@@ -12,7 +12,6 @@
 - █ ████ ███ ███ ████
 - ~~dont start over from scratch again!~~
 - ~~create map tiles~~
-- █ ████ ██████ ████
 # DECLASSIFIED
 
 - set up initial map
