@@ -479,7 +479,7 @@ var poi = {
                 5: {
                     loc: [0, 0],
                     map: "Outbreak",
-                    name: "Missing Name and Location",
+                    name: "Operation Baldr",
                     desc: ""
                 },
                 6: {
@@ -1020,19 +1020,19 @@ var poi = {
                 5: {
                     loc: [0, 0],
                     map: "Outbreak",
-                    name: "Missing Name and Location",
+                    name: "Operatsiya Inversiya Proposal",
                     desc: ""
                 },
                 6: {
                     loc: [0, 0],
                     map: "Outbreak",
-                    name: "Missing Name and Location",
+                    name: "Aetherium Warhead Blueprint",
                     desc: ""
                 },
                 7: {
                     loc: [0, 0],
                     map: "Outbreak",
-                    name: "Missing Name and Location",
+                    name: "R Cipher",
                     desc: ""
                 }
             },
@@ -1084,13 +1084,13 @@ var poi = {
                 4: {
                     loc: [0, 0],
                     map: "Outbreak",
-                    name: "Missing Name and Location",
+                    name: "ICBM Launch Key",
                     desc: ""
                 },
                 5: {
                     loc: [0, 0],
                     map: "Outbreak",
-                    name: "Missing Name and Location",
+                    name: "Modified Essence Trap",
                     desc: ""
                 },
                 6: {
@@ -2028,7 +2028,7 @@ var poi = {
                 4: {
                     loc: [0, 0],
                     map: "Outbreak",
-                    name: "Missing Name and Location",
+                    name: "Aetherium Crystal Chunks",
                     desc: ""
                 },
                 5: {
