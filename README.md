@@ -4,7 +4,7 @@
 ██████
 
 █████████  ██████  ████████████
-# [DECLASSIFIED](Odinnh.github.io/DECLASSIFIED)
+# [DECLASSIFIED](https://Odinnh.github.io/DECLASSIFIED)
 This is an interactive map for the game COD:Cold War.
 With every season more Intel becomes available, now this is the place to follow track and hunt for the next intel.
 
