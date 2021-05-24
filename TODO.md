@@ -1,12 +1,14 @@
 ███████████████[^1]
+
 ██████
+
 █████████  ██████  ████████████
 # CLASSIFIED
 - ~~convert icons to flat color~~
 - ~~add categories~~
 - ~~generate markers through loop~~
 - ~~multiple instaned maps(map/level selector)~~
-- █ ████ ███ ███ ████
+- █ ████ ██████ ████
 # DECLASSIFIED
 
 - set up initial map
