@@ -28,5 +28,11 @@ L.tileLayer(`./maps/ruka/{z}/{y}_{x}.png`, {
     noWrap: true
 }).addTo(ruka);
 
-L.marker(poi.REDACTED[0].Audio[1].loc, { icon: maxisIcon }).addTo(duga)
+L.marker([10, 0], { icon: maxisIcon }).addTo(duga)
+    .bindPopup(` <h1>${poi.REDACTED[0].Audio[1].name}</h1> ${poi.REDACTED[0].Audio[1].desc}`);
+L.marker([-10, 0], { icon: omegaIcon }).addTo(duga)
+    .bindPopup(` <h1>${poi.REDACTED[0].Audio[1].name}</h1> ${poi.REDACTED[0].Audio[1].desc}`);
+L.marker([0, 10], { icon: darkAetherIcon }).addTo(duga)
+    .bindPopup(` <h1>${poi.REDACTED[0].Audio[1].name}</h1> ${poi.REDACTED[0].Audio[1].desc}`);
+L.marker([0, -10], { icon: requiemIcon }).addTo(duga)
     .bindPopup(` <h1>${poi.REDACTED[0].Audio[1].name}</h1> ${poi.REDACTED[0].Audio[1].desc}`);
