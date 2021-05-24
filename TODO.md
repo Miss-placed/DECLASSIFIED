@@ -1,5 +1,7 @@
 ███████████████[^1]
+
 ██████
+
 █████████  ██████  ████████████
 # CLASSIFIED
 - ~~convert icons to flat color~~
@@ -9,6 +11,8 @@
 - ~~general UI~~
 - █ ████ ███ ███ ████
 - ~~dont start over from scratch again!~~
+- ~~create map tiles~~
+- █ ████ ██████ ████
 # DECLASSIFIED
 
 - set up initial map
