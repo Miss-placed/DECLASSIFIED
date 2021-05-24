@@ -1,12 +1,15 @@
 
 ███████████████[^1]
+
 ██████
+
 █████████  ██████  ████████████
 # DECLASSIFIED
 This is an interactive map for the game COD:Cold War.
 With every season more Intel becomes available, now this is the place to follow track and hunt for the next intel.
 
 ████ ██████████ █ ███████ ████
+
 ██ █ ███████
 
 I made this project after the frustration of going to go through multiple websites and reddit posts.
