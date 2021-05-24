@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000000000000000000;
+}
+
+#duga,
+#ruka {
+    height: 100vh;
+}
+
+#ruka {
+    display: none;
+}
+
+#Golova {}
+
+#Sanatorium {}
