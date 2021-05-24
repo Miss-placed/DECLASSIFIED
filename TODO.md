@@ -6,7 +6,9 @@
 - ~~add categories~~
 - ~~generate markers through loop~~
 - ~~multiple instaned maps(map/level selector)~~
+- ~~general UI~~
 - █ ████ ███ ███ ████
+- ~~dont start over from scratch again!~~
 # DECLASSIFIED
 
 - set up initial map
