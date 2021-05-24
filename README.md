@@ -11,6 +11,7 @@ With every season more Intel becomes available, now this is the place to follow 
 ████ ██████████ █ ███████ ████
 
 ██ █ ███████
+Want to help out? go check out our [discord](https://discord.gg/4Xqj8XntFe)
 
 I made this project after the frustration of going to go through multiple websites and reddit posts.
 Previously I contributed to [the Red Dead Redemption 2 Collectors map](https://jeanropke.github.io/RDR2CollectorsMap/), which is an inspiration for this map made by [Jeanropke](https://github.com/jeanropke/)
