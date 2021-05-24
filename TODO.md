@@ -8,6 +8,7 @@
 - ~~add categories~~
 - ~~generate markers through loop~~
 - ~~multiple instaned maps(map/level selector)~~
+- ~~create map tiles~~
 - █ ████ ██████ ████
 # DECLASSIFIED
 
