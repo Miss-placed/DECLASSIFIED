@@ -28,8 +28,8 @@ var baseMaps = {
 
 L.control.layers(baseMaps).addTo(map);
 // marker loop
-L.marker([10, 0], { icon: maxisIcon }).addTo(dugaMarkers)
-    .bindPopup(` <h1>${poi.REDACTED[0].Audio[1].name}</h1> ${poi.REDACTED[0].Audio[1].desc}`);
+L.marker(poi.Requiem[3].Audio[1].loc, { icon: requiemIcon }).addTo(dugaMarkers)
+    .bindPopup(` <h1>${poi.Requiem[3].Audio[1].name}</h1> ${poi.Requiem[3].Audio[1].desc}`);
 
 L.marker([-10, 0], { icon: omegaIcon }).addTo(rukaMarkers)
     .bindPopup(` <h1>${poi.REDACTED[0].Audio[1].name}</h1> ${poi.REDACTED[0].Audio[1].desc}`);
