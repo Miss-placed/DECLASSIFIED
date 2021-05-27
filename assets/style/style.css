@@ -7,3 +7,25 @@
 #worldMap {
     height: 100vh;
 }
+
+.leaflet-control-zoom.leaflet-bar.leaflet-control {
+    margin-top: 80px!important;
+}
+
+.leaflet-control-layers.leaflet-control-layers-expanded.leaflet-control {
+    border: none!important;
+    border-radius: 0!important;
+    margin: 0!important;
+    width: 100vw!important;
+    background-color: #2D2D2D;
+}
+
+.leaflet-control-layers.leaflet-control-layers-expanded.leaflet-control label {
+    display: inline-block;
+    padding: 5px;
+    color: white;
+}
+
+input[type="radio"] {
+    display: none;
+}
