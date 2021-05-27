@@ -43,7 +43,8 @@ var map = L.map('worldMap', {
     ],
     tap: true,
     tapTolerance: 30,
-    noWrap: true
+    noWrap: true,
+    doubleClickZoom: false,
 });
 var baseMaps = {
     "Die Maschine": dieMaschine,
