@@ -11,12 +11,10 @@
 - ~~change level selector to more appealing menu (might be with UI setup)~~
 - ~~general UI~~
 - █ ████ ███ ███ ████
-
-- ~~create map tiles~~
 - ~~vector of each map~~
 - ~~system to track collected intel~~
 - ~~list of all intel~~
-- ~~generate one map and markers at a time~~
+- ~~create a marker placer (for dev)~~
 # DECLASSIFIED
 
 - vector of duga
@@ -25,6 +23,7 @@
 - set up initial map
 - set up structure for markers
 - set up possible level selector
+- generate one map with markers at a time
 
 
 [^1]: ██████ is property of the CIA. a U.S. government agency.

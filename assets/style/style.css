@@ -6,6 +6,7 @@
 
 #worldMap {
     height: 100vh;
+    background-color: #2D2D2D;
 }
 
 .leaflet-control-zoom.leaflet-bar.leaflet-control {

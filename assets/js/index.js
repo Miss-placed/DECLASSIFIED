@@ -1,45 +1,21 @@
-// init map tiles
-var duga = new L.LayerGroup();
-var dugaMarkers = new L.LayerGroup();
-var dugaTiles = L.tileLayer(`./maps/duga/{z}/{x}_{y}.png`, { id: 'duga', tileSize: 512, zoomOffset: -1 })
-
-var ruka = new L.LayerGroup();
-var rukaMarkers = new L.LayerGroup();
-var rukaTiles = L.tileLayer(`./maps/duga/{z}/{x}_{y}.png`, { id: 'ruka', tileSize: 512, zoomOffset: -1 })
-
-var alpine = new L.LayerGroup();
-var alpineMarkers = new L.LayerGroup();
-var alpineTiles = L.tileLayer(`./maps/duga/{z}/{x}_{y}.png`, { id: 'alpine', tileSize: 512, zoomOffset: -1 })
-
-var golova = new L.LayerGroup();
-var golovaMarkers = new L.LayerGroup();
-var golovaTiles = L.tileLayer(`./maps/duga/{z}/{x}_{y}.png`, { id: 'golova', tileSize: 512, zoomOffset: -1 })
-
-var firebaseZ = new L.LayerGroup();
-var firebaseZMarkers = new L.LayerGroup();
-var firebaseZTiles = L.tileLayer(`./maps/duga/{z}/{x}_{y}.png`, { id: 'firebaseZ', tileSize: 512, zoomOffset: -1 })
-
-var sanitorium = new L.LayerGroup();
-var sanitoriumMarkers = new L.LayerGroup();
-var sanitoriumTiles = L.tileLayer(`./maps/duga/{z}/{x}_{y}.png`, { id: 'sanitorium', tileSize: 512, zoomOffset: -1 })
-
-var dieMaschine = new L.LayerGroup();
-var dieMaschineMarkers = new L.LayerGroup();
-var dieMaschineTiles = L.tileLayer(`./maps/duga/{z}/{x}_{y}.png`, { id: 'dieMaschine', tileSize: 512, zoomOffset: -1 })
-
 var map = L.map('worldMap', {
     crs: L.CRS.Simple,
     center: [-(256 / 2), 256 / 2],
+    maxBounds: [
+        [0, 0],
+        [-512 / 2, 512 / 2]
+    ],
     zoom: 2,
     maxZoom: 5,
+    minZoom: 1,
     layers: [
-        duga,
-        ruka,
-        alpine,
-        golova,
-        firebaseZ,
-        sanitorium,
-        dieMaschine,
+        duga.Layer,
+        ruka.Layer,
+        alpine.Layer,
+        golova.Layer,
+        firebaseZ.Layer,
+        sanitorium.Layer,
+        dieMaschine.Layer,
     ],
     tap: true,
     tapTolerance: 30,
@@ -47,36 +23,45 @@ var map = L.map('worldMap', {
     doubleClickZoom: false,
 });
 var baseMaps = {
-    "Die Maschine": dieMaschine,
-    "firebase Z": firebaseZ,
-    "Duga": duga,
-    "Ruka": ruka,
-    "Alpine": alpine,
-    "golova": golova,
-    "sanitorium": sanitorium,
+    "Die Maschine": dieMaschine.Layer,
+    "firebase Z": firebaseZ.Layer,
+    "Duga": duga.Layer,
+    "Ruka": ruka.Layer,
+    "Alpine": alpine.Layer,
+    "golova": golova.Layer,
+    "sanitorium": sanitorium.Layer,
 };
 L.control.layers(baseMaps, "", { collapsed: false }).addTo(map);
 
 // do marker loop here
-L.marker(poi.Requiem[3].Audio[1].loc, { icon: requiemIcon }).addTo(dugaMarkers)
+L.marker(poi.Requiem[3].Audio[1].loc, { icon: requiemIcon }).addTo(duga.Markers)
     .bindPopup(` <h1>${poi.Requiem[3].Audio[1].name}</h1> ${poi.Requiem[3].Audio[1].desc}`);
 
-L.marker([-10, 0], { icon: omegaIcon }).addTo(rukaMarkers)
+L.marker([-10, 0], { icon: omegaIcon }).addTo(ruka.Markers)
     .bindPopup(` <h1>${poi.REDACTED[0].Audio[1].name}</h1> ${poi.REDACTED[0].Audio[1].desc}`);
 
-dugaTiles.addTo(duga);
-dugaMarkers.addTo(duga);
-rukaTiles.addTo(ruka);
-rukaMarkers.addTo(ruka);
+duga.Tiles.addTo(duga.Layer);
+duga.Markers.addTo(duga.Layer);
+ruka.Tiles.addTo(ruka.Layer);
+ruka.Markers.addTo(ruka.Layer);
 
-alpineTiles.addTo(alpine);
-alpineMarkers.addTo(alpine);
-golovaTiles.addTo(golova);
-golovaMarkers.addTo(golova);
-firebaseZTiles.addTo(firebaseZ);
-firebaseZMarkers.addTo(firebaseZ);
+alpine.Tiles.addTo(alpine.Layer);
+alpine.Markers.addTo(alpine.Layer);
+golova.Tiles.addTo(golova.Layer);
+golova.Markers.addTo(golova.Layer);
+firebaseZ.Tiles.addTo(firebaseZ.Layer);
+firebaseZ.Markers.addTo(firebaseZ.Layer);
 
-sanitoriumTiles.addTo(sanitorium);
-sanitoriumMarkers.addTo(sanitorium);
-dieMaschineTiles.addTo(dieMaschine);
-dieMaschineMarkers.addTo(dieMaschine);
+sanitorium.Tiles.addTo(sanitorium.Layer);
+sanitorium.Markers.addTo(sanitorium.Layer);
+dieMaschine.Tiles.addTo(dieMaschine.Layer);
+dieMaschine.Markers.addTo(dieMaschine.Layer);
+
+function setDefaultMap() {
+    map.removeLayer(ruka.Layer)
+    map.removeLayer(alpine.Layer)
+    map.removeLayer(golova.Layer)
+    map.removeLayer(firebaseZ.Layer)
+    map.removeLayer(sanitorium.Layer)
+    map.removeLayer(dieMaschine.Layer)
+}

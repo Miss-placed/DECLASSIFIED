@@ -20,20 +20,35 @@
 
 </head>
 
-<body>
+<body onload="setDefaultMap()">
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <Section>
-        <aside></aside>
+        <!-- <aside>
+            <button onClick="setMarkerVisibility(duga,'duga')">duga</button>
+            <button onClick="setMarkerVisibility(ruka,'ruka')">ruka</button>
+        </aside> -->
         <div id="worldMap"></div>
     </Section>
     <script src="" async defer></script>
     <script src="assets/js/icons.js"></script>
     <script src="poi/poi.js"></script>
+    <script src="assets/js/maps.js"></script>
     <script src="assets/js/index.js"></script>
     <script>
+        var currentMap = "duga";
         // map.panTo(new L.LatLng(-(256 / 2), 256 / 2))
+        function setMarkerVisibility(x, y) {
+            // if (currentMap == y) {
+            if (x.MarkersVisible) {
+                x.Layer.removeLayer(x.Markers);
+            } else {
+                x.Layer.addLayer(x.Markers)
+            }
+            x.MarkersVisible = !x.MarkersVisible
+                // }
+        }
     </script>
 </body>
 
