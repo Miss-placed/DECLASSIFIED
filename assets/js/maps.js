@@ -35,7 +35,7 @@ var sanitorium = {
     Layer: new L.LayerGroup(),
     Markers: new L.LayerGroup(),
     MarkersVisible: true,
-    Tiles: L.tileLayer(`./maps/duga/{z}/{x}_{y}.png`, { id: 'sanitorium', tileSize: tileSize, zoomOffset: zoomOffset })
+    Tiles: L.tileLayer(`./maps/sanitorium/{z}/{x}_{y}.png`, { id: 'sanitorium', tileSize: tileSize, zoomOffset: zoomOffset })
 }
 var dieMaschine = {
     Layer: new L.LayerGroup(),
