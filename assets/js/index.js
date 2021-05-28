@@ -34,11 +34,71 @@ var baseMaps = {
 L.control.layers(baseMaps, "", { collapsed: false }).addTo(map);
 
 // do marker loop here
-L.marker(poi.Requiem[3].Audio[1].loc, { icon: requiemIcon }).addTo(duga.Markers)
-    .bindPopup(` <h1>${poi.Requiem[3].Audio[1].name}</h1> ${poi.Requiem[3].Audio[1].desc}`);
+for (let key in poi) {
+    if (poi.hasOwnProperty(key)) {
+        if (key.toString() == "Requiem") {
+            for (let i = 0; i <= Object.keys(poi[key]).length; i++) {
+                let season = poi.Requiem[i];
+                for (let key in season) {
+                    for (let i = 0; i < Object.keys(season[key]).length; i++) {
+                        let intel = season[key][i + 1];
+                        if (intel.map == "Duga") {
+                            L.marker(intel.loc, { icon: requiemIcon }).addTo(duga.Markers)
+                                .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
+                        }
+                    }
 
-L.marker([-10, 0], { icon: omegaIcon }).addTo(ruka.Markers)
-    .bindPopup(` <h1>${poi.REDACTED[0].Audio[1].name}</h1> ${poi.REDACTED[0].Audio[1].desc}`);
+                }
+            }
+        }
+        if (key.toString() == "Omega") {
+            for (let i = 0; i <= Object.keys(poi[key]).length; i++) {
+                let season = poi.Omega[i];
+                for (let key in season) {
+                    for (let i = 0; i < Object.keys(season[key]).length; i++) {
+                        let intel = season[key][i + 1];
+                        if (intel.map == "Duga") {
+                            L.marker(intel.loc, { icon: omegaIcon }).addTo(duga.Markers)
+                                .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
+                        }
+                    }
+
+                }
+            }
+        }
+        if (key.toString() == "Maxis") {
+            for (let i = 0; i <= Object.keys(poi[key]).length; i++) {
+                let season = poi.Maxis[i];
+                for (let key in season) {
+                    for (let i = 0; i < Object.keys(season[key]).length; i++) {
+                        let intel = season[key][i + 1];
+                        if (intel.map == "Duga") {
+                            L.marker(intel.loc, { icon: maxisIcon }).addTo(duga.Markers)
+                                .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
+                        }
+                    }
+
+                }
+            }
+        }
+        if (key.toString() == "DarkAether") {
+            for (let i = 0; i <= Object.keys(poi[key]).length; i++) {
+                let season = poi.DarkAether[i];
+                for (let key in season) {
+                    for (let i = 0; i < Object.keys(season[key]).length; i++) {
+                        let intel = season[key][i + 1];
+                        if (intel.map == "Duga") {
+                            L.marker(intel.loc, { icon: darkAetherIcon }).addTo(duga.Markers)
+                                .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
 
 duga.Tiles.addTo(duga.Layer);
 duga.Markers.addTo(duga.Layer);

@@ -318,37 +318,37 @@ var poi = {
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Ruka - Outbreak",
+                    map: "Ruka",
                     name: "Like Flies To Honey",
                     desc: "In the Base Headquarters location on a long table."
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Alpine - Outbreak",
+                    map: "Alpine",
                     name: "A Grisly Affair",
                     desc: "In Base Cabins on the back of a truck behind the cabins."
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Golova - Outbreak",
+                    map: "Golova",
                     name: "I See Hierarchy",
                     desc: "On the top of the water tower near the gas station at the edge of the village proper."
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Sanitorium - Outbreak",
+                    map: "Sanitorium",
                     name: "Quantum Entanglement",
                     desc: "On the pier in the back room of the building at the end."
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Ruka - Outbreak",
+                    map: "Ruka",
                     name: "Recon Rover Blues",
                     desc: "In the big building of the Old Farm location."
                 },
                 7: {
                     loc: [0, 0],
-                    map: "Alpine - Outbreak",
+                    map: "Alpine",
                     name: "Killer Crystals",
                     desc: "In Ski Patrol in the big building in the smaller side room on a table."
                 }
@@ -438,13 +438,13 @@ var poi = {
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Ruka - Outbreak",
+                    map: "Ruka",
                     name: "Aetherium Crystal Shard",
                     desc: "In the burnt forest section, right up against the egde of the map about halfway down. It's on top of a big rock."
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Alpine - Outbreak",
+                    map: "Alpine",
                     name: "Frostblast Canister",
                     desc: "Look for the circular ski lift station on the western side of the map near the Lodge and the Pro Shop."
                 }
@@ -454,49 +454,49 @@ var poi = {
             Audio: {
                 1: {
                     loc: [-71.25, 142],
-                    map: "Duga - Outbreak",
+                    map: "Duga",
                     name: "The Beacon",
                     desc: "In the Chemical Processing area, on the desk in the office of the big building."
                 },
                 2: {
-                    loc: [0, 0],
-                    map: "Duga - Outbreak",
+                    loc: [-84, 213.75],
+                    map: "Duga",
                     name: "Doubts",
                     desc: "In the SAM site, in the big hanger on a box marked with a red star."
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Ruka - Outbreak",
+                    map: "Ruka",
                     name: "Death Squad",
                     desc: "In the old farm area. In the green tent, under a table."
                 },
                 4: {
-                    loc: [0, 0],
-                    map: "Duga - Outbreak",
+                    loc: [-169, 152],
+                    map: "Duga",
                     name: "Eyes Only",
                     desc: "In the Worker Services building. On the second floor, on a desk in one of the offices."
                 },
                 5: {
-                    loc: [0, 0],
-                    map: "Duga - Outbreak",
+                    loc: [-153.75, 137],
+                    map: "Duga",
                     name: "Operation Baldr",
                     desc: "In Radar Control. Sitting on the table next to the couch in the Office on the second floor."
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Sanitorium - Outbreak",
+                    map: "Sanitorium",
                     name: "Dissent And Division",
                     desc: "On the monorail track in South Lake. It's in the support pillar in the middle of the lake."
                 },
                 7: {
                     loc: [0, 0],
-                    map: "Sanitorium - Outbreak",
+                    map: "Sanitorium",
                     name: "News From Upstairs",
                     desc: "Under the bridge. Right at the end of the bridge just before you go outta the map, on a little platform just above the surface of the water."
                 },
                 8: {
                     loc: [0, 0],
-                    map: "Alpine - Outbreak",
+                    map: "Alpine",
                     name: "Embarrassment of Riches",
                     desc: "In the lodge. On the third floor sitting on the bar."
                 }
@@ -580,37 +580,37 @@ var poi = {
             Artifacts: {
                 1: {
                     loc: [0, 0],
-                    map: "Sanitorium - Outbreak",
+                    map: "Sanitorium",
                     name: "Energy Mine Canister",
                     desc: "On the roof of the 001 and 002 apartments in the Mechanic Shop area."
                 },
                 2: {
-                    loc: [0, 0],
-                    map: "Duga - Outbreak",
+                    loc: [-72.5, 116.5],
+                    map: "Duga",
                     name: "Essence Explosive",
                     desc: "In the bunker area, in the top most guard station."
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Sanitorium - Outbreak",
+                    map: "Sanitorium",
                     name: "Requiem Patch",
                     desc: "In the Lakeside Dell area. Its on a little dock to the left of the big bridge."
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Golova - Outbreak",
+                    map: "Golova",
                     name: "Transformed Apple Crate",
                     desc: "In the barn of the lower farmstead. Should be pretty easy to spot."
                 },
                 5: {
-                    loc: [0, 0],
-                    map: "Duga - Outbreak",
+                    loc: [-160.25, 199.25],
+                    map: "Duga",
                     name: "Beacon Device Component",
                     desc: "In the Eletrical Substation. On one of the two taller structures, is very easy to see."
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Alpine - Outbreak",
+                    map: "Alpine",
                     name: "Aether Shroud Canister",
                     desc: "In the Maintenance section. It's inside one of the garages."
                 }
@@ -863,13 +863,13 @@ var poi = {
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Golova - Outbreak",
+                    map: "Golova",
                     name: "Ghost Stories",
                     desc: "In the big building in the little cemetary's office room."
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Sanitorium - Outbreak",
+                    map: "Sanitorium",
                     name: "Something I Can Use",
                     desc: "In the Sanitorium building on the second floor, in a side room attached to the big open room with the long oval table."
                 },
@@ -881,25 +881,25 @@ var poi = {
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Alpine - Outbreak",
+                    map: "Alpine",
                     name: "Do What You Must",
                     desc: "On a little table on the balcony in the Chalet area."
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Ruka - Outbreak",
+                    map: "Ruka",
                     name: "In The Wild",
                     desc: "In the middle of the Missile Silos on a shelf. near the ammo crate."
                 },
                 7: {
                     loc: [0, 0],
-                    map: "Sanitorium - Outbreak",
+                    map: "Sanitorium",
                     name: "Proposed Targets",
                     desc: "In the Sanitorium building on the first floor in a side room to the right of the statue."
                 },
                 8: {
                     loc: [0, 0],
-                    map: "Ruka - Outbreak",
+                    map: "Ruka",
                     name: "Lightning Bugs",
                     desc: "On a table near the edge of the Mobile ICBM Site."
                 }
@@ -953,13 +953,13 @@ var poi = {
             Artifacts: {
                 1: {
                     loc: [0, 0],
-                    map: "Ruka - Outbreak",
+                    map: "Ruka",
                     name: "Kravchenko's Knife",
                     desc: "In a green lookout tower in the southwest corner of the Missile Silos."
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Ruka - Outbreak",
+                    map: "Ruka",
                     name: "Omega Group Patch",
                     desc: "On top of the climbable net in the obstacle course."
                 }
@@ -968,26 +968,26 @@ var poi = {
         3: {
             Audio: {
                 1: {
-                    loc: [0, 0],
-                    map: "Duga - Outbreak",
+                    loc: [-173.75, 177.5],
+                    map: "Duga",
                     name: "Leadership Techniques",
                     desc: "On the third floor of the Admin Offices. In the room with a big oval table."
                 },
                 2: {
-                    loc: [0, 0],
-                    map: "Duga - Outbreak",
+                    loc: [-150.25, 224.25],
+                    map: "Duga",
                     name: "This Isn't My Work",
                     desc: "In the Research Labs. In the right most building."
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Ruka - Outbreak",
+                    map: "Ruka",
                     name: "Witching Hour",
                     desc: "I the missile silos by the A elevator. On the side of the building, next to the generators."
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Sanitorium - Outbreak",
+                    map: "Sanitorium",
                     name: "His Plan, Our Plan",
                     desc: "On the Sanitorium Roof. It's on top of the spire with 2 satellite dishes. Requires a Jump pad to get to."
                 }
@@ -1065,37 +1065,37 @@ var poi = {
             Artifacts: {
                 1: {
                     loc: [0, 0],
-                    map: "Ruka - Outbreak",
+                    map: "Ruka",
                     name: "Mangler Cannon",
                     desc: "Near the base of the Train Trestle closest to the building. It's sitting at the base of a tree."
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Sanitorium - Outbreak",
+                    map: "Sanitorium",
                     name: "Peck's ID Badge",
                     desc: "In the middle of the large Bathhouse, on a shelf."
                 },
                 3: {
-                    loc: [0, 0],
-                    map: "Duga - Outbreak",
+                    loc: [-173.75, 172.75],
+                    map: "Duga",
                     name: "Boost Module Monitor",
                     desc: "In the admin offices on the third floor. In the room with all the computers."
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Duga - Outbreak",
+                    map: "Ruka",
                     name: "ICBM Launch Key",
                     desc: "Obtained during the Outbreak EE."
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Duga - Outbreak",
+                    map: "Ruka",
                     name: "Modified Essence Trap",
                     desc: "In a hallway on the ground floor of Silo A, obtained during the Outbreak EE."
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Alpine - Outbreak",
+                    map: "Alpine",
                     name: "Tempest Head",
                     desc: "In the medivac area. Inside the large building, on top of a pile of crates and sandbags that need to be clambered up."
                 }
@@ -1287,25 +1287,25 @@ var poi = {
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Ruka - Outbreak",
+                    map: "Ruka",
                     name: "Call Me Mac",
                     desc: "In the small cabin in the Backwoods."
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Alpine - Outbreak",
+                    map: "Alpine",
                     name: "My Reputation Precedes ME",
                     desc: "Inside the Red building's office area, in Maintenance."
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Golova - Outbreak",
+                    map: "Golova",
                     name: "It's All Relative",
                     desc: "In the little barn next to the 4 silos in Lower Farmstead."
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Sanitorium - Outbreak",
+                    map: "Sanitorium",
                     name: "We've Both Been To Hell",
                     desc: "In the little reception area of the biggest building in the maintenance area."
                 }
@@ -1377,13 +1377,13 @@ var poi = {
             Artifacts: {
                 1: {
                     loc: [0, 0],
-                    map: "Golova - Outbreak",
+                    map: "Golova",
                     name: "Endstation Video Tape",
                     desc: "Found in a room in Lower East Town on an end table by a bed."
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Golova - Outbreak",
+                    map: "Golova",
                     name: "Maxis BND Badge",
                     desc: "Behind some sandbags, very close to the edge of the map, in the Industrial Park location."
                 }
@@ -1392,32 +1392,32 @@ var poi = {
         3: {
             Audio: {
                 1: {
-                    loc: [0, 0],
-                    map: "Duga - Outbreak",
+                    loc: [-87, 109],
+                    map: "Duga",
                     name: "It's Always Dark",
                     desc: "In the 3rd bunker down from the top in the Bunkers section of the map, on a box."
                 },
                 2: {
-                    loc: [0, 0],
-                    map: "Duga - Outbreak",
+                    loc: [-82.75, 28],
+                    map: "Duga",
                     name: "Outbursts",
                     desc: "In the farm area. In the big red house, on the bed on the upper floor."
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Golova - Outbreak",
+                    map: "Golova",
                     name: "A New Friend",
                     desc: "On a desk in one of the Church's back rooms."
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Golova - Outbreak",
+                    map: "Golova",
                     name: "Isolated",
                     desc: "On a desk in the Police station(the armor station building)"
                 },
                 5: {
-                    loc: [0, 0],
-                    map: "Duga - Outbreak",
+                    loc: [-125.25, 96.5],
+                    map: "Duga",
                     name: "Someone We Can Trust",
                     desc: "In the warehouses section. On the second floor of the top most warehouse, on a desk."
                 }
@@ -1451,14 +1451,14 @@ var poi = {
             Radio: {},
             Artifacts: {
                 1: {
-                    loc: [0, 0],
-                    map: "Duga - Outbreak",
+                    loc: [-107.75, 48],
+                    map: "Duga",
                     name: "Maxis's Katana",
                     desc: "In the farm area. Stuck in a haybale in a shed near the back of the area, next to the stone wall."
                 },
                 2: {
-                    loc: [0, 0],
-                    map: "Duga - Outbreak",
+                    loc: [-146, 126.75],
+                    map: "Duga",
                     name: "Maxis's Scarf",
                     desc: "In the listening post. In a room just to the left of the wonderfizz, on a coathook."
                 },
@@ -1482,7 +1482,7 @@ var poi = {
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Golova - Outbreak",
+                    map: "Golova",
                     name: "Maxis's Watch",
                     desc: "In the Lower West town area. It's on the roof of the building with the crafting bench, requires a jump pad to get to. It's tucked in between the roof itself and one of the 4 spire things with a flag on it."
                 }
@@ -1873,25 +1873,25 @@ var poi = {
             Artifacts: {
                 1: {
                     loc: [0, 0],
-                    map: "Alpine - Outbreak",
+                    map: "Alpine",
                     name: "Empty Jugger-Nog",
                     desc: "On the roof of the Large Sauna building"
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Golova - Outbreak",
+                    map: "Golova",
                     name: "Cymbal Monkey Toy",
                     desc: "On the lip of the left most tower on the roof of the church."
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Ruka - Outbreak",
+                    map: "Ruka",
                     name: "Ivan's Head",
                     desc: "On a telephone pillar next to the train trestle bridge (use parachute)."
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Alpine - Outbreak",
+                    map: "Alpine",
                     name: "Mystery Box Bunny",
                     desc: "In a bed in Base Suites section. It's the third building from the bottom."
                 }
@@ -2009,37 +2009,37 @@ var poi = {
             Artifacts: {
                 1: {
                     loc: [0, 0],
-                    map: "Sanitorium - Outbreak",
+                    map: "Sanitorium",
                     name: "Empty Speed Cola",
                     desc: "On the counter on the kitchen of the higher of the two right most houses in the vacation homes section."
                 },
                 2: {
-                    loc: [0, 0],
-                    map: "Duga - Outbreak",
+                    loc: [-98, 143.25],
+                    map: "Duga",
                     name: "Broken Essence Capsule",
                     desc: "In the Secondary Array. This location is kinda weird. Starting from the top of the left most array, go as far left as you can, then go down 3 layers. It will be sitting on a grey metal bar connecting the walkway to the side of the array. This is away from the Primary Array, not towards it."
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Sanitorium - Outbreak",
+                    map: "Sanitorium",
                     name: "Empty Quick Revive Soda Can",
                     desc: "On Sanitorium, in the Beach Resort. Under the stairs of the White shack building."
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "Ruka",
                     name: "Broken Essence Canister",
                     desc: ""
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Duga - Outbreak",
+                    map: "Ruka",
                     name: "Aetherium Crystal Chunks",
                     desc: "Found by breaking crystals in Silo B during the Outbreak EE"
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Alpine - Outbreak",
+                    map: "Alpine",
                     name: "Dragon Head Trophy",
                     desc: "In the lodge. In Room 201, above the bed."
                 }
