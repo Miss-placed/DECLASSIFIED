@@ -7,6 +7,7 @@
 #worldMap {
     height: 100vh;
     background-color: #2D2D2D;
+    cursor: crosshair;
 }
 
 .leaflet-control-zoom.leaflet-bar.leaflet-control {

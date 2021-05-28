@@ -453,7 +453,7 @@ var poi = {
         3: {
             Audio: {
                 1: {
-                    loc: [-65, 20],
+                    loc: [-71.25, 142],
                     map: "Duga - Outbreak",
                     name: "The Beacon",
                     desc: "In the Chemical Processing area, on the desk in the office of the big building."

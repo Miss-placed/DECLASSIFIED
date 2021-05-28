@@ -26,8 +26,13 @@
         <![endif]-->
     <Section>
         <!-- <aside>
-            <button onClick="setMarkerVisibility(duga,'duga')">duga</button>
-            <button onClick="setMarkerVisibility(ruka,'ruka')">ruka</button>
+            <button onClick="setMarkerVisibility(dieMaschine,'Die Maschine')">Die Maschine</button>
+            <button onClick="setMarkerVisibility(firebaseZ,'Firebase Z')">Firebase Z</button>
+            <button onClick="setMarkerVisibility(duga,'Duga')">Duga</button>
+            <button onClick="setMarkerVisibility(ruka,'Ruka')">Ruka</button>
+            <button onClick="setMarkerVisibility(golova,'Golova')">Golova</button>
+            <button onClick="setMarkerVisibility(alpine,'Sanitorium')">Sanitorium</button>
+            <button onClick="setMarkerVisibility(alpine,'Alpine')">Alpine</button>
         </aside> -->
         <div id="worldMap"></div>
     </Section>
@@ -37,18 +42,28 @@
     <script src="assets/js/maps.js"></script>
     <script src="assets/js/index.js"></script>
     <script>
-        var currentMap = "duga";
+        var currentMap = duga;
+
         // map.panTo(new L.LatLng(-(256 / 2), 256 / 2))
         function setMarkerVisibility(x, y) {
-            // if (currentMap == y) {
-            if (x.MarkersVisible) {
-                x.Layer.removeLayer(x.Markers);
+            if (currentMap == y) {
+                if (x.MarkersVisible) {
+                    x.Layer.removeLayer(x.Markers);
+                } else {
+                    x.Layer.addLayer(x.Markers)
+                }
+                x.MarkersVisible = !x.MarkersVisible
             } else {
-                x.Layer.addLayer(x.Markers)
+                map.removeLayer(currentMap.Layer)
+                map.addLayer(x.Layer)
+
+                currentMap = x
+                currentMarkers = y
             }
-            x.MarkersVisible = !x.MarkersVisible
-                // }
         }
+        map.on("click", function(e) {
+            console.log("[" + e.latlng.lat + ", " + e.latlng.lng + "]");
+        })
     </script>
 </body>
 

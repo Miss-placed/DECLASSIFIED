@@ -24,12 +24,12 @@ var map = L.map('worldMap', {
 });
 var baseMaps = {
     "Die Maschine": dieMaschine.Layer,
-    "firebase Z": firebaseZ.Layer,
+    "Firebase Z": firebaseZ.Layer,
     "Duga": duga.Layer,
     "Ruka": ruka.Layer,
     "Alpine": alpine.Layer,
-    "golova": golova.Layer,
-    "sanitorium": sanitorium.Layer,
+    "Golova": golova.Layer,
+    "Sanitorium": sanitorium.Layer,
 };
 L.control.layers(baseMaps, "", { collapsed: false }).addTo(map);
 
