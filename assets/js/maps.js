@@ -17,7 +17,7 @@ var alpine = {
     Layer: new L.LayerGroup(),
     Markers: new L.LayerGroup(),
     MarkersVisible: true,
-    Tiles: L.tileLayer(`./maps/duga/{z}/{x}_{y}.png`, { id: 'alpine', tileSize: tileSize, zoomOffset: zoomOffset })
+    Tiles: L.tileLayer(`./maps/alpine/{z}/{x}_{y}.png`, { id: 'alpine', tileSize: tileSize, zoomOffset: zoomOffset })
 }
 var golova = {
     Layer: new L.LayerGroup(),
@@ -31,11 +31,11 @@ var firebaseZ = {
     MarkersVisible: true,
     Tiles: L.tileLayer(`./maps/duga/{z}/{x}_{y}.png`, { id: 'firebaseZ', tileSize: tileSize, zoomOffset: zoomOffset })
 }
-var sanitorium = {
+var sanatorium = {
     Layer: new L.LayerGroup(),
     Markers: new L.LayerGroup(),
     MarkersVisible: true,
-    Tiles: L.tileLayer(`./maps/sanitorium/{z}/{x}_{y}.png`, { id: 'sanitorium', tileSize: tileSize, zoomOffset: zoomOffset })
+    Tiles: L.tileLayer(`./maps/sanatorium/{z}/{x}_{y}.png`, { id: 'sanatorium', tileSize: tileSize, zoomOffset: zoomOffset })
 }
 var dieMaschine = {
     Layer: new L.LayerGroup(),

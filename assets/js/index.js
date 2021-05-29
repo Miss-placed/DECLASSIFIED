@@ -14,7 +14,7 @@ var map = L.map('worldMap', {
         alpine.Layer,
         golova.Layer,
         firebaseZ.Layer,
-        sanitorium.Layer,
+        sanatorium.Layer,
         dieMaschine.Layer,
     ],
     tap: true,
@@ -29,7 +29,7 @@ var baseMaps = {
     "Ruka": ruka.Layer,
     "Alpine": alpine.Layer,
     "Golova": golova.Layer,
-    "Sanitorium": sanitorium.Layer,
+    "Sanatorium": sanatorium.Layer,
 };
 L.control.layers(baseMaps, "", { collapsed: false }).addTo(map);
 
@@ -44,6 +44,14 @@ for (let key in poi) {
                         let intel = season[key][i + 1];
                         if (intel.map == "Duga") {
                             L.marker(intel.loc, { icon: requiemIcon }).addTo(duga.Markers)
+                                .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
+                        }
+                        if (intel.map == "Sanatorium") {
+                            L.marker(intel.loc, { icon: requiemIcon }).addTo(sanatorium.Markers)
+                                .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
+                        }
+                        if (intel.map == "Alpine") {
+                            L.marker(intel.loc, { icon: requiemIcon }).addTo(alpine.Markers)
                                 .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
                         }
                     }
@@ -61,6 +69,15 @@ for (let key in poi) {
                             L.marker(intel.loc, { icon: omegaIcon }).addTo(duga.Markers)
                                 .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
                         }
+                        console.log(intel.map)
+                        if (intel.map == "Sanatorium") {
+                            L.marker(intel.loc, { icon: omegaIcon }).addTo(sanatorium.Markers)
+                                .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
+                        }
+                        if (intel.map == "Alpine") {
+                            L.marker(intel.loc, { icon: omegaIcon }).addTo(alpine.Markers)
+                                .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
+                        }
                     }
 
                 }
@@ -76,6 +93,14 @@ for (let key in poi) {
                             L.marker(intel.loc, { icon: maxisIcon }).addTo(duga.Markers)
                                 .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
                         }
+                        if (intel.map == "Sanatorium") {
+                            L.marker(intel.loc, { icon: maxisIcon }).addTo(sanatorium.Markers)
+                                .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
+                        }
+                        if (intel.map == "Alpine") {
+                            L.marker(intel.loc, { icon: maxisIcon }).addTo(alpine.Markers)
+                                .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
+                        }
                     }
 
                 }
@@ -89,6 +114,14 @@ for (let key in poi) {
                         let intel = season[key][i + 1];
                         if (intel.map == "Duga") {
                             L.marker(intel.loc, { icon: darkAetherIcon }).addTo(duga.Markers)
+                                .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
+                        }
+                        if (intel.map == "Sanatorium") {
+                            L.marker(intel.loc, { icon: darkAetherIcon }).addTo(sanatorium.Markers)
+                                .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
+                        }
+                        if (intel.map == "Alpine") {
+                            L.marker(intel.loc, { icon: darkAetherIcon }).addTo(alpine.Markers)
                                 .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
                         }
                     }
@@ -112,8 +145,8 @@ golova.Markers.addTo(golova.Layer);
 firebaseZ.Tiles.addTo(firebaseZ.Layer);
 firebaseZ.Markers.addTo(firebaseZ.Layer);
 
-sanitorium.Tiles.addTo(sanitorium.Layer);
-sanitorium.Markers.addTo(sanitorium.Layer);
+sanatorium.Tiles.addTo(sanatorium.Layer);
+sanatorium.Markers.addTo(sanatorium.Layer);
 dieMaschine.Tiles.addTo(dieMaschine.Layer);
 dieMaschine.Markers.addTo(dieMaschine.Layer);
 
@@ -122,6 +155,6 @@ function setDefaultMap() {
     map.removeLayer(alpine.Layer)
     map.removeLayer(golova.Layer)
     map.removeLayer(firebaseZ.Layer)
-    map.removeLayer(sanitorium.Layer)
+    map.removeLayer(sanatorium.Layer)
     map.removeLayer(dieMaschine.Layer)
 }

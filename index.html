@@ -31,11 +31,12 @@
             <button onClick="setMarkerVisibility(duga,'Duga')">Duga</button>
             <button onClick="setMarkerVisibility(ruka,'Ruka')">Ruka</button>
             <button onClick="setMarkerVisibility(golova,'Golova')">Golova</button>
-            <button onClick="setMarkerVisibility(alpine,'Sanitorium')">Sanitorium</button>
+            <button onClick="setMarkerVisibility(alpine,'Sanatorium')">Sanatorium</button>
             <button onClick="setMarkerVisibility(alpine,'Alpine')">Alpine</button>
         </aside> -->
         <div id="worldMap"></div>
     </Section>
+    <input id="cb" type="text" hidden>
     <script src="" async defer></script>
     <script src="assets/js/icons.js"></script>
     <script src="poi/poi.js"></script>
@@ -62,7 +63,13 @@
             }
         }
         map.on("click", function(e) {
-            console.log("[" + e.latlng.lat + ", " + e.latlng.lng + "]");
+            // "[" + e.latlng.lat + ", " + e.latlng.lng + "]"
+            var cb = document.getElementById("cb");
+            cb.value = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
+            cb.style.display = 'block';
+            cb.select();
+            document.execCommand('copy');
+            cb.style.display = 'none';
         })
     </script>
 </body>

@@ -323,7 +323,7 @@ var poi = {
                     desc: "In the Base Headquarters location on a long table."
                 },
                 3: {
-                    loc: [0, 0],
+                    loc: [-109.75, 28],
                     map: "Alpine",
                     name: "A Grisly Affair",
                     desc: "In Base Cabins on the back of a truck behind the cabins."
@@ -335,8 +335,8 @@ var poi = {
                     desc: "On the top of the water tower near the gas station at the edge of the village proper."
                 },
                 5: {
-                    loc: [0, 0],
-                    map: "Sanitorium",
+                    loc: [-88, 132.5],
+                    map: "Sanatorium",
                     name: "Quantum Entanglement",
                     desc: "On the pier in the back room of the building at the end."
                 },
@@ -347,10 +347,10 @@ var poi = {
                     desc: "In the big building of the Old Farm location."
                 },
                 7: {
-                    loc: [0, 0],
+                    loc: [-116.5, 142.75],
                     map: "Alpine",
                     name: "Killer Crystals",
-                    desc: "In Ski Patrol in the big building in the smaller side room on a table."
+                    desc: "In Ski Patrol in the big building upstairs in the smaller side room on a table."
                 }
             },
             Documents: {
@@ -443,10 +443,10 @@ var poi = {
                     desc: "In the burnt forest section, right up against the egde of the map about halfway down. It's on top of a big rock."
                 },
                 4: {
-                    loc: [0, 0],
+                    loc: [-128, 83.75],
                     map: "Alpine",
                     name: "Frostblast Canister",
-                    desc: "Look for the circular ski lift station on the western side of the map near the Lodge and the Pro Shop."
+                    desc: "Look ontop of the circular ski lift station on the western side of the map near the Lodge and the Pro Shop."
                 }
             },
         },
@@ -483,19 +483,19 @@ var poi = {
                     desc: "In Radar Control. Sitting on the table next to the couch in the Office on the second floor."
                 },
                 6: {
-                    loc: [0, 0],
-                    map: "Sanitorium",
+                    loc: [-112.75, 149.25],
+                    map: "Sanatorium",
                     name: "Dissent And Division",
                     desc: "On the monorail track in South Lake. It's in the support pillar in the middle of the lake."
                 },
                 7: {
-                    loc: [0, 0],
-                    map: "Sanitorium",
+                    loc: [-104.5, 172.75],
+                    map: "Sanatorium",
                     name: "News From Upstairs",
                     desc: "Under the bridge. Right at the end of the bridge just before you go outta the map, on a little platform just above the surface of the water."
                 },
                 8: {
-                    loc: [0, 0],
+                    loc: [-146.5, 74.75],
                     map: "Alpine",
                     name: "Embarrassment of Riches",
                     desc: "In the lodge. On the third floor sitting on the bar."
@@ -579,8 +579,8 @@ var poi = {
             },
             Artifacts: {
                 1: {
-                    loc: [0, 0],
-                    map: "Sanitorium",
+                    loc: [-116.75, 63.75],
+                    map: "Sanatorium",
                     name: "Energy Mine Canister",
                     desc: "On the roof of the 001 and 002 apartments in the Mechanic Shop area."
                 },
@@ -591,8 +591,8 @@ var poi = {
                     desc: "In the bunker area, in the top most guard station."
                 },
                 3: {
-                    loc: [0, 0],
-                    map: "Sanitorium",
+                    loc: [-133.25, 166.25],
+                    map: "Sanatorium",
                     name: "Requiem Patch",
                     desc: "In the Lakeside Dell area. Its on a little dock to the left of the big bridge."
                 },
@@ -609,7 +609,7 @@ var poi = {
                     desc: "In the Eletrical Substation. On one of the two taller structures, is very easy to see."
                 },
                 6: {
-                    loc: [0, 0],
+                    loc: [-76, 214],
                     map: "Alpine",
                     name: "Aether Shroud Canister",
                     desc: "In the Maintenance section. It's inside one of the garages."
@@ -868,10 +868,10 @@ var poi = {
                     desc: "In the big building in the little cemetary's office room."
                 },
                 3: {
-                    loc: [0, 0],
-                    map: "Sanitorium",
+                    loc: [-119.75, 96.5],
+                    map: "Sanatorium",
                     name: "Something I Can Use",
-                    desc: "In the Sanitorium building on the second floor, in a side room attached to the big open room with the long oval table."
+                    desc: "In the Sanatorium building on the second floor, on a coffee table in the room with the wallbuy."
                 },
                 4: {
                     loc: [0, 0],
@@ -880,10 +880,10 @@ var poi = {
                     desc: "In the Wonderfizz building, in one of the side rooms."
                 },
                 5: {
-                    loc: [0, 0],
+                    loc: [-133.5, 186.75],
                     map: "Alpine",
                     name: "Do What You Must",
-                    desc: "On a little table on the balcony in the Chalet area."
+                    desc: "On a little table on the balcony terras in the Chalet area."
                 },
                 6: {
                     loc: [0, 0],
@@ -892,10 +892,10 @@ var poi = {
                     desc: "In the middle of the Missile Silos on a shelf. near the ammo crate."
                 },
                 7: {
-                    loc: [0, 0],
-                    map: "Sanitorium",
+                    loc: [-135, 96.25],
+                    map: "Sanatorium",
                     name: "Proposed Targets",
-                    desc: "In the Sanitorium building on the first floor in a side room to the right of the statue."
+                    desc: "In the Sanatorium building on the first floor in a side room to the right of the statue."
                 },
                 8: {
                     loc: [0, 0],
@@ -986,10 +986,10 @@ var poi = {
                     desc: "I the missile silos by the A elevator. On the side of the building, next to the generators."
                 },
                 4: {
-                    loc: [0, 0],
-                    map: "Sanitorium",
+                    loc: [-112.375, 97.75],
+                    map: "Sanatorium",
                     name: "His Plan, Our Plan",
-                    desc: "On the Sanitorium Roof. It's on top of the spire with 2 satellite dishes. Requires a Jump pad to get to."
+                    desc: "On the Sanatorium Roof. It's on top of the spire with 2 satellite dishes. Requires a Jump pad to get to."
                 }
             },
             Documents: {
@@ -1070,8 +1070,8 @@ var poi = {
                     desc: "Near the base of the Train Trestle closest to the building. It's sitting at the base of a tree."
                 },
                 2: {
-                    loc: [0, 0],
-                    map: "Sanitorium",
+                    loc: [-191.375, 137],
+                    map: "Sanatorium",
                     name: "Peck's ID Badge",
                     desc: "In the middle of the large Bathhouse, on a shelf."
                 },
@@ -1094,7 +1094,7 @@ var poi = {
                     desc: "In a hallway on the ground floor of Silo A, obtained during the Outbreak EE."
                 },
                 6: {
-                    loc: [0, 0],
+                    loc: [-64.5, 124.5],
                     map: "Alpine",
                     name: "Tempest Head",
                     desc: "In the medivac area. Inside the large building, on top of a pile of crates and sandbags that need to be clambered up."
@@ -1292,7 +1292,7 @@ var poi = {
                     desc: "In the small cabin in the Backwoods."
                 },
                 3: {
-                    loc: [0, 0],
+                    loc: [-71, 202.5],
                     map: "Alpine",
                     name: "My Reputation Precedes ME",
                     desc: "Inside the Red building's office area, in Maintenance."
@@ -1304,8 +1304,8 @@ var poi = {
                     desc: "In the little barn next to the 4 silos in Lower Farmstead."
                 },
                 5: {
-                    loc: [0, 0],
-                    map: "Sanitorium",
+                    loc: [-79.25, 73.25],
+                    map: "Sanatorium",
                     name: "We've Both Been To Hell",
                     desc: "In the little reception area of the biggest building in the maintenance area."
                 }
@@ -1463,8 +1463,8 @@ var poi = {
                     desc: "In the listening post. In a room just to the left of the wonderfizz, on a coathook."
                 },
                 3: {
-                    loc: [0, 0],
-                    map: "Sanitoriom - Outbreak",
+                    loc: [-184.75, 64.75],
+                    map: "Sanatoriom",
                     name: "Maxis's Goggles",
                     desc: "In the market square on one of the round tables."
                 },
@@ -1872,7 +1872,7 @@ var poi = {
             },
             Artifacts: {
                 1: {
-                    loc: [0, 0],
+                    loc: [-178.5, 106.25],
                     map: "Alpine",
                     name: "Empty Jugger-Nog",
                     desc: "On the roof of the Large Sauna building"
@@ -1890,7 +1890,7 @@ var poi = {
                     desc: "On a telephone pillar next to the train trestle bridge (use parachute)."
                 },
                 4: {
-                    loc: [0, 0],
+                    loc: [-129.25, 36.75],
                     map: "Alpine",
                     name: "Mystery Box Bunny",
                     desc: "In a bed in Base Suites section. It's the third building from the bottom."
@@ -1972,19 +1972,19 @@ var poi = {
                 2: {
                     loc: [0, 0],
                     map: "Outbreak",
-                    name: "Missing Name and Location",
+                    name: "Great Patriotic",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
                     map: "Outbreak",
-                    name: "Missing Name and Location",
+                    name: "Tethered",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
                     map: "Outbreak",
-                    name: "Missing Name and Location",
+                    name: "Changes",
                     desc: ""
                 },
                 5: {
@@ -2008,8 +2008,8 @@ var poi = {
             },
             Artifacts: {
                 1: {
-                    loc: [0, 0],
-                    map: "Sanitorium",
+                    loc: [-174.75, 231],
+                    map: "Sanatorium",
                     name: "Empty Speed Cola",
                     desc: "On the counter on the kitchen of the higher of the two right most houses in the vacation homes section."
                 },
@@ -2020,10 +2020,10 @@ var poi = {
                     desc: "In the Secondary Array. This location is kinda weird. Starting from the top of the left most array, go as far left as you can, then go down 3 layers. It will be sitting on a grey metal bar connecting the walkway to the side of the array. This is away from the Primary Array, not towards it."
                 },
                 3: {
-                    loc: [0, 0],
-                    map: "Sanitorium",
+                    loc: [-113.75, 119.25],
+                    map: "Sanatorium",
                     name: "Empty Quick Revive Soda Can",
-                    desc: "On Sanitorium, in the Beach Resort. Under the stairs of the White shack building."
+                    desc: "In the Beach Resort. Under the stairs of the White shack building."
                 },
                 4: {
                     loc: [0, 0],
@@ -2038,7 +2038,7 @@ var poi = {
                     desc: "Found by breaking crystals in Silo B during the Outbreak EE"
                 },
                 6: {
-                    loc: [0, 0],
+                    loc: [-143, 71.25],
                     map: "Alpine",
                     name: "Dragon Head Trophy",
                     desc: "In the lodge. In Room 201, above the bed."
