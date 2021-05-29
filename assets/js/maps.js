@@ -29,7 +29,7 @@ var firebaseZ = {
     Layer: new L.LayerGroup(),
     Markers: new L.LayerGroup(),
     MarkersVisible: true,
-    Tiles: L.tileLayer(`./maps/duga/{z}/{x}_{y}.png`, { id: 'firebaseZ', tileSize: tileSize, zoomOffset: zoomOffset })
+    Tiles: L.tileLayer(`./maps/firebaseZ/{z}/{x}_{y}.png`, { id: 'firebaseZ', tileSize: tileSize, zoomOffset: zoomOffset })
 }
 var sanatorium = {
     Layer: new L.LayerGroup(),
