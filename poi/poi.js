@@ -329,7 +329,7 @@ var poi = {
                     desc: "In Base Cabins on the back of a truck behind the cabins."
                 },
                 4: {
-                    loc: [0, 0],
+                    loc: [-177.0341105354059, 130.95094615904483],
                     map: "Golova",
                     name: "I See Hierarchy",
                     desc: "On the top of the water tower near the gas station at the edge of the village proper."
@@ -597,7 +597,7 @@ var poi = {
                     desc: "In the Lakeside Dell area. Its on a little dock to the left of the big bridge."
                 },
                 4: {
-                    loc: [0, 0],
+                    loc: [-62.10046056419114, 176.97788916422618],
                     map: "Golova",
                     name: "Transformed Apple Crate",
                     desc: "In the barn of the lower farmstead. Should be pretty easy to spot."
@@ -862,7 +862,7 @@ var poi = {
                     desc: "Under a bunk bed in Scientist Quarters, in the starting area."
                 },
                 2: {
-                    loc: [0, 0],
+                    loc: [-201.27014968336212, 179.729499887362],
                     map: "Golova",
                     name: "Ghost Stories",
                     desc: "In the big building in the little cemetary's office room."
@@ -874,7 +874,7 @@ var poi = {
                     desc: "In the Sanatorium building on the second floor, on a coffee table in the room with the wallbuy."
                 },
                 4: {
-                    loc: [0, 0],
+                    loc: [-130.56088082901556, 147.46061049785988],
                     map: "Outbreak",
                     name: "Golova - Off The Hook",
                     desc: "In the Wonderfizz building, in one of the side rooms."
@@ -1298,7 +1298,7 @@ var poi = {
                     desc: "Inside the Red building's office area, in Maintenance."
                 },
                 4: {
-                    loc: [0, 0],
+                    loc: [-79.0905296488198, 187.73418562739357],
                     map: "Golova",
                     name: "It's All Relative",
                     desc: "In the little barn next to the 4 silos in Lower Farmstead."
@@ -1376,13 +1376,13 @@ var poi = {
             },
             Artifacts: {
                 1: {
-                    loc: [0, 0],
+                    loc: [-149.30008635578585, 144.20870691597207],
                     map: "Golova",
                     name: "Endstation Video Tape",
                     desc: "Found in a room in Lower East Town on an end table by a bed."
                 },
                 2: {
-                    loc: [0, 0],
+                    loc: [-173.03641335636155, 210.49751070060825],
                     map: "Golova",
                     name: "Maxis BND Badge",
                     desc: "Behind some sandbags, very close to the edge of the map, in the Industrial Park location."
@@ -1404,13 +1404,13 @@ var poi = {
                     desc: "In the farm area. In the big red house, on the bed on the upper floor."
                 },
                 3: {
-                    loc: [0, 0],
+                    loc: [-210.26496833621187, 169.7236427123226],
                     map: "Golova",
                     name: "A New Friend",
                     desc: "On a desk in one of the Church's back rooms."
                 },
                 4: {
-                    loc: [0, 0],
+                    loc: [-170.0381404720783, 170.72422842982655],
                     map: "Golova",
                     name: "Isolated",
                     desc: "On a desk in the Police station(the armor station building)"
@@ -1481,7 +1481,7 @@ var poi = {
                     desc: "Obtained by breaking a stone monkey during the Outbreak EE."
                 },
                 6: {
-                    loc: [0, 0],
+                    loc: [-150.29951065054692, 161.4688105429151],
                     map: "Golova",
                     name: "Maxis's Watch",
                     desc: "In the Lower West town area. It's on the roof of the building with the crafting bench, requires a jump pad to get to. It's tucked in between the roof itself and one of the 4 spire things with a flag on it."
@@ -1878,7 +1878,7 @@ var poi = {
                     desc: "On the roof of the Large Sauna building"
                 },
                 2: {
-                    loc: [0, 0],
+                    loc: [-203.51885434657456, 163.46998197792294],
                     map: "Golova",
                     name: "Cymbal Monkey Toy",
                     desc: "On the lip of the left most tower on the roof of the church."
@@ -1928,37 +1928,37 @@ var poi = {
                 1: {
                     loc: [0, 0],
                     map: "Outbreak",
-                    name: "Missing Name and Location",
+                    name: "Day 1",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
                     map: "Outbreak",
-                    name: "Missing Name and Location",
+                    name: "Day 3",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
                     map: "Outbreak",
-                    name: "Missing Name and Location",
+                    name: "Day 7",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
                     map: "Outbreak",
-                    name: "Missing Name and Location",
+                    name: "Day 9",
                     desc: ""
                 },
                 5: {
                     loc: [0, 0],
                     map: "Outbreak",
-                    name: "Missing Name and Location",
+                    name: "Day 11",
                     desc: ""
                 },
                 6: {
                     loc: [0, 0],
                     map: "Outbreak",
-                    name: "Missing Name and Location",
+                    name: "Day 12",
                     desc: ""
                 }
             },
@@ -1990,19 +1990,19 @@ var poi = {
                 5: {
                     loc: [0, 0],
                     map: "Outbreak",
-                    name: "Missing Name and Location",
+                    name: "Junkyard",
                     desc: ""
                 },
                 6: {
                     loc: [0, 0],
                     map: "Outbreak",
-                    name: "Missing Name and Location",
+                    name: "Invasion",
                     desc: ""
                 },
                 7: {
                     loc: [0, 0],
                     map: "Outbreak",
-                    name: "Missing Name and Location",
+                    name: "Bring Me Home",
                     desc: ""
                 }
             },

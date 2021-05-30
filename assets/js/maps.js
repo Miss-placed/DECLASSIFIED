@@ -23,7 +23,7 @@ var golova = {
     Layer: new L.LayerGroup(),
     Markers: new L.LayerGroup(),
     MarkersVisible: true,
-    Tiles: L.tileLayer(`./maps/duga/{z}/{x}_{y}.png`, { id: 'golova', tileSize: tileSize, zoomOffset: zoomOffset })
+    Tiles: L.tileLayer(`./maps/golova/{z}/{x}_{y}.png`, { id: 'golova', tileSize: tileSize, zoomOffset: zoomOffset })
 }
 var firebaseZ = {
     Layer: new L.LayerGroup(),

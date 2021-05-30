@@ -53,6 +53,10 @@ for (let key in poi) {
                             L.marker(intel.loc, { icon: requiemIcon }).addTo(alpine.Markers)
                                 .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
                         }
+                        if (intel.map == "Golova") {
+                            L.marker(intel.loc, { icon: requiemIcon }).addTo(golova.Markers)
+                                .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
+                        }
                     }
 
                 }
@@ -68,13 +72,16 @@ for (let key in poi) {
                             L.marker(intel.loc, { icon: omegaIcon }).addTo(duga.Markers)
                                 .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
                         }
-                        console.log(intel.map)
                         if (intel.map == "Sanatorium") {
                             L.marker(intel.loc, { icon: omegaIcon }).addTo(sanatorium.Markers)
                                 .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
                         }
                         if (intel.map == "Alpine") {
                             L.marker(intel.loc, { icon: omegaIcon }).addTo(alpine.Markers)
+                                .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
+                        }
+                        if (intel.map == "Golova") {
+                            L.marker(intel.loc, { icon: omegaIcon }).addTo(golova.Markers)
                                 .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
                         }
                     }
@@ -100,6 +107,10 @@ for (let key in poi) {
                             L.marker(intel.loc, { icon: maxisIcon }).addTo(alpine.Markers)
                                 .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
                         }
+                        if (intel.map == "Golova") {
+                            L.marker(intel.loc, { icon: maxisIcon }).addTo(golova.Markers)
+                                .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
+                        }
                     }
 
                 }
@@ -121,6 +132,10 @@ for (let key in poi) {
                         }
                         if (intel.map == "Alpine") {
                             L.marker(intel.loc, { icon: darkAetherIcon }).addTo(alpine.Markers)
+                                .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
+                        }
+                        if (intel.map == "Golova") {
+                            L.marker(intel.loc, { icon: darkAetherIcon }).addTo(golova.Markers)
                                 .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
                         }
                     }
