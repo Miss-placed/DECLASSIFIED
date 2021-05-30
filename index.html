@@ -20,20 +20,37 @@
 
 </head>
 
-<body onload="setDefaultMap()">
+<body onload="setIntelList()">
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <Section>
-        <!-- <aside>
-            <button onClick="setMarkerVisibility(dieMaschine,'Die Maschine')">Die Maschine</button>
-            <button onClick="setMarkerVisibility(firebaseZ,'Firebase Z')">Firebase Z</button>
-            <button onClick="setMarkerVisibility(duga,'Duga')">Duga</button>
-            <button onClick="setMarkerVisibility(ruka,'Ruka')">Ruka</button>
-            <button onClick="setMarkerVisibility(golova,'Golova')">Golova</button>
-            <button onClick="setMarkerVisibility(alpine,'Sanatorium')">Sanatorium</button>
-            <button onClick="setMarkerVisibility(alpine,'Alpine')">Alpine</button>
-        </aside> -->
+        <header>
+            <div class="" onClick="setMap(dieMaschine,this)">Die Maschine</div>
+            <div class="" onClick="setMap(firebaseZ,this)">Firebase Z</div>
+            <div class="current-map" onClick="setMap(duga,this)">Duga</div>
+            <div class="" onClick="setMap(ruka,this)">Ruka</div>
+            <div class="" onClick="setMap(golova,this)">Golova</div>
+            <div class="" onClick="setMap(sanatorium,this)">Sanatorium</div>
+            <div class="" onClick="setMap(alpine,this)">Alpine</div>
+        </header>
+        <aside>
+            <div id="Requiem">
+                <h1>Requiem</h1>
+                <div class="list">
+                    <div class="ïtem">
+                        <h2>title</h2>
+                        <label>Collected</label><input type="checkbox">
+                        <p>desc</p>
+                        <button>focus</button>
+                    </div>
+                </div>
+            </div>
+            <div id="Omega"></div>
+            <div id="Maxis"></div>
+            <div id="Dark Aether"></div>
+
+        </aside>
         <div id="worldMap"></div>
     </Section>
     <input id="cb" type="text" hidden>
@@ -46,31 +63,42 @@
         var currentMap = duga;
 
         // map.panTo(new L.LatLng(-(256 / 2), 256 / 2))
-        function setMarkerVisibility(x, y) {
-            if (currentMap == y) {
-                if (x.MarkersVisible) {
-                    x.Layer.removeLayer(x.Markers);
-                } else {
-                    x.Layer.addLayer(x.Markers)
-                }
-                x.MarkersVisible = !x.MarkersVisible
-            } else {
+
+        function setMap(x, y) {
+            if (currentMap != x) {
                 map.removeLayer(currentMap.Layer)
                 map.addLayer(x.Layer)
-
                 currentMap = x
-                currentMarkers = y
+                document.getElementsByClassName("current-map")[0].classList.toggle("current-map")
+                y.classList.toggle("current-map")
             }
         }
-        map.on("click", function(e) {
-            // "[" + e.latlng.lat + ", " + e.latlng.lng + "]"
-            var cb = document.getElementById("cb");
-            cb.value = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
-            cb.style.display = 'block';
-            cb.select();
-            document.execCommand('copy');
-            cb.style.display = 'none';
-        })
+
+        // function setMarkerVisibility(x, y) {
+        //     if (currentMap != y) {
+        //         if (x.MarkersVisible) {
+        //             x.Layer.removeLayer(x.Markers);
+        //         } else {
+        //             x.Layer.addLayer(x.Markers)
+        //         }
+        //         x.MarkersVisible = !x.MarkersVisible
+        //     } else {
+        //         map.removeLayer(currentMap.Layer)
+        //         map.addLayer(x.Layer)
+
+        //         currentMap = x
+        //         currentMarkers = y
+        //     }
+        // }
+        // map.on("click", function(e) {
+        //     // "[" + e.latlng.lat + ", " + e.latlng.lng + "]"
+        //     var cb = document.getElementById("cb");
+        //     cb.value = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
+        //     cb.style.display = 'block';
+        //     cb.select();
+        //     document.execCommand('copy');
+        //     cb.style.display = 'none';
+        // })
     </script>
 </body>
 

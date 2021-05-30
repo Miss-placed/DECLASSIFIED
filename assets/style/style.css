@@ -5,29 +5,53 @@
 }
 
 #worldMap {
-    height: 100vh;
+    display: block;
+    grid-column: 1;
+    height: 90vh;
+    width: 80vw;
     background-color: #2D2D2D;
     cursor: crosshair;
+    float: right;
+    border-top: 1px solid #e8e8d3;
 }
 
-.leaflet-control-zoom.leaflet-bar.leaflet-control {
-    margin-top: 80px!important;
+.current-map {
+    text-decoration: underline;
 }
 
-.leaflet-control-layers.leaflet-control-layers-expanded.leaflet-control {
-    border: none!important;
-    border-radius: 0!important;
-    margin: 0!important;
-    width: 100vw!important;
-    background-color: #2D2D2D;
+aside {
+    display: block;
+    height: 90vh;
+    width: 20vw;
+    float: left;
+    background: #e8e8d3;
 }
 
-.leaflet-control-layers.leaflet-control-layers-expanded.leaflet-control label {
-    display: inline-block;
-    padding: 5px;
+header {
+    height: 10vh;
+    width: 100vw;
+    background: #2d2d2d;
     color: white;
+    font-family: sans-serif;
+    display: grid;
+    grid-auto-flow: column;
 }
 
-input[type="radio"] {
-    display: none;
+header div {
+    padding: 0px;
+    margin: auto;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, white 50%);
+    background-size: 200%;
+    background-position: 0 0;
+    transition: 0.1s ease-in-out;
+    font-family: sans-serif;
+}
+
+header div:hover {
+    background-position: -100% 0;
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+    background-color: #e8e8d3!important;
 }

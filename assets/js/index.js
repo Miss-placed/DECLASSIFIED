@@ -31,7 +31,6 @@ var baseMaps = {
     "Golova": golova.Layer,
     "Sanatorium": sanatorium.Layer,
 };
-L.control.layers(baseMaps, "", { collapsed: false }).addTo(map);
 
 // do marker loop here
 for (let key in poi) {
