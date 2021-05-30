@@ -36,21 +36,29 @@
         </header>
         <aside>
             <div id="Requiem">
-                <h1>Requiem</h1>
-                <div class="list">
+                <h1>here will be a list of all intel</h1>
+                <!-- <div class="list">
                     <div class="ïtem">
                         <h2>title</h2>
                         <label>Collected</label><input type="checkbox">
                         <p>desc</p>
                         <button>focus</button>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div id="Omega"></div>
             <div id="Maxis"></div>
             <div id="Dark Aether"></div>
 
         </aside>
+        <!-- <div id="control-die-Maschine">
+            <div class="" onClick="setMap(dieMaschine,this)">Aboveground</div>
+            <div class="" onClick="setMap(dieMaschineUnder,this)">Underground</div>
+        </div>
+        <div id="control-firebase-Z">
+            <div class="" onClick="setMap(dieMaschine,this)">Firebase</div>
+            <div class="" onClick="setMap(dieMaschineSpawn,this)">Spawn</div>
+        </div> -->
         <div id="worldMap"></div>
     </Section>
     <input id="cb" type="text" hidden>
@@ -61,8 +69,8 @@
     <script src="assets/js/index.js"></script>
     <script>
         var currentMap = duga;
-
-        // map.panTo(new L.LatLng(-(256 / 2), 256 / 2))
+        var debug = false
+            // map.panTo(new L.LatLng(-(256 / 2), 256 / 2))
 
         function setMap(x, y) {
             if (currentMap != x) {
@@ -71,6 +79,12 @@
                 currentMap = x
                 document.getElementsByClassName("current-map")[0].classList.toggle("current-map")
                 y.classList.toggle("current-map")
+                    // if (currentMap = firebaseZ) {
+                    //     document.getElementById("control-firebase-Z").classList.toggle("visible")
+                    // }
+                    // if (currentMap = dieMaschine) {
+                    //     document.getElementById("control-die-Maschine").classList.toggle("visible")
+                    // }
             }
         }
 
@@ -90,15 +104,20 @@
         //         currentMarkers = y
         //     }
         // }
-        // map.on("click", function(e) {
-        //     // "[" + e.latlng.lat + ", " + e.latlng.lng + "]"
-        //     var cb = document.getElementById("cb");
-        //     cb.value = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
-        //     cb.style.display = 'block';
-        //     cb.select();
-        //     document.execCommand('copy');
-        //     cb.style.display = 'none';
-        // })
+        function setIntelList() {
+            setDefaultMap()
+        }
+        map.on("click", function(e) {
+            if (debug) {
+                // "[" + e.latlng.lat + ", " + e.latlng.lng + "]"
+                var cb = document.getElementById("cb");
+                cb.value = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
+                cb.style.display = 'block';
+                cb.select();
+                document.execCommand('copy');
+                cb.style.display = 'none';
+            }
+        })
     </script>
 </body>
 
