@@ -9,15 +9,7 @@ var map = L.map('worldMap', {
     maxZoom: 5,
     minZoom: 1,
     layers: [
-        duga.Layer,
-        ruka.Layer,
-        alpine.Layer,
-        golova.Layer,
-        firebaseZ_spawn.Layer,
-        firebaseZ.Layer,
-        sanatorium.Layer,
-        dieMaschine.Layer,
-        dieMaschine_underground.Layer,
+        duga.Layer
     ],
     tap: true,
     tapTolerance: 30,
@@ -174,12 +166,12 @@ dieMaschine_underground.Tiles.addTo(dieMaschine_underground.Layer);
 dieMaschine_underground.Markers.addTo(dieMaschine_underground.Layer);
 
 function setDefaultMap() {
-    map.removeLayer(ruka.Layer)
-    map.removeLayer(alpine.Layer)
-    map.removeLayer(golova.Layer)
-    map.removeLayer(firebaseZ.Layer)
-    map.removeLayer(firebaseZ_spawn.Layer)
-    map.removeLayer(sanatorium.Layer)
-    map.removeLayer(dieMaschine.Layer)
-    map.removeLayer(dieMaschine_underground.Layer)
+    // map.removeLayer(ruka.Layer)
+    // map.removeLayer(alpine.Layer)
+    // map.removeLayer(golova.Layer)
+    // map.removeLayer(firebaseZ.Layer)
+    // map.removeLayer(firebaseZ_spawn.Layer)
+    // map.removeLayer(sanatorium.Layer)
+    // map.removeLayer(dieMaschine.Layer)
+    // map.removeLayer(dieMaschine_underground.Layer)
 }
