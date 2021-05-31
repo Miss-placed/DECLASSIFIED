@@ -18,6 +18,7 @@ body {
     cursor: crosshair;
     float: right;
     border-top: 1px solid #e8e8d3;
+    z-index: 0;
 }
 
 .current-map {

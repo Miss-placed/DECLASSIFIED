@@ -13,9 +13,11 @@ var map = L.map('worldMap', {
         ruka.Layer,
         alpine.Layer,
         golova.Layer,
+        firebaseZ_spawn.Layer,
         firebaseZ.Layer,
         sanatorium.Layer,
         dieMaschine.Layer,
+        dieMaschine_underground.Layer,
     ],
     tap: true,
     tapTolerance: 30,
@@ -24,7 +26,9 @@ var map = L.map('worldMap', {
 });
 var baseMaps = {
     "Die Maschine": dieMaschine.Layer,
+    "Die Maschine Underground": dieMaschine_underground.Layer,
     "Firebase Z": firebaseZ.Layer,
+    "Firebase Z Spawn": firebaseZ_spawn.Layer,
     "Duga": duga.Layer,
     "Ruka": ruka.Layer,
     "Alpine": alpine.Layer,
@@ -158,17 +162,24 @@ golova.Tiles.addTo(golova.Layer);
 golova.Markers.addTo(golova.Layer);
 firebaseZ.Tiles.addTo(firebaseZ.Layer);
 firebaseZ.Markers.addTo(firebaseZ.Layer);
+firebaseZ_spawn.Tiles.addTo(firebaseZ_spawn.Layer);
+firebaseZ_spawn.Markers.addTo(firebaseZ_spawn.Layer);
 
 sanatorium.Tiles.addTo(sanatorium.Layer);
 sanatorium.Markers.addTo(sanatorium.Layer);
+
 dieMaschine.Tiles.addTo(dieMaschine.Layer);
 dieMaschine.Markers.addTo(dieMaschine.Layer);
+dieMaschine_underground.Tiles.addTo(dieMaschine_underground.Layer);
+dieMaschine_underground.Markers.addTo(dieMaschine_underground.Layer);
 
 function setDefaultMap() {
     map.removeLayer(ruka.Layer)
     map.removeLayer(alpine.Layer)
     map.removeLayer(golova.Layer)
     map.removeLayer(firebaseZ.Layer)
+    map.removeLayer(firebaseZ_spawn.Layer)
     map.removeLayer(sanatorium.Layer)
     map.removeLayer(dieMaschine.Layer)
+    map.removeLayer(dieMaschine_underground.Layer)
 }

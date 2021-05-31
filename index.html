@@ -26,8 +26,22 @@
         <![endif]-->
     <Section>
         <header>
-            <div class="" onClick="setMap(dieMaschine,this)">Die Maschine</div>
-            <div class="" onClick="setMap(firebaseZ,this)">Firebase Z</div>
+            <div class="dropdown">
+                <div class="dropbtn">Die Maschine</div>
+                <div class="dropdown-content">
+                    <div class="" onClick="setMap(dieMaschine,this)">Die Maschine Surface</div>
+                    <div class="" onClick="setMap(dieMaschine_underground,this)">Die Maschine Underground</div>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <div class="dropbtn">Firebase Z</div>
+                <div class="dropdown-content">
+                    <div class="" onClick="setMap(firebaseZ_spawn,this)">Firebase Z Spawn</div>
+                    <div class="" onClick="setMap(firebaseZ,this)">Firebase Z Main Base</div>
+                </div>
+            </div>
+
             <div class="current-map" onClick="setMap(duga,this)">Duga</div>
             <div class="" onClick="setMap(ruka,this)">Ruka</div>
             <div class="" onClick="setMap(golova,this)">Golova</div>
