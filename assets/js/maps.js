@@ -41,5 +41,5 @@ var dieMaschine = {
     Layer: new L.LayerGroup(),
     Markers: new L.LayerGroup(),
     MarkersVisible: true,
-    Tiles: L.tileLayer(`./maps/Die Machine/{z}/{x}_{y}.png`, { id: 'dieMaschine', tileSize: tileSize, zoomOffset: zoomOffset })
+    Tiles: L.tileLayer(`./maps/Die Maschine/{z}/{x}_{y}.png`, { id: 'dieMaschine', tileSize: tileSize, zoomOffset: zoomOffset })
 }
