@@ -21,6 +21,7 @@ Previously I contributed to [the Red Dead Redemption 2 Collectors map](https://j
  - ████████ [1](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
  - Geoffg10 [1](https://www.reddit.com/user/Alpharettaraiders09/posts/)
  - Ricerat477 [1](https://www.reddit.com/user/Ricerat477)
+ - NanikOs [1](https://github.com/Nanik0s)
 
 [^1]: ██████ is property of the CIA. a U.S. government agency.
 --------------------------------------------------
