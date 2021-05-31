@@ -14,16 +14,11 @@ body {
     grid-column: 1;
     height: 90vh;
     width: 80vw;
-    background-color: #2D2D2D;
+    background-color: #2d2d2d;
     cursor: crosshair;
     float: right;
     border-top: 1px solid #e8e8d3;
     z-index: 0;
-}
-
-.current-map {
-    background-color: #e8e8d3;
-    color: black;
 }
 
 aside {
@@ -44,17 +39,21 @@ header {
     grid-auto-flow: column;
 }
 
-header div {
-    padding: 5px 10px;
+header>div,
+.dropdown-item {
+    padding: 10px 20px;
     margin: auto;
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, #e8e8d3 50%);
     background-size: 200%;
     background-position: 0 0;
     transition: 0.1s ease-in-out;
     font-family: sans-serif;
+    border: none;
+    cursor: pointer;
 }
 
-header div:hover {
+header>div:hover,
+.dropdown-item:hover {
     background-position: -100% 0;
     color: #2d2d2d;
 }
@@ -74,7 +73,7 @@ header div:hover {
 
 .leaflet-popup-content,
 .leaflet-popup-content-wrapper {
-    color: #2D2D2D!important;
+    color: #2d2d2d!important;
     background-color: #e8e8d3!important;
     border-radius: 0!important;
 }
@@ -101,7 +100,7 @@ header div:hover {
     ;
 }
 
-.title {
+.not-selectable {
     user-select: none;
     -khtml-user-select: none;
     -webkit-touch-callout: none;
@@ -116,7 +115,6 @@ header div:hover {
 }
 
 .itemList {
-    /* background-color: red; */
     max-height: 0px;
     overflow: hidden;
     width: 100%;
@@ -132,20 +130,9 @@ header div:hover {
     background: #dadacd;
 }
 
-
-/* Style The Dropdown Button */
-
-.dropbtn {
-    border: none;
-    cursor: pointer;
-}
-
-
-/* The container <div> - needed to position the dropdown content */
-
-.dropdown {
-    position: relative;
-    display: inline-block;
+.dropdown-item {
+    padding: 10px 20px;
+    color: #e8e8d3;
 }
 
 
@@ -154,27 +141,10 @@ header div:hover {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #dadacd;
+    background-color: #2d2d2d;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-}
-
-
-/* Links inside the dropdown */
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-
-/* Change color of dropdown links on hover */
-
-.dropdown-content a:hover {
-    background-color: #e8e8d3
 }
 
 
@@ -182,4 +152,9 @@ header div:hover {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.current-map {
+    background-color: #e8e8d3;
+    color: #2d2d2d;
 }

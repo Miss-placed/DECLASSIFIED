@@ -22,3 +22,9 @@ var requiemIcon = L.icon({
     iconAnchor: [24, 48],
     popupAnchor: [0, -30]
 });
+var REDACTEDIcon = L.icon({
+    iconUrl: 'assets/img/icons/darkAetherIcon.png',
+    iconSize: [30, 48],
+    iconAnchor: [15, 48],
+    popupAnchor: [0, -30]
+});

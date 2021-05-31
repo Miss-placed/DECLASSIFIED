@@ -1,28 +1,16 @@
 var poi = {
-    REDACTED: {
+    requiem: {
         0: {
             Audio: {
                 1: {
                     loc: [0, 0],
-                    map: "Test",
-                    name: "Test",
-                    desc: "This Is A Test Node"
-                }
-            }
-        }
-    },
-    Requiem: {
-        0: {
-            Audio: {
-                1: {
-                    loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "The Incident",
                     desc: "Right next to power on the left."
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Parallel",
                     desc: "Near PaP, behind the stairs leading up while in the Dark Aether."
                 },
@@ -30,37 +18,37 @@ var poi = {
             Documents: {
                 1: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Endstation Approval Letter",
                     desc: "Drops from a Megaton."
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Spacetime Breach Sketch",
                     desc: "Drops from a Megaton."
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "D.I.E. Blueprint",
                     desc: "Drops from a Megaton."
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Der Wechdler Blueprint",
                     desc: "Drops from a Megaton."
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "V Cipher #1",
                     desc: "Drops from a Megaton."
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "V Cipher #2",
                     desc: "Drops from a Megaton."
                 }
@@ -68,43 +56,43 @@ var poi = {
             Radio: {
                 1: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Officer Weaver",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Doctor Grey",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Dimension of Death",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Doctor Strauss",
                     desc: ""
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Aetherium",
                     desc: ""
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Major Carver",
                     desc: ""
                 },
                 7: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "New Arms Race",
                     desc: ""
                 }
@@ -112,31 +100,31 @@ var poi = {
             Artifacts: {
                 1: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "D.I.E. Remote Control",
                     desc: "Gotten as part of the free D.I.E Machine Quest"
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "D.I.E. Machine",
                     desc: "Get the free D.I.E Machine from the quest("
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Aetherscope",
                     desc: "Part of the main quest. You have to craft it."
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Doctor Vogel's Diary",
                     desc: "When you have crafted the Aetherscope, it can be found next to the computer in the med bay."
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Decontamination Agent",
                     desc: "In a cabinet in the med bay. Obtained during the main quest."
                 }
@@ -146,31 +134,31 @@ var poi = {
             Audio: {
                 1: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Exo-Element 1",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "New Orders",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Ravenov",
                     desc: "On a table in the outer ring of Data Center, first floor near a cabinet of data reels."
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "they Took Her",
                     desc: "On a bench above PaP."
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Meeting Of Minds",
                     desc: "In military Command, under the desk near the zombie barrier."
                 }
@@ -178,31 +166,31 @@ var poi = {
             Documents: {
                 1: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Doctor Vogel Entry 203",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Firebase Z",
-                    name: "Outbreak Zones Timeline",
+                    map: "firebaseZ",
+                    name: "outbreak Zones Timeline",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Requiem Formation Memo",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Requiem Staffing Announcement",
                     desc: ""
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "C Cipher",
                     desc: ""
                 }
@@ -210,73 +198,73 @@ var poi = {
             Radio: {
                 1: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Ommega's Advantage",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "This Is Personal",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Peck",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Between Us",
                     desc: ""
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "W.A.N.D.",
                     desc: ""
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Stick",
                     desc: ""
                 },
                 7: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Blacksmiths and Architects",
                     desc: ""
                 },
                 8: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Not Unlike Oxygen",
                     desc: ""
                 },
                 9: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "A Storied Career",
                     desc: ""
                 },
                 10: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "The Thick Of It",
                     desc: ""
                 },
                 11: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Transformative Properties",
                     desc: ""
                 },
                 12: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Genetic Secrets",
                     desc: ""
                 }
@@ -284,25 +272,25 @@ var poi = {
             Artifacts: {
                 1: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "RAI K-84 Blueprint",
                     desc: "On the wall in Weapons Lab."
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Weapon Trial Folder",
                     desc: "On the ground next to Kuhlklay's Body."
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Kuhlklay's Diary",
                     desc: "Obtained from a locker, requires the locker key from the quest."
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "RAI K-84 Prototype",
                     desc: "Obtain the ww. Needs to be the free one from the quest."
                 }
@@ -312,43 +300,43 @@ var poi = {
             Audio: {
                 1: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Focal Point",
                     desc: "On the corner of the building on a ledge, near the sattalite dish. Rocky Defense. Need to shoot it down."
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Ruka",
+                    map: "ruka",
                     name: "Like Flies To Honey",
                     desc: "In the Base Headquarters location on a long table."
                 },
                 3: {
                     loc: [-109.75, 28],
-                    map: "Alpine",
+                    map: "alpine",
                     name: "A Grisly Affair",
                     desc: "In Base Cabins on the back of a truck behind the cabins."
                 },
                 4: {
                     loc: [-177.0341105354059, 130.95094615904483],
-                    map: "Golova",
+                    map: "golova",
                     name: "I See Hierarchy",
                     desc: "On the top of the water tower near the gas station at the edge of the village proper."
                 },
                 5: {
                     loc: [-88, 132.5],
-                    map: "Sanatorium",
+                    map: "sanatorium",
                     name: "Quantum Entanglement",
                     desc: "On the pier in the back room of the building at the end."
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Ruka",
+                    map: "ruka",
                     name: "Recon Rover Blues",
                     desc: "In the big building of the Old Farm location."
                 },
                 7: {
                     loc: [-116.5, 142.75],
-                    map: "Alpine",
+                    map: "alpine",
                     name: "Killer Crystals",
                     desc: "In Ski Patrol in the big building upstairs in the smaller side room on a table."
                 }
@@ -356,43 +344,43 @@ var poi = {
             Documents: {
                 1: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "RE: Funding Allocation 1",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "RE: Funding Allocation 2",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Berlin COMINT",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Operation Threshhold Authorization",
                     desc: ""
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Domino Effect",
                     desc: ""
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Recon Rover Blueprint",
                     desc: ""
                 },
                 7: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Disruptor Satellite Blueprint",
                     desc: ""
                 }
@@ -400,25 +388,25 @@ var poi = {
             Radio: {
                 1: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Nose To Nose",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Race Against Time",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "How We Win",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Under Observation",
                     desc: ""
                 }
@@ -426,25 +414,25 @@ var poi = {
             Artifacts: {
                 1: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Zombie Head",
                     desc: "Collected through the Defence objective."
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Aetherium Canister",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Ruka",
+                    map: "ruka",
                     name: "Aetherium Crystal Shard",
                     desc: "In the burnt forest section, right up against the egde of the map about halfway down. It's on top of a big rock."
                 },
                 4: {
                     loc: [-128, 83.75],
-                    map: "Alpine",
+                    map: "alpine",
                     name: "Frostblast Canister",
                     desc: "Look ontop of the circular ski lift station on the western side of the map near the Lodge and the Pro Shop."
                 }
@@ -454,49 +442,49 @@ var poi = {
             Audio: {
                 1: {
                     loc: [-71.25, 142],
-                    map: "Duga",
+                    map: "duga",
                     name: "The Beacon",
                     desc: "In the Chemical Processing area, on the desk in the office of the big building."
                 },
                 2: {
                     loc: [-84, 213.75],
-                    map: "Duga",
+                    map: "duga",
                     name: "Doubts",
                     desc: "In the SAM site, in the big hanger on a box marked with a red star."
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Ruka",
+                    map: "ruka",
                     name: "Death Squad",
                     desc: "In the old farm area. In the green tent, under a table."
                 },
                 4: {
                     loc: [-169, 152],
-                    map: "Duga",
+                    map: "duga",
                     name: "Eyes Only",
                     desc: "In the Worker Services building. On the second floor, on a desk in one of the offices."
                 },
                 5: {
                     loc: [-153.75, 137],
-                    map: "Duga",
+                    map: "duga",
                     name: "Operation Baldr",
                     desc: "In Radar Control. Sitting on the table next to the couch in the Office on the second floor."
                 },
                 6: {
                     loc: [-112.75, 149.25],
-                    map: "Sanatorium",
+                    map: "sanatorium",
                     name: "Dissent And Division",
                     desc: "On the monorail track in South Lake. It's in the support pillar in the middle of the lake."
                 },
                 7: {
                     loc: [-104.5, 172.75],
-                    map: "Sanatorium",
+                    map: "sanatorium",
                     name: "News From Upstairs",
                     desc: "Under the bridge. Right at the end of the bridge just before you go outta the map, on a little platform just above the surface of the water."
                 },
                 8: {
                     loc: [-146.5, 74.75],
-                    map: "Alpine",
+                    map: "alpine",
                     name: "Embarrassment of Riches",
                     desc: "In the lodge. On the third floor sitting on the bar."
                 }
@@ -504,49 +492,49 @@ var poi = {
             Documents: {
                 1: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Extraction Rocket Blueprint",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Dark Aether Object Report",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Crate Memo",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "E.C.M. Mlueprint",
                     desc: ""
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Investigation Request",
                     desc: ""
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Zykov Assessment",
                     desc: ""
                 },
                 7: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Power Nodes Report",
                     desc: ""
                 },
                 8: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "J Cipher",
                     desc: ""
                 }
@@ -554,25 +542,25 @@ var poi = {
             Radio: {
                 1: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Progress Update",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "A Visceral Process",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Fish Out Of Water",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Commander-In-Chief",
                     desc: ""
                 }
@@ -580,61 +568,61 @@ var poi = {
             Artifacts: {
                 1: {
                     loc: [-116.75, 63.75],
-                    map: "Sanatorium",
+                    map: "sanatorium",
                     name: "Energy Mine Canister",
                     desc: "On the roof of the 001 and 002 apartments in the Mechanic Shop area."
                 },
                 2: {
                     loc: [-72.5, 116.5],
-                    map: "Duga",
+                    map: "duga",
                     name: "Essence Explosive",
                     desc: "In the bunker area, in the top most guard station."
                 },
                 3: {
                     loc: [-133.25, 166.25],
-                    map: "Sanatorium",
+                    map: "sanatorium",
                     name: "Requiem Patch",
                     desc: "In the Lakeside Dell area. Its on a little dock to the left of the big bridge."
                 },
                 4: {
                     loc: [-62.10046056419114, 176.97788916422618],
-                    map: "Golova",
+                    map: "golova",
                     name: "Transformed Apple Crate",
                     desc: "In the barn of the lower farmstead. Should be pretty easy to spot."
                 },
                 5: {
                     loc: [-160.25, 199.25],
-                    map: "Duga",
+                    map: "duga",
                     name: "Beacon Device Component",
                     desc: "In the Eletrical Substation. On one of the two taller structures, is very easy to see."
                 },
                 6: {
                     loc: [-76, 214],
-                    map: "Alpine",
+                    map: "alpine",
                     name: "Aether Shroud Canister",
                     desc: "In the Maintenance section. It's inside one of the garages."
                 }
             },
-        }
+        },
     },
-    Omega: {
+    omega: {
         0: {
             Audio: {
                 1: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "8th Guard's First Contact",
                     desc: "Sitting on the ground next to the door to the bunker in Tunnel."
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "The Volunteer",
                     desc: "In the room where the PaP part can spawn in med bay. It's the area where the aether tunnel droops you off."
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "For Mother Russia",
                     desc: "In the room where the PaP part can spawn in the weapon lab.It's the area where the aether tunnel droops you off."
                 }
@@ -642,25 +630,25 @@ var poi = {
             Documents: {
                 1: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "An Explanation",
                     desc: "Drops from a Megaton."
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Befor The Devil Arrives",
                     desc: "Drops from a Megaton."
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "K Cipher",
                     desc: "Drops from a Megaton."
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Die Maschinne",
+                    map: "dieMaschine",
                     name: "G Cipher",
                     desc: "Drops from a Megaton."
                 }
@@ -669,7 +657,7 @@ var poi = {
             Artifacts: {
                 1: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Orlov Family Photo",
                     desc: "Collected in the radio station in nacht at the end of the main quest."
                 }
@@ -679,61 +667,61 @@ var poi = {
             Audio: {
                 1: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Turning Point",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Next Phase",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Dimentional Fertility",
                     desc: "In Scorched Defense, on top of the building with the minigun."
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Let It Ride",
                     desc: "On top of some pipes in Engineering. Shoot it down."
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Aethernauts",
                     desc: "In Planning Offices under the desk in the middle of the room."
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "The Anatomy Lesson",
                     desc: "In field Hospital, near the exit to the Mission control area."
                 },
                 7: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Kuhlklay's Payback",
                     desc: "On a shelf in weapons lab , directly across from the RAI K-84 blueprint."
                 },
                 8: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Gorev",
                     desc: "In colonels office, under the desk with the monitor bank."
                 },
                 9: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "To Dust You Will Return",
                     desc: "Inside the OPC(part of the main quest)."
                 },
                 10: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Outpost 25 Has Fallen",
                     desc: "In Mission Control, on a table by a window, near the top most charge collector."
                 }
@@ -741,81 +729,81 @@ var poi = {
             Documents: {
                 1: {
                     loc: [0, 0],
-                    map: "Die Maschine",
-                    name: "Omega Group Formation",
-                    desc: ""
+                    map: "dieMaschine",
+                    name: "omega Group Formation",
+                    desc: "drops from a Megaton"
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Operation Undertaker",
-                    desc: ""
+                    desc: "drops from a Megaton"
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Khe Sanh Site",
-                    desc: ""
+                    desc: "drops from a Megaton"
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Authorization to Conscript",
-                    desc: ""
+                    desc: "drops from a Mimic or Mangler"
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Firebase Z",
-                    name: "Omega Teleport Blueprint",
-                    desc: ""
+                    map: "firebaseZ",
+                    name: "omega Teleport Blueprint",
+                    desc: "drops from a Mimic or Mangler"
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Aetherium Production Report",
-                    desc: ""
+                    desc: "drops from a Mimic or Mangler"
                 },
                 7: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Speciment K7-1924",
-                    desc: ""
+                    desc: "drops from a Mimic or Mangler"
                 },
                 8: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "P Cipher",
-                    desc: ""
+                    desc: "drops from a Mimic or Mangler"
                 },
                 9: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "G Cipher",
-                    desc: ""
+                    desc: "drops from a Mimic or Mangler"
                 }
             },
             Radio: {
                 1: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Good Little Lemmings",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Not Built To Last",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Do Try To Stay Alive",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Gorev's Disappointment",
                     desc: ""
                 }
@@ -823,31 +811,31 @@ var poi = {
             Artifacts: {
                 1: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Kuhlklay's Eye",
                     desc: "In scorched defense, in a dead body leaning up against a blown up tank."
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Ravenov ID Badge",
                     desc: "Obtained from Ravenov during the main quest."
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Agent Delivery System",
                     desc: "Obtained from the medic building during the main quest."
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Essence Trap",
                     desc: "Obtained from the datacenter during the main quest."
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Aethermeter",
                     desc: "Obtained during the main quest."
                 }
@@ -857,49 +845,49 @@ var poi = {
             Audio: {
                 1: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Half Of The Reason",
                     desc: "Under a bunk bed in Scientist Quarters, in the starting area."
                 },
                 2: {
                     loc: [-201.27014968336212, 179.729499887362],
-                    map: "Golova",
+                    map: "golova",
                     name: "Ghost Stories",
                     desc: "In the big building in the little cemetary's office room."
                 },
                 3: {
                     loc: [-119.75, 96.5],
-                    map: "Sanatorium",
+                    map: "sanatorium",
                     name: "Something I Can Use",
-                    desc: "In the Sanatorium building on the second floor, on a coffee table in the room with the wallbuy."
+                    desc: "In the sanatorium building on the second floor, on a coffee table in the room with the wallbuy."
                 },
                 4: {
                     loc: [-130.56088082901556, 147.46061049785988],
-                    map: "Outbreak",
-                    name: "Golova - Off The Hook",
+                    map: "outbreak",
+                    name: "golova - Off The Hook",
                     desc: "In the Wonderfizz building, in one of the side rooms."
                 },
                 5: {
                     loc: [-133.5, 186.75],
-                    map: "Alpine",
+                    map: "alpine",
                     name: "Do What You Must",
                     desc: "On a little table on the balcony terras in the Chalet area."
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Ruka",
+                    map: "ruka",
                     name: "In The Wild",
                     desc: "In the middle of the Missile Silos on a shelf. near the ammo crate."
                 },
                 7: {
                     loc: [-135, 96.25],
-                    map: "Sanatorium",
+                    map: "sanatorium",
                     name: "Proposed Targets",
-                    desc: "In the Sanatorium building on the first floor in a side room to the right of the statue."
+                    desc: "In the sanatorium building on the first floor in a side room to the right of the statue."
                 },
                 8: {
                     loc: [0, 0],
-                    map: "Ruka",
+                    map: "ruka",
                     name: "Lightning Bugs",
                     desc: "On a table near the edge of the Mobile ICBM Site."
                 }
@@ -907,45 +895,45 @@ var poi = {
             Documents: {
                 1: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "New Frontiers",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Outbreak",
-                    name: "Omega Staffing Report",
+                    map: "outbreak",
+                    name: "omega Staffing Report",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Outbreak",
-                    name: "Omega Records Review",
+                    map: "outbreak",
+                    name: "omega Records Review",
                     desc: ""
                 }
             },
             Radio: {
                 1: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "The Colonel",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Up To Speed",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Fiasco",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Trespassers",
                     desc: ""
                 }
@@ -953,14 +941,14 @@ var poi = {
             Artifacts: {
                 1: {
                     loc: [0, 0],
-                    map: "Ruka",
+                    map: "ruka",
                     name: "Kravchenko's Knife",
                     desc: "In a green lookout tower in the southwest corner of the Missile Silos."
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Ruka",
-                    name: "Omega Group Patch",
+                    map: "ruka",
+                    name: "omega Group Patch",
                     desc: "On top of the climbable net in the obstacle course."
                 }
             }
@@ -969,69 +957,69 @@ var poi = {
             Audio: {
                 1: {
                     loc: [-173.75, 177.5],
-                    map: "Duga",
+                    map: "duga",
                     name: "Leadership Techniques",
                     desc: "On the third floor of the Admin Offices. In the room with a big oval table."
                 },
                 2: {
                     loc: [-150.25, 224.25],
-                    map: "Duga",
+                    map: "duga",
                     name: "This Isn't My Work",
                     desc: "In the Research Labs. In the right most building."
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Ruka",
+                    map: "ruka",
                     name: "Witching Hour",
                     desc: "I the missile silos by the A elevator. On the side of the building, next to the generators."
                 },
                 4: {
                     loc: [-112.375, 97.75],
-                    map: "Sanatorium",
+                    map: "sanatorium",
                     name: "His Plan, Our Plan",
-                    desc: "On the Sanatorium Roof. It's on top of the spire with 2 satellite dishes. Requires a Jump pad to get to."
+                    desc: "On the sanatorium Roof. It's on top of the spire with 2 satellite dishes. Requires a Jump pad to get to."
                 }
             },
             Documents: {
                 1: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Boost Module Report",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Phaze Report",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Krasny Soldat Blueprint",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Valentina Diary Entry",
                     desc: ""
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Operatsiya Inversiya Proposal",
                     desc: ""
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Aetherium Warhead Blueprint",
                     desc: ""
                 },
                 7: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "R Cipher",
                     desc: ""
                 }
@@ -1039,25 +1027,25 @@ var poi = {
             Radio: {
                 1: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Uncle",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Made Of Fire",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Chasing Ghosts",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Missing Name and Location",
                     desc: ""
                 }
@@ -1065,61 +1053,61 @@ var poi = {
             Artifacts: {
                 1: {
                     loc: [0, 0],
-                    map: "Ruka",
+                    map: "ruka",
                     name: "Mangler Cannon",
                     desc: "Near the base of the Train Trestle closest to the building. It's sitting at the base of a tree."
                 },
                 2: {
                     loc: [-191.375, 137],
-                    map: "Sanatorium",
+                    map: "sanatorium",
                     name: "Peck's ID Badge",
                     desc: "In the middle of the large Bathhouse, on a shelf."
                 },
                 3: {
                     loc: [-173.75, 172.75],
-                    map: "Duga",
+                    map: "duga",
                     name: "Boost Module Monitor",
                     desc: "In the admin offices on the third floor. In the room with all the computers."
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Ruka",
+                    map: "ruka",
                     name: "ICBM Launch Key",
-                    desc: "Obtained during the Outbreak EE."
+                    desc: "Obtained during the outbreak EE."
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Ruka",
+                    map: "ruka",
                     name: "Modified Essence Trap",
-                    desc: "In a hallway on the ground floor of Silo A, obtained during the Outbreak EE."
+                    desc: "In a hallway on the ground floor of Silo A, obtained during the outbreak EE."
                 },
                 6: {
                     loc: [-64.5, 124.5],
-                    map: "Alpine",
+                    map: "alpine",
                     name: "Tempest Head",
                     desc: "In the medivac area. Inside the large building, on top of a pile of crates and sandbags that need to be clambered up."
                 }
             }
-        }
+        },
     },
-    Maxis: {
+    maxis: {
         0: {
             Audio: {
                 1: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Cold War Paranoia",
                     desc: "On the couch next to the ee song cassette in first floor of nacht."
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Game Changer",
                     desc: "Drop the crate for the Cryo WW upgrade. The log will be near the destroyed crate and flask."
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "The VHS Tape",
                     desc: "same place as the canister for the nova 5 WW upgrade. Suck it with the WW."
                 }
@@ -1127,19 +1115,19 @@ var poi = {
             Documents: {
                 1: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "KGB Videotape Note",
                     desc: "Drops from a Megaton."
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Dieter's Note",
                     desc: "Drops from a Megaton."
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Message For Weaver",
                     desc: "Drops from a Megaton."
                 }
@@ -1147,19 +1135,19 @@ var poi = {
             Radio: {
                 1: {
                     loc: [0, 0],
-                    map: "Die Maschine",
-                    name: "Agent Maxis",
+                    map: "dieMaschine",
+                    name: "Agent maxis",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Scorpions From Frogs",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Why You're Here",
                     desc: ""
                 }
@@ -1170,19 +1158,19 @@ var poi = {
             Audio: {
                 1: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Not Who We Are",
                     desc: "In the scientist quarters, and on the inaccessible floor above you the audio log will be sitting, shoot it and it will be on the floor in the Briefing room."
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Workers Of The World",
                     desc: "In equipment storage, on the back wall of floor 1, on a shelf."
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Worse Than Baton Rouge",
                     desc: "Inside a locker in the barracks. Need the key from the free WW quest to unlock."
                 }
@@ -1190,25 +1178,25 @@ var poi = {
             Documents: {
                 1: {
                     loc: [0, 0],
-                    map: "Firebase Z",
-                    name: "Omega's Portal Blueprint",
+                    map: "firebaseZ",
+                    name: "omega's Portal Blueprint",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Firebase Z",
-                    name: "Omega's Propaganda Poster",
+                    map: "firebaseZ",
+                    name: "omega's Propaganda Poster",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Aetherium Effects Report",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Aether Reactor Blueprint",
                     desc: ""
                 }
@@ -1216,61 +1204,61 @@ var poi = {
             Radio: {
                 1: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "The New Threat",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Divided Loyalties",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Shared History / Old Friend",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Code In",
                     desc: ""
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Relentless",
                     desc: ""
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Monsters Are Real",
                     desc: ""
                 },
                 7: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "The Perpetual Night",
                     desc: ""
                 },
                 8: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "The Light Within",
                     desc: ""
                 },
                 9: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Blood On My Hands",
                     desc: ""
                 },
                 10: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "A Bad Dream",
                     desc: ""
                 }
@@ -1281,31 +1269,31 @@ var poi = {
             Audio: {
                 1: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "More Than Bad News",
                     desc: "At the base of the OPC. Gotta climb over a barrier near the entrance to Mission Control."
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Ruka",
+                    map: "ruka",
                     name: "Call Me Mac",
                     desc: "In the small cabin in the Backwoods."
                 },
                 3: {
                     loc: [-71, 202.5],
-                    map: "Alpine",
+                    map: "alpine",
                     name: "My Reputation Precedes ME",
                     desc: "Inside the Red building's office area, in Maintenance."
                 },
                 4: {
                     loc: [-79.0905296488198, 187.73418562739357],
-                    map: "Golova",
+                    map: "golova",
                     name: "It's All Relative",
                     desc: "In the little barn next to the 4 silos in Lower Farmstead."
                 },
                 5: {
                     loc: [-79.25, 73.25],
-                    map: "Sanatorium",
+                    map: "sanatorium",
                     name: "We've Both Been To Hell",
                     desc: "In the little reception area of the biggest building in the maintenance area."
                 }
@@ -1313,63 +1301,63 @@ var poi = {
             Documents: {
                 1: {
                     loc: [0, 0],
-                    map: "Outbreak",
-                    name: "Maxis Status Report",
+                    map: "outbreak",
+                    name: "maxis Status Report",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Outbreak",
-                    name: "Maxis Diary Entry",
+                    map: "outbreak",
+                    name: "maxis Diary Entry",
                     desc: ""
                 }
             },
             Radio: {
                 1: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "A Tangled Web",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "I Made A Promise",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Lab Rat",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Three Out Of Four",
                     desc: ""
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Both Ways",
                     desc: ""
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "I've Changed",
                     desc: ""
                 },
                 7: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Why I Fight",
                     desc: ""
                 },
                 8: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "True Courage",
                     desc: ""
                 }
@@ -1377,14 +1365,14 @@ var poi = {
             Artifacts: {
                 1: {
                     loc: [-149.30008635578585, 144.20870691597207],
-                    map: "Golova",
+                    map: "golova",
                     name: "Endstation Video Tape",
                     desc: "Found in a room in Lower East Town on an end table by a bed."
                 },
                 2: {
                     loc: [-173.03641335636155, 210.49751070060825],
-                    map: "Golova",
-                    name: "Maxis BND Badge",
+                    map: "golova",
+                    name: "maxis BND Badge",
                     desc: "Behind some sandbags, very close to the edge of the map, in the Industrial Park location."
                 }
             }
@@ -1393,31 +1381,31 @@ var poi = {
             Audio: {
                 1: {
                     loc: [-87, 109],
-                    map: "Duga",
+                    map: "duga",
                     name: "It's Always Dark",
                     desc: "In the 3rd bunker down from the top in the Bunkers section of the map, on a box."
                 },
                 2: {
                     loc: [-82.75, 28],
-                    map: "Duga",
+                    map: "duga",
                     name: "Outbursts",
                     desc: "In the farm area. In the big red house, on the bed on the upper floor."
                 },
                 3: {
                     loc: [-210.26496833621187, 169.7236427123226],
-                    map: "Golova",
+                    map: "golova",
                     name: "A New Friend",
                     desc: "On a desk in one of the Church's back rooms."
                 },
                 4: {
                     loc: [-170.0381404720783, 170.72422842982655],
-                    map: "Golova",
+                    map: "golova",
                     name: "Isolated",
                     desc: "On a desk in the Police station(the armor station building)"
                 },
                 5: {
                     loc: [-125.25, 96.5],
-                    map: "Duga",
+                    map: "duga",
                     name: "Someone We Can Trust",
                     desc: "In the warehouses section. On the second floor of the top most warehouse, on a desk."
                 }
@@ -1425,25 +1413,25 @@ var poi = {
             Documents: {
                 1: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Arrival",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Outbreak",
-                    name: "Maxis Progress Report",
+                    map: "outbreak",
+                    name: "maxis Progress Report",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Quarantine Diary 1",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Quarantine Diary 2",
                     desc: ""
                 }
@@ -1452,79 +1440,79 @@ var poi = {
             Artifacts: {
                 1: {
                     loc: [-107.75, 48],
-                    map: "Duga",
-                    name: "Maxis's Katana",
+                    map: "duga",
+                    name: "maxis's Katana",
                     desc: "In the farm area. Stuck in a haybale in a shed near the back of the area, next to the stone wall."
                 },
                 2: {
                     loc: [-146, 126.75],
-                    map: "Duga",
-                    name: "Maxis's Scarf",
+                    map: "duga",
+                    name: "maxis's Scarf",
                     desc: "In the listening post. In a room just to the left of the wonderfizz, on a coathook."
                 },
                 3: {
                     loc: [-184.75, 64.75],
-                    map: "Sanatoriom",
-                    name: "Maxis's Goggles",
+                    map: "sanatorium",
+                    name: "maxis's Goggles",
                     desc: "In the market square on one of the round tables."
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Beacon Listening Device",
-                    desc: "Obtained whilst completing an Aether transmission during the Outbreak EE."
+                    desc: "Obtained whilst completing an Aether transmission during the outbreak EE."
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Microfilm Slides",
-                    desc: "Obtained by breaking a stone monkey during the Outbreak EE."
+                    desc: "Obtained by breaking a stone monkey during the outbreak EE."
                 },
                 6: {
                     loc: [-150.29951065054692, 161.4688105429151],
-                    map: "Golova",
-                    name: "Maxis's Watch",
+                    map: "golova",
+                    name: "maxis's Watch",
                     desc: "In the Lower West town area. It's on the roof of the building with the crafting bench, requires a jump pad to get to. It's tucked in between the roof itself and one of the 4 spire things with a flag on it."
                 }
             }
         }
     },
-    DarkAether: {
+    darkAether: {
         0: {
             Audio: {
                 1: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Lost Souls: Johannes",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Lost Souls: Mariska",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Lost Souls: David",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Missing Name and Location",
                     desc: ""
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Missing Name and Location",
                     desc: ""
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Missing Name and Location",
                     desc: ""
                 }
@@ -1532,73 +1520,73 @@ var poi = {
             Documents: {
                 1: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "$!%()$3@!",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "I @N#B%D! O% T@#&",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Day 13,773",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Day 95",
                     desc: ""
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Day 175",
                     desc: ""
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Missing Name and Location",
                     desc: ""
                 },
                 7: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Missing Name and Location",
                     desc: ""
                 },
                 8: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Missing Name and Location",
                     desc: ""
                 },
                 9: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Missing Name and Location",
                     desc: ""
                 },
                 10: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Missing Name and Location",
                     desc: ""
                 },
                 11: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Missing Name and Location",
                     desc: ""
                 },
                 12: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Missing Name and Location",
                     desc: ""
                 }
@@ -1607,25 +1595,25 @@ var poi = {
             Artifacts: {
                 1: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Mutated Fungus",
                     desc: "Obtained during the main quest, on a tree with purple table mushrooms."
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Plaguehound Gas",
                     desc: "Obtained during the main quest, next to Deadshot Daquiri."
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Dark Aether Crystal",
                     desc: "Obtained during hte main quest, collected from the red Aether crystals."
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Dark Aether Wrench",
                     desc: "Obtained during the main quest, gotten from the ghostly figures in the med bay."
                 }
@@ -1635,37 +1623,37 @@ var poi = {
             Audio: {
                 1: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Lost Souls: Fedorov",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Lost Souls: Koslov",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Lost Souls: Tobias",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Lost Souls: Olga",
                     desc: ""
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Missing Name and Location",
                     desc: ""
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Missing Name and Location",
                     desc: ""
                 }
@@ -1673,79 +1661,79 @@ var poi = {
             Documents: {
                 1: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "My Friend!",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Day 291",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Day 3,789",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Day 4,01",
                     desc: ""
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Day 6,157",
                     desc: ""
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Day, 6,289",
                     desc: ""
                 },
                 7: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Day 2,499",
                     desc: ""
                 },
                 8: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Day 6,412",
                     desc: ""
                 },
                 9: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Day 6,416",
                     desc: ""
                 },
                 10: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Day 6,148",
                     desc: ""
                 },
                 11: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Missing Name and Location",
                     desc: ""
                 },
                 12: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Missing Name and Location",
                     desc: ""
                 },
                 13: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Missing Name and Location",
                     desc: ""
                 }
@@ -1753,37 +1741,37 @@ var poi = {
             Radio: {
                 1: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Without Orders",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Missing Name and Location",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Missing Name and Location",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Missing Name and Location",
                     desc: ""
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Missing Name and Location",
                     desc: ""
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Die Maschine",
+                    map: "dieMaschine",
                     name: "Missing Name and Location",
                     desc: ""
                 }
@@ -1791,8 +1779,8 @@ var poi = {
             Artifacts: {
                 1: {
                     loc: [0, 0],
-                    map: "Firebase Z",
-                    name: "Omega Canister",
+                    map: "firebaseZ",
+                    name: "omega Canister",
                     desc: "Part of the Main quest."
                 }
             }
@@ -1801,7 +1789,7 @@ var poi = {
             Audio: {
                 1: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Lost Souls: Fedorov #2",
                     desc: ""
                 }
@@ -1809,43 +1797,43 @@ var poi = {
             Documents: {
                 1: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Day 6,421",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Day 6,457",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Much More To Tell You",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Hello Again",
                     desc: ""
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Divided World",
                     desc: ""
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Trust Me",
                     desc: ""
                 },
                 7: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "More To Follow",
                     desc: ""
                 }
@@ -1853,19 +1841,19 @@ var poi = {
             Radio: {
                 1: {
                     loc: [0, 0],
-                    map: "Firebase Z",
+                    map: "firebaseZ",
                     name: "Crooked House",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Testing... Testing",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "New Enemies",
                     desc: ""
                 }
@@ -1873,25 +1861,25 @@ var poi = {
             Artifacts: {
                 1: {
                     loc: [-178.5, 106.25],
-                    map: "Alpine",
+                    map: "alpine",
                     name: "Empty Jugger-Nog",
                     desc: "On the roof of the Large Sauna building"
                 },
                 2: {
                     loc: [-203.51885434657456, 163.46998197792294],
-                    map: "Golova",
+                    map: "golova",
                     name: "Cymbal Monkey Toy",
                     desc: "On the lip of the left most tower on the roof of the church."
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Ruka",
+                    map: "ruka",
                     name: "Ivan's Head",
                     desc: "On a telephone pillar next to the train trestle bridge (use parachute)."
                 },
                 4: {
                     loc: [-129.25, 36.75],
-                    map: "Alpine",
+                    map: "alpine",
                     name: "Mystery Box Bunny",
                     desc: "In a bed in Base Suites section. It's the third building from the bottom."
                 }
@@ -1901,25 +1889,25 @@ var poi = {
             Audio: {
                 1: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Missing Name and Location",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Missing Name and Location",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Missing Name and Location",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Missing Name and Location",
                     desc: ""
                 }
@@ -1927,37 +1915,37 @@ var poi = {
             Documents: {
                 1: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Day 1",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Day 3",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Day 7",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Day 9",
                     desc: ""
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Day 11",
                     desc: ""
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Day 12",
                     desc: ""
                 }
@@ -1965,43 +1953,43 @@ var poi = {
             Radio: {
                 1: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Who I Am",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Great Patriotic",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Tethered",
                     desc: ""
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Changes",
                     desc: ""
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Junkyard",
                     desc: ""
                 },
                 6: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Invasion",
                     desc: ""
                 },
                 7: {
                     loc: [0, 0],
-                    map: "Outbreak",
+                    map: "outbreak",
                     name: "Bring Me Home",
                     desc: ""
                 }
@@ -2009,37 +1997,37 @@ var poi = {
             Artifacts: {
                 1: {
                     loc: [-174.75, 231],
-                    map: "Sanatorium",
+                    map: "sanatorium",
                     name: "Empty Speed Cola",
                     desc: "On the counter on the kitchen of the higher of the two right most houses in the vacation homes section."
                 },
                 2: {
                     loc: [-98, 143.25],
-                    map: "Duga",
+                    map: "duga",
                     name: "Broken Essence Capsule",
                     desc: "In the Secondary Array. This location is kinda weird. Starting from the top of the left most array, go as far left as you can, then go down 3 layers. It will be sitting on a grey metal bar connecting the walkway to the side of the array. This is away from the Primary Array, not towards it."
                 },
                 3: {
                     loc: [-113.75, 119.25],
-                    map: "Sanatorium",
+                    map: "sanatorium",
                     name: "Empty Quick Revive Soda Can",
                     desc: "In the Beach Resort. Under the stairs of the White shack building."
                 },
                 4: {
                     loc: [0, 0],
-                    map: "Ruka",
+                    map: "ruka",
                     name: "Broken Essence Canister",
                     desc: ""
                 },
                 5: {
                     loc: [0, 0],
-                    map: "Ruka",
+                    map: "ruka",
                     name: "Aetherium Crystal Chunks",
-                    desc: "Found by breaking crystals in Silo B during the Outbreak EE"
+                    desc: "Found by breaking crystals in Silo B during the outbreak EE"
                 },
                 6: {
                     loc: [-143, 71.25],
-                    map: "Alpine",
+                    map: "alpine",
                     name: "Dragon Head Trophy",
                     desc: "In the lodge. In Room 201, above the bed."
                 }
