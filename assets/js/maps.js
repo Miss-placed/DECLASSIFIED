@@ -11,7 +11,7 @@ var ruka = {
     Layer: new L.LayerGroup(),
     Markers: new L.LayerGroup(),
     MarkersVisible: true,
-    Tiles: L.tileLayer(`./maps/duga/{z}/{x}_{y}.png`, { id: 'ruka', tileSize: tileSize, zoomOffset: zoomOffset })
+    Tiles: L.tileLayer(`./maps/ruka/{z}/{x}_{y}.png`, { id: 'ruka', tileSize: tileSize, zoomOffset: zoomOffset })
 }
 var alpine = {
     Layer: new L.LayerGroup(),
@@ -41,5 +41,5 @@ var dieMaschine = {
     Layer: new L.LayerGroup(),
     Markers: new L.LayerGroup(),
     MarkersVisible: true,
-    Tiles: L.tileLayer(`./maps/duga/{z}/{x}_{y}.png`, { id: 'dieMaschine', tileSize: tileSize, zoomOffset: zoomOffset })
+    Tiles: L.tileLayer(`./maps/Die Machine/{z}/{x}_{y}.png`, { id: 'dieMaschine', tileSize: tileSize, zoomOffset: zoomOffset })
 }
