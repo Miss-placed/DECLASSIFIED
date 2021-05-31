@@ -20,7 +20,7 @@
 
 </head>
 
-<body onload="setIntelList()">
+<body onload="onLoad()">
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -36,19 +36,25 @@
         </header>
         <aside>
             <div id="Requiem">
-                <h1>here will be a list of all intel</h1>
-                <!-- <div class="list">
-                    <div class="ïtem">
-                        <h2>title</h2>
-                        <label>Collected</label><input type="checkbox">
-                        <p>desc</p>
-                        <button>focus</button>
-                    </div>
-                </div> -->
+                <h1 class="title" onload="" onclick="toggleList(this)">Requiem<span>+</span></h1>
+                <div class="itemList">
+                </div>
             </div>
-            <div id="Omega"></div>
-            <div id="Maxis"></div>
-            <div id="Dark Aether"></div>
+            <div id="Omega">
+                <h1 class="title" onload="" onclick="toggleList(this)">Omega<span>+</span></h1>
+                <div class="itemList">
+                </div>
+            </div>
+            <div id="Maxis">
+                <h1 class="title" onload="" onclick="toggleList(this)">Maxis<span>+</span></h1>
+                <div class="itemList">
+                </div>
+            </div>
+            <div id="Dark-Aether">
+                <h1 class="title" onload="" onclick="toggleList(this)">Dark Aether<span>+</span></h1>
+                <div class="itemList">
+                </div>
+            </div>
 
         </aside>
         <!-- <div id="control-die-Maschine">
@@ -104,8 +110,9 @@
         //         currentMarkers = y
         //     }
         // }
-        function setIntelList() {
+        function onLoad() {
             setDefaultMap()
+            generateList()
         }
         map.on("click", function(e) {
             if (debug) {
@@ -118,6 +125,46 @@
                 cb.style.display = 'none';
             }
         })
+        let reqiuemList = document.getElementById("Requiem");
+
+        function generateList(x) {
+            let title = poi.Requiem[3].Audio[1].name
+            let desc = poi.Requiem[3].Audio[1].desc
+            let loc = poi.Requiem[3].Audio[1].loc
+
+
+            let item = document.createElement("div")
+            let itemTitle = document.createElement("h2")
+            let itemTitleText = document.createTextNode(title)
+            let text = document.createTextNode(desc)
+            let button = document.createElement("button")
+            let buttonText = document.createTextNode("Locate")
+            button.onclick = function() {
+                map.flyTo(loc, 5);
+            }
+            button.appendChild(buttonText)
+            itemTitle.appendChild(itemTitleText)
+
+
+            item.classList.add("item")
+            itemTitle.classList.add("itemTitle")
+            item.appendChild(itemTitle)
+            item.appendChild(text)
+            item.appendChild(button)
+
+            document.getElementById("Requiem").children[1].appendChild(item)
+
+
+        }
+
+        function toggleList(x) {
+            if (x.children[0].innerHTML == "+") {
+                x.children[0].innerHTML = "-"
+            } else {
+                x.children[0].innerHTML = "+"
+            }
+            x.parentNode.children[1].classList.toggle("visible");
+        }
     </script>
 </body>
 

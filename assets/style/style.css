@@ -66,7 +66,6 @@ header div:hover {
 .leaflet-popup-close-button {
     color: #7c2728!important;
     text-shadow: -1px -1px 0 #e8e8d3, -1px 1px 0 #e8e8d3, 1px 1px 0 #e8e8d3, 1px -1px 0 #e8e8d3;
-    -1px -1px 0 #000;
     font-size: 20px!important;
     right: 3px!important;
     ;
@@ -94,4 +93,40 @@ header div:hover {
     background-color: #6b6b6b;
     color: #e8e8d3;
     margin-bottom: 5px
+}
+
+.itemList.visible {
+    max-height: 1000px;
+    ;
+}
+
+.title {
+    user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+}
+
+.title span {
+    float: right;
+    width: 20px;
+    text-align: center;
+}
+
+.itemList {
+    /* background-color: red; */
+    max-height: 0px;
+    overflow: hidden;
+    width: 100%;
+    display: block;
+    transition: ease-in-out 0.5s;
+}
+
+.itemList :nth-child(odd) {
+    background: #e8e8d3;
+}
+
+.itemList :nth-child(even) {
+    background: #dadacd;
 }
