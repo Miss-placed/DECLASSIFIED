@@ -17,16 +17,7 @@ body {
     background-color: #2d2d2d;
     cursor: crosshair;
     float: right;
-    border-top: 1px solid #e8e8d3;
     z-index: 0;
-}
-
-aside {
-    display: block;
-    height: 90vh;
-    width: 20vw;
-    float: left;
-    background: #e8e8d3;
 }
 
 header {
@@ -37,6 +28,7 @@ header {
     font-family: sans-serif;
     display: grid;
     grid-auto-flow: column;
+    border-bottom: 1px solid #e8e8d3;
 }
 
 header>div,
@@ -95,39 +87,12 @@ header>div:hover,
     margin-bottom: 5px
 }
 
-.itemList.visible {
-    max-height: 1000px;
-    ;
-}
-
 .not-selectable {
     user-select: none;
     -khtml-user-select: none;
     -webkit-touch-callout: none;
     -moz-user-select: none;
     -o-user-select: none;
-}
-
-.title span {
-    float: right;
-    width: 20px;
-    text-align: center;
-}
-
-.itemList {
-    max-height: 0px;
-    overflow: hidden;
-    width: 100%;
-    display: block;
-    transition: ease-in-out 0.5s;
-}
-
-.itemList :nth-child(odd) {
-    background: #e8e8d3;
-}
-
-.itemList :nth-child(even) {
-    background: #dadacd;
 }
 
 .dropdown-item {
@@ -157,4 +122,60 @@ header>div:hover,
 .current-map {
     background-color: #e8e8d3;
     color: #2d2d2d;
+}
+
+
+/* styling for the intel cards */
+
+aside {
+    display: block;
+    height: 90vh;
+    width: 20vw;
+    float: left;
+    overflow: scroll;
+    overflow-x: hidden;
+    background: #e8e8d3;
+}
+
+.title {
+    color: #dadacd;
+    background-color: #2d2d2d;
+    padding: 5px;
+}
+
+.title img {
+    display: inline-block;
+    height: 40px;
+    vertical-align: middle;
+    padding-left: calc(width);
+}
+
+.title span {
+    float: right;
+    width: 20px;
+    text-align: center;
+}
+
+.itemList.visible {
+    max-height: 10000px;
+    ;
+}
+
+.itemList {
+    max-height: 0px;
+    overflow: hidden;
+    width: 100%;
+    display: block;
+}
+
+.itemList :nth-child(odd) {
+    background: #e8e8d3;
+}
+
+.itemList :nth-child(even) {
+    background: #dadacd;
+}
+
+h2 {
+    font-size: 1em;
 }

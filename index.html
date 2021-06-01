@@ -49,23 +49,33 @@
             <div class="not-selectable" onClick="setMap(alpine,this)">Alpine</div>
         </header>
         <aside>
-            <div id="Requiem">
-                <h1 class="title not-selectable" onload="" onclick="toggleList(this)">Requiem<span>+</span></h1>
+            <div id="requiem">
+                <h1 class="title not-selectable" onload="" onclick="toggleList(this)">
+                    <img src="./assets/img/icons/faction-requiem-icon.png">
+                    <t>Requiem</t><span>+</span></h1>
                 <div class="itemList">
                 </div>
             </div>
-            <div id="Omega">
-                <h1 class="title not-selectable" onload="" onclick="toggleList(this)">Omega<span>+</span></h1>
+            <div id="omega">
+                <h1 class="title not-selectable" onload="" onclick="toggleList(this)">
+                    <img src="./assets/img/icons/faction-omega-icon.png">
+                    <t>Omega</t>
+                    <span>+</span>
+                </h1>
                 <div class="itemList">
                 </div>
             </div>
-            <div id="Maxis">
-                <h1 class="title not-selectable" onload="" onclick="toggleList(this)">Maxis<span>+</span></h1>
+            <div id="maxis">
+                <h1 class="title not-selectable" onload="" onclick="toggleList(this)">
+                    <img src="./assets/img/icons/faction-maxis-icon.png">
+                    <t>Maxis</t><span>+</span></h1>
                 <div class="itemList">
                 </div>
             </div>
-            <div id="Dark-Aether">
-                <h1 class="title not-selectable" onload="" onclick="toggleList(this)">Dark Aether<span>+</span></h1>
+            <div id="darkAether">
+                <h1 class="title not-selectable" onload="" onclick="toggleList(this)">
+                    <img src="./assets/img/icons/faction-darkAether-icon.png">
+                    <t>Dark Aether</t><span>+</span></h1>
                 <div class="itemList">
                 </div>
             </div>
@@ -104,7 +114,6 @@
         }
         map.on("click", function(e) {
             if (debug) {
-                // "[" + e.latlng.lat + ", " + e.latlng.lng + "]"
                 var cb = document.getElementById("cb");
                 cb.value = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
                 cb.style.display = 'block';
@@ -113,34 +122,56 @@
                 cb.style.display = 'none';
             }
         })
-        let reqiuemList = document.getElementById("Requiem");
 
         function generateList(x) {
-            let title = poi.requiem[3].Audio[1].name
-            let desc = poi.requiem[3].Audio[1].desc
-            let loc = poi.requiem[3].Audio[1].loc
 
 
-            let item = document.createElement("div")
-            let itemTitle = document.createElement("h2")
-            let itemTitleText = document.createTextNode(title)
-            let text = document.createTextNode(desc)
-            let button = document.createElement("button")
-            let buttonText = document.createTextNode("Locate")
-            button.onclick = function() {
-                map.flyTo(loc, 5);
+
+            for (let faction in poi) {
+                if (poi.hasOwnProperty(faction)) {
+                    let factionIcon = window[faction.toString() + "Icon"]
+                    for (let i = 0; i <= Object.keys(poi[faction]).length; i++) {
+                        let season = poi[faction][i];
+                        for (let typeOfIntel in season) {
+                            if (season.hasOwnProperty(typeOfIntel)) {
+                                for (let j = 0; j < Object.keys(season[typeOfIntel]).length; j++) {
+                                    let intel = season[typeOfIntel][j + 1];
+
+                                    mapLayer = window[intel.map]
+                                    let title = intel.name
+                                    let desc = intel.desc
+                                    let loc = intel.loc
+
+
+                                    let item = document.createElement("div")
+                                    let itemTitle = document.createElement("h2")
+                                    let itemTitleText = document.createTextNode(title)
+                                    let text = document.createTextNode(desc)
+                                    let button = document.createElement("button")
+                                    let buttonText = document.createTextNode("Locate")
+                                    button.onclick = function() {
+                                        map.flyTo(loc, 5);
+                                    }
+                                    button.appendChild(buttonText)
+                                    itemTitle.appendChild(itemTitleText)
+
+
+                                    item.classList.add("item")
+                                    itemTitle.classList.add("itemTitle")
+                                    item.appendChild(itemTitle)
+                                    item.appendChild(text)
+                                    item.appendChild(button)
+
+                                    document.getElementById(faction).children[1].appendChild(item)
+
+
+                                }
+                            }
+                        }
+                    }
+                }
             }
-            button.appendChild(buttonText)
-            itemTitle.appendChild(itemTitleText)
 
-
-            item.classList.add("item")
-            itemTitle.classList.add("itemTitle")
-            item.appendChild(itemTitle)
-            item.appendChild(text)
-            item.appendChild(button)
-
-            document.getElementById("Requiem").children[1].appendChild(item)
 
 
         }
