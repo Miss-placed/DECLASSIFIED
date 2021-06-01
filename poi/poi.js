@@ -11,7 +11,7 @@ var poi = {
                 2: {
                     loc: [0, 0],
                     map: "dieMaschine",
-                    name: "Parallel",
+                    name: "Parallel World",
                     desc: "Near PaP, behind the stairs leading up while in the Dark Aether."
                 },
             },
@@ -37,7 +37,7 @@ var poi = {
                 4: {
                     loc: [0, 0],
                     map: "dieMaschine",
-                    name: "Der Wechdler Blueprint",
+                    name: "Der Wechsler Blueprint",
                     desc: "Drops from a Megaton."
                 },
                 5: {
@@ -120,7 +120,7 @@ var poi = {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Doctor Vogel's Diary",
-                    desc: "When you have crafted the Aetherscope, it can be found next to the computer in the med bay."
+                    desc: "When you have crafted the Aetherscope, it can be found in the Dark Aether next to the computer in the med bay."
                 },
                 5: {
                     loc: [0, 0],
@@ -136,13 +136,13 @@ var poi = {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Exo-Element 1",
-                    desc: ""
+                    desc: "Obtained from table in med bay, by easter egg computer. On the far wall, close to the box location."
                 },
                 2: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "New Orders",
-                    desc: ""
+                    desc: "Obtained from a table in weapons lab, close to the dog gas collection point for the nova 5 WW upgrade."
                 },
                 3: {
                     loc: [0, 0],
@@ -168,31 +168,31 @@ var poi = {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Doctor Vogel Entry 203",
-                    desc: ""
+                    desc: "Obtained from megaton drop."
                 },
                 2: {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "outbreak Zones Timeline",
-                    desc: ""
+                    desc: "Obtained from a Mimic drop."
                 },
                 3: {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "Requiem Formation Memo",
-                    desc: ""
+                    desc: "Obtained from a Mimic drop."
                 },
                 4: {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "Requiem Staffing Announcement",
-                    desc: ""
+                    desc: "Obtained from a Mimic drop."
                 },
                 5: {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "C Cipher",
-                    desc: ""
+                    desc: "Obtained from a Mimic drop."
                 }
             },
             Radio: {
