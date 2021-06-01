@@ -1890,19 +1890,19 @@ var poi = {
                 1: {
                     loc: [0, 0],
                     map: "outbreak",
-                    name: "Missing Name and Location",
+                    name: "Lost Souls: Fedorov 1",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
                     map: "outbreak",
-                    name: "Missing Name and Location",
+                    name: "Lost Souls: Fedorov 2",
                     desc: ""
                 },
                 3: {
                     loc: [0, 0],
                     map: "outbreak",
-                    name: "Missing Name and Location",
+                    name: "Lost Souls: Fedorov 3",
                     desc: ""
                 },
                 4: {

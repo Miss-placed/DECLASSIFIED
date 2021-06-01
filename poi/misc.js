@@ -24,27 +24,27 @@ var miscDuga = {
     Monkey: {
         1: {
             name: "Stone Monkey",
-            desc: "Missing Location and description",
-            loc: [0, 0],
+            desc: "On top of the small building",
+            loc: [-164.63142350407898, 121],
         },
         2: {
             name: "Stone Monkey",
-            desc: "Missing Location and description",
-            loc: [0, 0],
+            desc: "On top of a stack of barrels.",
+            loc: [-86.25143297302276, 107.875],
         },
         3: {
             name: "Stone Monkey",
-            desc: "Missing Location and description",
-            loc: [0, 0],
+            desc: "At the back on top of the busstop.",
+            loc: [-76.7606662776204, 180.25],
         },
         4: {
             name: "Stone Monkey",
-            desc: "Missing Location and description",
-            loc: [0, 0],
+            desc: "Behind the wall",
+            loc: [-202.37940015960277, 165],
         },
     },
     Projector: {
-        1: { name: "Projector", desc: "The projector for the Main Quest", loc: [0, 0] },
+        1: { name: "Projector", desc: "The projector for the Main Quest", loc: [-169.37629954335875, 177.28125] },
     }
 }
 var miscRuka = {
