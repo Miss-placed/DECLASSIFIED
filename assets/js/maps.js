@@ -37,11 +37,13 @@ function generateLayers(name, settings) {
     let object = {
         Layer: new L.LayerGroup(),
         Markers: new L.LayerGroup(),
+        MiscMarkers: new L.LayerGroup(),
         MarkersVisible: true,
         Tiles: L.tileLayer(`./maps/${name}/{z}/{x}_{y}.png`, settings)
     }
     object.Tiles.addTo(object.Layer);
     object.Markers.addTo(object.Layer);
+    object.MiscMarkers.addTo(object.Layer);
     return object
 
 }

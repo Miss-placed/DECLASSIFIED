@@ -42,9 +42,9 @@
                 </div>
             </div>
 
-            <div class="current-map not-selectable" onClick="setMap(duga,this)">Duga</div>
+            <div class="not-selectable" onClick="setMap(duga,this)">Duga</div>
             <div class="not-selectable" onClick="setMap(ruka,this)">Ruka</div>
-            <div class="not-selectable" onClick="setMap(golova,this)">Golova</div>
+            <div class="current-map not-selectable" onClick="setMap(golova,this)">Golova</div>
             <div class="not-selectable" onClick="setMap(sanatorium,this)">Sanatorium</div>
             <div class="not-selectable" onClick="setMap(alpine,this)">Alpine</div>
         </header>
@@ -89,10 +89,11 @@
     <script src="assets/js/icons.js"></script>
     <script src="poi/poi.js"></script>
     <script src="assets/js/maps.js"></script>
+    <script src="poi/misc.js"></script>
     <script src="assets/js/index.js"></script>
     <script>
-        var currentMap = duga;
-        var debug = false
+        var currentMap = golova;
+        var debug = true
 
         function setMap(x, y, z = false) {
             if (currentMap != x) {
@@ -123,7 +124,7 @@
             }
         })
 
-        function generateList(x) {
+        function generateList() {
 
 
 

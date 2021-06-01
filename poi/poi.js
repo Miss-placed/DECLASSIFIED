@@ -58,43 +58,43 @@ var poi = {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Officer Weaver",
-                    desc: ""
+                    desc: "You can only get one radio transmission per game."
                 },
                 2: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Doctor Grey",
-                    desc: ""
+                    desc: "You can only get one radio transmission per game."
                 },
                 3: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Dimension of Death",
-                    desc: ""
+                    desc: "You can only get one radio transmission per game."
                 },
                 4: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Doctor Strauss",
-                    desc: ""
+                    desc: "You can only get one radio transmission per game."
                 },
                 5: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Aetherium",
-                    desc: ""
+                    desc: "You can only get one radio transmission per game."
                 },
                 6: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Major Carver",
-                    desc: ""
+                    desc: "You can only get one radio transmission per game."
                 },
                 7: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "New Arms Race",
-                    desc: ""
+                    desc: "You can only get one radio transmission per game."
                 }
             },
             Artifacts: {

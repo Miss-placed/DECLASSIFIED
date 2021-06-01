@@ -9,7 +9,7 @@ var map = L.map('worldMap', {
     maxZoom: 5,
     minZoom: 1,
     layers: [
-        duga.Layer
+        golova.Layer
     ],
     tap: true,
     tapTolerance: 30,
@@ -54,9 +54,63 @@ for (let faction in poi) {
                                 .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
                         }
 
+
+
                     }
                 }
             }
         }
+    }
+}
+
+for (type in miscGolova) {
+    for (item in miscGolova[type]) {
+        var item = miscGolova[type][item]
+        var desc = ((item.desc != "") ? item.desc : '');
+
+        L.marker(item.loc, { icon: generalIcon }).addTo(golova.MiscMarkers)
+            .bindPopup(` <h1>${item.name}</h1> ${desc}`);
+
+    }
+}
+for (type in miscAlpine) {
+    for (item in miscAlpine[type]) {
+        var item = miscAlpine[type][item]
+        var desc = ((item.desc != "") ? item.desc : '');
+
+        L.marker(item.loc, { icon: generalIcon }).addTo(alpine.MiscMarkers)
+            .bindPopup(` <h1>${item.name}</h1> ${desc}`);
+
+    }
+}
+for (type in miscRuka) {
+    for (item in miscRuka[type]) {
+        var item = miscRuka[type][item]
+        var desc = ((item.desc != "") ? item.desc : '');
+
+        L.marker(item.loc, { icon: generalIcon }).addTo(ruka.MiscMarkers)
+            .bindPopup(` <h1>${item.name}</h1> ${desc}`);
+
+    }
+}
+for (type in miscDuga) {
+    for (item in miscDuga[type]) {
+        var item = miscDuga[type][item]
+        var desc = ((item.desc != "") ? item.desc : '');
+
+        L.marker(item.loc, { icon: generalIcon }).addTo(duga.MiscMarkers)
+            .bindPopup(` <h1>${item.name}</h1> ${desc}`);
+
+    }
+}
+
+for (type in miscSanatorium) {
+    for (item in miscSanatorium[type]) {
+        var item = miscSanatorium[type][item]
+        var desc = ((item.desc != "") ? item.desc : '');
+
+        L.marker(item.loc, { icon: generalIcon }).addTo(sanatorium.MiscMarkers)
+            .bindPopup(` <h1>${item.name}</h1> ${desc}`);
+
     }
 }

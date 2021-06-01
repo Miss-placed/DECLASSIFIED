@@ -18,6 +18,12 @@ var omegaIcon = L.icon({
 });
 var requiemIcon = L.icon({
     iconUrl: 'assets/img/icons/requiemIcon.png',
+    iconSize: [40, 40],
+    iconAnchor: [24, 48],
+    popupAnchor: [0, -30]
+});
+var generalIcon = L.icon({
+    iconUrl: 'assets/img/icons/generalIcon.png',
     iconSize: [48, 48],
     iconAnchor: [24, 48],
     popupAnchor: [0, -30]
