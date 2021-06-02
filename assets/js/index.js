@@ -9,7 +9,7 @@ var map = L.map('worldMap', {
     maxZoom: 5,
     minZoom: 1,
     layers: [
-        golova.Layer
+        ruka.Layer
     ],
     tap: true,
     tapTolerance: 30,

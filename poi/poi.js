@@ -199,7 +199,7 @@ var poi = {
                 1: {
                     loc: [0, 0],
                     map: "firebaseZ",
-                    name: "Ommega's Advantage",
+                    name: "Omega's Advantage",
                     desc: ""
                 },
                 2: {
@@ -305,7 +305,7 @@ var poi = {
                     desc: "On the corner of the building on a ledge, near the sattalite dish. Rocky Defense. Need to shoot it down."
                 },
                 2: {
-                    loc: [0, 0],
+                    loc: [-113.13339022876397, 135.875],
                     map: "ruka",
                     name: "Like Flies To Honey",
                     desc: "In the Base Headquarters location on a long table."
@@ -329,10 +329,10 @@ var poi = {
                     desc: "On the pier in the back room of the building at the end."
                 },
                 6: {
-                    loc: [0, 0],
+                    loc: [-158.26233818052847, 46.25],
                     map: "ruka",
                     name: "Recon Rover Blues",
-                    desc: "In the big building of the Old Farm location."
+                    desc: "In the big building of the Old Farm location. (NEEDS FURTHER ELABORATION)"
                 },
                 7: {
                     loc: [-116.5, 142.75],
@@ -425,7 +425,7 @@ var poi = {
                     desc: ""
                 },
                 3: {
-                    loc: [0, 0],
+                    loc: [-202.75760329845718, 175],
                     map: "ruka",
                     name: "Aetherium Crystal Shard",
                     desc: "In the burnt forest section, right up against the egde of the map about halfway down. It's on top of a big rock."
@@ -453,7 +453,7 @@ var poi = {
                     desc: "In the SAM site, in the big hanger on a box marked with a red star."
                 },
                 3: {
-                    loc: [0, 0],
+                    loc: [-147.76345539989362, 43.75],
                     map: "ruka",
                     name: "Death Squad",
                     desc: "In the old farm area. In the green tent, under a table."
@@ -874,7 +874,7 @@ var poi = {
                     desc: "On a little table on the balcony terras in the Chalet area."
                 },
                 6: {
-                    loc: [0, 0],
+                    loc: [-166.51154016669622, 101.25],
                     map: "ruka",
                     name: "In The Wild",
                     desc: "In the middle of the Missile Silos on a shelf. near the ammo crate."
@@ -886,7 +886,7 @@ var poi = {
                     desc: "In the sanatorium building on the first floor in a side room to the right of the statue."
                 },
                 8: {
-                    loc: [0, 0],
+                    loc: [-91.01949370455755, 112.25],
                     map: "ruka",
                     name: "Lightning Bugs",
                     desc: "On a table near the edge of the Mobile ICBM Site."
@@ -940,13 +940,13 @@ var poi = {
             },
             Artifacts: {
                 1: {
-                    loc: [0, 0],
+                    loc: [-183.50973133534316, 77.75],
                     map: "ruka",
                     name: "Kravchenko's Knife",
                     desc: "In a green lookout tower in the southwest corner of the Missile Silos."
                 },
                 2: {
-                    loc: [0, 0],
+                    loc: [-129.7654504344742, 106.75],
                     map: "ruka",
                     name: "omega Group Patch",
                     desc: "On top of the climbable net in the obstacle course."
@@ -968,10 +968,10 @@ var poi = {
                     desc: "In the Research Labs. In the right most building."
                 },
                 3: {
-                    loc: [0, 0],
+                    loc: [-173.88019817343502, 93.875],
                     map: "ruka",
                     name: "Witching Hour",
-                    desc: "I the missile silos by the A elevator. On the side of the building, next to the generators."
+                    desc: "At the missile silos by the A elevator. On the side of the building, next to the generators."
                 },
                 4: {
                     loc: [-112.375, 97.75],
@@ -1052,7 +1052,7 @@ var poi = {
             },
             Artifacts: {
                 1: {
-                    loc: [0, 0],
+                    loc: [-94.00771191700656, 159.375],
                     map: "ruka",
                     name: "Mangler Cannon",
                     desc: "Near the base of the Train Trestle closest to the building. It's sitting at the base of a tree."
@@ -1274,7 +1274,7 @@ var poi = {
                     desc: "At the base of the OPC. Gotta climb over a barrier near the entrance to Mission Control."
                 },
                 2: {
-                    loc: [0, 0],
+                    loc: [-182.37330865401668, 147.875],
                     map: "ruka",
                     name: "Call Me Mac",
                     desc: "In the small cabin in the Backwoods."
@@ -1484,37 +1484,37 @@ var poi = {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Lost Souls: Johannes",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 2: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Lost Souls: Mariska",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 3: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Lost Souls: David",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 4: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Missing Name and Location",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 5: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Missing Name and Location",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 6: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Missing Name and Location",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 }
             },
             Documents: {
@@ -1522,73 +1522,73 @@ var poi = {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "$!%()$3@!",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 2: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "I @N#B%D! O% T@#&",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 3: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Day 13,773",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 4: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Day 95",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 5: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Day 175",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 6: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Missing Name and Location",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 7: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Missing Name and Location",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 8: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Missing Name and Location",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 9: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Missing Name and Location",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 10: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Missing Name and Location",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 11: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Missing Name and Location",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 12: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Missing Name and Location",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 }
             },
             Radio: {},
@@ -1625,37 +1625,37 @@ var poi = {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "Lost Souls: Fedorov",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 2: {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "Lost Souls: Koslov",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 3: {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "Lost Souls: Tobias",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 4: {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "Lost Souls: Olga",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 5: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Missing Name and Location",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 6: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Missing Name and Location",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 }
             },
             Documents: {
@@ -1663,79 +1663,79 @@ var poi = {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "My Friend!",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 2: {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "Day 291",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 3: {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "Day 3,789",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 4: {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "Day 4,01",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 5: {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "Day 6,157",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 6: {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "Day, 6,289",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 7: {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "Day 2,499",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 8: {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "Day 6,412",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 9: {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "Day 6,416",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 10: {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "Day 6,148",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 11: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Missing Name and Location",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 12: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Missing Name and Location",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 13: {
                     loc: [0, 0],
                     map: "dieMaschine",
                     name: "Missing Name and Location",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 }
             },
             Radio: {
@@ -1791,7 +1791,7 @@ var poi = {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "Lost Souls: Fedorov #2",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 }
             },
             Documents: {
@@ -1799,43 +1799,43 @@ var poi = {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "Day 6,421",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 2: {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "Day 6,457",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 3: {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "Much More To Tell You",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 4: {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "Hello Again",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 5: {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "Divided World",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 6: {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "Trust Me",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 7: {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "More To Follow",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 }
             },
             Radio: {
@@ -1843,19 +1843,19 @@ var poi = {
                     loc: [0, 0],
                     map: "firebaseZ",
                     name: "Crooked House",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 2: {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "Testing... Testing",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 3: {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "New Enemies",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 }
             },
             Artifacts: {
@@ -1872,7 +1872,7 @@ var poi = {
                     desc: "On the lip of the left most tower on the roof of the church."
                 },
                 3: {
-                    loc: [0, 0],
+                    loc: [-123.00462626352191, 194.75],
                     map: "ruka",
                     name: "Ivan's Head",
                     desc: "On a telephone pillar next to the train trestle bridge (use parachute)."
@@ -1891,25 +1891,25 @@ var poi = {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "Lost Souls: Fedorov 1",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 2: {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "Lost Souls: Fedorov 2",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 3: {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "Lost Souls: Fedorov 3",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 4: {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "Missing Name and Location",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 }
             },
             Documents: {
@@ -1917,37 +1917,37 @@ var poi = {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "Day 1",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 2: {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "Day 3",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 3: {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "Day 7",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 4: {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "Day 9",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 5: {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "Day 11",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 6: {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "Day 12",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 }
             },
             Radio: {
@@ -1955,43 +1955,43 @@ var poi = {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "Who I Am",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 2: {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "Great Patriotic",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 3: {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "Tethered",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 4: {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "Changes",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 5: {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "Junkyard",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 6: {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "Invasion",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 },
                 7: {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "Bring Me Home",
-                    desc: ""
+                    desc: "Obtained through the Challenge Machine"
                 }
             },
             Artifacts: {
@@ -2014,10 +2014,10 @@ var poi = {
                     desc: "In the Beach Resort. Under the stairs of the White shack building."
                 },
                 4: {
-                    loc: [0, 0],
+                    loc: [-116.26738576815711, 73.81661416289295],
                     map: "ruka",
                     name: "Broken Essence Canister",
-                    desc: ""
+                    desc: "Right next to the wall buy inside the barn."
                 },
                 5: {
                     loc: [0, 0],
