@@ -156,13 +156,18 @@ aside {
     text-align: center;
 }
 
-.itemList.visible {
+
+/* .visible {
     max-height: 10000px;
-    ;
+} */
+
+.locator-button {
+    position: absolute;
 }
 
-.itemList {
-    max-height: 0px;
+.itemList,
+.faction-list {
+    /* max-height: 0px; */
     overflow: hidden;
     width: 100%;
     display: block;
@@ -178,4 +183,17 @@ aside {
 
 h2 {
     font-size: 1em;
+}
+
+.season-list,
+.category-list,
+.intel-desc {
+    max-height: 0px;
+    overflow: hidden;
+}
+
+.season-list.visible,
+.category-list.visible,
+.intel-desc.visible {
+    max-height: 10000px!important;
 }

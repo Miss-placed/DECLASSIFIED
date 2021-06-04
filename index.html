@@ -48,38 +48,7 @@
             <div class="not-selectable" onClick="setMap(sanatorium,this)">Sanatorium</div>
             <div class="not-selectable" onClick="setMap(alpine,this)">Alpine</div>
         </header>
-        <aside>
-            <div id="requiem">
-                <h1 class="title not-selectable" onload="" onclick="toggleList(this)">
-                    <img src="./assets/img/icons/faction-requiem-icon.png">
-                    <t>Requiem</t><span>+</span></h1>
-                <div class="itemList">
-                </div>
-            </div>
-            <div id="omega">
-                <h1 class="title not-selectable" onload="" onclick="toggleList(this)">
-                    <img src="./assets/img/icons/faction-omega-icon.png">
-                    <t>Omega</t>
-                    <span>+</span>
-                </h1>
-                <div class="itemList">
-                </div>
-            </div>
-            <div id="maxis">
-                <h1 class="title not-selectable" onload="" onclick="toggleList(this)">
-                    <img src="./assets/img/icons/faction-maxis-icon.png">
-                    <t>Maxis</t><span>+</span></h1>
-                <div class="itemList">
-                </div>
-            </div>
-            <div id="darkAether">
-                <h1 class="title not-selectable" onload="" onclick="toggleList(this)">
-                    <img src="./assets/img/icons/faction-darkAether-icon.png">
-                    <t>Dark Aether</t><span>+</span></h1>
-                <div class="itemList">
-                </div>
-            </div>
-
+        <aside id="aside">
         </aside>
 
         <div id="worldMap"></div>
@@ -89,6 +58,7 @@
     <script src="assets/js/icons.js"></script>
     <script src="poi/poi.js"></script>
     <script src="assets/js/maps.js"></script>
+    <script src="assets/js/listgeneration.js"></script>
     <script src="poi/misc.js"></script>
     <script src="assets/js/index.js"></script>
     <script>
@@ -123,59 +93,6 @@
                 cb.style.display = 'none';
             }
         })
-
-        function generateList() {
-
-
-
-            for (let faction in poi) {
-                if (poi.hasOwnProperty(faction)) {
-                    let factionIcon = window[faction.toString() + "Icon"]
-                    for (let i = 0; i <= Object.keys(poi[faction]).length; i++) {
-                        let season = poi[faction][i];
-                        for (let typeOfIntel in season) {
-                            if (season.hasOwnProperty(typeOfIntel)) {
-                                for (let j = 0; j < Object.keys(season[typeOfIntel]).length; j++) {
-                                    let intel = season[typeOfIntel][j + 1];
-
-                                    mapLayer = window[intel.map]
-                                    let title = intel.name
-                                    let desc = intel.desc
-                                    let loc = intel.loc
-
-
-                                    let item = document.createElement("div")
-                                    let itemTitle = document.createElement("h2")
-                                    let itemTitleText = document.createTextNode(title)
-                                    let text = document.createTextNode(desc)
-                                    let button = document.createElement("button")
-                                    let buttonText = document.createTextNode("Locate")
-                                    button.onclick = function() {
-                                        map.flyTo(loc, 5);
-                                    }
-                                    button.appendChild(buttonText)
-                                    itemTitle.appendChild(itemTitleText)
-
-
-                                    item.classList.add("item")
-                                    itemTitle.classList.add("itemTitle")
-                                    item.appendChild(itemTitle)
-                                    item.appendChild(text)
-                                    item.appendChild(button)
-
-                                    document.getElementById(faction).children[1].appendChild(item)
-
-
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-
-
-        }
 
         function toggleList(x) {
             if (x.children[0].innerHTML == "+") {

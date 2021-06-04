@@ -1501,7 +1501,7 @@ var poi = {
                 4: {
                     loc: [0, 0],
                     map: "dieMaschine",
-                    name: "Missing Name and Location",
+                    name: "Approach",
                     desc: "Obtained through the Challenge Machine"
                 },
                 5: {
@@ -1551,13 +1551,13 @@ var poi = {
                 6: {
                     loc: [0, 0],
                     map: "dieMaschine",
-                    name: "Missing Name and Location",
+                    name: "Day 213",
                     desc: "Obtained through the Challenge Machine"
                 },
                 7: {
                     loc: [0, 0],
                     map: "dieMaschine",
-                    name: "Missing Name and Location",
+                    name: "Day 1,646",
                     desc: "Obtained through the Challenge Machine"
                 },
                 8: {
