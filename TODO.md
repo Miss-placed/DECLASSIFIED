@@ -5,17 +5,20 @@
 █████████  ██████  ████████████
 # CLASSIFIED
 - ~~**dont start over from scratch again!**~~
-- ~~decide what the icons are for each type of intel~~
-- ~~add intel category selector~~
+- ~~get icons for markers~~
 - █ ████ ███ ███ ████
-- ~~vector of each map~~
 - ~~system to track collected intel~~
-- ~~list of all intel~~
+- ~~style the intel list~~
+- ~~collect data for markers~~
+
 # DECLASSIFIED
 - refactored the layer generation
+- intel category selector
+- list of all intel
 - general UI
 - change level selector to more appealing menu (might be with UI setup)
 - generate markers through loop
+- vector tiles of ruka
 - vector tiles of duga
 - vector tiles of sanitorium
 - vector tiles of alpine

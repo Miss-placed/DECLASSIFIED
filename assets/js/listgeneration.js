@@ -1,7 +1,6 @@
 function generateList() {
     let pointsOfInterest = poi
-    poi.requiem[0].Artifacts[0]
-    let aside = document.getElementsByTagName("aside")[0]
+    let aside = document.getElementById("aside")
 
     for (faction in pointsOfInterest) {
         let factionElement = createElement("section", [faction, 'faction-list'], faction.toString())
@@ -17,18 +16,23 @@ function generateList() {
                     let intelItem = createElement("div", "intel-item", `-> -> ${item.name}`)
                     let intelDesc = createElement("div", "intel-desc", "")
                     let description = createElement("p", "intel-description", item.desc)
-                    let location = createElement("button", "item-location", "Locate Intel")
-                    location.onclick = function() {
-                        map.flyTo(item.loc, 5)
-                    }
                     intelDesc.appendChild(description)
-                    intelDesc.appendChild(location)
+
+
+
+                    if (item.loc[0] != 0 && item.loc[1] != 0) {
+                        let location = createElement("button", "item-location", "Locate Intel")
+                        location.onclick = function() {
+                            switchAndFly(item.loc, item.map)
+                        }
+                        intelDesc.appendChild(location)
+                    }
 
                     intelItem.appendChild(intelDesc)
                     intelList.appendChild(intelItem)
                 }
                 categoryItems.appendChild(intelList)
-                categoryList.appendChild(categoryItems)
+                if (pointsOfInterest[faction][season][category][1] !== undefined) categoryList.appendChild(categoryItems)
             }
             seasonItems.appendChild(categoryList)
             seasonList.appendChild(seasonItems)
