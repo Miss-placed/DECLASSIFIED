@@ -39,78 +39,88 @@ var baseMaps = {
 //sets season for ease of access than loops through the types of intel within ( Audio, Document etc...)
 //checks if typeOfIntel is actually set
 //loops through all types of intel and makes a marker
-for (let faction in poi) {
-    if (poi.hasOwnProperty(faction)) {
-        let factionIcon = window[faction.toString() + "Icon"]
-        for (let i = 0; i <= Object.keys(poi[faction]).length; i++) {
-            let season = poi[faction][i];
-            for (let typeOfIntel in season) {
-                if (season.hasOwnProperty(typeOfIntel)) {
-                    for (let j = 0; j < Object.keys(season[typeOfIntel]).length; j++) {
-                        let intel = season[typeOfIntel][j + 1];
-                        if (intel.map != "outbreak") {
-                            mapLayer = window[intel.map]
-                            L.marker(intel.loc, { icon: factionIcon }).addTo(mapLayer.Markers)
-                                .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
+if (!debug)
+    for (let faction in poi) {
+        if (poi.hasOwnProperty(faction)) {
+            let factionIcon = window[faction.toString() + "Icon"]
+            for (let i = 0; i <= Object.keys(poi[faction]).length; i++) {
+                let season = poi[faction][i];
+                for (let typeOfIntel in season) {
+                    if (season.hasOwnProperty(typeOfIntel)) {
+                        for (let j = 0; j < Object.keys(season[typeOfIntel]).length; j++) {
+                            let intel = season[typeOfIntel][j + 1];
+                            if (intel.map != "outbreak") {
+                                mapLayer = window[intel.map]
+                                L.marker(intel.loc, { icon: factionIcon }).addTo(mapLayer.Markers)
+                                    .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
+                            }
+
+
+
                         }
-
-
-
                     }
                 }
             }
         }
     }
-}
+if (typeof(miscGolova) !== "undefined") {
+    for (type in miscGolova) {
+        for (item in miscGolova[type]) {
+            var item = miscGolova[type][item]
+            var desc = ((item.desc != "") ? item.desc : '');
 
-for (type in miscGolova) {
-    for (item in miscGolova[type]) {
-        var item = miscGolova[type][item]
-        var desc = ((item.desc != "") ? item.desc : '');
+            L.marker(item.loc, { icon: generalIcon }).addTo(golova.MiscMarkers)
+                .bindPopup(` <h1>${item.name}</h1> ${desc}`);
 
-        L.marker(item.loc, { icon: generalIcon }).addTo(golova.MiscMarkers)
-            .bindPopup(` <h1>${item.name}</h1> ${desc}`);
-
-    }
-}
-for (type in miscAlpine) {
-    for (item in miscAlpine[type]) {
-        var item = miscAlpine[type][item]
-        var desc = ((item.desc != "") ? item.desc : '');
-
-        L.marker(item.loc, { icon: generalIcon }).addTo(alpine.MiscMarkers)
-            .bindPopup(` <h1>${item.name}</h1> ${desc}`);
-
-    }
-}
-for (type in miscRuka) {
-    for (item in miscRuka[type]) {
-        var item = miscRuka[type][item]
-        var desc = ((item.desc != "") ? item.desc : '');
-
-        L.marker(item.loc, { icon: generalIcon }).addTo(ruka.MiscMarkers)
-            .bindPopup(` <h1>${item.name}</h1> ${desc}`);
-
-    }
-}
-for (type in miscDuga) {
-    for (item in miscDuga[type]) {
-        var item = miscDuga[type][item]
-        var desc = ((item.desc != "") ? item.desc : '');
-
-        L.marker(item.loc, { icon: generalIcon }).addTo(duga.MiscMarkers)
-            .bindPopup(` <h1>${item.name}</h1> ${desc}`);
-
+        }
     }
 }
 
-for (type in miscSanatorium) {
-    for (item in miscSanatorium[type]) {
-        var item = miscSanatorium[type][item]
-        var desc = ((item.desc != "") ? item.desc : '');
+if (typeof(miscAlpine) !== "undefined") {
+    for (type in miscAlpine) {
+        for (item in miscAlpine[type]) {
+            var item = miscAlpine[type][item]
+            var desc = ((item.desc != "") ? item.desc : '');
 
-        L.marker(item.loc, { icon: generalIcon }).addTo(sanatorium.MiscMarkers)
-            .bindPopup(` <h1>${item.name}</h1> ${desc}`);
+            L.marker(item.loc, { icon: generalIcon }).addTo(alpine.MiscMarkers)
+                .bindPopup(` <h1>${item.name}</h1> ${desc}`);
 
+        }
+    }
+}
+if (typeof(miscRuka) !== "undefined") {
+    for (type in miscRuka) {
+        for (item in miscRuka[type]) {
+            var item = miscRuka[type][item]
+            var desc = ((item.desc != "") ? item.desc : '');
+
+            L.marker(item.loc, { icon: generalIcon }).addTo(ruka.MiscMarkers)
+                .bindPopup(` <h1>${item.name}</h1> ${desc}`);
+
+        }
+    }
+}
+if (typeof(miscDuga) !== "undefined") {
+    for (type in miscDuga) {
+        for (item in miscDuga[type]) {
+            var item = miscDuga[type][item]
+            var desc = ((item.desc != "") ? item.desc : '');
+
+            L.marker(item.loc, { icon: generalIcon }).addTo(duga.MiscMarkers)
+                .bindPopup(` <h1>${item.name}</h1> ${desc}`);
+
+        }
+    }
+}
+if (typeof(miscSanatorium) !== "undefined") {
+    for (type in miscSanatorium) {
+        for (item in miscSanatorium[type]) {
+            var item = miscSanatorium[type][item]
+            var desc = ((item.desc != "") ? item.desc : '');
+
+            L.marker(item.loc, { icon: generalIcon }).addTo(sanatorium.MiscMarkers)
+                .bindPopup(` <h1>${item.name}</h1> ${desc}`);
+
+        }
     }
 }

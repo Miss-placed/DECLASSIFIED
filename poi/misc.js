@@ -1,4 +1,16 @@
 var miscDuga = {
+    Demented: {
+        1: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        2: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        3: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        4: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        5: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        6: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        7: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        8: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        9: { name: "Demented Echo", desc: "", loc: [0, 0] },
+
+    },
     Ammo: {
         1: { name: "Ammo Crate", desc: "", loc: [0, 0] },
     },
@@ -48,6 +60,18 @@ var miscDuga = {
     }
 }
 var miscRuka = {
+    Demented: {
+        1: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        2: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        3: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        4: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        5: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        6: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        7: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        8: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        9: { name: "Demented Echo", desc: "", loc: [0, 0] },
+
+    },
     Ammo: {
         1: { name: "Ammo Crate", desc: "", loc: [0, 0] },
     },
@@ -97,7 +121,18 @@ var miscRuka = {
     }
 }
 var miscAlpine = {
+    Demented: {
+        1: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        2: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        3: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        4: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        5: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        6: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        7: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        8: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        9: { name: "Demented Echo", desc: "", loc: [0, 0] },
 
+    },
     Ammo: {
         1: { name: "Ammo Crate", desc: "", loc: [0, 0] },
     },
@@ -147,6 +182,18 @@ var miscAlpine = {
     }
 }
 var miscGolova = {
+    Demented: {
+        1: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        2: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        3: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        4: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        5: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        6: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        7: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        8: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        9: { name: "Demented Echo", desc: "", loc: [0, 0] },
+
+    },
     Ammo: {
         1: { name: "Ammo Crate", desc: "", loc: [-197.44126127440828, 135.6875] },
         2: { name: "Ammo Crate", desc: "", loc: [-202.3174546199183, 164.625] },
@@ -216,6 +263,18 @@ var miscGolova = {
     }
 }
 var miscSanatorium = {
+    Demented: {
+        1: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        2: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        3: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        4: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        5: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        6: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        7: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        8: { name: "Demented Echo", desc: "", loc: [0, 0] },
+        9: { name: "Demented Echo", desc: "", loc: [0, 0] },
+
+    },
     Ammo: {
         1: { name: "Ammo Crate", desc: "", loc: [0, 0], },
         2: { name: "Ammo Crate", desc: "", loc: [0, 0], },
