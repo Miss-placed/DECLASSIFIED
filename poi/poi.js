@@ -3,13 +3,13 @@ var poi = {
         0: {
             Audio: {
                 1: {
-                    loc: [0, 0],
+                    loc: [-197.25826830998406, 194],
                     map: "dieMaschine",
                     name: "The Incident",
                     desc: "Right next to power on the left."
                 },
                 2: {
-                    loc: [0, 0],
+                    loc: [-177.51036974640894, 189.75],
                     map: "dieMaschine",
                     name: "Parallel World",
                     desc: "Near PaP, behind the stairs leading up while in the Dark Aether."
@@ -67,7 +67,7 @@ var poi = {
                     desc: "You can only get one radio transmission per game."
                 },
                 3: {
-                    loc: [0, 0],
+                    loc: [-163.2618859726902, 128.25],
                     map: "dieMaschine",
                     name: "Dimension of Death",
                     desc: "You can only get one radio transmission per game."
@@ -609,8 +609,8 @@ var poi = {
         0: {
             Audio: {
                 1: {
-                    loc: [0, 0],
-                    map: "dieMaschine",
+                    loc: [-92.51941390317432, 113],
+                    map: "dieMaschine_underground",
                     name: "8th Guard's First Contact",
                     desc: "Sitting on the ground next to the door to the bunker in Tunnel."
                 },
@@ -1094,19 +1094,19 @@ var poi = {
         0: {
             Audio: {
                 1: {
-                    loc: [0, 0],
+                    loc: [-178.26028994502573, 128],
                     map: "dieMaschine",
                     name: "Cold War Paranoia",
                     desc: "On the couch next to the ee song cassette in first floor of nacht."
                 },
                 2: {
-                    loc: [0, 0],
+                    loc: [-143.01404061003726, 154],
                     map: "dieMaschine",
                     name: "Game Changer",
                     desc: "Drop the crate for the Cryo WW upgrade. The log will be near the destroyed crate and flask."
                 },
                 3: {
-                    loc: [0, 0],
+                    loc: [-113.26720606490512, 131.5],
                     map: "dieMaschine",
                     name: "The VHS Tape",
                     desc: "same place as the canister for the nova 5 WW upgrade. Suck it with the WW."
@@ -1215,7 +1215,7 @@ var poi = {
                     desc: ""
                 },
                 3: {
-                    loc: [0, 0],
+                    loc: [-133.01510462848023, 38.5],
                     map: "dieMaschine",
                     name: "Shared History / Old Friend",
                     desc: ""

@@ -197,3 +197,14 @@ h2 {
 .intel-desc.visible {
     max-height: 10000px!important;
 }
+
+.faction-list>h2 {
+    background-color: #6b6b6b;
+    padding: 10px 15px;
+    color: #dadacd;
+    border-bottom: 1px solid #e8e8d3;
+}
+
+.faction-list:nth-child(2)>h2 {
+    background-color: red;
+}
