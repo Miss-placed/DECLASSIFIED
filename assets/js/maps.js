@@ -8,9 +8,7 @@ var globalSettings = {
     ],
 }
 
-
 var ruka, duga, alpine, golova, sanatorium, dieMaschine, dieMaschine_underground, firebaseZ, firebaseZ_spawn;
-//TODO: need to do this in a smarter way!
 duga = generateLayers(
     "duga", globalSettings);
 ruka = generateLayers(
@@ -29,8 +27,6 @@ firebaseZ = generateLayers(
     "firebaseZ", globalSettings);
 firebaseZ_spawn = generateLayers(
     "firebaseZ_spawn", globalSettings);
-outbreak = generateLayers(
-    "outbreak", globalSettings);
 
 function generateLayers(name, settings) {
     settings.id = name
@@ -56,4 +52,3 @@ function switchAndFly(location = [0, 0], selectedMap = "") {
     setMap(eval(selectedMap), document.getElementById(selectedMap, ifSub))
     map.flyTo(location, 4)
 }
-const nameOf = (f) => (f).toString().replace(/[ |\(\)=>]/g, '');

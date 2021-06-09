@@ -39,7 +39,7 @@ var baseMaps = {
 //sets season for ease of access than loops through the types of intel within ( Audio, Document etc...)
 //checks if typeOfIntel is actually set
 //loops through all types of intel and makes a marker
-if (!debug)
+if (!debug) {
     for (let faction in poi) {
         if (poi.hasOwnProperty(faction)) {
             let factionIcon = window[faction.toString() + "Icon"]
@@ -51,76 +51,34 @@ if (!debug)
                             let intel = season[typeOfIntel][j + 1];
                             if (intel.map != "outbreak") {
                                 mapLayer = window[intel.map]
-                                L.marker(intel.loc, { icon: factionIcon }).addTo(mapLayer.Markers)
-                                    .bindPopup(` <h1>${intel.name}</h1> ${intel.desc}`);
+                                addMarkerToMap(intel.loc, factionIcon, mapLayer, intel.name, intel.desc)
                             }
-
-
-
                         }
                     }
                 }
             }
         }
     }
-if (typeof(miscGolova) !== "undefined") {
-    for (type in miscGolova) {
-        for (item in miscGolova[type]) {
-            var item = miscGolova[type][item]
-            var desc = ((item.desc != "") ? item.desc : '');
-            let icon = ((item.name == "Aether Rift") ? riftIcon : generalIcon)
-            L.marker(item.loc, { icon: icon }).addTo(golova.MiscMarkers)
-                .bindPopup(` <h1>${item.name}</h1> ${desc}`);
 
+    for (maep in miscPOI) {
+        let currmap = miscPOI[maep]
+        if (typeof(miscPOI[maep]) !== "undefined") {
+            for (type in currmap) {
+                for (item in currmap[type]) {
+                    var item = currmap[type][item]
+                    let icon = ((item.name == "Aether Rift") ? riftIcon : generalIcon)
+                    addMarkerToMap(item.loc, icon, window[maep], item.name, item.desc)
+
+                }
+            }
         }
     }
 }
 
-if (typeof(miscAlpine) !== "undefined") {
-    for (type in miscAlpine) {
-        for (item in miscAlpine[type]) {
-            var item = miscAlpine[type][item]
-            var desc = ((item.desc != "") ? item.desc : '');
-            let icon = ((item.name == "Aether Rift") ? riftIcon : generalIcon)
-            L.marker(item.loc, { icon: icon }).addTo(alpine.MiscMarkers)
-                .bindPopup(` <h1>${item.name}</h1> ${desc}`);
 
-        }
-    }
-}
-if (typeof(miscRuka) !== "undefined") {
-    for (type in miscRuka) {
-        for (item in miscRuka[type]) {
-            var item = miscRuka[type][item]
-            var desc = ((item.desc != "") ? item.desc : '');
 
-            L.marker(item.loc, { icon: generalIcon }).addTo(ruka.MiscMarkers)
-                .bindPopup(` <h1>${item.name}</h1> ${desc}`);
-
-        }
-    }
-}
-if (typeof(miscDuga) !== "undefined") {
-    for (type in miscDuga) {
-        for (item in miscDuga[type]) {
-            var item = miscDuga[type][item]
-            var desc = ((item.desc != "") ? item.desc : '');
-
-            L.marker(item.loc, { icon: generalIcon }).addTo(duga.MiscMarkers)
-                .bindPopup(` <h1>${item.name}</h1> ${desc}`);
-
-        }
-    }
-}
-if (typeof(miscSanatorium) !== "undefined") {
-    for (type in miscSanatorium) {
-        for (item in miscSanatorium[type]) {
-            var item = miscSanatorium[type][item]
-            var desc = ((item.desc != "") ? item.desc : '');
-
-            L.marker(item.loc, { icon: generalIcon }).addTo(sanatorium.MiscMarkers)
-                .bindPopup(` <h1>${item.name}</h1> ${desc}`);
-
-        }
-    }
+function addMarkerToMap(loc, icon, maep, name, desc = ``) {
+    desc = ((desc != "") ? `<p>${desc}</p>` : desc);
+    L.marker(loc, { icon: icon }).addTo(maep.MiscMarkers)
+        .bindPopup(` <h1>${name}</h1> ${desc}`);
 }
