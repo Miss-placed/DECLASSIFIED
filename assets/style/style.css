@@ -29,6 +29,8 @@ header {
     display: grid;
     grid-auto-flow: column;
     border-bottom: 1px solid #e8e8d3;
+    overflow-y: hidden;
+    overflow-x: auto;
 }
 
 header>div,
@@ -187,7 +189,8 @@ aside {
 }
 
 .faction-list>div>div:nth-of-type(2)>h2 {
-    background-color: orange;
+    background-color: #a72828;
+    color: #e8e8d3;
 }
 
 .faction-list>div>div:nth-of-type(3)>h2 {
@@ -202,4 +205,45 @@ aside {
     font-size: 0.8em;
     color: #2d2d2d;
     padding: 10px 25px;
+}
+
+.category-item>h2 {
+    padding: 10px 20px;
+    border-bottom: 1px solid #2d2d2d;
+    font-size: 0.7em;
+}
+
+.category-list.visible>.category-item {
+    border-bottom: 1px solid #2d2d2d;
+}
+
+.category-item:last-child {
+    border: 0;
+}
+
+#collapse {
+    z-index: 500;
+    display: flex;
+    background-color: #e8e8d3;
+    position: absolute;
+    top: 90px;
+    left: 12px;
+    padding: 50px 8px;
+    vertical-align: middle;
+    border-radius: 4px;
+    border: 1px solid black;
+    font-size: 2em;
+    float: left
+}
+
+#collapse:hover {
+    background-color: #dadacd;
+}
+
+#aside.menu-closed {
+    width: 0vw;
+}
+
+#worldMap.menu-closed {
+    width: 100vw;
 }
