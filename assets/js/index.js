@@ -68,8 +68,8 @@ if (typeof(miscGolova) !== "undefined") {
         for (item in miscGolova[type]) {
             var item = miscGolova[type][item]
             var desc = ((item.desc != "") ? item.desc : '');
-
-            L.marker(item.loc, { icon: generalIcon }).addTo(golova.MiscMarkers)
+            let icon = ((item.name == "Aether Rift") ? riftIcon : generalIcon)
+            L.marker(item.loc, { icon: icon }).addTo(golova.MiscMarkers)
                 .bindPopup(` <h1>${item.name}</h1> ${desc}`);
 
         }
@@ -81,8 +81,8 @@ if (typeof(miscAlpine) !== "undefined") {
         for (item in miscAlpine[type]) {
             var item = miscAlpine[type][item]
             var desc = ((item.desc != "") ? item.desc : '');
-
-            L.marker(item.loc, { icon: generalIcon }).addTo(alpine.MiscMarkers)
+            let icon = ((item.name == "Aether Rift") ? riftIcon : generalIcon)
+            L.marker(item.loc, { icon: icon }).addTo(alpine.MiscMarkers)
                 .bindPopup(` <h1>${item.name}</h1> ${desc}`);
 
         }

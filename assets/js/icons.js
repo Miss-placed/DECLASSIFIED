@@ -28,3 +28,9 @@ var generalIcon = L.icon({
     iconAnchor: [24, 48],
     popupAnchor: [0, -30]
 });
+var riftIcon = L.icon({
+    iconUrl: 'assets/img/icons/Rift.png',
+    iconSize: [22, 48],
+    iconAnchor: [11, 24],
+    popupAnchor: [0, -30]
+});

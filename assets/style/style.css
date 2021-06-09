@@ -137,54 +137,6 @@ aside {
     background: #e8e8d3;
 }
 
-.title {
-    color: #dadacd;
-    background-color: #2d2d2d;
-    padding: 5px;
-}
-
-.title img {
-    display: inline-block;
-    height: 40px;
-    vertical-align: middle;
-    padding-left: calc(width);
-}
-
-.title span {
-    float: right;
-    width: 20px;
-    text-align: center;
-}
-
-
-/* .visible {
-    max-height: 10000px;
-} */
-
-.locator-button {
-    position: absolute;
-}
-
-.itemList,
-.faction-list {
-    /* max-height: 0px; */
-    overflow: hidden;
-    width: 100%;
-    display: block;
-}
-
-.itemList :nth-child(odd) {
-    background: #e8e8d3;
-}
-
-.itemList :nth-child(even) {
-    background: #dadacd;
-}
-
-h2 {
-    font-size: 1em;
-}
-
 .season-list,
 .category-list,
 .intel-desc {
@@ -203,8 +155,39 @@ h2 {
     padding: 10px 15px;
     color: #dadacd;
     border-bottom: 1px solid #e8e8d3;
+    text-transform: capitalize;
+    justify-content: flex-start;
+    display: flex;
+    text-transform: capitalize;
+    align-content: flex-start;
+    align-items: center;
+    font-size: 25px;
 }
 
-.faction-list:nth-child(2)>h2 {
-    background-color: red;
+.faction-icon {
+    height: 30px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.faction-list>div>div:first-of-type>h2 {
+    background-color: #bbbbbb;
+}
+
+.faction-list>div>div:nth-of-type(2)>h2 {
+    background-color: orange;
+}
+
+.faction-list>div>div:nth-of-type(3)>h2 {
+    background-color: #329e32;
+}
+
+.faction-list>div>div:nth-of-type(4)>h2 {
+    background-color: #7cbeee;
+}
+
+.season-item>h2 {
+    font-size: 0.8em;
+    color: #2d2d2d;
+    padding: 10px 25px;
 }

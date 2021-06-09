@@ -1,19 +1,26 @@
 function generateList() {
     let pointsOfInterest = poi
     let aside = document.getElementById("aside")
-
+    let lib = {
+        Audio: "Audio Logs",
+        Radio: "Radio Transmisions",
+        Documents: "Documents",
+        Artifacts: "Artifacts",
+    }
     for (faction in pointsOfInterest) {
-        let factionElement = createElement("section", [faction, 'faction-list'], faction.toString())
+        let factionText = ((faction.toString() == "darkAether") ? "Dark Aether" : faction.toString())
+        let factionElement = createElement("section", [faction, 'faction-list'], `<img class="faction-icon" src="./assets/img/icons/faction-${faction}-icon.png">${factionText}`)
         let seasonList = createElement("div", "season-list", "")
         for (season in pointsOfInterest[faction]) {
-            let seasonItems = createElement("div", "season-item", `- season ${season}`)
+            let seasonText = ((season == 0) ? "Preseason" : `Season ${season}`)
+            let seasonItems = createElement("div", "season-item", seasonText)
             let categoryList = createElement("div", "category-list", "")
             for (category in pointsOfInterest[faction][season]) {
-                let categoryItems = createElement("div", "category-item", `-> ${category}`)
+                let categoryItems = createElement("div", "category-item", `${lib[category]}`)
                 let intelList = createElement("div", "category-list", "")
                 for (intel in pointsOfInterest[faction][season][category]) {
                     let item = pointsOfInterest[faction][season][category][intel]
-                    let intelItem = createElement("div", "intel-item", `-> -> ${item.name}`)
+                    let intelItem = createElement("div", "intel-item", `${intel}: ${item.name}`)
                     let intelDesc = createElement("div", "intel-desc", "")
                     let description = createElement("p", "intel-description", item.desc)
                     intelDesc.appendChild(description)

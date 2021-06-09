@@ -12,15 +12,16 @@ var miscDuga = {
 
     },
     Rift: {
-        1: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [0, 0] },
-        2: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [0, 0] },
-        3: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [0, 0] },
-        4: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [0, 0] },
+        1: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-125.51568983862387, 243] },
+        2: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-186.25922592658273, 96.5] },
+        3: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-100.76832328427027, 15.25] },
+        4: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-44.274334988473136, 130.25] },
     },
     Fishing: {
-        1: { name: "Fishing Spot", desc: "", loc: [0, 0] },
-        2: { name: "Fishing Spot", desc: "", loc: [0, 0] },
-        3: { name: "Fishing Spot", desc: "", loc: [0, 0] },
+        1: { name: "Fishing Spot", desc: "", loc: [-210.25667228231958, 179.75] },
+        2: { name: "Fishing Spot", desc: "", loc: [-160.01201897499558, 80.25] },
+        3: { name: "Fishing Spot", desc: "", loc: [-194.25837471182834, 130.5] },
+        3: { name: "Fishing Spot", desc: "", loc: [-112.26709966306083, 32.25] },
     },
     Radio: {
         1: { name: "Requiem Radio", desc: "", loc: [0, 0] },
@@ -67,8 +68,8 @@ var miscRuka = {
 
     },
     Rift: {
-        1: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [0, 0] },
-        2: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [0, 0] },
+        1: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-138.26643465153398, 224.75] },
+        2: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-33.77545220783827, 122.25] },
         3: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [0, 0] },
         4: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [0, 0] },
     },
@@ -281,14 +282,13 @@ var miscSanatorium = {
 
 }
 
-let miscdieMaschine = {
-    maxisAudioLog: [-178.26028994502573, 128],
-    requiemRadio: [-163.2618859726902, 128.25],
-    maxisRadio: [-133.01510462848023, 38.5],
+// let miscdieMaschine = {
+//     // requiemRadio: [-163.2618859726902, 128.25],
+//     // maxisRadio: [-133.01510462848023, 38.5],
 
-}
+// }
 
 
-dieMaschine_underground_intel = {
-    omegaAudio: [-92.51941390317432, 113]
-}
+// dieMaschine_underground_intel = {
+//     // omegaAudio: [-92.51941390317432, 113],
+// }

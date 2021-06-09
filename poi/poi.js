@@ -4,13 +4,13 @@ var poi = {
             Audio: {
                 1: {
                     loc: [-197.25826830998406, 194],
-                    map: "dieMaschine",
+                    map: "dieMaschine_underground",
                     name: "The Incident",
-                    desc: "Right next to power on the left."
+                    desc: "Right next to power in the left corner on a shelf."
                 },
                 2: {
                     loc: [-177.51036974640894, 189.75],
-                    map: "dieMaschine",
+                    map: "dieMaschine_underground",
                     name: "Parallel World",
                     desc: "Near PaP, behind the stairs leading up while in the Dark Aether."
                 },
@@ -133,14 +133,14 @@ var poi = {
         1: {
             Audio: {
                 1: {
-                    loc: [0, 0],
-                    map: "dieMaschine",
+                    loc: [-83.63805860968257, 181.75],
+                    map: "dieMaschine_underground",
                     name: "Exo-Element 1",
                     desc: "Obtained from table in med bay, by easter egg computer. On the far wall, close to the box location."
                 },
                 2: {
-                    loc: [0, 0],
-                    map: "dieMaschine",
+                    loc: [-158.2551183720518, 100],
+                    map: "dieMaschine_underground",
                     name: "New Orders",
                     desc: "Obtained from a table in weapons lab, close to the dog gas collection point for the nova 5 WW upgrade."
                 },
@@ -615,14 +615,14 @@ var poi = {
                     desc: "Sitting on the ground next to the door to the bunker in Tunnel."
                 },
                 2: {
-                    loc: [0, 0],
-                    map: "dieMaschine",
+                    loc: [-108.25546417804576, 186.5],
+                    map: "dieMaschine_underground",
                     name: "The Volunteer",
                     desc: "In the room where the PaP part can spawn in med bay. It's the area where the aether tunnel droops you off."
                 },
                 3: {
-                    loc: [0, 0],
-                    map: "dieMaschine",
+                    loc: [-150.87592879943253, 83.375],
+                    map: "dieMaschine_underground",
                     name: "For Mother Russia",
                     desc: "In the room where the PaP part can spawn in the weapon lab.It's the area where the aether tunnel droops you off."
                 }
@@ -666,16 +666,16 @@ var poi = {
         1: {
             Audio: {
                 1: {
-                    loc: [0, 0],
+                    loc: [-116.26688685937224, 150.75],
                     map: "dieMaschine",
                     name: "Turning Point",
-                    desc: ""
+                    desc: "In the bedroom on a table underneath the chalkboard."
                 },
                 2: {
-                    loc: [0, 0],
+                    loc: [-51.773749778329496, 188],
                     map: "dieMaschine",
                     name: "Next Phase",
-                    desc: ""
+                    desc: "in a far corner at the crash site."
                 },
                 3: {
                     loc: [0, 0],
@@ -1106,7 +1106,7 @@ var poi = {
                     desc: "Drop the crate for the Cryo WW upgrade. The log will be near the destroyed crate and flask."
                 },
                 3: {
-                    loc: [-113.26720606490512, 131.5],
+                    loc: [-184.50962493349886, 141.25],
                     map: "dieMaschine",
                     name: "The VHS Tape",
                     desc: "same place as the canister for the nova 5 WW upgrade. Suck it with the WW."
@@ -1507,7 +1507,7 @@ var poi = {
                 5: {
                     loc: [0, 0],
                     map: "dieMaschine",
-                    name: "Missing Name and Location",
+                    name: "Lost Souls: Alice",
                     desc: "Obtained through the Challenge Machine"
                 },
                 6: {
@@ -1563,7 +1563,7 @@ var poi = {
                 8: {
                     loc: [0, 0],
                     map: "dieMaschine",
-                    name: "Missing Name and Location",
+                    name: "Day 937",
                     desc: "Obtained through the Challenge Machine"
                 },
                 9: {
