@@ -71,39 +71,39 @@ var miscPOI = {
         Rift: {
             1: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-138.26643465153398, 224.75] },
             2: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-33.77545220783827, 122.25] },
-            3: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [0, 0] },
-            4: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [0, 0] },
+            3: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-112.4445875369862, 31] },
+            4: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-225.24684057609355, 102] },
         },
         Fishing: {
-            1: { name: "Fishing Spot", desc: "", loc: [0, 0] },
-            2: { name: "Fishing Spot", desc: "", loc: [0, 0] },
-            3: { name: "Fishing Spot", desc: "", loc: [0, 0] },
+            1: { name: "Fishing Spot", desc: "", loc: [-133.70571013511105, 159.5] },
+            2: { name: "Fishing Spot", desc: "", loc: [-109.94470339738334, 113.25] },
+            3: { name: "Fishing Spot", desc: "", loc: [-111.44539855976613, 50.5] },
         },
         Radio: {
-            1: { name: "Requiem Radio", desc: "", loc: [0, 0] },
-            2: { name: "Omega Radio", desc: "", loc: [0, 0] },
-            3: { name: "Maxis Radio", desc: "", loc: [0, 0] },
+            1: { name: "Requiem Radio", desc: "", loc: [-91.44099586467506, 168] },
+            2: { name: "Omega Radio", desc: "", loc: [-179.73189458486328, 112.25] },
+            3: { name: "Maxis Radio", desc: "", loc: [-121.4548991123311, 63] },
         },
         Monkey: {
             1: {
                 name: "Stone Monkey",
-                desc: "Missing Location and description",
-                loc: [0, 0],
+                desc: "On the third shelf next to three boxed.",
+                loc: [-192.98803518591137, 74],
             },
             2: {
                 name: "Stone Monkey",
-                desc: "Missing Location and description",
-                loc: [0, 0],
+                desc: "Behind some pallets next to the train platform.",
+                loc: [-99.69481925778047, 172.5],
             },
             3: {
                 name: "Stone Monkey",
-                desc: "Missing Location and description",
-                loc: [0, 0],
+                desc: "Leaning against the broken down car.",
+                loc: [-72.6359666318105, 65.5],
             },
             4: {
                 name: "Stone Monkey",
-                desc: "Missing Location and description",
-                loc: [0, 0],
+                desc: "At the end of the railroad, under rafters.",
+                loc: [-136.84510939439616, 224.15625],
             },
         },
         Projector: {
@@ -112,7 +112,7 @@ var miscPOI = {
     },
     alpine: {
         Demented: {
-            1: { name: "Demented Echo", desc: "", loc: [0, 0] },
+            1: { name: "Demented Echo", desc: "", loc: [-72.27130253591062, 113.75] },
             2: { name: "Demented Echo", desc: "", loc: [0, 0] },
             3: { name: "Demented Echo", desc: "", loc: [0, 0] },
             4: { name: "Demented Echo", desc: "", loc: [0, 0] },
@@ -130,14 +130,12 @@ var miscPOI = {
             4: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-62.01198129100904, 211.125] },
         },
         Fishing: {
-            1: { name: "Fishing Spot", desc: "", loc: [0, 0] },
-            2: { name: "Fishing Spot", desc: "", loc: [0, 0] },
-            3: { name: "Fishing Spot", desc: "", loc: [0, 0] },
+            1: { name: "Fishing Spot", desc: "", loc: [-92.51914789856357, 45.75] },
         },
         Radio: {
-            1: { name: "Requiem Radio", desc: "", loc: [0, 0] },
-            2: { name: "Omega Radio", desc: "", loc: [0, 0] },
-            3: { name: "Maxis Radio", desc: "", loc: [0, 0] },
+            1: { name: "Requiem Radio", desc: "", loc: [-173.76050274871432, 101.5] },
+            2: { name: "Omega Radio", desc: "", loc: [-122.75707350594077, 71.625] },
+            3: { name: "Maxis Radio", desc: "", loc: [-187.49270371519773, 173.8125] },
         },
         Monkey: {
             1: {
@@ -157,8 +155,8 @@ var miscPOI = {
             },
             4: {
                 name: "Stone Monkey",
-                desc: "Missing Location and description",
-                loc: [0, 0],
+                desc: "Behind the portapotties, by the gassoline tank.",
+                loc: [-51.389667937577585, 106.125],
             },
         },
         Projector: {

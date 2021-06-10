@@ -34,3 +34,27 @@ var riftIcon = L.icon({
     iconAnchor: [11, 24],
     popupAnchor: [0, -30]
 });
+var monkeyIcon = L.icon({
+    iconUrl: 'assets/img/icons/monkeyIcon.png',
+    iconSize: [48, 48],
+    iconAnchor: [24, 24],
+    popupAnchor: [0, -30]
+});
+var radioIcon = L.icon({
+    iconUrl: 'assets/img/icons/radioIcon.png',
+    iconSize: [39, 48],
+    iconAnchor: [19.5, 24],
+    popupAnchor: [0, -30]
+});
+var dementedIcon = L.icon({
+    iconUrl: 'assets/img/icons/dementedIcon.png',
+    iconSize: [48, 48],
+    iconAnchor: [24, 24],
+    popupAnchor: [0, -30]
+});
+var fishingIcon = L.icon({
+    iconUrl: 'assets/img/icons/fisingIcon.png',
+    iconSize: [22, 48],
+    iconAnchor: [11, 24],
+    popupAnchor: [0, -30]
+});

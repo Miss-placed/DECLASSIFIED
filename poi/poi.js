@@ -597,7 +597,7 @@ var poi = {
                     desc: "In the Eletrical Substation. On one of the two taller structures, is very easy to see."
                 },
                 6: {
-                    loc: [-76, 214],
+                    loc: [-76.44202097003014, 214],
                     map: "alpine",
                     name: "Aether Shroud Canister",
                     desc: "In the Maintenance section. It's inside one of the garages."
@@ -886,7 +886,7 @@ var poi = {
                     desc: "In the sanatorium building on the first floor in a side room to the right of the statue."
                 },
                 8: {
-                    loc: [-91.01949370455755, 112.25],
+                    loc: [-76.59028421446651, 107.125],
                     map: "ruka",
                     name: "Lightning Bugs",
                     desc: "On a table near the edge of the Mobile ICBM Site."

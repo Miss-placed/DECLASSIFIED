@@ -60,13 +60,23 @@ if (!debug) {
         }
     }
 
+
     for (maep in miscPOI) {
+        let iconlib = {
+            "Demented": dementedIcon,
+            "Rift": riftIcon,
+            "Radio": radioIcon,
+            "Monkey": monkeyIcon,
+            "Projector": generalIcon,
+            "Signal": generalIcon,
+            "Fishing": generalIcon,
+        }
         let currmap = miscPOI[maep]
         if (typeof(miscPOI[maep]) !== "undefined") {
             for (type in currmap) {
                 for (item in currmap[type]) {
                     var item = currmap[type][item]
-                    let icon = ((item.name == "Aether Rift") ? riftIcon : generalIcon)
+                    let icon = iconlib[type]
                     addMarkerToMap(item.loc, icon, window[maep], item.name, item.desc)
 
                 }
@@ -74,7 +84,6 @@ if (!debug) {
         }
     }
 }
-
 
 
 function addMarkerToMap(loc, icon, maep, name, desc = ``) {
