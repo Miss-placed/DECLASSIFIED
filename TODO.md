@@ -8,10 +8,10 @@
 - ~~get icons for markers~~
 - █ ████ ███ ███ ████
 - ~~system to track collected intel~~
-- ~~style the intel list~~
 - ~~collect data for markers~~
 
 # DECLASSIFIED
+- style the intel list
 - refactored the layer generation
 - intel category selector
 - list of all intel
@@ -22,6 +22,7 @@
 - vector tiles of duga
 - vector tiles of sanitorium
 - vector tiles of alpine
+-█████████  █████████████  █████
 - vector tiles of golova
 - vector tiles of firebase z
 - vector tiles of die maschine

@@ -1,5 +1,5 @@
 
-███████████████[^1]
+███████████████<a name="myfootnote1">1</a>:
 
 ██████
 
@@ -24,6 +24,7 @@ Previously I contributed to [the Red Dead Redemption 2 Collectors map](https://j
  - NanikOs [1](https://github.com/Nanik0s)
  - EdicionGamerYT [1](https://github.com/EdicionGamer) [2](https://www.youtube.com/channel/UCLFdusOixGf1Pto6oHfFdog)
 
-[^1]: ██████ is property of the CIA. a U.S. government agency.
+<sup>[^1](#myfootnote1): ██████ is property of the CIA. a U.S. government agency.</sup>
+
 --------------------------------------------------
 todo: [DECLASSIFIED/master/TODO.md](https://github.com/Odinnh/DECLASSIFIED/blob/master/TODO.md)
