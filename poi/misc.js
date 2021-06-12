@@ -1,7 +1,7 @@
 var miscPOI = {
     duga: {
         Demented: {
-            1: { name: "Demented Echo", desc: "", loc: [0, 0] },
+            1: { name: "Demented Echo", desc: "", loc: [-146.8813286930307, 129] },
             2: { name: "Demented Echo", desc: "", loc: [0, 0] },
             3: { name: "Demented Echo", desc: "", loc: [0, 0] },
             4: { name: "Demented Echo", desc: "", loc: [0, 0] },
@@ -25,9 +25,9 @@ var miscPOI = {
             4: { name: "Fishing Spot", desc: "", loc: [-112.26709966306083, 32.25] },
         },
         Radio: {
-            1: { name: "Requiem Radio", desc: "", loc: [0, 0] },
-            2: { name: "Omega Radio", desc: "", loc: [0, 0] },
-            3: { name: "Maxis Radio", desc: "", loc: [0, 0] },
+            1: { name: "Requiem Radio", desc: "", loc: [-146.90867008778153, 131.25] },
+            2: { name: "Omega Radio", desc: "", loc: [-109.76949370455758, 130.75] },
+            3: { name: "Maxis Radio", desc: "", loc: [-170.50135606933853, 179.25] },
         },
         Monkey: {
             1: {
@@ -188,9 +188,9 @@ var miscPOI = {
             3: { name: "Fishing Spot", desc: "", loc: [-90.2192695878133, 49.75] },
         },
         Radio: {
-            1: { name: "Requiem Radio", desc: "", loc: [0, 0] },
-            2: { name: "Omega Radio", desc: "", loc: [0, 0] },
-            3: { name: "Maxis Radio", desc: "", loc: [-90.2192695878133, 49.75] },
+            1: { name: "Requiem Radio", desc: "", loc: [-118.76510462848023, 59.75] },
+            2: { name: "Omega Radio", desc: "", loc: [-172.7593589288881, 157] },
+            3: { name: "Maxis Radio", desc: "", loc: [-120.51491842525272, 179.5] },
         },
         Monkey: {
             1: {
@@ -232,45 +232,46 @@ var miscPOI = {
 
         },
         Rift: {
-            1: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [0, 0], },
-            2: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [0, 0], },
-            3: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [0, 0], },
-            4: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [0, 0], },
+            1: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-124.7678976768931, 204.5], },
+            2: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-129.01744546905482, 7.75], },
+            3: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-206.5091993261217, 120.5], },
+            4: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-60.27476059585035, 108], },
         },
         Fishing: {
-            1: { name: "Fishing Spot", desc: "", loc: [0, 0], },
-            2: { name: "Fishing Spot", desc: "", loc: [0, 0], },
-            3: { name: "Fishing Spot", desc: "", loc: [0, 0], },
+            1: { name: "Fishing Spot", desc: "", loc: [-145.76566323816283, 219.75], },
+            2: { name: "Fishing Spot", desc: "", loc: [-86.2719941478986, 136.75], },
+            3: { name: "Fishing Spot", desc: "", loc: [-109.26954690547973, 135.75], },
+            3: { name: "Fishing Spot", desc: "", loc: [-133.01701986167762, 166], },
         },
         Radio: {
-            1: { name: "Requiem Radio", desc: "", loc: [0, 0] },
-            2: { name: "Omega Radio", desc: "", loc: [0, 0] },
-            3: { name: "Maxis Radio", desc: "", loc: [0, 0] },
+            1: { name: "Requiem Radio", desc: "", loc: [-179.76204557545668, 190] },
+            2: { name: "Omega Radio", desc: "", loc: [-98.27071732576701, 106] },
+            3: { name: "Maxis Radio", desc: "", loc: [-171.75627549210853, 70.125] },
         },
         Monkey: {
             1: {
                 name: "Stone Monkey",
-                desc: "In the elevated building behind a chain link fence.",
-                loc: [0, 0],
+                desc: "In the Admins office on a bookshelf floor 2.",
+                loc: [-97.2708237276113, 104.75],
             },
             2: {
                 name: "Stone Monkey",
                 desc: "Up in the rafters.",
-                loc: [0, 0],
+                loc: [-191.12750598510377, 139.1875],
             },
             3: {
                 name: "Stone Monkey",
-                desc: "On a pillar at the top of the scafolding.",
-                loc: [0, 0],
+                desc: "Underneath the bridge, on a support pillar.",
+                loc: [-123.446868904061, 174],
             },
             4: {
                 name: "Stone Monkey",
-                desc: "On the top shelf.",
-                loc: [0, 0],
+                desc: "on the top shelf above the bed.",
+                loc: [-158.75765871608442, 33.875],
             },
         },
         Projector: {
-            1: { name: "Projector", desc: "The projector for the Main Quest", loc: [0, 0] },
+            1: { name: "Projector", desc: "The projector for the Main Quest", loc: [-73.77332417095232, 89.75] },
         },
     }
     // Signal: {

@@ -221,6 +221,23 @@ aside {
     border: 0;
 }
 
+.intel-item>h2 {
+    padding: 7px 30px 7px 30px;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.intel-description {
+    padding: 5px 40px;
+}
+
+.item-location {
+    width: calc(20vw - 80px);
+    margin-left: 40px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
 #collapse {
     z-index: 500;
     display: flex;

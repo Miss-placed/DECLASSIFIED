@@ -53,8 +53,8 @@ var dementedIcon = L.icon({
     popupAnchor: [0, -30]
 });
 var fishingIcon = L.icon({
-    iconUrl: 'assets/img/icons/fisingIcon.png',
-    iconSize: [22, 48],
-    iconAnchor: [11, 24],
+    iconUrl: 'assets/img/icons/fishIcon.png',
+    iconSize: [48, 48],
+    iconAnchor: [24, 24],
     popupAnchor: [0, -30]
 });

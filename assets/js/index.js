@@ -69,7 +69,7 @@ if (!debug) {
             "Monkey": monkeyIcon,
             "Projector": generalIcon,
             "Signal": generalIcon,
-            "Fishing": generalIcon,
+            "Fishing": fishingIcon,
         }
         let currmap = miscPOI[maep]
         if (typeof(miscPOI[maep]) !== "undefined") {
