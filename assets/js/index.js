@@ -1,3 +1,6 @@
+var disableMarkers = [];
+var visibleMarkers = [];
+
 var map = L.map('worldMap', {
     crs: L.CRS.Simple,
     center: [-(256 / 2), 256 / 2],
@@ -92,7 +95,39 @@ if (!debug) {
 
 
 function addMarkerToMap(loc, icon, maep, name, desc = ``) {
-    desc = ((desc != "") ? `<p>${desc}</p>` : desc);
-    L.marker(loc, { icon: icon }).addTo(maep.MiscMarkers)
-        .bindPopup(` <h1>${name}</h1> ${desc}`);
+
+    const snippet = $(`<div>
+        <p>${desc}</p>
+        <button type="button" class="btn btn-info remove-button" data-item="${name}">Mark as collected</button>
+    </div>`);
+
+    var marker = L.marker(loc, { icon: icon }).addTo(maep.MiscMarkers)
+        .bindPopup(`<h1>${name}</h1>${snippet.html()}`);
+
+
+    //TODO: use a unique ID instead of name. Use a unique ID in data-item in 'Mark as collected' button
+    if (localStorage.getItem(name) == 'true') {
+        $(marker._icon).css('opacity', '.35');
+        disableMarkers.push(name);
+    }
+    visibleMarkers[name] = marker;
+
 }
+
+map.on('popupopen', function() {
+    $('.remove-button').click(function(e) {
+        var itemId = $(e.target).data("item");
+        if (disableMarkers.includes(itemId.toString())) {
+            disableMarkers = $.grep(disableMarkers, function(value) {
+                return value != itemId.toString();
+            });
+            $(visibleMarkers[itemId]._icon).css('opacity', '1');
+
+            localStorage.setItem(itemId, false);
+        } else {
+            disableMarkers.push(itemId.toString());
+            $(visibleMarkers[itemId]._icon).css('opacity', '0.35');
+            localStorage.setItem(itemId, true);
+        }
+    });
+});
