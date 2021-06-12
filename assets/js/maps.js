@@ -1,4 +1,5 @@
 var globalSettings = {
+    attribution: 'Want to help out? <a href="https://github.com/Odinnh/DECLASSIFIED">Github</a>. See all <a href="https://github.com/Odinnh/DECLASSIFIED#contributors">Contributors</a>',
     id: '',
     tileSize: 512,
     zoomOffset: -1,

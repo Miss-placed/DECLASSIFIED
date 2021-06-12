@@ -16,6 +16,10 @@ var map = L.map('worldMap', {
     noWrap: true,
     doubleClickZoom: false,
 });
+
+L.control.attribution({ prefix: 'DECLASSIFIED' })
+document.getElementsByClassName("leaflet-control-attribution")[0].getElementsByTagName("a")[0].title = "Declassified An Interactive map By Odinn"
+document.getElementsByClassName("leaflet-control-attribution")[0].getElementsByTagName("a")[0].innerHTML = "DECLASSIFIED"
 var baseMaps = {
     "Die Maschine": dieMaschine.Layer,
     "Die Maschine Underground": dieMaschine_underground.Layer,
@@ -27,6 +31,7 @@ var baseMaps = {
     "Golova": golova.Layer,
     "Sanatorium": sanatorium.Layer,
 };
+L.control.attribution()
 
 // TODO: improve this to not represent a staircade :@
 //##########################################################3

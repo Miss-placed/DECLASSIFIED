@@ -22,7 +22,9 @@ function generateList() {
                     let item = pointsOfInterest[faction][season][category][intel]
                     let intelItem = createElement("div", "intel-item", `${intel}: ${item.name}`)
                     let intelDesc = createElement("div", "intel-desc", "")
+                    let intelLocation = createElement("p", "intel-subtitle", item.map)
                     let description = createElement("p", "intel-description", item.desc)
+                    intelDesc.appendChild(intelLocation)
                     intelDesc.appendChild(description)
 
 
@@ -34,7 +36,6 @@ function generateList() {
                         }
                         intelDesc.appendChild(location)
                     }
-
                     intelItem.appendChild(intelDesc)
                     intelList.appendChild(intelItem)
                 }

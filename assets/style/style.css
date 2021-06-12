@@ -227,6 +227,11 @@ aside {
     text-transform: uppercase;
 }
 
+.intel-subtitle {
+    padding-left: 40px;
+    font-size: 0.6em;
+}
+
 .intel-description {
     padding: 5px 40px;
 }
