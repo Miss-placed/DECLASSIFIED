@@ -929,7 +929,7 @@ var poi = {
                     loc: [-130.56088082901556, 147.46061049785988],
                     map: "outbreak",
                     name: "golova - Off The Hook",
-                    desc: "In the Wonderfizz building, in one of the side rooms."
+                    desc: "Infront of the Wonderfizz, in one of the side rooms."
                 },
                 5: {
                     loc: [-133.5, 186.75],
@@ -1116,7 +1116,7 @@ var poi = {
             },
             Artifacts: {
                 1: {
-                    loc: [-94.00771191700656, 159.375],
+                    loc: [-115.01701986167761, 186.5],
                     map: "ruka",
                     name: "Mangler Cannon",
                     desc: "Near the base of the Train Trestle closest to the building. It's sitting at the base of a tree."
