@@ -611,7 +611,47 @@ var poi = {
                     map: "zoo",
                     name: "You know better.",
                     desc: "Next to the monorail up in the cages overpass."
+                },
+                2: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: ""
                 }
+            },
+            Documents: {
+                1: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: ""
+                },
+                2: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: ""
+                },
+                3: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: ""
+                },
+            },
+            Radio: {
+                1: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: ""
+                },
+                2: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: ""
+                },
             },
             Artifacts: {
                 1: {
@@ -619,6 +659,12 @@ var poi = {
                     map: "zoo",
                     name: "Healing Aura Canister",
                     desc: "Underneath the sink in the corner."
+                },
+                2: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: ""
                 }
             }
         }
@@ -1120,7 +1166,53 @@ var poi = {
                     map: "zoo",
                     name: "Day of victory.",
                     desc: "On top of the rectangular tower of the aquarium. Might need to use a jumppad.."
-                }
+                },
+                3: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: ""
+                },
+                4: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: ""
+                },
+                5: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: ""
+                },
+            },
+            Documents: {
+                1: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: ""
+                },
+                2: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: ""
+                },
+            },
+            Radio: {
+                1: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: ""
+                },
+                2: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: ""
+                },
             },
             Artifacts: {
                 1: {
@@ -1128,7 +1220,13 @@ var poi = {
                     map: "zoo",
                     name: "Aether Reactor Model.",
                     desc: "Between the Rail holds on top of the support pillar."
-                }
+                },
+                2: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: ""
+                },
             }
         }
     },
@@ -1531,7 +1629,21 @@ var poi = {
                     map: "zoo",
                     name: "The Confrontation",
                     desc: "In one of the animal cages on some hay"
-                }
+                },
+                3: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: ""
+                },
+            },
+            Documents: {
+                1: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: ""
+                },
             }
         }
     },
@@ -2092,12 +2204,54 @@ var poi = {
             }
         },
         4: {
+            Audio: {
+                1: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: "Obtained Through the challenge machine."
+                },
+            },
+            Documents: {
+                1: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: "Obtained Through the challenge machine."
+                },
+                2: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: "Obtained Through the challenge machine."
+                },
+            },
+            Radio: {
+                1: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: "Obtained Through the challenge machine."
+                },
+                2: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: "Obtained Through the challenge machine."
+                },
+            },
             Artifacts: {
                 1: {
                     loc: [-76.77108973222204, 130.5],
                     map: "zoo",
                     name: "Empty stamin-up can",
                     desc: "Inside the diner under the counter."
+                },
+                1: {
+                    loc: [0, 0],
+                    map: "outbreak",
+                    name: "missing name and location",
+                    desc: ""
                 }
             }
         }
