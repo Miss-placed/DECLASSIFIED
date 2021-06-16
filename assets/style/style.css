@@ -189,8 +189,8 @@ aside {
 }
 
 .faction-list>div>div:nth-of-type(2)>h2 {
-    background-color: #a72828;
-    color: #e8e8d3;
+    background-color: #e52114;
+    /* color: #e8e8d3; */
 }
 
 .faction-list>div>div:nth-of-type(3)>h2 {
@@ -199,6 +199,10 @@ aside {
 
 .faction-list>div>div:nth-of-type(4)>h2 {
     background-color: #7cbeee;
+}
+
+.faction-list>div>div:nth-of-type(5)>h2 {
+    background-color: #c84c34;
 }
 
 .season-item>h2 {

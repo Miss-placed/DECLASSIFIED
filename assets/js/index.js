@@ -32,6 +32,7 @@ var baseMaps = {
     "Ruka": ruka.Layer,
     "Alpine": alpine.Layer,
     "Golova": golova.Layer,
+    "zoo": zoo.Layer,
     "Sanatorium": sanatorium.Layer,
 };
 L.control.attribution()
