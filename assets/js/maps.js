@@ -10,7 +10,9 @@ var globalSettings = {
     ],
 }
 
-var ruka, duga, alpine, golova, zoo, sanatorium, dieMaschine, dieMaschine_underground, firebaseZ, firebaseZ_spawn;
+var zoo, ruka, duga, alpine, golova, sanatorium, dieMaschine, dieMaschine_underground, firebaseZ, firebaseZ_spawn;
+zoo = generateLayers(
+    "zoo", globalSettings);
 duga = generateLayers(
     "duga", globalSettings);
 ruka = generateLayers(
@@ -19,8 +21,6 @@ alpine = generateLayers(
     "alpine", globalSettings);
 golova = generateLayers(
     "golova", globalSettings);
-zoo = generateLayers(
-    "zoo", globalSettings);
 sanatorium = generateLayers(
     "sanatorium", globalSettings);
 dieMaschine = generateLayers(
