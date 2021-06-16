@@ -12,7 +12,7 @@ var map = L.map('worldMap', {
     maxZoom: 5,
     minZoom: 1,
     layers: [
-        ruka.Layer
+        zoo.Layer
     ],
     tap: true,
     tapTolerance: 30,
