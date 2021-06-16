@@ -1,4 +1,58 @@
 var miscPOI = {
+    zoo: {
+        Demented: {
+            1: { name: "Demented Echo", desc: "", loc: [-150.26326919666607, 161.5] }, //done
+            2: { name: "Demented Echo", desc: "", loc: [0, 0] },
+            3: { name: "Demented Echo", desc: "", loc: [0, 0] },
+            4: { name: "Demented Echo", desc: "", loc: [0, 0] },
+            5: { name: "Demented Echo", desc: "", loc: [0, 0] },
+            6: { name: "Demented Echo", desc: "", loc: [0, 0] },
+            7: { name: "Demented Echo", desc: "", loc: [0, 0] },
+            8: { name: "Demented Echo", desc: "", loc: [0, 0] },
+            9: { name: "Demented Echo", desc: "", loc: [0, 0] },
+
+        },
+        Rift: {
+            1: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-38.27518620322752, 135] }, //done
+            2: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-152.2630563929775, 234.25] }, //done
+            3: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-195.7584279127505, 90] }, //done
+            4: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-111.51739226813265, 21.75] }, //done
+        },
+        Fishing: {
+            1: { name: "Fishing Spot", desc: "", loc: [-131.5152642312467, 172.75] }, //done
+            2: { name: "Fishing Spot", desc: "", loc: [-169.76119436070226, 166.25] }, //done
+        },
+        Radio: {
+            1: { name: "Requiem Radio", desc: "", loc: [-64.77236655435361, 138.75] }, //done
+            2: { name: "Omega Radio", desc: "", loc: [-197.50824170952296, 188] }, //done
+            3: { name: "Maxis Radio", desc: "", loc: [-124.51600904415677, 59] }, //done
+        },
+        Monkey: {
+            1: {
+                name: "Stone Monkey",
+                desc: "On top of the small building",
+                loc: [0, 0],
+            },
+            2: {
+                name: "Stone Monkey",
+                desc: "On top of a stack of barrels.",
+                loc: [0, 0],
+            },
+            3: {
+                name: "Stone Monkey",
+                desc: "At the back on top of the busstop.",
+                loc: [0, 0],
+            },
+            4: {
+                name: "Stone Monkey",
+                desc: "Behind the wall",
+                loc: [0, 0],
+            },
+        },
+        Projector: {
+            1: { name: "Projector", desc: "The projector for the Main Quest", loc: [0, 0] },
+        }
+    },
     duga: {
         Demented: {
             1: { name: "Demented Echo", desc: "", loc: [-146.8813286930307, 129] },

@@ -604,6 +604,24 @@ var poi = {
                 }
             },
         },
+        4: {
+            Audio: {
+                1: {
+                    loc: [-155.01276378790567, 143],
+                    map: "zoo",
+                    name: "You know better.",
+                    desc: "Next to the monorail up in the cages overpass."
+                }
+            },
+            Artifacts: {
+                1: {
+                    loc: [-132.7572597091683, 54.875],
+                    map: "zoo",
+                    name: "Healing Aura Canister",
+                    desc: "Underneath the sink in the corner."
+                }
+            }
+        }
     },
     omega: {
         0: {
@@ -1089,6 +1107,30 @@ var poi = {
                 }
             }
         },
+        4: {
+            Audio: {
+                1: {
+                    loc: [-172.01095495655258, 156.75],
+                    map: "zoo",
+                    name: "Greater Threat",
+                    desc: "On a bench on the first floor of the Restaurant"
+                },
+                2: {
+                    loc: [-161.2620987763788, 164.5],
+                    map: "zoo",
+                    name: "Day of victory.",
+                    desc: "On top of the rectangular tower of the aquarium. Might need to use a jumppad.."
+                }
+            },
+            Artifacts: {
+                1: {
+                    loc: [-202.5077097003015, 134],
+                    map: "zoo",
+                    name: "Aether Reactor Model.",
+                    desc: "Between the Rail holds on top of the support pillar."
+                }
+            }
+        }
     },
     maxis: {
         0: {
@@ -1473,6 +1515,22 @@ var poi = {
                     map: "golova",
                     name: "maxis's Watch",
                     desc: "In the Lower West town area. It's on the roof of the building with the crafting bench, requires a jump pad to get to. It's tucked in between the roof itself and one of the 4 spire things with a flag on it."
+                }
+            }
+        },
+        4: {
+            Audio: {
+                1: {
+                    loc: [-196.25837471182834, 179.75],
+                    map: "zoo",
+                    name: "Take Her",
+                    desc: "In the basement of the zoo facilities in a shelf of one of the work stations"
+                },
+                2: {
+                    loc: [-146.76364160312113, 159.75],
+                    map: "zoo",
+                    name: "The Confrontation",
+                    desc: "In one of the animal cages on some hay"
                 }
             }
         }
@@ -2032,6 +2090,24 @@ var poi = {
                     desc: "In the lodge. In Room 201, above the bed."
                 }
             }
+        },
+        4: {
+            Artifacts: {
+                1: {
+                    loc: [-76.77108973222204, 130.5],
+                    map: "zoo",
+                    name: "Empty stamin-up can",
+                    desc: "Inside the diner under the counter."
+                }
+            }
         }
+    }
+}
+var newa = {
+    1: {
+        loc: [-132.01521103032454, 54],
+        map: "zoo",
+        name: "Healing Aura Canister",
+        desc: "Underneath the desk in the corner."
     }
 }

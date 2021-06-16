@@ -1,5 +1,6 @@
 var globalSettings = {
-    attribution: 'Want to help out? <a href="https://github.com/Odinnh/DECLASSIFIED">Github</a>. See all <a href="https://github.com/Odinnh/DECLASSIFIED#contributors">Contributors</a>',
+    prefix: false,
+    attribution: 'Want to help out? <a href="https://github.com/Odinnh/DECLASSIFIED">Github</a>. ||  See all <a href="https://github.com/Odinnh/DECLASSIFIED#contributors">Contributors</a>',
     id: '',
     tileSize: 512,
     zoomOffset: -1,
@@ -9,7 +10,7 @@ var globalSettings = {
     ],
 }
 
-var ruka, duga, alpine, golova, sanatorium, dieMaschine, dieMaschine_underground, firebaseZ, firebaseZ_spawn;
+var ruka, duga, alpine, golova, zoo, sanatorium, dieMaschine, dieMaschine_underground, firebaseZ, firebaseZ_spawn;
 duga = generateLayers(
     "duga", globalSettings);
 ruka = generateLayers(
@@ -18,6 +19,8 @@ alpine = generateLayers(
     "alpine", globalSettings);
 golova = generateLayers(
     "golova", globalSettings);
+zoo = generateLayers(
+    "zoo", globalSettings);
 sanatorium = generateLayers(
     "sanatorium", globalSettings);
 dieMaschine = generateLayers(
@@ -35,7 +38,6 @@ function generateLayers(name, settings) {
         Layer: new L.LayerGroup(),
         Markers: new L.LayerGroup(),
         MiscMarkers: new L.LayerGroup(),
-        MarkersVisible: true,
         Tiles: L.tileLayer(`./maps/${name}/{z}/{x}_{y}.png`, settings)
     }
     object.Tiles.addTo(object.Layer);
