@@ -623,13 +623,13 @@ var poi = {
                 1: {
                     loc: [0, 0],
                     map: "outbreak",
-                    name: "missing name and location",
+                    name: "DASA Station Blueprint",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
                     map: "outbreak",
-                    name: "missing name and location",
+                    name: "The Omega Eight",
                     desc: ""
                 },
                 3: {
@@ -643,13 +643,13 @@ var poi = {
                 1: {
                     loc: [0, 0],
                     map: "outbreak",
-                    name: "missing name and location",
+                    name: "Welcome Back",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
                     map: "outbreak",
-                    name: "missing name and location",
+                    name: "Patterns",
                     desc: ""
                 },
             },
@@ -1190,7 +1190,7 @@ var poi = {
                 1: {
                     loc: [0, 0],
                     map: "outbreak",
-                    name: "missing name and location",
+                    name: "Ravenov's Burn Notice",
                     desc: ""
                 },
                 2: {
@@ -1204,13 +1204,13 @@ var poi = {
                 1: {
                     loc: [0, 0],
                     map: "outbreak",
-                    name: "missing name and location",
+                    name: "Omega's Reputation",
                     desc: ""
                 },
                 2: {
                     loc: [0, 0],
                     map: "outbreak",
-                    name: "missing name and location",
+                    name: "The One-Eyed Cowboy",
                     desc: ""
                 },
             },
@@ -1641,7 +1641,7 @@ var poi = {
                 1: {
                     loc: [0, 0],
                     map: "outbreak",
-                    name: "missing name and location",
+                    name: "Quarantine Diary 9",
                     desc: ""
                 },
             }
@@ -2208,7 +2208,7 @@ var poi = {
                 1: {
                     loc: [0, 0],
                     map: "outbreak",
-                    name: "missing name and location",
+                    name: "We Are Waiting",
                     desc: "Obtained Through the challenge machine."
                 },
             },
@@ -2216,13 +2216,13 @@ var poi = {
                 1: {
                     loc: [0, 0],
                     map: "outbreak",
-                    name: "missing name and location",
+                    name: "Day 4,513",
                     desc: "Obtained Through the challenge machine."
                 },
                 2: {
                     loc: [0, 0],
                     map: "outbreak",
-                    name: "missing name and location",
+                    name: "Day 4,729",
                     desc: "Obtained Through the challenge machine."
                 },
             },
@@ -2230,13 +2230,13 @@ var poi = {
                 1: {
                     loc: [0, 0],
                     map: "outbreak",
-                    name: "missing name and location",
+                    name: "Secret Contact",
                     desc: "Obtained Through the challenge machine."
                 },
                 2: {
                     loc: [0, 0],
                     map: "outbreak",
-                    name: "missing name and location",
+                    name: "Bring Me Home 2",
                     desc: "Obtained Through the challenge machine."
                 },
             },
