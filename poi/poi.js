@@ -661,10 +661,10 @@ var poi = {
                     desc: "Underneath the sink in the corner."
                 },
                 2: {
-                    loc: [0, 0],
-                    map: "outbreak",
-                    name: "missing name and location",
-                    desc: ""
+                    loc: [-47.524148785245615, 184.75],
+                    map: "zoo",
+                    name: "Recon Rover Module",
+                    desc: "Secont floor (need better desc)"
                 }
             }
         }
@@ -1222,10 +1222,10 @@ var poi = {
                     desc: "Between the Rail holds on top of the support pillar."
                 },
                 2: {
-                    loc: [0, 0],
-                    map: "outbreak",
-                    name: "missing name and location",
-                    desc: ""
+                    loc: [-162.0110613583969, 172.5],
+                    map: "zoo",
+                    name: "Inversion Warhead Model",
+                    desc: "Up on the roof between a wooden wall and the rocks."
                 },
             }
         }
@@ -2244,10 +2244,10 @@ var poi = {
                 1: {
                     loc: [-76.77108973222204, 130.5],
                     map: "zoo",
-                    name: "Empty stamin-up can",
+                    name: "Empty Stamin-up Can",
                     desc: "Inside the diner under the counter."
                 },
-                1: {
+                2: {
                     loc: [0, 0],
                     map: "outbreak",
                     name: "missing name and location",
