@@ -30,27 +30,27 @@ var miscPOI = {
         Monkey: {
             1: {
                 name: "Stone Monkey",
-                desc: "On top of the small building",
-                loc: [0, 0],
+                desc: "Midway up the stairs in the book nook.",
+                loc: [-77.15817501439264, 174.77497502497502],
             },
             2: {
                 name: "Stone Monkey",
-                desc: "On top of a stack of barrels.",
-                loc: [0, 0],
+                desc: "In the corner on a green cabinet.",
+                loc: [-88.66479562464018, 131.2971467308202],
             },
             3: {
                 name: "Stone Monkey",
-                desc: "At the back on top of the busstop.",
-                loc: [0, 0],
+                desc: "Between a wall and a rock.",
+                loc: [-153.7372985031664, 139.75984347285367],
             },
             4: {
                 name: "Stone Monkey",
-                desc: "Behind the wall",
-                loc: [0, 0],
+                desc: "In the middle of the large shelves.",
+                loc: [-122.72992227979275, 58.785806030703995],
             },
         },
         Projector: {
-            1: { name: "Projector", desc: "The projector for the Main Quest", loc: [0, 0] },
+            1: { name: "Projector", desc: "The projector for the Main Quest", loc: [-135.17490644789868, 147.82830052600463] },
         }
     },
     duga: {
