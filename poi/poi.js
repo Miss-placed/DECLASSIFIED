@@ -613,10 +613,10 @@ var poi = {
                     desc: "Next to the monorail up in the cages overpass."
                 },
                 2: {
-                    loc: [0, 0],
+                    loc: [-89.6905950744813, 131.96875],
                     map: "outbreak",
-                    name: "missing name and location",
-                    desc: ""
+                    name: "Aftermath",
+                    desc: "On the desks in the center of the room."
                 }
             },
             Documents: {
@@ -2078,7 +2078,7 @@ var poi = {
                 4: {
                     loc: [0, 0],
                     map: "outbreak",
-                    name: "Missing Name and Location",
+                    name: "Great and Terrible.",
                     desc: "Obtained through the Challenge Machine"
                 }
             },
