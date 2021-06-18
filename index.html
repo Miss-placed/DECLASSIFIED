@@ -72,6 +72,7 @@
     <script src="assets/js/index.js"></script>
     <script>
         var currentMap = 'zoo';
+        let isMobile = false
 
 
 
@@ -112,6 +113,14 @@
             sidebar.classList.toggle("menu-closed")
             worldmap.classList.toggle("menu-closed")
             window.dispatchEvent(new Event('resize'));
+        }
+        if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
+            let sidebar = document.getElementById("aside")
+            let worldmap = document.getElementById("worldMap")
+            sidebar.classList.add("mobile-view")
+            worldmap.classList.add("mobile-view")
+            isMobile = true
+            toggleAside()
         }
     </script>
 </body>

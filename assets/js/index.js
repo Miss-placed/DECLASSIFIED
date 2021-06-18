@@ -61,6 +61,7 @@ if (!debug) {
                             if (intel.map != "outbreak") {
                                 mapLayer = window[intel.map]
                                 addMarkerToMap(intel.loc, factionIcon, mapLayer, intel.name, intel.desc)
+                                    // console.log(intel.loc, factionIcon, mapLayer, intel.name, intel.desc)
                             }
                         }
                     }
@@ -87,6 +88,7 @@ if (!debug) {
                 for (item in currmap[type]) {
                     var item = currmap[type][item]
                     let icon = iconlib[type]
+                    if (typeof iconlib[type] == "undefined") icon = generalIcon
                     addMiscMarkerToMap(item.loc, icon, window[maep], item.name, item.desc)
 
                 }

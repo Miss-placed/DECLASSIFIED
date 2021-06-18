@@ -1181,7 +1181,7 @@ var poi = {
                     },
                     5: {
                         loc: [0, 0],
-                        map: "sanatoruim",
+                        map: "sanatorium",
                         name: "The Trap",
                         desc: "Obtained during the Outbreak EE#2"
                     },
@@ -1195,7 +1195,7 @@ var poi = {
                     },
                     2: {
                         loc: [0, 0],
-                        map: "sanatoruim",
+                        map: "sanatorium",
                         name: "Aetherium Neutralizer Blueprint.",
                         desc: "Obtained during the Outbreak EE#2"
                     },
