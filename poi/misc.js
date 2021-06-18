@@ -132,7 +132,6 @@ var miscPOI = {
             1: { name: "Red Aether Rift", desc: "Jump through all the rifts to continue the Easter Egg", loc: [-133.6321799077851, 44.25] }, //done
 
         },
-
         Fishing: {
             1: { name: "Fishing Spot", desc: "", loc: [-133.70571013511105, 159.5] },
             2: { name: "Fishing Spot", desc: "", loc: [-109.94470339738334, 113.25] },
@@ -295,10 +294,12 @@ var miscPOI = {
 
         },
         Chopper: {
-            1: { name: "Chopper Gunner", desc: "Hold out untill the wave is dead.", loc: [-170.51300319205535, 39.25], },
+            1: { name: "Chopper Gunner", desc: "Hold out untill the wave is dead to continue with the Easter Egg", loc: [-170.51300319205535, 39.25], },
         },
-        Orb: {
-            1: { name: "Aetherial orb", desc: "", loc: [-59.27484039723356, 81.75], },
+        RedOrb: {
+            1: { name: "Aetherial orb", desc: "Shoot it and chase it untill its above the rover.", loc: [-59.27484039723356, 81.75], },
+            1: { name: "Aetherial orb", desc: "Shoot it and chase it untill its above the rover.", loc: [-59.27484039723356, 81.75], },
+            1: { name: "Aetherial orb", desc: "Shoot it and chase it untill its above the rover.", loc: [-59.27484039723356, 81.75], },
 
         },
         Rift: {

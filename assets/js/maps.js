@@ -49,9 +49,8 @@ function generateLayers(name, settings) {
 
 function switchAndFly(location = [0, 0], selectedMap = "") {
     let ifSub = false
-    document.getElementById(selectedMap)
     if (selectedMap == "firebaseZ" || selectedMap == "firebaseZ_spawn" ||
         selectedMap == "dieMaschine" || selectedMap == "dieMaschine_underground") ifSub = true
-    setMap(eval(selectedMap), document.getElementById(selectedMap, ifSub))
+    setMap(selectedMap, document.getElementById(selectedMap), ifSub)
     map.flyTo(location, 4)
 }

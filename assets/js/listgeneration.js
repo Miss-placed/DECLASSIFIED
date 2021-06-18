@@ -33,6 +33,7 @@ function generateList() {
                         let location = createElement("button", "item-location", "Locate Intel")
                         location.onclick = function() {
                             switchAndFly(item.loc, item.map)
+                            if (isMobile) toggleAside()
                         }
                         intelDesc.appendChild(location)
                     }
