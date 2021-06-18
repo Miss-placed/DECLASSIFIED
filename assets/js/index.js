@@ -74,6 +74,7 @@ if (!debug) {
         let iconlib = {
             "Demented": dementedIcon,
             "Rift": riftIcon,
+            "RedRift": redRiftIcon,
             "Radio": radioIcon,
             "Monkey": monkeyIcon,
             "Projector": generalIcon,
@@ -86,7 +87,7 @@ if (!debug) {
                 for (item in currmap[type]) {
                     var item = currmap[type][item]
                     let icon = iconlib[type]
-                    addMarkerToMap(item.loc, icon, window[maep], item.name, item.desc)
+                    addMiscMarkerToMap(item.loc, icon, window[maep], item.name, item.desc)
 
                 }
             }
@@ -96,13 +97,15 @@ if (!debug) {
 
 
 function addMarkerToMap(loc, icon, maep, name, desc = ``) {
-
-    const snippet = $(`<div>
+    // console.log(loc, icon, maep, name, desc)
+    let snippet = $(`<div></div>`)
+    if (desc !== '') {
+        snippet = $(`<div>
         <p>${desc}</p>
-        <button type="button" class="btn btn-info remove-button" data-item="${name}">Mark as collected</button>
-    </div>`);
-
-    var marker = L.marker(loc, { icon: icon }).addTo(maep.MiscMarkers)
+            <button type="button" class="btn btn-info remove-button" data-item="${name}">Mark as collected</button>
+        </div>`);
+    }
+    var marker = L.marker(loc, { icon: icon }).addTo(maep.Markers)
         .bindPopup(`<h1>${name}</h1>${snippet.html()}`);
 
 
@@ -112,6 +115,17 @@ function addMarkerToMap(loc, icon, maep, name, desc = ``) {
         disableMarkers.push(name);
     }
     visibleMarkers[name] = marker;
+
+}
+
+function addMiscMarkerToMap(loc, icon, maep, name, desc = ``) {
+    let snippet = $(`<div></div>`)
+    if (desc !== '') {
+        snippet = $(`<div>
+        <p>${desc}</p></div>`);
+    }
+    var marker = L.marker(loc, { icon: icon }).addTo(maep.MiscMarkers)
+        .bindPopup(`<h1>${name}</h1>${snippet.html()}`);
 
 }
 

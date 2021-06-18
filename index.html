@@ -31,25 +31,25 @@
         <div class="dropdown dropbtn">
             Die Maschine
             <div class="dropdown-content">
-                <div id="dieMaschine" class="dropdown-item not-selectable" onClick="setMap(dieMaschine,this,true)">Die Maschine Surface</div>
-                <div id="dieMaschine_underground" class="dropdown-item not-selectable" onClick="setMap(dieMaschine_underground,this,true)">Die Maschine Underground</div>
+                <div id="dieMaschine" class="dropdown-item not-selectable" onClick="setMap('dieMaschine',this,true)">Die Maschine Surface</div>
+                <div id="dieMaschine_underground" class="dropdown-item not-selectable" onClick="setMap('dieMaschine_underground',this,true)">Die Maschine Underground</div>
             </div>
         </div>
 
         <div class="dropdown dropbtn">
             Firebase Z
             <div class="dropdown-content">
-                <div id="firebaseZ_spawn" class="dropdown-item not-selectable" onClick="setMap(firebaseZ_spawn,this,true)">Firebase Z Spawn</div>
-                <div id="firebaseZ" class="dropdown-item not-selectable" onClick="setMap(firebaseZ,this,true)">Firebase Z Main Base</div>
+                <div id="firebaseZ_spawn" class="dropdown-item not-selectable" onClick="setMap('firebaseZ_spawn',this,true)">Firebase Z Spawn</div>
+                <div id="firebaseZ" class="dropdown-item not-selectable" onClick="setMap('firebaseZ',this,true)">Firebase Z Main Base</div>
             </div>
         </div>
 
-        <div id="zoo" class="current-map not-selectable" onClick="setMap(zoo,this)">Zoo</div>
-        <div id="duga" class="not-selectable" onClick="setMap(duga,this)">Duga</div>
-        <div id="ruka" class=" not-selectable" onClick="setMap(ruka,this)">Ruka</div>
-        <div id="golova" class="not-selectable" onClick="setMap(golova,this)">Golova</div>
-        <div id="sanatorium" class="not-selectable" onClick="setMap(sanatorium,this)">Sanatorium</div>
-        <div id="alpine" class="not-selectable" onClick="setMap(alpine,this)">Alpine</div>
+        <div id="zoo" class="current-map not-selectable" onClick="setMap('zoo',this)">Zoo</div>
+        <div id="duga" class="not-selectable" onClick="setMap('duga',this)">Duga</div>
+        <div id="ruka" class=" not-selectable" onClick="setMap('ruka',this)">Ruka</div>
+        <div id="golova" class="not-selectable" onClick="setMap('golova',this)">Golova</div>
+        <div id="sanatorium" class="not-selectable" onClick="setMap('sanatorium',this)">Sanatorium</div>
+        <div id="alpine" class="not-selectable" onClick="setMap('alpine',this)">Alpine</div>
     </header>
     <Section>
         <aside id="aside">
@@ -71,14 +71,17 @@
     <script src="poi/misc.js"></script>
     <script src="assets/js/index.js"></script>
     <script>
-        var currentMap = zoo;
+        var currentMap = 'zoo';
+
 
 
         function setMap(selectedMap, htmlElement, ifSub = false) {
             if (currentMap != selectedMap) {
-                map.removeLayer(currentMap.Layer)
-                map.addLayer(selectedMap.Layer)
+                map.removeLayer(window[currentMap].Layer)
+                map.addLayer(window[selectedMap].Layer)
+
                 currentMap = selectedMap
+
 
                 Array.from(document.getElementsByClassName('current-map'))
                     .forEach((element) => {

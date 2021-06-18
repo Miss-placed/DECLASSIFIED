@@ -128,6 +128,11 @@ var miscPOI = {
             3: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-112.4445875369862, 31] },
             4: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-225.24684057609355, 102] },
         },
+        RedRift: {
+            1: { name: "Red Aether Rift", desc: "Jump through all the rifts to continue the Easter Egg", loc: [-133.6321799077851, 44.25] }, //done
+
+        },
+
         Fishing: {
             1: { name: "Fishing Spot", desc: "", loc: [-133.70571013511105, 159.5] },
             2: { name: "Fishing Spot", desc: "", loc: [-109.94470339738334, 113.25] },
@@ -236,6 +241,10 @@ var miscPOI = {
             3: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-43.52139785422946, 150.5] },
             4: { name: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", loc: [-215.2513145061181, 117.75] },
         },
+        RedRift: {
+            1: { name: "Red Aether Rift", desc: "Jump through all the rifts to continue the Easter Egg", loc: [-209.7518143731158, 165.8125] }, //done
+
+        },
         Fishing: {
             1: { name: "Fishing Spot", desc: "", loc: [-56.46100796505169, 118.5] },
             2: { name: "Fishing Spot", desc: "", loc: [-55.960885570640414, 129] },
@@ -283,6 +292,13 @@ var miscPOI = {
             7: { name: "Demented Echo", desc: "", loc: [0, 0] },
             8: { name: "Demented Echo", desc: "", loc: [0, 0] },
             9: { name: "Demented Echo", desc: "", loc: [0, 0] },
+
+        },
+        Chopper: {
+            1: { name: "Chopper Gunner", desc: "Hold out untill the wave is dead.", loc: [-170.51300319205535, 39.25], },
+        },
+        Orb: {
+            1: { name: "Aetherial orb", desc: "", loc: [-59.27484039723356, 81.75], },
 
         },
         Rift: {
