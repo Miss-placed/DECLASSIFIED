@@ -58,3 +58,9 @@ var fishingIcon = L.icon({
     iconAnchor: [24, 24],
     popupAnchor: [0, -30]
 });
+var redRiftIcon = L.icon({
+    iconUrl: 'assets/img/icons/redRiftIcon.png',
+    iconSize: [22, 48],
+    iconAnchor: [11, 24],
+    popupAnchor: [0, -30]
+});
