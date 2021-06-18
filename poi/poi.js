@@ -634,9 +634,9 @@ var poi = {
                     },
                     3: {
                         loc: [0, 0],
-                        map: "outbreak",
-                        name: "missing name and location",
-                        desc: ""
+                        map: "sanatorium",
+                        name: "The Child's Note",
+                        desc: "Obtained during the Outbreak EE#2"
                     },
                 },
                 Radio: {
@@ -1169,21 +1169,21 @@ var poi = {
                     },
                     3: {
                         loc: [0, 0],
-                        map: "outbreak",
-                        name: "missing name and location",
-                        desc: ""
+                        map: "sanatorium",
+                        name: "The Survivors",
+                        desc: "Obtained during the Outbreak EE#2"
                     },
                     4: {
                         loc: [0, 0],
-                        map: "outbreak",
-                        name: "missing name and location",
-                        desc: ""
+                        map: "sanatorium",
+                        name: "The Device",
+                        desc: "Obtained during the Outbreak EE#2"
                     },
                     5: {
                         loc: [0, 0],
-                        map: "outbreak",
-                        name: "missing name and location",
-                        desc: ""
+                        map: "sanatoruim",
+                        name: "The Trap",
+                        desc: "Obtained during the Outbreak EE#2"
                     },
                 },
                 Documents: {
@@ -1191,13 +1191,13 @@ var poi = {
                         loc: [0, 0],
                         map: "outbreak",
                         name: "Ravenov's Burn Notice",
-                        desc: ""
+                        desc: "dropped from Special/Elite kills or golden chests"
                     },
                     2: {
                         loc: [0, 0],
-                        map: "outbreak",
-                        name: "missing name and location",
-                        desc: ""
+                        map: "sanatoruim",
+                        name: "Aetherium Neutralizer Blueprint.",
+                        desc: "Obtained during the Outbreak EE#2"
                     },
                 },
                 Radio: {
@@ -1205,13 +1205,13 @@ var poi = {
                         loc: [0, 0],
                         map: "outbreak",
                         name: "Omega's Reputation",
-                        desc: ""
+                        desc: "Collected through the Omega Radios in Outbreak"
                     },
                     2: {
                         loc: [0, 0],
                         map: "outbreak",
                         name: "The One-Eyed Cowboy",
-                        desc: ""
+                        desc: "Collected through the Omega Radios in Outbreak"
                     },
                 },
                 Artifacts: {
@@ -1642,7 +1642,7 @@ var poi = {
                         loc: [0, 0],
                         map: "outbreak",
                         name: "Quarantine Diary 9",
-                        desc: ""
+                        desc: "Dropped from Special/Elite kills or golden chests"
                     },
                 }
             }
