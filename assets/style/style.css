@@ -267,17 +267,25 @@ aside {
 }
 
 #aside.menu-closed {
-    width: 0vw!important;
+    width: 0vw;
 }
 
 #worldMap.menu-closed {
-    width: 100vw!important;
+    width: 100vw;
+}
+
+#aside.mobile-view {
+    width: 83vw;
 }
 
 #worldMap.mobile-view {
     width: 17vw;
 }
 
-#aside.mobile-view {
-    width: 83vw;
+#aside.mobile-view.menu-closed {
+    width: 0vw;
+}
+
+#worldMap.mobile-view.menu-closed {
+    width: 100vw;
 }
