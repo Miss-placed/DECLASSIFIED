@@ -2,8 +2,8 @@ var miscPOI = {
     zoo: {
         Demented: {
             1: { name: "Demented Echo", desc: "", loc: [-150.26326919666607, 161.5] }, //done
-            2: { name: "Demented Echo", desc: "", loc: [0, 0] },
-            3: { name: "Demented Echo", desc: "", loc: [0, 0] },
+            2: { name: "Demented Echo", desc: "", loc: [-174.31503434714938, 148.222502654611] }, //#8
+            3: { name: "Demented Echo", desc: "", loc: [-154.4547581108373, 166.8768944269258] }, //#7
             4: { name: "Demented Echo", desc: "", loc: [0, 0] },
             5: { name: "Demented Echo", desc: "", loc: [0, 0] },
             6: { name: "Demented Echo", desc: "", loc: [0, 0] },

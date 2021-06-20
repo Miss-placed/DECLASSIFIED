@@ -1159,7 +1159,7 @@ var poi = {
                         loc: [-172.01095495655258, 156.75],
                         map: "zoo",
                         name: "Greater Threat",
-                        desc: "On a bench on the first floor of the Restaurant"
+                        desc: "On a couch on the first floor of the Restaurant"
                     },
                     2: {
                         loc: [-161.2620987763788, 164.5],
@@ -1631,7 +1631,7 @@ var poi = {
                         desc: "In one of the animal cages on some hay"
                     },
                     3: {
-                        loc: [0, 0],
+                        loc: [-122.6266719498138, 60.90625],
                         map: "zoo",
                         name: "The Ally",
                         desc: " In the little nook where the stone monkey is on a shelf."
@@ -2245,7 +2245,7 @@ var poi = {
                         loc: [-76.77108973222204, 130.5],
                         map: "zoo",
                         name: "Empty Stamin-up Can",
-                        desc: "Inside the diner under the counter."
+                        desc: "Inside the diner under the white marble counter."
                     },
                     2: {
                         loc: [-152.76489182479162, 149.75],
