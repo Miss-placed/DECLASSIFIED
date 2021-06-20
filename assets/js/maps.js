@@ -52,5 +52,6 @@ function switchAndFly(location = [0, 0], selectedMap = "") {
     if (selectedMap == mapStrings.firebaseZ || selectedMap == mapStrings.firebaseZ_spawn ||
         selectedMap == mapStrings.dieMaschine || selectedMap == mapStrings.dieMaschine_underground) ifSub = true
     setMap(selectedMap, document.getElementById(selectedMap), ifSub)
+    setLastVisitedMap(selectedMap)
     map.flyTo(location, 4)
 }

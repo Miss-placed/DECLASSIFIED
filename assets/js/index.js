@@ -12,7 +12,7 @@ var map = L.map('worldMap', {
     maxZoom: 5,
     minZoom: 1,
     layers: [
-        zoo.Layer
+        window[JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap].Layer
     ],
     tap: true,
     tapTolerance: 30,
@@ -23,18 +23,6 @@ var map = L.map('worldMap', {
 L.control.attribution({ prefix: 'DECLASSIFIED' })
 document.getElementsByClassName("leaflet-control-attribution")[0].getElementsByTagName("a")[0].title = "Declassified An Interactive map By Odinn"
 document.getElementsByClassName("leaflet-control-attribution")[0].getElementsByTagName("a")[0].innerHTML = "DECLASSIFIED"
-/* var baseMaps = {
-    "Die Maschine": dieMaschine.Layer,
-    "Die Maschine Underground": dieMaschine_underground.Layer,
-    "Firebase Z": firebaseZ.Layer,
-    "Firebase Z Spawn": firebaseZ_spawn.Layer,
-    "Duga": duga.Layer,
-    "Ruka": ruka.Layer,
-    "Alpine": alpine.Layer,
-    "Golova": golova.Layer,
-    "zoo": zoo.Layer,
-    "Sanatorium": sanatorium.Layer,
-}; */
 L.control.attribution()
 
 // TODO: improve this to not represent a staircade :@
@@ -61,7 +49,6 @@ if (!debug) {
                             if (intel.map != mapStrings.allOutbreakMaps) {
                                 mapLayer = window[intel.map]
                                 addMarkerToMap(intel.loc, factionIcon, mapLayer, intel.id, intel.name, intel.desc)
-                                    // console.log(intel.loc, factionIcon, mapLayer, intel.name, intel.desc)
                             }
                         }
                     }
@@ -99,7 +86,6 @@ if (!debug) {
 
 
 function addMarkerToMap(loc, icon, maep, id, name, desc = ``) {
-    // console.log(loc, icon, maep, name, desc)
     let snippet = $(`<div></div>`)
     if (desc !== '') {
         snippet = $(`<div>
@@ -110,7 +96,6 @@ function addMarkerToMap(loc, icon, maep, id, name, desc = ``) {
     var marker = L.marker(loc, { icon: icon }).addTo(maep.Markers)
         .bindPopup(`<h1>${name}</h1>${snippet.html()}`);
 
-    //TODO: use a unique ID instead of name. Use a unique ID in data-item in 'Mark as collected' button
     if (hasUserCollected(id)) {
         marker.setOpacity(0.35);
         disableMarkers.push(id);
@@ -152,7 +137,7 @@ function setMap(selectedMap, htmlElement, ifSub = false) {
         map.addLayer(window[selectedMap].Layer)
 
         currentMap = selectedMap
-
+        setLastVisitedMap(selectedMap)
 
         Array.from(document.getElementsByClassName('current-map'))
             .forEach((element) => {
