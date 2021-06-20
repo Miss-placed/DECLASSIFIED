@@ -113,7 +113,7 @@ function addMarkerToMap(loc, icon, maep, name, desc = ``) {
 
     //TODO: use a unique ID instead of name. Use a unique ID in data-item in 'Mark as collected' button
     if (localStorage.getItem(name) == 'true') {
-        $(marker._icon).css('opacity', '.35');
+        marker.setOpacity(0.35);
         disableMarkers.push(name);
     }
     visibleMarkers[name] = marker;
@@ -138,12 +138,12 @@ map.on('popupopen', function() {
             disableMarkers = $.grep(disableMarkers, function(value) {
                 return value != itemId.toString();
             });
-            $(visibleMarkers[itemId]._icon).css('opacity', '1');
+            visibleMarkers[itemId].setOpacity(1);
 
             localStorage.setItem(itemId, false);
         } else {
             disableMarkers.push(itemId.toString());
-            $(visibleMarkers[itemId]._icon).css('opacity', '0.35');
+            visibleMarkers[itemId].setOpacity(0.35);
             localStorage.setItem(itemId, true);
         }
     });
