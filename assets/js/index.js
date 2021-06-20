@@ -23,7 +23,7 @@ var map = L.map('worldMap', {
 L.control.attribution({ prefix: 'DECLASSIFIED' })
 document.getElementsByClassName("leaflet-control-attribution")[0].getElementsByTagName("a")[0].title = "Declassified An Interactive map By Odinn"
 document.getElementsByClassName("leaflet-control-attribution")[0].getElementsByTagName("a")[0].innerHTML = "DECLASSIFIED"
-var baseMaps = {
+/* var baseMaps = {
     "Die Maschine": dieMaschine.Layer,
     "Die Maschine Underground": dieMaschine_underground.Layer,
     "Firebase Z": firebaseZ.Layer,
@@ -34,7 +34,7 @@ var baseMaps = {
     "Golova": golova.Layer,
     "zoo": zoo.Layer,
     "Sanatorium": sanatorium.Layer,
-};
+}; */
 L.control.attribution()
 
 // TODO: improve this to not represent a staircade :@
@@ -58,9 +58,9 @@ if (!debug) {
                     if (season.hasOwnProperty(typeOfIntel)) {
                         for (let j = 0; j < Object.keys(season[typeOfIntel]).length; j++) {
                             let intel = season[typeOfIntel][j + 1];
-                            if (intel.map != "outbreak") {
+                            if (intel.map != mapStrings.allOutbreakMaps) {
                                 mapLayer = window[intel.map]
-                                addMarkerToMap(intel.loc, factionIcon, mapLayer, intel.name, intel.desc)
+                                addMarkerToMap(intel.loc, factionIcon, mapLayer, intel.id, intel.name, intel.desc)
                                     // console.log(intel.loc, factionIcon, mapLayer, intel.name, intel.desc)
                             }
                         }
@@ -98,26 +98,24 @@ if (!debug) {
 }
 
 
-function addMarkerToMap(loc, icon, maep, name, desc = ``) {
+function addMarkerToMap(loc, icon, maep, id, name, desc = ``) {
     // console.log(loc, icon, maep, name, desc)
     let snippet = $(`<div></div>`)
     if (desc !== '') {
         snippet = $(`<div>
         <p>${desc}</p>
-            <button type="button" class="btn btn-info remove-button" data-item="${name}">Mark as collected</button>
+            <button type="button" class="btn btn-info remove-button" data-item="${id}">Mark as collected</button>
         </div>`);
     }
     var marker = L.marker(loc, { icon: icon }).addTo(maep.Markers)
         .bindPopup(`<h1>${name}</h1>${snippet.html()}`);
 
-
     //TODO: use a unique ID instead of name. Use a unique ID in data-item in 'Mark as collected' button
-    if (localStorage.getItem(name) == 'true') {
+    if (hasUserCollected(id)) {
         marker.setOpacity(0.35);
-        disableMarkers.push(name);
+        disableMarkers.push(id);
     }
-    visibleMarkers[name] = marker;
-
+    visibleMarkers[id] = marker;
 }
 
 function addMiscMarkerToMap(loc, icon, maep, name, desc = ``) {
@@ -139,12 +137,35 @@ map.on('popupopen', function() {
                 return value != itemId.toString();
             });
             visibleMarkers[itemId].setOpacity(1);
-
-            localStorage.setItem(itemId, false);
+            removeCollectedIntel(itemId)
         } else {
             disableMarkers.push(itemId.toString());
             visibleMarkers[itemId].setOpacity(0.35);
-            localStorage.setItem(itemId, true);
+            addCollectedIntel(itemId);
         }
     });
 });
+
+function setMap(selectedMap, htmlElement, ifSub = false) {
+    if (currentMap != selectedMap) {
+        map.removeLayer(window[currentMap].Layer)
+        map.addLayer(window[selectedMap].Layer)
+
+        currentMap = selectedMap
+
+
+        Array.from(document.getElementsByClassName('current-map'))
+            .forEach((element) => {
+                element.classList.toggle("current-map");
+            })
+        if (ifSub) htmlElement.parentNode.parentNode.classList.toggle("current-map")
+        htmlElement.classList.toggle("current-map")
+    }
+}
+function toggleAside() {
+    let sidebar = document.getElementById("aside")
+    let worldmap = document.getElementById("worldMap")
+    sidebar.classList.toggle("menu-closed")
+    worldmap.classList.toggle("menu-closed")
+    window.dispatchEvent(new Event('resize'));
+}
