@@ -1355,7 +1355,8 @@ var poi = {
                         desc: ""
                     },
                     3: {
-                        loc: [-133.01510462848023, 38.5],
+                        // loc: [-133.01510462848023, 38.5],
+                        loc: [0, 0],
                         map: "dieMaschine",
                         name: "Shared History / Old Friend",
                         desc: ""
