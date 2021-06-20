@@ -65,6 +65,8 @@
     <input id="cb" type="text" hidden>
     <script src="" async defer></script>
     <script src="assets/js/icons.js"></script>
+    <script src="assets/js/models.js"></script>
+    <script src="assets/js/userPrefs.js"></script>
     <script src="poi/poi.js"></script>
     <script src="assets/js/maps.js"></script>
     <script src="assets/js/listgeneration.js"></script>
@@ -73,28 +75,10 @@
     <script>
         var currentMap = 'zoo';
         let isMobile = false
-
-
-
-        function setMap(selectedMap, htmlElement, ifSub = false) {
-            if (currentMap != selectedMap) {
-                map.removeLayer(window[currentMap].Layer)
-                map.addLayer(window[selectedMap].Layer)
-
-                currentMap = selectedMap
-
-
-                Array.from(document.getElementsByClassName('current-map'))
-                    .forEach((element) => {
-                        element.classList.toggle("current-map");
-                    })
-                if (ifSub) htmlElement.parentNode.parentNode.classList.toggle("current-map")
-                htmlElement.classList.toggle("current-map")
-            }
-        }
+        const userPrefs = userPrefsStartup();
 
         function onLoad() {
-            generateList()
+            generateList();
         }
         map.on("click", function(e) {
             if (debug) {
@@ -107,13 +91,6 @@
             }
         })
 
-        function toggleAside() {
-            let sidebar = document.getElementById("aside")
-            let worldmap = document.getElementById("worldMap")
-            sidebar.classList.toggle("menu-closed")
-            worldmap.classList.toggle("menu-closed")
-            window.dispatchEvent(new Event('resize'));
-        }
         if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
             let sidebar = document.getElementById("aside")
             let worldmap = document.getElementById("worldMap")

@@ -12,25 +12,25 @@ var globalSettings = {
 
 var zoo, ruka, duga, alpine, golova, sanatorium, dieMaschine, dieMaschine_underground, firebaseZ, firebaseZ_spawn;
 zoo = generateLayers(
-    "zoo", globalSettings);
+    mapStrings.zoo, globalSettings);
 duga = generateLayers(
-    "duga", globalSettings);
+    mapStrings.duga, globalSettings);
 ruka = generateLayers(
-    "ruka", globalSettings);
+    mapStrings.ruka, globalSettings);
 alpine = generateLayers(
-    "alpine", globalSettings);
+    mapStrings.alpine, globalSettings);
 golova = generateLayers(
-    "golova", globalSettings);
+    mapStrings.golova, globalSettings);
 sanatorium = generateLayers(
-    "sanatorium", globalSettings);
+    mapStrings.sanatorium, globalSettings);
 dieMaschine = generateLayers(
-    "dieMaschine", globalSettings);
+    mapStrings.dieMaschine, globalSettings);
 dieMaschine_underground = generateLayers(
-    "dieMaschine_underground", globalSettings);
+    mapStrings.dieMaschine_underground, globalSettings);
 firebaseZ = generateLayers(
-    "firebaseZ", globalSettings);
+    mapStrings.firebaseZ, globalSettings);
 firebaseZ_spawn = generateLayers(
-    "firebaseZ_spawn", globalSettings);
+    mapStrings.firebaseZ_spawn, globalSettings);
 
 function generateLayers(name, settings) {
     settings.id = name
@@ -49,8 +49,8 @@ function generateLayers(name, settings) {
 
 function switchAndFly(location = [0, 0], selectedMap = "") {
     let ifSub = false
-    if (selectedMap == "firebaseZ" || selectedMap == "firebaseZ_spawn" ||
-        selectedMap == "dieMaschine" || selectedMap == "dieMaschine_underground") ifSub = true
+    if (selectedMap == mapStrings.firebaseZ || selectedMap == mapStrings.firebaseZ_spawn ||
+        selectedMap == mapStrings.dieMaschine || selectedMap == mapStrings.dieMaschine_underground) ifSub = true
     setMap(selectedMap, document.getElementById(selectedMap), ifSub)
     map.flyTo(location, 4)
 }
