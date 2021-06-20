@@ -1,6 +1,8 @@
 var disableMarkers = [];
 var visibleMarkers = [];
-
+let currentMap = 'zoo'
+if (localStorage.declassifiedPrefs != undefined)
+    currentMap = JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap;
 var map = L.map('worldMap', {
     crs: L.CRS.Simple,
     center: [-(256 / 2), 256 / 2],
@@ -12,7 +14,7 @@ var map = L.map('worldMap', {
     maxZoom: 5,
     minZoom: 1,
     layers: [
-        window[JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap].Layer
+        window[currentMap].Layer
     ],
     tap: true,
     tapTolerance: 30,
