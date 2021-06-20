@@ -53,3 +53,4 @@ function removeCollectedIntel(intel) {
     currentPrefs.collectedIntel.splice(indexOfIntel, 1);
     setUserPrefs(currentPrefs);
 }
+//test
