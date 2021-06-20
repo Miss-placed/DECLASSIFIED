@@ -1,4 +1,4 @@
-{
+let poi = {
     "requiem": {
         "0": {
             "Audio": {
