@@ -5,12 +5,12 @@
 █████████  ██████  ████████████
 # CLASSIFIED
 - ~~**dont start over from scratch again!**~~
-- ~~get icons for markers~~
 - █ ████ ███ ███ ████
 - ~~system to track collected intel~~
 - ~~collect data for markers~~
 
 # DECLASSIFIED
+- get icons for markers
 - style the intel list
 - refactored the layer generation
 - intel category selector
