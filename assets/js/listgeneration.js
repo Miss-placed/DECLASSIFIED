@@ -36,6 +36,16 @@ function generateList() {
                             if (isMobile) toggleAside()
                         }
                         intelDesc.appendChild(location)
+                        let share = createElement("button", ["share-intel", "fas", "fa-external-link-alt"], "")
+                        share.onclick = function() {
+                            var cb = document.getElementById("cb");
+                            cb.value = window.location.origin + window.location.pathname + "?id=" + item.id;
+                            cb.style.display = 'block';
+                            cb.select();
+                            document.execCommand('copy');
+                            cb.style.display = 'none';
+                        }
+                        intelDesc.appendChild(share)
                     }
                     intelItem.appendChild(intelDesc)
                     intelList.appendChild(intelItem)
