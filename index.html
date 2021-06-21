@@ -79,6 +79,18 @@
         function onLoad() {
             document.getElementById(currentMap).classList.add("current-map")
             generateList();
+            let urlId = (getUrlVars()["id"] === "" ? undefined : getUrlVars()["id"])
+            if (urlId != undefined) {
+                searchThroughPOI(urlId)
+            }
+        }
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
         }
         map.on("click", function(e) {
             if (debug) {

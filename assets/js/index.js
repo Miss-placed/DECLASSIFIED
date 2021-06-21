@@ -1,6 +1,38 @@
 var disableMarkers = [];
 var visibleMarkers = [];
 let currentMap = 'zoo'
+var results = [];
+
+
+function searchThroughPOI(query) {
+    for (let faction in poi) {
+        if (poi.hasOwnProperty(faction)) {
+            let factionIcon = window[faction.toString() + "Icon"]
+            for (let i = 0; i <= Object.keys(poi[faction]).length; i++) {
+                let season = poi[faction][i];
+                for (let typeOfIntel in season) {
+                    if (season.hasOwnProperty(typeOfIntel)) {
+                        for (let j = 0; j < Object.keys(season[typeOfIntel]).length; j++) {
+                            let item = season[typeOfIntel][j + 1]
+                            for (key in item) {
+                                if (item[key].indexOf(query) != -1) {
+                                    switchAndFly(item.loc, item.map)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
 if (localStorage.declassifiedPrefs != undefined)
     currentMap = JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap;
 var map = L.map('worldMap', {
@@ -149,6 +181,7 @@ function setMap(selectedMap, htmlElement, ifSub = false) {
         htmlElement.classList.toggle("current-map")
     }
 }
+
 function toggleAside() {
     let sidebar = document.getElementById("aside")
     let worldmap = document.getElementById("worldMap")
