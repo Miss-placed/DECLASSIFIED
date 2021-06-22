@@ -63,6 +63,12 @@
             </div>
         </div>
     </Section>
+    <section id="copy-notif">Coppied To Clipboard!</section>
+    <section id="error-notif">
+        <h1 id="title">ERROR</h1>
+        <p id="error-p"></p>
+        <button id="error-button"></button>
+    </section>
     <input id="cb" type="text" hidden>
     <script src="" async defer></script>
     <script src="assets/js/icons.js"></script>
@@ -76,6 +82,11 @@
     <script>
         let isMobile = false
         const userPrefs = userPrefsStartup();
+        let copyNotif = document.getElementById("copy-notif")
+
+        copyNotif.onanimationend = () => {
+            copyNotif.classList.remove("animated")
+        }
 
         function onLoad() {
             document.getElementById(currentMap).classList.add("current-map")
@@ -101,6 +112,9 @@
                 cb.select();
                 document.execCommand('copy');
                 cb.style.display = 'none';
+
+                copyNotif.innerHTML = "Location Added To Clipboard!"
+                copyNotif.classList.add("animated")
             }
         })
 
