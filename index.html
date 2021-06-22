@@ -67,12 +67,14 @@
             </div>
         </div>
     </Section>
-    <section id="copy-notif">Coppied To Clipboard!</section>
+    <!-- Notifications -->
+    <section id="copy-notif">Copied To Clipboard!</section>
     <section id="error-notif">
         <h1 id="title">ERROR</h1>
         <p id="error-p"></p>
         <button id="error-button"></button>
     </section>
+    
     <input id="cb" type="text" hidden>
     <script src="" async defer></script>
     <script src="assets/js/icons.js"></script>
@@ -83,54 +85,6 @@
     <script src="assets/js/listgeneration.js"></script>
     <script src="poi/misc.js"></script>
     <script src="assets/js/index.js"></script>
-    <script>
-        let isMobile = false
-        const userPrefs = userPrefsStartup();
-        let copyNotif = document.getElementById("copy-notif")
-
-        copyNotif.onanimationend = () => {
-            copyNotif.classList.remove("animated")
-        }
-
-        function onLoad() {
-            document.getElementById(currentMap).classList.add("current-map")
-            generateList();
-            let urlId = (getUrlVars()["id"] === "" ? undefined : getUrlVars()["id"])
-            if (urlId != undefined) {
-                searchThroughPOI(urlId)
-            }
-        }
-
-        function getUrlVars() {
-            var vars = {};
-            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
-                vars[key] = value;
-            });
-            return vars;
-        }
-        map.on("click", function(e) {
-            if (debug) {
-                var cb = document.getElementById("cb");
-                cb.value = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
-                cb.style.display = 'block';
-                cb.select();
-                document.execCommand('copy');
-                cb.style.display = 'none';
-
-                copyNotif.innerHTML = "Location Added To Clipboard!"
-                copyNotif.classList.add("animated")
-            }
-        })
-
-        if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
-            let sidebar = document.getElementById("aside")
-            let worldmap = document.getElementById("worldMap")
-            sidebar.classList.add("mobile-view")
-            worldmap.classList.add("mobile-view")
-            isMobile = true
-            toggleAside()
-        }
-    </script>
 </body>
 
 </html>
