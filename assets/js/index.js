@@ -240,7 +240,7 @@ if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
 
 function showNotification(message) {
     copyNotif.classList.remove("animated");
-    void element.offsetWidth; //https://css-tricks.com/restart-css-animation/
+    void copyNotif.offsetWidth; //https://css-tricks.com/restart-css-animation/
     copyNotif.innerHTML = message;
     copyNotif.classList.add("animated");
 }
