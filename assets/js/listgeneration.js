@@ -1,6 +1,6 @@
 function generateList() {
     let pointsOfInterest = poi
-    let aside = document.getElementById("aside")
+    let intelList = document.getElementById("intelList")
     let lib = {
         Audio: "Audio Logs",
         Radio: "Radio Transmisions",
@@ -22,8 +22,8 @@ function generateList() {
                     let item = pointsOfInterest[faction][season][category][intel]
                     let intelItem = createElement("div", "intel-item", `${intel}: ${item.name}`)
                     let intelDesc = createElement("div", "intel-desc", "")
-                    let intelLocation = createElement("p", "intel-subtitle", item.map)
-                    let description = createElement("p", "intel-description", item.desc)
+                    let intelLocation = createElement("p", ["intel-subtitle", "searchable"], item.map)
+                    let description = createElement("p", ["intel-description", "searchable"], item.desc)
                     intelDesc.appendChild(intelLocation)
                     intelDesc.appendChild(description)
 
@@ -49,7 +49,7 @@ function generateList() {
         }
 
         factionElement.appendChild(seasonList)
-        aside.appendChild(factionElement)
+        intelList.appendChild(factionElement)
     }
 
 
@@ -87,7 +87,8 @@ function createElement(type, className, inside = undefined) {
         }
         let tempElement = undefined
         if (type == "section" || type == "div") {
-            tempElement = document.createElement("h2")
+            tempElement = document.createElement("h2");
+            tempElement.className = "searchable";
             tempElement.onclick = function() {
                 if (this.nextSibling != undefined) this.nextSibling.classList.toggle("visible")
             }

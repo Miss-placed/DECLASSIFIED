@@ -191,3 +191,79 @@ function toggleAside() {
     worldmap.classList.toggle("menu-closed")
     window.dispatchEvent(new Event('resize'));
 }
+
+let isMobile = false
+const userPrefs = userPrefsStartup();
+let copyNotif = document.getElementById("copy-notif")
+
+copyNotif.onanimationend = () => {
+    copyNotif.classList.remove("animated")
+}
+
+function onLoad() {
+    document.getElementById(currentMap).classList.add("current-map")
+    generateList();
+    let urlId = (getUrlVars()["id"] === "" ? undefined : getUrlVars()["id"])
+    if (urlId != undefined) {
+        searchThroughPOI(urlId)
+    }
+}
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+map.on("click", function(e) {
+    if (debug) {
+        var cb = document.getElementById("cb");
+        cb.value = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
+        cb.style.display = 'block';
+        cb.select();
+        document.execCommand('copy');
+        cb.style.display = 'none';
+
+        showNotification("Location Added To Clipboard!");
+    }
+})
+
+if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
+    let sidebar = document.getElementById("aside")
+    let worldmap = document.getElementById("worldMap")
+    sidebar.classList.add("mobile-view")
+    worldmap.classList.add("mobile-view")
+    isMobile = true
+    toggleAside()
+}
+
+function showNotification(message) {
+    copyNotif.classList.remove("animated");
+    void copyNotif.offsetWidth; //https://css-tricks.com/restart-css-animation/
+    copyNotif.innerHTML = message;
+    copyNotif.classList.add("animated");
+}
+
+
+document.getElementById("intelFilter").addEventListener("focus", function(e) {
+    var searchItems = $('.searchable');  // cache this for better performance
+    $('#intelFilter').keyup(function() {
+      var valThis = $(this).val().toLowerCase();
+      
+      if (valThis == "") {
+          debugger
+        searchItems.removeClass("visible");// hide all items
+      } else {
+        searchItems.each(function() {
+          var label = $(this);                    // cache this
+          var text = label.text().toLowerCase();
+          if (text.indexOf(valThis) > -1) {
+            label.parentsUntil("#aside").removeClass("visible").addClass("visible")// show all li parents up the ancestor tree
+          } else {
+           label.parent().removeClass("visible");// hide current li as it doesn't match
+          }
+        });
+      };
+    });
+})
