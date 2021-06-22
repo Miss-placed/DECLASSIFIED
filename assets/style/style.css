@@ -52,6 +52,8 @@ header>div:hover,
     color: #2d2d2d;
 }
 
+/* Leaflet Stuff */
+
 .leaflet-control-zoom-in,
 .leaflet-control-zoom-out {
     background-color: #e8e8d3!important;
@@ -99,6 +101,11 @@ header>div:hover,
     padding-right: 19px;
     background-color: #6b6b6b;
     color: #e8e8d3;
+}
+
+.leaflet-popup-content .remove-button {
+    margin-bottom: 10px;
+    padding: 5px;
 }
 
 .not-selectable {
