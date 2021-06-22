@@ -68,8 +68,7 @@ function copyShareLink(intelId) {
     cb.select()
     document.execCommand('copy')
     cb.style.display = 'none'
-    copyNotif.innerHTML = "Link Copied To Clipboard!"
-    copyNotif.classList.add("animated")
+    showNotification("Link Copied To Clipboard!")
 }
 
 function createElement(type, className, inside = undefined) {
