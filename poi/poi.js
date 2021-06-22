@@ -1135,7 +1135,7 @@ let poi = {
                     "loc": [-129.7654504344742, 106.75],
                     "map": mapStrings.ruka,
                     "name": "omega Group Patch",
-                    "desc": "On top of the climbable net in the obstacle course.",
+                    "desc": "On top of the climbable net in the obstacle course. (might currently be bugged)",
                     "id": "OS2Ar2"
                 }
             }
