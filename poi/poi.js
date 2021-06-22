@@ -1818,7 +1818,7 @@ let poi = {
                     "id": "MS4Au2"
                 },
                 "3": {
-                    "loc": [-122.6266719498138, 60.90625],
+                    "loc": [-76.34629311491399, 175.25],
                     "map": mapStrings.zoo,
                     "name": "The Ally",
                     "desc": " In the little nook where the stone monkey is on a shelf.",

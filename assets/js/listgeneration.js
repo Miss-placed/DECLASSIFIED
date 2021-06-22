@@ -36,16 +36,7 @@ function generateList() {
                             if (isMobile) toggleAside()
                         }
                         intelDesc.appendChild(location)
-                        let share = createElement("button", ["share-intel", "fas", "fa-external-link-alt"], "")
-                        share.onclick = function() {
-                            var cb = document.getElementById("cb");
-                            cb.value = window.location.origin + window.location.pathname + "?id=" + item.id;
-                            cb.style.display = 'block';
-                            cb.select();
-                            document.execCommand('copy');
-                            cb.style.display = 'none';
-                        }
-                        intelDesc.appendChild(share)
+                        intelDesc.appendChild(genShareButton(item.id))
                     }
                     intelItem.appendChild(intelDesc)
                     intelList.appendChild(intelItem)
@@ -62,6 +53,21 @@ function generateList() {
     }
 
 
+}
+
+function genShareButton(intelId) {
+    let shareBtn = createElement("button", ["share-intel", "fas", "fa-external-link-alt"], "")
+    shareBtn.setAttribute("onclick", `copyShareLink("${intelId}")`)
+    return shareBtn;
+}
+
+function copyShareLink(intelId) {
+    var cb = document.getElementById("cb")
+    cb.value = window.location.origin + window.location.pathname + "?id=" + intelId
+    cb.style.display = 'block'
+    cb.select()
+    document.execCommand('copy')
+    cb.style.display = 'none'
 }
 
 function createElement(type, className, inside = undefined) {
