@@ -20,10 +20,10 @@ function generateList() {
                 let intelList = createElement("div", "category-list", "")
                 for (intel in pointsOfInterest[faction][season][category]) {
                     let item = pointsOfInterest[faction][season][category][intel]
-                    let intelItem = createElement("div", "intel-item", `${intel}: ${item.name}`)
+                    let intelItem = createElement("div", "intel-item", `${intel}: ${item.name}`, item.id, item.map)
                     let intelDesc = createElement("div", "intel-desc", "")
-                    let intelLocation = createElement("p", ["intel-subtitle", "searchable"], item.map)
-                    let description = createElement("p", ["intel-description", "searchable"], item.desc)
+                    let intelLocation = createElement("p", ["intel-subtitle"], item.map)
+                    let description = createElement("p", ["intel-description"], item.desc)
                     intelDesc.appendChild(intelLocation)
                     intelDesc.appendChild(description)
 
@@ -71,7 +71,7 @@ function copyShareLink(intelId) {
     showNotification("Link Copied To Clipboard!")
 }
 
-function createElement(type, className, inside = undefined) {
+function createElement(type, className, inside = undefined, id, map) {
     element = document.createElement(type)
     if (className != "") {
         if (Array.isArray(className)) {
@@ -87,7 +87,12 @@ function createElement(type, className, inside = undefined) {
         let tempElement = undefined
         if (type == "section" || type == "div") {
             tempElement = document.createElement("h2");
-            tempElement.className = "searchable";
+            tempElement.className = "category";
+            if (id) {
+                tempElement.className += " searchable";
+                tempElement.setAttribute("data-id", id);
+            }
+            if (map) tempElement.setAttribute("data-map", map);
             tempElement.onclick = function() {
                 if (this.nextSibling != undefined) this.nextSibling.classList.toggle("visible")
             }

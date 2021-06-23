@@ -245,25 +245,48 @@ function showNotification(message) {
     copyNotif.classList.add("animated");
 }
 
+function hideCategoryIfEmpty(category) {
+    if (category) {
+        category.each(function () {
+            var category = $(this);
+            var anyVisibleItems = category.find(".searchable").is(":visible");
+            if (!anyVisibleItems) category.hide();
+        });
+    }
+}
 
+//Intel Search
 document.getElementById("intelFilter").addEventListener("focus", function(e) {
-    var searchItems = $('.searchable');  // cache this for better performance
+    var searchItems = $('.searchable'); 
     $('#intelFilter').keyup(function() {
-      var valThis = $(this).val().toLowerCase();
+      var searchTerm = $(this).val().toLowerCase();
       
-      if (valThis == "") {
-          debugger
-        searchItems.removeClass("visible");// hide all items
+      if (searchTerm == "") {
+          //When search is empty, collapse all again and show all hidden elements
+        $("#intelList").find(".visible").removeClass("visible");
+        $("#intelList").find(":hidden").show();
       } else {
         searchItems.each(function() {
-          var label = $(this);                    // cache this
-          var text = label.text().toLowerCase();
-          if (text.indexOf(valThis) > -1) {
-            label.parentsUntil("#aside").removeClass("visible").addClass("visible")// show all li parents up the ancestor tree
+          var item = $(this);
+          var text = item.text().toLowerCase();
+          
+          if (text.indexOf(searchTerm) > -1 && item.is("h2") && item.attr("data-id")) {
+            item.parentsUntil("#aside").removeClass("visible").addClass("visible");// show all parents up the ancestor tree
+            item.parentsUntil("#aside").show();
+            item.show();
           } else {
-           label.parent().removeClass("visible");// hide current li as it doesn't match
+            item.hide();
           }
         });
+
+        //If any categories are empty, collapse them
+        var intelTypes = $(".category-item");
+        hideCategoryIfEmpty(intelTypes)
+        //If any seasons are empty, collapse them
+        var seasons = $(".season-item");
+        hideCategoryIfEmpty(seasons);
       };
     });
 })
+
+
