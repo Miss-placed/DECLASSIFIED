@@ -167,21 +167,21 @@ let poi = {
                     "id": "RS1Au2"
                 },
                 "3": {
-                    "loc": [0, 0],
+                    "loc": [-141.01425341372584, 175.75],
                     "map": mapStrings.firebaseZ,
                     "name": "Ravenov",
                     "desc": "On a table in the outer ring of Data Center, first floor near a cabinet of data reels.",
                     "id": "RS1Au3"
                 },
                 "4": {
-                    "loc": [0, 0],
-                    "map": mapStrings.firebaseZ,
+                    "loc": [-61.52271236034758, 123.5],
+                    "map": mapStrings.firebaseZ_spawn,
                     "name": "they Took Her",
                     "desc": "On a bench above PaP.",
                     "id": "RS1Au4"
                 },
                 "5": {
-                    "loc": [0, 0],
+                    "loc": [-151.5131361943607, 104],
                     "map": mapStrings.firebaseZ,
                     "name": "Meeting Of Minds",
                     "desc": "In military Command, under the desk near the zombie barrier.",
@@ -313,28 +313,28 @@ let poi = {
             },
             "Artifacts": {
                 "1": {
-                    "loc": [0, 0],
+                    "loc": [-110.76747206951588, 193.75],
                     "map": mapStrings.firebaseZ,
                     "name": "RAI K-84 Blueprint",
                     "desc": "On the wall in Weapons Lab.",
                     "id": "RS1Ar1"
                 },
                 "2": {
-                    "loc": [0, 0],
+                    "loc": [-82.77045132115624, 224],
                     "map": mapStrings.firebaseZ,
                     "name": "Weapon Trial Folder",
                     "desc": "On the ground next to Kuhlklay's Body.",
                     "id": "RS1Ar2"
                 },
                 "3": {
-                    "loc": [0, 0],
+                    "loc": [-109.76757847136018, 165.25],
                     "map": mapStrings.firebaseZ,
                     "name": "Kuhlklay's Diary",
                     "desc": "Obtained from a locker, requires the locker key from the quest.",
                     "id": "RS1Ar3"
                 },
                 "4": {
-                    "loc": [0, 0],
+                    "loc": [-110.76747206951588, 193.75],
                     "map": mapStrings.firebaseZ,
                     "name": "RAI K-84 Prototype",
                     "desc": "Obtain the ww. Needs to be the free one from the quest.",
@@ -345,7 +345,7 @@ let poi = {
         "2": {
             "Audio": {
                 "1": {
-                    "loc": [0, 0],
+                    "loc": [-169.76119436070226, 179.25],
                     "map": mapStrings.firebaseZ,
                     "name": "Focal Point",
                     "desc": "On the corner of the building on a ledge, near the sattalite dish. Rocky Defense. Need to shoot it down.",
@@ -829,42 +829,42 @@ let poi = {
                     "id": "OS1Au2"
                 },
                 "3": {
-                    "loc": [0, 0],
+                    "loc": [-43.0246807944671, 198.25],
                     "map": mapStrings.firebaseZ,
                     "name": "Dimentional Fertility",
                     "desc": "In Scorched Defense, on top of the building with the minigun.",
                     "id": "OS1Au3"
                 },
                 "4": {
-                    "loc": [0, 0],
+                    "loc": [-65.02233995389254, 147.25],
                     "map": mapStrings.firebaseZ,
                     "name": "Let It Ride",
                     "desc": "On top of some pipes in Engineering. Shoot it down.",
                     "id": "OS1Au4"
                 },
                 "5": {
-                    "loc": [0, 0],
+                    "loc": [-54.7734305727966, 131.5],
                     "map": mapStrings.firebaseZ,
                     "name": "Aethernauts",
                     "desc": "In Planning Offices under the desk in the middle of the room.",
                     "id": "OS1Au5"
                 },
                 "6": {
-                    "loc": [0, 0],
+                    "loc": [-108.76768487320447, 182.75],
                     "map": mapStrings.firebaseZ,
                     "name": "The Anatomy Lesson",
                     "desc": "In field Hospital, near the exit to the Mission control area.",
                     "id": "OS1Au6"
                 },
                 "7": {
-                    "loc": [0, 0],
+                    "loc": [-170.51111455931903, 145.25],
                     "map": mapStrings.firebaseZ,
                     "name": "Kuhlklay's Payback",
                     "desc": "On a shelf in weapons lab , directly across from the RAI K-84 blueprint.",
                     "id": "OS1Au7"
                 },
                 "8": {
-                    "loc": [0, 0],
+                    "loc": [-118.26667405568364, 102],
                     "map": mapStrings.firebaseZ,
                     "name": "Gorev",
                     "desc": "In colonels office, under the desk with the monitor bank.",
@@ -878,7 +878,7 @@ let poi = {
                     "id": "OS1Au9"
                 },
                 "10": {
-                    "loc": [0, 0],
+                    "loc": [-39.27507980138323, 164.5],
                     "map": mapStrings.firebaseZ,
                     "name": "Outpost 25 Has Fallen",
                     "desc": "In Mission Control, on a table by a window, near the top most charge collector.",
@@ -982,28 +982,28 @@ let poi = {
             },
             "Artifacts": {
                 "1": {
-                    "loc": [0, 0],
+                    "loc": [-86.02010551516227, 223.5],
                     "map": mapStrings.firebaseZ,
                     "name": "Kuhlklay's Eye",
                     "desc": "In scorched defense, in a dead body leaning up against a blown up tank.",
                     "id": "OS1Ar1"
                 },
                 "2": {
-                    "loc": [0, 0],
-                    "map": mapStrings.firebaseZ,
+                    "loc": [-68.77194094697641, 132.5],
+                    "map": mapStrings.firebaseZ_spawn,
                     "name": "Ravenov ID Badge",
                     "desc": "Obtained from Ravenov during the main quest.",
                     "id": "OS1Ar2"
                 },
                 "3": {
-                    "loc": [0, 0],
+                    "loc": [-111.76736566767158, 184],
                     "map": mapStrings.firebaseZ,
                     "name": "Agent Delivery System",
                     "desc": "Obtained from the medic building during the main quest.",
                     "id": "OS1Ar3"
                 },
                 "4": {
-                    "loc": [0, 0],
+                    "loc": [-170.76108795885796, 177],
                     "map": mapStrings.firebaseZ,
                     "name": "Essence Trap",
                     "desc": "Obtained from the datacenter during the main quest.",
@@ -1021,8 +1021,8 @@ let poi = {
         "2": {
             "Audio": {
                 "1": {
-                    "loc": [0, 0],
-                    "map": mapStrings.firebaseZ,
+                    "loc": [-82.52047792161731, 114.5],
+                    "map": mapStrings.firebaseZ_spawn,
                     "name": "Half Of The Reason",
                     "desc": "Under a bunk bed in Scientist Quarters, in the starting area.",
                     "id": "OS2Au1"
@@ -1447,21 +1447,21 @@ let poi = {
         "1": {
             "Audio": {
                 "1": {
-                    "loc": [0, 0],
-                    "map": mapStrings.firebaseZ,
+                    "loc": [-77.77098333037773, 83],
+                    "map": mapStrings.firebaseZ_spawn,
                     "name": "Not Who We Are",
-                    "desc": "In the scientist quarters, and on the inaccessible floor above you the audio log will be sitting, shoot it and it will be on the floor in the Briefing room.",
+                    "desc": "In the scientist quarters, on the inaccessible floor above you the audio log will be sitting, shoot it and it will be on the floor in the Briefing room.",
                     "id": "MS1Au1"
                 },
                 "2": {
-                    "loc": [0, 0],
-                    "map": mapStrings.firebaseZ,
+                    "loc": [-189.25911952473845, 108.25],
+                    "map": mapStrings.firebaseZ_spawn,
                     "name": "Workers Of The World",
-                    "desc": "In equipment storage, on the back wall of floor 1, on a shelf.",
+                    "desc": "In equipment storage, on the back wall of the groundfloor, on a shelf.",
                     "id": "MS1Au2"
                 },
                 "3": {
-                    "loc": [0, 0],
+                    "loc": [-109.76757847136018, 161.5],
                     "map": mapStrings.firebaseZ,
                     "name": "Worse Than Baton Rouge",
                     "desc": "Inside a locker in the barracks. Need the key from the free WW quest to unlock.",
@@ -1575,7 +1575,7 @@ let poi = {
         "2": {
             "Audio": {
                 "1": {
-                    "loc": [0, 0],
+                    "loc": [-66.02223355204825, 155.75],
                     "map": mapStrings.firebaseZ,
                     "name": "More Than Bad News",
                     "desc": "At the base of the OPC. Gotta climb over a barrier near the entrance to Mission Control.",

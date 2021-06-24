@@ -1,8 +1,10 @@
+const userPrefs = userPrefsStartup();
 var disableMarkers = [];
 var visibleMarkers = [];
 let currentMap = 'zoo'
 var results = [];
-
+let isMobile = false
+let copyNotif = document.getElementById("copy-notif")
 
 function searchThroughPOI(query) {
     for (let faction in poi) {
@@ -26,12 +28,6 @@ function searchThroughPOI(query) {
         }
     }
 }
-
-
-
-
-
-
 
 if (localStorage.declassifiedPrefs != undefined)
     currentMap = JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap;
@@ -167,6 +163,19 @@ map.on('popupopen', function() {
     });
 });
 
+map.on("click", function(e) {
+    if (debug) {
+        var cb = document.getElementById("cb");
+        cb.value = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
+        cb.style.display = 'block';
+        cb.select();
+        document.execCommand('copy');
+        cb.style.display = 'none';
+
+        showNotification("Location Added To Clipboard!");
+    }
+})
+
 function setMap(selectedMap, htmlElement, ifSub = false) {
     if (currentMap != selectedMap) {
         map.removeLayer(window[currentMap].Layer)
@@ -192,9 +201,7 @@ function toggleAside() {
     window.dispatchEvent(new Event('resize'));
 }
 
-let isMobile = false
-const userPrefs = userPrefsStartup();
-let copyNotif = document.getElementById("copy-notif")
+
 
 copyNotif.onanimationend = () => {
     copyNotif.classList.remove("animated")
@@ -216,18 +223,6 @@ function getUrlVars() {
     });
     return vars;
 }
-map.on("click", function(e) {
-    if (debug) {
-        var cb = document.getElementById("cb");
-        cb.value = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
-        cb.style.display = 'block';
-        cb.select();
-        document.execCommand('copy');
-        cb.style.display = 'none';
-
-        showNotification("Location Added To Clipboard!");
-    }
-})
 
 if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
     let sidebar = document.getElementById("aside")
