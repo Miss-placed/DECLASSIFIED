@@ -160,11 +160,14 @@ aside {
 }
 
 aside #intelFilter {
-    width: 95%;
+    width: 100%;
     height: 30px;
-    /* margin: 5px 0; */
     padding: 5px;
     font-size: medium;
+    border: 0;
+}
+aside #intelFilter:focus-visible {
+    outline: none;
 }
 
 .season-list,
