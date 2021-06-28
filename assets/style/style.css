@@ -159,6 +159,17 @@ aside {
     background: #e8e8d3;
 }
 
+aside #intelFilter {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    font-size: medium;
+    border: 0;
+}
+aside #intelFilter:focus-visible {
+    outline: none;
+}
+
 .season-list,
 .category-list,
 .intel-desc {
