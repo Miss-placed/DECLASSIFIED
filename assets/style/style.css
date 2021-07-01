@@ -166,6 +166,7 @@ aside #intelFilter {
     font-size: medium;
     border: 0;
 }
+
 aside #intelFilter:focus-visible {
     outline: none;
 }
@@ -318,6 +319,7 @@ aside #intelFilter:focus-visible {
 /*notification styling*/
 
 #copy-notif {
+    display: none;
     position: absolute;
     bottom: -200px;
     background-color: rgba(0, 0, 0, 0.404);
@@ -332,6 +334,7 @@ aside #intelFilter:focus-visible {
 
 #copy-notif.animated {
     animation: bounce-in 2s;
+    display: block;
 }
 
 @keyframes bounce-in {
@@ -356,4 +359,8 @@ aside #intelFilter:focus-visible {
     100% {
         bottom: 0px;
     }
+}
+
+#error-notif {
+    display: none;
 }

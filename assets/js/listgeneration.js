@@ -57,19 +57,29 @@ function generateList() {
 
 function genShareButton(intelId) {
     let shareBtn = createElement("button", ["share-intel", "fas", "fa-external-link-alt"], "")
-    shareBtn.setAttribute("onclick", `copyShareLink("${intelId}")`)
+    shareBtn.setAttribute("onclick", `copyToClipboard("${window.location.origin}${window.location.pathname}?id=${intelId}", "Link Copied To Clipboard")`)
     return shareBtn;
 }
 
-function copyShareLink(intelId) {
-    var cb = document.getElementById("cb")
-    cb.value = window.location.origin + window.location.pathname + "?id=" + intelId
-    cb.style.display = 'block'
-    cb.select()
-    document.execCommand('copy')
-    cb.style.display = 'none'
-    showNotification("Link Copied To Clipboard!")
+function copyToClipboard(text, notif) {
+    const listener = function(ev) {
+        ev.preventDefault();
+        ev.clipboardData.setData('text/plain', text);
+    };
+    document.addEventListener('copy', listener);
+    document.execCommand('copy');
+    document.removeEventListener('copy', listener);
+    showNotification(notif)
 }
+// function copyShareLink(intelId) {
+//     var cb = document.getElementById("cb")
+//     cb.value = window.location.origin + window.location.pathname + "?id=" + intelId
+//     cb.style.display = 'block'
+//     cb.select()
+//     document.execCommand('copy')
+//     cb.style.display = 'none'
+//     
+// }
 
 function createElement(type, className, inside = undefined, id, map) {
     element = document.createElement(type)
