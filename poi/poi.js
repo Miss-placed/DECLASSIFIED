@@ -314,6 +314,7 @@ let poi = {
             "Artifacts": {
                 "1": {
                     "loc": [-110.76747206951588, 193.75],
+                    "loc": [-176.87676671395639, 143.625],
                     "map": mapStrings.firebaseZ,
                     "name": "RAI K-84 Blueprint",
                     "desc": "On the wall in Weapons Lab.",
@@ -335,6 +336,7 @@ let poi = {
                 },
                 "4": {
                     "loc": [-110.76747206951588, 193.75],
+                    "loc": [-176.31374966749425, 141.3125],
                     "map": mapStrings.firebaseZ,
                     "name": "RAI K-84 Prototype",
                     "desc": "Obtain the ww. Needs to be the free one from the quest.",
@@ -1578,6 +1580,7 @@ let poi = {
                     "loc": [-66.02223355204825, 155.75],
                     "map": mapStrings.firebaseZ,
                     "name": "More Than Bad News",
+                    "name": "More Bad News",
                     "desc": "At the base of the OPC. Gotta climb over a barrier near the entrance to Mission Control.",
                     "id": "MS2Au1"
                 },
@@ -2184,6 +2187,7 @@ let poi = {
             "Artifacts": {
                 "1": {
                     "loc": [0, 0],
+                    "loc": [-78.51957350594077, 142.75],
                     "map": mapStrings.firebaseZ,
                     "name": "omega Canister",
                     "desc": "Part of the Main quest.",
