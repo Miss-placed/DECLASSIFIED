@@ -475,13 +475,15 @@ let poi = {
                     "loc": [0, 0],
                     "map": mapStrings.allOutbreakMaps,
                     "name": "Zombie Head",
-                    "desc": "Collected through the Defence objective."
+                    "desc": "Collected through the Defence objective.",
+                    "id": "RS2Ar1"
                 },
                 "2": {
-                    "loc": [0, 0],
+                    "loc": [-157.75305794467104, 73.625],
                     "map": mapStrings.allOutbreakMaps,
                     "name": "Aetherium Canister",
-                    "desc": ""
+                    "desc": "Between the pipes connecting the Silo with the building.",
+                    "id": "RS2Ar2"
                 },
                 "3": {
                     "loc": [-202.75760329845718, 175],
