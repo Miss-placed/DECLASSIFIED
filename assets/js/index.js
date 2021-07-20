@@ -232,13 +232,30 @@ function hideCategoryIfEmpty(category) {
     }
 }
 
+function filterIntel(searchTerm) {
+    var results = intelStoreV2;
+
+    results = results.filter((intel) => {
+        return intel.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
+    })
+    debugger
+
+    return results;
+}
+
 //Intel Search
 document.getElementById("intelFilter").addEventListener("focus", function(e) {
     var searchItems = $('.searchable');
     $('#intelFilter').keyup(function() {
         var searchTerm = $(this).val().toLowerCase();
 
-        if (searchTerm == "") {
+        var filteredIntel = filterIntel(searchTerm)
+
+        generateList(filteredIntel)
+
+
+
+/*         if (searchTerm == "") {
             //When search is empty, collapse all again and show all hidden elements
             $("#intelList").find(".visible").removeClass("visible");
             $("#intelList").find(":hidden").show();
@@ -262,6 +279,6 @@ document.getElementById("intelFilter").addEventListener("focus", function(e) {
                 //If any seasons are empty, collapse them
             var seasons = $(".season-item");
             hideCategoryIfEmpty(seasons);
-        };
+        }; */
     });
 })

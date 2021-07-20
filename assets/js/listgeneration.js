@@ -2,7 +2,7 @@
 
 function generateList(pointsOfInterest) {
     let intelList = document.getElementById("intelList")
-
+    intelList.innerHTML = "";
     for (const [factionKey, factionValue] of Object.entries(factions)) {
         let factionElement = createElement("section", [factionKey, 'faction-list'], `<img class="faction-icon" src="./assets/img/icons/faction-${factionKey}-icon.png">${factionValue}`)
         let seasonList = createElement("div", "season-list", "")
