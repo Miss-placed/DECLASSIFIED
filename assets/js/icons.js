@@ -1,3 +1,18 @@
+function getIconByFaction(faction) {
+    switch (faction) {
+        case factions.requiem:
+            return requiemIcon;
+        case factions.omega:
+            return omegaIcon;
+        case factions.maxis:
+            return maxisIcon;
+        case factions.darkAether:
+            return darkAetherIcon;
+        default:
+            return generalIcon;
+    }
+}
+
 var darkAetherIcon = L.icon({
     iconUrl: 'assets/img/icons/darkAetherIcon.png',
     iconSize: [30, 48],
