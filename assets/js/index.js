@@ -7,11 +7,11 @@ let isMobile = false
 let copyNotif = document.getElementById("copy-notif")
 
 function searchThroughPOI(query) {
-    for (let faction in poi) {
-        if (poi.hasOwnProperty(faction)) {
+    for (let faction in poiStore) {
+        if (poiStore.hasOwnProperty(faction)) {
             let factionIcon = window[faction.toString() + "Icon"]
-            for (let i = 0; i <= Object.keys(poi[faction]).length; i++) {
-                let season = poi[faction][i];
+            for (let i = 0; i <= Object.keys(poiStore[faction]).length; i++) {
+                let season = poiStore[faction][i];
                 for (let typeOfIntel in season) {
                     if (season.hasOwnProperty(typeOfIntel)) {
                         for (let j = 0; j < Object.keys(season[typeOfIntel]).length; j++) {
@@ -67,23 +67,11 @@ L.control.attribution()
 //checks if typeOfIntel is actually set
 //loops through all types of intel and makes a marker
 if (!debug) {
-    for (let faction in poi) {
-        if (poi.hasOwnProperty(faction)) {
-            let factionIcon = window[faction.toString() + "Icon"]
-            for (let i = 0; i <= Object.keys(poi[faction]).length; i++) {
-                let season = poi[faction][i];
-                for (let typeOfIntel in season) {
-                    if (season.hasOwnProperty(typeOfIntel)) {
-                        for (let j = 0; j < Object.keys(season[typeOfIntel]).length; j++) {
-                            let intel = season[typeOfIntel][j + 1];
-                            if (intel.map != mapStrings.allOutbreakMaps) {
-                                mapLayer = window[intel.map]
-                                addMarkerToMap(intel.loc, factionIcon, mapLayer, intel.id, intel.name, intel.desc)
-                            }
-                        }
-                    }
-                }
-            }
+    for (intel of intelStoreV2) {
+        if (intel.map != mapStrings.allOutbreakMaps) {
+            let factionIcon = getIconByFaction(intel.faction);
+            mapLayer = window[intel.map]
+            addMarkerToMap(intel.loc, factionIcon, mapLayer, intel.id, intel.name, intel.desc)
         }
     }
 
@@ -203,7 +191,7 @@ copyNotif.onanimationend = () => {
 
 function onLoad() {
     document.getElementById(currentMap).classList.add("current-map")
-    generateList();
+    generateList(intelStoreV2);
     let urlId = (getUrlVars()["id"] === "" ? undefined : getUrlVars()["id"])
     if (urlId != undefined) {
         searchThroughPOI(urlId)
