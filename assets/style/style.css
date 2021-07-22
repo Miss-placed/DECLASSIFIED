@@ -9,6 +9,26 @@ body {
     font-family: sans-serif;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #e8e8d3; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #6b6b6b; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2d2d2d; 
+  }
+
 #worldMap {
     display: block;
     grid-column: 1;
@@ -385,6 +405,7 @@ aside #searchTerm:focus-visible {
     color: #dadacd;
 }
 
-.accordion-item {
+#filters.accordion.accordion-flush, .accordion-item {
+    border-bottom: 1px solid #e8e8d3;
     background: gray;
 }
