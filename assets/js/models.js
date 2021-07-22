@@ -1,24 +1,33 @@
 const mapStrings = {
-    zoo:"zoo", 
-    ruka:"ruka", 
-    duga:"duga", 
-    alpine:"alpine", 
-    golova:"golova", 
-    sanatorium:"sanatorium", 
+    zoo: "zoo",
+    ruka: "ruka",
+    duga: "duga",
+    alpine: "alpine",
+    golova: "golova",
+    sanatorium: "sanatorium",
 
-    allOutbreakMaps:"outbreak",
+    allOutbreakMaps: "outbreak",
 
-    dieMaschine:"dieMaschine", 
-    dieMaschineUnderground: "dieMaschine_underground", 
-    firebaseZ:"firebaseZ", 
-    firebaseZSpawn:"firebaseZ_spawn",
+    dieMaschine: "dieMaschine",
+    dieMaschineUnderground: "dieMaschine_underground",
+    firebaseZ: "firebaseZ",
+    firebaseZSpawn: "firebaseZ_spawn",
 }
 
+const allOutbreakMapsArr = [
+    mapStrings.zoo,
+    mapStrings.ruka,
+    mapStrings.duga,
+    mapStrings.alpine,
+    mapStrings.golova,
+    mapStrings.sanatorium
+]
+
 const factions = {
-	requiem: "Requiem",
-	omega: "Omega",
-	maxis: "Maxis",
-	darkAether: "Dark Aether",
+    requiem: "Requiem",
+    omega: "Omega",
+    maxis: "Maxis",
+    darkAether: "Dark Aether",
 }
 
 const seasons = {
@@ -30,8 +39,8 @@ const seasons = {
 }
 
 const intelTypes = {
-	audio: "Audio Logs",
-	docs: "Documents",
-	radio: "Radio Transmissions",
+    audio: "Audio Logs",
+    docs: "Documents",
+    radio: "Radio Transmissions",
     artifact: "Artifacts",
 }

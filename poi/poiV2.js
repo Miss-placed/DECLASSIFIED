@@ -3000,7 +3000,8 @@ const intelStoreV2 = [{
 }]
 
 //Needed to parse location back from a string.
-var intelCache = intelStoreV2.slice();
+const intelCache = intelStoreV2.slice();
+let intelFiltered = intelCache.slice();
 
 intelCache.map((item) => {
     item.loc = JSON.parse(item.loc)
