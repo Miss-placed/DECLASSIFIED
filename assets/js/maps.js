@@ -26,11 +26,11 @@ sanatorium = generateLayers(
 dieMaschine = generateLayers(
     mapStrings.dieMaschine, globalSettings);
 dieMaschine_underground = generateLayers(
-    mapStrings.dieMaschine_underground, globalSettings);
+    mapStrings.dieMaschineUnderground, globalSettings);
 firebaseZ = generateLayers(
     mapStrings.firebaseZ, globalSettings);
 firebaseZ_spawn = generateLayers(
-    mapStrings.firebaseZ_spawn, globalSettings);
+    mapStrings.firebaseZSpawn, globalSettings);
 
 function generateLayers(name, settings) {
     settings.id = name
@@ -49,8 +49,8 @@ function generateLayers(name, settings) {
 
 function switchAndFly(location = [0, 0], selectedMap = "") {
     let ifSub = false
-    if (selectedMap == mapStrings.firebaseZ || selectedMap == mapStrings.firebaseZ_spawn ||
-        selectedMap == mapStrings.dieMaschine || selectedMap == mapStrings.dieMaschine_underground) ifSub = true
+    if (selectedMap == mapStrings.firebaseZ || selectedMap == mapStrings.firebaseZSpawn ||
+        selectedMap == mapStrings.dieMaschine || selectedMap == mapStrings.dieMaschineUnderground) ifSub = true
     setMap(selectedMap, document.getElementById(selectedMap), ifSub)
     setLastVisitedMap(selectedMap)
     map.flyTo(location, 4)

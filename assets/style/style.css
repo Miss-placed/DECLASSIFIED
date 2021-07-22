@@ -159,7 +159,7 @@ aside {
     background: #e8e8d3;
 }
 
-aside #intelFilter {
+aside #searchTerm {
     width: 100%;
     height: 30px;
     padding: 5px;
@@ -167,7 +167,7 @@ aside #intelFilter {
     border: 0;
 }
 
-aside #intelFilter:focus-visible {
+aside #searchTerm:focus-visible {
     outline: none;
 }
 

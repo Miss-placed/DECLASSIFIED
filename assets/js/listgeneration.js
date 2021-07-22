@@ -4,46 +4,48 @@ function generateList(pointsOfInterest) {
     let intelList = document.getElementById("intelList")
     intelList.innerHTML = "";
     for (const [factionKey, factionValue] of Object.entries(factions)) {
-        let factionElement = createElement("section", [factionKey, 'faction-list'], `<img class="faction-icon" src="./assets/img/icons/faction-${factionKey}-icon.png">${factionValue}`)
-        let seasonList = createElement("div", "season-list", "")
-        for (const [seasonKey, seasonValue] of Object.entries(seasons)) {
-            let seasonItems = createElement("div", "season-item", seasonKey)
-            let categoryList = createElement("div", "category-list", "")
-            for (const [categoryKey, categoryValue] of Object.entries(intelTypes)) {
-                let categoryItems = createElement("div", "category-item", `${categoryValue}`)
-                let intelList = createElement("div", "category-list", "")
-                for (item of pointsOfInterest) {
-                    if (item.faction == factionValue && item.season == seasonValue && item.intelType == categoryValue) {
+        if (pointsOfInterest.some(intel => intel.faction == factionValue)) {
+            let factionElement = createElement("section", [factionKey, 'faction-list'], `<img class="faction-icon" src="./assets/img/icons/faction-${factionKey}-icon.png">${factionValue}`)
+            let seasonList = createElement("div", ["season-list", "visible"], "")
+            for (const [seasonKey, seasonValue] of Object.entries(seasons)) {
+                let seasonItems = createElement("div", ["season-item", "visible"], seasonValue)
+                let categoryList = createElement("div", ["category-list", "visible"], "")
+                for (const [categoryKey, categoryValue] of Object.entries(intelTypes)) {
+                    let categoryItems = createElement("div", "category-item", categoryValue)
+                    let intelList = createElement("div", ["category-list", "visible"], "")
+                    for (item of pointsOfInterest) {
+                        if (item.faction == factionValue && item.season == seasonValue && item.intelType == categoryValue) {
 
-                        let intelItem = createElement("div", "intel-item", `${item.name}`, item.id, item.map)
-                        let intelDesc = createElement("div", "intel-desc", "")
-                        let intelLocation = createElement("p", ["intel-subtitle"], item.map)
-                        let description = createElement("p", ["intel-description"], item.desc)
-                        intelDesc.appendChild(intelLocation)
-                        intelDesc.appendChild(description)
+                            let intelItem = createElement("div", "intel-item", `${item.name}`, item.id, item.map)
+                            let intelDesc = createElement("div", ["intel-desc", "visible"], "")
+                            let intelLocation = createElement("p", ["intel-subtitle"], item.map)
+                            let description = createElement("p", ["intel-description"], item.desc)
+                            intelDesc.appendChild(intelLocation)
+                            intelDesc.appendChild(description)
 
 
 
-                        if (item.loc[0] != 0 && item.loc[1] != 0) {
-                            let location = createElement("button", "item-location", "Locate Intel")
-                            location.onclick = goToIntel(item)
-                            intelDesc.appendChild(location)
-                            intelDesc.appendChild(genShareButton(item.id))
+                            if (item.loc[0] != 0 && item.loc[1] != 0) {
+                                let location = createElement("button", "item-location", "Locate Intel")
+                                location.onclick = goToIntel(item)
+                                intelDesc.appendChild(location)
+                                intelDesc.appendChild(genShareButton(item.id))
+                            }
+                            intelItem.appendChild(intelDesc)
+                            intelList.appendChild(intelItem)
                         }
-                        intelItem.appendChild(intelDesc)
-                        intelList.appendChild(intelItem)
                     }
+                    categoryItems.appendChild(intelList)
+                    categoryList.appendChild(categoryItems)
+                    /* if (pointsOfInterest[faction][season][category][1] !== undefined) categoryList.appendChild(categoryItems) Need to find out what this was for*/
                 }
-                categoryItems.appendChild(intelList)
-                categoryList.appendChild(categoryItems)
-                /* if (pointsOfInterest[faction][season][category][1] !== undefined) categoryList.appendChild(categoryItems) Need to find out what this was for*/
+                seasonItems.appendChild(categoryList)
+                seasonList.appendChild(seasonItems)
             }
-            seasonItems.appendChild(categoryList)
-            seasonList.appendChild(seasonItems)
-        }
 
-        factionElement.appendChild(seasonList)
-        intelList.appendChild(factionElement)
+            factionElement.appendChild(seasonList)
+            intelList.appendChild(factionElement)
+        }
     }
 
 

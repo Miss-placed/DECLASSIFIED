@@ -6,27 +6,11 @@ var results = [];
 let isMobile = false
 let copyNotif = document.getElementById("copy-notif")
 
-function searchThroughPOI(query) {
-    for (let faction in poiStore) {
-        if (poiStore.hasOwnProperty(faction)) {
-            let factionIcon = window[faction.toString() + "Icon"]
-            for (let i = 0; i <= Object.keys(poiStore[faction]).length; i++) {
-                let season = poiStore[faction][i];
-                for (let typeOfIntel in season) {
-                    if (season.hasOwnProperty(typeOfIntel)) {
-                        for (let j = 0; j < Object.keys(season[typeOfIntel]).length; j++) {
-                            let item = season[typeOfIntel][j + 1]
-                            for (key in item) {
-                                if (item[key].indexOf(query) != -1) {
-                                    switchAndFly(item.loc, item.map)
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+function searchThroughPOI(intelId) {
+    let matchedIntel = intelCache.find((item) => {
+        return item.id == intelId;
+    })
+    switchAndFly(matchedIntel.loc, matchedIntel.map);
 }
 
 if (localStorage.declassifiedPrefs != undefined)
@@ -67,7 +51,7 @@ L.control.attribution()
 //checks if typeOfIntel is actually set
 //loops through all types of intel and makes a marker
 if (!debug) {
-    for (intel of intelStoreV2) {
+    for (intel of intelCache) {
         if (intel.map != mapStrings.allOutbreakMaps) {
             let factionIcon = getIconByFaction(intel.faction);
             mapLayer = window[intel.map]
@@ -191,7 +175,7 @@ copyNotif.onanimationend = () => {
 
 function onLoad() {
     document.getElementById(currentMap).classList.add("current-map")
-    generateList(intelStoreV2);
+    generateList(intelCache);
     let urlId = (getUrlVars()["id"] === "" ? undefined : getUrlVars()["id"])
     if (urlId != undefined) {
         searchThroughPOI(urlId)
@@ -207,12 +191,12 @@ function getUrlVars() {
 }
 
 if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
-    let sidebar = document.getElementById("aside")
-    let worldmap = document.getElementById("worldMap")
-    sidebar.classList.add("mobile-view")
-    worldmap.classList.add("mobile-view")
+    let sidebar = document.getElementById("aside");
+    let worldmap = document.getElementById("worldMap");
+    sidebar.classList.add("mobile-view");
+    worldmap.classList.add("mobile-view");
     isMobile = true
-    toggleAside()
+    toggleAside();
 }
 
 function showNotification(message) {
@@ -222,7 +206,7 @@ function showNotification(message) {
     copyNotif.classList.add("animated");
 }
 
-function hideCategoryIfEmpty(category) {
+/* function hideCategoryIfEmpty(category) {
     if (category) {
         category.each(function() {
             var category = $(this);
@@ -230,55 +214,78 @@ function hideCategoryIfEmpty(category) {
             if (!anyVisibleItems) category.hide();
         });
     }
-}
+} */
 
-function filterIntel(searchTerm) {
-    var results = intelStoreV2;
-
+function filterIntel(searchTerm, factionsArr, seasonsArr, intelTypeArr, mapArr) {
+    var results = intelCache;
     results = results.filter((intel) => {
         return intel.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
     })
-    debugger
+
+    results = results.filter((intel) => {
+        return factionsArr.includes(intel.faction)
+    })
 
     return results;
 }
 
+var filterCheckboxes = $('#intelFilter').find("input[type=checkbox]");
+
+filterCheckboxes.change(function () {
+/*     var currentCheck = $(this);
+    if(currentCheck.is(':checked')){
+        console.log(currentCheck, "Checked", currentCheck.val());
+    }
+    else
+    {
+        console.log(currentCheck, "Unchecked", currentCheck.val());
+    }    */
+    var factionFilters = $('#factionFilterCollapse').find("input[type=checkbox]:checked");
+    let factionsArr = [];
+    /* console.log(factionFilters); */
+    $.each(factionFilters, function(){
+        factionsArr.push(factions[$(this).val()]);
+    });
+    /* console.log(factionsArr); */
+
+    var seasonsFilters = $('#seasonFilterCollapse').find("input[type=checkbox]:checked");
+    let seasonsArr = [];
+    /* console.log(seasonsFilters); */
+    $.each(seasonsFilters, function(){
+        seasonsArr.push(seasons[$(this).val()]);
+    });
+    /* console.log(seasonsArr); */
+
+    var intelTypeFilters = $('#intelTypeFilterCollapse').find("input[type=checkbox]:checked");
+    let intelTypeArr = [];
+    /* console.log(intelTypeFilters); */
+    $.each(intelTypeFilters, function(){
+        intelTypeArr.push(intelTypes[$(this).val()]);
+    });
+    /* console.log(intelTypeArr); */
+
+    var mapFilters = $('#mapFilterCollapse').find("input[type=checkbox]:checked");
+    let mapArr = [];
+    /* console.log(mapFilters); */
+    $.each(mapFilters, function(){
+        mapArr.push(mapStrings[$(this).val()]);
+    });
+    /* console.log(mapArr); */
+
+    var filteredIntel = filterIntel($('#searchTerm').val().toLowerCase(), factionsArr, seasonsArr, intelTypeArr, mapArr);
+    generateList(filteredIntel);
+});
+
+$('#searchTerm').keyup(function() {
+    var searchTerm = $(this).val().toLowerCase();
+    
+    
+    var filteredIntel = filterIntel(searchTerm);
+
+    generateList(filteredIntel);
+
+});
 //Intel Search
 document.getElementById("intelFilter").addEventListener("focus", function(e) {
-    var searchItems = $('.searchable');
-    $('#intelFilter').keyup(function() {
-        var searchTerm = $(this).val().toLowerCase();
 
-        var filteredIntel = filterIntel(searchTerm)
-
-        generateList(filteredIntel)
-
-
-
-/*         if (searchTerm == "") {
-            //When search is empty, collapse all again and show all hidden elements
-            $("#intelList").find(".visible").removeClass("visible");
-            $("#intelList").find(":hidden").show();
-        } else {
-            searchItems.each(function() {
-                var item = $(this);
-                var text = item.text().toLowerCase();
-
-                if (text.indexOf(searchTerm) > -1 && item.is("h2") && item.attr("data-id")) {
-                    item.parentsUntil("#aside").removeClass("visible").addClass("visible"); // show all parents up the ancestor tree
-                    item.parentsUntil("#aside").show();
-                    item.show();
-                } else {
-                    item.hide();
-                }
-            });
-
-            //If any categories are empty, collapse them
-            var intelTypes = $(".category-item");
-            hideCategoryIfEmpty(intelTypes)
-                //If any seasons are empty, collapse them
-            var seasons = $(".season-item");
-            hideCategoryIfEmpty(seasons);
-        }; */
-    });
 })
