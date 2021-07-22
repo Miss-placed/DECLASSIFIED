@@ -66,112 +66,113 @@
     </header>
     <Section>
         <aside id="aside">
-            <input type="text" id="intelFilter" placeholder="Search Intel">
-
-            <div class="filters accordion accordion-flush" id="filters">
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="factionFilter">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#factionFilterCollapse" aria-expanded="false"
-                            aria-controls="factionFilterCollapse">
-                            Factions
-                        </button>
-                    </h2>
-                    <div id="factionFilterCollapse" class="accordion-collapse collapse" aria-labelledby="factionFilter"
-                        data-bs-parent="#filters">
-                        <div class="accordion-body">
-                            <input type="checkbox" id="faction1" name="faction1" value="requiem" checked>
-                            <label for="faction1">Requiem</label><br>
-                            <input type="checkbox" id="faction2" name="faction2" value="omega" checked>
-                            <label for="faction2">Omega</label><br>
-                            <input type="checkbox" id="faction3" name="faction3" value="maxis" checked>
-                            <label for="faction3">Maxis</label><br>
-                            <input type="checkbox" id="faction4" name="faction4" value="darkAether" checked>
-                            <label for="faction4">Dark Aether</label><br>
+            <div id="intelFilter">
+                <input type="text" id="searchTerm" placeholder="Search Intel">
+                <div class="filters accordion accordion-flush" id="filters">
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="factionFilter">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#factionFilterCollapse" aria-expanded="false"
+                                aria-controls="factionFilterCollapse">
+                                Factions
+                            </button>
+                        </h2>
+                        <div id="factionFilterCollapse" class="accordion-collapse collapse" aria-labelledby="factionFilter"
+                            data-bs-parent="#filters">
+                            <div class="accordion-body">
+                                <input type="checkbox" id="faction1" name="faction1" value="requiem" checked>
+                                <label for="faction1">Requiem</label><br>
+                                <input type="checkbox" id="faction2" name="faction2" value="omega" checked>
+                                <label for="faction2">Omega</label><br>
+                                <input type="checkbox" id="faction3" name="faction3" value="maxis" checked>
+                                <label for="faction3">Maxis</label><br>
+                                <input type="checkbox" id="faction4" name="faction4" value="darkAether" checked>
+                                <label for="faction4">Dark Aether</label><br>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="seasonFilter">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#seasonFilterCollapse" aria-expanded="false"
-                            aria-controls="seasonFilterCollapse">
-                            Seasons
-                        </button>
-                    </h2>
-                    <div id="seasonFilterCollapse" class="accordion-collapse collapse" aria-labelledby="seasonFilter"
-                        data-bs-parent="#filters">
-                        <div class="accordion-body">
-                            <input type="checkbox" id="season0" name="season0" value="0" checked>
-                            <label for="season0">Preseason</label><br>
-                            <input type="checkbox" id="season1" name="season1" value="1" checked>
-                            <label for="season1">Season 1</label><br>
-                            <input type="checkbox" id="season2" name="season2" value="2" checked>
-                            <label for="season2">Season 2</label><br>
-                            <input type="checkbox" id="season3" name="season3" value="3" checked>
-                            <label for="season3">Season 3</label><br>
-                            <input type="checkbox" id="season4" name="season4" value="4" checked>
-                            <label for="season4">Season 4</label><br>
+    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="seasonFilter">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#seasonFilterCollapse" aria-expanded="false"
+                                aria-controls="seasonFilterCollapse">
+                                Seasons
+                            </button>
+                        </h2>
+                        <div id="seasonFilterCollapse" class="accordion-collapse collapse" aria-labelledby="seasonFilter"
+                            data-bs-parent="#filters">
+                            <div class="accordion-body">
+                                <input type="checkbox" id="season0" name="season0" value="0" checked>
+                                <label for="season0">Preseason</label><br>
+                                <input type="checkbox" id="season1" name="season1" value="1" checked>
+                                <label for="season1">Season 1</label><br>
+                                <input type="checkbox" id="season2" name="season2" value="2" checked>
+                                <label for="season2">Season 2</label><br>
+                                <input type="checkbox" id="season3" name="season3" value="3" checked>
+                                <label for="season3">Season 3</label><br>
+                                <input type="checkbox" id="season4" name="season4" value="4" checked>
+                                <label for="season4">Season 4</label><br>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="intelTypeFilter">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#intelTypeFilterCollapse" aria-expanded="false"
-                            aria-controls="intelTypeFilterCollapse">
-                            Intel Types
-                        </button>
-                    </h2>
-                    <div id="intelTypeFilterCollapse" class="accordion-collapse collapse" aria-labelledby="intelTypeFilter"
-                        data-bs-parent="#filters">
-                        <div class="accordion-body">
-                            <input type="checkbox" id="intelType1" name="intelType1" value="AUDIO" checked>
-                            <label for="intelType1">Audio Logs</label><br>
-                            <input type="checkbox" id="intelType2" name="intelType2" value="DOCS" checked>
-                            <label for="intelType2">Documents</label><br>
-                            <input type="checkbox" id="intelType3" name="intelType3" value="RADIO" checked>
-                            <label for="intelType3">Radio Transmissions</label><br>
-                            <input type="checkbox" id="intelType4" name="intelType4" value="ARTIFACT" checked>
-                            <label for="intelType4">Artifacts</label><br>
+    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="intelTypeFilter">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#intelTypeFilterCollapse" aria-expanded="false"
+                                aria-controls="intelTypeFilterCollapse">
+                                Intel Types
+                            </button>
+                        </h2>
+                        <div id="intelTypeFilterCollapse" class="accordion-collapse collapse" aria-labelledby="intelTypeFilter"
+                            data-bs-parent="#filters">
+                            <div class="accordion-body">
+                                <input type="checkbox" id="intelType1" name="intelType1" value="audio" checked>
+                                <label for="intelType1">Audio Logs</label><br>
+                                <input type="checkbox" id="intelType2" name="intelType2" value="docs" checked>
+                                <label for="intelType2">Documents</label><br>
+                                <input type="checkbox" id="intelType3" name="intelType3" value="radio" checked>
+                                <label for="intelType3">Radio Transmissions</label><br>
+                                <input type="checkbox" id="intelType4" name="intelType4" value="artifact" checked>
+                                <label for="intelType4">Artifacts</label><br>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="mapFilter">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#mapFilterCollapse" aria-expanded="false"
-                            aria-controls="mapFilterCollapse">
-                            Maps
-                        </button>
-                    </h2>
-                    <div id="mapFilterCollapse" class="accordion-collapse collapse" aria-labelledby="mapFilter"
-                        data-bs-parent="#filters">
-                        <div class="accordion-body">
-                            <input type="checkbox" id="map1" name="map1" value="dieMaschine" checked>
-                            <label for="map1">Die Maschine</label><br>
-                            <input type="checkbox" id="map2" name="map2" value="firebaseZ" checked>
-                            <label for="map2">Firebase Z</label><br>
-                            <input type="checkbox" id="map3" name="map3" value="zoo" checked>
-                            <label for="map3">Zoo</label><br>
-                            <input type="checkbox" id="map4" name="map4" value="ruka" checked>
-                            <label for="map4">Ruka</label><br>
-                            <input type="checkbox" id="map5" name="map5" value="duga" checked>
-                            <label for="map5">Duga</label><br>
-                            <input type="checkbox" id="map6" name="map6" value="alpine" checked>
-                            <label for="map6">Alpine</label><br>
-                            <input type="checkbox" id="map7" name="map7" value="golova" checked>
-                            <label for="map7">Golova</label><br>
-                            <input type="checkbox" id="map8" name="map8" value="sanatorium" checked>
-                            <label for="map8">Sanatorium</label><br>
+    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="mapFilter">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#mapFilterCollapse" aria-expanded="false"
+                                aria-controls="mapFilterCollapse">
+                                Maps
+                            </button>
+                        </h2>
+                        <div id="mapFilterCollapse" class="accordion-collapse collapse" aria-labelledby="mapFilter"
+                            data-bs-parent="#filters">
+                            <div class="accordion-body">
+                                <input type="checkbox" id="map1" name="map1" value="dieMaschine" checked>
+                                <label for="map1">Die Maschine</label><br>
+                                <input type="checkbox" id="map2" name="map2" value="firebaseZ" checked>
+                                <label for="map2">Firebase Z</label><br>
+                                <input type="checkbox" id="map3" name="map3" value="zoo" checked>
+                                <label for="map3">Zoo</label><br>
+                                <input type="checkbox" id="map4" name="map4" value="ruka" checked>
+                                <label for="map4">Ruka</label><br>
+                                <input type="checkbox" id="map5" name="map5" value="duga" checked>
+                                <label for="map5">Duga</label><br>
+                                <input type="checkbox" id="map6" name="map6" value="alpine" checked>
+                                <label for="map6">Alpine</label><br>
+                                <input type="checkbox" id="map7" name="map7" value="golova" checked>
+                                <label for="map7">Golova</label><br>
+                                <input type="checkbox" id="map8" name="map8" value="sanatorium" checked>
+                                <label for="map8">Sanatorium</label><br>
+                            </div>
                         </div>
                     </div>
+    
                 </div>
-
             </div>
 
             <div id="intelList">

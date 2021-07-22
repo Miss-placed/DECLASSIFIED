@@ -9,9 +9,9 @@ const mapStrings = {
     allOutbreakMaps:"outbreak",
 
     dieMaschine:"dieMaschine", 
-    dieMaschine_underground: "dieMaschine_underground", 
+    dieMaschineUnderground: "dieMaschine_underground", 
     firebaseZ:"firebaseZ", 
-    firebaseZ_spawn:"firebaseZ_spawn",
+    firebaseZSpawn:"firebaseZ_spawn",
 }
 
 const factions = {
@@ -22,16 +22,16 @@ const factions = {
 }
 
 const seasons = {
-    "Preseason": 0,
-    "Season 1": 1,
-    "Season 2": 2,
-    "Season 3": 3,
-    "Season 4": 4,
+    preseason: "Preseason",
+    season1: "Season 1",
+    season2: "Season 2",
+    season3: "Season 3",
+    season4: "Season 4",
 }
 
 const intelTypes = {
-	AUDIO: "Audio Logs",
-	DOCS: "Documents",
-	RADIO: "Radio Transmissions",
-    ARTIFACT: "Artifacts",
+	audio: "Audio Logs",
+	docs: "Documents",
+	radio: "Radio Transmissions",
+    artifact: "Artifacts",
 }
