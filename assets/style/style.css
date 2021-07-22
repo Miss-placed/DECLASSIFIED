@@ -372,3 +372,19 @@ aside #searchTerm:focus-visible {
     font-weight: bold;
     line-height: 1.2;
 }
+
+.accordion-item,.accordion-button {
+    background: #6b6b6b;
+    font-weight: bold;
+    color: #dadacd;
+}
+
+.accordion-button:not(.collapsed){
+    background: #6b6b6b;
+    font-weight: bold;
+    color: #dadacd;
+}
+
+.accordion-item {
+    background: gray;
+}
