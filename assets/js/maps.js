@@ -1,4 +1,4 @@
-var globalSettings = {
+var globalMapSettings = {
     prefix: false,
     attribution: 'Want to help out? <a href="https://github.com/Odinnh/DECLASSIFIED">Github</a>. ||  See all <a href="https://github.com/Odinnh/DECLASSIFIED#contributors">Contributors</a>',
     id: '',
@@ -11,26 +11,16 @@ var globalSettings = {
 }
 
 var zoo, ruka, duga, alpine, golova, sanatorium, dieMaschine, dieMaschine_underground, firebaseZ, firebaseZ_spawn;
-zoo = generateLayers(
-    mapStrings.zoo, globalSettings);
-duga = generateLayers(
-    mapStrings.duga, globalSettings);
-ruka = generateLayers(
-    mapStrings.ruka, globalSettings);
-alpine = generateLayers(
-    mapStrings.alpine, globalSettings);
-golova = generateLayers(
-    mapStrings.golova, globalSettings);
-sanatorium = generateLayers(
-    mapStrings.sanatorium, globalSettings);
-dieMaschine = generateLayers(
-    mapStrings.dieMaschine, globalSettings);
-dieMaschine_underground = generateLayers(
-    mapStrings.dieMaschine_underground, globalSettings);
-firebaseZ = generateLayers(
-    mapStrings.firebaseZ, globalSettings);
-firebaseZ_spawn = generateLayers(
-    mapStrings.firebaseZ_spawn, globalSettings);
+zoo = generateLayers(mapStrings.zoo, globalMapSettings);
+duga = generateLayers(mapStrings.duga, globalMapSettings);
+ruka = generateLayers(mapStrings.ruka, globalMapSettings);
+alpine = generateLayers(mapStrings.alpine, globalMapSettings);
+golova = generateLayers(mapStrings.golova, globalMapSettings);
+sanatorium = generateLayers(mapStrings.sanatorium, globalMapSettings);
+dieMaschine = generateLayers(mapStrings.dieMaschine, globalMapSettings);
+dieMaschine_underground = generateLayers(mapStrings.dieMaschineUnderground, globalMapSettings);
+firebaseZ = generateLayers(mapStrings.firebaseZ, globalMapSettings);
+firebaseZ_spawn = generateLayers(mapStrings.firebaseZSpawn, globalMapSettings);
 
 function generateLayers(name, settings) {
     settings.id = name
@@ -44,14 +34,4 @@ function generateLayers(name, settings) {
     object.Markers.addTo(object.Layer);
     object.MiscMarkers.addTo(object.Layer);
     return object
-
-}
-
-function switchAndFly(location = [0, 0], selectedMap = "") {
-    let ifSub = false
-    if (selectedMap == mapStrings.firebaseZ || selectedMap == mapStrings.firebaseZ_spawn ||
-        selectedMap == mapStrings.dieMaschine || selectedMap == mapStrings.dieMaschine_underground) ifSub = true
-    setMap(selectedMap, document.getElementById(selectedMap), ifSub)
-    setLastVisitedMap(selectedMap)
-    map.flyTo(location, 4)
 }
