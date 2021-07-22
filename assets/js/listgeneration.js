@@ -14,7 +14,7 @@ function GenerateFactionList(pointsOfInterest, factionKey, factionValue) {
     let factionElement = createElement("section", [factionKey, 'faction-list'], `<img class="faction-icon" src="./assets/img/icons/faction-${factionKey}-icon.png">${factionValue}`);
     let seasonList = createElement("div", ["season-list", "visible"], "");
     for (const [seasonKey, seasonValue] of Object.entries(seasons)) {
-        if (pointsOfInterest.some(intel => intel.season == seasonValue)) {
+        if (pointsOfInterest.some(intel => intel.season == seasonValue && intel.faction == factionValue)) {
             seasonList.appendChild(GenerateSeasonList(pointsOfInterest, seasonValue, factionValue));
         }
     }
@@ -27,7 +27,7 @@ function GenerateSeasonList(pointsOfInterest, seasonValue, factionValue) {
     let seasonItems = createElement("div", ["season-item", "visible"], seasonValue);
     let categoryList = createElement("div", ["category-list", "visible"], "");
     for (const [intelTypeKey, intelTypeValue] of Object.entries(intelTypes)) {
-        if (pointsOfInterest.some(intel => intel.intelType == intelTypeValue)) {
+        if (pointsOfInterest.some(intel => intel.intelType == intelTypeValue && intel.season == seasonValue && intel.faction == factionValue)) {
             categoryList.appendChild(GenerateIntelTypeList(pointsOfInterest, intelTypeValue, factionValue, seasonValue));
             /* WHAT WAS THIS FOR? if (pointsOfInterest[faction][season][category][1] !== undefined) categoryList.appendChild(categoryItems) */
         }
