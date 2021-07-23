@@ -8,274 +8,129 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>DECLASSIFIED - Cold War Intel Map</title>
-    <meta name="description" content="With The Cold War Collectables Map you can track your progress on which intel you still need to collect.">
+    <title>Declassified</title>
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/style/style.css">
-    <link rel="icon" href="./favicon-32x32.png" type="image/png">
+    <link rel="stylesheet" href="style2.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="donut.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-    <script>
-        var debug = true
-    </script>
 </head>
 
-<body onload="onLoad()">
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <Section>
-        <header>
-            <div class="dropdown dropbtn">
-                Die Maschine
-                <div class="dropdown-content">
-                    <div id="dieMaschine" class="dropdown-item not-selectable" onClick="setMap(dieMaschine,this,true)">Die Maschine Surface</div>
-                    <div id="dieMaschine_underground" class="dropdown-item not-selectable" onClick="setMap(dieMaschine_underground,this,true)">Die Maschine Underground</div>
-                </div>
-            </div>
-
-            <div class="dropdown dropbtn">
-                Firebase Z
-                <div class="dropdown-content">
-                    <div id="firebaseZ_spawn" class="dropdown-item not-selectable" onClick="setMap(firebaseZ_spawn,this,true)">Firebase Z Spawn</div>
-                    <div id="firebaseZ" class="dropdown-item not-selectable" onClick="setMap(firebaseZ,this,true)">Firebase Z Main Base</div>
-                </div>
-            </div>
-
-            <div id="zoo" class="not-selectable" onClick="setMap(zoo,this)">Duga</div>
-            <div id="duga" class="not-selectable" onClick="setMap(duga,this)">Duga</div>
-            <div id="ruka" class="current-map not-selectable" onClick="setMap(ruka,this)">Ruka</div>
-            <div id="golova" class="not-selectable" onClick="setMap(golova,this)">Golova</div>
-            <div id="sanatorium" class="not-selectable" onClick="setMap(sanatorium,this)">Sanatorium</div>
-            <div id="alpine" class="not-selectable" onClick="setMap(alpine,this)">Alpine</div>
-        </header>
-        <aside id="aside"></aside>
-        <div id="worldMap"></div>
-    </Section>
-    <input id="cb" type="text" hidden>
-    <script src="" async defer></script>
-    <script src="assets/js/icons.js"></script>
-    <script src="assets/js/maps.js"></script>
-    <script src="assets/js/index.js"></script>
+<body>
+    <section id="worldmap">
+        <div id="intel-graph" class="graph"></div>
+        <div id="graph-box">
+            <canvas id="season-graph" class="graph"></canvas>
+        </div>
+        <button class="btn">test</button>
+        <input type="checkbox" name="checkbox" id="thing" class="check">
+    </section>
     <script>
-        var currentMap = ruka;
-
-        function onLoad() {}
-
-        function setMap(selectedMap, htmlElement, ifSub = false) {
-            if (currentMap != selectedMap) {
-                map.removeLayer(currentMap.Layer)
-                map.addLayer(selectedMap.Layer)
-                currentMap = selectedMap
-
-                Array.from(document.getElementsByClassName('current-map'))
-                    .forEach((element) => {
-                        element.classList.toggle("current-map");
-                    })
-                if (ifSub) htmlElement.parentNode.parentNode.classList.toggle("current-map")
-                htmlElement.classList.toggle("current-map")
-            }
+        let intelTotal = {
+            Maxis: 100,
+            Requiem: 50,
+            Omega: 140,
+            DarkAether: 200,
         }
-        let rai = 1,
-            rii = 1,
-            rri = 1,
-            rd = 1;
-        let oai = 1,
-            oii = 1,
-            ori = 1,
-            od = 1;
-        let mai = 1,
-            mii = 1,
-            mri = 1,
-            md = 1;
-        let dai = 1,
-            dii = 1,
-            dri = 1,
-            dd = 1;
-        let markerPoints = {
-            requiem: {
-                4: {
-                    Audio: {
-                        0: {},
-                    },
-                    Radio: {
-                        0: {},
-                    },
-                    Documents: {
-                        0: {},
-                    },
-                    Artifacts: {
-                        0: {},
-                    },
-                }
-            },
-            omega: {
-                4: {
-                    Audio: {
-                        0: {},
-                    },
-                    Radio: {
-                        0: {},
-                    },
-                    Documents: {
-                        0: {},
-                    },
-                    Artifacts: {
-                        0: {},
-                    },
-                }
-            },
-            maxis: {
-                4: {
-                    Audio: {
-                        0: {},
-                    },
-                    Radio: {
-                        0: {},
-                    },
-                    Documents: {
-                        0: {},
-                    },
-                    Artifacts: {
-                        0: {},
-                    },
-                }
-            },
-            darkAether: {
-                4: {
-                    Audio: {
-                        0: {},
-                    },
-                    Radio: {
-                        0: {},
-                    },
-                    Documents: {
-                        0: {},
-                    },
-                    Artifacts: {
-                        0: {},
-                    },
-                }
-            },
-        }
-        map.on("click", function(e) {
-            if (debug) {
-                let faction = prompt("Faction?")
-                let season = prompt("Season?")
-                let type = prompt("Type?")
-                let name = prompt("Name?")
-                let description = prompt("Description?")
-                let maep = Object.keys(ruka)[0]
-                let aside = document.getElementById("aside")
-                let index
-                switch (faction) {
-                    case 'requiem':
-                        switch (type) {
-                            case 'Audio':
-                                index = rai
-                                rai++
-                                break
-                            case 'Artifacts':
-                                index = rii
-                                rii++
-                                break
-                            case 'Documents':
-                                index = rdi
-                                rdi++
-                                break
-                            case 'Radio':
-                                index = rri
-                                rri++
-                                break
-                        }
-                        break
-                    case 'omega':
-                        switch (type) {
-                            case 'Audio':
-                                index = oai
-                                oai++
-                                break
-                            case 'Artifacts':
-                                index = oii
-                                oii++
-                                break
-                            case 'Documents':
-                                index = odi
-                                odi++
-                                break
-                            case 'Radio':
-                                index = ori
-                                ori++
-                                break
-                        }
-                        break
-                    case 'maxis':
-                        switch (type) {
-                            case 'Audio':
-                                index = mai
-                                mai++
-                                break
-                            case 'Artifacts':
-                                index = mii
-                                mii++
-                                break
-                            case 'Documents':
-                                index = mdi
-                                mdi++
-                                break
-                            case 'Radio':
-                                index = mri
-                                mri++
-                                break
-                        }
-                        break
-                    case 'darkAether':
-                        switch (type) {
-                            case 'Audio':
-                                index = dai
-                                dai++
-                                break
-                            case 'Artifacts':
-                                index = dii
-                                dii++
-                                break
-                            case 'Documents':
-                                index = ddi
-                                ddi++
-                                break
-                            case 'Radio':
-                                index = dri
-                                dri++
-                                break
-                        }
-                    default:
-                        index = 0;
-                        break
-                }
-                markerPoints[faction][season][type][index] = JSON.parse(`{
-                                    "name":"${name}",
-                                    "loc":[${e.latlng.lat}, ${e.latlng.lng}],
-                                    "desc":"${description}",
-                                    "map":"${maep}"
-                                }
-                `)
+        intelTotal.All = intelTotal.Maxis + intelTotal.Requiem + intelTotal.Omega + intelTotal.DarkAether;
 
-                aside.innerHTML = `${JSON.stringify(markerPoints)}`
-                    // var cb = document.getElementById("cb");
-                    // cb.value = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
-                    // cb.style.display = 'block';
-                    // cb.select();
-                    // document.execCommand('copy');
-                    // cb.style.display = 'none';
-                L.marker(e.latlng, {
-                        icon: generalIcon
-                    }).addTo(currentMap.Markers)
-                    .bindPopup(` <h1>${name}</h1> ${description}`);
-            }
-        })
+        let collectedIntel = {
+            Maxis: 70,
+            Requiem: 50,
+            Omega: 100,
+            DarkAether: 10,
+        }
+        collectedIntel.Not = intelTotal.All - collectedIntel.Maxis - collectedIntel.Requiem - collectedIntel.Omega - collectedIntel.DarkAether;
+
+
+        var mychart = new DonutChart(
+            document.getElementById("intel-graph"), {
+                r: 90,
+                stroke: 30,
+                scale: 100,
+                items: [{
+                    label: "R",
+                    value: (collectedIntel.Requiem / intelTotal.All)
+                }, {
+                    label: "O",
+                    value: (collectedIntel.Omega / intelTotal.All)
+                }, {
+                    label: "M",
+                    value: (collectedIntel.Maxis / intelTotal.All)
+                }, {
+                    label: "D",
+                    value: (collectedIntel.DarkAether / intelTotal.All)
+                }, {
+                    label: "N",
+                    value: (collectedIntel.Not / intelTotal.All)
+                }, ]
+
+            })
     </script>
+
+    <script>
+        const factionColor = {
+            Requiem: '#50809c',
+            Omega: '#b33536',
+            Maxis: '#252d5c',
+            DarkAether: '#472359',
+        }
+        const data = {
+            labels: [
+                'Requiem',
+                'Omega',
+                'Maxis',
+                'Dark Aether',
+                'Not Collected'
+            ],
+            datasets: [{
+                label: 'Total Intel Per Season',
+                data: [
+                    collectedIntel.Requiem,
+                    collectedIntel.Omega,
+                    collectedIntel.Maxis,
+                    collectedIntel.DarkAether,
+                    collectedIntel.Not
+                ],
+                backgroundColor: [
+                    factionColor.Requiem,
+                    factionColor.Omega,
+                    factionColor.Maxis,
+                    factionColor.DarkAether,
+                    '#565555'
+                ],
+                borderWidth: 0,
+                hoverOffset: 4,
+                weight: 5
+            }]
+        };
+
+        const config = {
+            type: 'doughnut',
+            data: data,
+            options: {
+                radius: "90%",
+                cutout: "70%",
+                plugins: {
+                    layout: {
+                        padding: 20
+                    },
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        };
+        var myChart = new Chart(
+            document.getElementById('season-graph'),
+            config
+        );
+    </script>
+    </script>
+
 </body>
 
 </html>
