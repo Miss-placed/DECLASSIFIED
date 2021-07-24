@@ -73,6 +73,7 @@
 }
 
 .check {
+    appearance:none;
     position: relative;
     appearance: none;
     outline: none;
@@ -81,6 +82,7 @@
     background-color: var(--v2-red);
     border-radius: 50px;
     box-shadow: 0px 3px 0px 0px var(--v2-black);
+    
 }
 
 .check:after {
