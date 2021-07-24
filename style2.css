@@ -74,9 +74,10 @@
 
 .check {
     -webkit-appearance: none;
+    appearance: none;
     border-radius: 0;
     position: relative;
-    appearance: none;
+    
     outline: none;
     width: 50px;
     height: 30px;
