@@ -73,7 +73,8 @@
 }
 
 .check {
-    appearance:none;
+    -webkit-appearance: none;
+    border-radius: 0;
     position: relative;
     appearance: none;
     outline: none;
