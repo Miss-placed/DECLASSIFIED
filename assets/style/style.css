@@ -9,25 +9,33 @@ body {
     font-family: sans-serif;
 }
 
+
 /* width */
+
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #e8e8d3; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #6b6b6b; 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #2d2d2d; 
-  }
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #e8e8d3;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #6b6b6b;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #2d2d2d;
+}
 
 #worldMap {
     display: block;
@@ -49,8 +57,6 @@ header {
     display: grid;
     grid-auto-flow: column;
     border-bottom: 1px solid #e8e8d3;
-    overflow-y: hidden;
-    overflow-x: auto;
 }
 
 header>div,
@@ -385,27 +391,39 @@ aside #searchTerm:focus-visible {
     display: none;
 }
 
-
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin-top: 0;
     margin-bottom: 0;
     font-weight: bold;
     line-height: 1.2;
 }
 
-.accordion-item,.accordion-button {
+.accordion-item,
+.accordion-button {
     background: #6b6b6b;
     font-weight: bold;
     color: #dadacd;
 }
 
-.accordion-button:not(.collapsed){
+.accordion-button:not(.collapsed) {
     background: #6b6b6b;
     font-weight: bold;
     color: #dadacd;
 }
 
-#filters.accordion.accordion-flush, .accordion-item {
+#filters.accordion.accordion-flush,
+.accordion-item {
     border-bottom: 1px solid #e8e8d3;
     background: gray;
 }
