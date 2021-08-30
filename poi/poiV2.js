@@ -1595,6 +1595,15 @@ const intelStoreV2 = [{
     "name": "The Trap",
     "desc": "Obtained during the Outbreak EE#2"
 }, {
+    "id": "OS4Au6",
+    "faction": factions.omega,
+    "season": seasons.season4,
+    "intelType": intelTypes.audio,
+    "loc": "[-182.94626512386282, 133.8125]",
+    "map": mapStrings.duga,
+    "name": "Peace is Our Profession",
+    "desc": "Underground bunker in the south, under the bed."
+}, {
     "faction": factions.omega,
     "season": seasons.season4,
     "intelType": intelTypes.docs,
