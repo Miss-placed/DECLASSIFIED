@@ -17,10 +17,14 @@ ruka = generateLayers(mapStrings.ruka, globalMapSettings);
 alpine = generateLayers(mapStrings.alpine, globalMapSettings);
 golova = generateLayers(mapStrings.golova, globalMapSettings);
 sanatorium = generateLayers(mapStrings.sanatorium, globalMapSettings);
+collateral = generateLayers(mapStrings.collateral, globalMapSettings);
+
 dieMaschine = generateLayers(mapStrings.dieMaschine, globalMapSettings);
 dieMaschine_underground = generateLayers(mapStrings.dieMaschineUnderground, globalMapSettings);
 firebaseZ = generateLayers(mapStrings.firebaseZ, globalMapSettings);
 firebaseZ_spawn = generateLayers(mapStrings.firebaseZSpawn, globalMapSettings);
+mauerDerToten = generateLayers(mapStrings.mauerDerToten, globalMapSettings);
+mauerDerToten_streets = generateLayers(mapStrings.mauerDerTotenStreets, globalMapSettings);
 
 function generateLayers(name, settings) {
     settings.id = name

@@ -5,6 +5,7 @@ const mapStrings = {
     alpine: "alpine",
     golova: "golova",
     sanatorium: "sanatorium",
+    collateral: "collateral",
 
     allOutbreakMaps: "outbreak",
 
@@ -12,6 +13,8 @@ const mapStrings = {
     dieMaschineUnderground: "dieMaschine_underground",
     firebaseZ: "firebaseZ",
     firebaseZSpawn: "firebaseZ_spawn",
+    mauerDerToten: "mauerDerToten",
+    mauerDerTotenStreets: "mauerDerToten_streets"
 }
 
 const allOutbreakMapsArr = [
@@ -20,7 +23,8 @@ const allOutbreakMapsArr = [
     mapStrings.duga,
     mapStrings.alpine,
     mapStrings.golova,
-    mapStrings.sanatorium
+    mapStrings.sanatorium,
+    mapStrings.collateral
 ]
 
 const factions = {

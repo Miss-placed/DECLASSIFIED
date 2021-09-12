@@ -48,12 +48,22 @@
             </div>
         </div>
 
+        <div class="dropdown dropbtn">
+            Mauer Der Toten
+            <div class="dropdown-content">
+                <div id="mauerDerToten_streets" class="dropdown-item not-selectable" onClick="setMap('mauerDerToten_streets',this,true)">Mauer Der Toten Streets</div>
+                <div id="mauerDerToten" class="dropdown-item not-selectable" onClick="setMap('mauerDerToten',this,true)">
+                    Under-, Above- Ground</div>
+            </div>
+        </div>
+
         <div id="zoo" class="not-selectable" onClick="setMap('zoo',this)">Zoo</div>
         <div id="duga" class="not-selectable" onClick="setMap('duga',this)">Duga</div>
         <div id="ruka" class=" not-selectable" onClick="setMap('ruka',this)">Ruka</div>
+        <div id="alpine" class="not-selectable" onClick="setMap('alpine',this)">Alpine</div>
         <div id="golova" class="not-selectable" onClick="setMap('golova',this)">Golova</div>
         <div id="sanatorium" class="not-selectable" onClick="setMap('sanatorium',this)">Sanatorium</div>
-        <div id="alpine" class="not-selectable" onClick="setMap('alpine',this)">Alpine</div>
+        <div id="collateral" class="not-selectable" onClick="setMap('collateral',this)">Collateral</div>
     </header>
     <Section>
         <aside id="aside">
@@ -138,18 +148,22 @@
                                 <label for="map2">Firebase Z</label><br>
                                 <input type="checkbox" id="map2L1" name="map2L1" value="firebaseZSpawn" checked>
                                 <label for="map2L1">Firebase Z (Spawn)</label><br>
-                                <input type="checkbox" id="map3" name="map3" value="zoo" checked>
-                                <label for="map3">Zoo</label><br>
-                                <input type="checkbox" id="map4" name="map4" value="ruka" checked>
-                                <label for="map4">Ruka</label><br>
-                                <input type="checkbox" id="map5" name="map5" value="duga" checked>
-                                <label for="map5">Duga</label><br>
-                                <input type="checkbox" id="map6" name="map6" value="alpine" checked>
-                                <label for="map6">Alpine</label><br>
-                                <input type="checkbox" id="map7" name="map7" value="golova" checked>
-                                <label for="map7">Golova</label><br>
-                                <input type="checkbox" id="map8" name="map8" value="sanatorium" checked>
-                                <label for="map8">Sanatorium</label><br>
+                                <input type="checkbox" id="map3" name="map3" value="mauerDerTotenStreets" checked>
+                                <label for="map3">Mauer Der Toten</label><br>
+                                <input type="checkbox" id="map3L1" name="map3L1" value="mauerDertoten" checked>
+                                <label for="map3L1">Mauer Der Toten (Roofs)</label><br>
+                                <input type="checkbox" id="map4" name="map4" value="zoo" checked>
+                                <label for="map4">Zoo</label><br>
+                                <input type="checkbox" id="map5" name="map5" value="ruka" checked>
+                                <label for="map5">Ruka</label><br>
+                                <input type="checkbox" id="map6" name="map6" value="duga" checked>
+                                <label for="map6">Duga</label><br>
+                                <input type="checkbox" id="map7" name="map7" value="alpine" checked>
+                                <label for="map7">Alpine</label><br>
+                                <input type="checkbox" id="map8" name="map8" value="golova" checked>
+                                <label for="map8">Golova</label><br>
+                                <input type="checkbox" id="map9" name="map9" value="sanatorium" checked>
+                                <label for="map9">Sanatorium</label><br>
                             </div>
                         </div>
                     </div>

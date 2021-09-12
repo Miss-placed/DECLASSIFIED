@@ -26,25 +26,25 @@ function filterIntel(searchTerm, factionsArr, seasonsArr, intelTypeArr, mapArr) 
 function TriggerSearch() {
     var factionFilters = $('#factionFilterCollapse').find("input[type=checkbox]:checked");
     let factionsArr = [];
-    $.each(factionFilters, function () {
+    $.each(factionFilters, function() {
         factionsArr.push(factions[$(this).val()]);
     });
 
     var seasonsFilters = $('#seasonFilterCollapse').find("input[type=checkbox]:checked");
     let seasonsArr = [];
-    $.each(seasonsFilters, function () {
+    $.each(seasonsFilters, function() {
         seasonsArr.push(seasons[$(this).val()]);
     });
 
     var intelTypeFilters = $('#intelTypeFilterCollapse').find("input[type=checkbox]:checked");
     let intelTypeArr = [];
-    $.each(intelTypeFilters, function () {
+    $.each(intelTypeFilters, function() {
         intelTypeArr.push(intelTypes[$(this).val()]);
     });
 
     var mapFilters = $('#mapFilterCollapse').find("input[type=checkbox]:checked");
     let mapArr = [];
-    $.each(mapFilters, function () {
+    $.each(mapFilters, function() {
         mapArr.push(mapStrings[$(this).val()]);
     });
 
