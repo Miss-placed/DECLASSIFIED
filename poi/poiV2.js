@@ -582,7 +582,7 @@ const intelStoreV2 = [{
     "season": seasons.season2,
     "intelType": intelTypes.artifact,
     "loc": "[-157.75305794467104, 73.625]",
-    "map": mapStrings.allOutbreakMaps,
+    "map": mapStrings.golova,
     "name": "Aetherium Canister",
     "desc": "Between the pipes connecting the Silo with the building."
 }, {
@@ -839,7 +839,7 @@ const intelStoreV2 = [{
     "season": seasons.season4,
     "intelType": intelTypes.audio,
     "loc": "[-89.6905950744813, 131.96875]",
-    "map": mapStrings.allOutbreakMaps,
+    "map": mapStrings.zoo,
     "name": "Aftermath",
     "desc": "On the desks in the center of the room."
 }, {
@@ -1257,7 +1257,7 @@ const intelStoreV2 = [{
     "season": seasons.season2,
     "intelType": intelTypes.audio,
     "loc": "[-130.56088082901556, 147.46061049785988]",
-    "map": mapStrings.allOutbreakMaps,
+    "map": mapStrings.golova,
     "name": "golova - Off The Hook",
     "desc": "Infront of the Wonderfizz, in one of the side rooms."
 }, {
@@ -1594,6 +1594,15 @@ const intelStoreV2 = [{
     "map": mapStrings.sanatorium,
     "name": "The Trap",
     "desc": "Obtained during the Outbreak EE#2"
+}, {
+    "id": "OS4Au6",
+    "faction": factions.omega,
+    "season": seasons.season4,
+    "intelType": intelTypes.audio,
+    "loc": "[-182.94626512386282, 133.8125]",
+    "map": mapStrings.duga,
+    "name": "Peace is Our Profession",
+    "desc": "Underground bunker in the south, under the bed."
 }, {
     "faction": factions.omega,
     "season": seasons.season4,
