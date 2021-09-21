@@ -50,7 +50,7 @@ function DonutChart(parent, spec) {
         var out = [{
                 0: "circle",
                 1: {
-                    "cx": c + 5,
+                    "cx": c + 10,
                     "cy": c + 10,
                     "r": r,
                     "stroke-width": chart.stroke - 5,
