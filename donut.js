@@ -91,7 +91,11 @@ function DonutChart(parent, spec) {
                     c.addEventListener('mouseover', function() {
                         let facName = this.getAttribute("class")
                         let collected = this.getAttribute("value")
+<<<<<<< Updated upstream
                         label.innerHTML = `${facName}: ${collected}`
+=======
+                        parent.getElementsByClassName("graph-label")[0].innerHTML = `${facName}: ${collected}`
+>>>>>>> Stashed changes
                     })
                     c.addEventListener('mouseout', function() {
                         label.innerHTML = `${spec.collected} / ${spec.total}`
@@ -103,12 +107,24 @@ function DonutChart(parent, spec) {
         return root
     }
 
+<<<<<<< Updated upstream
     var correct_orientation = "matrix(0 -1 -1 0 0 0)"
+=======
+    var correct_orientation = `
+        transform: 
+            rotateZ(90deg) 
+            rotateY(180deg)
+        ;`
+>>>>>>> Stashed changes
         // var correct_orientation = ""
     var __gen_code = function(spec) {
         return __create_tag_tree(
             ["svg", {
+<<<<<<< Updated upstream
                 transform: correct_orientation,
+=======
+                style: correct_orientation,
+>>>>>>> Stashed changes
                 class: "chart-donut",
                 width: spec.r * 2 + 20,
                 height: spec.r * 2 + 20,
@@ -138,4 +154,8 @@ function DonutChart(parent, spec) {
     this.update({})
     document.getElementsByTagName('head')[0].appendChild(style);
     this.parent.appendChild(label)
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes

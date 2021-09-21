@@ -11,7 +11,11 @@
     <title>Declassified</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< Updated upstream
     <link rel="stylesheet" href="devtool.css">
+=======
+    <link rel="stylesheet" href="style2.css">
+>>>>>>> Stashed changes
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <script src="donut.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -22,6 +26,7 @@
     <section id="worldmap">
         <div id="intel-graph" class="graph"></div>
         <div id="intel-graph2" class="graph"></div>
+<<<<<<< Updated upstream
         <button class="btn ui"><i class="bi bi-layers-fill"></i></button>
         <button class="btn">Locate intel <i class="bi bi-caret-right-fill"></i> </button>
         <input type="checkbox" name="checkbox" id="thing" class="check">
@@ -134,6 +139,151 @@
                     color: "--clr-grey"
                 }, ]
 
+=======
+        <div><button class="btn ui"><i class="bi bi-layers-fill"></i></button>
+            <p>button "btn ui"</p>
+        </div>
+        <div>
+            <div style="display: flex; gap: 20px;">
+                <div>
+                    <button class="btn type" type="Documents" value="5 / 10"></button>
+                    <button class="btn type" type="Artifacts" value="5 / 10"></button>
+
+
+                </div>
+                <div>
+                    <button class="btn type" type="Audio Logs" value="5 / 10"></button>
+                    <button class="btn type" type="Radio Transmissions" value="5 / 10"></button>
+                </div>
+            </div>
+            <p>button "btn type"<br>type="Documents"</p>
+        </div>
+        <div>
+            <button class="btn" href="">Locate intel <i class="bi bi-caret-right-fill"></i> </button>
+            <p>button "btn"</p>
+        </div>
+        <div>
+            <a class="btn" href="modal-example.html">Modal Example</a>
+            <p>
+                a "btn"
+
+            </p>
+        </div>
+        <div><input type="checkbox" name="checkbox" id="thing" class="toggle" placeholder="_">
+
+            <input type="checkbox" name="checkbox" id="thing" class="check" content="<i class='bi bi-check '></i>">
+        </div>
+        <div><input type="search"></div>
+    </section>
+    <script>
+        function sum(obj) {
+            return Object.keys(obj).reduce((sum, key) => sum + parseFloat(obj[key] || 0), 0);
+        }
+        let factionTotal = {
+            Requiem: 135,
+            Omega: 108,
+            Maxis: 62,
+            DarkAether: 106,
+        }
+        factionTotal.All = sum(factionTotal);
+        let seasonTotal = {
+            PreSeason: 59,
+            Season1: 97,
+            Season2: 71,
+            Season3: 85,
+            Season4: 99,
+            Season5: 0,
+        }
+        seasonTotal.All = sum(seasonTotal);
+
+        let collectedFaction = {
+            Requiem: 126,
+            Omega: 104,
+            Maxis: 62,
+            DarkAether: 91,
+        }
+        collectedFaction.All = sum(collectedFaction)
+        collectedFaction.Not = factionTotal.All - collectedFaction.All;
+
+        let collectedSeason = {
+            PreSeason: 56,
+            Season1: 87,
+            Season2: 71,
+            Season3: 85,
+            Season4: 84,
+            Season5: 0,
+        }
+        collectedSeason.All = sum(collectedSeason)
+        collectedSeason.Not = factionTotal.All - collectedSeason.All;
+
+        var mychart = new DonutChart(
+            document.getElementById("intel-graph"), {
+                r: 90,
+                stroke: 30,
+                scale: 100,
+                total: factionTotal.All,
+                collected: collectedFaction.All,
+                items: [{
+                    label: "Requiem",
+                    value: collectedFaction.Requiem,
+                    color: "--clr-blue"
+                }, {
+                    label: "Omega",
+                    value: collectedFaction.Omega,
+                    color: "--clr-red"
+                }, {
+                    label: "Maxis",
+                    value: collectedFaction.Maxis,
+                    color: "--clr-blue-d"
+                }, {
+                    label: "DarkAether",
+                    value: collectedFaction.DarkAether,
+                    color: "--clr-purple"
+                }, {
+                    label: "NotCollected",
+                    value: collectedFaction.Not,
+                    color: "--clr-grey"
+                }, ]
+
+            })
+        var mychart2 = new DonutChart(
+            document.getElementById("intel-graph2"), {
+                r: 90,
+                stroke: 30,
+                scale: 100,
+                total: seasonTotal.All,
+                collected: collectedSeason.All,
+                items: [{
+                    label: "PreSeason",
+                    value: collectedSeason.PreSeason,
+                    color: "--clr-blue-d"
+                }, {
+                    label: "Season1",
+                    value: collectedSeason.Season1,
+                    color: "--clr-green"
+                }, {
+                    label: "Season2",
+                    value: collectedSeason.Season2,
+                    color: "--clr-red"
+                }, {
+                    label: "Season3",
+                    value: collectedSeason.Season3,
+                    color: "--clr-purple"
+                }, {
+                    label: "Season4",
+                    value: collectedSeason.Season4,
+                    color: "--clr-yellow"
+                }, {
+                    label: "Season5",
+                    value: collectedSeason.Season5,
+                    color: "--clr-orange"
+                }, {
+                    label: "NotCollected",
+                    value: collectedSeason.Not,
+                    color: "--clr-grey"
+                }, ]
+
+>>>>>>> Stashed changes
             })
     </script>
 
@@ -142,3 +292,23 @@
 </body>
 
 </html>
+<<<<<<< Updated upstream
+=======
+
+<!--
+collectedFaction.Requiem = 135,
+collectedFaction.Omega = 108,
+collectedFaction.DarkAether: 106,
+}
+collectedFaction.All = sum(collectedFaction)
+collectedFaction.Not = factionTotal.All - collectedFaction.All;
+mychart.update({
+    items: [
+        { label: "Requiem", value: collectedFaction.Requiem},
+        { label: "Omega", value: collectedFaction.Omega },
+        { label: "DarkAether", value: collectedFaction.DarkAether },
+        { label: "NotCollected", value: collectedFaction.Not},
+    ]
+})
+ -->
+>>>>>>> Stashed changes
