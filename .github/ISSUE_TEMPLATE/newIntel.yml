@@ -63,7 +63,6 @@ body:
       label: Description
       description: Where do you find it? How does it drop?
       placeholder: Obtained from a Mimic drop.
-      value: ""
     validations:
       required: false
   - type: dropdown
@@ -104,6 +103,5 @@ body:
     attributes:
       label: Any Other Info
       description: is there any other/extra info you need to provide us?
-      value: ""
     validations:
       required: false
