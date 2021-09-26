@@ -70,7 +70,7 @@ body:
     id: intelMap
     attributes:
       label: Map
-      description: What map can you find the intel?
+      description: What map can you find the intel? (The map should have auto filled as a label as well, check this is also set)
       options:
         - allOutbreakMaps
         - zoo
