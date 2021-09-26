@@ -65,7 +65,7 @@
                     Under-, Above- Ground</div>
             </div>
         </div> -->
-        <div class="dropdown dropbtn current-map">
+        <div class="dropdown dropbtn">
             Outbreak
             <div class="dropdown-content">
                 <div id="zoo" class="dropdown-item not-selectable" onClick="setMap('zoo',this, true)">Zoo</div>
@@ -74,9 +74,13 @@
                 <div id="alpine" class="dropdown-item not-selectable" onClick="setMap('alpine',this, true)">Alpine</div>
                 <div id="golova" class="dropdown-item not-selectable" onClick="setMap('golova',this, true)">Golova</div>
                 <div id="sanatorium" class="dropdown-item not-selectable" onClick="setMap('sanatorium',this, true)">Sanatorium</div>
-                <div id="collateral" class="dropdown-item not-selectable current-map" onClick="setMap('collateral',this, true)">Collateral</div>
+                <div id="collateral" class="dropdown-item not-selectable" onClick="setMap('collateral',this, true)">Collateral</div>
                 <div id="Armada" class="dropdown-item not-selectable" onClick="setMap('armada',this, true)">Armada</div>
             </div>
+        </div>
+
+        <div id="newIntel" onClick="newIntelInit()">
+            Submit New Intel
         </div>
     </header>
     <Section>
@@ -215,7 +219,7 @@
         </div>
     </Section>
     <!-- Notifications -->
-    <section id="copy-notif">Copied To Clipboard!</section>
+    <section id="notification-popup"></section>
     <section id="error-notif">
         <h1 id="title">ERROR</h1>
         <p id="error-p"></p>
@@ -231,6 +235,7 @@
     <script src="poi/poiV2.js"></script>
     <script src="assets/js/maps.js"></script>
     <script src="assets/js/mapUtils.js"></script>
+    <script src="assets/js/utils.js"></script>
     <script src="assets/js/listgeneration.js"></script>
     <script src="assets/js/filtering.js"></script>
     <script src="poi/misc.js"></script>
