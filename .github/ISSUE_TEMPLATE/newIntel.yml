@@ -9,7 +9,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to help us improve our app!
+        Thanks for taking the time to help us improve our app! Please put the name of the intel in the title of the issue.
   - type: input
     id: intelName
     attributes:
