@@ -25,7 +25,9 @@
     /* border properties*/
     --shadow: 0px 3px 0px 0px var(--clr-black);
     --shadow-hover: 0px 4px 0px 0px var(--clr-black);
-    --aspect-ratio: 7/16;
+    --col-1: 7/16;
+    --col-2: 7/8;
+    --col-3: 14/8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -284,11 +286,16 @@ body {
 .modal {
     display: flex;
     background-color: var(--clr-bg);
-    aspect-ratio: var(--aspect-ratio);
+    aspect-ratio: var(--col-1);
     width: 300px;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+
+.modal.-big {
+    aspect-ratio: var(--col-2);
+    width: 600px;
 }
 
 select.faction-list {
@@ -310,7 +317,7 @@ select.faction-list>option {
     margin: 0 auto;
     flex-wrap: nowrap;
     flex-direction: column;
-    aspect-ratio: var(--aspect-ratio);
+    aspect-ratio: var(--col-1);
     width: 250px;
     align-items: center;
 }

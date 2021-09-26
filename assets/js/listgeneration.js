@@ -1,5 +1,3 @@
-
-
 function GenerateFullIntelList(pointsOfInterest) {
     let intelList = document.getElementById("intelList")
     intelList.innerHTML = "";
@@ -30,6 +28,7 @@ function GenerateSeasonList(pointsOfInterest, seasonValue, factionValue) {
         if (pointsOfInterest.some(intel => intel.intelType == intelTypeValue && intel.season == seasonValue && intel.faction == factionValue)) {
             categoryList.appendChild(GenerateIntelTypeList(pointsOfInterest, intelTypeValue, factionValue, seasonValue));
             /* WHAT WAS THIS FOR? if (pointsOfInterest[faction][season][category][1] !== undefined) categoryList.appendChild(categoryItems) */
+            // O: Can't Remember
         }
     }
     seasonItems.appendChild(categoryList);
@@ -69,7 +68,7 @@ function GenerateIntelListItem(item) {
 }
 
 function goToIntel(item) {
-    return function () {
+    return function() {
         switchAndFly(item.loc, item.map)
         if (isMobile)
             toggleAside()
@@ -83,7 +82,7 @@ function genShareButton(intelId) {
 }
 
 function copyToClipboard(text, notif) {
-    const listener = function (ev) {
+    const listener = function(ev) {
         ev.preventDefault();
         ev.clipboardData.setData('text/plain', text);
     };
@@ -124,7 +123,7 @@ function createElement(type, className, inside = undefined, id, map) {
                 tempElement.setAttribute("data-id", id);
             }
             if (map) tempElement.setAttribute("data-map", map);
-            tempElement.onclick = function () {
+            tempElement.onclick = function() {
                 if (this.nextSibling != undefined) this.nextSibling.classList.toggle("visible")
             }
             tempElement.innerHTML = inside

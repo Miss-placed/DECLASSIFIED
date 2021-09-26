@@ -58,7 +58,7 @@
         <div><input type="search"></div>
     </section>
     <section class="modal-bg -hidden">
-        <div class="modal">
+        <div class="modal" id="intel-type">
             <select class="faction-list">
                 <option value="Requiem"><img class="list-icon" src="/assets/img/icons/faction-requiem-icon.png" alt=""> Requiem</option>
                 <option value="Omega"><img class="list-icon" src="/assets/img/icons/faction-omega-icon.png" alt=""> Omega</option>
@@ -86,14 +86,20 @@
                 <option value="Season3 ">Season 6</option>
             </select>
             <div id>
-                <button class="btn ">Exo-Element</button>
-                <button class="btn ">New Orders</button>
-                <button class="btn ">Ravenov</button>
-                <button class="btn ">They Took Her</button>
-                <button class="btn ">Meeting Of Minds</button>
+                <button class="btn to-intel" target="intel-desc" id="0">Exo-Element</button>
+                <button class="btn to-intel" target="intel-desc" id="1">New Orders</button>
+                <button class="btn to-intel" target="intel-desc" id="2">Ravenov</button>
+                <button class="btn to-intel" target="intel-desc" id="3">They Took Her</button>
+                <button class="btn to-intel" target="intel-desc" id="4">Meeting Of Minds</button>
             </div>
         </div>
-        <div class="modal">
+        <div class="modal -big -hidden" id="intel-desc">
+            <div class="sub-modal">
+                <h2>Exo-Element</h2>
+                <p>Obtained from table in med bay, by easter egg computer. On the far wall, close to the box location.</p>
+            </div>
+        </div>
+        <div class="modal" id="intel-stats">
             <div class="sub-modal ">
                 <input type="search ">
                 <div id="intel-graph " class="graph "></div>
@@ -128,10 +134,32 @@
             document.getElementsByClassName("modal-bg")[0].classList.add("-hidden")
         }
 
+        /**
+         *  
+         * @param {string} target Class of the targeted submodal that you want to open.
+         */
+        function openSubModal(target) {
+            document.getElementById(target).classList.remove("-hidden")
+        }
+
+        function closeSubModal(target) {
+            document.getElementById(target).classList.add("-hidden")
+        }
+        /**
+         *  
+         * @param {object} obj Object of intel Details.
+         */
+        function propigateIntelDetails(obj) {
+            let descBox = document.getElementById("intel-desc")
+
+            descBox.querySelector("h2").innerHTML = obj.name
+            descBox.querySelector("p").innerHTML = obj.desc
+        }
+
         document.addEventListener(
             "click",
             function(event) {
-                // If user either clicks X button OR clicks outside the modal window, then close modal by calling closeModal()
+                // If user clicks outside the modal window, then close modal by calling closeModal()
                 if (
                     event.target.matches(".modal-bg") &&
                     !event.target.closest(".modal")
@@ -142,9 +170,74 @@
             false
         )
 
+        let obj = [{
+            "id": "RS0Au1",
+            "faction": "factions.requiem",
+            "season": "seasons.preseason",
+            "intelType": "intelTypes.audio",
+            "loc": "[-197.25826830998406, 194]",
+            "map": "mapStrings.dieMaschineUnderground",
+            "name": "The Incident",
+            "desc": "Right next to power in the left corner on a shelf."
+        }, {
+            "id": "RS0Au2",
+            "faction": "factions.requiem",
+            "season": "seasons.preseason",
+            "intelType": "intelTypes.audio",
+            "loc": "[-177.51036974640894, 189.75]",
+            "map": "mapStrings.dieMaschineUnderground",
+            "name": "Parallel World",
+            "desc": "Near PaP, behind the stairs leading up while in the Dark Aether."
+        }, {
+            "id": "RS0Do1",
+            "faction": "factions.requiem",
+            "season": "seasons.preseason",
+            "intelType": "intelTypes.docs",
+            "loc": "[0, 0]",
+            "map": "mapStrings.dieMaschine",
+            "name": "Endstation Approval Letter",
+            "desc": "Drops from a Megaton."
+        }, {
+            "id": "RS0Do2",
+            "faction": "factions.requiem",
+            "season": "seasons.preseason",
+            "intelType": "intelTypes.docs",
+            "loc": "[0, 0]",
+            "map": "mapStrings.dieMaschine",
+            "name": "Spacetime Breach Sketch",
+            "desc": "Drops from a Megaton."
+        }, {
+            "id": "RS0Do3",
+            "faction": "factions.requiem",
+            "season": "seasons.preseason",
+            "intelType": "intelTypes.docs",
+            "loc": "[0, 0]",
+            "map": "mapStrings.dieMaschine",
+            "name": "D.I.E. Blueprint",
+            "desc": "Drops from a Megaton."
+        }]
+
+        document.querySelectorAll(".to-intel").forEach(element => {
+            element.addEventListener('click', () => {
+                let target = element.getAttribute('target')
+                openSubModal("intel-desc")
+
+                //use target to get intel instead of predefined obj
+                propigateIntelDetails(obj[element.getAttribute('id')])
+                closeSubModal("intel-stats")
+                closeSubModal("intel-type")
+
+            })
+        })
+
+
+
         function sum(obj) {
             return Object.keys(obj).reduce((sum, key) => sum + parseFloat(obj[key] || 0), 0);
         }
+
+
+
         let factionTotal = {
             Requiem: 135,
             Omega: 108,
