@@ -1,6 +1,6 @@
 name: New Intel
 description: Identifying a new piece of intel we do not have yet.
-title: "[New Intel]: "
+title: ""
 labels: ["New Intel"]
 assignees:
   - Odinnh
@@ -9,7 +9,8 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to help us improve our app! Please put the name of the intel in the title of the issue.
+        Thanks for taking the time to help us improve our app! 
+        Please put the name of the intel in the title of the issue.
   - type: input
     id: intelName
     attributes:
