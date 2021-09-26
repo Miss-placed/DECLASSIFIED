@@ -6,7 +6,7 @@ function userPrefsStartup() {
     if (existingPrefs) return JSON.parse(existingPrefs);
 
     let newPrefs = {
-        lastSelectedMap: mapStrings.zoo,
+        lastSelectedMap: currentMap,
         collectedIntel: [],
     }
 
