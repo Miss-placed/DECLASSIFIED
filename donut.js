@@ -50,7 +50,7 @@ function DonutChart(parent, spec) {
         var out = [{
                 0: "circle",
                 1: {
-                    "cx": c + 5,
+                    "cx": c + 10,
                     "cy": c + 10,
                     "r": r,
                     "stroke-width": chart.stroke - 5,
@@ -91,7 +91,7 @@ function DonutChart(parent, spec) {
                     c.addEventListener('mouseover', function() {
                         let facName = this.getAttribute("class")
                         let collected = this.getAttribute("value")
-                        label.innerHTML = `${facName}: ${collected}`
+                        parent.getElementsByClassName("graph-label")[0].innerHTML = `${facName}: ${collected}`
                     })
                     c.addEventListener('mouseout', function() {
                         label.innerHTML = `${spec.collected} / ${spec.total}`
@@ -103,12 +103,16 @@ function DonutChart(parent, spec) {
         return root
     }
 
-    var correct_orientation = "matrix(0 -1 -1 0 0 0)"
+    var correct_orientation = `
+        transform: 
+            rotateZ(90deg) 
+            rotateY(180deg)
+        ;`
         // var correct_orientation = ""
     var __gen_code = function(spec) {
         return __create_tag_tree(
             ["svg", {
-                transform: correct_orientation,
+                style: correct_orientation,
                 class: "chart-donut",
                 width: spec.r * 2 + 20,
                 height: spec.r * 2 + 20,

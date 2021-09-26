@@ -4,7 +4,7 @@ var { currentMap, disableMarkers, visibleMarkers, copyNotif, isMobile } = Startu
 function StartupGlobals() {
     var disableMarkers = [];
     var visibleMarkers = [];
-    let currentMap = 'zoo';
+    let currentMap = 'armada';
     var results = [];
     let isMobile = false;
     let copyNotif = document.getElementById("copy-notif");
@@ -20,7 +20,7 @@ function searchThroughPOI(intelId) {
 
 if (localStorage.declassifiedPrefs != undefined)
     currentMap = JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap;
-    
+
 var map = InitMap();
 
 L.control.attribution({ prefix: 'DECLASSIFIED' })
@@ -31,11 +31,11 @@ L.control.attribution()
 //loops through all types of intel and makes a marker
 AddMapMarkersFromCache(intelCache);
 
-map.on('popupopen', function () {
-    $('.remove-button').click(function (e) {
+map.on('popupopen', function() {
+    $('.remove-button').click(function(e) {
         var itemId = $(e.target).data("item");
         if (disableMarkers.includes(itemId.toString())) {
-            disableMarkers = $.grep(disableMarkers, function (value) {
+            disableMarkers = $.grep(disableMarkers, function(value) {
                 return value != itemId.toString();
             });
             visibleMarkers[itemId].setOpacity(1);
@@ -48,7 +48,7 @@ map.on('popupopen', function () {
     });
 });
 
-map.on("click", function (e) {
+map.on("click", function(e) {
     if (debug) {
         copyToClipboard("[" + e.latlng.lat + ", " + e.latlng.lng + "]", "Location Copied to Clipboard")
         showNotification("Location Added To Clipboard!");
@@ -77,18 +77,18 @@ function onLoad() {
     }
 
     //Intel Search Listeners
-    $('#intelFilter').find("input[type=checkbox]").change(function () {
+    $('#intelFilter').find("input[type=checkbox]").change(function() {
         intelFiltered = TriggerSearch();
     });
 
-    $('#searchTerm').keyup(function () {
+    $('#searchTerm').keyup(function() {
         intelFiltered = TriggerSearch();
     });
 }
 
 function getUrlVars() {
     var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
         vars[key] = value;
     });
     return vars;
@@ -109,4 +109,3 @@ function showNotification(message) {
     copyNotif.innerHTML = message;
     copyNotif.classList.add("animated");
 }
-

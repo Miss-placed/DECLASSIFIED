@@ -18,6 +18,7 @@ alpine = generateLayers(mapStrings.alpine, globalMapSettings);
 golova = generateLayers(mapStrings.golova, globalMapSettings);
 sanatorium = generateLayers(mapStrings.sanatorium, globalMapSettings);
 collateral = generateLayers(mapStrings.collateral, globalMapSettings);
+armada = generateLayers(mapStrings.armada, globalMapSettings);
 
 dieMaschine = generateLayers(mapStrings.dieMaschine, globalMapSettings);
 dieMaschine_underground = generateLayers(mapStrings.dieMaschineUnderground, globalMapSettings);
