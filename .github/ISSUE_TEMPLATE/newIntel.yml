@@ -1,7 +1,7 @@
 name: New Intel
 description: Identifying a new piece of intel we do not have yet.
 title: "[New Intel]: "
-labels: ["newIntel"]
+labels: ["New Intel"]
 assignees:
   - Odinnh
   - sol3uk
