@@ -2,7 +2,6 @@ const userPrefs = userPrefsStartup();
 let { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingIntel, results } = StartupGlobals();
 
 function StartupGlobals() {
-    debugger
     var disableMarkers = [];
     var visibleMarkers = [];
     //Use default latest map otherwise use last selected map of user
