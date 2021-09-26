@@ -42,8 +42,8 @@ const seasons = {
     season2: "Season 2",
     season3: "Season 3",
     season4: "Season 4",
-    season4: "Season 5",
-    season4: "Season 6",
+    season5: "Season 5",
+    season6: "Season 6",
 }
 
 const intelTypes = {
