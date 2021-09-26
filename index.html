@@ -57,13 +57,27 @@
             </div>
         </div>
 
-        <div id="zoo" class="not-selectable" onClick="setMap('zoo',this)">Zoo</div>
-        <div id="duga" class="not-selectable" onClick="setMap('duga',this)">Duga</div>
-        <div id="ruka" class=" not-selectable" onClick="setMap('ruka',this)">Ruka</div>
-        <div id="alpine" class="not-selectable" onClick="setMap('alpine',this)">Alpine</div>
-        <div id="golova" class="not-selectable" onClick="setMap('golova',this)">Golova</div>
-        <div id="sanatorium" class="not-selectable" onClick="setMap('sanatorium',this)">Sanatorium</div>
-        <div id="collateral" class="not-selectable" onClick="setMap('collateral',this)">Collateral</div>
+        <!-- <div class="dropdown dropbtn">
+            Mauer Der Toten
+            <div class="dropdown-content">
+                <div id="mauerDerToten_streets" class="dropdown-item not-selectable" onClick="setMap('mauerDerToten_streets',this,true)">Mauer Der Toten Streets</div>
+                <div id="mauerDerToten" class="dropdown-item not-selectable" onClick="setMap('mauerDerToten',this,true)">
+                    Under-, Above- Ground</div>
+            </div>
+        </div> -->
+        <div class="dropdown dropbtn current-map">
+            Outbreak
+            <div class="dropdown-content">
+                <div id="zoo" class="dropdown-item not-selectable" onClick="setMap('zoo',this, true)">Zoo</div>
+                <div id="duga" class="dropdown-item not-selectable" onClick="setMap('duga',this, true)">Duga</div>
+                <div id="ruka" class="dropdown-item not-selectable" onClick="setMap('ruka',this, true)">Ruka</div>
+                <div id="alpine" class="dropdown-item not-selectable" onClick="setMap('alpine',this, true)">Alpine</div>
+                <div id="golova" class="dropdown-item not-selectable" onClick="setMap('golova',this, true)">Golova</div>
+                <div id="sanatorium" class="dropdown-item not-selectable" onClick="setMap('sanatorium',this, true)">Sanatorium</div>
+                <div id="collateral" class="dropdown-item not-selectable current-map" onClick="setMap('collateral',this, true)">Collateral</div>
+                <div id="Armada" class="dropdown-item not-selectable" onClick="setMap('armada',this, true)">Armada</div>
+            </div>
+        </div>
     </header>
     <Section>
         <aside id="aside">
@@ -108,6 +122,10 @@
                                 <label for="season3">Season 3</label><br>
                                 <input type="checkbox" id="season4" name="season4" value="season4" checked>
                                 <label for="season4">Season 4</label><br>
+                                <input type="checkbox" id="season5" name="season5" value="season5" checked>
+                                <label for="season5">Season 5</label><br>
+                                <!-- <input type="checkbox" id="season6" name="season6" value="season6" checked>
+                                <label for="season6">Season 6</label><br> -->
                             </div>
                         </div>
                     </div>
@@ -152,18 +170,29 @@
                                 <label for="map3">Mauer Der Toten</label><br>
                                 <input type="checkbox" id="map3L1" name="map3L1" value="mauerDertoten" checked>
                                 <label for="map3L1">Mauer Der Toten (Roofs)</label><br>
-                                <input type="checkbox" id="map4" name="map4" value="zoo" checked>
-                                <label for="map4">Zoo</label><br>
-                                <input type="checkbox" id="map5" name="map5" value="ruka" checked>
-                                <label for="map5">Ruka</label><br>
-                                <input type="checkbox" id="map6" name="map6" value="duga" checked>
-                                <label for="map6">Duga</label><br>
-                                <input type="checkbox" id="map7" name="map7" value="alpine" checked>
-                                <label for="map7">Alpine</label><br>
-                                <input type="checkbox" id="map8" name="map8" value="golova" checked>
-                                <label for="map8">Golova</label><br>
-                                <input type="checkbox" id="map9" name="map9" value="sanatorium" checked>
-                                <label for="map9">Sanatorium</label><br>
+
+                                <!-- 
+                                <input type="checkbox" id="map4" name="map4" value="tbd" checked>
+                                <label for="map4">tbd</label><br>
+                                <input type="checkbox" id="map4L1" name="map4L1" value="tbd" checked>
+                                <label for="map4L1"TBD</label><br> -->
+
+                                <input type="checkbox" id="map5" name="map5" value="zoo" checked>
+                                <label for="map5">Zoo</label><br>
+                                <input type="checkbox" id="map6" name="map6" value="ruka" checked>
+                                <label for="ma65">Ruka</label><br>
+                                <input type="checkbox" id="map7" name="map7" value="duga" checked>
+                                <label for="map7">Duga</label><br>
+                                <input type="checkbox" id="map8" name="map8" value="alpine" checked>
+                                <label for="map8">Alpine</label><br>
+                                <input type="checkbox" id="map9" name="map9" value="golova" checked>
+                                <label for="map9">Golova</label><br>
+                                <input type="checkbox" id="map10" name="map10" value="sanatorium" checked>
+                                <label for="map10">Sanatorium</label><br>
+                                <input type="checkbox" id="map111" name="map11" value="collateral" checked>
+                                <label for="map11">Collateral</label><br>
+                                <input type="checkbox" id="map12" name="map12" value="armada" checked>
+                                <label for="map12">Armada</label><br>
                             </div>
                         </div>
                     </div>

@@ -6,6 +6,7 @@ const mapStrings = {
     golova: "golova",
     sanatorium: "sanatorium",
     collateral: "collateral",
+    armada: "armada",
 
     allOutbreakMaps: "outbreak",
 
@@ -24,7 +25,8 @@ const allOutbreakMapsArr = [
     mapStrings.alpine,
     mapStrings.golova,
     mapStrings.sanatorium,
-    mapStrings.collateral
+    mapStrings.collateral,
+    mapStrings.armada
 ]
 
 const factions = {
@@ -41,6 +43,7 @@ const seasons = {
     season3: "Season 3",
     season4: "Season 4",
     season5: "Season 5",
+    season6: "Season 6",
 }
 
 const intelTypes = {

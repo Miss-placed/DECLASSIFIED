@@ -480,7 +480,7 @@
                 },
                 "2": {
                     "loc": [-157.75305794467104, 73.625],
-                    "map": mapStrings.allOutbreakMaps,
+                    "map": mapStrings.golova,
                     "name": "Aetherium Canister",
                     "desc": "Between the pipes connecting the Silo with the building.",
                     "id": "RS2Ar2"
