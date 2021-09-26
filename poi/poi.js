@@ -1,4 +1,4 @@
-let poiStore = {
+/* let poiStore = {
     "requiem": {
         "0": {
             "Audio": {
@@ -2515,4 +2515,4 @@ let poiStore = {
             }
         }
     }
-}
+} */

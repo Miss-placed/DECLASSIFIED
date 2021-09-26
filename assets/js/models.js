@@ -40,6 +40,7 @@ const seasons = {
     season2: "Season 2",
     season3: "Season 3",
     season4: "Season 4",
+    season5: "Season 5",
 }
 
 const intelTypes = {
@@ -47,4 +48,40 @@ const intelTypes = {
     docs: "Documents",
     radio: "Radio Transmissions",
     artifact: "Artifacts",
+}
+
+const challengeTypes = {
+    multiplayer: "Multiplayer",
+    zombies: "Zombies",
+    campaign: "Campaign",
+}
+
+const challengeCategories = {
+    career: "Career",
+    battleHardened: "Battle Hardened",
+    requiemAdvancement: "Requiem Advancement",
+    darkOps: "Dark Ops",
+}
+
+const challengeSubCategories = {
+    career: {
+        dieMaschineReport: "",
+        bootCamp: "",
+        grizzledVeteran: "",
+    },
+    battleHardened: {
+        zombieHunter: "",
+        elementalist: "",
+        tactician: "",
+        silverbackExpedition: "",
+        gorillaStalker: "",
+    },
+    requiemAdvancement: {
+        mauerDerTotenReport: "",
+        firebaseZReport: "",
+        fieldResearcher: "",
+        surveyor: "",
+        exterminator: "",
+    },
+    seasonal: seasons
 }
