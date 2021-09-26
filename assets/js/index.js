@@ -1,25 +1,20 @@
 const userPrefs = userPrefsStartup();
-var { currentMap, disableMarkers, visibleMarkers, copyNotif, isMobile } = StartupGlobals();
+let { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingIntel, results } = StartupGlobals();
 
 function StartupGlobals() {
+    debugger
     var disableMarkers = [];
     var visibleMarkers = [];
-    let currentMap = 'armada';
+    //Use default latest map otherwise use last selected map of user
+    let currentMap = mapStrings.armada;
+    if (localStorage.declassifiedPrefs != undefined && JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap)
+        currentMap = JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap;
     var results = [];
     let isMobile = false;
-    let copyNotif = document.getElementById("copy-notif");
-    return { currentMap, disableMarkers, visibleMarkers, copyNotif, isMobile };
+    let submittingIntel = false;
+    let notificationEle = document.getElementById("notification-popup");
+    return { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingIntel, results };
 }
-
-function searchThroughPOI(intelId) {
-    let matchedIntel = intelCache.find((item) => {
-        return item.id == intelId;
-    })
-    switchAndFly(matchedIntel.loc, matchedIntel.map);
-}
-
-if (localStorage.declassifiedPrefs != undefined)
-    currentMap = JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap;
 
 var map = InitMap();
 
@@ -31,11 +26,11 @@ L.control.attribution()
 //loops through all types of intel and makes a marker
 AddMapMarkersFromCache(intelCache);
 
-map.on('popupopen', function() {
-    $('.remove-button').click(function(e) {
+map.on('popupopen', function () {
+    $('.remove-button').click(function (e) {
         var itemId = $(e.target).data("item");
         if (disableMarkers.includes(itemId.toString())) {
-            disableMarkers = $.grep(disableMarkers, function(value) {
+            disableMarkers = $.grep(disableMarkers, function (value) {
                 return value != itemId.toString();
             });
             visibleMarkers[itemId].setOpacity(1);
@@ -48,25 +43,14 @@ map.on('popupopen', function() {
     });
 });
 
-map.on("click", function(e) {
+map.on("click", function (e) {
+    var location = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
     if (debug) {
-        copyToClipboard("[" + e.latlng.lat + ", " + e.latlng.lng + "]", "Location Copied to Clipboard")
-        showNotification("Location Added To Clipboard!");
+        copyToClipboard(location, "Location Copied to Clipboard")
+    } else if (submittingIntel) {
+        redirectToGithub(location);
     }
 })
-
-function toggleAside() {
-    let sidebar = document.getElementById("aside")
-    let worldmap = document.getElementById("worldMap")
-    sidebar.classList.toggle("menu-closed")
-    worldmap.classList.toggle("menu-closed")
-    window.dispatchEvent(new Event('resize'));
-}
-
-
-copyNotif.onanimationend = () => {
-    copyNotif.classList.remove("animated")
-}
 
 function onLoad() {
     document.getElementById(currentMap).classList.add("current-map")
@@ -77,21 +61,13 @@ function onLoad() {
     }
 
     //Intel Search Listeners
-    $('#intelFilter').find("input[type=checkbox]").change(function() {
+    $('#intelFilter').find("input[type=checkbox]").change(function () {
         intelFiltered = TriggerSearch();
     });
 
-    $('#searchTerm').keyup(function() {
+    $('#searchTerm').keyup(function () {
         intelFiltered = TriggerSearch();
     });
-}
-
-function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
-        vars[key] = value;
-    });
-    return vars;
 }
 
 if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
@@ -101,11 +77,4 @@ if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
     worldmap.classList.add("mobile-view");
     isMobile = true
     toggleAside();
-}
-
-function showNotification(message) {
-    copyNotif.classList.remove("animated");
-    void copyNotif.offsetWidth; //https://css-tricks.com/restart-css-animation/
-    copyNotif.innerHTML = message;
-    copyNotif.classList.add("animated");
 }
