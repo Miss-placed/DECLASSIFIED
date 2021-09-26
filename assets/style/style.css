@@ -344,7 +344,7 @@ aside #searchTerm:focus-visible {
 
 /*notification styling*/
 
-#copy-notif {
+#notification-popup {
     display: none;
     position: absolute;
     bottom: -200px;
@@ -358,8 +358,12 @@ aside #searchTerm:focus-visible {
     transform: translate(-50%, -50%);
 }
 
-#copy-notif.animated {
+#notification-popup.animated {
     animation: bounce-in 2s;
+    display: block;
+}
+#notification-popup.fixed {
+    bottom: 0px;
     display: block;
 }
 
