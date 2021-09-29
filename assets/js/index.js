@@ -1,5 +1,5 @@
-const userPrefs = userPrefsStartup();
 let { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingIntel, results } = StartupGlobals();
+const userPrefs = userPrefsStartup();
 
 function StartupGlobals() {
     var disableMarkers = [];
