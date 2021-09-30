@@ -2477,7 +2477,7 @@ const intelStoreV2 = [
         "intelType": intelTypes.artifact,
         "loc": "[-146, 126.75]",
         "map": mapStrings.duga,
-        "name": "maxis's Scarf",
+        "name": "Maxis's Scarf",
         "desc": "In the listening post. In a room just to the left of the wonderfizz, on a coathook."
     }, {
         "id": "MS3Ar3",
