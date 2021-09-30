@@ -1,5 +1,6 @@
 const userPrefs = userPrefsStartup();
 let { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingIntel, results } = StartupGlobals();
+const userPrefs = userPrefsStartup();
 
 function StartupGlobals() {
     var disableMarkers = [];
@@ -25,11 +26,11 @@ L.control.attribution()
 //loops through all types of intel and makes a marker
 AddMapMarkersFromCache(intelCache);
 
-map.on('popupopen', function () {
-    $('.remove-button').click(function (e) {
+map.on('popupopen', function() {
+    $('.remove-button').click(function(e) {
         var itemId = $(e.target).data("item");
         if (disableMarkers.includes(itemId.toString())) {
-            disableMarkers = $.grep(disableMarkers, function (value) {
+            disableMarkers = $.grep(disableMarkers, function(value) {
                 return value != itemId.toString();
             });
             visibleMarkers[itemId].setOpacity(1);
@@ -42,7 +43,7 @@ map.on('popupopen', function () {
     });
 });
 
-map.on("click", function (e) {
+map.on("click", function(e) {
     var location = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
     if (debug) {
         copyToClipboard(location, "Location Copied to Clipboard")
@@ -60,11 +61,11 @@ function onLoad() {
     }
 
     //Intel Search Listeners
-    $('#intelFilter').find("input[type=checkbox]").change(function () {
+    $('#intelFilter').find("input[type=checkbox]").change(function() {
         intelFiltered = TriggerSearch();
     });
 
-    $('#searchTerm').keyup(function () {
+    $('#searchTerm').keyup(function() {
         intelFiltered = TriggerSearch();
     });
 }
