@@ -1071,7 +1071,7 @@ const intelStoreV2 = [
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0,-0]",
+        "loc": "[-86.25847909062274, 201.80990062385027]",
         "map": mapStrings.collateral,
         "name": "Frenzied Guard Canister",
         "desc": "On the roof of the Drapery."
