@@ -679,6 +679,7 @@ const intelStoreV2 = [
         "name": "Embarrassment of Riches",
         "desc": "In the lodge. On the third floor sitting on the bar."
     }, {
+        "id": "RS3Do1",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -687,6 +688,7 @@ const intelStoreV2 = [
         "name": "Extraction Rocket Blueprint",
         "desc": ""
     }, {
+        "id": "RS3Do2",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -695,6 +697,7 @@ const intelStoreV2 = [
         "name": "Dark Aether Object Report",
         "desc": ""
     }, {
+        "id": "RS3Do3",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -703,6 +706,7 @@ const intelStoreV2 = [
         "name": "Crate Memo",
         "desc": ""
     }, {
+        "id": "RS3Do4",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -711,6 +715,7 @@ const intelStoreV2 = [
         "name": "E.C.M. Mlueprint",
         "desc": ""
     }, {
+        "id": "RS3Do5",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -719,6 +724,7 @@ const intelStoreV2 = [
         "name": "Investigation Request",
         "desc": ""
     }, {
+        "id": "RS3Do6",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -727,6 +733,7 @@ const intelStoreV2 = [
         "name": "Zykov Assessment",
         "desc": ""
     }, {
+        "id": "RS3Do7",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -735,6 +742,7 @@ const intelStoreV2 = [
         "name": "Power Nodes Report",
         "desc": ""
     }, {
+        "id": "RS3Do8",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -743,6 +751,7 @@ const intelStoreV2 = [
         "name": "J Cipher",
         "desc": ""
     }, {
+        "id": "RS3Ra1",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
@@ -751,6 +760,7 @@ const intelStoreV2 = [
         "name": "Progress Update",
         "desc": ""
     }, {
+        "id": "RS3Ra2",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
@@ -759,6 +769,7 @@ const intelStoreV2 = [
         "name": "A Visceral Process",
         "desc": ""
     }, {
+        "id": "RS3Ra3",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
@@ -767,6 +778,7 @@ const intelStoreV2 = [
         "name": "Fish Out Of Water",
         "desc": ""
     }, {
+        "id": "RS3Ra4",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
@@ -838,6 +850,7 @@ const intelStoreV2 = [
         "name": "You know better.",
         "desc": "Next to the monorail up in the cages overpass."
     }, {
+        "id": "RS4Au2",
         "faction": factions.requiem,
         "season": seasons.season4,
         "intelType": intelTypes.audio,
@@ -846,6 +859,16 @@ const intelStoreV2 = [
         "name": "Aftermath",
         "desc": "On the desks in the center of the room."
     }, {
+        "id": "RS4Au3",
+        "faction": factions.requiem,
+        "season": seasons.season4,
+        "intelType": intelTypes.audio,
+        "loc": "[-127.94974152785755, 138.625]",
+        "map": mapStrings.golova,
+        "name": "What Tomorrow Brings",
+        "desc": "On a bar counter."
+    }, {
+        "id": "RS4Do1",
         "faction": factions.requiem,
         "season": seasons.season4,
         "intelType": intelTypes.docs,
@@ -854,6 +877,7 @@ const intelStoreV2 = [
         "name": "DASA Station Blueprint",
         "desc": ""
     }, {
+        "id": "RS4Do2",
         "faction": factions.requiem,
         "season": seasons.season4,
         "intelType": intelTypes.docs,
@@ -871,6 +895,7 @@ const intelStoreV2 = [
         "name": "The Child's Note",
         "desc": "Obtained during the Outbreak EE#2"
     }, {
+        "id": "RS4Ra1",
         "faction": factions.requiem,
         "season": seasons.season4,
         "intelType": intelTypes.radio,
@@ -879,6 +904,7 @@ const intelStoreV2 = [
         "name": "Welcome Back",
         "desc": ""
     }, {
+        "id": "RS4Ra2",
         "faction": factions.requiem,
         "season": seasons.season4,
         "intelType": intelTypes.radio,
@@ -904,6 +930,15 @@ const intelStoreV2 = [
         "map": mapStrings.zoo,
         "name": "Recon Rover Module",
         "desc": "Behind the sink in the bathroom, second floor."
+    }, {
+        "id": "RS4Ar3",
+        "faction": factions.requiem,
+        "season": seasons.season4,
+        "intelType": intelTypes.artifact,
+        "loc": "[-103.51195549461748, 36.9375]",
+        "map": mapStrings.alpine,
+        "name": "Ring of Fire Canister",
+        "desc": "In a yellow hanging coat inside the southernmost base cabin."
     },
     {
         "id": "RS5Au1",
@@ -3439,8 +3474,17 @@ const intelStoreV2 = [
         "intelType": intelTypes.artifact,
         "loc": "[-152.76489182479162, 149.75]",
         "map": mapStrings.zoo,
-        "name": "Fury cristal",
+        "name": "Fury crystal",
         "desc": "On the roof behind a pillar."
+    }, {
+        "id": "DS4Ar3",
+        "faction": factions.darkAether,
+        "season": seasons.season4,
+        "intelType": intelTypes.artifact,
+        "loc": "[-162.82115511107816, 165.8125]",
+        "map": mapStrings.golova,
+        "name": "Empty Elemental Pop",
+        "desc": "Resting on a food shelf inside the kitchen area."
     }, {
         "id": "DS5Au1",
         "faction": factions.darkAether,
