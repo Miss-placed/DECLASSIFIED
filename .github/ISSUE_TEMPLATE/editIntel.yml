@@ -1,0 +1,44 @@
+name: Intel Fix
+description: Making an edit to an existing piece of intel where the information may be incorrect.
+title: "Intel Fix: "
+labels: ["Intel Fix"]
+assignees:
+  - Odinnh
+  - sol3uk
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to help us improve our app! 
+        Please put the name of the intel in the title of the issue if not automatically populated.
+  - type: input
+    id: intelName
+    attributes:
+      label: Name
+      description: Provide the title of the intel, close as possible to what is in-game.
+      placeholder: ex. Maxis Scarf
+    validations:
+      required: true
+  - type: input
+    id: intelId
+    attributes:
+      label: Intel Id
+      description: Provide the Id of the intel if you are aware of it.
+      placeholder: ex. MS3Ar2
+    validations:
+      required: false
+  - type: textarea
+    id: intelFixNeeded
+    attributes:
+      label: Fix Needed
+      description: What is incorrect about the intel? Please give as much information as possible.
+      placeholder: e.g. Season should be 3 not 4.
+    validations:
+      required: true
+  - type: textarea
+    id: extraInfo
+    attributes:
+      label: Any Other Info
+      description: is there any other/extra info you need to provide us?
+    validations:
+      required: false
