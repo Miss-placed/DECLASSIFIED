@@ -44,8 +44,9 @@ function showNotification(message, isStatic = false) {
 }
 
 function redirectToGithub(location) {
-    var labels = `New+Intel,${currentMap}`;
-    window.open(`https://github.com/Odinnh/DECLASSIFIED/issues/new?assignees=Odinnh%2Csol3uk&labels=${labels}&template=newIntel.yml&title=New+Intel%3A+&intelLocation=${location}&intelMap=${currentMap}`);
+    var labels = encodeURI(`New Intel,${currentMap}`);
+    var issueTitle = encodeURI(`New Intel: INTEL NAME HERE [${currentMap}]`);
+    window.open(`https://github.com/Odinnh/DECLASSIFIED/issues/new?assignees=Odinnh%2Csol3uk&labels=${labels}&template=newIntel.yml&title=${issueTitle}&intelLocation=${location}&intelMap=${currentMap}`);
     submittingIntel = false;
     notificationEle.classList.remove("fixed");
 }
