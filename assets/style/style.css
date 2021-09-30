@@ -359,7 +359,7 @@ aside #searchTerm:focus-visible {
 }
 
 #notification-popup.animated {
-    animation: bounce-in 2s;
+    animation: bounce-in 3s;
     display: block;
 }
 #notification-popup.fixed {

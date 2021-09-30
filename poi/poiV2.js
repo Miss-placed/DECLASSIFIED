@@ -945,46 +945,46 @@ const intelStoreV2 = [
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[-0, -0]",
+        "loc": "[-179.94745326193697, 186.75]",
         "map": mapStrings.collateral,
         "name": "Peacemakers",
-        "desc": "in the South dunes area. Near the Jump Pad, on the treads of the big machine, just to the west of the Jump pad."
+        "desc": "In the South dunes area. Near the Jump Pad, on the treads of the big machine, just to the west of the Jump pad."
     }, {
         "id": "RS5Au2",
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[-0, -0]",
+        "loc": "[-73.15684286918251, 58.533448694162985]",
         "map": mapStrings.collateral,
         "name": "Soul Searching",
-        "desc": "in the Wadi area. It's in the broken down building, in the back corner."
+        "desc": "It's in the broken down building, in the back corner, close to the border of the region."
     }, {
         "id": "RS5Au3",
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[-0, -0]",
+        "loc": "[-83.8559764734765, 143]",
         "map": mapStrings.armada,
         "name": "Unto the Breach",
-        "desc": "in the Gun Boat area. it's just behind a crate, near the Wonderfizz."
+        "desc": "In the Gun Boat area. it's just behind a crate, near the Wunderfizz."
     }, {
         "id": "RS5Au4",
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[-0, -0]",
+        "loc": "[-123.51145121266036, 139.63745565658832]",
         "map": mapStrings.armada,
         "name": "Butterscotch",
-        "desc": "in the Launch Bay area. Top Right most one, if looking at the big map."
+        "desc": "In Launch Bay area #3. Top Right most one, if looking at the big map."
     }, {
         "id": "RS5Au5",
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[-0, -0]",
+        "loc": "[-128.88453858039142, 124.2078240636914]",
         "map": mapStrings.armada,
         "name": "Desperate Measures",
-        "desc": "on a table in the center of the Control Room area of the main boat."
+        "desc": "On a table in the center of the Control Room area of the main boat."
     }, {
         "id": "RS5Do1",
         "faction": factions.requiem,
@@ -1071,7 +1071,7 @@ const intelStoreV2 = [
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0,-0]",
+        "loc": "[-86.25847909062274, 201.80990062385027]",
         "map": mapStrings.collateral,
         "name": "Frenzied Guard Canister",
         "desc": "On the roof of the Drapery."
@@ -1080,16 +1080,16 @@ const intelStoreV2 = [
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0,-0]",
+        "loc": "[-164.01915843693837, 55]",
         "map": mapStrings.collateral,
         "name": "Aetherium Rocket Model",
-        "desc": "In the Oil Tanks area. It's under a staircase, sitting on a pipe."
+        "desc": "In the Oil Tanks area. It's under a staircase, sitting on a yellow pipe embedded in the wall."
     }, {
         "id": "RS5Ar3",
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0,-0]",
+        "loc": "[-165.50550469233477, 139.03125]",
         "map": mapStrings.collateral,
         "name": "Raptor One's Helmet",
         "desc": "At the back of the Helipad Area. it's at the base of the helipad, at the bottom of a staircase."
@@ -1098,28 +1098,28 @@ const intelStoreV2 = [
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0,-0]",
+        "loc": "[-127.53644665653778, 60.78125]",
         "map": mapStrings.armada,
         "name": "Toxic Growth Canister",
-        "desc": "in the western most Capsized area. it's under the water on a platform near the front of the ship."
+        "desc": " the western most Capsized area. it's under the water on a platform near the front of the ship."
     }, {
         "id": "RS5Ar5",
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0,-0]",
+        "loc": "[-157.5083690778381, 66.75]",
         "map": mapStrings.armada,
         "name": "Requiem Helicopter Model",
-        "desc": "in the Maintenance section. Near one of the doors."
+        "desc": "In the Maintenance section. Near one of the doors."
     }, {
         "id": "RS5Ar6",
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0,-0]",
+        "loc": "[-97.63651544347891, 198.375]",
         "map": mapStrings.armada,
         "name": "Agent Klaus Model",
-        "desc": "in the North-eastern most Hangar area. He's hanging off some pipes just above one of the staircases, climb on the nearby toolbox to grab him."
+        "desc": "In the North-eastern most Hangar area. He's hanging off some pipes just above one of the staircases, climb on the nearby toolbox to grab him."
     },
 
 
@@ -1214,7 +1214,7 @@ const intelStoreV2 = [
         "loc": "[-51.773749778329496, 188]",
         "map": mapStrings.dieMaschine,
         "name": "Next Phase",
-        "desc": "in a far corner at the crash site."
+        "desc": "In a far corner at the crash site."
     }, {
         "id": "OS1Au3",
         "faction": factions.omega,
@@ -1483,7 +1483,7 @@ const intelStoreV2 = [
         "loc": "[-130.56088082901556, 147.46061049785988]",
         "map": mapStrings.golova,
         "name": "golova - Off The Hook",
-        "desc": "Infront of the Wonderfizz, in one of the side rooms."
+        "desc": "Infront of the Wunderfizz, in one of the side rooms."
     }, {
         "id": "OS2Au5",
         "faction": factions.omega,
@@ -1895,7 +1895,7 @@ const intelStoreV2 = [
         "loc": "[-0,-0]",
         "map": mapStrings.armada,
         "name": "New Frontiers",
-        "desc": "in the Hangar area. It's sitting on a blue Shelf."
+        "desc": "In the Hangar area. It's sitting on a blue Shelf."
     }, {
         "id": "OS5Au3",
         "faction": factions.omega,
@@ -1904,7 +1904,7 @@ const intelStoreV2 = [
         "loc": "[-0,-0]",
         "map": mapStrings.collateral,
         "name": "Growing Concerns",
-        "desc": "in the Cliffs area. It's at the edge of the top most set of rocks, up against the lowermost rock in the set. The location overlooks the village area."
+        "desc": "In the Cliffs area. It's at the edge of the top most set of rocks, up against the lowermost rock in the set. The location overlooks the village area."
     }, {
         "id": "OS5Do1",
         "faction": factions.omega,
@@ -1985,7 +1985,7 @@ const intelStoreV2 = [
         "loc": "[-0,-0]",
         "map": mapStrings.armada,
         "name": "Gorev's ID",
-        "desc": "in the Patrol Boat area. It's on top of the boat itself."
+        "desc": "In the Patrol Boat area. It's on top of the boat itself."
     }, {
         "id": "OS5Ar5",
         "faction": factions.omega,
@@ -1994,7 +1994,7 @@ const intelStoreV2 = [
         "loc": "[-0,-0]",
         "map": mapStrings.armada,
         "name": "Teleporter Model",
-        "desc": "in the eastern most Capsized area. It's underwater, along the guardrails of the deck."
+        "desc": "In the eastern most Capsized area. It's underwater, along the guardrails of the deck."
     },
 
 
@@ -2477,8 +2477,8 @@ const intelStoreV2 = [
         "intelType": intelTypes.artifact,
         "loc": "[-146, 126.75]",
         "map": mapStrings.duga,
-        "name": "maxis's Scarf",
-        "desc": "In the listening post. In a room just to the left of the wonderfizz, on a coathook."
+        "name": "Maxis's Scarf",
+        "desc": "In the listening post. In a room just to the left of the Wunderfizz, on a coathook."
     }, {
         "id": "MS3Ar3",
         "faction": factions.maxis,
@@ -2584,7 +2584,7 @@ const intelStoreV2 = [
         "loc": "[-0, -0]",
         "map": mapStrings.collateral,
         "name": "Sixty-Two Days",
-        "desc": "in the Oil Rig area. This one is a bit difficult. Climb up to where PaP is. Then look up towards the yellow platform, and you can just barely see the edge of the tape recorder hanging over the edge. Shoot it down, and it will fall down to you."
+        "desc": "In the Oil Rig area. This one is a bit difficult. Climb up to where PaP is. Then look up towards the yellow platform, and you can just barely see the edge of the tape recorder hanging over the edge. Shoot it down, and it will fall down to you."
     }, {
         "id": "MS5Au5",
         "faction": factions.maxis,
@@ -2593,7 +2593,7 @@ const intelStoreV2 = [
         "loc": "[-0, -0]",
         "map": mapStrings.armada,
         "name": "Thirty Seconds",
-        "desc": "in the same room as Pap on a table."
+        "desc": "In the same room as Pap on a table."
     }, {
         "id": "MS5Do1",
         "faction": factions.maxis,
