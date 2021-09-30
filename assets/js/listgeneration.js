@@ -27,8 +27,6 @@ function GenerateSeasonList(pointsOfInterest, seasonValue, factionValue) {
     for (const [intelTypeKey, intelTypeValue] of Object.entries(intelTypes)) {
         if (pointsOfInterest.some(intel => intel.intelType == intelTypeValue && intel.season == seasonValue && intel.faction == factionValue)) {
             categoryList.appendChild(GenerateIntelTypeList(pointsOfInterest, intelTypeValue, factionValue, seasonValue));
-            /* WHAT WAS THIS FOR? if (pointsOfInterest[faction][season][category][1] !== undefined) categoryList.appendChild(categoryItems) */
-            // O: Can't Remember
         }
     }
     seasonItems.appendChild(categoryList);
@@ -98,7 +96,6 @@ function genShareButton(intelId) {
     let shareBtn = createElement("button", ["btn", "btn-info","action-buttons", "share", "fas", "fa-external-link-alt"], "")
     shareBtn.title = "Copy Sharing Link";
     shareBtn.onclick = copyClipboardForButton(intelId);
-    /* shareBtn.setAttribute("onclick", `copyToClipboard("${window.location.origin}${window.location.pathname}?id=${intelId}", "Link Copied To Clipboard")`) */
     return shareBtn;
 }
 
@@ -119,15 +116,6 @@ function copyToClipboard(text, notif) {
     document.removeEventListener('copy', listener);
     showNotification(notif)
 }
-// function copyShareLink(intelId) {
-//     var cb = document.getElementById("cb")
-//     cb.value = window.location.origin + window.location.pathname + "?id=" + intelId
-//     cb.style.display = 'block'
-//     cb.select()
-//     document.execCommand('copy')
-//     cb.style.display = 'none'
-//     
-// }
 
 function createElement(type, className, inside = undefined, id, map) {
     element = document.createElement(type)
