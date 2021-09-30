@@ -23,7 +23,7 @@ body:
     id: intelId
     attributes:
       label: Intel Id
-      description: Provide the Id of the intel if you are aware of it.
+      description: Provide the Id of the intel if you are aware of it. ([A]S[B][Cc][D] A: Faction e.g. M R D O, B: season number 0>6, C: intel type Radio = Ra, D: index of the intel) 
       placeholder: ex. MS3Ar2
     validations:
       required: false
