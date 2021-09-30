@@ -1,5 +1,5 @@
+let { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingIntel, results } = StartupGlobals();
 const userPrefs = userPrefsStartup();
-let { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingIntel, fixedNotification, results } = StartupGlobals();
 
 function StartupGlobals() {
     var disableMarkers = [];
@@ -27,10 +27,10 @@ L.control.attribution()
 AddMapMarkersFromCache(intelCache);
 
 map.on('popupopen', function () {
-    $('.remove-button').click(function (e) {
-        var itemId = $(e.target).data("item");
+    $('.mark-collected').click(function (e) {
+        var itemId = $(e.target).closest(".buttonContainer").data("item");
         if (disableMarkers.includes(itemId.toString())) {
-            disableMarkers = $.grep(disableMarkers, function (value) {
+            disableMarkers = $.grep(disableMarkers, function(value) {
                 return value != itemId.toString();
             });
             visibleMarkers[itemId].setOpacity(1);
@@ -41,15 +41,24 @@ map.on('popupopen', function () {
             addCollectedIntel(itemId);
         }
     });
+    $('.share').click(function (e) {
+        var itemId = $(e.target).closest(".buttonContainer").data("item");
+        console.log("share", itemId);
+        copyToClipboard(`${window.location.origin}${window.location.pathname}?id=${itemId}`, "Link Copied To Clipboard");
+    });
+    $('.bugRep').click(function (e) {
+        var itemId = $(e.target).closest(".buttonContainer").data("item");
+        console.log("bugRep", itemId);
+        redirectToGithub({label: "Intel Fix", issueTemplate: "editIntel", intelId: itemId})
+    });
 });
 
-map.on("click", function (e) {
+map.on("click", function(e) {
     var location = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
     if (debug) {
         copyToClipboard(location, "Location Copied to Clipboard")
     } else if (submittingIntel) {
-        redirectToGithub(location);
-        
+        redirectToGithub({location: location});
     }
 })
 
@@ -58,15 +67,15 @@ function onLoad() {
     GenerateFullIntelList(intelCache);
     let urlId = (getUrlVars()["id"] === "" ? undefined : getUrlVars()["id"])
     if (urlId != undefined) {
-        searchThroughPOI(urlId)
+        goToIntelById(urlId)
     }
 
     //Intel Search Listeners
-    $('#intelFilter').find("input[type=checkbox]").change(function () {
+    $('#intelFilter').find("input[type=checkbox]").change(function() {
         intelFiltered = TriggerSearch();
     });
 
-    $('#searchTerm').keyup(function () {
+    $('#searchTerm').keyup(function() {
         intelFiltered = TriggerSearch();
     });
 

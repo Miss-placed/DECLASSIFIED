@@ -57,6 +57,7 @@ header {
     display: grid;
     grid-auto-flow: column;
     border-bottom: 1px solid #e8e8d3;
+    user-select: none;
 }
 
 header>div,
@@ -128,11 +129,6 @@ header>div:hover,
     padding-right: 19px;
     background-color: #6b6b6b;
     color: #e8e8d3;
-}
-
-.leaflet-popup-content .remove-button {
-    margin-bottom: 10px;
-    padding: 5px;
 }
 
 .not-selectable {
@@ -257,6 +253,10 @@ aside #searchTerm:focus-visible {
     padding: 10px 25px;
 }
 
+.category{
+    user-select: none;
+}
+
 .category-item>h2 {
     padding: 10px 20px;
     border-bottom: 1px solid #2d2d2d;
@@ -293,9 +293,15 @@ aside #searchTerm:focus-visible {
     margin-bottom: 20px;
 }
 
-.share-intel {
+.action-buttons {
     padding: 6px;
     margin-left: 2px;
+}
+
+.buttonContainer {
+    display: flex; 
+    justify-content: center; 
+    padding-bottom: 5px;
 }
 
 #collapse {
@@ -430,4 +436,12 @@ h6 {
 .accordion-item {
     border-bottom: 1px solid #e8e8d3;
     background: gray;
+}
+
+/* Bootstrap Overrides */
+
+.btn-info {
+    color: #FFFFFF;
+    background-color: #565555;
+    border-color: #1f2223;
 }
