@@ -1,3 +1,7 @@
+function getNotificationTime() {
+    return 2000;
+}
+
 function newIntelInit() {
     submittingIntel = true;
     showNotification("Click exactly where the intel is located! Next time you click on the map you will be redirected to our new intel form.", true);
@@ -27,25 +31,36 @@ function getUrlVars() {
     return vars;
 }
 
-function showNotification(message, isStatic = false) {
-    notificationEle.onanimationend = () => {
+function notificationAnimationEnd() {
+    //Check if supposed to be a fixed notification of not
+    if (fixedNotification) {
+        //Fixed notification, Keep fixed class after animation
+        notificationEle.classList.remove("animated");
+        notificationEle.classList.add("fixed");
+    } else {
+        //Normal notification behaviour
         notificationEle.classList.remove("animated", "fixed");
     }
+}
+
+function showNotification(message, isStatic = false) {
+    fixedNotification = isStatic;
+    //Notification end animation function
+    setTimeout(() => {
+        notificationAnimationEnd();
+    }, getNotificationTime());
     notificationEle.classList.remove("animated", "fixed");
     void notificationEle.offsetWidth; //https://css-tricks.com/restart-css-animation/
     notificationEle.innerHTML = message;
     notificationEle.classList.add("animated");
-    if (isStatic) {
-        notificationEle.onanimationend = () => {
-            notificationEle.classList.remove("animated");
-            notificationEle.classList.add("fixed");
-        }
-    }
 }
 
 function redirectToGithub(location) {
-    var labels = `New+Intel,${currentMap}`;
-    window.open(`https://github.com/Odinnh/DECLASSIFIED/issues/new?assignees=Odinnh%2Csol3uk&labels=${labels}&template=newIntel.yml&title=New+Intel%3A+&intelLocation=${location}&intelMap=${currentMap}`);
+    var labels = encodeURI(`New Intel,${currentMap}`);
+    var issueTitle = encodeURI(`New Intel: INTEL NAME HERE [${currentMap}]`);
+    window.open(`https://github.com/Odinnh/DECLASSIFIED/issues/new?assignees=Odinnh%2Csol3uk&labels=${labels}&template=newIntel.yml&title=${issueTitle}&intelLocation=${location}&intelMap=${currentMap}`);
     submittingIntel = false;
-    notificationEle.classList.remove("fixed");
+    setTimeout(() => {
+        notificationEle.classList.remove("fixed");
+    }, getNotificationTime());
 }
