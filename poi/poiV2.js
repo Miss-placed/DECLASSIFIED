@@ -945,7 +945,7 @@ const intelStoreV2 = [
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[-0, -0]",
+        "loc": "[-179.94745326193697, 186.75]",
         "map": mapStrings.collateral,
         "name": "Peacemakers",
         "desc": "in the South dunes area. Near the Jump Pad, on the treads of the big machine, just to the west of the Jump pad."
@@ -954,10 +954,10 @@ const intelStoreV2 = [
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[-0, -0]",
+        "loc": "[-73.15684286918251, 58.533448694162985]",
         "map": mapStrings.collateral,
         "name": "Soul Searching",
-        "desc": "in the Wadi area. It's in the broken down building, in the back corner."
+        "desc": "It's in the broken down building, in the back corner, close to the border of the region."
     }, {
         "id": "RS5Au3",
         "faction": factions.requiem,
@@ -1080,16 +1080,16 @@ const intelStoreV2 = [
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0,-0]",
+        "loc": "[-164.01915843693837, 55]",
         "map": mapStrings.collateral,
         "name": "Aetherium Rocket Model",
-        "desc": "In the Oil Tanks area. It's under a staircase, sitting on a pipe."
+        "desc": "In the Oil Tanks area. It's under a staircase, sitting on a yellow pipe embedded in the wall."
     }, {
         "id": "RS5Ar3",
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0,-0]",
+        "loc": "[-165.50550469233477, 139.03125]",
         "map": mapStrings.collateral,
         "name": "Raptor One's Helmet",
         "desc": "At the back of the Helipad Area. it's at the base of the helipad, at the bottom of a staircase."
