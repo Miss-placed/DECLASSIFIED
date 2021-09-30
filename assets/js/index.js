@@ -1,5 +1,5 @@
 const userPrefs = userPrefsStartup();
-let { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingIntel, results } = StartupGlobals();
+let { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingIntel, fixedNotification, results } = StartupGlobals();
 
 function StartupGlobals() {
     var disableMarkers = [];
@@ -11,8 +11,9 @@ function StartupGlobals() {
     var results = [];
     let isMobile = false;
     let submittingIntel = false;
+    let fixedNotification = false;
     let notificationEle = document.getElementById("notification-popup");
-    return { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingIntel, results };
+    return { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingIntel, fixedNotification, results };
 }
 
 var map = InitMap();
@@ -48,6 +49,7 @@ map.on("click", function (e) {
         copyToClipboard(location, "Location Copied to Clipboard")
     } else if (submittingIntel) {
         redirectToGithub(location);
+        
     }
 })
 
@@ -67,6 +69,8 @@ function onLoad() {
     $('#searchTerm').keyup(function () {
         intelFiltered = TriggerSearch();
     });
+
+
 }
 
 if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
