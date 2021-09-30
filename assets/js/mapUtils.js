@@ -87,11 +87,16 @@ function AddMapMarkersFromCache(intelArr) {
 function addMarkerToMap(loc, icon, maep, id, name, desc = ``) {
     let snippet = $(`<div></div>`)
     let shareBtn = genShareButton(id).outerHTML;
+    let bugBtn = genBugButton(id).outerHTML;
     if (desc !== '') {
-        snippet = $(`<div>
-        <p>${desc}</p>
-            <button type="button" class="btn btn-info remove-button" data-item="${id}">Mark as collected</button>
-            ${shareBtn}
+        snippet = $(`
+        <div>
+            <p>${desc}</p>
+            <div class="buttonContainer" data-item="${id}">
+                <button type="button" class="btn btn-info mark-collected">Mark as collected</button>
+                ${shareBtn}
+                ${bugBtn}
+            </div>
         </div>`);
     }
     var marker = L.marker(loc, { icon: icon }).addTo(maep.Markers)

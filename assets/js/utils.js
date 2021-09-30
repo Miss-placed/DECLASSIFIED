@@ -8,7 +8,7 @@ function newIntelInit() {
 }
 
 
-function searchThroughPOI(intelId) {
+function goToIntelById(intelId) {
     let matchedIntel = intelCache.find((item) => {
         return item.id == intelId;
     })
@@ -55,10 +55,12 @@ function showNotification(message, isStatic = false) {
     notificationEle.classList.add("animated");
 }
 
-function redirectToGithub(location) {
-    var labels = encodeURI(`New Intel,${currentMap}`);
-    var issueTitle = encodeURI(`New Intel: INTEL NAME HERE [${currentMap}]`);
-    window.open(`https://github.com/Odinnh/DECLASSIFIED/issues/new?assignees=Odinnh%2Csol3uk&labels=${labels}&template=newIntel.yml&title=${issueTitle}&intelLocation=${location}&intelMap=${currentMap}`);
+function redirectToGithub({label = "New Intel", issueTemplate = "newIntel", intelId, location}) {
+    var labels = encodeURI(`${label},${currentMap}`);
+    let intel = getIntelById(intelId);
+    var intelIdPlaceholder = intelId ? `[${intelId}]` : "";
+    var issueTitle = encodeURI(`${label}: ${intel.name} [${currentMap}]${intelIdPlaceholder}`);
+    window.open(`https://github.com/Odinnh/DECLASSIFIED/issues/new?assignees=Odinnh%2Csol3uk&labels=${labels}&template=${issueTemplate}.yml&title=${issueTitle}&intelId=${intelId}&intelName=${intel.name}&intelLocation=${location}&intelMap=${currentMap}`);
     submittingIntel = false;
     setTimeout(() => {
         notificationEle.classList.remove("fixed");
