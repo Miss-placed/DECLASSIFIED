@@ -63,8 +63,11 @@ map.on("click", function(e) {
 })
 
 function onLoad() {
-    document.getElementById(currentMap).classList.add("current-map")
-    GenerateFullIntelList(intelCache);
+    // needs to be replaced with the new menu highlighter
+    if (v2test == null) {
+        document.getElementById(currentMap).classList.add("current-map")
+        GenerateFullIntelList(intelCache);
+    }
     let urlId = (getUrlVars()["id"] === "" ? undefined : getUrlVars()["id"])
     if (urlId != undefined) {
         goToIntelById(urlId)
