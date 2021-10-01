@@ -254,19 +254,19 @@ body {
 /* ----------Type btn--------------- */
 
 .type[type="Documents"] {
-    background-image: url('assets/img/intelTypes/documents.png');
+    background-image: url('../img/intelTypes/documents.png');
 }
 
 .type[type="Audio logs"] {
-    background-image: url('assets/img/intelTypes/audio-logs.png');
+    background-image: url('../img/intelTypes/audio-logs.png');
 }
 
 .type[type="Radio transmissions"] {
-    background-image: url('assets/img/intelTypes/radio-logs.png');
+    background-image: url('../img/intelTypes/radio-logs.png');
 }
 
 .type[type="Artifacts"] {
-    background-image: url('assets/img/intelTypes/artifacts.png');
+    background-image: url('../img/intelTypes/artifacts.png');
 }
 
 
