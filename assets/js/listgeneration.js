@@ -27,8 +27,6 @@ function GenerateSeasonList(pointsOfInterest, seasonValue, factionValue) {
     for (const [intelTypeKey, intelTypeValue] of Object.entries(intelTypes)) {
         if (pointsOfInterest.some(intel => intel.intelType == intelTypeValue && intel.season == seasonValue && intel.faction == factionValue)) {
             categoryList.appendChild(GenerateIntelTypeList(pointsOfInterest, intelTypeValue, factionValue, seasonValue));
-            /* WHAT WAS THIS FOR? if (pointsOfInterest[faction][season][category][1] !== undefined) categoryList.appendChild(categoryItems) */
-            // O: Can't Remember
         }
     }
     seasonItems.appendChild(categoryList);
@@ -48,6 +46,7 @@ function GenerateIntelTypeList(pointsOfInterest, intelTypeValue, factionValue, s
 }
 
 function GenerateIntelListItem(item) {
+
     let intelItem = createElement("div", "intel-item", `${item.name}`, item.id, item.map);
     let intelDesc = createElement("div", ["intel-desc", "visible"], "");
     let intelLocation = createElement("p", ["intel-subtitle"], item.map);
@@ -55,14 +54,20 @@ function GenerateIntelListItem(item) {
     intelDesc.appendChild(intelLocation);
     intelDesc.appendChild(description);
 
+    let btnContainer = document.createElement("div");
+    btnContainer.className = "buttonContainer";
 
-
+    //Only Generate locate and share buttons if intel has location
     if (item.loc[0] != 0 && item.loc[1] != 0) {
-        let location = createElement("button", "item-location", "Locate Intel");
+        let location = createElement("button", ["btn", "btn-info", "remove-button"], "Locate Intel");
         location.onclick = goToIntel(item);
-        intelDesc.appendChild(location);
-        intelDesc.appendChild(genShareButton(item.id));
+        btnContainer.appendChild(location);
+        btnContainer.appendChild(genShareButton(item.id));
     }
+
+    //Always add bug button and button container
+    btnContainer.appendChild(genBugButton(item.id));
+    intelDesc.appendChild(btnContainer);
     intelItem.appendChild(intelDesc);
     return intelItem;
 }
@@ -75,10 +80,30 @@ function goToIntel(item) {
     }
 }
 
+function copyClipboardForButton(intelId) {
+    return function() {
+        copyToClipboard(`${window.location.origin}${window.location.pathname}?id=${intelId}`, "Link Copied To Clipboard")
+    }
+}
+
+function redirectToGithubForButton(intelId) {
+    return function() {
+        redirectToGithub({label: "Intel Fix", issueTemplate: "editIntel", intelId: intelId})
+    }
+}
+
 function genShareButton(intelId) {
-    let shareBtn = createElement("button", ["share-intel", "fas", "fa-external-link-alt"], "")
-    shareBtn.setAttribute("onclick", `copyToClipboard("${window.location.origin}${window.location.pathname}?id=${intelId}", "Link Copied To Clipboard")`)
+    let shareBtn = createElement("button", ["btn", "btn-info","action-buttons", "share", "fas", "fa-external-link-alt"], "")
+    shareBtn.title = "Copy Sharing Link";
+    shareBtn.onclick = copyClipboardForButton(intelId);
     return shareBtn;
+}
+
+function genBugButton(intelId) {
+    let bugBtn = createElement("button", ["btn", "btn-info", "action-buttons", "bugRep", "fas", "fa-bug"], "")
+    bugBtn.title = "Submit Bug Report";
+    bugBtn.onclick = redirectToGithubForButton(intelId);
+    return bugBtn;
 }
 
 function copyToClipboard(text, notif) {
@@ -91,15 +116,6 @@ function copyToClipboard(text, notif) {
     document.removeEventListener('copy', listener);
     showNotification(notif)
 }
-// function copyShareLink(intelId) {
-//     var cb = document.getElementById("cb")
-//     cb.value = window.location.origin + window.location.pathname + "?id=" + intelId
-//     cb.style.display = 'block'
-//     cb.select()
-//     document.execCommand('copy')
-//     cb.style.display = 'none'
-//     
-// }
 
 function createElement(type, className, inside = undefined, id, map) {
     element = document.createElement(type)

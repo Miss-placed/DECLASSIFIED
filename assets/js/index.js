@@ -26,9 +26,9 @@ L.control.attribution()
 //loops through all types of intel and makes a marker
 AddMapMarkersFromCache(intelCache);
 
-map.on('popupopen', function() {
-    $('.remove-button').click(function(e) {
-        var itemId = $(e.target).data("item");
+map.on('popupopen', function () {
+    $('.mark-collected').click(function (e) {
+        var itemId = $(e.target).closest(".buttonContainer").data("item");
         if (disableMarkers.includes(itemId.toString())) {
             disableMarkers = $.grep(disableMarkers, function(value) {
                 return value != itemId.toString();
@@ -41,6 +41,16 @@ map.on('popupopen', function() {
             addCollectedIntel(itemId);
         }
     });
+    $('.share').click(function (e) {
+        var itemId = $(e.target).closest(".buttonContainer").data("item");
+        console.log("share", itemId);
+        copyToClipboard(`${window.location.origin}${window.location.pathname}?id=${itemId}`, "Link Copied To Clipboard");
+    });
+    $('.bugRep').click(function (e) {
+        var itemId = $(e.target).closest(".buttonContainer").data("item");
+        console.log("bugRep", itemId);
+        redirectToGithub({label: "Intel Fix", issueTemplate: "editIntel", intelId: itemId})
+    });
 });
 
 map.on("click", function(e) {
@@ -48,8 +58,7 @@ map.on("click", function(e) {
     if (debug) {
         copyToClipboard(location, "Location Copied to Clipboard")
     } else if (submittingIntel) {
-        redirectToGithub(location);
-
+        redirectToGithub({location: location});
     }
 })
 
@@ -61,7 +70,7 @@ function onLoad() {
     }
     let urlId = (getUrlVars()["id"] === "" ? undefined : getUrlVars()["id"])
     if (urlId != undefined) {
-        searchThroughPOI(urlId)
+        goToIntelById(urlId)
     }
 
     //Intel Search Listeners
