@@ -80,6 +80,17 @@
         </div>
         <!-- end cc-all -->
     </section>
+    <script>
+        function setProgress(id, total, progress) {
+            let progressBar = document.getElementById(id)
+            if (total == progress) {
+                progressBar.classList.add("completed")
+            } else {
+                progressBar.classList.remove("completed")
+            }
+            progressBar.style.borderLeftWidth = `${progressBar.offsetWidth/total*progress}px`
+        }
+    </script>
 </body>
 
 </html>

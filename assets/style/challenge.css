@@ -48,3 +48,7 @@
 .cc-all {
     display: flex;
 }
+
+.cc-progress.completed {
+    border-color: var(--clr-green);
+}
