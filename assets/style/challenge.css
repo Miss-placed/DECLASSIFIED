@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+.cc-card {
+    position: relative;
+    aspect-ratio: 76/7;
+    background-color: var(--clr-grey-d);
+    width: 450px;
+    padding-block: 10px;
+    padding-inline: 15px;
+    border: solid 3px var(--clr-grey-l);
+    margin: 5px;
+}
+
+.cc-img {
+    width: calc(100% + 30px);
+    margin-inline: -15px;
+    margin-block-start: -10px;
+    margin-bottom: 15px;
+}
+
+.cc-title {
+    background-color: var(--clr-white);
+    position: absolute;
+    left: 15px;
+    top: 55%;
+    margin: 0;
+    font-family: sans-serif;
+    display: inline;
+    padding: 0 7px;
+}
+
+.cc-desc {
+    display: inline;
+    color: var(--clr-grey-l);
+    padding-bottom: 5px;
+}
+
+.cc-progress {
+    width: 100%;
+    height: 10px;
+    border-left-style: inset;
+    border-left: solid 200px var(--clr-yellow);
+    background-color: var(--clr-grey-l)
+}
+
+.cc-all {
+    display: flex;
+}
