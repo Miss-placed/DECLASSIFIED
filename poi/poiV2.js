@@ -981,7 +981,7 @@ const intelStoreV2 = [
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[-128.88453858039142, 124.2078240636914]",
+        "loc": "[-129.59698842897112, 124.9624075221947]",
         "map": mapStrings.armada,
         "name": "Desperate Measures",
         "desc": "On a table in the center of the Control Room area of the main boat."
@@ -1116,7 +1116,7 @@ const intelStoreV2 = [
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-97.63651544347891, 198.375]",
+        "loc": "[-98.72611390839525, 198.87212119091419]",
         "map": mapStrings.armada,
         "name": "Agent Klaus Model",
         "desc": "In the North-eastern most Hangar area. He's hanging off some pipes just above one of the staircases, climb on the nearby toolbox to grab him."
