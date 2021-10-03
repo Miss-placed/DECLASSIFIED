@@ -44,7 +44,7 @@ const contribTemplates = {
         newId: "newIntel",
         newTitle: "New Intel",
         editId: "editIntel",
-        editTitle: "Edit Intel",
+        editTitle: "Intel Fix",
     },
     misc: {
         newId: "newMisc",
