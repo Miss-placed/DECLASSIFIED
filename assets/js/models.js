@@ -1,10 +1,10 @@
 class Item {
     constructor(title, desc, icon) {
-      this.title = title ?? "";
-      this.desc = desc ?? "";
-      this.icon = icon ?? generalIcon;
+        this.title = title ?? "";
+        this.desc = desc ?? "";
+        this.icon = icon ?? generalIcon;
     }
-  }
+}
 
 /////////////////////Maps/////////////////////////
 const mapStrings = {
