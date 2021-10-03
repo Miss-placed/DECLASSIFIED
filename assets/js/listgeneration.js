@@ -88,7 +88,7 @@ function copyClipboardForButton(intelId) {
 
 function redirectToGithubForButton(intelId) {
     return function() {
-        redirectToGithub({label: "Intel Fix", issueTemplate: "editIntel", intelId: intelId})
+        redirectToGithub({label: "Intel Fix", issueTemplate: contribTemplates.intel.editId, intelId: intelId})
     }
 }
 

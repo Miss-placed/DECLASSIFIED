@@ -39,6 +39,21 @@ const allOutbreakMapsArr = [
 ]
 
 /////////////////////Metadata/////////////////////////
+const contribTemplates = {
+    intel: {
+        newId: "newIntel",
+        newTitle: "New Intel",
+        editId: "editIntel",
+        editTitle: "Edit Intel",
+    },
+    misc: {
+        newId: "newMisc",
+        newTitle: "New Misc Marker",
+        editId: "editMisc",
+        editTitle: "Misc Marker Fix",
+    }
+}
+
 const factions = {
     requiem: "Requiem",
     omega: "Omega",
