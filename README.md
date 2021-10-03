@@ -4,8 +4,8 @@
 ██████
 
 █████████  ██████  ████████████
-# [DECLASSIFIED](https://Miss-placed.github.io/DECLASSIFIED)
-This is an interactive map for the game COD:Cold War. [Interactive Map](https://Miss-Placed.github.io/DECLASSIFIED)
+# [DECLASSIFIED](https://declassified.netlify.app/)
+This is an interactive map for the game COD:Cold War. [Interactive Map](https://declassified.netlify.app/)
 With every season more Intel becomes available, now this is the place to follow track and hunt for the next intel.
 
 ████ ██████████ █ ███████ ████
