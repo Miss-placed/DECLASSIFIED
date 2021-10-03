@@ -4,8 +4,8 @@
 ██████
 
 █████████  ██████  ████████████
-# [DECLASSIFIED](https://Odinnh.github.io/DECLASSIFIED)
-This is an interactive map for the game COD:Cold War. [Interactive Map](https://Miss-placed.github.io/DECLASSIFIED)
+# [DECLASSIFIED](https://Miss-placed.github.io/DECLASSIFIED)
+This is an interactive map for the game COD:Cold War. [Interactive Map](https://Miss-Placed.github.io/DECLASSIFIED)
 With every season more Intel becomes available, now this is the place to follow track and hunt for the next intel.
 
 ████ ██████████ █ ███████ ████
@@ -22,7 +22,7 @@ Previously I contributed to [the Red Dead Redemption 2 Collectors map](https://j
  - Sol_3 [1](https://github.com/sol3uk)
  - Geoffg10 [1](https://www.reddit.com/user/Alpharettaraiders09/)
  - Ricerat477 [1](https://www.reddit.com/user/Ricerat477)
- - Bola2010
+ - Bola2010 [1](https://github.com/bola2010)
  - NanikOs [1](https://github.com/Nanik0s)
  - EdicionGamerYT [1](https://github.com/EdicionGamer) [2](https://www.youtube.com/channel/UCLFdusOixGf1Pto6oHfFdog)
  - JeanRopke [1](https://github.com/jeanropke)
@@ -31,4 +31,3 @@ Previously I contributed to [the Red Dead Redemption 2 Collectors map](https://j
 <sup name="footnote">[^1](#myfootnote1): ██████ is property of the CIA. a U.S. government agency.</sup>
 
 --------------------------------------------------
-todo: [DECLASSIFIED/master/TODO.md](https://github.com/Odinnh/DECLASSIFIED/blob/master/TODO.md)
