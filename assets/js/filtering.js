@@ -55,6 +55,9 @@ function TriggerSearch() {
 }
 
 function getIntelById(intelId) {
-    let matchedIntel = intelCache.find((item) => item.id == intelId)
-    return matchedIntel;
+    if (intelId) {
+        let matchedIntel = intelCache.find((item) => item.id == intelId)
+        return matchedIntel;
+    }
+    return null;
 }
