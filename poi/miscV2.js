@@ -20,9 +20,9 @@ class Marker {
 }
 
 /////////////////////Round Based Misc Items/////////////////////////
-miscPOI[mapStrings.dieMaschine] = [/*TODO*/]
-miscPOI[mapStrings.firebaseZ] = [/*TODO*/]
-miscPOI[mapStrings.mauerDerToten] = [/*TODO*/]
+miscPOI[mapStrings.dieMaschine] = [/*TODO*/];
+miscPOI[mapStrings.firebaseZ] = [/*TODO*/];
+miscPOI[mapStrings.mauerDerToten] = [/*TODO*/];
 
 /////////////////////Outbreak Misc Items/////////////////////////
 miscPOI[mapStrings.zoo] = [
@@ -185,5 +185,5 @@ miscPOI[mapStrings.sanatorium] = [
     //Don't really need this for now, not until we re-work easter eggs
     //new Marker(new Item("Chopper Gunner", "Hold out until the wave is dead to continue with the Easter Egg"), [-170.51300319205535, 39.25])
 ];
-miscPOI[mapStrings.collateral] = [/*TODO*/]
-miscPOI[mapStrings.armada] = [/*TODO*/]
+miscPOI[mapStrings.collateral] = [/*TODO*/];
+miscPOI[mapStrings.armada] = [/*TODO*/];
