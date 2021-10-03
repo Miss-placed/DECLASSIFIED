@@ -3,7 +3,7 @@
 // Please use the existing settings included in the URL and check for duplicate ids when possible (it's very very unlikely but still possible)
 
 // Non collectible items that need icons on the respective maps
-var miscPOI = {};
+let miscPOI = {};
 class Marker {
     constructor(item, loc, uniqueDesc) {
         if (item instanceof Item) {

@@ -1,5 +1,5 @@
 //Non collectible items that need icons on the respective maps
-var miscPOI = {};
+let miscPOI = {};
 /////////////////////Round Based Misc Items/////////////////////////
 
 /////////////////////Outbreak Misc Items/////////////////////////
