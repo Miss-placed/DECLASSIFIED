@@ -6,15 +6,16 @@ function StartupSettings() {
     let disableMarkers = [], visibleMarkers = [];
     //Use default latest map otherwise use last selected map of user
     let currentMap = mapStrings.armada;
+    let currentContribTemplate, currentContribLabel;
     if (localStorage.declassifiedPrefs != undefined && JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap)
         currentMap = JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap;
 
     let isMobile = false, submittingLocation = false, fixedNotification = false;
     let notificationEle = document.getElementById("notification-popup");
-    return response = { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingLocation, fixedNotification };
+    return response = { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingLocation, currentContribTemplate, currentContribLabel, fixedNotification };
 }
 
-var mapInstance = InitMap();
+let mapInstance = InitMap();
 
 L.control.attribution({ prefix: 'DECLASSIFIED' })
 document.getElementsByClassName("leaflet-control-attribution")[0].getElementsByTagName("a")[0].title = "Declassified An Interactive map By Odinn"
@@ -26,7 +27,7 @@ AddMapMarkersFromCache(intelCache);
 
 mapInstance.on('popupopen', function () {
     $('.mark-collected').click(function (e) {
-        var itemId = $(e.target).closest(".buttonContainer").data("item");
+        let itemId = $(e.target).closest(".buttonContainer").data("item");
         if (app.disableMarkers.includes(itemId.toString())) {
             app.disableMarkers = $.grep(app.disableMarkers, function(value) {
                 return value != itemId.toString();
@@ -40,23 +41,23 @@ mapInstance.on('popupopen', function () {
         }
     });
     $('.share').click(function (e) {
-        var itemId = $(e.target).closest(".buttonContainer").data("item");
+        let itemId = $(e.target).closest(".buttonContainer").data("item");
         console.log("share", itemId);
         copyToClipboard(`${window.location.origin}${window.location.pathname}?id=${itemId}`, "Link Copied To Clipboard");
     });
     $('.bugRep').click(function (e) {
-        var itemId = $(e.target).closest(".buttonContainer").data("item");
+        let itemId = $(e.target).closest(".buttonContainer").data("item");
         console.log("bugRep", itemId);
-        redirectToGithub({label: "Intel Fix", issueTemplate: "editIntel", intelId: itemId})
+        redirectToGithub({label: "Intel Fix", issueTemplate: contribTemplates.intel.editId, intelId: itemId})
     });
 });
 
 mapInstance.on("click", function(e) {
-    var location = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
+    let location = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
     if (debug) {
         copyToClipboard(location, "Location Copied to Clipboard")
     } else if (app.submittingLocation) {
-        redirectToGithub({location: location});
+        redirectToGithub({label:app.currentContribLabel, issueTemplate:app.currentContribTemplate, location: location});
     }
 })
 
