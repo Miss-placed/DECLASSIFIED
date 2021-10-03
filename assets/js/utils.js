@@ -65,7 +65,7 @@ function showNotification(message, isStatic = false) {
 }
 
 function redirectToGithub({label = contribTemplates.intel.newTitle, issueTemplate = contribTemplates.intel.newId, intelId: id = "", location}) {
-    const domain = "https://github.com/Odinnh/DECLASSIFIED/issues/new";
+    const domain = `${app.repoDomain}/issues/new`;
     let isIntel = (issueTemplate == contribTemplates.intel.newId || issueTemplate == contribTemplates.intel.editId);
     let isMisc = (issueTemplate == contribTemplates.misc.newId || issueTemplate == contribTemplates.misc.editId);
     let assignees = "Odinnh,sol3uk";

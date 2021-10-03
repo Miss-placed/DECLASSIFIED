@@ -3,6 +3,8 @@ const userPrefs = userPrefsStartup();
 
 function StartupSettings() {
     let response;
+    const repoDomain = 'https://github.com/Miss-placed/DECLASSIFIED';
+    const appDomain = 'https://miss-placed.github.io/DECLASSIFIED/';
     let disableMarkers = [], visibleMarkers = [];
     //Use default latest map otherwise use last selected map of user
     let currentMap = mapStrings.armada;
@@ -12,7 +14,7 @@ function StartupSettings() {
 
     let isMobile = false, submittingLocation = false, fixedNotification = false;
     let notificationEle = document.getElementById("notification-popup");
-    return response = { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingLocation, currentContribTemplate, currentContribLabel, fixedNotification };
+    return response = { appDomain, repoDomain, currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingLocation, currentContribTemplate, currentContribLabel, fixedNotification };
 }
 
 let mapInstance = InitMap();
