@@ -1823,7 +1823,7 @@ const intelStoreV2 = [
         "faction": factions.omega,
         "season": seasons.season4,
         "intelType": intelTypes.audio,
-        "loc": "[-182.94626512386282, 133.8125]",
+        "loc": "[-179.8780884641752, 130.0625]",
         "map": mapStrings.duga,
         "name": "Peace is Our Profession",
         "desc": "Underground bunker in the south, under the bed."
