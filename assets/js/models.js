@@ -1,10 +1,10 @@
 class Item {
     constructor(title, desc, icon) {
-      this.title = title ?? "";
-      this.desc = desc ?? "";
-      this.icon = icon ?? generalIcon;
+        this.title = title ?? "";
+        this.desc = desc ?? "";
+        this.icon = icon ?? generalIcon;
     }
-  }
+}
 
 /////////////////////Maps/////////////////////////
 const mapStrings = {
@@ -39,6 +39,21 @@ const allOutbreakMapsArr = [
 ]
 
 /////////////////////Metadata/////////////////////////
+const contribTemplates = {
+    intel: {
+        newId: "newIntel",
+        newTitle: "New Intel",
+        editId: "editIntel",
+        editTitle: "Edit Intel",
+    },
+    misc: {
+        newId: "newMisc",
+        newTitle: "New Misc Marker",
+        editId: "editMisc",
+        editTitle: "Misc Marker Fix",
+    }
+}
+
 const factions = {
     requiem: "Requiem",
     omega: "Omega",

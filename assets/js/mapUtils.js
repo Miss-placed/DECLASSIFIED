@@ -10,7 +10,7 @@ function InitMap() {
         maxZoom: 5,
         minZoom: 1,
         layers: [
-            window[currentMap].Layer
+            window[app.currentMap].Layer
         ],
         tap: true,
         tapTolerance: 30,
@@ -20,11 +20,11 @@ function InitMap() {
 }
 
 function setMap(selectedMap, htmlElement, ifSub = false) {
-    if (currentMap != selectedMap) {
-        mapInstance.removeLayer(window[currentMap].Layer)
+    if (app.currentMap != selectedMap) {
+        mapInstance.removeLayer(window[app.currentMap].Layer)
         mapInstance.addLayer(window[selectedMap].Layer)
 
-        currentMap = selectedMap
+        app.currentMap = selectedMap
         setLastVisitedMap(selectedMap)
 
         Array.from(document.getElementsByClassName('current-map'))
@@ -87,9 +87,9 @@ function addMarkerToMap(loc, icon, maep, id, name, desc = ``) {
 
         if (hasUserCollected(id)) {
             marker.setOpacity(0.35);
-            disableMarkers.push(id);
+            app.disableMarkers.push(id);
         }
-        visibleMarkers[id] = marker;
+        app.visibleMarkers[id] = marker;
     }
 }
 

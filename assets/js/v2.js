@@ -54,7 +54,7 @@ document.addEventListener(
 )
 
 function findObjectByKey(array, key, value) {
-    for (var i = 0; i < array.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         if (array[i][key] === value) {
             return array[i];
         }
@@ -129,7 +129,7 @@ let collectedSeason = {
 collectedSeason.All = sum(collectedSeason)
 collectedSeason.Not = factionTotal.All - collectedSeason.All;
 
-var factionDonut = new DonutChart(
+let factionDonut = new DonutChart(
     document.getElementById("faction-donut"), {
         r: 100,
         stroke: 25,
@@ -161,7 +161,7 @@ var factionDonut = new DonutChart(
     })
 
 // #TODO: uncomment once we have the season chart in place
-//         var seasonDonut = new DonutChart(
+//         let seasonDonut = new DonutChart(
 //             document.getElementById("season-donut "), {
 //     r: 90,
 //         stroke: 30,
