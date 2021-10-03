@@ -75,7 +75,7 @@ function GenerateIntelListItem(item) {
 function goToIntel(item) {
     return function() {
         switchAndFly(item.loc, item.map)
-        if (isMobile)
+        if (app.isMobile)
             toggleAside()
     }
 }
@@ -88,7 +88,7 @@ function copyClipboardForButton(intelId) {
 
 function redirectToGithubForButton(intelId) {
     return function() {
-        redirectToGithub({ label: "Intel Fix", issueTemplate: "editIntel", intelId: intelId })
+        redirectToGithub({label: contribTemplates.intel.editTitle, issueTemplate: contribTemplates.intel.editId, intelId: intelId})
     }
 }
 

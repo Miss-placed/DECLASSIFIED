@@ -1,22 +1,23 @@
-let { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingIntel, results } = StartupGlobals();
+const app = StartupSettings();
 const userPrefs = userPrefsStartup();
 
-function StartupGlobals() {
-    var disableMarkers = [];
-    var visibleMarkers = [];
+function StartupSettings() {
+    let response;
+    const repoDomain = 'https://github.com/Miss-placed/DECLASSIFIED';
+    const appDomain = 'https://miss-placed.github.io/DECLASSIFIED/';
+    let disableMarkers = [], visibleMarkers = [];
     //Use default latest map otherwise use last selected map of user
     let currentMap = mapStrings.armada;
+    let currentContribTemplate, currentContribLabel;
     if (localStorage.declassifiedPrefs != undefined && JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap)
         currentMap = JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap;
-    var results = [];
-    let isMobile = false;
-    let submittingIntel = false;
-    let fixedNotification = false;
+
+    let isMobile = false, submittingLocation = false, fixedNotification = false;
     let notificationEle = document.getElementById("notification-popup");
-    return { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingIntel, fixedNotification, results };
+    return response = { appDomain, repoDomain, currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingLocation, currentContribTemplate, currentContribLabel, fixedNotification };
 }
 
-var map = InitMap();
+let mapInstance = InitMap();
 
 L.control.attribution({ prefix: 'DECLASSIFIED' })
 document.getElementsByClassName("leaflet-control-attribution")[0].getElementsByTagName("a")[0].title = "Declassified An Interactive map By Odinn"
@@ -26,46 +27,46 @@ L.control.attribution()
 //loops through all types of intel and makes a marker
 AddMapMarkersFromCache(intelCache);
 
-map.on('popupopen', function () {
+mapInstance.on('popupopen', function () {
     $('.mark-collected').click(function (e) {
-        var itemId = $(e.target).closest(".buttonContainer").data("item");
-        if (disableMarkers.includes(itemId.toString())) {
-            disableMarkers = $.grep(disableMarkers, function(value) {
+        let itemId = $(e.target).closest(".buttonContainer").data("item");
+        if (app.disableMarkers.includes(itemId.toString())) {
+            app.disableMarkers = $.grep(app.disableMarkers, function(value) {
                 return value != itemId.toString();
             });
-            visibleMarkers[itemId].setOpacity(1);
+            app.visibleMarkers[itemId].setOpacity(1);
             removeCollectedIntel(itemId)
         } else {
-            disableMarkers.push(itemId.toString());
-            visibleMarkers[itemId].setOpacity(0.35);
+            app.disableMarkers.push(itemId.toString());
+            app.visibleMarkers[itemId].setOpacity(0.35);
             addCollectedIntel(itemId);
         }
     });
     $('.share').click(function (e) {
-        var itemId = $(e.target).closest(".buttonContainer").data("item");
+        let itemId = $(e.target).closest(".buttonContainer").data("item");
         console.log("share", itemId);
         copyToClipboard(`${window.location.origin}${window.location.pathname}?id=${itemId}`, "Link Copied To Clipboard");
     });
     $('.bugRep').click(function (e) {
-        var itemId = $(e.target).closest(".buttonContainer").data("item");
+        let itemId = $(e.target).closest(".buttonContainer").data("item");
         console.log("bugRep", itemId);
-        redirectToGithub({label: "Intel Fix", issueTemplate: "editIntel", intelId: itemId})
+        redirectToGithub({label: "Intel Fix", issueTemplate: contribTemplates.intel.editId, intelId: itemId})
     });
 });
 
-map.on("click", function(e) {
-    var location = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
+mapInstance.on("click", function(e) {
+    let location = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
     if (debug) {
         copyToClipboard(location, "Location Copied to Clipboard")
-    } else if (submittingIntel) {
-        redirectToGithub({location: location});
+    } else if (app.submittingLocation) {
+        redirectToGithub({label:app.currentContribLabel, issueTemplate:app.currentContribTemplate, location: location});
     }
 })
 
 function onLoad() {
     // needs to be replaced with the new menu highlighter
     //if (v2test == null) {
-        document.getElementById(currentMap).classList.add("current-map")
+        document.getElementById(app.currentMap).classList.add("current-map")
         GenerateFullIntelList(intelCache);
     //}
     let urlId = (getUrlVars()["id"] === "" ? undefined : getUrlVars()["id"])
@@ -90,6 +91,6 @@ if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
     let worldmap = document.getElementById("worldMap");
     sidebar.classList.add("mobile-view");
     worldmap.classList.add("mobile-view");
-    isMobile = true
+    app.isMobile = true
     toggleAside();
 }

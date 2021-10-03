@@ -3,8 +3,17 @@ function getNotificationTime() {
 }
 
 function newIntelInit() {
-    submittingIntel = true;
-    showNotification("Click exactly where the intel is located! Next time you click on the map you will be redirected to our new intel form.", true);
+    app.submittingLocation = true;
+    app.currentContribTemplate = contribTemplates.intel.newId;
+    app.currentContribLabel = contribTemplates.intel.newTitle;
+    showNotification("Click exactly where the intel is located. Next time you click on the map you will be redirected to our new intel form.", true);
+}
+
+function newMiscInit() {
+    app.submittingLocation = true;
+    app.currentContribTemplate = contribTemplates.misc.newId;
+    app.currentContribLabel = contribTemplates.misc.newTitle;
+    showNotification("Click exactly where the marker is located. Next time you click on the map you will be redirected to our new icon form.", true);
 }
 
 
@@ -24,8 +33,8 @@ function toggleAside() {
 }
 
 function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+    let vars = {};
+    let parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
         vars[key] = value;
     });
     return vars;
@@ -33,36 +42,61 @@ function getUrlVars() {
 
 function notificationAnimationEnd() {
     //Check if supposed to be a fixed notification of not
-    if (fixedNotification) {
+    if (app.fixedNotification) {
         //Fixed notification, Keep fixed class after animation
-        notificationEle.classList.remove("animated");
-        notificationEle.classList.add("fixed");
+        app.notificationEle.classList.remove("animated");
+        app.notificationEle.classList.add("fixed");
     } else {
         //Normal notification behaviour
-        notificationEle.classList.remove("animated", "fixed");
+        app.notificationEle.classList.remove("animated", "fixed");
     }
 }
 
 function showNotification(message, isStatic = false) {
-    fixedNotification = isStatic;
+    app.fixedNotification = isStatic;
     //Notification end animation function
     setTimeout(() => {
         notificationAnimationEnd();
     }, getNotificationTime());
-    notificationEle.classList.remove("animated", "fixed");
-    void notificationEle.offsetWidth; //https://css-tricks.com/restart-css-animation/
-    notificationEle.innerHTML = message;
-    notificationEle.classList.add("animated");
+    app.notificationEle.classList.remove("animated", "fixed");
+    void app.notificationEle.offsetWidth; //https://css-tricks.com/restart-css-animation/
+    app.notificationEle.innerHTML = message;
+    app.notificationEle.classList.add("animated");
 }
 
-function redirectToGithub({label = "New Intel", issueTemplate = "newIntel", intelId, location}) {
-    var labels = encodeURI(`${label},${currentMap}`);
-    let intel = getIntelById(intelId);
-    var intelIdPlaceholder = intelId ? `[${intelId}]` : "";
-    var issueTitle = encodeURI(`${label}: ${intel.name} [${currentMap}]${intelIdPlaceholder}`);
-    window.open(`https://github.com/Odinnh/DECLASSIFIED/issues/new?assignees=Odinnh%2Csol3uk&labels=${labels}&template=${issueTemplate}.yml&title=${issueTitle}&intelId=${intelId}&intelName=${intel.name}&intelLocation=${location}&intelMap=${currentMap}`);
-    submittingIntel = false;
+function redirectToGithub({label = contribTemplates.intel.newTitle, issueTemplate = contribTemplates.intel.newId, intelId: id = "", location}) {
+    const domain = `${app.repoDomain}/issues/new`;
+    let isIntel = (issueTemplate == contribTemplates.intel.newId || issueTemplate == contribTemplates.intel.editId);
+    let isMisc = (issueTemplate == contribTemplates.misc.newId || issueTemplate == contribTemplates.misc.editId);
+    let assignees = "Odinnh,sol3uk";
+    let labels = `${label},${app.currentMap}`;
+    let entityName = "";
+
+    if (isIntel){
+        let intel = getIntelById(id);
+        entityName = intel ? intel.name : "";
+    }
+    /* if (isMisc){
+        let miscItem = getMiscMarkerById(id);
+        entityName = miscItem ? miscItem.title : "";
+    } */
+
+    let intelIdPlaceholder = id ? `[${id}]` : "";
+    
+    let issueTitle = `${label}: ${entityName} [${app.currentMap}]${intelIdPlaceholder}`;
+    let finalURL = `${domain}?assignees=${assignees}&labels=${labels}&template=${issueTemplate}.yml&title=${issueTitle}`
+    
+    if (isIntel) {
+        let intelParams = `&intelId=${id}&intelName=${entityName}&intelLocation=${location}&intelMap=${app.currentMap}`
+        finalURL += intelParams;
+    }
+    if (isMisc) {
+        let miscParams = `&markerId=${id}&markerName=${entityName}&markerLocation=${location}&markerMap=${app.currentMap}`
+        finalURL += miscParams;
+    }
+    window.open(encodeURI(finalURL));
+    app.submittingLocation = false;
     setTimeout(() => {
-        notificationEle.classList.remove("fixed");
+        app.notificationEle.classList.remove("fixed");
     }, getNotificationTime());
 }

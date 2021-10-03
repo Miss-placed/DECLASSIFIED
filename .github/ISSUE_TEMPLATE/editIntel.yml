@@ -1,6 +1,6 @@
 name: Intel Fix
-description: Making an edit to an existing piece of intel where the information may be incorrect.
-title: "Intel Fix: "
+description: Help us by submitting an edit to an existing piece of intel where the information may be incorrect.
+title: "Intel Fix: INTEL_NAME [MAP]"
 labels: ["Intel Fix"]
 assignees:
   - Odinnh
@@ -16,7 +16,7 @@ body:
     attributes:
       label: Name
       description: Provide the title of the intel, close as possible to what is in-game.
-      placeholder: ex. Maxis Scarf
+      placeholder: e.g. Maxis Scarf
     validations:
       required: true
   - type: input
@@ -24,7 +24,7 @@ body:
     attributes:
       label: Intel Id
       description: Provide the Id of the intel if you are aware of it.
-      placeholder: ex. MS3Ar2
+      placeholder: e.g. MS3Ar2
     validations:
       required: false
   - type: textarea

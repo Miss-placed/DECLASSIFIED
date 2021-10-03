@@ -1,5 +1,5 @@
 function filterIntel(searchTerm, factionsArr, seasonsArr, intelTypeArr, mapArr) {
-    var results = intelCache;
+    let results = intelCache;
     results = results.filter((intel) => {
         return intel.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
     });
@@ -24,37 +24,40 @@ function filterIntel(searchTerm, factionsArr, seasonsArr, intelTypeArr, mapArr) 
 }
 
 function TriggerSearch() {
-    var factionFilters = $('#factionFilterCollapse').find("input[type=checkbox]:checked");
+    let factionFilters = $('#factionFilterCollapse').find("input[type=checkbox]:checked");
     let factionsArr = [];
     $.each(factionFilters, function() {
         factionsArr.push(factions[$(this).val()]);
     });
 
-    var seasonsFilters = $('#seasonFilterCollapse').find("input[type=checkbox]:checked");
+    let seasonsFilters = $('#seasonFilterCollapse').find("input[type=checkbox]:checked");
     let seasonsArr = [];
     $.each(seasonsFilters, function() {
         seasonsArr.push(seasons[$(this).val()]);
     });
 
-    var intelTypeFilters = $('#intelTypeFilterCollapse').find("input[type=checkbox]:checked");
+    let intelTypeFilters = $('#intelTypeFilterCollapse').find("input[type=checkbox]:checked");
     let intelTypeArr = [];
     $.each(intelTypeFilters, function() {
         intelTypeArr.push(intelTypes[$(this).val()]);
     });
 
-    var mapFilters = $('#mapFilterCollapse').find("input[type=checkbox]:checked");
+    let mapFilters = $('#mapFilterCollapse').find("input[type=checkbox]:checked");
     let mapArr = [];
     $.each(mapFilters, function() {
         mapArr.push(mapStrings[$(this).val()]);
     });
 
-    var filteredIntel = filterIntel($('#searchTerm').val().toLowerCase(), factionsArr, seasonsArr, intelTypeArr, mapArr);
+    let filteredIntel = filterIntel($('#searchTerm').val().toLowerCase(), factionsArr, seasonsArr, intelTypeArr, mapArr);
     GenerateFullIntelList(filteredIntel);
 
     return filteredIntel;
 }
 
 function getIntelById(intelId) {
-    let matchedIntel = intelCache.find((item) => item.id == intelId)
-    return matchedIntel;
+    if (intelId) {
+        let matchedIntel = intelCache.find((item) => item.id == intelId)
+        return matchedIntel;
+    }
+    return null;
 }

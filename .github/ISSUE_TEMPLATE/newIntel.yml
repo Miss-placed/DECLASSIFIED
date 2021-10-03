@@ -1,6 +1,6 @@
 name: New Intel
-description: Identifying a new piece of intel we do not have yet.
-title: "New Intel: "
+description: Help us by identifying a new piece of intel we do not have yet.
+title: "New Intel: INTEL_NAME [MAP]"
 labels: ["New Intel"]
 assignees:
   - Odinnh
@@ -16,7 +16,7 @@ body:
     attributes:
       label: Name
       description: Provide the title of the intel, close as possible to what is in-game.
-      placeholder: ex. Maxis Scarf
+      placeholder: e.g. Maxis Scarf
     validations:
       required: true
   - type: dropdown
@@ -95,7 +95,7 @@ body:
     attributes:
       label: Location Coordinates
       description: These are coordinates, you can get them by pressing f12 type "debug = true" and clicking on the map. Alternatively, use the submit new intel button and you'll be redirected here with the location automatically populated.
-      placeholder: ex. [-110.29555128702799, 137.5]
+      placeholder: e.g. [-110.29555128702799, 137.5]
     validations:
       required: true
       

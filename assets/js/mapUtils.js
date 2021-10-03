@@ -10,7 +10,7 @@ function InitMap() {
         maxZoom: 5,
         minZoom: 1,
         layers: [
-            window[currentMap].Layer
+            window[app.currentMap].Layer
         ],
         tap: true,
         tapTolerance: 30,
@@ -20,11 +20,11 @@ function InitMap() {
 }
 
 function setMap(selectedMap, htmlElement, ifSub = false) {
-    if (currentMap != selectedMap) {
-        map.removeLayer(window[currentMap].Layer)
-        map.addLayer(window[selectedMap].Layer)
+    if (app.currentMap != selectedMap) {
+        mapInstance.removeLayer(window[app.currentMap].Layer)
+        mapInstance.addLayer(window[selectedMap].Layer)
 
-        currentMap = selectedMap
+        app.currentMap = selectedMap
         setLastVisitedMap(selectedMap)
 
         Array.from(document.getElementsByClassName('current-map'))
@@ -42,7 +42,7 @@ function switchAndFly(location = [0, 0], selectedMap = "") {
         selectedMap == mapStrings.dieMaschine || selectedMap == mapStrings.dieMaschineUnderground) ifSub = true
     setMap(selectedMap, document.getElementById(selectedMap), ifSub)
     setLastVisitedMap(selectedMap)
-    map.flyTo(location, 4)
+    mapInstance.flyTo(location, 4)
 }
 
 function AddMapMarkersFromCache(intelArr) {
@@ -55,67 +55,52 @@ function AddMapMarkersFromCache(intelArr) {
             }
         }
 
-
         for (maep in miscPOI) {
-            let iconlib = {
-                "Demented": dementedIcon,
-                "Rift": riftIcon,
-                "RedRift": redRiftIcon,
-                "Radio": radioIcon,
-                "Monkey": monkeyIcon,
-                "Projector": generalIcon,
-                "Signal": generalIcon,
-                "Fishing": fishingIcon,
-            };
             let currmap = miscPOI[maep];
             if (typeof (miscPOI[maep]) !== "undefined") {
-                for (type in currmap) {
-                    for (item in currmap[type]) {
-                        var item = currmap[type][item];
-                        let icon = iconlib[type];
-                        if (typeof iconlib[type] == "undefined")
-                            icon = generalIcon;
-                        addMiscMarkerToMap(item.loc, icon, window[maep], item.name, item.desc);
-
-                    }
-                }
+                currmap.forEach(item => {
+                    addMiscMarkerToMap(item.loc, item.icon, window[maep], item.title, item.desc)
+                })
             }
         }
     }
 }
 
 function addMarkerToMap(loc, icon, maep, id, name, desc = ``) {
-    let snippet = $(`<div></div>`)
-    let shareBtn = genShareButton(id).outerHTML;
-    let bugBtn = genBugButton(id).outerHTML;
-    if (desc !== '') {
-        snippet = $(`
-        <div>
+    if (loc != null && JSON.stringify([0, 0]) != JSON.stringify(loc)) { // don't add 0,0 markers to the map for cleanliness
+        let snippet = $(`<div></div>`)
+        let shareBtn = genShareButton(id).outerHTML;
+        let bugBtn = genBugButton(id).outerHTML;
+        if (desc !== '') {
+            snippet = $(`
+            <div>
             <p>${desc}</p>
             <div class="buttonContainer" data-item="${id}">
-                <button type="button" class="btn btn-info mark-collected">Mark as collected</button>
-                ${shareBtn}
-                ${bugBtn}
+            <button type="button" class="btn btn-info mark-collected">Mark as collected</button>
+            ${shareBtn}
+            ${bugBtn}
             </div>
-        </div>`);
-    }
-    var marker = L.marker(loc, { icon: icon }).addTo(maep.Markers)
-        .bindPopup(`<h1>${name}</h1>${snippet.html()}`);
+            </div>`);
+        }
+        var marker = L.marker(loc, { icon: icon }).addTo(maep.Markers)
+            .bindPopup(`<h1>${name}</h1>${snippet.html()}`);
 
-    if (hasUserCollected(id)) {
-        marker.setOpacity(0.35);
-        disableMarkers.push(id);
+        if (hasUserCollected(id)) {
+            marker.setOpacity(0.35);
+            app.disableMarkers.push(id);
+        }
+        app.visibleMarkers[id] = marker;
     }
-    visibleMarkers[id] = marker;
 }
 
 function addMiscMarkerToMap(loc, icon, maep, name, desc = ``) {
-    let snippet = $(`<div></div>`)
-    if (desc !== '') {
-        snippet = $(`<div>
+    if (loc != null && JSON.stringify([0, 0]) != JSON.stringify(loc)) { // don't add 0,0 markers to the map for cleanliness
+        let snippet = $(`<div></div>`)
+        if (desc !== '') {
+            snippet = $(`<div>
         <p>${desc}</p></div>`);
+        }
+        var marker = L.marker(loc, { icon: icon }).addTo(maep.MiscMarkers)
+            .bindPopup(`<h1>${name}</h1>${snippet.html()}`);
     }
-    var marker = L.marker(loc, { icon: icon }).addTo(maep.MiscMarkers)
-        .bindPopup(`<h1>${name}</h1>${snippet.html()}`);
-
 }
