@@ -12,7 +12,6 @@
     <meta name="description" content="With The Cold War Collectables Map you can track your progress on which intel you still need to collect.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="assets/style/normalize.css">
     <link rel="stylesheet" href="assets/style/style2.css">
     <link rel="icon" href="./favicon-32x32.png" type="image/png">
 
@@ -26,7 +25,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
-<body onload="onLoad()">
+<body onload="">
     <div id="worldMap"></div>
     <!-- Map + UI -->
     <div id="worldmap">
@@ -69,25 +68,22 @@
                     buttons need to have the target be intel-desc and have the id be their id (this case it uses placeholders)
                 -->
                 <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button>
-                <button class="btn to-intel" target="intel-desc" id="MS0Do1">KGB Videotape Note</button>
-                <button class="btn to-intel" target="intel-desc" id="DS1Au4">Lost Souls: Olga</button>
-                <button class="btn to-intel" target="intel-desc" id="OS4Au3">The Survivors</button>
-                <button class="btn to-intel" target="intel-desc" id="4">Meeting Of Minds</button>
             </div>
         </div>
         <div class="modal -big -hidden" id="intel-desc">
-            <div class="sub-modal">
-                <button class=close-submodal onclick="switchmodal()">X</button>
+            <div class="sub-modal" id="description">
+                <button class="close-submodal btn inverted" onclick="switchmodal()"><i class="bi bi-x"></i></button>
                 <h2>INTEL NOT FOUND</h2>
                 <p>If you see this please report an issue on the github page.</p>
-                <button class="locate-intel">report error (wip)</button>
+                <button class="btn inverted locate-intel" id="locate-intel"> Locate Intel <i class="bi bi-geo-alt-fill"></i></button>
+                <button class="btn inverted"><i class="bi bi-bug-fill"></i></button>
             </div>
         </div>
         <!-- intel stats modal -->
         <!-- displays totals as a list and as donuts, includes searchbar -->
         <div class="modal" id="intel-stats">
             <div class="sub-modal ">
-                <div id="search-form"><input type="search"><button><i class="bi bi-search"></i></button></div>
+                <div id="search-form"><input type="search" placeholder="Search Intel..."><button class="btn inverted"><i class="bi bi-search"></i></button></div>
                 <div id="faction-donut" class="graph "></div>
                 <div id="totals">
                     <ul id="icons-faction">
@@ -101,11 +97,11 @@
                         </li>
                     </ul>
 
-                    <ul id="faction-total-collected ">
-                        <li>10/15</li>
-                        <li>05/15</li>
-                        <li>05/15</li>
-                        <li>01/76</li>
+                    <ul id="faction-total-collected">
+                        <li id="requiem-totals"></li>
+                        <li id="omega-totals"></li>
+                        <li id="maxis-totals"></li>
+                        <li id="dark-aether-totals"></li>
                     </ul>
                 </div>
             </div>

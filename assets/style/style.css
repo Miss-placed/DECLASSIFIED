@@ -1,3 +1,4 @@
+@import url("global.css");
 * {
     margin: 0;
     padding: 0;
@@ -253,7 +254,7 @@ aside #searchTerm:focus-visible {
     padding: 10px 25px;
 }
 
-.category{
+.category {
     user-select: none;
 }
 
@@ -299,8 +300,8 @@ aside #searchTerm:focus-visible {
 }
 
 .buttonContainer {
-    display: flex; 
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
     padding-bottom: 5px;
 }
 
@@ -368,6 +369,7 @@ aside #searchTerm:focus-visible {
     animation: bounce-in 3s;
     display: block;
 }
+
 #notification-popup.fixed {
     bottom: 0px;
     display: block;
@@ -437,6 +439,7 @@ h6 {
     border-bottom: 1px solid #e8e8d3;
     background: gray;
 }
+
 
 /* Bootstrap Overrides */
 

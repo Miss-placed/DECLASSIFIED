@@ -88,12 +88,12 @@ function copyClipboardForButton(intelId) {
 
 function redirectToGithubForButton(intelId) {
     return function() {
-        redirectToGithub({label: "Intel Fix", issueTemplate: "editIntel", intelId: intelId})
+        redirectToGithub({ label: "Intel Fix", issueTemplate: "editIntel", intelId: intelId })
     }
 }
 
 function genShareButton(intelId) {
-    let shareBtn = createElement("button", ["btn", "btn-info","action-buttons", "share", "fas", "fa-external-link-alt"], "")
+    let shareBtn = createElement("button", ["btn", "btn-info", "action-buttons", "share", "fas", "fa-external-link-alt"], "")
     shareBtn.title = "Copy Sharing Link";
     shareBtn.onclick = copyClipboardForButton(intelId);
     return shareBtn;

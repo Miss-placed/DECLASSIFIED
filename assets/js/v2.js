@@ -35,8 +35,8 @@ function propigateIntelDetails(obj) {
         "map": ${obj.map}<br>
         "name": ${obj.name}<br>
         "desc": ${obj.desc}
-    
     `
+
 }
 
 document.addEventListener(
@@ -85,11 +85,24 @@ function switchmodal() {
     openSubModal("intel-type")
 }
 
-// basic sum function for totals calculation
+function fillTotals(ele) {
+    let requiemTotalEle = document.getElementById("requiem-totals");
+    let omegaTotalEle = document.getElementById("omega-totals");
+    let maxisTotalEle = document.getElementById("maxis-totals");
+    let darkTotalEle = document.getElementById("dark-aether-totals");
+    // console.log(findObjectByKey(intelStoreV2, "faction", factions.requiem))
+    requiemTotalEle.innerHTML = "requiem?"
+    omegaTotalEle.innerHTML = "omega?"
+    maxisTotalEle.innerHTML = "maxis?"
+    darkTotalEle.innerHTML = "darkAether?"
+
+
+}
+fillTotals()
+    // basic sum function for totals calculation
 function sum(obj) {
     return Object.keys(obj).reduce((sum, key) => sum + parseFloat(obj[key] || 0), 0);
 }
-
 
 // #TODO: values need to be calculated maybe by lenght or whatever!
 let factionTotal = {
