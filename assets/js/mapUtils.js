@@ -55,25 +55,14 @@ function AddMapMarkersFromCache(intelArr) {
             }
         }
 
-
         for (maep in miscPOI) {
-            let iconlib = {
-                "Demented": dementedIcon,
-                "Rift": riftIcon,
-                "RedRift": redRiftIcon,
-                "Radio": radioIcon,
-                "Monkey": monkeyIcon,
-                "Projector": generalIcon,
-                "Signal": generalIcon,
-                "Fishing": fishingIcon,
-            };
             let currmap = miscPOI[maep];
             if (typeof (miscPOI[maep]) !== "undefined") {
                 for (type in currmap) {
                     for (item in currmap[type]) {
                         var item = currmap[type][item];
-                        let icon = iconlib[type];
-                        if (typeof iconlib[type] == "undefined")
+                        let icon = miscTypeIcons[type];
+                        if (typeof miscTypeIcons[type] == "undefined")
                             icon = generalIcon;
                         addMiscMarkerToMap(item.loc, icon, window[maep], item.name, item.desc);
 

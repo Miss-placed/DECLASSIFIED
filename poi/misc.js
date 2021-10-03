@@ -1,5 +1,8 @@
 //Non collectible items that need icons on the respective maps
 var miscPOI = {};
+/////////////////////Round Based Misc Items/////////////////////////
+
+/////////////////////Outbreak Misc Items/////////////////////////
 miscPOI[mapStrings.zoo] = {
     Demented: {
         1: { name: "Demented Echo", desc: "", loc: [-150.26326919666607, 161.5] }, //done
