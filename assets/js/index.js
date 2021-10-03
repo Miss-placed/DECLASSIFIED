@@ -16,7 +16,7 @@ function StartupGlobals() {
     return { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingIntel, fixedNotification, results };
 }
 
-var map = InitMap();
+var mapInstance = InitMap();
 
 L.control.attribution({ prefix: 'DECLASSIFIED' })
 document.getElementsByClassName("leaflet-control-attribution")[0].getElementsByTagName("a")[0].title = "Declassified An Interactive map By Odinn"
@@ -26,7 +26,7 @@ L.control.attribution()
 //loops through all types of intel and makes a marker
 AddMapMarkersFromCache(intelCache);
 
-map.on('popupopen', function () {
+mapInstance.on('popupopen', function () {
     $('.mark-collected').click(function (e) {
         var itemId = $(e.target).closest(".buttonContainer").data("item");
         if (disableMarkers.includes(itemId.toString())) {
@@ -53,7 +53,7 @@ map.on('popupopen', function () {
     });
 });
 
-map.on("click", function(e) {
+mapInstance.on("click", function(e) {
     var location = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
     if (debug) {
         copyToClipboard(location, "Location Copied to Clipboard")

@@ -1,3 +1,11 @@
+class Item {
+    constructor(title, desc, icon) {
+      this.title = title ?? "";
+      this.desc = desc ?? "";
+      this.icon = icon ?? generalIcon;
+    }
+  }
+
 /////////////////////Maps/////////////////////////
 const mapStrings = {
     zoo: "zoo",
@@ -64,39 +72,39 @@ const intelTypes = {
 }
 
 const miscTypes = {
-    dementedEcho: "Demented Echo",
-    rift: "Aether Rift",
-    redRift: "Red Aether Rift",
-    radio: "Radio",
-    monkey: "Monkey",
-    projector: "Projector",
-    signal: "Signal",
-    fishing: "Fishing",
-    essenceDrop: "Essence Drop",
-    scrapHeap: "Scrap Heap",
+    dementedEcho: new Item("Demented Echo", "Destroy it before it touches you to get a reward.", dementedIcon),
+    rift: new Item("Aether Rift", "Jump through to teleport and gain a random powerup.", riftIcon),
+    redRift: new Item("Red Aether Rift", "Jump through all the rifts to continue the Easter Egg", redRiftIcon),
+    radio: new Item("Radio", null, radioIcon),
+    monkey: new Item("Stone Monkey", null, monkeyIcon),
+    projector: new Item("Projector", "The projector for the Main Quest"),
+    signal: new Item("Signal"),
+    fishing: new Item("Fishing", null, fishingIcon),
+    essenceDrop: new Item("Essence Drop"),
+    scrapHeap: new Item("Scrap Heap"),
 
-    perkMachine: "Perk Machine",
-    papMachine: "Pack-a-Punch",
-    mysteryBox: "Mystery box",
-    wallbuy: "Wall Buy",
-    jumpPad: "Jump Pad",
-    craftingTable: "Crafting Table",
-    ammoCrate: "Ammo Crate",
-    trap: "Trap",
-    klausRadio: "Klaus recall radio",
-    aetherCrystal: "Aether Crystal",
+    perkMachine: new Item("Perk Machine"),
+    papMachine: new Item("Pack-a-Punch"),
+    mysteryBox: new Item("Mystery box"),
+    wallbuy: new Item("Wall Buy"),
+    jumpPad: new Item("Jump Pad"),
+    craftingTable: new Item("Crafting Table"),
+    ammoCrate: new Item("Ammo Crate"),
+    trap: new Item("Trap"),
+    klausRadio: new Item("Klaus recall radio"),
+    aetherCrystal: new Item("Aether Crystal"),
 }
 
 const worldEventTypes = {
-    furyCrystal: "Fury Crystal",
-    escort: "Escort",
-    redChallengeChest: "Red Challenge Chest",
-    purpleChallengeChest: "Purple Challenge Chest",
-    dragonRocket: "Dragon Rocket",
-    orda: "Orda",
-    horde: "Horde",
-    orb: "Orb",
-    musicRadio: "Music radio",
+    furyCrystal: new Item("Fury Crystal"),
+    escort: new Item("Escort"),
+    redChallengeChest: new Item("Red Challenge Chest"),
+    purpleChallengeChest: new Item("Purple Challenge Chest"),
+    dragonRocket: new Item("Dragon Rocket"),
+    orda: new Item("Orda"),
+    horde: new Item("Horde"),
+    orb: new Item("Aetherial orb", "Damage it and chase it 3 times, you can also shoot it mid-air whilst moving to each location."),
+    musicRadio: new Item("Music radio"),
 }
 
 //TODO: Decide the structure for how we store and retrieve EE steps (maybe new datastore)
@@ -129,15 +137,3 @@ const easterEggTypes = {
 
     music: "Cassette Tapes",
 }
-
-/////////////////////Marker Icons (images)/////////////////////////
-let miscTypeIcons = {
-    "Demented": dementedIcon,
-    "Rift": riftIcon,
-    "RedRift": redRiftIcon,
-    "Radio": radioIcon,
-    "Monkey": monkeyIcon,
-    "Projector": generalIcon,
-    "Signal": generalIcon,
-    "Fishing": fishingIcon,
-};
