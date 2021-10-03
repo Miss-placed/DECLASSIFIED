@@ -423,7 +423,7 @@ const intelStoreV2 = [
         "loc": "[-169.76119436070226, 179.25]",
         "map": mapStrings.firebaseZ,
         "name": "Focal Point",
-        "desc": "On the corner of the building on a ledge, near the sattalite dish. Rocky Defense. Need to shoot it down."
+        "desc": "On the corner of the building on a ledge, near the satellite dish. Rocky Defence. Need to shoot it down."
     }, {
         "id": "RS2Au2",
         "faction": factions.requiem,
@@ -511,7 +511,7 @@ const intelStoreV2 = [
         "intelType": intelTypes.docs,
         "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
-        "name": "Operation Threshhold Authorization",
+        "name": "Operation Threshold Authorization",
         "desc": ""
     }, {
         "faction": factions.requiem,
@@ -596,7 +596,7 @@ const intelStoreV2 = [
         "loc": "[-202.75760329845718, 175]",
         "map": mapStrings.ruka,
         "name": "Aetherium Crystal Shard",
-        "desc": "In the burnt forest section, right up against the egde of the map about halfway down. It's on top of a big rock."
+        "desc": "In the burnt forest section, right up against the edge of the map about halfway down. It's on top of a big rock."
     }, {
         "id": "RS2Ar4",
         "faction": factions.requiem,
@@ -605,7 +605,7 @@ const intelStoreV2 = [
         "loc": "[-128, 83.75]",
         "map": mapStrings.alpine,
         "name": "Frostblast Canister",
-        "desc": "Look ontop of the circular ski lift station on the western side of the map near the Lodge and the Pro Shop."
+        "desc": "Look on top of the circular ski lift station on the western side of the map near the Lodge and the Pro Shop."
     }, {
         "id": "RS3Au1",
         "faction": factions.requiem,
@@ -668,7 +668,7 @@ const intelStoreV2 = [
         "loc": "[-104.5, 172.75]",
         "map": mapStrings.sanatorium,
         "name": "News From Upstairs",
-        "desc": "Under the bridge. Right at the end of the bridge just before you go outta the map, on a little platform just above the surface of the water."
+        "desc": "Under the bridge. Right at the end of the bridge just before you go out of the map, on a little platform just above the surface of the water."
     }, {
         "id": "RS3Au8",
         "faction": factions.requiem,
@@ -679,6 +679,7 @@ const intelStoreV2 = [
         "name": "Embarrassment of Riches",
         "desc": "In the lodge. On the third floor sitting on the bar."
     }, {
+        "id": "RS3Do1",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -687,6 +688,7 @@ const intelStoreV2 = [
         "name": "Extraction Rocket Blueprint",
         "desc": ""
     }, {
+        "id": "RS3Do2",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -695,6 +697,7 @@ const intelStoreV2 = [
         "name": "Dark Aether Object Report",
         "desc": ""
     }, {
+        "id": "RS3Do3",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -703,14 +706,16 @@ const intelStoreV2 = [
         "name": "Crate Memo",
         "desc": ""
     }, {
+        "id": "RS3Do4",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
         "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
-        "name": "E.C.M. Mlueprint",
+        "name": "E.C.M. Blueprint",
         "desc": ""
     }, {
+        "id": "RS3Do5",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -719,6 +724,7 @@ const intelStoreV2 = [
         "name": "Investigation Request",
         "desc": ""
     }, {
+        "id": "RS3Do6",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -727,6 +733,7 @@ const intelStoreV2 = [
         "name": "Zykov Assessment",
         "desc": ""
     }, {
+        "id": "RS3Do7",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -735,6 +742,7 @@ const intelStoreV2 = [
         "name": "Power Nodes Report",
         "desc": ""
     }, {
+        "id": "RS3Do8",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -743,6 +751,7 @@ const intelStoreV2 = [
         "name": "J Cipher",
         "desc": ""
     }, {
+        "id": "RS3Ra1",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
@@ -751,6 +760,7 @@ const intelStoreV2 = [
         "name": "Progress Update",
         "desc": ""
     }, {
+        "id": "RS3Ra2",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
@@ -759,6 +769,7 @@ const intelStoreV2 = [
         "name": "A Visceral Process",
         "desc": ""
     }, {
+        "id": "RS3Ra3",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
@@ -767,6 +778,7 @@ const intelStoreV2 = [
         "name": "Fish Out Of Water",
         "desc": ""
     }, {
+        "id": "RS3Ra4",
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
@@ -818,7 +830,7 @@ const intelStoreV2 = [
         "loc": "[-160.25, 199.25]",
         "map": mapStrings.duga,
         "name": "Beacon Device Component",
-        "desc": "In the Eletrical Substation. On one of the two taller structures, is very easy to see."
+        "desc": "In the Electrical Substation. On one of the two taller structures, is very easy to see."
     }, {
         "id": "RS3Ar6",
         "faction": factions.requiem,
@@ -838,6 +850,7 @@ const intelStoreV2 = [
         "name": "You know better.",
         "desc": "Next to the monorail up in the cages overpass."
     }, {
+        "id": "RS4Au2",
         "faction": factions.requiem,
         "season": seasons.season4,
         "intelType": intelTypes.audio,
@@ -846,6 +859,16 @@ const intelStoreV2 = [
         "name": "Aftermath",
         "desc": "On the desks in the center of the room."
     }, {
+        "id": "RS4Au3",
+        "faction": factions.requiem,
+        "season": seasons.season4,
+        "intelType": intelTypes.audio,
+        "loc": "[-127.94974152785755, 138.625]",
+        "map": mapStrings.golova,
+        "name": "What Tomorrow Brings",
+        "desc": "On a bar counter."
+    }, {
+        "id": "RS4Do1",
         "faction": factions.requiem,
         "season": seasons.season4,
         "intelType": intelTypes.docs,
@@ -854,6 +877,7 @@ const intelStoreV2 = [
         "name": "DASA Station Blueprint",
         "desc": ""
     }, {
+        "id": "RS4Do2",
         "faction": factions.requiem,
         "season": seasons.season4,
         "intelType": intelTypes.docs,
@@ -871,6 +895,7 @@ const intelStoreV2 = [
         "name": "The Child's Note",
         "desc": "Obtained during the Outbreak EE#2"
     }, {
+        "id": "RS4Ra1",
         "faction": factions.requiem,
         "season": seasons.season4,
         "intelType": intelTypes.radio,
@@ -879,6 +904,7 @@ const intelStoreV2 = [
         "name": "Welcome Back",
         "desc": ""
     }, {
+        "id": "RS4Ra2",
         "faction": factions.requiem,
         "season": seasons.season4,
         "intelType": intelTypes.radio,
@@ -904,52 +930,61 @@ const intelStoreV2 = [
         "map": mapStrings.zoo,
         "name": "Recon Rover Module",
         "desc": "Behind the sink in the bathroom, second floor."
+    }, {
+        "id": "RS4Ar3",
+        "faction": factions.requiem,
+        "season": seasons.season4,
+        "intelType": intelTypes.artifact,
+        "loc": "[-103.51195549461748, 36.9375]",
+        "map": mapStrings.alpine,
+        "name": "Ring of Fire Canister",
+        "desc": "In a yellow hanging coat inside the southernmost base cabin."
     },
     {
         "id": "RS5Au1",
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[-0, -0]",
+        "loc": "[-179.94745326193697, 186.75]",
         "map": mapStrings.collateral,
         "name": "Peacemakers",
-        "desc": "in the South dunes area. Near the Jump Pad, on the treads of the big machine, just to the west of the Jump pad."
+        "desc": "In the South dunes area. Near the Jump Pad, on the treads of the big machine, just to the west of the Jump pad."
     }, {
         "id": "RS5Au2",
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[-0, -0]",
+        "loc": "[-73.15684286918251, 58.533448694162985]",
         "map": mapStrings.collateral,
         "name": "Soul Searching",
-        "desc": "in the Wadi area. It's in the broken down building, in the back corner."
+        "desc": "It's in the broken down building, in the back corner, close to the border of the region."
     }, {
         "id": "RS5Au3",
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[-0, -0]",
+        "loc": "[-83.8559764734765, 143]",
         "map": mapStrings.armada,
         "name": "Unto the Breach",
-        "desc": "in the Gun Boat area. it's just behind a crate, near the Wonderfizz."
+        "desc": "In the Gun Boat area. it's just behind a crate, near the Wunderfizz."
     }, {
         "id": "RS5Au4",
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[-0, -0]",
+        "loc": "[-123.51145121266036, 139.63745565658832]",
         "map": mapStrings.armada,
         "name": "Butterscotch",
-        "desc": "in the Launch Bay area. Top Right most one, if looking at the big map."
+        "desc": "In Launch Bay area #3. Top Right most one, if looking at the big map."
     }, {
         "id": "RS5Au5",
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[-0, -0]",
+        "loc": "[-129.59698842897112, 124.9624075221947]",
         "map": mapStrings.armada,
         "name": "Desperate Measures",
-        "desc": "on a table in the center of the Control Room area of the main boat."
+        "desc": "On a table in the center of the Control Room area of the main boat."
     }, {
         "id": "RS5Do1",
         "faction": factions.requiem,
@@ -1036,7 +1071,7 @@ const intelStoreV2 = [
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0,-0]",
+        "loc": "[-86.25847909062274, 201.80990062385027]",
         "map": mapStrings.collateral,
         "name": "Frenzied Guard Canister",
         "desc": "On the roof of the Drapery."
@@ -1045,16 +1080,16 @@ const intelStoreV2 = [
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0,-0]",
+        "loc": "[-164.01915843693837, 55]",
         "map": mapStrings.collateral,
         "name": "Aetherium Rocket Model",
-        "desc": "In the Oil Tanks area. It's under a staircase, sitting on a pipe."
+        "desc": "In the Oil Tanks area. It's under a staircase, sitting on a yellow pipe embedded in the wall."
     }, {
         "id": "RS5Ar3",
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0,-0]",
+        "loc": "[-165.50550469233477, 139.03125]",
         "map": mapStrings.collateral,
         "name": "Raptor One's Helmet",
         "desc": "At the back of the Helipad Area. it's at the base of the helipad, at the bottom of a staircase."
@@ -1063,28 +1098,28 @@ const intelStoreV2 = [
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0,-0]",
+        "loc": "[-127.53644665653778, 60.78125]",
         "map": mapStrings.armada,
         "name": "Toxic Growth Canister",
-        "desc": "in the western most Capsized area. it's under the water on a platform near the front of the ship."
+        "desc": " the western most Capsized area. it's under the water on a platform near the front of the ship."
     }, {
         "id": "RS5Ar5",
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0,-0]",
+        "loc": "[-157.5083690778381, 66.75]",
         "map": mapStrings.armada,
         "name": "Requiem Helicopter Model",
-        "desc": "in the Maintenance section. Near one of the doors."
+        "desc": "In the Maintenance section. Near one of the doors."
     }, {
         "id": "RS5Ar6",
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0,-0]",
+        "loc": "[-98.72611390839525, 198.87212119091419]",
         "map": mapStrings.armada,
         "name": "Agent Klaus Model",
-        "desc": "in the North-eastern most Hangar area. He's hanging off some pipes just above one of the staircases, climb on the nearby toolbox to grab him."
+        "desc": "In the North-eastern most Hangar area. He's hanging off some pipes just above one of the staircases, climb on the nearby toolbox to grab him."
     },
 
 
@@ -1179,7 +1214,7 @@ const intelStoreV2 = [
         "loc": "[-51.773749778329496, 188]",
         "map": mapStrings.dieMaschine,
         "name": "Next Phase",
-        "desc": "in a far corner at the crash site."
+        "desc": "In a far corner at the crash site."
     }, {
         "id": "OS1Au3",
         "faction": factions.omega,
@@ -1187,8 +1222,8 @@ const intelStoreV2 = [
         "intelType": intelTypes.audio,
         "loc": "[-43.0246807944671, 198.25]",
         "map": mapStrings.firebaseZ,
-        "name": "Dimentional Fertility",
-        "desc": "In Scorched Defense, on top of the building with the minigun."
+        "name": "Dimensional Fertility",
+        "desc": "In Scorched Defence, on top of the building with the minigun."
     }, {
         "id": "OS1Au4",
         "faction": factions.omega,
@@ -1259,8 +1294,8 @@ const intelStoreV2 = [
         "intelType": intelTypes.docs,
         "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
-        "name": "omega Group Formation",
-        "desc": "drops from a Megaton"
+        "name": "Omega Group Formation",
+        "desc": "Drops from a Megaton"
     }, {
         "id": "OS1Do2",
         "faction": factions.omega,
@@ -1269,7 +1304,7 @@ const intelStoreV2 = [
         "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Operation Undertaker",
-        "desc": "drops from a Megaton"
+        "desc": "Drops from a Megaton"
     }, {
         "id": "OS1Do3",
         "faction": factions.omega,
@@ -1278,7 +1313,7 @@ const intelStoreV2 = [
         "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Khe Sanh Site",
-        "desc": "drops from a Megaton"
+        "desc": "Drops from a Megaton"
     }, {
         "id": "OS1Do4",
         "faction": factions.omega,
@@ -1287,7 +1322,7 @@ const intelStoreV2 = [
         "loc": "[0, 0]",
         "map": mapStrings.firebaseZ,
         "name": "Authorization to Conscript",
-        "desc": "drops from a Mimic or Mangler"
+        "desc": "Drops from a Mimic or Mangler"
     }, {
         "id": "OS1Do5",
         "faction": factions.omega,
@@ -1296,7 +1331,7 @@ const intelStoreV2 = [
         "loc": "[0, 0]",
         "map": mapStrings.firebaseZ,
         "name": "omega Teleport Blueprint",
-        "desc": "drops from a Mimic or Mangler"
+        "desc": "Drops from a Mimic or Mangler"
     }, {
         "id": "OS1Do6",
         "faction": factions.omega,
@@ -1305,7 +1340,7 @@ const intelStoreV2 = [
         "loc": "[0, 0]",
         "map": mapStrings.firebaseZ,
         "name": "Aetherium Production Report",
-        "desc": "drops from a Mimic or Mangler"
+        "desc": "Drops from a Mimic or Mangler"
     }, {
         "id": "OS1Do7",
         "faction": factions.omega,
@@ -1313,8 +1348,8 @@ const intelStoreV2 = [
         "intelType": intelTypes.docs,
         "loc": "[0, 0]",
         "map": mapStrings.firebaseZ,
-        "name": "Speciment K7-1924",
-        "desc": "drops from a Mimic or Mangler"
+        "name": "Specimen K7-1924",
+        "desc": "Drops from a Mimic or Mangler"
     }, {
         "id": "OS1Do8",
         "faction": factions.omega,
@@ -1323,7 +1358,7 @@ const intelStoreV2 = [
         "loc": "[0, 0]",
         "map": mapStrings.firebaseZ,
         "name": "P Cipher",
-        "desc": "drops from a Mimic or Mangler"
+        "desc": "Drops from a Mimic or Mangler"
     }, {
         "id": "OS1Do9",
         "faction": factions.omega,
@@ -1332,7 +1367,7 @@ const intelStoreV2 = [
         "loc": "[0, 0]",
         "map": mapStrings.firebaseZ,
         "name": "G Cipher",
-        "desc": "drops from a Mimic or Mangler"
+        "desc": "Drops from a Mimic or Mangler"
     }, {
         "id": "OS1Ra1",
         "faction": factions.omega,
@@ -1377,7 +1412,7 @@ const intelStoreV2 = [
         "loc": "[-86.02010551516227, 223.5]",
         "map": mapStrings.firebaseZ,
         "name": "Kuhlklay's Eye",
-        "desc": "In scorched defense, in a dead body leaning up against a blown up tank."
+        "desc": "In scorched defence, in a dead body leaning up against a blown up tank."
     }, {
         "id": "OS1Ar2",
         "faction": factions.omega,
@@ -1440,7 +1475,7 @@ const intelStoreV2 = [
         "loc": "[-119.75, 96.5]",
         "map": mapStrings.sanatorium,
         "name": "Something I Can Use",
-        "desc": "In the sanatorium building on the second floor, on a coffee table in the room with the wallbuy."
+        "desc": "In the sanatorium building on the second floor, on a coffee table in the room with the wall-buy."
     }, {
         "faction": factions.omega,
         "season": seasons.season2,
@@ -1448,7 +1483,7 @@ const intelStoreV2 = [
         "loc": "[-130.56088082901556, 147.46061049785988]",
         "map": mapStrings.golova,
         "name": "golova - Off The Hook",
-        "desc": "Infront of the Wonderfizz, in one of the side rooms."
+        "desc": "In front of the Wunderfizz, in one of the side rooms."
     }, {
         "id": "OS2Au5",
         "faction": factions.omega,
@@ -1457,7 +1492,7 @@ const intelStoreV2 = [
         "loc": "[-133.5, 186.75]",
         "map": mapStrings.alpine,
         "name": "Do What You Must",
-        "desc": "On a little table on the balcony terras in the Chalet area."
+        "desc": "On a little table on the balcony terrace in the Chalet area."
     }, {
         "id": "OS2Au6",
         "faction": factions.omega,
@@ -1755,7 +1790,7 @@ const intelStoreV2 = [
         "loc": "[-161.2620987763788, 164.5]",
         "map": mapStrings.zoo,
         "name": "Day of victory.",
-        "desc": "On top of the rectangular tower of the aquarium. Might need to use a jumppad.."
+        "desc": "On top of the rectangular tower of the aquarium. Might need to use a jump pad.."
     }, {
         "id": "OS4Au3",
         "faction": factions.omega,
@@ -1848,7 +1883,7 @@ const intelStoreV2 = [
         "faction": factions.omega,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[-0,-0]",
+        "loc": "[-84.57114005669712, 212.28039870431098]",
         "map": mapStrings.collateral,
         "name": "Change of Plans",
         "desc": "on the top of the third building in a row in the Village area. The screen will say you are in the Roadside area when you are on the correct building. The correct building also has a white/blue parachute hanging over one if the corners."
@@ -1857,19 +1892,19 @@ const intelStoreV2 = [
         "faction": factions.omega,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[-0,-0]",
+        "loc": "[-162.40985147116044, 60.21325881788371]",
         "map": mapStrings.armada,
         "name": "New Frontiers",
-        "desc": "in the Hangar area. It's sitting on a blue Shelf."
+        "desc": "In the Hangar area. It's sitting on a blue Shelf."
     }, {
         "id": "OS5Au3",
         "faction": factions.omega,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[-0,-0]",
+        "loc": "[-91.38076872301791, 131.6832760137567]",
         "map": mapStrings.collateral,
         "name": "Growing Concerns",
-        "desc": "in the Cliffs area. It's at the edge of the top most set of rocks, up against the lowermost rock in the set. The location overlooks the village area."
+        "desc": "In the Cliffs area. It's at the edge of the top most set of rocks, up against the lowermost rock in the set. The location overlooks the village area."
     }, {
         "id": "OS5Do1",
         "faction": factions.omega,
@@ -1920,7 +1955,7 @@ const intelStoreV2 = [
         "faction": factions.omega,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0,-0]",
+        "loc": "[-121.00905115710289, 67.11540830200755]",
         "map": mapStrings.collateral,
         "name": "Boost Module Model",
         "desc": "In the Cliffs West area. in between the 2 middle clumps on the minimap."
@@ -1929,7 +1964,7 @@ const intelStoreV2 = [
         "faction": factions.omega,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0,-0]",
+        "loc": "[-112.1324079135091, 158.12251109733666]",
         "map": mapStrings.collateral,
         "name": "Mimic Tentacle",
         "desc": "Inside a pipe in the Village Dunes area, right next to a small oil drill. It's very close to the Parking Lot area."
@@ -1938,7 +1973,7 @@ const intelStoreV2 = [
         "faction": factions.omega,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0,-0]",
+        "loc": "[-153.31417624742917, 111.08954550907784]",
         "map": mapStrings.collateral,
         "name": "Valentina's ID Badge",
         "desc": "In the Oil Rig area. it's on the ground level, on a wall to the left when facing the Rappel Rope."
@@ -1947,19 +1982,19 @@ const intelStoreV2 = [
         "faction": factions.omega,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0,-0]",
+        "loc": "[-158.5666075299698, 168.1224201191714]",
         "map": mapStrings.armada,
-        "name": "Gorev's ID",
-        "desc": "in the Patrol Boat area. It's on top of the boat itself."
+        "name": "Gorev's ID Badge",
+        "desc": "In the Patrol Boat area. It's on top of the boat itself."
     }, {
         "id": "OS5Ar5",
         "faction": factions.omega,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0,-0]",
+        "loc": "[-136.1367354690482, 198.11902143485563]",
         "map": mapStrings.armada,
         "name": "Teleporter Model",
-        "desc": "in the eastern most Capsized area. It's underwater, along the guardrails of the deck."
+        "desc": "In the eastern most Capsized area. It's underwater, along the guardrails of the deck."
     },
 
 
@@ -2068,7 +2103,7 @@ const intelStoreV2 = [
         "loc": "[-189.25911952473845, 108.25]",
         "map": mapStrings.firebaseZSpawn,
         "name": "Workers Of The World",
-        "desc": "In equipment storage, on the back wall of the groundfloor, on a shelf."
+        "desc": "In equipment storage, on the back wall of the ground floor, on a shelf."
     }, {
         "id": "MS1Au3",
         "faction": factions.maxis,
@@ -2384,7 +2419,7 @@ const intelStoreV2 = [
         "loc": "[-170.0381404720783, 170.72422842982655]",
         "map": mapStrings.golova,
         "name": "Isolated",
-        "desc": "On a desk in the Police station(the armor station building)"
+        "desc": "On a desk in the Police station(the armour station building)"
     }, {
         "id": "MS3Au5",
         "faction": factions.maxis,
@@ -2442,8 +2477,8 @@ const intelStoreV2 = [
         "intelType": intelTypes.artifact,
         "loc": "[-146, 126.75]",
         "map": mapStrings.duga,
-        "name": "maxis's Scarf",
-        "desc": "In the listening post. In a room just to the left of the wonderfizz, on a coathook."
+        "name": "Maxis's Scarf",
+        "desc": "In the listening post. In a room just to the left of the Wunderfizz, on a coathook."
     }, {
         "id": "MS3Ar3",
         "faction": factions.maxis,
@@ -2519,7 +2554,7 @@ const intelStoreV2 = [
         "faction": factions.maxis,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[-0, -0]",
+        "loc": "[-71.50727589816753, 180.87187425017996]",
         "map": mapStrings.collateral,
         "name": "Test",
         "desc": "Inside the Building marked Carpets on a table."
@@ -2528,7 +2563,7 @@ const intelStoreV2 = [
         "faction": factions.maxis,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[-0, -0]",
+        "loc": "[-181.16216173963795, 91.96565024394145]",
         "map": mapStrings.collateral,
         "name": "Interrogation",
         "desc": "Inside the Pump Room on a Shelf."
@@ -2537,7 +2572,7 @@ const intelStoreV2 = [
         "faction": factions.maxis,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[-0, -0]",
+        "loc": "[-122.38152781123196, 127.27837119091419]",
         "map": mapStrings.collateral,
         "name": "Fifteen Days",
         "desc": "In the Warehouse. it's in a back room, up on a pipe. you need to shoot it down."
@@ -2546,19 +2581,19 @@ const intelStoreV2 = [
         "faction": factions.maxis,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[-0, -0]",
+        "loc": "[-149.22828116025272, 114.4369671278893]",
         "map": mapStrings.collateral,
         "name": "Sixty-Two Days",
-        "desc": "in the Oil Rig area. This one is a bit difficult. Climb up to where PaP is. Then look up towards the yellow platform, and you can just barely see the edge of the tape recorder hanging over the edge. Shoot it down, and it will fall down to you."
+        "desc": "In the Oil Rig area. This one is a bit difficult. Climb up to where PaP is. Then look up towards the yellow platform, and you can just barely see the edge of the tape recorder hanging over the edge. Shoot it down, and it will fall down to you."
     }, {
         "id": "MS5Au5",
         "faction": factions.maxis,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[-0, -0]",
+        "loc": "[-160.69057340979415, 127.5568333599936]",
         "map": mapStrings.armada,
         "name": "Thirty Seconds",
-        "desc": "in the same room as Pap on a table."
+        "desc": "In the same room as Pap on a table."
     }, {
         "id": "MS5Do1",
         "faction": factions.maxis,
@@ -2811,7 +2846,7 @@ const intelStoreV2 = [
         "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Plaguehound Gas",
-        "desc": "Obtained during the main quest, next to Deadshot Daquiri."
+        "desc": "Obtained during the main quest, next to Deadshot Daiquiri."
     }, {
         "id": "DS0Ar3",
         "faction": factions.darkAether,
@@ -3439,8 +3474,17 @@ const intelStoreV2 = [
         "intelType": intelTypes.artifact,
         "loc": "[-152.76489182479162, 149.75]",
         "map": mapStrings.zoo,
-        "name": "Fury cristal",
+        "name": "Fury crystal",
         "desc": "On the roof behind a pillar."
+    }, {
+        "id": "DS4Ar3",
+        "faction": factions.darkAether,
+        "season": seasons.season4,
+        "intelType": intelTypes.artifact,
+        "loc": "[-162.82115511107816, 165.8125]",
+        "map": mapStrings.golova,
+        "name": "Empty Elemental Pop",
+        "desc": "Resting on a food shelf inside the kitchen area."
     }, {
         "id": "DS5Au1",
         "faction": factions.darkAether,
@@ -3491,16 +3535,16 @@ const intelStoreV2 = [
         "faction": factions.darkAether,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0, -0]",
+        "loc": "[-136.6620297242964, 34.15043389586499]",
         "map": mapStrings.collateral,
-        "name": "Empty Deadshot Daquiri",
+        "name": "Empty Deadshot Daiquiri",
         "desc": "Inside the building marked Hazardous."
     }, {
         "id": "DS5Ar2",
         "faction": factions.darkAether,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0, -0]",
+        "loc": "[-73.53889994163532, 139.62238762696953]",
         "map": mapStrings.collateral,
         "name": "Demented Echo Head",
         "desc": "In the Cliffs area. Tucked in the Base of the top most clump on the minimap. It's right where the line connects to the clump on the minimap."
@@ -3509,7 +3553,7 @@ const intelStoreV2 = [
         "faction": factions.darkAether,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0, -0]",
+        "loc": "[-133.6920365798299, 94.36993121650804]",
         "map": mapStrings.armada,
         "name": "Empty Mule Kick",
         "desc": "In the Machine Shop area. It's inside an overturned trash can."
@@ -3518,7 +3562,7 @@ const intelStoreV2 = [
         "faction": factions.darkAether,
         "season": seasons.season5,
         "intelType": intelTypes.artifact,
-        "loc": "[-0, -0]",
+        "loc": "[-101.06856575753645, 131.3715298328401]",
         "map": mapStrings.armada,
         "name": "Empty Tombstone",
         "desc": " in the Gun boat Control Room. it's in-between one of the sonar panels and the wall."

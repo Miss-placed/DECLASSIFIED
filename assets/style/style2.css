@@ -1,0 +1,157 @@
+@import url("global.css");
+@import url("buttons.css");
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#worldmap {
+    color: var(--clr-color);
+    background-color: var(--clr-bg);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+
+/* ----------Modal Syle--------------- */
+
+.modal-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--clr-black-50);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000000000000000000000000000000000000000000000;
+}
+
+.modal {
+    display: flex;
+    background-color: var(--clr-bg);
+    aspect-ratio: var(--modal-col-1);
+    width: 300px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.modal.-big {
+    aspect-ratio: var(--modal-col-2);
+    width: 600px;
+}
+
+select.faction-list {
+    background: unset;
+    border: unset;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--clr-color);
+}
+
+select.faction-list>option {
+    background: var(--clr-bg-inverted);
+    color: var(--clr-color-inverted);
+    border: unset;
+}
+
+select.faction-list>option:hover {
+    background-color: var(--clr-red);
+}
+
+.modal #filtered-intel,
+#intel-type div {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    aspect-ratio: var(--modal-col-1);
+    width: 250px;
+    align-items: center;
+}
+
+#intel-list button.btn {
+    margin-bottom: 20px;
+    flex-direction: column;
+    width: 100%;
+}
+
+.modal .sub-modal {
+    background-color: var(--clr-bg-inverted);
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
+    flex: unset;
+}
+
+.faction-list-icon {
+    height: 40px
+}
+
+.modal ul {
+    display: inline-block;
+    list-style: none;
+}
+
+.modal ul li {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+#search-form {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    height: 100px;
+    width: 100%;
+    padding: 5px;
+}
+
+#search-form .btn {
+    height: 35px;
+}
+
+#totals {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+/*------------Donut Graph------------*/
+
+.graph {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.graph>svg>path {
+    transition: 100ms;
+}
+
+.graph>svg>path:hover {
+    stroke-width: 30px;
+}
+
+.chart-donut {
+    transform: matrix(0 -1 -1 0 0 0);
+}
+
+.-hidden {
+    display: none;
+}
