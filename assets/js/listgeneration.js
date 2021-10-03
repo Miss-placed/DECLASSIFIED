@@ -75,7 +75,7 @@ function GenerateIntelListItem(item) {
 function goToIntel(item) {
     return function() {
         switchAndFly(item.loc, item.map)
-        if (isMobile)
+        if (app.isMobile)
             toggleAside()
     }
 }

@@ -6,7 +6,7 @@ function userPrefsStartup() {
     if (existingPrefs) return JSON.parse(existingPrefs);
 
     let newPrefs = {
-        lastSelectedMap: currentMap,
+        lastSelectedMap: app.currentMap,
         collectedIntel: [],
     }
 
