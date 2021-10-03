@@ -22,6 +22,7 @@ Previously I contributed to [the Red Dead Redemption 2 Collectors map](https://j
  - Sol_3 [1](https://github.com/sol3uk)
  - Geoffg10 [1](https://www.reddit.com/user/Alpharettaraiders09/)
  - Ricerat477 [1](https://www.reddit.com/user/Ricerat477)
+ - Bola2010
  - NanikOs [1](https://github.com/Nanik0s)
  - EdicionGamerYT [1](https://github.com/EdicionGamer) [2](https://www.youtube.com/channel/UCLFdusOixGf1Pto6oHfFdog)
  - JeanRopke [1](https://github.com/jeanropke)
