@@ -5,19 +5,11 @@ body {
     padding: 0;
 }
 
-#worldmap {
+#worldMap {
     color: var(--clr-color);
     background-color: var(--clr-bg);
     width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    column-gap: 20px;
-    row-gap: 20px;
 }
 
 
@@ -34,7 +26,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000000000000000000000000000000000000000000000;
+    z-index: 1000000000;
 }
 
 .modal {
@@ -150,6 +142,13 @@ select.faction-list>option:hover {
 
 .chart-donut {
     transform: matrix(0 -1 -1 0 0 0);
+}
+
+#ui {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000000000000000000;
 }
 
 .-hidden {

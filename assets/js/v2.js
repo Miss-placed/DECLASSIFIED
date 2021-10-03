@@ -98,8 +98,8 @@ function fillTotals(ele) {
 
 
 }
-fillTotals()
-    // basic sum function for totals calculation
+
+// basic sum function for totals calculation
 function sum(obj) {
     return Object.keys(obj).reduce((sum, key) => sum + parseFloat(obj[key] || 0), 0);
 }
