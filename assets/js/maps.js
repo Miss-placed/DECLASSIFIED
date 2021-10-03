@@ -1,6 +1,6 @@
 var globalMapSettings = {
     prefix: false,
-    attribution: `Want to help out? <a href="${app.repoDomain}">Github</a>. ||  See all <a href="${app.repoDomain}#contributors">Contributors</a>`,
+    attribution: `Want to help out? <a href="${repoDomain}">Github</a>. ||  See all <a href="${repoDomain}#contributors">Contributors</a>`,
     id: '',
     tileSize: 512,
     zoomOffset: -1,

@@ -39,6 +39,9 @@ const allOutbreakMapsArr = [
 ]
 
 /////////////////////Metadata/////////////////////////
+const repoDomain = 'https://github.com/Miss-placed/DECLASSIFIED';
+const appDomain = 'https://miss-placed.github.io/DECLASSIFIED/';
+
 const contribTemplates = {
     intel: {
         newId: "newIntel",
