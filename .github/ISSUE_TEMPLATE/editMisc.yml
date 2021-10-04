@@ -1,0 +1,48 @@
+name: Misc Marker Fix
+description: Help us by submitting an edit to an existing Misc Marker where the information may be incorrect.
+title: "Misc Marker Fix: MARKER_NAME [MAP][ID]"
+labels: ["Misc Marker Fix"]
+assignees:
+  - Odinnh
+  - sol3uk
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to help us improve our app! 
+        Please put the name of the Misc Marker in the title of the issue if not automatically populated.
+
+  - type: input
+    id: markerName
+    attributes:
+      label: Name
+      description: Provide the title of the Marker, close as possible to what is in-game.
+      placeholder: e.g. Demented Echo
+    validations:
+      required: true
+
+  - type: input
+    id: markerId
+    attributes:
+      label: Marker Id
+      description: Provide the Id of the marker if you are aware of it.
+      placeholder: e.g. s9ryH
+    validations:
+      required: false
+
+  - type: textarea
+    id: markerFixNeeded
+    attributes:
+      label: Fix Needed
+      description: What is incorrect about the marker? Please give as much information as possible.
+      placeholder: e.g. Marker type should be fishing spot not radio.
+    validations:
+      required: true
+
+  - type: textarea
+    id: extraInfo
+    attributes:
+      label: Any Other Info
+      description: is there any other/extra info you need to provide us?
+    validations:
+      required: false
