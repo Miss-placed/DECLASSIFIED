@@ -1,4 +1,23 @@
-let v2test = true
+document.getElementsByClassName('leaflet-control-attribution')[0].style.display = 'none';
+
+const factionTotal = {
+    requiem: findTotal(intelStoreV2, "faction", factions.requiem),
+    omega: findTotal(intelStoreV2, "faction", factions.omega),
+    maxis: findTotal(intelStoreV2, "faction", factions.maxis),
+    darkAether: findTotal(intelStoreV2, "faction", factions.darkAether),
+    all: intelStoreV2.length
+}
+const seasonTotal = {
+    preSeason: findTotal(seasons.preseason, "season", intelStoreV2),
+    season1: findTotal(intelStoreV2, "season", seasons.season1),
+    season2: findTotal(intelStoreV2, "season", seasons.season2),
+    season3: findTotal(intelStoreV2, "season", seasons.season3),
+    season4: findTotal(intelStoreV2, "season", seasons.season4),
+    season5: findTotal(intelStoreV2, "season", seasons.season5),
+    season6: findTotal(intelStoreV2, "season", seasons.season6),
+    all: intelStoreV2.length
+}
+
 
 function openModal() {
     document.getElementsByClassName("modal-bg")[0].classList.remove("-hidden")
@@ -39,6 +58,20 @@ function propigateIntelDetails(obj) {
 
 }
 
+let array = getUserPrefs().collectedIntel
+
+function findInCollected(query) {
+    let total = 0
+    for (let i = 0; i < array.length; i++) {
+
+        if (query.test(array[i])) {
+            total++
+        }
+    }
+    console.log(total)
+    return parseInt(total);
+}
+
 document.addEventListener(
     "click",
     function(event) {
@@ -60,6 +93,17 @@ function findObjectByKey(array, key, value) {
         }
     }
     return null;
+}
+
+function findTotal(array, key, value) {
+    let total = 0
+    for (let i = 0; i < array.length; i++) {
+
+        if (array[i][key] === value) {
+            total++
+        }
+    }
+    return total;
 }
 document.querySelectorAll(".to-intel").forEach(element => {
     element.addEventListener('click', () => {
@@ -91,64 +135,50 @@ function fillTotals(ele) {
     let maxisTotalEle = document.getElementById("maxis-totals");
     let darkTotalEle = document.getElementById("dark-aether-totals");
     // console.log(findObjectByKey(intelStoreV2, "faction", factions.requiem))
-    requiemTotalEle.innerHTML = "requiem?"
-    omegaTotalEle.innerHTML = "omega?"
-    maxisTotalEle.innerHTML = "maxis?"
-    darkTotalEle.innerHTML = "darkAether?"
-
-
+    requiemTotalEle.innerHTML = `##/${factionTotal.requiem}`
+    omegaTotalEle.innerHTML = `##/${factionTotal.omega}`
+    maxisTotalEle.innerHTML = `##/${factionTotal.maxis}`
+    darkTotalEle.innerHTML = `##/${factionTotal.darkAether}`
 }
 
-// basic sum function for totals calculation
+fillTotals()
+    // basic sum function for totals calculation
 function sum(obj) {
     return Object.keys(obj).reduce((sum, key) => sum + parseFloat(obj[key] || 0), 0);
 }
 
 // #TODO: values need to be calculated maybe by lenght or whatever!
-let factionTotal = {
-    Requiem: 135,
-    Omega: 108,
-    Maxis: 62,
-    DarkAether: 106,
-}
-factionTotal.All = sum(factionTotal);
-let seasonTotal = {
-    PreSeason: 59,
-    Season1: 97,
-    Season2: 71,
-    Season3: 85,
-    Season4: 99,
-    Season5: 0,
-}
-seasonTotal.All = sum(seasonTotal);
+// /.S2...$/
 
 let collectedFaction = {
-    Requiem: 126,
-    Omega: 104,
-    Maxis: 62,
-    DarkAether: 91,
+    darkAether: findInCollected(/D.....$/),
+    requiem: findInCollected(/R.....$/),
+    omega: findInCollected(/O.....$/),
+    maxis: findInCollected(/M.....$/),
 }
-collectedFaction.All = sum(collectedFaction)
-collectedFaction.Not = factionTotal.All - collectedFaction.All;
+collectedFaction.all = array.length
+collectedFaction.not = factionTotal.all - collectedFaction.all;
 
 let collectedSeason = {
-    PreSeason: 56,
-    Season1: 87,
-    Season2: 71,
-    Season3: 85,
-    Season4: 84,
-    Season5: 0,
+    preSeason: findInCollected(/.S0...$/),
+    season1: findInCollected(/.S1...$/),
+    season2: findInCollected(/.S2...$/),
+    season3: findInCollected(/.S3...$/),
+    season4: findInCollected(/.S4...$/),
+    season5: findInCollected(/.S5...$/),
+    season5: findInCollected(/.S6...$/),
 }
-collectedSeason.All = sum(collectedSeason)
-collectedSeason.Not = factionTotal.All - collectedSeason.All;
+
+collectedSeason.all = array.length
+collectedSeason.not = seasonTotal.all - collectedSeason.all;
 
 let factionDonut = new DonutChart(
     document.getElementById("faction-donut"), {
         r: 100,
         stroke: 25,
         scale: 100,
-        total: factionTotal.All,
-        collected: collectedFaction.All,
+        total: factionTotal.all,
+        collected: collectedFaction.all,
         items: [{
             label: "Requiem ",
             value: collectedFaction.Requiem,

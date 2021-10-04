@@ -26,6 +26,64 @@
 </head>
 
 <body onload="">
+    <header class="-hidden">
+        <div class="dropdown dropbtn">
+            Die Maschine
+            <div class="dropdown-content">
+                <div id="dieMaschine" class="dropdown-item not-selectable" onClick="setMap('dieMaschine',this,true)">Die Maschine Surface</div>
+                <div id="dieMaschine_underground" class="dropdown-item not-selectable" onClick="setMap('dieMaschine_underground',this,true)">Die Maschine Underground</div>
+            </div>
+        </div>
+
+        <div class="dropdown dropbtn">
+            Firebase Z
+            <div class="dropdown-content">
+                <div id="firebaseZ_spawn" class="dropdown-item not-selectable" onClick="setMap('firebaseZ_spawn',this,true)">Firebase Z Spawn</div>
+                <div id="firebaseZ" class="dropdown-item not-selectable" onClick="setMap('firebaseZ',this,true)">
+                    Firebase Z Main Base</div>
+            </div>
+        </div>
+
+        <div class="dropdown dropbtn">
+            Mauer Der Toten
+            <div class="dropdown-content">
+                <div id="mauerDerToten_streets" class="dropdown-item not-selectable" onClick="setMap('mauerDerToten_streets',this,true)">Mauer Der Toten Streets</div>
+                <div id="mauerDerToten" class="dropdown-item not-selectable" onClick="setMap('mauerDerToten',this,true)">
+                    Under-, Above- Ground</div>
+            </div>
+        </div>
+
+        <!-- <div class="dropdown dropbtn">
+            Mauer Der Toten
+            <div class="dropdown-content">
+                <div id="mauerDerToten_streets" class="dropdown-item not-selectable" onClick="setMap('mauerDerToten_streets',this,true)">Mauer Der Toten Streets</div>
+                <div id="mauerDerToten" class="dropdown-item not-selectable" onClick="setMap('mauerDerToten',this,true)">
+                    Under-, Above- Ground</div>
+            </div>
+        </div> -->
+        <div class="dropdown dropbtn">
+            Outbreak
+            <div class="dropdown-content">
+                <div id="zoo" class="dropdown-item not-selectable" onClick="setMap('zoo',this, true)">Zoo</div>
+                <div id="duga" class="dropdown-item not-selectable" onClick="setMap('duga',this, true)">Duga</div>
+                <div id="ruka" class="dropdown-item not-selectable" onClick="setMap('ruka',this, true)">Ruka</div>
+                <div id="alpine" class="dropdown-item not-selectable" onClick="setMap('alpine',this, true)">Alpine</div>
+                <div id="golova" class="dropdown-item not-selectable" onClick="setMap('golova',this, true)">Golova</div>
+                <div id="sanatorium" class="dropdown-item not-selectable" onClick="setMap('sanatorium',this, true)">
+                    Sanatorium</div>
+                <div id="collateral" class="dropdown-item not-selectable" onClick="setMap('collateral',this, true)">
+                    Collateral</div>
+                <div id="armada" class="dropdown-item not-selectable" onClick="setMap('armada',this, true)">Armada</div>
+            </div>
+        </div>
+        <div class="dropdown dropbtn">
+            Contribute
+            <div class="dropdown-content">
+                <div id="newIntel" class="dropdown-item not-selectable" onClick="newIntelInit()">Submit New Intel</div>
+                <div id="newMisc" class="dropdown-item not-selectable" onClick="newMiscInit()">Submit New Misc Marker</div>
+            </div>
+        </div>
+    </header>
     <div id="worldMap"></div>
     <!-- UI -->
     <div id="ui">
@@ -37,6 +95,7 @@
 
         <div class="modal" id="intel-type">
             <select class="faction-list">
+                <option value="All-F"><img class="list-icon" src="/assets/img/icons/faction-requiem-icon.png" alt=""> All Factions</option>
                 <option value="Requiem"><img class="list-icon" src="/assets/img/icons/faction-requiem-icon.png" alt=""> Requiem</option>
                 <option value="Omega"><img class="list-icon" src="/assets/img/icons/faction-omega-icon.png" alt=""> Omega</option>
                 <option value="Maxis"><img class="list-icon" src="/assets/img/icons/faction-maxis-icon.png" alt=""> Maxis</option>
@@ -121,7 +180,7 @@
     <script src="assets/js/utils.js"></script>
     <script src="assets/js/listgeneration.js"></script>
     <script src="assets/js/filtering.js"></script>
-    <script src="poi/misc.js"></script>
+    <script src="poi/miscV2.js"></script>
     <script src="assets/js/index.js"></script>
     <script src="assets/js/v2.js"></script>
 </body>
