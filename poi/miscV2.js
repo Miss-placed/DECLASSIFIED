@@ -185,5 +185,13 @@ miscPOI[mapStrings.sanatorium] = [
     //Don't really need this for now, not until we re-work easter eggs
     //new Marker(new Item("Chopper Gunner", "Hold out until the wave is dead to continue with the Easter Egg"), [-170.51300319205535, 39.25])
 ];
-miscPOI[mapStrings.collateral] = [/*TODO*/];
-miscPOI[mapStrings.armada] = [/*TODO*/];
+miscPOI[mapStrings.collateral] = [
+    new Marker(miscTypes.radio, [-94.07362634563005, 176.0625], "Requiem Radio"),
+    new Marker(miscTypes.radio, [-166.0680266948917, 89.59375], "Omega Radio"),
+    new Marker(miscTypes.radio, [-107.65357553130384, 206.7470367111893], "Maxis Radio"),
+];
+miscPOI[mapStrings.armada] = [
+    new Marker(miscTypes.radio, [-151.2655940227159, 92.625], "Requiem Radio"),
+    new Marker(miscTypes.radio, [-153.13993394600806, 164.75], "Omega Radio"),
+    new Marker(miscTypes.radio, [-130.19513894035686, 156.125], "Maxis Radio"),
+];
