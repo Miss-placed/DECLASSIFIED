@@ -584,7 +584,7 @@ const intelStoreV2 = [
         "faction": factions.requiem,
         "season": seasons.season2,
         "intelType": intelTypes.artifact,
-        "loc": "[-157.75305794467104, 73.625]",
+        "loc": "[-163.5036605306553, 71.125]",
         "map": mapStrings.golova,
         "name": "Aetherium Canister",
         "desc": "Between the pipes connecting the Silo with the building."
@@ -593,7 +593,7 @@ const intelStoreV2 = [
         "faction": factions.requiem,
         "season": seasons.season2,
         "intelType": intelTypes.artifact,
-        "loc": "[-202.75760329845718, 175]",
+        "loc": "[-210.37879254599693, 161.8125]",
         "map": mapStrings.ruka,
         "name": "Aetherium Crystal Shard",
         "desc": "In the burnt forest section, right up against the edge of the map about halfway down. It's on top of a big rock."
@@ -836,7 +836,7 @@ const intelStoreV2 = [
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.artifact,
-        "loc": "[-76.44202097003014, 214]",
+        "loc": "[-77.64095995997849, 215.0625]",
         "map": mapStrings.alpine,
         "name": "Aether Shroud Canister",
         "desc": "In the Maintenance section. It's inside one of the garages."
@@ -3325,7 +3325,7 @@ const intelStoreV2 = [
         "faction": factions.darkAether,
         "season": seasons.season2,
         "intelType": intelTypes.artifact,
-        "loc": "[-123.00462626352191, 194.75]",
+        "loc": "[-129.63594337699874, 203.125]",
         "map": mapStrings.ruka,
         "name": "Ivan's Head",
         "desc": "On a telephone pillar next to the train trestle bridge (use parachute)."
@@ -3334,7 +3334,7 @@ const intelStoreV2 = [
         "faction": factions.darkAether,
         "season": seasons.season2,
         "intelType": intelTypes.artifact,
-        "loc": "[-129.25, 36.75]",
+        "loc": "[-136.32115511107816, 37.25]",
         "map": mapStrings.alpine,
         "name": "Mystery Box Bunny",
         "desc": "In a bed in Base Suites section. It's the third building from the bottom."
