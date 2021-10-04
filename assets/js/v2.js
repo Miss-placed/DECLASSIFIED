@@ -1,7 +1,27 @@
-let v2test = true
+document.getElementsByClassName('leaflet-control-attribution')[0].style.display = 'none';
+
+const factionTotal = {
+    requiem: findTotal(intelStoreV2, "faction", factions.requiem),
+    omega: findTotal(intelStoreV2, "faction", factions.omega),
+    maxis: findTotal(intelStoreV2, "faction", factions.maxis),
+    darkAether: findTotal(intelStoreV2, "faction", factions.darkAether),
+    all: intelStoreV2.length
+}
+const seasonTotal = {
+    preSeason: findTotal(intelStoreV2, "season", seasons.preSeason),
+    season1: findTotal(intelStoreV2, "season", seasons.season1),
+    season2: findTotal(intelStoreV2, "season", seasons.season2),
+    season3: findTotal(intelStoreV2, "season", seasons.season3),
+    season4: findTotal(intelStoreV2, "season", seasons.season4),
+    season5: findTotal(intelStoreV2, "season", seasons.season5),
+    season6: findTotal(intelStoreV2, "season", seasons.season6),
+    all: intelStoreV2.length
+}
+
 
 function openModal() {
     document.getElementsByClassName("modal-bg")[0].classList.remove("-hidden")
+    fillTotals()
 }
 
 function closeModal() {
@@ -14,6 +34,7 @@ function closeModal() {
  */
 function openSubModal(target) {
     document.getElementById(target).classList.remove("-hidden")
+
 }
 
 function closeSubModal(target) {
@@ -39,6 +60,17 @@ function propigateIntelDetails(obj) {
 
 }
 
+
+function findInCollected(query) {
+    let collectedIntel = getUserPrefs().collectedIntel
+    let total = 0
+    for (let i = 0; i < collectedIntel.length; i++) {
+        total += findTotal(query, "id", collectedIntel[i]).length
+    }
+    console.log(total)
+    return total;
+}
+
 document.addEventListener(
     "click",
     function(event) {
@@ -61,6 +93,18 @@ function findObjectByKey(array, key, value) {
     }
     return null;
 }
+
+function findTotal(array, key, value) {
+    let total = []
+    for (let i = 0; i < array.length; i++) {
+
+        if (array[i][key] === value) {
+            total.push(array[i])
+        }
+    }
+    return total;
+}
+
 document.querySelectorAll(".to-intel").forEach(element => {
     element.addEventListener('click', () => {
         let target = element.getAttribute('target')
@@ -84,20 +128,40 @@ function switchmodal() {
     openSubModal("intel-stats")
     openSubModal("intel-type")
 }
+let collectedFaction = {
+    darkAether: findInCollected(factionTotal.darkAether),
+    requiem: findInCollected(factionTotal.requiem),
+    omega: findInCollected(factionTotal.omega),
+    maxis: findInCollected(factionTotal.maxis),
+}
+collectedFaction.all = getUserPrefs().collectedIntel.length
+collectedFaction.not = factionTotal.all - collectedFaction.all;
 
-function fillTotals(ele) {
+let collectedSeason = {
+    preSeason: findInCollected(seasonTotal.preSeason),
+    season1: findInCollected(seasonTotal.season1),
+    season2: findInCollected(seasonTotal.season2),
+    season3: findInCollected(seasonTotal.season2),
+    season4: findInCollected(seasonTotal.season3),
+    season5: findInCollected(seasonTotal.season4),
+    season5: findInCollected(seasonTotal.season5),
+}
+
+collectedSeason.all = getUserPrefs().collectedIntel.length
+collectedSeason.not = seasonTotal.all - collectedSeason.all;
+
+function fillTotals() {
     let requiemTotalEle = document.getElementById("requiem-totals");
     let omegaTotalEle = document.getElementById("omega-totals");
     let maxisTotalEle = document.getElementById("maxis-totals");
     let darkTotalEle = document.getElementById("dark-aether-totals");
     // console.log(findObjectByKey(intelStoreV2, "faction", factions.requiem))
-    requiemTotalEle.innerHTML = "requiem?"
-    omegaTotalEle.innerHTML = "omega?"
-    maxisTotalEle.innerHTML = "maxis?"
-    darkTotalEle.innerHTML = "darkAether?"
-
-
+    requiemTotalEle.innerHTML = `${collectedFaction.requiem} / ${factionTotal.requiem.length}`
+    omegaTotalEle.innerHTML = `${collectedFaction.omega} / ${factionTotal.omega.length}`
+    maxisTotalEle.innerHTML = `${collectedFaction.maxis} / ${factionTotal.maxis.length}`
+    darkTotalEle.innerHTML = `${collectedFaction.darkAether} / ${factionTotal.darkAether.length}`
 }
+
 fillTotals()
     // basic sum function for totals calculation
 function sum(obj) {
@@ -105,69 +169,35 @@ function sum(obj) {
 }
 
 // #TODO: values need to be calculated maybe by lenght or whatever!
-let factionTotal = {
-    Requiem: 135,
-    Omega: 108,
-    Maxis: 62,
-    DarkAether: 106,
-}
-factionTotal.All = sum(factionTotal);
-let seasonTotal = {
-    PreSeason: 59,
-    Season1: 97,
-    Season2: 71,
-    Season3: 85,
-    Season4: 99,
-    Season5: 0,
-}
-seasonTotal.All = sum(seasonTotal);
+// /.S2...$/
 
-let collectedFaction = {
-    Requiem: 126,
-    Omega: 104,
-    Maxis: 62,
-    DarkAether: 91,
-}
-collectedFaction.All = sum(collectedFaction)
-collectedFaction.Not = factionTotal.All - collectedFaction.All;
-
-let collectedSeason = {
-    PreSeason: 56,
-    Season1: 87,
-    Season2: 71,
-    Season3: 85,
-    Season4: 84,
-    Season5: 0,
-}
-collectedSeason.All = sum(collectedSeason)
-collectedSeason.Not = factionTotal.All - collectedSeason.All;
 
 let factionDonut = new DonutChart(
     document.getElementById("faction-donut"), {
         r: 100,
         stroke: 25,
         scale: 100,
-        total: factionTotal.All,
-        collected: collectedFaction.All,
+        total: factionTotal.all,
+        collected: collectedFaction.all,
         items: [{
             label: "Requiem ",
-            value: collectedFaction.Requiem,
+            value: collectedFaction.requiem,
             color: "--clr-blue "
         }, {
             label: "Omega ",
-            value: collectedFaction.Omega,
+            value: collectedFaction.omega,
             color: "--clr-red "
         }, {
             label: "Maxis ",
-            value: collectedFaction.Maxis,
+            value: collectedFaction.maxis,
             color: "--clr-blue-d "
         }, {
             label: "DarkAether ",
-            value: collectedFaction.DarkAether,
+            value: collectedFaction.darkAether,
             color: "--clr-purple "
         }, {
             label: "NotCollected ",
-            value: collectedFaction.Not,
+            value: collectedFaction.not,
             color: "--clr-grey "
         }, ]
 

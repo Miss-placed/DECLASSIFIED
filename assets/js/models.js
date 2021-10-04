@@ -74,6 +74,7 @@ const seasons = {
     season6: "Season 6",
 }
 
+
 /////////////////////Markers/////////////////////////
 const markerTypes = {
     intel: "Intel",
