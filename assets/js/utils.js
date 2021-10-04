@@ -4,15 +4,15 @@ function getNotificationTime() {
 
 function newIntelInit() {
     app.submittingLocation = true;
-    app.currentContribTemplate = contribTemplates.intel.newId;
-    app.currentContribLabel = contribTemplates.intel.newTitle;
+    app.currentContribType = markerTypes.intel.id;
+    
     showNotification("Click exactly where the intel is located. Next time you click on the map you will be redirected to our new intel form.", true);
 }
 
 function newMiscInit() {
     app.submittingLocation = true;
-    app.currentContribTemplate = contribTemplates.misc.newId;
-    app.currentContribLabel = contribTemplates.misc.newTitle;
+    app.currentContribType = markerTypes.misc.id;
+    
     showNotification("Click exactly where the marker is located. Next time you click on the map you will be redirected to our new icon form.", true);
 }
 
@@ -64,34 +64,42 @@ function showNotification(message, isStatic = false) {
     app.notificationEle.classList.add("animated");
 }
 
-function redirectToGithub({label = contribTemplates.intel.newTitle, issueTemplate = contribTemplates.intel.newId, intelId: id = "", location}) {
+function redirectToGithub({ itemId: id = "", itemType, issueType = "New", location }) {
     const domain = `${repoDomain}/issues/new`;
-    let isIntel = (issueTemplate == contribTemplates.intel.newId || issueTemplate == contribTemplates.intel.editId);
-    let isMisc = (issueTemplate == contribTemplates.misc.newId || issueTemplate == contribTemplates.misc.editId);
     let assignees = "Odinnh,sol3uk";
-    let labels = `${label},${app.currentMap}`;
-    let entityName = "";
 
-    if (isIntel){
+    const isIntel = (itemType == markerTypes.intel.id);
+    const isMisc = (itemType == markerTypes.misc.id);
+    let label = ""; issueTemplate = ""; entityName = ""; map = "";
+    
+    if (isIntel) {
+        issueTemplate = issueType == "New" ? contribTemplates.intel.newId : contribTemplates.intel.editId;
+        label = issueType == "New" ? contribTemplates.intel.newTitle : contribTemplates.intel.editTitle;
         let intel = getIntelById(id);
         entityName = intel ? intel.name : "";
-    }
-    /* if (isMisc){
+        map = intel ? intel.map : "";
+    } else if (isMisc) {
+        issueTemplate = issueType == "New" ? contribTemplates.misc.newId : contribTemplates.misc.editId;
+        label = issueType == "New" ? contribTemplates.misc.newTitle : contribTemplates.misc.editTitle;
         let miscItem = getMiscMarkerById(id);
         entityName = miscItem ? miscItem.title : "";
-    } */
+        // Don't yet keep map against misc markers, need to change this, this will do for now since miscs are only on the current map
+        map = app.currentMap;
+    }
+    
+    let labels = `${label},${map}`;
 
     let intelIdPlaceholder = id ? `[${id}]` : "";
     
-    let issueTitle = `${label}: ${entityName} [${app.currentMap}]${intelIdPlaceholder}`;
+    let issueTitle = `${label}: ${entityName} [${map}]${intelIdPlaceholder}`;
     let finalURL = `${domain}?assignees=${assignees}&labels=${labels}&template=${issueTemplate}.yml&title=${issueTitle}`
     
     if (isIntel) {
-        let intelParams = `&intelId=${id}&intelName=${entityName}&intelLocation=${location}&intelMap=${app.currentMap}`
+        let intelParams = `&intelId=${id}&intelName=${entityName}&intelLocation=${location}&intelMap=${map}`
         finalURL += intelParams;
     }
     if (isMisc) {
-        let miscParams = `&markerId=${id}&markerName=${entityName}&markerLocation=${location}&markerMap=${app.currentMap}`
+        let miscParams = `&markerId=${id}&markerName=${entityName}&markerLocation=${location}&markerMap=${map}`
         finalURL += miscParams;
     }
     window.open(encodeURI(finalURL));
