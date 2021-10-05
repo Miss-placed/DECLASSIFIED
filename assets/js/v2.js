@@ -67,7 +67,7 @@ function findInCollected(query) {
     for (let i = 0; i < collectedIntel.length; i++) {
         total += findTotal(query, "id", collectedIntel[i]).length
     }
-    console.log(total)
+    console.log(toString(query), total)
     return total;
 }
 
@@ -168,8 +168,57 @@ function sum(obj) {
     return Object.keys(obj).reduce((sum, key) => sum + parseFloat(obj[key] || 0), 0);
 }
 
-// #TODO: values need to be calculated maybe by lenght or whatever!
-// /.S2...$/
+let factionItems = [{
+    label: "Requiem ",
+    value: collectedFaction.requiem,
+    color: "--clr-blue "
+}, {
+    label: "Omega ",
+    value: collectedFaction.omega,
+    color: "--clr-red "
+}, {
+    label: "Maxis ",
+    value: collectedFaction.maxis,
+    color: "--clr-blue-d "
+}, {
+    label: "DarkAether ",
+    value: collectedFaction.darkAether,
+    color: "--clr-purple "
+}, {
+    label: "NotCollected ",
+    value: collectedFaction.not,
+    color: "--clr-grey "
+}, ]
+
+seasonItems = [{
+    label: "PreSeason ",
+    value: collectedSeason.preSeason,
+    color: "--clr-blue-d "
+}, {
+    label: "Season1 ",
+    value: collectedSeason.season1,
+    color: "--clr-green "
+}, {
+    label: "Season2 ",
+    value: collectedSeason.season2,
+    color: "--clr-red "
+}, {
+    label: "Season3 ",
+    value: collectedSeason.season3,
+    color: "--clr-purple "
+}, {
+    label: "Season4 ",
+    value: collectedSeason.season4,
+    color: "--clr-yellow "
+}, {
+    label: "Season5 ",
+    value: collectedSeason.season5,
+    color: "--clr-orange "
+}, {
+    label: "NotCollected ",
+    value: collectedSeason.not,
+    color: "--clr-grey "
+}, ]
 
 
 let factionDonut = new DonutChart(
@@ -179,67 +228,7 @@ let factionDonut = new DonutChart(
         scale: 100,
         total: factionTotal.all,
         collected: collectedFaction.all,
-        items: [{
-            label: "Requiem ",
-            value: collectedFaction.requiem,
-            color: "--clr-blue "
-        }, {
-            label: "Omega ",
-            value: collectedFaction.omega,
-            color: "--clr-red "
-        }, {
-            label: "Maxis ",
-            value: collectedFaction.maxis,
-            color: "--clr-blue-d "
-        }, {
-            label: "DarkAether ",
-            value: collectedFaction.darkAether,
-            color: "--clr-purple "
-        }, {
-            label: "NotCollected ",
-            value: collectedFaction.not,
-            color: "--clr-grey "
-        }, ]
+        items: factionItems
 
-    })
-
-// #TODO: uncomment once we have the season chart in place
-//         let seasonDonut = new DonutChart(
-//             document.getElementById("season-donut "), {
-//     r: 90,
-//         stroke: 30,
-//         scale: 100,
-//         total: seasonTotal.All,
-//         collected: collectedSeason.All,
-//         items: [{
-//             label: "PreSeason ",
-//             value: collectedSeason.PreSeason,
-//             color: "--clr-blue-d "
-//         }, {
-//             label: "Season1 ",
-//             value: collectedSeason.Season1,
-//             color: "--clr-green "
-//         }, {
-//             label: "Season2 ",
-//             value: collectedSeason.Season2,
-//             color: "--clr-red "
-//         }, {
-//             label: "Season3 ",
-//             value: collectedSeason.Season3,
-//             color: "--clr-purple "
-//         }, {
-//             label: "Season4 ",
-//             value: collectedSeason.Season4,
-//             color: "--clr-yellow "
-//         }, {
-//             label: "Season5 ",
-//             value: collectedSeason.Season5,
-//             color: "--clr-orange "
-//         }, {
-//             label: "NotCollected ",
-//             value: collectedSeason.Not,
-//             color: "--clr-grey "
-//         }, ]
-
-//     })
-//
+    }
+)

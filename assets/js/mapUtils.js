@@ -19,7 +19,8 @@ function InitMap() {
     });
 }
 
-function setMap(selectedMap, htmlElement, ifSub = false) {
+function setMap(selectedMap, htmlElement, ifSub = true) {
+    // htmlElement.parentNode.parentNode.getElementsByTagName("H1") =
     if (app.currentMap != selectedMap) {
         mapInstance.removeLayer(window[app.currentMap].Layer)
         mapInstance.addLayer(window[selectedMap].Layer)
@@ -57,7 +58,7 @@ function AddMapMarkersFromCache(intelArr) {
 
         for (maep in miscPOI) {
             let currmap = miscPOI[maep];
-            if (typeof (miscPOI[maep]) !== "undefined") {
+            if (typeof(miscPOI[maep]) !== "undefined") {
                 currmap.forEach(item => {
                     addMiscMarkerToMap(item.loc, item.icon, window[maep], item.title, item.desc)
                 })

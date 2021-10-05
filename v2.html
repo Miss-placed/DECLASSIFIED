@@ -26,7 +26,8 @@
 </head>
 
 <body onload="">
-    <header class="-hidden">
+    <header class="" onClick="openSubMenu(this)">
+        <!-- <h1>Select Map</h1> -->
         <div class="dropdown dropbtn">
             Die Maschine
             <div class="dropdown-content">
@@ -87,7 +88,11 @@
     <div id="worldMap"></div>
     <!-- UI -->
     <div id="ui">
-        <button class="btn ui" onclick="openModal()"><i class="bi bi-layers-fill"></i> </button>
+        <div><button class="btn ui" onclick="openModal()"><i class="bi bi-folder-fill"></i> </button></div>
+        <div>
+            <a title="Join us on discord!" href="https://discord.gg/4Xqj8XntFe" target="_blank" class="btn ui" id="discord"><i class="fab fa-discord"></i> </a>
+            <a title="Help us out on Github!" href="https://github.com/Miss-placed/DECLASSIFIED" target="_blank" class="btn ui" id="github"><i class="bi bi-github"></i> </a>
+        </div>
     </div>
 
     <!-- modal popups -->
@@ -125,6 +130,11 @@
                 <!-- need to fill this list automatically with intel found with filter.
                     buttons need to have the target be intel-desc and have the id be their id (this case it uses placeholders)
                 -->
+                <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button>
+                <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button>
+                <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button>
+                <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button>
+                <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button>
                 <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button>
             </div>
         </div>
