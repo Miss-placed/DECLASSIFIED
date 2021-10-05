@@ -60,7 +60,7 @@ function AddMapMarkersFromCache(intelArr) {
             let currmap = miscPOI[maep];
             if (typeof(miscPOI[maep]) !== "undefined") {
                 currmap.forEach(item => {
-                    addMiscMarkerToMap(item.loc, item.icon, window[maep], item.title, item.desc)
+                    addMiscMarkerToMap(item.loc, item.icon, window[maep], item.id, item.title, item.desc)
                 })
             }
         }
@@ -76,7 +76,7 @@ function addMarkerToMap(loc, icon, maep, id, name, desc = ``) {
             snippet = $(`
             <div>
             <p>${desc}</p>
-            <div class="buttonContainer" data-item="${id}">
+            <div class="buttonContainer" data-item="${id}" data-type="${markerTypes.intel.id}">
             <button type="button" class="btn btn-info mark-collected">Mark as collected</button>
             ${shareBtn}
             ${bugBtn}
@@ -94,13 +94,16 @@ function addMarkerToMap(loc, icon, maep, id, name, desc = ``) {
     }
 }
 
-function addMiscMarkerToMap(loc, icon, maep, name, desc = ``) {
+function addMiscMarkerToMap(loc, icon, maep, id, name, desc = ``) {
     if (loc != null && JSON.stringify([0, 0]) != JSON.stringify(loc)) { // don't add 0,0 markers to the map for cleanliness
+        let bugBtn = genBugButton(id).outerHTML;
         let snippet = $(`<div></div>`)
-        if (desc !== '') {
-            snippet = $(`<div>
-        <p>${desc}</p></div>`);
-        }
+        snippet = $(`<div>
+        <p>${desc}</p>
+        <div class="buttonContainer" data-item="${id}" data-type="${markerTypes.misc.id}">
+        ${bugBtn}
+        </div>
+        </div>`);
         var marker = L.marker(loc, { icon: icon }).addTo(maep.MiscMarkers)
             .bindPopup(`<h1>${name}</h1>${snippet.html()}`);
     }

@@ -584,7 +584,7 @@ const intelStoreV2 = [
         "faction": factions.requiem,
         "season": seasons.season2,
         "intelType": intelTypes.artifact,
-        "loc": "[-157.75305794467104, 73.625]",
+        "loc": "[-163.5036605306553, 71.125]",
         "map": mapStrings.golova,
         "name": "Aetherium Canister",
         "desc": "Between the pipes connecting the Silo with the building."
@@ -593,7 +593,7 @@ const intelStoreV2 = [
         "faction": factions.requiem,
         "season": seasons.season2,
         "intelType": intelTypes.artifact,
-        "loc": "[-202.75760329845718, 175]",
+        "loc": "[-210.37879254599693, 161.8125]",
         "map": mapStrings.ruka,
         "name": "Aetherium Crystal Shard",
         "desc": "In the burnt forest section, right up against the edge of the map about halfway down. It's on top of a big rock."
@@ -836,7 +836,7 @@ const intelStoreV2 = [
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.artifact,
-        "loc": "[-76.44202097003014, 214]",
+        "loc": "[-77.64095995997849, 215.0625]",
         "map": mapStrings.alpine,
         "name": "Aether Shroud Canister",
         "desc": "In the Maintenance section. It's inside one of the garages."
@@ -867,6 +867,24 @@ const intelStoreV2 = [
         "map": mapStrings.golova,
         "name": "What Tomorrow Brings",
         "desc": "On a bar counter."
+    }, {
+        "id": "RS4Au4",
+        "faction": factions.requiem,
+        "season": seasons.season4,
+        "intelType": intelTypes.audio,
+        "loc": "[-75.89474439977026, 141.875]",
+        "map": mapStrings.ruka,
+        "name": "The Berlin Situation",
+        "desc": "The audio log is on top of a railway tanker."
+    }, {
+        "id": "RS4Au5",
+        "faction": factions.requiem,
+        "season": seasons.season4,
+        "intelType": intelTypes.audio,
+        "loc": "[-145.44285472753887, 66.375]",
+        "map": mapStrings.zoo,
+        "name": "Goes Without Saying",
+        "desc": "The audio log is inside one of the buildings at the Industrial Complex, on top of the the middle table."
     }, {
         "id": "RS4Do1",
         "faction": factions.requiem,
@@ -939,8 +957,16 @@ const intelStoreV2 = [
         "map": mapStrings.alpine,
         "name": "Ring of Fire Canister",
         "desc": "In a yellow hanging coat inside the southernmost base cabin."
-    },
-    {
+    }, {
+        "id": "RS4Ar4",
+        "faction": factions.requiem,
+        "season": seasons.season4,
+        "intelType": intelTypes.artifact,
+        "loc": "[-133.94186055937448, 160.15625]",
+        "map": mapStrings.zoo,
+        "name": "ECM Model",
+        "desc": "The artifact is found on the shelf inside the Zoo Entrance office."
+    }, {
         "id": "RS5Au1",
         "faction": factions.requiem,
         "season": seasons.season5,
@@ -1477,6 +1503,7 @@ const intelStoreV2 = [
         "name": "Something I Can Use",
         "desc": "In the sanatorium building on the second floor, on a coffee table in the room with the wall-buy."
     }, {
+        "id": "OS2Au4",
         "faction": factions.omega,
         "season": seasons.season2,
         "intelType": intelTypes.audio,
@@ -1521,6 +1548,7 @@ const intelStoreV2 = [
         "name": "Lightning Bugs",
         "desc": "On a table near the edge of the Mobile ICBM Site."
     }, {
+        "id": "OS2Do1",
         "faction": factions.omega,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
@@ -1529,6 +1557,7 @@ const intelStoreV2 = [
         "name": "New Frontiers",
         "desc": ""
     }, {
+        "id": "OS2Do2",
         "faction": factions.omega,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
@@ -1537,6 +1566,7 @@ const intelStoreV2 = [
         "name": "omega Staffing Report",
         "desc": ""
     }, {
+        "id": "OS2Do3",
         "faction": factions.omega,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
@@ -1554,6 +1584,7 @@ const intelStoreV2 = [
         "name": "The Colonel",
         "desc": ""
     }, {
+        "id": "OS2Ra2",
         "faction": factions.omega,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
@@ -1562,6 +1593,7 @@ const intelStoreV2 = [
         "name": "Up To Speed",
         "desc": ""
     }, {
+        "id": "OS2Ra3",
         "faction": factions.omega,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
@@ -1570,6 +1602,7 @@ const intelStoreV2 = [
         "name": "Fiasco",
         "desc": ""
     }, {
+        "id": "OS2Ra4",
         "faction": factions.omega,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
@@ -1632,6 +1665,7 @@ const intelStoreV2 = [
         "name": "His Plan, Our Plan",
         "desc": "On the sanatorium Roof. It's on top of the spire with 2 satellite dishes. Requires a Jump pad to get to."
     }, {
+        "id": "OS3Do1",
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -1640,6 +1674,7 @@ const intelStoreV2 = [
         "name": "Boost Module Report",
         "desc": ""
     }, {
+        "id": "OS3Do2",
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -1648,6 +1683,7 @@ const intelStoreV2 = [
         "name": "Phaze Report",
         "desc": ""
     }, {
+        "id": "OS3Do3",
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -1656,6 +1692,7 @@ const intelStoreV2 = [
         "name": "Krasny Soldat Blueprint",
         "desc": ""
     }, {
+        "id": "OS3Do4",
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -1664,6 +1701,7 @@ const intelStoreV2 = [
         "name": "Valentina Diary Entry",
         "desc": ""
     }, {
+        "id": "OS3Do5",
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -1672,6 +1710,7 @@ const intelStoreV2 = [
         "name": "Operatsiya Inversiya Proposal",
         "desc": ""
     }, {
+        "id": "OS3Do6",
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -1680,6 +1719,7 @@ const intelStoreV2 = [
         "name": "Aetherium Warhead Blueprint",
         "desc": ""
     }, {
+        "id": "OS3Do7",
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -1688,6 +1728,7 @@ const intelStoreV2 = [
         "name": "R Cipher",
         "desc": ""
     }, {
+        "id": "OS3Ra1",
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
@@ -1696,6 +1737,7 @@ const intelStoreV2 = [
         "name": "Uncle",
         "desc": ""
     }, {
+        "id": "OS3Ra2",
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
@@ -1704,6 +1746,7 @@ const intelStoreV2 = [
         "name": "Made Of Fire",
         "desc": ""
     }, {
+        "id": "OS3Ra3",
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
@@ -1712,6 +1755,7 @@ const intelStoreV2 = [
         "name": "Chasing Ghosts",
         "desc": ""
     }, {
+        "id": "OS3Ra4",
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
@@ -1828,6 +1872,25 @@ const intelStoreV2 = [
         "name": "Peace is Our Profession",
         "desc": "Underground bunker in the south, under the bed."
     }, {
+        "id": "OS4Au7",
+        "faction": factions.omega,
+        "season": seasons.season4,
+        "intelType": intelTypes.audio,
+        "loc": "[-135.64583063126494, 30.625]",
+        "map": mapStrings.sanatorium,
+        "name": "A Trap Is Set",
+        "desc": "The audio log is in the attic of one of the cottages, on a table with a lampshade."
+    }, {
+        "id": "OS4Au8",
+        "faction": factions.omega,
+        "season": seasons.season4,
+        "intelType": intelTypes.audio,
+        "loc": "[-69.77910359267014, 124.5]",
+        "map": mapStrings.alpine,
+        "name": "Play Your Part",
+        "desc": "The audio log is in the warehouse in the middle of a table."
+    }, {
+        "id": "OS4Do1",
         "faction": factions.omega,
         "season": seasons.season4,
         "intelType": intelTypes.docs,
@@ -1845,6 +1908,7 @@ const intelStoreV2 = [
         "name": "Aetherium Neutralizer Blueprint.",
         "desc": "Obtained during the Outbreak EE#2"
     }, {
+        "id": "OS4Ra1",
         "faction": factions.omega,
         "season": seasons.season4,
         "intelType": intelTypes.radio,
@@ -1853,6 +1917,7 @@ const intelStoreV2 = [
         "name": "Omega's Reputation",
         "desc": "Collected through the Omega Radios in Outbreak"
     }, {
+        "id": "OS4Ra2",
         "faction": factions.omega,
         "season": seasons.season4,
         "intelType": intelTypes.radio,
@@ -1878,6 +1943,33 @@ const intelStoreV2 = [
         "map": mapStrings.zoo,
         "name": "Inversion Warhead Model",
         "desc": "Up on the roof between a wooden wall and the rocks."
+    }, {
+        "id": "OS4Ar3",
+        "faction": factions.omega,
+        "season": seasons.season4,
+        "intelType": intelTypes.artifact,
+        "loc": "[-160.34599831390932, 138.81073892265857]",
+        "map": mapStrings.sanatorium,
+        "name": "Dark Aether Photos",
+        "desc": "The artifact is on a side table inside one of the rooms of Upper Suites."
+    }, {
+        "id": "OS4Ar4",
+        "faction": factions.omega,
+        "season": seasons.season4,
+        "intelType": intelTypes.artifact,
+        "loc": "[-134.25905115710287, 100.6875]",
+        "map": mapStrings.ruka,
+        "name": "Omega Flag",
+        "desc": "The artifact is inside the watchtower, in the wall besides the window."
+    }, {
+        "id": "OS4Ar5",
+        "faction": factions.omega,
+        "season": seasons.season4,
+        "intelType": intelTypes.artifact,
+        "loc": "[-168.16262379333347, 200]",
+        "map": mapStrings.zoo,
+        "name": "Krasny Soldat Flamethrower",
+        "desc": "The artifact is in the backroom of the 'Wolf Exhibit', on a shelf."
     }, {
         "id": "OS5Au1",
         "faction": factions.omega,
@@ -2319,6 +2411,7 @@ const intelStoreV2 = [
         "name": "I Made A Promise",
         "desc": ""
     }, {
+        "id": "MS2Ra3",
         "faction": factions.maxis,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
@@ -2327,6 +2420,7 @@ const intelStoreV2 = [
         "name": "Lab Rat",
         "desc": ""
     }, {
+        "id": "MS2Ra4",
         "faction": factions.maxis,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
@@ -2335,6 +2429,7 @@ const intelStoreV2 = [
         "name": "Three Out Of Four",
         "desc": ""
     }, {
+        "id": "MS2Ra5",
         "faction": factions.maxis,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
@@ -2343,6 +2438,7 @@ const intelStoreV2 = [
         "name": "Both Ways",
         "desc": ""
     }, {
+        "id": "MS2Ra6",
         "faction": factions.maxis,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
@@ -2351,6 +2447,7 @@ const intelStoreV2 = [
         "name": "I've Changed",
         "desc": ""
     }, {
+        "id": "MS2Ra7",
         "faction": factions.maxis,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
@@ -2359,6 +2456,7 @@ const intelStoreV2 = [
         "name": "Why I Fight",
         "desc": ""
     }, {
+        "id": "MS2Ra8",
         "faction": factions.maxis,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
@@ -2430,6 +2528,7 @@ const intelStoreV2 = [
         "name": "Someone We Can Trust",
         "desc": "In the warehouses section. On the second floor of the top most warehouse, on a desk."
     }, {
+        "id": "MS3Do1",
         "faction": factions.maxis,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -2438,6 +2537,7 @@ const intelStoreV2 = [
         "name": "Arrival",
         "desc": ""
     }, {
+        "id": "MS3Do2",
         "faction": factions.maxis,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -2446,6 +2546,7 @@ const intelStoreV2 = [
         "name": "maxis Progress Report",
         "desc": ""
     }, {
+        "id": "MS3Do3",
         "faction": factions.maxis,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -2454,6 +2555,7 @@ const intelStoreV2 = [
         "name": "Quarantine Diary 1",
         "desc": ""
     }, {
+        "id": "MS3Do4",
         "faction": factions.maxis,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -2468,7 +2570,7 @@ const intelStoreV2 = [
         "intelType": intelTypes.artifact,
         "loc": "[-107.75, 48]",
         "map": mapStrings.duga,
-        "name": "maxis's Katana",
+        "name": "Maxis' Katana",
         "desc": "In the farm area. Stuck in a haybale in a shed near the back of the area, next to the stone wall."
     }, {
         "id": "MS3Ar2",
@@ -2477,7 +2579,7 @@ const intelStoreV2 = [
         "intelType": intelTypes.artifact,
         "loc": "[-146, 126.75]",
         "map": mapStrings.duga,
-        "name": "Maxis's Scarf",
+        "name": "Maxis' Scarf",
         "desc": "In the listening post. In a room just to the left of the Wunderfizz, on a coathook."
     }, {
         "id": "MS3Ar3",
@@ -2486,9 +2588,10 @@ const intelStoreV2 = [
         "intelType": intelTypes.artifact,
         "loc": "[-184.75, 64.75]",
         "map": mapStrings.sanatorium,
-        "name": "maxis's Goggles",
+        "name": "Maxis' Goggles",
         "desc": "In the market square on one of the round tables."
     }, {
+        "id": "MS3Ar4",
         "faction": factions.maxis,
         "season": seasons.season3,
         "intelType": intelTypes.artifact,
@@ -2497,6 +2600,7 @@ const intelStoreV2 = [
         "name": "Beacon Listening Device",
         "desc": "Obtained whilst completing an Aether transmission during the outbreak EE."
     }, {
+        "id": "MS3Ar5",
         "faction": factions.maxis,
         "season": seasons.season3,
         "intelType": intelTypes.artifact,
@@ -3136,6 +3240,7 @@ const intelStoreV2 = [
         "name": "Much More To Tell You",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS2Do4",
         "faction": factions.darkAether,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
@@ -3144,6 +3249,7 @@ const intelStoreV2 = [
         "name": "Hello Again",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS2Do5",
         "faction": factions.darkAether,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
@@ -3152,6 +3258,7 @@ const intelStoreV2 = [
         "name": "Divided World",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS2Do6",
         "faction": factions.darkAether,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
@@ -3160,6 +3267,7 @@ const intelStoreV2 = [
         "name": "Trust Me",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS2Do7",
         "faction": factions.darkAether,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
@@ -3177,6 +3285,7 @@ const intelStoreV2 = [
         "name": "Crooked House",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS2Ra2",
         "faction": factions.darkAether,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
@@ -3185,6 +3294,7 @@ const intelStoreV2 = [
         "name": "Testing... Testing",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS2Ra3",
         "faction": factions.darkAether,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
@@ -3215,7 +3325,7 @@ const intelStoreV2 = [
         "faction": factions.darkAether,
         "season": seasons.season2,
         "intelType": intelTypes.artifact,
-        "loc": "[-123.00462626352191, 194.75]",
+        "loc": "[-129.63594337699874, 203.125]",
         "map": mapStrings.ruka,
         "name": "Ivan's Head",
         "desc": "On a telephone pillar next to the train trestle bridge (use parachute)."
@@ -3224,11 +3334,12 @@ const intelStoreV2 = [
         "faction": factions.darkAether,
         "season": seasons.season2,
         "intelType": intelTypes.artifact,
-        "loc": "[-129.25, 36.75]",
+        "loc": "[-136.32115511107816, 37.25]",
         "map": mapStrings.alpine,
         "name": "Mystery Box Bunny",
         "desc": "In a bed in Base Suites section. It's the third building from the bottom."
     }, {
+        "id": "DS3Au1",
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.audio,
@@ -3237,6 +3348,7 @@ const intelStoreV2 = [
         "name": "Lost Souls: Fedorov 1",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS3Au2",
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.audio,
@@ -3245,6 +3357,7 @@ const intelStoreV2 = [
         "name": "Lost Souls: Fedorov 2",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS3Au3",
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.audio,
@@ -3253,6 +3366,7 @@ const intelStoreV2 = [
         "name": "Lost Souls: Fedorov 3",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS3Au4",
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.audio,
@@ -3261,6 +3375,7 @@ const intelStoreV2 = [
         "name": "Great and Terrible.",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS3Do1",
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -3269,6 +3384,7 @@ const intelStoreV2 = [
         "name": "Day 1",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS3Do2",
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -3277,6 +3393,7 @@ const intelStoreV2 = [
         "name": "Day 3",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS3Do3",
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -3285,6 +3402,7 @@ const intelStoreV2 = [
         "name": "Day 7",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS3Do4",
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -3293,6 +3411,7 @@ const intelStoreV2 = [
         "name": "Day 9",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS3Do5",
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -3301,6 +3420,7 @@ const intelStoreV2 = [
         "name": "Day 11",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS3Do6",
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
@@ -3309,6 +3429,7 @@ const intelStoreV2 = [
         "name": "Day 12",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS3Ra1",
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
@@ -3317,6 +3438,7 @@ const intelStoreV2 = [
         "name": "Who I Am",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS3Ra2",
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
@@ -3325,6 +3447,7 @@ const intelStoreV2 = [
         "name": "Great Patriotic",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS3Ra3",
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
@@ -3333,6 +3456,7 @@ const intelStoreV2 = [
         "name": "Tethered",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS3Ra4",
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
@@ -3341,6 +3465,7 @@ const intelStoreV2 = [
         "name": "Changes",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS3Ra5",
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
@@ -3349,6 +3474,7 @@ const intelStoreV2 = [
         "name": "Junkyard",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS3Ra6",
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
@@ -3357,6 +3483,7 @@ const intelStoreV2 = [
         "name": "Invasion",
         "desc": "Obtained through the Challenge Machine"
     }, {
+        "id": "DS3Ra7",
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
@@ -3419,6 +3546,7 @@ const intelStoreV2 = [
         "name": "Dragon Head Trophy",
         "desc": "In the lodge. In Room 201, above the bed."
     }, {
+        "id": "DS4Au1",
         "faction": factions.darkAether,
         "season": seasons.season4,
         "intelType": intelTypes.audio,
@@ -3427,6 +3555,7 @@ const intelStoreV2 = [
         "name": "We Are Waiting",
         "desc": "Obtained Through the challenge machine."
     }, {
+        "id": "DS4Do1",
         "faction": factions.darkAether,
         "season": seasons.season4,
         "intelType": intelTypes.docs,
@@ -3435,6 +3564,7 @@ const intelStoreV2 = [
         "name": "Day 4,513",
         "desc": "Obtained Through the challenge machine."
     }, {
+        "id": "DS4Do2",
         "faction": factions.darkAether,
         "season": seasons.season4,
         "intelType": intelTypes.docs,
@@ -3443,6 +3573,7 @@ const intelStoreV2 = [
         "name": "Day 4,729",
         "desc": "Obtained Through the challenge machine."
     }, {
+        "id": "DS4Ra1",
         "faction": factions.darkAether,
         "season": seasons.season4,
         "intelType": intelTypes.radio,
@@ -3451,6 +3582,7 @@ const intelStoreV2 = [
         "name": "Secret Contact",
         "desc": "Obtained Through the challenge machine."
     }, {
+        "id": "DS4Ra2",
         "faction": factions.darkAether,
         "season": seasons.season4,
         "intelType": intelTypes.radio,
@@ -3485,6 +3617,15 @@ const intelStoreV2 = [
         "map": mapStrings.golova,
         "name": "Empty Elemental Pop",
         "desc": "Resting on a food shelf inside the kitchen area."
+    }, {
+        "id": "DS4Ar4",
+        "faction": factions.darkAether,
+        "season": seasons.season4,
+        "intelType": intelTypes.artifact,
+        "loc": "[-137.57480753552835, 163.9375]",
+        "map": mapStrings.duga,
+        "name": "Elemental Pop Poster",
+        "desc": "The poster is inside the 'Maintenance Facilities' building, fixed on the wall."
     }, {
         "id": "DS5Au1",
         "faction": factions.darkAether,

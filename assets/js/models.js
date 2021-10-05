@@ -1,5 +1,6 @@
 class Item {
-    constructor(title, desc, icon) {
+    constructor({ id, title, desc, icon }) {
+        this.id = id;
         this.title = title ?? "";
         this.desc = desc ?? "";
         this.icon = icon ?? generalIcon;
@@ -40,7 +41,7 @@ const allOutbreakMapsArr = [
 
 /////////////////////Metadata/////////////////////////
 const repoDomain = 'https://github.com/Miss-placed/DECLASSIFIED';
-const appDomain = 'https://miss-placed.github.io/DECLASSIFIED/';
+const appDomain = 'https://declassified.netlify.app/';
 
 const contribTemplates = {
     intel: {
@@ -77,10 +78,10 @@ const seasons = {
 
 /////////////////////Markers/////////////////////////
 const markerTypes = {
-    intel: "Intel",
-    misc: "Misc",
-    worldEvents: "World Events",
-    easterEggs: "Easter Eggs",
+    intel: new Item({ id: "intel", title: "Intel" }),
+    misc: new Item({ id: "misc", title: "Misc" }),
+    worldEvents: new Item({ id: "worldEvents", title: "World Events" }),
+    easterEggs: new Item({ id: "easterEggs", title: "Easter Eggs" }),
 }
 
 const intelTypes = {
@@ -91,39 +92,39 @@ const intelTypes = {
 }
 
 const miscTypes = {
-    dementedEcho: new Item("Demented Echo", "Destroy it before it touches you to get a reward.", dementedIcon),
-    rift: new Item("Aether Rift", "Jump through to teleport and gain a random powerup.", riftIcon),
-    redRift: new Item("Red Aether Rift", "Jump through all the rifts to continue the Easter Egg", redRiftIcon),
-    radio: new Item("Radio", null, radioIcon),
-    monkey: new Item("Stone Monkey", null, monkeyIcon),
-    projector: new Item("Projector", "The projector for the Main Quest"),
-    signal: new Item("Signal"),
-    fishing: new Item("Fishing", null, fishingIcon),
-    essenceDrop: new Item("Essence Drop"),
-    scrapHeap: new Item("Scrap Heap"),
+    dementedEcho: new Item({ title: "Demented Echo", desc: "Destroy it before it touches you to get a reward.", icon: dementedIcon}),
+    rift: new Item({ title: "Aether Rift", desc:  "Jump through to teleport and gain a random powerup.", icon: riftIcon}),
+    redRift: new Item({ title: "Red Aether Rift", desc:  "Jump through all the rifts to continue the Easter Egg", icon: redRiftIcon}),
+    radio: new Item({ title: "Radio", icon: radioIcon}),
+    monkey: new Item({ title: "Stone Monkey", icon: monkeyIcon}),
+    projector: new Item({ title: "Projector", desc:  "The projector for the Main Quest"}),
+    signal: new Item({ title: "Signal"}),
+    fishing: new Item({ title: "Fishing", desc: "Fish up to 3 times for a small reward each time.", icon: fishingIcon}),
+    essenceDrop: new Item({ title: "Essence Drop"}),
+    scrapHeap: new Item({ title: "Scrap Heap"}),
 
-    perkMachine: new Item("Perk Machine"),
-    papMachine: new Item("Pack-a-Punch"),
-    mysteryBox: new Item("Mystery box"),
-    wallbuy: new Item("Wall Buy"),
-    jumpPad: new Item("Jump Pad"),
-    craftingTable: new Item("Crafting Table"),
-    ammoCrate: new Item("Ammo Crate"),
-    trap: new Item("Trap"),
-    klausRadio: new Item("Klaus recall radio"),
-    aetherCrystal: new Item("Aether Crystal"),
+    perkMachine: new Item({ title: "Perk Machine"}),
+    papMachine: new Item({ title: "Pack-a-Punch"}),
+    mysteryBox: new Item({ title: "Mystery box"}),
+    wallbuy: new Item({ title: "Wall Buy"}),
+    jumpPad: new Item({ title: "Jump Pad"}),
+    craftingTable: new Item({ title: "Crafting Table"}),
+    ammoCrate: new Item({ title: "Ammo Crate"}),
+    trap: new Item({ title: "Trap"}),
+    klausRadio: new Item({ title: "Klaus recall radio"}),
+    aetherCrystal: new Item({ title: "Aether Crystal"}),
 }
 
 const worldEventTypes = {
-    furyCrystal: new Item("Fury Crystal"),
-    escort: new Item("Escort"),
-    redChallengeChest: new Item("Red Challenge Chest"),
-    purpleChallengeChest: new Item("Purple Challenge Chest"),
-    dragonRocket: new Item("Dragon Rocket"),
-    orda: new Item("Orda"),
-    horde: new Item("Horde"),
-    orb: new Item("Aetherial orb", "Damage it and chase it 3 times, you can also shoot it mid-air whilst moving to each location."),
-    musicRadio: new Item("Music radio"),
+    furyCrystal: new Item({ title: "Fury Crystal"}),
+    escort: new Item({ title: "Escort"}),
+    redChallengeChest: new Item({ title: "Red Challenge Chest"}),
+    purpleChallengeChest: new Item({ title: "Purple Challenge Chest"}),
+    dragonRocket: new Item({ title: "Dragon Rocket"}),
+    orda: new Item({ title: "Orda"}),
+    horde: new Item({ title: "Horde"}),
+    orb: new Item({ title: "Aetherial orb", desc: "Damage it and chase it 3 times, you can also shoot it mid-air whilst moving to each location."}),
+    musicRadio: new Item({ title: "Music radio"}),
 }
 
 //TODO: Decide the structure for how we store and retrieve EE steps (maybe new datastore)
