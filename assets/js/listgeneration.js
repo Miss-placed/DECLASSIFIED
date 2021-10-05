@@ -86,9 +86,10 @@ function copyClipboardForButton(intelId) {
     }
 }
 
-function redirectToGithubForButton(intelId) {
+function redirectToGithubForButton(itemId) {
     return function() {
-        redirectToGithub({label: contribTemplates.intel.editTitle, issueTemplate: contribTemplates.intel.editId, intelId: intelId})
+        //This is only for intel in the side panel. Misc markers are only on the map
+        redirectToGithub({ itemType: markerTypes.intel.id, issueType: "Fix", itemId: itemId })
     }
 }
 
@@ -99,10 +100,10 @@ function genShareButton(intelId) {
     return shareBtn;
 }
 
-function genBugButton(intelId) {
+function genBugButton(itemId) {
     let bugBtn = createElement("button", ["btn", "btn-info", "action-buttons", "bugRep", "fas", "fa-bug"], "")
     bugBtn.title = "Submit Bug Report";
-    bugBtn.onclick = redirectToGithubForButton(intelId);
+    bugBtn.onclick = redirectToGithubForButton(itemId);
     return bugBtn;
 }
 

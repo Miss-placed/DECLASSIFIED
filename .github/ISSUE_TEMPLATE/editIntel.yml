@@ -1,6 +1,6 @@
 name: Intel Fix
 description: Help us by submitting an edit to an existing piece of intel where the information may be incorrect.
-title: "Intel Fix: INTEL_NAME [MAP]"
+title: "Intel Fix: INTEL_NAME [MAP][ID]"
 labels: ["Intel Fix"]
 assignees:
   - Odinnh
@@ -11,6 +11,7 @@ body:
       value: |
         Thanks for taking the time to help us improve our app! 
         Please put the name of the intel in the title of the issue if not automatically populated.
+        
   - type: input
     id: intelName
     attributes:
@@ -19,6 +20,7 @@ body:
       placeholder: e.g. Maxis Scarf
     validations:
       required: true
+
   - type: input
     id: intelId
     attributes:
@@ -27,6 +29,7 @@ body:
       placeholder: e.g. MS3Ar2
     validations:
       required: false
+      
   - type: textarea
     id: intelFixNeeded
     attributes:
@@ -35,6 +38,7 @@ body:
       placeholder: e.g. Season should be 3 not 4.
     validations:
       required: true
+
   - type: textarea
     id: extraInfo
     attributes:

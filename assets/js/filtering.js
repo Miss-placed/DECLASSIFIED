@@ -61,3 +61,11 @@ function getIntelById(intelId) {
     }
     return null;
 }
+
+function getMiscMarkerById(itemId) {
+    if (itemId) {
+        let matchedMisc = miscPOI[app.currentMap].find((item) => item.id == itemId)
+        return matchedMisc;
+    }
+    return null;
+}
