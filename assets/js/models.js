@@ -104,6 +104,8 @@ const miscTypes = {
     scrapHeap: new Item({ title: "Scrap Heap"}),
 
     perkMachine: new Item({ title: "Perk Machine"}),
+    wunderFizz: new Item({ title: "Der Wunderfizz"}),
+    trialComputer: new Item({ title: "Trial Computer"}),
     papMachine: new Item({ title: "Pack-a-Punch"}),
     mysteryBox: new Item({ title: "Mystery Box Location"}),
     wallbuy: new Item({ title: "Wall Buy"}),
