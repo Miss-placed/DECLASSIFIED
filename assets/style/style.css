@@ -43,7 +43,7 @@ body {
     grid-column: 1;
     height: 90vh;
     width: 80vw;
-    background-color: #2d2d2d;
+    background-color: var(--clr-grey-d);
     cursor: crosshair;
     float: right;
     z-index: 0;
