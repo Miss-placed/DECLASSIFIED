@@ -105,12 +105,17 @@ const miscTypes = {
 
     perkMachine: new Item({ title: "Perk Machine"}),
     papMachine: new Item({ title: "Pack-a-Punch"}),
-    mysteryBox: new Item({ title: "Mystery box"}),
+    mysteryBox: new Item({ title: "Mystery Box Location"}),
     wallbuy: new Item({ title: "Wall Buy"}),
+    power: new Item({ title: "Power Switch"}),
     jumpPad: new Item({ title: "Jump Pad"}),
     craftingTable: new Item({ title: "Crafting Table"}),
+    arsenal: new Item({ title: "Arsenal"}),
     ammoCrate: new Item({ title: "Ammo Crate"}),
     trap: new Item({ title: "Trap"}),
+    zipline: new Item({ title: "Zipline"}),
+    rampageInducer: new Item({ title: "Rampage Inducer"}),
+
     klausRadio: new Item({ title: "Klaus recall radio"}),
     aetherCrystal: new Item({ title: "Aether Crystal"}),
 }
