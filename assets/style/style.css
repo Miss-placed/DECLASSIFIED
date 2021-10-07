@@ -56,6 +56,42 @@ body {
     background-color: var(--clr-grey);
 }
 
+#ui {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    padding: 20px;
+    z-index: 100000;
+    pointer-events: none;
+}
+
+.btn.ui {
+    border-radius: 10px;
+    border: none;
+    width: 50px;
+    height: 50px;
+    padding: 5px 0;
+    pointer-events: auto;
+    background-color: var(--clr-bg-inverted);
+}
+
+.btn.ui i {
+    font-size: 1.6em;
+    margin: auto;
+}
+
+#discord {
+    background-color: #5865F2;
+    color: var(--clr-white-d);
+}
+
+#github {
+    background-color: var(--clr-black);
+    color: var(--clr-white);
+}
+
 header {
     height: 10vh;
     width: 100vw;
