@@ -58,3 +58,10 @@ function setLastVisitedMap(selectedMap) {
     currentPrefs.lastSelectedMap = selectedMap
     setUserPrefs(currentPrefs);
 }
+
+function toggleDarkMode() {
+    let currentPrefs = getUserPrefs();
+    currentPrefs.darkmode = !currentPrefs.darkmode
+    setUserPrefs(currentPrefs);
+    location.reload();
+}
