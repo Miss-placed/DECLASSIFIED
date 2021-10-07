@@ -21,7 +21,7 @@ function getUserPrefs() {
 
 function setUserPrefs(prefsObj) {
     localStorage.setItem("declassifiedPrefs", JSON.stringify(prefsObj));
-} 
+}
 
 function hasUserCollected(intel, getIndex = false) {
     let currentPrefs = getUserPrefs();
@@ -29,15 +29,15 @@ function hasUserCollected(intel, getIndex = false) {
     let indexOfIntel = currentPrefs.collectedIntel.indexOf(intel);
     if (indexOfIntel > -1 && getIndex) return indexOfIntel;
     if (indexOfIntel > -1 && !getIndex) return true;
-    
+
     //Couldn't find the intel, assume they haven't collected
     return false;
 }
 
 function addCollectedIntel(intel) {
     let currentPrefs = getUserPrefs();
-    
-    if(hasUserCollected(intel)) {
+
+    if (hasUserCollected(intel)) {
         console.log("Already collected this intel.");
         return;
     }
@@ -47,13 +47,14 @@ function addCollectedIntel(intel) {
 
 function removeCollectedIntel(intel) {
     let currentPrefs = getUserPrefs();
-    
+
     let indexOfIntel = hasUserCollected(intel, true);
 
     currentPrefs.collectedIntel.splice(indexOfIntel, 1);
     setUserPrefs(currentPrefs);
 }
-function setLastVisitedMap(selectedMap){
+
+function setLastVisitedMap(selectedMap) {
     let currentPrefs = getUserPrefs();
     currentPrefs.lastSelectedMap = selectedMap
     setUserPrefs(currentPrefs);

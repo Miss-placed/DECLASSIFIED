@@ -7,21 +7,28 @@ body {
 
 #worldMap {
     color: var(--clr-color);
-    background-color: var(--clr-bg);
     width: 100vw;
     height: 90vh;
     z-index: var(--z-index-map);
+}
+
+#worldMap {
+    background-color: var(--clr-grey-d);
+}
+
+#worldMap.light- {
+    background-color: var(--clr-grey);
 }
 
 header {
     height: 10vh;
     width: 100vw;
     background: var(--clr-grey-d);
-    color: var(--clr-grey-l);
+    color: var(--clr-white-d);
     font-family: sans-serif;
     display: grid;
     grid-auto-flow: column;
-    border-bottom: 1px solid var(--clr-grey-l);
+    border-bottom: 1px solid var(--clr-white-d);
     user-select: none;
     z-index: var(--z-index-menu);
 }
@@ -30,7 +37,7 @@ header>div,
 .dropdown-item {
     padding: 10px 20px;
     margin: auto;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, var(--clr-grey-l) 50%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, var(--clr-white-d) 50%);
     background-size: 200%;
     background-position: 0 0;
     transition: 0.1s ease-in-out;
@@ -47,7 +54,7 @@ header>div:hover,
 
 .dropdown-item {
     padding: 10px 20px;
-    color: var(--clr-grey-l);
+    color: var(--clr-white-d);
 }
 
 
@@ -70,7 +77,7 @@ header>div:hover,
 }
 
 .current-map {
-    background-color: var(--clr-grey-l);
+    background-color: var(--clr-white-d);
     color: var(--clr-grey);
 }
 

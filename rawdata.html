@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Declassified Raw Data</title>
+</head>
+
+<body onload="getData()">
+    <textarea id="field">
+
+    </textarea>
+    <button onclick="saveToLocalStorage()">Import data</button>
+    <button onclick="getData()">Export data</button>
+    <script>
+        function getData() {
+            document.getElementById("field").value = localStorage.declassifiedPrefs
+        }
+
+        function saveToLocalStorage() {
+            if (confirm("this will override your localstorage be sure to back it up first!!!!!!!")) {
+                localStorage.declassifiedPrefs = document.getElementById("field").value
+            }
+        }
+    </script>
+</body>
+
+</html>

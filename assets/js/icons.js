@@ -39,8 +39,8 @@ var requiemIcon = L.icon({
 });
 var generalIcon = L.icon({
     iconUrl: 'assets/img/icons/generalIcon.png',
-    iconSize: [48, 48],
-    iconAnchor: [24, 48],
+    iconSize: [40, 40],
+    iconAnchor: [20, 40],
     popupAnchor: [0, -30]
 });
 var riftIcon = L.icon({

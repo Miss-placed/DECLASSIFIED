@@ -8,7 +8,8 @@
 :root {
     /* whites and blacks */
     --clr-white: #FFFFFF;
-    --clr-grey-l: #c7bbb2;
+    --clr-white-d: #c7bbb2;
+    --clr-grey-l: #6a6a6b;
     --clr-grey: #565555;
     --clr-grey-d: #3c3c3b;
     --clr-black: #1f2223;
@@ -24,11 +25,11 @@
     --clr-orange: #d3642b;
     --clr-pink: #CC358B;
     /* backgrounds */
-    --clr-bg: var(--clr-grey-l);
+    --clr-bg: var(--clr-white-d);
     --clr-bg-inverted: var(--clr-grey-d);
     /* text color */
     --clr-color: var(--clr-grey-d);
-    --clr-color-inverted: var(--clr-grey-l);
+    --clr-color-inverted: var(--clr-white-d);
     /* border properties*/
     --shadow: 0px 3px 0px 0px var(--clr-black);
     --shadow-hover: 0px 4px 0px 0px var(--clr-black);
@@ -43,8 +44,8 @@
 @media (prefers-color-scheme: dark) {
      :root {
         --clr-bg: var(--clr-grey-d);
-        --clr-color: var(--clr-grey-l);
-        --clr-bg-inverted: var(--clr-grey-l);
+        --clr-color: var(--clr-white-d);
+        --clr-bg-inverted: var(--clr-white-d);
         --clr-color-inverted: var(--clr-grey-d);
     }
 }
@@ -58,7 +59,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--clr-grey-l);
+    background: var(--clr-white-d);
 }
 
 ::-webkit-scrollbar-thumb:hover {
