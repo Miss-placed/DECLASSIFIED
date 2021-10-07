@@ -19,6 +19,11 @@ const seasonTotal = {
 }
 
 
+function toggleDarkMode() {
+    localStorage.darkmode = !JSON.parse(localStorage.darkmode);
+    location.reload();
+}
+
 function openModal() {
     document.getElementsByClassName("modal-bg")[0].classList.remove("-hidden")
     fillTotals()

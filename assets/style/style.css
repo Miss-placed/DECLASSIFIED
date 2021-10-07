@@ -43,10 +43,17 @@ body {
     grid-column: 1;
     height: 90vh;
     width: 80vw;
-    background-color: var(--clr-grey-d);
     cursor: crosshair;
     float: right;
     z-index: 0;
+}
+
+#worldMap {
+    background-color: var(--clr-grey-d);
+}
+
+#worldMap.light- {
+    background-color: var(--clr-grey);
 }
 
 header {

@@ -1,6 +1,8 @@
 const app = StartupSettings();
 const userPrefs = userPrefsStartup();
 
+
+
 function StartupSettings() {
     let response;
 
@@ -12,12 +14,15 @@ function StartupSettings() {
     if (localStorage.declassifiedPrefs != undefined && JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap)
         currentMap = JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap;
 
-    let isMobile = false, submittingLocation = false, fixedNotification = false;
+    let isMobile = false,
+        submittingLocation = false,
+        fixedNotification = false;
     let notificationEle = document.getElementById("notification-popup");
     return response = { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingLocation, currentContribType, fixedNotification };
 }
 
 let mapInstance = InitMap();
+
 
 L.control.attribution({ prefix: 'DECLASSIFIED' })
 document.getElementsByClassName("leaflet-control-attribution")[0].getElementsByTagName("a")[0].title = "Declassified An Interactive map By Odinn"
@@ -27,11 +32,11 @@ L.control.attribution()
 //loops through all types of intel and makes a marker
 AddMapMarkersFromCache(intelCache);
 
-mapInstance.on('popupopen', function () {
-    $('.mark-collected').click(function (e) {
+mapInstance.on('popupopen', function() {
+    $('.mark-collected').click(function(e) {
         let itemId = $(e.target).closest(".buttonContainer").data("item");
         if (app.disableMarkers.includes(itemId.toString())) {
-            app.disableMarkers = $.grep(app.disableMarkers, function (value) {
+            app.disableMarkers = $.grep(app.disableMarkers, function(value) {
                 return value != itemId.toString();
             });
             app.visibleMarkers[itemId].setOpacity(1);
@@ -42,11 +47,11 @@ mapInstance.on('popupopen', function () {
             addCollectedIntel(itemId);
         }
     });
-    $('.share').click(function (e) {
+    $('.share').click(function(e) {
         let itemId = $(e.target).closest(".buttonContainer").data("item");
         copyToClipboard(`${window.location.origin}${window.location.pathname}?id=${itemId}`, "Link Copied To Clipboard");
     });
-    $('.bugRep').click(function (e) {
+    $('.bugRep').click(function(e) {
         let itemId = $(e.target).closest(".buttonContainer").data("item");
         let type = $(e.target).closest(".buttonContainer").data("type");
 
@@ -54,7 +59,7 @@ mapInstance.on('popupopen', function () {
     });
 });
 
-mapInstance.on("click", function (e) {
+mapInstance.on("click", function(e) {
     let location = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
     if (debug) {
         copyToClipboard(location, "Location Copied to Clipboard")
@@ -74,11 +79,11 @@ function onLoad() {
     }
 
     //Intel Search Listeners
-    $('#intelFilter').find("input[type=checkbox]").change(function () {
+    $('#intelFilter').find("input[type=checkbox]").change(function() {
         intelFiltered = TriggerSearch();
     });
 
-    $('#searchTerm').keyup(function () {
+    $('#searchTerm').keyup(function() {
         intelFiltered = TriggerSearch();
     });
 

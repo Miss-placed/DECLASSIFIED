@@ -29,11 +29,12 @@ mauerDerToten_streets = generateLayers(mapStrings.mauerDerTotenStreets, globalMa
 
 function generateLayers(name, settings) {
     settings.id = name
+
     let object = {
         Layer: new L.LayerGroup(),
         Markers: new L.LayerGroup(),
         MiscMarkers: new L.LayerGroup(),
-        Tiles: L.tileLayer(`./maps/${name}/{z}/{x}_{y}.png`, settings)
+        Tiles: L.tileLayer(`./maps/${name}/${lightModeClass}{z}/{x}_{y}.png`, settings)
     }
     object.Tiles.addTo(object.Layer);
     object.Markers.addTo(object.Layer);
