@@ -1,17 +1,16 @@
 //Store and Retrieve user preferences from localStorage
-
-function userPrefsStartup() {
-    let existingPrefs = localStorage.getItem("declassifiedPrefs");
-
-    if (existingPrefs) return JSON.parse(existingPrefs);
-
-    let newPrefs = {
-        lastSelectedMap: app.currentMap,
-        collectedIntel: [],
+class UserPrefs {
+    constructor({lastSelectedMap, collectedIntel, darkmode}) {
+        this.lastSelectedMap = lastSelectedMap ?? app.currentMap;
+        this.collectedIntel = collectedIntel ?? [];
+        this.darkmode = darkmode ?? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
     }
+}
+function userPrefsStartup() {
+    var userPrefs = new UserPrefs(JSON.parse(localStorage.getItem("declassifiedPrefs")));
 
-    localStorage.setItem("declassifiedPrefs", JSON.stringify(newPrefs));
-    return newPrefs;
+    localStorage.setItem("declassifiedPrefs", JSON.stringify(userPrefs));
+    return userPrefs;
 }
 
 function getUserPrefs() {
