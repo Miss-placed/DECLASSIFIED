@@ -31,3 +31,4 @@ Previously I contributed to [the Red Dead Redemption 2 Collectors map](https://j
 <sup name="footnote">[^1](#myfootnote1): ██████ is property of the CIA. a U.S. government agency.</sup>
 
 --------------------------------------------------
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5256217c-b53a-400c-b05a-fb874346331b/deploy-status)](https://app.netlify.com/sites/declassified/deploys)
