@@ -31,10 +31,38 @@ miscPOI[mapStrings.mauerDerToten] = [
 miscPOI[mapStrings.mauerDerTotenStreets] = [
     new Marker("WLKGz", miscTypes.ammoCrate, [-142.88592137444184, 52.11727367820464]),
     new Marker("O9joh", miscTypes.ammoCrate, [-106.77844351596228, 85.74172275786793]),
+    new Marker("KtnDa", miscTypes.ammoCrate, [-71.5698129551055, 164.75]),
+    new Marker("uuvse", miscTypes.ammoCrate, [-111.40353152619, 176.625]),
+    new Marker("8NpKm", miscTypes.ammoCrate, [-198.25754108688, 143.875]),
+    new Marker("lS2oV", miscTypes.ammoCrate, [-193.74711187489578, 221.5]),
+    new Marker("fEYzo", miscTypes.ammoCrate, [-86.19960951251598, 222.0625]),
+
+    new Marker("MvQgd", miscTypes.craftingTable, [-99.13255498323173, 206.375]),
+    new Marker("g7EFo", miscTypes.arsenal, [-49.88994784235979, 193.4375]),
+    new Marker("d4_OW", miscTypes.arsenal, [-166.56954892442238, 194.75]),
+    new Marker("X3VOB", miscTypes.mysteryBox, [-197.62074771636617, 206.875]),
+    new Marker("ePWVb", miscTypes.mysteryBox, [-206.62890255878156, 135.5625]),
+    new Marker("N8ZNs", miscTypes.mysteryBox, [-117.50473865594486, 134.625]),
+    new Marker("5Jio9", miscTypes.perkMachine, [-91.94925747160512, 193.0625], "JuggerNog"),
+    new Marker("npHck", miscTypes.perkMachine, [-178.51449389486947, 150], "Speed Cola"),
+    new Marker("YWNji", miscTypes.perkMachine, [-196.05916371755202, 182.25], "Staminup"),
+    new Marker("kU1ty", miscTypes.perkMachine, [-110.94089649997221, 192.125], "Tombstone"),
+    new Marker("7_Xve", miscTypes.zipline, [-163.38575346019158, 51.854360642995346]),
+    new Marker("iSOF5", miscTypes.zipline, [-176.64015397157732, 169.125]),
+    new Marker("PYHwG", miscTypes.zipline, [-155.52259083581924, 153]),
+    new Marker("enALO", miscTypes.zipline, [-112.27589121935854, 213.25]),
+    new Marker("99LL2", miscTypes.zipline, [-151.26216162383503, 212]),
+
+    new Marker("0NXak", miscTypes.wallbuy, [-56.07526958922384, 163], "Type 63"),
+    new Marker("8kTWI", miscTypes.wallbuy, [-112.63949389486946, 190.125], "AK-74u"),
+    new Marker("X4lhW", miscTypes.wallbuy, [-185.76194159826574, 170], "MP5"),
+    new Marker("jQOwR", miscTypes.wallbuy, [-162.75839108039503, 202.1875], "Gallo SA12"),
+    new Marker("ZEXRC", miscTypes.wallbuy, [-85.57482953808527, 206.875], "Diamatti"),
+
     new Marker("Awvc5", miscTypes.wunderFizz, [-97.90163930629413, 28.60234508078787]),
     new Marker("7EMcB", miscTypes.papMachine, [-130.0202585647848, 98.36943704830733]),
-    new Marker("7_Xve", miscTypes.zipline, [-163.38575346019158, 51.854360642995346]),
     new Marker("slGlH", miscTypes.trialComputer, [-129.51562992162457, 19.797826707129513]),
+    new Marker("UvjK8", miscTypes.rampageInducer, [-87.0118234792759, 192.375]),
 ];
 
 /////////////////////Outbreak Misc Items/////////////////////////
