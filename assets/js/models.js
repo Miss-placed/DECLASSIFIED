@@ -1,9 +1,34 @@
+/////////////////////Classes/////////////////////////
 class Item {
     constructor({ id, title, desc, icon }) {
         this.id = id;
         this.title = title ?? "";
         this.desc = desc ?? "";
         this.icon = icon ?? generalIcon;
+    }
+}
+
+class Marker {
+    constructor(id, item, loc, uniqueDesc) {
+        this.id = id;
+        if (item instanceof Item) {
+            this.title = item.title ?? "";
+            this.desc = item.desc ?? "";
+            this.icon = item.icon ?? generalIcon;
+        }
+        //Override static description with unique description
+        if (uniqueDesc) this.desc = uniqueDesc;
+        // Could do map in the future depending on how the data structure needs to change
+        /* this.map = map; */
+        this.loc = loc ?? [0, 0];
+    }
+}
+
+class UserPrefs {
+    constructor({lastSelectedMap, collectedIntel, darkmode}) {
+        this.lastSelectedMap = lastSelectedMap ?? app.currentMap;
+        this.collectedIntel = collectedIntel ?? [];
+        this.darkmode = darkmode ?? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
     }
 }
 

@@ -4,21 +4,6 @@
 
 // Non collectible items that need icons on the respective maps
 let miscPOI = {};
-class Marker {
-    constructor(id, item, loc, uniqueDesc) {
-        this.id = id;
-        if (item instanceof Item) {
-            this.title = item.title ?? "";
-            this.desc = item.desc ?? "";
-            this.icon = item.icon ?? generalIcon;
-        }
-        //Override static description with unique description
-        if (uniqueDesc) this.desc = uniqueDesc;
-        // Could do map in the future depending on how the data structure needs to change
-        /* this.map = map; */
-        this.loc = loc ?? [0, 0];
-    }
-}
 
 /////////////////////Round Based Misc Items/////////////////////////
 miscPOI[mapStrings.dieMaschine] = [/*TODO*/];
@@ -26,30 +11,30 @@ miscPOI[mapStrings.dieMaschineUnderground] = [/*TODO*/];
 miscPOI[mapStrings.firebaseZ] = [/*TODO*/];
 miscPOI[mapStrings.firebaseZSpawn] = [/*TODO*/];
 miscPOI[mapStrings.mauerDerToten] = [
-    new Marker("", miscTypes.ammoCrate, [-75.66101239554577, 83.375]),
-    new Marker("", miscTypes.ammoCrate, [-99.28174389950158, 153.8789236277639]),
-    new Marker("", miscTypes.ammoCrate, [-152.0086771136351, 112.42974680404187]),
+    new Marker("Vz7PI", miscTypes.ammoCrate, [-75.66101239554577, 83.375]),
+    new Marker("lgFlW", miscTypes.ammoCrate, [-99.28174389950158, 153.8789236277639]),
+    new Marker("028Bw", miscTypes.ammoCrate, [-152.0086771136351, 112.42974680404187]),
     
-    new Marker("", miscTypes.craftingTable, [-102.27888356710085, 99.75]),
-    new Marker("", miscTypes.arsenal, [-161.3178987326527, 104.42802685762481]),
-    new Marker("", miscTypes.mysteryBox, [-66.66136443645661, 109.5]),
-    new Marker("", miscTypes.perkMachine, [-101.64992310685368, 134.375], "Mule Kick"),
-    new Marker("", miscTypes.perkMachine, [-128.9423486687295, 106.49040592389237], "Elemental Pop"),
-    new Marker("", miscTypes.zipline, [-182.69490096533323, 87.42872558585674]),
+    new Marker("qXZCX", miscTypes.craftingTable, [-102.27888356710085, 99.75]),
+    new Marker("2Z69d", miscTypes.arsenal, [-161.3178987326527, 104.42802685762481]),
+    new Marker("rvI3J", miscTypes.mysteryBox, [-66.66136443645661, 109.5]),
+    new Marker("lUa4E", miscTypes.perkMachine, [-101.64992310685368, 134.375], "Mule Kick"),
+    new Marker("mYtJL", miscTypes.perkMachine, [-128.9423486687295, 106.49040592389237], "Elemental Pop"),
+    new Marker("htMzr", miscTypes.zipline, [-182.69490096533323, 87.42872558585674]),
     
-    new Marker("", miscTypes.wallbuy, [-89.40617183302145, 100.375], "Krig 6"),
-    new Marker("", miscTypes.wallbuy, [-112.02127068240351, 156], "M16"),
-    new Marker("", miscTypes.wallbuy, [-123.7682783346612, 103.10930548894439], "Milano 821"),
-    new Marker("", miscTypes.wallbuy, [-176.43757411387597, 98.42673689781202], "XM4"),
-    new Marker("", miscTypes.power, [-114.27162272331438, 103.23433236310714], "2 fuses are required to activate."),
+    new Marker("qUsdq", miscTypes.wallbuy, [-89.40617183302145, 100.375], "Krig 6"),
+    new Marker("_MhF2", miscTypes.wallbuy, [-112.02127068240351, 156], "M16"),
+    new Marker("9iDLM", miscTypes.wallbuy, [-123.7682783346612, 103.10930548894439], "Milano 821"),
+    new Marker("6n4vD", miscTypes.wallbuy, [-176.43757411387597, 98.42673689781202], "XM4"),
+    new Marker("ROB5S", miscTypes.power, [-114.27162272331438, 103.23433236310714], "2 fuses are required to activate."),
 ];
 miscPOI[mapStrings.mauerDerTotenStreets] = [
-    new Marker("", miscTypes.ammoCrate, [-142.88592137444184, 52.11727367820464]),
-    new Marker("", miscTypes.ammoCrate, [-106.77844351596228, 85.74172275786793]),
-    new Marker("", miscTypes.wunderFizz, [-97.90163930629413, 28.60234508078787]),
-    new Marker("", miscTypes.papMachine, [-130.0202585647848, 98.36943704830733]),
-    new Marker("", miscTypes.zipline, [-163.38575346019158, 51.854360642995346]),
-    new Marker("", miscTypes.trialComputer, [-129.51562992162457, 19.797826707129513]),
+    new Marker("WLKGz", miscTypes.ammoCrate, [-142.88592137444184, 52.11727367820464]),
+    new Marker("O9joh", miscTypes.ammoCrate, [-106.77844351596228, 85.74172275786793]),
+    new Marker("Awvc5", miscTypes.wunderFizz, [-97.90163930629413, 28.60234508078787]),
+    new Marker("7EMcB", miscTypes.papMachine, [-130.0202585647848, 98.36943704830733]),
+    new Marker("7_Xve", miscTypes.zipline, [-163.38575346019158, 51.854360642995346]),
+    new Marker("slGlH", miscTypes.trialComputer, [-129.51562992162457, 19.797826707129513]),
 ];
 
 /////////////////////Outbreak Misc Items/////////////////////////

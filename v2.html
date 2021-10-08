@@ -9,15 +9,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>DECLASSIFIED - Cold War Intel Map</title>
-    <meta name="description" content="With The Cold War Collectables Map you can track your progress on which intel you still need to collect.">
+    <meta name="description"
+        content="With The Cold War Collectables Map you can track your progress on which intel you still need to collect.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/style/style2.css">
     <link rel="icon" href="./favicon-32x32.png" type="image/png">
 
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
     <script src="https://kit.fontawesome.com/d8228dcdfd.js" crossorigin="anonymous"></script>
     <script>
         var debug = false
@@ -31,15 +36,18 @@
         <div class="dropdown dropbtn">
             Die Maschine
             <div class="dropdown-content">
-                <div id="dieMaschine" class="dropdown-item not-selectable" onClick="setMap('dieMaschine',this,true)">Die Maschine Surface</div>
-                <div id="dieMaschine_underground" class="dropdown-item not-selectable" onClick="setMap('dieMaschine_underground',this,true)">Die Maschine Underground</div>
+                <div id="dieMaschine" class="dropdown-item not-selectable" onClick="setMap('dieMaschine',this,true)">Die
+                    Maschine Surface</div>
+                <div id="dieMaschine_underground" class="dropdown-item not-selectable"
+                    onClick="setMap('dieMaschine_underground',this,true)">Die Maschine Underground</div>
             </div>
         </div>
 
         <div class="dropdown dropbtn">
             Firebase Z
             <div class="dropdown-content">
-                <div id="firebaseZ_spawn" class="dropdown-item not-selectable" onClick="setMap('firebaseZ_spawn',this,true)">Firebase Z Spawn</div>
+                <div id="firebaseZ_spawn" class="dropdown-item not-selectable"
+                    onClick="setMap('firebaseZ_spawn',this,true)">Firebase Z Spawn</div>
                 <div id="firebaseZ" class="dropdown-item not-selectable" onClick="setMap('firebaseZ',this,true)">
                     Firebase Z Main Base</div>
             </div>
@@ -48,8 +56,10 @@
         <div class="dropdown dropbtn">
             Mauer Der Toten
             <div class="dropdown-content">
-                <div id="mauerDerToten_streets" class="dropdown-item not-selectable" onClick="setMap('mauerDerToten_streets',this,true)">Mauer Der Toten Streets</div>
-                <div id="mauerDerToten" class="dropdown-item not-selectable" onClick="setMap('mauerDerToten',this,true)">
+                <div id="mauerDerToten_streets" class="dropdown-item not-selectable"
+                    onClick="setMap('mauerDerToten_streets',this,true)">Mauer Der Toten Streets</div>
+                <div id="mauerDerToten" class="dropdown-item not-selectable"
+                    onClick="setMap('mauerDerToten',this,true)">
                     Mauer Der Toten Underground</div>
             </div>
         </div>
@@ -72,7 +82,8 @@
             Contribute
             <div class="dropdown-content">
                 <div id="newIntel" class="dropdown-item not-selectable" onClick="newIntelInit()">Submit New Intel</div>
-                <div id="newMisc" class="dropdown-item not-selectable" onClick="newMiscInit()">Submit New Misc Marker</div>
+                <div id="newMisc" class="dropdown-item not-selectable" onClick="newMiscInit()">Submit New Misc Marker
+                </div>
             </div>
         </div>
     </header>
@@ -83,8 +94,10 @@
         <div><button class="btn ui" onclick="openModal()"><i class="bi bi-folder-fill"></i> </button></div>
         <div>
             <button class="btn ui" onclick="toggleDarkMode()"><i class="fas fa-moon"></i> </button>
-            <a title="Join us on discord!" href="https://discord.gg/4Xqj8XntFe" target="_blank" class="btn ui" id="discord"><i class="fab fa-discord"></i> </a>
-            <a title="Help us out on Github!" href="https://github.com/Miss-placed/DECLASSIFIED" target="_blank" class="btn ui" id="github"><i class="bi bi-github"></i> </a>
+            <a title="Join us on discord!" href="https://discord.gg/4Xqj8XntFe" target="_blank" class="btn ui"
+                id="discord"><i class="fab fa-discord"></i> </a>
+            <a title="Help us out on Github!" href="https://github.com/Miss-placed/DECLASSIFIED" target="_blank"
+                class="btn ui" id="github"><i class="bi bi-github"></i> </a>
         </div>
     </div>
 
@@ -93,11 +106,16 @@
 
         <div class="modal" id="intel-type">
             <select class="faction-list">
-                <option value="All-F"><img class="list-icon" src="/assets/img/icons/faction-requiem-icon.png" alt=""> All Factions</option>
-                <option value="Requiem"><img class="list-icon" src="/assets/img/icons/faction-requiem-icon.png" alt=""> Requiem</option>
-                <option value="Omega"><img class="list-icon" src="/assets/img/icons/faction-omega-icon.png" alt=""> Omega</option>
-                <option value="Maxis"><img class="list-icon" src="/assets/img/icons/faction-maxis-icon.png" alt=""> Maxis</option>
-                <option value="DarkAether"><img class="list-icon" src="/assets/img/icons/faction-darkAether-icon.png" alt=""> Dark Aether</option>
+                <option value="All-F"><img class="list-icon" src="/assets/img/icons/faction-requiem-icon.png" alt="">
+                    All Factions</option>
+                <option value="Requiem"><img class="list-icon" src="/assets/img/icons/faction-requiem-icon.png" alt="">
+                    Requiem</option>
+                <option value="Omega"><img class="list-icon" src="/assets/img/icons/faction-omega-icon.png" alt="">
+                    Omega</option>
+                <option value="Maxis"><img class="list-icon" src="/assets/img/icons/faction-maxis-icon.png" alt="">
+                    Maxis</option>
+                <option value="DarkAether"><img class="list-icon" src="/assets/img/icons/faction-darkAether-icon.png"
+                        alt=""> Dark Aether</option>
             </select>
             <div>
                 <button class="btn type" type="Documents" value="5 / 10"></button>
@@ -136,7 +154,8 @@
                 <button class="close-submodal btn inverted" onclick="switchmodal()"><i class="bi bi-x"></i></button>
                 <h2>INTEL NOT FOUND</h2>
                 <p>If you see this please report an issue on the github page.</p>
-                <button class="btn inverted locate-intel" id="locate-intel"> Locate Intel&MediumSpace;<i class="bi bi-geo-alt-fill"></i></button>
+                <button class="btn inverted locate-intel" id="locate-intel"> Locate Intel&MediumSpace;<i
+                        class="bi bi-geo-alt-fill"></i></button>
                 <button class="btn inverted">&#8288;<i class="bi bi-bug-fill"></i>&#8288;</button>
             </div>
         </div>
@@ -144,17 +163,22 @@
         <!-- displays totals as a list and as donuts, includes searchbar -->
         <div class="modal" id="intel-stats">
             <div class="sub-modal ">
-                <div id="search-form"><input type="search" placeholder="Search Intel..."><button class="btn inverted"><i class="bi bi-search"></i></button></div>
+                <div id="search-form"><input type="search" placeholder="Search Intel..."><button class="btn inverted"><i
+                            class="bi bi-search"></i></button></div>
                 <div id="faction-donut" class="graph "></div>
                 <div id="totals">
                     <ul id="icons-faction">
-                        <li><img class="faction-list-icon " src="assets/img/icons/faction-requiem-icon.png " alt="Requiem total ">
+                        <li><img class="faction-list-icon " src="assets/img/icons/faction-requiem-icon.png "
+                                alt="Requiem total ">
                         </li>
-                        <li><img class="faction-list-icon " src="assets/img/icons/faction-omega-icon.png " alt="Omega total ">
+                        <li><img class="faction-list-icon " src="assets/img/icons/faction-omega-icon.png "
+                                alt="Omega total ">
                         </li>
-                        <li><img class="faction-list-icon " src="assets/img/icons/faction-maxis-icon.png " alt="Maxis total ">
+                        <li><img class="faction-list-icon " src="assets/img/icons/faction-maxis-icon.png "
+                                alt="Maxis total ">
                         </li>
-                        <li><img class="faction-list-icon " src="assets/img/icons/faction-darkAether-icon.png " alt="Dark aether total ">
+                        <li><img class="faction-list-icon " src="assets/img/icons/faction-darkAether-icon.png "
+                                alt="Dark aether total ">
                         </li>
                     </ul>
 
@@ -168,24 +192,30 @@
             </div>
         </div>
     </section>
-
+    <!-- Notifications -->
+    <section id="notification-popup"></section>
+    <section id="error-notif">
+        <h1 id="title">ERROR</h1>
+        <p id="error-p"></p>
+        <button id="error-button"></button>
+    </section>
 
     <!-- scripts -->
     <script src="" async defer></script>
     <!-- js for generating the Donut in the stats modal -->
     <script src="assets/js/donut.js"></script>
-    
-    <script src="assets/js/userPrefs.js"></script>
-    <script src="assets/js/darkmode.js"></script>
     <script src="assets/js/icons.js"></script>
     <script src="assets/js/models.js"></script>
+
+    <script src="assets/js/userPrefs.js"></script>
+    <script src="assets/js/darkmode.js"></script>
+    <script src="poi/miscV2.js"></script>
     <script src="poi/poiV2.js"></script>
     <script src="assets/js/maps.js"></script>
     <script src="assets/js/mapUtils.js"></script>
     <script src="assets/js/utils.js"></script>
     <script src="assets/js/listgeneration.js"></script>
     <script src="assets/js/filtering.js"></script>
-    <script src="poi/miscV2.js"></script>
     <script src="assets/js/index.js"></script>
     <script src="assets/js/v2.js"></script>
 </body>

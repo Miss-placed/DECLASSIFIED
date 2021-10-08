@@ -1,13 +1,28 @@
-//Store and Retrieve user preferences from localStorage
-class UserPrefs {
-    constructor({lastSelectedMap, collectedIntel, darkmode}) {
-        this.lastSelectedMap = lastSelectedMap ?? app.currentMap;
-        this.collectedIntel = collectedIntel ?? [];
-        this.darkmode = darkmode ?? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    }
+// SHOULD BE VERY START OF APP JS THAT ISN'T MODELS/CONSTANTS
+const app = StartupSettings();
+const userPrefs = userPrefsStartup();
+
+function StartupSettings() {
+    let response;
+    
+    let disableMarkers = [],
+    visibleMarkers = [];
+    //Use default latest map otherwise use last selected map of user
+    let currentMap = mapStrings.armada;
+    let currentContribType;
+    if (localStorage.declassifiedPrefs != undefined && JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap)
+    currentMap = JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap;
+    
+    let isMobile = false,
+    submittingLocation = false,
+    fixedNotification = false;
+    let notificationEle = document.getElementById("notification-popup");
+    return response = { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingLocation, currentContribType, fixedNotification };
 }
+
+//Store and Retrieve user preferences from localStorage
 function userPrefsStartup() {
-    var userPrefs = new UserPrefs(JSON.parse(localStorage.getItem("declassifiedPrefs")));
+    var userPrefs = new UserPrefs(JSON.parse(localStorage.getItem("declassifiedPrefs")) ?? {});
 
     localStorage.setItem("declassifiedPrefs", JSON.stringify(userPrefs));
     return userPrefs;
@@ -65,3 +80,4 @@ function toggleDarkMode() {
     setUserPrefs(currentPrefs);
     location.reload();
 }
+
