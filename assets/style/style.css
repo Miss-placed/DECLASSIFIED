@@ -99,10 +99,11 @@ header {
     background: #2d2d2d;
     color: #e8e8d3;
     font-family: sans-serif;
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
     border-bottom: 1px solid #e8e8d3;
     user-select: none;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 header>div,
@@ -199,6 +200,7 @@ header>div:hover,
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    margin-top: 32px;
 }
 
 
@@ -206,6 +208,13 @@ header>div:hover,
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.dropdown.dropbtn {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
 }
 
 .current-map {
