@@ -25,10 +25,11 @@ class Marker {
 }
 
 class UserPrefs {
-    constructor({lastSelectedMap, collectedIntel, darkmode}) {
+    constructor({lastSelectedMap, collectedIntel, darkmode, asideShow}) {
         this.lastSelectedMap = lastSelectedMap ?? app.currentMap;
         this.collectedIntel = collectedIntel ?? [];
         this.darkmode = darkmode ?? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        this.asideShow = asideShow ?? true;
     }
 }
 
@@ -100,6 +101,15 @@ const seasons = {
     season6: "Season 6",
 }
 
+const perks = {
+    staminup: "Stamin-Up",
+    jugg: "Jugger-Nog",
+    speed: "Speed Cola",
+    mule: "Mule Kick",
+    elemental: "Elemental Pop",
+    death: "Death Perception",
+    tomb: "Tombstone",
+}
 
 /////////////////////Markers/////////////////////////
 const markerTypes = {

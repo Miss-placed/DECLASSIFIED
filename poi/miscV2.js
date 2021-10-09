@@ -6,8 +6,37 @@
 let miscPOI = {};
 
 /////////////////////Round Based Misc Items/////////////////////////
-miscPOI[mapStrings.dieMaschine] = [/*TODO*/];
-miscPOI[mapStrings.dieMaschineUnderground] = [/*TODO*/];
+miscPOI[mapStrings.dieMaschine] = [
+    new Marker("", miscTypes.craftingTable, [-136.5233027437026, 156.62646537136334]),
+    new Marker("", miscTypes.rampageInducer, [-162.38736070793146, 148.98356235601133]),
+    
+    new Marker("", miscTypes.ammoCrate, [-169.38704934919, 146.75]),
+    new Marker("", miscTypes.mysteryBox, [-152.76796516527764, 172]),
+    new Marker("", miscTypes.radio, [-134.72470912538628, 168.75], "Exfill Radio"),
+    new Marker("", miscTypes.radio, [-161.4085840200393, 128.125], "Requiem Radio"),
+
+    new Marker("", miscTypes.wallbuy, [-125.44612674407716, 177.5], "1911"),
+    new Marker("", miscTypes.wallbuy, [-117.64812482442176, 127.875], "MP5"),
+    new Marker("", miscTypes.ammoCrate, [-130.76734244779473, 150.625]),
+    new Marker("", miscTypes.perkMachine, [-130.01760932671598, 174.875], perks.staminup),
+    new Marker("", miscTypes.mysteryBox, [-62.91649499016762, 143.625]),
+    new Marker("", miscTypes.perkMachine, [-74.91222492742766, 129.875], perks.jugg),
+    new Marker("", miscTypes.ammoCrate, [-88.1361398539189, 131.9375]),
+    new Marker("", miscTypes.wallbuy, [-85.51207393014327, 159.375], "Gallo"),
+    new Marker("", miscTypes.trialComputer, [-141.8944329993445, 152]),
+    new Marker("", miscTypes.mysteryBox, [0, 0]),
+    new Marker("", miscTypes.mysteryBox, [0, 0]),
+    new Marker("", miscTypes.mysteryBox, [0, 0]),
+    new Marker("", miscTypes.mysteryBox, [0, 0]),
+    new Marker("", miscTypes.mysteryBox, [0, 0]),
+];
+miscPOI[mapStrings.dieMaschineUnderground] = [
+    new Marker("", miscTypes.craftingTable, [-104.52748384680213, 99.75]),
+    new Marker("", miscTypes.wallbuy, [-93.28148703062084, 94.125], "XM4"),
+    new Marker("", miscTypes.mysteryBox, [0, 0]),
+    new Marker("", miscTypes.mysteryBox, [0, 0]),
+    new Marker("", miscTypes.mysteryBox, [0, 0]),
+];
 miscPOI[mapStrings.firebaseZ] = [/*TODO*/];
 miscPOI[mapStrings.firebaseZSpawn] = [/*TODO*/];
 miscPOI[mapStrings.mauerDerToten] = [
@@ -18,8 +47,8 @@ miscPOI[mapStrings.mauerDerToten] = [
     new Marker("qXZCX", miscTypes.craftingTable, [-102.27888356710085, 99.75]),
     new Marker("2Z69d", miscTypes.arsenal, [-161.3178987326527, 104.42802685762481]),
     new Marker("rvI3J", miscTypes.mysteryBox, [-66.66136443645661, 109.5]),
-    new Marker("lUa4E", miscTypes.perkMachine, [-101.64992310685368, 134.375], "Mule Kick"),
-    new Marker("mYtJL", miscTypes.perkMachine, [-128.9423486687295, 106.49040592389237], "Elemental Pop"),
+    new Marker("lUa4E", miscTypes.perkMachine, [-101.64992310685368, 134.375], perks.mule),
+    new Marker("mYtJL", miscTypes.perkMachine, [-128.9423486687295, 106.49040592389237], perks.elemental),
     new Marker("htMzr", miscTypes.zipline, [-182.69490096533323, 87.42872558585674]),
     
     new Marker("qUsdq", miscTypes.wallbuy, [-89.40617183302145, 100.375], "Krig 6"),
@@ -43,10 +72,10 @@ miscPOI[mapStrings.mauerDerTotenStreets] = [
     new Marker("X3VOB", miscTypes.mysteryBox, [-197.62074771636617, 206.875]),
     new Marker("ePWVb", miscTypes.mysteryBox, [-206.62890255878156, 135.5625]),
     new Marker("N8ZNs", miscTypes.mysteryBox, [-117.50473865594486, 134.625]),
-    new Marker("5Jio9", miscTypes.perkMachine, [-91.94925747160512, 193.0625], "JuggerNog"),
-    new Marker("npHck", miscTypes.perkMachine, [-178.51449389486947, 150], "Speed Cola"),
-    new Marker("YWNji", miscTypes.perkMachine, [-196.05916371755202, 182.25], "Staminup"),
-    new Marker("kU1ty", miscTypes.perkMachine, [-110.94089649997221, 192.125], "Tombstone"),
+    new Marker("5Jio9", miscTypes.perkMachine, [-91.94925747160512, 193.0625], perks.jugg),
+    new Marker("npHck", miscTypes.perkMachine, [-178.51449389486947, 150], perks.speed),
+    new Marker("YWNji", miscTypes.perkMachine, [-196.05916371755202, 182.25], perks.staminup),
+    new Marker("kU1ty", miscTypes.perkMachine, [-110.94089649997221, 192.125], perks.tomb),
     new Marker("7_Xve", miscTypes.zipline, [-163.38575346019158, 51.854360642995346]),
     new Marker("iSOF5", miscTypes.zipline, [-176.64015397157732, 169.125]),
     new Marker("PYHwG", miscTypes.zipline, [-155.52259083581924, 153]),
