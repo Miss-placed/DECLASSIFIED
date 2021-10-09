@@ -2,11 +2,11 @@ var globalMapSettings = {
     prefix: false,
     attribution: `Want to help out? <a href="${repoDomain}">Github</a>. ||  See all <a href="${repoDomain}#contributors">Contributors</a>`,
     id: '',
-    tileSize: 512,
+    tileSize: 0,
     zoomOffset: -1,
     bounds: [
-        [-256, 0],
-        [768, 256]
+        [0, 0],
+        [512, 512]
     ],
 }
 
@@ -34,9 +34,15 @@ function generateLayers(name, settings) {
         Layer: new L.LayerGroup(),
         Markers: new L.LayerGroup(),
         MiscMarkers: new L.LayerGroup(),
-        Tiles: L.tileLayer(`./maps/${name}/${lightModeClass}{z}/{x}_{y}.png`, settings)
+        //Tiles: L.tileLayer(`./maps/${name}/${lightModeClass}{z}/{x}_{y}.png`, settings)
     }
-    object.Tiles.addTo(object.Layer);
+    var imageUrl = './maps/ruka/Ruka.svg',
+    imageBounds = [
+      [0, 0],
+      [512, 512]
+    ];
+    //object.Tiles.addTo(object.Layer);
+    L.imageOverlay(imageUrl, imageBounds).addTo(object.Layer);
     object.Markers.addTo(object.Layer);
     object.MiscMarkers.addTo(object.Layer);
     return object
