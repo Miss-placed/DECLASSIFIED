@@ -1,10 +1,10 @@
 function InitMap() {
     return L.map('worldMap', {
         crs: L.CRS.Simple,
-        center: [-(256 / 2), 256 / 2],
+        center: [256, 256],
         maxBounds: [
             [0, 0],
-            [-512 / 2, 512 / 2]
+            [1024, 1024]
         ],
         zoom: 2,
         maxZoom: 5,
