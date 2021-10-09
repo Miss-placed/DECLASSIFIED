@@ -73,7 +73,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Endstation Approval Letter",
         "desc": "Drops from a Megaton."
@@ -82,7 +82,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Spacetime Breach Sketch",
         "desc": "Drops from a Megaton."
@@ -91,7 +91,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "D.I.E. Blueprint",
         "desc": "Drops from a Megaton."
@@ -100,7 +100,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Der Wechsler Blueprint",
         "desc": "Drops from a Megaton."
@@ -109,7 +109,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "V Cipher #1",
         "desc": "Drops from a Megaton."
@@ -118,7 +118,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "V Cipher #2",
         "desc": "Drops from a Megaton."
@@ -127,7 +127,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.preseason,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Officer Weaver",
         "desc": "You can only get one radio transmission per game."
@@ -136,7 +136,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.preseason,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Doctor Grey",
         "desc": "You can only get one radio transmission per game."
@@ -154,7 +154,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.preseason,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Doctor Strauss",
         "desc": "You can only get one radio transmission per game."
@@ -163,7 +163,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.preseason,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Aetherium",
         "desc": "You can only get one radio transmission per game."
@@ -172,7 +172,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.preseason,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Major Carver",
         "desc": "You can only get one radio transmission per game."
@@ -181,7 +181,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.preseason,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "New Arms Race",
         "desc": "You can only get one radio transmission per game."
@@ -190,7 +190,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.preseason,
         "intelType": intelTypes.artifact,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "D.I.E. Remote Control",
         "desc": "Gotten as part of the free D.I.E Machine Quest"
@@ -199,7 +199,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.preseason,
         "intelType": intelTypes.artifact,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "D.I.E. Machine",
         "desc": "Get the free D.I.E Machine from the quest("
@@ -208,7 +208,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.preseason,
         "intelType": intelTypes.artifact,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Aetherscope",
         "desc": "Part of the main quest. You have to craft it."
@@ -217,7 +217,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.preseason,
         "intelType": intelTypes.artifact,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Doctor Vogel's Diary",
         "desc": "When you have crafted the Aetherscope, it can be found in the Dark Aether next to the computer in the med bay."
@@ -226,7 +226,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.preseason,
         "intelType": intelTypes.artifact,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Decontamination Agent",
         "desc": "In a cabinet in the med bay. Obtained during the main quest."
@@ -280,7 +280,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Doctor Vogel Entry 203",
         "desc": "Obtained from megaton drop."
@@ -289,7 +289,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "outbreak Zones Timeline",
         "desc": "Obtained from a Mimic drop."
@@ -298,7 +298,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Requiem Formation Memo",
         "desc": "Obtained from a Mimic drop."
@@ -307,7 +307,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Requiem Staffing Announcement",
         "desc": "Obtained from a Mimic drop."
@@ -316,7 +316,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "C Cipher",
         "desc": "Obtained from a Mimic drop."
@@ -325,7 +325,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Omega's Advantage",
         "desc": ""
@@ -334,7 +334,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "This Is Personal",
         "desc": ""
@@ -343,7 +343,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Peck",
         "desc": ""
@@ -352,7 +352,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Between Us",
         "desc": ""
@@ -361,7 +361,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "W.A.N.D.",
         "desc": ""
@@ -370,7 +370,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Stick",
         "desc": ""
@@ -379,7 +379,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Blacksmiths and Architects",
         "desc": ""
@@ -388,7 +388,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Not Unlike Oxygen",
         "desc": ""
@@ -397,7 +397,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "A Storied Career",
         "desc": ""
@@ -406,7 +406,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "The Thick Of It",
         "desc": ""
@@ -415,7 +415,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Transformative Properties",
         "desc": ""
@@ -424,7 +424,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Genetic Secrets",
         "desc": ""
@@ -532,7 +532,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "RE: Funding Allocation 1",
         "desc": ""
@@ -541,7 +541,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "RE: Funding Allocation 2",
         "desc": ""
@@ -550,7 +550,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Berlin COMINT",
         "desc": ""
@@ -559,7 +559,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Operation Threshold Authorization",
         "desc": ""
@@ -568,7 +568,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Domino Effect",
         "desc": ""
@@ -577,7 +577,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Recon Rover Blueprint",
         "desc": ""
@@ -586,7 +586,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Disruptor Satellite Blueprint",
         "desc": ""
@@ -595,7 +595,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Nose To Nose",
         "desc": ""
@@ -604,7 +604,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Race Against Time",
         "desc": ""
@@ -613,7 +613,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "How We Win",
         "desc": ""
@@ -622,7 +622,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Under Observation",
         "desc": ""
@@ -631,7 +631,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season2,
         "intelType": intelTypes.artifact,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Zombie Head",
         "desc": "Collected through the Defence objective."
@@ -739,7 +739,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Extraction Rocket Blueprint",
         "desc": ""
@@ -748,7 +748,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Dark Aether Object Report",
         "desc": ""
@@ -757,7 +757,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Crate Memo",
         "desc": ""
@@ -766,7 +766,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "E.C.M. Blueprint",
         "desc": ""
@@ -775,7 +775,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Investigation Request",
         "desc": ""
@@ -784,7 +784,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Zykov Assessment",
         "desc": ""
@@ -793,7 +793,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Power Nodes Report",
         "desc": ""
@@ -802,7 +802,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "J Cipher",
         "desc": ""
@@ -811,7 +811,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Progress Update",
         "desc": ""
@@ -820,7 +820,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "A Visceral Process",
         "desc": ""
@@ -829,7 +829,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Fish Out Of Water",
         "desc": ""
@@ -838,7 +838,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Commander-In-Chief",
         "desc": ""
@@ -946,7 +946,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season4,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "DASA Station Blueprint",
         "desc": ""
@@ -955,7 +955,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season4,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "The Omega Eight",
         "desc": ""
@@ -964,7 +964,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season4,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.sanatorium,
         "name": "The Child's Note",
         "desc": "Obtained during the Outbreak EE#2"
@@ -973,7 +973,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season4,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Welcome Back",
         "desc": ""
@@ -982,7 +982,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season4,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Patterns",
         "desc": ""
@@ -1072,7 +1072,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Dark Aether Vortex Report",
         "desc": "Dropped from Special/Elite kills or golden chests"
@@ -1081,7 +1081,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Krafft Journal Page",
         "desc": "Dropped from Special/Elite kills or golden chests"
@@ -1090,7 +1090,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Outbreak Expansions Report",
         "desc": "Dropped from Special/Elite kills or golden chests"
@@ -1099,7 +1099,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Krafft Journal Page 2",
         "desc": "Dropped from Special/Elite kills or golden chests"
@@ -1108,7 +1108,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Operation First Domino",
         "desc": "Dropped from Special/Elite kills or golden chests"
@@ -1117,7 +1117,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Updates",
         "desc": ""
@@ -1126,7 +1126,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Busy Bees",
         "desc": ""
@@ -1135,7 +1135,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Walking Notso",
         "desc": ""
@@ -1144,7 +1144,7 @@ const intelStoreV2 = [{
         "faction": factions.requiem,
         "season": seasons.season5,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Act Three Time",
         "desc": ""
@@ -1234,7 +1234,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "An Explanation",
         "desc": "Drops from a Megaton."
@@ -1243,7 +1243,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Befor The Devil Arrives",
         "desc": "Drops from a Megaton."
@@ -1252,7 +1252,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "K Cipher",
         "desc": "Drops from a Megaton."
@@ -1261,7 +1261,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "G Cipher",
         "desc": "Drops from a Megaton."
@@ -1270,7 +1270,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.preseason,
         "intelType": intelTypes.artifact,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Orlov Family Photo",
         "desc": "Collected in the radio station in nacht at the end of the main quest."
@@ -1351,7 +1351,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season1,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "To Dust You Will Return",
         "desc": "Inside the OPC(part of the main quest)."
@@ -1369,7 +1369,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Omega Group Formation",
         "desc": "Drops from a Megaton"
@@ -1378,7 +1378,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Operation Undertaker",
         "desc": "Drops from a Megaton"
@@ -1387,7 +1387,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Khe Sanh Site",
         "desc": "Drops from a Megaton"
@@ -1396,7 +1396,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Authorization to Conscript",
         "desc": "Drops from a Mimic or Mangler"
@@ -1405,7 +1405,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "omega Teleport Blueprint",
         "desc": "Drops from a Mimic or Mangler"
@@ -1414,7 +1414,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Aetherium Production Report",
         "desc": "Drops from a Mimic or Mangler"
@@ -1423,7 +1423,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Specimen K7-1924",
         "desc": "Drops from a Mimic or Mangler"
@@ -1432,7 +1432,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "P Cipher",
         "desc": "Drops from a Mimic or Mangler"
@@ -1441,7 +1441,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "G Cipher",
         "desc": "Drops from a Mimic or Mangler"
@@ -1450,7 +1450,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Good Little Lemmings",
         "desc": ""
@@ -1459,7 +1459,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Not Built To Last",
         "desc": ""
@@ -1468,7 +1468,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Do Try To Stay Alive",
         "desc": ""
@@ -1477,7 +1477,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Gorev's Disappointment",
         "desc": ""
@@ -1522,7 +1522,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season1,
         "intelType": intelTypes.artifact,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Aethermeter",
         "desc": "Obtained during the main quest."
@@ -1603,7 +1603,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "New Frontiers",
         "desc": ""
@@ -1612,7 +1612,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "omega Staffing Report",
         "desc": ""
@@ -1621,7 +1621,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "omega Records Review",
         "desc": ""
@@ -1630,7 +1630,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "The Colonel",
         "desc": ""
@@ -1639,7 +1639,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Up To Speed",
         "desc": ""
@@ -1648,7 +1648,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Fiasco",
         "desc": ""
@@ -1657,7 +1657,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Trespassers",
         "desc": ""
@@ -1720,7 +1720,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Boost Module Report",
         "desc": ""
@@ -1729,7 +1729,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Phaze Report",
         "desc": ""
@@ -1738,7 +1738,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Krasny Soldat Blueprint",
         "desc": ""
@@ -1747,7 +1747,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Valentina Diary Entry",
         "desc": ""
@@ -1756,7 +1756,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Operatsiya Inversiya Proposal",
         "desc": ""
@@ -1765,7 +1765,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Aetherium Warhead Blueprint",
         "desc": ""
@@ -1774,7 +1774,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "R Cipher",
         "desc": ""
@@ -1783,7 +1783,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Uncle",
         "desc": ""
@@ -1792,7 +1792,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Made Of Fire",
         "desc": ""
@@ -1801,7 +1801,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Chasing Ghosts",
         "desc": ""
@@ -1810,7 +1810,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Missing Name and Location",
         "desc": ""
@@ -1846,7 +1846,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.artifact,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.ruka,
         "name": "ICBM Launch Key",
         "desc": "Obtained during the outbreak EE."
@@ -1855,7 +1855,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season3,
         "intelType": intelTypes.artifact,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.ruka,
         "name": "Modified Essence Trap",
         "desc": "In a hallway on the ground floor of Silo A, obtained during the outbreak EE."
@@ -1891,7 +1891,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season4,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.sanatorium,
         "name": "The Survivors",
         "desc": "Obtained during the Outbreak EE#2"
@@ -1900,7 +1900,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season4,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.sanatorium,
         "name": "The Device",
         "desc": "Obtained during the Outbreak EE#2"
@@ -1909,7 +1909,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season4,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.sanatorium,
         "name": "The Trap",
         "desc": "Obtained during the Outbreak EE#2"
@@ -1945,7 +1945,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season4,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Ravenov's Burn Notice",
         "desc": "dropped from Special/Elite kills or golden chests"
@@ -1954,7 +1954,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season4,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.sanatorium,
         "name": "Aetherium Neutralizer Blueprint.",
         "desc": "Obtained during the Outbreak EE#2"
@@ -1963,7 +1963,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season4,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Omega's Reputation",
         "desc": "Collected through the Omega Radios in Outbreak"
@@ -1972,7 +1972,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season4,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "The One-Eyed Cowboy",
         "desc": "Collected through the Omega Radios in Outbreak"
@@ -2053,7 +2053,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season5,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Berlin Report",
         "desc": "Dropped from Special/Elite kills or golden chests"
@@ -2062,7 +2062,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season5,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Enemy Engagement Report",
         "desc": "Dropped from Special/Elite kills or golden chests"
@@ -2071,7 +2071,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season5,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Operatsiya Izbavitel Orders",
         "desc": "Dropped from Special/Elite kills or golden chests"
@@ -2080,7 +2080,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season5,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Kravchenko Letter",
         "desc": "Dropped from Special/Elite kills or golden chests"
@@ -2089,7 +2089,7 @@ const intelStoreV2 = [{
         "faction": factions.omega,
         "season": seasons.season5,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Test Site Anna Report",
         "desc": "Dropped from Special/Elite kills or golden chests"
@@ -2170,7 +2170,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "KGB Videotape Note",
         "desc": "Drops from a Megaton."
@@ -2179,7 +2179,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Dieter's Note",
         "desc": "Drops from a Megaton."
@@ -2188,7 +2188,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Message For Weaver",
         "desc": "Drops from a Megaton."
@@ -2197,7 +2197,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.preseason,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Agent maxis",
         "desc": ""
@@ -2206,7 +2206,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.preseason,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Scorpions From Frogs",
         "desc": ""
@@ -2215,7 +2215,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.preseason,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Why You're Here",
         "desc": ""
@@ -2251,7 +2251,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "omega's Portal Blueprint",
         "desc": ""
@@ -2260,7 +2260,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "omega's Propaganda Poster",
         "desc": ""
@@ -2269,7 +2269,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Aetherium Effects Report",
         "desc": ""
@@ -2278,7 +2278,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Aether Reactor Blueprint",
         "desc": ""
@@ -2287,7 +2287,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "The New Threat",
         "desc": ""
@@ -2296,7 +2296,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Divided Loyalties",
         "desc": ""
@@ -2305,7 +2305,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Shared History / Old Friend",
         "desc": ""
@@ -2314,7 +2314,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Code In",
         "desc": ""
@@ -2323,7 +2323,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Relentless",
         "desc": ""
@@ -2332,7 +2332,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Monsters Are Real",
         "desc": ""
@@ -2341,7 +2341,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "The Perpetual Night",
         "desc": ""
@@ -2350,7 +2350,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "The Light Within",
         "desc": ""
@@ -2359,7 +2359,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Blood On My Hands",
         "desc": ""
@@ -2368,7 +2368,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "A Bad Dream",
         "desc": ""
@@ -2422,7 +2422,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "maxis Status Report",
         "desc": ""
@@ -2431,7 +2431,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "maxis Diary Entry",
         "desc": ""
@@ -2440,7 +2440,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "A Tangled Web",
         "desc": ""
@@ -2449,7 +2449,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "I Made A Promise",
         "desc": ""
@@ -2458,7 +2458,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Lab Rat",
         "desc": ""
@@ -2467,7 +2467,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Three Out Of Four",
         "desc": ""
@@ -2476,7 +2476,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Both Ways",
         "desc": ""
@@ -2485,7 +2485,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "I've Changed",
         "desc": ""
@@ -2494,7 +2494,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Why I Fight",
         "desc": ""
@@ -2503,7 +2503,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "True Courage",
         "desc": ""
@@ -2575,7 +2575,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Arrival",
         "desc": ""
@@ -2584,7 +2584,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "maxis Progress Report",
         "desc": ""
@@ -2593,7 +2593,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Quarantine Diary 1",
         "desc": ""
@@ -2602,7 +2602,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Quarantine Diary 2",
         "desc": ""
@@ -2638,7 +2638,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season3,
         "intelType": intelTypes.artifact,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Beacon Listening Device",
         "desc": "Obtained whilst completing an Aether transmission during the outbreak EE."
@@ -2647,7 +2647,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season3,
         "intelType": intelTypes.artifact,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Microfilm Slides",
         "desc": "Obtained by breaking a stone monkey during the outbreak EE."
@@ -2692,7 +2692,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season4,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Quarantine Diary 9",
         "desc": "Dropped from Special/Elite kills or golden chests"
@@ -2746,7 +2746,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season5,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Week 1 Summary",
         "desc": "Dropped from Special/Elite kills or golden chests"
@@ -2755,7 +2755,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season5,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Subject Rules",
         "desc": "Dropped from Special/Elite kills or golden chests"
@@ -2764,7 +2764,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season5,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Weaver Letter",
         "desc": "Dropped from Special/Elite kills or golden chests"
@@ -2773,7 +2773,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season5,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Grey Letter",
         "desc": "Dropped from Special/Elite kills or golden chests"
@@ -2782,7 +2782,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season5,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "New Frequency",
         "desc": ""
@@ -2791,7 +2791,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season5,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Understand Me",
         "desc": ""
@@ -2800,7 +2800,7 @@ const intelStoreV2 = [{
         "faction": factions.maxis,
         "season": seasons.season5,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Power",
         "desc": ""
@@ -2809,7 +2809,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Lost Souls: Johannes",
         "desc": "Obtained through the Challenge Machine"
@@ -2818,7 +2818,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Lost Souls: Mariska",
         "desc": "Obtained through the Challenge Machine"
@@ -2827,7 +2827,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Lost Souls: David",
         "desc": "Obtained through the Challenge Machine"
@@ -2836,7 +2836,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Approach",
         "desc": "Obtained through the Challenge Machine"
@@ -2845,7 +2845,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Lost Souls: Alice",
         "desc": "Obtained through the Challenge Machine"
@@ -2854,7 +2854,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Missing Name and Location",
         "desc": "Obtained through the Challenge Machine"
@@ -2863,7 +2863,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "$!%()$3@!",
         "desc": "Obtained through the Challenge Machine"
@@ -2872,7 +2872,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "I @N#B%D! O% T@#&",
         "desc": "Obtained through the Challenge Machine"
@@ -2881,7 +2881,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Day 13,773",
         "desc": "Obtained through the Challenge Machine"
@@ -2890,7 +2890,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Day 95",
         "desc": "Obtained through the Challenge Machine"
@@ -2899,7 +2899,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Day 175",
         "desc": "Obtained through the Challenge Machine"
@@ -2908,7 +2908,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Day 213",
         "desc": "Obtained through the Challenge Machine"
@@ -2917,7 +2917,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Day 1,646",
         "desc": "Obtained through the Challenge Machine"
@@ -2926,7 +2926,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Day 937",
         "desc": "Obtained through the Challenge Machine"
@@ -2935,7 +2935,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Missing Name and Location",
         "desc": "Obtained through the Challenge Machine"
@@ -2944,7 +2944,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Missing Name and Location",
         "desc": "Obtained through the Challenge Machine"
@@ -2953,7 +2953,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Missing Name and Location",
         "desc": "Obtained through the Challenge Machine"
@@ -2962,7 +2962,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Missing Name and Location",
         "desc": "Obtained through the Challenge Machine"
@@ -2971,7 +2971,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.artifact,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Mutated Fungus",
         "desc": "Obtained during the main quest, on a tree with purple table mushrooms."
@@ -2980,7 +2980,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.artifact,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Plaguehound Gas",
         "desc": "Obtained during the main quest, next to Deadshot Daiquiri."
@@ -2989,7 +2989,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.artifact,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Dark Aether Crystal",
         "desc": "Obtained during hte main quest, collected from the red Aether crystals."
@@ -2998,7 +2998,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.preseason,
         "intelType": intelTypes.artifact,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Dark Aether Wrench",
         "desc": "Obtained during the main quest, gotten from the ghostly figures in the med bay."
@@ -3007,7 +3007,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Lost Souls: Fedorov",
         "desc": "Obtained through the Challenge Machine"
@@ -3016,7 +3016,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Lost Souls: Koslov",
         "desc": "Obtained through the Challenge Machine"
@@ -3025,7 +3025,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Lost Souls: Tobias",
         "desc": "Obtained through the Challenge Machine"
@@ -3034,7 +3034,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Lost Souls: Olga",
         "desc": "Obtained through the Challenge Machine"
@@ -3043,7 +3043,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Missing Name and Location",
         "desc": "Obtained through the Challenge Machine"
@@ -3052,7 +3052,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Missing Name and Location",
         "desc": "Obtained through the Challenge Machine"
@@ -3061,7 +3061,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "My Friend!",
         "desc": "Obtained through the Challenge Machine"
@@ -3070,7 +3070,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Day 291",
         "desc": "Obtained through the Challenge Machine"
@@ -3079,7 +3079,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Day 3,789",
         "desc": "Obtained through the Challenge Machine"
@@ -3088,7 +3088,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Day 4,01",
         "desc": "Obtained through the Challenge Machine"
@@ -3097,7 +3097,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Day 6,157",
         "desc": "Obtained through the Challenge Machine"
@@ -3106,7 +3106,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Day, 6,289",
         "desc": "Obtained through the Challenge Machine"
@@ -3115,7 +3115,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Day 2,499",
         "desc": "Obtained through the Challenge Machine"
@@ -3124,7 +3124,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Day 6,412",
         "desc": "Obtained through the Challenge Machine"
@@ -3133,7 +3133,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Day 6,416",
         "desc": "Obtained through the Challenge Machine"
@@ -3142,7 +3142,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Day 6,148",
         "desc": "Obtained through the Challenge Machine"
@@ -3151,7 +3151,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Missing Name and Location",
         "desc": "Obtained through the Challenge Machine"
@@ -3160,7 +3160,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Missing Name and Location",
         "desc": "Obtained through the Challenge Machine"
@@ -3169,7 +3169,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Missing Name and Location",
         "desc": "Obtained through the Challenge Machine"
@@ -3178,7 +3178,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Without Orders",
         "desc": ""
@@ -3187,7 +3187,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Missing Name and Location",
         "desc": ""
@@ -3196,7 +3196,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Missing Name and Location",
         "desc": ""
@@ -3205,7 +3205,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Missing Name and Location",
         "desc": ""
@@ -3214,7 +3214,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Missing Name and Location",
         "desc": ""
@@ -3223,7 +3223,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season1,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Missing Name and Location",
         "desc": ""
@@ -3241,7 +3241,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season2,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Lost Souls: Fedorov #2",
         "desc": "Obtained through the Challenge Machine"
@@ -3250,7 +3250,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Day 6,421",
         "desc": "Obtained through the Challenge Machine"
@@ -3259,7 +3259,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Day 6,457",
         "desc": "Obtained through the Challenge Machine"
@@ -3268,7 +3268,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Much More To Tell You",
         "desc": "Obtained through the Challenge Machine"
@@ -3277,7 +3277,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Hello Again",
         "desc": "Obtained through the Challenge Machine"
@@ -3286,7 +3286,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Divided World",
         "desc": "Obtained through the Challenge Machine"
@@ -3295,7 +3295,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Trust Me",
         "desc": "Obtained through the Challenge Machine"
@@ -3304,7 +3304,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season2,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "More To Follow",
         "desc": "Obtained through the Challenge Machine"
@@ -3313,7 +3313,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.dieMaschine,
         "name": "Crooked House",
         "desc": "Obtained through the Challenge Machine"
@@ -3322,7 +3322,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Testing... Testing",
         "desc": "Obtained through the Challenge Machine"
@@ -3331,7 +3331,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season2,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "New Enemies",
         "desc": "Obtained through the Challenge Machine"
@@ -3376,7 +3376,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Lost Souls: Fedorov 1",
         "desc": "Obtained through the Challenge Machine"
@@ -3385,7 +3385,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Lost Souls: Fedorov 2",
         "desc": "Obtained through the Challenge Machine"
@@ -3394,7 +3394,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Lost Souls: Fedorov 3",
         "desc": "Obtained through the Challenge Machine"
@@ -3403,7 +3403,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Great and Terrible.",
         "desc": "Obtained through the Challenge Machine"
@@ -3412,7 +3412,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Day 1",
         "desc": "Obtained through the Challenge Machine"
@@ -3421,7 +3421,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Day 3",
         "desc": "Obtained through the Challenge Machine"
@@ -3430,7 +3430,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Day 7",
         "desc": "Obtained through the Challenge Machine"
@@ -3439,7 +3439,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Day 9",
         "desc": "Obtained through the Challenge Machine"
@@ -3448,7 +3448,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Day 11",
         "desc": "Obtained through the Challenge Machine"
@@ -3457,7 +3457,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Day 12",
         "desc": "Obtained through the Challenge Machine"
@@ -3466,7 +3466,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Who I Am",
         "desc": "Obtained through the Challenge Machine"
@@ -3475,7 +3475,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Great Patriotic",
         "desc": "Obtained through the Challenge Machine"
@@ -3484,7 +3484,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Tethered",
         "desc": "Obtained through the Challenge Machine"
@@ -3493,7 +3493,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Changes",
         "desc": "Obtained through the Challenge Machine"
@@ -3502,7 +3502,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Junkyard",
         "desc": "Obtained through the Challenge Machine"
@@ -3511,7 +3511,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Invasion",
         "desc": "Obtained through the Challenge Machine"
@@ -3520,7 +3520,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Bring Me Home",
         "desc": "Obtained through the Challenge Machine"
@@ -3565,7 +3565,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season3,
         "intelType": intelTypes.artifact,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.ruka,
         "name": "Aetherium Crystal Chunks",
         "desc": "Found by breaking crystals in Silo B during the outbreak EE"
@@ -3583,7 +3583,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season4,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "We Are Waiting",
         "desc": "Obtained Through the challenge machine."
@@ -3592,7 +3592,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season4,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Day 4,513",
         "desc": "Obtained Through the challenge machine."
@@ -3601,7 +3601,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season4,
         "intelType": intelTypes.docs,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Day 4,729",
         "desc": "Obtained Through the challenge machine."
@@ -3610,7 +3610,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season4,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Secret Contact",
         "desc": "Obtained Through the challenge machine."
@@ -3619,7 +3619,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season4,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Bring Me Home 2",
         "desc": "Obtained Through the challenge machine."
@@ -3664,7 +3664,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Lost Souls: Piotr 1",
         "desc": "Obtained Through the challenge machine."
@@ -3673,7 +3673,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season5,
         "intelType": intelTypes.audio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Lost Souls: Piotr 2",
         "desc": "Obtained Through the challenge machine."
@@ -3682,7 +3682,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season5,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "The Machine",
         "desc": "Obtained Through the challenge machine."
@@ -3691,7 +3691,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season5,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Broken Trust",
         "desc": "Obtained Through the challenge machine."
@@ -3700,7 +3700,7 @@ const intelStoreV2 = [{
         "faction": factions.darkAether,
         "season": seasons.season5,
         "intelType": intelTypes.radio,
-        "loc": "[512, 0]",
+        "loc": "[0, 0]",
         "map": mapStrings.allOutbreakMaps,
         "name": "Make This Right",
         "desc": "Obtained Through the challenge machine."
