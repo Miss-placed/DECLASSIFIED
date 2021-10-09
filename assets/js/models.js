@@ -51,7 +51,9 @@ const mapStrings = {
     firebaseZ: "firebaseZ",
     firebaseZSpawn: "firebaseZ_spawn",
     mauerDerToten: "mauerDerToten",
-    mauerDerTotenStreets: "mauerDerToten_streets"
+    mauerDerTotenStreets: "mauerDerToten_streets",
+    forsaken: "forsaken",
+    forsakenUnderground: "forsaken_underground",
 }
 
 const allOutbreakMapsArr = [
