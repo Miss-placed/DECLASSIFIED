@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
+<g>
+	<g id="ArtboardBorder_x2F_Fences">
+		<rect fill="#3C3C3B" width="512" height="512"/>
+	</g>
+	<g id="Ground_Terrain">
+		<path fill="#565555" d="M63.76,392.54H91.7v5.18h36.22l1.55,4.66h83.31v-13.45h8.28v-31.57h-12.42v-54.34H234l40.88-38.81v-19.66
+			h67.27c0,0,35.19-14.49,33.63-43.47h163c0,0,1.04,39.33,46.05,44.5h54.85v19.66l41.4,38.29h27.43v53.82h-14.49v34.67h157.31
+			v-19.67h83.83V574.7h15.01v46.57H960v30.53h-11.9v101.43h-9.83v12.42h9.31v160.42H845.65V765.14h8.8v-10.87h-10.87V651.81h-15.01
+			v14.49h-78.14v30.53H432.19V654.4h-52.78c0,0-61.58-19.67-60.54-76.08v-78.66h4.66V480h-32.6v-18.63h-34.67l-4.66,5.69h-36.74
+			l-1.55-6.73h-30.53v-3.62h-52.78l-3.62,3.62H95.84l-5.17,5.18H64.27L63.76,392.54z"/>
+		<path fill="#3C3C3B" d="M351.47,480.52v14.49h5.17v81.25c0,0,0,40.37,38.81,40.88h36.22v-42.95h318.76v30.02h79.17v16.56h11.9
+			v-47.61h14.49v-83.32h-5.69V468.1H613.82v11.39L351.47,480.52z"/>
+		<polygon fill="#3C3C3B" points="247.71,356.83 283.03,356.83 283.03,342.09 310.97,314.53 371.13,314.53 371.13,355.67 
+			414.6,355.67 414.6,378.96 289.24,378.96 289.24,392.54 247.33,392.54 		"/>
+		<polygon fill="#3C3C3B" points="499.59,356.45 542.67,356.45 542.67,312.98 602.05,312.98 631.16,341.31 631.16,356.45 
+			668.03,356.45 668.03,389.05 612.53,389.05 612.53,380.12 499.98,380.12 		"/>
+	</g>
+	<g id="Fence_6_">
+		
+			<line fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" x1="298.94" y1="416.61" x2="340.86" y2="416.61"/>
+		
+			<line fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" x1="299.72" y1="442.22" x2="340.86" y2="442.22"/>
+		
+			<line fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" x1="316.8" y1="379.35" x2="316.8" y2="416.61"/>
+		
+			<line fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" x1="316.02" y1="442.22" x2="316.02" y2="478.71"/>
+		
+			<line fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" x1="323.39" y1="481.81" x2="351.73" y2="481.81"/>
+		
+			<line fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" x1="414.6" y1="362.27" x2="499.98" y2="362.27"/>
+		
+			<line fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" x1="537.24" y1="404.57" x2="537.24" y2="451.54"/>
+		<line fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" x1="537.62" y1="380.12" x2="537.62" y2="384"/>
+		
+			<line fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" x1="537.24" y1="479.87" x2="537.24" y2="475.6"/>
+		<polyline fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" points="572.55,479.48 572.55,442.22 
+			616.41,442.22 		"/>
+		<polyline fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" points="616.41,415.83 572.55,415.83 
+			572.55,379.73 		"/>
+		
+			<line fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" x1="848.49" y1="392.15" x2="848.49" y2="467.84"/>
+		
+			<line fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" x1="855.86" y1="571.86" x2="882.64" y2="571.86"/>
+		
+			<line fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" x1="910.59" y1="571.86" x2="934.65" y2="571.86"/>
+		<polyline fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" points="843.45,652.2 848.49,652.2 
+			848.49,619.21 841.51,619.21 		"/>
+		
+			<line fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" x1="751.85" y1="604.07" x2="751.85" y2="622.7"/>
+		
+			<line fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" x1="752.63" y1="648.32" x2="752.63" y2="665.78"/>
+		
+			<line fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" stroke-dasharray="3.8811" x1="430.12" y1="654.91" x2="430.12" y2="650.64"/>
+		
+			<line fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" stroke-dasharray="3.8811" x1="430.51" y1="623.09" x2="430.51" y2="617.27"/>
+		
+			<line fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" stroke-dasharray="3.8811" x1="513.17" y1="380.12" x2="513.17" y2="413.11"/>
+		
+			<line fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" stroke-dasharray="3.8811" x1="513.95" y1="446.1" x2="513.95" y2="479.48"/>
+		
+			<rect x="394.03" y="415.05" fill="none" stroke="#6A6A6B" stroke-width="0.7762" stroke-miterlimit="10" stroke-dasharray="3.8811" width="5.82" height="28.33"/>
+	</g>
+	<g id="Buildings_13_">
+		<ellipse fill="#FFFFFF" cx="457.29" cy="279.99" rx="49.68" ry="49.68"/>
+		<circle fill="#FFFFFF" cx="352.5" cy="279.99" r="8.54"/>
+		<circle fill="#FFFFFF" cx="274.88" cy="304.05" r="8.54"/>
+		<circle fill="#FFFFFF" cx="637.37" cy="304.05" r="8.54"/>
+		<circle fill="#FFFFFF" cx="561.3" cy="280.76" r="8.54"/>
+		<rect x="439.44" y="411.17" fill="#FFFFFF" width="29.5" height="24.84"/>
+		<rect x="479.02" y="598.25" fill="#FFFFFF" width="36.48" height="22.51"/>
+		<rect x="479.02" y="648.7" fill="#FFFFFF" width="35.45" height="22.51"/>
+		<rect x="538.53" y="618.17" fill="#FFFFFF" width="25.1" height="34.41"/>
+		<rect x="602.18" y="613.51" fill="#FFFFFF" width="11.13" height="43.21"/>
+		<rect x="645.13" y="621.79" fill="#FFFFFF" width="68.56" height="25.62"/>
+		<rect x="602.7" y="575.22" fill="#FFFFFF" width="10.61" height="4.92"/>
+		<rect x="602.7" y="690.23" fill="#FFFFFF" width="10.61" height="4.92"/>
+		<rect x="742.93" y="411.17" fill="#FFFFFF" width="44.24" height="33.38"/>
+		<polygon fill="#FFFFFF" points="877.21,656.47 915.5,656.47 915.5,673.03 906.19,681.31 888.08,681.31 878.25,674.06 		"/>
+		<polygon fill="#FFFFFF" points="896.88,795.67 876.18,784.81 876.18,755.31 886.01,744.44 905.67,744.44 916.02,755.31 
+			916.02,784.29 		"/>
+	</g>
+	<g id="Deadzone_2_">
+		<path fill="none" stroke="#B33536" stroke-width="2.3287" stroke-miterlimit="10" d="M63.76,392.54H91.7v5.18h36.22l1.55,4.66
+			h83.31v-13.45h8.28v-31.57h-12.42v-54.34H234l40.88-38.81v-19.66h67.27c0,0,35.19-14.49,33.63-43.47h163
+			c0,0,1.04,39.33,46.05,44.5h54.85v19.66l41.4,38.29h27.43v53.82h-14.49v34.67h157.31v-19.67h83.83V574.7h15.01v46.57H960v30.53
+			h-11.9v101.43h-9.83v12.42h9.31v160.42H845.65V765.14h8.8v-10.87h-10.87V651.81h-15.01v14.49h-78.14v30.53H432.19V654.4h-52.78
+			c0,0-61.58-19.67-60.54-76.08v-78.66h4.66V480h-32.6v-18.63h-34.67l-4.66,5.69h-36.74l-1.55-6.73h-30.53v-3.62h-52.78l-3.62,3.62
+			H95.84l-5.17,5.18H64.27L63.76,392.54z"/>
+		<path fill="none" stroke="#B33536" stroke-width="2.3287" stroke-miterlimit="10" d="M351.47,480.52v14.49h5.17v81.25
+			c0,0,0,40.37,38.81,40.88h36.22v-42.95h318.76v30.02h79.17v16.56h11.9v-47.61h14.49v-83.32h-5.69V468.1H613.82v11.39
+			L351.47,480.52z"/>
+		<polygon fill="none" stroke="#B33536" stroke-width="2.3287" stroke-miterlimit="10" points="247.71,356.83 283.03,356.83 
+			283.03,342.09 310.97,314.53 371.13,314.53 371.13,355.67 414.6,355.67 414.6,378.96 289.24,378.96 289.24,392.54 247.33,392.54 
+					"/>
+		<polygon fill="none" stroke="#B33536" stroke-width="2.3287" stroke-miterlimit="10" points="499.59,356.45 542.67,356.45 
+			542.67,312.98 602.05,312.98 631.16,341.31 631.16,356.45 668.03,356.45 668.03,389.05 612.53,389.05 612.53,380.12 
+			499.98,380.12 		"/>
+	</g>
+</g>
+</svg>
