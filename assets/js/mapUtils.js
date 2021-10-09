@@ -4,7 +4,7 @@ function InitMap() {
         center: [256, 256],
         maxBounds: [
             [0, 0],
-            [1024, 1024]
+            [512, 512]
         ],
         zoom: 2,
         maxZoom: 5,
