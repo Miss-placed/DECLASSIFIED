@@ -62,8 +62,8 @@ function onLoad() {
     $('#searchTerm').keyup(function() {
         intelFiltered = TriggerSearch();
     });
-
-
+    //Hide aside if toggled off
+    if (!userPrefs.asideShow) toggleAside(false);
 }
 
 if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
@@ -72,5 +72,5 @@ if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
     sidebar.classList.add("mobile-view");
     worldmap.classList.add("mobile-view");
     app.isMobile = true
-    toggleAside();
+    toggleAside(false);
 }

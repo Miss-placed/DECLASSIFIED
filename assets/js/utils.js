@@ -24,12 +24,17 @@ function goToIntelById(intelId) {
     switchAndFly(matchedIntel.loc, matchedIntel.map);
 }
 
-function toggleAside() {
+function toggleAside(changePrefs = true) {
     let sidebar = document.getElementById("aside")
     let worldmap = document.getElementById("worldMap")
     sidebar.classList.toggle("menu-closed")
     worldmap.classList.toggle("menu-closed")
     window.dispatchEvent(new Event('resize'));
+    if (changePrefs) {
+        let currentPrefs = getUserPrefs();
+        currentPrefs.asideShow = !currentPrefs.asideShow;
+        setUserPrefs(currentPrefs);
+    }
 }
 
 function getUrlVars() {
@@ -67,7 +72,7 @@ function showNotification(message, isStatic = false) {
 function redirectToGithub({ itemId: id = "", itemType, issueType = "New", location }) {
     const domain = `${repoDomain}/issues/new`;
     let assignees = "Odinnh,sol3uk";
-    
+
     const isIntel = (itemType == markerTypes.intel.id);
     const isMisc = (itemType == markerTypes.misc.id);
     let label = ""; issueTemplate = ""; entityName = ""; map = app.currentMap ?? "";
