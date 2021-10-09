@@ -9,7 +9,7 @@ let miscPOI = {};
 miscPOI[mapStrings.dieMaschine] = [
     new Marker("", miscTypes.craftingTable, [-136.5233027437026, 156.62646537136334]),
     new Marker("", miscTypes.rampageInducer, [-162.38736070793146, 148.98356235601133]),
-    
+
     new Marker("", miscTypes.ammoCrate, [-169.38704934919, 146.75]),
     new Marker("", miscTypes.mysteryBox, [-152.76796516527764, 172]),
     new Marker("", miscTypes.radio, [-134.72470912538628, 168.75], "Exfill Radio"),
@@ -43,14 +43,14 @@ miscPOI[mapStrings.mauerDerToten] = [
     new Marker("Vz7PI", miscTypes.ammoCrate, [-75.66101239554577, 83.375]),
     new Marker("lgFlW", miscTypes.ammoCrate, [-99.28174389950158, 153.8789236277639]),
     new Marker("028Bw", miscTypes.ammoCrate, [-152.0086771136351, 112.42974680404187]),
-    
+
     new Marker("qXZCX", miscTypes.craftingTable, [-102.27888356710085, 99.75]),
     new Marker("2Z69d", miscTypes.arsenal, [-161.3178987326527, 104.42802685762481]),
     new Marker("rvI3J", miscTypes.mysteryBox, [-66.66136443645661, 109.5]),
     new Marker("lUa4E", miscTypes.perkMachine, [-101.64992310685368, 134.375], perks.mule),
     new Marker("mYtJL", miscTypes.perkMachine, [-128.9423486687295, 106.49040592389237], perks.elemental),
     new Marker("htMzr", miscTypes.zipline, [-182.69490096533323, 87.42872558585674]),
-    
+
     new Marker("qUsdq", miscTypes.wallbuy, [-89.40617183302145, 100.375], "Krig 6"),
     new Marker("_MhF2", miscTypes.wallbuy, [-112.02127068240351, 156], "M16"),
     new Marker("9iDLM", miscTypes.wallbuy, [-123.7682783346612, 103.10930548894439], "Milano 821"),
@@ -121,7 +121,7 @@ miscPOI[mapStrings.zoo] = [
     new Marker("a84zo", miscTypes.projector, [-135.17490644789868, 147.82830052600463]),
 ];
 miscPOI[mapStrings.duga] = [
-    new Marker("BcM6G", miscTypes.dementedEcho, [-146.8813286930307, 129]),
+    new Marker("BcM6G", miscTypes.dementedEcho, [218.2373426139386, 258]),
     new Marker("X69Ma", miscTypes.dementedEcho, [0, 0]),
     new Marker("M6PhI", miscTypes.dementedEcho, [0, 0]),
     new Marker("ZeAyZ", miscTypes.dementedEcho, [0, 0]),
@@ -130,22 +130,22 @@ miscPOI[mapStrings.duga] = [
     new Marker("xCH_G", miscTypes.dementedEcho, [0, 0]),
     new Marker("a78ns", miscTypes.dementedEcho, [0, 0]),
     new Marker("KGNAI", miscTypes.dementedEcho, [0, 0]),
-    new Marker("j0woJ", miscTypes.rift, [-125.51568983862387, 243]),
-    new Marker("YzOdE", miscTypes.rift, [-186.25922592658273, 96.5]),
-    new Marker("8Dwkm", miscTypes.rift, [-100.76832328427027, 15.25]),
-    new Marker("pWvAS", miscTypes.rift, [-44.274334988473136, 130.25]),
-    new Marker("8wQJ4", miscTypes.fishing, [-210.25667228231958, 179.75]),
-    new Marker("fXMwv", miscTypes.fishing, [-160.01201897499558, 80.25]),
-    new Marker("XaCK_", miscTypes.fishing, [-194.25837471182834, 130.5]),
-    new Marker("pqtg9", miscTypes.fishing, [-112.26709966306083, 32.25]),
-    new Marker("JFoDx", miscTypes.radio, [-146.90867008778153, 131.25], "Requiem Radio"),
-    new Marker("SpPAk", miscTypes.radio, [-109.76949370455758, 130.75], "Omega Radio"),
-    new Marker("JG472", miscTypes.radio, [-170.50135606933853, 179.25], "Maxis Radio"),
-    new Marker("uReU5", miscTypes.monkey, [-164.63142350407898, 121], "On top of the small building"),
-    new Marker("knmox", miscTypes.monkey, [-86.25143297302276, 107.875], "On top of a stack of barrels."),
-    new Marker("FIUz1", miscTypes.monkey, [-76.7606662776204, 180.25], "At the back on top of the bus stop."),
-    new Marker("P79of", miscTypes.monkey, [-202.37940015960277, 165], "Behind the wall"),
-    new Marker("d2US7", miscTypes.projector, [-169.37629954335875, 177.28125]),
+    new Marker("j0woJ", miscTypes.rift, [260.96862032275226, 486]),
+    new Marker("YzOdE", miscTypes.rift, [139.48154814683454, 193]),
+    new Marker("8Dwkm", miscTypes.rift, [310.4633534314595, 30.5]),
+    new Marker("pWvAS", miscTypes.rift, [423.45133002305374, 260.5]),
+    new Marker("8wQJ4", miscTypes.fishing, [91.48665543536083, 359.5]),
+    new Marker("fXMwv", miscTypes.fishing, [191.97596205000883, 160.5]),
+    new Marker("XaCK_", miscTypes.fishing, [123.48325057634332, 261]),
+    new Marker("pqtg9", miscTypes.fishing, [287.46580067387833, 64.5]),
+    new Marker("JFoDx", miscTypes.radio, [218.18265982443694, 262.5], "Requiem Radio"),
+    new Marker("SpPAk", miscTypes.radio, [292.4610125908848, 261.5], "Omega Radio"),
+    new Marker("JG472", miscTypes.radio, [170.99728786132295, 358.5], "Maxis Radio"),
+    new Marker("uReU5", miscTypes.monkey, [182.73715299184204, 242], "On top of the small building"),
+    new Marker("knmox", miscTypes.monkey, [339.4971340539545, 215.75], "On top of a stack of barrels."),
+    new Marker("FIUz1", miscTypes.monkey, [358.4786674447592, 360.5], "At the back on top of the bus stop."),
+    new Marker("P79of", miscTypes.monkey, [107.24119968079447, 330], "Behind the wall"),
+    new Marker("d2US7", miscTypes.projector, [173.2474009132825, 354.5625]),
 ];
 miscPOI[mapStrings.ruka] = [
     new Marker("vi0sy", miscTypes.dementedEcho, [0, 0]),
