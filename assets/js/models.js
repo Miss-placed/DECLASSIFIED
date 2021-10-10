@@ -103,16 +103,20 @@ const seasons = {
     season6: "Season 6",
 }
 
+/////////////////////Perks/////////////////////////
 const perks = {
-    staminup: "Stamin-Up",
-    jugg: "Jugger-Nog",
-    speed: "Speed Cola",
-    mule: "Mule Kick",
-    elemental: "Elemental Pop",
-    death: "Death Perception",
-    tomb: "Tombstone",
-    deadshot: "Deadshot Daiquiri"
+    staminup: new Item({ id: "staminUp", title: "Stamin-Up", icon: iconInit("staminUp", "perk")}),
+    quick: new Item({ id: "quickRevive", title: "Quick Revive", icon: iconInit("quickRevive", "perk")}),
+    jugg: new Item({ id: "juggernog", title: "Jugger-Nog", icon: iconInit("juggernog", "perk")}),
+    speed: new Item({ id: "speedCola", title: "Speed Cola", icon: iconInit("speedCola", "perk")}),
+    mule: new Item({ id: "muleKick", title: "Mule Kick", icon: iconInit("muleKick", "perk")}),
+    elemental: new Item({ id: "elementalPop", title: "Elemental Pop", icon: iconInit("elementalPop", "perk")}),
+    death: new Item({ id: "deathPerception", title: "Death Perception", icon: iconInit("deathPerception", "perk")}),
+    tomb: new Item({ id: "tombstoneSoda", title: "Tombstone", icon: iconInit("tombstoneSoda", "perk")}),
+    deadshot: new Item({ id: "deadshotDaiquiri", title: "Deadshot Daiquiri", icon: iconInit("deadshotDaiquiri", "perk")}),
 }
+
+
 
 /////////////////////Markers/////////////////////////
 const markerTypes = {
@@ -141,14 +145,15 @@ const miscTypes = {
     essenceDrop: new Item({ title: "Essence Drop"}),
     scrapHeap: new Item({ title: "Scrap Heap"}),
 
-    perkMachine: new Item({ title: "Perk Machine"}),
-    wunderFizz: new Item({ title: "Der Wunderfizz"}),
+    wunderFizz: new Item({ title: "Der Wunderfizz", icon: wunderFizzIcon}),
     trialComputer: new Item({ title: "Trial Computer"}),
     papMachine: new Item({ title: "Pack-a-Punch"}),
-    mysteryBox: new Item({ title: "Mystery Box Location"}),
+    mysteryBox: new Item({ title: "Mystery Box Location", icon: mysteryBoxIcon}),
     wallbuy: new Item({ title: "Wall Buy"}),
     power: new Item({ title: "Power Switch"}),
     jumpPad: new Item({ title: "Jump Pad"}),
+    teleporter: new Item({ title: "Teleporter"}),
+    collector: new Item({ title: "Collection Unit"}),
     craftingTable: new Item({ title: "Crafting Table"}),
     arsenal: new Item({ title: "Arsenal"}),
     ammoCrate: new Item({ title: "Ammo Crate"}),
