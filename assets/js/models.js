@@ -114,6 +114,7 @@ const perks = {
     death: new Item({ id: "deathPerception", title: "Death Perception", icon: iconInit("deathPerception", "perk")}),
     tomb: new Item({ id: "tombstoneSoda", title: "Tombstone", icon: iconInit("tombstoneSoda", "perk")}),
     deadshot: new Item({ id: "deadshotDaiquiri", title: "Deadshot Daiquiri", icon: iconInit("deadshotDaiquiri", "perk")}),
+    phd: new Item({ id: "PHDSlider", title: "PHD Slider", icon: iconInit("PHDSlider", "perk")}),
 }
 
 
