@@ -111,6 +111,7 @@ const perks = {
     elemental: "Elemental Pop",
     death: "Death Perception",
     tomb: "Tombstone",
+    deadshot: "Deadshot Daiquiri"
 }
 
 /////////////////////Markers/////////////////////////
