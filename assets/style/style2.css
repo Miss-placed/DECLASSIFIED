@@ -8,7 +8,7 @@ body {
 #worldMap {
     color: var(--clr-color);
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     z-index: var(--z-index-map);
     cursor: crosshair;
 }
@@ -22,40 +22,51 @@ body {
 }
 
 header {
-    height: 10vh;
-    width: 100vw;
-    background: var(--clr-grey-d);
-    color: var(--clr-white-d);
-    font-family: sans-serif;
-    display: grid;
-    grid-auto-flow: column;
-    border-bottom: 1px solid var(--clr-white-d);
-    user-select: none;
-    z-index: var(--z-index-menu);
+    margin: 0 auto;
+    position: absolute;
+    z-index: 1000;
+    left: calc((100vw - 400px) /2);
 }
 
-header>div,
-.dropdown-item {
-    padding: 10px 20px;
+header h1 {
+    color: red;
+    width: 400px;
+    background-image: url(.././img/cc/placehoder.jpg);
+    background-size: contain;
+    display: flex;
     margin: auto;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, var(--clr-white-d) 50%);
-    background-size: 200%;
-    background-position: 0 0;
-    transition: 0.1s ease-in-out;
-    font-family: sans-serif;
-    border: none;
-    cursor: pointer;
+    height: 90px;
+    align-items: center;
+    justify-content: center;
 }
 
-header>div:hover,
-.dropdown-item:hover {
-    background-position: -100% 0;
-    color: var(--clr-grey);
+header ul {
+    list-style: none;
+    color: var(--clr-color);
 }
 
-.dropdown-item {
-    padding: 10px 20px;
-    color: var(--clr-white-d);
+header h2,
+header>ul>li>ul>li {
+    padding: 10px 15px;
+    background-color: var(--clr-bg);
+}
+
+header>ul>li:hover>h2,
+header>ul>li>ul>li:hover {
+    background-color: var(--clr-bg-inverted);
+    color: var(--clr-color-inverted);
+}
+
+header>ul>li>ul,
+header>ul {
+    display: none;
+}
+
+header.visible>ul,
+header>ul>li:hover>ul,
+header>ul>li:focus>ul,
+header>ul>li:focus-within>ul {
+    display: initial;
 }
 
 
@@ -239,6 +250,7 @@ select.faction-list>option:hover {
 .-hidden {
     display: none;
 }
+
 
 /*notification styling */
 
