@@ -41,8 +41,8 @@ var requiemIcon = L.icon({
 /////////////////////Misc/////////////////////////
 var generalIcon = L.icon({
     iconUrl: 'assets/img/icons/generalIcon.png',
-    iconSize: [40, 40],
-    iconAnchor: [20, 40],
+    iconSize: [30, 30],
+    iconAnchor: [15, 30],
     popupAnchor: [0, -30]
 });
 var riftIcon = L.icon({
@@ -53,8 +53,8 @@ var riftIcon = L.icon({
 });
 var monkeyIcon = L.icon({
     iconUrl: 'assets/img/icons/monkeyIcon.png',
-    iconSize: [48, 48],
-    iconAnchor: [24, 24],
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
     popupAnchor: [0, -30]
 });
 var radioIcon = L.icon({
@@ -71,8 +71,8 @@ var dementedIcon = L.icon({
 });
 var fishingIcon = L.icon({
     iconUrl: 'assets/img/icons/fishIcon.png',
-    iconSize: [48, 48],
-    iconAnchor: [24, 24],
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
     popupAnchor: [0, -30]
 });
 var redRiftIcon = L.icon({
@@ -83,21 +83,21 @@ var redRiftIcon = L.icon({
 });
 var wunderFizzIcon = L.icon({
     iconUrl: 'assets/img/icons/perk/wunderFizz.png',
-    iconSize: [50, 50],
-    iconAnchor: [25, 25],
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
     popupAnchor: [0, -15]
 });
 var mysteryBoxIcon = L.icon({
     iconUrl: 'assets/img/icons/misc/mysteryBox.png',
-    iconSize: [50, 50],
-    iconAnchor: [25, 25],
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
     popupAnchor: [0, -15]
 });
 function iconInit(id, type) {
     return L.icon({
         iconUrl: `assets/img/icons/${type}/${id}.png`,
-        iconSize: [50, 50],
-        iconAnchor: [25, 25],
+        iconSize: [30, 30],
+        iconAnchor: [15, 15],
         popupAnchor: [0, -15]
     });
 }
