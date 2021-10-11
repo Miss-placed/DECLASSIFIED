@@ -54,7 +54,7 @@ function closeSubModal(target) {
  *  
  * @param {object} obj Object of intel Details.
  */
-function propigateIntelDetails(obj) {
+function propagateIntelDetails(obj) {
     let descBox = document.getElementById("intel-desc")
     descBox.querySelector("h2").innerHTML = obj.name
     descBox.querySelector("p").innerHTML = `
@@ -115,21 +115,9 @@ function findTotal(array, key, value) {
     return total;
 }
 
-document.querySelectorAll(".to-intel").forEach(element => {
-    element.addEventListener('click', () => {
-        let target = element.getAttribute('target')
-        let intelID = element.getAttribute('id')
-        openSubModal("intel-desc")
+/////////////////////List Generation/////////////////////////
+GenerateList();
 
-        //use target to get intel instead of predefined obj
-
-        let obj = findObjectByKey(intelStoreV2, "id", intelID);
-        propigateIntelDetails(obj)
-        closeSubModal("intel-stats")
-        closeSubModal("intel-type")
-
-    })
-})
 
 function switchmodal() {
 

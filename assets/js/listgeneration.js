@@ -1,3 +1,37 @@
+/////////////////////V2/////////////////////////
+
+function GenerateList(filters) {
+    const intelListEle = document.querySelector("#filtered-intel");
+    intelListEle.replaceChildren(); // Empty First
+
+    intelCache.forEach(intel => {
+        const buttonTemplate = htmlToElement(`<button class="btn to-intel" target="intel-desc" id="${intel.id}">${intel.name}</button>`);
+        intelListEle.appendChild(buttonTemplate);
+    });
+    InitialiseButtons();
+}
+
+function InitialiseButtons() {
+    document.querySelectorAll(".to-intel").forEach(element => {
+        element.addEventListener('click', () => {
+            let target = element.getAttribute('target')
+            let intelID = element.getAttribute('id')
+            openSubModal("intel-desc")
+    
+            //use target to get intel instead of predefined obj
+    
+            let obj = findObjectByKey(intelStoreV2, "id", intelID);
+            propagateIntelDetails(obj)
+            closeSubModal("intel-stats")
+            closeSubModal("intel-type")
+    
+        });
+    });
+}
+
+
+
+/////////////////////V1/////////////////////////
 function GenerateFullIntelList(pointsOfInterest) {
     let intelList = document.getElementById("intelList")
     intelList.innerHTML = "";
