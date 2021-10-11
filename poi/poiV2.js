@@ -3732,8 +3732,19 @@ const intelStoreV2 = [
     loc: "[309.8628684849271, 262.7430596656802]",
     map: mapStrings.armada,
     name: "Empty Tombstone",
-    desc: " in the Gun boat Control Room. it's in-between one of the sonar panels and the wall."
-}, ]
+    desc: "In the Gun boat Control Room. it's in-between one of the sonar panels and the wall."
+}, {
+    id: "DS6Ar1",
+    faction: factions.darkAether,
+    season: seasons.season6,
+    intelType: intelTypes.artifact,
+    loc: "[393.3707361360731, 342]",
+    map: mapStrings.ruka,
+    name: "Archaic Goblet",
+    desc: "On top of a cut tree stump."
+}, 
+
+]
 
 //Needed to parse location back from a string.
 const intelCache = intelStoreV2.slice();
