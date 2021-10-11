@@ -8,8 +8,9 @@ body {
 #worldMap {
     color: var(--clr-color);
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     z-index: var(--z-index-map);
+    cursor: crosshair;
 }
 
 #worldMap {
@@ -21,40 +22,51 @@ body {
 }
 
 header {
-    height: 10vh;
-    width: 100vw;
-    background: var(--clr-grey-d);
-    color: var(--clr-white-d);
-    font-family: sans-serif;
-    display: grid;
-    grid-auto-flow: column;
-    border-bottom: 1px solid var(--clr-white-d);
-    user-select: none;
-    z-index: var(--z-index-menu);
+    margin: 0 auto;
+    position: absolute;
+    z-index: 1000;
+    left: calc((100vw - 400px) /2);
 }
 
-header>div,
-.dropdown-item {
-    padding: 10px 20px;
+header h1 {
+    color: red;
+    width: 400px;
+    background-image: url(.././img/cc/placehoder.jpg);
+    background-size: contain;
+    display: flex;
     margin: auto;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, var(--clr-white-d) 50%);
-    background-size: 200%;
-    background-position: 0 0;
-    transition: 0.1s ease-in-out;
-    font-family: sans-serif;
-    border: none;
-    cursor: pointer;
+    height: 90px;
+    align-items: center;
+    justify-content: center;
 }
 
-header>div:hover,
-.dropdown-item:hover {
-    background-position: -100% 0;
-    color: var(--clr-grey);
+header ul {
+    list-style: none;
+    color: var(--clr-color);
 }
 
-.dropdown-item {
-    padding: 10px 20px;
-    color: var(--clr-white-d);
+header h2,
+header>ul>li>ul>li {
+    padding: 10px 15px;
+    background-color: var(--clr-bg);
+}
+
+header>ul>li:hover>h2,
+header>ul>li>ul>li:hover {
+    background-color: var(--clr-bg-inverted);
+    color: var(--clr-color-inverted);
+}
+
+header>ul>li>ul,
+header>ul {
+    display: none;
+}
+
+header.visible>ul,
+header>ul>li:hover>ul,
+header>ul>li:focus>ul,
+header>ul>li:focus-within>ul {
+    display: initial;
 }
 
 
@@ -120,6 +132,7 @@ select.faction-list {
     text-transform: uppercase;
     font-weight: bold;
     color: var(--clr-color);
+    cursor: pointer;
 }
 
 select.faction-list>option {
@@ -235,5 +248,61 @@ select.faction-list>option:hover {
 }
 
 .-hidden {
+    display: none;
+}
+
+
+/*notification styling */
+
+#notification-popup {
+    display: none;
+    position: absolute;
+    bottom: -200px;
+    background-color: rgba(0, 0, 0, 0.404);
+    color: white;
+    border-radius: 50px;
+    padding: 10px 15px;
+    /* transition: bottom 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86); */
+    margin: auto 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+}
+
+#notification-popup.animated {
+    animation: bounce-in 3s;
+    display: block;
+}
+
+#notification-popup.fixed {
+    bottom: 0px;
+    display: block;
+}
+
+@keyframes bounce-in {
+    0% {
+        bottom: -20px;
+    }
+    1% {
+        bottom: 0px;
+    }
+    3% {
+        bottom: -12px;
+    }
+    6% {
+        bottom: -20px;
+    }
+    9% {
+        bottom: -5px;
+    }
+    10% {
+        bottom: 0px;
+    }
+    100% {
+        bottom: 0px;
+    }
+}
+
+#error-notif {
     display: none;
 }

@@ -1,28 +1,4 @@
-const app = StartupSettings();
-const userPrefs = userPrefsStartup();
-
-
-
-function StartupSettings() {
-    let response;
-
-    let disableMarkers = [],
-        visibleMarkers = [];
-    //Use default latest map otherwise use last selected map of user
-    let currentMap = mapStrings.armada;
-    let currentContribType;
-    if (localStorage.declassifiedPrefs != undefined && JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap)
-        currentMap = JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap;
-
-    let isMobile = false,
-        submittingLocation = false,
-        fixedNotification = false;
-    let notificationEle = document.getElementById("notification-popup");
-    return response = { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingLocation, currentContribType, fixedNotification };
-}
-
 let mapInstance = InitMap();
-
 
 L.control.attribution({ prefix: 'DECLASSIFIED' })
 document.getElementsByClassName("leaflet-control-attribution")[0].getElementsByTagName("a")[0].title = "Declassified An Interactive map By Odinn"
@@ -86,8 +62,8 @@ function onLoad() {
     $('#searchTerm').keyup(function() {
         intelFiltered = TriggerSearch();
     });
-
-
+    //Hide aside if toggled off
+    if (!userPrefs.asideShow) toggleAside(false);
 }
 
 if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
@@ -96,5 +72,5 @@ if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
     sidebar.classList.add("mobile-view");
     worldmap.classList.add("mobile-view");
     app.isMobile = true
-    toggleAside();
+    toggleAside(false);
 }

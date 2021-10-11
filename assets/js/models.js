@@ -1,9 +1,35 @@
+/////////////////////Classes/////////////////////////
 class Item {
     constructor({ id, title, desc, icon }) {
         this.id = id;
         this.title = title ?? "";
         this.desc = desc ?? "";
         this.icon = icon ?? generalIcon;
+    }
+}
+
+class Marker {
+    constructor(id, item, loc, uniqueDesc) {
+        this.id = id;
+        if (item instanceof Item) {
+            this.title = item.title ?? "";
+            this.desc = item.desc ?? "";
+            this.icon = item.icon ?? generalIcon;
+        }
+        //Override static description with unique description
+        if (uniqueDesc) this.desc = uniqueDesc;
+        // Could do map in the future depending on how the data structure needs to change
+        /* this.map = map; */
+        this.loc = loc ?? [0, 0];
+    }
+}
+
+class UserPrefs {
+    constructor({lastSelectedMap, collectedIntel, darkmode, asideShow}) {
+        this.lastSelectedMap = lastSelectedMap ?? app.currentMap;
+        this.collectedIntel = collectedIntel ?? [];
+        this.darkmode = darkmode ?? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        this.asideShow = asideShow ?? true;
     }
 }
 
@@ -25,7 +51,9 @@ const mapStrings = {
     firebaseZ: "firebaseZ",
     firebaseZSpawn: "firebaseZ_spawn",
     mauerDerToten: "mauerDerToten",
-    mauerDerTotenStreets: "mauerDerToten_streets"
+    mauerDerTotenStreets: "mauerDerToten_streets",
+    forsaken: "forsaken",
+    forsakenUnderground: "forsaken_underground",
 }
 
 const allOutbreakMapsArr = [
@@ -75,6 +103,21 @@ const seasons = {
     season6: "Season 6",
 }
 
+/////////////////////Perks/////////////////////////
+const perks = {
+    staminup: new Item({ id: "staminUp", title: "Stamin-Up", icon: iconInit("staminUp", "perk")}),
+    quick: new Item({ id: "quickRevive", title: "Quick Revive", icon: iconInit("quickRevive", "perk")}),
+    jugg: new Item({ id: "juggernog", title: "Jugger-Nog", icon: iconInit("juggernog", "perk")}),
+    speed: new Item({ id: "speedCola", title: "Speed Cola", icon: iconInit("speedCola", "perk")}),
+    mule: new Item({ id: "muleKick", title: "Mule Kick", icon: iconInit("muleKick", "perk")}),
+    elemental: new Item({ id: "elementalPop", title: "Elemental Pop", icon: iconInit("elementalPop", "perk")}),
+    death: new Item({ id: "deathPerception", title: "Death Perception", icon: iconInit("deathPerception", "perk")}),
+    tomb: new Item({ id: "tombstoneSoda", title: "Tombstone", icon: iconInit("tombstoneSoda", "perk")}),
+    deadshot: new Item({ id: "deadshotDaiquiri", title: "Deadshot Daiquiri", icon: iconInit("deadshotDaiquiri", "perk")}),
+    phd: new Item({ id: "PHDSlider", title: "PHD Slider", icon: iconInit("PHDSlider", "perk")}),
+}
+
+
 
 /////////////////////Markers/////////////////////////
 const markerTypes = {
@@ -103,14 +146,18 @@ const miscTypes = {
     essenceDrop: new Item({ title: "Essence Drop"}),
     scrapHeap: new Item({ title: "Scrap Heap"}),
 
-    perkMachine: new Item({ title: "Perk Machine"}),
-    wunderFizz: new Item({ title: "Der Wunderfizz"}),
+    wunderFizz: new Item({ title: "Der Wunderfizz", icon: wunderFizzIcon}),
     trialComputer: new Item({ title: "Trial Computer"}),
     papMachine: new Item({ title: "Pack-a-Punch"}),
-    mysteryBox: new Item({ title: "Mystery Box Location"}),
+    mysteryBox: new Item({ title: "Mystery Box Location", icon: mysteryBoxIcon}),
     wallbuy: new Item({ title: "Wall Buy"}),
     power: new Item({ title: "Power Switch"}),
     jumpPad: new Item({ title: "Jump Pad"}),
+    landingPad: new Item({ title: "Landing Pad"}),
+    airSupport: new Item({ title: "Air Support Console"}),
+    teleporter: new Item({ title: "Teleporter"}),
+    collector: new Item({ title: "Collection Unit"}),
+    reactor: new Item({ title: "Aether Reactor"}),
     craftingTable: new Item({ title: "Crafting Table"}),
     arsenal: new Item({ title: "Arsenal"}),
     ammoCrate: new Item({ title: "Ammo Crate"}),

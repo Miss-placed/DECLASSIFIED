@@ -13,34 +13,36 @@ function getIconByFaction(faction) {
     }
 }
 
+/////////////////////Factions/////////////////////////
 var darkAetherIcon = L.icon({
-    iconUrl: 'assets/img/icons/darkAetherIcon.png',
+    iconUrl: 'assets/img/icons/faction/darkAether.png',
     iconSize: [30, 48],
     iconAnchor: [15, 48],
     popupAnchor: [0, -30]
 });
 var maxisIcon = L.icon({
-    iconUrl: 'assets/img/icons/maxisIcon.png',
+    iconUrl: 'assets/img/icons/faction/maxis.png',
     iconSize: [34, 48],
     iconAnchor: [17, 48],
     popupAnchor: [0, -30]
 });
 var omegaIcon = L.icon({
-    iconUrl: 'assets/img/icons/omegaIcon.png',
+    iconUrl: 'assets/img/icons/faction/omega.png',
     iconSize: [55, 48],
     iconAnchor: [27.5, 48],
     popupAnchor: [0, -30]
 });
 var requiemIcon = L.icon({
-    iconUrl: 'assets/img/icons/requiemIcon.png',
+    iconUrl: 'assets/img/icons/faction/requiem.png',
     iconSize: [40, 40],
     iconAnchor: [24, 48],
     popupAnchor: [0, -30]
 });
+/////////////////////Misc/////////////////////////
 var generalIcon = L.icon({
     iconUrl: 'assets/img/icons/generalIcon.png',
-    iconSize: [40, 40],
-    iconAnchor: [20, 40],
+    iconSize: [30, 30],
+    iconAnchor: [15, 30],
     popupAnchor: [0, -30]
 });
 var riftIcon = L.icon({
@@ -51,8 +53,8 @@ var riftIcon = L.icon({
 });
 var monkeyIcon = L.icon({
     iconUrl: 'assets/img/icons/monkeyIcon.png',
-    iconSize: [48, 48],
-    iconAnchor: [24, 24],
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
     popupAnchor: [0, -30]
 });
 var radioIcon = L.icon({
@@ -69,8 +71,8 @@ var dementedIcon = L.icon({
 });
 var fishingIcon = L.icon({
     iconUrl: 'assets/img/icons/fishIcon.png',
-    iconSize: [48, 48],
-    iconAnchor: [24, 24],
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
     popupAnchor: [0, -30]
 });
 var redRiftIcon = L.icon({
@@ -79,3 +81,23 @@ var redRiftIcon = L.icon({
     iconAnchor: [11, 24],
     popupAnchor: [0, -30]
 });
+var wunderFizzIcon = L.icon({
+    iconUrl: 'assets/img/icons/perk/wunderFizz.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -15]
+});
+var mysteryBoxIcon = L.icon({
+    iconUrl: 'assets/img/icons/misc/mysteryBox.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -15]
+});
+function iconInit(id, type) {
+    return L.icon({
+        iconUrl: `assets/img/icons/${type}/${id}.png`,
+        iconSize: [30, 30],
+        iconAnchor: [15, 15],
+        popupAnchor: [0, -15]
+    });
+}

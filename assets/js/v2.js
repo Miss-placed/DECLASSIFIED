@@ -18,11 +18,16 @@ const seasonTotal = {
     all: intelStoreV2.length
 }
 
-
-function toggleDarkMode() {
-    localStorage.darkmode = !JSON.parse(localStorage.darkmode);
-    location.reload();
+function expandMenu() {
+    document.querySelector("header").classList.toggle("visible");
 }
+
+function changeMapTo(x, y, z) {
+    document.querySelector("header").querySelector("h1").innerHTML = x
+    setMap(y, z, true)
+    expandMenu()
+}
+
 
 function openModal() {
     document.getElementsByClassName("modal-bg")[0].classList.remove("-hidden")
