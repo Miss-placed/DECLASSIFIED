@@ -3787,6 +3787,15 @@ const intelStoreV2 = [
     map: mapStrings.alpine,
     name: "Zykov's Mask",
     desc: "On the shelf."
+}, {
+    id: "DS6Ar4",
+    faction: factions.darkAether,
+    season: seasons.season6,
+    intelType: intelTypes.artifact,
+    loc: "[238.2379564951548, 255.125]",
+    map: mapStrings.sanatorium,
+    name: "Empty Death Perception",
+    desc: "In the sink on the ground floor."
 }, 
 
 ]
