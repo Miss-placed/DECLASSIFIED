@@ -1153,6 +1153,15 @@ const intelStoreV2 = [
     map: mapStrings.armada,
     name: "Agent Klaus Model",
     desc: "In the North-eastern most Hangar area. He's hanging off some pipes just above one of the staircases, climb on the nearby toolbox to grab him."
+}, {
+    id: "RS6Ar1",
+    faction: factions.requiem,
+    season: seasons.season6,
+    intelType: intelTypes.artifact,
+    loc: "[192.94132033870045, 217]",
+    map: mapStrings.zoo,
+    name: "Weaver's Eyepatch",
+    desc: "Behind the desk at the gas station counter."
 }, 
 /////////////////////Omega/////////////////////////
 {
