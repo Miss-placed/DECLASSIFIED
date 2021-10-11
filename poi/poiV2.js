@@ -2109,6 +2109,15 @@ const intelStoreV2 = [
     map: mapStrings.alpine,
     name: "Contaminated Crystal",
     desc: "Yellow/orange crystals in the toilet bowl in the westernmost of the four doors."
+}, {
+    id: "OS6Au1",
+    faction: factions.omega,
+    season: seasons.season6,
+    intelType: intelTypes.audio,
+    loc: "[213.46177113635102, 360.5]",
+    map: mapStrings.zoo,
+    name: "Codename Whiskers",
+    desc: "Under the table inside the building."
 }, 
 /////////////////////Maxis/////////////////////////
 {
