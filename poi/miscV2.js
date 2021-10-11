@@ -1,6 +1,6 @@
 // Used to generate IDs for all of the below misc markers:
 // https://nanoid.jormaechea.com.ar/?alphabet=0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz&length=5
-// Please use the existing settings included in the URL and check for duplicate ids when possible (it's very very unlikely but still possible)
+// Please use the existing settings included in the URL and check for duplicate ids when possible (it's very very unlikely but still possible).
 
 // Non collectible items that need icons on the respective maps
 let miscPOI = {};
