@@ -1162,6 +1162,15 @@ const intelStoreV2 = [
     map: mapStrings.zoo,
     name: "Weaver's Eyepatch",
     desc: "Behind the desk at the gas station counter."
+}, {
+    id: "RS6Ar2",
+    faction: factions.requiem,
+    season: seasons.season6,
+    intelType: intelTypes.artifact,
+    loc: "[233.49143289914954, 155]",
+    map: mapStrings.golova,
+    name: "Tesla Storm Canister",
+    desc: "On top of the electrical box."
 }, 
 /////////////////////Omega/////////////////////////
 {
@@ -2110,6 +2119,15 @@ const intelStoreV2 = [
     name: "Contaminated Crystal",
     desc: "Yellow/orange crystals in the toilet bowl in the westernmost of the four doors."
 }, {
+    id: "OS6Ar2",
+    faction: factions.omega,
+    season: seasons.season6,
+    intelType: intelTypes.artifact,
+    loc: "[182.24077282244167, 240.6875]",
+    map: mapStrings.duga,
+    name: "Jager's ID Badge",
+    desc: ""
+}, {
     id: "OS6Au1",
     faction: factions.omega,
     season: seasons.season6,
@@ -2118,6 +2136,15 @@ const intelStoreV2 = [
     map: mapStrings.zoo,
     name: "Codename Whiskers",
     desc: "Under the table inside the building."
+}, {
+    id: "OS6Au2",
+    faction: factions.omega,
+    season: seasons.season6,
+    intelType: intelTypes.audio,
+    loc: "[392.92004386615037, 250.5625]",
+    map: mapStrings.duga,
+    name: "Lineage",
+    desc: "In the bunker, on the floor in the computer room, behind the door."
 }, 
 /////////////////////Maxis/////////////////////////
 {
@@ -3742,6 +3769,15 @@ const intelStoreV2 = [
     map: mapStrings.ruka,
     name: "Archaic Goblet",
     desc: "On top of a cut tree stump."
+}, {
+    id: "DS6Ar2",
+    faction: factions.darkAether,
+    season: seasons.season6,
+    intelType: intelTypes.artifact,
+    loc: "[170.61009616275408, 319.75]",
+    map: mapStrings.golova,
+    name: "Empty PhD Slider",
+    desc: "On top of the desk in a second-floor room to the right of pack-a-punch."
 }, 
 
 ]
