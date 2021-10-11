@@ -1171,6 +1171,15 @@ const intelStoreV2 = [
     map: mapStrings.golova,
     name: "Tesla Storm Canister",
     desc: "On top of the electrical box."
+}, {
+    id: "RS6Ar3",
+    faction: factions.requiem,
+    season: seasons.season6,
+    intelType: intelTypes.artifact,
+    loc: "[157.43164326675438, 121.59375]",
+    map: mapStrings.sanatorium,
+    name: "Director Mug",
+    desc: "On top of a small round table on the ground floor."
 }, 
 /////////////////////Omega/////////////////////////
 {
