@@ -1,5 +1,7 @@
 
-const intelStoreV2 = [{
+const intelStoreV2 = [
+/////////////////////Requiem/////////////////////////
+    {
     id: "RS0Au1",
     faction: factions.requiem,
     season: seasons.preseason,
@@ -1151,7 +1153,9 @@ const intelStoreV2 = [{
     map: mapStrings.armada,
     name: "Agent Klaus Model",
     desc: "In the North-eastern most Hangar area. He's hanging off some pipes just above one of the staircases, climb on the nearby toolbox to grab him."
-}, {
+}, 
+/////////////////////Omega/////////////////////////
+{
     id: "OS0Au1",
     faction: factions.omega,
     season: seasons.preseason,
@@ -2088,6 +2092,17 @@ const intelStoreV2 = [{
     name: "Teleporter Model",
     desc: "In the eastern most Capsized area. It's underwater, along the guardrails of the deck."
 }, {
+    id: "OS6Ar1",
+    faction: factions.omega,
+    season: seasons.season6,
+    intelType: intelTypes.artifact,
+    loc: "[141.11727408456636, 323.75]",
+    map: mapStrings.alpine,
+    name: "Contaminated Crystal",
+    desc: "Yellow/orange crystals in the toilet bowl in the westernmost of the four doors."
+}, 
+/////////////////////Maxis/////////////////////////
+{
     id: "MS0Au1",
     faction: factions.maxis,
     season: seasons.preseason,
@@ -2753,7 +2768,9 @@ const intelStoreV2 = [{
     map: mapStrings.allOutbreakMaps,
     name: "Power",
     desc: ""
-}, {
+}, 
+/////////////////////Dark Aether/////////////////////////
+{
     id: "DS0Au1",
     faction: factions.darkAether,
     season: seasons.preseason,
