@@ -2786,6 +2786,15 @@ const intelStoreV2 = [
     map: mapStrings.allOutbreakMaps,
     name: "Power",
     desc: ""
+}, {
+    id: "MS6Au1",
+    faction: factions.maxis,
+    season: seasons.season6,
+    intelType: intelTypes.audio,
+    loc: "[232.85298123066093, 312]",
+    map: mapStrings.ruka,
+    name: "I Am Alive",
+    desc: "On the ledge of the top of the watchtower."
 }, 
 /////////////////////Dark Aether/////////////////////////
 {
