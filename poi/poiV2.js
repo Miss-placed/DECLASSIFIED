@@ -3778,6 +3778,15 @@ const intelStoreV2 = [
     map: mapStrings.golova,
     name: "Empty PhD Slider",
     desc: "On top of the desk in a second-floor room to the right of pack-a-punch."
+}, {
+    id: "DS6Ar3",
+    faction: factions.darkAether,
+    season: seasons.season6,
+    intelType: intelTypes.artifact,
+    loc: "[327.842464008449, 304.25]",
+    map: mapStrings.alpine,
+    name: "Zykov's Mask",
+    desc: "On the shelf."
 }, 
 
 ]
