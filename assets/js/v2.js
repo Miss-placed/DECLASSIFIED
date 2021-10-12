@@ -22,9 +22,10 @@ function expandMenu() {
     document.querySelector("header").classList.toggle("visible");
 }
 
-function changeMapTo(x, y, z) {
-    document.querySelector("header").querySelector("h1").innerHTML = x
-    setMap(y, z, true)
+function changeMapTo(mapName, mapId, targetElement) {
+    //debugger
+    document.querySelector("header").querySelector("h1").innerHTML = mapName
+    setMap(mapId, targetElement)
     expandMenu()
 }
 
@@ -52,22 +53,56 @@ function closeSubModal(target) {
 }
 /**
  *  
- * @param {object} obj Object of intel Details.
+ * @param {object} intel Object of intel Details.
  */
-function propagateIntelDetails(obj) {
-    let descBox = document.getElementById("intel-desc")
-    descBox.querySelector("h2").innerHTML = obj.name
-    descBox.querySelector("p").innerHTML = `
-        "id": ${obj.id}<br>
-        "faction": ${obj.faction}<br>
-        "season": ${obj.season}<br>
-        "intelType": ${obj.intelType}<br>
-        "loc": ${obj.loc}<br>
-        "map": ${obj.map}<br>
-        "name": ${obj.name}<br>
-        "desc": ${obj.desc}
-    `
+function GenerateDetailModal(intel) {
+    let detailModal = document.getElementById("description");
+    detailModal.replaceChildren();
+    if (!intel) {
+        intel.name = "Intel Not Found";
+        intel.desc = "If you see this please report an issue on the github page."
+    }
+    var elementsToAdd = htmlToElements(
+        `<button class="close-submodal btn inverted" onclick="switchmodal()"><i class="bi bi-x"></i></button>
+    
+        <h2>${intel.name}</h2>
+        <p>${intel.desc}</p>`
+    );
 
+    
+    elementsToAdd.forEach(element => {
+        detailModal.append(element);
+    });
+
+
+
+    let btnContainer = document.createElement("div");
+    btnContainer.className = "buttonContainer";
+
+    //Only Generate locate and share buttons if intel has location
+    if (intel.loc[0] != 0 && intel.loc[1] != 0) {
+        let location = createElement("button", ["btn", "inverted", "locate-intel"], "Locate Intel", "locate-intel");
+        location.onclick = goToIntel(intel);
+        location.appendChild(htmlToElement(`<i class="fas fa-map-marker-alt" aria-hidden="true" style="margin-left: 5px;"></i>`));
+        btnContainer.appendChild(location);
+        btnContainer.appendChild(genShareButton(intel.id));
+    }
+
+    //Always add bug button and button container
+    btnContainer.appendChild(genBugButton(intel.id));
+    detailModal.appendChild(btnContainer);
+
+
+        /*     detailModal.querySelector("p").innerHTML = `
+            "id": ${intel.id}<br>
+            "faction": ${intel.faction}<br>
+            "season": ${intel.season}<br>
+            "intelType": ${intel.intelType}<br>
+            "loc": ${intel.loc}<br>
+            "map": ${intel.map}<br>
+            "name": ${intel.name}<br>
+            "desc": ${intel.desc}
+        ` */
 }
 
 
@@ -122,7 +157,7 @@ GenerateList();
 function switchmodal() {
 
     // need to make a proper open and close function for modal switching
-    closeSubModal("intel-desc")
+    closeSubModal("intel-detail")
     openSubModal("intel-stats")
     openSubModal("intel-type")
 }
