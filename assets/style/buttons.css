@@ -82,6 +82,17 @@
     }
     /*------------Checkbox-slider------------*/
     
+    .chk-btn {
+        display: flex;
+        flex-direction: row!important;
+        align-content: center;
+        justify-content: space-between;
+    }
+    
+    .chk-btn p {
+        display: inline;
+    }
+    
     .toggle {
         -webkit-appearance: none;
         appearance: none;
