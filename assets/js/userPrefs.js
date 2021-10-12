@@ -74,9 +74,17 @@ function setLastVisitedMap(selectedMap) {
     setUserPrefs(currentPrefs);
 }
 
+//toggleDarkmode function to be depricated on v2 release
 function toggleDarkMode() {
     let currentPrefs = getUserPrefs();
     currentPrefs.darkmode = !currentPrefs.darkmode
     setUserPrefs(currentPrefs);
     location.reload();
+}
+
+function changePreferedMode() {
+    let currentPrefs = getUserPrefs();
+    currentPrefs.osPreferedMode = document.getElementById("dark-mode").checked
+    setColorScheme()
+    setUserPrefs(currentPrefs);
 }

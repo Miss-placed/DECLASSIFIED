@@ -1,9 +1,13 @@
 let userColorScheme = false;
-
+function startupDarkMode(){
+    let currentPrefs = getUserPrefs(); 
+    document.getElementById("dark-mode").checked = currentPrefs.osPreferedMode
+}
+startupDarkMode()
 function setColorScheme() {
-    let osPreferedMode = JSON.parse(localStorage.osPreferedMode)
+    let currentPrefs = getUserPrefs();
+    let osPreferedMode = JSON.parse(currentPrefs.osPreferedMode)
     let osColorScheme = window.matchMedia('(prefers-color-scheme: light)').matches
-    document.getElementById("dark-mode").checked = osPreferedMode
     document.getElementById("color-scheme-toggle").classList = "btn ui"
     if (osPreferedMode) {
         userColorScheme = osColorScheme
@@ -12,10 +16,4 @@ function setColorScheme() {
     document.body.classList = userColorScheme ? 'light' : 'dark';
     userColorScheme = !userColorScheme
 }
-
-function changePreferedMode() {
-    localStorage.osPreferedMode = document.getElementById("dark-mode").checked
-    setColorScheme()
-}
-
 setColorScheme()

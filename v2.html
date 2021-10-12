@@ -97,15 +97,15 @@
 
         <div class="modal" id="intel-type">
             <select class="faction-list">
-                <option value="All-F"><img class="list-icon" src="/assets/img/icons/faction-requiem-icon.png" alt="">
+                <option value="All-F"><img class="list-icon" src="./assets/img/icons/faction-requiem-icon.png" alt="">
                     All Factions</option>
-                <option value="Requiem"><img class="list-icon" src="/assets/img/icons/faction-requiem-icon.png" alt="">
+                <option value="Requiem"><img class="list-icon" src="./assets/img/icons/faction-requiem-icon.png" alt="">
                     Requiem</option>
-                <option value="Omega"><img class="list-icon" src="/assets/img/icons/faction-omega-icon.png" alt="">
+                <option value="Omega"><img class="list-icon" src="./assets/img/icons/faction-omega-icon.png" alt="">
                     Omega</option>
-                <option value="Maxis"><img class="list-icon" src="/assets/img/icons/faction-maxis-icon.png" alt="">
+                <option value="Maxis"><img class="list-icon" src="./assets/img/icons/faction-maxis-icon.png" alt="">
                     Maxis</option>
-                <option value="DarkAether"><img class="list-icon" src="/assets/img/icons/faction-darkAether-icon.png"
+                <option value="DarkAether"><img class="list-icon" src="./assets/img/icons/faction-darkAether-icon.png"
                         alt=""> Dark Aether</option>
             </select>
             <div>
@@ -219,6 +219,22 @@
     <script src="assets/js/filtering.js"></script>
     <script src="assets/js/index.js"></script>
     <script src="assets/js/v2.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            $('.leaflet-image-layer.leaflet-zoom-animated').each(function(){
+                var img         = $(this);
+                var image_uri   = img.attr('src');
+    
+                $.get(image_uri, function(data) {
+                    var svg = $(data).find('svg');
+                    svg.removeAttr('xmlns:a');
+                    img.replaceWith(svg);
+                }, 'xml');
+    
+            });
+        });
+    </script>
 </body>
 
 </html>

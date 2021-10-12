@@ -77,7 +77,6 @@ function findInCollected(query) {
     for (let i = 0; i < collectedIntel.length; i++) {
         total += findTotal(query, "id", collectedIntel[i]).length
     }
-    console.log(toString(query), total)
     return total;
 }
 
@@ -130,6 +129,18 @@ document.querySelectorAll(".to-intel").forEach(element => {
 
     })
 })
+
+
+
+
+/* <img class="leaflet-image-layer leaflet-zoom-animated" src="./maps/forsaken/forsaken.svg" alt="" style="z-index: 1; transform: translate3d(-256px, -584px, 0px); width: 2048px; height: 2048px;"> */
+
+function interceptMapLoad(){
+    var el = document.querySelector("img.leaflet-image-layer.leaflet-zoom-animated");
+    console.log(el)
+
+    
+}
 
 function switchmodal() {
 
