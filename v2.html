@@ -86,7 +86,7 @@
     <div id="ui">
         <div><button class="btn ui" onclick="openModal()"><i class="bi bi-folder-fill"></i> </button></div>
         <div>
-            <button class="btn ui" onclick="toggleDarkMode()"><i class="fas fa-moon"></i> </button>
+            <button class="btn ui" id="color-scheme-toggle" onclick="setColorScheme()"><i class="fas fa-moon"></i> </button>
             <a title="Join us on discord!" href="https://discord.gg/4Xqj8XntFe" target="_blank" class="btn ui" id="discord"><i class="fab fa-discord"></i> </a>
             <a title="Help us out on Github!" href="https://github.com/Miss-placed/DECLASSIFIED" target="_blank" class="btn ui" id="github"><i class="bi bi-github"></i> </a>
         </div>
@@ -186,7 +186,7 @@
                 <label class="btn chk-btn" for="checkbox"><p>Misc Markers: </p><input type="checkbox" name="checkbox" id="show-misc" class="toggle" placeholder="_"></label>
                 <label class="btn chk-btn" for="checkbox"><p>EE markers</p><input type="checkbox" name="checkbox" id="show-ee" class="toggle" placeholder="_"></label>
                 <p>Dark mode: </p>
-                <label class="btn chk-btn" for="checkbox"><p>System Dark Mode</p><input type="checkbox" name="checkbox" id="dark-mode" class="toggle" placeholder="_" onchange="toggleSystemDarkmode()"></label>
+                <label class="btn chk-btn" for="dark-mode"><p>System Dark Mode</p><input type="checkbox" name="dark-mode" id="dark-mode" class="toggle" placeholder="_" onchange="changePreferedMode()"></label>
                 <p>Collected Markers:
                 </p>
                 <button class="btn chk-btn" for="checkbox"><p>Import/Export Markers</p></button>

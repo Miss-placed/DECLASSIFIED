@@ -4,18 +4,18 @@ const userPrefs = userPrefsStartup();
 
 function StartupSettings() {
     let response;
-    
+
     let disableMarkers = [],
-    visibleMarkers = [];
+        visibleMarkers = [];
     //Use default latest map otherwise use last selected map of user
     let currentMap = mapStrings.armada;
     let currentContribType;
     if (localStorage.declassifiedPrefs != undefined && JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap)
-    currentMap = JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap;
-    
+        currentMap = JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap;
+
     let isMobile = false,
-    submittingLocation = false,
-    fixedNotification = false;
+        submittingLocation = false,
+        fixedNotification = false;
     let notificationEle = document.getElementById("notification-popup");
     return response = { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingLocation, currentContribType, fixedNotification };
 }
@@ -80,4 +80,3 @@ function toggleDarkMode() {
     setUserPrefs(currentPrefs);
     location.reload();
 }
-

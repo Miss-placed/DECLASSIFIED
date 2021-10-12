@@ -5,7 +5,7 @@
     font-family: sans-serif;
 }
 
-:root {
+body {
     /* whites and blacks */
     --clr-white: #FFFFFF;
     --clr-white-d: #c7bbb2;
@@ -41,13 +41,11 @@
     --z-index-map: 1;
 }
 
-@media (prefers-color-scheme: dark) {
-     :root {
-        --clr-bg: var(--clr-grey-d);
-        --clr-color: var(--clr-white-d);
-        --clr-bg-inverted: var(--clr-white-d);
-        --clr-color-inverted: var(--clr-grey-d);
-    }
+body.dark {
+    --clr-bg: var(--clr-grey-d);
+    --clr-color: var(--clr-white-d);
+    --clr-bg-inverted: var(--clr-white-d);
+    --clr-color-inverted: var(--clr-grey-d);
 }
 
 ::-webkit-scrollbar {

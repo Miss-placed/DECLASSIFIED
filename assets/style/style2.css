@@ -42,7 +42,7 @@ header h1 {
     align-items: center;
     justify-content: center;
     box-shadow: var(--shadow);
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-weight: 900;
 }
 

@@ -1,28 +1,21 @@
-let lightModeClass = "light-"
-let systemDarkMode = false;
+let userColorScheme = false;
 
-function darkmodeSetup() {
-    if (getUserPrefs().darkmode) {
-        document.getElementById("worldMap").classList.remove(lightModeClass)
-        lightModeClass = ""
-    } else {
-        lightModeClass = "light-"
-        document.getElementById("worldMap").classList.add(lightModeClass)
+function setColorScheme() {
+    let osPreferedMode = JSON.parse(localStorage.osPreferedMode)
+    let osColorScheme = window.matchMedia('(prefers-color-scheme: light)').matches
+    document.getElementById("dark-mode").checked = osPreferedMode
+    document.getElementById("color-scheme-toggle").classList = "btn ui"
+    if (osPreferedMode) {
+        userColorScheme = osColorScheme
+        document.getElementById("color-scheme-toggle").classList = "btn ui -hidden"
     }
-
-    if (systemDarkMode == true) {
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.getElementById("worldMap").classList.remove(lightModeClass)
-            lightModeClass = ""
-        } else {
-            lightModeClass = "light-"
-            document.getElementById("worldMap").classList.add(lightModeClass)
-        }
-    }
+    document.body.classList = userColorScheme ? 'light' : 'dark';
+    userColorScheme = !userColorScheme
 }
 
-function toggleSystemDarkmode(x) {
-    systemDarkMode != systemDarkMode
-    darkmodeSetup()
+function changePreferedMode() {
+    localStorage.osPreferedMode = document.getElementById("dark-mode").checked
+    setColorScheme()
 }
-darkmodeSetup()
+
+setColorScheme()
