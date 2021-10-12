@@ -24,20 +24,26 @@ body {
 header {
     margin: 0 auto;
     position: absolute;
-    z-index: 1000;
+    z-index: var(--z-index-menu);
     left: calc((100vw - 400px) /2);
 }
 
 header h1 {
-    color: red;
+    color: var(--clr-white);
     width: 400px;
-    background-image: url(.././img/cc/placehoder.jpg);
-    background-size: contain;
+    background: var(--clr-grey-d);
+    background: linear-gradient( 135deg, var(--clr-grey-d) 15%, var(--clr-red) 15%, var(--clr-red) 16%, var(--clr-grey-d) 16%);
+    background-position-x: -454px;
+    background-repeat: no-repeat;
+    background-size: 800%;
     display: flex;
     margin: auto;
     height: 90px;
     align-items: center;
     justify-content: center;
+    box-shadow: var(--shadow);
+    text-transform: uppercase;
+    font-weight: 900;
 }
 
 header ul {
@@ -146,6 +152,7 @@ select.faction-list>option:hover {
 }
 
 .modal #filtered-intel,
+.button-list,
 #intel-type div {
     display: flex;
     margin: 0 auto;
@@ -162,7 +169,8 @@ select.faction-list>option:hover {
     padding-right: 5px;
 }
 
-#intel-list button.btn {
+#intel-list button.btn,
+#settings>div>.btn {
     margin-bottom: 20px;
     flex-direction: column;
     width: 100%;
@@ -213,6 +221,22 @@ select.faction-list>option:hover {
 
 #description {
     padding: 10px;
+}
+
+#settings {
+    color: var(--clr-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#settings>h2,
+#settings>.button-list>p {
+    margin-bottom: 5px;
+}
+
+#settings>div {
+    display: flex;
 }
 
 
