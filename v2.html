@@ -225,13 +225,17 @@
             $('.leaflet-image-layer.leaflet-zoom-animated').each(function(){
                 var img         = $(this);
                 var image_uri   = img.attr('src');
-    
+                var img_class   = img.attr('class');
+                var img_style   = img.attr('style')
                 $.get(image_uri, function(data) {
                     var svg = $(data).find('svg');
                     svg.removeAttr('xmlns:a');
+                    svg.attr('class') = img_class;
+                    svg.attr('style') = img_style;
+                    
                     img.replaceWith(svg);
                 }, 'xml');
-    
+                
             });
         });
     </script>
