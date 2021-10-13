@@ -18,18 +18,85 @@ const seasonTotal = {
     all: intelStoreV2.length
 }
 
+/////////////////////Header Menu/////////////////////////
 function expandMenu() {
     document.querySelector("header").classList.toggle("visible");
 }
 
-function changeMapTo(mapName, mapId, targetElement) {
-    //debugger
-    document.querySelector("header").querySelector("h1").innerHTML = mapName
+function changeMapTo(mapId, targetElement) {
+    const currentMap = mapDetails[mapId];
+    document.querySelector("header").querySelector("h1").innerHTML = currentMap.title;
     setMap(mapId, targetElement)
     expandMenu()
 }
 
+function renderHeader() {
+    const header = document.querySelector("header")
+    header.replaceChildren(); // Empty Out First
+    const currentMap = mapDetails[app.currentMap];
 
+    
+
+    let navbarHtmlToAdd = htmlToElements(
+    `<h1 onclick="expandMenu()">${currentMap.title}</h1>
+    <ul>
+        <li>
+            <h2>Die Maschine</h2>
+            <ul>
+                <li onclick="changeMapTo('dieMaschine',this)">Surface</li>
+                <li onclick="changeMapTo('dieMaschineUnderground',this)">Underground</li>
+            </ul>
+        </li>
+        <li>
+            <h2>Firebase Z</h2>
+            <ul>
+                <li onclick="changeMapTo('firebaseZSpawn',this)">Spawn</li>
+                <li onclick="changeMapTo('firebaseZ',this)">Main Base</li>
+            </ul>
+        </li>
+        <li>
+            <h2>Mauer Der Toten</h2>
+            <ul>
+                <li onclick="changeMapTo('mauerDerTotenStreets',this)">Surface</li>
+                <li onclick="changeMapTo('mauerDerToten',this)">Underground</li>
+            </ul>
+        </li>
+        <li>
+            <h2>Forsaken</h2>
+            <ul>
+                <li onclick="changeMapTo('forsaken',this)">Surface</li>
+                <li onclick="changeMapTo('forsakenUnderground',this)">Underground</li>
+            </ul>
+        </li>
+        <li>
+            <h2>Outbreak</h2>
+            <ul>
+                <li onclick="changeMapTo('zoo',this)">Zoo</li>
+                <li onclick="changeMapTo('duga',this)">Duga</li>
+                <li onclick="changeMapTo('ruka',this)">Ruka</li>
+                <li onclick="changeMapTo('alpine',this)">Alpine</li>
+                <li onclick="changeMapTo('armada',this)">Armada</li>
+                <li onclick="changeMapTo('golova',this)">Golova</li>
+                <li onclick="changeMapTo('collateral',this)">Collateral</li>
+                <li onclick="changeMapTo('sanatorium',this)">Sanatorium</li>
+            </ul>
+        </li>
+        <li>
+            <h2>Contribute</h2>
+            <ul>
+                <li id="newIntel" class="dropdown-item not-selectable" onClick="newIntelInit()">Submit New Intel</li>
+                <li id="newMisc" class="dropdown-item not-selectable" onClick="newMiscInit()">Submit New Misc Marker</li>
+            </ul>
+        </li>
+    </ul>`)
+    navbarHtmlToAdd.forEach(element => {
+        header.append(element);
+    });
+}
+
+renderHeader();
+
+/////////////////////Modal Functions/////////////////////////
 function openModal() {
     document.getElementsByClassName("modal-bg")[0].classList.remove("-hidden")
     fillTotals()
@@ -69,7 +136,7 @@ function GenerateDetailModal(intel) {
         <p>${intel.desc}</p>`
     );
 
-    
+
     elementsToAdd.forEach(element => {
         detailModal.append(element);
     });
@@ -93,16 +160,16 @@ function GenerateDetailModal(intel) {
     detailModal.appendChild(btnContainer);
 
 
-        /*     detailModal.querySelector("p").innerHTML = `
-            "id": ${intel.id}<br>
-            "faction": ${intel.faction}<br>
-            "season": ${intel.season}<br>
-            "intelType": ${intel.intelType}<br>
-            "loc": ${intel.loc}<br>
-            "map": ${intel.map}<br>
-            "name": ${intel.name}<br>
-            "desc": ${intel.desc}
-        ` */
+    /*     detailModal.querySelector("p").innerHTML = `
+        "id": ${intel.id}<br>
+        "faction": ${intel.faction}<br>
+        "season": ${intel.season}<br>
+        "intelType": ${intel.intelType}<br>
+        "loc": ${intel.loc}<br>
+        "map": ${intel.map}<br>
+        "name": ${intel.name}<br>
+        "desc": ${intel.desc}
+    ` */
 }
 
 
@@ -118,7 +185,7 @@ function findInCollected(query) {
 
 document.addEventListener(
     "click",
-    function(event) {
+    function (event) {
         // If user clicks outside the modal window, then close modal by calling closeModal()
         if (
             event.target.matches(".modal-bg") &&
@@ -196,7 +263,7 @@ function fillTotals() {
 }
 
 fillTotals()
-    // basic sum function for totals calculation
+// basic sum function for totals calculation
 function sum(obj) {
     return Object.keys(obj).reduce((sum, key) => sum + parseFloat(obj[key] || 0), 0);
 }
@@ -221,7 +288,7 @@ let factionItems = [{
     label: "NotCollected ",
     value: collectedFaction.not,
     color: "--clr-grey "
-}, ]
+},]
 
 seasonItems = [{
     label: "PreSeason ",
@@ -251,17 +318,18 @@ seasonItems = [{
     label: "NotCollected ",
     value: collectedSeason.not,
     color: "--clr-grey "
-}, ]
+},]
 
 
 let factionDonut = new DonutChart(
     document.getElementById("faction-donut"), {
-        r: 100,
-        stroke: 25,
-        scale: 100,
-        total: factionTotal.all,
-        collected: collectedFaction.all,
-        items: factionItems
+    r: 100,
+    stroke: 25,
+    scale: 100,
+    total: factionTotal.all,
+    collected: collectedFaction.all,
+    items: factionItems
 
-    }
+}
 )
+

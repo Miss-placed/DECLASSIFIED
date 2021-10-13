@@ -8,7 +8,7 @@ function StartupSettings() {
     let disableMarkers = [],
     visibleMarkers = [];
     //Use default latest map otherwise use last selected map of user
-    let currentMap = mapStrings.armada;
+    let currentMap = mapDetails.armada.id;
     let currentContribType;
     if (localStorage.declassifiedPrefs != undefined && JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap)
     currentMap = JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap;
@@ -75,8 +75,11 @@ function setLastVisitedMap(selectedMap) {
 }
 
 function toggleDarkMode() {
+    //Getting
     let currentPrefs = getUserPrefs();
+    //Updating
     currentPrefs.darkmode = !currentPrefs.darkmode
+    //Setting/Saving
     setUserPrefs(currentPrefs);
     location.reload();
 }

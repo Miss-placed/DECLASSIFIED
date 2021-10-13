@@ -1,4 +1,4 @@
-//Non collectible items that need icons on the respective maps
+/* //Non collectible items that need icons on the respective maps
 let miscPOI = {};
 /////////////////////Round Based Misc Items/////////////////////////
 
@@ -404,4 +404,4 @@ miscPOI[mapStrings.sanatorium] = {
 
 // dieMaschine_underground_intel = {
 //     // omegaAudio: [-92.51941390317432, 113],
-// }
+// } */

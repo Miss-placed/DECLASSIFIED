@@ -25,46 +25,46 @@ class Marker {
 }
 
 class UserPrefs {
-    constructor({lastSelectedMap, collectedIntel, darkmode, asideShow}) {
+    constructor({lastSelectedMap, collectedIntel, darkmode, asideShow, osPreferedMode}) {
         this.lastSelectedMap = lastSelectedMap ?? app.currentMap;
         this.collectedIntel = collectedIntel ?? [];
         this.darkmode = darkmode ?? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
         this.asideShow = asideShow ?? true;
+        this.osPreferedMode = osPreferedMode ?? false;
     }
 }
 
 /////////////////////Maps/////////////////////////
-const mapStrings = {
-    zoo: "zoo",
-    ruka: "ruka",
-    duga: "duga",
-    alpine: "alpine",
-    golova: "golova",
-    sanatorium: "sanatorium",
-    collateral: "collateral",
-    armada: "armada",
 
-    allOutbreakMaps: "outbreak",
-
-    dieMaschine: "dieMaschine",
-    dieMaschineUnderground: "dieMaschine_underground",
-    firebaseZ: "firebaseZ",
-    firebaseZSpawn: "firebaseZ_spawn",
-    mauerDerToten: "mauerDerToten",
-    mauerDerTotenStreets: "mauerDerToten_streets",
-    forsaken: "forsaken",
-    forsakenUnderground: "forsaken_underground",
-}
+const mapDetails = {
+    allOutbreakMaps: new Item({ id: "outbreak", title: "All Outbreak Maps"}),
+    zoo: new Item({ id: "zoo", title: "Zoo"}),
+    ruka: new Item({ id: "ruka", title: "Ruka"}),
+    duga: new Item({ id: "duga", title: "Duga"}),
+    alpine: new Item({ id: "alpine", title: "Alpine"}),
+    golova: new Item({ id: "golova", title: "Golova"}),
+    sanatorium: new Item({ id: "sanatorium", title: "Sanatorium"}),
+    collateral: new Item({ id: "collateral", title: "Collateral"}),
+    armada: new Item({ id: "armada", title: "Armada"}),
+    dieMaschine: new Item({ id: "dieMaschine", title: "Die Maschine"}),
+    dieMaschineUnderground: new Item({ id: "dieMaschine_underground", title: "Die Maschine"}),
+    firebaseZ: new Item({ id: "firebaseZ", title: "Firebase Z"}),
+    firebaseZSpawn: new Item({ id: "firebaseZ_spawn", title: "Firebase Z"}),
+    mauerDerToten: new Item({ id: "mauerDerToten", title: "Mauer Der Toten"}),
+    mauerDerTotenStreets: new Item({ id: "mauerDerToten_streets", title: "Mauer Der Toten"}),
+    forsaken: new Item({ id: "forsaken", title: "Forsaken"}),
+    forsakenUnderground: new Item({ id: "forsaken_underground", title: "Forsaken"}),
+};
 
 const allOutbreakMapsArr = [
-    mapStrings.zoo,
-    mapStrings.ruka,
-    mapStrings.duga,
-    mapStrings.alpine,
-    mapStrings.golova,
-    mapStrings.sanatorium,
-    mapStrings.collateral,
-    mapStrings.armada
+    mapDetails.zoo.id,
+    mapDetails.ruka.id,
+    mapDetails.duga.id,
+    mapDetails.alpine.id,
+    mapDetails.golova.id,
+    mapDetails.sanatorium.id,
+    mapDetails.collateral.id,
+    mapDetails.armada.id
 ]
 
 /////////////////////Metadata/////////////////////////

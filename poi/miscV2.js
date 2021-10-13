@@ -6,7 +6,7 @@
 let miscPOI = {};
 
 /////////////////////Round Based Misc Items/////////////////////////
-miscPOI[mapStrings.dieMaschine] = [
+miscPOI[mapDetails.dieMaschine.id] = [
     new Marker("qnnn7", miscTypes.craftingTable, [238.9533945125948, 313.2529307427267]),
     new Marker("FcRRV", miscTypes.rampageInducer, [187.22527858413707, 297.96712471202267]),
     new Marker("RNg0j", miscTypes.ammoCrate, [173.22590130162, 293.5]),
@@ -31,7 +31,7 @@ miscPOI[mapStrings.dieMaschine] = [
     new Marker("U24cf", miscTypes.ammoCrate, [256.22518494241035, 86.25]),
     new Marker("6gdU5", miscTypes.radio, [257.99097293754096, 88.5625]),
 ];
-miscPOI[mapStrings.dieMaschineUnderground] = [
+miscPOI[mapDetails.dieMaschineUnderground.id] = [
     new Marker("cTakX", miscTypes.craftingTable, [302.9450323063958, 199.5]),
     new Marker("GdJqJ", miscTypes.wallbuy, [325.4370259387583, 188.25], "XM4"),
     new Marker("OwuYN", miscTypes.wallbuy, [189.74051249234878, 245], "RPD"),
@@ -51,7 +51,7 @@ miscPOI[mapStrings.dieMaschineUnderground] = [
     new Marker("q44EK", miscTypes.mysteryBox, [182.9811409122104, 203.75]),
     new Marker("LXxTQ", miscTypes.power, [126.11151299315564, 399.125]),
 ];
-miscPOI[mapStrings.firebaseZ] = [
+miscPOI[mapDetails.firebaseZ.id] = [
     new Marker("JgR0a", miscTypes.teleporter, [325.0978719917595, 221.75], "To Spawn"),
     new Marker("zfWMF", miscTypes.ammoCrate, [314.97647485719637, 243.375]),
     new Marker("V0Gux", miscTypes.ammoCrate, [357.7112627586853, 248.75]),
@@ -124,7 +124,7 @@ miscPOI[mapStrings.firebaseZ] = [
     new Marker("4wv87", miscTypes.airSupport, [393.9098932484315, 375.5], "Napalm Strike"),
     new Marker("eLtJ6", miscTypes.airSupport, [149.72083060211628, 349.75], "Artillery"),
 ];
-miscPOI[mapStrings.firebaseZSpawn] = [
+miscPOI[mapDetails.firebaseZSpawn.id] = [
     new Marker("uxA5R", miscTypes.ammoCrate, [208.93098604738273, 232.5]),
     new Marker("kgGlY", perks.quick, [159.46212192152825, 258.5]),
     new Marker("rVCnt", miscTypes.craftingTable, [311.9078565408746, 242]),
@@ -138,7 +138,7 @@ miscPOI[mapStrings.firebaseZSpawn] = [
     new Marker("il15s", miscTypes.wallbuy, [314.4659378218934, 149.25], "Stoner 83"),
     new Marker("ZQwBM", miscTypes.teleporter, [220.20935480850267, 349.25], "To Main Base"),
 ];
-miscPOI[mapStrings.mauerDerToten] = [
+miscPOI[mapDetails.mauerDerToten.id] = [
     new Marker("Vz7PI", miscTypes.ammoCrate, [360.6779752089085, 166.75]),
     new Marker("lgFlW", miscTypes.ammoCrate, [313.43651220099684, 307.7578472555278]),
     new Marker("028Bw", miscTypes.ammoCrate, [207.98264577272982, 224.85949360808374]),
@@ -154,7 +154,7 @@ miscPOI[mapStrings.mauerDerToten] = [
     new Marker("6n4vD", miscTypes.wallbuy, [159.12485177224806, 196.85347379562404], "XM4"),
     new Marker("ROB5S", miscTypes.power, [283.45675455337124, 206.46866472621429], "2 fuses are required to activate."),
 ];
-miscPOI[mapStrings.mauerDerTotenStreets] = [
+miscPOI[mapDetails.mauerDerTotenStreets.id] = [
     new Marker("WLKGz", miscTypes.ammoCrate, [226.22815725111633, 104.23454735640928]),
     new Marker("O9joh", miscTypes.ammoCrate, [298.4431129680754, 171.48344551573587]),
     new Marker("KtnDa", miscTypes.ammoCrate, [368.860374089789, 329.5]),
@@ -187,7 +187,7 @@ miscPOI[mapStrings.mauerDerTotenStreets] = [
     new Marker("slGlH", miscTypes.trialComputer, [252.96874015675087, 39.595653414259026]),
     new Marker("UvjK8", miscTypes.rampageInducer, [337.9763530414482, 384.75]),
 ];
-miscPOI[mapStrings.forsaken] = [
+miscPOI[mapDetails.forsaken.id] = [
     new Marker("uhk5c", miscTypes.teleporter, [312.4317773199738, 82.75], "To Main Street"),
     new Marker("UATGZ", miscTypes.ammoCrate, [238.70802041389643, 101.25]),
     new Marker("8zjoh", miscTypes.ammoCrate, [260.86174735462123, 289.5625]),
@@ -254,7 +254,7 @@ miscPOI[mapStrings.forsaken] = [
     new Marker("seF1D", miscTypes.papMachine, [274.98619135686863, 306.875]),
     new Marker("vuLXB", miscTypes.radio, [66.98666073602396, 129.125]),
 ];
-miscPOI[mapStrings.forsakenUnderground] = [
+miscPOI[mapDetails.forsakenUnderground.id] = [
     new Marker("9sxm7", miscTypes.ammoCrate, [284.6965446202828, 98.5]),
     new Marker("BwlgF", miscTypes.teleporter, [296.91141492649126, 38], "To Tower"),
     new Marker("ndKPG", miscTypes.arsenal, [385.43844929300496, 142]),
@@ -270,7 +270,7 @@ miscPOI[mapStrings.forsakenUnderground] = [
 ];
 
 /////////////////////Outbreak Misc Items/////////////////////////
-miscPOI[mapStrings.zoo] = [
+miscPOI[mapDetails.zoo.id] = [
     new Marker("s9ryH", miscTypes.dementedEcho, [0, 0]),
     new Marker("a0AnD", miscTypes.dementedEcho, [0, 0]),
     new Marker("OygKx", miscTypes.dementedEcho, [0, 0]),
@@ -295,7 +295,7 @@ miscPOI[mapStrings.zoo] = [
     new Marker("t1Csu", miscTypes.monkey, [266.54015544041454, 117.57161206140799], "In the middle of the large shelves."),
     new Marker("a84zo", miscTypes.projector, [241.65018710420264, 295.65660105200925]),
 ];
-miscPOI[mapStrings.duga] = [
+miscPOI[mapDetails.duga.id] = [
     new Marker("BcM6G", miscTypes.dementedEcho, [218.2373426139386, 258]),
     new Marker("X69Ma", miscTypes.dementedEcho, [0, 0]),
     new Marker("M6PhI", miscTypes.dementedEcho, [0, 0]),
@@ -322,7 +322,7 @@ miscPOI[mapStrings.duga] = [
     new Marker("P79of", miscTypes.monkey, [107.24119968079447, 330], "Behind the wall"),
     new Marker("d2US7", miscTypes.projector, [173.2474009132825, 354.5625]),
 ];
-miscPOI[mapStrings.ruka] = [
+miscPOI[mapDetails.ruka.id] = [
     new Marker("vi0sy", miscTypes.dementedEcho, [0, 0]),
     new Marker("JzRzZ", miscTypes.dementedEcho, [0, 0]),
     new Marker("Rek6g", miscTypes.dementedEcho, [0, 0]),
@@ -349,7 +349,7 @@ miscPOI[mapStrings.ruka] = [
     new Marker("SGa0I", miscTypes.monkey, [238.30978121120768, 448.3125], "At the end of the railroad, under rafters."),
     new Marker("fDb0E", miscTypes.projector, [0, 0]),
 ];
-miscPOI[mapStrings.alpine] = [
+miscPOI[mapDetails.alpine.id] = [
     new Marker("yfDA4", miscTypes.dementedEcho, [0, 0]),
     new Marker("JnfGP", miscTypes.dementedEcho, [0, 0]),
     new Marker("sKxXQ", miscTypes.dementedEcho, [0, 0]),
@@ -373,7 +373,7 @@ miscPOI[mapStrings.alpine] = [
     new Marker("aFKUh", miscTypes.monkey, [409.2206641248448, 212.25], "Behind the porta-potties, by the gasoline tank."),
     new Marker("rYPHj", miscTypes.projector, [0, 0]),
 ];
-miscPOI[mapStrings.golova] = [
+miscPOI[mapDetails.golova.id] = [
     new Marker("_9qob", miscTypes.dementedEcho, [0, 0]),
     new Marker("1blw4", miscTypes.dementedEcho, [0, 0]),
     new Marker("qAgVa", miscTypes.dementedEcho, [0, 0]),
@@ -400,7 +400,7 @@ miscPOI[mapStrings.golova] = [
     new Marker("8xhDt", miscTypes.monkey, [185.48268753325056, 416.75], "On the top shelf."),
     new Marker("iMHwr", miscTypes.projector, [177.0071341819346, 347.625]),
 ];
-miscPOI[mapStrings.sanatorium] = [
+miscPOI[mapDetails.sanatorium.id] = [
     new Marker("ijcwV", miscTypes.dementedEcho, [0, 0]),
     new Marker("FpAjy", miscTypes.dementedEcho, [0, 0]),
     new Marker("H8LVB", miscTypes.dementedEcho, [0, 0]),
@@ -430,12 +430,12 @@ miscPOI[mapStrings.sanatorium] = [
     //Don't really need this for now, not until we re-work easter eggs
     //new Marker(new Item("oEPK3", "Chopper Gunner", "Hold out until the wave is dead to continue with the Easter Egg"), [-170.51300319205535, 39.25])
 ];
-miscPOI[mapStrings.collateral] = [
+miscPOI[mapDetails.collateral.id] = [
     new Marker("0FS1A", miscTypes.requiemRadio, [323.85274730873994, 352.125]),
     new Marker("W6wPV", miscTypes.omegaRadio, [179.8639466102166, 179.1875]),
     new Marker("bUGza", miscTypes.maxisRadio, [296.69284893739234, 413.4940734223786]),
 ];
-miscPOI[mapStrings.armada] = [
+miscPOI[mapDetails.armada.id] = [
     new Marker("iC2vJ", miscTypes.requiemRadio, [209.4688119545682, 185.25]),
     new Marker("S1EN7", miscTypes.omegaRadio, [205.7201321079839, 329.5]),
     new Marker("G5tYA", miscTypes.maxisRadio, [251.6097221192863, 312.25]),

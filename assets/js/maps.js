@@ -12,22 +12,22 @@ var globalMapSettings = {
 
 //Need to use var here because JS weirdness
 const mapLayers = {
-    zoo: generateLayers(mapStrings.zoo, globalMapSettings),
-    duga: generateLayers(mapStrings.duga, globalMapSettings),
-    ruka: generateLayers(mapStrings.ruka, globalMapSettings),
-    alpine: generateLayers(mapStrings.alpine, globalMapSettings),
-    golova: generateLayers(mapStrings.golova, globalMapSettings),
-    sanatorium: generateLayers(mapStrings.sanatorium, globalMapSettings),
-    collateral: generateLayers(mapStrings.collateral, globalMapSettings),
-    armada: generateLayers(mapStrings.armada, globalMapSettings),
-    dieMaschine: generateLayers(mapStrings.dieMaschine, globalMapSettings),
-    dieMaschine_underground: generateLayers(mapStrings.dieMaschineUnderground, globalMapSettings),
-    firebaseZ: generateLayers(mapStrings.firebaseZ, globalMapSettings),
-    firebaseZ_spawn: generateLayers(mapStrings.firebaseZSpawn, globalMapSettings),
-    mauerDerToten: generateLayers(mapStrings.mauerDerToten, globalMapSettings),
-    mauerDerToten_streets: generateLayers(mapStrings.mauerDerTotenStreets, globalMapSettings),
-    forsaken: generateLayers(mapStrings.forsaken, globalMapSettings),
-    forsaken_underground: generateLayers(mapStrings.forsakenUnderground, globalMapSettings),
+    zoo: generateLayers(mapDetails.zoo.id, globalMapSettings),
+    duga: generateLayers(mapDetails.duga.id, globalMapSettings),
+    ruka: generateLayers(mapDetails.ruka.id, globalMapSettings),
+    alpine: generateLayers(mapDetails.alpine.id, globalMapSettings),
+    golova: generateLayers(mapDetails.golova.id, globalMapSettings),
+    sanatorium: generateLayers(mapDetails.sanatorium.id, globalMapSettings),
+    collateral: generateLayers(mapDetails.collateral.id, globalMapSettings),
+    armada: generateLayers(mapDetails.armada.id, globalMapSettings),
+    dieMaschine: generateLayers(mapDetails.dieMaschine.id, globalMapSettings),
+    dieMaschine_underground: generateLayers(mapDetails.dieMaschineUnderground.id, globalMapSettings),
+    firebaseZ: generateLayers(mapDetails.firebaseZ.id, globalMapSettings),
+    firebaseZ_spawn: generateLayers(mapDetails.firebaseZSpawn.id, globalMapSettings),
+    mauerDerToten: generateLayers(mapDetails.mauerDerToten.id, globalMapSettings),
+    mauerDerToten_streets: generateLayers(mapDetails.mauerDerTotenStreets.id, globalMapSettings),
+    forsaken: generateLayers(mapDetails.forsaken.id, globalMapSettings),
+    forsaken_underground: generateLayers(mapDetails.forsakenUnderground.id, globalMapSettings),
 }
 
 function generateLayers(name, settings) {

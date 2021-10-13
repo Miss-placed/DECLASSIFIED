@@ -7,7 +7,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.audio,
     loc: "[117.48346338003188, 388]",
-    map: mapStrings.dieMaschineUnderground,
+    map: mapDetails.dieMaschineUnderground.id,
     name: "The Incident",
     desc: "Right next to power in the left corner on a shelf."
 }, {
@@ -16,7 +16,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.audio,
     loc: "[156.97926050718212, 379.5]",
-    map: mapStrings.dieMaschineUnderground,
+    map: mapDetails.dieMaschineUnderground.id,
     name: "Parallel World",
     desc: "Near PaP, behind the stairs leading up while in the Dark Aether."
 }, {
@@ -25,7 +25,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Endstation Approval Letter",
     desc: "Drops from a Megaton."
 }, {
@@ -34,7 +34,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Spacetime Breach Sketch",
     desc: "Drops from a Megaton."
 }, {
@@ -43,7 +43,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "D.I.E. Blueprint",
     desc: "Drops from a Megaton."
 }, {
@@ -52,7 +52,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Der Wechsler Blueprint",
     desc: "Drops from a Megaton."
 }, {
@@ -61,7 +61,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "V Cipher #1",
     desc: "Drops from a Megaton."
 }, {
@@ -70,7 +70,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "V Cipher #2",
     desc: "Drops from a Megaton."
 }, {
@@ -79,7 +79,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Officer Weaver",
     desc: "You can only get one radio transmission per game."
 }, {
@@ -88,7 +88,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Doctor Grey",
     desc: "You can only get one radio transmission per game."
 }, {
@@ -97,7 +97,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.radio,
     loc: "[185.47622805461958, 256.5]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Dimension of Death",
     desc: "You can only get one radio transmission per game."
 }, {
@@ -106,7 +106,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Doctor Strauss",
     desc: "You can only get one radio transmission per game."
 }, {
@@ -115,7 +115,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Aetherium",
     desc: "You can only get one radio transmission per game."
 }, {
@@ -124,7 +124,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Major Carver",
     desc: "You can only get one radio transmission per game."
 }, {
@@ -133,7 +133,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "New Arms Race",
     desc: "You can only get one radio transmission per game."
 }, {
@@ -142,7 +142,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.artifact,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "D.I.E. Remote Control",
     desc: "Gotten as part of the free D.I.E Machine Quest"
 }, {
@@ -151,7 +151,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.artifact,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "D.I.E. Machine",
     desc: "Get the free D.I.E Machine from the quest("
 }, {
@@ -160,7 +160,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.artifact,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Aetherscope",
     desc: "Part of the main quest. You have to craft it."
 }, {
@@ -169,7 +169,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.artifact,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Doctor Vogel's Diary",
     desc: "When you have crafted the Aetherscope, it can be found in the Dark Aether next to the computer in the med bay."
 }, {
@@ -178,7 +178,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.artifact,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Decontamination Agent",
     desc: "In a cabinet in the med bay. Obtained during the main quest."
 }, {
@@ -187,7 +187,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[344.7238827806349, 363.5]",
-    map: mapStrings.dieMaschineUnderground,
+    map: mapDetails.dieMaschineUnderground.id,
     name: "Exo-Element 1",
     desc: "Obtained from table in med bay, by easter egg computer. On the far wall, close to the box location."
 }, {
@@ -196,7 +196,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[195.48976325589638, 200]",
-    map: mapStrings.dieMaschineUnderground,
+    map: mapDetails.dieMaschineUnderground.id,
     name: "New Orders",
     desc: "Obtained from a table in weapons lab, close to the dog gas collection point for the nova 5 WW upgrade."
 }, {
@@ -205,7 +205,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[229.97149317254832, 351.5]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Ravenov",
     desc: "On a table in the outer ring of Data Center, first floor near a cabinet of data reels."
 }, {
@@ -214,7 +214,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[388.95457527930483, 247]",
-    map: mapStrings.firebaseZSpawn,
+    map: mapDetails.firebaseZSpawn.id,
     name: "they Took Her",
     desc: "On a bench above PaP."
 }, {
@@ -223,7 +223,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[208.9737276112786, 208]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Meeting Of Minds",
     desc: "In military Command, under the desk near the zombie barrier."
 }, {
@@ -232,7 +232,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Doctor Vogel Entry 203",
     desc: "Obtained from megaton drop."
 }, {
@@ -241,7 +241,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "outbreak Zones Timeline",
     desc: "Obtained from a Mimic drop."
 }, {
@@ -250,7 +250,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Requiem Formation Memo",
     desc: "Obtained from a Mimic drop."
 }, {
@@ -259,7 +259,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Requiem Staffing Announcement",
     desc: "Obtained from a Mimic drop."
 }, {
@@ -268,7 +268,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "C Cipher",
     desc: "Obtained from a Mimic drop."
 }, {
@@ -277,7 +277,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Omega's Advantage",
     desc: ""
 }, {
@@ -286,7 +286,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "This Is Personal",
     desc: ""
 }, {
@@ -295,7 +295,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Peck",
     desc: ""
 }, {
@@ -304,7 +304,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Between Us",
     desc: ""
 }, {
@@ -313,7 +313,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "W.A.N.D.",
     desc: ""
 }, {
@@ -322,7 +322,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Stick",
     desc: ""
 }, {
@@ -331,7 +331,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Blacksmiths and Architects",
     desc: ""
 }, {
@@ -340,7 +340,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Not Unlike Oxygen",
     desc: ""
 }, {
@@ -349,7 +349,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "A Storied Career",
     desc: ""
 }, {
@@ -358,7 +358,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "The Thick Of It",
     desc: ""
 }, {
@@ -367,7 +367,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Transformative Properties",
     desc: ""
 }, {
@@ -376,7 +376,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Genetic Secrets",
     desc: ""
 }, {
@@ -385,7 +385,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.artifact,
     loc: "[158.24646657208723, 287.25]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "RAI K-84 Blueprint",
     desc: "On the wall in Weapons Lab."
 }, {
@@ -394,7 +394,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.artifact,
     loc: "[346.4590973576875, 448]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Weapon Trial Folder",
     desc: "On the ground next to Kuhlklay's Body."
 }, {
@@ -403,7 +403,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.artifact,
     loc: "[292.4648430572796, 330.5]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Kuhlklay's Diary",
     desc: "Obtained from a locker, requires the locker key from the quest."
 }, {
@@ -412,7 +412,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.artifact,
     loc: "[159.3725006650115, 282.625]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "RAI K-84 Prototype",
     desc: "Obtain the ww. Needs to be the free one from the quest."
 }, {
@@ -421,7 +421,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.audio,
     loc: "[172.47761127859548, 358.5]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Focal Point",
     desc: "On the corner of the building on a ledge, near the satellite dish. Rocky Defence. Need to shoot it down."
 }, {
@@ -430,7 +430,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.audio,
     loc: "[285.73321954247206, 271.75]",
-    map: mapStrings.ruka,
+    map: mapDetails.ruka.id,
     name: "Like Flies To Honey",
     desc: "In the Base Headquarters location on a long table."
 }, {
@@ -439,7 +439,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.audio,
     loc: "[292.5, 56]",
-    map: mapStrings.alpine,
+    map: mapDetails.alpine.id,
     name: "A Grisly Affair",
     desc: "In Base Cabins on the back of a truck behind the cabins."
 }, {
@@ -448,7 +448,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.audio,
     loc: "[157.93177892918823, 261.90189231808966]",
-    map: mapStrings.golova,
+    map: mapDetails.golova.id,
     name: "I See Hierarchy",
     desc: "On the top of the water tower near the gas station at the edge of the village proper."
 }, {
@@ -457,7 +457,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.audio,
     loc: "[336, 265]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "Quantum Entanglement",
     desc: "On the pier in the back room of the building at the end."
 }, {
@@ -466,7 +466,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.audio,
     loc: "[195.47532363894305, 92.5]",
-    map: mapStrings.ruka,
+    map: mapDetails.ruka.id,
     name: "Recon Rover Blues",
     desc: "In the big building of the Old Farm location. (NEEDS FURTHER ELABORATION)"
 }, {
@@ -475,7 +475,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.audio,
     loc: "[279, 285.5]",
-    map: mapStrings.alpine,
+    map: mapDetails.alpine.id,
     name: "Killer Crystals",
     desc: "In Ski Patrol in the big building upstairs in the smaller side room on a table."
 }, {
@@ -484,7 +484,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "RE: Funding Allocation 1",
     desc: ""
 }, {
@@ -493,7 +493,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "RE: Funding Allocation 2",
     desc: ""
 }, {
@@ -502,7 +502,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Berlin COMINT",
     desc: ""
 }, {
@@ -511,7 +511,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Operation Threshold Authorization",
     desc: ""
 }, {
@@ -520,7 +520,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Domino Effect",
     desc: ""
 }, {
@@ -529,7 +529,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Recon Rover Blueprint",
     desc: ""
 }, {
@@ -538,7 +538,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Disruptor Satellite Blueprint",
     desc: ""
 }, {
@@ -547,7 +547,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Nose To Nose",
     desc: ""
 }, {
@@ -556,7 +556,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Race Against Time",
     desc: ""
 }, {
@@ -565,7 +565,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "How We Win",
     desc: ""
 }, {
@@ -574,7 +574,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Under Observation",
     desc: ""
 }, {
@@ -583,7 +583,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.artifact,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Zombie Head",
     desc: "Collected through the Defence objective."
 }, {
@@ -592,7 +592,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.artifact,
     loc: "[184.99267893868938, 142.25]",
-    map: mapStrings.golova,
+    map: mapDetails.golova.id,
     name: "Aetherium Canister",
     desc: "Between the pipes connecting the Silo with the building."
 }, {
@@ -601,7 +601,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.artifact,
     loc: "[91.24241490800614, 323.625]",
-    map: mapStrings.ruka,
+    map: mapDetails.ruka.id,
     name: "Aetherium Crystal Shard",
     desc: "In the burnt forest section, right up against the edge of the map about halfway down. It's on top of a big rock."
 }, {
@@ -610,7 +610,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.artifact,
     loc: "[256, 167.5]",
-    map: mapStrings.alpine,
+    map: mapDetails.alpine.id,
     name: "Frostblast Canister",
     desc: "Look on top of the circular ski lift station on the western side of the map near the Lodge and the Pro Shop."
 }, {
@@ -619,7 +619,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.audio,
     loc: "[369.5, 284]",
-    map: mapStrings.duga,
+    map: mapDetails.duga.id,
     name: "The Beacon",
     desc: "In the Chemical Processing area, on the desk in the office of the big building."
 }, {
@@ -628,7 +628,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.audio,
     loc: "[344, 427.5]",
-    map: mapStrings.duga,
+    map: mapDetails.duga.id,
     name: "Doubts",
     desc: "In the SAM site, in the big hanger on a box marked with a red star."
 }, {
@@ -637,7 +637,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.audio,
     loc: "[216.47308920021277, 87.5]",
-    map: mapStrings.ruka,
+    map: mapDetails.ruka.id,
     name: "Death Squad",
     desc: "In the old farm area. In the green tent, under a table."
 }, {
@@ -646,7 +646,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.audio,
     loc: "[174, 304]",
-    map: mapStrings.duga,
+    map: mapDetails.duga.id,
     name: "Eyes Only",
     desc: "In the Worker Services building. On the second floor, on a desk in one of the offices."
 }, {
@@ -655,7 +655,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.audio,
     loc: "[204.5, 274]",
-    map: mapStrings.duga,
+    map: mapDetails.duga.id,
     name: "Operation Baldr",
     desc: "In Radar Control. Sitting on the table next to the couch in the Office on the second floor."
 }, {
@@ -664,7 +664,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.audio,
     loc: "[286.5, 298.5]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "Dissent And Division",
     desc: "On the monorail track in South Lake. It's in the support pillar in the middle of the lake."
 }, {
@@ -673,7 +673,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.audio,
     loc: "[303, 345.5]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "News From Upstairs",
     desc: "Under the bridge. Right at the end of the bridge just before you go out of the map, on a little platform just above the surface of the water."
 }, {
@@ -682,7 +682,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.audio,
     loc: "[219, 149.5]",
-    map: mapStrings.alpine,
+    map: mapDetails.alpine.id,
     name: "Embarrassment of Riches",
     desc: "In the lodge. On the third floor sitting on the bar."
 }, {
@@ -691,7 +691,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Extraction Rocket Blueprint",
     desc: ""
 }, {
@@ -700,7 +700,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Dark Aether Object Report",
     desc: ""
 }, {
@@ -709,7 +709,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Crate Memo",
     desc: ""
 }, {
@@ -718,7 +718,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "E.C.M. Blueprint",
     desc: ""
 }, {
@@ -727,7 +727,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Investigation Request",
     desc: ""
 }, {
@@ -736,7 +736,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Zykov Assessment",
     desc: ""
 }, {
@@ -745,7 +745,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Power Nodes Report",
     desc: ""
 }, {
@@ -754,7 +754,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "J Cipher",
     desc: ""
 }, {
@@ -763,7 +763,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Progress Update",
     desc: ""
 }, {
@@ -772,7 +772,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "A Visceral Process",
     desc: ""
 }, {
@@ -781,7 +781,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Fish Out Of Water",
     desc: ""
 }, {
@@ -790,7 +790,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Commander-In-Chief",
     desc: ""
 }, {
@@ -799,7 +799,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[278.5, 127.5]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "Energy Mine Canister",
     desc: "On the roof of the 001 and 002 apartments in the Mechanic Shop area."
 }, {
@@ -808,7 +808,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[367, 233]",
-    map: mapStrings.duga,
+    map: mapDetails.duga.id,
     name: "Essence Explosive",
     desc: "In the bunker area, in the top most guard station."
 }, {
@@ -817,7 +817,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[245.5, 332.5]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "Requiem Patch",
     desc: "In the Lakeside Dell area. Its on a little dock to the left of the big bridge."
 }, {
@@ -826,7 +826,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[387.7990788716177, 353.95577832845237]",
-    map: mapStrings.golova,
+    map: mapDetails.golova.id,
     name: "Transformed Apple Crate",
     desc: "In the barn of the lower farmstead. Should be pretty easy to spot."
 }, {
@@ -835,7 +835,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[191.5, 398.5]",
-    map: mapStrings.duga,
+    map: mapDetails.duga.id,
     name: "Beacon Device Component",
     desc: "In the Electrical Substation. On one of the two taller structures, is very easy to see."
 }, {
@@ -844,7 +844,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[356.718080080043, 430.125]",
-    map: mapStrings.alpine,
+    map: mapDetails.alpine.id,
     name: "Aether Shroud Canister",
     desc: "In the Maintenance section. It's inside one of the garages."
 }, {
@@ -853,7 +853,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.audio,
     loc: "[201.97447242418866, 286]",
-    map: mapStrings.zoo,
+    map: mapDetails.zoo.id,
     name: "You know better.",
     desc: "Next to the monorail up in the cages overpass."
 }, {
@@ -862,7 +862,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.audio,
     loc: "[332.61880985103744, 263.9375]",
-    map: mapStrings.zoo,
+    map: mapDetails.zoo.id,
     name: "Aftermath",
     desc: "On the desks in the center of the room."
 }, {
@@ -871,7 +871,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.audio,
     loc: "[256.1005169442849, 277.25]",
-    map: mapStrings.golova,
+    map: mapDetails.golova.id,
     name: "What Tomorrow Brings",
     desc: "On a bar counter."
 }, {
@@ -880,7 +880,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.audio,
     loc: "[360.21051120045945, 283.75]",
-    map: mapStrings.ruka,
+    map: mapDetails.ruka.id,
     name: "The Berlin Situation",
     desc: "The audio log is on top of a railway tanker."
 }, {
@@ -889,7 +889,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.audio,
     loc: "[221.11429054492226, 132.75]",
-    map: mapStrings.zoo,
+    map: mapDetails.zoo.id,
     name: "Goes Without Saying",
     desc: "The audio log is inside one of the buildings at the Industrial Complex, on top of the the middle table."
 }, {
@@ -898,7 +898,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "DASA Station Blueprint",
     desc: ""
 }, {
@@ -907,7 +907,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "The Omega Eight",
     desc: ""
 }, {
@@ -916,7 +916,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "The Child's Note",
     desc: "Obtained during the Outbreak EE#2"
 }, {
@@ -925,7 +925,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Welcome Back",
     desc: ""
 }, {
@@ -934,7 +934,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Patterns",
     desc: ""
 }, {
@@ -943,7 +943,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.artifact,
     loc: "[246.4854805816634, 109.75]",
-    map: mapStrings.zoo,
+    map: mapDetails.zoo.id,
     name: "Healing Aura Canister",
     desc: "Underneath the sink in the corner."
 }, {
@@ -952,7 +952,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.artifact,
     loc: "[416.95170242950877, 369.5]",
-    map: mapStrings.zoo,
+    map: mapDetails.zoo.id,
     name: "Recon Rover Module",
     desc: "Behind the sink in the bathroom, second floor."
 }, {
@@ -961,7 +961,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.artifact,
     loc: "[304.976089010765, 73.875]",
-    map: mapStrings.alpine,
+    map: mapDetails.alpine.id,
     name: "Ring of Fire Canister",
     desc: "In a yellow hanging coat inside the southernmost base cabin."
 }, {
@@ -970,7 +970,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.artifact,
     loc: "[244.11627888125105, 320.3125]",
-    map: mapStrings.zoo,
+    map: mapDetails.zoo.id,
     name: "ECM Model",
     desc: "The artifact is found on the shelf inside the Zoo Entrance office."
 }, {
@@ -979,7 +979,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.audio,
     loc: "[152.10509347612606, 373.5]",
-    map: mapStrings.collateral,
+    map: mapDetails.collateral.id,
     name: "Peacemakers",
     desc: "In the South dunes area. Near the Jump Pad, on the treads of the big machine, just to the west of the Jump pad."
 }, {
@@ -988,7 +988,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.audio,
     loc: "[365.68631426163495, 117.06689738832597]",
-    map: mapStrings.collateral,
+    map: mapDetails.collateral.id,
     name: "Soul Searching",
     desc: "It's in the broken down building, in the back corner, close to the border of the region."
 }, {
@@ -997,7 +997,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.audio,
     loc: "[344.28804705304697, 286]",
-    map: mapStrings.armada,
+    map: mapDetails.armada.id,
     name: "Unto the Breach",
     desc: "In the Gun Boat area. it's just behind a crate, near the Wunderfizz."
 }, {
@@ -1006,7 +1006,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.audio,
     loc: "[264.9770975746793, 279.27491131317663]",
-    map: mapStrings.armada,
+    map: mapDetails.armada.id,
     name: "Butterscotch",
     desc: "In Launch Bay area #3. Top Right most one, if looking at the big map."
 }, {
@@ -1015,7 +1015,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.audio,
     loc: "[252.80602314205777, 249.9248150443894]",
-    map: mapStrings.armada,
+    map: mapDetails.armada.id,
     name: "Desperate Measures",
     desc: "On a table in the center of the Control Room area of the main boat."
 }, {
@@ -1024,7 +1024,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Dark Aether Vortex Report",
     desc: "Dropped from Special/Elite kills or golden chests"
 }, {
@@ -1033,7 +1033,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Krafft Journal Page",
     desc: "Dropped from Special/Elite kills or golden chests"
 }, {
@@ -1042,7 +1042,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Outbreak Expansions Report",
     desc: "Dropped from Special/Elite kills or golden chests"
 }, {
@@ -1051,7 +1051,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Krafft Journal Page 2",
     desc: "Dropped from Special/Elite kills or golden chests"
 }, {
@@ -1060,7 +1060,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Operation First Domino",
     desc: "Dropped from Special/Elite kills or golden chests"
 }, {
@@ -1069,7 +1069,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Updates",
     desc: ""
 }, {
@@ -1078,7 +1078,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Busy Bees",
     desc: ""
 }, {
@@ -1087,7 +1087,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Walking Notso",
     desc: ""
 }, {
@@ -1096,7 +1096,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Act Three Time",
     desc: ""
 }, {
@@ -1105,7 +1105,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.artifact,
     loc: "[339.4830418187545, 403.61980124770054]",
-    map: mapStrings.collateral,
+    map: mapDetails.collateral.id,
     name: "Frenzied Guard Canister",
     desc: "On the roof of the Drapery."
 }, {
@@ -1114,7 +1114,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.artifact,
     loc: "[183.96168312612326, 110]",
-    map: mapStrings.collateral,
+    map: mapDetails.collateral.id,
     name: "Aetherium Rocket Model",
     desc: "In the Oil Tanks area. It's under a staircase, sitting on a yellow pipe embedded in the wall."
 }, {
@@ -1123,7 +1123,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.artifact,
     loc: "[180.98899061533047, 278.0625]",
-    map: mapStrings.collateral,
+    map: mapDetails.collateral.id,
     name: "Raptor One's Helmet",
     desc: "At the back of the Helipad Area. it's at the base of the helipad, at the bottom of a staircase."
 }, {
@@ -1132,7 +1132,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.artifact,
     loc: "[256.92710668692445, 121.5625]",
-    map: mapStrings.armada,
+    map: mapDetails.armada.id,
     name: "Toxic Growth Canister",
     desc: " the western most Capsized area. it's under the water on a platform near the front of the ship."
 }, {
@@ -1141,7 +1141,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.artifact,
     loc: "[196.9832618443238, 133.5]",
-    map: mapStrings.armada,
+    map: mapDetails.armada.id,
     name: "Requiem Helicopter Model",
     desc: "In the Maintenance section. Near one of the doors."
 }, {
@@ -1150,7 +1150,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.artifact,
     loc: "[314.54777218320953, 397.74424238182837]",
-    map: mapStrings.armada,
+    map: mapDetails.armada.id,
     name: "Agent Klaus Model",
     desc: "In the North-eastern most Hangar area. He's hanging off some pipes just above one of the staircases, climb on the nearby toolbox to grab him."
 }, {
@@ -1159,7 +1159,7 @@ const intelStoreV2 = [
     season: seasons.season6,
     intelType: intelTypes.artifact,
     loc: "[192.94132033870045, 217]",
-    map: mapStrings.zoo,
+    map: mapDetails.zoo.id,
     name: "Weaver's Eyepatch",
     desc: "Behind the desk at the gas station counter."
 }, {
@@ -1168,7 +1168,7 @@ const intelStoreV2 = [
     season: seasons.season6,
     intelType: intelTypes.artifact,
     loc: "[233.49143289914954, 155]",
-    map: mapStrings.golova,
+    map: mapDetails.golova.id,
     name: "Tesla Storm Canister",
     desc: "On top of the electrical box."
 }, {
@@ -1177,7 +1177,7 @@ const intelStoreV2 = [
     season: seasons.season6,
     intelType: intelTypes.artifact,
     loc: "[157.43164326675438, 121.59375]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "Director Mug",
     desc: "On top of a small round table on the ground floor."
 }, 
@@ -1188,7 +1188,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.audio,
     loc: "[326.96117219365135, 226]",
-    map: mapStrings.dieMaschineUnderground,
+    map: mapDetails.dieMaschineUnderground.id,
     name: "8th Guard's First Contact",
     desc: "Sitting on the ground next to the door to the bunker in Tunnel."
 }, {
@@ -1197,7 +1197,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.audio,
     loc: "[295.48907164390846, 373]",
-    map: mapStrings.dieMaschineUnderground,
+    map: mapDetails.dieMaschineUnderground.id,
     name: "The Volunteer",
     desc: "In the room where the PaP part can spawn in med bay. It's the area where the aether tunnel droops you off."
 }, {
@@ -1206,7 +1206,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.audio,
     loc: "[210.24814240113494, 166.75]",
-    map: mapStrings.dieMaschineUnderground,
+    map: mapDetails.dieMaschineUnderground.id,
     name: "For Mother Russia",
     desc: "In the room where the PaP part can spawn in the weapon lab.It's the area where the aether tunnel droops you off."
 }, {
@@ -1215,7 +1215,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "An Explanation",
     desc: "Drops from a Megaton."
 }, {
@@ -1224,7 +1224,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Befor The Devil Arrives",
     desc: "Drops from a Megaton."
 }, {
@@ -1233,7 +1233,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "K Cipher",
     desc: "Drops from a Megaton."
 }, {
@@ -1242,7 +1242,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "G Cipher",
     desc: "Drops from a Megaton."
 }, {
@@ -1251,7 +1251,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.artifact,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Orlov Family Photo",
     desc: "Collected in the radio station in nacht at the end of the main quest."
 }, {
@@ -1260,7 +1260,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[279.46622628125556, 301.5]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Turning Point",
     desc: "In the bedroom on a table underneath the chalkboard."
 }, {
@@ -1269,7 +1269,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[408.452500443341, 376]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Next Phase",
     desc: "In a far corner at the crash site."
 }, {
@@ -1278,7 +1278,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[425.9506384110658, 396.5]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Dimensional Fertility",
     desc: "In Scorched Defence, on top of the building with the minigun."
 }, {
@@ -1287,7 +1287,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[381.95532009221495, 294.5]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Let It Ride",
     desc: "On top of some pipes in Engineering. Shoot it down."
 }, {
@@ -1296,7 +1296,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[402.4531388544068, 263]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Aethernauts",
     desc: "In Planning Offices under the desk in the middle of the room."
 }, {
@@ -1305,7 +1305,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[294.46463025359105, 365.5]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "The Anatomy Lesson",
     desc: "In field Hospital, near the exit to the Mission control area."
 }, {
@@ -1314,7 +1314,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[170.97777088136195, 290.5]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Kuhlklay's Payback",
     desc: "On a shelf in weapons lab , directly across from the RAI K-84 blueprint."
 }, {
@@ -1323,7 +1323,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[275.4666518886327, 204]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Gorev",
     desc: "In colonels office, under the desk with the monitor bank."
 }, {
@@ -1332,7 +1332,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "To Dust You Will Return",
     desc: "Inside the OPC(part of the main quest)."
 }, {
@@ -1341,7 +1341,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[433.4498403972335, 329]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Outpost 25 Has Fallen",
     desc: "In Mission Control, on a table by a window, near the top most charge collector."
 }, {
@@ -1350,7 +1350,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Omega Group Formation",
     desc: "Drops from a Megaton"
 }, {
@@ -1359,7 +1359,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Operation Undertaker",
     desc: "Drops from a Megaton"
 }, {
@@ -1368,7 +1368,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Khe Sanh Site",
     desc: "Drops from a Megaton"
 }, {
@@ -1377,7 +1377,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Authorization to Conscript",
     desc: "Drops from a Mimic or Mangler"
 }, {
@@ -1386,7 +1386,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "omega Teleport Blueprint",
     desc: "Drops from a Mimic or Mangler"
 }, {
@@ -1395,7 +1395,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Aetherium Production Report",
     desc: "Drops from a Mimic or Mangler"
 }, {
@@ -1404,7 +1404,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Specimen K7-1924",
     desc: "Drops from a Mimic or Mangler"
 }, {
@@ -1413,7 +1413,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "P Cipher",
     desc: "Drops from a Mimic or Mangler"
 }, {
@@ -1422,7 +1422,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "G Cipher",
     desc: "Drops from a Mimic or Mangler"
 }, {
@@ -1431,7 +1431,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Good Little Lemmings",
     desc: ""
 }, {
@@ -1440,7 +1440,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Not Built To Last",
     desc: ""
 }, {
@@ -1449,7 +1449,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Do Try To Stay Alive",
     desc: ""
 }, {
@@ -1458,7 +1458,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Gorev's Disappointment",
     desc: ""
 }, {
@@ -1467,7 +1467,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.artifact,
     loc: "[339.95978896967546, 447]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Kuhlklay's Eye",
     desc: "In scorched defence, in a dead body leaning up against a blown up tank."
 }, {
@@ -1476,7 +1476,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.artifact,
     loc: "[374.45611810604714, 265]",
-    map: mapStrings.firebaseZSpawn,
+    map: mapDetails.firebaseZSpawn.id,
     name: "Ravenov ID Badge",
     desc: "Obtained from Ravenov during the main quest."
 }, {
@@ -1485,7 +1485,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.artifact,
     loc: "[288.46526866465683, 368]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Agent Delivery System",
     desc: "Obtained from the medic building during the main quest."
 }, {
@@ -1494,7 +1494,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.artifact,
     loc: "[170.4778240822841, 354]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Essence Trap",
     desc: "Obtained from the datacenter during the main quest."
 }, {
@@ -1503,7 +1503,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.artifact,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Aethermeter",
     desc: "Obtained during the main quest."
 }, {
@@ -1512,7 +1512,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.audio,
     loc: "[346.95904415676534, 229]",
-    map: mapStrings.firebaseZSpawn,
+    map: mapDetails.firebaseZSpawn.id,
     name: "Half Of The Reason",
     desc: "Under a bunk bed in Scientist Quarters, in the starting area."
 }, {
@@ -1521,7 +1521,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.audio,
     loc: "[109.45970063327576, 359.458999774724]",
-    map: mapStrings.golova,
+    map: mapDetails.golova.id,
     name: "Ghost Stories",
     desc: "In the big building in the little cemetary's office room."
 }, {
@@ -1530,7 +1530,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.audio,
     loc: "[272.5, 193]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "Something I Can Use",
     desc: "In the sanatorium building on the second floor, on a coffee table in the room with the wall-buy."
 }, {
@@ -1539,7 +1539,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.audio,
     loc: "[250.87823834196888, 294.92122099571975]",
-    map: mapStrings.golova,
+    map: mapDetails.golova.id,
     name: "golova - Off The Hook",
     desc: "In front of the Wunderfizz, in one of the side rooms."
 }, {
@@ -1548,7 +1548,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.audio,
     loc: "[245, 373.5]",
-    map: mapStrings.alpine,
+    map: mapDetails.alpine.id,
     name: "Do What You Must",
     desc: "On a little table on the balcony terrace in the Chalet area."
 }, {
@@ -1557,7 +1557,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.audio,
     loc: "[178.97691966660756, 202.5]",
-    map: mapStrings.ruka,
+    map: mapDetails.ruka.id,
     name: "In The Wild",
     desc: "In the middle of the Missile Silos on a shelf. near the ammo crate."
 }, {
@@ -1566,7 +1566,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.audio,
     loc: "[242, 192.5]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "Proposed Targets",
     desc: "In the sanatorium building on the first floor in a side room to the right of the statue."
 }, {
@@ -1575,7 +1575,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.audio,
     loc: "[358.81943157106696, 214.25]",
-    map: mapStrings.ruka,
+    map: mapDetails.ruka.id,
     name: "Lightning Bugs",
     desc: "On a table near the edge of the Mobile ICBM Site."
 }, {
@@ -1584,7 +1584,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "New Frontiers",
     desc: ""
 }, {
@@ -1593,7 +1593,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "omega Staffing Report",
     desc: ""
 }, {
@@ -1602,7 +1602,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "omega Records Review",
     desc: ""
 }, {
@@ -1611,7 +1611,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "The Colonel",
     desc: ""
 }, {
@@ -1620,7 +1620,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Up To Speed",
     desc: ""
 }, {
@@ -1629,7 +1629,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Fiasco",
     desc: ""
 }, {
@@ -1638,7 +1638,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Trespassers",
     desc: ""
 }, {
@@ -1647,7 +1647,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.artifact,
     loc: "[144.98053732931368, 155.5]",
-    map: mapStrings.ruka,
+    map: mapDetails.ruka.id,
     name: "Kravchenko's Knife",
     desc: "In a green lookout tower in the southwest corner of the Missile Silos."
 }, {
@@ -1656,7 +1656,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.artifact,
     loc: "[252.46909913105162, 213.5]",
-    map: mapStrings.ruka,
+    map: mapDetails.ruka.id,
     name: "omega Group Patch",
     desc: "On top of the climbable net in the obstacle course. (might currently be bugged)"
 }, {
@@ -1665,7 +1665,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.audio,
     loc: "[164.5, 355]",
-    map: mapStrings.duga,
+    map: mapDetails.duga.id,
     name: "Leadership Techniques",
     desc: "On the third floor of the Admin Offices. In the room with a big oval table."
 }, {
@@ -1674,7 +1674,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.audio,
     loc: "[211.5, 448.5]",
-    map: mapStrings.duga,
+    map: mapDetails.duga.id,
     name: "This Isn't My Work",
     desc: "In the Research Labs. In the right most building."
 }, {
@@ -1683,7 +1683,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.audio,
     loc: "[164.23960365312996, 187.75]",
-    map: mapStrings.ruka,
+    map: mapDetails.ruka.id,
     name: "Witching Hour",
     desc: "At the missile silos by the A elevator. On the side of the building, next to the generators."
 }, {
@@ -1692,7 +1692,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.audio,
     loc: "[287.25, 195.5]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "His Plan, Our Plan",
     desc: "On the sanatorium Roof. It's on top of the spire with 2 satellite dishes. Requires a Jump pad to get to."
 }, {
@@ -1701,7 +1701,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Boost Module Report",
     desc: ""
 }, {
@@ -1710,7 +1710,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Phaze Report",
     desc: ""
 }, {
@@ -1719,7 +1719,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Krasny Soldat Blueprint",
     desc: ""
 }, {
@@ -1728,7 +1728,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Valentina Diary Entry",
     desc: ""
 }, {
@@ -1737,7 +1737,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Operatsiya Inversiya Proposal",
     desc: ""
 }, {
@@ -1746,7 +1746,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Aetherium Warhead Blueprint",
     desc: ""
 }, {
@@ -1755,7 +1755,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "R Cipher",
     desc: ""
 }, {
@@ -1764,7 +1764,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Uncle",
     desc: ""
 }, {
@@ -1773,7 +1773,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Made Of Fire",
     desc: ""
 }, {
@@ -1782,7 +1782,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Chasing Ghosts",
     desc: ""
 }, {
@@ -1791,7 +1791,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Missing Name and Location",
     desc: ""
 }, {
@@ -1800,7 +1800,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[281.96596027664475, 373]",
-    map: mapStrings.ruka,
+    map: mapDetails.ruka.id,
     name: "Mangler Cannon",
     desc: "Near the base of the Train Trestle closest to the building. It's sitting at the base of a tree."
 }, {
@@ -1809,7 +1809,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[129.25, 274]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "Peck's ID Badge",
     desc: "In the middle of the large Bathhouse, on a shelf."
 }, {
@@ -1818,7 +1818,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[164.5, 345.5]",
-    map: mapStrings.duga,
+    map: mapDetails.duga.id,
     name: "Boost Module Monitor",
     desc: "In the admin offices on the third floor. In the room with all the computers."
 }, {
@@ -1827,7 +1827,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[0, 0]",
-    map: mapStrings.ruka,
+    map: mapDetails.ruka.id,
     name: "ICBM Launch Key",
     desc: "Obtained during the outbreak EE."
 }, {
@@ -1836,7 +1836,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[0, 0]",
-    map: mapStrings.ruka,
+    map: mapDetails.ruka.id,
     name: "Modified Essence Trap",
     desc: "In a hallway on the ground floor of Silo A, obtained during the outbreak EE."
 }, {
@@ -1845,7 +1845,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[383, 249]",
-    map: mapStrings.alpine,
+    map: mapDetails.alpine.id,
     name: "Tempest Head",
     desc: "In the medivac area. Inside the large building, on top of a pile of crates and sandbags that need to be clambered up."
 }, {
@@ -1854,7 +1854,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.audio,
     loc: "[167.97809008689484, 313.5]",
-    map: mapStrings.zoo,
+    map: mapDetails.zoo.id,
     name: "Greater Threat",
     desc: "On a couch on the first floor of the Restaurant"
 }, {
@@ -1863,7 +1863,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.audio,
     loc: "[189.47580244724242, 329]",
-    map: mapStrings.zoo,
+    map: mapDetails.zoo.id,
     name: "Day of victory.",
     desc: "On top of the rectangular tower of the aquarium. Might need to use a jump pad.."
 }, {
@@ -1872,7 +1872,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "The Survivors",
     desc: "Obtained during the Outbreak EE#2"
 }, {
@@ -1881,7 +1881,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "The Device",
     desc: "Obtained during the Outbreak EE#2"
 }, {
@@ -1890,7 +1890,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "The Trap",
     desc: "Obtained during the Outbreak EE#2"
 }, {
@@ -1899,7 +1899,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.audio,
     loc: "[152.24382307164962, 260.125]",
-    map: mapStrings.duga,
+    map: mapDetails.duga.id,
     name: "Peace is Our Profession",
     desc: "Underground bunker in the south, under the bed."
 }, {
@@ -1908,7 +1908,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.audio,
     loc: "[240.70833873747011, 61.25]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "A Trap Is Set",
     desc: "The audio log is in the attic of one of the cottages, on a table with a lampshade."
 }, {
@@ -1917,7 +1917,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.audio,
     loc: "[372.4417928146597, 249]",
-    map: mapStrings.alpine,
+    map: mapDetails.alpine.id,
     name: "Play Your Part",
     desc: "The audio log is in the warehouse in the middle of a table."
 }, {
@@ -1926,7 +1926,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Ravenov's Burn Notice",
     desc: "dropped from Special/Elite kills or golden chests"
 }, {
@@ -1935,7 +1935,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "Aetherium Neutralizer Blueprint.",
     desc: "Obtained during the Outbreak EE#2"
 }, {
@@ -1944,7 +1944,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Omega's Reputation",
     desc: "Collected through the Omega Radios in Outbreak"
 }, {
@@ -1953,7 +1953,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "The One-Eyed Cowboy",
     desc: "Collected through the Omega Radios in Outbreak"
 }, {
@@ -1962,7 +1962,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.artifact,
     loc: "[106.98458059939702, 268]",
-    map: mapStrings.zoo,
+    map: mapDetails.zoo.id,
     name: "Aether Reactor Model.",
     desc: "Between the Rail holds on top of the support pillar."
 }, {
@@ -1971,7 +1971,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.artifact,
     loc: "[187.97787728320623, 345]",
-    map: mapStrings.zoo,
+    map: mapDetails.zoo.id,
     name: "Inversion Warhead Model",
     desc: "Up on the roof between a wooden wall and the rocks."
 }, {
@@ -1980,7 +1980,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.artifact,
     loc: "[191.30800337218136, 277.62147784531714]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "Dark Aether Photos",
     desc: "The artifact is on a side table inside one of the rooms of Upper Suites."
 }, {
@@ -1989,7 +1989,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.artifact,
     loc: "[243.48189768579425, 201.375]",
-    map: mapStrings.ruka,
+    map: mapDetails.ruka.id,
     name: "Omega Flag",
     desc: "The artifact is inside the watchtower, in the wall besides the window."
 }, {
@@ -1998,7 +1998,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.artifact,
     loc: "[175.67475241333307, 400]",
-    map: mapStrings.zoo,
+    map: mapDetails.zoo.id,
     name: "Krasny Soldat Flamethrower",
     desc: "The artifact is in the backroom of the 'Wolf Exhibit', on a shelf."
 }, {
@@ -2007,7 +2007,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.audio,
     loc: "[342.85771988660576, 424.56079740862197]",
-    map: mapStrings.collateral,
+    map: mapDetails.collateral.id,
     name: "Change of Plans",
     desc: "on the top of the third building in a row in the Village area. The screen will say you are in the Roadside area when you are on the correct building. The correct building also has a white/blue parachute hanging over one if the corners."
 }, {
@@ -2016,7 +2016,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.audio,
     loc: "[187.18029705767913, 120.42651763576742]",
-    map: mapStrings.armada,
+    map: mapDetails.armada.id,
     name: "New Frontiers",
     desc: "In the Hangar area. It's sitting on a blue Shelf."
 }, {
@@ -2025,7 +2025,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.audio,
     loc: "[329.23846255396415, 263.3665520275134]",
-    map: mapStrings.collateral,
+    map: mapDetails.collateral.id,
     name: "Growing Concerns",
     desc: "In the Cliffs area. It's at the edge of the top most set of rocks, up against the lowermost rock in the set. The location overlooks the village area."
 }, {
@@ -2034,7 +2034,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Berlin Report",
     desc: "Dropped from Special/Elite kills or golden chests"
 }, {
@@ -2043,7 +2043,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Enemy Engagement Report",
     desc: "Dropped from Special/Elite kills or golden chests"
 }, {
@@ -2052,7 +2052,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Operatsiya Izbavitel Orders",
     desc: "Dropped from Special/Elite kills or golden chests"
 }, {
@@ -2061,7 +2061,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Kravchenko Letter",
     desc: "Dropped from Special/Elite kills or golden chests"
 }, {
@@ -2070,7 +2070,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Test Site Anna Report",
     desc: "Dropped from Special/Elite kills or golden chests"
 }, {
@@ -2079,7 +2079,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.artifact,
     loc: "[269.98189768579425, 134.2308166040151]",
-    map: mapStrings.collateral,
+    map: mapDetails.collateral.id,
     name: "Boost Module Model",
     desc: "In the Cliffs West area. in between the 2 middle clumps on the minimap."
 }, {
@@ -2088,7 +2088,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.artifact,
     loc: "[287.7351841729818, 316.2450221946733]",
-    map: mapStrings.collateral,
+    map: mapDetails.collateral.id,
     name: "Mimic Tentacle",
     desc: "Inside a pipe in the Village Dunes area, right next to a small oil drill. It's very close to the Parking Lot area."
 }, {
@@ -2097,7 +2097,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.artifact,
     loc: "[205.37164750514165, 222.17909101815567]",
-    map: mapStrings.collateral,
+    map: mapDetails.collateral.id,
     name: "Valentina's ID Badge",
     desc: "In the Oil Rig area. it's on the ground level, on a wall to the left when facing the Rappel Rope."
 }, {
@@ -2106,7 +2106,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.artifact,
     loc: "[194.86678494006043, 336.2448402383428]",
-    map: mapStrings.armada,
+    map: mapDetails.armada.id,
     name: "Gorev's ID Badge",
     desc: "In the Patrol Boat area. It's on top of the boat itself."
 }, {
@@ -2115,7 +2115,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.artifact,
     loc: "[239.7265290619036, 396.23804286971125]",
-    map: mapStrings.armada,
+    map: mapDetails.armada.id,
     name: "Teleporter Model",
     desc: "In the eastern most Capsized area. It's underwater, along the guardrails of the deck."
 }, {
@@ -2124,7 +2124,7 @@ const intelStoreV2 = [
     season: seasons.season6,
     intelType: intelTypes.artifact,
     loc: "[141.11727408456636, 323.75]",
-    map: mapStrings.alpine,
+    map: mapDetails.alpine.id,
     name: "Contaminated Crystal",
     desc: "Yellow/orange crystals in the toilet bowl in the westernmost of the four doors."
 }, {
@@ -2133,7 +2133,7 @@ const intelStoreV2 = [
     season: seasons.season6,
     intelType: intelTypes.artifact,
     loc: "[182.24077282244167, 240.6875]",
-    map: mapStrings.duga,
+    map: mapDetails.duga.id,
     name: "Jager's ID Badge",
     desc: ""
 }, {
@@ -2142,7 +2142,7 @@ const intelStoreV2 = [
     season: seasons.season6,
     intelType: intelTypes.audio,
     loc: "[213.46177113635102, 360.5]",
-    map: mapStrings.zoo,
+    map: mapDetails.zoo.id,
     name: "Codename Whiskers",
     desc: "Under the table inside the building."
 }, {
@@ -2151,7 +2151,7 @@ const intelStoreV2 = [
     season: seasons.season6,
     intelType: intelTypes.audio,
     loc: "[392.92004386615037, 250.5625]",
-    map: mapStrings.duga,
+    map: mapDetails.duga.id,
     name: "Lineage",
     desc: "In the bunker, on the floor in the computer room, behind the door."
 }, 
@@ -2162,7 +2162,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.audio,
     loc: "[155.47942010994853, 256]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Cold War Paranoia",
     desc: "On the couch next to the ee song cassette in first floor of nacht."
 }, {
@@ -2171,7 +2171,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.audio,
     loc: "[225.9719187799255, 308]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Game Changer",
     desc: "Drop the crate for the Cryo WW upgrade. The log will be near the destroyed crate and flask."
 }, {
@@ -2180,7 +2180,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.audio,
     loc: "[142.9807501330023, 282.5]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "The VHS Tape",
     desc: "same place as the canister for the nova 5 WW upgrade. Suck it with the WW."
 }, {
@@ -2189,7 +2189,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "KGB Videotape Note",
     desc: "Drops from a Megaton."
 }, {
@@ -2198,7 +2198,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Dieter's Note",
     desc: "Drops from a Megaton."
 }, {
@@ -2207,7 +2207,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Message For Weaver",
     desc: "Drops from a Megaton."
 }, {
@@ -2216,7 +2216,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Agent maxis",
     desc: ""
 }, {
@@ -2225,7 +2225,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Scorpions From Frogs",
     desc: ""
 }, {
@@ -2234,7 +2234,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Why You're Here",
     desc: ""
 }, {
@@ -2243,7 +2243,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[356.45803333924454, 166]",
-    map: mapStrings.firebaseZSpawn,
+    map: mapDetails.firebaseZSpawn.id,
     name: "Not Who We Are",
     desc: "In the scientist quarters, on the inaccessible floor above you the audio log will be sitting, shoot it and it will be on the floor in the Briefing room."
 }, {
@@ -2252,7 +2252,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[133.4817609505231, 216.5]",
-    map: mapStrings.firebaseZSpawn,
+    map: mapDetails.firebaseZSpawn.id,
     name: "Workers Of The World",
     desc: "In equipment storage, on the back wall of the ground floor, on a shelf."
 }, {
@@ -2261,7 +2261,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[292.4648430572796, 323]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Worse Than Baton Rouge",
     desc: "Inside a locker in the barracks. Need the key from the free WW quest to unlock."
 }, {
@@ -2270,7 +2270,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "omega's Portal Blueprint",
     desc: ""
 }, {
@@ -2279,7 +2279,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "omega's Propaganda Poster",
     desc: ""
 }, {
@@ -2288,7 +2288,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Aetherium Effects Report",
     desc: ""
 }, {
@@ -2297,7 +2297,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Aether Reactor Blueprint",
     desc: ""
 }, {
@@ -2306,7 +2306,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "The New Threat",
     desc: ""
 }, {
@@ -2315,7 +2315,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Divided Loyalties",
     desc: ""
 }, {
@@ -2324,7 +2324,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Shared History / Old Friend",
     desc: ""
 }, {
@@ -2333,7 +2333,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Code In",
     desc: ""
 }, {
@@ -2342,7 +2342,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Relentless",
     desc: ""
 }, {
@@ -2351,7 +2351,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Monsters Are Real",
     desc: ""
 }, {
@@ -2360,7 +2360,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "The Perpetual Night",
     desc: ""
 }, {
@@ -2369,7 +2369,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "The Light Within",
     desc: ""
 }, {
@@ -2378,7 +2378,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Blood On My Hands",
     desc: ""
 }, {
@@ -2387,7 +2387,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "A Bad Dream",
     desc: ""
 }, {
@@ -2396,7 +2396,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.audio,
     loc: "[379.9555328959035, 311.5]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "More Bad News",
     desc: "At the base of the OPC. Gotta climb over a barrier near the entrance to Mission Control."
 }, {
@@ -2405,7 +2405,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.audio,
     loc: "[147.25338269196664, 295.75]",
-    map: mapStrings.ruka,
+    map: mapDetails.ruka.id,
     name: "Call Me Mac",
     desc: "In the small cabin in the Backwoods."
 }, {
@@ -2414,7 +2414,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.audio,
     loc: "[370, 405]",
-    map: mapStrings.alpine,
+    map: mapDetails.alpine.id,
     name: "My Reputation Precedes ME",
     desc: "Inside the Red building's office area, in Maintenance."
 }, {
@@ -2423,7 +2423,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.audio,
     loc: "[353.8189407023604, 375.46837125478714]",
-    map: mapStrings.golova,
+    map: mapDetails.golova.id,
     name: "It's All Relative",
     desc: "In the little barn next to the 4 silos in Lower Farmstead."
 }, {
@@ -2432,7 +2432,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.audio,
     loc: "[353.5, 146.5]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "We've Both Been To Hell",
     desc: "In the little reception area of the biggest building in the maintenance area."
 }, {
@@ -2441,7 +2441,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "maxis Status Report",
     desc: ""
 }, {
@@ -2450,7 +2450,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "maxis Diary Entry",
     desc: ""
 }, {
@@ -2459,7 +2459,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "A Tangled Web",
     desc: ""
 }, {
@@ -2468,7 +2468,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "I Made A Promise",
     desc: ""
 }, {
@@ -2477,7 +2477,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Lab Rat",
     desc: ""
 }, {
@@ -2486,7 +2486,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Three Out Of Four",
     desc: ""
 }, {
@@ -2495,7 +2495,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Both Ways",
     desc: ""
 }, {
@@ -2504,7 +2504,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "I've Changed",
     desc: ""
 }, {
@@ -2513,7 +2513,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Why I Fight",
     desc: ""
 }, {
@@ -2522,7 +2522,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "True Courage",
     desc: ""
 }, {
@@ -2531,7 +2531,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.artifact,
     loc: "[213.3998272884283, 288.41741383194415]",
-    map: mapStrings.golova,
+    map: mapDetails.golova.id,
     name: "Endstation Video Tape",
     desc: "Found in a room in Lower East Town on an end table by a bed."
 }, {
@@ -2540,7 +2540,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.artifact,
     loc: "[165.9271732872769, 420.9950214012165]",
-    map: mapStrings.golova,
+    map: mapDetails.golova.id,
     name: "maxis BND Badge",
     desc: "Behind some sandbags, very close to the edge of the map, in the Industrial Park location."
 }, {
@@ -2549,7 +2549,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.audio,
     loc: "[338, 218]",
-    map: mapStrings.duga,
+    map: mapDetails.duga.id,
     name: "It's Always Dark",
     desc: "In the 3rd bunker down from the top in the Bunkers section of the map, on a box."
 }, {
@@ -2558,7 +2558,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.audio,
     loc: "[346.5, 56]",
-    map: mapStrings.duga,
+    map: mapDetails.duga.id,
     name: "Outbursts",
     desc: "In the farm area. In the big red house, on the bed on the upper floor."
 }, {
@@ -2567,7 +2567,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.audio,
     loc: "[91.47006332757627, 339.4472854246452]",
-    map: mapStrings.golova,
+    map: mapDetails.golova.id,
     name: "A New Friend",
     desc: "On a desk in one of the Church's back rooms."
 }, {
@@ -2576,7 +2576,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.audio,
     loc: "[171.92371905584338, 341.4484568596531]",
-    map: mapStrings.golova,
+    map: mapDetails.golova.id,
     name: "Isolated",
     desc: "On a desk in the Police station(the armour station building)"
 }, {
@@ -2585,7 +2585,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.audio,
     loc: "[261.5, 193]",
-    map: mapStrings.duga,
+    map: mapDetails.duga.id,
     name: "Someone We Can Trust",
     desc: "In the warehouses section. On the second floor of the top most warehouse, on a desk."
 }, {
@@ -2594,7 +2594,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Arrival",
     desc: ""
 }, {
@@ -2603,7 +2603,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "maxis Progress Report",
     desc: ""
 }, {
@@ -2612,7 +2612,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Quarantine Diary 1",
     desc: ""
 }, {
@@ -2621,7 +2621,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Quarantine Diary 2",
     desc: ""
 }, {
@@ -2630,7 +2630,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[296.5, 96]",
-    map: mapStrings.duga,
+    map: mapDetails.duga.id,
     name: "Maxis' Katana",
     desc: "In the farm area. Stuck in a haybale in a shed near the back of the area, next to the stone wall."
 }, {
@@ -2639,7 +2639,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[220, 253.5]",
-    map: mapStrings.duga,
+    map: mapDetails.duga.id,
     name: "Maxis' Scarf",
     desc: "In the listening post. In a room just to the left of the Wunderfizz, on a coathook."
 }, {
@@ -2648,7 +2648,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[142.5, 129.5]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "Maxis' Goggles",
     desc: "In the market square on one of the round tables."
 }, {
@@ -2657,7 +2657,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Beacon Listening Device",
     desc: "Obtained whilst completing an Aether transmission during the outbreak EE."
 }, {
@@ -2666,7 +2666,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Microfilm Slides",
     desc: "Obtained by breaking a stone monkey during the outbreak EE."
 }, {
@@ -2675,7 +2675,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[211.40097869890616, 322.9376210858302]",
-    map: mapStrings.golova,
+    map: mapDetails.golova.id,
     name: "maxis's Watch",
     desc: "In the Lower West town area. It's on the roof of the building with the crafting bench, requires a jump pad to get to. It's tucked in between the roof itself and one of the 4 spire things with a flag on it."
 }, {
@@ -2684,7 +2684,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.audio,
     loc: "[119.48325057634332, 359.5]",
-    map: mapStrings.zoo,
+    map: mapDetails.zoo.id,
     name: "Take Her",
     desc: "In the basement of the zoo facilities in a shelf of one of the work stations"
 }, {
@@ -2693,7 +2693,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.audio,
     loc: "[218.47271679375774, 319.5]",
-    map: mapStrings.zoo,
+    map: mapDetails.zoo.id,
     name: "The Confrontation",
     desc: "In one of the animal cages on some hay"
 }, {
@@ -2702,7 +2702,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.audio,
     loc: "[359.30741377017205, 350.5]",
-    map: mapStrings.zoo,
+    map: mapDetails.zoo.id,
     name: "The Ally",
     desc: "In the little nook where the stone monkey is on a shelf."
 }, {
@@ -2711,7 +2711,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Quarantine Diary 9",
     desc: "Dropped from Special/Elite kills or golden chests"
 }, {
@@ -2720,7 +2720,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.audio,
     loc: "[368.98544820366493, 361.7437485003599]",
-    map: mapStrings.collateral,
+    map: mapDetails.collateral.id,
     name: "Test",
     desc: "Inside the Building marked Carpets on a table."
 }, {
@@ -2729,7 +2729,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.audio,
     loc: "[149.6756765207241, 183.9313004878829]",
-    map: mapStrings.collateral,
+    map: mapDetails.collateral.id,
     name: "Interrogation",
     desc: "Inside the Pump Room on a Shelf."
 }, {
@@ -2738,7 +2738,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.audio,
     loc: "[267.2369443775361, 254.55674238182837]",
-    map: mapStrings.collateral,
+    map: mapDetails.collateral.id,
     name: "Fifteen Days",
     desc: "In the Warehouse. it's in a back room, up on a pipe. you need to shoot it down."
 }, {
@@ -2747,7 +2747,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.audio,
     loc: "[213.54343767949456, 228.8739342557786]",
-    map: mapStrings.collateral,
+    map: mapDetails.collateral.id,
     name: "Sixty-Two Days",
     desc: "In the Oil Rig area. This one is a bit difficult. Climb up to where PaP is. Then look up towards the yellow platform, and you can just barely see the edge of the tape recorder hanging over the edge. Shoot it down, and it will fall down to you."
 }, {
@@ -2756,7 +2756,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.audio,
     loc: "[190.6188531804117, 255.1136667199872]",
-    map: mapStrings.armada,
+    map: mapDetails.armada.id,
     name: "Thirty Seconds",
     desc: "In the same room as Pap on a table."
 }, {
@@ -2765,7 +2765,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Week 1 Summary",
     desc: "Dropped from Special/Elite kills or golden chests"
 }, {
@@ -2774,7 +2774,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Subject Rules",
     desc: "Dropped from Special/Elite kills or golden chests"
 }, {
@@ -2783,7 +2783,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Weaver Letter",
     desc: "Dropped from Special/Elite kills or golden chests"
 }, {
@@ -2792,7 +2792,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Grey Letter",
     desc: "Dropped from Special/Elite kills or golden chests"
 }, {
@@ -2801,7 +2801,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "New Frequency",
     desc: ""
 }, {
@@ -2810,7 +2810,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Understand Me",
     desc: ""
 }, {
@@ -2819,7 +2819,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Power",
     desc: ""
 }, {
@@ -2828,7 +2828,7 @@ const intelStoreV2 = [
     season: seasons.season6,
     intelType: intelTypes.audio,
     loc: "[232.85298123066093, 312]",
-    map: mapStrings.ruka,
+    map: mapDetails.ruka.id,
     name: "I Am Alive",
     desc: "On the ledge of the top of the watchtower."
 }, 
@@ -2839,7 +2839,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Lost Souls: Johannes",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -2848,7 +2848,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Lost Souls: Mariska",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -2857,7 +2857,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Lost Souls: David",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -2866,7 +2866,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Approach",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -2875,7 +2875,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Lost Souls: Alice",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -2884,7 +2884,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Missing Name and Location",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -2893,7 +2893,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "$!%()$3@!",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -2902,7 +2902,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "I @N#B%D! O% T@#&",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -2911,7 +2911,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Day 13,773",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -2920,7 +2920,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Day 95",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -2929,7 +2929,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Day 175",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -2938,7 +2938,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Day 213",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -2947,7 +2947,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Day 1,646",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -2956,7 +2956,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Day 937",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -2965,7 +2965,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Missing Name and Location",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -2974,7 +2974,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Missing Name and Location",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -2983,7 +2983,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Missing Name and Location",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -2992,7 +2992,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Missing Name and Location",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3001,7 +3001,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.artifact,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Mutated Fungus",
     desc: "Obtained during the main quest, on a tree with purple table mushrooms."
 }, {
@@ -3010,7 +3010,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.artifact,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Plaguehound Gas",
     desc: "Obtained during the main quest, next to Deadshot Daiquiri."
 }, {
@@ -3019,7 +3019,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.artifact,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Dark Aether Crystal",
     desc: "Obtained during hte main quest, collected from the red Aether crystals."
 }, {
@@ -3028,7 +3028,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.artifact,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Dark Aether Wrench",
     desc: "Obtained during the main quest, gotten from the ghostly figures in the med bay."
 }, {
@@ -3037,7 +3037,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Lost Souls: Fedorov",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3046,7 +3046,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Lost Souls: Koslov",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3055,7 +3055,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Lost Souls: Tobias",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3064,7 +3064,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Lost Souls: Olga",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3073,7 +3073,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Missing Name and Location",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3082,7 +3082,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Missing Name and Location",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3091,7 +3091,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "My Friend!",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3100,7 +3100,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Day 291",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3109,7 +3109,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Day 3,789",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3118,7 +3118,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Day 4,01",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3127,7 +3127,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Day 6,157",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3136,7 +3136,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Day, 6,289",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3145,7 +3145,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Day 2,499",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3154,7 +3154,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Day 6,412",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3163,7 +3163,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Day 6,416",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3172,7 +3172,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Day 6,148",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3181,7 +3181,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Missing Name and Location",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3190,7 +3190,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Missing Name and Location",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3199,7 +3199,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Missing Name and Location",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3208,7 +3208,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Without Orders",
     desc: ""
 }, {
@@ -3217,7 +3217,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Missing Name and Location",
     desc: ""
 }, {
@@ -3226,7 +3226,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Missing Name and Location",
     desc: ""
 }, {
@@ -3235,7 +3235,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Missing Name and Location",
     desc: ""
 }, {
@@ -3244,7 +3244,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Missing Name and Location",
     desc: ""
 }, {
@@ -3253,7 +3253,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine,
+    map: mapDetails.dieMaschine.id,
     name: "Missing Name and Location",
     desc: ""
 }, {
@@ -3262,7 +3262,7 @@ const intelStoreV2 = [
     season: seasons.season1,
     intelType: intelTypes.artifact,
     loc: "[354.96085298811846, 285.5]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "omega Canister",
     desc: "Part of the Main quest."
 }, {
@@ -3271,7 +3271,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Lost Souls: Fedorov #2",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3280,7 +3280,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Day 6,421",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3289,7 +3289,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Day 6,457",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3298,7 +3298,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Much More To Tell You",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3307,7 +3307,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Hello Again",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3316,7 +3316,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Divided World",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3325,7 +3325,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Trust Me",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3334,7 +3334,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "More To Follow",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3343,7 +3343,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.firebaseZ,
+    map: mapDetails.firebaseZ.id,
     name: "Crooked House",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3352,7 +3352,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Testing... Testing",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3361,7 +3361,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "New Enemies",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3370,7 +3370,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.artifact,
     loc: "[155, 212.5]",
-    map: mapStrings.alpine,
+    map: mapDetails.alpine.id,
     name: "Empty Jugger-Nog",
     desc: "On the roof of the Large Sauna building"
 }, {
@@ -3379,7 +3379,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.artifact,
     loc: "[104.96229130685089, 326.9399639558459]",
-    map: mapStrings.golova,
+    map: mapDetails.golova.id,
     name: "Cymbal Monkey Toy",
     desc: "On the lip of the left most tower on the roof of the church."
 }, {
@@ -3388,7 +3388,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.artifact,
     loc: "[252.72811324600252, 406.25]",
-    map: mapStrings.ruka,
+    map: mapDetails.ruka.id,
     name: "Ivan's Head",
     desc: "On a telephone pillar next to the train trestle bridge (use parachute)."
 }, {
@@ -3397,7 +3397,7 @@ const intelStoreV2 = [
     season: seasons.season2,
     intelType: intelTypes.artifact,
     loc: "[239.3576897778437, 74.5]",
-    map: mapStrings.alpine,
+    map: mapDetails.alpine.id,
     name: "Mystery Box Bunny",
     desc: "In a bed in Base Suites section. It's the third building from the bottom."
 }, {
@@ -3406,7 +3406,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Lost Souls: Fedorov 1",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3415,7 +3415,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Lost Souls: Fedorov 2",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3424,7 +3424,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Lost Souls: Fedorov 3",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3433,7 +3433,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Great and Terrible.",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3442,7 +3442,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Day 1",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3451,7 +3451,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Day 3",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3460,7 +3460,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Day 7",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3469,7 +3469,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Day 9",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3478,7 +3478,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Day 11",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3487,7 +3487,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Day 12",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3496,7 +3496,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Who I Am",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3505,7 +3505,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Great Patriotic",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3514,7 +3514,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Tethered",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3523,7 +3523,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Changes",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3532,7 +3532,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Junkyard",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3541,7 +3541,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Invasion",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3550,7 +3550,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Bring Me Home",
     desc: "Obtained through the Challenge Machine"
 }, {
@@ -3559,7 +3559,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[162.5, 462]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "Empty Speed Cola",
     desc: "On the counter on the kitchen of the higher of the two right most houses in the vacation homes section."
 }, {
@@ -3568,7 +3568,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[316, 286.5]",
-    map: mapStrings.duga,
+    map: mapDetails.duga.id,
     name: "Broken Essence Capsule",
     desc: "In the Secondary Array. This location is kinda weird. Starting from the top of the left most array, go as far left as you can, then go down 3 layers. It will be sitting on a grey metal bar connecting the walkway to the side of the array. This is away from the Primary Array, not towards it."
 }, {
@@ -3577,7 +3577,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[284.5, 238.5]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "Empty Quick Revive Soda Can",
     desc: "In the Beach Resort. Under the stairs of the White shack building."
 }, {
@@ -3586,7 +3586,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[279.4652284636858, 147.6332283257859]",
-    map: mapStrings.ruka,
+    map: mapDetails.ruka.id,
     name: "Broken Essence Canister",
     desc: "Right next to the wall buy inside the barn."
 }, {
@@ -3595,7 +3595,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[0, 0]",
-    map: mapStrings.ruka,
+    map: mapDetails.ruka.id,
     name: "Aetherium Crystal Chunks",
     desc: "Found by breaking crystals in Silo B during the outbreak EE"
 }, {
@@ -3604,7 +3604,7 @@ const intelStoreV2 = [
     season: seasons.season3,
     intelType: intelTypes.artifact,
     loc: "[226, 142.5]",
-    map: mapStrings.alpine,
+    map: mapDetails.alpine.id,
     name: "Dragon Head Trophy",
     desc: "In the lodge. In Room 201, above the bed."
 }, {
@@ -3613,7 +3613,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "We Are Waiting",
     desc: "Obtained Through the challenge machine."
 }, {
@@ -3622,7 +3622,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Day 4,513",
     desc: "Obtained Through the challenge machine."
 }, {
@@ -3631,7 +3631,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Day 4,729",
     desc: "Obtained Through the challenge machine."
 }, {
@@ -3640,7 +3640,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Secret Contact",
     desc: "Obtained Through the challenge machine."
 }, {
@@ -3649,7 +3649,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Bring Me Home 2",
     desc: "Obtained Through the challenge machine."
 }, {
@@ -3658,7 +3658,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.artifact,
     loc: "[358.4578205355559, 261]",
-    map: mapStrings.zoo,
+    map: mapDetails.zoo.id,
     name: "Empty Stamin-up Can",
     desc: "Inside the diner under the white marble counter."
 }, {
@@ -3667,7 +3667,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.artifact,
     loc: "[206.47021635041676, 299.5]",
-    map: mapStrings.zoo,
+    map: mapDetails.zoo.id,
     name: "Fury crystal",
     desc: "On the roof behind a pillar."
 }, {
@@ -3676,7 +3676,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.artifact,
     loc: "[186.3576897778437, 331.625]",
-    map: mapStrings.golova,
+    map: mapDetails.golova.id,
     name: "Empty Elemental Pop",
     desc: "Resting on a food shelf inside the kitchen area."
 }, {
@@ -3685,7 +3685,7 @@ const intelStoreV2 = [
     season: seasons.season4,
     intelType: intelTypes.artifact,
     loc: "[236.8503849289433, 327.875]",
-    map: mapStrings.duga,
+    map: mapDetails.duga.id,
     name: "Elemental Pop Poster",
     desc: "The poster is inside the 'Maintenance Facilities' building, fixed on the wall."
 }, {
@@ -3694,7 +3694,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Lost Souls: Piotr 1",
     desc: "Obtained Through the challenge machine."
 }, {
@@ -3703,7 +3703,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Lost Souls: Piotr 2",
     desc: "Obtained Through the challenge machine."
 }, {
@@ -3712,7 +3712,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "The Machine",
     desc: "Obtained Through the challenge machine."
 }, {
@@ -3721,7 +3721,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Broken Trust",
     desc: "Obtained Through the challenge machine."
 }, {
@@ -3730,7 +3730,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.radio,
     loc: "[0, 0]",
-    map: mapStrings.allOutbreakMaps,
+    map: mapDetails.allOutbreakMaps.id,
     name: "Make This Right",
     desc: "Obtained Through the challenge machine."
 }, {
@@ -3739,7 +3739,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.artifact,
     loc: "[238.67594055140722, 68.30086779172998]",
-    map: mapStrings.collateral,
+    map: mapDetails.collateral.id,
     name: "Empty Deadshot Daiquiri",
     desc: "Inside the building marked Hazardous."
 }, {
@@ -3748,7 +3748,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.artifact,
     loc: "[364.92220011672936, 279.24477525393905]",
-    map: mapStrings.collateral,
+    map: mapDetails.collateral.id,
     name: "Demented Echo Head",
     desc: "In the Cliffs area. Tucked in the Base of the top most clump on the minimap. It's right where the line connects to the clump on the minimap."
 }, {
@@ -3757,7 +3757,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.artifact,
     loc: "[244.6159268403402, 188.73986243301607]",
-    map: mapStrings.armada,
+    map: mapDetails.armada.id,
     name: "Empty Mule Kick",
     desc: "In the Machine Shop area. It's inside an overturned trash can."
 }, {
@@ -3766,7 +3766,7 @@ const intelStoreV2 = [
     season: seasons.season5,
     intelType: intelTypes.artifact,
     loc: "[309.8628684849271, 262.7430596656802]",
-    map: mapStrings.armada,
+    map: mapDetails.armada.id,
     name: "Empty Tombstone",
     desc: "In the Gun boat Control Room. it's in-between one of the sonar panels and the wall."
 }, {
@@ -3775,7 +3775,7 @@ const intelStoreV2 = [
     season: seasons.season6,
     intelType: intelTypes.artifact,
     loc: "[393.3707361360731, 342]",
-    map: mapStrings.ruka,
+    map: mapDetails.ruka.id,
     name: "Archaic Goblet",
     desc: "On top of a cut tree stump."
 }, {
@@ -3784,7 +3784,7 @@ const intelStoreV2 = [
     season: seasons.season6,
     intelType: intelTypes.artifact,
     loc: "[170.61009616275408, 319.75]",
-    map: mapStrings.golova,
+    map: mapDetails.golova.id,
     name: "Empty PhD Slider",
     desc: "On top of the desk in a second-floor room to the right of pack-a-punch."
 }, {
@@ -3793,7 +3793,7 @@ const intelStoreV2 = [
     season: seasons.season6,
     intelType: intelTypes.artifact,
     loc: "[327.842464008449, 304.25]",
-    map: mapStrings.alpine,
+    map: mapDetails.alpine.id,
     name: "Zykov's Mask",
     desc: "On the shelf."
 }, {
@@ -3802,7 +3802,7 @@ const intelStoreV2 = [
     season: seasons.season6,
     intelType: intelTypes.artifact,
     loc: "[238.2379564951548, 255.125]",
-    map: mapStrings.sanatorium,
+    map: mapDetails.sanatorium.id,
     name: "Empty Death Perception",
     desc: "In the sink on the ground floor."
 }, 
