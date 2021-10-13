@@ -29,7 +29,7 @@ function expandMenu() {
 }
 
 function changeMapTo(mapId, targetElement) {
-    const currentMap = mapDetails[mapId];
+    const currentMap = FindMapById(mapId);
     document.querySelector("header").querySelector("h1").innerHTML = currentMap.title;
     setMap(mapId, targetElement)
     expandMenu()
@@ -38,7 +38,7 @@ function changeMapTo(mapId, targetElement) {
 function renderHeader() {
     const header = document.querySelector("header")
     header.replaceChildren(); // Empty Out First
-    const currentMap = mapDetails[app.currentMap];
+    const currentMap = FindMapById(app.currentMap);
 
 
 
@@ -49,20 +49,20 @@ function renderHeader() {
             <h2>Die Maschine</h2>
             <ul>
                 <li onclick="changeMapTo('dieMaschine',this)">Surface</li>
-                <li onclick="changeMapTo('dieMaschineUnderground',this)">Underground</li>
+                <li onclick="changeMapTo('dieMaschine_underground',this)">Underground</li>
             </ul>
         </li>
         <li>
             <h2>Firebase Z</h2>
             <ul>
-                <li onclick="changeMapTo('firebaseZSpawn',this)">Spawn</li>
+                <li onclick="changeMapTo('firebaseZ_spawn',this)">Spawn</li>
                 <li onclick="changeMapTo('firebaseZ',this)">Main Base</li>
             </ul>
         </li>
         <li>
             <h2>Mauer Der Toten</h2>
             <ul>
-                <li onclick="changeMapTo('mauerDerTotenStreets',this)">Surface</li>
+                <li onclick="changeMapTo('mauerDerToten_streets',this)">Surface</li>
                 <li onclick="changeMapTo('mauerDerToten',this)">Underground</li>
             </ul>
         </li>
@@ -70,7 +70,7 @@ function renderHeader() {
             <h2>Forsaken</h2>
             <ul>
                 <li onclick="changeMapTo('forsaken',this)">Surface</li>
-                <li onclick="changeMapTo('forsakenUnderground',this)">Underground</li>
+                <li onclick="changeMapTo('forsaken_underground',this)">Underground</li>
             </ul>
         </li>
         <li>

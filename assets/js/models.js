@@ -57,6 +57,12 @@ const mapDetails = {
     forsakenUnderground: new Item({ id: "forsaken_underground", title: "Forsaken"}),
 };
 
+function FindMapById(mapId) {
+    const maps = Object.values(mapDetails);
+    const foundMap = maps.find(map => map.id === mapId);
+    return foundMap;
+}
+
 const allOutbreakMapsArr = [
     mapDetails.zoo.id,
     mapDetails.ruka.id,

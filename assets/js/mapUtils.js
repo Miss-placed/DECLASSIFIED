@@ -19,8 +19,8 @@ function InitMap() {
     });
 }
 
-function setMap(selectedMap, navHtml) {
-    const { id: mapId } = mapDetails[selectedMap];
+function setMap(selectedMapId, navHtml) {
+    const { id: mapId } = FindMapById(selectedMapId);
     if (app.currentMap != mapId) {
         mapInstance.removeLayer(mapLayers[app.currentMap].Layer)
         mapInstance.addLayer(mapLayers[mapId].Layer)
