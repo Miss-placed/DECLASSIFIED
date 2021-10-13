@@ -14,12 +14,9 @@ body {
 }
 
 #worldMap {
-    background-color: var(--clr-grey-d);
+    background-color:var(--svg-background);
 }
 
-#worldMap.light- {
-    background-color: var(--clr-grey);
-}
 
 header {
     margin: 0 auto;

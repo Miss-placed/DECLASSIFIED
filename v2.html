@@ -48,7 +48,7 @@
                 <h2>Mauer Der Toten</h2>
                 <ul>
                     <li onclick="changeMapTo('Mauer Der Toten','mauerDerToten_streets',this)">Surface</li>
-                    <li onclick="changeMapTo('Mauer Der Toten','mauerDertoten',this)">Underground</li>
+                    <li onclick="changeMapTo('Mauer Der Toten','mauerDerToten',this)">Underground</li>
                 </ul>
             </li>
             <li>
@@ -200,9 +200,11 @@
         <p id="error-p"></p>
         <button id="error-button"></button>
     </section>
+    <i id="hidden-svg"></i>
 
     <!-- scripts -->
     <script src="" async defer></script>
+    <script src="assets/js/mapsvg.js"></script>
     <!-- js for generating the Donut in the stats modal -->
     <script src="assets/js/donut.js"></script>
     <script src="assets/js/icons.js"></script>
@@ -221,23 +223,28 @@
     <script src="assets/js/v2.js"></script>
     <script type="text/javascript">
 
-        $(document).ready(function() {
-            $('.leaflet-image-layer.leaflet-zoom-animated').each(function(){
-                var img         = $(this);
-                var image_uri   = img.attr('src');
-                var img_class   = img.attr('class');
-                var img_style   = img.attr('style')
-                $.get(image_uri, function(data) {
-                    var svg = $(data).find('svg');
-                    svg.removeAttr('xmlns:a');
-                    svg.attr('class') = img_class;
-                    svg.attr('style') = img_style;
-                    
-                    img.replaceWith(svg);
-                }, 'xml');
+        // $(document).ready(function() {
+        //     $('.leaflet-image-layer.leaflet-zoom-animated').each(function(){
+        //         var img         = $(this);
+        //         var image_uri   = img.attr('src');
+        //         var img_class   = img.attr('class');
+        //         var img_style   = img.attr('style')
+        //         $.get(image_uri, function(data) {
+        //             var svg = $(data).find('svg');
+        //             svg.removeAttr('xmlns');
+        //             svg.addClass(img_class)
+        //             svg.attr('style', img_style)
+        //             img.replaceWith(svg);
+        //         }, 'xml');
                 
-            });
-        });
+        //     });
+        // });
+            // let thing =$.get(`./maps/firebaseZ_spawn/firebaseZ_spawn.svg`, function(data) {
+            //     var svg = $(data).find('svg');
+            //     svg.removeAttr('xmlns:a');
+            // }, 'xml')
+            
+            // console.log(thing.responseText)
     </script>
 </body>
 
