@@ -1,17 +1,31 @@
+// SHOULD BE VERY START OF APP JS THAT ISN'T MODELS/CONSTANTS
+const app = StartupSettings();
+const userPrefs = userPrefsStartup();
+
+function StartupSettings() {
+    let response;
+
+    let disableMarkers = [],
+        visibleMarkers = [];
+    //Use default latest map otherwise use last selected map of user
+    let currentMap = mapStrings.armada;
+    let currentContribType;
+    if (localStorage.declassifiedPrefs != undefined && JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap)
+        currentMap = JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap;
+
+    let isMobile = false,
+        submittingLocation = false,
+        fixedNotification = false;
+    let notificationEle = document.getElementById("notification-popup");
+    return response = { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingLocation, currentContribType, fixedNotification };
+}
+
 //Store and Retrieve user preferences from localStorage
-
 function userPrefsStartup() {
-    let existingPrefs = localStorage.getItem("declassifiedPrefs");
+    var userPrefs = new UserPrefs(JSON.parse(localStorage.getItem("declassifiedPrefs")) ?? {});
 
-    if (existingPrefs) return JSON.parse(existingPrefs);
-
-    let newPrefs = {
-        lastSelectedMap: app.currentMap,
-        collectedIntel: [],
-    }
-
-    localStorage.setItem("declassifiedPrefs", JSON.stringify(newPrefs));
-    return newPrefs;
+    localStorage.setItem("declassifiedPrefs", JSON.stringify(userPrefs));
+    return userPrefs;
 }
 
 function getUserPrefs() {
@@ -21,7 +35,7 @@ function getUserPrefs() {
 
 function setUserPrefs(prefsObj) {
     localStorage.setItem("declassifiedPrefs", JSON.stringify(prefsObj));
-} 
+}
 
 function hasUserCollected(intel, getIndex = false) {
     let currentPrefs = getUserPrefs();
@@ -29,15 +43,15 @@ function hasUserCollected(intel, getIndex = false) {
     let indexOfIntel = currentPrefs.collectedIntel.indexOf(intel);
     if (indexOfIntel > -1 && getIndex) return indexOfIntel;
     if (indexOfIntel > -1 && !getIndex) return true;
-    
+
     //Couldn't find the intel, assume they haven't collected
     return false;
 }
 
 function addCollectedIntel(intel) {
     let currentPrefs = getUserPrefs();
-    
-    if(hasUserCollected(intel)) {
+
+    if (hasUserCollected(intel)) {
         console.log("Already collected this intel.");
         return;
     }
@@ -47,14 +61,30 @@ function addCollectedIntel(intel) {
 
 function removeCollectedIntel(intel) {
     let currentPrefs = getUserPrefs();
-    
+
     let indexOfIntel = hasUserCollected(intel, true);
 
     currentPrefs.collectedIntel.splice(indexOfIntel, 1);
     setUserPrefs(currentPrefs);
 }
-function setLastVisitedMap(selectedMap){
+
+function setLastVisitedMap(selectedMap) {
     let currentPrefs = getUserPrefs();
     currentPrefs.lastSelectedMap = selectedMap
+    setUserPrefs(currentPrefs);
+}
+
+//toggleDarkmode function to be depricated on v2 release
+function toggleDarkMode() {
+    let currentPrefs = getUserPrefs();
+    currentPrefs.darkmode = !currentPrefs.darkmode
+    setUserPrefs(currentPrefs);
+    location.reload();
+}
+
+function changePreferedMode() {
+    let currentPrefs = getUserPrefs();
+    currentPrefs.osPreferedMode = document.getElementById("dark-mode").checked
+    setColorScheme()
     setUserPrefs(currentPrefs);
 }

@@ -11,32 +11,85 @@
     <title>Declassified</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style2.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <script src="donut.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="assets/style/global.css">
+    <style>
+
+    </style>
     <script>
-        function openModal(element) {
-            document.getElementById(element).classList.remove("closed")
+        function expandMenu() {
+            document.querySelector("header").classList.toggle("visible");
         }
 
-        function closeModal(element) {
-            document.getElementById(element).classList.remove("closed")
+        function changeMapTo(x, y, z) {
+            document.querySelector("header").querySelector("h1").innerHTML = x
+            setMap(y, z, true)
+            expandMenu()
+        }
+
+        function setMap(x, y, z) {
+            console.log(x, y, z)
         }
     </script>
+
 </head>
 
 <body>
-    <main id="worldmap">
-        <button class="btn" href="" onclick="openModal('intel-menu')">Open Modal <i class="bi bi-caret-right-fill"></i> </button>
-        <a class="btn" href="devtool.html">Ui Elements Example</a>
-    </main>
-    <section id="intel-menu" class="modal closed">
-        <div class="modal-content -one-col">one</div>
-        <div class="modal-content -one-col">2</div>
-        <div class="modal-content detail closed -two-col">detail</div>
-        <div class="modal-content -one-col">3</div>
-    </section>
+    <header>
+        <h1 onclick="expandMenu()">
+            [Current Map Name]
+        </h1>
+        <ul>
+            <li>
+                <h2>Die Maschine</h2>
+                <ul>
+                    <li onclick="changeMapTo('Die Maschine','dieMaschine',this)">Surface</li>
+                    <li onclick="changeMapTo('Die Maschine','dieMaschine_underground',this)">Underground</li>
+                </ul>
+            </li>
+            <li>
+                <h2>Firebase Z</h2>
+                <ul>
+                    <li onclick="changeMapTo('Firebase Z','firebaseZ_spawn',this)">Spawn</li>
+                    <li onclick="changeMapTo('Firebase Z','firebaseZ',this)">Main Base</li>
+                </ul>
+            </li>
+            <li>
+                <h2>Mauer Der Toten</h2>
+                <ul>
+                    <li onclick="changeMapTo('Mauer Der Toten','mauerDerToten_streets',this)">Surface</li>
+                    <li onclick="changeMapTo('Mauer Der Toten','mauerDertoten',this)">Underground</li>
+                </ul>
+            </li>
+            <li>
+                <h2>Forsaken</h2>
+                <ul>
+                    <li onclick="changeMapTo('Forsaken','forsaken',this)">Surface</li>
+                    <li onclick="changeMapTo('Forsaken','forsaken_underground',this)">Underground</li>
+                </ul>
+            </li>
+            <li>
+                <h2>Outbreak</h2>
+                <ul>
+                    <li onclick="changeMapTo('Zoo','zoo',this)">Zoo</li>
+                    <li onclick="changeMapTo('Duga','duga',this)">Duga</li>
+                    <li onclick="changeMapTo('Ruka','ruka',this)">Ruka</li>
+                    <li onclick="changeMapTo('Alpine','alpine',this)">Alpine</li>
+                    <li onclick="changeMapTo('Armada','armada',this)">Armada</li>
+                    <li onclick="changeMapTo('Golova','golova',this)">Golova</li>
+                    <li onclick="changeMapTo('Collateral','collateral',this)">Collateral</li>
+                    <li onclick="changeMapTo('Sanatorium','sanatorium',this)">Sanatorium</li>
+                </ul>
+                <li>
+                    <h2>Contribute</h2>
+                    <ul>
+                        <li id="newIntel" class="dropdown-item not-selectable" onClick="newIntelInit()">Submit New Intel</li>
+                        <li id="newMisc" class="dropdown-item not-selectable" onClick="newMiscInit()">Submit New Misc Marker</li>
+                        <li><a class="dropdown-item not-selectable" href="./v2.html" target="_blank">Beta Test Our New UI!</a></li>
+                    </ul>
+                </li>
+            </li>
+        </ul>
+    </header>
 </body>
 
 </html>

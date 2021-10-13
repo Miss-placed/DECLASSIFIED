@@ -1,4 +1,5 @@
 @import url("global.css");
+@import url("buttons.css");
 * {
     margin: 0;
     padding: 0;
@@ -43,10 +44,50 @@ body {
     grid-column: 1;
     height: 90vh;
     width: 80vw;
-    background-color: #2d2d2d;
     cursor: crosshair;
     float: right;
     z-index: 0;
+}
+
+#worldMap {
+    background-color: var(--svg-background);
+}
+
+
+#ui {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    padding: 20px;
+    z-index: 100000;
+    pointer-events: none;
+}
+
+.btn.ui {
+    border-radius: 10px;
+    border: none;
+    width: 50px;
+    height: 50px;
+    padding: 5px 0;
+    pointer-events: auto;
+    background-color: var(--clr-bg-inverted);
+}
+
+.btn.ui i {
+    font-size: 1.6em;
+    margin: auto;
+}
+
+#discord {
+    background-color: #5865F2;
+    color: var(--clr-white-d);
+}
+
+#github {
+    background-color: var(--clr-black);
+    color: var(--clr-white);
 }
 
 header {
@@ -55,10 +96,11 @@ header {
     background: #2d2d2d;
     color: #e8e8d3;
     font-family: sans-serif;
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
     border-bottom: 1px solid #e8e8d3;
     user-select: none;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 header>div,
@@ -155,6 +197,7 @@ header>div:hover,
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    margin-top: 32px;
 }
 
 
@@ -162,6 +205,13 @@ header>div:hover,
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.dropdown.dropbtn {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
 }
 
 .current-map {
@@ -363,6 +413,7 @@ aside #searchTerm:focus-visible {
     margin: auto 0;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 99;
 }
 
 #notification-popup.animated {

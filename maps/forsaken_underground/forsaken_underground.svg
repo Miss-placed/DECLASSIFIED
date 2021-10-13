@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+	<defs>
+        <style>
+            .no-fill{fill:none;}
+            .no-stroke{stroke:none;}
+            
+            .border-fill{fill:#b33536;}
+            .road-fill{fill:#1f2223;}
+			.background-fill{fill:#3c3c3b;}
+            .field-fill{fill:#565555;}
+            .feature-fill{fill:#6a6a6b;}
+            .building-fill{fill:#fff;}
+            
+            .border-stroke{stroke:#b33536;}
+            .road-stroke{stroke:#1f2223;}
+			.background-stroke{stroke:#3c3c3b;}
+            .field-stroke{stroke:#565555;}
+            .feature-stroke{stroke:#6a6a6b;}
+            .building-stroke{stroke:#fff;} 
+        </style>
+		<style>
+			.c,.d,.e{stroke-miterlimit:10;}
+            .c{stroke-width:0.96px;}
+            .d,.e{sstroke-width:0.39px;}
+            .e{stroke-dasharray:1.94;}
+		</style>
+	</defs>
+	<rect class="a background-fill" width="512" height="512" />
+	<path class="b field-fill" d="M475.09,310.64V287.35h-7.51V186.18H425.67V196H347V178.68h7.25V151.77H340.55l-20.7-19.15v-9.83H292.42c-22.51-2.59-23-22.26-23-22.26h-81.5c.78,14.49-16.81,21.74-16.81,21.74H137.44v9.83L117,151.51H104.32v27.17h6.21v15.78h-4.14v6.73H64.74L64,198.86H45.85v-2.59h-14l.26,36.48H45.33l2.59-2.59H63.19L65,228.35H91.39v1.81h15.26l.78,3.37H125.8l2.33-2.85h17.33V240h16.3v9.83h-2.33v39.33c-.51,28.2,30.28,38,30.28,38H216.1v21.21H375.22V333.15h39.07V325.9h7.5v51.24h5.43v5.43h-4.4V463h51V382.83h-4.65v-6.21h4.91V325.9H480V310.64ZM334,194.52H306.26v-4.46H250l-.19-11.84h21.53V156.49H301l14.56,14.16v7.57H334Z" />
+	<path class="a background-fill" d="M175.73,240.26v7.24h2.59v40.63s0,20.18,19.41,20.44h18.11V287.09H375.22v15H414.8v8.28h5.95V286.57H428V244.92h-2.85V234.05H306.91v5.69Z" />
+	<polygon class="a background-fill" points="123.86 178.42 141.52 178.42 141.52 171.04 155.49 157.26 185.56 157.26 185.56 177.84 207.3 177.84 207.3 189.48 144.62 189.48 144.62 196.27 123.66 196.27 123.86 178.42" />
+	<polygon class="c no-fill border-stroke" points="249.79 178.22 271.33 178.22 271.33 156.49 301.02 156.49 315.58 170.66 315.58 178.22 334.01 178.22 334.01 194.52 306.26 194.52 306.26 190.06 249.99 190.06 249.79 178.22" />
+	<line class="d feature-stroke no-fill" x1="149.47" y1="208.3" x2="170.43" y2="208.3" />
+	<line class="d feature-stroke no-fill" x1="149.86" y1="221.11" x2="170.43" y2="221.11" />
+	<line class="d feature-stroke no-fill" x1="158.4" y1="189.67" x2="158.4" y2="208.3" />
+	<line class="d feature-stroke no-fill" x1="158.01" y1="221.11" x2="158.01" y2="239.35" />
+	<line class="d feature-stroke no-fill" x1="161.7" y1="240.91" x2="175.86" y2="240.91" />
+	<line class="d feature-stroke no-fill" x1="207.3" y1="181.13" x2="249.99" y2="181.13" />
+	<line class="d feature-stroke no-fill" x1="268.62" y1="202.29" x2="268.62" y2="225.77" />
+	<line class="d feature-stroke no-fill" x1="268.81" y1="190.06" x2="268.81" y2="192" />
+	<line class="d feature-stroke no-fill" x1="268.62" y1="239.93" x2="268.62" y2="237.8" />
+	<polyline class="d feature-stroke no-fill" points="286.28 239.74 286.28 221.11 308.2 221.11" />
+	<polyline class="d feature-stroke no-fill" points="308.2 207.91 286.28 207.91 286.28 189.87" />
+	<line class="d feature-stroke no-fill" x1="424.25" y1="196.08" x2="424.25" y2="233.92" />
+	<line class="d feature-stroke no-fill" x1="427.93" y1="285.93" x2="441.32" y2="285.93" />
+	<line class="d feature-stroke no-fill" x1="455.29" y1="285.93" x2="467.32" y2="285.93" />
+	<polyline class="d feature-stroke no-fill" points="421.72 326.1 424.25 326.1 424.25 309.6 420.75 309.6" />
+	<line class="d feature-stroke no-fill" x1="375.93" y1="302.03" x2="375.93" y2="311.35" />
+	<line class="d feature-stroke no-fill" x1="376.32" y1="324.16" x2="376.32" y2="332.89" />
+	<line class="e feature-stroke no-fill" x1="215.06" y1="327.46" x2="215.06" y2="325.32" />
+	<line class="e feature-stroke no-fill" x1="215.25" y1="311.54" x2="215.25" y2="308.63" />
+	<line class="e feature-stroke no-fill" x1="256.59" y1="190.06" x2="256.59" y2="206.56" />
+	<line class="e feature-stroke no-fill" x1="256.98" y1="223.05" x2="256.98" y2="239.74" />
+	<rect class="e feature-stroke no-fill" x="197.01" y="207.53" width="2.91" height="14.17" />
+	<circle class="f building-fill" cx="228.64" cy="139.99" r="24.84" />
+	<circle class="f building-fill" cx="176.25" cy="139.99" r="4.27" />
+	<circle class="f building-fill" cx="137.44" cy="152.02" r="4.27" />
+	<circle class="f building-fill" cx="318.68" cy="152.02" r="4.27" />
+	<circle class="f building-fill" cx="280.65" cy="140.38" r="4.27" />
+	<rect class="f building-fill" x="219.72" y="205.59" width="14.75" height="12.42" />
+	<rect class="f building-fill" x="239.51" y="299.12" width="18.24" height="11.26" />
+	<rect class="f building-fill" x="239.51" y="324.35" width="17.72" height="11.26" />
+	<rect class="f building-fill" x="269.27" y="309.09" width="12.55" height="17.21" />
+	<rect class="f building-fill" x="301.09" y="306.76" width="5.56" height="21.61" />
+	<rect class="f building-fill" x="322.56" y="310.9" width="34.28" height="12.81" />
+	<rect class="f building-fill" x="301.35" y="287.61" width="5.3" height="2.46" />
+	<rect class="f building-fill" x="301.35" y="345.12" width="5.3" height="2.46" />
+	<rect class="f building-fill" x="371.46" y="205.59" width="22.12" height="16.69" />
+	<polygon class="f building-fill" points="438.61 328.23 457.75 328.23 457.75 336.51 453.1 340.65 444.04 340.65 439.12 337.03 438.61 328.23" />
+	<polygon class="f building-fill" points="448.44 397.84 438.09 392.4 438.09 377.65 443 372.22 452.84 372.22 458.01 377.65 458.01 392.14 448.44 397.84" />
+	<path class="c no-fill border-stroke" d="M31.88,196.27h14v2.59H64l.78,2.33h41.65v-6.73h4.14V178.68h-6.21V151.51H117l20.44-19.41v-9.83h33.64s17.59-7.25,16.81-21.74h81.5s.52,19.67,23,22.26h27.43v9.83l20.7,19.15h13.71v26.91H347V196h78.66v-9.83h41.91V287.35h7.51v23.29H480V325.9h-5.95v50.72h-4.91v6.21h4.65V463h-51V382.57h4.4v-5.43h-5.43V325.9h-7.5v7.25H375.22v15.26H216.1V327.2H189.71s-30.79-9.84-30.28-38V249.83h2.33V240h-16.3v-9.32H128.13l-2.33,2.85H107.43l-.78-3.37H91.39v-1.81H65l-1.81,1.81H47.92l-2.59,2.59H32.14Z" />
+	<path class="c no-fill border-stroke" d="M175.73,240.26v7.24h2.59v40.63s0,20.18,19.41,20.44h18.11V287.09H375.22v15H414.8v8.28h5.95V286.57H428V244.92h-2.85V234.05H306.91v5.69Z" />
+	<polygon class="c no-fill border-stroke" points="123.86 178.42 141.52 178.42 141.52 171.04 155.49 157.26 185.56 157.26 185.56 177.84 207.3 177.84 207.3 189.48 144.62 189.48 144.62 196.27 123.66 196.27 123.86 178.42" />
+</svg>

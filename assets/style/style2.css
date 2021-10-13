@@ -7,9 +7,93 @@ body {
 
 #worldMap {
     color: var(--clr-color);
-    background-color: var(--clr-bg);
     width: 100vw;
     height: 100vh;
+    z-index: var(--z-index-map);
+    cursor: crosshair;
+}
+
+#worldMap {
+    background-color:var(--svg-background);
+}
+
+
+header {
+    margin: 0 auto;
+    position: absolute;
+    z-index: var(--z-index-menu);
+    left: calc((100vw - 400px) /2);
+}
+
+header h1 {
+    color: var(--clr-white);
+    width: 400px;
+    background: var(--clr-grey-d);
+    background: linear-gradient( 135deg, var(--clr-grey-d) 15%, var(--clr-red) 15%, var(--clr-red) 16%, var(--clr-grey-d) 16%);
+    background-position-x: -454px;
+    background-repeat: no-repeat;
+    background-size: 800%;
+    display: flex;
+    margin: auto;
+    height: 90px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    /* text-transform: uppercase; */
+    font-weight: 900;
+}
+
+header ul {
+    list-style: none;
+    color: var(--clr-color);
+}
+
+header h2,
+header>ul>li>ul>li {
+    padding: 10px 15px;
+    background-color: var(--clr-bg);
+}
+
+header>ul>li:hover>h2,
+header>ul>li>ul>li:hover {
+    background-color: var(--clr-bg-inverted);
+    color: var(--clr-color-inverted);
+}
+
+header>ul>li>ul,
+header>ul {
+    display: none;
+}
+
+header.visible>ul,
+header>ul>li:hover>ul,
+header>ul>li:focus>ul,
+header>ul>li:focus-within>ul {
+    display: initial;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--clr-grey);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px var(--clr-black-50);
+    z-index: var(--z-index-menu);
+}
+
+
+/* Show the dropdown menu on hover */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.current-map {
+    background-color: var(--clr-white-d);
+    color: var(--clr-grey);
 }
 
 
@@ -26,7 +110,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000000000;
+    z-index: var(--z-index-ui);
 }
 
 .modal {
@@ -51,6 +135,7 @@ select.faction-list {
     text-transform: uppercase;
     font-weight: bold;
     color: var(--clr-color);
+    cursor: pointer;
 }
 
 select.faction-list>option {
@@ -64,6 +149,7 @@ select.faction-list>option:hover {
 }
 
 .modal #filtered-intel,
+.button-list,
 #intel-type div {
     display: flex;
     margin: 0 auto;
@@ -74,7 +160,14 @@ select.faction-list>option:hover {
     align-items: center;
 }
 
-#intel-list button.btn {
+#filtered-intel {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-right: 5px;
+}
+
+#intel-list button.btn,
+#settings>div>.btn {
     margin-bottom: 20px;
     flex-direction: column;
     width: 100%;
@@ -123,6 +216,26 @@ select.faction-list>option:hover {
     justify-content: center;
 }
 
+#description {
+    padding: 10px;
+}
+
+#settings {
+    color: var(--clr-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#settings>h2,
+#settings>.button-list>p {
+    margin-bottom: 5px;
+}
+
+#settings>div {
+    display: flex;
+}
+
 
 /*------------Donut Graph------------*/
 
@@ -145,12 +258,72 @@ select.faction-list>option:hover {
 }
 
 #ui {
+    display: flex;
+    justify-content: space-between;
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    z-index: 1000000000000000000;
+    width: 100vw;
+    bottom: 0;
+    padding: 20px;
+    z-index: var(--z-index-ui);
+    pointer-events: none;
 }
 
 .-hidden {
+    display: none!important;
+}
+
+
+/*notification styling */
+
+#notification-popup {
+    display: none;
+    position: absolute;
+    bottom: -200px;
+    background-color: rgba(0, 0, 0, 0.404);
+    color: white;
+    border-radius: 50px;
+    padding: 10px 15px;
+    /* transition: bottom 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86); */
+    margin: auto 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+}
+
+#notification-popup.animated {
+    animation: bounce-in 3s;
+    display: block;
+}
+
+#notification-popup.fixed {
+    bottom: 0px;
+    display: block;
+}
+
+@keyframes bounce-in {
+    0% {
+        bottom: -20px;
+    }
+    1% {
+        bottom: 0px;
+    }
+    3% {
+        bottom: -12px;
+    }
+    6% {
+        bottom: -20px;
+    }
+    9% {
+        bottom: -5px;
+    }
+    10% {
+        bottom: 0px;
+    }
+    100% {
+        bottom: 0px;
+    }
+}
+
+#error-notif {
     display: none;
 }

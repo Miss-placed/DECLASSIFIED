@@ -1,24 +1,3 @@
-const app = StartupSettings();
-const userPrefs = userPrefsStartup();
-
-function StartupSettings() {
-    let response;
-
-    let disableMarkers = [],
-        visibleMarkers = [];
-    //Use default latest map otherwise use last selected map of user
-    let currentMap = mapStrings.armada;
-    let currentContribTemplate, currentContribLabel;
-    if (localStorage.declassifiedPrefs != undefined && JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap)
-        currentMap = JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap;
-
-    let isMobile = false,
-        submittingLocation = false,
-        fixedNotification = false;
-    let notificationEle = document.getElementById("notification-popup");
-    return response = { currentMap, disableMarkers, visibleMarkers, notificationEle, isMobile, submittingLocation, currentContribTemplate, currentContribLabel, fixedNotification };
-}
-
 let mapInstance = InitMap();
 
 L.control.attribution({ prefix: 'DECLASSIFIED' })
@@ -46,13 +25,13 @@ mapInstance.on('popupopen', function() {
     });
     $('.share').click(function(e) {
         let itemId = $(e.target).closest(".buttonContainer").data("item");
-        console.log("share", itemId);
         copyToClipboard(`${window.location.origin}${window.location.pathname}?id=${itemId}`, "Link Copied To Clipboard");
     });
     $('.bugRep').click(function(e) {
         let itemId = $(e.target).closest(".buttonContainer").data("item");
-        console.log("bugRep", itemId);
-        redirectToGithub({ label: "Intel Fix", issueTemplate: contribTemplates.intel.editId, intelId: itemId })
+        let type = $(e.target).closest(".buttonContainer").data("type");
+
+        redirectToGithub({ itemType: type, issueType: "Fix", itemId: itemId })
     });
 });
 
@@ -61,7 +40,7 @@ mapInstance.on("click", function(e) {
     if (debug) {
         copyToClipboard(location, "Location Copied to Clipboard")
     } else if (app.submittingLocation) {
-        redirectToGithub({ label: app.currentContribLabel, issueTemplate: app.currentContribTemplate, location: location });
+        redirectToGithub({ itemType: app.currentContribType, issueType: "New", location: location });
     }
 })
 
@@ -83,8 +62,8 @@ function onLoad() {
     $('#searchTerm').keyup(function() {
         intelFiltered = TriggerSearch();
     });
-
-
+    //Hide aside if toggled off
+    if (!userPrefs.asideShow) toggleAside(false);
 }
 
 if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
@@ -93,5 +72,5 @@ if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
     sidebar.classList.add("mobile-view");
     worldmap.classList.add("mobile-view");
     app.isMobile = true
-    toggleAside();
+    toggleAside(false);
 }

@@ -17,15 +17,42 @@ const seasonTotal = {
     season6: findTotal(intelStoreV2, "season", seasons.season6),
     all: intelStoreV2.length
 }
+const modalSet = {
+    intelOverview: ["intel-type", "intel-list", "intel-stats"],
+    intelDescription: ["intel-list", "intel-desc"],
+    settingsMain: ["settings"],
+}
+function expandMenu() {
+    document.querySelector("header").classList.toggle("visible");
+}
+
+function changeMapTo(x, y, z) {
+    document.querySelector("header").querySelector("h1").innerHTML = x
+    setMap(y, z, true)
+    expandMenu()
+}
 
 
-function openModal() {
+function openModal(x) {
     document.getElementsByClassName("modal-bg")[0].classList.remove("-hidden")
+    let modals = document.querySelectorAll(".modal")
+    modals.forEach((modal) => { 
+        if (x.indexOf(modal.id) != -1){
+            modal.classList.remove("-hidden")
+        }else{
+            modal.classList.add("-hidden")
+        }
+     })
+    // console.log(modals)
     fillTotals()
 }
 
 function closeModal() {
     document.getElementsByClassName("modal-bg")[0].classList.add("-hidden")
+    let modals = document.querySelectorAll(".modal")
+    modals.forEach((modal) => { 
+            modal.classList.add("-hidden")
+     })
 }
 
 /**
@@ -67,13 +94,12 @@ function findInCollected(query) {
     for (let i = 0; i < collectedIntel.length; i++) {
         total += findTotal(query, "id", collectedIntel[i]).length
     }
-    console.log(total)
     return total;
 }
 
 document.addEventListener(
     "click",
-    function(event) {
+    function (event) {
         // If user clicks outside the modal window, then close modal by calling closeModal()
         if (
             event.target.matches(".modal-bg") &&
@@ -121,6 +147,18 @@ document.querySelectorAll(".to-intel").forEach(element => {
     })
 })
 
+
+
+
+/* <img class="leaflet-image-layer leaflet-zoom-animated" src="./maps/forsaken/forsaken.svg" alt="" style="z-index: 1; transform: translate3d(-256px, -584px, 0px); width: 2048px; height: 2048px;"> */
+
+function interceptMapLoad() {
+    var el = document.querySelector("img.leaflet-image-layer.leaflet-zoom-animated");
+    console.log(el)
+
+
+}
+
 function switchmodal() {
 
     // need to make a proper open and close function for modal switching
@@ -133,6 +171,8 @@ let collectedFaction = {
     requiem: findInCollected(factionTotal.requiem),
     omega: findInCollected(factionTotal.omega),
     maxis: findInCollected(factionTotal.maxis),
+    all:0,
+    not:0,
 }
 collectedFaction.all = getUserPrefs().collectedIntel.length
 collectedFaction.not = factionTotal.all - collectedFaction.all;
@@ -145,6 +185,8 @@ let collectedSeason = {
     season4: findInCollected(seasonTotal.season3),
     season5: findInCollected(seasonTotal.season4),
     season5: findInCollected(seasonTotal.season5),
+    all:0,
+    not:0,
 }
 
 collectedSeason.all = getUserPrefs().collectedIntel.length
@@ -163,83 +205,72 @@ function fillTotals() {
 }
 
 fillTotals()
-    // basic sum function for totals calculation
+// basic sum function for totals calculation
 function sum(obj) {
     return Object.keys(obj).reduce((sum, key) => sum + parseFloat(obj[key] || 0), 0);
 }
 
-// #TODO: values need to be calculated maybe by lenght or whatever!
-// /.S2...$/
+let factionItems = [{
+    label: "Requiem ",
+    value: collectedFaction.requiem,
+    color: "--clr-blue "
+}, {
+    label: "Omega ",
+    value: collectedFaction.omega,
+    color: "--clr-red "
+}, {
+    label: "Maxis ",
+    value: collectedFaction.maxis,
+    color: "--clr-blue-d "
+}, {
+    label: "DarkAether ",
+    value: collectedFaction.darkAether,
+    color: "--clr-purple "
+}, {
+    label: "NotCollected ",
+    value: collectedFaction.not,
+    color: "--clr-grey "
+},]
+
+seasonItems = [{
+    label: "PreSeason ",
+    value: collectedSeason.preSeason,
+    color: "--clr-blue-d "
+}, {
+    label: "Season1 ",
+    value: collectedSeason.season1,
+    color: "--clr-green "
+}, {
+    label: "Season2 ",
+    value: collectedSeason.season2,
+    color: "--clr-red "
+}, {
+    label: "Season3 ",
+    value: collectedSeason.season3,
+    color: "--clr-purple "
+}, {
+    label: "Season4 ",
+    value: collectedSeason.season4,
+    color: "--clr-yellow "
+}, {
+    label: "Season5 ",
+    value: collectedSeason.season5,
+    color: "--clr-orange "
+}, {
+    label: "NotCollected ",
+    value: collectedSeason.not-1,
+    color: "--clr-grey "
+},]
 
 
 let factionDonut = new DonutChart(
     document.getElementById("faction-donut"), {
-        r: 100,
-        stroke: 25,
-        scale: 100,
-        total: factionTotal.all,
-        collected: collectedFaction.all,
-        items: [{
-            label: "Requiem ",
-            value: collectedFaction.requiem,
-            color: "--clr-blue "
-        }, {
-            label: "Omega ",
-            value: collectedFaction.omega,
-            color: "--clr-red "
-        }, {
-            label: "Maxis ",
-            value: collectedFaction.maxis,
-            color: "--clr-blue-d "
-        }, {
-            label: "DarkAether ",
-            value: collectedFaction.darkAether,
-            color: "--clr-purple "
-        }, {
-            label: "NotCollected ",
-            value: collectedFaction.not,
-            color: "--clr-grey "
-        }, ]
+    r: 100,
+    stroke: 25,
+    scale: 100,
+    total: factionTotal.all,
+    collected: collectedFaction.all,
+    items: factionItems
 
-    })
-
-// #TODO: uncomment once we have the season chart in place
-//         let seasonDonut = new DonutChart(
-//             document.getElementById("season-donut "), {
-//     r: 90,
-//         stroke: 30,
-//         scale: 100,
-//         total: seasonTotal.All,
-//         collected: collectedSeason.All,
-//         items: [{
-//             label: "PreSeason ",
-//             value: collectedSeason.PreSeason,
-//             color: "--clr-blue-d "
-//         }, {
-//             label: "Season1 ",
-//             value: collectedSeason.Season1,
-//             color: "--clr-green "
-//         }, {
-//             label: "Season2 ",
-//             value: collectedSeason.Season2,
-//             color: "--clr-red "
-//         }, {
-//             label: "Season3 ",
-//             value: collectedSeason.Season3,
-//             color: "--clr-purple "
-//         }, {
-//             label: "Season4 ",
-//             value: collectedSeason.Season4,
-//             color: "--clr-yellow "
-//         }, {
-//             label: "Season5 ",
-//             value: collectedSeason.Season5,
-//             color: "--clr-orange "
-//         }, {
-//             label: "NotCollected ",
-//             value: collectedSeason.Not,
-//             color: "--clr-grey "
-//         }, ]
-
-//     })
-//
+}
+)
