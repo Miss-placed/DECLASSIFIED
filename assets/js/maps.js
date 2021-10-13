@@ -52,7 +52,7 @@ function generateLayers(name, settings) {
     //     svgElement.innerHTML = load.responseText.slice('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">'.length, '</svg>'.length + load.responseText.length)
     // })
 
-    svgElement.innerHTML = svg.globalStyle + svg[name] 
+    svgElement.innerHTML = mapSVGs.globalStyle + mapSVGs[name] 
     var imageBounds = [
         [0, 0],
         [512, 512]
