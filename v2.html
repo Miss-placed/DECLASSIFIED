@@ -9,25 +9,30 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>DECLASSIFIED - Cold War Intel Map</title>
-    <meta name="description" content="With The Cold War Collectables Map you can track your progress on which intel you still need to collect.">
+    <meta name="description"
+        content="With The Cold War Collectables Map you can track your progress on which intel you still need to collect.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/style/style2.css">
     <link rel="icon" href="./favicon-32x32.png" type="image/png">
     <script>
         let debug = false
     </script>
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-    <script src="https://kit.fontawesome.com/d8228dcdfd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body onload="">
     <header>
         <h1 onclick="expandMenu()">
-            [Current Map Name]
+
         </h1>
         <ul>
             <li>
@@ -48,7 +53,7 @@
                 <h2>Mauer Der Toten</h2>
                 <ul>
                     <li onclick="changeMapTo('Mauer Der Toten','mauerDerToten_streets',this)">Surface</li>
-                    <li onclick="changeMapTo('Mauer Der Toten','mauerDertoten',this)">Underground</li>
+                    <li onclick="changeMapTo('Mauer Der Toten','mauerDerToten',this)">Underground</li>
                 </ul>
             </li>
             <li>
@@ -70,13 +75,15 @@
                     <li onclick="changeMapTo('Collateral','collateral',this)">Collateral</li>
                     <li onclick="changeMapTo('Sanatorium','sanatorium',this)">Sanatorium</li>
                 </ul>
-                <li>
-                    <h2>Contribute</h2>
-                    <ul>
-                        <li id="newIntel" class="dropdown-item not-selectable" onClick="newIntelInit()">Submit New Intel</li>
-                        <li id="newMisc" class="dropdown-item not-selectable" onClick="newMiscInit()">Submit New Misc Marker</li>
-                    </ul>
-                </li>
+            <li>
+                <h2>Contribute</h2>
+                <ul>
+                    <li id="newIntel" class="dropdown-item not-selectable" onClick="newIntelInit()">Submit New Intel
+                    </li>
+                    <li id="newMisc" class="dropdown-item not-selectable" onClick="newMiscInit()">Submit New Misc Marker
+                    </li>
+                </ul>
+            </li>
             </li>
         </ul>
     </header>
@@ -84,28 +91,34 @@
     <!-- UI -->
 
     <div id="ui">
-        <div><button class="btn ui" onclick="openModal()"><i class="bi bi-folder-fill"></i> </button></div>
         <div>
-            <button class="btn ui" onclick="toggleDarkMode()"><i class="fas fa-moon"></i> </button>
-            <a title="Join us on discord!" href="https://discord.gg/4Xqj8XntFe" target="_blank" class="btn ui" id="discord"><i class="fab fa-discord"></i> </a>
-            <a title="Help us out on Github!" href="https://github.com/Miss-placed/DECLASSIFIED" target="_blank" class="btn ui" id="github"><i class="bi bi-github"></i> </a>
+            <button class="btn ui" onclick="openModal(modalSet.intelOverview)"><i class="bi bi-folder-fill"></i> </button>
+            <button class="btn ui" onclick="openModal(modalSet.settingsMain)"><i class="bi bi-gear-fill"></i> </button>
+        </div>
+        <div>
+            <button class="btn ui" id="color-scheme-toggle" onclick="setColorScheme()"><i class="fas fa-moon"></i>
+            </button>
+            <a title="Join us on discord!" href="https://discord.gg/4Xqj8XntFe" target="_blank" class="btn ui"
+                id="discord"><i class="fab fa-discord"></i> </a>
+            <a title="Help us out on Github!" href="https://github.com/Miss-placed/DECLASSIFIED" target="_blank"
+                class="btn ui" id="github"><i class="bi bi-github"></i> </a>
         </div>
     </div>
 
     <!-- modal popups -->
     <section class="modal-bg -hidden">
 
-        <div class="modal" id="intel-type">
+        <div class="modal -hidden" id="intel-type">
             <select class="faction-list">
-                <option value="All-F"><img class="list-icon" src="/assets/img/icons/faction-requiem-icon.png" alt="">
+                <option value="All-F"><img class="list-icon" src="./assets/img/icons/faction-requiem-icon.png" alt="">
                     All Factions</option>
-                <option value="Requiem"><img class="list-icon" src="/assets/img/icons/faction-requiem-icon.png" alt="">
+                <option value="Requiem"><img class="list-icon" src="./assets/img/icons/faction-requiem-icon.png" alt="">
                     Requiem</option>
-                <option value="Omega"><img class="list-icon" src="/assets/img/icons/faction-omega-icon.png" alt="">
+                <option value="Omega"><img class="list-icon" src="./assets/img/icons/faction-omega-icon.png" alt="">
                     Omega</option>
-                <option value="Maxis"><img class="list-icon" src="/assets/img/icons/faction-maxis-icon.png" alt="">
+                <option value="Maxis"><img class="list-icon" src="./assets/img/icons/faction-maxis-icon.png" alt="">
                     Maxis</option>
-                <option value="DarkAether"><img class="list-icon" src="/assets/img/icons/faction-darkAether-icon.png"
+                <option value="DarkAether"><img class="list-icon" src="./assets/img/icons/faction-darkAether-icon.png"
                         alt=""> Dark Aether</option>
             </select>
             <div>
@@ -117,7 +130,7 @@
         </div>
 
 
-        <div class="modal" id="intel-list">
+        <div class="modal -hidden" id="intel-list">
             <select class="season-list ">
                 <option value="AllSeasons ">All Seasons</option>
                 <option value="PreSeason ">Pre Season</option>
@@ -152,20 +165,24 @@
         </div>
         <!-- intel stats modal -->
         <!-- displays totals as a list and as donuts, includes searchbar -->
-        <div class="modal" id="intel-stats">
+        <div class="modal -hidden" id="intel-stats">
             <div class="sub-modal ">
                 <div id="search-form"><input type="search" placeholder="Search Intel..."><button class="btn inverted"><i
                             class="bi bi-search"></i></button></div>
                 <div id="faction-donut" class="graph "></div>
                 <div id="totals">
                     <ul id="icons-faction">
-                        <li><img class="faction-list-icon " src="assets/img/icons/faction-requiem-icon.png " alt="Requiem total ">
+                        <li><img class="faction-list-icon " src="assets/img/icons/faction-requiem-icon.png "
+                                alt="Requiem total ">
                         </li>
-                        <li><img class="faction-list-icon " src="assets/img/icons/faction-omega-icon.png " alt="Omega total ">
+                        <li><img class="faction-list-icon " src="assets/img/icons/faction-omega-icon.png "
+                                alt="Omega total ">
                         </li>
-                        <li><img class="faction-list-icon " src="assets/img/icons/faction-maxis-icon.png " alt="Maxis total ">
+                        <li><img class="faction-list-icon " src="assets/img/icons/faction-maxis-icon.png "
+                                alt="Maxis total ">
                         </li>
-                        <li><img class="faction-list-icon " src="assets/img/icons/faction-darkAether-icon.png " alt="Dark aether total ">
+                        <li><img class="faction-list-icon " src="assets/img/icons/faction-darkAether-icon.png "
+                                alt="Dark aether total ">
                         </li>
                     </ul>
 
@@ -178,6 +195,33 @@
                 </div>
             </div>
         </div>
+        <div class="modal -hidden" id="settings">
+            <h2>Settings</h2>
+            <div class="button-list">
+                <p>Marker visibility:</p>
+                <label class="btn chk-btn" for="checkbox1">
+                    <p>Intel Markers: </p><input type="checkbox" name="checkbox1" id="show-intel" class="toggle"
+                        placeholder="_">
+                </label>
+                <label class="btn chk-btn" for="checkbox">
+                    <p>Misc Markers: </p><input type="checkbox" name="checkbox" id="show-misc" class="toggle"
+                        placeholder="_">
+                </label>
+                <label class="btn chk-btn" for="checkbox">
+                    <p>EE markers</p><input type="checkbox" name="checkbox" id="show-ee" class="toggle" placeholder="_">
+                </label>
+                <p>Dark mode: </p>
+                <label class="btn chk-btn" for="dark-mode">
+                    <p>System Dark Mode</p><input type="checkbox" name="dark-mode" id="dark-mode" class="toggle"
+                        placeholder="_" onchange="changePreferedMode()">
+                </label>
+                <p>Collected Markers:
+                </p>
+                <button class="btn chk-btn" for="checkbox">
+                    <p>Import/Export Markers</p>
+                </button>
+            </div>
+        </div>
     </section>
     <!-- Notifications -->
     <section id="notification-popup"></section>
@@ -186,9 +230,11 @@
         <p id="error-p"></p>
         <button id="error-button"></button>
     </section>
+    <i id="hidden-svg"></i>
 
     <!-- scripts -->
     <script src="" async defer></script>
+    <script src="assets/js/mapsvg.js"></script>
     <!-- js for generating the Donut in the stats modal -->
     <script src="assets/js/donut.js"></script>
     <script src="assets/js/icons.js"></script>
@@ -205,6 +251,31 @@
     <script src="assets/js/filtering.js"></script>
     <script src="assets/js/index.js"></script>
     <script src="assets/js/v2.js"></script>
+    <script type="text/javascript">
+
+        // $(document).ready(function() {
+        //     $('.leaflet-image-layer.leaflet-zoom-animated').each(function(){
+        //         var img         = $(this);
+        //         var image_uri   = img.attr('src');
+        //         var img_class   = img.attr('class');
+        //         var img_style   = img.attr('style')
+        //         $.get(image_uri, function(data) {
+        //             var svg = $(data).find('svg');
+        //             svg.removeAttr('xmlns');
+        //             svg.addClass(img_class)
+        //             svg.attr('style', img_style)
+        //             img.replaceWith(svg);
+        //         }, 'xml');
+
+        //     });
+        // });
+            // let thing =$.get(`./maps/firebaseZ_spawn/firebaseZ_spawn.svg`, function(data) {
+            //     var svg = $(data).find('svg');
+            //     svg.removeAttr('xmlns:a');
+            // }, 'xml')
+
+            // console.log(thing.responseText)
+    </script>
 </body>
 
 </html>

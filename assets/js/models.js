@@ -25,11 +25,13 @@ class Marker {
 }
 
 class UserPrefs {
-    constructor({lastSelectedMap, collectedIntel, darkmode, asideShow}) {
+    constructor({lastSelectedMap, collectedIntel, darkmode, asideShow, osPreferedMode}) {
         this.lastSelectedMap = lastSelectedMap ?? app.currentMap;
         this.collectedIntel = collectedIntel ?? [];
+        //darkmode variable to be depricated on v2 release
         this.darkmode = darkmode ?? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
         this.asideShow = asideShow ?? true;
+        this.osPreferedMode = osPreferedMode ?? false;
     }
 }
 
@@ -139,6 +141,9 @@ const miscTypes = {
     rift: new Item({ title: "Aether Rift", desc:  "Jump through to teleport and gain a random powerup.", icon: riftIcon}),
     redRift: new Item({ title: "Red Aether Rift", desc:  "Jump through all the rifts to continue the Easter Egg", icon: redRiftIcon}),
     radio: new Item({ title: "Radio", icon: radioIcon}),
+    requiemRadio: new Item({ title: "Requiem Radio", icon: radioIcon}),
+    omegaRadio: new Item({ title: "Omega Radio", icon: radioIcon}),
+    maxisRadio: new Item({ title: "Maxis Radio", icon: radioIcon}),
     monkey: new Item({ title: "Stone Monkey", icon: monkeyIcon}),
     projector: new Item({ title: "Projector", desc:  "The projector for the Main Quest"}),
     signal: new Item({ title: "Signal"}),

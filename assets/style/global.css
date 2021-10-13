@@ -5,7 +5,7 @@
     font-family: sans-serif;
 }
 
-:root {
+body {
     /* whites and blacks */
     --clr-white: #FFFFFF;
     --clr-white-d: #c7bbb2;
@@ -39,15 +39,38 @@
     --z-index-ui: 3;
     --z-index-menu: 2;
     --z-index-map: 1;
-}
 
-@media (prefers-color-scheme: dark) {
-     :root {
-        --clr-bg: var(--clr-grey-d);
-        --clr-color: var(--clr-white-d);
-        --clr-bg-inverted: var(--clr-white-d);
-        --clr-color-inverted: var(--clr-grey-d);
-    }
+    /* whites and blacks */
+    --svg-border:var(--clr-red);
+    --svg-roads:var(--clr-grey-l);
+    --svg-background: var(--clr-grey);
+    --svg-field: var(--clr-white-d);
+    --svg-features:var(--clr-grey);
+    --svg-buildings: var(--clr-grey-d);
+
+} 
+
+body.dark {
+    --clr-bg: var(--clr-grey-d);
+    --clr-color: var(--clr-white-d);
+    --clr-bg-inverted: var(--clr-white-d);
+    --clr-color-inverted: var(--clr-grey-d);
+
+    /* whites and blacks */
+    --svg-border:var(--clr-red);
+    --svg-roads:var(--clr-black);
+    --svg-background: var(--clr-grey-d);
+    --svg-field: var(--clr-grey);
+    --svg-features:var(--clr-grey-l);
+    --svg-buildings: var(--clr-white);
+}
+body.custom-color{
+    --svg-border:var(--clr-green);
+    --svg-roads:var(--clr-purple);
+    --svg-background: var(--clr-yellow);
+    --svg-field: var(--clr-white-d);
+    --svg-features:#a16767;
+    --svg-buildings: #38c715;
 }
 
 ::-webkit-scrollbar {
