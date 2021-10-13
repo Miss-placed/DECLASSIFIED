@@ -17,7 +17,11 @@ const seasonTotal = {
     season6: findTotal(intelStoreV2, "season", seasons.season6),
     all: intelStoreV2.length
 }
-
+const modalSet = {
+    intelOverview: ["intel-type", "intel-list", "intel-stats"],
+    intelDescription: ["intel-list", "intel-desc"],
+    settingsMain: ["settings"],
+}
 function expandMenu() {
     document.querySelector("header").classList.toggle("visible");
 }
@@ -29,13 +33,26 @@ function changeMapTo(x, y, z) {
 }
 
 
-function openModal() {
+function openModal(x) {
     document.getElementsByClassName("modal-bg")[0].classList.remove("-hidden")
+    let modals = document.querySelectorAll(".modal")
+    modals.forEach((modal) => { 
+        if (x.indexOf(modal.id) != -1){
+            modal.classList.remove("-hidden")
+        }else{
+            modal.classList.add("-hidden")
+        }
+     })
+    // console.log(modals)
     fillTotals()
 }
 
 function closeModal() {
     document.getElementsByClassName("modal-bg")[0].classList.add("-hidden")
+    let modals = document.querySelectorAll(".modal")
+    modals.forEach((modal) => { 
+            modal.classList.add("-hidden")
+     })
 }
 
 /**
@@ -82,7 +99,7 @@ function findInCollected(query) {
 
 document.addEventListener(
     "click",
-    function(event) {
+    function (event) {
         // If user clicks outside the modal window, then close modal by calling closeModal()
         if (
             event.target.matches(".modal-bg") &&
@@ -135,11 +152,11 @@ document.querySelectorAll(".to-intel").forEach(element => {
 
 /* <img class="leaflet-image-layer leaflet-zoom-animated" src="./maps/forsaken/forsaken.svg" alt="" style="z-index: 1; transform: translate3d(-256px, -584px, 0px); width: 2048px; height: 2048px;"> */
 
-function interceptMapLoad(){
+function interceptMapLoad() {
     var el = document.querySelector("img.leaflet-image-layer.leaflet-zoom-animated");
     console.log(el)
 
-    
+
 }
 
 function switchmodal() {
@@ -154,6 +171,8 @@ let collectedFaction = {
     requiem: findInCollected(factionTotal.requiem),
     omega: findInCollected(factionTotal.omega),
     maxis: findInCollected(factionTotal.maxis),
+    all:0,
+    not:0,
 }
 collectedFaction.all = getUserPrefs().collectedIntel.length
 collectedFaction.not = factionTotal.all - collectedFaction.all;
@@ -166,6 +185,8 @@ let collectedSeason = {
     season4: findInCollected(seasonTotal.season3),
     season5: findInCollected(seasonTotal.season4),
     season5: findInCollected(seasonTotal.season5),
+    all:0,
+    not:0,
 }
 
 collectedSeason.all = getUserPrefs().collectedIntel.length
@@ -184,7 +205,7 @@ function fillTotals() {
 }
 
 fillTotals()
-    // basic sum function for totals calculation
+// basic sum function for totals calculation
 function sum(obj) {
     return Object.keys(obj).reduce((sum, key) => sum + parseFloat(obj[key] || 0), 0);
 }
@@ -209,7 +230,7 @@ let factionItems = [{
     label: "NotCollected ",
     value: collectedFaction.not,
     color: "--clr-grey "
-}, ]
+},]
 
 seasonItems = [{
     label: "PreSeason ",
@@ -237,19 +258,19 @@ seasonItems = [{
     color: "--clr-orange "
 }, {
     label: "NotCollected ",
-    value: collectedSeason.not,
+    value: collectedSeason.not-1,
     color: "--clr-grey "
-}, ]
+},]
 
 
 let factionDonut = new DonutChart(
     document.getElementById("faction-donut"), {
-        r: 100,
-        stroke: 25,
-        scale: 100,
-        total: factionTotal.all,
-        collected: collectedFaction.all,
-        items: factionItems
+    r: 100,
+    stroke: 25,
+    scale: 100,
+    total: factionTotal.all,
+    collected: collectedFaction.all,
+    items: factionItems
 
-    }
+}
 )

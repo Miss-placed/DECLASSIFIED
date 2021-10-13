@@ -269,7 +269,7 @@ select.faction-list>option:hover {
 }
 
 .-hidden {
-    display: none;
+    display: none!important;
 }
 
 
