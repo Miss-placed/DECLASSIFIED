@@ -29,7 +29,7 @@ miscPOI[mapStrings.dieMaschine] = [
     new Marker("whnl0", miscTypes.mysteryBox, [227.36045978087836, 178.5]),
     new Marker("znu5z", miscTypes.wallbuy, [211.11624215750538, 158.125], "M16"),
     new Marker("U24cf", miscTypes.ammoCrate, [256.22518494241035, 86.25]),
-    new Marker("6gdU5", miscTypes.radio, [257.99097293754096, 88.5625]),
+    new Marker("6gdU5", miscTypes.maxisRadio, [257.99097293754096, 88.5625]),
 ];
 miscPOI[mapStrings.dieMaschineUnderground] = [
     new Marker("cTakX", miscTypes.craftingTable, [302.9450323063958, 199.5]),

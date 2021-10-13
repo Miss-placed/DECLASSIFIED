@@ -2135,7 +2135,7 @@ const intelStoreV2 = [
     loc: "[182.24077282244167, 240.6875]",
     map: mapStrings.duga,
     name: "Jager's ID Badge",
-    desc: ""
+    desc: "On the desk as you walk in."
 }, {
     id: "OS6Au1",
     faction: factions.omega,
