@@ -18,6 +18,11 @@ const seasonTotal = {
     all: intelStoreV2.length
 }
 
+const modalSet = {
+    intelOverview: ["intel-type", "intel-list", "intel-stats"],
+    intelDescription: ["intel-list", "intel-desc"],
+    settingsMain: ["settings"],
+}
 /////////////////////Header Menu/////////////////////////
 function expandMenu() {
     document.querySelector("header").classList.toggle("visible");
@@ -35,10 +40,10 @@ function renderHeader() {
     header.replaceChildren(); // Empty Out First
     const currentMap = mapDetails[app.currentMap];
 
-    
+
 
     let navbarHtmlToAdd = htmlToElements(
-    `<h1 onclick="expandMenu()">${currentMap.title}</h1>
+        `<h1 onclick="expandMenu()">${currentMap.title}</h1>
     <ul>
         <li>
             <h2>Die Maschine</h2>
@@ -97,13 +102,26 @@ function renderHeader() {
 renderHeader();
 
 /////////////////////Modal Functions/////////////////////////
-function openModal() {
+function openModal(x) {
     document.getElementsByClassName("modal-bg")[0].classList.remove("-hidden")
+    let modals = document.querySelectorAll(".modal")
+    modals.forEach((modal) => {
+        if (x.indexOf(modal.id) != -1) {
+            modal.classList.remove("-hidden")
+        } else {
+            modal.classList.add("-hidden")
+        }
+    })
+    // console.log(modals)
     fillTotals()
 }
 
 function closeModal() {
     document.getElementsByClassName("modal-bg")[0].classList.add("-hidden")
+    let modals = document.querySelectorAll(".modal")
+    modals.forEach((modal) => {
+        modal.classList.add("-hidden")
+    })
 }
 
 /**
@@ -179,7 +197,6 @@ function findInCollected(query) {
     for (let i = 0; i < collectedIntel.length; i++) {
         total += findTotal(query, "id", collectedIntel[i]).length
     }
-    console.log(toString(query), total)
     return total;
 }
 
@@ -221,6 +238,18 @@ function findTotal(array, key, value) {
 GenerateList();
 
 
+
+
+
+/* <img class="leaflet-image-layer leaflet-zoom-animated" src="./maps/forsaken/forsaken.svg" alt="" style="z-index: 1; transform: translate3d(-256px, -584px, 0px); width: 2048px; height: 2048px;"> */
+
+function interceptMapLoad() {
+    var el = document.querySelector("img.leaflet-image-layer.leaflet-zoom-animated");
+    console.log(el)
+
+
+}
+
 function switchmodal() {
 
     // need to make a proper open and close function for modal switching
@@ -233,6 +262,8 @@ let collectedFaction = {
     requiem: findInCollected(factionTotal.requiem),
     omega: findInCollected(factionTotal.omega),
     maxis: findInCollected(factionTotal.maxis),
+    all: 0,
+    not: 0,
 }
 collectedFaction.all = getUserPrefs().collectedIntel.length
 collectedFaction.not = factionTotal.all - collectedFaction.all;
@@ -245,6 +276,8 @@ let collectedSeason = {
     season4: findInCollected(seasonTotal.season3),
     season5: findInCollected(seasonTotal.season4),
     season5: findInCollected(seasonTotal.season5),
+    all: 0,
+    not: 0,
 }
 
 collectedSeason.all = getUserPrefs().collectedIntel.length
@@ -316,7 +349,7 @@ seasonItems = [{
     color: "--clr-orange "
 }, {
     label: "NotCollected ",
-    value: collectedSeason.not,
+    value: collectedSeason.not - 1,
     color: "--clr-grey "
 },]
 
@@ -329,7 +362,4 @@ let factionDonut = new DonutChart(
     total: factionTotal.all,
     collected: collectedFaction.all,
     items: factionItems
-
-}
-)
-
+})

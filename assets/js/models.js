@@ -28,6 +28,7 @@ class UserPrefs {
     constructor({lastSelectedMap, collectedIntel, darkmode, asideShow, osPreferedMode}) {
         this.lastSelectedMap = lastSelectedMap ?? app.currentMap;
         this.collectedIntel = collectedIntel ?? [];
+        //darkmode variable to be depricated on v2 release
         this.darkmode = darkmode ?? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
         this.asideShow = asideShow ?? true;
         this.osPreferedMode = osPreferedMode ?? false;

@@ -92,7 +92,7 @@
     <div id="ui">
         <div></div>
         <div>
-            <button class="btn ui" onclick="toggleDarkMode()"><i class="fas fa-moon"></i> </button>
+            <button class="btn ui" id="color-scheme-toggle" onclick="setColorScheme()"><i class="fas fa-moon"></i> </button>
             <a title="Join us on discord!" href="https://discord.gg/4Xqj8XntFe" target="_blank" class="btn ui" id="discord"><i class="fab fa-discord"></i> </a>
             <a title="Help us out on Github!" href="https://github.com/Miss-placed/DECLASSIFIED" target="_blank" class="btn ui" id="github"><i class="bi bi-github"></i> </a>
         </div>
@@ -231,6 +231,7 @@
                 <h5>=</h5>
             </div>
         </div>
+        <div><input type="checkbox" name="" id="dark-mode" style="display:none;"></div>
     </Section>
     <!-- Notifications -->
     <section id="notification-popup"></section>
@@ -244,6 +245,7 @@
     <script src="" async defer></script>
     <script src="assets/js/icons.js"></script>
     <script src="assets/js/models.js"></script>
+    <script src="assets/js/mapsvg.js"></script>
 
     <script src="assets/js/userPrefs.js"></script>
     <script src="assets/js/darkmode.js"></script>

@@ -14,12 +14,9 @@ body {
 }
 
 #worldMap {
-    background-color: var(--clr-grey-d);
+    background-color:var(--svg-background);
 }
 
-#worldMap.light- {
-    background-color: var(--clr-grey);
-}
 
 header {
     margin: 0 auto;
@@ -42,7 +39,7 @@ header h1 {
     align-items: center;
     justify-content: center;
     box-shadow: var(--shadow);
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-weight: 900;
 }
 
@@ -272,7 +269,7 @@ select.faction-list>option:hover {
 }
 
 .-hidden {
-    display: none;
+    display: none!important;
 }
 
 

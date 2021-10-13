@@ -6,7 +6,7 @@ function InitMap() {
             [0, 0],
             [512, 512]
         ],
-        zoom: 2,
+        zoom: 1,
         maxZoom: 5,
         minZoom: 1,
         layers: [
