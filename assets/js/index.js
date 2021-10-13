@@ -45,13 +45,14 @@ mapInstance.on("click", function (e) {
 })
 
 function onLoad() {
+    //Set initial theme
+    setThemeFromPrefs();
+    initSystemThemeButton();
+
     // needs to be replaced with the new menu highlighter
     document.getElementById(app.currentMap).classList.add("current-map")
     GenerateFullIntelList(intelCache);
-    let urlId = (getUrlVars()["id"] === "" ? undefined : getUrlVars()["id"])
-    if (urlId != undefined) {
-        goToIntelById(urlId)
-    }
+    CheckIfSharingURL();
 
     //Intel Search Listeners
     $('#intelFilter').find("input[type=checkbox]").change(function () {
@@ -63,17 +64,16 @@ function onLoad() {
     });
     //Hide aside if toggled off
     if (!userPrefs.asideShow) toggleAside(false);
-
-    //Set initial theme
-    setThemeFromPrefs();
-    initSystemThemeButton();
-    
 }
+
+
 
 function onLoadV2() {
     //Set initial theme
     setThemeFromPrefs();
     initSystemThemeButton();
+
+    CheckIfSharingURL();
 }
 
 if (navigator.userAgent.toLowerCase().match(/mobile/i)) {

@@ -32,11 +32,6 @@ function setMap(selectedMapId, navHtml) {
             .forEach((element) => {
                 element.classList.toggle("current-map");
             })
-        
-        navHtml.classList.toggle("current-map")
-        if (navHtml.closest(".dropdown.dropbtn")) {
-            
-        }
     }
 }
 
