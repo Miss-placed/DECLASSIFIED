@@ -25,13 +25,13 @@ class Marker {
 }
 
 class UserPrefs {
-    constructor({lastSelectedMap, collectedIntel, darkmode, asideShow, osPreferedMode}) {
+    constructor({lastSelectedMap, collectedIntel, darkmode, asideShow, useSystemTheme}) {
         this.lastSelectedMap = lastSelectedMap ?? app.currentMap;
         this.collectedIntel = collectedIntel ?? [];
-        //darkmode variable to be depricated on v2 release
-        this.darkmode = darkmode ?? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        this.useSystemTheme = useSystemTheme ?? false;
+        // If the user is using system theme then follow that, else set to previous setting else default to true. (because darkmode is best)
+        this.darkmode = useSystemTheme ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) : darkmode ?? true;
         this.asideShow = asideShow ?? true;
-        this.osPreferedMode = osPreferedMode ?? false;
     }
 }
 

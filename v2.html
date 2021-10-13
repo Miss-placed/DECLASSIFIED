@@ -29,7 +29,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
-<body onload="">
+<body onload="onLoadV2()" class="dark">
     <header>
         
     </header>
@@ -151,10 +151,10 @@
                 <label class="btn chk-btn" for="checkbox">
                     <p>EE markers</p><input type="checkbox" name="checkbox" id="show-ee" class="toggle" placeholder="_">
                 </label>
-                <p>Dark mode: </p>
-                <label class="btn chk-btn" for="dark-mode">
-                    <p>System Dark Mode</p><input type="checkbox" name="dark-mode" id="dark-mode" class="toggle"
-                        placeholder="_" onchange="changePreferedMode()">
+                <p>Theme: </p>
+                <label class="btn chk-btn" for="system-theme">
+                    <p>Use System Theme</p><input type="checkbox" name="system-theme" id="system-theme" class="toggle"
+                        placeholder="_" onchange="changePreferredMode()">
                 </label>
                 <p>Collected Markers:
                 </p>
@@ -182,7 +182,6 @@
     <script src="assets/js/models.js"></script>
 
     <script src="assets/js/userPrefs.js"></script>
-    <script src="assets/js/darkmode.js"></script>
     <script src="poi/miscV2.js"></script>
     <script src="poi/poiV2.js"></script>
     <script src="assets/js/maps.js"></script>

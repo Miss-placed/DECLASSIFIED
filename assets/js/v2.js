@@ -245,9 +245,6 @@ GenerateList();
 
 function interceptMapLoad() {
     var el = document.querySelector("img.leaflet-image-layer.leaflet-zoom-animated");
-    console.log(el)
-
-
 }
 
 function switchmodal() {
