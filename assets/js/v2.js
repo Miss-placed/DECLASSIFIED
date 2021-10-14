@@ -17,32 +17,101 @@ const seasonTotal = {
     season6: findTotal(intelStoreV2, "season", seasons.season6),
     all: intelStoreV2.length
 }
+
 const modalSet = {
     intelOverview: ["intel-type", "intel-list", "intel-stats"],
     intelDescription: ["intel-list", "intel-desc"],
     settingsMain: ["settings"],
 }
+/////////////////////Header Menu/////////////////////////
 function expandMenu() {
     document.querySelector("header").classList.toggle("visible");
 }
 
-function changeMapTo(x, y, z) {
-    document.querySelector("header").querySelector("h1").innerHTML = x
-    setMap(y, z, true)
+function changeMapTo(mapId, targetElement) {
+    const currentMap = FindMapById(mapId);
+    document.querySelector("header").querySelector("h1").innerHTML = currentMap.title;
+    setMap(mapId, targetElement)
     expandMenu()
 }
 
+function renderHeader() {
+    const header = document.querySelector("header")
+    header.replaceChildren(); // Empty Out First
+    const currentMap = FindMapById(app.currentMap);
 
+
+
+    let navbarHtmlToAdd = htmlToElements(
+        `<h1 onclick="expandMenu()">${currentMap.title}</h1>
+    <ul>
+        <li>
+            <h2>Die Maschine</h2>
+            <ul>
+                <li onclick="changeMapTo('dieMaschine',this)">Surface</li>
+                <li onclick="changeMapTo('dieMaschine_underground',this)">Underground</li>
+            </ul>
+        </li>
+        <li>
+            <h2>Firebase Z</h2>
+            <ul>
+                <li onclick="changeMapTo('firebaseZ_spawn',this)">Spawn</li>
+                <li onclick="changeMapTo('firebaseZ',this)">Main Base</li>
+            </ul>
+        </li>
+        <li>
+            <h2>Mauer Der Toten</h2>
+            <ul>
+                <li onclick="changeMapTo('mauerDerToten_streets',this)">Surface</li>
+                <li onclick="changeMapTo('mauerDerToten',this)">Underground</li>
+            </ul>
+        </li>
+        <li>
+            <h2>Forsaken</h2>
+            <ul>
+                <li onclick="changeMapTo('forsaken',this)">Surface</li>
+                <li onclick="changeMapTo('forsaken_underground',this)">Underground</li>
+            </ul>
+        </li>
+        <li>
+            <h2>Outbreak</h2>
+            <ul>
+                <li onclick="changeMapTo('zoo',this)">Zoo</li>
+                <li onclick="changeMapTo('duga',this)">Duga</li>
+                <li onclick="changeMapTo('ruka',this)">Ruka</li>
+                <li onclick="changeMapTo('alpine',this)">Alpine</li>
+                <li onclick="changeMapTo('armada',this)">Armada</li>
+                <li onclick="changeMapTo('golova',this)">Golova</li>
+                <li onclick="changeMapTo('collateral',this)">Collateral</li>
+                <li onclick="changeMapTo('sanatorium',this)">Sanatorium</li>
+            </ul>
+        </li>
+        <li>
+            <h2>Contribute</h2>
+            <ul>
+                <li id="newIntel" class="dropdown-item not-selectable" onClick="newIntelInit()">Submit New Intel</li>
+                <li id="newMisc" class="dropdown-item not-selectable" onClick="newMiscInit()">Submit New Misc Marker</li>
+            </ul>
+        </li>
+    </ul>`)
+    navbarHtmlToAdd.forEach(element => {
+        header.append(element);
+    });
+}
+
+renderHeader();
+
+/////////////////////Modal Functions/////////////////////////
 function openModal(x) {
     document.getElementsByClassName("modal-bg")[0].classList.remove("-hidden")
     let modals = document.querySelectorAll(".modal")
-    modals.forEach((modal) => { 
-        if (x.indexOf(modal.id) != -1){
+    modals.forEach((modal) => {
+        if (x.indexOf(modal.id) != -1) {
             modal.classList.remove("-hidden")
-        }else{
+        } else {
             modal.classList.add("-hidden")
         }
-     })
+    })
     // console.log(modals)
     fillTotals()
 }
@@ -50,9 +119,9 @@ function openModal(x) {
 function closeModal() {
     document.getElementsByClassName("modal-bg")[0].classList.add("-hidden")
     let modals = document.querySelectorAll(".modal")
-    modals.forEach((modal) => { 
-            modal.classList.add("-hidden")
-     })
+    modals.forEach((modal) => {
+        modal.classList.add("-hidden")
+    })
 }
 
 /**
@@ -69,22 +138,56 @@ function closeSubModal(target) {
 }
 /**
  *  
- * @param {object} obj Object of intel Details.
+ * @param {object} intel Object of intel Details.
  */
-function propigateIntelDetails(obj) {
-    let descBox = document.getElementById("intel-desc")
-    descBox.querySelector("h2").innerHTML = obj.name
-    descBox.querySelector("p").innerHTML = `
-        "id": ${obj.id}<br>
-        "faction": ${obj.faction}<br>
-        "season": ${obj.season}<br>
-        "intelType": ${obj.intelType}<br>
-        "loc": ${obj.loc}<br>
-        "map": ${obj.map}<br>
-        "name": ${obj.name}<br>
-        "desc": ${obj.desc}
-    `
+function GenerateDetailModal(intel) {
+    let detailModal = document.getElementById("description");
+    detailModal.replaceChildren();
+    if (!intel) {
+        intel.name = "Intel Not Found";
+        intel.desc = "If you see this please report an issue on the github page."
+    }
+    var elementsToAdd = htmlToElements(
+        `<button class="close-submodal btn inverted" onclick="switchmodal()"><i class="bi bi-x"></i></button>
+    
+        <h2>${intel.name}</h2>
+        <p>${intel.desc}</p>`
+    );
 
+
+    elementsToAdd.forEach(element => {
+        detailModal.append(element);
+    });
+
+
+
+    let btnContainer = document.createElement("div");
+    btnContainer.className = "buttonContainer";
+
+    //Only Generate locate and share buttons if intel has location
+    if (intel.loc[0] != 0 && intel.loc[1] != 0) {
+        let location = createElement("button", ["btn", "inverted", "locate-intel"], "Locate Intel", "locate-intel");
+        location.onclick = goToIntel(intel);
+        location.appendChild(htmlToElement(`<i class="fas fa-map-marker-alt" aria-hidden="true" style="margin-left: 5px;"></i>`));
+        btnContainer.appendChild(location);
+        btnContainer.appendChild(genShareButton(intel.id));
+    }
+
+    //Always add bug button and button container
+    btnContainer.appendChild(genBugButton(intel.id));
+    detailModal.appendChild(btnContainer);
+
+
+    /*     detailModal.querySelector("p").innerHTML = `
+        "id": ${intel.id}<br>
+        "faction": ${intel.faction}<br>
+        "season": ${intel.season}<br>
+        "intelType": ${intel.intelType}<br>
+        "loc": ${intel.loc}<br>
+        "map": ${intel.map}<br>
+        "name": ${intel.name}<br>
+        "desc": ${intel.desc}
+    ` */
 }
 
 
@@ -131,21 +234,9 @@ function findTotal(array, key, value) {
     return total;
 }
 
-document.querySelectorAll(".to-intel").forEach(element => {
-    element.addEventListener('click', () => {
-        let target = element.getAttribute('target')
-        let intelID = element.getAttribute('id')
-        openSubModal("intel-desc")
+/////////////////////List Generation/////////////////////////
+GenerateList();
 
-        //use target to get intel instead of predefined obj
-
-        let obj = findObjectByKey(intelStoreV2, "id", intelID);
-        propigateIntelDetails(obj)
-        closeSubModal("intel-stats")
-        closeSubModal("intel-type")
-
-    })
-})
 
 
 
@@ -154,15 +245,12 @@ document.querySelectorAll(".to-intel").forEach(element => {
 
 function interceptMapLoad() {
     var el = document.querySelector("img.leaflet-image-layer.leaflet-zoom-animated");
-    console.log(el)
-
-
 }
 
 function switchmodal() {
 
     // need to make a proper open and close function for modal switching
-    closeSubModal("intel-desc")
+    closeSubModal("intel-detail")
     openSubModal("intel-stats")
     openSubModal("intel-type")
 }
@@ -171,8 +259,8 @@ let collectedFaction = {
     requiem: findInCollected(factionTotal.requiem),
     omega: findInCollected(factionTotal.omega),
     maxis: findInCollected(factionTotal.maxis),
-    all:0,
-    not:0,
+    all: 0,
+    not: 0,
 }
 collectedFaction.all = getUserPrefs().collectedIntel.length
 collectedFaction.not = factionTotal.all - collectedFaction.all;
@@ -185,8 +273,8 @@ let collectedSeason = {
     season4: findInCollected(seasonTotal.season3),
     season5: findInCollected(seasonTotal.season4),
     season5: findInCollected(seasonTotal.season5),
-    all:0,
-    not:0,
+    all: 0,
+    not: 0,
 }
 
 collectedSeason.all = getUserPrefs().collectedIntel.length
@@ -258,7 +346,7 @@ seasonItems = [{
     color: "--clr-orange "
 }, {
     label: "NotCollected ",
-    value: collectedSeason.not-1,
+    value: collectedSeason.not - 1,
     color: "--clr-grey "
 },]
 
@@ -271,6 +359,4 @@ let factionDonut = new DonutChart(
     total: factionTotal.all,
     collected: collectedFaction.all,
     items: factionItems
-
-}
-)
+})

@@ -10,7 +10,7 @@ function InitMap() {
         maxZoom: 5,
         minZoom: 1,
         layers: [
-            window[app.currentMap].Layer
+            mapLayers[app.currentMap].Layer
         ],
         tap: true,
         tapTolerance: 30,
@@ -19,29 +19,24 @@ function InitMap() {
     });
 }
 
-function setMap(selectedMap, htmlElement, ifSub = true) {
-    // htmlElement.parentNode.parentNode.getElementsByTagName("H1") =
-    if (app.currentMap != selectedMap) {
-        mapInstance.removeLayer(window[app.currentMap].Layer)
-        mapInstance.addLayer(window[selectedMap].Layer)
+function setMap(selectedMapId, navHtml) {
+    const { id: mapId } = FindMapById(selectedMapId);
+    if (app.currentMap != mapId) {
+        mapInstance.removeLayer(mapLayers[app.currentMap].Layer)
+        mapInstance.addLayer(mapLayers[mapId].Layer)
 
-        app.currentMap = selectedMap
-        setLastVisitedMap(selectedMap)
+        app.currentMap = mapId
+        setLastVisitedMap(mapId)
 
         Array.from(document.getElementsByClassName('current-map'))
             .forEach((element) => {
                 element.classList.toggle("current-map");
             })
-        if (ifSub) htmlElement.parentNode.parentNode.classList.toggle("current-map")
-        htmlElement.classList.toggle("current-map")
     }
 }
 
 function switchAndFly(location = [0, 0], selectedMap = "") {
-    let ifSub = false
-    if (selectedMap == mapStrings.firebaseZ || selectedMap == mapStrings.firebaseZSpawn ||
-        selectedMap == mapStrings.dieMaschine || selectedMap == mapStrings.dieMaschineUnderground) ifSub = true
-    setMap(selectedMap, document.getElementById(selectedMap), ifSub)
+    setMap(selectedMap, document.getElementById(selectedMap))
     setLastVisitedMap(selectedMap)
     mapInstance.flyTo(location, 4)
 }
@@ -49,9 +44,9 @@ function switchAndFly(location = [0, 0], selectedMap = "") {
 function AddMapMarkersFromCache(intelArr) {
     if (!debug) {
         for (intel of intelArr) {
-            if (intel.map != mapStrings.allOutbreakMaps) {
+            if (intel.map != mapDetails.allOutbreakMaps.id) {
                 let factionIcon = getIconByFaction(intel.faction);
-                mapLayer = window[intel.map];
+                mapLayer = mapLayers[intel.map];
                 addMarkerToMap(intel.loc, factionIcon, mapLayer, intel.id, intel.name, intel.desc);
             }
         }
@@ -60,7 +55,7 @@ function AddMapMarkersFromCache(intelArr) {
             let currmap = miscPOI[maep];
             if (typeof(miscPOI[maep]) !== "undefined") {
                 currmap.forEach(item => {
-                    addMiscMarkerToMap(item.loc, item.icon, window[maep], item.id, item.title, item.desc)
+                    addMiscMarkerToMap(item.loc, item.icon, mapLayers[maep], item.id, item.title, item.desc)
                 })
             }
         }
@@ -77,7 +72,7 @@ function addMarkerToMap(loc, icon, maep, id, name, desc = ``) {
             <div>
             <p>${desc}</p>
             <div class="buttonContainer" data-item="${id}" data-type="${markerTypes.intel.id}">
-            <button type="button" class="btn btn-info mark-collected">Mark as collected</button>
+            <button type="button" class="btn btn-info inverted mark-collected">Mark as collected</button>
             ${shareBtn}
             ${bugBtn}
             </div>

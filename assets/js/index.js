@@ -8,11 +8,11 @@ L.control.attribution()
 //loops through all types of intel and makes a marker
 AddMapMarkersFromCache(intelCache);
 
-mapInstance.on('popupopen', function() {
-    $('.mark-collected').click(function(e) {
+mapInstance.on('popupopen', function () {
+    $('.mark-collected').click(function (e) {
         let itemId = $(e.target).closest(".buttonContainer").data("item");
         if (app.disableMarkers.includes(itemId.toString())) {
-            app.disableMarkers = $.grep(app.disableMarkers, function(value) {
+            app.disableMarkers = $.grep(app.disableMarkers, function (value) {
                 return value != itemId.toString();
             });
             app.visibleMarkers[itemId].setOpacity(1);
@@ -23,11 +23,11 @@ mapInstance.on('popupopen', function() {
             addCollectedIntel(itemId);
         }
     });
-    $('.share').click(function(e) {
+    $('.share').click(function (e) {
         let itemId = $(e.target).closest(".buttonContainer").data("item");
         copyToClipboard(`${window.location.origin}${window.location.pathname}?id=${itemId}`, "Link Copied To Clipboard");
     });
-    $('.bugRep').click(function(e) {
+    $('.bugRep').click(function (e) {
         let itemId = $(e.target).closest(".buttonContainer").data("item");
         let type = $(e.target).closest(".buttonContainer").data("type");
 
@@ -35,7 +35,7 @@ mapInstance.on('popupopen', function() {
     });
 });
 
-mapInstance.on("click", function(e) {
+mapInstance.on("click", function (e) {
     let location = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
     if (debug) {
         copyToClipboard(location, "Location Copied to Clipboard")
@@ -45,25 +45,35 @@ mapInstance.on("click", function(e) {
 })
 
 function onLoad() {
-    // needs to be replaced with the new menu highlighter
+    //Set initial theme
+    setThemeFromPrefs();
+    initSystemThemeButton();
 
+    // needs to be replaced with the new menu highlighter
     document.getElementById(app.currentMap).classList.add("current-map")
     GenerateFullIntelList(intelCache);
-    let urlId = (getUrlVars()["id"] === "" ? undefined : getUrlVars()["id"])
-    if (urlId != undefined) {
-        goToIntelById(urlId)
-    }
+    CheckIfSharingURL();
 
     //Intel Search Listeners
-    $('#intelFilter').find("input[type=checkbox]").change(function() {
+    $('#intelFilter').find("input[type=checkbox]").change(function () {
         intelFiltered = TriggerSearch();
     });
 
-    $('#searchTerm').keyup(function() {
+    $('#searchTerm').keyup(function () {
         intelFiltered = TriggerSearch();
     });
     //Hide aside if toggled off
     if (!userPrefs.asideShow) toggleAside(false);
+}
+
+
+
+function onLoadV2() {
+    //Set initial theme
+    setThemeFromPrefs();
+    initSystemThemeButton();
+
+    CheckIfSharingURL();
 }
 
 if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
@@ -74,3 +84,4 @@ if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
     app.isMobile = true
     toggleAside(false);
 }
+

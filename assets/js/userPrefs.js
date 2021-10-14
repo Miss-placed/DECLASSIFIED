@@ -8,7 +8,7 @@ function StartupSettings() {
     let disableMarkers = [],
         visibleMarkers = [];
     //Use default latest map otherwise use last selected map of user
-    let currentMap = mapStrings.armada;
+    let currentMap = mapDetails.forsaken.id;
     let currentContribType;
     if (localStorage.declassifiedPrefs != undefined && JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap)
         currentMap = JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap;
@@ -22,7 +22,7 @@ function StartupSettings() {
 
 //Store and Retrieve user preferences from localStorage
 function userPrefsStartup() {
-    var userPrefs = new UserPrefs(JSON.parse(localStorage.getItem("declassifiedPrefs")) ?? {});
+    var userPrefs = getUserPrefs();
 
     localStorage.setItem("declassifiedPrefs", JSON.stringify(userPrefs));
     return userPrefs;
@@ -30,7 +30,7 @@ function userPrefsStartup() {
 
 function getUserPrefs() {
     //Additional logic can be added here for getting prefs
-    return userPrefsStartup();
+    return new UserPrefs(JSON.parse(localStorage.getItem("declassifiedPrefs")) ?? {});
 }
 
 function setUserPrefs(prefsObj) {
@@ -74,17 +74,53 @@ function setLastVisitedMap(selectedMap) {
     setUserPrefs(currentPrefs);
 }
 
-//toggleDarkmode function to be depricated on v2 release
-function toggleDarkMode() {
+function toggleDarkModeSetting() {
     let currentPrefs = getUserPrefs();
     currentPrefs.darkmode = !currentPrefs.darkmode
     setUserPrefs(currentPrefs);
-    location.reload();
 }
 
-function changePreferedMode() {
+function changePreferredMode() {
     let currentPrefs = getUserPrefs();
-    currentPrefs.osPreferedMode = document.getElementById("dark-mode").checked
-    setColorScheme()
+    debugger
+    const systemPrefersDarkmode = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    currentPrefs.useSystemTheme = document.getElementById("system-theme").checked;
     setUserPrefs(currentPrefs);
+
+    if (currentPrefs.useSystemTheme && ((currentPrefs.darkmode && !systemPrefersDarkmode) || (!currentPrefs.darkmode && systemPrefersDarkmode))) {
+        setColorScheme();
+    }
+    initSystemThemeButton();
+}
+
+function initSystemThemeButton() {
+    let currentPrefs = getUserPrefs();
+    // Firstly hide the button depending on system theme setting
+    if (currentPrefs.useSystemTheme) {
+        hideDarkmodeButton();
+        document.getElementById("system-theme").checked = true;
+    }
+    else {
+        showDarkmodeButton();
+        document.getElementById("system-theme").checked = false;
+    }
+}
+
+
+function setColorScheme() {
+    toggleDarkModeSetting();
+    setThemeFromPrefs();
+}
+
+function hideDarkmodeButton() {
+    document.getElementById("color-scheme-toggle").classList = "btn ui -hidden";
+}
+
+function showDarkmodeButton() {
+    document.getElementById("color-scheme-toggle").classList = "btn ui";
+}
+
+function setThemeFromPrefs() {
+    let currentPrefs = getUserPrefs();
+    document.body.classList = currentPrefs.darkmode ? 'dark' : 'light';
 }

@@ -29,63 +29,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
-<body onload="">
+<body onload="onLoadV2()" class="dark">
     <header>
-        <h1 onclick="expandMenu()">
-
-        </h1>
-        <ul>
-            <li>
-                <h2>Die Maschine</h2>
-                <ul>
-                    <li onclick="changeMapTo('Die Maschine','dieMaschine',this)">Surface</li>
-                    <li onclick="changeMapTo('Die Maschine','dieMaschine_underground',this)">Underground</li>
-                </ul>
-            </li>
-            <li>
-                <h2>Firebase Z</h2>
-                <ul>
-                    <li onclick="changeMapTo('Firebase Z','firebaseZ_spawn',this)">Spawn</li>
-                    <li onclick="changeMapTo('Firebase Z','firebaseZ',this)">Main Base</li>
-                </ul>
-            </li>
-            <li>
-                <h2>Mauer Der Toten</h2>
-                <ul>
-                    <li onclick="changeMapTo('Mauer Der Toten','mauerDerToten_streets',this)">Surface</li>
-                    <li onclick="changeMapTo('Mauer Der Toten','mauerDerToten',this)">Underground</li>
-                </ul>
-            </li>
-            <li>
-                <h2>Forsaken</h2>
-                <ul>
-                    <li onclick="changeMapTo('Forsaken','forsaken',this)">Surface</li>
-                    <li onclick="changeMapTo('Forsaken','forsaken_underground',this)">Underground</li>
-                </ul>
-            </li>
-            <li>
-                <h2>Outbreak</h2>
-                <ul>
-                    <li onclick="changeMapTo('Zoo','zoo',this)">Zoo</li>
-                    <li onclick="changeMapTo('Duga','duga',this)">Duga</li>
-                    <li onclick="changeMapTo('Ruka','ruka',this)">Ruka</li>
-                    <li onclick="changeMapTo('Alpine','alpine',this)">Alpine</li>
-                    <li onclick="changeMapTo('Armada','armada',this)">Armada</li>
-                    <li onclick="changeMapTo('Golova','golova',this)">Golova</li>
-                    <li onclick="changeMapTo('Collateral','collateral',this)">Collateral</li>
-                    <li onclick="changeMapTo('Sanatorium','sanatorium',this)">Sanatorium</li>
-                </ul>
-            <li>
-                <h2>Contribute</h2>
-                <ul>
-                    <li id="newIntel" class="dropdown-item not-selectable" onClick="newIntelInit()">Submit New Intel
-                    </li>
-                    <li id="newMisc" class="dropdown-item not-selectable" onClick="newMiscInit()">Submit New Misc Marker
-                    </li>
-                </ul>
-            </li>
-            </li>
-        </ul>
+        
     </header>
     <div id="worldMap"></div>
     <!-- UI -->
@@ -110,15 +56,15 @@
 
         <div class="modal -hidden" id="intel-type">
             <select class="faction-list">
-                <option value="All-F"><img class="list-icon" src="./assets/img/icons/faction-requiem-icon.png" alt="">
+                <option value="All-F"><img class="list-icon" src="./assets/img/icons/faction/requiem.png" alt="">
                     All Factions</option>
-                <option value="Requiem"><img class="list-icon" src="./assets/img/icons/faction-requiem-icon.png" alt="">
+                <option value="Requiem"><img class="list-icon" src="./assets/img/icons/faction/requiem.png" alt="">
                     Requiem</option>
-                <option value="Omega"><img class="list-icon" src="./assets/img/icons/faction-omega-icon.png" alt="">
+                <option value="Omega"><img class="list-icon" src="./assets/img/icons/faction/omega.png" alt="">
                     Omega</option>
-                <option value="Maxis"><img class="list-icon" src="./assets/img/icons/faction-maxis-icon.png" alt="">
+                <option value="Maxis"><img class="list-icon" src="./assets/img/icons/faction/maxis.png" alt="">
                     Maxis</option>
-                <option value="DarkAether"><img class="list-icon" src="./assets/img/icons/faction-darkAether-icon.png"
+                <option value="DarkAether"><img class="list-icon" src="./assets/img/icons/faction/darkAether.png"
                         alt=""> Dark Aether</option>
             </select>
             <div>
@@ -153,14 +99,9 @@
                 <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button>
             </div>
         </div>
-        <div class="modal -big -hidden" id="intel-desc">
+        <div class="modal -big -hidden" id="intel-detail">
             <div class="sub-modal" id="description">
-                <button class="close-submodal btn inverted" onclick="switchmodal()"><i class="bi bi-x"></i></button>
-                <h2>INTEL NOT FOUND</h2>
-                <p>If you see this please report an issue on the github page.</p>
-                <button class="btn inverted locate-intel" id="locate-intel"> Locate Intel&MediumSpace;<i
-                        class="bi bi-geo-alt-fill"></i></button>
-                <button class="btn inverted">&#8288;<i class="bi bi-bug-fill"></i>&#8288;</button>
+                
             </div>
         </div>
         <!-- intel stats modal -->
@@ -210,10 +151,10 @@
                 <label class="btn chk-btn" for="checkbox">
                     <p>EE markers</p><input type="checkbox" name="checkbox" id="show-ee" class="toggle" placeholder="_">
                 </label>
-                <p>Dark mode: </p>
-                <label class="btn chk-btn" for="dark-mode">
-                    <p>System Dark Mode</p><input type="checkbox" name="dark-mode" id="dark-mode" class="toggle"
-                        placeholder="_" onchange="changePreferedMode()">
+                <p>Theme: </p>
+                <label class="btn chk-btn" for="system-theme">
+                    <p>Use System Theme</p><input type="checkbox" name="system-theme" id="system-theme" class="toggle"
+                        placeholder="_" onchange="changePreferredMode()">
                 </label>
                 <p>Collected Markers:
                 </p>
@@ -241,7 +182,6 @@
     <script src="assets/js/models.js"></script>
 
     <script src="assets/js/userPrefs.js"></script>
-    <script src="assets/js/darkmode.js"></script>
     <script src="poi/miscV2.js"></script>
     <script src="poi/poiV2.js"></script>
     <script src="assets/js/maps.js"></script>
