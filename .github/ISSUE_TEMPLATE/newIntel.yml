@@ -87,6 +87,8 @@ body:
         - firebaseZ_spawn
         - mauerDerToten
         - mauerDerToten_streets
+        - forsaken
+        - forsaken_underground
         - other (what? a new map?!)
     validations:
       required: true
