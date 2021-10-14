@@ -93,6 +93,18 @@ var mysteryBoxIcon = L.icon({
     iconAnchor: [15, 15],
     popupAnchor: [0, -15]
 });
+var arsenalIcon = L.icon({
+    iconUrl: 'assets/img/icons/misc/arsenal.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -15]
+});
+var wallbuyIcon = L.icon({
+    iconUrl: 'assets/img/icons/misc/wallbuy.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -15]
+});
 function iconInit(id, type) {
     return L.icon({
         iconUrl: `assets/img/icons/${type}/${id}.png`,
