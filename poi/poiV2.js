@@ -2884,7 +2884,7 @@ const intelStoreV2 = [
     season: seasons.preseason,
     intelType: intelTypes.audio,
     loc: "[0, 0]",
-    map: mapStrings.dieMaschine.id,
+    map: mapDetails.dieMaschine.id,
     name: "Lost Souls: Barbara",
     desc: "Obtained through the Challenge Machine"
 }, {
