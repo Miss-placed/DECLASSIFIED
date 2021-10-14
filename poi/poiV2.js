@@ -2885,7 +2885,7 @@ const intelStoreV2 = [
     intelType: intelTypes.audio,
     loc: "[0, 0]",
     map: mapStrings.dieMaschine,
-    name: "Missing Name and Location",
+    name: "Lost Souls: Barbara",
     desc: "Obtained through the Challenge Machine"
 }, {
     id: "DS0Do1",
