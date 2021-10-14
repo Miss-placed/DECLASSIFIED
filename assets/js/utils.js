@@ -16,12 +16,27 @@ function newMiscInit() {
     showNotification("Click exactly where the marker is located. Next time you click on the map you will be redirected to our new icon form.", true);
 }
 
-
+/////////////////////Link Sharing/////////////////////////
 function goToIntelById(intelId) {
     let matchedIntel = intelCache.find((item) => {
         return item.id == intelId;
     })
     switchAndFly(matchedIntel.loc, matchedIntel.map);
+}
+
+function CheckIfSharingURL() {
+    let urlId = (getUrlVars()["id"] === "" ? undefined : getUrlVars()["id"]);
+    if (urlId != undefined) {
+        goToIntelById(urlId);
+    }
+}
+
+function getUrlVars() {
+    let vars = {};
+    let parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+        vars[key] = value;
+    });
+    return vars;
 }
 
 function toggleAside(changePrefs = true) {
@@ -37,14 +52,7 @@ function toggleAside(changePrefs = true) {
     }
 }
 
-function getUrlVars() {
-    let vars = {};
-    let parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
-        vars[key] = value;
-    });
-    return vars;
-}
-
+/////////////////////Notifications/////////////////////////
 function notificationAnimationEnd() {
     //Check if supposed to be a fixed notification of not
     if (app.fixedNotification) {
@@ -118,4 +126,28 @@ function redirectToGithub({ itemId: id = "", itemType, issueType = "New", locati
     setTimeout(() => {
         app.notificationEle.classList.remove("fixed");
     }, getNotificationTime());
+}
+
+
+/////////////////////Helpers For HTML Generation/////////////////////////
+// Thank you https://stackoverflow.com/a/35385518/4459118
+/**
+ * @param {String} HTML representing a single element
+ * @return {Element}
+ */
+ function htmlToElement(html) {
+    var template = document.createElement('template');
+    html = html.trim(); // Never return a text node of whitespace as the result
+    template.innerHTML = html;
+    return template.content.firstChild;
+}
+
+/**
+ * @param {String} HTML representing any number of sibling elements
+ * @return {NodeList} 
+ */
+function htmlToElements(html) {
+    var template = document.createElement('template');
+    template.innerHTML = html;
+    return template.content.childNodes;
 }

@@ -10,23 +10,24 @@ var globalMapSettings = {
 }
 
 //Need to use var here because JS weirdness
-var zoo = generateLayers(mapStrings.zoo, globalMapSettings);
-var duga = generateLayers(mapStrings.duga, globalMapSettings);
-var ruka = generateLayers(mapStrings.ruka, globalMapSettings);
-var alpine = generateLayers(mapStrings.alpine, globalMapSettings);
-var golova = generateLayers(mapStrings.golova, globalMapSettings);
-var sanatorium = generateLayers(mapStrings.sanatorium, globalMapSettings);
-var collateral = generateLayers(mapStrings.collateral, globalMapSettings);
-var armada = generateLayers(mapStrings.armada, globalMapSettings);
-
-var dieMaschine = generateLayers(mapStrings.dieMaschine, globalMapSettings);
-var dieMaschine_underground = generateLayers(mapStrings.dieMaschineUnderground, globalMapSettings);
-var firebaseZ = generateLayers(mapStrings.firebaseZ, globalMapSettings);
-var firebaseZ_spawn = generateLayers(mapStrings.firebaseZSpawn, globalMapSettings);
-var mauerDerToten = generateLayers(mapStrings.mauerDerToten, globalMapSettings);
-var mauerDerToten_streets = generateLayers(mapStrings.mauerDerTotenStreets, globalMapSettings);
-var forsaken = generateLayers(mapStrings.forsaken, globalMapSettings);
-var forsaken_underground = generateLayers(mapStrings.forsakenUnderground, globalMapSettings);
+const mapLayers = {
+    zoo: generateLayers(mapDetails.zoo.id, globalMapSettings),
+    duga: generateLayers(mapDetails.duga.id, globalMapSettings),
+    ruka: generateLayers(mapDetails.ruka.id, globalMapSettings),
+    alpine: generateLayers(mapDetails.alpine.id, globalMapSettings),
+    golova: generateLayers(mapDetails.golova.id, globalMapSettings),
+    sanatorium: generateLayers(mapDetails.sanatorium.id, globalMapSettings),
+    collateral: generateLayers(mapDetails.collateral.id, globalMapSettings),
+    armada: generateLayers(mapDetails.armada.id, globalMapSettings),
+    dieMaschine: generateLayers(mapDetails.dieMaschine.id, globalMapSettings),
+    dieMaschine_underground: generateLayers(mapDetails.dieMaschineUnderground.id, globalMapSettings),
+    firebaseZ: generateLayers(mapDetails.firebaseZ.id, globalMapSettings),
+    firebaseZ_spawn: generateLayers(mapDetails.firebaseZSpawn.id, globalMapSettings),
+    mauerDerToten: generateLayers(mapDetails.mauerDerToten.id, globalMapSettings),
+    mauerDerToten_streets: generateLayers(mapDetails.mauerDerTotenStreets.id, globalMapSettings),
+    forsaken: generateLayers(mapDetails.forsaken.id, globalMapSettings),
+    forsaken_underground: generateLayers(mapDetails.forsakenUnderground.id, globalMapSettings),
+}
 
 function generateLayers(name, settings) {
     settings.id = name
@@ -51,7 +52,7 @@ function generateLayers(name, settings) {
     //     svgElement.innerHTML = load.responseText.slice('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">'.length, '</svg>'.length + load.responseText.length)
     // })
 
-    svgElement.innerHTML = svg.globalStyle + svg[name] 
+    svgElement.innerHTML = mapSVGs.globalStyle + mapSVGs[name] 
     var imageBounds = [
         [0, 0],
         [512, 512]
