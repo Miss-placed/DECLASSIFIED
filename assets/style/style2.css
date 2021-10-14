@@ -19,6 +19,7 @@ body {
 
 
 header {
+    user-select: none;
     margin: 0 auto;
     position: absolute;
     z-index: var(--z-index-menu);

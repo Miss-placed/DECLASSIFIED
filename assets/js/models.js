@@ -157,7 +157,7 @@ const miscTypes = {
     scrapHeap: new Item({ title: "Scrap Heap"}),
 
     wunderFizz: new Item({ title: "Der Wunderfizz", icon: wunderFizzIcon}),
-    trialComputer: new Item({ title: "Trial Computer"}),
+    trialComputer: new Item({ title: "Trial Computer", icon: trialComputerIcon}),
     papMachine: new Item({ title: "Pack-a-Punch"}),
     mysteryBox: new Item({ title: "Mystery Box Location", icon: mysteryBoxIcon}),
     wallbuy: new Item({ title: "Wall Buy", icon: wallbuyIcon}),
@@ -168,11 +168,11 @@ const miscTypes = {
     teleporter: new Item({ title: "Teleporter"}),
     collector: new Item({ title: "Collection Unit"}),
     reactor: new Item({ title: "Aether Reactor"}),
-    craftingTable: new Item({ title: "Crafting Table"}),
+    craftingTable: new Item({ title: "Crafting Table", icon: craftingTableIcon}),
     arsenal: new Item({ title: "Arsenal", icon: arsenalIcon}),
-    ammoCrate: new Item({ title: "Ammo Crate"}),
+    ammoCrate: new Item({ title: "Ammo Crate", icon: ammoCrateIcon}),
     trap: new Item({ title: "Trap"}),
-    zipline: new Item({ title: "Zipline"}),
+    zipline: new Item({ title: "Zipline", icon: ziplineIcon}),
     rampageInducer: new Item({ title: "Rampage Inducer"}),
 
     klausRadio: new Item({ title: "Klaus recall radio"}),

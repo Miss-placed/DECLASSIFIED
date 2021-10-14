@@ -105,6 +105,30 @@ var wallbuyIcon = L.icon({
     iconAnchor: [15, 15],
     popupAnchor: [0, -15]
 });
+var ammoCrateIcon = L.icon({
+    iconUrl: 'assets/img/icons/misc/ammoCrate.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -15]
+});
+var craftingTableIcon = L.icon({
+    iconUrl: 'assets/img/icons/misc/craftingTable.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -15]
+});
+var ziplineIcon = L.icon({
+    iconUrl: 'assets/img/icons/misc/zipline.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -15]
+});
+var trialComputerIcon = L.icon({
+    iconUrl: 'assets/img/icons/misc/trialComputer.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -15]
+});
 function iconInit(id, type) {
     return L.icon({
         iconUrl: `assets/img/icons/${type}/${id}.png`,
