@@ -1,5 +1,6 @@
-function filterIntel(searchTerm, factionsArr, seasonsArr, intelTypeArr, mapArr) {
+function filterIntel(searchTermDirty, factionsArr, seasonsArr, intelTypeArr, mapArr) {
     let results = intelCache;
+    let searchTerm = searchTermDirty.toLowerCase()
     results = results.filter((intel) => {
         return intel.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
     });
@@ -23,7 +24,7 @@ function filterIntel(searchTerm, factionsArr, seasonsArr, intelTypeArr, mapArr) 
     return results;
 }
 
-function TriggerSearch() {
+function TriggerSearchV1() {
     let factionFilters = $('#factionFilterCollapse').find("input[type=checkbox]:checked");
     let factionsArr = [];
     $.each(factionFilters, function() {
@@ -52,6 +53,14 @@ function TriggerSearch() {
     GenerateFullIntelList(filteredIntel);
 
     return filteredIntel;
+}
+
+function TriggerSearch(params) {
+    const searchTerm = $('#search-term').val();
+    debugger
+
+    let filteredIntel = filterIntel(searchTerm);
+    GenerateList(filteredIntel);
 }
 
 function getIntelById(intelId) {

@@ -31,14 +31,15 @@
 
 <body onload="onLoadV2()" class="dark">
     <header>
-        
+
     </header>
     <div id="worldMap"></div>
     <!-- UI -->
 
     <div id="ui">
         <div>
-            <button class="btn ui" onclick="openModal(modalSet.intelOverview)"><i class="bi bi-folder-fill"></i> </button>
+            <button class="btn ui" onclick="openModal(modalSet.intelOverview)"><i class="bi bi-folder-fill"></i>
+            </button>
             <button class="btn ui" onclick="openModal(modalSet.settingsMain)"><i class="bi bi-gear-fill"></i> </button>
         </div>
         <div>
@@ -87,29 +88,25 @@
                 <option value="Season3 ">Season 5</option>
                 <option value="Season3 ">Season 6</option>
             </select>
+
+            <div id="search-form">
+                <input id="search-term" type="search" placeholder="Search Intel...">
+                <button class="btn inverted"><i class="bi bi-search"></i></button>
+            </div>
             <div id="filtered-intel">
-                <!-- need to fill this list automatically with intel found with filter.
-                    buttons need to have the target be intel-desc and have the id be their id (this case it uses placeholders)
-                -->
-                <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button>
-                <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button>
-                <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button>
-                <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button>
-                <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button>
-                <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button>
+                <!-- <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button> -->
             </div>
         </div>
         <div class="modal -big -hidden" id="intel-detail">
             <div class="sub-modal" id="description">
-                
+
             </div>
         </div>
         <!-- intel stats modal -->
         <!-- displays totals as a list and as donuts, includes searchbar -->
         <div class="modal -hidden" id="intel-stats">
             <div class="sub-modal ">
-                <div id="search-form"><input type="search" placeholder="Search Intel..."><button class="btn inverted"><i
-                            class="bi bi-search"></i></button></div>
+
                 <div id="faction-donut" class="graph "></div>
                 <div id="totals">
                     <ul id="icons-faction">

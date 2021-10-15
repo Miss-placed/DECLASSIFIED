@@ -234,13 +234,6 @@ function findTotal(array, key, value) {
     return total;
 }
 
-/////////////////////List Generation/////////////////////////
-GenerateList();
-
-
-
-
-
 /* <img class="leaflet-image-layer leaflet-zoom-animated" src="./maps/forsaken/forsaken.svg" alt="" style="z-index: 1; transform: translate3d(-256px, -584px, 0px); width: 2048px; height: 2048px;"> */
 
 function interceptMapLoad() {

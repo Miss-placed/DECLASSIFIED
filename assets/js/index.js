@@ -56,11 +56,11 @@ function onLoad() {
 
     //Intel Search Listeners
     $('#intelFilter').find("input[type=checkbox]").change(function () {
-        intelFiltered = TriggerSearch();
+        intelFiltered = TriggerSearchV1();
     });
 
     $('#searchTerm').keyup(function () {
-        intelFiltered = TriggerSearch();
+        intelFiltered = TriggerSearchV1();
     });
     //Hide aside if toggled off
     if (!userPrefs.asideShow) toggleAside(false);
@@ -74,6 +74,11 @@ function onLoadV2() {
     initSystemThemeButton();
 
     CheckIfSharingURL();
+
+    //Intel Search Listeners
+    $('#search-term').keyup(function () {
+        intelFiltered = TriggerSearch();
+    });
 }
 
 if (navigator.userAgent.toLowerCase().match(/mobile/i)) {

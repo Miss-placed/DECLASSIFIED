@@ -1,10 +1,10 @@
 /////////////////////V2/////////////////////////
 
-function GenerateList(filters) {
+function GenerateList(intelToRender) {
     const intelListEle = document.querySelector("#filtered-intel");
     intelListEle.replaceChildren(); // Empty First
 
-    intelCache.forEach(intel => {
+    intelToRender.forEach(intel => {
         const buttonTemplate = htmlToElement(`<button class="btn to-intel" target="intel-detail" id="${intel.id}">${intel.name}</button>`);
         intelListEle.appendChild(buttonTemplate);
     });
