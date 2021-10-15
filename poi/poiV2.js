@@ -1154,6 +1154,42 @@ const intelStoreV2 = [
     name: "Agent Klaus Model",
     desc: "In the North-eastern most Hangar area. He's hanging off some pipes just above one of the staircases, climb on the nearby toolbox to grab him."
 }, {
+    id: "RS6Au1",
+    faction: factions.requiem,
+    season: seasons.season6,
+    intelType: intelTypes.audio,
+    loc: "[328.7872515067342, 221.11097924801237]",
+    map: mapDetails.forsaken.id,
+    name: "Symbiotic Relationship",
+    desc: "In the storage zone rooftops area, on top of a wire spool next to the mystery box. It only spawns, after progressing through the main quest (more precisely, after the crystal core drops from the sky, which is part of the wonder weapon)."
+}, {
+	id: "RS6Au2",
+    faction: factions.requiem,
+    season: seasons.season6,
+    intelType: intelTypes.audio,
+    loc: "[193.361937897806, 267.4743705907465]",
+    map: mapDetails.forsakenUnderground.id,
+    name: "Russian to Russian",
+    desc: "In the office area, on the floor next to the desks and Wunderfizz machine."
+}, {
+	id: "RS6Au3",
+    faction: factions.requiem,
+    season: seasons.season6,
+    intelType: intelTypes.audio,
+    loc: "[115.67661364380001, 222.11087874406564]",
+    map: mapDetails.forsaken.id,
+    name: "For Health",
+    desc: "In the bar, on top of the counter."
+}, {
+	id: "RS6Au4",
+    faction: factions.requiem,
+    season: seasons.season6,
+    intelType: intelTypes.audio,
+    loc: "[254.59109465195596, 73.70455695553227]",
+    map: mapDetails.forsaken.id,
+    name: "The Zakarpatska Oblast",
+    desc: "In the staging area, on top of a crate next to a truck."
+}, {
     id: "RS6Ar1",
     faction: factions.requiem,
     season: seasons.season6,
@@ -1180,6 +1216,42 @@ const intelStoreV2 = [
     map: mapDetails.sanatorium.id,
     name: "Director Mug",
     desc: "On top of a small round table on the ground floor."
+}, {
+    id: "RS6Ar4",
+    faction: factions.requiem,
+    season: seasons.season6,
+    intelType: intelTypes.artifact,
+    loc: "[112.54451034857252, 166.98547672827868]",
+    map: mapDetails.forsaken.id,
+    name: "Monitoring Device",
+    desc: "In the TV store, part of the main quest."
+}, {
+	id: "RS6Ar5",
+    faction: factions.requiem,
+    season: seasons.season6,
+    intelType: intelTypes.artifact,
+    loc: "[318.04606581468073, 284.23979839798847]",
+    map: mapDetails.forsakenUnderground.id,
+    name: "Housing Unit",
+    desc: "In the board room, part of the main quest."
+}, {
+	id: "RS6Ar6",
+    faction: factions.requiem,
+    season: seasons.season6,
+    intelType: intelTypes.artifact,
+    loc: "[386.40504451376614, 260.86230015702665]",
+    map: mapDetails.forsaken.id,
+    name: "Aetherium Neutralizer",
+    desc: "In the main street area, part of the main quest."
+}, {
+	id: "RS6Ar7",
+    faction: factions.requiem,
+    season: seasons.season6,
+    intelType: intelTypes.artifact,
+    loc: "[224.84742021412936, 264.4752320531471]",
+    map: mapDetails.forsaken.id,
+    name: "Fuel Tank",
+    desc: "In the fuel processing area, part of the main quest."
 }, 
 /////////////////////Omega/////////////////////////
 {
@@ -2154,6 +2226,42 @@ const intelStoreV2 = [
     map: mapDetails.duga.id,
     name: "Lineage",
     desc: "In the bunker, on the floor in the computer room, behind the door."
+}, {
+    id: "OS6Au3",
+    faction: factions.omega,
+    season: seasons.season6,
+    intelType: intelTypes.audio,
+    loc: "[115.3396428835883, 167.2192018163428]",
+    map: mapDetails.forsaken.id,
+    name: "The Agreement",
+    desc: "In the TV store, drops after using the ARC-XD during the main quest step."
+}, {
+	id: "OS6Au4",
+    faction: factions.omega,
+    season: seasons.season6,
+    intelType: intelTypes.audio,
+    loc: "[310.2865774714206, 137.8574616098765]",
+    map: mapDetails.forsakenUnderground.id,
+    name: "Fully Operational",
+    desc: "In the amplifier area, leans against the railing on the right side before you go down the stairs."
+}, {
+	id: "OS6Au5",
+    faction: factions.omega,
+    season: seasons.season6,
+    intelType: intelTypes.audio,
+    loc: "[247.70418142073183, 243.117709648726]",
+    map: mapDetails.forsaken.id,
+    name: "The Magnificant Two",
+    desc: "In the fuel processing area, leans against a wall left towards the teleporter."
+}, {
+	id: "OS6Au6",
+    faction: factions.omega,
+    season: seasons.season6,
+    intelType: intelTypes.audio,
+    loc: "[400.15504451376614, 68.22878603696722]",
+    map: mapDetails.forsaken.id,
+    name: "Deja Vu",
+    desc: "Leans against the small checkpoint building."
 }, 
 /////////////////////Maxis/////////////////////////
 {
@@ -2831,6 +2939,33 @@ const intelStoreV2 = [
     map: mapDetails.ruka.id,
     name: "I Am Alive",
     desc: "On the ledge of the top of the watchtower."
+}, {
+    id: "MS6Au2",
+    faction: factions.maxis,
+    season: seasons.season6,
+    intelType: intelTypes.audio,
+    loc: "[407.05853356142404, 229.72348041293253]",
+    map: mapDetails.forsakenUnderground.id,
+    name: "My Choice",
+    desc: "In the particle accelerator area, drops out of the aetherium tank after assembling the wonder weapon in there."
+}, {
+	id: "MS6Au3",
+    faction: factions.maxis,
+    season: seasons.season6,
+    intelType: intelTypes.audio,
+    loc: "[418.38774090659103, 179.5548004540857]",
+    map: mapDetails.forsaken.id,
+    name: "My Orders",
+    desc: "In the Beach Pizza restaurant, on top of the lamp bracket. You need to shoot it down."
+}, {
+	id: "MS6Au4",
+    faction: factions.maxis,
+    season: seasons.season6,
+    intelType: intelTypes.audio,
+    loc: "[50.866396900649534, 116.21334387201858]",
+    map: mapDetails.forsaken.id,
+    name: "My Control",
+    desc: "In the video store, on a shelf behind the Mule Kick machine."
 }, 
 /////////////////////Dark Aether/////////////////////////
 {
@@ -3805,6 +3940,15 @@ const intelStoreV2 = [
     map: mapDetails.sanatorium.id,
     name: "Empty Death Perception",
     desc: "In the sink on the ground floor."
+}, {
+    id: "DS6Ar5",
+    faction: factions.darkAether,
+    season: seasons.season6,
+    intelType: intelTypes.artifact,
+    loc: "[421.0527264879534, 127.71176452428412]",
+    map: mapDetails.forsaken.id,
+    name: "Polymorphic Crystal Core",
+    desc: "In the Jim's Donuts building, the artifact is part of the wonder weapon quest."
 }, 
 
 ]
