@@ -1230,7 +1230,7 @@ const intelStoreV2 = [
     faction: factions.requiem,
     season: seasons.season6,
     intelType: intelTypes.artifact,
-    loc: "[318.04606581468073, 284.23979839798847]",
+    loc: "[212.23422995682867, 373.5]",
     map: mapDetails.forsakenUnderground.id,
     name: "Housing Unit",
     desc: "In the board room, part of the main quest."
@@ -2240,7 +2240,7 @@ const intelStoreV2 = [
     faction: factions.omega,
     season: seasons.season6,
     intelType: intelTypes.audio,
-    loc: "[310.2865774714206, 137.8574616098765]",
+    loc: "[319.84422421300326, 160.75]",
     map: mapDetails.forsakenUnderground.id,
     name: "Fully Operational",
     desc: "In the amplifier area, leans against the railing on the right side before you go down the stairs."
