@@ -199,8 +199,6 @@ function switchmodal() {
     openSubModal("intel-stats")
     openSubModal("intel-type")
 }
-/////////////////////List Generation/////////////////////////
-GenerateList();
 
 let collectedFaction = {
     darkAether: findInCollected(factionTotal.darkAether),

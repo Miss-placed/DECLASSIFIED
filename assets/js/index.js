@@ -79,6 +79,8 @@ function onLoadV2() {
     $('#search-term').keyup(function () {
         intelFiltered = TriggerSearch();
     });
+
+    TriggerSearch();
 }
 
 if (navigator.userAgent.toLowerCase().match(/mobile/i)) {

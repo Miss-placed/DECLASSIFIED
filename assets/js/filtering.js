@@ -5,21 +5,29 @@ function filterIntel(searchTermDirty, factionsArr, seasonsArr, intelTypeArr, map
         return intel.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
     });
 
-    results = results.filter((intel) => {
-        return factionsArr.includes(intel.faction);
-    });
+    if (factionsArr) {
+        results = results.filter((intel) => {
+            return factionsArr.includes(intel.faction);
+        });
+    }
 
-    results = results.filter((intel) => {
-        return seasonsArr.includes(intel.season);
-    });
+    if (seasonsArr) {
+        results = results.filter((intel) => {
+            return seasonsArr.includes(intel.season);
+        });
+    }
 
-    results = results.filter((intel) => {
-        return intelTypeArr.includes(intel.intelType);
-    });
+    if (intelTypeArr) {
+        results = results.filter((intel) => {
+            return intelTypeArr.includes(intel.intelType);
+        });
+    }
 
-    results = results.filter((intel) => {
-        return mapArr.includes(intel.map) || intel.map == mapDetails.allOutbreakMaps.id && mapArr.some((e) => { return allOutbreakMapsArr.includes(e) });
-    });
+    if (mapArr) {
+        results = results.filter((intel) => {
+            return mapArr.includes(intel.map) || intel.map == mapDetails.allOutbreakMaps.id && mapArr.some((e) => { return allOutbreakMapsArr.includes(e) });
+        });
+    }
 
     return results;
 }
@@ -27,25 +35,25 @@ function filterIntel(searchTermDirty, factionsArr, seasonsArr, intelTypeArr, map
 function TriggerSearchV1() {
     let factionFilters = $('#factionFilterCollapse').find("input[type=checkbox]:checked");
     let factionsArr = [];
-    $.each(factionFilters, function() {
+    $.each(factionFilters, function () {
         factionsArr.push(factions[$(this).val()]);
     });
 
     let seasonsFilters = $('#seasonFilterCollapse').find("input[type=checkbox]:checked");
     let seasonsArr = [];
-    $.each(seasonsFilters, function() {
+    $.each(seasonsFilters, function () {
         seasonsArr.push(seasons[$(this).val()]);
     });
 
     let intelTypeFilters = $('#intelTypeFilterCollapse').find("input[type=checkbox]:checked");
     let intelTypeArr = [];
-    $.each(intelTypeFilters, function() {
+    $.each(intelTypeFilters, function () {
         intelTypeArr.push(intelTypes[$(this).val()]);
     });
 
     let mapFilters = $('#mapFilterCollapse').find("input[type=checkbox]:checked");
     let mapArr = [];
-    $.each(mapFilters, function() {
+    $.each(mapFilters, function () {
         mapArr.push(mapDetails[$(this).val()].id);
     });
 
@@ -57,7 +65,6 @@ function TriggerSearchV1() {
 
 function TriggerSearch(params) {
     const searchTerm = $('#search-term').val();
-    debugger
 
     let filteredIntel = filterIntel(searchTerm);
     GenerateList(filteredIntel);
