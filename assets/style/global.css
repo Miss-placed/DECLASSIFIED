@@ -105,3 +105,6 @@ body.custom-color{
 #filtered-intel::-webkit-scrollbar-thumb:hover {
     background: var(--clr-grey);
 }
+.-hidden {
+    display: none!important;
+}
