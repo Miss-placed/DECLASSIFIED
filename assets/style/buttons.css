@@ -15,6 +15,7 @@
         font-family: Arial;
         text-decoration: none;
         cursor: pointer;
+        line-height:1em;
     }
     
     .btn:hover {

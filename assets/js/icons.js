@@ -45,18 +45,11 @@ var generalIcon = L.icon({
     iconAnchor: [15, 30],
     popupAnchor: [0, -30]
 });
-var riftIcon = L.icon({
-    iconUrl: 'assets/img/icons/Rift.png',
+var riftIcon = iconInit('rift', 'outbreak', bounds = {
     iconSize: [22, 48],
     iconAnchor: [11, 24],
     popupAnchor: [0, -30]
-});
-var monkeyIcon = L.icon({
-    iconUrl: 'assets/img/icons/monkeyIcon.png',
-    iconSize: [30, 30],
-    iconAnchor: [15, 15],
-    popupAnchor: [0, -30]
-});
+})
 var radioIcon = L.icon({
     iconUrl: 'assets/img/icons/radioIcon.png',
     iconSize: [39, 48],
@@ -64,76 +57,50 @@ var radioIcon = L.icon({
     popupAnchor: [0, -30]
 });
 var dementedIcon = L.icon({
-    iconUrl: 'assets/img/icons/dementedIcon.png',
+    iconUrl: 'assets/img/icons/outbreak/dementedIcon.png',
     iconSize: [48, 48],
     iconAnchor: [24, 24],
     popupAnchor: [0, -30]
 });
-var fishingIcon = L.icon({
-    iconUrl: 'assets/img/icons/fishIcon.png',
+var fishingIcon = iconInit('fishIcon', 'outbreak', {
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -30]
+})
+
+var monkeyIcon = L.icon({
+    iconUrl: 'assets/img/icons/outbreak/monkeyIcon.png',
     iconSize: [30, 30],
     iconAnchor: [15, 15],
     popupAnchor: [0, -30]
 });
-var redRiftIcon = L.icon({
-    iconUrl: 'assets/img/icons/redRiftIcon.png',
+var redRiftIcon = iconInit('redRift', 'outbreak', bounds = {
     iconSize: [22, 48],
     iconAnchor: [11, 24],
     popupAnchor: [0, -30]
-});
-var wunderFizzIcon = L.icon({
-    iconUrl: 'assets/img/icons/perk/wunderFizz.png',
-    iconSize: [30, 30],
-    iconAnchor: [15, 15],
-    popupAnchor: [0, -15]
-});
-var mysteryBoxIcon = L.icon({
-    iconUrl: 'assets/img/icons/misc/mysteryBox.png',
-    iconSize: [30, 30],
-    iconAnchor: [15, 15],
-    popupAnchor: [0, -15]
-});
-var arsenalIcon = L.icon({
-    iconUrl: 'assets/img/icons/misc/arsenal.png',
-    iconSize: [30, 30],
-    iconAnchor: [15, 15],
-    popupAnchor: [0, -15]
-});
-var wallbuyIcon = L.icon({
-    iconUrl: 'assets/img/icons/misc/wallbuy.png',
-    iconSize: [30, 30],
-    iconAnchor: [15, 15],
-    popupAnchor: [0, -15]
-});
-var ammoCrateIcon = L.icon({
-    iconUrl: 'assets/img/icons/misc/ammoCrate.png',
-    iconSize: [30, 30],
-    iconAnchor: [15, 15],
-    popupAnchor: [0, -15]
-});
-var craftingTableIcon = L.icon({
-    iconUrl: 'assets/img/icons/misc/craftingTable.png',
-    iconSize: [30, 30],
-    iconAnchor: [15, 15],
-    popupAnchor: [0, -15]
-});
-var ziplineIcon = L.icon({
-    iconUrl: 'assets/img/icons/misc/zipline.png',
-    iconSize: [30, 30],
-    iconAnchor: [15, 15],
-    popupAnchor: [0, -15]
-});
-var trialComputerIcon = L.icon({
-    iconUrl: 'assets/img/icons/misc/trialComputer.png',
-    iconSize: [30, 30],
-    iconAnchor: [15, 15],
-    popupAnchor: [0, -15]
-});
-function iconInit(id, type) {
-    return L.icon({
-        iconUrl: `assets/img/icons/${type}/${id}.png`,
+})
+
+var wunderFizzIcon = iconInit('wunderFizz', 'perk')
+var mysteryBoxIcon = iconInit('mysteryBox', 'misc')
+var arsenalIcon = iconInit('arsenal', 'misc')
+var wallbuyIcon = iconInit('wallBuy', 'misc')
+var ammoCrateIcon = iconInit('ammoCrate', 'misc')
+var craftingTableIcon = iconInit('craftingTable', 'misc')
+var ziplineIcon = iconInit('zipline', 'misc')
+var trialComputerIcon = iconInit('trialComputer', 'misc')
+var papMachineIcon = iconInit('papMachine', 'misc')
+
+//idk how to do an override where you specify only a few bound properties
+function iconInit(id, type,
+    bounds = {
         iconSize: [30, 30],
         iconAnchor: [15, 15],
         popupAnchor: [0, -15]
+    }) {
+    return L.icon({
+        iconUrl: `assets/img/icons/${type}/${id}.png`,
+        iconSize: bounds.iconSize,
+        iconAnchor: bounds.iconAnchor,
+        popupAnchor: bounds.popupAnchor
     });
 }

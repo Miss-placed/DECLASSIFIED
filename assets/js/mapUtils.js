@@ -47,7 +47,7 @@ function AddMapMarkersFromCache(intelArr) {
             if (intel.map != mapDetails.allOutbreakMaps.id) {
                 let factionIcon = getIconByFaction(intel.faction);
                 mapLayer = mapLayers[intel.map];
-                addMarkerToMap(intel.loc, factionIcon, mapLayer, intel.id, intel.name, intel.desc);
+                addMarkerToMap(intel, factionIcon, mapLayer);
             }
         }
 
@@ -62,30 +62,37 @@ function AddMapMarkersFromCache(intelArr) {
     }
 }
 
-function addMarkerToMap(loc, icon, maep, id, name, desc = ``) {
-    if (loc != null && JSON.stringify([0, 0]) != JSON.stringify(loc)) { // don't add 0,0 markers to the map for cleanliness
+function addMarkerToMap(intel, icon, maep) {
+    if (intel.loc != null && JSON.stringify([0, 0]) != JSON.stringify(intel.loc)) { // don't add 0,0 markers to the map for cleanliness
         let snippet = $(`<div></div>`)
-        let shareBtn = genShareButton(id).outerHTML;
-        let bugBtn = genBugButton(id).outerHTML;
-        if (desc !== '') {
+        let shareBtn = genShareButton(intel.id).outerHTML;
+        let bugBtn = genBugButton(intel.id).outerHTML;
+        let moreBtn = genMoreButton(intel).outerHTML;
+        let tempBtn = bugBtn
+
+
+        if (typeof closeModal !== "undefined") { 
+            tempBtn = moreBtn
+        }
+        if (intel.desc !== '') {
             snippet = $(`
             <div>
-            <p>${desc}</p>
-            <div class="buttonContainer" data-item="${id}" data-type="${markerTypes.intel.id}">
+            <p>${intel.desc}</p>
+            <div class="buttonContainer" data-item="${intel.id}" data-type="${markerTypes.intel.id}">
             <button type="button" class="btn btn-info inverted mark-collected">Mark as collected</button>
             ${shareBtn}
-            ${bugBtn}
+            ${tempBtn}
             </div>
             </div>`);
         }
-        var marker = L.marker(loc, { icon: icon }).addTo(maep.Markers)
-            .bindPopup(`<h1>${name}</h1>${snippet.html()}`);
+        var marker = L.marker(intel.loc, { icon: icon }).addTo(maep.Markers)
+            .bindPopup(`<h1>${intel.name}</h1>${snippet.html()}`);
 
-        if (hasUserCollected(id)) {
+        if (hasUserCollected(intel.id)) {
             marker.setOpacity(0.35);
-            app.disableMarkers.push(id);
+            app.disableMarkers.push(intel.id);
         }
-        app.visibleMarkers[id] = marker;
+        app.visibleMarkers[intel.id] = marker;
     }
 }
 
