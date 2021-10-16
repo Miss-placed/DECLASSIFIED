@@ -12,6 +12,9 @@
     color:var(--clr-white-d);
     text-transform: uppercase;
 }
+.leaflet-popup-content p{
+    padding:5px 20px;
+}
 .leaflet-popup-content {
     margin: unset;
 }
@@ -27,4 +30,5 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin-bottom:10px;
 }

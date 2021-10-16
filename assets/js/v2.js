@@ -20,7 +20,7 @@ const seasonTotal = {
 
 const modalSet = {
     intelOverview: ["intel-type", "intel-list", "intel-stats"],
-    intelDescription: ["intel-list", "intel-desc"],
+    intelDescription: ["intel-list", "intel-detail"],
     settingsMain: ["settings"],
 }
 /////////////////////Header Menu/////////////////////////
@@ -140,55 +140,7 @@ function closeSubModal(target) {
  *  
  * @param {object} intel Object of intel Details.
  */
-function GenerateDetailModal(intel) {
-    let detailModal = document.getElementById("description");
-    detailModal.replaceChildren();
-    if (!intel) {
-        intel.name = "Intel Not Found";
-        intel.desc = "If you see this please report an issue on the github page."
-    }
-    var elementsToAdd = htmlToElements(
-        `<button class="close-submodal btn inverted" onclick="switchmodal()"><i class="bi bi-x"></i></button>
-    
-        <h2>${intel.name}</h2>
-        <p>${intel.desc}</p>`
-    );
 
-
-    elementsToAdd.forEach(element => {
-        detailModal.append(element);
-    });
-
-
-
-    let btnContainer = document.createElement("div");
-    btnContainer.className = "buttonContainer";
-
-    //Only Generate locate and share buttons if intel has location
-    if (intel.loc[0] != 0 && intel.loc[1] != 0) {
-        let location = createElement("button", ["btn", "inverted", "locate-intel"], "Locate Intel", "locate-intel");
-        location.onclick = goToIntel(intel);
-        location.appendChild(htmlToElement(`<i class="fas fa-map-marker-alt" aria-hidden="true" style="margin-left: 5px;"></i>`));
-        btnContainer.appendChild(location);
-        btnContainer.appendChild(genShareButton(intel.id));
-    }
-
-    //Always add bug button and button container
-    btnContainer.appendChild(genBugButton(intel.id));
-    detailModal.appendChild(btnContainer);
-
-
-    /*     detailModal.querySelector("p").innerHTML = `
-        "id": ${intel.id}<br>
-        "faction": ${intel.faction}<br>
-        "season": ${intel.season}<br>
-        "intelType": ${intel.intelType}<br>
-        "loc": ${intel.loc}<br>
-        "map": ${intel.map}<br>
-        "name": ${intel.name}<br>
-        "desc": ${intel.desc}
-    ` */
-}
 
 
 function findInCollected(query) {
@@ -237,23 +189,6 @@ function findTotal(array, key, value) {
 /////////////////////List Generation/////////////////////////
 GenerateList();
 
-
-
-
-
-/* <img class="leaflet-image-layer leaflet-zoom-animated" src="./maps/forsaken/forsaken.svg" alt="" style="z-index: 1; transform: translate3d(-256px, -584px, 0px); width: 2048px; height: 2048px;"> */
-
-function interceptMapLoad() {
-    var el = document.querySelector("img.leaflet-image-layer.leaflet-zoom-animated");
-}
-
-function switchmodal() {
-
-    // need to make a proper open and close function for modal switching
-    closeSubModal("intel-detail")
-    openSubModal("intel-stats")
-    openSubModal("intel-type")
-}
 let collectedFaction = {
     darkAether: findInCollected(factionTotal.darkAether),
     requiem: findInCollected(factionTotal.requiem),

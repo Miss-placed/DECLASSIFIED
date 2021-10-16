@@ -145,6 +145,21 @@ function genBugButton(itemId) {
     return bugBtn;
 }
 
+
+function openDescModal(intel) {
+    return function () {
+        console.log("lol try again")
+        GenerateDetailModal(intel)
+        openModal(modalSet.intelDescription)
+    }
+}
+function genMoreButton(intel) {
+    let moreBtn = createElement("button", ["btn", "btn-info", "inverted", "action-buttons", "moreInfo", "bi", "bi-three-dots"], "")
+    moreBtn.title = "More Info";
+    moreBtn.onclick = openDescModal(intel);
+    return moreBtn;
+}
+
 function copyToClipboard(text, notif) {
     const listener = function (ev) {
         ev.preventDefault();
