@@ -129,6 +129,12 @@ var trialComputerIcon = L.icon({
     iconAnchor: [15, 15],
     popupAnchor: [0, -15]
 });
+var papMachineIcon = L.icon({
+    iconUrl: 'assets/img/icons/misc/papMachine.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -15]
+});
 function iconInit(id, type) {
     return L.icon({
         iconUrl: `assets/img/icons/${type}/${id}.png`,

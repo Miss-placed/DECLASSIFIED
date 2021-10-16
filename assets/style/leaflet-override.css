@@ -1,0 +1,30 @@
+.leaflet-popup-content-wrapper {
+    border-radius: unset;
+    background-color: var(--clr-white-d);
+    border:none;
+    padding:-1px;
+}
+
+.leaflet-popup-content h1{
+    background-color:var(--clr-grey-d);
+    margin:-1px;
+    padding:5px 20px;
+    color:var(--clr-white-d);
+    text-transform: uppercase;
+}
+.leaflet-popup-content {
+    margin: unset;
+}
+
+.leaflet-popup-tip {
+    background-color: var(--clr-white-d);
+    z-index: -1;
+}
+
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}

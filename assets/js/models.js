@@ -158,7 +158,7 @@ const miscTypes = {
 
     wunderFizz: new Item({ title: "Der Wunderfizz", icon: wunderFizzIcon}),
     trialComputer: new Item({ title: "Trial Computer", icon: trialComputerIcon}),
-    papMachine: new Item({ title: "Pack-a-Punch"}),
+    papMachine: new Item({ title: "Pack-a-Punch", icon: papMachineIcon}),
     mysteryBox: new Item({ title: "Mystery Box Location", icon: mysteryBoxIcon}),
     wallbuy: new Item({ title: "Wall Buy", icon: wallbuyIcon}),
     power: new Item({ title: "Power Switch"}),
