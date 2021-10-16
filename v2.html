@@ -168,7 +168,9 @@
         </div>
     </section>
 
-    <img id="lightbox" class="-hidden" src="#" onclick="hideElement(this)">
+    <section id="lightbox-container" class="-hidden" onclick="hideElement(this)">
+        <img id="lightbox"  src="#" >
+    </section>
     <script>
         function hideElement(ele){
             ele.classList.toggle('-hidden')

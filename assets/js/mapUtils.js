@@ -77,7 +77,7 @@ function addMarkerToMap(intel, icon, maep) {
         if (typeof closeModal !== undefined) {
             tempBtn = moreBtn
             if (intel.img !== undefined) {
-                img.setAttribute('src', `http://i.imgur.com/${intel.img}.jpg`)
+                img.setAttribute('src', `https://i.imgur.com/${intel.img}.jpg`)
             } else {
                 img.setAttribute('src', `assets/img/intelScreenshot/placeholder.png`)
             }
@@ -111,7 +111,7 @@ function addMarkerToMap(intel, icon, maep) {
     }
 }
 function expandImage(ele) {
-    document.getElementById('lightbox').classList.toggle('-hidden')
+    document.getElementById('lightbox-container').classList.toggle('-hidden')
     document.getElementById('lightbox').setAttribute('src', ele.getAttribute('src'))
 }
 
