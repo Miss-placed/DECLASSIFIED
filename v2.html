@@ -40,7 +40,8 @@
 
     <div id="ui">
         <div>
-            <button class="btn ui" onclick="openModal(modalSet.intelOverview)"><i class="bi bi-folder-fill"></i> </button>
+            <button class="btn ui" onclick="openModal(modalSet.intelOverview)"><i class="bi bi-folder-fill"></i>
+            </button>
             <button class="btn ui" onclick="openModal(modalSet.settingsMain)"><i class="bi bi-gear-fill"></i> </button>
         </div>
         <div>
@@ -103,7 +104,7 @@
         </div>
         <div class="modal -big -hidden" id="intel-detail">
             <div class="sub-modal" id="description">
-                
+
             </div>
         </div>
         <!-- intel stats modal -->
@@ -166,6 +167,13 @@
             </div>
         </div>
     </section>
+
+    <img id="lightbox" class="-hidden" src="#" onclick="hideElement(this)">
+    <script>
+        function hideElement(ele){
+            ele.classList.toggle('-hidden')
+        }
+    </script>
     <!-- Notifications -->
     <section id="notification-popup"></section>
     <section id="error-notif">

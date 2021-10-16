@@ -2947,7 +2947,8 @@ const intelStoreV2 = [
     loc: "[407.05853356142404, 229.72348041293253]",
     map: mapDetails.forsakenUnderground.id,
     name: "My Choice",
-    desc: "In the particle accelerator area, drops out of the aetherium tank after assembling the wonder weapon in there."
+    desc: "In the particle accelerator area, drops out of the aetherium tank after assembling the wonder weapon in there.",
+    img: "44r3bWk"
 }, {
 	id: "MS6Au3",
     faction: factions.maxis,

@@ -500,3 +500,11 @@ h6 {
     border-color: #1f2223;
 }
 
+#lightbox{
+    width:100vw;
+    height:100vh;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: var(--z-index-ui);
+}

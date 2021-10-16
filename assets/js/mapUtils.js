@@ -53,7 +53,7 @@ function AddMapMarkersFromCache(intelArr) {
 
         for (maep in miscPOI) {
             let currmap = miscPOI[maep];
-            if (typeof(miscPOI[maep]) !== "undefined") {
+            if (typeof (miscPOI[maep]) !== "undefined") {
                 currmap.forEach(item => {
                     addMiscMarkerToMap(item.loc, item.icon, mapLayers[maep], item.id, item.title, item.desc)
                 })
@@ -69,24 +69,39 @@ function addMarkerToMap(intel, icon, maep) {
         let bugBtn = genBugButton(intel.id).outerHTML;
         let moreBtn = genMoreButton(intel).outerHTML;
         let tempBtn = bugBtn
-
-
-        if (typeof closeModal !== "undefined") { 
+        let img = document.createElement('img')
+        img.setAttribute('onclick', 'expandImage(this)')
+        
+        
+        
+        if (typeof closeModal !== undefined) {
             tempBtn = moreBtn
+            if (intel.img !== undefined) {
+                img.setAttribute('src', `http://i.imgur.com/${intel.img}.jpg`)
+            } else {
+                img.setAttribute('src', `assets/img/intelScreenshot/placeholder.png`)
+            }
         }
+
         if (intel.desc !== '') {
             snippet = $(`
             <div>
-            <p>${intel.desc}</p>
-            <div class="buttonContainer" data-item="${intel.id}" data-type="${markerTypes.intel.id}">
-            <button type="button" class="btn btn-info inverted mark-collected">Mark as collected</button>
-            ${shareBtn}
-            ${tempBtn}
+                <p>${intel.desc}</p>
+                <div class="buttonContainer" data-item="${intel.id}" data-type="${markerTypes.intel.id}">
+                <button type="button" class="btn btn-info inverted mark-collected">Mark as collected</button>
+                ${shareBtn}
+                ${tempBtn}
+                </div>
             </div>
-            </div>`);
+            `);
         }
+
+
         var marker = L.marker(intel.loc, { icon: icon }).addTo(maep.Markers)
-            .bindPopup(`<h1>${intel.name}</h1>${snippet.html()}`);
+            .bindPopup(`<h1>${intel.name}</h1>
+                        <div>${snippet.html()}</div>
+                         ${img.outerHTML}
+        `);
 
         if (hasUserCollected(intel.id)) {
             marker.setOpacity(0.35);
@@ -94,6 +109,10 @@ function addMarkerToMap(intel, icon, maep) {
         }
         app.visibleMarkers[intel.id] = marker;
     }
+}
+function expandImage(ele) {
+    document.getElementById('lightbox').classList.toggle('-hidden')
+    document.getElementById('lightbox').setAttribute('src', ele.getAttribute('src'))
 }
 
 function addMiscMarkerToMap(loc, icon, maep, id, name, desc = ``) {

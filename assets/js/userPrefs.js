@@ -82,7 +82,7 @@ function toggleDarkModeSetting() {
 
 function changePreferredMode() {
     let currentPrefs = getUserPrefs();
-    debugger
+    // debugger
     const systemPrefersDarkmode = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
     currentPrefs.useSystemTheme = document.getElementById("system-theme").checked;
     setUserPrefs(currentPrefs);
