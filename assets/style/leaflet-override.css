@@ -4,29 +4,27 @@
   border: none;
   padding: -1px;
 }
+
 .leaflet-popup-content{
-  display: flex;
-  width: 600px !important;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  width:clamp(300px, 600px, 600px)
 }
+
 .leaflet-popup-content h1 {
   background-color: var(--clr-grey-d);
   margin: -1px;
   padding: 5px 20px;
-  width: calc(100% + 2px);
+  width: 100%;
   color: var(--clr-white-d);
   text-transform: uppercase;
 }
 .leaflet-popup-content > div {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 .leaflet-popup-content > img {
-  width: 50%;
+  width: 300px;
   margin-right: -1px;
   margin-bottom: -1px;
 }
