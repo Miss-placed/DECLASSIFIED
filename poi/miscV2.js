@@ -261,6 +261,7 @@ miscPOI[mapDetails.forsaken.id] = [
     new Marker("n474k", miscTypes.trap, [151.59858366888284, 273.875], "Suspended Hind"),
     new Marker("lbIYT", miscTypes.mysteryBox, [118.62162421575054, 211.75]),
     new Marker("nzKwk", miscTypes.mysteryBox, [237.86299513063022, 324]),
+    new Marker("xcJJq", miscTypes.mysteryBox, [263.70345178866245, 38.39665499450159]),
     new Marker("0U1dM", miscTypes.wallbuy, [163.22869884820676, 344.625], "FFAR1"),
     new Marker("i4Hh4", miscTypes.trialComputer, [264.67736094203576, 289.5625]),
     new Marker("seF1D", miscTypes.papMachine, [274.98619135686863, 306.875]),
