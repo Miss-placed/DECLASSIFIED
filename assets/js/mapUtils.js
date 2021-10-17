@@ -3,12 +3,12 @@ function InitMap() {
         crs: L.CRS.Simple,
         center: [256, 256],
         maxBounds: [
-            [0, 0],
-            [512, 512]
+            [-256, -256],
+            [768, 768]
         ],
-        zoom: 1,
+        zoom: 0.8,
         maxZoom: 5,
-        minZoom: 1,
+        minZoom: 0.1,
         layers: [
             mapLayers[app.currentMap].Layer
         ],
@@ -16,6 +16,10 @@ function InitMap() {
         tapTolerance: 30,
         noWrap: true,
         doubleClickZoom: false,
+        zoomDelta: 0.5,
+        wheelPxPerZoomLevel: 80,
+        zoomSnap: 0,
+        maxBoundsViscosity: 1.0,
     });
 }
 
