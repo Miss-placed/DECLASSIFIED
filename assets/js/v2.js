@@ -19,7 +19,7 @@ const seasonTotal = {
 }
 
 const modalSet = {
-    intelOverview: ["intel-type", "intel-list", "intel-stats"],
+    intelOverview: ["intel-filters", "intel-list", "intel-stats"],
     intelDescription: ["intel-list", "intel-detail"],
     settingsMain: ["settings"],
 }
@@ -197,7 +197,7 @@ function switchmodal() {
     // need to make a proper open and close function for modal switching
     closeSubModal("intel-detail")
     openSubModal("intel-stats")
-    openSubModal("intel-type")
+    openSubModal("intel-filters")
 }
 
 let collectedFaction = {

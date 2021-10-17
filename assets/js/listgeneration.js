@@ -27,7 +27,7 @@ function IntelButtonClick(event) {
     let intel = getIntelById(intelID);
     GenerateDetailModal(intel);
     closeSubModal("intel-stats");
-    closeSubModal("intel-type");
+    closeSubModal("intel-filters");
 }
 
 /////////////////////V1/////////////////////////

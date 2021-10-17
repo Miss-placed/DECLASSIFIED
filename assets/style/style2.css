@@ -153,7 +153,7 @@ select.faction-list > option:hover {
 
 .modal #filtered-intel,
 .button-list,
-#intel-type #intel-type-select {
+#intel-filters #intel-type-select {
   display: flex;
   margin: 0 auto;
   flex-wrap: nowrap;
