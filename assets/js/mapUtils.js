@@ -67,14 +67,17 @@ function addMarkerToMap(intel, icon, maep) {
         let snippet = '';
         let shareBtn = genShareButton(intel.id).outerHTML;
         let bugBtn = genBugButton(intel.id).outerHTML;
-        let moreBtn = genMoreButton(intel).outerHTML;
+        // let moreBtn = genMoreButton(intel).outerHTML;
         let tempBtn = bugBtn
         let imgSrc = 'assets/img/intelScreenshot/placeholder.png';
-
+        let imgEle = ''
         // tempBtn = moreBtn
+
         if (intel.img !== undefined) {
             imgSrc = `https://i.imgur.com/${intel.img}.jpg`
         }
+
+        if (typeof v2Test == 'string'){imgEle = `<img src="${imgSrc}" onclick="expandImage(this)"></img>`}
 
         if (intel.desc !== '') {
             snippet = `
@@ -89,7 +92,7 @@ function addMarkerToMap(intel, icon, maep) {
                         ${tempBtn}
                     </div>
                 </div>
-                <img src="${imgSrc}" onclick="expandImage(this)">
+                ${imgEle}
             </div>
             `;
 
