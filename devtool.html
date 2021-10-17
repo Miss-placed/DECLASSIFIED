@@ -51,11 +51,15 @@
 
             </p>
         </div>
-        <div><input type="checkbox" name="checkbox" id="thing" class="toggle" placeholder="_">
+        <div>
+            <input type="checkbox" name="checkbox" id="thing" class="toggle" placeholder="_">
 
-            <input type="checkbox" name="checkbox" id="thing" class="check" content="<i class='bi bi-check '></i>">
+            <input type="checkbox" name="checkbox" id="thing" class="check" content=""><h4></h4>
+            <input type="checkbox" name="checkbox" id="thing" class="check" content=""><h4></h4>
+            <input type="checkbox" name="checkbox" id="thing" class="check" content=""><h4></h4>
+            <input type="checkbox" name="checkbox" id="thing" class="check" content=""><h4></h4>
+            <input type="checkbox" name="checkbox" id="thing" class="check" content=""><h4></h4>
         </div>
-        <div><input type="search"></div>
     </section>
 
 
@@ -63,10 +67,14 @@
     <section class="modal-bg -hidden">
         <div class="modal" id="intel-type">
             <select class="faction-list">
-                <option value="Requiem"><img class="list-icon" src="/assets/img/icons/faction-requiem-icon.png" alt=""> Requiem</option>
-                <option value="Omega"><img class="list-icon" src="/assets/img/icons/faction-omega-icon.png" alt=""> Omega</option>
-                <option value="Maxis"><img class="list-icon" src="/assets/img/icons/faction-maxis-icon.png" alt=""> Maxis</option>
-                <option value="DarkAether"><img class="list-icon" src="/assets/img/icons/faction-darkAether-icon.png" alt=""> Dark Aether</option>
+                <option value="Requiem"><img class="list-icon" src="/assets/img/icons/faction-requiem-icon.png" alt="">
+                    Requiem</option>
+                <option value="Omega"><img class="list-icon" src="/assets/img/icons/faction-omega-icon.png" alt="">
+                    Omega</option>
+                <option value="Maxis"><img class="list-icon" src="/assets/img/icons/faction-maxis-icon.png" alt="">
+                    Maxis</option>
+                <option value="DarkAether"><img class="list-icon" src="/assets/img/icons/faction-darkAether-icon.png"
+                        alt=""> Dark Aether</option>
             </select>
             <div>
                 <button class="btn type" type="Documents" value="5 / 10"></button>
@@ -99,7 +107,8 @@
         <div class="modal -big -hidden" id="intel-desc">
             <div class="sub-modal">
                 <h2>Exo-Element</h2>
-                <p>Obtained from table in med bay, by easter egg computer. On the far wall, close to the box location.</p>
+                <p>Obtained from table in med bay, by easter egg computer. On the far wall, close to the box location.
+                </p>
             </div>
         </div>
         <div class="modal" id="intel-stats">
@@ -108,13 +117,17 @@
                 <div id="intel-graph " class="graph "></div>
                 <div id="totals">
                     <ul id="icons ">
-                        <li><img class="faction-list-icon " src="assets/img/icons/faction-requiem-icon.png " alt="Requiem total ">
+                        <li><img class="faction-list-icon " src="assets/img/icons/faction-requiem-icon.png "
+                                alt="Requiem total ">
                         </li>
-                        <li><img class="faction-list-icon " src="assets/img/icons/faction-omega-icon.png " alt="Omega total ">
+                        <li><img class="faction-list-icon " src="assets/img/icons/faction-omega-icon.png "
+                                alt="Omega total ">
                         </li>
-                        <li><img class="faction-list-icon " src="assets/img/icons/faction-maxis-icon.png " alt="Maxis total ">
+                        <li><img class="faction-list-icon " src="assets/img/icons/faction-maxis-icon.png "
+                                alt="Maxis total ">
                         </li>
-                        <li><img class="faction-list-icon " src="assets/img/icons/faction-darkAether-icon.png " alt="Dark aether total ">
+                        <li><img class="faction-list-icon " src="assets/img/icons/faction-darkAether-icon.png "
+                                alt="Dark aether total ">
                         </li>
                     </ul>
 
@@ -163,7 +176,7 @@
 
         document.addEventListener(
             "click",
-            function(event) {
+            function (event) {
                 // If user clicks outside the modal window, then close modal by calling closeModal()
                 if (
                     event.target.matches(".modal-bg") &&
@@ -292,35 +305,35 @@
         collectedSeason.Not = factionTotal.All - collectedSeason.All;
 
         var mychart = new DonutChart(
-                document.getElementById("intel-graph "), {
-                    r: 100,
-                    stroke: 25,
-                    scale: 100,
-                    total: factionTotal.All,
-                    collected: collectedFaction.All,
-                    items: [{
-                        label: "Requiem ",
-                        value: collectedFaction.Requiem,
-                        color: "--clr-blue "
-                    }, {
-                        label: "Omega ",
-                        value: collectedFaction.Omega,
-                        color: "--clr-red "
-                    }, {
-                        label: "Maxis ",
-                        value: collectedFaction.Maxis,
-                        color: "--clr-blue-d "
-                    }, {
-                        label: "DarkAether ",
-                        value: collectedFaction.DarkAether,
-                        color: "--clr-purple "
-                    }, {
-                        label: "NotCollected ",
-                        value: collectedFaction.Not,
-                        color: "--clr-grey "
-                    }, ]
+            document.getElementById("intel-graph "), {
+            r: 100,
+            stroke: 25,
+            scale: 100,
+            total: factionTotal.All,
+            collected: collectedFaction.All,
+            items: [{
+                label: "Requiem ",
+                value: collectedFaction.Requiem,
+                color: "--clr-blue "
+            }, {
+                label: "Omega ",
+                value: collectedFaction.Omega,
+                color: "--clr-red "
+            }, {
+                label: "Maxis ",
+                value: collectedFaction.Maxis,
+                color: "--clr-blue-d "
+            }, {
+                label: "DarkAether ",
+                value: collectedFaction.DarkAether,
+                color: "--clr-purple "
+            }, {
+                label: "NotCollected ",
+                value: collectedFaction.Not,
+                color: "--clr-grey "
+            },]
 
-                })
+        })
             //         var mychart2 = new DonutChart(
             //             document.getElementById("intel-graph2 "), {
             //     r: 90,

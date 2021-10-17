@@ -215,7 +215,7 @@ const intelStoreV2 = [
     intelType: intelTypes.audio,
     loc: "[388.95457527930483, 247]",
     map: mapDetails.firebaseZSpawn.id,
-    name: "they Took Her",
+    name: "They Took Her",
     desc: "On a bench above PaP."
 }, {
     id: "RS1Au5",
@@ -242,7 +242,7 @@ const intelStoreV2 = [
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.firebaseZ.id,
-    name: "outbreak Zones Timeline",
+    name: "Outbreak Zones Timeline",
     desc: "Obtained from a Mimic drop."
 }, {
     id: "RS1Do3",
@@ -323,7 +323,7 @@ const intelStoreV2 = [
     intelType: intelTypes.radio,
     loc: "[0, 0]",
     map: mapDetails.firebaseZ.id,
-    name: "Stick",
+    name: "The Stick",
     desc: ""
 }, {
     id: "RS1Ra7",
@@ -449,7 +449,7 @@ const intelStoreV2 = [
     intelType: intelTypes.audio,
     loc: "[157.93177892918823, 261.90189231808966]",
     map: mapDetails.golova.id,
-    name: "I See Hierarchy",
+    name: "I See A Hierarchy",
     desc: "On the top of the water tower near the gas station at the edge of the village proper."
 }, {
     id: "RS2Au5",
@@ -611,7 +611,7 @@ const intelStoreV2 = [
     intelType: intelTypes.artifact,
     loc: "[256, 167.5]",
     map: mapDetails.alpine.id,
-    name: "Frostblast Canister",
+    name: "Frost Blast Canister",
     desc: "Look on top of the circular ski lift station on the western side of the map near the Lodge and the Pro Shop."
 }, {
     id: "RS3Au1",
@@ -638,7 +638,7 @@ const intelStoreV2 = [
     intelType: intelTypes.audio,
     loc: "[216.47308920021277, 87.5]",
     map: mapDetails.ruka.id,
-    name: "Death Squad",
+    name: "Death Squads",
     desc: "In the old farm area. In the green tent, under a table."
 }, {
     id: "RS3Au4",
@@ -854,7 +854,7 @@ const intelStoreV2 = [
     intelType: intelTypes.audio,
     loc: "[201.97447242418866, 286]",
     map: mapDetails.zoo.id,
-    name: "You know better.",
+    name: "You Knew Better",
     desc: "Next to the monorail up in the cages overpass."
 }, {
     id: "RS4Au2",
@@ -953,7 +953,7 @@ const intelStoreV2 = [
     intelType: intelTypes.artifact,
     loc: "[416.95170242950877, 369.5]",
     map: mapDetails.zoo.id,
-    name: "Recon Rover Module",
+    name: "Recon Rover Model",
     desc: "Behind the sink in the bathroom, second floor."
 }, {
     id: "RS4Ar3",
@@ -998,7 +998,7 @@ const intelStoreV2 = [
     intelType: intelTypes.audio,
     loc: "[344.28804705304697, 286]",
     map: mapDetails.armada.id,
-    name: "Unto the Breach",
+    name: "Unto The Breach",
     desc: "In the Gun Boat area. it's just behind a crate, near the Wunderfizz."
 }, {
     id: "RS5Au4",
@@ -1297,7 +1297,7 @@ const intelStoreV2 = [
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.dieMaschine.id,
-    name: "Befor The Devil Arrives",
+    name: "Before The Devil Arrives",
     desc: "Drops from a Megaton."
 }, {
     id: "OS0Do3",
@@ -1459,7 +1459,7 @@ const intelStoreV2 = [
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.firebaseZ.id,
-    name: "omega Teleport Blueprint",
+    name: "Omega Teleport Blueprint",
     desc: "Drops from a Mimic or Mangler"
 }, {
     id: "OS1Do6",
@@ -1666,7 +1666,7 @@ const intelStoreV2 = [
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.allOutbreakMaps.id,
-    name: "omega Staffing Report",
+    name: "Omega Staffing Report",
     desc: ""
 }, {
     id: "OS2Do3",
@@ -1675,7 +1675,7 @@ const intelStoreV2 = [
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.allOutbreakMaps.id,
-    name: "omega Records Review",
+    name: "Omega Records Review",
     desc: ""
 }, {
     id: "OS2Ra1",
@@ -1729,7 +1729,7 @@ const intelStoreV2 = [
     intelType: intelTypes.artifact,
     loc: "[252.46909913105162, 213.5]",
     map: mapDetails.ruka.id,
-    name: "omega Group Patch",
+    name: "Omega Group Patch",
     desc: "On top of the climbable net in the obstacle course. (might currently be bugged)"
 }, {
     id: "OS3Au1",
@@ -1783,7 +1783,7 @@ const intelStoreV2 = [
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.allOutbreakMaps.id,
-    name: "Phaze Report",
+    name: "Phase Report",
     desc: ""
 }, {
     id: "OS3Do3",
@@ -1864,7 +1864,7 @@ const intelStoreV2 = [
     intelType: intelTypes.radio,
     loc: "[0, 0]",
     map: mapDetails.allOutbreakMaps.id,
-    name: "Missing Name and Location",
+    name: "Something Is Coming",
     desc: ""
 }, {
     id: "OS3Ar1",
@@ -1936,7 +1936,7 @@ const intelStoreV2 = [
     intelType: intelTypes.audio,
     loc: "[189.47580244724242, 329]",
     map: mapDetails.zoo.id,
-    name: "Day of victory.",
+    name: "Day of Victory.",
     desc: "On top of the rectangular tower of the aquarium. Might need to use a jump pad.."
 }, {
     id: "OS4Au3",
@@ -1972,7 +1972,7 @@ const intelStoreV2 = [
     intelType: intelTypes.audio,
     loc: "[152.24382307164962, 260.125]",
     map: mapDetails.duga.id,
-    name: "Peace is Our Profession",
+    name: "Peace Is Our Profession",
     desc: "Underground bunker in the south, under the bed."
 }, {
     id: "OS4Au7",
@@ -1999,7 +1999,7 @@ const intelStoreV2 = [
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.allOutbreakMaps.id,
-    name: "Ravenov's Burn Notice",
+    name: "Ravenov Burn Notice",
     desc: "dropped from Special/Elite kills or golden chests"
 }, {
     id: "OS4Do2",
@@ -2080,7 +2080,7 @@ const intelStoreV2 = [
     intelType: intelTypes.audio,
     loc: "[342.85771988660576, 424.56079740862197]",
     map: mapDetails.collateral.id,
-    name: "Change of Plans",
+    name: "Change Of Plans",
     desc: "on the top of the third building in a row in the Village area. The screen will say you are in the Roadside area when you are on the correct building. The correct building also has a white/blue parachute hanging over one if the corners."
 }, {
     id: "OS5Au2",
@@ -2325,7 +2325,7 @@ const intelStoreV2 = [
     intelType: intelTypes.radio,
     loc: "[0, 0]",
     map: mapDetails.dieMaschine.id,
-    name: "Agent maxis",
+    name: "Agent Maxis",
     desc: ""
 }, {
     id: "MS0Ra2",
@@ -2361,7 +2361,7 @@ const intelStoreV2 = [
     intelType: intelTypes.audio,
     loc: "[133.4817609505231, 216.5]",
     map: mapDetails.firebaseZSpawn.id,
-    name: "Workers Of The World",
+    name: "Workers Of The Worlds",
     desc: "In equipment storage, on the back wall of the ground floor, on a shelf."
 }, {
     id: "MS1Au3",
@@ -2379,7 +2379,7 @@ const intelStoreV2 = [
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.firebaseZ.id,
-    name: "omega's Portal Blueprint",
+    name: "Omega's Portal Blueprint",
     desc: ""
 }, {
     id: "MS1Do2",
@@ -2388,7 +2388,7 @@ const intelStoreV2 = [
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.firebaseZ.id,
-    name: "omega's Propaganda Poster",
+    name: "Omega's Propaganda Poster",
     desc: ""
 }, {
     id: "MS1Do3",
@@ -2433,7 +2433,7 @@ const intelStoreV2 = [
     intelType: intelTypes.radio,
     loc: "[0, 0]",
     map: mapDetails.dieMaschine.id,
-    name: "Shared History / Old Friend",
+    name: "Shared History / Old Friends",
     desc: ""
 }, {
     id: "MS1Ra4",
@@ -2544,22 +2544,22 @@ const intelStoreV2 = [
     name: "We've Both Been To Hell",
     desc: "In the little reception area of the biggest building in the maintenance area."
 }, {
-    id: "undefined",
+    id: "MS2Do1",
     faction: factions.maxis,
     season: seasons.season2,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.allOutbreakMaps.id,
-    name: "maxis Status Report",
+    name: "Maxis Status Report",
     desc: ""
 }, {
-    id: "undefined",
+    id: "MS2Do2",
     faction: factions.maxis,
     season: seasons.season2,
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.allOutbreakMaps.id,
-    name: "maxis Diary Entry",
+    name: "Maxis Diary Entry",
     desc: ""
 }, {
     id: "MS2Ra1",
@@ -2649,7 +2649,7 @@ const intelStoreV2 = [
     intelType: intelTypes.artifact,
     loc: "[165.9271732872769, 420.9950214012165]",
     map: mapDetails.golova.id,
-    name: "maxis BND Badge",
+    name: "Maxis BND Badge",
     desc: "Behind some sandbags, very close to the edge of the map, in the Industrial Park location."
 }, {
     id: "MS3Au1",
@@ -2712,7 +2712,7 @@ const intelStoreV2 = [
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.allOutbreakMaps.id,
-    name: "maxis Progress Report",
+    name: "Maxis Progress Report",
     desc: ""
 }, {
     id: "MS3Do3",
@@ -2739,7 +2739,7 @@ const intelStoreV2 = [
     intelType: intelTypes.artifact,
     loc: "[296.5, 96]",
     map: mapDetails.duga.id,
-    name: "Maxis' Katana",
+    name: "Maxis's Katana",
     desc: "In the farm area. Stuck in a haybale in a shed near the back of the area, next to the stone wall."
 }, {
     id: "MS3Ar2",
@@ -2748,7 +2748,7 @@ const intelStoreV2 = [
     intelType: intelTypes.artifact,
     loc: "[220, 253.5]",
     map: mapDetails.duga.id,
-    name: "Maxis' Scarf",
+    name: "Maxis's Scarf",
     desc: "In the listening post. In a room just to the left of the Wunderfizz, on a coathook."
 }, {
     id: "MS3Ar3",
@@ -2757,7 +2757,7 @@ const intelStoreV2 = [
     intelType: intelTypes.artifact,
     loc: "[142.5, 129.5]",
     map: mapDetails.sanatorium.id,
-    name: "Maxis' Goggles",
+    name: "Maxis's Goggles",
     desc: "In the market square on one of the round tables."
 }, {
     id: "MS3Ar4",
@@ -2784,7 +2784,7 @@ const intelStoreV2 = [
     intelType: intelTypes.artifact,
     loc: "[211.40097869890616, 322.9376210858302]",
     map: mapDetails.golova.id,
-    name: "maxis's Watch",
+    name: "Maxis's Watch",
     desc: "In the Lower West town area. It's on the roof of the building with the crafting bench, requires a jump pad to get to. It's tucked in between the roof itself and one of the 4 spire things with a flag on it."
 }, {
     id: "MS4Au1",
@@ -3102,7 +3102,7 @@ const intelStoreV2 = [
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.dieMaschine.id,
-    name: "Missing Name and Location",
+    name: "DAY 1,108",
     desc: "Obtained through the Challenge Machine"
 }, {
     id: "DS0Do10",
@@ -3111,7 +3111,7 @@ const intelStoreV2 = [
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.dieMaschine.id,
-    name: "Missing Name and Location",
+    name: "DAY 6,121",
     desc: "Obtained through the Challenge Machine"
 }, {
     id: "DS0Do11",
@@ -3120,7 +3120,7 @@ const intelStoreV2 = [
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.dieMaschine.id,
-    name: "Missing Name and Location",
+    name: "DAY 2,873",
     desc: "Obtained through the Challenge Machine"
 }, {
     id: "DS0Do12",
@@ -3129,7 +3129,7 @@ const intelStoreV2 = [
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.dieMaschine.id,
-    name: "Missing Name and Location",
+    name: "DAY 3,289",
     desc: "Obtained through the Challenge Machine"
 }, {
     id: "DS0Ar1",
@@ -3210,7 +3210,7 @@ const intelStoreV2 = [
     intelType: intelTypes.audio,
     loc: "[0, 0]",
     map: mapDetails.dieMaschine.id,
-    name: "Missing Name and Location",
+    name: "Lost Souls: Fritz",
     desc: "Obtained through the Challenge Machine"
 }, {
     id: "DS1Au6",
@@ -3219,7 +3219,7 @@ const intelStoreV2 = [
     intelType: intelTypes.audio,
     loc: "[0, 0]",
     map: mapDetails.dieMaschine.id,
-    name: "Missing Name and Location",
+    name: "Lost Souls: Pyotr",
     desc: "Obtained through the Challenge Machine"
 }, {
     id: "DS1Do1",
@@ -3255,7 +3255,7 @@ const intelStoreV2 = [
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.firebaseZ.id,
-    name: "Day 4,01",
+    name: "Day 4,010",
     desc: "Obtained through the Challenge Machine"
 }, {
     id: "DS1Do5",
@@ -3273,7 +3273,7 @@ const intelStoreV2 = [
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.firebaseZ.id,
-    name: "Day, 6,289",
+    name: "Day 6,289",
     desc: "Obtained through the Challenge Machine"
 }, {
     id: "DS1Do7",
@@ -3282,7 +3282,7 @@ const intelStoreV2 = [
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.firebaseZ.id,
-    name: "Day 2,499",
+    name: "Day 2,944",
     desc: "Obtained through the Challenge Machine"
 }, {
     id: "DS1Do8",
@@ -3309,7 +3309,7 @@ const intelStoreV2 = [
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.firebaseZ.id,
-    name: "Day 6,148",
+    name: "Day 6,418",
     desc: "Obtained through the Challenge Machine"
 }, {
     id: "DS1Do11",
@@ -3318,7 +3318,7 @@ const intelStoreV2 = [
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.dieMaschine.id,
-    name: "Missing Name and Location",
+    name: "Hello?",
     desc: "Obtained through the Challenge Machine"
 }, {
     id: "DS1Do12",
@@ -3327,7 +3327,7 @@ const intelStoreV2 = [
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.dieMaschine.id,
-    name: "Missing Name and Location",
+    name: "Day 13,784",
     desc: "Obtained through the Challenge Machine"
 }, {
     id: "DS1Do13",
@@ -3336,7 +3336,7 @@ const intelStoreV2 = [
     intelType: intelTypes.docs,
     loc: "[0, 0]",
     map: mapDetails.dieMaschine.id,
-    name: "Missing Name and Location",
+    name: "Day 4,100",
     desc: "Obtained through the Challenge Machine"
 }, {
     id: "DS1Ra1",
@@ -3354,7 +3354,7 @@ const intelStoreV2 = [
     intelType: intelTypes.radio,
     loc: "[0, 0]",
     map: mapDetails.dieMaschine.id,
-    name: "Missing Name and Location",
+    name: "ALIVE",
     desc: ""
 }, {
     id: "DS1Ra3",
@@ -3363,7 +3363,7 @@ const intelStoreV2 = [
     intelType: intelTypes.radio,
     loc: "[0, 0]",
     map: mapDetails.dieMaschine.id,
-    name: "Missing Name and Location",
+    name: "GATHERING",
     desc: ""
 }, {
     id: "DS1Ra4",
@@ -3372,7 +3372,7 @@ const intelStoreV2 = [
     intelType: intelTypes.radio,
     loc: "[0, 0]",
     map: mapDetails.dieMaschine.id,
-    name: "Missing Name and Location",
+    name: "BEHEMOTH",
     desc: ""
 }, {
     id: "DS1Ra5",
@@ -3381,7 +3381,7 @@ const intelStoreV2 = [
     intelType: intelTypes.radio,
     loc: "[0, 0]",
     map: mapDetails.dieMaschine.id,
-    name: "Missing Name and Location",
+    name: "DOMINION",
     desc: ""
 }, {
     id: "DS1Ra6",
@@ -3390,7 +3390,7 @@ const intelStoreV2 = [
     intelType: intelTypes.radio,
     loc: "[0, 0]",
     map: mapDetails.dieMaschine.id,
-    name: "Missing Name and Location",
+    name: "HORDE",
     desc: ""
 }, {
     id: "DS1Ar1",
@@ -3399,7 +3399,7 @@ const intelStoreV2 = [
     intelType: intelTypes.artifact,
     loc: "[354.96085298811846, 285.5]",
     map: mapDetails.firebaseZ.id,
-    name: "omega Canister",
+    name: "Omega Canister",
     desc: "Part of the Main quest."
 }, {
     id: "DS2Au1",
@@ -3489,7 +3489,7 @@ const intelStoreV2 = [
     intelType: intelTypes.radio,
     loc: "[0, 0]",
     map: mapDetails.allOutbreakMaps.id,
-    name: "Testing... Testing",
+    name: "Testing... Testing...",
     desc: "Obtained through the Challenge Machine"
 }, {
     id: "DS2Ra3",
@@ -3714,7 +3714,7 @@ const intelStoreV2 = [
     intelType: intelTypes.artifact,
     loc: "[284.5, 238.5]",
     map: mapDetails.sanatorium.id,
-    name: "Empty Quick Revive Soda Can",
+    name: "Empty Quick Revive",
     desc: "In the Beach Resort. Under the stairs of the White shack building."
 }, {
     id: "DS3Ar4",
@@ -3795,7 +3795,7 @@ const intelStoreV2 = [
     intelType: intelTypes.artifact,
     loc: "[358.4578205355559, 261]",
     map: mapDetails.zoo.id,
-    name: "Empty Stamin-up Can",
+    name: "Empty Stamin-Up",
     desc: "Inside the diner under the white marble counter."
 }, {
     id: "DS4Ar2",
@@ -3804,7 +3804,7 @@ const intelStoreV2 = [
     intelType: intelTypes.artifact,
     loc: "[206.47021635041676, 299.5]",
     map: mapDetails.zoo.id,
-    name: "Fury crystal",
+    name: "Fury Crystal",
     desc: "On the roof behind a pillar."
 }, {
     id: "DS4Ar3",
@@ -3903,7 +3903,7 @@ const intelStoreV2 = [
     intelType: intelTypes.artifact,
     loc: "[309.8628684849271, 262.7430596656802]",
     map: mapDetails.armada.id,
-    name: "Empty Tombstone",
+    name: "Empty Tombstone Soda",
     desc: "In the Gun boat Control Room. it's in-between one of the sonar panels and the wall."
 }, {
     id: "DS6Ar1",

@@ -30,6 +30,9 @@ miscPOI[mapDetails.dieMaschine.id] = [
     new Marker("znu5z", miscTypes.wallbuy, [211.11624215750538, 158.125], "M16"),
     new Marker("U24cf", miscTypes.ammoCrate, [256.22518494241035, 86.25]),
     new Marker("6gdU5", miscTypes.maxisRadio, [257.99097293754096, 88.5625]),
+    new Marker("206x9", miscTypes.aetherTunnel, [228.712198675318, 112.25]),
+    new Marker("yZ4Mf", miscTypes.aetherTunnel, [231.71142976622465, 261.25]),
+    new Marker("zczWT", miscTypes.aetherTunnel, [312.95656000863335, 345.5]),
 ];
 miscPOI[mapDetails.dieMaschineUnderground.id] = [
     new Marker("cTakX", miscTypes.craftingTable, [302.9450323063958, 199.5]),
@@ -50,6 +53,9 @@ miscPOI[mapDetails.dieMaschineUnderground.id] = [
     new Marker("TUgDl", miscTypes.wallbuy, [210.9681570307718, 296], "AK-74u"),
     new Marker("q44EK", miscTypes.mysteryBox, [182.9811409122104, 203.75]),
     new Marker("LXxTQ", miscTypes.power, [126.11151299315564, 399.125]),
+    new Marker("ovCt3", miscTypes.aetherTunnel, [209.95886673591343, 173]),
+    new Marker("ZK5LG", miscTypes.aetherTunnel, [216.46392872077806, 315]),
+    new Marker("amLbg", miscTypes.aetherTunnel, [293.2263897694622, 384]),
 ];
 miscPOI[mapDetails.firebaseZ.id] = [
     new Marker("JgR0a", miscTypes.teleporter, [325.0978719917595, 221.75], "To Spawn"),
@@ -255,6 +261,7 @@ miscPOI[mapDetails.forsaken.id] = [
     new Marker("n474k", miscTypes.trap, [151.59858366888284, 273.875], "Suspended Hind"),
     new Marker("lbIYT", miscTypes.mysteryBox, [118.62162421575054, 211.75]),
     new Marker("nzKwk", miscTypes.mysteryBox, [237.86299513063022, 324]),
+    new Marker("xcJJq", miscTypes.mysteryBox, [263.70345178866245, 38.39665499450159]),
     new Marker("0U1dM", miscTypes.wallbuy, [163.22869884820676, 344.625], "FFAR1"),
     new Marker("i4Hh4", miscTypes.trialComputer, [264.67736094203576, 289.5625]),
     new Marker("seF1D", miscTypes.papMachine, [274.98619135686863, 306.875]),

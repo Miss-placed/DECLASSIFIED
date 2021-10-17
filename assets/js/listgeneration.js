@@ -154,9 +154,9 @@ function openDescModal(intel) {
     }
 }
 function genMoreButton(intel) {
-    let moreBtn = createElement("button", ["btn", "btn-info", "inverted", "action-buttons", "moreInfo", "bi", "bi-three-dots"], "")
+    let moreBtn = createElement("button", ["btn", "btn-info", "inverted", "action-buttons", "moreInfo", "fas", "fa-ellipsis-h"], "")
     moreBtn.title = "More Info";
-    moreBtn.setAttribute('onclick',`openDescModal(${[intel]})`) 
+    moreBtn.onclick = openDescModal(intel) 
     return moreBtn;
 }
 

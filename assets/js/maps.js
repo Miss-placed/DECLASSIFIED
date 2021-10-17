@@ -7,6 +7,8 @@ var globalMapSettings = {
         [0, 0],
         [512, 512]
     ],
+    padding: [1000, 1000],
+    zoomSnap: 0.1
 }
 
 //Need to use var here because JS weirdness
@@ -52,7 +54,7 @@ function generateLayers(name, settings) {
     //     svgElement.innerHTML = load.responseText.slice('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">'.length, '</svg>'.length + load.responseText.length)
     // })
 
-    svgElement.innerHTML = mapSVGs.globalStyle + mapSVGs[name] 
+    svgElement.innerHTML = mapSVGs.globalStyle + mapSVGs[name]
     var imageBounds = [
         [0, 0],
         [512, 512]

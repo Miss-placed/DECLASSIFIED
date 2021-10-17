@@ -3,12 +3,12 @@ function InitMap() {
         crs: L.CRS.Simple,
         center: [256, 256],
         maxBounds: [
-            [0, 0],
-            [512, 512]
+            [-256, -256],
+            [768, 768]
         ],
-        zoom: 1,
+        zoom: 0.8,
         maxZoom: 5,
-        minZoom: 1,
+        minZoom: 0.1,
         layers: [
             mapLayers[app.currentMap].Layer
         ],
@@ -16,6 +16,10 @@ function InitMap() {
         tapTolerance: 30,
         noWrap: true,
         doubleClickZoom: false,
+        zoomDelta: 0.5,
+        wheelPxPerZoomLevel: 80,
+        zoomSnap: 0,
+        maxBoundsViscosity: 1.0,
     });
 }
 
@@ -64,44 +68,45 @@ function AddMapMarkersFromCache(intelArr) {
 
 function addMarkerToMap(intel, icon, maep) {
     if (intel.loc != null && JSON.stringify([0, 0]) != JSON.stringify(intel.loc)) { // don't add 0,0 markers to the map for cleanliness
-        let snippet = $(`<div></div>`)
+        let snippet = '';
         let shareBtn = genShareButton(intel.id).outerHTML;
         let bugBtn = genBugButton(intel.id).outerHTML;
         let moreBtn = genMoreButton(intel).outerHTML;
         let tempBtn = bugBtn
-        let img = document.createElement('img')
-        img.setAttribute('onclick', 'expandImage(this)')
-        
-        
-        
-        if (typeof closeModal !== undefined) {
+        let imgSrc = 'assets/img/intelScreenshot/placeholder.png';
+        let imgEle = ''
+
+        if (intel.img !== undefined) {
+            imgSrc = `https://i.imgur.com/${intel.img}.jpg`
+        }
+
+        if (typeof v2Test == 'string') {
+            imgEle = `<img src="${imgSrc}" onclick="expandImage(this)"></img>`
             tempBtn = moreBtn
-            if (intel.img !== undefined) {
-                img.setAttribute('src', `https://i.imgur.com/${intel.img}.jpg`)
-            } else {
-                img.setAttribute('src', `assets/img/intelScreenshot/placeholder.png`)
-            }
         }
 
         if (intel.desc !== '') {
-            snippet = $(`
-            <div>
-                <p>${intel.desc}</p>
-                <div class="buttonContainer" data-item="${intel.id}" data-type="${markerTypes.intel.id}">
-                <button type="button" class="btn btn-info inverted mark-collected">Mark as collected</button>
-                ${shareBtn}
-                ${tempBtn}
+            snippet = `
+            <h1>${intel.name}</h1>
+                        
+            <div class="intel-content">
+                <div>
+                    <p>${intel.desc}</p>
+                    <div class="buttonContainer" data-item="${intel.id}" data-type="${markerTypes.intel.id}">
+                        <button type="button" class="btn btn-info inverted mark-collected">Mark as collected</button>
+                        ${shareBtn}
+                        ${tempBtn}
+                    </div>
                 </div>
+                ${imgEle}
             </div>
-            `);
+            `;
+
         }
 
 
         var marker = L.marker(intel.loc, { icon: icon }).addTo(maep.Markers)
-            .bindPopup(`<h1>${intel.name}</h1>
-                        <div>${snippet.html()}</div>
-                         ${img.outerHTML}
-        `);
+            .bindPopup(snippet);
 
         if (hasUserCollected(intel.id)) {
             marker.setOpacity(0.35);
@@ -119,13 +124,19 @@ function addMiscMarkerToMap(loc, icon, maep, id, name, desc = ``) {
     if (loc != null && JSON.stringify([0, 0]) != JSON.stringify(loc)) { // don't add 0,0 markers to the map for cleanliness
         let bugBtn = genBugButton(id).outerHTML;
         let snippet = $(`<div></div>`)
-        snippet = $(`<div>
-        <p>${desc}</p>
-        <div class="buttonContainer" data-item="${id}" data-type="${markerTypes.misc.id}">
-        ${bugBtn}
-        </div>
-        </div>`);
+        
+        h1Ele = desc ==''? name: `${name}:<br> ${desc}`;
+        snippet = `
+        <div class="misc-content">
+        <h1>${h1Ele}</h1>
+            <div class="buttonContainer" data-item="${id}" data-type="${markerTypes.misc.id}">
+                ${bugBtn}
+            </div>
+        </div>`;
         var marker = L.marker(loc, { icon: icon }).addTo(maep.MiscMarkers)
-            .bindPopup(`<h1>${name}</h1>${snippet.html()}`);
+            .bindPopup(snippet);
     }
+
+
+
 }
