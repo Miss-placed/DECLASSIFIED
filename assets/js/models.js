@@ -175,7 +175,8 @@ const miscTypes = {
     zipline: new Item({ title: "Zipline", icon: ziplineIcon }),
     rampageInducer: new Item({ title: "Rampage Inducer",icon: dementedIcon }),
 
-    klausRadio: new Item({ title: "Klaus recall radio" }),
+    klausRadio: new Item({ title: "Klaus recall radio", icon: radioIcon }),
+    aetherTunnel: new Item({ title: "Aether Tunnel", icon: ziplineIcon }),
     aetherCrystal: new Item({ title: "Aether Crystal" }),
 }
 
