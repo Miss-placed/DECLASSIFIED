@@ -28,6 +28,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css">
     <link rel="stylesheet" href="assets/style/leaflet-override.css">
+    
+    <script src="assets/js/iscroll.js"></script>
 
 </head>
 
@@ -59,74 +61,82 @@
         <!-- FILTERS -->
         <div class="modal -hidden" id="intel-filters">
             <list id="season-multi-select" class="droopy">
-                <p>Seasons</p>
+                <p>Seasons <i class="fas fa-caret-down"></i></p>
                 <div>
-                    <ul class="checks">
-                        <li><label for="season0">Pre Season</label></li>
-                        <li><label for="season1">Season 1</label></li>
-                        <li><label for="season2">Season 2 </label></li>
-                        <li><label for="season3">Season 3</label></li>
-                        <li><label for="season4">Season 4</label></li>
-                        <li><label for="season5">Season 5</label></li>
-                        <li><label for="season6">Season 6</label></li>
-                    </ul>
-                    <ul class="balances">
-                        <li><input type="checkbox" name="factionSelection" id="season0" class="check" content="">
+                    <ul>
+                        <li>
+                            <label for="season0">Pre Season</label>
+                            <input type="checkbox" id="season0" class="check">
                         </li>
-                        <li><input type="checkbox" name="factionSelection" id="season1" class="check" content="">
+                        <li>
+                            <label for="season1">Season 1</label>
+                            <input type="checkbox" id="season1" class="check">
                         </li>
-                        <li><input type="checkbox" name="factionSelection" id="season2" class="check" content="">
+                        <li>
+                            <label for="season2">Season 2 </label>
+                            <input type="checkbox" id="season2" class="check">
                         </li>
-                        <li><input type="checkbox" name="factionSelection" id="season3" class="check" content="">
+                        <li>
+                            <label for="season3">Season 3</label>
+                            <input type="checkbox" id="season3" class="check">
                         </li>
-                        <li><input type="checkbox" name="factionSelection" id="season4" class="check" content="">
+                        <li>
+                            <label for="season4">Season 4</label>
+                            <input type="checkbox" id="season4" class="check">
                         </li>
-                        <li><input type="checkbox" name="factionSelection" id="season5" class="check" content="">
+                        <li>
+                            <label for="season5">Season 5</label>
+                            <input type="checkbox" id="season5" class="check">
                         </li>
-                        <li><input type="checkbox" name="factionSelection" id="season6" class="check" content="">
+                        <li>
+                            <label for="season6">Season 6</label>
+                            <input type="checkbox" id="season6" class="check">
                         </li>
-
                     </ul>
                 </div>
             </list>
             <list id="season-multi-select" class="droopy">
-                <p>Seasons</p>
+                <p>Factions <i class="fas fa-caret-down"></i></p>
                 <div>
                     <ul class="checks">
-                        <li><label for="season0">Pre Season</label></li>
-                        <li><label for="season1">Season 1</label></li>
-                        <li><label for="season2">Season 2 </label></li>
-                        <li><label for="season3">Season 3</label></li>
-                        <li><label for="season4">Season 4</label></li>
-                        <li><label for="season5">Season 5</label></li>
-                        <li><label for="season6">Season 6</label></li>
-                    </ul>
-                    <ul class="balances">
-                        <li><input type="checkbox" name="factionSelection" id="season0" class="check" content="">
+                        <li>
+                            <label for="requiem">Requiem</label>
+                            <input type="checkbox" id="requiem" class="check">
                         </li>
-                        <li><input type="checkbox" name="factionSelection" id="season1" class="check" content="">
+                        <li>
+                            <label for="omega">Omega</label>
+                            <input type="checkbox" id="omega" class="check">
                         </li>
-                        <li><input type="checkbox" name="factionSelection" id="season2" class="check" content="">
+                        <li>
+                            <label for="maxis">Maxis</label>
+                            <input type="checkbox" id="maxis" class="check">
                         </li>
-                        <li><input type="checkbox" name="factionSelection" id="season3" class="check" content="">
+                        <li>
+                            <label for="darkAether">Dark Aether</label>
+                            <input type="checkbox" id="darkAether" class="check">
                         </li>
-                        <li><input type="checkbox" name="factionSelection" id="season4" class="check" content="">
-                        </li>
-                        <li><input type="checkbox" name="factionSelection" id="season5" class="check" content="">
-                        </li>
-                        <li><input type="checkbox" name="factionSelection" id="season6" class="check" content="">
-                        </li>
-
                     </ul>
                 </div>
             </list>
 
 
             <div id="intel-type-select">
-                <button class="btn type" type="Documents" value="5 / 10"></button>
-                <button class="btn type" type="Artifacts" value="5 / 10"></button>
-                <button class="btn type" type="Audio Logs" value="5 / 10"></button>
-                <button class="btn type" type="Radio Transmissions" value="5 / 10"></button>
+                <span>
+                    <input type="checkbox" id="document-check" class="type-check -hidden">
+                    <label class="btn type" type="Documents" value="5 / 10" for="document-check"></label>
+                </span>
+                <span>
+                    <input type="checkbox" id="artifact-check" class="type-check -hidden">
+                    <label class="btn type" type="Artifacts" value="5 / 10" for="artifact-check"></label>
+                </span>
+                <span>
+                    <input type="checkbox" id="audio-check" class="type-check -hidden">
+                    <label class="btn type" type="Audio Logs" value="5 / 10" for="audio-check"></label>
+                </span>
+                <span>
+                    <input type="checkbox" id="radio-check" class="type-check -hidden">
+                    <label class="btn type" type="Radio Transmissions" value="5 / 10" for="radio-check"></label>
+                </span>
             </div>
         </div>
 
@@ -146,7 +156,7 @@
             <div id="search-form">
                 <input id="search-term" type="search" placeholder="Search Intel...">
             </div>
-            
+
 
             <div id="filtered-intel">
                 <!-- <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button> -->
@@ -221,13 +231,14 @@
         </div>
     </section>
 
-    <section id="lightbox-container" class="-hidden" onclick="hideElement(this)">
+    <div id="lightbox-container" class="-hidden" onclick="hideElement(this)">
         <img id="lightbox" src="#">
-    </section>
+    </div>
     <script>
         function hideElement(ele) {
             ele.classList.toggle('-hidden')
         }
+
     </script>
     <!-- Notifications -->
     <section id="notification-popup"></section>
