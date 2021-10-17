@@ -253,10 +253,12 @@ input[type="search"] {
 
 .droopy {
   width: 150px;
+  height:min-content;
   background-color: var(--clr-white);
   color:var(--clr-grey-d);
   position: relative;
   border: 1px solid var(--clr-black);
+  z-index: 2;
 }
 
 .droopy>p{
