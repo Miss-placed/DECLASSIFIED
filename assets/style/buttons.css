@@ -252,17 +252,27 @@ input[type="search"] {
 }
 
 .droopy {
-  width: 20%;
-  background-color: red;
+  width: 150px;
+  background-color: var(--clr-white);
+  color:var(--clr-grey-d);
+  position: relative;
+  border: 1px solid var(--clr-black);
 }
+
 .droopy>p{
 padding:5px;
 }
+.droopy>p:after{
+}
 .droopy .checks{
-    width:90%;
+    width:max-content;
+}
+.droopy .balances{
+  width:30px;
 }
 .droopy > div {
   display: flex;
+  position:absolute;
 }
 .droopy > div > ul {
   display: none;
@@ -272,6 +282,7 @@ padding:5px;
   line-height: 30px;
   list-style-type: none;
   padding:5px;
+  margin:0;
 }
 .droopy .checks > li > label,
 .droopy .balances > li > label {

@@ -3,17 +3,22 @@
   background-color: var(--clr-white-d);
   border: none;
   padding: 0px !important;
+}.leaflet-popup-content{
+  width:unset!important;
 }
 
-.leaflet-popup-content {
-  width: 300px !important;
+.intel-content {
+  width: 300px ;
   display: flex;
   flex-direction: column;
 }
 @media (min-width: 600px) {
-  .leaflet-popup-content {
-    width: 600px !important;
+  .intel-content {
+    width: 600px;
   }
+}
+.misc-content{
+  width:300px;
 }
 .leaflet-popup-content h1 {
   background-color: var(--clr-grey-d);

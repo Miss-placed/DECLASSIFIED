@@ -1,0 +1,3 @@
+#worldMap > div.leaflet-pane.leaflet-map-pane > div.leaflet-pane.leaflet-popup-pane > div > div.leaflet-popup-content-wrapper > div > div.misc-content> div.buttonContainer{
+    display:none;
+}

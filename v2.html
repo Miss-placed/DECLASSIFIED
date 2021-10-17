@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="assets/style/leaflet-override.css">
+    <link rel="stylesheet" href="assets/style/hideDebugButton.css" disabled>
 
 </head>
 
@@ -40,9 +41,9 @@
 
     <div id="ui">
         <div>
-            <button class="btn ui" onclick="openModal(modalSet.intelOverview)"><i class="bi bi-folder-fill"></i>
+            <button class="btn ui" onclick="openModal(modalSet.intelOverview)"><i class="fas fa-folder-open"></i>
             </button>
-            <button class="btn ui" onclick="openModal(modalSet.settingsMain)"><i class="bi bi-gear-fill"></i> </button>
+            <button class="btn ui" onclick="openModal(modalSet.settingsMain)"><i class="fas fa-gear"></i> </button>
         </div>
         <div>
             <button class="btn ui" id="color-scheme-toggle" onclick="setColorScheme()"><i class="fas fa-moon"></i>
@@ -50,7 +51,7 @@
             <a title="Join us on discord!" href="https://discord.gg/4Xqj8XntFe" target="_blank" class="btn ui"
                 id="discord"><i class="fab fa-discord"></i> </a>
             <a title="Help us out on Github!" href="https://github.com/Miss-placed/DECLASSIFIED" target="_blank"
-                class="btn ui" id="github"><i class="bi bi-github"></i> </a>
+                class="btn ui" id="github"><i class="fab fa-github"></i> </a>
         </div>
     </div>
 
@@ -80,16 +81,31 @@
 
 
         <div class="modal -hidden" id="intel-list" >
-            <select class="season-list " multiple="multiple">
-                <option value="AllSeasons ">All Seasons</option>
-                <option value="PreSeason ">Pre Season</option>
-                <option value="Season1 ">Season 1</option>
-                <option value="Season2 ">Season 2</option>
-                <option value="Season3 ">Season 3</option>
-                <option value="Season3 ">Season 4</option>
-                <option value="Season3 ">Season 5</option>
-                <option value="Season3 ">Season 6</option>
-            </select>
+            <div id="c" class="droopy" >
+                <p>Seasons</p>
+                <div>
+                    <ul class="checks">
+                        <li><label for="season0">Pre SeasonPre SeasonPre Season</label></li>
+                        <li><label for="season1">Season 1</label></li>
+                        <li><label for="season2">Season 2 </label></li>
+                        <li><label for="season3">Season 3</label></li>
+                        <li><label for="season4">Season 4</label></li>
+                        <li><label for="season5">Season 5</label></li>
+                        <li><label for="season6">Season 6</label></li>
+                    </ul>
+                    <ul class="balances">
+                        <li><input type="checkbox" name="factionSelection" id="season0" class="check" content=""></li>
+                        <li><input type="checkbox" name="factionSelection" id="season1" class="check" content=""></li>
+                        <li><input type="checkbox" name="factionSelection" id="season2" class="check" content=""></li>
+                        <li><input type="checkbox" name="factionSelection" id="season3" class="check" content=""></li>
+                        <li><input type="checkbox" name="factionSelection" id="season4" class="check" content=""></li>
+                        <li><input type="checkbox" name="factionSelection" id="season5" class="check" content=""></li>
+                        <li><input type="checkbox" name="factionSelection" id="season6" class="check" content=""></li>
+
+                    </ul>
+                </div>
+            </div>
+        
             <div id="filtered-intel">
                 <!-- need to fill this list automatically with intel found with filter.
                     buttons need to have the target be intel-desc and have the id be their id (this case it uses placeholders)
@@ -107,7 +123,7 @@
         <div class="modal -hidden" id="intel-stats">
             <div class="sub-modal ">
                 <div id="search-form"><input type="search" placeholder="Search Intel..."><button class="btn inverted"><i
-                            class="bi bi-search"></i></button></div>
+                            class="fas fa-search"></i></button></div>
                 <div id="faction-donut" class="graph "></div>
                 <div id="totals">
                     <ul id="icons-faction" >
@@ -153,6 +169,11 @@
                 <label class="btn chk-btn" for="system-theme">
                     <p>Use System Theme</p><input type="checkbox" name="system-theme" id="system-theme" class="toggle"
                         placeholder="_" onchange="changePreferredMode()">
+                </label>
+                <p>Debug: </p>
+                <label class="btn chk-btn" for="system-theme">
+                    <p>Show debug buttons</p><input type="checkbox" name="debug-toggle" id="debug-toggle" class="toggle"
+                        placeholder="_" onchange="changeDebugButton()" checked>
                 </label>
                 <p>Collected Markers:
                 </p>

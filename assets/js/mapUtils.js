@@ -89,7 +89,7 @@ function addMarkerToMap(intel, icon, maep) {
             snippet = `
             <h1>${intel.name}</h1>
                         
-            <div>
+            <div class="intel-content">
                 <div>
                     <p>${intel.desc}</p>
                     <div class="buttonContainer" data-item="${intel.id}" data-type="${markerTypes.intel.id}">
@@ -124,13 +124,19 @@ function addMiscMarkerToMap(loc, icon, maep, id, name, desc = ``) {
     if (loc != null && JSON.stringify([0, 0]) != JSON.stringify(loc)) { // don't add 0,0 markers to the map for cleanliness
         let bugBtn = genBugButton(id).outerHTML;
         let snippet = $(`<div></div>`)
-        snippet = $(`<div>
-        <p>${desc}</p>
-        <div class="buttonContainer" data-item="${id}" data-type="${markerTypes.misc.id}">
-        ${bugBtn}
-        </div>
-        </div>`);
+        
+        h1Ele = desc ==''? name: `${name}:<br> ${desc}`;
+        snippet = `
+        <div class="misc-content">
+        <h1>${h1Ele}</h1>
+            <div class="buttonContainer" data-item="${id}" data-type="${markerTypes.misc.id}">
+                ${bugBtn}
+            </div>
+        </div>`;
         var marker = L.marker(loc, { icon: icon }).addTo(maep.MiscMarkers)
-            .bindPopup(`<h1>${name}</h1>${snippet.html()}`);
+            .bindPopup(snippet);
     }
+
+
+
 }
