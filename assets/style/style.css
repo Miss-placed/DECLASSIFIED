@@ -349,6 +349,8 @@ aside #searchTerm:focus-visible {
   display: flex;
   justify-content: center;
   padding-bottom: 5px;
+  margin-top: 5px;
+  padding-bottom: 10px;
 }
 
 #collapse {
