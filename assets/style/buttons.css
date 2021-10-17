@@ -239,6 +239,13 @@
   background-image: url("../img/intelTypes/artifacts.png");
 }
 
+
+.type-check:checked + label{
+  outline: 3px solid var(--clr-yellow);
+  outline-offset: 2px;
+
+}
+
 input[type="search"] {
   font-size: 1em;
   width: 100%;
@@ -252,44 +259,48 @@ input[type="search"] {
 }
 
 .droopy {
-  width: 150px;
-  height:min-content;
+  width: 67.5%;
+  height: min-content;
   background-color: var(--clr-white);
-  color:var(--clr-grey-d);
+  color: var(--clr-grey-d);
   position: relative;
   border: 1px solid var(--clr-black);
-  z-index: 2;
 }
 
-.droopy>p{
-padding:5px;
+.droopy > p {
+  padding: 5px;
 }
-.droopy>p:after{
-}
-.droopy .checks{
-    width:max-content;
-}
-.droopy .balances{
-  width:30px;
+.droopy > p > i {
+  position: absolute;
+  right: 5px;
 }
 .droopy > div {
+  z-index: 2;
   display: flex;
-  position:absolute;
+  position: absolute;
+  width: 100%;
 }
 .droopy > div > ul {
   display: none;
+  width: 100%;
+  border-top: 1px solid var(--clr-black);
+}
+.droopy label {
+  width: 100%;
 }
 .droopy > div > ul > li {
-  background-color: coral;
+  width: 100%;
+  background-color: var(--clr-white);
   line-height: 30px;
   list-style-type: none;
-  padding:5px;
-  margin:0;
+  padding: 5px;
+  display: flex;
+  margin: 0;
+  flex-direction: row;
+  justify-content: space-between;
 }
-.droopy .checks > li > label,
-.droopy .balances > li > label {
-  width: 100%;
-  display: inline-block;
+.droopy > div > ul > li:hover {
+  background: var(--clr-blue);
 }
 .droopy:hover div > ul {
   display: initial;
