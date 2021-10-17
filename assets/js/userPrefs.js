@@ -124,10 +124,22 @@ function setThemeFromPrefs() {
     let currentPrefs = getUserPrefs();
     document.body.classList = currentPrefs.darkmode ? 'dark' : 'light';
 }
+function setDebugButton(){
+    let currentPrefs = getUserPrefs();
+
+    if (currentPrefs.hideDebugButton) {
+        document.getElementById("debug-button-toggle").checked = true;
+    }
+    else {
+        document.getElementById("debug-button-toggle").checked = false;
+    }
+
+    changeDebugButton()
+}
 
 function changeDebugButton() {
     let currentPrefs = getUserPrefs();
-    currentPrefs.hideDebugButton = document.getElementById("debug-toggle").checked;
+    currentPrefs.hideDebugButton = document.getElementById("debug-button-toggle").checked;
     setUserPrefs(currentPrefs);
     $('link[href="assets/style/hideDebugButton.css"]').prop('disabled', currentPrefs.hideDebugButton);
 

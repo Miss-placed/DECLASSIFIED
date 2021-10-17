@@ -79,8 +79,8 @@
         </div>
 
 
-        <div class="modal -hidden" id="intel-list" >
-            <div id="c" class="droopy" >
+        <div class="modal -hidden" id="intel-list">
+            <div id="c" class="droopy">
                 <p>Seasons</p>
                 <div>
                     <ul class="checks">
@@ -104,7 +104,7 @@
                     </ul>
                 </div>
             </div>
-        
+
             <div id="filtered-intel">
                 <!-- need to fill this list automatically with intel found with filter.
                     buttons need to have the target be intel-desc and have the id be their id (this case it uses placeholders)
@@ -125,7 +125,7 @@
                             class="fas fa-search"></i></button></div>
                 <div id="faction-donut" class="graph "></div>
                 <div id="totals">
-                    <ul id="icons-faction" >
+                    <ul id="icons-faction">
                         <li><img class="faction-list-icon " src="assets/img/icons/faction-requiem-icon.png "
                                 alt="Requiem total ">
                         </li>
@@ -149,7 +149,7 @@
                 </div>
             </div>
         </div>
-        <div class="modal -hidden" id="settings">
+        <div class="modal -hidden settings" id="settings">
             <h2>Settings</h2>
             <div class="button-list">
                 <p>Marker visibility:</p>
@@ -170,25 +170,37 @@
                         placeholder="_" onchange="changePreferredMode()">
                 </label>
                 <p>Debug: </p>
-                <label class="btn chk-btn" for="system-theme">
-                    <p>Show debug buttons</p><input type="checkbox" name="debug-toggle" id="debug-toggle" class="toggle"
+                <button class="btn chk-btn" onclick="openModal(modalSet.settingsDebug)"> Debug options<i class="fas fa-caret-right"></i></button>
+
+                <p>Collected Markers:</p>
+                <button class="btn chk-btn">Import/Export Markers
+                </button>
+            </div>
+        </div>
+        <div class="modal -hidden settings" id="settings-2">
+            <h2>Debug options: </h2>
+            <div class="button-list">
+                <p>Misc bug report: </p>
+                <label class="btn chk-btn" for="debug-button-toggle">
+                    <p>Show buttons</p><input type="checkbox" name="debug-button-toggle" id="debug-button-toggle" class="toggle"
                         placeholder="_" onchange="changeDebugButton()" checked>
                 </label>
-                <p>Collected Markers:
-                </p>
-                <button class="btn chk-btn" for="checkbox">
-                    <p>Import/Export Markers</p>
-                </button>
+                <p>Click for co-ordinates: </p>
+                <label class="btn chk-btn" for="debug-toggle">
+                    <p>Copy on click</p><input type="checkbox" name="debug-toggle" id="debug-toggle" class="toggle"
+                        placeholder="_" onchange="changeDebugButton()" checked>
+                </label>
+                
             </div>
         </div>
     </section>
 
     <section id="lightbox-container" class="-hidden" onclick="hideElement(this)">
-        <img id="lightbox"  src="#" >
+        <img id="lightbox" src="#">
     </section>
     <script>
         var v2Test = 'hi'
-        function hideElement(ele){
+        function hideElement(ele) {
             ele.classList.toggle('-hidden')
         }
     </script>

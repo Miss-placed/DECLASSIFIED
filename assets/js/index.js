@@ -72,7 +72,9 @@ function onLoadV2() {
     //Set initial theme
     setThemeFromPrefs();
     initSystemThemeButton();
-
+    
+    setDebugButton();
+    
     CheckIfSharingURL();
 }
 
