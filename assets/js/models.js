@@ -25,48 +25,53 @@ class Marker {
 }
 
 class UserPrefs {
-    constructor({lastSelectedMap, collectedIntel, darkmode, asideShow, osPreferedMode}) {
+    constructor({ lastSelectedMap, collectedIntel, darkmode, asideShow, useSystemTheme }) {
         this.lastSelectedMap = lastSelectedMap ?? app.currentMap;
         this.collectedIntel = collectedIntel ?? [];
-        //darkmode variable to be depricated on v2 release
-        this.darkmode = darkmode ?? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        this.useSystemTheme = useSystemTheme ?? false;
+        // If the user is using system theme then follow that, else set to previous setting else default to true. (because darkmode is best)
+        this.darkmode = useSystemTheme ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) : darkmode ?? true;
         this.asideShow = asideShow ?? true;
-        this.osPreferedMode = osPreferedMode ?? false;
     }
 }
 
 /////////////////////Maps/////////////////////////
-const mapStrings = {
-    zoo: "zoo",
-    ruka: "ruka",
-    duga: "duga",
-    alpine: "alpine",
-    golova: "golova",
-    sanatorium: "sanatorium",
-    collateral: "collateral",
-    armada: "armada",
 
-    allOutbreakMaps: "outbreak",
+const mapDetails = {
+    allOutbreakMaps: new Item({ id: "outbreak", title: "All Outbreak Maps" }),
+    zoo: new Item({ id: "zoo", title: "Zoo" }),
+    ruka: new Item({ id: "ruka", title: "Ruka" }),
+    duga: new Item({ id: "duga", title: "Duga" }),
+    alpine: new Item({ id: "alpine", title: "Alpine" }),
+    golova: new Item({ id: "golova", title: "Golova" }),
+    sanatorium: new Item({ id: "sanatorium", title: "Sanatorium" }),
+    collateral: new Item({ id: "collateral", title: "Collateral" }),
+    armada: new Item({ id: "armada", title: "Armada" }),
+    dieMaschine: new Item({ id: "dieMaschine", title: "Die Maschine" }),
+    dieMaschineUnderground: new Item({ id: "dieMaschine_underground", title: "Die Maschine" }),
+    firebaseZ: new Item({ id: "firebaseZ", title: "Firebase Z" }),
+    firebaseZSpawn: new Item({ id: "firebaseZ_spawn", title: "Firebase Z" }),
+    mauerDerToten: new Item({ id: "mauerDerToten", title: "Mauer Der Toten" }),
+    mauerDerTotenStreets: new Item({ id: "mauerDerToten_streets", title: "Mauer Der Toten" }),
+    forsaken: new Item({ id: "forsaken", title: "Forsaken" }),
+    forsakenUnderground: new Item({ id: "forsaken_underground", title: "Forsaken" }),
+};
 
-    dieMaschine: "dieMaschine",
-    dieMaschineUnderground: "dieMaschine_underground",
-    firebaseZ: "firebaseZ",
-    firebaseZSpawn: "firebaseZ_spawn",
-    mauerDerToten: "mauerDerToten",
-    mauerDerTotenStreets: "mauerDerToten_streets",
-    forsaken: "forsaken",
-    forsakenUnderground: "forsaken_underground",
+function FindMapById(mapId) {
+    const maps = Object.values(mapDetails);
+    const foundMap = maps.find(map => map.id === mapId);
+    return foundMap;
 }
 
 const allOutbreakMapsArr = [
-    mapStrings.zoo,
-    mapStrings.ruka,
-    mapStrings.duga,
-    mapStrings.alpine,
-    mapStrings.golova,
-    mapStrings.sanatorium,
-    mapStrings.collateral,
-    mapStrings.armada
+    mapDetails.zoo.id,
+    mapDetails.ruka.id,
+    mapDetails.duga.id,
+    mapDetails.alpine.id,
+    mapDetails.golova.id,
+    mapDetails.sanatorium.id,
+    mapDetails.collateral.id,
+    mapDetails.armada.id
 ]
 
 /////////////////////Metadata/////////////////////////
@@ -107,16 +112,16 @@ const seasons = {
 
 /////////////////////Perks/////////////////////////
 const perks = {
-    staminup: new Item({ id: "staminUp", title: "Stamin-Up", icon: iconInit("staminUp", "perk")}),
-    quick: new Item({ id: "quickRevive", title: "Quick Revive", icon: iconInit("quickRevive", "perk")}),
-    jugg: new Item({ id: "juggernog", title: "Jugger-Nog", icon: iconInit("juggernog", "perk")}),
-    speed: new Item({ id: "speedCola", title: "Speed Cola", icon: iconInit("speedCola", "perk")}),
-    mule: new Item({ id: "muleKick", title: "Mule Kick", icon: iconInit("muleKick", "perk")}),
-    elemental: new Item({ id: "elementalPop", title: "Elemental Pop", icon: iconInit("elementalPop", "perk")}),
-    death: new Item({ id: "deathPerception", title: "Death Perception", icon: iconInit("deathPerception", "perk")}),
-    tomb: new Item({ id: "tombstoneSoda", title: "Tombstone", icon: iconInit("tombstoneSoda", "perk")}),
-    deadshot: new Item({ id: "deadshotDaiquiri", title: "Deadshot Daiquiri", icon: iconInit("deadshotDaiquiri", "perk")}),
-    phd: new Item({ id: "PHDSlider", title: "PHD Slider", icon: iconInit("PHDSlider", "perk")}),
+    staminup: new Item({ id: "staminUp", title: "Stamin-Up", icon: iconInit("staminUp", "perk") }),
+    quick: new Item({ id: "quickRevive", title: "Quick Revive", icon: iconInit("quickRevive", "perk") }),
+    jugg: new Item({ id: "juggernog", title: "Jugger-Nog", icon: iconInit("juggernog", "perk") }),
+    speed: new Item({ id: "speedCola", title: "Speed Cola", icon: iconInit("speedCola", "perk") }),
+    mule: new Item({ id: "muleKick", title: "Mule Kick", icon: iconInit("muleKick", "perk") }),
+    elemental: new Item({ id: "elementalPop", title: "Elemental Pop", icon: iconInit("elementalPop", "perk") }),
+    death: new Item({ id: "deathPerception", title: "Death Perception", icon: iconInit("deathPerception", "perk") }),
+    tomb: new Item({ id: "tombstoneSoda", title: "Tombstone", icon: iconInit("tombstoneSoda", "perk") }),
+    deadshot: new Item({ id: "deadshotDaiquiri", title: "Deadshot Daiquiri", icon: iconInit("deadshotDaiquiri", "perk") }),
+    phd: new Item({ id: "PHDSlider", title: "PHD Slider", icon: iconInit("PHDSlider", "perk") }),
 }
 
 
@@ -137,53 +142,54 @@ const intelTypes = {
 }
 
 const miscTypes = {
-    dementedEcho: new Item({ title: "Demented Echo", desc: "Destroy it before it touches you to get a reward.", icon: dementedIcon}),
-    rift: new Item({ title: "Aether Rift", desc:  "Jump through to teleport and gain a random powerup.", icon: riftIcon}),
-    redRift: new Item({ title: "Red Aether Rift", desc:  "Jump through all the rifts to continue the Easter Egg", icon: redRiftIcon}),
-    radio: new Item({ title: "Radio", icon: radioIcon}),
-    requiemRadio: new Item({ title: "Requiem Radio", icon: radioIcon}),
-    omegaRadio: new Item({ title: "Omega Radio", icon: radioIcon}),
-    maxisRadio: new Item({ title: "Maxis Radio", icon: radioIcon}),
-    monkey: new Item({ title: "Stone Monkey", icon: monkeyIcon}),
-    projector: new Item({ title: "Projector", desc:  "The projector for the Main Quest"}),
-    signal: new Item({ title: "Signal"}),
-    fishing: new Item({ title: "Fishing", desc: "Fish up to 3 times for a small reward each time.", icon: fishingIcon}),
-    essenceDrop: new Item({ title: "Essence Drop"}),
-    scrapHeap: new Item({ title: "Scrap Heap"}),
+    dementedEcho: new Item({ title: "Demented Echo", desc: "Destroy it before it touches you to get a reward.", icon: dementedIcon }),
+    rift: new Item({ title: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", icon: riftIcon }),
+    redRift: new Item({ title: "Red Aether Rift", desc: "Jump through all the rifts to continue the Easter Egg", icon: redRiftIcon }),
+    radio: new Item({ title: "Radio", icon: radioIcon }),
+    requiemRadio: new Item({ title: "Requiem Radio", icon: radioIcon }),
+    omegaRadio: new Item({ title: "Omega Radio", icon: radioIcon }),
+    maxisRadio: new Item({ title: "Maxis Radio", icon: radioIcon }),
+    monkey: new Item({ title: "Stone Monkey", icon: monkeyIcon }),
+    projector: new Item({ title: "Projector", desc: "The projector for the Main Quest" }),
+    signal: new Item({ title: "Signal" }),
+    fishing: new Item({ title: "Fishing", desc: "Fish up to 3 times for a small reward each time.", icon: fishingIcon }),
+    essenceDrop: new Item({ title: "Essence Drop" }),
+    scrapHeap: new Item({ title: "Scrap Heap" }),
 
-    wunderFizz: new Item({ title: "Der Wunderfizz", icon: wunderFizzIcon}),
-    trialComputer: new Item({ title: "Trial Computer"}),
-    papMachine: new Item({ title: "Pack-a-Punch"}),
-    mysteryBox: new Item({ title: "Mystery Box Location", icon: mysteryBoxIcon}),
-    wallbuy: new Item({ title: "Wall Buy"}),
-    power: new Item({ title: "Power Switch"}),
-    jumpPad: new Item({ title: "Jump Pad"}),
-    landingPad: new Item({ title: "Landing Pad"}),
-    airSupport: new Item({ title: "Air Support Console"}),
-    teleporter: new Item({ title: "Teleporter"}),
-    collector: new Item({ title: "Collection Unit"}),
-    reactor: new Item({ title: "Aether Reactor"}),
-    craftingTable: new Item({ title: "Crafting Table"}),
-    arsenal: new Item({ title: "Arsenal"}),
-    ammoCrate: new Item({ title: "Ammo Crate"}),
-    trap: new Item({ title: "Trap"}),
-    zipline: new Item({ title: "Zipline"}),
-    rampageInducer: new Item({ title: "Rampage Inducer"}),
+    wunderFizz: new Item({ title: "Der Wunderfizz", icon: wunderFizzIcon }),
+    trialComputer: new Item({ title: "Trial Computer", icon: trialComputerIcon }),
+    papMachine: new Item({ title: "Pack-a-Punch", icon: papMachineIcon }),
+    mysteryBox: new Item({ title: "Mystery Box Location", icon: mysteryBoxIcon }),
+    wallbuy: new Item({ title: "Wall Buy", icon: wallbuyIcon }),
+    power: new Item({ title: "Power Switch" }),
+    jumpPad: new Item({ title: "Jump Pad" }),
+    landingPad: new Item({ title: "Landing Pad" }),
+    airSupport: new Item({ title: "Air Support Console" }),
+    teleporter: new Item({ title: "Teleporter" }),
+    collector: new Item({ title: "Collection Unit" }),
+    reactor: new Item({ title: "Aether Reactor" }),
+    craftingTable: new Item({ title: "Crafting Table", icon: craftingTableIcon }),
+    arsenal: new Item({ title: "Arsenal", icon: arsenalIcon }),
+    ammoCrate: new Item({ title: "Ammo Crate", icon: ammoCrateIcon }),
+    trap: new Item({ title: "Trap" }),
+    zipline: new Item({ title: "Zipline", icon: ziplineIcon }),
+    rampageInducer: new Item({ title: "Rampage Inducer",icon: dementedIcon }),
 
-    klausRadio: new Item({ title: "Klaus recall radio"}),
-    aetherCrystal: new Item({ title: "Aether Crystal"}),
+    klausRadio: new Item({ title: "Klaus recall radio", icon: radioIcon }),
+    aetherTunnel: new Item({ title: "Aether Tunnel", icon: ziplineIcon }),
+    aetherCrystal: new Item({ title: "Aether Crystal" }),
 }
 
 const worldEventTypes = {
-    furyCrystal: new Item({ title: "Fury Crystal"}),
-    escort: new Item({ title: "Escort"}),
-    redChallengeChest: new Item({ title: "Red Challenge Chest"}),
-    purpleChallengeChest: new Item({ title: "Purple Challenge Chest"}),
-    dragonRocket: new Item({ title: "Dragon Rocket"}),
-    orda: new Item({ title: "Orda"}),
-    horde: new Item({ title: "Horde"}),
-    orb: new Item({ title: "Aetherial orb", desc: "Damage it and chase it 3 times, you can also shoot it mid-air whilst moving to each location."}),
-    musicRadio: new Item({ title: "Music radio"}),
+    furyCrystal: new Item({ title: "Fury Crystal" }),
+    escort: new Item({ title: "Escort" }),
+    redChallengeChest: new Item({ title: "Red Challenge Chest" }),
+    purpleChallengeChest: new Item({ title: "Purple Challenge Chest" }),
+    dragonRocket: new Item({ title: "Dragon Rocket" }),
+    orda: new Item({ title: "Orda" }),
+    horde: new Item({ title: "Horde" }),
+    orb: new Item({ title: "Aetherial orb", desc: "Damage it and chase it 3 times, you can also shoot it mid-air whilst moving to each location." }),
+    musicRadio: new Item({ title: "Music radio" }),
 }
 
 //TODO: Decide the structure for how we store and retrieve EE steps (maybe new datastore)

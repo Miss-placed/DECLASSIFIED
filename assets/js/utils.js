@@ -16,12 +16,92 @@ function newMiscInit() {
     showNotification("Click exactly where the marker is located. Next time you click on the map you will be redirected to our new icon form.", true);
 }
 
+/////////////////////Modal helpers/////////////////////////
 
+function openModal(x) {
+    document.getElementsByClassName("modal-bg")[0].classList.remove("-hidden")
+    let modals = document.querySelectorAll(".modal")
+    modals.forEach((modal) => {
+        if (x.indexOf(modal.id) != -1) {
+            modal.classList.remove("-hidden")
+        } else {
+            modal.classList.add("-hidden")
+        }
+    })
+    // console.log(modals)
+    fillTotals()
+}
+
+function GenerateDetailModal(intel) {
+    let detailModal = document.getElementById("description");
+    detailModal.replaceChildren();
+    if (!intel) {
+        intel.name = "Intel Not Found";
+        intel.desc = "If you see this please report an issue on the github page."
+    }
+    var elementsToAdd = htmlToElements(
+        `<button class="close-submodal btn inverted" onclick="openModal(modalSet.intelOverview)"><i class="bi bi-x"></i></button>
+    
+        <h2>${intel.name}</h2>
+        <p>${intel.desc}</p>`
+    );
+
+
+    elementsToAdd.forEach(element => {
+        detailModal.append(element);
+    });
+
+
+
+    let btnContainer = document.createElement("div");
+    btnContainer.className = "buttonContainer";
+
+    //Only Generate locate and share buttons if intel has location
+    if (intel.loc[0] != 0 && intel.loc[1] != 0) {
+        let location = createElement("button", ["btn", "inverted", "locate-intel"], "Locate Intel", "locate-intel");
+        location.onclick = goToIntel(intel);
+        location.appendChild(htmlToElement(`<i class="fas fa-map-marker-alt" aria-hidden="true" style="margin-left: 5px;"></i>`));
+        btnContainer.appendChild(location);
+        btnContainer.appendChild(genShareButton(intel.id));
+    }
+
+    //Always add bug button and button container
+    btnContainer.appendChild(genBugButton(intel.id));
+    detailModal.appendChild(btnContainer);
+
+
+    /*     detailModal.querySelector("p").innerHTML = `
+        "id": ${intel.id}<br>
+        "faction": ${intel.faction}<br>
+        "season": ${intel.season}<br>
+        "intelType": ${intel.intelType}<br>
+        "loc": ${intel.loc}<br>
+        "map": ${intel.map}<br>
+        "name": ${intel.name}<br>
+        "desc": ${intel.desc}
+    ` */
+}
+/////////////////////Link Sharing/////////////////////////
 function goToIntelById(intelId) {
     let matchedIntel = intelCache.find((item) => {
         return item.id == intelId;
     })
     switchAndFly(matchedIntel.loc, matchedIntel.map);
+}
+
+function CheckIfSharingURL() {
+    let urlId = (getUrlVars()["id"] === "" ? undefined : getUrlVars()["id"]);
+    if (urlId != undefined) {
+        goToIntelById(urlId);
+    }
+}
+
+function getUrlVars() {
+    let vars = {};
+    let parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+        vars[key] = value;
+    });
+    return vars;
 }
 
 function toggleAside(changePrefs = true) {
@@ -37,14 +117,7 @@ function toggleAside(changePrefs = true) {
     }
 }
 
-function getUrlVars() {
-    let vars = {};
-    let parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
-        vars[key] = value;
-    });
-    return vars;
-}
-
+/////////////////////Notifications/////////////////////////
 function notificationAnimationEnd() {
     //Check if supposed to be a fixed notification of not
     if (app.fixedNotification) {
@@ -118,4 +191,28 @@ function redirectToGithub({ itemId: id = "", itemType, issueType = "New", locati
     setTimeout(() => {
         app.notificationEle.classList.remove("fixed");
     }, getNotificationTime());
+}
+
+
+/////////////////////Helpers For HTML Generation/////////////////////////
+// Thank you https://stackoverflow.com/a/35385518/4459118
+/**
+ * @param {String} HTML representing a single element
+ * @return {Element}
+ */
+ function htmlToElement(html) {
+    var template = document.createElement('template');
+    html = html.trim(); // Never return a text node of whitespace as the result
+    template.innerHTML = html;
+    return template.content.firstChild;
+}
+
+/**
+ * @param {String} HTML representing any number of sibling elements
+ * @return {NodeList} 
+ */
+function htmlToElements(html) {
+    var template = document.createElement('template');
+    template.innerHTML = html;
+    return template.content.childNodes;
 }

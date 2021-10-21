@@ -17,7 +17,7 @@ function filterIntel(searchTerm, factionsArr, seasonsArr, intelTypeArr, mapArr) 
     });
 
     results = results.filter((intel) => {
-        return mapArr.includes(intel.map) || intel.map == mapStrings.allOutbreakMaps && mapArr.some((e) => { return allOutbreakMapsArr.includes(e) });
+        return mapArr.includes(intel.map) || intel.map == mapDetails.allOutbreakMaps.id && mapArr.some((e) => { return allOutbreakMapsArr.includes(e) });
     });
 
     return results;
@@ -45,7 +45,7 @@ function TriggerSearch() {
     let mapFilters = $('#mapFilterCollapse').find("input[type=checkbox]:checked");
     let mapArr = [];
     $.each(mapFilters, function() {
-        mapArr.push(mapStrings[$(this).val()]);
+        mapArr.push(mapDetails[$(this).val()].id);
     });
 
     let filteredIntel = filterIntel($('#searchTerm').val().toLowerCase(), factionsArr, seasonsArr, intelTypeArr, mapArr);

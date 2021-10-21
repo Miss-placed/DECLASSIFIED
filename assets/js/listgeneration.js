@@ -1,3 +1,36 @@
+/////////////////////V2/////////////////////////
+
+function GenerateList(filters) {
+    const intelListEle = document.querySelector("#filtered-intel");
+    intelListEle.replaceChildren(); // Empty First
+
+    intelCache.forEach(intel => {
+        const buttonTemplate = htmlToElement(`<button class="btn to-intel" target="intel-detail" id="${intel.id}">${intel.name}</button>`);
+        intelListEle.appendChild(buttonTemplate);
+    });
+    InitialiseButtons();
+}
+
+function InitialiseButtons() {
+    document.querySelectorAll(".to-intel").forEach(element => {
+        element.addEventListener('click', (event) => IntelButtonClick(event));
+    });
+}
+
+function IntelButtonClick(event) {
+    let target = event.target;
+    let intelID = target.getAttribute('id');
+    openSubModal("intel-detail")
+
+    //use target to get intel instead of predefined obj
+
+    let intel = getIntelById(intelID);
+    GenerateDetailModal(intel);
+    closeSubModal("intel-stats");
+    closeSubModal("intel-type");
+}
+
+/////////////////////V1/////////////////////////
 function GenerateFullIntelList(pointsOfInterest) {
     let intelList = document.getElementById("intelList")
     intelList.innerHTML = "";
@@ -59,7 +92,7 @@ function GenerateIntelListItem(item) {
 
     //Only Generate locate and share buttons if intel has location
     if (item.loc[0] != 0 && item.loc[1] != 0) {
-        let location = createElement("button", ["btn", "btn-info", "remove-button"], "Locate Intel");
+        let location = createElement("button", ["btn", "btn-info", "inverted", "remove-button"], "Locate Intel");
         location.onclick = goToIntel(item);
         btnContainer.appendChild(location);
         btnContainer.appendChild(genShareButton(item.id));
@@ -73,7 +106,12 @@ function GenerateIntelListItem(item) {
 }
 
 function goToIntel(item) {
-    return function() {
+    return function () {
+        // REMOVE THIS IF WHEN WE MOVE TO V2
+        if (typeof closeModal !== "undefined") { 
+            closeModal();
+        }
+        
         switchAndFly(item.loc, item.map)
         if (app.isMobile)
             toggleAside()
@@ -81,34 +119,49 @@ function goToIntel(item) {
 }
 
 function copyClipboardForButton(intelId) {
-    return function() {
+    return function () {
         copyToClipboard(`${window.location.origin}${window.location.pathname}?id=${intelId}`, "Link Copied To Clipboard")
     }
 }
 
 function redirectToGithubForButton(itemId) {
-    return function() {
+    return function () {
         //This is only for intel in the side panel. Misc markers are only on the map
         redirectToGithub({ itemType: markerTypes.intel.id, issueType: "Fix", itemId: itemId })
     }
 }
 
 function genShareButton(intelId) {
-    let shareBtn = createElement("button", ["btn", "btn-info", "action-buttons", "share", "fas", "fa-external-link-alt"], "")
+    let shareBtn = createElement("button", ["btn", "btn-info", "inverted", "action-buttons", "share", "fas", "fa-link"], "")
     shareBtn.title = "Copy Sharing Link";
     shareBtn.onclick = copyClipboardForButton(intelId);
     return shareBtn;
 }
 
 function genBugButton(itemId) {
-    let bugBtn = createElement("button", ["btn", "btn-info", "action-buttons", "bugRep", "fas", "fa-bug"], "")
+    let bugBtn = createElement("button", ["btn", "btn-info", "inverted", "action-buttons", "bugRep", "fas", "fa-bug"], "")
     bugBtn.title = "Submit Bug Report";
     bugBtn.onclick = redirectToGithubForButton(itemId);
     return bugBtn;
 }
 
+
+function openDescModal(intel) {
+    return function () {
+        console.log("lol try again")
+        GenerateDetailModal(intel)
+        openModal(modalSet.intelDescription)
+    }
+}
+function genMoreButton(intel) {
+    let moreBtn = createElement("button", ["btn", "btn-info", "inverted", "action-buttons", "moreInfo", "fas", "fa-ellipsis-h"], "")
+    moreBtn.title = "More Info";
+    moreBtn.onclick = openDescModal(intel) 
+    return moreBtn;
+}
+
 function copyToClipboard(text, notif) {
-    const listener = function(ev) {
+    const listener = function (ev) {
         ev.preventDefault();
         ev.clipboardData.setData('text/plain', text);
     };
@@ -140,7 +193,7 @@ function createElement(type, className, inside = undefined, id, map) {
                 tempElement.setAttribute("data-id", id);
             }
             if (map) tempElement.setAttribute("data-map", map);
-            tempElement.onclick = function() {
+            tempElement.onclick = function () {
                 if (this.nextSibling != undefined) this.nextSibling.classList.toggle("visible")
             }
             tempElement.innerHTML = inside
