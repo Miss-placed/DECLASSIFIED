@@ -892,6 +892,51 @@ const intelStoreV2 = [
         map: mapDetails.zoo.id,
         name: "Goes Without Saying",
         desc: "The audio log is inside one of the buildings at the Industrial Complex, on top of the the middle table."
+    },{
+        id: "RS4Au6",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.audio,
+        loc: "[303.05556562291264, 280.65884945678516]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Lost in Transit",
+        desc: "In the Ghost Station. Laying next to a pillar on the side the Mule Kick machine is."
+    },{
+        id: "RS4Au7",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.audio,
+        loc: "[103.78745589513629, 472.14785263771023]",
+        map: mapDetails.mauerDerTotenStreets.id,
+        name: "A Handful",
+        desc: "Inside the hidden area of Hotel Room 305."
+    },{
+        id: "RS4Au8",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.audio,
+        loc: "[335.0112274771998, 164.60089211307502]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Who's Laughing Now?",
+        desc: "In the Safe House. On a desk to the left of a door."
+    },{
+        id: "RS4Au9",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.audio,
+        loc: "[366.9034013599705, 174.04713639358818]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Bad Days",
+        desc: "Inside the Safehouse inside a locker. Only appears after Klaus has been built."
+    },{
+        id: "RS4Au10",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.audio,
+        loc: "[182.3751168341555, 152.49714880759007]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Final Order",
+        desc: "Inside the secret lab accessed during the main ee. On a table behind the pedestal used during the ee."
     }, {
         id: "RS4Do1",
         faction: factions.requiem,
@@ -973,6 +1018,24 @@ const intelStoreV2 = [
         map: mapDetails.zoo.id,
         name: "ECM Model",
         desc: "The artifact is found on the shelf inside the Zoo Entrance office."
+    }, {
+        id: "RS4Ar6",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.artifact,
+        loc: "[103.6017379770531, 462.17348530573224]",
+        map: mapDetails.mauerDerTotenStreets.id,
+        name: "Klaus's Hands",
+        desc: "The hands are found around the neck of a scorched zombie in room 305."
+    },{
+        id: "RS4Ar6",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.artifact,
+        loc: "[115.54337132643306, 451.52283934547444]",
+        map: mapDetails.mauerDerTotenStreets.id,
+        name: "CRBR-S",
+        desc: "In the Safe in rroom 305."
     }, {
         id: "RS5Au1",
         faction: factions.requiem,
@@ -1997,6 +2060,33 @@ const intelStoreV2 = [
         name: "Play Your Part",
         desc: "The audio log is in the warehouse in the middle of a table."
     }, {
+        id: "OS4Au9",
+        faction: factions.omega,
+        season: seasons.season4,
+        intelType: intelTypes.audio,
+        loc: "[156.2484627011629, 160.65870156772797]",
+        map: mapDetails.mauerDerToten.id,
+        name: "A Decent Proposal",
+        desc: "In the Sewer Access area. In between a Staircase and the rappel point to the West Berlin Streets."
+    },{
+        id: "OS4Au10",
+        faction: factions.omega,
+        season: seasons.season4,
+        intelType: intelTypes.audio,
+        loc: "[372.4417928146597, 249]",
+        map: mapDetails.mauerDerTotenStreets.id,
+        name: "The Letter",
+        desc: "In the Blasted Suite. Under the bed."
+    },{
+        id: "OS4Au11",
+        faction: factions.omega,
+        season: seasons.season4,
+        intelType: intelTypes.audio,
+        loc: "[192.98132363950188, 166.56126147457007]",
+        map: mapDetails.mauerDerTotenStreets.id,
+        name: "The Turn",
+        desc: "In the \"Death Strip\". Sitting on top of a guard tower, can be shot down from the Destroyed Penthouse."
+    },{
         id: "OS4Do1",
         faction: factions.omega,
         season: seasons.season4,
