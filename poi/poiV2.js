@@ -495,7 +495,7 @@ const intelStoreV2 = [
         loc: "[0, 0]",
         map: mapDetails.firebaseZ.id,
         name: "RE: Funding Allocation 2",
-        desc: ""
+        desc: "Dropped from Special/Elite kills"
     }, {
         id: "RS2Do3",
         faction: factions.requiem,
@@ -504,43 +504,43 @@ const intelStoreV2 = [
         loc: "[0, 0]",
         map: mapDetails.firebaseZ.id,
         name: "Berlin COMINT",
-        desc: ""
+        desc: "Dropped from Special/Elite kills"
     }, {
-        id: "undefined",
+        id: "Rs2Do4",
         faction: factions.requiem,
         season: seasons.season2,
         intelType: intelTypes.docs,
         loc: "[0, 0]",
         map: mapDetails.allOutbreakMaps.id,
         name: "Operation Threshold Authorization",
-        desc: ""
+        desc: "Dropped from Special/Elite kills or golden chests"
     }, {
-        id: "undefined",
+        id: "Rs2Do5",
         faction: factions.requiem,
         season: seasons.season2,
         intelType: intelTypes.docs,
         loc: "[0, 0]",
         map: mapDetails.allOutbreakMaps.id,
         name: "Domino Effect",
-        desc: ""
+        desc: "Dropped from Special/Elite kills or golden chests"
     }, {
-        id: "undefined",
+        id: "Rs2Do6",
         faction: factions.requiem,
         season: seasons.season2,
         intelType: intelTypes.docs,
         loc: "[0, 0]",
         map: mapDetails.allOutbreakMaps.id,
         name: "Recon Rover Blueprint",
-        desc: ""
+        desc: "Dropped from Special/Elite kills or golden chests"
     }, {
-        id: "undefined",
+        id: "Rs2Do7",
         faction: factions.requiem,
         season: seasons.season2,
         intelType: intelTypes.docs,
         loc: "[0, 0]",
         map: mapDetails.allOutbreakMaps.id,
         name: "Disruptor Satellite Blueprint",
-        desc: ""
+        desc: "Dropped from Special/Elite kills or golden chests"
     }, {
         id: "RS2Ra1",
         faction: factions.requiem,
@@ -551,7 +551,7 @@ const intelStoreV2 = [
         name: "Nose To Nose",
         desc: ""
     }, {
-        id: "undefined",
+        id: "RS2Ra2",
         faction: factions.requiem,
         season: seasons.season2,
         intelType: intelTypes.radio,
@@ -560,7 +560,7 @@ const intelStoreV2 = [
         name: "Race Against Time",
         desc: ""
     }, {
-        id: "undefined",
+        id: "RS2Ra3",
         faction: factions.requiem,
         season: seasons.season2,
         intelType: intelTypes.radio,
@@ -569,7 +569,7 @@ const intelStoreV2 = [
         name: "How We Win",
         desc: ""
     }, {
-        id: "undefined",
+        id: "RS2Ra4",
         faction: factions.requiem,
         season: seasons.season2,
         intelType: intelTypes.radio,
@@ -1463,7 +1463,7 @@ const intelStoreV2 = [
         intelType: intelTypes.docs,
         loc: "[0, 0]",
         map: mapDetails.firebaseZ.id,
-        name: "Omega Teleport Blueprint",
+        name: "Omega Teleporter Blueprint",
         desc: "Drops from a Mimic or Mangler"
     }, {
         id: "OS1Do6",
@@ -1940,7 +1940,7 @@ const intelStoreV2 = [
         intelType: intelTypes.audio,
         loc: "[189.47580244724242, 329]",
         map: mapDetails.zoo.id,
-        name: "Day of Victory.",
+        name: "Day of Victory",
         desc: "On top of the rectangular tower of the aquarium. Might need to use a jump pad.."
     }, {
         id: "OS4Au3",
@@ -2255,7 +2255,7 @@ const intelStoreV2 = [
         intelType: intelTypes.audio,
         loc: "[247.70418142073183, 243.117709648726]",
         map: mapDetails.forsaken.id,
-        name: "The Magnificant Two",
+        name: "The Magnificent Two",
         desc: "In the fuel processing area, leans against a wall left towards the teleporter.",
         img: "bhxXWIM"
     }, {
@@ -2385,8 +2385,8 @@ const intelStoreV2 = [
         intelType: intelTypes.docs,
         loc: "[0, 0]",
         map: mapDetails.firebaseZ.id,
-        name: "Omega's Portal Blueprint",
-        desc: ""
+        name: "Omega Portal Blueprint",
+        desc: "Obtained form a Special or Elite drop."
     }, {
         id: "MS1Do2",
         faction: factions.maxis,
@@ -2394,8 +2394,8 @@ const intelStoreV2 = [
         intelType: intelTypes.docs,
         loc: "[0, 0]",
         map: mapDetails.firebaseZ.id,
-        name: "Omega's Propaganda Poster",
-        desc: ""
+        name: "Omega Propaganda Poster",
+        desc: "Obtained form a Special or Elite drop."
     }, {
         id: "MS1Do3",
         faction: factions.maxis,
@@ -2404,7 +2404,7 @@ const intelStoreV2 = [
         loc: "[0, 0]",
         map: mapDetails.firebaseZ.id,
         name: "Aetherium Effects Report",
-        desc: ""
+        desc: "Obtained form a Special or Elite drop."
     }, {
         id: "MS1Do4",
         faction: factions.maxis,
