@@ -1506,7 +1506,7 @@ const intelStoreV2 = [
         intelType: intelTypes.artifact,
         loc: "[407.05853356142404, 229.72348041293253]",
         map: mapDetails.forsaken.id,
-        name: "The Crysalax",
+        name: "The Chrysalax",
         desc: "Part Of the Main Quest, After all the crystals are in the tub Melee 10 zombies.",
     }, {
         id: "RS6Do1",
@@ -2264,7 +2264,7 @@ const intelStoreV2 = [
         intelType: intelTypes.audio,
         loc: "[189.47580244724242, 329]",
         map: mapDetails.zoo.id,
-        name: "Day of Victory",
+        name: "Day Of Victory",
         desc: "On top of the rectangular tower of the aquarium. Might need to use a jump pad.."
     }, {
         id: "OS4Au3",
@@ -3539,7 +3539,7 @@ const intelStoreV2 = [
         intelType: intelTypes.docs,
         loc: defaultPOIData.nullLoc,
         map: mapDetails.ruka.id,
-        name: "Ability Assesment",
+        name: "Ability Assessment",
         desc: defaultPOIData.special
     }, {
         id: "MS6Do2",
@@ -4703,7 +4703,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.forsaken.id,
         name: "Catalyzed Crystal Shard",
-        desc: "missing description"
+        desc: "Part of the EE, can be obtained by killing an Abomination that has eaten a Crystal Shard"
     }
 
 ]
