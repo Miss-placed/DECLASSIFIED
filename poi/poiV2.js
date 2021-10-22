@@ -495,7 +495,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "RE: Funding Allocation 2",
-        desc: "Dropped from Special/Elite kills"
+        desc: defaultPOIData.special
     }, {
         id: "RS2Do3",
         faction: factions.requiem,
@@ -504,7 +504,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Berlin COMINT",
-        desc: "Dropped from Special/Elite kills"
+        desc: defaultPOIData.special
     }, {
         id: "Rs2Do4",
         faction: factions.requiem,
