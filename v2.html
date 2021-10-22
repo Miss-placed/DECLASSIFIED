@@ -66,51 +66,52 @@
                 <ul>
                     <li>
                         <label for="season0">Pre Season</label>
-                        <input type="checkbox" id="season0" class="check">
+                        <input type="checkbox" id="season0" value="Pre Season" class="check">
                     </li>
                     <li>
                         <label for="season1">Season 1</label>
-                        <input type="checkbox" id="season1" class="check">
+                        <input type="checkbox" id="season1" value="Season 1" class="check">
                     </li>
                     <li>
                         <label for="season2">Season 2 </label>
-                        <input type="checkbox" id="season2" class="check">
+                        <input type="checkbox" id="season2" value="Season 2" class="check">
                     </li>
                     <li>
                         <label for="season3">Season 3</label>
-                        <input type="checkbox" id="season3" class="check">
+                        <input type="checkbox" id="season3" value="Season 3" class="check">
                     </li>
                     <li>
                         <label for="season4">Season 4</label>
-                        <input type="checkbox" id="season4" class="check">
+                        <input type="checkbox" id="season4" value="Season 4" class="check">
                     </li>
                     <li>
                         <label for="season5">Season 5</label>
-                        <input type="checkbox" id="season5" class="check">
+                        <input type="checkbox" id="season5" value="Season 5" class="check">
                     </li>
                     <li>
                         <label for="season6">Season 6</label>
-                        <input type="checkbox" id="season6" class="check">
+                        <input type="checkbox" id="season6"  value="Season 6" class="check">
                     </li>
                 </ul>
             </fieldset>
-            
-            <fieldset id="faction-multi-select" class="droopy filled">
+
+            <fieldset id="faction-multi-select" class="droopy">
                 <legend>Factions</legend>
                 <label class="title">Factions</label>
-                <label class="list-selection"><span>Requiem</span><span>Requiem</span><span>Requiem</span><span>Requiem</span><span>Requiem</span></label>
+                <label
+                    class="list-selection"><span>Requiem</span><span>Requiem</span><span>Requiem</span><span>Requiem</span><span>Requiem</span></label>
                 <ul>
                     <li>
                         <label for="requiem">Requiem</label>
-                        <input type="checkbox" id="requiem" class="check">
+                        <input type="checkbox" id="requiem" value="Requiem" class="check">
                     </li>
                     <li>
                         <label for="omega">Omega</label>
-                        <input type="checkbox" id="omega" class="check">
+                        <input type="checkbox" id="omega" value="Omega" class="check">
                     </li>
                     <li>
                         <label for="maxis">Maxis</label>
-                        <input type="checkbox" id="maxis" class="check">
+                        <input type="checkbox" id="maxis" value="Maxis" class="check">
                     </li>
                     <li>
                         <label for="darkAether">Dark Aether</label>
@@ -275,6 +276,24 @@
     <script src="assets/js/filtering.js"></script>
     <script src="assets/js/index.js"></script>
     <script src="assets/js/v2.js"></script>
+    <script>
+        document.querySelectorAll(".droopy").forEach(ele => {
+            ele.addEventListener('change', () => {
+                let innerHTML = ''
+
+                ele.querySelectorAll("input[type='checkbox']:checked").forEach(chk => {
+                    innerHTML += `<span>${chk.getAttribute('value')}</span>`
+                })
+                if (innerHTML != '') {
+                    ele.classList.add('filled')
+                } else {
+                    ele.classList.remove('filled')
+                }
+
+                ele.querySelector('.list-selection').innerHTML = innerHTML
+            })
+        });
+    </script>
 
 </body>
 
