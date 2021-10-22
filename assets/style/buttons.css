@@ -238,12 +238,10 @@
 .type[type="Artifacts"] {
   background-image: url("../img/intelTypes/artifacts.png");
 }
-
-
-.type-check:checked + label{
+.type-check{display:none;}
+.type-check:checked + label {
   outline: 3px solid var(--clr-yellow);
   outline-offset: 2px;
-
 }
 
 input[type="search"] {
@@ -260,48 +258,73 @@ input[type="search"] {
 
 .droopy {
   width: 67.5%;
-  height: min-content;
+  height: 1.6rem;
+  line-height: 1.6rem;
   background-color: var(--clr-white);
   color: var(--clr-grey-d);
   position: relative;
   border: 1px solid var(--clr-black);
 }
-
-.droopy > p {
-  padding: 5px;
+.droopy > legend {
+  visibility: hidden;
+  width: 0px;
+  height: 1px;
+  transition: 0.3s;
 }
-.droopy > p > i {
-  position: absolute;
-  right: 5px;
+.droopy:hover > legend
+.droopy:focus-within legend,
+.droopy.filled legend {
+  width: 75px;
 }
-.droopy > div {
-  z-index: 2;
-  display: flex;
-  position: absolute;
-  width: 100%;
-}
-.droopy > div > ul {
-  display: none;
-  width: 100%;
-  border-top: 1px solid var(--clr-black);
-}
-.droopy label {
-  width: 100%;
-}
-.droopy > div > ul > li {
-  width: 100%;
+.droopy .title {
+  color:var(--clr-black);
+  position: relative;
+  top: 0px;
+  padding-inline: 5px;
+  transition: 0.3s;
   background-color: var(--clr-white);
-  line-height: 30px;
-  list-style-type: none;
-  padding: 5px;
+  /* border-top-left-radius: 5px;
+  border-top-right-radius: 5px; */
+}
+.droopy:hover .title,
+.droopy:focus-within .title,
+.droopy.filled .title {
+  top: -1rem;
+  font-size: smaller;
+}
+.droopy>ul {
+  position: relative;
+  display: none;
+}
+.droopy:hover>ul {
+  display: block;
+  margin-top:-3px;
+  z-index: var(--z-index-ui);
+  width: 100%;
+  padding:5px;
+  background-color:var(--clr-grey)
+}
+.droopy li {
+  width: 100%;
   display: flex;
-  margin: 0;
   flex-direction: row;
   justify-content: space-between;
 }
-.droopy > div > ul > li:hover {
-  background: var(--clr-blue);
+.droopy li:hover{
+  background-color:var(--clr-blue);
 }
-.droopy:hover div > ul {
-  display: initial;
+.droopy .list-selection{
+  position:relative;
+  display:none;
+  overflow:hidden;
+  width:100%;
+  height:100%;
+}
+.droopy.filled .list-selection{
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }

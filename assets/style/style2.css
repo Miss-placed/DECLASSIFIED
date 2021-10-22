@@ -188,12 +188,12 @@ select.faction-list > option:hover {
   height: 40px;
 }
 
-.modal ul {
+.submodal-list {
   display: inline-block;
   list-style: none;
 }
 
-.modal ul li {
+.submodal-list li {
   height: 40px;
   display: flex;
   align-items: center;
