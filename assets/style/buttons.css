@@ -312,6 +312,7 @@ input[type="search"] {
   align-items: center;
 }
 .droopy li label {
+  color:var(--clr-white-d);
   width: 100%;
 }
 .droopy li:hover{
