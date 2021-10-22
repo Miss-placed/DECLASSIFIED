@@ -24,61 +24,61 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Endstation Approval Letter",
-        desc: "Drops from a Megaton."
+        desc: defaultPOIData.special
     }, {
         id: "RS0Do2",
         faction: factions.requiem,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Spacetime Breach Sketch",
-        desc: "Drops from a Megaton."
+        desc: defaultPOIData.special
     }, {
         id: "RS0Do3",
         faction: factions.requiem,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "D.I.E. Blueprint",
-        desc: "Drops from a Megaton."
+        desc: defaultPOIData.special
     }, {
         id: "RS0Do4",
         faction: factions.requiem,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Der Wechsler Blueprint",
-        desc: "Drops from a Megaton."
+        desc: defaultPOIData.special
     }, {
         id: "RS0Do5",
         faction: factions.requiem,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "V Cipher #1",
-        desc: "Drops from a Megaton."
+        desc: defaultPOIData.special
     }, {
         id: "RS0Do6",
         faction: factions.requiem,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "V Cipher #2",
-        desc: "Drops from a Megaton."
+        desc: defaultPOIData.special
     }, {
         id: "RS0Ra1",
         faction: factions.requiem,
         season: seasons.preseason,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Officer Weaver",
         desc: "You can only get one radio transmission per game."
@@ -87,7 +87,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.preseason,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Doctor Grey",
         desc: "You can only get one radio transmission per game."
@@ -105,7 +105,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.preseason,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Doctor Strauss",
         desc: "You can only get one radio transmission per game."
@@ -114,7 +114,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.preseason,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Aetherium",
         desc: "You can only get one radio transmission per game."
@@ -123,7 +123,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.preseason,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Major Carver",
         desc: "You can only get one radio transmission per game."
@@ -132,7 +132,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.preseason,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "New Arms Race",
         desc: "You can only get one radio transmission per game."
@@ -141,7 +141,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.preseason,
         intelType: intelTypes.artifact,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "D.I.E. Remote Control",
         desc: "Gotten as part of the free D.I.E Machine Quest"
@@ -150,16 +150,16 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.preseason,
         intelType: intelTypes.artifact,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "D.I.E. Machine",
-        desc: "Get the free D.I.E Machine from the quest("
+        desc: "Get the free D.I.E Machine from the quest"
     }, {
         id: "RS0Ar3",
         faction: factions.requiem,
         season: seasons.preseason,
         intelType: intelTypes.artifact,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Aetherscope",
         desc: "Part of the main quest. You have to craft it."
@@ -168,7 +168,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.preseason,
         intelType: intelTypes.artifact,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Doctor Vogel's Diary",
         desc: "When you have crafted the Aetherscope, it can be found in the Dark Aether next to the computer in the med bay."
@@ -177,7 +177,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.preseason,
         intelType: intelTypes.artifact,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Decontamination Agent",
         desc: "In a cabinet in the med bay. Obtained during the main quest."
@@ -231,7 +231,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Doctor Vogel Entry 203",
         desc: "Obtained from megaton drop."
@@ -240,43 +240,43 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Outbreak Zones Timeline",
-        desc: "Obtained from a Mimic drop."
+        desc: defaultPOIData.special
     }, {
         id: "RS1Do3",
         faction: factions.requiem,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Requiem Formation Memo",
-        desc: "Obtained from a Mimic drop."
+        desc: defaultPOIData.special
     }, {
         id: "RS1Do4",
         faction: factions.requiem,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Requiem Staffing Announcement",
-        desc: "Obtained from a Mimic drop."
+        desc: defaultPOIData.special
     }, {
         id: "RS1Do5",
         faction: factions.requiem,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "C Cipher",
-        desc: "Obtained from a Mimic drop."
+        desc: defaultPOIData.special
     }, {
         id: "RS1Ra1",
         faction: factions.requiem,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Omega's Advantage",
         desc: ""
@@ -285,7 +285,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "This Is Personal",
         desc: ""
@@ -294,7 +294,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Peck",
         desc: ""
@@ -303,7 +303,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Between Us",
         desc: ""
@@ -312,7 +312,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "W.A.N.D.",
         desc: ""
@@ -321,7 +321,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "The Stick",
         desc: ""
@@ -330,7 +330,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Blacksmiths and Architects",
         desc: ""
@@ -339,7 +339,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Not Unlike Oxygen",
         desc: ""
@@ -348,7 +348,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "A Storied Career",
         desc: ""
@@ -357,7 +357,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "The Thick Of It",
         desc: ""
@@ -366,7 +366,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Transformative Properties",
         desc: ""
@@ -375,7 +375,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Genetic Secrets",
         desc: ""
@@ -483,7 +483,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season2,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "RE: Funding Allocation 1",
         desc: ""
@@ -492,7 +492,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season2,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "RE: Funding Allocation 2",
         desc: "Dropped from Special/Elite kills"
@@ -501,7 +501,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season2,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Berlin COMINT",
         desc: "Dropped from Special/Elite kills"
@@ -510,43 +510,43 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season2,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Operation Threshold Authorization",
-        desc: "Dropped from Special/Elite kills or golden chests"
+        desc: defaultPOIData.chests
     }, {
         id: "Rs2Do5",
         faction: factions.requiem,
         season: seasons.season2,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Domino Effect",
-        desc: "Dropped from Special/Elite kills or golden chests"
+        desc: defaultPOIData.chests
     }, {
         id: "Rs2Do6",
         faction: factions.requiem,
         season: seasons.season2,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Recon Rover Blueprint",
-        desc: "Dropped from Special/Elite kills or golden chests"
+        desc: defaultPOIData.chests
     }, {
         id: "Rs2Do7",
         faction: factions.requiem,
         season: seasons.season2,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Disruptor Satellite Blueprint",
-        desc: "Dropped from Special/Elite kills or golden chests"
+        desc: defaultPOIData.chests
     }, {
         id: "RS2Ra1",
         faction: factions.requiem,
         season: seasons.season2,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Nose To Nose",
         desc: ""
@@ -555,7 +555,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season2,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Race Against Time",
         desc: ""
@@ -564,7 +564,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season2,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "How We Win",
         desc: ""
@@ -573,7 +573,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season2,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Under Observation",
         desc: ""
@@ -582,7 +582,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season2,
         intelType: intelTypes.artifact,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Zombie Head",
         desc: "Collected through the Defence objective."
@@ -690,79 +690,79 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Extraction Rocket Blueprint",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "RS3Do2",
         faction: factions.requiem,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Dark Aether Object Report",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "RS3Do3",
         faction: factions.requiem,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Crate Memo",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "RS3Do4",
         faction: factions.requiem,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "E.C.M. Blueprint",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "RS3Do5",
         faction: factions.requiem,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Investigation Request",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "RS3Do6",
         faction: factions.requiem,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Zykov Assessment",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "RS3Do7",
         faction: factions.requiem,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Power Nodes Report",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "RS3Do8",
         faction: factions.requiem,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "J Cipher",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "RS3Ra1",
         faction: factions.requiem,
         season: seasons.season3,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Progress Update",
         desc: ""
@@ -771,7 +771,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season3,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "A Visceral Process",
         desc: ""
@@ -780,7 +780,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season3,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Fish Out Of Water",
         desc: ""
@@ -789,7 +789,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season3,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Commander-In-Chief",
         desc: ""
@@ -892,7 +892,7 @@ const intelStoreV2 = [
         map: mapDetails.zoo.id,
         name: "Goes Without Saying",
         desc: "The audio log is inside one of the buildings at the Industrial Complex, on top of the the middle table."
-    },{
+    }, {
         id: "RS4Au6",
         faction: factions.requiem,
         season: seasons.season4,
@@ -901,7 +901,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerToten.id,
         name: "Lost in Transit",
         desc: "In the Ghost Station. Laying next to a pillar on the side the Mule Kick machine is."
-    },{
+    }, {
         id: "RS4Au7",
         faction: factions.requiem,
         season: seasons.season4,
@@ -910,7 +910,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerTotenStreets.id,
         name: "A Handful",
         desc: "Inside the hidden area of Hotel Room 305."
-    },{
+    }, {
         id: "RS4Au8",
         faction: factions.requiem,
         season: seasons.season4,
@@ -919,7 +919,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerToten.id,
         name: "Who's Laughing Now?",
         desc: "In the Safe House. On a desk to the left of a door."
-    },{
+    }, {
         id: "RS4Au9",
         faction: factions.requiem,
         season: seasons.season4,
@@ -928,7 +928,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerToten.id,
         name: "Bad Days",
         desc: "Inside the Safehouse inside a locker. Only appears after Klaus has been built."
-    },{
+    }, {
         id: "RS4Au10",
         faction: factions.requiem,
         season: seasons.season4,
@@ -942,25 +942,25 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "DASA Station Blueprint",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "RS4Do2",
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "The Omega Eight",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "RS4Do3",
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.sanatorium.id,
         name: "The Child's Note",
         desc: "Obtained during the Outbreak EE#2"
@@ -969,7 +969,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Welcome Back",
         desc: ""
@@ -978,7 +978,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Patterns",
         desc: ""
@@ -1027,7 +1027,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerTotenStreets.id,
         name: "Klaus's Hands",
         desc: "The hands are found around the neck of a scorched zombie in room 305."
-    },{
+    }, {
         id: "RS4Ar6",
         faction: factions.requiem,
         season: seasons.season4,
@@ -1086,52 +1086,52 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season5,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Dark Aether Vortex Report",
-        desc: "Dropped from Special/Elite kills or golden chests"
+        desc: defaultPOIData.chests
     }, {
         id: "RS5Do2",
         faction: factions.requiem,
         season: seasons.season5,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Krafft Journal Page",
-        desc: "Dropped from Special/Elite kills or golden chests"
+        desc: defaultPOIData.chests
     }, {
         id: "RS5Do3",
         faction: factions.requiem,
         season: seasons.season5,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Outbreak Expansions Report",
-        desc: "Dropped from Special/Elite kills or golden chests"
+        desc: defaultPOIData.chests
     }, {
         id: "RS5Do4",
         faction: factions.requiem,
         season: seasons.season5,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Krafft Journal Page 2",
-        desc: "Dropped from Special/Elite kills or golden chests"
+        desc: defaultPOIData.chests
     }, {
         id: "RS5Do5",
         faction: factions.requiem,
         season: seasons.season5,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Operation First Domino",
-        desc: "Dropped from Special/Elite kills or golden chests"
+        desc: defaultPOIData.chests
     }, {
         id: "RS5Ra1",
         faction: factions.requiem,
         season: seasons.season5,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Updates",
         desc: ""
@@ -1140,7 +1140,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season5,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Busy Bees",
         desc: ""
@@ -1149,7 +1149,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season5,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Walking Notso",
         desc: ""
@@ -1158,7 +1158,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season5,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Act Three Time",
         desc: ""
@@ -1197,7 +1197,7 @@ const intelStoreV2 = [
         loc: "[256.92710668692445, 121.5625]",
         map: mapDetails.armada.id,
         name: "Toxic Growth Canister",
-        desc: " the western most Capsized area. it's under the water on a platform near the front of the ship."
+        desc: "The western most Capsized area. it's under the water on a platform near the front of the ship."
     }, {
         id: "RS5Ar5",
         faction: factions.requiem,
@@ -1244,7 +1244,7 @@ const intelStoreV2 = [
         map: mapDetails.forsaken.id,
         name: "For Health",
         desc: "In the bar, on top of the counter.",
-        img:"N5FxkHZ"
+        img: "N5FxkHZ"
     }, {
         id: "RS6Au4",
         faction: factions.requiem,
@@ -1319,6 +1319,87 @@ const intelStoreV2 = [
         map: mapDetails.forsaken.id,
         name: "Fuel Tank",
         desc: "In the fuel processing area, part of the main quest.",
+    }, {
+        id: "RS6Ar8",
+        faction: factions.requiem,
+        season: seasons.season6,
+        intelType: intelTypes.artifact,
+        loc: "[407.05853356142404, 229.72348041293253]",
+        map: mapDetails.forsaken.id,
+        name: "The Crysalax",
+        desc: "Part Of the Main Quest, After all the crystals are in the tub Melee 10 zombies.",
+    }, {
+        id: "RS6Do1",
+        faction: factions.requiem,
+        season: seasons.season6,
+        intelType: intelTypes.docs,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.forsaken.id,
+        name: "Page Six",
+        desc: defaultPOIData.special
+    }, {
+        id: "RS6Do2",
+        faction: factions.requiem,
+        season: seasons.season6,
+        intelType: intelTypes.docs,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.forsaken.id,
+        name: "B-14 Wiretap Transcript",
+        desc: defaultPOIData.special
+    }, {
+        id: "RS6Do3",
+        faction: factions.requiem,
+        season: defaultPOIData.season6,
+        intelType: intelTypes.docs,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.forsaken.id,
+        name: "Ancient Parchment",
+        desc: defaultPOIData.special
+    }, {
+        id: "RS6Do4",
+        faction: factions.requiem,
+        season: seasons.season6,
+        intelType: intelTypes.docs,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.forsaken.id,
+        name: "Collapse Report",
+        desc: defaultPOIData.special
+    }, {
+        id: "RS6Do5",
+        faction: factions.requiem,
+        season: seasons.season6,
+        intelType: intelTypes.docs,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.forsaken.id,
+        name: "Ancient Parchment 2",
+        desc: defaultPOIData.special
+    }, {
+        id: "RS6Do6",
+        faction: factions.requiem,
+        season: seasons.season6,
+        intelType: intelTypes.docs,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.forsaken.id,
+        name: "Requiem Neutralizer Blueprint",
+        desc: defaultPOIData.special
+    }, {
+        id: "RS6Do7",
+        faction: factions.requiem,
+        season: seasons.season6,
+        intelType: intelTypes.docs,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.forsaken.id,
+        name: "Memorandum For The Board",
+        desc: defaultPOIData.special
+    }, {
+        id: "RS6Do8",
+        faction: factions.requiem,
+        season: seasons.season6,
+        intelType: intelTypes.docs,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.forsaken.id,
+        name: "Progress Report",
+        desc: defaultPOIData.special
     },
     /////////////////////Omega/////////////////////////
     {
@@ -1353,43 +1434,43 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "An Explanation",
-        desc: "Drops from a Megaton."
+        desc: defaultPOIData.special
     }, {
         id: "OS0Do2",
         faction: factions.omega,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Before The Devil Arrives",
-        desc: "Drops from a Megaton."
+        desc: defaultPOIData.special
     }, {
         id: "OS0Do3",
         faction: factions.omega,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "K Cipher",
-        desc: "Drops from a Megaton."
+        desc: defaultPOIData.special
     }, {
         id: "OS0Do4",
         faction: factions.omega,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "G Cipher",
-        desc: "Drops from a Megaton."
+        desc: defaultPOIData.special
     }, {
         id: "OS0Ar1",
         faction: factions.omega,
         season: seasons.preseason,
         intelType: intelTypes.artifact,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Orlov Family Photo",
         desc: "Collected in the radio station in nacht at the end of the main quest."
@@ -1470,7 +1551,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season1,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "To Dust You Will Return",
         desc: "Inside the OPC(part of the main quest)."
@@ -1488,88 +1569,88 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Omega Group Formation",
-        desc: "Drops from a Megaton"
+        desc: defaultPOIData.special
     }, {
         id: "OS1Do2",
         faction: factions.omega,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Operation Undertaker",
-        desc: "Drops from a Megaton"
+        desc: defaultPOIData.special
     }, {
         id: "OS1Do3",
         faction: factions.omega,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Khe Sanh Site",
-        desc: "Drops from a Megaton"
+        desc: defaultPOIData.special
     }, {
         id: "OS1Do4",
         faction: factions.omega,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Authorization to Conscript",
-        desc: "Drops from a Mimic or Mangler"
+        desc: defaultPOIData.special
     }, {
         id: "OS1Do5",
         faction: factions.omega,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Omega Teleporter Blueprint",
-        desc: "Drops from a Mimic or Mangler"
+        desc: defaultPOIData.special
     }, {
         id: "OS1Do6",
         faction: factions.omega,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Aetherium Production Report",
-        desc: "Drops from a Mimic or Mangler"
+        desc: defaultPOIData.special
     }, {
         id: "OS1Do7",
         faction: factions.omega,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Specimen K7-1924",
-        desc: "Drops from a Mimic or Mangler"
+        desc: defaultPOIData.special
     }, {
         id: "OS1Do8",
         faction: factions.omega,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "P Cipher",
-        desc: "Drops from a Mimic or Mangler"
+        desc: defaultPOIData.special
     }, {
         id: "OS1Do9",
         faction: factions.omega,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "G Cipher",
-        desc: "Drops from a Mimic or Mangler"
+        desc: defaultPOIData.special
     }, {
         id: "OS1Ra1",
         faction: factions.omega,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Good Little Lemmings",
         desc: ""
@@ -1578,7 +1659,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Not Built To Last",
         desc: ""
@@ -1587,7 +1668,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Do Try To Stay Alive",
         desc: ""
@@ -1596,7 +1677,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Gorev's Disappointment",
         desc: ""
@@ -1641,7 +1722,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season1,
         intelType: intelTypes.artifact,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Aethermeter",
         desc: "Obtained during the main quest."
@@ -1722,34 +1803,34 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season2,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "New Frontiers",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "OS2Do2",
         faction: factions.omega,
         season: seasons.season2,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Omega Staffing Report",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "OS2Do3",
         faction: factions.omega,
         season: seasons.season2,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Omega Records Review",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "OS2Ra1",
         faction: factions.omega,
         season: seasons.season2,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "The Colonel",
         desc: ""
@@ -1758,7 +1839,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season2,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Up To Speed",
         desc: ""
@@ -1767,7 +1848,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season2,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Fiasco",
         desc: ""
@@ -1776,7 +1857,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season2,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Trespassers",
         desc: ""
@@ -1839,70 +1920,70 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Boost Module Report",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "OS3Do2",
         faction: factions.omega,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Phase Report",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "OS3Do3",
         faction: factions.omega,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Krasny Soldat Blueprint",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "OS3Do4",
         faction: factions.omega,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Valentina Diary Entry",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "OS3Do5",
         faction: factions.omega,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Operatsiya Inversiya Proposal",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "OS3Do6",
         faction: factions.omega,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Aetherium Warhead Blueprint",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "OS3Do7",
         faction: factions.omega,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "R Cipher",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "OS3Ra1",
         faction: factions.omega,
         season: seasons.season3,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Uncle",
         desc: ""
@@ -1911,7 +1992,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season3,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Made Of Fire",
         desc: ""
@@ -1920,7 +2001,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season3,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Chasing Ghosts",
         desc: ""
@@ -1929,7 +2010,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season3,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Something Is Coming",
         desc: ""
@@ -1965,7 +2046,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season3,
         intelType: intelTypes.artifact,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.ruka.id,
         name: "ICBM Launch Key",
         desc: "Obtained during the outbreak EE."
@@ -1974,7 +2055,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season3,
         intelType: intelTypes.artifact,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.ruka.id,
         name: "Modified Essence Trap",
         desc: "In a hallway on the ground floor of Silo A, obtained during the outbreak EE."
@@ -2010,7 +2091,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season4,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.sanatorium.id,
         name: "The Survivors",
         desc: "Obtained during the Outbreak EE#2"
@@ -2019,7 +2100,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season4,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.sanatorium.id,
         name: "The Device",
         desc: "Obtained during the Outbreak EE#2"
@@ -2028,7 +2109,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season4,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.sanatorium.id,
         name: "The Trap",
         desc: "Obtained during the Outbreak EE#2"
@@ -2068,7 +2149,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerToten.id,
         name: "A Decent Proposal",
         desc: "In the Sewer Access area. In between a Staircase and the rappel point to the West Berlin Streets."
-    },{
+    }, {
         id: "OS4Au10",
         faction: factions.omega,
         season: seasons.season4,
@@ -2077,7 +2158,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerTotenStreets.id,
         name: "The Letter",
         desc: "In the Blasted Suite. Under the bed."
-    },{
+    }, {
         id: "OS4Au11",
         faction: factions.omega,
         season: seasons.season4,
@@ -2086,21 +2167,21 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerTotenStreets.id,
         name: "The Turn",
         desc: "In the \"Death Strip\". Sitting on top of a guard tower, can be shot down from the Destroyed Penthouse."
-    },{
+    }, {
         id: "OS4Do1",
         faction: factions.omega,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Ravenov Burn Notice",
-        desc: "dropped from Special/Elite kills or golden chests"
+        desc: defaultPOIData.chests
     }, {
         id: "OS4Do2",
         faction: factions.omega,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.sanatorium.id,
         name: "Aetherium Neutralizer Blueprint.",
         desc: "Obtained during the Outbreak EE#2"
@@ -2109,7 +2190,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season4,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Omega's Reputation",
         desc: "Collected through the Omega Radios in Outbreak"
@@ -2118,7 +2199,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season4,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "The One-Eyed Cowboy",
         desc: "Collected through the Omega Radios in Outbreak"
@@ -2199,46 +2280,46 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season5,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Berlin Report",
-        desc: "Dropped from Special/Elite kills or golden chests"
+        desc: defaultPOIData.chests
     }, {
         id: "OS5Do2",
         faction: factions.omega,
         season: seasons.season5,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Enemy Engagement Report",
-        desc: "Dropped from Special/Elite kills or golden chests"
+        desc: defaultPOIData.chests
     }, {
         id: "OS5Do3",
         faction: factions.omega,
         season: seasons.season5,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Operatsiya Izbavitel Orders",
-        desc: "Dropped from Special/Elite kills or golden chests"
+        desc: defaultPOIData.chests
     }, {
         id: "OS5Do4",
         faction: factions.omega,
         season: seasons.season5,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Kravchenko Letter",
-        desc: "Dropped from Special/Elite kills or golden chests"
+        desc: defaultPOIData.chests
     }, {
         id: "OS5Do5",
         faction: factions.omega,
         season: seasons.season5,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Test Site Anna Report",
-        desc: "Dropped from Special/Elite kills or golden chests"
+        desc: defaultPOIData.chests
     }, {
         id: "OS5Ar1",
         faction: factions.omega,
@@ -2358,6 +2439,87 @@ const intelStoreV2 = [
         name: "Deja Vu",
         desc: "Leans against the small checkpoint building.",
         img: "nQTOc2W"
+    }, {
+        id: "OS6Do1",
+        faction: factions.omega,
+        season: seasons.season6,
+        intelType: intelTypes.docs,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.zoo.id,
+        name: "Operatsiya Izbavitel Approval",
+        desc: defaultPOIData.special
+    }, {
+        id: "OS6Do2",
+        faction: factions.omega,
+        season: seasons.season6,
+        intelType: intelTypes.docs,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.duga.id,
+        name: "Order Of Operations",
+        desc: defaultPOIData.special
+    }, {
+        id: "OS6Do3",
+        faction: factions.omega,
+        season: seasons.season6,
+        intelType: intelTypes.docs,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.forsaken.id,
+        name: "Test Site Construction Blueprint",
+        desc: defaultPOIData.special
+    }, {
+        id: "OS6Do4",
+        faction: factions.omega,
+        season: seasons.season6,
+        intelType: intelTypes.docs,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.forsakenUnderground.id,
+        name: "Containment Chamber Blueprint",
+        desc: defaultPOIData.special
+    }, {
+        id: "OS6Do5",
+        faction: factions.omega,
+        season: seasons.season6,
+        intelType: intelTypes.docs,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.forsaken.id,
+        name: "Location Targets",
+        desc: defaultPOIData.special
+    }, {
+        id: "OS6Do6",
+        faction: factions.omega,
+        season: seasons.season6,
+        intelType: intelTypes.docs,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.forsaken.id,
+        name: "Aetherium Gun Turret Blueprint",
+        desc: defaultPOIData.special
+    }, {
+        id: "OS6Do7",
+        faction: factions.omega,
+        season: seasons.season6,
+        intelType: intelTypes.docs,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.forsakenUnderground.id,
+        name: "Forsaken Photograph",
+        desc: defaultPOIData.special
+    }, {
+        id: "OS6Do8",
+        faction: factions.omega,
+        season: seasons.season6,
+        intelType: intelTypes.docs,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.forsaken.id,
+        name: "ARC-XD Blueprint",
+        desc: defaultPOIData.special
+    }, {
+        id: "OS6Do9",
+        faction: factions.omega,
+        season: seasons.season6,
+        intelType: intelTypes.docs,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.forsaken.id,
+        name: "Anton Note",
+        desc: defaultPOIData.special
     },
     /////////////////////Maxis/////////////////////////
     {
@@ -2392,34 +2554,34 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "KGB Videotape Note",
-        desc: "Drops from a Megaton."
+        desc: defaultPOIData.special
     }, {
         id: "MS0Do2",
         faction: factions.maxis,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Dieter's Note",
-        desc: "Drops from a Megaton."
+        desc: defaultPOIData.special
     }, {
         id: "MS0Do3",
         faction: factions.maxis,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Message For Weaver",
-        desc: "Drops from a Megaton."
+        desc: defaultPOIData.special
     }, {
         id: "MS0Ra1",
         faction: factions.maxis,
         season: seasons.preseason,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Agent Maxis",
         desc: ""
@@ -2428,7 +2590,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.preseason,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Scorpions From Frogs",
         desc: ""
@@ -2437,7 +2599,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.preseason,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Why You're Here",
         desc: ""
@@ -2473,43 +2635,43 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Omega Portal Blueprint",
-        desc: "Obtained form a Special or Elite drop."
+        desc: defaultPOIData.special
     }, {
         id: "MS1Do2",
         faction: factions.maxis,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Omega Propaganda Poster",
-        desc: "Obtained form a Special or Elite drop."
+        desc: defaultPOIData.special
     }, {
         id: "MS1Do3",
         faction: factions.maxis,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Aetherium Effects Report",
-        desc: "Obtained form a Special or Elite drop."
+        desc: defaultPOIData.special
     }, {
         id: "MS1Do4",
         faction: factions.maxis,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Aether Reactor Blueprint",
-        desc: ""
+        desc: defaultPOIData.special
     }, {
         id: "MS1Ra1",
         faction: factions.maxis,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "The New Threat",
         desc: ""
@@ -2518,7 +2680,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Divided Loyalties",
         desc: ""
@@ -2527,7 +2689,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Shared History / Old Friends",
         desc: ""
@@ -2536,7 +2698,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Code In",
         desc: ""
@@ -2545,7 +2707,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Relentless",
         desc: ""
@@ -2554,7 +2716,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Monsters Are Real",
         desc: ""
@@ -2563,7 +2725,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "The Perpetual Night",
         desc: ""
@@ -2572,7 +2734,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "The Light Within",
         desc: ""
@@ -2581,7 +2743,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Blood On My Hands",
         desc: ""
@@ -2590,7 +2752,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "A Bad Dream",
         desc: ""
@@ -2644,25 +2806,25 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season2,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Maxis Status Report",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "MS2Do2",
         faction: factions.maxis,
         season: seasons.season2,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Maxis Diary Entry",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "MS2Ra1",
         faction: factions.maxis,
         season: seasons.season2,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "A Tangled Web",
         desc: ""
@@ -2671,7 +2833,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season2,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "I Made A Promise",
         desc: ""
@@ -2680,7 +2842,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season2,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Lab Rat",
         desc: ""
@@ -2689,7 +2851,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season2,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Three Out Of Four",
         desc: ""
@@ -2698,7 +2860,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season2,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Both Ways",
         desc: ""
@@ -2707,7 +2869,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season2,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "I've Changed",
         desc: ""
@@ -2716,7 +2878,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season2,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Why I Fight",
         desc: ""
@@ -2725,7 +2887,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season2,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "True Courage",
         desc: ""
@@ -2797,37 +2959,37 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Arrival",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "MS3Do2",
         faction: factions.maxis,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Maxis Progress Report",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "MS3Do3",
         faction: factions.maxis,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Quarantine Diary 1",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "MS3Do4",
         faction: factions.maxis,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Quarantine Diary 2",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "MS3Ar1",
         faction: factions.maxis,
@@ -2860,7 +3022,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season3,
         intelType: intelTypes.artifact,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Beacon Listening Device",
         desc: "Obtained whilst completing an Aether transmission during the outbreak EE."
@@ -2869,7 +3031,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season3,
         intelType: intelTypes.artifact,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Microfilm Slides",
         desc: "Obtained by breaking a stone monkey during the outbreak EE."
@@ -2914,10 +3076,10 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Quarantine Diary 9",
-        desc: "Dropped from Special/Elite kills or golden chests"
+        desc: defaultPOIData.chests
     }, {
         id: "MS5Au1",
         faction: factions.maxis,
@@ -2968,43 +3130,43 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season5,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Week 1 Summary",
-        desc: "Dropped from Special/Elite kills or golden chests"
+        desc: defaultPOIData.chests
     }, {
         id: "MS5Do2",
         faction: factions.maxis,
         season: seasons.season5,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Subject Rules",
-        desc: "Dropped from Special/Elite kills or golden chests"
+        desc: defaultPOIData.chests
     }, {
         id: "MS5Do3",
         faction: factions.maxis,
         season: seasons.season5,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Weaver Letter",
-        desc: "Dropped from Special/Elite kills or golden chests"
+        desc: defaultPOIData.chests
     }, {
         id: "MS5Do4",
         faction: factions.maxis,
         season: seasons.season5,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Grey Letter",
-        desc: "Dropped from Special/Elite kills or golden chests"
+        desc: defaultPOIData.chests
     }, {
         id: "MS5Ra1",
         faction: factions.maxis,
         season: seasons.season5,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "New Frequency",
         desc: ""
@@ -3013,7 +3175,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season5,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Understand Me",
         desc: ""
@@ -3022,7 +3184,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season5,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Power",
         desc: ""
@@ -3064,6 +3226,51 @@ const intelStoreV2 = [
         name: "My Control",
         desc: "In the video store, on a shelf behind the Mule Kick machine.",
         img: "2fCWOQB",
+    }, {
+        id: "MS6Do1",
+        faction: factions.maxis,
+        season: seasons.season6,
+        intelType: intelTypes.docs,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.ruka.id,
+        name: "Ability Assesment",
+        desc: defaultPOIData.special
+    }, {
+        id: "MS6Do2",
+        faction: factions.maxis,
+        season: seasons.season6,
+        intelType: intelTypes.docs,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.forsaken.id,
+        name: "Samantha Letter",
+        desc: defaultPOIData.special
+    }, {
+        id: "MS6Do3",
+        faction: factions.maxis,
+        season: seasons.season6,
+        intelType: intelTypes.docs,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.forsaken.id,
+        name: "Maxis Approval Memo",
+        desc: defaultPOIData.special
+    }, {
+        id: "MS6Ra1",
+        faction: factions.maxis,
+        season: seasons.season5,
+        intelType: intelTypes.radio,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.allOutbreakMaps.id,
+        name: "The Boy",
+        desc: ""
+    }, {
+        id: "MS6Ra2",
+        faction: factions.maxis,
+        season: seasons.season5,
+        intelType: intelTypes.radio,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.allOutbreakMaps.id,
+        name: "The Promise",
+        desc: ""
     },
     /////////////////////Dark Aether/////////////////////////
     {
@@ -3071,169 +3278,169 @@ const intelStoreV2 = [
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Lost Souls: Johannes",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS0Au2",
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Lost Souls: Mariska",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS0Au3",
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Lost Souls: David",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS0Au4",
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Approach",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS0Au5",
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Lost Souls: Alice",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS0Au6",
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Lost Souls: Barbara",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS0Do1",
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "$!%()$3@!",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS0Do2",
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "I @N#B%D! O% T@#&",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS0Do3",
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Day 13,773",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS0Do4",
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Day 95",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS0Do5",
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Day 175",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS0Do6",
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Day 213",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS0Do7",
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Day 1,646",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS0Do8",
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Day 937",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS0Do9",
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "DAY 1,108",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS0Do10",
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "DAY 6,121",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS0Do11",
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "DAY 2,873",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS0Do12",
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "DAY 3,289",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS0Ar1",
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.artifact,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Mutated Fungus",
         desc: "Obtained during the main quest, on a tree with purple table mushrooms."
@@ -3242,7 +3449,7 @@ const intelStoreV2 = [
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.artifact,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Plaguehound Gas",
         desc: "Obtained during the main quest, next to Deadshot Daiquiri."
@@ -3251,7 +3458,7 @@ const intelStoreV2 = [
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.artifact,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Dark Aether Crystal",
         desc: "Obtained during hte main quest, collected from the red Aether crystals."
@@ -3260,7 +3467,7 @@ const intelStoreV2 = [
         faction: factions.darkAether,
         season: seasons.preseason,
         intelType: intelTypes.artifact,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Dark Aether Wrench",
         desc: "Obtained during the main quest, gotten from the ghostly figures in the med bay."
@@ -3269,226 +3476,226 @@ const intelStoreV2 = [
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Lost Souls: Fedorov",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Au2",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Lost Souls: Koslov",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Au3",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Lost Souls: Tobias",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Au4",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Lost Souls: Olga",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Au5",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Lost Souls: Fritz",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Au6",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Lost Souls: Pyotr",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Do1",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "My Friend!",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Do2",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Day 291",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Do3",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Day 3,789",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Do4",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Day 4,010",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Do5",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Day 6,157",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Do6",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Day 6,289",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Do7",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Day 2,944",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Do8",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Day 6,412",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Do9",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Day 6,416",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Do10",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Day 6,418",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Do11",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Hello?",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Do12",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Day 13,784",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Do13",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Day 4,100",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Ra1",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Without Orders",
-        desc: ""
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Ra2",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "ALIVE",
-        desc: ""
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Ra3",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "GATHERING",
-        desc: ""
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Ra4",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "BEHEMOTH",
-        desc: ""
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Ra5",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "DOMINION",
-        desc: ""
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Ra6",
         faction: factions.darkAether,
         season: seasons.season1,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "HORDE",
-        desc: ""
+        desc: defaultPOIData.challenge
     }, {
         id: "DS1Ar1",
         faction: factions.darkAether,
@@ -3503,100 +3710,100 @@ const intelStoreV2 = [
         faction: factions.darkAether,
         season: seasons.season2,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Lost Souls: Fedorov #2",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS2Do1",
         faction: factions.darkAether,
         season: seasons.season2,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Day 6,421",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS2Do2",
         faction: factions.darkAether,
         season: seasons.season2,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Day 6,457",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS2Do3",
         faction: factions.darkAether,
         season: seasons.season2,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Much More To Tell You",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS2Do4",
         faction: factions.darkAether,
         season: seasons.season2,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Hello Again",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS2Do5",
         faction: factions.darkAether,
         season: seasons.season2,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Divided World",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS2Do6",
         faction: factions.darkAether,
         season: seasons.season2,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Trust Me",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS2Do7",
         faction: factions.darkAether,
         season: seasons.season2,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "More To Follow",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS2Ra1",
         faction: factions.darkAether,
         season: seasons.season2,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Crooked House",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS2Ra2",
         faction: factions.darkAether,
         season: seasons.season2,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Testing... Testing...",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS2Ra3",
         faction: factions.darkAether,
         season: seasons.season2,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "New Enemies",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS2Ar1",
         faction: factions.darkAether,
@@ -3638,154 +3845,154 @@ const intelStoreV2 = [
         faction: factions.darkAether,
         season: seasons.season3,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Lost Souls: Fedorov 1",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS3Au2",
         faction: factions.darkAether,
         season: seasons.season3,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Lost Souls: Fedorov 2",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS3Au3",
         faction: factions.darkAether,
         season: seasons.season3,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Lost Souls: Fedorov 3",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS3Au4",
         faction: factions.darkAether,
         season: seasons.season3,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Great and Terrible.",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS3Do1",
         faction: factions.darkAether,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Day 1",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS3Do2",
         faction: factions.darkAether,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Day 3",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS3Do3",
         faction: factions.darkAether,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Day 7",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS3Do4",
         faction: factions.darkAether,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Day 9",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS3Do5",
         faction: factions.darkAether,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Day 11",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS3Do6",
         faction: factions.darkAether,
         season: seasons.season3,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Day 12",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS3Ra1",
         faction: factions.darkAether,
         season: seasons.season3,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Who I Am",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS3Ra2",
         faction: factions.darkAether,
         season: seasons.season3,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Great Patriotic",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS3Ra3",
         faction: factions.darkAether,
         season: seasons.season3,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Tethered",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS3Ra4",
         faction: factions.darkAether,
         season: seasons.season3,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Changes",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS3Ra5",
         faction: factions.darkAether,
         season: seasons.season3,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Junkyard",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS3Ra6",
         faction: factions.darkAether,
         season: seasons.season3,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Invasion",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS3Ra7",
         faction: factions.darkAether,
         season: seasons.season3,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Bring Me Home",
-        desc: "Obtained through the Challenge Machine"
+        desc: defaultPOIData.challenge
     }, {
         id: "DS3Ar1",
         faction: factions.darkAether,
@@ -3827,7 +4034,7 @@ const intelStoreV2 = [
         faction: factions.darkAether,
         season: seasons.season3,
         intelType: intelTypes.artifact,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.ruka.id,
         name: "Aetherium Crystal Chunks",
         desc: "Found by breaking crystals in Silo B during the outbreak EE"
@@ -3845,46 +4052,46 @@ const intelStoreV2 = [
         faction: factions.darkAether,
         season: seasons.season4,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "We Are Waiting",
-        desc: "Obtained Through the challenge machine."
+        desc: defaultPOIData.challenge
     }, {
         id: "DS4Do1",
         faction: factions.darkAether,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Day 4,513",
-        desc: "Obtained Through the challenge machine."
+        desc: defaultPOIData.challenge
     }, {
         id: "DS4Do2",
         faction: factions.darkAether,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Day 4,729",
-        desc: "Obtained Through the challenge machine."
+        desc: defaultPOIData.challenge
     }, {
         id: "DS4Ra1",
         faction: factions.darkAether,
         season: seasons.season4,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Secret Contact",
-        desc: "Obtained Through the challenge machine."
+        desc: defaultPOIData.challenge
     }, {
         id: "DS4Ra2",
         faction: factions.darkAether,
         season: seasons.season4,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Bring Me Home 2",
-        desc: "Obtained Through the challenge machine."
+        desc: defaultPOIData.challenge
     }, {
         id: "DS4Ar1",
         faction: factions.darkAether,
@@ -3926,46 +4133,46 @@ const intelStoreV2 = [
         faction: factions.darkAether,
         season: seasons.season5,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Lost Souls: Piotr 1",
-        desc: "Obtained Through the challenge machine."
+        desc: defaultPOIData.challenge
     }, {
         id: "DS5Au2",
         faction: factions.darkAether,
         season: seasons.season5,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Lost Souls: Piotr 2",
-        desc: "Obtained Through the challenge machine."
+        desc: defaultPOIData.challenge
     }, {
         id: "DS5Ra1",
         faction: factions.darkAether,
         season: seasons.season5,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "The Machine",
-        desc: "Obtained Through the challenge machine."
+        desc: defaultPOIData.challenge
     }, {
         id: "DS5Ra2",
         faction: factions.darkAether,
         season: seasons.season5,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Broken Trust",
-        desc: "Obtained Through the challenge machine."
+        desc: defaultPOIData.challenge
     }, {
         id: "DS5Ra3",
         faction: factions.darkAether,
         season: seasons.season5,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Make This Right",
-        desc: "Obtained Through the challenge machine."
+        desc: defaultPOIData.challenge
     }, {
         id: "DS5Ar1",
         faction: factions.darkAether,
@@ -4002,6 +4209,24 @@ const intelStoreV2 = [
         map: mapDetails.armada.id,
         name: "Empty Tombstone Soda",
         desc: "In the Gun boat Control Room. it's in-between one of the sonar panels and the wall."
+    }, {
+        id: "DS6Au1",
+        faction: factions.darkAether,
+        season: seasons.season5,
+        intelType: intelTypes.audio,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.allOutbreakMaps.id,
+        name: "Lost Souls: Piotr 3",
+        desc: defaultPOIData.challenge
+    }, {
+        id: "DS6Au2",
+        faction: factions.darkAether,
+        season: seasons.season5,
+        intelType: intelTypes.audio,
+        loc: "[309.8628684849271, 262.7430596656802]",
+        map: mapDetails.allOutbreakMaps.id,
+        name: "Lost Souls: Piotr 4",
+        desc: defaultPOIData.challenge
     }, {
         id: "DS6Ar1",
         faction: factions.darkAether,
@@ -4047,7 +4272,34 @@ const intelStoreV2 = [
         map: mapDetails.forsaken.id,
         name: "Polymorphic Crystal Core",
         desc: "In the Jim's Donuts building, the artifact is part of the wonder weapon quest."
-    },
+    }, {
+        id: "DS6Ar6",
+        faction: factions.darkAether,
+        season: seasons.season6,
+        intelType: intelTypes.artifact,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.forsaken.id,
+        name: "Energetic Geode",
+        desc: "Get an Abomination to Destroy a Dark aether Crystal(the Purple ones you can melee) with it's Laser."
+    }, {
+        id: "DS6Ar7",
+        faction: factions.darkAether,
+        season: seasons.season6,
+        intelType: intelTypes.artifact,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.forsaken.id,
+        name: "Tempered Crystal Heart",
+        desc: "Kill a Tormentor with a Flame Thrower."
+    }, {
+        id: "DS6Ar8",
+        faction: factions.darkAether,
+        season: seasons.season6,
+        intelType: intelTypes.artifact,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.forsaken.id,
+        name: "Catalyzed Crystal Shard",
+        desc: "missing description"
+    }
 
 ]
 

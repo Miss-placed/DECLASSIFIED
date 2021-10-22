@@ -140,7 +140,12 @@ const intelTypes = {
     radio: "Radio Transmissions",
     artifact: "Artifacts",
 }
-
+const defaultPOIData = {
+    challenge: "Obtained through the Challenge Machine",
+    special: "Dropped from Special/Elite kills",
+    chests: "Dropped from Special/Elite kills or golden chests",
+    nullLoc: "[0,0]"
+}
 const miscTypes = {
     dementedEcho: new Item({ title: "Demented Echo", desc: "Destroy it before it touches you to get a reward.", icon: dementedIcon }),
     rift: new Item({ title: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", icon: riftIcon }),
