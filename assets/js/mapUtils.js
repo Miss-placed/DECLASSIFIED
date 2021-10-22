@@ -81,7 +81,7 @@ function addMarkerToMap(intel, icon, maep) {
         }
 
         if (typeof v2Test == 'string') {
-            imgEle = `<img src="${imgSrc}" onclick="expandImage(this)"></img>`
+            imgEle = `<img src="${imgSrc}" crossorigin="anonymous" onclick="expandImage(this)"></img>`
             tempBtn = moreBtn
         }
 

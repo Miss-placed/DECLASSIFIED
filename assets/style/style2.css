@@ -171,7 +171,7 @@ select.faction-list > option:hover {
 }
 
 #intel-list button.btn,
-#settings > div > .btn {
+.settings > div > .btn {
   margin-bottom: 20px;
   flex-direction: column;
   width: 100%;
@@ -223,19 +223,19 @@ select.faction-list > option:hover {
   padding: 10px;
 }
 
-#settings {
+.settings {
   color: var(--clr-color);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-#settings > h2,
-#settings > .button-list > p {
+.settings > h2,
+.settings > .button-list > p {
   margin-bottom: 5px;
 }
 
-#settings > div {
+.settings > div {
   display: flex;
 }
 

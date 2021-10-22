@@ -22,6 +22,7 @@ const modalSet = {
     intelOverview: ["intel-filters", "intel-list", "intel-stats"],
     intelDescription: ["intel-list", "intel-detail"],
     settingsMain: ["settings"],
+    settingsDebug: ["settings","settings-2"],
 }
 /////////////////////Header Menu/////////////////////////
 function expandMenu() {

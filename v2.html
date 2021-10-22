@@ -141,21 +141,32 @@
 
 
         <div class="modal -hidden" id="intel-list">
-            <!-- <select class="season-list ">
-                <option value="AllSeasons ">All Seasons</option>
-                <option value="PreSeason ">Pre Season</option>
-                <option value="Season1 ">Season 1</option>
-                <option value="Season2 ">Season 2</option>
-                <option value="Season3 ">Season 3</option>
-                <option value="Season3 ">Season 4</option>
-                <option value="Season3 ">Season 5</option>
-                <option value="Season3 ">Season 6</option>
-            </select> -->
-
+            <div id="c" class="droopy">
+                <p>Seasons</p>
+                <div>
+                    <ul class="checks">
+                        <li><label for="season0">Pre SeasonPre SeasonPre Season</label></li>
+                        <li><label for="season1">Season 1</label></li>
+                        <li><label for="season2">Season 2 </label></li>
+                        <li><label for="season3">Season 3</label></li>
+                        <li><label for="season4">Season 4</label></li>
+                        <li><label for="season5">Season 5</label></li>
+                        <li><label for="season6">Season 6</label></li>
+                    </ul>
+                    <ul class="balances">
+                        <li><input type="checkbox" name="factionSelection" id="season0" class="check" content=""></li>
+                        <li><input type="checkbox" name="factionSelection" id="season1" class="check" content=""></li>
+                        <li><input type="checkbox" name="factionSelection" id="season2" class="check" content=""></li>
+                        <li><input type="checkbox" name="factionSelection" id="season3" class="check" content=""></li>
+                        <li><input type="checkbox" name="factionSelection" id="season4" class="check" content=""></li>
+                        <li><input type="checkbox" name="factionSelection" id="season5" class="check" content=""></li>
+                        <li><input type="checkbox" name="factionSelection" id="season6" class="check" content=""></li>
+                    </ul>
+                </div>
+            </div>
             <div id="search-form">
                 <input id="search-term" type="search" placeholder="Search Intel...">
             </div>
-
 
             <div id="filtered-intel">
                 <!-- <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button> -->
@@ -196,7 +207,7 @@
                 </div>
             </div>
         </div>
-        <div class="modal -hidden" id="settings">
+        <div class="modal -hidden settings" id="settings">
             <h2>Settings</h2>
             <div class="button-list">
                 <p>Marker visibility:</p>
@@ -217,23 +228,39 @@
                         placeholder="_" onchange="changePreferredMode()">
                 </label>
                 <p>Debug: </p>
-                <label class="btn chk-btn" for="system-theme">
-                    <p>Show debug buttons</p><input type="checkbox" name="debug-toggle" id="debug-toggle" class="toggle"
+                <button class="btn chk-btn" onclick="openModal(modalSet.settingsDebug)"> Debug options<i
+                        class="fas fa-caret-right"></i></button>
+
+                <p>Collected Markers:</p>
+                <button class="btn chk-btn">Import/Export Markers
+                </button>
+            </div>
+        </div>
+        <div class="modal -hidden settings" id="settings-2">
+            <h2>Debug options: </h2>
+            <div class="button-list">
+                <p>Misc bug report: </p>
+                <label class="btn chk-btn" for="debug-button-toggle">
+                    <p>Show buttons</p><input type="checkbox" name="debug-button-toggle" id="debug-button-toggle"
+                        class="toggle" placeholder="_" onchange="changeDebugButton()" checked>
+                </label>
+                <p>Click for co-ordinates: </p>
+                <label class="btn chk-btn" for="debug-toggle">
+                    <p>Copy on click</p><input type="checkbox" name="debug-toggle" id="debug-toggle" class="toggle"
                         placeholder="_" onchange="changeDebugButton()" checked>
                 </label>
-                <p>Collected Markers:
-                </p>
-                <button class="btn chk-btn" for="checkbox">
-                    <p>Import/Export Markers</p>
-                </button>
+
             </div>
         </div>
     </section>
 
-    <div id="lightbox-container" class="-hidden" onclick="hideElement(this)">
+
+    <section id="lightbox-container" class="-hidden" onclick="hideElement(this)">
         <img id="lightbox" src="#">
-    </div>
+    </section>
     <script>
+        var v2Test = 'hi'
+
         function hideElement(ele) {
             ele.classList.toggle('-hidden')
         }
