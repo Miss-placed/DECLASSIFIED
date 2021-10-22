@@ -915,7 +915,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.audio,
-        loc: "[335.0112274771998, 164.60089211307502]",
+        loc: "[329.9196021776218, 185.50607794719141]",
         map: mapDetails.mauerDerToten.id,
         name: "Who's Laughing Now?",
         desc: "In the Safe House. On a desk to the left of a door."
@@ -924,7 +924,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.audio,
-        loc: "[366.9034013599705, 174.04713639358818]",
+        loc: "[351.0639951945735, 164.25180305542324]",
         map: mapDetails.mauerDerToten.id,
         name: "Bad Days",
         desc: "Inside the Safehouse inside a locker. Only appears after Klaus has been built."
@@ -965,6 +965,132 @@ const intelStoreV2 = [
         name: "The Child's Note",
         desc: "Obtained during the Outbreak EE#2"
     }, {
+        id: "RS4Do4",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.allOutbreakMaps.id,
+        name: "Operation Excision Report",
+        desc: ""
+    }, {
+        id: "RS4Do5",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.allOutbreakMaps.id,
+        name: "Where's My Robot?",
+        desc: ""
+    }, {
+        id: "RS4Do6",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.allOutbreakMaps.id,
+        name: "CRBR-S Report",
+        desc: ""
+    }, {
+        id: "RS4Do7",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.allOutbreakMaps.id,
+        name: "E Cipher",
+        desc: ""
+    }, {
+        id: "RS4Do8",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "CRBR-S Blueprint",
+        desc: ""
+    }, {
+        id: "RS4Do9",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Klaus Blueprint",
+        desc: ""
+    }, {
+        id: "RS4Do10",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Berlin Outbreak Report",
+        desc: ""
+    }, {
+        id: "RS4Do11",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Rico's Note",
+        desc: "Part of the main EE, can be found on the train."
+    }, {
+        id: "RS4Do12",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Subject: Strange Communique",
+        desc: "Part of the main EE, can be found on the computer beside Klaus."
+    }, {
+        id: "RS4Do13",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Subject: Urgent",
+        desc: "Part of the main EE, can be found on the computer beside Klaus."
+    }, {
+        id: "RS4Do14",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "J Cipher",
+        desc: "Part of the main EE, can be found on the computer beside Klaus."
+    }, {
+        id: "RS4Do15",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "EE-1 Harvester Blueprint",
+        desc: ""
+    }, {
+        id: "RS4Do16",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "EE-1 Conversion Blueprint",
+        desc: ""
+    }, {
+        id: "RS4Do17",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Vogel's Letter",
+        desc: ""
+    }, {
         id: "RS4Ra1",
         faction: factions.requiem,
         season: seasons.season4,
@@ -981,6 +1107,24 @@ const intelStoreV2 = [
         loc: "[0, 0]",
         map: mapDetails.allOutbreakMaps.id,
         name: "Patterns",
+        desc: ""
+    }, {
+        id: "RS4Ra3",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.radio,
+        loc: "[0, 0]",
+        map: mapDetails.allOutbreakMaps.id,
+        name: "Eye For An Eye",
+        desc: ""
+    }, {
+        id: "RS4Ra4",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.radio,
+        loc: "[0, 0]",
+        map: mapDetails.allOutbreakMaps.id,
+        name: "Marked Man",
         desc: ""
     }, {
         id: "RS4Ar1",
@@ -1036,6 +1180,42 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerTotenStreets.id,
         name: "CRBR-S",
         desc: "In the Safe in rroom 305."
+    },{
+        id: "RS4Ar7",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.artifact,
+        loc: "[296.73609119124524, 317.747499559232]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Warhead",
+        desc: "Part of the EE, can be found inside the train on an open chest"
+    },{
+        id: "RS4Ar8",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.artifact,
+        loc: "[290.359361317248, 317.5268297579435]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Rico's Keycard",
+        desc: "Part of the EE, can be found inside the train on a burnt corpse"
+    },{
+        id: "RS4Ar9",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.artifact,
+        loc: "[336.8310351797605, 202.84884675145662]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Hacking Helm",
+        desc: "Part of the EE, can be obtained by crafting onto Klaus. U must collect first the Antenna, Transistor and Electronic Boards"
+    },{
+        id: "RS4Ar10",
+        faction: factions.requiem,
+        season: seasons.season4,
+        intelType: intelTypes.artifact,
+        loc: "[286.0552817646633, 37.73111969127485]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Improvised Collider",
+        desc: "Part of the EE, can be obtained by picking up corrupted uranium and using it on the workbench"
     }, {
         id: "RS5Au1",
         faction: factions.requiem,
@@ -2105,6 +2285,69 @@ const intelStoreV2 = [
         name: "Aetherium Neutralizer Blueprint.",
         desc: "Obtained during the Outbreak EE#2"
     }, {
+        id: "OS4Do3",
+        faction: factions.omega,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.allOutbreakMaps.id,
+        name: "Necro-Analytics",
+        desc: "Dropped from Special/Elite kills or golden chests"
+    }, {
+        id: "OS4Do4",
+        faction: factions.omega,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "LT53 Kazimir Blueprint",
+        desc: "Dropped from Special/Elite kills"
+    }, {
+        id: "OS4Do5",
+        faction: factions.omega,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Angelika Vogel Summary",
+        desc: "Dropped from Special/Elite kills"
+    }, {
+        id: "OS4Do6",
+        faction: factions.omega,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Operation Baldr Approval",
+        desc: "Dropped from Special/Elite kills"
+    }, {
+        id: "OS4Do7",
+        faction: factions.omega,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Valentina Diary 15-07-83",
+        desc: "Dropped from Special/Elite kills"
+    }, {
+        id: "OS4Do8",
+        faction: factions.omega,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Statement Of Intent",
+        desc: "Dropped from Special/Elite kills"
+    }, {
+        id: "OS4Do9",
+        faction: factions.omega,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "F Cipher",
+        desc: "Dropped from Special/Elite kills"
+    }, {
         id: "OS4Ra1",
         faction: factions.omega,
         season: seasons.season4,
@@ -2122,6 +2365,51 @@ const intelStoreV2 = [
         map: mapDetails.allOutbreakMaps.id,
         name: "The One-Eyed Cowboy",
         desc: "Collected through the Omega Radios in Outbreak"
+    }, {
+        id: "OS4Ra3",
+        faction: factions.omega,
+        season: seasons.season4,
+        intelType: intelTypes.radio,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Your Problem Now",
+        desc: ""
+    }, {
+        id: "OS4Ra4",
+        faction: factions.omega,
+        season: seasons.season4,
+        intelType: intelTypes.radio,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Secrets Harbored",
+        desc: ""
+    }, {
+        id: "OS4Ra5",
+        faction: factions.omega,
+        season: seasons.season4,
+        intelType: intelTypes.radio,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "5-Star Treatment",
+        desc: ""
+    }, {
+        id: "OS4Ra6",
+        faction: factions.omega,
+        season: seasons.season4,
+        intelType: intelTypes.radio,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Not For Me",
+        desc: ""
+    }, {
+        id: "OS4Ra7",
+        faction: factions.omega,
+        season: seasons.season4,
+        intelType: intelTypes.radio,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Leverage",
+        desc: ""
     }, {
         id: "OS4Ar1",
         faction: factions.omega,
@@ -2167,6 +2455,24 @@ const intelStoreV2 = [
         map: mapDetails.zoo.id,
         name: "Krasny Soldat Flamethrower",
         desc: "The artifact is in the backroom of the 'Wolf Exhibit', on a shelf."
+    }, {
+        id: "OS4Ar6",
+        faction: factions.omega,
+        season: seasons.season4,
+        intelType: intelTypes.artifact,
+        loc: "[155.04142581255437, 150.71763984611835]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Endstation Lure",
+        desc: "Part of the EE, enter the Secret Lab and shoot the machine next to the portal frame. Can only be obtained after collecting and distributing the canisters"
+    }, {
+        id: "OS4Ar7",
+        faction: factions.omega,
+        season: seasons.season4,
+        intelType: intelTypes.artifact,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.mauerDerToten.id,
+        name: "Battery",
+        desc: "Can be obtained by killing the first Krazny"
     }, {
         id: "OS5Au1",
         faction: factions.omega,
@@ -3850,6 +4156,33 @@ const intelStoreV2 = [
         name: "We Are Waiting",
         desc: "Obtained Through the challenge machine."
     }, {
+        id: "DS4Au2",
+        faction: factions.darkAether,
+        season: seasons.season4,
+        intelType: intelTypes.audio,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Lost Souls: Valentina 1",
+        desc: defaultPOIData.challenge,
+    }, {
+        id: "DS4Au3",
+        faction: factions.darkAether,
+        season: seasons.season4,
+        intelType: intelTypes.audio,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Lost Souls: Valentina 2",
+        desc: defaultPOIData.challenge,
+    }, {
+        id: "DS4Au4",
+        faction: factions.darkAether,
+        season: seasons.season4,
+        intelType: intelTypes.audio,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Lost Souls: Valentina 3",
+        desc: defaultPOIData.challenge,
+    }, {
         id: "DS4Do1",
         faction: factions.darkAether,
         season: seasons.season4,
@@ -3868,6 +4201,33 @@ const intelStoreV2 = [
         name: "Day 4,729",
         desc: "Obtained Through the challenge machine."
     }, {
+        id: "DS4Do3",
+        faction: factions.darkAether,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Day 4,527",
+        desc: defaultPOIData.challenge,
+    }, {
+        id: "DS4Do4",
+        faction: factions.darkAether,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Day 4,771",
+        desc: defaultPOIData.challenge,
+    }, {
+        id: "DS4Do5",
+        faction: factions.darkAether,
+        season: seasons.season4,
+        intelType: intelTypes.docs,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Day 5,169",
+        desc: defaultPOIData.challenge,
+    }, {
         id: "DS4Ra1",
         faction: factions.darkAether,
         season: seasons.season4,
@@ -3885,6 +4245,24 @@ const intelStoreV2 = [
         map: mapDetails.allOutbreakMaps.id,
         name: "Bring Me Home 2",
         desc: "Obtained Through the challenge machine."
+    }, {
+        id: "DS4Ra3",
+        faction: factions.darkAether,
+        season: seasons.season4,
+        intelType: intelTypes.radio,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "The Forsaken",
+        desc: defaultPOIData.challenge,
+    }, {
+        id: "DS4Ra4",
+        faction: factions.darkAether,
+        season: seasons.season4,
+        intelType: intelTypes.radio,
+        loc: "[0, 0]",
+        map: mapDetails.mauerDerToten.id,
+        name: "Consumed",
+        desc: defaultPOIData.challenge,
     }, {
         id: "DS4Ar1",
         faction: factions.darkAether,
@@ -3921,6 +4299,33 @@ const intelStoreV2 = [
         map: mapDetails.duga.id,
         name: "Elemental Pop Poster",
         desc: "The poster is inside the 'Maintenance Facilities' building, fixed on the wall."
+    }, {
+        id: "DS4Ar5",
+        faction: factions.darkAether,
+        season: seasons.season4,
+        intelType: intelTypes.artifact,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.mauerDerToten.id,
+        name: "Electrical Fuse",
+        desc: "Obtained by killing the first tempest, used to restore power"
+    }, {
+        id: "DS4Ar6",
+        faction: factions.darkAether,
+        season: seasons.season4,
+        intelType: intelTypes.artifact,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.mauerDerToten.id,
+        name: "Tempest Essence",
+        desc: "Part of the EE, can be obtained by placing a container on the essence harvester and filling it up by killing the spawning Tempest."
+    }, {
+        id: "DS4Ar7",
+        faction: factions.darkAether,
+        season: seasons.season4,
+        intelType: intelTypes.artifact,
+        loc: defaultPOIData.nullLoc,
+        map: mapDetails.mauerDerToten.id,
+        name: "Corrupted Uranium",
+        desc: "Part of the EE, can be obtained by spawning an HVT Megaton and killing the 2 halves"
     }, {
         id: "DS5Au1",
         faction: factions.darkAether,
