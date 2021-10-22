@@ -44,8 +44,9 @@ function TriggerSearch() {
 
     let mapFilters = $('#mapFilterCollapse').find("input[type=checkbox]:checked");
     let mapArr = [];
-    $.each(mapFilters, function() {
-        mapArr.push(mapDetails[$(this).val()].id);
+    $.each(mapFilters, function () {
+        var mapId = $(this).val();
+        mapArr.push(mapId);
     });
 
     let filteredIntel = filterIntel($('#searchTerm').val().toLowerCase(), factionsArr, seasonsArr, intelTypeArr, mapArr);
