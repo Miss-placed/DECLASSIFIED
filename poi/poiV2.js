@@ -1180,7 +1180,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerTotenStreets.id,
         name: "CRBR-S",
         desc: "In the Safe in rroom 305."
-    },{
+    }, {
         id: "RS4Ar7",
         faction: factions.requiem,
         season: seasons.season4,
@@ -1189,7 +1189,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerToten.id,
         name: "Warhead",
         desc: "Part of the EE, can be found inside the train on an open chest"
-    },{
+    }, {
         id: "RS4Ar8",
         faction: factions.requiem,
         season: seasons.season4,
@@ -1198,7 +1198,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerToten.id,
         name: "Rico's Keycard",
         desc: "Part of the EE, can be found inside the train on a burnt corpse"
-    },{
+    }, {
         id: "RS4Ar9",
         faction: factions.requiem,
         season: seasons.season4,
@@ -1207,7 +1207,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerToten.id,
         name: "Hacking Helm",
         desc: "Part of the EE, can be obtained by crafting onto Klaus. U must collect first the Antenna, Transistor and Electronic Boards"
-    },{
+    }, {
         id: "RS4Ar10",
         faction: factions.requiem,
         season: seasons.season4,
