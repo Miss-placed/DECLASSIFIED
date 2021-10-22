@@ -1061,7 +1061,7 @@ const intelStoreV2 = [
         intelType: intelTypes.docs,
         loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
-        name: "J Cipher",
+        name: "J Cipher 2",
         desc: "Part of the main EE, can be found on the computer beside Klaus."
     }, {
         id: "RS4Do15",
