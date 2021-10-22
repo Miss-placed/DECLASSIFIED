@@ -3087,7 +3087,7 @@ const intelStoreV2 = [
         intelType: intelTypes.audio,
         loc: "[370, 405]",
         map: mapDetails.alpine.id,
-        name: "My Reputation Precedes ME",
+        name: "My Reputation Precedes Me",
         desc: "Inside the Red building's office area, in Maintenance."
     }, {
         id: "MS2Au4",
