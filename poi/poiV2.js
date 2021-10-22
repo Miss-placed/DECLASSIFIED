@@ -1940,7 +1940,7 @@ const intelStoreV2 = [
         intelType: intelTypes.audio,
         loc: "[250.87823834196888, 294.92122099571975]",
         map: mapDetails.golova.id,
-        name: "golova - Off The Hook",
+        name: "Off The Hook",
         desc: "In front of the Wunderfizz, in one of the side rooms."
     }, {
         id: "OS2Au5",
