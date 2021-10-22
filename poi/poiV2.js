@@ -969,7 +969,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Operation Excision Report",
         desc: ""
@@ -978,7 +978,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Where's My Robot?",
         desc: ""
@@ -987,7 +987,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "CRBR-S Report",
         desc: ""
@@ -996,7 +996,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "E Cipher",
         desc: ""
@@ -1005,7 +1005,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "CRBR-S Blueprint",
         desc: ""
@@ -1014,7 +1014,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Klaus Blueprint",
         desc: ""
@@ -1023,7 +1023,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Berlin Outbreak Report",
         desc: ""
@@ -1032,7 +1032,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Rico's Note",
         desc: "Part of the main EE, can be found on the train."
@@ -1041,7 +1041,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Subject: Strange Communique",
         desc: "Part of the main EE, can be found on the computer beside Klaus."
@@ -1050,7 +1050,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Subject: Urgent",
         desc: "Part of the main EE, can be found on the computer beside Klaus."
@@ -1059,7 +1059,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "J Cipher",
         desc: "Part of the main EE, can be found on the computer beside Klaus."
@@ -1068,7 +1068,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "EE-1 Harvester Blueprint",
         desc: ""
@@ -1077,19 +1077,19 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "EE-1 Conversion Blueprint",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "RS4Do17",
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Vogel's Letter",
-        desc: ""
+        desc: defaultPOIData.chests
     }, {
         id: "RS4Ra1",
         faction: factions.requiem,
@@ -1113,7 +1113,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Eye For An Eye",
         desc: ""
@@ -1122,7 +1122,7 @@ const intelStoreV2 = [
         faction: factions.requiem,
         season: seasons.season4,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Marked Man",
         desc: ""
@@ -1213,7 +1213,7 @@ const intelStoreV2 = [
         season: seasons.season4,
         intelType: intelTypes.artifact,
         loc: "[286.0552817646633, 37.73111969127485]",
-        map: mapDetails.mauerDerToten.id,
+        map: mapDetails.mauerDerTotenStreets.id,
         name: "Improvised Collider",
         desc: "Part of the EE, can be obtained by picking up corrupted uranium and using it on the workbench"
     }, {
@@ -2370,64 +2370,64 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Necro-Analytics",
-        desc: "Dropped from Special/Elite kills or golden chests"
+        desc: defaultPOIData.chests
     }, {
         id: "OS4Do4",
         faction: factions.omega,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "LT53 Kazimir Blueprint",
-        desc: "Dropped from Special/Elite kills"
+        desc: defaultPOIData.chests
     }, {
         id: "OS4Do5",
         faction: factions.omega,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Angelika Vogel Summary",
-        desc: "Dropped from Special/Elite kills"
+        desc: defaultPOIData.chests
     }, {
         id: "OS4Do6",
         faction: factions.omega,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Operation Baldr Approval",
-        desc: "Dropped from Special/Elite kills"
+        desc: defaultPOIData.chests
     }, {
         id: "OS4Do7",
         faction: factions.omega,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Valentina Diary 15-07-83",
-        desc: "Dropped from Special/Elite kills"
+        desc: defaultPOIData.chests
     }, {
         id: "OS4Do8",
         faction: factions.omega,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Statement Of Intent",
-        desc: "Dropped from Special/Elite kills"
+        desc: defaultPOIData.chests
     }, {
         id: "OS4Do9",
         faction: factions.omega,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "F Cipher",
-        desc: "Dropped from Special/Elite kills"
+        desc: defaultPOIData.chests
     }, {
         id: "OS4Ra1",
         faction: factions.omega,
@@ -2451,7 +2451,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season4,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Your Problem Now",
         desc: ""
@@ -2460,7 +2460,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season4,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Secrets Harbored",
         desc: ""
@@ -2469,7 +2469,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season4,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "5-Star Treatment",
         desc: ""
@@ -2478,7 +2478,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season4,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Not For Me",
         desc: ""
@@ -2487,7 +2487,7 @@ const intelStoreV2 = [
         faction: factions.omega,
         season: seasons.season4,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Leverage",
         desc: ""
@@ -4367,7 +4367,7 @@ const intelStoreV2 = [
         faction: factions.darkAether,
         season: seasons.season4,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Lost Souls: Valentina 1",
         desc: defaultPOIData.challenge,
@@ -4376,7 +4376,7 @@ const intelStoreV2 = [
         faction: factions.darkAether,
         season: seasons.season4,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Lost Souls: Valentina 2",
         desc: defaultPOIData.challenge,
@@ -4385,7 +4385,7 @@ const intelStoreV2 = [
         faction: factions.darkAether,
         season: seasons.season4,
         intelType: intelTypes.audio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Lost Souls: Valentina 3",
         desc: defaultPOIData.challenge,
@@ -4412,7 +4412,7 @@ const intelStoreV2 = [
         faction: factions.darkAether,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Day 4,527",
         desc: defaultPOIData.challenge,
@@ -4421,7 +4421,7 @@ const intelStoreV2 = [
         faction: factions.darkAether,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Day 4,771",
         desc: defaultPOIData.challenge,
@@ -4430,7 +4430,7 @@ const intelStoreV2 = [
         faction: factions.darkAether,
         season: seasons.season4,
         intelType: intelTypes.docs,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Day 5,169",
         desc: defaultPOIData.challenge,
@@ -4457,7 +4457,7 @@ const intelStoreV2 = [
         faction: factions.darkAether,
         season: seasons.season4,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "The Forsaken",
         desc: defaultPOIData.challenge,
@@ -4466,7 +4466,7 @@ const intelStoreV2 = [
         faction: factions.darkAether,
         season: seasons.season4,
         intelType: intelTypes.radio,
-        loc: "[0, 0]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Consumed",
         desc: defaultPOIData.challenge,
