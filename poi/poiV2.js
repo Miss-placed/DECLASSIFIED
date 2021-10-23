@@ -1471,6 +1471,7 @@ const intelStoreV2 = [
         map: mapDetails.forsaken.id,
         name: "Monitoring Device",
         desc: "In the TV store, part of the main quest.",
+        img: "UlujB1r",
     }, {
         id: "RS6Ar5",
         faction: factions.requiem,
@@ -1490,6 +1491,7 @@ const intelStoreV2 = [
         map: mapDetails.forsaken.id,
         name: "Aetherium Neutralizer",
         desc: "In the main street area, part of the main quest.",
+        img: "TOHSDW0",
     }, {
         id: "RS6Ar7",
         faction: factions.requiem,
@@ -1499,6 +1501,7 @@ const intelStoreV2 = [
         map: mapDetails.forsaken.id,
         name: "Fuel Tank",
         desc: "In the fuel processing area, part of the main quest.",
+        img: "fTtfpLM",
     }, {
         id: "RS6Ar8",
         faction: factions.requiem,
@@ -2707,6 +2710,7 @@ const intelStoreV2 = [
         map: mapDetails.duga.id,
         name: "Lineage",
         desc: "In the bunker, on the floor in the computer room, behind the door.",
+        img: "QkBpDd6",
     }, {
         id: "OS6Au3",
         faction: factions.omega,
@@ -4318,6 +4322,7 @@ const intelStoreV2 = [
         map: mapDetails.duga.id,
         name: "Broken Essence Capsule",
         desc: "In the Secondary Array. This location is kinda weird. Starting from the top of the left most array, go as far left as you can, then go down 3 layers. It will be sitting on a grey metal bar connecting the walkway to the side of the array. This is away from the Primary Array, not towards it.",
+        img: "4FvTHz3",
     }, {
         id: "DS3Ar3",
         faction: factions.darkAether,
@@ -4678,6 +4683,7 @@ const intelStoreV2 = [
         map: mapDetails.forsaken.id,
         name: "Polymorphic Crystal Core",
         desc: "In the Jim's Donuts building, the artifact is part of the wonder weapon quest.",
+        img: "rVWYM4B",             
     }, {
         id: "DS6Ar6",
         faction: factions.darkAether,
@@ -4687,6 +4693,7 @@ const intelStoreV2 = [
         map: mapDetails.forsaken.id,
         name: "Energetic Geode",
         desc: "Get an Abomination to Destroy a Dark aether Crystal(the Purple ones you can melee) with it's Laser.",
+        img: "9pfNhpv",
     }, {
         id: "DS6Ar7",
         faction: factions.darkAether,
@@ -4696,6 +4703,7 @@ const intelStoreV2 = [
         map: mapDetails.forsaken.id,
         name: "Tempered Crystal Heart",
         desc: "Kill a Tormentor with a Flame Thrower.",
+        img: "qVkZGEG",
     }, {
         id: "DS6Ar8",
         faction: factions.darkAether,
@@ -4704,7 +4712,8 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.forsaken.id,
         name: "Catalyzed Crystal Shard",
-        desc: "Part of the EE, can be obtained by killing an Abomination that has eaten a Crystal Shard"
+        desc: "Part of the EE, can be obtained by killing an Abomination that has eaten a Crystal Shard",
+        img: "9VCpNkr",
     }
 
 ]
