@@ -1480,7 +1480,6 @@ const intelStoreV2 = [
         map: mapDetails.forsakenUnderground.id,
         name: "Housing Unit",
         desc: "In the board room, part of the main quest.",
-        img: "FSUOES7"
     }, {
         id: "RS6Ar6",
         faction: factions.requiem,
@@ -2724,7 +2723,8 @@ const intelStoreV2 = [
         loc: "[319.84422421300326, 160.75]",
         map: mapDetails.forsakenUnderground.id,
         name: "Fully Operational",
-        desc: "In the amplifier area, leans against the railing on the right side before you go down the stairs."
+        desc: "In the amplifier area, leans against the railing on the right side before you go down the stairs.",
+        img: "FSUOES7"
     }, {
         id: "OS6Au5",
         faction: factions.omega,
