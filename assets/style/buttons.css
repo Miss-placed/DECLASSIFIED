@@ -334,6 +334,7 @@ input[type="search"] {
   height: 100%;
 }
 .droopy .list-selection span{
+  white-space: nowrap;
   border:1px solid var(--clr-yellow);
   border-radius:2px;
   padding:2px;

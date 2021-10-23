@@ -40,7 +40,7 @@ function GenerateDetailModal(intel) {
         intel.desc = "If you see this please report an issue on the github page."
     }
     var elementsToAdd = htmlToElements(
-        `<button class="close-submodal btn inverted" onclick="openModal(modalSet.intelOverview)"><i class="bi bi-x"></i></button>
+        `<button class="close-submodal btn inverted" onclick="openModal(modalSet.intelOverview)"><i class="fas fa-x"></i></button>
     
         <h2>${intel.name}</h2>
         <p>${intel.desc}</p>`

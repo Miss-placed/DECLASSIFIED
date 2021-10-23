@@ -202,10 +202,11 @@ select.faction-list > option:hover {
 
 #search-form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   width: 100%;
   padding: 5px;
+  align-items: center;
 }
 
 #search-form .btn {

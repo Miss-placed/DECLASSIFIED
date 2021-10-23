@@ -1,29 +1,30 @@
-function filterIntel(searchTermDirty, factionsArr, seasonsArr, intelTypeArr, mapArr) {
+function filterIntel(searchTermDirty, factionsArr = [], seasonsArr = [], intelTypeArr = [], mapArr = []) {
     let results = intelCache;
     let searchTerm = searchTermDirty.toLowerCase()
     results = results.filter((intel) => {
         return intel.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
     });
 
-    if (factionsArr) {
+    if (factionsArr.some(item => item)) {
         results = results.filter((intel) => {
             return factionsArr.includes(intel.faction);
         });
     }
 
-    if (seasonsArr) {
+    if (seasonsArr.some(item => item)) {
         results = results.filter((intel) => {
             return seasonsArr.includes(intel.season);
         });
     }
 
-    if (intelTypeArr) {
+    if (intelTypeArr.some(item => item)) {
+        console.log(intelTypeArr);
         results = results.filter((intel) => {
             return intelTypeArr.includes(intel.intelType);
         });
     }
 
-    if (mapArr) {
+    if (mapArr.some(item => item)) {
         results = results.filter((intel) => {
             return mapArr.includes(intel.map) || intel.map == mapDetails.allOutbreakMaps.id && mapArr.some((e) => { return allOutbreakMapsArr.includes(e) });
         });
@@ -66,8 +67,19 @@ function TriggerSearchV1() {
 
 function TriggerSearch(params) {
     const searchTerm = $('#search-term').val();
+    const factionsArr = $('').val();
+    const seasonsArr = $('').val();
+    const intelTypeArr = [];
+    $('#intel-type-select input[type=checkbox]:checked').each(function () {
+        intelTypeArr.push(intelTypes[$(this).data("filter")]);
+    });
+    const mapArr = [];
+    //Filter by current map
+    if ($('#curr-map-filter:checked').length > 0) mapArr.push(app.currentMap);
 
-    let filteredIntel = filterIntel(searchTerm);
+    console.log(intelTypeArr);
+    let filteredIntel = filterIntel(searchTerm, factionsArr, seasonsArr, intelTypeArr, mapArr);
+    console.log(filteredIntel.length);
     GenerateList(filteredIntel);
 }
 

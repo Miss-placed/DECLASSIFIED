@@ -79,7 +79,10 @@ function onLoadV2() {
 
     //Intel Search Listeners
     $('#search-term').keyup(function () {
-        intelFiltered = TriggerSearch();
+        TriggerSearch();
+    });
+    $('#intel-type-select input[type=checkbox]').click(function (params) {
+        TriggerSearch();
     });
 
     TriggerSearch();

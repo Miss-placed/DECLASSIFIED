@@ -123,19 +123,19 @@
 
             <div id="intel-type-select">
                 <span>
-                    <input type="checkbox" id="document-check" class="type-check -hidden">
+                    <input type="checkbox" id="document-check" class="type-check -hidden" data-filter="docs">
                     <label class="btn type" type="Documents" value="5 / 10" for="document-check"></label>
                 </span>
                 <span>
-                    <input type="checkbox" id="artifact-check" class="type-check -hidden">
+                    <input type="checkbox" id="artifact-check" class="type-check -hidden" data-filter="artifact">
                     <label class="btn type" type="Artifacts" value="5 / 10" for="artifact-check"></label>
                 </span>
                 <span>
-                    <input type="checkbox" id="audio-check" class="type-check -hidden">
+                    <input type="checkbox" id="audio-check" class="type-check -hidden" data-filter="audio">
                     <label class="btn type" type="Audio Logs" value="5 / 10" for="audio-check"></label>
                 </span>
                 <span>
-                    <input type="checkbox" id="radio-check" class="type-check -hidden">
+                    <input type="checkbox" id="radio-check" class="type-check -hidden" data-filter="radio">
                     <label class="btn type" type="Radio Transmissions" value="5 / 10" for="radio-check"></label>
                 </span>
             </div>
@@ -145,6 +145,10 @@
         <div class="modal -hidden" id="intel-list">
             <div id="search-form">
                 <input id="search-term" type="search" placeholder="Search Intel...">
+                <label class="btn chk-btn" for="curr-map-filter"  onchange="TriggerSearch()">
+                    <p>Filter by Current Map</p><input type="checkbox" name="curr-map-filter" id="curr-map-filter" class="toggle"
+                        placeholder="_">
+                </label>
             </div>
 
             <div id="filtered-intel">
