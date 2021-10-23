@@ -9,7 +9,7 @@ const intelStoreV2 = [
         loc: "[117.48346338003188, 388]",
         map: mapDetails.dieMaschineUnderground.id,
         name: "The Incident",
-        desc: "Right next to power in the left corner on a shelf."
+        desc: "Right next to power in the left corner on a shelf.",
     }, {
         id: "RS0Au2",
         faction: factions.requiem,
@@ -18,7 +18,7 @@ const intelStoreV2 = [
         loc: "[156.97926050718212, 379.5]",
         map: mapDetails.dieMaschineUnderground.id,
         name: "Parallel World",
-        desc: "Near PaP, behind the stairs leading up while in the Dark Aether."
+        desc: "Near PaP, behind the stairs leading up while in the Dark Aether.",
     }, {
         id: "RS0Do1",
         faction: factions.requiem,
@@ -81,7 +81,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Officer Weaver",
-        desc: "You can only get one radio transmission per game."
+        desc: "You can only get one radio transmission per game.",
     }, {
         id: "RS0Ra2",
         faction: factions.requiem,
@@ -90,7 +90,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Doctor Grey",
-        desc: "You can only get one radio transmission per game."
+        desc: "You can only get one radio transmission per game.",
     }, {
         id: "RS0Ra3",
         faction: factions.requiem,
@@ -99,7 +99,7 @@ const intelStoreV2 = [
         loc: "[185.47622805461958, 256.5]",
         map: mapDetails.dieMaschine.id,
         name: "Dimension of Death",
-        desc: "You can only get one radio transmission per game."
+        desc: "You can only get one radio transmission per game.",
     }, {
         id: "RS0Ra4",
         faction: factions.requiem,
@@ -108,7 +108,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Doctor Strauss",
-        desc: "You can only get one radio transmission per game."
+        desc: "You can only get one radio transmission per game.",
     }, {
         id: "RS0Ra5",
         faction: factions.requiem,
@@ -117,7 +117,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Aetherium",
-        desc: "You can only get one radio transmission per game."
+        desc: "You can only get one radio transmission per game.",
     }, {
         id: "RS0Ra6",
         faction: factions.requiem,
@@ -126,7 +126,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Major Carver",
-        desc: "You can only get one radio transmission per game."
+        desc: "You can only get one radio transmission per game.",
     }, {
         id: "RS0Ra7",
         faction: factions.requiem,
@@ -135,7 +135,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "New Arms Race",
-        desc: "You can only get one radio transmission per game."
+        desc: "You can only get one radio transmission per game.",
     }, {
         id: "RS0Ar1",
         faction: factions.requiem,
@@ -144,7 +144,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "D.I.E. Remote Control",
-        desc: "Gotten as part of the free D.I.E Machine Quest"
+        desc: "Gotten as part of the free D.I.E Machine Quest",
     }, {
         id: "RS0Ar2",
         faction: factions.requiem,
@@ -153,7 +153,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "D.I.E. Machine",
-        desc: "Get the free D.I.E Machine from the quest"
+        desc: "Get the free D.I.E Machine from the quest",
     }, {
         id: "RS0Ar3",
         faction: factions.requiem,
@@ -162,7 +162,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Aetherscope",
-        desc: "Part of the main quest. You have to craft it."
+        desc: "Part of the main quest. You have to craft it.",
     }, {
         id: "RS0Ar4",
         faction: factions.requiem,
@@ -171,7 +171,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Doctor Vogel's Diary",
-        desc: "When you have crafted the Aetherscope, it can be found in the Dark Aether next to the computer in the med bay."
+        desc: "When you have crafted the Aetherscope, it can be found in the Dark Aether next to the computer in the med bay.",
     }, {
         id: "RS0Ar5",
         faction: factions.requiem,
@@ -180,7 +180,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Decontamination Agent",
-        desc: "In a cabinet in the med bay. Obtained during the main quest."
+        desc: "In a cabinet in the med bay. Obtained during the main quest.",
     }, {
         id: "RS1Au1",
         faction: factions.requiem,
@@ -189,7 +189,7 @@ const intelStoreV2 = [
         loc: "[344.7238827806349, 363.5]",
         map: mapDetails.dieMaschineUnderground.id,
         name: "Exo-Element 1",
-        desc: "Obtained from table in med bay, by easter egg computer. On the far wall, close to the box location."
+        desc: "Obtained from table in med bay, by easter egg computer. On the far wall, close to the box location.",
     }, {
         id: "RS1Au2",
         faction: factions.requiem,
@@ -198,7 +198,7 @@ const intelStoreV2 = [
         loc: "[195.48976325589638, 200]",
         map: mapDetails.dieMaschineUnderground.id,
         name: "New Orders",
-        desc: "Obtained from a table in weapons lab, close to the dog gas collection point for the nova 5 WW upgrade."
+        desc: "Obtained from a table in weapons lab, close to the dog gas collection point for the nova 5 WW upgrade.",
     }, {
         id: "RS1Au3",
         faction: factions.requiem,
@@ -207,7 +207,7 @@ const intelStoreV2 = [
         loc: "[229.97149317254832, 351.5]",
         map: mapDetails.firebaseZ.id,
         name: "Ravenov",
-        desc: "On a table in the outer ring of Data Center, first floor near a cabinet of data reels."
+        desc: "On a table in the outer ring of Data Center, first floor near a cabinet of data reels.",
     }, {
         id: "RS1Au4",
         faction: factions.requiem,
@@ -216,7 +216,7 @@ const intelStoreV2 = [
         loc: "[388.95457527930483, 247]",
         map: mapDetails.firebaseZSpawn.id,
         name: "They Took Her",
-        desc: "On a bench above PaP."
+        desc: "On a bench above PaP.",
     }, {
         id: "RS1Au5",
         faction: factions.requiem,
@@ -225,7 +225,7 @@ const intelStoreV2 = [
         loc: "[208.9737276112786, 208]",
         map: mapDetails.firebaseZ.id,
         name: "Meeting Of Minds",
-        desc: "In military Command, under the desk near the zombie barrier."
+        desc: "In military Command, under the desk near the zombie barrier.",
     }, {
         id: "RS1Do1",
         faction: factions.requiem,
@@ -234,7 +234,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Doctor Vogel Entry 203",
-        desc: "Obtained from megaton drop."
+        desc: "Obtained from megaton drop.",
     }, {
         id: "RS1Do2",
         faction: factions.requiem,
@@ -279,7 +279,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Omega's Advantage",
-        desc: ""
+        desc: "",
     }, {
         id: "RS1Ra2",
         faction: factions.requiem,
@@ -288,7 +288,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "This Is Personal",
-        desc: ""
+        desc: "",
     }, {
         id: "RS1Ra3",
         faction: factions.requiem,
@@ -297,7 +297,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Peck",
-        desc: ""
+        desc: "",
     }, {
         id: "RS1Ra4",
         faction: factions.requiem,
@@ -306,7 +306,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Between Us",
-        desc: ""
+        desc: "",
     }, {
         id: "RS1Ra5",
         faction: factions.requiem,
@@ -315,7 +315,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "W.A.N.D.",
-        desc: ""
+        desc: "",
     }, {
         id: "RS1Ra6",
         faction: factions.requiem,
@@ -324,7 +324,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "The Stick",
-        desc: ""
+        desc: "",
     }, {
         id: "RS1Ra7",
         faction: factions.requiem,
@@ -333,7 +333,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Blacksmiths and Architects",
-        desc: ""
+        desc: "",
     }, {
         id: "RS1Ra8",
         faction: factions.requiem,
@@ -342,7 +342,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Not Unlike Oxygen",
-        desc: ""
+        desc: "",
     }, {
         id: "RS1Ra9",
         faction: factions.requiem,
@@ -351,7 +351,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "A Storied Career",
-        desc: ""
+        desc: "",
     }, {
         id: "RS1Ra10",
         faction: factions.requiem,
@@ -360,7 +360,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "The Thick Of It",
-        desc: ""
+        desc: "",
     }, {
         id: "RS1Ra11",
         faction: factions.requiem,
@@ -369,7 +369,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Transformative Properties",
-        desc: ""
+        desc: "",
     }, {
         id: "RS1Ra12",
         faction: factions.requiem,
@@ -378,7 +378,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Genetic Secrets",
-        desc: ""
+        desc: "",
     }, {
         id: "RS1Ar1",
         faction: factions.requiem,
@@ -387,7 +387,7 @@ const intelStoreV2 = [
         loc: "[158.24646657208723, 287.25]",
         map: mapDetails.firebaseZ.id,
         name: "RAI K-84 Blueprint",
-        desc: "On the wall in Weapons Lab."
+        desc: "On the wall in Weapons Lab.",
     }, {
         id: "RS1Ar2",
         faction: factions.requiem,
@@ -396,7 +396,7 @@ const intelStoreV2 = [
         loc: "[346.4590973576875, 448]",
         map: mapDetails.firebaseZ.id,
         name: "Weapon Trial Folder",
-        desc: "On the ground next to Kuhlklay's Body."
+        desc: "On the ground next to Kuhlklay's Body.",
     }, {
         id: "RS1Ar3",
         faction: factions.requiem,
@@ -405,7 +405,7 @@ const intelStoreV2 = [
         loc: "[292.4648430572796, 330.5]",
         map: mapDetails.firebaseZ.id,
         name: "Kuhlklay's Diary",
-        desc: "Obtained from a locker, requires the locker key from the quest."
+        desc: "Obtained from a locker, requires the locker key from the quest.",
     }, {
         id: "RS1Ar4",
         faction: factions.requiem,
@@ -414,7 +414,7 @@ const intelStoreV2 = [
         loc: "[159.3725006650115, 282.625]",
         map: mapDetails.firebaseZ.id,
         name: "RAI K-84 Prototype",
-        desc: "Obtain the ww. Needs to be the free one from the quest."
+        desc: "Obtain the ww. Needs to be the free one from the quest.",
     }, {
         id: "RS2Au1",
         faction: factions.requiem,
@@ -423,7 +423,7 @@ const intelStoreV2 = [
         loc: "[172.47761127859548, 358.5]",
         map: mapDetails.firebaseZ.id,
         name: "Focal Point",
-        desc: "On the corner of the building on a ledge, near the satellite dish. Rocky Defence. Need to shoot it down."
+        desc: "On the corner of the building on a ledge, near the satellite dish. Rocky Defence. Need to shoot it down.",
     }, {
         id: "RS2Au2",
         faction: factions.requiem,
@@ -432,7 +432,7 @@ const intelStoreV2 = [
         loc: "[285.73321954247206, 271.75]",
         map: mapDetails.ruka.id,
         name: "Like Flies To Honey",
-        desc: "In the Base Headquarters location on a long table."
+        desc: "In the Base Headquarters location on a long table.",
     }, {
         id: "RS2Au3",
         faction: factions.requiem,
@@ -441,7 +441,7 @@ const intelStoreV2 = [
         loc: "[292.5, 56]",
         map: mapDetails.alpine.id,
         name: "A Grisly Affair",
-        desc: "In Base Cabins on the back of a truck behind the cabins."
+        desc: "In Base Cabins on the back of a truck behind the cabins.",
     }, {
         id: "RS2Au4",
         faction: factions.requiem,
@@ -450,7 +450,7 @@ const intelStoreV2 = [
         loc: "[157.93177892918823, 261.90189231808966]",
         map: mapDetails.golova.id,
         name: "I See A Hierarchy",
-        desc: "On the top of the water tower near the gas station at the edge of the village proper."
+        desc: "On the top of the water tower near the gas station at the edge of the village proper.",
     }, {
         id: "RS2Au5",
         faction: factions.requiem,
@@ -459,7 +459,7 @@ const intelStoreV2 = [
         loc: "[336, 265]",
         map: mapDetails.sanatorium.id,
         name: "Quantum Entanglement",
-        desc: "On the pier in the back room of the building at the end."
+        desc: "On the pier in the back room of the building at the end.",
     }, {
         id: "RS2Au6",
         faction: factions.requiem,
@@ -468,7 +468,7 @@ const intelStoreV2 = [
         loc: "[195.47532363894305, 92.5]",
         map: mapDetails.ruka.id,
         name: "Recon Rover Blues",
-        desc: "In the big building of the Old Farm location. (NEEDS FURTHER ELABORATION)"
+        desc: "In the big building of the Old Farm location. (NEEDS FURTHER ELABORATION)",
     }, {
         id: "RS2Au7",
         faction: factions.requiem,
@@ -477,7 +477,7 @@ const intelStoreV2 = [
         loc: "[279, 285.5]",
         map: mapDetails.alpine.id,
         name: "Killer Crystals",
-        desc: "In Ski Patrol in the big building upstairs in the smaller side room on a table."
+        desc: "In Ski Patrol in the big building upstairs in the smaller side room on a table.",
     }, {
         id: "RS2Do1",
         faction: factions.requiem,
@@ -486,7 +486,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "RE: Funding Allocation 1",
-        desc: ""
+        desc: "",
     }, {
         id: "RS2Do2",
         faction: factions.requiem,
@@ -549,7 +549,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Nose To Nose",
-        desc: ""
+        desc: "",
     }, {
         id: "RS2Ra2",
         faction: factions.requiem,
@@ -558,7 +558,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Race Against Time",
-        desc: ""
+        desc: "",
     }, {
         id: "RS2Ra3",
         faction: factions.requiem,
@@ -567,7 +567,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "How We Win",
-        desc: ""
+        desc: "",
     }, {
         id: "RS2Ra4",
         faction: factions.requiem,
@@ -576,7 +576,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Under Observation",
-        desc: ""
+        desc: "",
     }, {
         id: "RS2Ar1",
         faction: factions.requiem,
@@ -585,7 +585,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Zombie Head",
-        desc: "Collected through the Defence objective."
+        desc: "Collected through the Defence objective.",
     }, {
         id: "RS2Ar2",
         faction: factions.requiem,
@@ -594,7 +594,7 @@ const intelStoreV2 = [
         loc: "[184.99267893868938, 142.25]",
         map: mapDetails.golova.id,
         name: "Aetherium Canister",
-        desc: "Between the pipes connecting the Silo with the building."
+        desc: "Between the pipes connecting the Silo with the building.",
     }, {
         id: "RS2Ar3",
         faction: factions.requiem,
@@ -603,7 +603,7 @@ const intelStoreV2 = [
         loc: "[91.24241490800614, 323.625]",
         map: mapDetails.ruka.id,
         name: "Aetherium Crystal Shard",
-        desc: "In the burnt forest section, right up against the edge of the map about halfway down. It's on top of a big rock."
+        desc: "In the burnt forest section, right up against the edge of the map about halfway down. It's on top of a big rock.",
     }, {
         id: "RS2Ar4",
         faction: factions.requiem,
@@ -612,7 +612,7 @@ const intelStoreV2 = [
         loc: "[256, 167.5]",
         map: mapDetails.alpine.id,
         name: "Frost Blast Canister",
-        desc: "Look on top of the circular ski lift station on the western side of the map near the Lodge and the Pro Shop."
+        desc: "Look on top of the circular ski lift station on the western side of the map near the Lodge and the Pro Shop.",
     }, {
         id: "RS3Au1",
         faction: factions.requiem,
@@ -621,7 +621,7 @@ const intelStoreV2 = [
         loc: "[369.5, 284]",
         map: mapDetails.duga.id,
         name: "The Beacon",
-        desc: "In the Chemical Processing area, on the desk in the office of the big building."
+        desc: "In the Chemical Processing area, on the desk in the office of the big building.",
     }, {
         id: "RS3Au2",
         faction: factions.requiem,
@@ -630,7 +630,7 @@ const intelStoreV2 = [
         loc: "[344, 427.5]",
         map: mapDetails.duga.id,
         name: "Doubts",
-        desc: "In the SAM site, in the big hanger on a box marked with a red star."
+        desc: "In the SAM site, in the big hanger on a box marked with a red star.",
     }, {
         id: "RS3Au3",
         faction: factions.requiem,
@@ -639,7 +639,7 @@ const intelStoreV2 = [
         loc: "[216.47308920021277, 87.5]",
         map: mapDetails.ruka.id,
         name: "Death Squads",
-        desc: "In the old farm area. In the green tent, under a table."
+        desc: "In the old farm area. In the green tent, under a table.",
     }, {
         id: "RS3Au4",
         faction: factions.requiem,
@@ -648,7 +648,7 @@ const intelStoreV2 = [
         loc: "[174, 304]",
         map: mapDetails.duga.id,
         name: "Eyes Only",
-        desc: "In the Worker Services building. On the second floor, on a desk in one of the offices."
+        desc: "In the Worker Services building. On the second floor, on a desk in one of the offices.",
     }, {
         id: "RS3Au5",
         faction: factions.requiem,
@@ -657,7 +657,7 @@ const intelStoreV2 = [
         loc: "[204.5, 274]",
         map: mapDetails.duga.id,
         name: "Operation Baldr",
-        desc: "In Radar Control. Sitting on the table next to the couch in the Office on the second floor."
+        desc: "In Radar Control. Sitting on the table next to the couch in the Office on the second floor.",
     }, {
         id: "RS3Au6",
         faction: factions.requiem,
@@ -666,7 +666,7 @@ const intelStoreV2 = [
         loc: "[286.5, 298.5]",
         map: mapDetails.sanatorium.id,
         name: "Dissent And Division",
-        desc: "On the monorail track in South Lake. It's in the support pillar in the middle of the lake."
+        desc: "On the monorail track in South Lake. It's in the support pillar in the middle of the lake.",
     }, {
         id: "RS3Au7",
         faction: factions.requiem,
@@ -675,7 +675,7 @@ const intelStoreV2 = [
         loc: "[303, 345.5]",
         map: mapDetails.sanatorium.id,
         name: "News From Upstairs",
-        desc: "Under the bridge. Right at the end of the bridge just before you go out of the map, on a little platform just above the surface of the water."
+        desc: "Under the bridge. Right at the end of the bridge just before you go out of the map, on a little platform just above the surface of the water.",
     }, {
         id: "RS3Au8",
         faction: factions.requiem,
@@ -684,7 +684,7 @@ const intelStoreV2 = [
         loc: "[219, 149.5]",
         map: mapDetails.alpine.id,
         name: "Embarrassment of Riches",
-        desc: "In the lodge. On the third floor sitting on the bar."
+        desc: "In the lodge. On the third floor sitting on the bar.",
     }, {
         id: "RS3Do1",
         faction: factions.requiem,
@@ -765,7 +765,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Progress Update",
-        desc: ""
+        desc: "",
     }, {
         id: "RS3Ra2",
         faction: factions.requiem,
@@ -774,7 +774,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "A Visceral Process",
-        desc: ""
+        desc: "",
     }, {
         id: "RS3Ra3",
         faction: factions.requiem,
@@ -783,7 +783,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Fish Out Of Water",
-        desc: ""
+        desc: "",
     }, {
         id: "RS3Ra4",
         faction: factions.requiem,
@@ -792,7 +792,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Commander-In-Chief",
-        desc: ""
+        desc: "",
     }, {
         id: "RS3Ar1",
         faction: factions.requiem,
@@ -801,7 +801,7 @@ const intelStoreV2 = [
         loc: "[278.5, 127.5]",
         map: mapDetails.sanatorium.id,
         name: "Energy Mine Canister",
-        desc: "On the roof of the 001 and 002 apartments in the Mechanic Shop area."
+        desc: "On the roof of the 001 and 002 apartments in the Mechanic Shop area.",
     }, {
         id: "RS3Ar2",
         faction: factions.requiem,
@@ -810,7 +810,7 @@ const intelStoreV2 = [
         loc: "[367, 233]",
         map: mapDetails.duga.id,
         name: "Essence Explosive",
-        desc: "In the bunker area, in the top most guard station."
+        desc: "In the bunker area, in the top most guard station.",
     }, {
         id: "RS3Ar3",
         faction: factions.requiem,
@@ -819,7 +819,7 @@ const intelStoreV2 = [
         loc: "[245.5, 332.5]",
         map: mapDetails.sanatorium.id,
         name: "Requiem Patch",
-        desc: "In the Lakeside Dell area. Its on a little dock to the left of the big bridge."
+        desc: "In the Lakeside Dell area. Its on a little dock to the left of the big bridge.",
     }, {
         id: "RS3Ar4",
         faction: factions.requiem,
@@ -828,7 +828,7 @@ const intelStoreV2 = [
         loc: "[387.7990788716177, 353.95577832845237]",
         map: mapDetails.golova.id,
         name: "Transformed Apple Crate",
-        desc: "In the barn of the lower farmstead. Should be pretty easy to spot."
+        desc: "In the barn of the lower farmstead. Should be pretty easy to spot.",
     }, {
         id: "RS3Ar5",
         faction: factions.requiem,
@@ -837,7 +837,7 @@ const intelStoreV2 = [
         loc: "[191.5, 398.5]",
         map: mapDetails.duga.id,
         name: "Beacon Device Component",
-        desc: "In the Electrical Substation. On one of the two taller structures, is very easy to see."
+        desc: "In the Electrical Substation. On one of the two taller structures, is very easy to see.",
     }, {
         id: "RS3Ar6",
         faction: factions.requiem,
@@ -846,7 +846,7 @@ const intelStoreV2 = [
         loc: "[356.718080080043, 430.125]",
         map: mapDetails.alpine.id,
         name: "Aether Shroud Canister",
-        desc: "In the Maintenance section. It's inside one of the garages."
+        desc: "In the Maintenance section. It's inside one of the garages.",
     }, {
         id: "RS4Au1",
         faction: factions.requiem,
@@ -855,7 +855,7 @@ const intelStoreV2 = [
         loc: "[201.97447242418866, 286]",
         map: mapDetails.zoo.id,
         name: "You Knew Better",
-        desc: "Next to the monorail up in the cages overpass."
+        desc: "Next to the monorail up in the cages overpass.",
     }, {
         id: "RS4Au2",
         faction: factions.requiem,
@@ -864,7 +864,7 @@ const intelStoreV2 = [
         loc: "[332.61880985103744, 263.9375]",
         map: mapDetails.zoo.id,
         name: "Aftermath",
-        desc: "On the desks in the center of the room."
+        desc: "On the desks in the center of the room.",
     }, {
         id: "RS4Au3",
         faction: factions.requiem,
@@ -873,7 +873,7 @@ const intelStoreV2 = [
         loc: "[256.1005169442849, 277.25]",
         map: mapDetails.golova.id,
         name: "What Tomorrow Brings",
-        desc: "On a bar counter."
+        desc: "On a bar counter.",
     }, {
         id: "RS4Au4",
         faction: factions.requiem,
@@ -882,7 +882,7 @@ const intelStoreV2 = [
         loc: "[360.21051120045945, 283.75]",
         map: mapDetails.ruka.id,
         name: "The Berlin Situation",
-        desc: "The audio log is on top of a railway tanker."
+        desc: "The audio log is on top of a railway tanker.",
     }, {
         id: "RS4Au5",
         faction: factions.requiem,
@@ -891,7 +891,7 @@ const intelStoreV2 = [
         loc: "[221.11429054492226, 132.75]",
         map: mapDetails.zoo.id,
         name: "Goes Without Saying",
-        desc: "The audio log is inside one of the buildings at the Industrial Complex, on top of the the middle table."
+        desc: "The audio log is inside one of the buildings at the Industrial Complex, on top of the the middle table.",
     }, {
         id: "RS4Au6",
         faction: factions.requiem,
@@ -900,7 +900,7 @@ const intelStoreV2 = [
         loc: "[303.05556562291264, 280.65884945678516]",
         map: mapDetails.mauerDerToten.id,
         name: "Lost in Transit",
-        desc: "In the Ghost Station. Laying next to a pillar on the side the Mule Kick machine is."
+        desc: "In the Ghost Station. Laying next to a pillar on the side the Mule Kick machine is.",
     }, {
         id: "RS4Au7",
         faction: factions.requiem,
@@ -909,7 +909,7 @@ const intelStoreV2 = [
         loc: "[103.78745589513629, 472.14785263771023]",
         map: mapDetails.mauerDerTotenStreets.id,
         name: "A Handful",
-        desc: "Inside the hidden area of Hotel Room 305."
+        desc: "Inside the hidden area of Hotel Room 305.",
     }, {
         id: "RS4Au8",
         faction: factions.requiem,
@@ -918,7 +918,7 @@ const intelStoreV2 = [
         loc: "[329.9196021776218, 185.50607794719141]",
         map: mapDetails.mauerDerToten.id,
         name: "Who's Laughing Now?",
-        desc: "In the Safe House. On a desk to the left of a door."
+        desc: "In the Safe House. On a desk to the left of a door.",
     }, {
         id: "RS4Au9",
         faction: factions.requiem,
@@ -927,7 +927,7 @@ const intelStoreV2 = [
         loc: "[351.0639951945735, 164.25180305542324]",
         map: mapDetails.mauerDerToten.id,
         name: "Bad Days",
-        desc: "Inside the Safehouse inside a locker. Only appears after Klaus has been built."
+        desc: "Inside the Safehouse inside a locker. Only appears after Klaus has been built.",
     }, {
         id: "RS4Au10",
         faction: factions.requiem,
@@ -936,7 +936,7 @@ const intelStoreV2 = [
         loc: "[182.3751168341555, 152.49714880759007]",
         map: mapDetails.mauerDerToten.id,
         name: "Final Order",
-        desc: "Inside the secret lab accessed during the main ee. On a table behind the pedestal used during the ee."
+        desc: "Inside the secret lab accessed during the main ee. On a table behind the pedestal used during the ee.",
     }, {
         id: "RS4Do1",
         faction: factions.requiem,
@@ -963,7 +963,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.sanatorium.id,
         name: "The Child's Note",
-        desc: "Obtained during the Outbreak EE#2"
+        desc: "Obtained during the Outbreak EE#2",
     }, {
         id: "RS4Do4",
         faction: factions.requiem,
@@ -972,7 +972,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Operation Excision Report",
-        desc: ""
+        desc: "",
     }, {
         id: "RS4Do5",
         faction: factions.requiem,
@@ -981,7 +981,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Where's My Robot?",
-        desc: ""
+        desc: "",
     }, {
         id: "RS4Do6",
         faction: factions.requiem,
@@ -990,7 +990,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "CRBR-S Report",
-        desc: ""
+        desc: "",
     }, {
         id: "RS4Do7",
         faction: factions.requiem,
@@ -999,7 +999,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "E Cipher",
-        desc: ""
+        desc: "",
     }, {
         id: "RS4Do8",
         faction: factions.requiem,
@@ -1008,7 +1008,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "CRBR-S Blueprint",
-        desc: ""
+        desc: "",
     }, {
         id: "RS4Do9",
         faction: factions.requiem,
@@ -1017,7 +1017,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Klaus Blueprint",
-        desc: ""
+        desc: "",
     }, {
         id: "RS4Do10",
         faction: factions.requiem,
@@ -1026,7 +1026,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Berlin Outbreak Report",
-        desc: ""
+        desc: "",
     }, {
         id: "RS4Do11",
         faction: factions.requiem,
@@ -1035,7 +1035,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Rico's Note",
-        desc: "Part of the main EE, can be found on the train."
+        desc: "Part of the main EE, can be found on the train.",
     }, {
         id: "RS4Do12",
         faction: factions.requiem,
@@ -1044,7 +1044,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Subject: Strange Communique",
-        desc: "Part of the main EE, can be found on the computer beside Klaus."
+        desc: "Part of the main EE, can be found on the computer beside Klaus.",
     }, {
         id: "RS4Do13",
         faction: factions.requiem,
@@ -1053,7 +1053,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Subject: Urgent",
-        desc: "Part of the main EE, can be found on the computer beside Klaus."
+        desc: "Part of the main EE, can be found on the computer beside Klaus.",
     }, {
         id: "RS4Do14",
         faction: factions.requiem,
@@ -1062,7 +1062,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "J Cipher 2",
-        desc: "Part of the main EE, can be found on the computer beside Klaus."
+        desc: "Part of the main EE, can be found on the computer beside Klaus.",
     }, {
         id: "RS4Do15",
         faction: factions.requiem,
@@ -1071,7 +1071,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "EE-1 Harvester Blueprint",
-        desc: ""
+        desc: "",
     }, {
         id: "RS4Do16",
         faction: factions.requiem,
@@ -1098,7 +1098,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Welcome Back",
-        desc: ""
+        desc: "",
     }, {
         id: "RS4Ra2",
         faction: factions.requiem,
@@ -1107,7 +1107,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Patterns",
-        desc: ""
+        desc: "",
     }, {
         id: "RS4Ra3",
         faction: factions.requiem,
@@ -1116,7 +1116,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Eye For An Eye",
-        desc: ""
+        desc: "",
     }, {
         id: "RS4Ra4",
         faction: factions.requiem,
@@ -1125,7 +1125,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Marked Man",
-        desc: ""
+        desc: "",
     }, {
         id: "RS4Ar1",
         faction: factions.requiem,
@@ -1134,7 +1134,7 @@ const intelStoreV2 = [
         loc: "[246.4854805816634, 109.75]",
         map: mapDetails.zoo.id,
         name: "Healing Aura Canister",
-        desc: "Underneath the sink in the corner."
+        desc: "Underneath the sink in the corner.",
     }, {
         id: "RS4Ar2",
         faction: factions.requiem,
@@ -1143,7 +1143,7 @@ const intelStoreV2 = [
         loc: "[416.95170242950877, 369.5]",
         map: mapDetails.zoo.id,
         name: "Recon Rover Model",
-        desc: "Behind the sink in the bathroom, second floor."
+        desc: "Behind the sink in the bathroom, second floor.",
     }, {
         id: "RS4Ar3",
         faction: factions.requiem,
@@ -1152,7 +1152,7 @@ const intelStoreV2 = [
         loc: "[304.976089010765, 73.875]",
         map: mapDetails.alpine.id,
         name: "Ring of Fire Canister",
-        desc: "In a yellow hanging coat inside the southernmost base cabin."
+        desc: "In a yellow hanging coat inside the southernmost base cabin.",
     }, {
         id: "RS4Ar4",
         faction: factions.requiem,
@@ -1161,7 +1161,7 @@ const intelStoreV2 = [
         loc: "[244.11627888125105, 320.3125]",
         map: mapDetails.zoo.id,
         name: "ECM Model",
-        desc: "The artifact is found on the shelf inside the Zoo Entrance office."
+        desc: "The artifact is found on the shelf inside the Zoo Entrance office.",
     }, {
         id: "RS4Ar6",
         faction: factions.requiem,
@@ -1170,7 +1170,7 @@ const intelStoreV2 = [
         loc: "[103.6017379770531, 462.17348530573224]",
         map: mapDetails.mauerDerTotenStreets.id,
         name: "Klaus's Hands",
-        desc: "The hands are found around the neck of a scorched zombie in room 305."
+        desc: "The hands are found around the neck of a scorched zombie in room 305.",
     }, {
         id: "RS4Ar6",
         faction: factions.requiem,
@@ -1179,7 +1179,7 @@ const intelStoreV2 = [
         loc: "[115.54337132643306, 451.52283934547444]",
         map: mapDetails.mauerDerTotenStreets.id,
         name: "CRBR-S",
-        desc: "In the Safe in rroom 305."
+        desc: "In the Safe in rroom 305.",
     }, {
         id: "RS4Ar7",
         faction: factions.requiem,
@@ -1188,7 +1188,7 @@ const intelStoreV2 = [
         loc: "[296.73609119124524, 317.747499559232]",
         map: mapDetails.mauerDerToten.id,
         name: "Warhead",
-        desc: "Part of the EE, can be found inside the train on an open chest"
+        desc: "Part of the EE, can be found inside the train on an open chest",
     }, {
         id: "RS4Ar8",
         faction: factions.requiem,
@@ -1197,7 +1197,7 @@ const intelStoreV2 = [
         loc: "[290.359361317248, 317.5268297579435]",
         map: mapDetails.mauerDerToten.id,
         name: "Rico's Keycard",
-        desc: "Part of the EE, can be found inside the train on a burnt corpse"
+        desc: "Part of the EE, can be found inside the train on a burnt corpse",
     }, {
         id: "RS4Ar9",
         faction: factions.requiem,
@@ -1206,7 +1206,7 @@ const intelStoreV2 = [
         loc: "[336.8310351797605, 202.84884675145662]",
         map: mapDetails.mauerDerToten.id,
         name: "Hacking Helm",
-        desc: "Part of the EE, can be obtained by crafting onto Klaus. U must collect first the Antenna, Transistor and Electronic Boards"
+        desc: "Part of the EE, can be obtained by crafting onto Klaus. U must collect first the Antenna, Transistor and Electronic Boards",
     }, {
         id: "RS4Ar10",
         faction: factions.requiem,
@@ -1215,7 +1215,7 @@ const intelStoreV2 = [
         loc: "[286.0552817646633, 37.73111969127485]",
         map: mapDetails.mauerDerTotenStreets.id,
         name: "Improvised Collider",
-        desc: "Part of the EE, can be obtained by picking up corrupted uranium and using it on the workbench"
+        desc: "Part of the EE, can be obtained by picking up corrupted uranium and using it on the workbench",
     }, {
         id: "RS5Au1",
         faction: factions.requiem,
@@ -1224,7 +1224,7 @@ const intelStoreV2 = [
         loc: "[152.10509347612606, 373.5]",
         map: mapDetails.collateral.id,
         name: "Peacemakers",
-        desc: "In the South dunes area. Near the Jump Pad, on the treads of the big machine, just to the west of the Jump pad."
+        desc: "In the South dunes area. Near the Jump Pad, on the treads of the big machine, just to the west of the Jump pad.",
     }, {
         id: "RS5Au2",
         faction: factions.requiem,
@@ -1233,7 +1233,7 @@ const intelStoreV2 = [
         loc: "[365.68631426163495, 117.06689738832597]",
         map: mapDetails.collateral.id,
         name: "Soul Searching",
-        desc: "It's in the broken down building, in the back corner, close to the border of the region."
+        desc: "It's in the broken down building, in the back corner, close to the border of the region.",
     }, {
         id: "RS5Au3",
         faction: factions.requiem,
@@ -1242,7 +1242,7 @@ const intelStoreV2 = [
         loc: "[344.28804705304697, 286]",
         map: mapDetails.armada.id,
         name: "Unto The Breach",
-        desc: "In the Gun Boat area. it's just behind a crate, near the Wunderfizz."
+        desc: "In the Gun Boat area. it's just behind a crate, near the Wunderfizz.",
     }, {
         id: "RS5Au4",
         faction: factions.requiem,
@@ -1251,7 +1251,7 @@ const intelStoreV2 = [
         loc: "[264.9770975746793, 279.27491131317663]",
         map: mapDetails.armada.id,
         name: "Butterscotch",
-        desc: "In Launch Bay area #3. Top Right most one, if looking at the big map."
+        desc: "In Launch Bay area #3. Top Right most one, if looking at the big map.",
     }, {
         id: "RS5Au5",
         faction: factions.requiem,
@@ -1260,7 +1260,7 @@ const intelStoreV2 = [
         loc: "[252.80602314205777, 249.9248150443894]",
         map: mapDetails.armada.id,
         name: "Desperate Measures",
-        desc: "On a table in the center of the Control Room area of the main boat."
+        desc: "On a table in the center of the Control Room area of the main boat.",
     }, {
         id: "RS5Do1",
         faction: factions.requiem,
@@ -1314,7 +1314,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Updates",
-        desc: ""
+        desc: "",
     }, {
         id: "RS5Ra2",
         faction: factions.requiem,
@@ -1323,7 +1323,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Busy Bees",
-        desc: ""
+        desc: "",
     }, {
         id: "RS5Ra3",
         faction: factions.requiem,
@@ -1332,7 +1332,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Walking Notso",
-        desc: ""
+        desc: "",
     }, {
         id: "RS5Ra4",
         faction: factions.requiem,
@@ -1341,7 +1341,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Act Three Time",
-        desc: ""
+        desc: "",
     }, {
         id: "RS5Ar1",
         faction: factions.requiem,
@@ -1350,7 +1350,7 @@ const intelStoreV2 = [
         loc: "[339.4830418187545, 403.61980124770054]",
         map: mapDetails.collateral.id,
         name: "Frenzied Guard Canister",
-        desc: "On the roof of the Drapery."
+        desc: "On the roof of the Drapery.",
     }, {
         id: "RS5Ar2",
         faction: factions.requiem,
@@ -1359,7 +1359,7 @@ const intelStoreV2 = [
         loc: "[183.96168312612326, 110]",
         map: mapDetails.collateral.id,
         name: "Aetherium Rocket Model",
-        desc: "In the Oil Tanks area. It's under a staircase, sitting on a yellow pipe embedded in the wall."
+        desc: "In the Oil Tanks area. It's under a staircase, sitting on a yellow pipe embedded in the wall.",
     }, {
         id: "RS5Ar3",
         faction: factions.requiem,
@@ -1368,7 +1368,7 @@ const intelStoreV2 = [
         loc: "[180.98899061533047, 278.0625]",
         map: mapDetails.collateral.id,
         name: "Raptor One's Helmet",
-        desc: "At the back of the Helipad Area. it's at the base of the helipad, at the bottom of a staircase."
+        desc: "At the back of the Helipad Area. it's at the base of the helipad, at the bottom of a staircase.",
     }, {
         id: "RS5Ar4",
         faction: factions.requiem,
@@ -1377,7 +1377,7 @@ const intelStoreV2 = [
         loc: "[256.92710668692445, 121.5625]",
         map: mapDetails.armada.id,
         name: "Toxic Growth Canister",
-        desc: "The western most Capsized area. it's under the water on a platform near the front of the ship."
+        desc: "The western most Capsized area. it's under the water on a platform near the front of the ship.",
     }, {
         id: "RS5Ar5",
         faction: factions.requiem,
@@ -1386,7 +1386,7 @@ const intelStoreV2 = [
         loc: "[196.9832618443238, 133.5]",
         map: mapDetails.armada.id,
         name: "Requiem Helicopter Model",
-        desc: "In the Maintenance section. Near one of the doors."
+        desc: "In the Maintenance section. Near one of the doors.",
     }, {
         id: "RS5Ar6",
         faction: factions.requiem,
@@ -1395,7 +1395,7 @@ const intelStoreV2 = [
         loc: "[314.54777218320953, 397.74424238182837]",
         map: mapDetails.armada.id,
         name: "Agent Klaus Model",
-        desc: "In the North-eastern most Hangar area. He's hanging off some pipes just above one of the staircases, climb on the nearby toolbox to grab him."
+        desc: "In the North-eastern most Hangar area. He's hanging off some pipes just above one of the staircases, climb on the nearby toolbox to grab him.",
     }, {
         id: "RS6Au1",
         faction: factions.requiem,
@@ -1404,7 +1404,7 @@ const intelStoreV2 = [
         loc: "[328.7872515067342, 221.11097924801237]",
         map: mapDetails.forsaken.id,
         name: "Symbiotic Relationship",
-        desc: "In the storage zone rooftops area, on top of a wire spool next to the mystery box. It only spawns, after progressing through the main quest (more precisely, after the crystal core drops from the sky, which is part of the wonder weapon)."
+        desc: "In the storage zone rooftops area, on top of a wire spool next to the mystery box. It only spawns, after progressing through the main quest (more precisely, after the crystal core drops from the sky, which is part of the wonder weapon).",
     }, {
         id: "RS6Au2",
         faction: factions.requiem,
@@ -1424,7 +1424,7 @@ const intelStoreV2 = [
         map: mapDetails.forsaken.id,
         name: "For Health",
         desc: "In the bar, on top of the counter.",
-        img: "N5FxkHZ"
+        img: "N5FxkHZ",
     }, {
         id: "RS6Au4",
         faction: factions.requiem,
@@ -1443,7 +1443,7 @@ const intelStoreV2 = [
         loc: "[192.94132033870045, 217]",
         map: mapDetails.zoo.id,
         name: "Weaver's Eyepatch",
-        desc: "Behind the desk at the gas station counter."
+        desc: "Behind the desk at the gas station counter.",
     }, {
         id: "RS6Ar2",
         faction: factions.requiem,
@@ -1452,7 +1452,7 @@ const intelStoreV2 = [
         loc: "[233.49143289914954, 155]",
         map: mapDetails.golova.id,
         name: "Tesla Storm Canister",
-        desc: "On top of the electrical box."
+        desc: "On top of the electrical box.",
     }, {
         id: "RS6Ar3",
         faction: factions.requiem,
@@ -1461,7 +1461,7 @@ const intelStoreV2 = [
         loc: "[157.43164326675438, 121.59375]",
         map: mapDetails.sanatorium.id,
         name: "Director Mug",
-        desc: "On top of a small round table on the ground floor."
+        desc: "On top of a small round table on the ground floor.",
     }, {
         id: "RS6Ar4",
         faction: factions.requiem,
@@ -1470,7 +1470,7 @@ const intelStoreV2 = [
         loc: "[112.54451034857252, 166.98547672827868]",
         map: mapDetails.forsaken.id,
         name: "Monitoring Device",
-        desc: "In the TV store, part of the main quest."
+        desc: "In the TV store, part of the main quest.",
     }, {
         id: "RS6Ar5",
         faction: factions.requiem,
@@ -1489,7 +1489,7 @@ const intelStoreV2 = [
         loc: "[386.40504451376614, 260.86230015702665]",
         map: mapDetails.forsaken.id,
         name: "Aetherium Neutralizer",
-        desc: "In the main street area, part of the main quest."
+        desc: "In the main street area, part of the main quest.",
     }, {
         id: "RS6Ar7",
         faction: factions.requiem,
@@ -1590,7 +1590,7 @@ const intelStoreV2 = [
         loc: "[326.96117219365135, 226]",
         map: mapDetails.dieMaschineUnderground.id,
         name: "8th Guard's First Contact",
-        desc: "Sitting on the ground next to the door to the bunker in Tunnel."
+        desc: "Sitting on the ground next to the door to the bunker in Tunnel.",
     }, {
         id: "OS0Au2",
         faction: factions.omega,
@@ -1599,7 +1599,7 @@ const intelStoreV2 = [
         loc: "[295.48907164390846, 373]",
         map: mapDetails.dieMaschineUnderground.id,
         name: "The Volunteer",
-        desc: "In the room where the PaP part can spawn in med bay. It's the area where the aether tunnel droops you off."
+        desc: "In the room where the PaP part can spawn in med bay. It's the area where the aether tunnel droops you off.",
     }, {
         id: "OS0Au3",
         faction: factions.omega,
@@ -1608,7 +1608,7 @@ const intelStoreV2 = [
         loc: "[210.24814240113494, 166.75]",
         map: mapDetails.dieMaschineUnderground.id,
         name: "For Mother Russia",
-        desc: "In the room where the PaP part can spawn in the weapon lab.It's the area where the aether tunnel droops you off."
+        desc: "In the room where the PaP part can spawn in the weapon lab.It's the area where the aether tunnel droops you off.",
     }, {
         id: "OS0Do1",
         faction: factions.omega,
@@ -1653,7 +1653,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Orlov Family Photo",
-        desc: "Collected in the radio station in nacht at the end of the main quest."
+        desc: "Collected in the radio station in nacht at the end of the main quest.",
     }, {
         id: "OS1Au1",
         faction: factions.omega,
@@ -1662,7 +1662,7 @@ const intelStoreV2 = [
         loc: "[279.46622628125556, 301.5]",
         map: mapDetails.dieMaschine.id,
         name: "Turning Point",
-        desc: "In the bedroom on a table underneath the chalkboard."
+        desc: "In the bedroom on a table underneath the chalkboard.",
     }, {
         id: "OS1Au2",
         faction: factions.omega,
@@ -1671,7 +1671,7 @@ const intelStoreV2 = [
         loc: "[408.452500443341, 376]",
         map: mapDetails.dieMaschine.id,
         name: "Next Phase",
-        desc: "In a far corner at the crash site."
+        desc: "In a far corner at the crash site.",
     }, {
         id: "OS1Au3",
         faction: factions.omega,
@@ -1680,7 +1680,7 @@ const intelStoreV2 = [
         loc: "[425.9506384110658, 396.5]",
         map: mapDetails.firebaseZ.id,
         name: "Dimensional Fertility",
-        desc: "In Scorched Defence, on top of the building with the minigun."
+        desc: "In Scorched Defence, on top of the building with the minigun.",
     }, {
         id: "OS1Au4",
         faction: factions.omega,
@@ -1689,7 +1689,7 @@ const intelStoreV2 = [
         loc: "[381.95532009221495, 294.5]",
         map: mapDetails.firebaseZ.id,
         name: "Let It Ride",
-        desc: "On top of some pipes in Engineering. Shoot it down."
+        desc: "On top of some pipes in Engineering. Shoot it down.",
     }, {
         id: "OS1Au5",
         faction: factions.omega,
@@ -1698,7 +1698,7 @@ const intelStoreV2 = [
         loc: "[402.4531388544068, 263]",
         map: mapDetails.firebaseZ.id,
         name: "Aethernauts",
-        desc: "In Planning Offices under the desk in the middle of the room."
+        desc: "In Planning Offices under the desk in the middle of the room.",
     }, {
         id: "OS1Au6",
         faction: factions.omega,
@@ -1707,7 +1707,7 @@ const intelStoreV2 = [
         loc: "[294.46463025359105, 365.5]",
         map: mapDetails.firebaseZ.id,
         name: "The Anatomy Lesson",
-        desc: "In field Hospital, near the exit to the Mission control area."
+        desc: "In field Hospital, near the exit to the Mission control area.",
     }, {
         id: "OS1Au7",
         faction: factions.omega,
@@ -1716,7 +1716,7 @@ const intelStoreV2 = [
         loc: "[170.97777088136195, 290.5]",
         map: mapDetails.firebaseZ.id,
         name: "Kuhlklay's Payback",
-        desc: "On a shelf in weapons lab , directly across from the RAI K-84 blueprint."
+        desc: "On a shelf in weapons lab , directly across from the RAI K-84 blueprint.",
     }, {
         id: "OS1Au8",
         faction: factions.omega,
@@ -1725,7 +1725,7 @@ const intelStoreV2 = [
         loc: "[275.4666518886327, 204]",
         map: mapDetails.firebaseZ.id,
         name: "Gorev",
-        desc: "In colonels office, under the desk with the monitor bank."
+        desc: "In colonels office, under the desk with the monitor bank.",
     }, {
         id: "OS1Au9",
         faction: factions.omega,
@@ -1734,7 +1734,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "To Dust You Will Return",
-        desc: "Inside the OPC(part of the main quest)."
+        desc: "Inside the OPC(part of the main quest).",
     }, {
         id: "OS1Au10",
         faction: factions.omega,
@@ -1743,7 +1743,7 @@ const intelStoreV2 = [
         loc: "[433.4498403972335, 329]",
         map: mapDetails.firebaseZ.id,
         name: "Outpost 25 Has Fallen",
-        desc: "In Mission Control, on a table by a window, near the top most charge collector."
+        desc: "In Mission Control, on a table by a window, near the top most charge collector.",
     }, {
         id: "OS1Do1",
         faction: factions.omega,
@@ -1833,7 +1833,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Good Little Lemmings",
-        desc: ""
+        desc: "",
     }, {
         id: "OS1Ra2",
         faction: factions.omega,
@@ -1842,7 +1842,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Not Built To Last",
-        desc: ""
+        desc: "",
     }, {
         id: "OS1Ra3",
         faction: factions.omega,
@@ -1851,7 +1851,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Do Try To Stay Alive",
-        desc: ""
+        desc: "",
     }, {
         id: "OS1Ra4",
         faction: factions.omega,
@@ -1860,7 +1860,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Gorev's Disappointment",
-        desc: ""
+        desc: "",
     }, {
         id: "OS1Ar1",
         faction: factions.omega,
@@ -1869,7 +1869,7 @@ const intelStoreV2 = [
         loc: "[339.95978896967546, 447]",
         map: mapDetails.firebaseZ.id,
         name: "Kuhlklay's Eye",
-        desc: "In scorched defence, in a dead body leaning up against a blown up tank."
+        desc: "In scorched defence, in a dead body leaning up against a blown up tank.",
     }, {
         id: "OS1Ar2",
         faction: factions.omega,
@@ -1878,7 +1878,7 @@ const intelStoreV2 = [
         loc: "[374.45611810604714, 265]",
         map: mapDetails.firebaseZSpawn.id,
         name: "Ravenov ID Badge",
-        desc: "Obtained from Ravenov during the main quest."
+        desc: "Obtained from Ravenov during the main quest.",
     }, {
         id: "OS1Ar3",
         faction: factions.omega,
@@ -1887,7 +1887,7 @@ const intelStoreV2 = [
         loc: "[288.46526866465683, 368]",
         map: mapDetails.firebaseZ.id,
         name: "Agent Delivery System",
-        desc: "Obtained from the medic building during the main quest."
+        desc: "Obtained from the medic building during the main quest.",
     }, {
         id: "OS1Ar4",
         faction: factions.omega,
@@ -1896,7 +1896,7 @@ const intelStoreV2 = [
         loc: "[170.4778240822841, 354]",
         map: mapDetails.firebaseZ.id,
         name: "Essence Trap",
-        desc: "Obtained from the datacenter during the main quest."
+        desc: "Obtained from the datacenter during the main quest.",
     }, {
         id: "OS1Ar5",
         faction: factions.omega,
@@ -1905,7 +1905,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Aethermeter",
-        desc: "Obtained during the main quest."
+        desc: "Obtained during the main quest.",
     }, {
         id: "OS2Au1",
         faction: factions.omega,
@@ -1914,7 +1914,7 @@ const intelStoreV2 = [
         loc: "[346.95904415676534, 229]",
         map: mapDetails.firebaseZSpawn.id,
         name: "Half Of The Reason",
-        desc: "Under a bunk bed in Scientist Quarters, in the starting area."
+        desc: "Under a bunk bed in Scientist Quarters, in the starting area.",
     }, {
         id: "OS2Au2",
         faction: factions.omega,
@@ -1923,7 +1923,7 @@ const intelStoreV2 = [
         loc: "[109.45970063327576, 359.458999774724]",
         map: mapDetails.golova.id,
         name: "Ghost Stories",
-        desc: "In the big building in the little cemetary's office room."
+        desc: "In the big building in the little cemetary's office room.",
     }, {
         id: "OS2Au3",
         faction: factions.omega,
@@ -1932,7 +1932,7 @@ const intelStoreV2 = [
         loc: "[272.5, 193]",
         map: mapDetails.sanatorium.id,
         name: "Something I Can Use",
-        desc: "In the sanatorium building on the second floor, on a coffee table in the room with the wall-buy."
+        desc: "In the sanatorium building on the second floor, on a coffee table in the room with the wall-buy.",
     }, {
         id: "OS2Au4",
         faction: factions.omega,
@@ -1941,7 +1941,7 @@ const intelStoreV2 = [
         loc: "[250.87823834196888, 294.92122099571975]",
         map: mapDetails.golova.id,
         name: "Off The Hook",
-        desc: "In front of the Wunderfizz, in one of the side rooms."
+        desc: "In front of the Wunderfizz, in one of the side rooms.",
     }, {
         id: "OS2Au5",
         faction: factions.omega,
@@ -1950,7 +1950,7 @@ const intelStoreV2 = [
         loc: "[245, 373.5]",
         map: mapDetails.alpine.id,
         name: "Do What You Must",
-        desc: "On a little table on the balcony terrace in the Chalet area."
+        desc: "On a little table on the balcony terrace in the Chalet area.",
     }, {
         id: "OS2Au6",
         faction: factions.omega,
@@ -1959,7 +1959,7 @@ const intelStoreV2 = [
         loc: "[178.97691966660756, 202.5]",
         map: mapDetails.ruka.id,
         name: "In The Wild",
-        desc: "In the middle of the Missile Silos on a shelf. near the ammo crate."
+        desc: "In the middle of the Missile Silos on a shelf. near the ammo crate.",
     }, {
         id: "OS2Au7",
         faction: factions.omega,
@@ -1968,7 +1968,7 @@ const intelStoreV2 = [
         loc: "[242, 192.5]",
         map: mapDetails.sanatorium.id,
         name: "Proposed Targets",
-        desc: "In the sanatorium building on the first floor in a side room to the right of the statue."
+        desc: "In the sanatorium building on the first floor in a side room to the right of the statue.",
     }, {
         id: "OS2Au8",
         faction: factions.omega,
@@ -1977,7 +1977,7 @@ const intelStoreV2 = [
         loc: "[358.81943157106696, 214.25]",
         map: mapDetails.ruka.id,
         name: "Lightning Bugs",
-        desc: "On a table near the edge of the Mobile ICBM Site."
+        desc: "On a table near the edge of the Mobile ICBM Site.",
     }, {
         id: "OS2Do1",
         faction: factions.omega,
@@ -2013,7 +2013,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "The Colonel",
-        desc: ""
+        desc: "",
     }, {
         id: "OS2Ra2",
         faction: factions.omega,
@@ -2022,7 +2022,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Up To Speed",
-        desc: ""
+        desc: "",
     }, {
         id: "OS2Ra3",
         faction: factions.omega,
@@ -2031,7 +2031,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Fiasco",
-        desc: ""
+        desc: "",
     }, {
         id: "OS2Ra4",
         faction: factions.omega,
@@ -2040,7 +2040,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Trespassers",
-        desc: ""
+        desc: "",
     }, {
         id: "OS2Ar1",
         faction: factions.omega,
@@ -2049,7 +2049,7 @@ const intelStoreV2 = [
         loc: "[144.98053732931368, 155.5]",
         map: mapDetails.ruka.id,
         name: "Kravchenko's Knife",
-        desc: "In a green lookout tower in the southwest corner of the Missile Silos."
+        desc: "In a green lookout tower in the southwest corner of the Missile Silos.",
     }, {
         id: "OS2Ar2",
         faction: factions.omega,
@@ -2058,7 +2058,7 @@ const intelStoreV2 = [
         loc: "[252.46909913105162, 213.5]",
         map: mapDetails.ruka.id,
         name: "Omega Group Patch",
-        desc: "On top of the climbable net in the obstacle course. (might currently be bugged)"
+        desc: "On top of the climbable net in the obstacle course. (might currently be bugged)",
     }, {
         id: "OS3Au1",
         faction: factions.omega,
@@ -2067,7 +2067,7 @@ const intelStoreV2 = [
         loc: "[164.5, 355]",
         map: mapDetails.duga.id,
         name: "Leadership Techniques",
-        desc: "On the third floor of the Admin Offices. In the room with a big oval table."
+        desc: "On the third floor of the Admin Offices. In the room with a big oval table.",
     }, {
         id: "OS3Au2",
         faction: factions.omega,
@@ -2076,7 +2076,7 @@ const intelStoreV2 = [
         loc: "[211.5, 448.5]",
         map: mapDetails.duga.id,
         name: "This Isn't My Work",
-        desc: "In the Research Labs. In the right most building."
+        desc: "In the Research Labs. In the right most building.",
     }, {
         id: "OS3Au3",
         faction: factions.omega,
@@ -2085,7 +2085,7 @@ const intelStoreV2 = [
         loc: "[164.23960365312996, 187.75]",
         map: mapDetails.ruka.id,
         name: "Witching Hour",
-        desc: "At the missile silos by the A elevator. On the side of the building, next to the generators."
+        desc: "At the missile silos by the A elevator. On the side of the building, next to the generators.",
     }, {
         id: "OS3Au4",
         faction: factions.omega,
@@ -2094,7 +2094,7 @@ const intelStoreV2 = [
         loc: "[287.25, 195.5]",
         map: mapDetails.sanatorium.id,
         name: "His Plan, Our Plan",
-        desc: "On the sanatorium Roof. It's on top of the spire with 2 satellite dishes. Requires a Jump pad to get to."
+        desc: "On the sanatorium Roof. It's on top of the spire with 2 satellite dishes. Requires a Jump pad to get to.",
     }, {
         id: "OS3Do1",
         faction: factions.omega,
@@ -2166,7 +2166,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Uncle",
-        desc: ""
+        desc: "",
     }, {
         id: "OS3Ra2",
         faction: factions.omega,
@@ -2175,7 +2175,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Made Of Fire",
-        desc: ""
+        desc: "",
     }, {
         id: "OS3Ra3",
         faction: factions.omega,
@@ -2184,7 +2184,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Chasing Ghosts",
-        desc: ""
+        desc: "",
     }, {
         id: "OS3Ra4",
         faction: factions.omega,
@@ -2193,7 +2193,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Something Is Coming",
-        desc: ""
+        desc: "",
     }, {
         id: "OS3Ar1",
         faction: factions.omega,
@@ -2202,7 +2202,7 @@ const intelStoreV2 = [
         loc: "[281.96596027664475, 373]",
         map: mapDetails.ruka.id,
         name: "Mangler Cannon",
-        desc: "Near the base of the Train Trestle closest to the building. It's sitting at the base of a tree."
+        desc: "Near the base of the Train Trestle closest to the building. It's sitting at the base of a tree.",
     }, {
         id: "OS3Ar2",
         faction: factions.omega,
@@ -2211,7 +2211,7 @@ const intelStoreV2 = [
         loc: "[129.25, 274]",
         map: mapDetails.sanatorium.id,
         name: "Peck's ID Badge",
-        desc: "In the middle of the large Bathhouse, on a shelf."
+        desc: "In the middle of the large Bathhouse, on a shelf.",
     }, {
         id: "OS3Ar3",
         faction: factions.omega,
@@ -2220,7 +2220,7 @@ const intelStoreV2 = [
         loc: "[164.5, 345.5]",
         map: mapDetails.duga.id,
         name: "Boost Module Monitor",
-        desc: "In the admin offices on the third floor. In the room with all the computers."
+        desc: "In the admin offices on the third floor. In the room with all the computers.",
     }, {
         id: "OS3Ar4",
         faction: factions.omega,
@@ -2229,7 +2229,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.ruka.id,
         name: "ICBM Launch Key",
-        desc: "Obtained during the outbreak EE."
+        desc: "Obtained during the outbreak EE.",
     }, {
         id: "OS3Ar5",
         faction: factions.omega,
@@ -2238,7 +2238,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.ruka.id,
         name: "Modified Essence Trap",
-        desc: "In a hallway on the ground floor of Silo A, obtained during the outbreak EE."
+        desc: "In a hallway on the ground floor of Silo A, obtained during the outbreak EE.",
     }, {
         id: "OS3Ar6",
         faction: factions.omega,
@@ -2247,7 +2247,7 @@ const intelStoreV2 = [
         loc: "[383, 249]",
         map: mapDetails.alpine.id,
         name: "Tempest Head",
-        desc: "In the medivac area. Inside the large building, on top of a pile of crates and sandbags that need to be clambered up."
+        desc: "In the medivac area. Inside the large building, on top of a pile of crates and sandbags that need to be clambered up.",
     }, {
         id: "OS4Au1",
         faction: factions.omega,
@@ -2256,7 +2256,7 @@ const intelStoreV2 = [
         loc: "[167.97809008689484, 313.5]",
         map: mapDetails.zoo.id,
         name: "Greater Threat",
-        desc: "On a couch on the first floor of the Restaurant"
+        desc: "On a couch on the first floor of the Restaurant",
     }, {
         id: "OS4Au2",
         faction: factions.omega,
@@ -2265,7 +2265,7 @@ const intelStoreV2 = [
         loc: "[189.47580244724242, 329]",
         map: mapDetails.zoo.id,
         name: "Day Of Victory",
-        desc: "On top of the rectangular tower of the aquarium. Might need to use a jump pad.."
+        desc: "On top of the rectangular tower of the aquarium. Might need to use a jump pad..",
     }, {
         id: "OS4Au3",
         faction: factions.omega,
@@ -2274,7 +2274,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.sanatorium.id,
         name: "The Survivors",
-        desc: "Obtained during the Outbreak EE#2"
+        desc: "Obtained during the Outbreak EE#2",
     }, {
         id: "OS4Au4",
         faction: factions.omega,
@@ -2283,7 +2283,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.sanatorium.id,
         name: "The Device",
-        desc: "Obtained during the Outbreak EE#2"
+        desc: "Obtained during the Outbreak EE#2",
     }, {
         id: "OS4Au5",
         faction: factions.omega,
@@ -2292,7 +2292,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.sanatorium.id,
         name: "The Trap",
-        desc: "Obtained during the Outbreak EE#2"
+        desc: "Obtained during the Outbreak EE#2",
     }, {
         id: "OS4Au6",
         faction: factions.omega,
@@ -2301,7 +2301,7 @@ const intelStoreV2 = [
         loc: "[152.24382307164962, 260.125]",
         map: mapDetails.duga.id,
         name: "Peace Is Our Profession",
-        desc: "Underground bunker in the south, under the bed."
+        desc: "Underground bunker in the south, under the bed.",
     }, {
         id: "OS4Au7",
         faction: factions.omega,
@@ -2310,7 +2310,7 @@ const intelStoreV2 = [
         loc: "[240.70833873747011, 61.25]",
         map: mapDetails.sanatorium.id,
         name: "A Trap Is Set",
-        desc: "The audio log is in the attic of one of the cottages, on a table with a lampshade."
+        desc: "The audio log is in the attic of one of the cottages, on a table with a lampshade.",
     }, {
         id: "OS4Au8",
         faction: factions.omega,
@@ -2319,7 +2319,7 @@ const intelStoreV2 = [
         loc: "[372.4417928146597, 249]",
         map: mapDetails.alpine.id,
         name: "Play Your Part",
-        desc: "The audio log is in the warehouse in the middle of a table."
+        desc: "The audio log is in the warehouse in the middle of a table.",
     }, {
         id: "OS4Au9",
         faction: factions.omega,
@@ -2328,7 +2328,7 @@ const intelStoreV2 = [
         loc: "[156.2484627011629, 160.65870156772797]",
         map: mapDetails.mauerDerToten.id,
         name: "A Decent Proposal",
-        desc: "In the Sewer Access area. In between a Staircase and the rappel point to the West Berlin Streets."
+        desc: "In the Sewer Access area. In between a Staircase and the rappel point to the West Berlin Streets.",
     }, {
         id: "OS4Au10",
         faction: factions.omega,
@@ -2337,7 +2337,7 @@ const intelStoreV2 = [
         loc: "[372.4417928146597, 249]",
         map: mapDetails.mauerDerTotenStreets.id,
         name: "The Letter",
-        desc: "In the Blasted Suite. Under the bed."
+        desc: "In the Blasted Suite. Under the bed.",
     }, {
         id: "OS4Au11",
         faction: factions.omega,
@@ -2346,7 +2346,7 @@ const intelStoreV2 = [
         loc: "[192.98132363950188, 166.56126147457007]",
         map: mapDetails.mauerDerTotenStreets.id,
         name: "The Turn",
-        desc: "In the \"Death Strip\". Sitting on top of a guard tower, can be shot down from the Destroyed Penthouse."
+        desc: "In the \"Death Strip\". Sitting on top of a guard tower, can be shot down from the Destroyed Penthouse.",
     }, {
         id: "OS4Do1",
         faction: factions.omega,
@@ -2364,7 +2364,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.sanatorium.id,
         name: "Aetherium Neutralizer Blueprint.",
-        desc: "Obtained during the Outbreak EE#2"
+        desc: "Obtained during the Outbreak EE#2",
     }, {
         id: "OS4Do3",
         faction: factions.omega,
@@ -2436,7 +2436,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Omega's Reputation",
-        desc: "Collected through the Omega Radios in Outbreak"
+        desc: "Collected through the Omega Radios in Outbreak",
     }, {
         id: "OS4Ra2",
         faction: factions.omega,
@@ -2445,7 +2445,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "The One-Eyed Cowboy",
-        desc: "Collected through the Omega Radios in Outbreak"
+        desc: "Collected through the Omega Radios in Outbreak",
     }, {
         id: "OS4Ra3",
         faction: factions.omega,
@@ -2454,7 +2454,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Your Problem Now",
-        desc: ""
+        desc: "",
     }, {
         id: "OS4Ra4",
         faction: factions.omega,
@@ -2463,7 +2463,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Secrets Harbored",
-        desc: ""
+        desc: "",
     }, {
         id: "OS4Ra5",
         faction: factions.omega,
@@ -2472,7 +2472,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "5-Star Treatment",
-        desc: ""
+        desc: "",
     }, {
         id: "OS4Ra6",
         faction: factions.omega,
@@ -2481,7 +2481,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Not For Me",
-        desc: ""
+        desc: "",
     }, {
         id: "OS4Ra7",
         faction: factions.omega,
@@ -2490,7 +2490,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Leverage",
-        desc: ""
+        desc: "",
     }, {
         id: "OS4Ar1",
         faction: factions.omega,
@@ -2499,7 +2499,7 @@ const intelStoreV2 = [
         loc: "[106.98458059939702, 268]",
         map: mapDetails.zoo.id,
         name: "Aether Reactor Model.",
-        desc: "Between the Rail holds on top of the support pillar."
+        desc: "Between the Rail holds on top of the support pillar.",
     }, {
         id: "OS4Ar2",
         faction: factions.omega,
@@ -2508,7 +2508,7 @@ const intelStoreV2 = [
         loc: "[187.97787728320623, 345]",
         map: mapDetails.zoo.id,
         name: "Inversion Warhead Model",
-        desc: "Up on the roof between a wooden wall and the rocks."
+        desc: "Up on the roof between a wooden wall and the rocks.",
     }, {
         id: "OS4Ar3",
         faction: factions.omega,
@@ -2517,7 +2517,7 @@ const intelStoreV2 = [
         loc: "[191.30800337218136, 277.62147784531714]",
         map: mapDetails.sanatorium.id,
         name: "Dark Aether Photos",
-        desc: "The artifact is on a side table inside one of the rooms of Upper Suites."
+        desc: "The artifact is on a side table inside one of the rooms of Upper Suites.",
     }, {
         id: "OS4Ar4",
         faction: factions.omega,
@@ -2526,7 +2526,7 @@ const intelStoreV2 = [
         loc: "[243.48189768579425, 201.375]",
         map: mapDetails.ruka.id,
         name: "Omega Flag",
-        desc: "The artifact is inside the watchtower, in the wall besides the window."
+        desc: "The artifact is inside the watchtower, in the wall besides the window.",
     }, {
         id: "OS4Ar5",
         faction: factions.omega,
@@ -2535,7 +2535,7 @@ const intelStoreV2 = [
         loc: "[175.67475241333307, 400]",
         map: mapDetails.zoo.id,
         name: "Krasny Soldat Flamethrower",
-        desc: "The artifact is in the backroom of the 'Wolf Exhibit', on a shelf."
+        desc: "The artifact is in the backroom of the 'Wolf Exhibit', on a shelf.",
     }, {
         id: "OS4Ar6",
         faction: factions.omega,
@@ -2544,7 +2544,7 @@ const intelStoreV2 = [
         loc: "[155.04142581255437, 150.71763984611835]",
         map: mapDetails.mauerDerToten.id,
         name: "Endstation Lure",
-        desc: "Part of the EE, enter the Secret Lab and shoot the machine next to the portal frame. Can only be obtained after collecting and distributing the canisters"
+        desc: "Part of the EE, enter the Secret Lab and shoot the machine next to the portal frame. Can only be obtained after collecting and distributing the canisters",
     }, {
         id: "OS4Ar7",
         faction: factions.omega,
@@ -2553,7 +2553,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Battery",
-        desc: "Can be obtained by killing the first Krazny"
+        desc: "Can be obtained by killing the first Krazny",
     }, {
         id: "OS5Au1",
         faction: factions.omega,
@@ -2562,7 +2562,7 @@ const intelStoreV2 = [
         loc: "[342.85771988660576, 424.56079740862197]",
         map: mapDetails.collateral.id,
         name: "Change Of Plans",
-        desc: "on the top of the third building in a row in the Village area. The screen will say you are in the Roadside area when you are on the correct building. The correct building also has a white/blue parachute hanging over one if the corners."
+        desc: "on the top of the third building in a row in the Village area. The screen will say you are in the Roadside area when you are on the correct building. The correct building also has a white/blue parachute hanging over one if the corners.",
     }, {
         id: "OS5Au2",
         faction: factions.omega,
@@ -2571,7 +2571,7 @@ const intelStoreV2 = [
         loc: "[187.18029705767913, 120.42651763576742]",
         map: mapDetails.armada.id,
         name: "New Frontiers",
-        desc: "In the Hangar area. It's sitting on a blue Shelf."
+        desc: "In the Hangar area. It's sitting on a blue Shelf.",
     }, {
         id: "OS5Au3",
         faction: factions.omega,
@@ -2580,7 +2580,7 @@ const intelStoreV2 = [
         loc: "[329.23846255396415, 263.3665520275134]",
         map: mapDetails.collateral.id,
         name: "Growing Concerns",
-        desc: "In the Cliffs area. It's at the edge of the top most set of rocks, up against the lowermost rock in the set. The location overlooks the village area."
+        desc: "In the Cliffs area. It's at the edge of the top most set of rocks, up against the lowermost rock in the set. The location overlooks the village area.",
     }, {
         id: "OS5Do1",
         faction: factions.omega,
@@ -2634,7 +2634,7 @@ const intelStoreV2 = [
         loc: "[269.98189768579425, 134.2308166040151]",
         map: mapDetails.collateral.id,
         name: "Boost Module Model",
-        desc: "In the Cliffs West area. in between the 2 middle clumps on the minimap."
+        desc: "In the Cliffs West area. in between the 2 middle clumps on the minimap.",
     }, {
         id: "OS5Ar2",
         faction: factions.omega,
@@ -2643,7 +2643,7 @@ const intelStoreV2 = [
         loc: "[287.7351841729818, 316.2450221946733]",
         map: mapDetails.collateral.id,
         name: "Mimic Tentacle",
-        desc: "Inside a pipe in the Village Dunes area, right next to a small oil drill. It's very close to the Parking Lot area."
+        desc: "Inside a pipe in the Village Dunes area, right next to a small oil drill. It's very close to the Parking Lot area.",
     }, {
         id: "OS5Ar3",
         faction: factions.omega,
@@ -2652,7 +2652,7 @@ const intelStoreV2 = [
         loc: "[205.37164750514165, 222.17909101815567]",
         map: mapDetails.collateral.id,
         name: "Valentina's ID Badge",
-        desc: "In the Oil Rig area. it's on the ground level, on a wall to the left when facing the Rappel Rope."
+        desc: "In the Oil Rig area. it's on the ground level, on a wall to the left when facing the Rappel Rope.",
     }, {
         id: "OS5Ar4",
         faction: factions.omega,
@@ -2661,7 +2661,7 @@ const intelStoreV2 = [
         loc: "[194.86678494006043, 336.2448402383428]",
         map: mapDetails.armada.id,
         name: "Gorev's ID Badge",
-        desc: "In the Patrol Boat area. It's on top of the boat itself."
+        desc: "In the Patrol Boat area. It's on top of the boat itself.",
     }, {
         id: "OS5Ar5",
         faction: factions.omega,
@@ -2670,7 +2670,7 @@ const intelStoreV2 = [
         loc: "[239.7265290619036, 396.23804286971125]",
         map: mapDetails.armada.id,
         name: "Teleporter Model",
-        desc: "In the eastern most Capsized area. It's underwater, along the guardrails of the deck."
+        desc: "In the eastern most Capsized area. It's underwater, along the guardrails of the deck.",
     }, {
         id: "OS6Ar1",
         faction: factions.omega,
@@ -2679,7 +2679,7 @@ const intelStoreV2 = [
         loc: "[141.11727408456636, 323.75]",
         map: mapDetails.alpine.id,
         name: "Contaminated Crystal",
-        desc: "Yellow/orange crystals in the toilet bowl in the westernmost of the four doors."
+        desc: "Yellow/orange crystals in the toilet bowl in the westernmost of the four doors.",
     }, {
         id: "OS6Ar2",
         faction: factions.omega,
@@ -2688,7 +2688,7 @@ const intelStoreV2 = [
         loc: "[182.24077282244167, 240.6875]",
         map: mapDetails.duga.id,
         name: "Jager's ID Badge",
-        desc: "On the desk as you walk in."
+        desc: "On the desk as you walk in.",
     }, {
         id: "OS6Au1",
         faction: factions.omega,
@@ -2697,7 +2697,7 @@ const intelStoreV2 = [
         loc: "[213.46177113635102, 360.5]",
         map: mapDetails.zoo.id,
         name: "Codename Whiskers",
-        desc: "Under the table inside the building."
+        desc: "Under the table inside the building.",
     }, {
         id: "OS6Au2",
         faction: factions.omega,
@@ -2706,7 +2706,7 @@ const intelStoreV2 = [
         loc: "[392.92004386615037, 250.5625]",
         map: mapDetails.duga.id,
         name: "Lineage",
-        desc: "In the bunker, on the floor in the computer room, behind the door."
+        desc: "In the bunker, on the floor in the computer room, behind the door.",
     }, {
         id: "OS6Au3",
         faction: factions.omega,
@@ -2715,7 +2715,7 @@ const intelStoreV2 = [
         loc: "[115.3396428835883, 167.2192018163428]",
         map: mapDetails.forsaken.id,
         name: "The Agreement",
-        desc: "In the TV store, drops after using the ARC-XD during the main quest step."
+        desc: "In the TV store, drops after using the ARC-XD during the main quest step.",
     }, {
         id: "OS6Au4",
         faction: factions.omega,
@@ -2725,7 +2725,7 @@ const intelStoreV2 = [
         map: mapDetails.forsakenUnderground.id,
         name: "Fully Operational",
         desc: "In the amplifier area, leans against the railing on the right side before you go down the stairs.",
-        img: "FSUOES7"
+        img: "FSUOES7",
     }, {
         id: "OS6Au5",
         faction: factions.omega,
@@ -2735,7 +2735,7 @@ const intelStoreV2 = [
         map: mapDetails.forsaken.id,
         name: "The Magnificent Two",
         desc: "In the fuel processing area, leans against a wall left towards the teleporter.",
-        img: "bhxXWIM"
+        img: "bhxXWIM",
     }, {
         id: "OS6Au6",
         faction: factions.omega,
@@ -2745,7 +2745,7 @@ const intelStoreV2 = [
         map: mapDetails.forsaken.id,
         name: "Deja Vu",
         desc: "Leans against the small checkpoint building.",
-        img: "nQTOc2W"
+        img: "nQTOc2W",
     }, {
         id: "OS6Do1",
         faction: factions.omega,
@@ -2837,7 +2837,7 @@ const intelStoreV2 = [
         loc: "[155.47942010994853, 256]",
         map: mapDetails.dieMaschine.id,
         name: "Cold War Paranoia",
-        desc: "On the couch next to the ee song cassette in first floor of nacht."
+        desc: "On the couch next to the ee song cassette in first floor of nacht.",
     }, {
         id: "MS0Au2",
         faction: factions.maxis,
@@ -2846,7 +2846,7 @@ const intelStoreV2 = [
         loc: "[225.9719187799255, 308]",
         map: mapDetails.dieMaschine.id,
         name: "Game Changer",
-        desc: "Drop the crate for the Cryo WW upgrade. The log will be near the destroyed crate and flask."
+        desc: "Drop the crate for the Cryo WW upgrade. The log will be near the destroyed crate and flask.",
     }, {
         id: "MS0Au3",
         faction: factions.maxis,
@@ -2855,7 +2855,7 @@ const intelStoreV2 = [
         loc: "[142.9807501330023, 282.5]",
         map: mapDetails.dieMaschine.id,
         name: "The VHS Tape",
-        desc: "same place as the canister for the nova 5 WW upgrade. Suck it with the WW."
+        desc: "same place as the canister for the nova 5 WW upgrade. Suck it with the WW.",
     }, {
         id: "MS0Do1",
         faction: factions.maxis,
@@ -2891,7 +2891,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Agent Maxis",
-        desc: ""
+        desc: "",
     }, {
         id: "MS0Ra2",
         faction: factions.maxis,
@@ -2900,7 +2900,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Scorpions From Frogs",
-        desc: ""
+        desc: "",
     }, {
         id: "MS0Ra3",
         faction: factions.maxis,
@@ -2909,7 +2909,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Why You're Here",
-        desc: ""
+        desc: "",
     }, {
         id: "MS1Au1",
         faction: factions.maxis,
@@ -2918,7 +2918,7 @@ const intelStoreV2 = [
         loc: "[356.45803333924454, 166]",
         map: mapDetails.firebaseZSpawn.id,
         name: "Not Who We Are",
-        desc: "In the scientist quarters, on the inaccessible floor above you the audio log will be sitting, shoot it and it will be on the floor in the Briefing room."
+        desc: "In the scientist quarters, on the inaccessible floor above you the audio log will be sitting, shoot it and it will be on the floor in the Briefing room.",
     }, {
         id: "MS1Au2",
         faction: factions.maxis,
@@ -2927,7 +2927,7 @@ const intelStoreV2 = [
         loc: "[133.4817609505231, 216.5]",
         map: mapDetails.firebaseZSpawn.id,
         name: "Workers Of The Worlds",
-        desc: "In equipment storage, on the back wall of the ground floor, on a shelf."
+        desc: "In equipment storage, on the back wall of the ground floor, on a shelf.",
     }, {
         id: "MS1Au3",
         faction: factions.maxis,
@@ -2936,7 +2936,7 @@ const intelStoreV2 = [
         loc: "[292.4648430572796, 323]",
         map: mapDetails.firebaseZ.id,
         name: "Worse Than Baton Rouge",
-        desc: "Inside a locker in the barracks. Need the key from the free WW quest to unlock."
+        desc: "Inside a locker in the barracks. Need the key from the free WW quest to unlock.",
     }, {
         id: "MS1Do1",
         faction: factions.maxis,
@@ -2981,7 +2981,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "The New Threat",
-        desc: ""
+        desc: "",
     }, {
         id: "MS1Ra2",
         faction: factions.maxis,
@@ -2990,7 +2990,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Divided Loyalties",
-        desc: ""
+        desc: "",
     }, {
         id: "MS1Ra3",
         faction: factions.maxis,
@@ -2999,7 +2999,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Shared History / Old Friends",
-        desc: ""
+        desc: "",
     }, {
         id: "MS1Ra4",
         faction: factions.maxis,
@@ -3008,7 +3008,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Code In",
-        desc: ""
+        desc: "",
     }, {
         id: "MS1Ra5",
         faction: factions.maxis,
@@ -3017,7 +3017,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Relentless",
-        desc: ""
+        desc: "",
     }, {
         id: "MS1Ra6",
         faction: factions.maxis,
@@ -3026,7 +3026,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Monsters Are Real",
-        desc: ""
+        desc: "",
     }, {
         id: "MS1Ra7",
         faction: factions.maxis,
@@ -3035,7 +3035,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "The Perpetual Night",
-        desc: ""
+        desc: "",
     }, {
         id: "MS1Ra8",
         faction: factions.maxis,
@@ -3044,7 +3044,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "The Light Within",
-        desc: ""
+        desc: "",
     }, {
         id: "MS1Ra9",
         faction: factions.maxis,
@@ -3053,7 +3053,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Blood On My Hands",
-        desc: ""
+        desc: "",
     }, {
         id: "MS1Ra10",
         faction: factions.maxis,
@@ -3062,7 +3062,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "A Bad Dream",
-        desc: ""
+        desc: "",
     }, {
         id: "MS2Au1",
         faction: factions.maxis,
@@ -3071,7 +3071,7 @@ const intelStoreV2 = [
         loc: "[379.9555328959035, 311.5]",
         map: mapDetails.firebaseZ.id,
         name: "More Bad News",
-        desc: "At the base of the OPC. Gotta climb over a barrier near the entrance to Mission Control."
+        desc: "At the base of the OPC. Gotta climb over a barrier near the entrance to Mission Control.",
     }, {
         id: "MS2Au2",
         faction: factions.maxis,
@@ -3080,7 +3080,7 @@ const intelStoreV2 = [
         loc: "[147.25338269196664, 295.75]",
         map: mapDetails.ruka.id,
         name: "Call Me Mac",
-        desc: "In the small cabin in the Backwoods."
+        desc: "In the small cabin in the Backwoods.",
     }, {
         id: "MS2Au3",
         faction: factions.maxis,
@@ -3089,7 +3089,7 @@ const intelStoreV2 = [
         loc: "[370, 405]",
         map: mapDetails.alpine.id,
         name: "My Reputation Precedes Me",
-        desc: "Inside the Red building's office area, in Maintenance."
+        desc: "Inside the Red building's office area, in Maintenance.",
     }, {
         id: "MS2Au4",
         faction: factions.maxis,
@@ -3098,7 +3098,7 @@ const intelStoreV2 = [
         loc: "[353.8189407023604, 375.46837125478714]",
         map: mapDetails.golova.id,
         name: "It's All Relative",
-        desc: "In the little barn next to the 4 silos in Lower Farmstead."
+        desc: "In the little barn next to the 4 silos in Lower Farmstead.",
     }, {
         id: "MS2Au5",
         faction: factions.maxis,
@@ -3107,7 +3107,7 @@ const intelStoreV2 = [
         loc: "[353.5, 146.5]",
         map: mapDetails.sanatorium.id,
         name: "We've Both Been To Hell",
-        desc: "In the little reception area of the biggest building in the maintenance area."
+        desc: "In the little reception area of the biggest building in the maintenance area.",
     }, {
         id: "MS2Do1",
         faction: factions.maxis,
@@ -3134,7 +3134,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "A Tangled Web",
-        desc: ""
+        desc: "",
     }, {
         id: "MS2Ra2",
         faction: factions.maxis,
@@ -3143,7 +3143,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "I Made A Promise",
-        desc: ""
+        desc: "",
     }, {
         id: "MS2Ra3",
         faction: factions.maxis,
@@ -3152,7 +3152,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Lab Rat",
-        desc: ""
+        desc: "",
     }, {
         id: "MS2Ra4",
         faction: factions.maxis,
@@ -3161,7 +3161,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Three Out Of Four",
-        desc: ""
+        desc: "",
     }, {
         id: "MS2Ra5",
         faction: factions.maxis,
@@ -3170,7 +3170,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Both Ways",
-        desc: ""
+        desc: "",
     }, {
         id: "MS2Ra6",
         faction: factions.maxis,
@@ -3179,7 +3179,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "I've Changed",
-        desc: ""
+        desc: "",
     }, {
         id: "MS2Ra7",
         faction: factions.maxis,
@@ -3188,7 +3188,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Why I Fight",
-        desc: ""
+        desc: "",
     }, {
         id: "MS2Ra8",
         faction: factions.maxis,
@@ -3197,7 +3197,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "True Courage",
-        desc: ""
+        desc: "",
     }, {
         id: "MS2Ar1",
         faction: factions.maxis,
@@ -3206,7 +3206,7 @@ const intelStoreV2 = [
         loc: "[213.3998272884283, 288.41741383194415]",
         map: mapDetails.golova.id,
         name: "Endstation Video Tape",
-        desc: "Found in a room in Lower East Town on an end table by a bed."
+        desc: "Found in a room in Lower East Town on an end table by a bed.",
     }, {
         id: "MS2Ar2",
         faction: factions.maxis,
@@ -3215,7 +3215,7 @@ const intelStoreV2 = [
         loc: "[165.9271732872769, 420.9950214012165]",
         map: mapDetails.golova.id,
         name: "Maxis BND Badge",
-        desc: "Behind some sandbags, very close to the edge of the map, in the Industrial Park location."
+        desc: "Behind some sandbags, very close to the edge of the map, in the Industrial Park location.",
     }, {
         id: "MS3Au1",
         faction: factions.maxis,
@@ -3224,7 +3224,7 @@ const intelStoreV2 = [
         loc: "[338, 218]",
         map: mapDetails.duga.id,
         name: "It's Always Dark",
-        desc: "In the 3rd bunker down from the top in the Bunkers section of the map, on a box."
+        desc: "In the 3rd bunker down from the top in the Bunkers section of the map, on a box.",
     }, {
         id: "MS3Au2",
         faction: factions.maxis,
@@ -3233,7 +3233,7 @@ const intelStoreV2 = [
         loc: "[346.5, 56]",
         map: mapDetails.duga.id,
         name: "Outbursts",
-        desc: "In the farm area. In the big red house, on the bed on the upper floor."
+        desc: "In the farm area. In the big red house, on the bed on the upper floor.",
     }, {
         id: "MS3Au3",
         faction: factions.maxis,
@@ -3242,7 +3242,7 @@ const intelStoreV2 = [
         loc: "[91.47006332757627, 339.4472854246452]",
         map: mapDetails.golova.id,
         name: "A New Friend",
-        desc: "On a desk in one of the Church's back rooms."
+        desc: "On a desk in one of the Church's back rooms.",
     }, {
         id: "MS3Au4",
         faction: factions.maxis,
@@ -3251,7 +3251,7 @@ const intelStoreV2 = [
         loc: "[171.92371905584338, 341.4484568596531]",
         map: mapDetails.golova.id,
         name: "Isolated",
-        desc: "On a desk in the Police station(the armour station building)"
+        desc: "On a desk in the Police station(the armour station building)",
     }, {
         id: "MS3Au5",
         faction: factions.maxis,
@@ -3260,7 +3260,7 @@ const intelStoreV2 = [
         loc: "[261.5, 193]",
         map: mapDetails.duga.id,
         name: "Someone We Can Trust",
-        desc: "In the warehouses section. On the second floor of the top most warehouse, on a desk."
+        desc: "In the warehouses section. On the second floor of the top most warehouse, on a desk.",
     }, {
         id: "MS3Do1",
         faction: factions.maxis,
@@ -3305,7 +3305,7 @@ const intelStoreV2 = [
         loc: "[296.5, 96]",
         map: mapDetails.duga.id,
         name: "Maxis's Katana",
-        desc: "In the farm area. Stuck in a haybale in a shed near the back of the area, next to the stone wall."
+        desc: "In the farm area. Stuck in a haybale in a shed near the back of the area, next to the stone wall.",
     }, {
         id: "MS3Ar2",
         faction: factions.maxis,
@@ -3314,7 +3314,7 @@ const intelStoreV2 = [
         loc: "[220, 253.5]",
         map: mapDetails.duga.id,
         name: "Maxis's Scarf",
-        desc: "In the listening post. In a room just to the left of the Wunderfizz, on a coathook."
+        desc: "In the listening post. In a room just to the left of the Wunderfizz, on a coathook.",
     }, {
         id: "MS3Ar3",
         faction: factions.maxis,
@@ -3323,7 +3323,7 @@ const intelStoreV2 = [
         loc: "[142.5, 129.5]",
         map: mapDetails.sanatorium.id,
         name: "Maxis's Goggles",
-        desc: "In the market square on one of the round tables."
+        desc: "In the market square on one of the round tables.",
     }, {
         id: "MS3Ar4",
         faction: factions.maxis,
@@ -3332,7 +3332,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Beacon Listening Device",
-        desc: "Obtained whilst completing an Aether transmission during the outbreak EE."
+        desc: "Obtained whilst completing an Aether transmission during the outbreak EE.",
     }, {
         id: "MS3Ar5",
         faction: factions.maxis,
@@ -3341,7 +3341,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Microfilm Slides",
-        desc: "Obtained by breaking a stone monkey during the outbreak EE."
+        desc: "Obtained by breaking a stone monkey during the outbreak EE.",
     }, {
         id: "MS3Ar6",
         faction: factions.maxis,
@@ -3350,7 +3350,7 @@ const intelStoreV2 = [
         loc: "[211.40097869890616, 322.9376210858302]",
         map: mapDetails.golova.id,
         name: "Maxis's Watch",
-        desc: "In the Lower West town area. It's on the roof of the building with the crafting bench, requires a jump pad to get to. It's tucked in between the roof itself and one of the 4 spire things with a flag on it."
+        desc: "In the Lower West town area. It's on the roof of the building with the crafting bench, requires a jump pad to get to. It's tucked in between the roof itself and one of the 4 spire things with a flag on it.",
     }, {
         id: "MS4Au1",
         faction: factions.maxis,
@@ -3359,7 +3359,7 @@ const intelStoreV2 = [
         loc: "[119.48325057634332, 359.5]",
         map: mapDetails.zoo.id,
         name: "Take Her",
-        desc: "In the basement of the zoo facilities in a shelf of one of the work stations"
+        desc: "In the basement of the zoo facilities in a shelf of one of the work stations",
     }, {
         id: "MS4Au2",
         faction: factions.maxis,
@@ -3368,7 +3368,7 @@ const intelStoreV2 = [
         loc: "[218.47271679375774, 319.5]",
         map: mapDetails.zoo.id,
         name: "The Confrontation",
-        desc: "In one of the animal cages on some hay"
+        desc: "In one of the animal cages on some hay",
     }, {
         id: "MS4Au3",
         faction: factions.maxis,
@@ -3377,7 +3377,7 @@ const intelStoreV2 = [
         loc: "[359.30741377017205, 350.5]",
         map: mapDetails.zoo.id,
         name: "The Ally",
-        desc: "In the little nook where the stone monkey is on a shelf."
+        desc: "In the little nook where the stone monkey is on a shelf.",
     }, {
         id: "MS4Do1",
         faction: factions.maxis,
@@ -3395,7 +3395,7 @@ const intelStoreV2 = [
         loc: "[368.98544820366493, 361.7437485003599]",
         map: mapDetails.collateral.id,
         name: "Test",
-        desc: "Inside the Building marked Carpets on a table."
+        desc: "Inside the Building marked Carpets on a table.",
     }, {
         id: "MS5Au2",
         faction: factions.maxis,
@@ -3404,7 +3404,7 @@ const intelStoreV2 = [
         loc: "[149.6756765207241, 183.9313004878829]",
         map: mapDetails.collateral.id,
         name: "Interrogation",
-        desc: "Inside the Pump Room on a Shelf."
+        desc: "Inside the Pump Room on a Shelf.",
     }, {
         id: "MS5Au3",
         faction: factions.maxis,
@@ -3413,7 +3413,7 @@ const intelStoreV2 = [
         loc: "[267.2369443775361, 254.55674238182837]",
         map: mapDetails.collateral.id,
         name: "Fifteen Days",
-        desc: "In the Warehouse. it's in a back room, up on a pipe. you need to shoot it down."
+        desc: "In the Warehouse. it's in a back room, up on a pipe. you need to shoot it down.",
     }, {
         id: "MS5Au4",
         faction: factions.maxis,
@@ -3422,7 +3422,7 @@ const intelStoreV2 = [
         loc: "[213.54343767949456, 228.8739342557786]",
         map: mapDetails.collateral.id,
         name: "Sixty-Two Days",
-        desc: "In the Oil Rig area. This one is a bit difficult. Climb up to where PaP is. Then look up towards the yellow platform, and you can just barely see the edge of the tape recorder hanging over the edge. Shoot it down, and it will fall down to you."
+        desc: "In the Oil Rig area. This one is a bit difficult. Climb up to where PaP is. Then look up towards the yellow platform, and you can just barely see the edge of the tape recorder hanging over the edge. Shoot it down, and it will fall down to you.",
     }, {
         id: "MS5Au5",
         faction: factions.maxis,
@@ -3431,7 +3431,7 @@ const intelStoreV2 = [
         loc: "[190.6188531804117, 255.1136667199872]",
         map: mapDetails.armada.id,
         name: "Thirty Seconds",
-        desc: "In the same room as Pap on a table."
+        desc: "In the same room as Pap on a table.",
     }, {
         id: "MS5Do1",
         faction: factions.maxis,
@@ -3476,7 +3476,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "New Frequency",
-        desc: ""
+        desc: "",
     }, {
         id: "MS5Ra2",
         faction: factions.maxis,
@@ -3485,7 +3485,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Understand Me",
-        desc: ""
+        desc: "",
     }, {
         id: "MS5Ra3",
         faction: factions.maxis,
@@ -3494,7 +3494,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Power",
-        desc: ""
+        desc: "",
     }, {
         id: "MS6Au1",
         faction: factions.maxis,
@@ -3503,7 +3503,7 @@ const intelStoreV2 = [
         loc: "[232.85298123066093, 312]",
         map: mapDetails.ruka.id,
         name: "I Am Alive",
-        desc: "On the ledge of the top of the watchtower."
+        desc: "On the ledge of the top of the watchtower.",
     }, {
         id: "MS6Au2",
         faction: factions.maxis,
@@ -3513,7 +3513,7 @@ const intelStoreV2 = [
         map: mapDetails.forsakenUnderground.id,
         name: "My Choice",
         desc: "In the particle accelerator area, drops out of the aetherium tank after assembling the wonder weapon in there.",
-        img: "44r3bWk"
+        img: "44r3bWk",
     }, {
         id: "MS6Au3",
         faction: factions.maxis,
@@ -3522,7 +3522,7 @@ const intelStoreV2 = [
         loc: "[418.38774090659103, 179.5548004540857]",
         map: mapDetails.forsaken.id,
         name: "My Orders",
-        desc: "In the Beach Pizza restaurant, on top of the lamp bracket. You need to shoot it down."
+        desc: "In the Beach Pizza restaurant, on top of the lamp bracket. You need to shoot it down.",
     }, {
         id: "MS6Au4",
         faction: factions.maxis,
@@ -3568,7 +3568,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "The Boy",
-        desc: ""
+        desc: "",
     }, {
         id: "MS6Ra2",
         faction: factions.maxis,
@@ -3750,7 +3750,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Mutated Fungus",
-        desc: "Obtained during the main quest, on a tree with purple table mushrooms."
+        desc: "Obtained during the main quest, on a tree with purple table mushrooms.",
     }, {
         id: "DS0Ar2",
         faction: factions.darkAether,
@@ -3759,7 +3759,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Plaguehound Gas",
-        desc: "Obtained during the main quest, next to Deadshot Daiquiri."
+        desc: "Obtained during the main quest, next to Deadshot Daiquiri.",
     }, {
         id: "DS0Ar3",
         faction: factions.darkAether,
@@ -3768,7 +3768,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Dark Aether Crystal",
-        desc: "Obtained during hte main quest, collected from the red Aether crystals."
+        desc: "Obtained during hte main quest, collected from the red Aether crystals.",
     }, {
         id: "DS0Ar4",
         faction: factions.darkAether,
@@ -3777,7 +3777,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Dark Aether Wrench",
-        desc: "Obtained during the main quest, gotten from the ghostly figures in the med bay."
+        desc: "Obtained during the main quest, gotten from the ghostly figures in the med bay.",
     }, {
         id: "DS1Au1",
         faction: factions.darkAether,
@@ -4011,7 +4011,7 @@ const intelStoreV2 = [
         loc: "[354.96085298811846, 285.5]",
         map: mapDetails.firebaseZ.id,
         name: "Omega Canister",
-        desc: "Part of the Main quest."
+        desc: "Part of the Main quest.",
     }, {
         id: "DS2Au1",
         faction: factions.darkAether,
@@ -4119,7 +4119,7 @@ const intelStoreV2 = [
         loc: "[155, 212.5]",
         map: mapDetails.alpine.id,
         name: "Empty Jugger-Nog",
-        desc: "On the roof of the Large Sauna building"
+        desc: "On the roof of the Large Sauna building",
     }, {
         id: "DS2Ar2",
         faction: factions.darkAether,
@@ -4128,7 +4128,7 @@ const intelStoreV2 = [
         loc: "[104.96229130685089, 326.9399639558459]",
         map: mapDetails.golova.id,
         name: "Cymbal Monkey Toy",
-        desc: "On the lip of the left most tower on the roof of the church."
+        desc: "On the lip of the left most tower on the roof of the church.",
     }, {
         id: "DS2Ar3",
         faction: factions.darkAether,
@@ -4137,7 +4137,7 @@ const intelStoreV2 = [
         loc: "[252.72811324600252, 406.25]",
         map: mapDetails.ruka.id,
         name: "Ivan's Head",
-        desc: "On a telephone pillar next to the train trestle bridge (use parachute)."
+        desc: "On a telephone pillar next to the train trestle bridge (use parachute).",
     }, {
         id: "DS2Ar4",
         faction: factions.darkAether,
@@ -4146,7 +4146,7 @@ const intelStoreV2 = [
         loc: "[239.3576897778437, 74.5]",
         map: mapDetails.alpine.id,
         name: "Mystery Box Bunny",
-        desc: "In a bed in Base Suites section. It's the third building from the bottom."
+        desc: "In a bed in Base Suites section. It's the third building from the bottom.",
     }, {
         id: "DS3Au1",
         faction: factions.darkAether,
@@ -4308,7 +4308,7 @@ const intelStoreV2 = [
         loc: "[162.5, 462]",
         map: mapDetails.sanatorium.id,
         name: "Empty Speed Cola",
-        desc: "On the counter on the kitchen of the higher of the two right most houses in the vacation homes section."
+        desc: "On the counter on the kitchen of the higher of the two right most houses in the vacation homes section.",
     }, {
         id: "DS3Ar2",
         faction: factions.darkAether,
@@ -4317,7 +4317,7 @@ const intelStoreV2 = [
         loc: "[316, 286.5]",
         map: mapDetails.duga.id,
         name: "Broken Essence Capsule",
-        desc: "In the Secondary Array. This location is kinda weird. Starting from the top of the left most array, go as far left as you can, then go down 3 layers. It will be sitting on a grey metal bar connecting the walkway to the side of the array. This is away from the Primary Array, not towards it."
+        desc: "In the Secondary Array. This location is kinda weird. Starting from the top of the left most array, go as far left as you can, then go down 3 layers. It will be sitting on a grey metal bar connecting the walkway to the side of the array. This is away from the Primary Array, not towards it.",
     }, {
         id: "DS3Ar3",
         faction: factions.darkAether,
@@ -4326,7 +4326,7 @@ const intelStoreV2 = [
         loc: "[284.5, 238.5]",
         map: mapDetails.sanatorium.id,
         name: "Empty Quick Revive",
-        desc: "In the Beach Resort. Under the stairs of the White shack building."
+        desc: "In the Beach Resort. Under the stairs of the White shack building.",
     }, {
         id: "DS3Ar4",
         faction: factions.darkAether,
@@ -4335,7 +4335,7 @@ const intelStoreV2 = [
         loc: "[279.4652284636858, 147.6332283257859]",
         map: mapDetails.ruka.id,
         name: "Broken Essence Canister",
-        desc: "Right next to the wall buy inside the barn."
+        desc: "Right next to the wall buy inside the barn.",
     }, {
         id: "DS3Ar5",
         faction: factions.darkAether,
@@ -4344,7 +4344,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.ruka.id,
         name: "Aetherium Crystal Chunks",
-        desc: "Found by breaking crystals in Silo B during the outbreak EE"
+        desc: "Found by breaking crystals in Silo B during the outbreak EE",
     }, {
         id: "DS3Ar6",
         faction: factions.darkAether,
@@ -4353,7 +4353,7 @@ const intelStoreV2 = [
         loc: "[226, 142.5]",
         map: mapDetails.alpine.id,
         name: "Dragon Head Trophy",
-        desc: "In the lodge. In Room 201, above the bed."
+        desc: "In the lodge. In Room 201, above the bed.",
     }, {
         id: "DS4Au1",
         faction: factions.darkAether,
@@ -4479,7 +4479,7 @@ const intelStoreV2 = [
         loc: "[358.4578205355559, 261]",
         map: mapDetails.zoo.id,
         name: "Empty Stamin-Up",
-        desc: "Inside the diner under the white marble counter."
+        desc: "Inside the diner under the white marble counter.",
     }, {
         id: "DS4Ar2",
         faction: factions.darkAether,
@@ -4488,7 +4488,7 @@ const intelStoreV2 = [
         loc: "[206.47021635041676, 299.5]",
         map: mapDetails.zoo.id,
         name: "Fury Crystal",
-        desc: "On the roof behind a pillar."
+        desc: "On the roof behind a pillar.",
     }, {
         id: "DS4Ar3",
         faction: factions.darkAether,
@@ -4497,7 +4497,7 @@ const intelStoreV2 = [
         loc: "[186.3576897778437, 331.625]",
         map: mapDetails.golova.id,
         name: "Empty Elemental Pop",
-        desc: "Resting on a food shelf inside the kitchen area."
+        desc: "Resting on a food shelf inside the kitchen area.",
     }, {
         id: "DS4Ar4",
         faction: factions.darkAether,
@@ -4506,7 +4506,7 @@ const intelStoreV2 = [
         loc: "[236.8503849289433, 327.875]",
         map: mapDetails.duga.id,
         name: "Elemental Pop Poster",
-        desc: "The poster is inside the 'Maintenance Facilities' building, fixed on the wall."
+        desc: "The poster is inside the 'Maintenance Facilities' building, fixed on the wall.",
     }, {
         id: "DS4Ar5",
         faction: factions.darkAether,
@@ -4515,7 +4515,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Electrical Fuse",
-        desc: "Obtained by killing the first tempest, used to restore power"
+        desc: "Obtained by killing the first tempest, used to restore power",
     }, {
         id: "DS4Ar6",
         faction: factions.darkAether,
@@ -4524,7 +4524,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Tempest Essence",
-        desc: "Part of the EE, can be obtained by placing a container on the essence harvester and filling it up by killing the spawning Tempest."
+        desc: "Part of the EE, can be obtained by placing a container on the essence harvester and filling it up by killing the spawning Tempest.",
     }, {
         id: "DS4Ar7",
         faction: factions.darkAether,
@@ -4533,7 +4533,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
         name: "Corrupted Uranium",
-        desc: "Part of the EE, can be obtained by spawning an HVT Megaton and killing the 2 halves"
+        desc: "Part of the EE, can be obtained by spawning an HVT Megaton and killing the 2 halves",
     }, {
         id: "DS5Au1",
         faction: factions.darkAether,
@@ -4587,7 +4587,7 @@ const intelStoreV2 = [
         loc: "[238.67594055140722, 68.30086779172998]",
         map: mapDetails.collateral.id,
         name: "Empty Deadshot Daiquiri",
-        desc: "Inside the building marked Hazardous."
+        desc: "Inside the building marked Hazardous.",
     }, {
         id: "DS5Ar2",
         faction: factions.darkAether,
@@ -4596,7 +4596,7 @@ const intelStoreV2 = [
         loc: "[364.92220011672936, 279.24477525393905]",
         map: mapDetails.collateral.id,
         name: "Demented Echo Head",
-        desc: "In the Cliffs area. Tucked in the Base of the top most clump on the minimap. It's right where the line connects to the clump on the minimap."
+        desc: "In the Cliffs area. Tucked in the Base of the top most clump on the minimap. It's right where the line connects to the clump on the minimap.",
     }, {
         id: "DS5Ar3",
         faction: factions.darkAether,
@@ -4605,7 +4605,7 @@ const intelStoreV2 = [
         loc: "[244.6159268403402, 188.73986243301607]",
         map: mapDetails.armada.id,
         name: "Empty Mule Kick",
-        desc: "In the Machine Shop area. It's inside an overturned trash can."
+        desc: "In the Machine Shop area. It's inside an overturned trash can.",
     }, {
         id: "DS5Ar4",
         faction: factions.darkAether,
@@ -4614,7 +4614,7 @@ const intelStoreV2 = [
         loc: "[309.8628684849271, 262.7430596656802]",
         map: mapDetails.armada.id,
         name: "Empty Tombstone Soda",
-        desc: "In the Gun boat Control Room. it's in-between one of the sonar panels and the wall."
+        desc: "In the Gun boat Control Room. it's in-between one of the sonar panels and the wall.",
     }, {
         id: "DS6Au1",
         faction: factions.darkAether,
@@ -4641,7 +4641,7 @@ const intelStoreV2 = [
         loc: "[393.3707361360731, 342]",
         map: mapDetails.ruka.id,
         name: "Archaic Goblet",
-        desc: "On top of a cut tree stump."
+        desc: "On top of a cut tree stump.",
     }, {
         id: "DS6Ar2",
         faction: factions.darkAether,
@@ -4650,7 +4650,7 @@ const intelStoreV2 = [
         loc: "[170.61009616275408, 319.75]",
         map: mapDetails.golova.id,
         name: "Empty PhD Slider",
-        desc: "On top of the desk in a second-floor room to the right of pack-a-punch."
+        desc: "On top of the desk in a second-floor room to the right of pack-a-punch.",
     }, {
         id: "DS6Ar3",
         faction: factions.darkAether,
@@ -4659,7 +4659,7 @@ const intelStoreV2 = [
         loc: "[327.842464008449, 304.25]",
         map: mapDetails.alpine.id,
         name: "Zykov's Mask",
-        desc: "On the shelf."
+        desc: "On the shelf.",
     }, {
         id: "DS6Ar4",
         faction: factions.darkAether,
@@ -4668,7 +4668,7 @@ const intelStoreV2 = [
         loc: "[238.2379564951548, 255.125]",
         map: mapDetails.sanatorium.id,
         name: "Empty Death Perception",
-        desc: "In the sink on the ground floor."
+        desc: "In the sink on the ground floor.",
     }, {
         id: "DS6Ar5",
         faction: factions.darkAether,
@@ -4677,7 +4677,7 @@ const intelStoreV2 = [
         loc: "[421.0527264879534, 127.71176452428412]",
         map: mapDetails.forsaken.id,
         name: "Polymorphic Crystal Core",
-        desc: "In the Jim's Donuts building, the artifact is part of the wonder weapon quest."
+        desc: "In the Jim's Donuts building, the artifact is part of the wonder weapon quest.",
     }, {
         id: "DS6Ar6",
         faction: factions.darkAether,
@@ -4686,7 +4686,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.forsaken.id,
         name: "Energetic Geode",
-        desc: "Get an Abomination to Destroy a Dark aether Crystal(the Purple ones you can melee) with it's Laser."
+        desc: "Get an Abomination to Destroy a Dark aether Crystal(the Purple ones you can melee) with it's Laser.",
     }, {
         id: "DS6Ar7",
         faction: factions.darkAether,
@@ -4695,7 +4695,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.forsaken.id,
         name: "Tempered Crystal Heart",
-        desc: "Kill a Tormentor with a Flame Thrower."
+        desc: "Kill a Tormentor with a Flame Thrower.",
     }, {
         id: "DS6Ar8",
         faction: factions.darkAether,
