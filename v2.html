@@ -145,15 +145,15 @@
         <div class="modal -hidden" id="intel-list">
             <div id="search-form">
                 <input id="search-term" type="search" placeholder="Search Intel...">
-                <label class="btn chk-btn" for="curr-map-filter"  onchange="TriggerSearch()">
-                    <p>Filter by Current Map</p><input type="checkbox" name="curr-map-filter" id="curr-map-filter" class="toggle"
-                        placeholder="_">
-                </label>
             </div>
-
+            
             <div id="filtered-intel">
                 <!-- <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button> -->
             </div>
+            <label id="curr-map-filter-label"class="chk-btn" for="curr-map-filter"  onchange="TriggerSearch()">
+                Filter by Current Map: <input type="checkbox" name="curr-map-filter" id="curr-map-filter" class="-small toggle"
+                    placeholder="_">
+            </label>
         </div>
         <div class="modal -big -hidden" id="intel-detail">
             <div class="sub-modal" id="description">

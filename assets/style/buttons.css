@@ -340,3 +340,31 @@ input[type="search"] {
   padding:2px;
   font-size:.7rem;
 }
+#curr-map-filter-label{
+  color:var(--clr-color)
+}
+.-small.toggle{
+  background-color:var(--clr-purple);
+  width: 40px;
+    height: 25px;
+
+}
+.-small.toggle:checked{
+  background-color:var(--clr-pink);
+  
+}
+.-small.toggle::after{
+    top: 2.5px;
+    left: 2px;
+    width: 19px;
+    height: 19px;
+    background-color: var(--clr-grey-l);
+    border-radius: 50%;
+    transition: 100ms;
+}
+.-small.toggle:checked::after{
+  left: 19px;
+}
+.-small.toggle:hover::after{
+  top:0px;
+}
