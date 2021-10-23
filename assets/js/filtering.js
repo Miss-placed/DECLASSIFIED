@@ -67,8 +67,14 @@ function TriggerSearchV1() {
 
 function TriggerSearch(params) {
     const searchTerm = $('#search-term').val();
-    const factionsArr = $('').val();
-    const seasonsArr = $('').val();
+    const factionsArr = [];
+    $('#faction-multi-select input[type=checkbox]:checked').each(function () {
+        factionsArr.push(factions[$(this).data("filter")]);
+    });
+    const seasonsArr = [];
+    $('#season-multi-select input[type=checkbox]:checked').each(function () {
+        seasonsArr.push(seasons[$(this).data("filter")]);
+    });
     const intelTypeArr = [];
     $('#intel-type-select input[type=checkbox]:checked').each(function () {
         intelTypeArr.push(intelTypes[$(this).data("filter")]);

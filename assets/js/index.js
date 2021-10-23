@@ -81,7 +81,7 @@ function onLoadV2() {
     $('#search-term').keyup(function () {
         TriggerSearch();
     });
-    $('#intel-type-select input[type=checkbox]').click(function (params) {
+    $('#intel-filters input[type=checkbox]').click(function (params) {
         TriggerSearch();
     });
 
