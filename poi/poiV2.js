@@ -1480,6 +1480,7 @@ const intelStoreV2 = [
         map: mapDetails.forsakenUnderground.id,
         name: "Housing Unit",
         desc: "In the board room, part of the main quest.",
+        img: "f2TL9eI",
     }, {
         id: "RS6Ar6",
         faction: factions.requiem,
