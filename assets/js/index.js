@@ -44,7 +44,7 @@ mapInstance.on("click", function (e) {
     }
 })
 
-function onLoad() {
+function onLoadV1() {
     //Set initial theme
     setThemeFromPrefs();
     initSystemThemeButton();
@@ -68,7 +68,7 @@ function onLoad() {
 
 
 
-function onLoadV2() {
+function onLoad() {
     //Set initial theme
     setThemeFromPrefs();
     initSystemThemeButton();
@@ -78,7 +78,7 @@ function onLoadV2() {
     CheckIfSharingURL();
 
     //Intel Search Listeners
-    $('#search-term').keyup(function () {
+    $('#search-term').on('search keyup', function () {
         TriggerSearch();
     });
     $('#intel-filters input[type=checkbox]').click(function (params) {
