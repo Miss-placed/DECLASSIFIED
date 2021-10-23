@@ -495,7 +495,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "RE: Funding Allocation 2",
-        desc: "Dropped from Special/Elite kills"
+        desc: defaultPOIData.special
     }, {
         id: "RS2Do3",
         faction: factions.requiem,
@@ -504,7 +504,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.firebaseZ.id,
         name: "Berlin COMINT",
-        desc: "Dropped from Special/Elite kills"
+        desc: defaultPOIData.special
     }, {
         id: "Rs2Do4",
         faction: factions.requiem,
@@ -1061,7 +1061,7 @@ const intelStoreV2 = [
         intelType: intelTypes.docs,
         loc: defaultPOIData.nullLoc,
         map: mapDetails.mauerDerToten.id,
-        name: "J Cipher",
+        name: "J Cipher 2",
         desc: "Part of the main EE, can be found on the computer beside Klaus."
     }, {
         id: "RS4Do15",
@@ -1506,7 +1506,7 @@ const intelStoreV2 = [
         intelType: intelTypes.artifact,
         loc: "[407.05853356142404, 229.72348041293253]",
         map: mapDetails.forsaken.id,
-        name: "The Crysalax",
+        name: "The Chrysalax",
         desc: "Part Of the Main Quest, After all the crystals are in the tub Melee 10 zombies.",
     }, {
         id: "RS6Do1",
@@ -1940,7 +1940,7 @@ const intelStoreV2 = [
         intelType: intelTypes.audio,
         loc: "[250.87823834196888, 294.92122099571975]",
         map: mapDetails.golova.id,
-        name: "golova - Off The Hook",
+        name: "Off The Hook",
         desc: "In front of the Wunderfizz, in one of the side rooms."
     }, {
         id: "OS2Au5",
@@ -2264,7 +2264,7 @@ const intelStoreV2 = [
         intelType: intelTypes.audio,
         loc: "[189.47580244724242, 329]",
         map: mapDetails.zoo.id,
-        name: "Day of Victory",
+        name: "Day Of Victory",
         desc: "On top of the rectangular tower of the aquarium. Might need to use a jump pad.."
     }, {
         id: "OS4Au3",
@@ -3087,7 +3087,7 @@ const intelStoreV2 = [
         intelType: intelTypes.audio,
         loc: "[370, 405]",
         map: mapDetails.alpine.id,
-        name: "My Reputation Precedes ME",
+        name: "My Reputation Precedes Me",
         desc: "Inside the Red building's office area, in Maintenance."
     }, {
         id: "MS2Au4",
@@ -3539,7 +3539,7 @@ const intelStoreV2 = [
         intelType: intelTypes.docs,
         loc: defaultPOIData.nullLoc,
         map: mapDetails.ruka.id,
-        name: "Ability Assesment",
+        name: "Ability Assessment",
         desc: defaultPOIData.special
     }, {
         id: "MS6Do2",
@@ -4703,7 +4703,7 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.forsaken.id,
         name: "Catalyzed Crystal Shard",
-        desc: "missing description"
+        desc: "Part of the EE, can be obtained by killing an Abomination that has eaten a Crystal Shard"
     }
 
 ]
