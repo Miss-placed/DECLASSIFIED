@@ -49,7 +49,7 @@ function AddMapMarkersFromCache(intelArr) {
     if (!debug) {
         for (intel of intelArr) {
             if (intel.map != mapDetails.allOutbreakMaps.id) {
-                let factionIcon = getIconByFaction(intel.faction);
+                let factionIcon = returnMarker(intel.faction, intel.intelType);
                 mapLayer = mapLayers[intel.map];
                 addMarkerToMap(intel, factionIcon, mapLayer);
             }
@@ -67,6 +67,7 @@ function AddMapMarkersFromCache(intelArr) {
 }
 
 function addMarkerToMap(intel, icon, maep) {
+    console.log(icon)
     if (intel.loc != null && JSON.stringify([0, 0]) != JSON.stringify(intel.loc)) { // don't add 0,0 markers to the map for cleanliness
         let snippet = '';
         let shareBtn = genShareButton(intel.id).outerHTML;

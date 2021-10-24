@@ -13,44 +13,31 @@ function getIconByFaction(faction) {
     }
 }
 var defaultMarker = {
-    shadowSize: [33, 40],
-    shadowAnchor: [(33/2), 40],
-    popupAnchor: [0, 25]
+    shadowSize: [33, 44],
+    shadowAnchor: [(33/2), 44],
+    popupAnchor: [0, -25]
+}
+var defaultIcon = {
+    iconSize: [25, 25],
+    iconAnchor: [12.5, 40],
+}
+function returnMarker(faction, type){
+    return L.icon(Object.assign({
+        shadowUrl: `assets/img/icons/markers/${faction}.png`,
+        iconUrl:`assets/img/icons/type/${type}.png`,
+
+    },
+    defaultIcon,
+    defaultMarker,
+    ))
 }
 /////////////////////Factions/////////////////////////
-// var darkAetherIcon = L.icon(Object.assign({
-//     iconUrl:"assets/img/icon/type/document.png",
-//     shadowUrl: 'assets/img/icon/markers/darkAether.png',
-// }, defaultMarker));
 
-var darkAetherIcon = L.icon({
-    iconUrl: 'assets/img/icon/type/document.png',
-    shadowUrl: 'assets/img/icon/markers/darkAether.png',
+// var darkAetherIcon = L.icon(returnMarker('dark Aether','documents'));
+// var maxisIcon = L.icon(returnMarker('maxis','documents'));
+// var omegaIcon = L.icon(returnMarker('omega','documents'));
+// var requiemIcon = L.icon(returnMarker('requiem','artifacts'));
 
-    iconSize:     [38, 95], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-});
-var maxisIcon = L.icon({
-    iconUrl: 'assets/img/icons/markers/maxis.png',
-    iconSize: [34, 48],
-    iconAnchor: [17, 48],
-    popupAnchor: [0, -30]
-});
-var omegaIcon = L.icon({
-    iconUrl: 'assets/img/icons/markers/omega.png',
-    iconSize: [55, 48],
-    iconAnchor: [27.5, 48],
-    popupAnchor: [0, -30]
-});
-var requiemIcon = L.icon({
-    iconUrl: 'assets/img/icons/markers/requiem.png',
-    iconSize: [40, 40],
-    iconAnchor: [24, 48],
-    popupAnchor: [0, -30]
-});
 /////////////////////Misc/////////////////////////
 var generalIcon = L.icon({
     iconUrl: 'assets/img/icons/generalIcon.png',

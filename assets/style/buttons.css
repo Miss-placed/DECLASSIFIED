@@ -62,16 +62,16 @@
   background-color: var(--clr-purple);
 }
 .btn.to-intel[type="Documents"]::before {
-  background-image: url("../img/icons/type/document.png");
+  background-image: url("../img/icons/type/documents.png");
 }
 .btn.to-intel[type="Artifacts"]::before {
-  background-image: url("../img/icons/type/artifact.png");
+  background-image: url("../img/icons/type/artifacts.png");
 }
 .btn.to-intel[type="Audio Logs"]::before {
-  background-image: url("../img/icons/type/audio.png");
+  background-image: url("../img/icons/type/audio\ logs.png");
 }
 .btn.to-intel[type="Radio Transmissions"]::before {
-  background-image: url("../img/icons/type/radio.png");
+  background-image: url("../img/icons/type/radio\ transmissions.png");
 }
 /*------------UI Button------------*/
 
