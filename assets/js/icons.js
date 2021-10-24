@@ -12,28 +12,41 @@ function getIconByFaction(faction) {
             return generalIcon;
     }
 }
-
+var defaultMarker = {
+    shadowSize: [33, 40],
+    shadowAnchor: [(33/2), 40],
+    popupAnchor: [0, 25]
+}
 /////////////////////Factions/////////////////////////
+// var darkAetherIcon = L.icon(Object.assign({
+//     iconUrl:"assets/img/icon/type/document.png",
+//     shadowUrl: 'assets/img/icon/markers/darkAether.png',
+// }, defaultMarker));
+
 var darkAetherIcon = L.icon({
-    iconUrl: 'assets/img/icons/faction/darkAether.png',
-    iconSize: [30, 48],
-    iconAnchor: [15, 48],
-    popupAnchor: [0, -30]
+    iconUrl: 'assets/img/icon/type/document.png',
+    shadowUrl: 'assets/img/icon/markers/darkAether.png',
+
+    iconSize:     [38, 95], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 var maxisIcon = L.icon({
-    iconUrl: 'assets/img/icons/faction/maxis.png',
+    iconUrl: 'assets/img/icons/markers/maxis.png',
     iconSize: [34, 48],
     iconAnchor: [17, 48],
     popupAnchor: [0, -30]
 });
 var omegaIcon = L.icon({
-    iconUrl: 'assets/img/icons/faction/omega.png',
+    iconUrl: 'assets/img/icons/markers/omega.png',
     iconSize: [55, 48],
     iconAnchor: [27.5, 48],
     popupAnchor: [0, -30]
 });
 var requiemIcon = L.icon({
-    iconUrl: 'assets/img/icons/faction/requiem.png',
+    iconUrl: 'assets/img/icons/markers/requiem.png',
     iconSize: [40, 40],
     iconAnchor: [24, 48],
     popupAnchor: [0, -30]
