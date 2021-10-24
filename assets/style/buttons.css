@@ -31,6 +31,48 @@
 .btn i {
   font-size: 0.8em;
 }
+/*------------Intel List Button------------*/
+
+.btn.to-intel {
+  position: relative;
+  padding-left: 30px;
+}
+.btn.to-intel::before {
+  content: "";
+  width: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-size: calc(contain - 5px);
+  background-repeat: no-repeat;
+  background-position: center center;
+  
+}
+.btn.to-intel[faction="Requiem"]::before {
+  background-color: var(--clr-blue);
+}
+.btn.to-intel[faction="Omega"]::before {
+  background-color: var(--clr-red);
+}
+.btn.to-intel[faction="Maxis"]::before {
+  background-color: var(--clr-blue-d);
+}
+.btn.to-intel[faction="Dark Aether"]::before {
+  background-color: var(--clr-purple);
+}
+.btn.to-intel[type="Documents"]::before {
+  background-image: url("../img/icons/type/document.png");
+}
+.btn.to-intel[type="Artifacts"]::before {
+  background-image: url("../img/icons/type/artifact.png");
+}
+.btn.to-intel[type="Audio Logs"]::before {
+  background-image: url("../img/icons/type/audio.png");
+}
+.btn.to-intel[type="Radio Transmissions"]::before {
+  background-image: url("../img/icons/type/radio.png");
+}
 /*------------UI Button------------*/
 
 .btn.ui {

@@ -5,11 +5,11 @@ function GenerateList(intelToRender) {
     intelListEle.replaceChildren(); // Empty First
 
     intelToRender.forEach(intel => {
-        const buttonTemplate = htmlToElement(`<button class="btn to-intel" target="intel-detail" id="${intel.id}">${intel.name}</button>`);
+        const buttonTemplate = htmlToElement(`<button class="btn to-intel" faction="${intel.faction}" type="${intel.intelType}"target="intel-detail" id="${intel.id}">${intel.name}</button>`);
         intelListEle.appendChild(buttonTemplate);
     });
     InitialiseButtons();
-}
+} 
 
 function InitialiseButtons() {
     document.querySelectorAll(".to-intel").forEach(element => {
