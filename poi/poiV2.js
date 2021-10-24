@@ -1405,6 +1405,7 @@ const intelStoreV2 = [
         map: mapDetails.forsaken.id,
         name: "Symbiotic Relationship",
         desc: "In the storage zone rooftops area, on top of a wire spool next to the mystery box. It only spawns, after progressing through the main quest (more precisely, after the crystal core drops from the sky, which is part of the wonder weapon).",
+        img: "PYbde8y",
     }, {
         id: "RS6Au2",
         faction: factions.requiem,
@@ -1444,6 +1445,7 @@ const intelStoreV2 = [
         map: mapDetails.zoo.id,
         name: "Weaver's Eyepatch",
         desc: "Behind the desk at the gas station counter.",
+        img: "1gYdyUD",
     }, {
         id: "RS6Ar2",
         faction: factions.requiem,
@@ -1453,6 +1455,7 @@ const intelStoreV2 = [
         map: mapDetails.golova.id,
         name: "Tesla Storm Canister",
         desc: "On top of the electrical box.",
+        img: "GCO1WXK",
     }, {
         id: "RS6Ar3",
         faction: factions.requiem,
@@ -1462,6 +1465,7 @@ const intelStoreV2 = [
         map: mapDetails.sanatorium.id,
         name: "Director Mug",
         desc: "On top of a small round table on the ground floor.",
+        img: "rCf8A7L",
     }, {
         id: "RS6Ar4",
         faction: factions.requiem,
@@ -1511,6 +1515,7 @@ const intelStoreV2 = [
         map: mapDetails.forsaken.id,
         name: "The Chrysalax",
         desc: "Part Of the Main Quest, After all the crystals are in the tub Melee 10 zombies.",
+        img: "HcykNAE",
     }, {
         id: "RS6Do1",
         faction: factions.requiem,
@@ -2683,6 +2688,7 @@ const intelStoreV2 = [
         map: mapDetails.alpine.id,
         name: "Contaminated Crystal",
         desc: "Yellow/orange crystals in the toilet bowl in the westernmost of the four doors.",
+        img: "8WsW1hG",
     }, {
         id: "OS6Ar2",
         faction: factions.omega,
@@ -2692,6 +2698,7 @@ const intelStoreV2 = [
         map: mapDetails.duga.id,
         name: "Jager's ID Badge",
         desc: "On the desk as you walk in.",
+        img: "al9W49e",
     }, {
         id: "OS6Au1",
         faction: factions.omega,
@@ -2701,6 +2708,7 @@ const intelStoreV2 = [
         map: mapDetails.zoo.id,
         name: "Codename Whiskers",
         desc: "Under the table inside the building.",
+        img: "yams9th",
     }, {
         id: "OS6Au2",
         faction: factions.omega,
@@ -3508,6 +3516,7 @@ const intelStoreV2 = [
         map: mapDetails.ruka.id,
         name: "I Am Alive",
         desc: "On the ledge of the top of the watchtower.",
+        img: "w7NTeIJ",
     }, {
         id: "MS6Au2",
         faction: factions.maxis,
@@ -3527,6 +3536,7 @@ const intelStoreV2 = [
         map: mapDetails.forsaken.id,
         name: "My Orders",
         desc: "In the Beach Pizza restaurant, on top of the lamp bracket. You need to shoot it down.",
+        img: "APub0rE",
     }, {
         id: "MS6Au4",
         faction: factions.maxis,
@@ -4647,6 +4657,7 @@ const intelStoreV2 = [
         map: mapDetails.ruka.id,
         name: "Archaic Goblet",
         desc: "On top of a cut tree stump.",
+        img: "sYh4g2M",
     }, {
         id: "DS6Ar2",
         faction: factions.darkAether,
@@ -4656,6 +4667,7 @@ const intelStoreV2 = [
         map: mapDetails.golova.id,
         name: "Empty PhD Slider",
         desc: "On top of the desk in a second-floor room to the right of pack-a-punch.",
+        img: "D8Pj7M5",
     }, {
         id: "DS6Ar3",
         faction: factions.darkAether,
@@ -4665,6 +4677,7 @@ const intelStoreV2 = [
         map: mapDetails.alpine.id,
         name: "Zykov's Mask",
         desc: "On the shelf.",
+        img: "YnDjT7U",
     }, {
         id: "DS6Ar4",
         faction: factions.darkAether,
@@ -4674,6 +4687,7 @@ const intelStoreV2 = [
         map: mapDetails.sanatorium.id,
         name: "Empty Death Perception",
         desc: "In the sink on the ground floor.",
+        img: "y6hCATZ",
     }, {
         id: "DS6Ar5",
         faction: factions.darkAether,
