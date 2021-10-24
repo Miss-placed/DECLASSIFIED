@@ -31,6 +31,48 @@
 .btn i {
   font-size: 0.8em;
 }
+/*------------Intel List Button------------*/
+
+.btn.to-intel {
+  position: relative;
+  padding-left: 30px;
+}
+.btn.to-intel::before {
+  content: "";
+  width: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-size: calc(contain - 5px);
+  background-repeat: no-repeat;
+  background-position: center center;
+  
+}
+.btn.to-intel[faction="Requiem"]::before {
+  background-color: var(--clr-blue);
+}
+.btn.to-intel[faction="Omega"]::before {
+  background-color: var(--clr-red);
+}
+.btn.to-intel[faction="Maxis"]::before {
+  background-color: var(--clr-blue-d);
+}
+.btn.to-intel[faction="Dark Aether"]::before {
+  background-color: var(--clr-purple);
+}
+.btn.to-intel[type="Documents"]::before {
+  background-image: url("../img/icons/type/document.png");
+}
+.btn.to-intel[type="Artifacts"]::before {
+  background-image: url("../img/icons/type/artifact.png");
+}
+.btn.to-intel[type="Audio Logs"]::before {
+  background-image: url("../img/icons/type/audio.png");
+}
+.btn.to-intel[type="Radio Transmissions"]::before {
+  background-image: url("../img/icons/type/radio.png");
+}
 /*------------UI Button------------*/
 
 .btn.ui {
@@ -254,25 +296,25 @@ input[type="search"] {
 .droopy {
   width: 150px;
   background-color: var(--clr-white);
-  color:var(--clr-grey-d);
+  color: var(--clr-grey-d);
   position: relative;
   border: 1px solid var(--clr-black);
 }
 
-.droopy>p{
-padding:5px;
+.droopy > p {
+  padding: 5px;
 }
-.droopy>p:after{
+.droopy > p:after {
 }
-.droopy .checks{
-    width:max-content;
+.droopy .checks {
+  width: max-content;
 }
-.droopy .balances{
-  width:30px;
+.droopy .balances {
+  width: 30px;
 }
 .droopy > div {
   display: flex;
-  position:absolute;
+  position: absolute;
 }
 .droopy > div > ul {
   display: none;
@@ -281,8 +323,8 @@ padding:5px;
   background-color: coral;
   line-height: 30px;
   list-style-type: none;
-  padding:5px;
-  margin:0;
+  padding: 5px;
+  margin: 0;
 }
 .droopy .checks > li > label,
 .droopy .balances > li > label {
