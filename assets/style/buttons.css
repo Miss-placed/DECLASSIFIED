@@ -37,7 +37,8 @@
   position: relative;
   padding-left: 30px;
 }
-.btn.to-intel::before {
+.btn.to-intel::before,
+.btn.to-intel::after {
   content: "";
   width: 30px;
   position: absolute;
@@ -47,7 +48,9 @@
   background-size: calc(contain - 5px);
   background-repeat: no-repeat;
   background-position: center center;
-  
+}
+.btn.to-intel::after{
+  left:30px;
 }
 .btn.to-intel[faction="Requiem"]::before {
   background-color: var(--clr-blue);
@@ -60,6 +63,18 @@
 }
 .btn.to-intel[faction="Dark Aether"]::before {
   background-color: var(--clr-purple);
+}
+.btn.to-intel[collected]::after {
+  content:' ';
+  left:unset;
+  right:0;
+  background: linear-gradient(
+    225deg,
+    rgba(255, 255, 255, 0)  15%,
+    var(--clr-green) 15%,
+    var(--clr-green) 35%,
+    rgba(255, 255, 255, 0) 16%
+  );
 }
 .btn.to-intel[type="Documents"]::before {
   background-image: url("../img/icons/type/document.png");
