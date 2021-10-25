@@ -1,3 +1,4 @@
+/////////////////////Filtering/////////////////////////
 function filterIntel(searchTermDirty, factionsArr = [], seasonsArr = [], intelTypeArr = [], mapArr = []) {
     let results = intelCache;
     let searchTerm = searchTermDirty.toLowerCase()
@@ -64,7 +65,7 @@ function TriggerSearchV1() {
     return filteredIntel;
 }
 
-function TriggerSearch(params) {
+function TriggerSearch() {
     const searchTerm = $('#search-term').val();
     const factionsArr = [];
     $('#faction-multi-select input[type=checkbox]:checked').each(function () {
@@ -83,7 +84,16 @@ function TriggerSearch(params) {
     if ($('#curr-map-filter:checked').length > 0) mapArr.push(app.currentMap);
 
     let filteredIntel = filterIntel(searchTerm, factionsArr, seasonsArr, intelTypeArr, mapArr);
-    GenerateList(filteredIntel);
+    //Sort by Intel Faction A=>Z first then by Intel type A=>Z then by Intel Name A=>Z
+    let sortedIntel = filteredIntel.sort(function(a, b){
+        if (a.faction > b.faction) return -1;
+        if (a.faction < b.faction) return 1;
+        if (b.intelType > a.intelType) return -1;
+        if (b.intelType < a.intelType) return 1;
+        if (b.name > a.name) return -1;
+        if (b.name < a.name) return 1;
+    });
+    GenerateList(sortedIntel);
 }
 
 function getIntelById(intelId) {
@@ -100,4 +110,42 @@ function getMiscMarkerById(itemId) {
         return matchedMisc;
     }
     return null;
+}
+
+/////////////////////Stats/////////////////////////
+function CalcStats() {
+    document.querySelectorAll("#intel-type-select label").forEach(element => {
+        const intelTypeCheck = $(element);
+        const intelType = intelTypeCheck.attr("type");
+        const intelCollected = getIntelCollectedAndTotalByType(intelType);
+        intelTypeCheck.attr("value",`${intelCollected[0]}/${intelCollected[1]}`);
+    });
+}
+
+function getIntelCollectedAndTotalByType(intelType, totalsOnly = false) {
+    let intelCount = 0;
+    let collectedCount = 0;
+    switch (intelType) {
+        case intelTypes.audio:
+        case intelTypes.docs:
+        case intelTypes.radio:
+        case intelTypes.artifact:
+            let intelTypeArr = intelCache.filter((intel) => {
+                return intelType == intel.intelType;
+            });
+            intelCount = intelTypeArr.length;
+            if (!totalsOnly) {
+                collectedCount = intelTypeArr.filter((intel) => {
+                    return hasUserCollected(intel.id);
+                }).length;
+            }
+            break;
+        default:
+            intelCount = intelCache.length;
+            break;
+    }
+    if (totalsOnly)
+        return intelCount;
+    else
+        return [collectedCount, intelCount];
 }

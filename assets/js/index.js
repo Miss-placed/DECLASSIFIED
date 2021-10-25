@@ -76,6 +76,7 @@ function onLoad() {
         TriggerSearch();
     });
 
+    CalcStats();
     TriggerSearch();
 }
 

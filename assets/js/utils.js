@@ -148,6 +148,7 @@ function markIntelCollected(intelId) {
         }
         addCollectedIntel(intelId);
     }
+    CalcStats();
 }
 
 function hasUserCollected(intelId, getIndex = false) {
