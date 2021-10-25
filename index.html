@@ -12,12 +12,11 @@
     <meta name="description"
         content="With The Cold War Collectables Map you can track your progress on which intel you still need to collect.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/style/normalize.css">
-    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="assets/style/style2.css">
     <link rel="icon" href="./favicon-32x32.png" type="image/png">
-
+    <script>
+        let debug = false
+    </script>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -25,248 +24,231 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
-    <script src="https://kit.fontawesome.com/d8228dcdfd.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
-
-    <script>
-        var debug = false
-    </script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css">
+    <link rel="stylesheet" href="assets/style/leaflet-override.css">
+
+
 </head>
 
-<body onload="onLoadV1()" class="dark">
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+<body onload="onLoad()" class="dark">
     <header>
-        <div class="dropdown dropbtn">
-            Die Maschine
-            <div class="dropdown-content">
-                <div id="dieMaschine" class="dropdown-item not-selectable" onClick="setMap('dieMaschine',this)">Surface
-                </div>
-                <div id="dieMaschine_underground" class="dropdown-item not-selectable"
-                    onClick="setMap('dieMaschine_underground',this)">Underground</div>
-            </div>
-        </div>
-
-        <div class="dropdown dropbtn">
-            Firebase Z
-            <div class="dropdown-content">
-                <div id="firebaseZ_spawn" class="dropdown-item not-selectable" onClick="setMap('firebaseZ_spawn',this)">
-                    Spawn</div>
-                <div id="firebaseZ" class="dropdown-item not-selectable" onClick="setMap('firebaseZ',this)">Main Base
-                </div>
-            </div>
-        </div>
-
-        <div class="dropdown dropbtn">
-            Mauer Der Toten
-            <div class="dropdown-content">
-                <div id="mauerDerToten_streets" class="dropdown-item not-selectable"
-                    onClick="setMap('mauerDerToten_streets',this)">Streets</div>
-                <div id="mauerDerToten" class="dropdown-item not-selectable" onClick="setMap('mauerDerToten',this)">
-                    Underground</div>
-            </div>
-        </div>
-
-        <div class="dropdown dropbtn">
-            Forsaken
-            <div class="dropdown-content">
-                <div id="forsaken" class="dropdown-item not-selectable" onClick="setMap('forsaken',this)">Surface</div>
-                <div id="forsaken_underground" class="dropdown-item not-selectable"
-                    onClick="setMap('forsaken_underground',this)">Underground</div>
-            </div>
-        </div>
-
-        <div class="dropdown dropbtn">
-            Outbreak
-            <div class="dropdown-content">
-                <div id="zoo" class="dropdown-item not-selectable" onClick="setMap('zoo',this)">Zoo</div>
-                <div id="duga" class="dropdown-item not-selectable" onClick="setMap('duga',this)">Duga</div>
-                <div id="ruka" class="dropdown-item not-selectable" onClick="setMap('ruka',this)">Ruka</div>
-                <div id="alpine" class="dropdown-item not-selectable" onClick="setMap('alpine',this)">Alpine</div>
-                <div id="golova" class="dropdown-item not-selectable" onClick="setMap('golova',this)">Golova</div>
-                <div id="sanatorium" class="dropdown-item not-selectable" onClick="setMap('sanatorium',this)">
-                    Sanatorium</div>
-                <div id="collateral" class="dropdown-item not-selectable" onClick="setMap('collateral',this)">
-                    Collateral</div>
-                <div id="armada" class="dropdown-item not-selectable" onClick="setMap('armada',this)">Armada</div>
-            </div>
-        </div>
-        <div class="dropdown dropbtn">
-            Contribute
-            <div class="dropdown-content">
-                <div id="newIntel" class="dropdown-item not-selectable" onClick="newIntelInit()">Submit New Intel</div>
-                <div id="newMisc" class="dropdown-item not-selectable" onClick="newMiscInit()">Submit New Misc Marker
-                </div>
-                <a class="dropdown-item not-selectable" href="./v2.html" target="_blank">Beta Test Our New UI!</a>
-            </div>
-        </div>
+        <!-- Header nav Generated in v2.js -->
     </header>
+    <div id="worldMap"></div>
+    <!-- UI -->
+
     <div id="ui">
-        <div></div>
+        <div>
+            <button class="btn ui" onclick="openModal(modalSet.intelOverview)"><i class="fas fa-folder-open"></i>
+            </button>
+            <button class="btn ui" onclick="openModal(modalSet.settingsMain)"><i class="fas fa-gear"></i> </button>
+        </div>
         <div>
             <button class="btn ui" id="color-scheme-toggle" onclick="setColorScheme()"><i class="fas fa-moon"></i>
             </button>
             <a title="Join us on discord!" href="https://discord.gg/4Xqj8XntFe" target="_blank" class="btn ui"
                 id="discord"><i class="fab fa-discord"></i> </a>
             <a title="Help us out on Github!" href="https://github.com/Miss-placed/DECLASSIFIED" target="_blank"
-                class="btn ui" id="github"><i class="bi bi-github"></i> </a>
+                class="btn ui" id="github"><i class="fab fa-github"></i> </a>
         </div>
     </div>
-    <Section>
-        <aside id="aside">
-            <div id="intelFilter">
-                <div class="filters accordion accordion-flush" id="filters">
 
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="factionFilter">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#factionFilterCollapse" aria-expanded="false"
-                                aria-controls="factionFilterCollapse">
-                                Factions
-                            </button>
-                        </h2>
-                        <div id="factionFilterCollapse" class="accordion-collapse collapse"
-                            aria-labelledby="factionFilter" data-bs-parent="#filters">
-                            <div class="accordion-body">
-                                <input type="checkbox" id="faction1" name="faction1" value="requiem" checked>
-                                <label for="faction1">Requiem</label><br>
-                                <input type="checkbox" id="faction2" name="faction2" value="omega" checked>
-                                <label for="faction2">Omega</label><br>
-                                <input type="checkbox" id="faction3" name="faction3" value="maxis" checked>
-                                <label for="faction3">Maxis</label><br>
-                                <input type="checkbox" id="faction4" name="faction4" value="darkAether" checked>
-                                <label for="faction4">Dark Aether</label><br>
-                            </div>
-                        </div>
-                    </div>
+    <!-- modal popups -->
+    <section class="modal-bg -hidden">
+        <!-- FILTERS -->
+        <div class="modal -hidden" id="intel-filters">
+            <fieldset id="season-multi-select" class="droopy">
+                <legend>Seasons</legend>
+                <label class="title">Seasons</label>
+                <label class="list-selection"></label>
+                <ul>
+                    <li>
+                        <label for="season0">Pre Season</label>
+                        <input type="checkbox" id="season0" value="Pre Season" class="check" data-filter="preseason">
+                    </li>
+                    <li>
+                        <label for="season1">Season 1</label>
+                        <input type="checkbox" id="season1" value="Season 1" class="check" data-filter="season1">
+                    </li>
+                    <li>
+                        <label for="season2">Season 2 </label>
+                        <input type="checkbox" id="season2" value="Season 2" class="check" data-filter="season2">
+                    </li>
+                    <li>
+                        <label for="season3">Season 3</label>
+                        <input type="checkbox" id="season3" value="Season 3" class="check" data-filter="season3">
+                    </li>
+                    <li>
+                        <label for="season4">Season 4</label>
+                        <input type="checkbox" id="season4" value="Season 4" class="check" data-filter="season4">
+                    </li>
+                    <li>
+                        <label for="season5">Season 5</label>
+                        <input type="checkbox" id="season5" value="Season 5" class="check" data-filter="season5">
+                    </li>
+                    <li>
+                        <label for="season6">Season 6</label>
+                        <input type="checkbox" id="season6"  value="Season 6" class="check" data-filter="season6">
+                    </li>
+                </ul>
+            </fieldset>
 
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="seasonFilter">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#seasonFilterCollapse" aria-expanded="false"
-                                aria-controls="seasonFilterCollapse">
-                                Seasons
-                            </button>
-                        </h2>
-                        <div id="seasonFilterCollapse" class="accordion-collapse collapse"
-                            aria-labelledby="seasonFilter" data-bs-parent="#filters">
-                            <div class="accordion-body">
-                                <input type="checkbox" id="season0" name="season0" value="preseason" checked>
-                                <label for="season0">Preseason</label><br>
-                                <input type="checkbox" id="season1" name="season1" value="season1" checked>
-                                <label for="season1">Season 1</label><br>
-                                <input type="checkbox" id="season2" name="season2" value="season2" checked>
-                                <label for="season2">Season 2</label><br>
-                                <input type="checkbox" id="season3" name="season3" value="season3" checked>
-                                <label for="season3">Season 3</label><br>
-                                <input type="checkbox" id="season4" name="season4" value="season4" checked>
-                                <label for="season4">Season 4</label><br>
-                                <input type="checkbox" id="season5" name="season5" value="season5" checked>
-                                <label for="season5">Season 5</label><br>
-                                <input type="checkbox" id="season6" name="season6" value="season6" checked>
-                                <label for="season6">Season 6</label><br>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="intelTypeFilter">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#intelTypeFilterCollapse" aria-expanded="false"
-                                aria-controls="intelTypeFilterCollapse">
-                                Intel Types
-                            </button>
-                        </h2>
-                        <div id="intelTypeFilterCollapse" class="accordion-collapse collapse"
-                            aria-labelledby="intelTypeFilter" data-bs-parent="#filters">
-                            <div class="accordion-body">
-                                <input type="checkbox" id="intelType1" name="intelType1" value="audio" checked>
-                                <label for="intelType1">Audio Logs</label><br>
-                                <input type="checkbox" id="intelType2" name="intelType2" value="docs" checked>
-                                <label for="intelType2">Documents</label><br>
-                                <input type="checkbox" id="intelType3" name="intelType3" value="radio" checked>
-                                <label for="intelType3">Radio Transmissions</label><br>
-                                <input type="checkbox" id="intelType4" name="intelType4" value="artifact" checked>
-                                <label for="intelType4">Artifacts</label><br>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="mapFilter">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#mapFilterCollapse" aria-expanded="false"
-                                aria-controls="mapFilterCollapse">
-                                Maps
-                            </button>
-                        </h2>
-                        <div id="mapFilterCollapse" class="accordion-collapse collapse" aria-labelledby="mapFilter"
-                            data-bs-parent="#filters">
-                            <div class="accordion-body">
-                                <input type="checkbox" id="map1" name="map1" value="dieMaschine" checked>
-                                <label for="map1">Die Maschine</label><br>
-                                <input type="checkbox" id="map1L1" name="map1L1" value="dieMaschine_underground" checked>
-                                <label for="map1L1">Die Maschine (Underground)</label><br>
-                                <input type="checkbox" id="map2" name="map2" value="firebaseZ" checked>
-                                <label for="map2">Firebase Z</label><br>
-                                <input type="checkbox" id="map2L1" name="map2L1" value="firebaseZ_spawn" checked>
-                                <label for="map2L1">Firebase Z (Spawn)</label><br>
-                                <input type="checkbox" id="map3" name="map3" value="mauerDerToten_streets" checked>
-                                <label for="map3">Mauer Der Toten</label><br>
-                                <input type="checkbox" id="map3L1" name="map3L1" value="mauerDerToten" checked>
-                                <label for="map3L1">Mauer Der Toten (Roofs)</label><br>
-                                <input type="checkbox" id="map4" name="map4" value="forsaken" checked>
-                                <label for="map4">Forsaken</label><br>
-                                <input type="checkbox" id="map4L1" name="map4L1" value="forsaken_underground" checked>
-                                <label for="map4L1">Forsaken (Underground)</label><br>
-
-                                <!-- 
-                                <input type="checkbox" id="map4" name="map4" value="tbd" checked>
-                                <label for="map4">tbd</label><br>
-                                <input type="checkbox" id="map4L1" name="map4L1" value="tbd" checked>
-                                <label for="map4L1"TBD</label><br> -->
-
-                                <input type="checkbox" id="map5" name="map5" value="zoo" checked>
-                                <label for="map5">Zoo</label><br>
-                                <input type="checkbox" id="map6" name="map6" value="ruka" checked>
-                                <label for="ma65">Ruka</label><br>
-                                <input type="checkbox" id="map7" name="map7" value="duga" checked>
-                                <label for="map7">Duga</label><br>
-                                <input type="checkbox" id="map8" name="map8" value="alpine" checked>
-                                <label for="map8">Alpine</label><br>
-                                <input type="checkbox" id="map9" name="map9" value="golova" checked>
-                                <label for="map9">Golova</label><br>
-                                <input type="checkbox" id="map10" name="map10" value="sanatorium" checked>
-                                <label for="map10">Sanatorium</label><br>
-                                <input type="checkbox" id="map111" name="map11" value="collateral" checked>
-                                <label for="map11">Collateral</label><br>
-                                <input type="checkbox" id="map12" name="map12" value="armada" checked>
-                                <label for="map12">Armada</label><br>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <input type="text" id="searchTerm" placeholder="Search Intel">
-            </div>
-
-            <div id="intelList">
-
-            </div>
-        </aside>
+            <fieldset id="faction-multi-select" class="droopy">
+                <legend>Factions</legend>
+                <label class="title">Factions</label>
+                <label
+                    class="list-selection"><span>Requiem</span><span>Requiem</span><span>Requiem</span><span>Requiem</span><span>Requiem</span></label>
+                <ul>
+                    <li>
+                        <label for="requiem">Requiem</label>
+                        <input type="checkbox" id="requiem" value="Requiem" class="check" data-filter="requiem">
+                    </li>
+                    <li>
+                        <label for="omega">Omega</label>
+                        <input type="checkbox" id="omega" value="Omega" class="check" data-filter="omega">
+                    </li>
+                    <li>
+                        <label for="maxis">Maxis</label>
+                        <input type="checkbox" id="maxis" value="Maxis" class="check" data-filter="maxis">
+                    </li>
+                    <li>
+                        <label for="darkAether">Dark Aether</label>
+                        <input type="checkbox" id="darkAether" value="Dark Aether" class="check" data-filter="darkAether">
+                    </li>
+                </ul>
+            </fieldset>
 
 
-        <div id="worldMap">
-            <div id="collapse" onclick="toggleAside()">
-                <h5>=</h5>
+            <div id="intel-type-select">
+                <span>
+                    <input type="checkbox" id="document-check" class="type-check -hidden" data-filter="docs">
+                    <label class="btn type" type="Documents" value="5 / 10" for="document-check"></label>
+                </span>
+                <span>
+                    <input type="checkbox" id="artifact-check" class="type-check -hidden" data-filter="artifact">
+                    <label class="btn type" type="Artifacts" value="5 / 10" for="artifact-check"></label>
+                </span>
+                <span>
+                    <input type="checkbox" id="audio-check" class="type-check -hidden" data-filter="audio">
+                    <label class="btn type" type="Audio Logs" value="5 / 10" for="audio-check"></label>
+                </span>
+                <span>
+                    <input type="checkbox" id="radio-check" class="type-check -hidden" data-filter="radio">
+                    <label class="btn type" type="Radio Transmissions" value="5 / 10" for="radio-check"></label>
+                </span>
             </div>
         </div>
-        <div><input type="checkbox" name="" id="system-theme" style="display:none;"></div>
-    </Section>
+
+
+        <div class="modal -hidden" id="intel-list">
+            <div id="search-form">
+                <input id="search-term" type="search" placeholder="Search Intel...">
+            </div>
+            
+            <div id="filtered-intel">
+                <!-- <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button> -->
+            </div>
+            <label id="curr-map-filter-label"class="chk-btn" for="curr-map-filter"  onchange="TriggerSearch()">
+                Filter by Current Map <input type="checkbox" name="curr-map-filter" id="curr-map-filter" class="-small toggle"
+                    placeholder="_">
+            </label>
+        </div>
+        <div class="modal -big -hidden" id="intel-detail">
+            <div class="sub-modal" id="description">
+
+            </div>
+        </div>
+        <!-- intel stats modal -->
+        <!-- displays totals as a list and as donuts, includes searchbar -->
+        <div class="modal -hidden" id="intel-stats">
+            <div class="sub-modal ">
+                <div id="faction-donut" class="graph "></div>
+                <div id="totals">
+                    <ul class="submodal-list" id="icons-faction">
+                        <li><img class="faction-list-icon " src="assets/img/icons/faction-requiem-icon.png "
+                                alt="Requiem total ">
+                        </li>
+                        <li><img class="faction-list-icon " src="assets/img/icons/faction-omega-icon.png "
+                                alt="Omega total ">
+                        </li>
+                        <li><img class="faction-list-icon " src="assets/img/icons/faction-maxis-icon.png "
+                                alt="Maxis total ">
+                        </li>
+                        <li><img class="faction-list-icon " src="assets/img/icons/faction-darkAether-icon.png "
+                                alt="Dark aether total ">
+                        </li>
+                    </ul>
+
+                    <ul class="submodal-list" id="faction-total-collected">
+                        <li id="requiem-totals"></li>
+                        <li id="omega-totals"></li>
+                        <li id="maxis-totals"></li>
+                        <li id="dark-aether-totals"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="modal -hidden settings" id="settings">
+            <h2>Settings</h2>
+            <div class="button-list">
+                <p>Marker visibility:</p>
+                <label class="btn chk-btn" for="checkbox1">
+                    <p>Intel Markers: </p><input type="checkbox" name="checkbox1" id="show-intel" class="toggle"
+                        placeholder="_">
+                </label>
+                <label class="btn chk-btn" for="checkbox">
+                    <p>Misc Markers: </p><input type="checkbox" name="checkbox" id="show-misc" class="toggle"
+                        placeholder="_">
+                </label>
+                <label class="btn chk-btn" for="checkbox">
+                    <p>EE markers</p><input type="checkbox" name="checkbox" id="show-ee" class="toggle" placeholder="_">
+                </label>
+                <p>Theme: </p>
+                <label class="btn chk-btn" for="system-theme">
+                    <p>Use System Theme</p><input type="checkbox" name="system-theme" id="system-theme" class="toggle"
+                        placeholder="_" onchange="changePreferredMode()">
+                </label>
+                <p>Debug: </p>
+                <button class="btn chk-btn" onclick="openModal(modalSet.settingsDebug)"> Debug options<i
+                        class="fas fa-caret-right"></i></button>
+
+                <p>Collected Markers:</p>
+                <button class="btn chk-btn">Import/Export Markers
+                </button>
+            </div>
+        </div>
+        <div class="modal -hidden settings" id="settings-2">
+            <h2>Debug options: </h2>
+            <div class="button-list">
+                <p>Misc bug report: </p>
+                <label class="btn chk-btn" for="debug-button-toggle">
+                    <p>Show buttons</p><input type="checkbox" name="debug-button-toggle" id="debug-button-toggle"
+                        class="toggle" placeholder="_" onchange="changeDebugButton()" checked>
+                </label>
+                <p>Click for co-ordinates: </p>
+                <label class="btn chk-btn" for="debug-toggle">
+                    <p>Copy on click</p><input type="checkbox" name="debug-toggle" id="debug-toggle" class="toggle"
+                        placeholder="_" onchange="changeDebugButton()" checked>
+                </label>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section id="lightbox-container" class="-hidden" onclick="hideElement(this)">
+        <img id="lightbox" src="#">
+    </section>
+    <script>
+        var v2Test = 'hi'
+
+        function hideElement(ele) {
+            ele.classList.toggle('-hidden')
+        }
+
+    </script>
     <!-- Notifications -->
     <section id="notification-popup"></section>
     <section id="error-notif">
@@ -274,25 +256,19 @@
         <p id="error-p"></p>
         <button id="error-button"></button>
     </section>
+    <i id="hidden-svg"></i>
 
-
-    <section id="lightbox-container" class="-hidden"onclick="hideElement(this)">
-        <img id="lightbox"  src="#" >
-    </section>
-
-    <script>
-        function hideElement(ele) {
-            ele.classList.toggle('-hidden')
-        }
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <!-- scripts -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="" async defer></script>
+    <script src="assets/js/mapsvg.js"></script>
+    <!-- js for generating the Donut in the stats modal -->
+    <script src="assets/js/donut.js"></script>
     <script src="assets/js/icons.js"></script>
     <script src="assets/js/models.js"></script>
-    <script src="assets/js/mapsvg.js"></script>
 
     <script src="assets/js/userPrefs.js"></script>
     <script src="poi/miscV2.js"></script>
@@ -303,6 +279,26 @@
     <script src="assets/js/listgeneration.js"></script>
     <script src="assets/js/filtering.js"></script>
     <script src="assets/js/index.js"></script>
+    <script src="assets/js/v2.js"></script>
+    <script>
+        document.querySelectorAll(".droopy").forEach(ele => {
+            ele.addEventListener('change', () => {
+                let innerHTML = ''
+
+                ele.querySelectorAll("input[type='checkbox']:checked").forEach(chk => {
+                    innerHTML += `<span>${chk.getAttribute('value')}</span>`
+                })
+                if (innerHTML != '') {
+                    ele.classList.add('filled')
+                } else {
+                    ele.classList.remove('filled')
+                }
+
+                ele.querySelector('.list-selection').innerHTML = innerHTML
+            })
+        });
+    </script>
+
 </body>
 
 </html>
