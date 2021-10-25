@@ -14,23 +14,30 @@ function getIconByFaction(faction) {
 }
 var defaultMarker = {
     shadowSize: [33, 44],
-    shadowAnchor: [(33/2), 44],
+    shadowAnchor: [(33 / 2), 44],
     popupAnchor: [0, -25]
 }
 var defaultIcon = {
     iconSize: [25, 25],
     iconAnchor: [12.5, 40],
 }
-function returnMarker(faction, type){
-    return L.icon(Object.assign({
-        shadowUrl: `assets/img/icons/markers/${faction}.png`,
-        iconUrl:`assets/img/icons/type/${type}.png`,
 
+function returnMarker(faction, type) {
+    const iconHtml = 
+    `<div>
+        <img class="icon" src="assets/img/icons/type/${type}.png" alt="Icon">
+        <img class="background" src="assets/img/icons/markers/${faction}.png" alt="Background">
+        <!-- Shadow here -->
+    </div>`;
+
+    return L.divIcon(Object.assign({
+        html: iconHtml
     },
-    defaultIcon,
-    defaultMarker,
-    ))
+        defaultIcon,
+        defaultMarker,
+    ));
 }
+
 /////////////////////Factions/////////////////////////
 
 // var darkAetherIcon = L.icon(returnMarker('dark Aether','documents'));
