@@ -33,7 +33,8 @@ function changeMapTo(mapId, targetElement) {
     const currentMap = FindMapById(mapId);
     document.querySelector("header").querySelector("h1").innerHTML = currentMap.title;
     setMap(mapId, targetElement)
-    expandMenu()
+    expandMenu();
+    TriggerSearch();
 }
 
 function renderHeader() {
