@@ -67,7 +67,6 @@ function AddMapMarkersFromCache(intelArr) {
 }
 
 function addMarkerToMap(intel, icon, maep) {
-    console.log(icon)
     if (intel.loc != null && JSON.stringify([0, 0]) != JSON.stringify(intel.loc)) { // don't add 0,0 markers to the map for cleanliness
         let snippet = '';
         let shareBtn = genShareButton(intel.id).outerHTML;
