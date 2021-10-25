@@ -18,7 +18,6 @@ function filterIntel(searchTermDirty, factionsArr = [], seasonsArr = [], intelTy
     }
 
     if (intelTypeArr.some(item => item)) {
-        console.log(intelTypeArr);
         results = results.filter((intel) => {
             return intelTypeArr.includes(intel.intelType);
         });
@@ -83,9 +82,7 @@ function TriggerSearch(params) {
     //Filter by current map
     if ($('#curr-map-filter:checked').length > 0) mapArr.push(app.currentMap);
 
-    console.log(intelTypeArr);
     let filteredIntel = filterIntel(searchTerm, factionsArr, seasonsArr, intelTypeArr, mapArr);
-    console.log(filteredIntel.length);
     GenerateList(filteredIntel);
 }
 

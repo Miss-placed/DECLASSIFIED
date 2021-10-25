@@ -11,17 +11,7 @@ AddMapMarkersFromCache(intelCache);
 mapInstance.on('popupopen', function () {
     $('.mark-collected').click(function (e) {
         let itemId = $(e.target).closest(".buttonContainer").data("item");
-        if (app.disableMarkers.includes(itemId.toString())) {
-            app.disableMarkers = $.grep(app.disableMarkers, function (value) {
-                return value != itemId.toString();
-            });
-            app.visibleMarkers[itemId].setOpacity(1);
-            removeCollectedIntel(itemId)
-        } else {
-            app.disableMarkers.push(itemId.toString());
-            app.visibleMarkers[itemId].setOpacity(0.35);
-            addCollectedIntel(itemId);
-        }
+        markIntelCollected(itemId);
     });
     $('.share').click(function (e) {
         let itemId = $(e.target).closest(".buttonContainer").data("item");
@@ -43,6 +33,7 @@ mapInstance.on("click", function (e) {
         redirectToGithub({ itemType: app.currentContribType, issueType: "New", location: location });
     }
 })
+
 
 function onLoadV1() {
     //Set initial theme
