@@ -149,3 +149,34 @@ function getIntelCollectedAndTotalByType(intelType, totalsOnly = false) {
     else
         return [collectedCount, intelCount];
 }
+
+
+function findObjectByKey(array, key, value) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i][key] === value) {
+            return array[i];
+        }
+    }
+    return null;
+}
+
+function findTotal(array, key, value) {
+    let total = []
+    for (let i = 0; i < array.length; i++) {
+
+        if (array[i][key] === value) {
+            total.push(array[i])
+        }
+    }
+    return total;
+}
+
+
+function findInCollected(query) {
+    let collectedIntel = getUserPrefs().collectedIntel
+    let total = 0
+    for (let i = 0; i < collectedIntel.length; i++) {
+        total += findTotal(query, "id", collectedIntel[i]).length
+    }
+    return total;
+}
