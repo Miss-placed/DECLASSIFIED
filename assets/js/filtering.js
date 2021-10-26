@@ -85,7 +85,7 @@ function TriggerSearch() {
 
     let filteredIntel = filterIntel(searchTerm, factionsArr, seasonsArr, intelTypeArr, mapArr);
     //Sort by Intel Faction A=>Z first then by Intel type A=>Z then by Intel Name A=>Z
-    let sortedIntel = filteredIntel.sort(function(a, b){
+    let sortedIntel = filteredIntel.sort(function (a, b) {
         if (a.faction > b.faction) return -1;
         if (a.faction < b.faction) return 1;
         if (b.intelType > a.intelType) return -1;
@@ -112,14 +112,82 @@ function getMiscMarkerById(itemId) {
     return null;
 }
 
+/////////////////////Totals/////////////////////////
+const factionTotal = {
+    requiem: findTotal(intelStoreV2, "faction", factions.requiem),
+    omega: findTotal(intelStoreV2, "faction", factions.omega),
+    maxis: findTotal(intelStoreV2, "faction", factions.maxis),
+    darkAether: findTotal(intelStoreV2, "faction", factions.darkAether),
+    all: intelStoreV2.length
+}
+const seasonTotal = {
+    preSeason: findTotal(intelStoreV2, "season", seasons.preSeason),
+    season1: findTotal(intelStoreV2, "season", seasons.season1),
+    season2: findTotal(intelStoreV2, "season", seasons.season2),
+    season3: findTotal(intelStoreV2, "season", seasons.season3),
+    season4: findTotal(intelStoreV2, "season", seasons.season4),
+    season5: findTotal(intelStoreV2, "season", seasons.season5),
+    season6: findTotal(intelStoreV2, "season", seasons.season6),
+    all: intelStoreV2.length
+}
+
+let collectedFaction = calcCollectedForFaction();
+
+let collectedSeason = calcCollectedForSeason();
+
+function calcCollectedForFaction() {
+    var collectedStats = {
+        darkAether: findCollectedTotalFrom(factionTotal.darkAether),
+        requiem: findCollectedTotalFrom(factionTotal.requiem),
+        omega: findCollectedTotalFrom(factionTotal.omega),
+        maxis: findCollectedTotalFrom(factionTotal.maxis),
+        all: 0,
+        not: 0,
+    };
+    collectedStats.all = getUserPrefs().collectedIntel.length
+    collectedStats.not = factionTotal.all - collectedStats.all;
+    return collectedStats;
+}
+
+function calcCollectedForSeason() {
+    var collectedStats = {
+        preSeason: findCollectedTotalFrom(seasonTotal.preSeason),
+        season1: findCollectedTotalFrom(seasonTotal.season1),
+        season2: findCollectedTotalFrom(seasonTotal.season2),
+        season3: findCollectedTotalFrom(seasonTotal.season2),
+        season4: findCollectedTotalFrom(seasonTotal.season3),
+        season5: findCollectedTotalFrom(seasonTotal.season4),
+        season5: findCollectedTotalFrom(seasonTotal.season5),
+        all: 0,
+        not: 0,
+    };
+    collectedStats.all = getUserPrefs().collectedIntel.length
+    collectedStats.not = seasonTotal.all - collectedStats.all;
+    return collectedStats;
+}
+
+function fillTotals() {
+    let requiemTotalEle = document.getElementById("requiem-totals");
+    let omegaTotalEle = document.getElementById("omega-totals");
+    let maxisTotalEle = document.getElementById("maxis-totals");
+    let darkTotalEle = document.getElementById("dark-aether-totals");
+    // console.log(findObjectByKey(intelStoreV2, "faction", factions.requiem))
+    requiemTotalEle.innerHTML = `${collectedFaction.requiem} / ${factionTotal.requiem.length}`
+    omegaTotalEle.innerHTML = `${collectedFaction.omega} / ${factionTotal.omega.length}`
+    maxisTotalEle.innerHTML = `${collectedFaction.maxis} / ${factionTotal.maxis.length}`
+    darkTotalEle.innerHTML = `${collectedFaction.darkAether} / ${factionTotal.darkAether.length}`
+}
+
 /////////////////////Stats/////////////////////////
 function CalcStats() {
     document.querySelectorAll("#intel-type-select label").forEach(element => {
         const intelTypeCheck = $(element);
         const intelType = intelTypeCheck.attr("type");
         const intelCollected = getIntelCollectedAndTotalByType(intelType);
-        intelTypeCheck.attr("value",`${intelCollected[0]}/${intelCollected[1]}`);
+        intelTypeCheck.attr("value", `${intelCollected[0]}/${intelCollected[1]}`);
     });
+
+    fillTotals();
 }
 
 function getIntelCollectedAndTotalByType(intelType, totalsOnly = false) {
@@ -149,6 +217,9 @@ function getIntelCollectedAndTotalByType(intelType, totalsOnly = false) {
     else
         return [collectedCount, intelCount];
 }
+
+
+
 
 
 function findTotal(array, key, value) {

@@ -145,63 +145,9 @@ function DonutChart(parent, spec) {
 }
 
 
-const factionTotal = {
-    requiem: findTotal(intelStoreV2, "faction", factions.requiem),
-    omega: findTotal(intelStoreV2, "faction", factions.omega),
-    maxis: findTotal(intelStoreV2, "faction", factions.maxis),
-    darkAether: findTotal(intelStoreV2, "faction", factions.darkAether),
-    all: intelStoreV2.length
-}
-const seasonTotal = {
-    preSeason: findTotal(intelStoreV2, "season", seasons.preSeason),
-    season1: findTotal(intelStoreV2, "season", seasons.season1),
-    season2: findTotal(intelStoreV2, "season", seasons.season2),
-    season3: findTotal(intelStoreV2, "season", seasons.season3),
-    season4: findTotal(intelStoreV2, "season", seasons.season4),
-    season5: findTotal(intelStoreV2, "season", seasons.season5),
-    season6: findTotal(intelStoreV2, "season", seasons.season6),
-    all: intelStoreV2.length
-}
 
-let collectedFaction = {
-    darkAether: findCollectedTotalFrom(factionTotal.darkAether),
-    requiem: findCollectedTotalFrom(factionTotal.requiem),
-    omega: findCollectedTotalFrom(factionTotal.omega),
-    maxis: findCollectedTotalFrom(factionTotal.maxis),
-    all: 0,
-    not: 0,
-}
-collectedFaction.all = getUserPrefs().collectedIntel.length
-collectedFaction.not = factionTotal.all - collectedFaction.all;
 
-let collectedSeason = {
-    preSeason: findCollectedTotalFrom(seasonTotal.preSeason),
-    season1: findCollectedTotalFrom(seasonTotal.season1),
-    season2: findCollectedTotalFrom(seasonTotal.season2),
-    season3: findCollectedTotalFrom(seasonTotal.season2),
-    season4: findCollectedTotalFrom(seasonTotal.season3),
-    season5: findCollectedTotalFrom(seasonTotal.season4),
-    season5: findCollectedTotalFrom(seasonTotal.season5),
-    all: 0,
-    not: 0,
-}
 
-collectedSeason.all = getUserPrefs().collectedIntel.length
-collectedSeason.not = seasonTotal.all - collectedSeason.all;
-
-function fillTotals() {
-    let requiemTotalEle = document.getElementById("requiem-totals");
-    let omegaTotalEle = document.getElementById("omega-totals");
-    let maxisTotalEle = document.getElementById("maxis-totals");
-    let darkTotalEle = document.getElementById("dark-aether-totals");
-    // console.log(findObjectByKey(intelStoreV2, "faction", factions.requiem))
-    requiemTotalEle.innerHTML = `${collectedFaction.requiem} / ${factionTotal.requiem.length}`
-    omegaTotalEle.innerHTML = `${collectedFaction.omega} / ${factionTotal.omega.length}`
-    maxisTotalEle.innerHTML = `${collectedFaction.maxis} / ${factionTotal.maxis.length}`
-    darkTotalEle.innerHTML = `${collectedFaction.darkAether} / ${factionTotal.darkAether.length}`
-}
-
-fillTotals()
 // basic sum function for totals calculation
 function sum(obj) {
     return Object.keys(obj).reduce((sum, key) => sum + parseFloat(obj[key] || 0), 0);

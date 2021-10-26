@@ -28,8 +28,6 @@ function openModal(x) {
             modal.classList.add("-hidden")
         }
     })
-    // console.log(modals)
-    fillTotals()
 }
 
 function GenerateDetailModal(intel) {
