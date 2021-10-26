@@ -164,10 +164,10 @@ const seasonTotal = {
 }
 
 let collectedFaction = {
-    darkAether: findInCollected(factionTotal.darkAether),
-    requiem: findInCollected(factionTotal.requiem),
-    omega: findInCollected(factionTotal.omega),
-    maxis: findInCollected(factionTotal.maxis),
+    darkAether: findCollectedTotalFrom(factionTotal.darkAether),
+    requiem: findCollectedTotalFrom(factionTotal.requiem),
+    omega: findCollectedTotalFrom(factionTotal.omega),
+    maxis: findCollectedTotalFrom(factionTotal.maxis),
     all: 0,
     not: 0,
 }
@@ -175,13 +175,13 @@ collectedFaction.all = getUserPrefs().collectedIntel.length
 collectedFaction.not = factionTotal.all - collectedFaction.all;
 
 let collectedSeason = {
-    preSeason: findInCollected(seasonTotal.preSeason),
-    season1: findInCollected(seasonTotal.season1),
-    season2: findInCollected(seasonTotal.season2),
-    season3: findInCollected(seasonTotal.season2),
-    season4: findInCollected(seasonTotal.season3),
-    season5: findInCollected(seasonTotal.season4),
-    season5: findInCollected(seasonTotal.season5),
+    preSeason: findCollectedTotalFrom(seasonTotal.preSeason),
+    season1: findCollectedTotalFrom(seasonTotal.season1),
+    season2: findCollectedTotalFrom(seasonTotal.season2),
+    season3: findCollectedTotalFrom(seasonTotal.season2),
+    season4: findCollectedTotalFrom(seasonTotal.season3),
+    season5: findCollectedTotalFrom(seasonTotal.season4),
+    season5: findCollectedTotalFrom(seasonTotal.season5),
     all: 0,
     not: 0,
 }
