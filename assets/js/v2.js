@@ -5,19 +5,24 @@ const modalSet = {
     intelOverview: ["intel-filters", "intel-list", "intel-stats"],
     intelDescription: ["intel-list", "intel-detail"],
     settingsMain: ["settings"],
-    settingsDebug: ["settings","settings-2"],
+    settingsDebug: ["settings", "settings-2"],
 }
 
 /////////////////////Header Menu/////////////////////////
-function expandMenu() {
-    document.querySelector("header").classList.toggle("visible");
+function expandMenu(x) {
+    x.parentElement.classList.toggle("visible");
 }
-
+function collapseMenu() { 
+    document.getElementsByTagName('header')[0].classList.remove('visible')
+    document.getElementsByTagName('header')[0].querySelectorAll('.visible').forEach(ele=>{
+        ele.classList.remove('visible')
+    })
+}
 function changeMapTo(mapId, targetElement) {
     const currentMap = FindMapById(mapId);
     document.querySelector("header").querySelector("h1").innerHTML = currentMap.title;
     setMap(mapId, targetElement)
-    expandMenu();
+    collapseMenu();
     TriggerSearch();
 }
 
@@ -29,38 +34,38 @@ function renderHeader() {
 
 
     let navbarHtmlToAdd = htmlToElements(
-        `<h1 onclick="expandMenu()">${currentMap.title}</h1>
+        `<h1 onclick="expandMenu(this)">${currentMap.title}</h1>
     <ul>
         <li>
-            <h2>Die Maschine</h2>
+            <h2 onclick="expandMenu(this)">Die Maschine</h2>
             <ul>
                 <li onclick="changeMapTo('dieMaschine',this)">Surface</li>
                 <li onclick="changeMapTo('dieMaschine_underground',this)">Underground</li>
             </ul>
         </li>
         <li>
-            <h2>Firebase Z</h2>
+            <h2 onclick="expandMenu(this)">Firebase Z</h2>
             <ul>
                 <li onclick="changeMapTo('firebaseZ_spawn',this)">Spawn</li>
                 <li onclick="changeMapTo('firebaseZ',this)">Main Base</li>
             </ul>
         </li>
         <li>
-            <h2>Mauer Der Toten</h2>
+            <h2 onclick="expandMenu(this)">Mauer Der Toten</h2>
             <ul>
                 <li onclick="changeMapTo('mauerDerToten_streets',this)">Surface</li>
                 <li onclick="changeMapTo('mauerDerToten',this)">Underground</li>
             </ul>
         </li>
         <li>
-            <h2>Forsaken</h2>
+            <h2 onclick="expandMenu(this)">Forsaken</h2>
             <ul>
                 <li onclick="changeMapTo('forsaken',this)">Surface</li>
                 <li onclick="changeMapTo('forsaken_underground',this)">Underground</li>
             </ul>
         </li>
         <li>
-            <h2>Outbreak</h2>
+            <h2 onclick="expandMenu(this)">Outbreak</h2>
             <ul>
                 <li onclick="changeMapTo('zoo',this)">Zoo</li>
                 <li onclick="changeMapTo('duga',this)">Duga</li>
@@ -73,7 +78,7 @@ function renderHeader() {
             </ul>
         </li>
         <li>
-            <h2>Contribute</h2>
+            <h2 onclick="expandMenu(this)">Contribute</h2>
             <ul>
                 <li id="newIntel" class="dropdown-item not-selectable" onClick="newIntelInit()">Submit New Intel</li>
                 <li id="newMisc" class="dropdown-item not-selectable" onClick="newMiscInit()">Submit New Misc Marker</li>

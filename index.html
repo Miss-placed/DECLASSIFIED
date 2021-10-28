@@ -90,7 +90,7 @@
                     </li>
                     <li>
                         <label for="season6">Season 6</label>
-                        <input type="checkbox" id="season6"  value="Season 6" class="check" data-filter="season6">
+                        <input type="checkbox" id="season6" value="Season 6" class="check" data-filter="season6">
                     </li>
                 </ul>
             </fieldset>
@@ -115,7 +115,8 @@
                     </li>
                     <li>
                         <label for="darkAether">Dark Aether</label>
-                        <input type="checkbox" id="darkAether" value="Dark Aether" class="check" data-filter="darkAether">
+                        <input type="checkbox" id="darkAether" value="Dark Aether" class="check"
+                            data-filter="darkAether">
                     </li>
                 </ul>
             </fieldset>
@@ -146,13 +147,13 @@
             <div id="search-form">
                 <input id="search-term" type="search" placeholder="Search Intel...">
             </div>
-            
+
             <div id="filtered-intel">
                 <!-- <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button> -->
             </div>
-            <label id="curr-map-filter-label"class="chk-btn" for="curr-map-filter"  onchange="TriggerSearch()">
-                Filter by Current Map <input type="checkbox" name="curr-map-filter" id="curr-map-filter" class="-small toggle"
-                    placeholder="_">
+            <label id="curr-map-filter-label" class="chk-btn" for="curr-map-filter" onchange="TriggerSearch()">
+                Filter by Current Map <input type="checkbox" name="curr-map-filter" id="curr-map-filter"
+                    class="-small toggle" placeholder="_">
             </label>
         </div>
         <div class="modal -big -hidden" id="intel-detail">
@@ -193,7 +194,7 @@
         <div class="modal -hidden settings" id="settings">
             <h2>Settings</h2>
             <div class="button-list">
-                <p>Marker visibility:</p>
+                <!-- <p>Marker visibility:</p>
                 <label class="btn chk-btn" for="checkbox1">
                     <p>Intel Markers: </p><input type="checkbox" name="checkbox1" id="show-intel" class="toggle"
                         placeholder="_">
@@ -204,19 +205,19 @@
                 </label>
                 <label class="btn chk-btn" for="checkbox">
                     <p>EE markers</p><input type="checkbox" name="checkbox" id="show-ee" class="toggle" placeholder="_">
-                </label>
+                </label> -->
                 <p>Theme: </p>
                 <label class="btn chk-btn" for="system-theme">
                     <p>Use System Theme</p><input type="checkbox" name="system-theme" id="system-theme" class="toggle"
                         placeholder="_" onchange="changePreferredMode()">
                 </label>
-                <p>Debug: </p>
+                <!-- <p>Debug: </p>
                 <button class="btn chk-btn" onclick="openModal(modalSet.settingsDebug)"> Debug options<i
-                        class="fas fa-caret-right"></i></button>
+                        class="fas fa-caret-right"></i></button> -->
 
                 <p>Collected Markers:</p>
-                <button class="btn chk-btn">Import/Export Markers
-                </button>
+                <a href="rawdata.html" target="_blank" class="btn chk-btn">Import/Export Markers
+                </a>
             </div>
         </div>
         <div class="modal -hidden settings" id="settings-2">
@@ -267,7 +268,7 @@
     <script src="assets/js/mapsvg.js"></script>
     <script src="assets/js/icons.js"></script>
     <script src="assets/js/models.js"></script>
-    
+
     <script src="assets/js/userPrefs.js"></script>
     <script src="poi/miscV2.js"></script>
     <script src="poi/poiV2.js"></script>
