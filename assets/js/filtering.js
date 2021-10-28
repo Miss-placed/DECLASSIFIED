@@ -113,43 +113,25 @@ function getMiscMarkerById(itemId) {
 }
 
 /////////////////////Totals/////////////////////////
-const factionTotal = {
-    requiem: findTotal(intelStoreV2, "faction", factions.requiem),
-    omega: findTotal(intelStoreV2, "faction", factions.omega),
-    maxis: findTotal(intelStoreV2, "faction", factions.maxis),
-    darkAether: findTotal(intelStoreV2, "faction", factions.darkAether),
-    all: intelStoreV2.length
-}
-const seasonTotal = {
-    preSeason: findTotal(intelStoreV2, "season", seasons.preSeason),
-    season1: findTotal(intelStoreV2, "season", seasons.season1),
-    season2: findTotal(intelStoreV2, "season", seasons.season2),
-    season3: findTotal(intelStoreV2, "season", seasons.season3),
-    season4: findTotal(intelStoreV2, "season", seasons.season4),
-    season5: findTotal(intelStoreV2, "season", seasons.season5),
-    season6: findTotal(intelStoreV2, "season", seasons.season6),
-    all: intelStoreV2.length
-}
 
-let collectedFaction = calcCollectedForFaction();
-
-let collectedSeason = calcCollectedForSeason();
 
 function calcCollectedForFaction() {
+    const totals = getTotals();
     var collectedStats = {
-        darkAether: findCollectedTotalFrom(factionTotal.darkAether),
-        requiem: findCollectedTotalFrom(factionTotal.requiem),
-        omega: findCollectedTotalFrom(factionTotal.omega),
-        maxis: findCollectedTotalFrom(factionTotal.maxis),
+        darkAether: findCollectedTotalFrom(totals.factionTotal.darkAether),
+        requiem: findCollectedTotalFrom(totals.factionTotal.requiem),
+        omega: findCollectedTotalFrom(totals.factionTotal.omega),
+        maxis: findCollectedTotalFrom(totals.factionTotal.maxis),
         all: 0,
         not: 0,
     };
     collectedStats.all = getUserPrefs().collectedIntel.length
-    collectedStats.not = factionTotal.all - collectedStats.all;
+    collectedStats.not = totals.factionTotal.all - collectedStats.all;
     return collectedStats;
 }
 
 function calcCollectedForSeason() {
+    let { seasonTotal } = getTotals();
     var collectedStats = {
         preSeason: findCollectedTotalFrom(seasonTotal.preSeason),
         season1: findCollectedTotalFrom(seasonTotal.season1),
@@ -166,7 +148,38 @@ function calcCollectedForSeason() {
     return collectedStats;
 }
 
+function getTotals() {
+    const factionTotal = {
+        requiem: findTotal(intelStoreV2, "faction", factions.requiem),
+        omega: findTotal(intelStoreV2, "faction", factions.omega),
+        maxis: findTotal(intelStoreV2, "faction", factions.maxis),
+        darkAether: findTotal(intelStoreV2, "faction", factions.darkAether),
+        all: intelStoreV2.length
+    }
+    const seasonTotal = {
+        preSeason: findTotal(intelStoreV2, "season", seasons.preSeason),
+        season1: findTotal(intelStoreV2, "season", seasons.season1),
+        season2: findTotal(intelStoreV2, "season", seasons.season2),
+        season3: findTotal(intelStoreV2, "season", seasons.season3),
+        season4: findTotal(intelStoreV2, "season", seasons.season4),
+        season5: findTotal(intelStoreV2, "season", seasons.season5),
+        season6: findTotal(intelStoreV2, "season", seasons.season6),
+        all: intelStoreV2.length
+    }
+    
+    return { factionTotal, seasonTotal };
+}
+
+function getCollected() {
+    let collectedFaction = calcCollectedForFaction();
+
+    let collectedSeason = calcCollectedForSeason();
+    return { collectedFaction, collectedSeason };
+}
+
 function fillTotals() {
+    let { factionTotal } = getTotals();
+    let { collectedFaction } = getCollected();
     let requiemTotalEle = document.getElementById("requiem-totals");
     let omegaTotalEle = document.getElementById("omega-totals");
     let maxisTotalEle = document.getElementById("maxis-totals");
@@ -187,6 +200,7 @@ function CalcStats() {
         intelTypeCheck.attr("value", `${intelCollected[0]}/${intelCollected[1]}`);
     });
 
+    refreshDonut();
     fillTotals();
 }
 
