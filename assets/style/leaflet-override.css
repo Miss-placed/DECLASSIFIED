@@ -64,3 +64,23 @@
   margin-bottom: 10px;
   margin-top: 5px;
 }
+.leaflet-div-icon{
+  background:none;
+  border:none;
+}
+.leaflet-div-icon > div{
+  display:flex;
+  justify-content: center;
+}
+.leaflet-div-icon .icon, .leaflet-div-icon .background{
+  position:absolute;
+
+}
+.leaflet-div-icon .icon{
+  z-index:2;
+  top: 4px;
+  left: calc(50% - 11.5px);
+}
+.leaflet-div-icon .background{
+  z-index:1;
+}
