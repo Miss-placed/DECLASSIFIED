@@ -72,7 +72,7 @@ header > ul {
 }
 
 header.visible > ul,
-header > ul > li:hover > ul,
+header > ul > li.visible > ul,
 header > ul > li:focus > ul,
 header > ul > li:focus-within > ul {
   display: initial;
