@@ -12,9 +12,10 @@ const modalSet = {
 function expandMenu(x) {
     x.parentElement.classList.toggle("visible");
 }
-function collapseMenu() { 
+function collapseMenu() {
     document.getElementsByTagName('header')[0].classList.remove('visible')
-    document.getElementsByTagName('header')[0].querySelectorAll('.visible').forEach(ele=>{
+
+    document.getElementsByTagName('header')[0].querySelectorAll('.visible').forEach(ele => {
         ele.classList.remove('visible')
     })
 }
