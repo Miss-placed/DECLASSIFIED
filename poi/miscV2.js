@@ -476,8 +476,8 @@ miscPOI[mapDetails.sanatorium.id] = [
     //new Marker(new Item("oEPK3", "Chopper Gunner", "Hold out until the wave is dead to continue with the Easter Egg"), [-170.51300319205535, 39.25])
 ];
 miscPOI[mapDetails.collateral.id] = [
-    new Marker("0FS1A", miscTypes.requiemRadio, [323.85274730873994, 352.125]),
-    new Marker("W6wPV", miscTypes.omegaRadio, [179.8639466102166, 179.1875]),
+    new Marker("0FS1A", miscTypes.requiemRadio, [[208.56446345433304, 185.99219645126215]]),
+    new Marker("W6wPV", miscTypes.omegaRadio, [205.64054514049639, 328.34673879951004]),
     new Marker("bUGza", miscTypes.maxisRadio, [296.69284893739234, 413.4940734223786]),
 ];
 miscPOI[mapDetails.armada.id] = [
