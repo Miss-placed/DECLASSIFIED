@@ -145,6 +145,7 @@ const intelStoreV2 = [
         map: mapDetails.dieMaschine.id,
         name: "D.I.E. Remote Control",
         desc: "Gotten as part of the free D.I.E Machine Quest",
+        img: "7VkXI09",
     }, {
         id: "RS0Ar2",
         faction: factions.requiem,
@@ -154,6 +155,7 @@ const intelStoreV2 = [
         map: mapDetails.dieMaschine.id,
         name: "D.I.E. Machine",
         desc: "Get the free D.I.E Machine from the quest",
+        img: "CEAruXt",
     }, {
         id: "RS0Ar3",
         faction: factions.requiem,
@@ -163,6 +165,7 @@ const intelStoreV2 = [
         map: mapDetails.dieMaschine.id,
         name: "Aetherscope",
         desc: "Part of the main quest. You have to craft it.",
+        img: "rgoEclM",
     }, {
         id: "RS0Ar4",
         faction: factions.requiem,
@@ -172,6 +175,7 @@ const intelStoreV2 = [
         map: mapDetails.dieMaschine.id,
         name: "Doctor Vogel's Diary",
         desc: "When you have crafted the Aetherscope, it can be found in the Dark Aether next to the computer in the med bay.",
+        img: "yGC78xG",
     }, {
         id: "RS0Ar5",
         faction: factions.requiem,
@@ -181,6 +185,7 @@ const intelStoreV2 = [
         map: mapDetails.dieMaschine.id,
         name: "Decontamination Agent",
         desc: "In a cabinet in the med bay. Obtained during the main quest.",
+        img: "ci5KPI7",
     }, {
         id: "RS1Au1",
         faction: factions.requiem,
@@ -388,6 +393,7 @@ const intelStoreV2 = [
         map: mapDetails.firebaseZ.id,
         name: "RAI K-84 Blueprint",
         desc: "On the wall in Weapons Lab.",
+        img: "AZfBKTe",
     }, {
         id: "RS1Ar2",
         faction: factions.requiem,
@@ -397,6 +403,7 @@ const intelStoreV2 = [
         map: mapDetails.firebaseZ.id,
         name: "Weapon Trial Folder",
         desc: "On the ground next to Kuhlklay's Body.",
+        img: "3y6mDXU",
     }, {
         id: "RS1Ar3",
         faction: factions.requiem,
@@ -415,6 +422,7 @@ const intelStoreV2 = [
         map: mapDetails.firebaseZ.id,
         name: "RAI K-84 Prototype",
         desc: "Obtain the ww. Needs to be the free one from the quest.",
+        img: "HqQqEQ4",
     }, {
         id: "RS2Au1",
         faction: factions.requiem,
@@ -1662,6 +1670,7 @@ const intelStoreV2 = [
         map: mapDetails.dieMaschine.id,
         name: "Orlov Family Photo",
         desc: "Collected in the radio station in nacht at the end of the main quest.",
+        img: "m4HN82i",
     }, {
         id: "OS1Au1",
         faction: factions.omega,
@@ -1878,6 +1887,7 @@ const intelStoreV2 = [
         map: mapDetails.firebaseZ.id,
         name: "Kuhlklay's Eye",
         desc: "In scorched defence, in a dead body leaning up against a blown up tank.",
+        img: "q5ZddoH",
     }, {
         id: "OS1Ar2",
         faction: factions.omega,
@@ -1887,6 +1897,7 @@ const intelStoreV2 = [
         map: mapDetails.firebaseZSpawn.id,
         name: "Ravenov ID Badge",
         desc: "Obtained from Ravenov during the main quest.",
+        img: "Q2zH0bd",
     }, {
         id: "OS1Ar3",
         faction: factions.omega,
@@ -1896,6 +1907,7 @@ const intelStoreV2 = [
         map: mapDetails.firebaseZ.id,
         name: "Agent Delivery System",
         desc: "Obtained from the medic building during the main quest.",
+        img: "qHRfsEJ",
     }, {
         id: "OS1Ar4",
         faction: factions.omega,
@@ -1905,6 +1917,7 @@ const intelStoreV2 = [
         map: mapDetails.firebaseZ.id,
         name: "Essence Trap",
         desc: "Obtained from the datacenter during the main quest.",
+        img: "gFj1WrM",
     }, {
         id: "OS1Ar5",
         faction: factions.omega,
@@ -1914,6 +1927,7 @@ const intelStoreV2 = [
         map: mapDetails.firebaseZ.id,
         name: "Aethermeter",
         desc: "Obtained during the main quest.",
+        img: "f1MWrhy",
     }, {
         id: "OS2Au1",
         faction: factions.omega,
@@ -3765,6 +3779,7 @@ const intelStoreV2 = [
         map: mapDetails.dieMaschine.id,
         name: "Mutated Fungus",
         desc: "Obtained during the main quest, on a tree with purple table mushrooms.",
+        img: "jiJAPUQ",
     }, {
         id: "DS0Ar2",
         faction: factions.darkAether,
@@ -3774,6 +3789,7 @@ const intelStoreV2 = [
         map: mapDetails.dieMaschine.id,
         name: "Plaguehound Gas",
         desc: "Obtained during the main quest, next to Deadshot Daiquiri.",
+        img: "EYww78N",
     }, {
         id: "DS0Ar3",
         faction: factions.darkAether,
@@ -3782,7 +3798,8 @@ const intelStoreV2 = [
         loc: defaultPOIData.nullLoc,
         map: mapDetails.dieMaschine.id,
         name: "Dark Aether Crystal",
-        desc: "Obtained during hte main quest, collected from the red Aether crystals.",
+        desc: "Obtained during the main quest, collected from the red Aether crystals.",
+        img: "gSh6MRa",
     }, {
         id: "DS0Ar4",
         faction: factions.darkAether,
@@ -3792,6 +3809,7 @@ const intelStoreV2 = [
         map: mapDetails.dieMaschine.id,
         name: "Dark Aether Wrench",
         desc: "Obtained during the main quest, gotten from the ghostly figures in the med bay.",
+        img: "ow2AEku",
     }, {
         id: "DS1Au1",
         faction: factions.darkAether,
@@ -4026,6 +4044,7 @@ const intelStoreV2 = [
         map: mapDetails.firebaseZ.id,
         name: "Omega Canister",
         desc: "Part of the Main quest.",
+        img: "tLJkx4S",
     }, {
         id: "DS2Au1",
         faction: factions.darkAether,
