@@ -1,11 +1,12 @@
 /////////////////////V2/////////////////////////
 
-function GenerateList(filters) {
+function GenerateList(intelToRender) {
     const intelListEle = document.querySelector("#filtered-intel");
     intelListEle.replaceChildren(); // Empty First
 
-    intelCache.forEach(intel => {
-        const buttonTemplate = htmlToElement(`<button class="btn to-intel" target="intel-detail" id="${intel.id}">${intel.name}</button>`);
+    intelToRender.forEach(intel => {
+        const isCollected = hasUserCollected(intel.id);
+        const buttonTemplate = htmlToElement(`<button class="btn to-intel" faction="${intel.faction}" type="${intel.intelType}"target="intel-detail" id="${intel.id}" ${isCollected ? "collected" : ""}>${intel.name}</button>`);
         intelListEle.appendChild(buttonTemplate);
     });
     InitialiseButtons();
@@ -27,7 +28,7 @@ function IntelButtonClick(event) {
     let intel = getIntelById(intelID);
     GenerateDetailModal(intel);
     closeSubModal("intel-stats");
-    closeSubModal("intel-type");
+    closeSubModal("intel-filters");
 }
 
 /////////////////////V1/////////////////////////
@@ -89,6 +90,7 @@ function GenerateIntelListItem(item) {
 
     let btnContainer = document.createElement("div");
     btnContainer.className = "buttonContainer";
+    btnContainer.appendChild(genCollectedButton(item.id));
 
     //Only Generate locate and share buttons if intel has location
     if (item.loc[0] != 0 && item.loc[1] != 0) {
@@ -103,6 +105,13 @@ function GenerateIntelListItem(item) {
     intelDesc.appendChild(btnContainer);
     intelItem.appendChild(intelDesc);
     return intelItem;
+}
+
+/////////////////////Utils/////////////////////////
+function markIntelCollectedForButton(intelId) {
+    return function () {
+        markIntelCollected(intelId)
+    }
 }
 
 function goToIntel(item) {
@@ -145,10 +154,25 @@ function genBugButton(itemId) {
     return bugBtn;
 }
 
+function genCollectedButton(itemId) {
+    let collectedBtn = createElement("button", ["btn", "btn-info", "inverted", "action-buttons", "mark-collected"], "Collected:")
+    if(hasUserCollected(itemId))
+        collectedBtn.appendChild(genIcon("fa-check-square"));
+    else 
+        collectedBtn.appendChild(genIcon("fa-square"));
+
+    collectedBtn.id = `${itemId}-collect-btn`;
+    collectedBtn.title = "Mark As Collected";
+    collectedBtn.onclick = markIntelCollectedForButton(itemId);
+    return collectedBtn;
+}
+
+function genIcon(fontAwesomeClass) {
+    return htmlToElement(`<i class="fas ${fontAwesomeClass}" aria-hidden="true" style="margin-left: 5px;"></i>`);
+}
 
 function openDescModal(intel) {
     return function () {
-        console.log("lol try again")
         GenerateDetailModal(intel)
         openModal(modalSet.intelDescription)
     }
@@ -171,7 +195,7 @@ function copyToClipboard(text, notif) {
     showNotification(notif)
 }
 
-function createElement(type, className, inside = undefined, id, map) {
+function createElement(type, className, inside = undefined, id, map, iconClass) {
     element = document.createElement(type)
     if (className != "") {
         if (Array.isArray(className)) {
@@ -202,6 +226,9 @@ function createElement(type, className, inside = undefined, id, map) {
         }
         element.appendChild(tempElement)
 
+    }
+    if (iconClass) {
+        element.appendChild(genIcon(iconClass))
     }
     return element
 }

@@ -1,5 +1,6 @@
 @import url("global.css");
 @import url("buttons.css");
+
 body {
   margin: 0;
   padding: 0;
@@ -72,7 +73,7 @@ header > ul {
 }
 
 header.visible > ul,
-header > ul > li:hover > ul,
+header > ul > li.visible > ul,
 header > ul > li:focus > ul,
 header > ul > li:focus-within > ul {
   display: initial;
@@ -153,7 +154,7 @@ select.faction-list > option:hover {
 
 .modal #filtered-intel,
 .button-list,
-#intel-type div {
+#intel-filters #intel-type-select {
   display: flex;
   margin: 0 auto;
   flex-wrap: nowrap;
@@ -161,6 +162,7 @@ select.faction-list > option:hover {
   aspect-ratio: var(--modal-col-1);
   width: 250px;
   align-items: center;
+  z-index: 1;
 }
 
 #filtered-intel {
@@ -181,18 +183,28 @@ select.faction-list > option:hover {
   width: calc(100% - 50px);
   height: calc(100% - 50px);
   flex: unset;
+  text-align: center;
+}
+
+.sub-modal h2 {
+  margin-top: 3vh;
+  text-align: center;
+}
+
+.sub-modal button {
+  float: right;
 }
 
 .faction-list-icon {
   height: 40px;
 }
 
-.modal ul {
+.submodal-list {
   display: inline-block;
   list-style: none;
 }
 
-.modal ul li {
+.submodal-list li {
   height: 40px;
   display: flex;
   align-items: center;
@@ -201,11 +213,11 @@ select.faction-list > option:hover {
 
 #search-form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
-  height: 100px;
   width: 100%;
   padding: 5px;
+  align-items: center;
 }
 
 #search-form .btn {
@@ -301,21 +313,27 @@ select.faction-list > option:hover {
   0% {
     bottom: -20px;
   }
+
   1% {
     bottom: 0px;
   }
+
   3% {
     bottom: -12px;
   }
+
   6% {
     bottom: -20px;
   }
+
   9% {
     bottom: -5px;
   }
+
   10% {
     bottom: 0px;
   }
+
   100% {
     bottom: 0px;
   }
@@ -329,6 +347,7 @@ select.faction-list > option:hover {
   max-width: 100%;
   max-height: 100%;
 }
+
 #lightbox-container {
   position: absolute;
   top: 0;

@@ -49,7 +49,7 @@ function AddMapMarkersFromCache(intelArr) {
     if (!debug) {
         for (intel of intelArr) {
             if (intel.map != mapDetails.allOutbreakMaps.id) {
-                let factionIcon = getIconByFaction(intel.faction);
+                let factionIcon = returnMarker(intel.faction, intel.intelType);
                 mapLayer = mapLayers[intel.map];
                 addMarkerToMap(intel, factionIcon, mapLayer);
             }
@@ -72,6 +72,7 @@ function addMarkerToMap(intel, icon, maep) {
         let shareBtn = genShareButton(intel.id).outerHTML;
         let bugBtn = genBugButton(intel.id).outerHTML;
         let moreBtn = genMoreButton(intel).outerHTML;
+        let collectedBtn = genCollectedButton(intel.id).outerHTML;
         let tempBtn = bugBtn
         let imgSrc = 'assets/img/intelScreenshot/placeholder.png';
         let imgEle = ''
@@ -81,7 +82,7 @@ function addMarkerToMap(intel, icon, maep) {
         }
 
         if (typeof v2Test == 'string') {
-            imgEle = `<img src="${imgSrc}" crossorigin="anonymous" onclick="expandImage(this)"></img>`
+            imgEle = `<img src="${imgSrc}" onclick="expandImage(this)"></img>`
             tempBtn = moreBtn
         }
 
@@ -93,7 +94,7 @@ function addMarkerToMap(intel, icon, maep) {
                 <div>
                     <p>${intel.desc}</p>
                     <div class="buttonContainer" data-item="${intel.id}" data-type="${markerTypes.intel.id}">
-                        <button type="button" class="btn btn-info inverted mark-collected">Mark as collected</button>
+                        ${collectedBtn}
                         ${shareBtn}
                         ${tempBtn}
                     </div>
@@ -124,12 +125,12 @@ function addMiscMarkerToMap(loc, icon, maep, id, name, desc = ``) {
     if (loc != null && JSON.stringify([0, 0]) != JSON.stringify(loc)) { // don't add 0,0 markers to the map for cleanliness
         let bugBtn = genBugButton(id).outerHTML;
         let snippet = $(`<div></div>`)
-        
-        h1Ele = desc ==''? name: `${name}:<br> ${desc}`;
+
+        h1Ele = desc == '' ? name : `${name}:<br> ${desc}`;
         snippet = `
         <div class="misc-content">
         <h1>${h1Ele}</h1>
-            <div class="buttonContainer" data-item="${id}" data-type="${markerTypes.misc.id}">
+            <div class="buttonContainer noselect" data-item="${id}" data-type="${markerTypes.misc.id}">
                 ${bugBtn}
             </div>
         </div>`;

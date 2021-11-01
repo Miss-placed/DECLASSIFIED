@@ -37,17 +37,6 @@ function setUserPrefs(prefsObj) {
     localStorage.setItem("declassifiedPrefs", JSON.stringify(prefsObj));
 }
 
-function hasUserCollected(intel, getIndex = false) {
-    let currentPrefs = getUserPrefs();
-    //Search all arrays of intel to see if the intel exists
-    let indexOfIntel = currentPrefs.collectedIntel.indexOf(intel);
-    if (indexOfIntel > -1 && getIndex) return indexOfIntel;
-    if (indexOfIntel > -1 && !getIndex) return true;
-
-    //Couldn't find the intel, assume they haven't collected
-    return false;
-}
-
 function addCollectedIntel(intel) {
     let currentPrefs = getUserPrefs();
 
@@ -82,7 +71,6 @@ function toggleDarkModeSetting() {
 
 function changePreferredMode() {
     let currentPrefs = getUserPrefs();
-    // debugger
     const systemPrefersDarkmode = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
     currentPrefs.useSystemTheme = document.getElementById("system-theme").checked;
     setUserPrefs(currentPrefs);

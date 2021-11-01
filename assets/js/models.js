@@ -93,11 +93,19 @@ const contribTemplates = {
     }
 }
 
+/////////////////////Core Categories/////////////////////////
 const factions = {
     requiem: "Requiem",
     omega: "Omega",
     maxis: "Maxis",
     darkAether: "Dark Aether",
+}
+
+const intelTypes = {
+    audio: "Audio Logs",
+    docs: "Documents",
+    radio: "Radio Transmissions",
+    artifact: "Artifacts",
 }
 
 const seasons = {
@@ -124,8 +132,6 @@ const perks = {
     phd: new Item({ id: "PHDSlider", title: "PHD Slider", icon: iconInit("PHDSlider", "perk") }),
 }
 
-
-
 /////////////////////Markers/////////////////////////
 const markerTypes = {
     intel: new Item({ id: "intel", title: "Intel" }),
@@ -134,11 +140,11 @@ const markerTypes = {
     easterEggs: new Item({ id: "easterEggs", title: "Easter Eggs" }),
 }
 
-const intelTypes = {
-    audio: "Audio Logs",
-    docs: "Documents",
-    radio: "Radio Transmissions",
-    artifact: "Artifacts",
+const defaultPOIData = {
+    challenge: "Obtained through the Challenge Machine",
+    special: "Dropped from Special/Elite kills",
+    chests: "Dropped from Special/Elite kills or golden chests",
+    nullLoc: "[0,0]"
 }
 
 const miscTypes = {
