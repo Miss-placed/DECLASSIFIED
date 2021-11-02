@@ -24,6 +24,7 @@ header {
   position: absolute;
   z-index: var(--z-index-menu);
   left: calc((100vw - 400px) / 2);
+  cursor: pointer;
 }
 
 header h1 {
