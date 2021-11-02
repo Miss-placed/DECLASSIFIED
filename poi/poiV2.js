@@ -1179,6 +1179,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerTotenStreets.id,
         name: "Klaus's Hands",
         desc: "The hands are found around the neck of a scorched zombie in room 305.",
+        img: "y0rk1MH",
     }, {
         id: "RS4Ar6",
         faction: factions.requiem,
@@ -1188,6 +1189,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerTotenStreets.id,
         name: "CRBR-S",
         desc: "In the Safe in rroom 305.",
+        img: "05AhecN",
     }, {
         id: "RS4Ar7",
         faction: factions.requiem,
@@ -1197,6 +1199,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerToten.id,
         name: "Warhead",
         desc: "Part of the EE, can be found inside the train on an open chest",
+        img: "waVs3Fr",
     }, {
         id: "RS4Ar8",
         faction: factions.requiem,
@@ -1206,6 +1209,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerToten.id,
         name: "Rico's Keycard",
         desc: "Part of the EE, can be found inside the train on a burnt corpse",
+        img: "8XlPsfD",
     }, {
         id: "RS4Ar9",
         faction: factions.requiem,
@@ -1215,6 +1219,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerToten.id,
         name: "Hacking Helm",
         desc: "Part of the EE, can be obtained by crafting onto Klaus. U must collect first the Antenna, Transistor and Electronic Boards",
+        img: "iuuHVb2",
     }, {
         id: "RS4Ar10",
         faction: factions.requiem,
@@ -1224,6 +1229,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerTotenStreets.id,
         name: "Improvised Collider",
         desc: "Part of the EE, can be obtained by picking up corrupted uranium and using it on the workbench",
+        img: "BHetga7",
     }, {
         id: "RS5Au1",
         faction: factions.requiem,
@@ -2567,6 +2573,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerToten.id,
         name: "Endstation Lure",
         desc: "Part of the EE, enter the Secret Lab and shoot the machine next to the portal frame. Can only be obtained after collecting and distributing the canisters",
+        img: "S9WRizi",
     }, {
         id: "OS4Ar7",
         faction: factions.omega,
@@ -2576,6 +2583,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerToten.id,
         name: "Battery",
         desc: "Can be obtained by killing the first Krazny",
+        img: "chnzEpa",
     }, {
         id: "OS5Au1",
         faction: factions.omega,
@@ -4550,6 +4558,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerToten.id,
         name: "Electrical Fuse",
         desc: "Obtained by killing the first tempest, used to restore power",
+        img: "LcCTZ0F",
     }, {
         id: "DS4Ar6",
         faction: factions.darkAether,
@@ -4559,6 +4568,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerToten.id,
         name: "Tempest Essence",
         desc: "Part of the EE, can be obtained by placing a container on the essence harvester and filling it up by killing the spawning Tempest.",
+        img: "nbh7Pym",
     }, {
         id: "DS4Ar7",
         faction: factions.darkAether,
@@ -4568,6 +4578,7 @@ const intelStoreV2 = [
         map: mapDetails.mauerDerToten.id,
         name: "Corrupted Uranium",
         desc: "Part of the EE, can be obtained by spawning an HVT Megaton and killing the 2 halves",
+        img: "UpeO5Dr",
     }, {
         id: "DS5Au1",
         faction: factions.darkAether,
