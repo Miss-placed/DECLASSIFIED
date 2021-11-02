@@ -28,8 +28,6 @@ function openModal(x) {
             modal.classList.add("-hidden")
         }
     })
-    // console.log(modals)
-    fillTotals()
 }
 
 function GenerateDetailModal(intel) {
@@ -40,7 +38,7 @@ function GenerateDetailModal(intel) {
         intel.desc = "If you see this please report an issue on the github page."
     }
     var elementsToAdd = htmlToElements(
-        `<button class="close-submodal btn inverted" onclick="openModal(modalSet.intelOverview)"><i class="bi bi-x"></i></button>
+        `<button class="close-submodal btn inverted" onclick="openModal(modalSet.intelOverview)"><i class="fas fa-x"></i></button>
     
         <h2>${intel.name}</h2>
         <p>${intel.desc}</p>`
@@ -54,13 +52,14 @@ function GenerateDetailModal(intel) {
 
 
     let btnContainer = document.createElement("div");
-    btnContainer.className = "buttonContainer";
+    btnContainer.className = "buttonContainer noselect";
+    btnContainer.appendChild(genCollectedButton(intel.id));
 
     //Only Generate locate and share buttons if intel has location
     if (intel.loc[0] != 0 && intel.loc[1] != 0) {
         let location = createElement("button", ["btn", "inverted", "locate-intel"], "Locate Intel", "locate-intel");
         location.onclick = goToIntel(intel);
-        location.appendChild(htmlToElement(`<i class="fas fa-map-marker-alt" aria-hidden="true" style="margin-left: 5px;"></i>`));
+        location.appendChild(genIcon("fa-map-marker-alt"));
         btnContainer.appendChild(location);
         btnContainer.appendChild(genShareButton(intel.id));
     }
@@ -115,6 +114,55 @@ function toggleAside(changePrefs = true) {
         currentPrefs.asideShow = !currentPrefs.asideShow;
         setUserPrefs(currentPrefs);
     }
+}
+
+/////////////////////Intel Collected/////////////////////////
+function markIntelCollected(intelId) {
+    const collectButtonSelector = `#${intelId}-collect-btn`;
+    const buttonSelector = `#${intelId}.to-intel`;
+    const intelHasMarker = doesIntelHaveMarker(intelId);
+    if (hasUserCollected(intelId)) {
+        // "Un"Collect?
+        $(buttonSelector).removeAttr("collected")
+        $(collectButtonSelector).removeAttr("collected")
+        $(collectButtonSelector + " i").removeClass("fa-check-square")
+        $(collectButtonSelector + " i").addClass("fa-square")
+        if (intelHasMarker) {
+            app.disableMarkers = $.grep(app.disableMarkers, function (value) {
+                return value != intelId.toString();
+            });
+            app.visibleMarkers[intelId].setOpacity(1);
+        }
+        removeCollectedIntel(intelId);
+    } else {
+        // Collect
+        $(buttonSelector).attr("collected", "")
+        $(collectButtonSelector).attr("collected", "")
+        $(collectButtonSelector + " i").removeClass("fa-square")
+        $(collectButtonSelector + " i").addClass("fa-check-square")
+        if (intelHasMarker) {
+            app.disableMarkers.push(intelId.toString());
+            app.visibleMarkers[intelId].setOpacity(0.35);
+        }
+        addCollectedIntel(intelId);
+    }
+    CalcStats();
+}
+
+function hasUserCollected(intelId, getIndex = false) {
+    let currentPrefs = getUserPrefs();
+    //Search all arrays of intel to see if the intel exists
+    let indexOfIntel = currentPrefs.collectedIntel.indexOf(intelId);
+    if (indexOfIntel > -1 && getIndex) return indexOfIntel;
+    if (indexOfIntel > -1 && !getIndex) return true;
+
+    //Couldn't find the intel, assume they haven't collected
+    return false;
+}
+
+function doesIntelHaveMarker(intelId) {
+    const intel = getIntelById(intelId);
+    return JSON.stringify(intel.loc) != defaultPOIData.nullLoc;
 }
 
 /////////////////////Notifications/////////////////////////
@@ -200,7 +248,7 @@ function redirectToGithub({ itemId: id = "", itemType, issueType = "New", locati
  * @param {String} HTML representing a single element
  * @return {Element}
  */
- function htmlToElement(html) {
+function htmlToElement(html) {
     var template = document.createElement('template');
     html = html.trim(); // Never return a text node of whitespace as the result
     template.innerHTML = html;

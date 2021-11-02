@@ -12,32 +12,39 @@ function getIconByFaction(faction) {
             return generalIcon;
     }
 }
+var defaultMarker = {
+    shadowSize: [33, 44],
+    shadowAnchor: [(33 / 2), 44],
+    popupAnchor: [0, -25]
+}
+var defaultIcon = {
+    iconSize: [25, 25],
+    iconAnchor: [12.5, 40],
+}
+
+function returnMarker(faction, type) {
+    const iconHtml = 
+    `<div>
+        <img class="icon" src="assets/img/icons/type/${type}.png" alt="Icon">
+        <img class="background" src="assets/img/icons/markers/${faction}.png" alt="Background">
+        <!-- Shadow here -->
+    </div>`;
+
+    return L.divIcon(Object.assign({
+        html: iconHtml
+    },
+        defaultIcon,
+        defaultMarker,
+    ));
+}
 
 /////////////////////Factions/////////////////////////
-var darkAetherIcon = L.icon({
-    iconUrl: 'assets/img/icons/faction/darkAether.png',
-    iconSize: [30, 48],
-    iconAnchor: [15, 48],
-    popupAnchor: [0, -30]
-});
-var maxisIcon = L.icon({
-    iconUrl: 'assets/img/icons/faction/maxis.png',
-    iconSize: [34, 48],
-    iconAnchor: [17, 48],
-    popupAnchor: [0, -30]
-});
-var omegaIcon = L.icon({
-    iconUrl: 'assets/img/icons/faction/omega.png',
-    iconSize: [55, 48],
-    iconAnchor: [27.5, 48],
-    popupAnchor: [0, -30]
-});
-var requiemIcon = L.icon({
-    iconUrl: 'assets/img/icons/faction/requiem.png',
-    iconSize: [40, 40],
-    iconAnchor: [24, 48],
-    popupAnchor: [0, -30]
-});
+
+// var darkAetherIcon = L.icon(returnMarker('dark Aether','documents'));
+// var maxisIcon = L.icon(returnMarker('maxis','documents'));
+// var omegaIcon = L.icon(returnMarker('omega','documents'));
+// var requiemIcon = L.icon(returnMarker('requiem','artifacts'));
+
 /////////////////////Misc/////////////////////////
 var generalIcon = L.icon({
     iconUrl: 'assets/img/icons/generalIcon.png',
