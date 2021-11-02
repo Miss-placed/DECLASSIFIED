@@ -170,7 +170,7 @@ const defaultPOIData = {
     challenge: "Obtained through the Challenge Machine",
     special: "Dropped from Special/Elite kills",
     chests: "Dropped from Special/Elite kills or golden chests",
-    onslaught: "Dropped during the onslaught gamemode,",
+    onslaught: "Dropped during the onslaught gamemode.",
     nullLoc: "[0,0]"
 }
 
