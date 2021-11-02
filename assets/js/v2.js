@@ -11,16 +11,6 @@ const modalSet = {
 /////////////////////Header Menu/////////////////////////
 function expandMenu(x) {
     x.parentElement.classList.toggle("visible");
-<<<<<<< HEAD
-=======
-}
-function collapseMenu() {
-    document.getElementsByTagName('header')[0].classList.remove('visible')
-
-    document.getElementsByTagName('header')[0].querySelectorAll('.visible').forEach(ele => {
-        ele.classList.remove('visible')
-    })
->>>>>>> de2ff5e7b28a39f0e412f1a3da2aa9c9787bb120
 }
 function collapseMenu() {
     document.getElementsByTagName('header')[0].classList.remove('visible')
@@ -33,12 +23,8 @@ function changeMapTo(mapId, targetElement) {
     const currentMap = FindMapById(mapId);
     document.querySelector("header").querySelector("h1").innerHTML = currentMap.title;
     setMap(mapId, targetElement)
-<<<<<<< HEAD
     collapseMenu();
     TriggerSearch();
-=======
-    collapseMenu()
->>>>>>> de2ff5e7b28a39f0e412f1a3da2aa9c9787bb120
 }
 
 function renderHeader() {
