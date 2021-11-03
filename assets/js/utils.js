@@ -256,6 +256,7 @@ function htmlToElement(html) {
 }
 
 /**
+ * NOTE: It's a bit picky about starting with empty lines
  * @param {String} HTML representing any number of sibling elements
  * @return {NodeList} 
  */
@@ -263,4 +264,14 @@ function htmlToElements(html) {
     var template = document.createElement('template');
     template.innerHTML = html;
     return template.content.childNodes;
+}
+
+/////////////////////Other Util Methods/////////////////////////
+function IsJsonString(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
 }

@@ -132,3 +132,27 @@ function changeDebugButton() {
     $('link[href="assets/style/hideDebugButton.css"]').prop('disabled', currentPrefs.hideDebugButton);
 
 }
+
+function exportUserPrefs() {
+    const currentPrefs = JSON.stringify(getUserPrefs());
+    document.getElementById("import-export").value = currentPrefs;
+    copyToClipboard(currentPrefs, "User Preferences Copied to Clipboard");
+}
+
+function importUserPrefs() {
+    const importVal = document.getElementById("import-export")?.value;
+    if (importVal && IsJsonString(importVal)) {
+        const newPrefsImport = new UserPrefs(JSON.parse(importVal));
+        if (confirm("This will override your settings with whatever is in the box. Be sure to back it up first if you're not sure what this does!!!") && newPrefsImport instanceof UserPrefs) {
+            setUserPrefs(newPrefsImport);
+            showNotification("Preferences Imported, Reloading...");
+            setTimeout(function () {
+                location.reload();
+            }, 2000);
+        } else {
+            showNotification("Unable to import, there was an issue with the data format.");
+        }
+    } else {
+        showNotification("Unable to import, bad/no data.");
+    }
+}

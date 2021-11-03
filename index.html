@@ -220,7 +220,7 @@
                         class="fas fa-caret-right"></i></button> -->
 
                 <p>Collected Markers:</p>
-                <a href="rawdata.html" target="_blank" class="btn chk-btn">Import/Export Markers
+                <a onclick="importExportModal()" target="_blank" class="btn chk-btn">Import/Export Markers
                 </a>
             </div>
         </div>
@@ -238,6 +238,11 @@
                         placeholder="_" onchange="changeDebugButton()" checked>
                 </label>
 
+            </div>
+        </div>
+        <div class="modal -hidden" id="settings-detail">
+            <div class="sub-modal" id="settings-desc">
+                
             </div>
         </div>
     </section>

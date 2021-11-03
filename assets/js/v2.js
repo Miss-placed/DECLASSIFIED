@@ -6,6 +6,7 @@ const modalSet = {
     intelDescription: ["intel-list", "intel-detail"],
     settingsMain: ["settings"],
     settingsDebug: ["settings", "settings-2"],
+    settingsDetail: "settings-detail",
 }
 
 /////////////////////Header Menu/////////////////////////
@@ -112,6 +113,31 @@ function closeModal() {
     modals.forEach((modal) => {
         modal.classList.add("-hidden")
     })
+}
+
+function toggleModal(modalId) {
+    let modal = document.querySelectorAll(`#${modalId}`)[0];
+    if (modal) {
+         if (modal.classList.contains("-hidden")) modal.classList.remove("-hidden");
+         else modal.classList.add("-hidden");
+    }
+}
+
+function importExportModal() {
+    const detailModal = document.querySelector("#settings-desc");
+    detailModal.replaceChildren();
+    var elementsToAdd = htmlToElements(
+        `<textarea id="import-export"></textarea>
+        <p>Copy the contents of the textbox and save somewhere. Import again any time by copying it back in and pressing import.</p>
+        <div class="button-list">
+            <a onclick="importUserPrefs()" target="_blank" class="btn chk-btn inverted">Import data</a>
+            <a onclick="exportUserPrefs()" target="_blank" class="btn chk-btn inverted">Export data</a>
+        </div>`);
+    
+    elementsToAdd.forEach(element => {
+        detailModal.append(element);
+    });
+    toggleModal(modalSet.settingsDetail);
 }
 
 /**
