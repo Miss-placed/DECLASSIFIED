@@ -429,11 +429,13 @@ input[type="search"] {
   font-size: .7rem;
 }
 
-#curr-map-filter-label {
+#curr-map-filter-label,
+#show-collected-filter-label {
   color: var(--clr-color)
 }
 
-#curr-map-filter {
+#curr-map-filter,
+#show-collected-filter {
   margin-left: 10px;
 }
 

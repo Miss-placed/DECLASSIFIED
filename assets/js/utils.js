@@ -147,6 +147,7 @@ function markIntelCollected(intelId) {
         addCollectedIntel(intelId);
     }
     CalcStats();
+    TriggerSearch();
 }
 
 function hasUserCollected(intelId, getIndex = false) {
