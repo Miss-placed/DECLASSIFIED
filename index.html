@@ -59,7 +59,8 @@
     <section class="modal-bg -hidden">
         <!-- FILTERS -->
         <div class="modal -hidden" id="intel-filters">
-            <label id="show-collected-filter-label" class="chk-btn" for="show-collected-filter" onchange="TriggerSearch()">
+            <label id="show-collected-filter-label" class="chk-btn" for="show-collected-filter"
+                onchange="TriggerSearch()">
                 Hide Collected <input type="checkbox" name="show-collected-filter" id="show-collected-filter"
                     class="-small toggle" placeholder="_">
             </label>
@@ -201,33 +202,7 @@
             </div>
         </div>
         <div class="modal -hidden settings" id="settings">
-            <h2>Settings</h2>
-            <div class="button-list">
-                <!-- <p>Marker visibility:</p>
-                <label class="btn chk-btn" for="checkbox1">
-                    <p>Intel Markers: </p><input type="checkbox" name="checkbox1" id="show-intel" class="toggle"
-                        placeholder="_">
-                </label>
-                <label class="btn chk-btn" for="checkbox">
-                    <p>Misc Markers: </p><input type="checkbox" name="checkbox" id="show-misc" class="toggle"
-                        placeholder="_">
-                </label>
-                <label class="btn chk-btn" for="checkbox">
-                    <p>EE markers</p><input type="checkbox" name="checkbox" id="show-ee" class="toggle" placeholder="_">
-                </label> -->
-                <p>Theme: </p>
-                <label class="btn chk-btn" for="system-theme">
-                    <p>Use System Theme</p><input type="checkbox" name="system-theme" id="system-theme" class="toggle"
-                        placeholder="_" onchange="changePreferredMode()">
-                </label>
-                <!-- <p>Debug: </p>
-                <button class="btn chk-btn" onclick="openModal(modalSet.settingsDebug)"> Debug options<i
-                        class="fas fa-caret-right"></i></button> -->
 
-                <p>Collected Markers:</p>
-                <a onclick="importExportModal()" target="_blank" class="btn chk-btn">Import/Export Markers
-                </a>
-            </div>
         </div>
         <div class="modal -hidden settings" id="settings-2">
             <h2>Debug options: </h2>
@@ -247,7 +222,7 @@
         </div>
         <div class="modal -hidden" id="settings-detail">
             <div class="sub-modal" id="settings-desc">
-                
+
             </div>
         </div>
     </section>

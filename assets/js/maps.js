@@ -1,3 +1,4 @@
+//Need to use var here because JS weirdness
 var globalMapSettings = {
     prefix: false,
     attribution: `Want to help out? <a href="${repoDomain}">Github</a>. ||  See all <a href="${repoDomain}#contributors">Contributors</a>`,
@@ -11,24 +12,27 @@ var globalMapSettings = {
     zoomSnap: 0.1
 }
 
-//Need to use var here because JS weirdness
-const mapLayers = {
-    zoo: generateLayers(mapDetails.zoo.id, globalMapSettings),
-    duga: generateLayers(mapDetails.duga.id, globalMapSettings),
-    ruka: generateLayers(mapDetails.ruka.id, globalMapSettings),
-    alpine: generateLayers(mapDetails.alpine.id, globalMapSettings),
-    golova: generateLayers(mapDetails.golova.id, globalMapSettings),
-    sanatorium: generateLayers(mapDetails.sanatorium.id, globalMapSettings),
-    collateral: generateLayers(mapDetails.collateral.id, globalMapSettings),
-    armada: generateLayers(mapDetails.armada.id, globalMapSettings),
-    dieMaschine: generateLayers(mapDetails.dieMaschine.id, globalMapSettings),
-    dieMaschine_underground: generateLayers(mapDetails.dieMaschineUnderground.id, globalMapSettings),
-    firebaseZ: generateLayers(mapDetails.firebaseZ.id, globalMapSettings),
-    firebaseZ_spawn: generateLayers(mapDetails.firebaseZSpawn.id, globalMapSettings),
-    mauerDerToten: generateLayers(mapDetails.mauerDerToten.id, globalMapSettings),
-    mauerDerToten_streets: generateLayers(mapDetails.mauerDerTotenStreets.id, globalMapSettings),
-    forsaken: generateLayers(mapDetails.forsaken.id, globalMapSettings),
-    forsaken_underground: generateLayers(mapDetails.forsakenUnderground.id, globalMapSettings),
+const mapLayers = generateMapLayers();
+
+function generateMapLayers() {
+    return {
+        zoo: generateLayers(mapDetails.zoo.id, globalMapSettings),
+        duga: generateLayers(mapDetails.duga.id, globalMapSettings),
+        ruka: generateLayers(mapDetails.ruka.id, globalMapSettings),
+        alpine: generateLayers(mapDetails.alpine.id, globalMapSettings),
+        golova: generateLayers(mapDetails.golova.id, globalMapSettings),
+        sanatorium: generateLayers(mapDetails.sanatorium.id, globalMapSettings),
+        collateral: generateLayers(mapDetails.collateral.id, globalMapSettings),
+        armada: generateLayers(mapDetails.armada.id, globalMapSettings),
+        dieMaschine: generateLayers(mapDetails.dieMaschine.id, globalMapSettings),
+        dieMaschine_underground: generateLayers(mapDetails.dieMaschineUnderground.id, globalMapSettings),
+        firebaseZ: generateLayers(mapDetails.firebaseZ.id, globalMapSettings),
+        firebaseZ_spawn: generateLayers(mapDetails.firebaseZSpawn.id, globalMapSettings),
+        mauerDerToten: generateLayers(mapDetails.mauerDerToten.id, globalMapSettings),
+        mauerDerToten_streets: generateLayers(mapDetails.mauerDerTotenStreets.id, globalMapSettings),
+        forsaken: generateLayers(mapDetails.forsaken.id, globalMapSettings),
+        forsaken_underground: generateLayers(mapDetails.forsakenUnderground.id, globalMapSettings),
+    };
 }
 
 function generateLayers(name, settings) {

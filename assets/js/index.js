@@ -58,11 +58,12 @@ function onLoadV1() {
 }
 
 
-
 function onLoad() {
     //Set initial theme
     setThemeFromPrefs();
     initSystemThemeButton();
+
+    setVisibilityFromPrefs();
     
     setDebugButton();
     

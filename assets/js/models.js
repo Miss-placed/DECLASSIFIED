@@ -25,13 +25,15 @@ class Marker {
 }
 
 class UserPrefs {
-    constructor({ lastSelectedMap, collectedIntel, darkmode, asideShow, useSystemTheme }) {
+    constructor({ lastSelectedMap, collectedIntel, darkmode, asideShow, useSystemTheme, hideIntel, hideMisc }) {
         this.lastSelectedMap = lastSelectedMap ?? app.currentMap;
         this.collectedIntel = collectedIntel ?? [];
         this.useSystemTheme = useSystemTheme ?? false;
         // If the user is using system theme then follow that, else set to previous setting else default to true. (because darkmode is best)
         this.darkmode = useSystemTheme ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) : darkmode ?? true;
         this.asideShow = asideShow ?? true;
+        this.hideIntel = hideIntel ?? false;
+        this.hideMisc = hideMisc ?? false;
     }
 }
 
@@ -146,16 +148,16 @@ const seasons = {
 
 /////////////////////Perks/////////////////////////
 const perks = {
-    staminup: new Item({ id: "staminUp", title: "Stamin-Up", icon: iconInit("staminUp", "perk") }),
-    quick: new Item({ id: "quickRevive", title: "Quick Revive", icon: iconInit("quickRevive", "perk") }),
-    jugg: new Item({ id: "juggernog", title: "Jugger-Nog", icon: iconInit("juggernog", "perk") }),
-    speed: new Item({ id: "speedCola", title: "Speed Cola", icon: iconInit("speedCola", "perk") }),
-    mule: new Item({ id: "muleKick", title: "Mule Kick", icon: iconInit("muleKick", "perk") }),
-    elemental: new Item({ id: "elementalPop", title: "Elemental Pop", icon: iconInit("elementalPop", "perk") }),
-    death: new Item({ id: "deathPerception", title: "Death Perception", icon: iconInit("deathPerception", "perk") }),
-    tomb: new Item({ id: "tombstoneSoda", title: "Tombstone", icon: iconInit("tombstoneSoda", "perk") }),
-    deadshot: new Item({ id: "deadshotDaiquiri", title: "Deadshot Daiquiri", icon: iconInit("deadshotDaiquiri", "perk") }),
-    phd: new Item({ id: "PHDSlider", title: "PHD Slider", icon: iconInit("PHDSlider", "perk") }),
+    staminup: new Item({ id: "staminUp", title: "Stamin-Up", icon: miscIconInit("staminUp", "perk") }),
+    quick: new Item({ id: "quickRevive", title: "Quick Revive", icon: miscIconInit("quickRevive", "perk") }),
+    jugg: new Item({ id: "juggernog", title: "Jugger-Nog", icon: miscIconInit("juggernog", "perk") }),
+    speed: new Item({ id: "speedCola", title: "Speed Cola", icon: miscIconInit("speedCola", "perk") }),
+    mule: new Item({ id: "muleKick", title: "Mule Kick", icon: miscIconInit("muleKick", "perk") }),
+    elemental: new Item({ id: "elementalPop", title: "Elemental Pop", icon: miscIconInit("elementalPop", "perk") }),
+    death: new Item({ id: "deathPerception", title: "Death Perception", icon: miscIconInit("deathPerception", "perk") }),
+    tomb: new Item({ id: "tombstoneSoda", title: "Tombstone", icon: miscIconInit("tombstoneSoda", "perk") }),
+    deadshot: new Item({ id: "deadshotDaiquiri", title: "Deadshot Daiquiri", icon: miscIconInit("deadshotDaiquiri", "perk") }),
+    phd: new Item({ id: "PHDSlider", title: "PHD Slider", icon: miscIconInit("PHDSlider", "perk") }),
 }
 
 /////////////////////Markers/////////////////////////

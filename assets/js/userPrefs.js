@@ -94,6 +94,27 @@ function initSystemThemeButton() {
     }
 }
 
+function changeMarkerVisibility(markerType) {
+    let currentPrefs = getUserPrefs();
+
+    switch (markerType) {
+        case markerTypes.intel.id:
+            currentPrefs.hideIntel = !document.getElementById("show-intel").checked;
+            break;
+        case markerTypes.misc.id:
+            currentPrefs.hideMisc = !document.getElementById("show-misc").checked;
+            break;
+        case markerTypes.worldEvents.id:
+        case markerTypes.easterEggs.id:
+        default:
+            break;
+    }
+
+    toggleMarkers(markerType);
+
+    setUserPrefs(currentPrefs);
+}
+
 
 function setColorScheme() {
     toggleDarkModeSetting();
@@ -112,7 +133,18 @@ function setThemeFromPrefs() {
     let currentPrefs = getUserPrefs();
     document.body.classList = currentPrefs.darkmode ? 'dark' : 'light';
 }
-function setDebugButton(){
+
+function setVisibilityFromPrefs() {
+    let currentPrefs = getUserPrefs();
+    if (currentPrefs.hideIntel) {
+        toggleMarkers(markerTypes.intel.id, true);
+    }
+    if (currentPrefs.hideMisc) {
+        toggleMarkers(markerTypes.misc.id, true);
+    }
+}
+
+function setDebugButton() {
     let currentPrefs = getUserPrefs();
 
     if (currentPrefs.hideDebugButton) {

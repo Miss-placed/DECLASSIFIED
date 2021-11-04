@@ -42,7 +42,8 @@ function setMap(selectedMapId, navHtml) {
 function changeMapTo(mapId, targetElement) {
     const currentMap = findMapById(mapId);
     document.querySelector("header").querySelector("h1").innerHTML = currentMap.title;
-    setMap(mapId, targetElement)
+    setMap(mapId, targetElement);
+    setVisibilityFromPrefs();
     collapseMenu();
     TriggerSearch();
 }
@@ -114,7 +115,8 @@ function addMarkerToMap(intel, icon, maep) {
         }
 
 
-        var marker = L.marker(intel.loc, { icon: icon }).addTo(maep.Markers)
+        var marker = L.marker(intel.loc, { icon: icon })
+            .addTo(maep.Markers)
             .bindPopup(snippet);
 
         if (hasUserCollected(intel.id)) {
@@ -142,10 +144,31 @@ function addMiscMarkerToMap(loc, icon, maep, id, name, desc = ``) {
                 ${bugBtn}
             </div>
         </div>`;
-        var marker = L.marker(loc, { icon: icon }).addTo(maep.MiscMarkers)
+        var marker = L.marker(loc, { icon: icon })
+            .addTo(maep.MiscMarkers)
             .bindPopup(snippet);
     }
-
-
-
 }
+
+function toggleMarkers(markerType = markerTypes.intel.id, forceHide = false) {
+    let elementsToHide;
+    switch (markerType) {
+        case markerTypes.intel.id:
+            elementsToHide = $(".intel-icon");
+            break;
+        case markerTypes.misc.id:
+            elementsToHide = $(".misc-icon");
+            break;
+        case markerTypes.worldEvents.id:
+        case markerTypes.easterEggs.id:
+        default:
+            break;
+    }
+
+    if (forceHide) {
+        elementsToHide.fadeOut();
+    } else {
+        elementsToHide.fadeToggle();
+    }
+}
+

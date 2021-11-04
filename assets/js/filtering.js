@@ -194,7 +194,7 @@ function fillTotals() {
     let omegaTotalEle = document.getElementById("omega-totals");
     let maxisTotalEle = document.getElementById("maxis-totals");
     let darkTotalEle = document.getElementById("dark-aether-totals");
-    // console.log(findObjectByKey(intelStoreV2, "faction", factions.requiem))
+    
     requiemTotalEle.innerHTML = `${collectedFaction.requiem} / ${factionTotal.requiem.length}`
     omegaTotalEle.innerHTML = `${collectedFaction.omega} / ${factionTotal.omega.length}`
     maxisTotalEle.innerHTML = `${collectedFaction.maxis} / ${factionTotal.maxis.length}`
