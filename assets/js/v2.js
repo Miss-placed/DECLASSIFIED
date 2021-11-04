@@ -20,13 +20,6 @@ function collapseMenu() {
         ele.classList.remove('visible')
     })
 }
-function changeMapTo(mapId, targetElement) {
-    const currentMap = FindMapById(mapId);
-    document.querySelector("header").querySelector("h1").innerHTML = currentMap.title;
-    setMap(mapId, targetElement)
-    collapseMenu();
-    TriggerSearch();
-}
 
 function renderHeader() {
     const header = document.querySelector("header")

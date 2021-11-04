@@ -39,8 +39,16 @@ function setMap(selectedMapId, navHtml) {
     }
 }
 
+function changeMapTo(mapId, targetElement) {
+    const currentMap = FindMapById(mapId);
+    document.querySelector("header").querySelector("h1").innerHTML = currentMap.title;
+    setMap(mapId, targetElement)
+    collapseMenu();
+    TriggerSearch();
+}
+
 function switchAndFly(location = [0, 0], selectedMap = "") {
-    setMap(selectedMap, document.getElementById(selectedMap))
+    changeMapTo(selectedMap, document.getElementById(selectedMap))
     setLastVisitedMap(selectedMap)
     mapInstance.flyTo(location, 4)
 }
