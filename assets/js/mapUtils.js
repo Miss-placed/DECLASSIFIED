@@ -24,7 +24,7 @@ function InitMap() {
 }
 
 function setMap(selectedMapId, navHtml) {
-    const { id: mapId } = FindMapById(selectedMapId);
+    const { id: mapId } = findMapById(selectedMapId);
     if (app.currentMap != mapId) {
         mapInstance.removeLayer(mapLayers[app.currentMap].Layer)
         mapInstance.addLayer(mapLayers[mapId].Layer)
@@ -40,7 +40,7 @@ function setMap(selectedMapId, navHtml) {
 }
 
 function changeMapTo(mapId, targetElement) {
-    const currentMap = FindMapById(mapId);
+    const currentMap = findMapById(mapId);
     document.querySelector("header").querySelector("h1").innerHTML = currentMap.title;
     setMap(mapId, targetElement)
     collapseMenu();
@@ -137,7 +137,7 @@ function addMiscMarkerToMap(loc, icon, maep, id, name, desc = ``) {
         h1Ele = desc == '' ? name : `${name}:<br> ${desc}`;
         snippet = `
         <div class="misc-content">
-        <h1>${h1Ele}</h1>
+            <h1>${h1Ele}</h1>
             <div class="buttonContainer noselect" data-item="${id}" data-type="${markerTypes.misc.id}">
                 ${bugBtn}
             </div>

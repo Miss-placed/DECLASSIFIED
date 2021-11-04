@@ -24,7 +24,7 @@ function collapseMenu() {
 function renderHeader() {
     const header = document.querySelector("header")
     header.replaceChildren(); // Empty Out First
-    const currentMap = FindMapById(app.currentMap);
+    const currentMap = findMapById(app.currentMap);
 
 
 

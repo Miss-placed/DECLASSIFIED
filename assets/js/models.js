@@ -82,7 +82,7 @@ const mapDetails = {
 
 };
 
-function FindMapById(mapId) {
+function findMapById(mapId) {
     const maps = Object.values(mapDetails);
     const foundMap = maps.find(map => map.id === mapId);
     return foundMap;

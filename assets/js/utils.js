@@ -32,6 +32,7 @@ function openModal(x) {
 
 function GenerateDetailModal(intel) {
     let detailModal = document.getElementById("description");
+    const mapName = findMapById(intel.map).title ?? "Map Not Found";
     detailModal.replaceChildren();
     if (!intel) {
         intel.name = "Intel Not Found";
@@ -41,7 +42,9 @@ function GenerateDetailModal(intel) {
         `<button class="close-submodal btn inverted" onclick="openModal(modalSet.intelOverview)"><i class="fas fa-x"></i></button>
     
         <h2>${intel.name}</h2>
-        <p>${intel.desc}</p>`
+        <h4>${mapName}</h4>
+        <p>${intel.desc}</p>
+        `
     );
 
 
