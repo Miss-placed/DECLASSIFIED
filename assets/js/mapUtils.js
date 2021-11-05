@@ -58,7 +58,7 @@ function AddMapMarkersFromCache(intelArr) {
     if (!debug) {
         for (intel of intelArr) {
             if (intel.map != mapDetails.allOutbreakMaps.id) {
-                let factionIcon = returnMarker(intel.faction, intel.intelType);
+                let factionIcon = intelIconInit(intel.faction, intel.intelType);
                 mapLayer = mapLayers[intel.map];
                 addMarkerToMap(intel, factionIcon, mapLayer);
             }
