@@ -122,14 +122,14 @@ function toggleAside(changePrefs = true) {
 /////////////////////Intel Collected/////////////////////////
 function markIntelCollected(intelId) {
     const collectButtonSelector = `#${intelId}-collect-btn`;
+    const popupCollectButtonSelector = `#${intelId}-popup-collect-btn`;
     const buttonSelector = `#${intelId}.to-intel`;
     const intelHasMarker = doesIntelHaveMarker(intelId);
     if (hasUserCollected(intelId)) {
         // "Un"Collect?
         $(buttonSelector).removeAttr("collected")
-        $(collectButtonSelector).removeAttr("collected")
-        $(collectButtonSelector + " i").removeClass("fa-check-square")
-        $(collectButtonSelector + " i").addClass("fa-square")
+        markButtonAsUnCollected(collectButtonSelector);
+        markButtonAsUnCollected(popupCollectButtonSelector);
         if (intelHasMarker) {
             app.disableMarkers = $.grep(app.disableMarkers, function (value) {
                 return value != intelId.toString();
@@ -140,9 +140,8 @@ function markIntelCollected(intelId) {
     } else {
         // Collect
         $(buttonSelector).attr("collected", "")
-        $(collectButtonSelector).attr("collected", "")
-        $(collectButtonSelector + " i").removeClass("fa-square")
-        $(collectButtonSelector + " i").addClass("fa-check-square")
+        markButtonAsCollected(collectButtonSelector);
+        markButtonAsCollected(popupCollectButtonSelector);
         if (intelHasMarker) {
             app.disableMarkers.push(intelId.toString());
             app.visibleMarkers[intelId].setOpacity(0.35);
@@ -151,6 +150,18 @@ function markIntelCollected(intelId) {
     }
     CalcStats();
     TriggerSearch();
+}
+
+function markButtonAsCollected(btnSelector) {
+    $(btnSelector).attr("collected", "");
+    $(btnSelector + " i").removeClass("fa-square");
+    $(btnSelector + " i").addClass("fa-check-square");
+}
+
+function markButtonAsUnCollected(btnSelector) {
+    $(btnSelector).removeAttr("collected");
+    $(btnSelector + " i").removeClass("fa-check-square");
+    $(btnSelector + " i").addClass("fa-square");
 }
 
 function hasUserCollected(intelId, getIndex = false) {

@@ -81,7 +81,7 @@ function addMarkerToMap(intel, icon, maep) {
         let shareBtn = genShareButton(intel.id).outerHTML;
         let bugBtn = genBugButton(intel.id).outerHTML;
         let moreBtn = genMoreButton(intel).outerHTML;
-        let collectedBtn = genCollectedButton(intel.id).outerHTML;
+        let collectedBtn = genCollectedButton(intel.id, true).outerHTML;
         let tempBtn = bugBtn
         let imgSrc = 'assets/img/intelScreenshot/placeholder.png';
         let imgEle = ''

@@ -154,14 +154,14 @@ function genBugButton(itemId) {
     return bugBtn;
 }
 
-function genCollectedButton(itemId) {
+function genCollectedButton(itemId, isForPopup = false) {
     let collectedBtn = createElement("button", ["btn", "btn-info", "inverted", "action-buttons", "mark-collected"], "Collected:")
     if(hasUserCollected(itemId))
         collectedBtn.appendChild(genIcon("fa-check-square"));
     else 
         collectedBtn.appendChild(genIcon("fa-square"));
 
-    collectedBtn.id = `${itemId}-collect-btn`;
+    collectedBtn.id = `${itemId}${isForPopup ? '-popup' : ''}-collect-btn`;
     collectedBtn.title = "Mark As Collected";
     collectedBtn.onclick = markIntelCollectedForButton(itemId);
     return collectedBtn;

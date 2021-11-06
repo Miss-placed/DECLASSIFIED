@@ -158,9 +158,8 @@ function renderSettingsModal() {
                 <p>Use System Theme</p><input type="checkbox" name="system-theme" id="system-theme" class="toggle"
                     placeholder="_" onchange="changePreferredMode()">
             </label>
-            <!-- <p>Debug: </p>
-            <button class="btn chk-btn" onclick="openModal(modalSet.settingsDebug)"> Debug options<i
-                    class="fas fa-caret-right"></i></button> -->
+            <p>Debug: </p>
+            <button class="btn chk-btn" onclick="openModal(modalSet.settingsDebug)"> Debug options<i class="fas fa-caret-right"></i></button>
 
             <p>Collected Markers:</p>
             <a onclick="importExportModal()" target="_blank" class="btn chk-btn">Import/Export Markers

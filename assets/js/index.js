@@ -8,20 +8,25 @@ L.control.attribution()
 //loops through all types of intel and makes a marker
 AddMapMarkersFromCache(intelCache);
 
-mapInstance.on('popupopen', function () {
-    $('.mark-collected').click(function (e) {
-        let itemId = $(e.target).closest(".buttonContainer").data("item");
-        markIntelCollected(itemId);
-    });
-    $('.share').click(function (e) {
-        let itemId = $(e.target).closest(".buttonContainer").data("item");
-        copyToClipboard(`${window.location.origin}${window.location.pathname}?id=${itemId}`, "Link Copied To Clipboard");
-    });
-    $('.bugRep').click(function (e) {
-        let itemId = $(e.target).closest(".buttonContainer").data("item");
-        let type = $(e.target).closest(".buttonContainer").data("type");
+mapInstance.on('popupopen', function (e) {
+    const popup = e.popup._source._popup._wrapper;
+    const intelId = $(popup).find(".buttonContainer").first().data("item");
+    const type = $(popup).find(".buttonContainer").first().data("type");
+    const collectBtnSelector = `#${intelId}-popup-collect-btn`;
+    const isCollected = hasUserCollected(intelId);
+    if (isCollected)
+        markButtonAsCollected(collectBtnSelector)
+    else
+        markButtonAsUnCollected(collectBtnSelector)
 
-        redirectToGithub({ itemType: type, issueType: "Fix", itemId: itemId })
+    $(collectBtnSelector).click(function (e) {
+        markIntelCollected(intelId);
+    });
+    $('.share').click(function () {
+        copyToClipboard(`${window.location.origin}${window.location.pathname}?id=${intelId}`, "Link Copied To Clipboard");
+    });
+    $('.bugRep').click(function () {
+        redirectToGithub({ itemType: type, issueType: "Fix", itemId: intelId })
     });
 });
 
