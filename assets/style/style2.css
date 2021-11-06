@@ -249,6 +249,7 @@ select.faction-list>option:hover {
 
 #description {
   padding: 10px;
+  user-select: text;
 }
 
 .settings {
