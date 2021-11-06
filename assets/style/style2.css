@@ -124,6 +124,7 @@ header>ul>li:focus-within>ul {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  user-select: none;
 }
 
 .modal.-big {
@@ -203,6 +204,11 @@ select.faction-list>option:hover {
 
 .sub-modal button {
   float: right;
+}
+
+.sub-modal img {
+  width: inherit;
+  padding: inherit;
 }
 
 .faction-list-icon {
@@ -376,6 +382,9 @@ select.faction-list>option:hover {
 
 #settings-desc {
   padding: 10px;
+  display: block;
+  height: auto;
+  width: fit-content;
 }
 
 #settings-desc p {

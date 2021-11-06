@@ -144,25 +144,16 @@ function setVisibilityFromPrefs() {
     }
 }
 
-function setDebugButton() {
+function toggleDebugButton() {
     let currentPrefs = getUserPrefs();
-
-    if (currentPrefs.hideDebugButton) {
-        document.getElementById("debug-button-toggle").checked = true;
-    }
-    else {
-        document.getElementById("debug-button-toggle").checked = false;
-    }
-
-    changeDebugButton()
+    currentPrefs.hideBugRepButton = !document.getElementById("debug-button-toggle").checked;
+    setUserPrefs(currentPrefs);
+    $('link[href="assets/style/hideDebugButton.css"]').prop('disabled', !currentPrefs.hideBugRepButton);
 }
 
-function changeDebugButton() {
-    let currentPrefs = getUserPrefs();
-    currentPrefs.hideDebugButton = document.getElementById("debug-button-toggle").checked;
-    setUserPrefs(currentPrefs);
-    $('link[href="assets/style/hideDebugButton.css"]').prop('disabled', currentPrefs.hideDebugButton);
-
+function toggleClickCoord() {
+    
+    debug = !debug;
 }
 
 function exportUserPrefs() {

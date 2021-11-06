@@ -79,10 +79,9 @@ function addMarkerToMap(intel, icon, maep) {
     if (intel.loc != null && JSON.stringify([0, 0]) != JSON.stringify(intel.loc)) { // don't add 0,0 markers to the map for cleanliness
         let snippet = '';
         let shareBtn = genShareButton(intel.id).outerHTML;
-        let bugBtn = genBugButton(intel.id).outerHTML;
+        let bugBtn = !userPrefs.hideBugRepButton ? genBugButton(intel.id).outerHTML : '';
         let moreBtn = genMoreButton(intel).outerHTML;
         let collectedBtn = genCollectedButton(intel.id, true).outerHTML;
-        let tempBtn = bugBtn
         let imgSrc = 'assets/img/intelScreenshot/placeholder.png';
         let imgEle = ''
 
@@ -90,10 +89,7 @@ function addMarkerToMap(intel, icon, maep) {
             imgSrc = `https://i.imgur.com/${intel.img}.jpg`
         }
 
-        if (typeof v2Test == 'string') {
-            imgEle = `<img src="${imgSrc}" onclick="expandImage(this)"></img>`
-            tempBtn = moreBtn
-        }
+        imgEle = `<img src="${imgSrc}" onclick="expandImage(this)"></img>`
 
         if (intel.desc !== '') {
             snippet = `
@@ -105,7 +101,8 @@ function addMarkerToMap(intel, icon, maep) {
                     <div class="buttonContainer" data-item="${intel.id}" data-type="${markerTypes.intel.id}">
                         ${collectedBtn}
                         ${shareBtn}
-                        ${tempBtn}
+                        ${bugBtn}
+                        ${moreBtn}
                     </div>
                 </div>
                 ${imgEle}

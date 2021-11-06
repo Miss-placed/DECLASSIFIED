@@ -28,7 +28,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css">
     <link rel="stylesheet" href="assets/style/leaflet-override.css">
-
+    <link rel="stylesheet" href="assets/style/hideDebugButton.css" disabled>
 
 </head>
 
@@ -201,29 +201,11 @@
                 </div>
             </div>
         </div>
-        <div class="modal -hidden settings" id="settings">
+        <div class="modal settings -hidden" id="settings">
 
         </div>
-        <div class="modal -hidden settings" id="settings-2">
-            <h2>Debug options: </h2>
-            <div class="button-list">
-                <p>Misc bug report: </p>
-                <label class="btn chk-btn" for="debug-button-toggle">
-                    <p>Show buttons</p><input type="checkbox" name="debug-button-toggle" id="debug-button-toggle"
-                        class="toggle" placeholder="_" onchange="changeDebugButton()" checked>
-                </label>
-                <p>Click for co-ordinates: </p>
-                <label class="btn chk-btn" for="debug-toggle">
-                    <p>Copy on click</p><input type="checkbox" name="debug-toggle" id="debug-toggle" class="toggle"
-                        placeholder="_" onchange="changeDebugButton()" checked>
-                </label>
+        <div class="modal settings -hidden" id="settings-detail">
 
-            </div>
-        </div>
-        <div class="modal -hidden" id="settings-detail">
-            <div class="sub-modal" id="settings-desc">
-
-            </div>
         </div>
     </section>
 

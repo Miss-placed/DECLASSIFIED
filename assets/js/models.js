@@ -25,7 +25,7 @@ class Marker {
 }
 
 class UserPrefs {
-    constructor({ lastSelectedMap, collectedIntel, darkmode, asideShow, useSystemTheme, hideIntel, hideMisc }) {
+    constructor({ lastSelectedMap, collectedIntel, darkmode, asideShow, useSystemTheme, hideIntel, hideMisc, hideBugRepButton }) {
         this.lastSelectedMap = lastSelectedMap ?? app.currentMap;
         this.collectedIntel = collectedIntel ?? [];
         this.useSystemTheme = useSystemTheme ?? false;
@@ -34,6 +34,7 @@ class UserPrefs {
         this.asideShow = asideShow ?? true;
         this.hideIntel = hideIntel ?? false;
         this.hideMisc = hideMisc ?? false;
+        this.hideBugRepButton = hideBugRepButton ?? false;
     }
 }
 
@@ -118,6 +119,13 @@ const contribTemplates = {
         editId: "editMisc",
         editTitle: "Misc Marker Fix",
     }
+}
+
+const modalSet = {
+    intelOverview: ["intel-filters", "intel-list", "intel-stats"],
+    intelDescription: ["intel-list", "intel-detail"],
+    settingsMain: ["settings"],
+    settingsDetail: ["settings", "settings-detail"],
 }
 
 /////////////////////Core Categories/////////////////////////

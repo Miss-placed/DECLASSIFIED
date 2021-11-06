@@ -26,8 +26,11 @@ mapInstance.on('popupopen', function (e) {
         copyToClipboard(`${window.location.origin}${window.location.pathname}?id=${intelId}`, "Link Copied To Clipboard");
     });
     $('.bugRep').click(function () {
-        redirectToGithub({ itemType: type, issueType: "Fix", itemId: intelId })
+        redirectToGithub({ itemType: type, issueType: "Fix", itemId: intelId });
     });
+    $('.moreInfo').click(function () {
+        OpenIntelDetail(intelId);
+    })
 });
 
 mapInstance.on("click", function (e) {
@@ -64,13 +67,12 @@ function onLoadV1() {
 
 
 function onLoad() {
+    renderSettingsModal();
     //Set initial theme
     setThemeFromPrefs();
     initSystemThemeButton();
 
     setVisibilityFromPrefs();
-    
-    setDebugButton();
     
     CheckIfSharingURL();
 
@@ -81,6 +83,8 @@ function onLoad() {
     $('#intel-filters input[type=checkbox]').click(function (params) {
         TriggerSearch();
     });
+    //Initialise bug rep buttons being hidden or not
+    $('link[href="assets/style/hideDebugButton.css"]').prop('disabled', !userPrefs.hideBugRepButton);
 
     CalcStats();
     TriggerSearch();
