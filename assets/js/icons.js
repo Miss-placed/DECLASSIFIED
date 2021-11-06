@@ -75,10 +75,10 @@ var redRiftIcon = miscIconInit('redRift', 'outbreak', {
 
 var wunderFizzIcon = miscIconInit('wunderFizz', 'perk')
 var mysteryBoxIcon = miscIconInit('mysteryBox', 'misc')
-var arsenalIcon = miscIconInit('arsenal', 'misc')
+var arsenalIcon = miscIconInit('arsenal', 'misc', { iconAnchor: [15, 30] })
+var craftingTableIcon = miscIconInit('craftingTable', 'misc', { iconAnchor: [15, 30] })
 var wallbuyIcon = miscIconInit('wallBuy', 'misc')
 var ammoCrateIcon = miscIconInit('ammoCrate', 'misc')
-var craftingTableIcon = miscIconInit('craftingTable', 'misc')
 var ziplineIcon = miscIconInit('zipline', 'misc')
 var trialComputerIcon = miscIconInit('trialComputer', 'misc')
 var papMachineIcon = miscIconInit('papMachine', 'misc')
