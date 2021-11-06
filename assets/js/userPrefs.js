@@ -94,6 +94,27 @@ function initSystemThemeButton() {
     }
 }
 
+function changeMarkerVisibility(markerType) {
+    let currentPrefs = getUserPrefs();
+
+    switch (markerType) {
+        case markerTypes.intel.id:
+            currentPrefs.hideIntel = !document.getElementById("show-intel").checked;
+            break;
+        case markerTypes.misc.id:
+            currentPrefs.hideMisc = !document.getElementById("show-misc").checked;
+            break;
+        case markerTypes.worldEvents.id:
+        case markerTypes.easterEggs.id:
+        default:
+            break;
+    }
+
+    toggleMarkers(markerType);
+
+    setUserPrefs(currentPrefs);
+}
+
 
 function setColorScheme() {
     toggleDarkModeSetting();
@@ -112,23 +133,49 @@ function setThemeFromPrefs() {
     let currentPrefs = getUserPrefs();
     document.body.classList = currentPrefs.darkmode ? 'dark' : 'light';
 }
-function setDebugButton(){
+
+function setVisibilityFromPrefs() {
     let currentPrefs = getUserPrefs();
-
-    if (currentPrefs.hideDebugButton) {
-        document.getElementById("debug-button-toggle").checked = true;
+    if (currentPrefs.hideIntel) {
+        toggleMarkers(markerTypes.intel.id, true);
     }
-    else {
-        document.getElementById("debug-button-toggle").checked = false;
+    if (currentPrefs.hideMisc) {
+        toggleMarkers(markerTypes.misc.id, true);
     }
-
-    changeDebugButton()
 }
 
-function changeDebugButton() {
+function toggleDebugButton() {
     let currentPrefs = getUserPrefs();
-    currentPrefs.hideDebugButton = document.getElementById("debug-button-toggle").checked;
+    currentPrefs.hideBugRepButton = !document.getElementById("debug-button-toggle").checked;
     setUserPrefs(currentPrefs);
-    $('link[href="assets/style/hideDebugButton.css"]').prop('disabled', currentPrefs.hideDebugButton);
+    $('link[href="assets/style/hideDebugButton.css"]').prop('disabled', !currentPrefs.hideBugRepButton);
+}
 
+function toggleClickCoord() {
+    
+    debug = !debug;
+}
+
+function exportUserPrefs() {
+    const currentPrefs = JSON.stringify(getUserPrefs());
+    document.getElementById("import-export").value = currentPrefs;
+    copyToClipboard(currentPrefs, "User Preferences Copied to Clipboard");
+}
+
+function importUserPrefs() {
+    const importVal = document.getElementById("import-export")?.value;
+    if (importVal && IsJsonString(importVal)) {
+        const newPrefsImport = new UserPrefs(JSON.parse(importVal));
+        if (confirm("This will override your settings with whatever is in the box. Be sure to back it up first if you're not sure what this does!!!") && newPrefsImport instanceof UserPrefs) {
+            setUserPrefs(newPrefsImport);
+            showNotification("Preferences Imported, Reloading...");
+            setTimeout(function () {
+                location.reload();
+            }, 2000);
+        } else {
+            showNotification("Unable to import, there was an issue with the data format.");
+        }
+    } else {
+        showNotification("Unable to import, bad/no data.");
+    }
 }

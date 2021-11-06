@@ -1,35 +1,23 @@
 document.getElementsByClassName('leaflet-control-attribution')[0].style.display = 'none';
 
 
-const modalSet = {
-    intelOverview: ["intel-filters", "intel-list", "intel-stats"],
-    intelDescription: ["intel-list", "intel-detail"],
-    settingsMain: ["settings"],
-    settingsDebug: ["settings", "settings-2"],
-}
 
 /////////////////////Header Menu/////////////////////////
 function expandMenu(x) {
     x.parentElement.classList.toggle("visible");
 }
-function collapseMenu() { 
+function collapseMenu() {
     document.getElementsByTagName('header')[0].classList.remove('visible')
-    document.getElementsByTagName('header')[0].querySelectorAll('.visible').forEach(ele=>{
+
+    document.getElementsByTagName('header')[0].querySelectorAll('.visible').forEach(ele => {
         ele.classList.remove('visible')
     })
-}
-function changeMapTo(mapId, targetElement) {
-    const currentMap = FindMapById(mapId);
-    document.querySelector("header").querySelector("h1").innerHTML = currentMap.title;
-    setMap(mapId, targetElement)
-    collapseMenu();
-    TriggerSearch();
 }
 
 function renderHeader() {
     const header = document.querySelector("header")
     header.replaceChildren(); // Empty Out First
-    const currentMap = FindMapById(app.currentMap);
+    const currentMap = findMapById(app.currentMap);
 
 
 
@@ -91,40 +79,6 @@ function renderHeader() {
 }
 
 renderHeader();
-
-/////////////////////Modal Functions/////////////////////////
-function openModal(x) {
-    document.getElementsByClassName("modal-bg")[0].classList.remove("-hidden")
-    let modals = document.querySelectorAll(".modal")
-    modals.forEach((modal) => {
-        if (x.indexOf(modal.id) != -1) {
-            modal.classList.remove("-hidden")
-        } else {
-            modal.classList.add("-hidden")
-        }
-    })
-}
-
-function closeModal() {
-    document.getElementsByClassName("modal-bg")[0].classList.add("-hidden")
-    let modals = document.querySelectorAll(".modal")
-    modals.forEach((modal) => {
-        modal.classList.add("-hidden")
-    })
-}
-
-/**
- *  
- * @param {string} target Class of the targeted submodal that you want to open.
- */
-function openSubModal(target) {
-    document.getElementById(target).classList.remove("-hidden")
-
-}
-
-function closeSubModal(target) {
-    document.getElementById(target).classList.add("-hidden")
-}
 
 
 

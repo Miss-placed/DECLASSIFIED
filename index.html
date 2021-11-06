@@ -28,7 +28,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css">
     <link rel="stylesheet" href="assets/style/leaflet-override.css">
-
+    <link rel="stylesheet" href="assets/style/hideDebugButton.css" disabled>
 
 </head>
 
@@ -59,11 +59,21 @@
     <section class="modal-bg -hidden">
         <!-- FILTERS -->
         <div class="modal -hidden" id="intel-filters">
+            <label id="show-collected-filter-label" class="chk-btn" for="show-collected-filter"
+                onchange="TriggerSearch()">
+                Hide Collected <input type="checkbox" name="show-collected-filter" id="show-collected-filter"
+                    class="-small toggle" placeholder="_">
+            </label>
+
             <fieldset id="season-multi-select" class="droopy">
                 <legend>Seasons</legend>
                 <label class="title">Seasons</label>
                 <label class="list-selection"></label>
                 <ul>
+                    <li>
+                        <label for="onslaught">Onslaught</label>
+                        <input type="checkbox" id="onslaught" value="Onslaught" class="check" data-filter="onslaught">
+                    </li>
                     <li>
                         <label for="season0">Pre Season</label>
                         <input type="checkbox" id="season0" value="Pre Season" class="check" data-filter="preseason">
@@ -191,50 +201,11 @@
                 </div>
             </div>
         </div>
-        <div class="modal -hidden settings" id="settings">
-            <h2>Settings</h2>
-            <div class="button-list">
-                <!-- <p>Marker visibility:</p>
-                <label class="btn chk-btn" for="checkbox1">
-                    <p>Intel Markers: </p><input type="checkbox" name="checkbox1" id="show-intel" class="toggle"
-                        placeholder="_">
-                </label>
-                <label class="btn chk-btn" for="checkbox">
-                    <p>Misc Markers: </p><input type="checkbox" name="checkbox" id="show-misc" class="toggle"
-                        placeholder="_">
-                </label>
-                <label class="btn chk-btn" for="checkbox">
-                    <p>EE markers</p><input type="checkbox" name="checkbox" id="show-ee" class="toggle" placeholder="_">
-                </label> -->
-                <p>Theme: </p>
-                <label class="btn chk-btn" for="system-theme">
-                    <p>Use System Theme</p><input type="checkbox" name="system-theme" id="system-theme" class="toggle"
-                        placeholder="_" onchange="changePreferredMode()">
-                </label>
-                <!-- <p>Debug: </p>
-                <button class="btn chk-btn" onclick="openModal(modalSet.settingsDebug)"> Debug options<i
-                        class="fas fa-caret-right"></i></button> -->
+        <div class="modal settings -hidden" id="settings">
 
-                <p>Collected Markers:</p>
-                <a href="rawdata.html" target="_blank" class="btn chk-btn">Import/Export Markers
-                </a>
-            </div>
         </div>
-        <div class="modal -hidden settings" id="settings-2">
-            <h2>Debug options: </h2>
-            <div class="button-list">
-                <p>Misc bug report: </p>
-                <label class="btn chk-btn" for="debug-button-toggle">
-                    <p>Show buttons</p><input type="checkbox" name="debug-button-toggle" id="debug-button-toggle"
-                        class="toggle" placeholder="_" onchange="changeDebugButton()" checked>
-                </label>
-                <p>Click for co-ordinates: </p>
-                <label class="btn chk-btn" for="debug-toggle">
-                    <p>Copy on click</p><input type="checkbox" name="debug-toggle" id="debug-toggle" class="toggle"
-                        placeholder="_" onchange="changeDebugButton()" checked>
-                </label>
+        <div class="modal settings -hidden" id="settings-detail">
 
-            </div>
         </div>
     </section>
 

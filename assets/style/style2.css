@@ -24,19 +24,18 @@ header {
   position: absolute;
   z-index: var(--z-index-menu);
   left: calc((100vw - 400px) / 2);
+  cursor: pointer;
 }
 
 header h1 {
   color: var(--clr-white);
   width: 400px;
   background: var(--clr-grey-d);
-  background: linear-gradient(
-    135deg,
-    var(--clr-grey-d) 15%,
-    var(--clr-red) 15%,
-    var(--clr-red) 16%,
-    var(--clr-grey-d) 16%
-  );
+  background: linear-gradient(135deg,
+      var(--clr-grey-d) 15%,
+      var(--clr-red) 15%,
+      var(--clr-red) 16%,
+      var(--clr-grey-d) 16%);
   background-position-x: -454px;
   background-repeat: no-repeat;
   background-size: 800%;
@@ -56,26 +55,26 @@ header ul {
 }
 
 header h2,
-header > ul > li > ul > li {
+header>ul>li>ul>li {
   padding: 10px 15px;
   background-color: var(--clr-bg);
 }
 
-header > ul > li:hover > h2,
-header > ul > li > ul > li:hover {
+header>ul>li:hover>h2,
+header>ul>li>ul>li:hover {
   background-color: var(--clr-bg-inverted);
   color: var(--clr-color-inverted);
 }
 
-header > ul > li > ul,
-header > ul {
+header>ul>li>ul,
+header>ul {
   display: none;
 }
 
-header.visible > ul,
-header > ul > li.visible > ul,
-header > ul > li:focus > ul,
-header > ul > li:focus-within > ul {
+header.visible>ul,
+header>ul>li.visible>ul,
+header>ul>li:focus>ul,
+header>ul>li:focus-within>ul {
   display: initial;
 }
 
@@ -125,6 +124,7 @@ header > ul > li:focus-within > ul {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  user-select: none;
 }
 
 .modal.-big {
@@ -142,13 +142,13 @@ select.faction-list {
   cursor: pointer;
 }
 
-select.faction-list > option {
+select.faction-list>option {
   background: var(--clr-bg-inverted);
   color: var(--clr-color-inverted);
   border: unset;
 }
 
-select.faction-list > option:hover {
+select.faction-list>option:hover {
   background-color: var(--clr-red);
 }
 
@@ -159,10 +159,21 @@ select.faction-list > option:hover {
   margin: 0 auto;
   flex-wrap: nowrap;
   flex-direction: column;
-  aspect-ratio: var(--modal-col-1);
   width: 250px;
   align-items: center;
   z-index: 1;
+}
+
+.button-list {
+  width: -webkit-fill-available;
+}
+
+#filtered-intel {
+  aspect-ratio: var(--modal-col-1);
+}
+
+.button-list a {
+  margin-bottom: 10px;
 }
 
 #filtered-intel {
@@ -172,7 +183,7 @@ select.faction-list > option:hover {
 }
 
 #intel-list button.btn,
-.settings > div > .btn {
+.settings>div>.btn {
   margin-bottom: 20px;
   flex-direction: column;
   width: 100%;
@@ -193,6 +204,11 @@ select.faction-list > option:hover {
 
 .sub-modal button {
   float: right;
+}
+
+.sub-modal img {
+  width: inherit;
+  padding: inherit;
 }
 
 .faction-list-icon {
@@ -233,6 +249,7 @@ select.faction-list > option:hover {
 
 #description {
   padding: 10px;
+  user-select: text;
 }
 
 .settings {
@@ -240,14 +257,15 @@ select.faction-list > option:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  padding: 15px;
 }
 
-.settings > h2,
-.settings > .button-list > p {
+.settings>h2,
+.settings>.button-list>p {
   margin-bottom: 5px;
 }
 
-.settings > div {
+.settings>div {
   display: flex;
 }
 
@@ -259,11 +277,11 @@ select.faction-list > option:hover {
   align-items: center;
 }
 
-.graph > svg > path {
+.graph>svg>path {
   transition: 100ms;
 }
 
-.graph > svg > path:hover {
+.graph>svg>path:hover {
   stroke-width: 30px;
 }
 
@@ -353,4 +371,25 @@ select.faction-list > option:hover {
   top: 0;
   left: 0;
   z-index: var(--z-index-ui);
+}
+
+#settings-desc #import-export {
+  height: 10vh;
+  width: -webkit-fill-available;
+  min-width: -webkit-fill-available;
+  max-width: -webkit-fill-available;
+  max-height: 450px;
+}
+
+#settings-desc {
+  padding: 10px;
+  display: block;
+  height: auto;
+  width: fit-content;
+}
+
+#settings-desc p {
+  color: var(--clr-color-inverted);
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
