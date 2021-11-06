@@ -16,7 +16,7 @@ function newMiscInit() {
     showNotification("Click exactly where the marker is located. Next time you click on the map you will be redirected to our new icon form.", true);
 }
 
-/////////////////////Modal helpers/////////////////////////
+/////////////////////Modal Functions/////////////////////////
 
 function openModal(x) {
     document.getElementsByClassName("modal-bg")[0].classList.remove("-hidden")
@@ -32,18 +32,25 @@ function openModal(x) {
 
 function GenerateDetailModal(intel) {
     let detailModal = document.getElementById("description");
+    const mapName = findMapById(intel.map).title ?? "Map Not Found";
     detailModal.replaceChildren();
     if (!intel) {
         intel.name = "Intel Not Found";
         intel.desc = "If you see this please report an issue on the github page."
     }
+
+    const imgEle = intel.img ? `<img src="https://i.imgur.com/${intel.img}.jpg" onclick="expandImage(this)"></img>` : '';
+    
     var elementsToAdd = htmlToElements(
         `<button class="close-submodal btn inverted" onclick="openModal(modalSet.intelOverview)"><i class="fas fa-x"></i></button>
     
         <h2>${intel.name}</h2>
-        <p>${intel.desc}</p>`
+        <h4>${mapName} - ${intel.season}</h4>
+        <h5>${intel.intelType} - ${intel.faction}</h5>
+        <p>${intel.desc}</p>
+        ${imgEle}
+        `
     );
-
 
     elementsToAdd.forEach(element => {
         detailModal.append(element);
@@ -80,6 +87,154 @@ function GenerateDetailModal(intel) {
         "desc": ${intel.desc}
     ` */
 }
+
+function openModal(modalArr) {
+    document.getElementsByClassName("modal-bg")[0].classList.remove("-hidden");
+    let modals = document.querySelectorAll(".modal");
+    //If modal is in modalArr then only show those modals
+    modals.forEach((modal) => {
+        if (modalArr.indexOf(modal.id) != -1) {
+            modal.classList.remove("-hidden");
+        } else {
+            modal.classList.add("-hidden");
+        }
+    })
+}
+
+function closeModal(modalId) {
+    let modals = document.querySelectorAll(".modal");
+    if (modalId) {
+        modals.forEach((modal) => {
+            if (modal.id === modalId) {
+                modal.classList.add("-hidden");
+            }
+        })
+    } else {
+        document.getElementsByClassName("modal-bg")[0].classList.add("-hidden");
+        modals.forEach((modal) => {
+            modal.classList.add("-hidden");
+        })
+    }
+}
+
+function OpenIntelDetail(intelID) {
+    openModal(modalSet.intelDescription);
+    openSubModal("intel-detail");
+
+    //use target to get intel instead of predefined obj
+
+    let intel = getIntelById(intelID);
+    GenerateDetailModal(intel);
+    closeSubModal("intel-stats");
+    closeSubModal("intel-filters");
+}
+
+function debugModal() {
+    const currentPrefs = getUserPrefs();
+    const settingsDetailModal = document.querySelector("#settings-detail");
+    settingsDetailModal.replaceChildren();
+    var elementsToAdd = htmlToElements(
+        `<h2>Debug options: </h2>
+        <div class="button-list">
+            <p>Misc bug report: </p>
+            <label class="btn chk-btn" for="debug-button-toggle">
+                <p>Show buttons</p><input type="checkbox" name="debug-button-toggle" id="debug-button-toggle"
+                    class="toggle" placeholder="_" onchange="toggleDebugButton()" ${!currentPrefs.hideBugRepButton ? 'checked' : ''}>
+            </label>
+            <p>Click for co-ordinates: </p>
+            <label class="btn chk-btn" for="debug-toggle">
+                <p>Copy on click</p><input type="checkbox" name="debug-toggle" id="debug-toggle" class="toggle"
+                    placeholder="_" onchange="toggleClickCoord()" ${debug ? 'checked' : ''}>
+            </label>
+
+        </div>`);
+
+    elementsToAdd.forEach(element => {
+        settingsDetailModal.append(element);
+    });
+    
+    if (settingsDetailModal.classList.contains("-hidden")) {
+        openModal(modalSet.settingsDetail);
+    } /* else {
+        closeModal("settings-detail");
+    } */
+}
+
+function importExportModal() {
+    const settingsDetailModal = document.querySelector("#settings-detail");
+    settingsDetailModal.replaceChildren();
+    settingsDetailModal.append(htmlToElement(`<div class="sub-modal" id="settings-desc"></div>`));
+    const detailSubModal = document.querySelector("#settings-desc");
+    
+    var elementsToAdd = htmlToElements(
+        `<textarea id="import-export"></textarea>
+        <p>Copy the contents of the textbox and save somewhere. Import again any time by copying it back in and pressing import.</p>
+        <div class="button-list">
+            <a onclick="importUserPrefs()" target="_blank" class="btn chk-btn inverted">Import data</a>
+            <a onclick="exportUserPrefs()" target="_blank" class="btn chk-btn inverted">Export data</a>
+        </div>`);
+
+    elementsToAdd.forEach(element => {
+        detailSubModal.append(element);
+    });
+    
+    if (settingsDetailModal.classList.contains("-hidden")) {
+        openModal(modalSet.settingsDetail);
+    } /* else {
+        closeModal("settings-detail")
+    } */
+}
+
+function renderSettingsModal() {
+    const settingsModal = document.querySelector("#settings");
+    let currentPrefs = getUserPrefs();
+    settingsModal.replaceChildren(); // Empty Out First
+
+    let htmlToAdd = htmlToElements(
+        `<h2>Settings</h2>
+        <div class="button-list">
+            <p>Marker visibility:</p>
+            <label class="btn chk-btn" for="show-intel">
+                <p>Intel Markers: </p><input type="checkbox" name="show-intel" id="show-intel" class="toggle"
+                    placeholder="_" onchange="changeMarkerVisibility('${markerTypes.intel.id}')" ${!currentPrefs.hideIntel ? 'checked' : ''}>
+            </label>
+            <label class="btn chk-btn" for="show-misc">
+                <p>Misc Markers: </p><input type="checkbox" name="show-misc" id="show-misc" class="toggle"
+                    placeholder="_" onchange="changeMarkerVisibility('${markerTypes.misc.id}')" ${!currentPrefs.hideMisc ? 'checked' : ''}>
+            </label>
+            <!-- <label class="btn chk-btn" for="checkbox">
+                <p>EE markers</p><input type="checkbox" name="checkbox" id="show-ee" class="toggle" placeholder="_">
+            </label> -->
+            <p>Theme: </p>
+            <label class="btn chk-btn" for="system-theme">
+                <p>Use System Theme</p><input type="checkbox" name="system-theme" id="system-theme" class="toggle"
+                    placeholder="_" onchange="changePreferredMode()">
+            </label>
+            <p>Debug: </p>
+            <button class="btn chk-btn" onclick="debugModal()"> Debug options<i class="fas fa-caret-right"></i></button>
+
+            <p>Collected Markers:</p>
+            <a onclick="importExportModal()" target="_blank" class="btn chk-btn">Import/Export Markers
+            </a>
+        </div>`)
+    htmlToAdd.forEach(element => {
+        settingsModal.append(element);
+    });
+}
+
+/**
+ *  
+ * @param {string} target Class of the targeted submodal that you want to open.
+ */
+function openSubModal(target) {
+    document.getElementById(target).classList.remove("-hidden")
+
+}
+
+function closeSubModal(target) {
+    document.getElementById(target).classList.add("-hidden")
+}
+
 /////////////////////Link Sharing/////////////////////////
 function goToIntelById(intelId) {
     let matchedIntel = intelCache.find((item) => {
@@ -119,14 +274,14 @@ function toggleAside(changePrefs = true) {
 /////////////////////Intel Collected/////////////////////////
 function markIntelCollected(intelId) {
     const collectButtonSelector = `#${intelId}-collect-btn`;
+    const popupCollectButtonSelector = `#${intelId}-popup-collect-btn`;
     const buttonSelector = `#${intelId}.to-intel`;
     const intelHasMarker = doesIntelHaveMarker(intelId);
     if (hasUserCollected(intelId)) {
         // "Un"Collect?
         $(buttonSelector).removeAttr("collected")
-        $(collectButtonSelector).removeAttr("collected")
-        $(collectButtonSelector + " i").removeClass("fa-check-square")
-        $(collectButtonSelector + " i").addClass("fa-square")
+        markButtonAsUnCollected(collectButtonSelector);
+        markButtonAsUnCollected(popupCollectButtonSelector);
         if (intelHasMarker) {
             app.disableMarkers = $.grep(app.disableMarkers, function (value) {
                 return value != intelId.toString();
@@ -137,9 +292,8 @@ function markIntelCollected(intelId) {
     } else {
         // Collect
         $(buttonSelector).attr("collected", "")
-        $(collectButtonSelector).attr("collected", "")
-        $(collectButtonSelector + " i").removeClass("fa-square")
-        $(collectButtonSelector + " i").addClass("fa-check-square")
+        markButtonAsCollected(collectButtonSelector);
+        markButtonAsCollected(popupCollectButtonSelector);
         if (intelHasMarker) {
             app.disableMarkers.push(intelId.toString());
             app.visibleMarkers[intelId].setOpacity(0.35);
@@ -147,6 +301,19 @@ function markIntelCollected(intelId) {
         addCollectedIntel(intelId);
     }
     CalcStats();
+    TriggerSearch();
+}
+
+function markButtonAsCollected(btnSelector) {
+    $(btnSelector).attr("collected", "");
+    $(btnSelector + " i").removeClass("fa-square");
+    $(btnSelector + " i").addClass("fa-check-square");
+}
+
+function markButtonAsUnCollected(btnSelector) {
+    $(btnSelector).removeAttr("collected");
+    $(btnSelector + " i").removeClass("fa-check-square");
+    $(btnSelector + " i").addClass("fa-square");
 }
 
 function hasUserCollected(intelId, getIndex = false) {
@@ -256,6 +423,7 @@ function htmlToElement(html) {
 }
 
 /**
+ * NOTE: It's a bit picky about starting with empty lines
  * @param {String} HTML representing any number of sibling elements
  * @return {NodeList} 
  */
@@ -263,4 +431,14 @@ function htmlToElements(html) {
     var template = document.createElement('template');
     template.innerHTML = html;
     return template.content.childNodes;
+}
+
+/////////////////////Other Util Methods/////////////////////////
+function IsJsonString(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
 }

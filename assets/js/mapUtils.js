@@ -24,7 +24,7 @@ function InitMap() {
 }
 
 function setMap(selectedMapId, navHtml) {
-    const { id: mapId } = FindMapById(selectedMapId);
+    const { id: mapId } = findMapById(selectedMapId);
     if (app.currentMap != mapId) {
         mapInstance.removeLayer(mapLayers[app.currentMap].Layer)
         mapInstance.addLayer(mapLayers[mapId].Layer)
@@ -39,29 +39,36 @@ function setMap(selectedMapId, navHtml) {
     }
 }
 
+function changeMapTo(mapId, targetElement) {
+    const currentMap = findMapById(mapId);
+    document.querySelector("header").querySelector("h1").innerHTML = currentMap.title;
+    setMap(mapId, targetElement);
+    setVisibilityFromPrefs();
+    collapseMenu();
+    TriggerSearch();
+}
+
 function switchAndFly(location = [0, 0], selectedMap = "") {
-    setMap(selectedMap, document.getElementById(selectedMap))
+    changeMapTo(selectedMap, document.getElementById(selectedMap))
     setLastVisitedMap(selectedMap)
     mapInstance.flyTo(location, 4)
 }
 
 function AddMapMarkersFromCache(intelArr) {
-    if (!debug) {
-        for (intel of intelArr) {
-            if (intel.map != mapDetails.allOutbreakMaps.id) {
-                let factionIcon = returnMarker(intel.faction, intel.intelType);
-                mapLayer = mapLayers[intel.map];
-                addMarkerToMap(intel, factionIcon, mapLayer);
-            }
+    for (intel of intelArr) {
+        if (intel.map != mapDetails.allOutbreakMaps.id) {
+            let factionIcon = intelIconInit(intel.faction, intel.intelType);
+            mapLayer = mapLayers[intel.map];
+            addMarkerToMap(intel, factionIcon, mapLayer);
         }
+    }
 
-        for (maep in miscPOI) {
-            let currmap = miscPOI[maep];
-            if (typeof (miscPOI[maep]) !== "undefined") {
-                currmap.forEach(item => {
-                    addMiscMarkerToMap(item.loc, item.icon, mapLayers[maep], item.id, item.title, item.desc)
-                })
-            }
+    for (maep in miscPOI) {
+        let currmap = miscPOI[maep];
+        if (typeof (miscPOI[maep]) !== "undefined") {
+            currmap.forEach(item => {
+                addMiscMarkerToMap(item.loc, item.icon, mapLayers[maep], item.id, item.title, item.desc)
+            })
         }
     }
 }
@@ -70,10 +77,9 @@ function addMarkerToMap(intel, icon, maep) {
     if (intel.loc != null && JSON.stringify([0, 0]) != JSON.stringify(intel.loc)) { // don't add 0,0 markers to the map for cleanliness
         let snippet = '';
         let shareBtn = genShareButton(intel.id).outerHTML;
-        let bugBtn = genBugButton(intel.id).outerHTML;
+        let bugBtn = !userPrefs.hideBugRepButton ? genBugButton(intel.id).outerHTML : '';
         let moreBtn = genMoreButton(intel).outerHTML;
-        let collectedBtn = genCollectedButton(intel.id).outerHTML;
-        let tempBtn = bugBtn
+        let collectedBtn = genCollectedButton(intel.id, true).outerHTML;
         let imgSrc = 'assets/img/intelScreenshot/placeholder.png';
         let imgEle = ''
 
@@ -81,10 +87,7 @@ function addMarkerToMap(intel, icon, maep) {
             imgSrc = `https://i.imgur.com/${intel.img}.jpg`
         }
 
-        if (typeof v2Test == 'string') {
-            imgEle = `<img src="${imgSrc}" onclick="expandImage(this)"></img>`
-            tempBtn = moreBtn
-        }
+        imgEle = `<img src="${imgSrc}" onclick="expandImage(this)"></img>`
 
         if (intel.desc !== '') {
             snippet = `
@@ -96,7 +99,8 @@ function addMarkerToMap(intel, icon, maep) {
                     <div class="buttonContainer" data-item="${intel.id}" data-type="${markerTypes.intel.id}">
                         ${collectedBtn}
                         ${shareBtn}
-                        ${tempBtn}
+                        ${bugBtn}
+                        ${moreBtn}
                     </div>
                 </div>
                 ${imgEle}
@@ -106,7 +110,8 @@ function addMarkerToMap(intel, icon, maep) {
         }
 
 
-        var marker = L.marker(intel.loc, { icon: icon }).addTo(maep.Markers)
+        var marker = L.marker(intel.loc, { icon: icon })
+            .addTo(maep.Markers)
             .bindPopup(snippet);
 
         if (hasUserCollected(intel.id)) {
@@ -129,15 +134,36 @@ function addMiscMarkerToMap(loc, icon, maep, id, name, desc = ``) {
         h1Ele = desc == '' ? name : `${name}:<br> ${desc}`;
         snippet = `
         <div class="misc-content">
-        <h1>${h1Ele}</h1>
+            <h1>${h1Ele}</h1>
             <div class="buttonContainer noselect" data-item="${id}" data-type="${markerTypes.misc.id}">
                 ${bugBtn}
             </div>
         </div>`;
-        var marker = L.marker(loc, { icon: icon }).addTo(maep.MiscMarkers)
+        var marker = L.marker(loc, { icon: icon })
+            .addTo(maep.MiscMarkers)
             .bindPopup(snippet);
     }
-
-
-
 }
+
+function toggleMarkers(markerType = markerTypes.intel.id, forceHide = false) {
+    let elementsToHide;
+    switch (markerType) {
+        case markerTypes.intel.id:
+            elementsToHide = $(".intel-icon");
+            break;
+        case markerTypes.misc.id:
+            elementsToHide = $(".misc-icon");
+            break;
+        case markerTypes.worldEvents.id:
+        case markerTypes.easterEggs.id:
+        default:
+            break;
+    }
+
+    if (forceHide) {
+        elementsToHide.fadeOut();
+    } else {
+        elementsToHide.fadeToggle();
+    }
+}
+

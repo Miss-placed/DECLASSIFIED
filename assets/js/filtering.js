@@ -1,5 +1,5 @@
 /////////////////////Filtering/////////////////////////
-function filterIntel(searchTermDirty, factionsArr = [], seasonsArr = [], intelTypeArr = [], mapArr = []) {
+function filterIntel(searchTermDirty, factionsArr = [], seasonsArr = [], intelTypeArr = [], mapArr = [], showCollected = true) {
     let results = intelCache;
     let searchTerm = searchTermDirty.toLowerCase()
     results = results.filter((intel) => {
@@ -30,6 +30,12 @@ function filterIntel(searchTermDirty, factionsArr = [], seasonsArr = [], intelTy
         });
     }
 
+    if (!showCollected) {
+        const currentPrefs = getUserPrefs();
+        results = results.filter((intel) => {
+            return !currentPrefs.collectedIntel.includes(intel.id);
+        });
+    }
     return results;
 }
 
@@ -68,6 +74,7 @@ function TriggerSearchV1() {
 function TriggerSearch() {
     const searchTerm = $('#search-term').val();
     const factionsArr = [];
+    let showCollected = true;
     $('#faction-multi-select input[type=checkbox]:checked').each(function () {
         factionsArr.push(factions[$(this).data("filter")]);
     });
@@ -83,7 +90,10 @@ function TriggerSearch() {
     //Filter by current map
     if ($('#curr-map-filter:checked').length > 0) mapArr.push(app.currentMap);
 
-    let filteredIntel = filterIntel(searchTerm, factionsArr, seasonsArr, intelTypeArr, mapArr);
+    //Filter by already collected
+    if ($('#show-collected-filter:checked').length > 0) showCollected = false;
+
+    let filteredIntel = filterIntel(searchTerm, factionsArr, seasonsArr, intelTypeArr, mapArr, showCollected);
     //Sort by Intel Faction A=>Z first then by Intel type A=>Z then by Intel Name A=>Z
     let sortedIntel = filteredIntel.sort(function (a, b) {
         if (a.faction > b.faction) return -1;
@@ -166,7 +176,7 @@ function getTotals() {
         season6: findTotal(intelStoreV2, "season", seasons.season6),
         all: intelStoreV2.length
     }
-    
+
     return { factionTotal, seasonTotal };
 }
 
@@ -184,7 +194,7 @@ function fillTotals() {
     let omegaTotalEle = document.getElementById("omega-totals");
     let maxisTotalEle = document.getElementById("maxis-totals");
     let darkTotalEle = document.getElementById("dark-aether-totals");
-    // console.log(findObjectByKey(intelStoreV2, "faction", factions.requiem))
+    
     requiemTotalEle.innerHTML = `${collectedFaction.requiem} / ${factionTotal.requiem.length}`
     omegaTotalEle.innerHTML = `${collectedFaction.omega} / ${factionTotal.omega.length}`
     maxisTotalEle.innerHTML = `${collectedFaction.maxis} / ${factionTotal.maxis.length}`

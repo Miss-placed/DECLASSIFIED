@@ -14,21 +14,8 @@ function GenerateList(intelToRender) {
 
 function InitialiseButtons() {
     document.querySelectorAll(".to-intel").forEach(element => {
-        element.addEventListener('click', (event) => IntelButtonClick(event));
+        element.addEventListener('click', (event) => OpenIntelDetail(event.target.getAttribute('id')));
     });
-}
-
-function IntelButtonClick(event) {
-    let target = event.target;
-    let intelID = target.getAttribute('id');
-    openSubModal("intel-detail")
-
-    //use target to get intel instead of predefined obj
-
-    let intel = getIntelById(intelID);
-    GenerateDetailModal(intel);
-    closeSubModal("intel-stats");
-    closeSubModal("intel-filters");
 }
 
 /////////////////////V1/////////////////////////
@@ -110,7 +97,7 @@ function GenerateIntelListItem(item) {
 /////////////////////Utils/////////////////////////
 function markIntelCollectedForButton(intelId) {
     return function () {
-        markIntelCollected(intelId)
+        markIntelCollected(intelId) // Only used for detail modal button, otherwise use event listeners
     }
 }
 
@@ -154,14 +141,14 @@ function genBugButton(itemId) {
     return bugBtn;
 }
 
-function genCollectedButton(itemId) {
+function genCollectedButton(itemId, isForPopup = false) {
     let collectedBtn = createElement("button", ["btn", "btn-info", "inverted", "action-buttons", "mark-collected"], "Collected:")
     if(hasUserCollected(itemId))
         collectedBtn.appendChild(genIcon("fa-check-square"));
     else 
         collectedBtn.appendChild(genIcon("fa-square"));
 
-    collectedBtn.id = `${itemId}-collect-btn`;
+    collectedBtn.id = `${itemId}${isForPopup ? '-popup' : ''}-collect-btn`;
     collectedBtn.title = "Mark As Collected";
     collectedBtn.onclick = markIntelCollectedForButton(itemId);
     return collectedBtn;
@@ -171,16 +158,10 @@ function genIcon(fontAwesomeClass) {
     return htmlToElement(`<i class="fas ${fontAwesomeClass}" aria-hidden="true" style="margin-left: 5px;"></i>`);
 }
 
-function openDescModal(intel) {
-    return function () {
-        GenerateDetailModal(intel)
-        openModal(modalSet.intelDescription)
-    }
-}
+
 function genMoreButton(intel) {
     let moreBtn = createElement("button", ["btn", "btn-info", "inverted", "action-buttons", "moreInfo", "fas", "fa-ellipsis-h"], "")
     moreBtn.title = "More Info";
-    moreBtn.onclick = openDescModal(intel) 
     return moreBtn;
 }
 
