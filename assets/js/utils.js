@@ -45,7 +45,8 @@ function GenerateDetailModal(intel) {
         `<button class="close-submodal btn inverted" onclick="openModal(modalSet.intelOverview)"><i class="fas fa-x"></i></button>
     
         <h2>${intel.name}</h2>
-        <h4>${mapName}</h4>
+        <h4>${mapName} - ${intel.season}</h4>
+        <h5>${intel.intelType} - ${intel.faction}</h5>
         <p>${intel.desc}</p>
         ${imgEle}
         `

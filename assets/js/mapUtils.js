@@ -55,22 +55,20 @@ function switchAndFly(location = [0, 0], selectedMap = "") {
 }
 
 function AddMapMarkersFromCache(intelArr) {
-    if (!debug) {
-        for (intel of intelArr) {
-            if (intel.map != mapDetails.allOutbreakMaps.id) {
-                let factionIcon = intelIconInit(intel.faction, intel.intelType);
-                mapLayer = mapLayers[intel.map];
-                addMarkerToMap(intel, factionIcon, mapLayer);
-            }
+    for (intel of intelArr) {
+        if (intel.map != mapDetails.allOutbreakMaps.id) {
+            let factionIcon = intelIconInit(intel.faction, intel.intelType);
+            mapLayer = mapLayers[intel.map];
+            addMarkerToMap(intel, factionIcon, mapLayer);
         }
+    }
 
-        for (maep in miscPOI) {
-            let currmap = miscPOI[maep];
-            if (typeof (miscPOI[maep]) !== "undefined") {
-                currmap.forEach(item => {
-                    addMiscMarkerToMap(item.loc, item.icon, mapLayers[maep], item.id, item.title, item.desc)
-                })
-            }
+    for (maep in miscPOI) {
+        let currmap = miscPOI[maep];
+        if (typeof (miscPOI[maep]) !== "undefined") {
+            currmap.forEach(item => {
+                addMiscMarkerToMap(item.loc, item.icon, mapLayers[maep], item.id, item.title, item.desc)
+            })
         }
     }
 }
