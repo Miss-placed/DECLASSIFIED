@@ -308,6 +308,7 @@ miscPOI[mapDetails.zoo.id] = [
     new Marker("AqCfQ", miscTypes.monkey, [204.52540299366723, 279.51968694570735], "Between a wall and a rock."),
     new Marker("t1Csu", miscTypes.monkey, [266.54015544041454, 117.57161206140799], "In the middle of the large shelves."),
     new Marker("a84zo", miscTypes.projector, [241.65018710420264, 295.65660105200925]),
+    new Marker("QDny7", miscTypes.redRift, [194.58900339361654, 392.10299971799157]),
 ];
 miscPOI[mapDetails.duga.id] = [
     new Marker("BcM6G", miscTypes.dementedEcho, [218.2373426139386, 258]),
@@ -404,7 +405,7 @@ miscPOI[mapDetails.alpine.id] = [
     new Marker("31UO9", miscTypes.wallbuy, [317.30615777129947, 67.41337618919444], "Gallo"),
     new Marker("GpZS_", miscTypes.wallbuy, [139.88254903819504, 197.95937117870153], "AUG"),
     new Marker("K7ay6", miscTypes.wallbuy, [378.35148690180966, 214.6089341851221], "MP5"),
-    new Marker("rYPHj", miscTypes.projector, [0, 0]),
+    new Marker("rYPHj", miscTypes.projector, [199.38751401269195, 138.7419183294555]),
 ];
 miscPOI[mapDetails.golova.id] = [
     new Marker("_9qob", miscTypes.dementedEcho, [0, 0]),
