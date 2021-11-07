@@ -3081,7 +3081,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season1,
         intelType: intelTypes.audio,
-        loc: "[292.4648430572796, 323]",
+        loc: "[263.0644128266228, 323.67997920450915]",
         map: mapDetails.firebaseZ.id,
         name: "Worse Than Baton Rouge",
         desc: "Inside a locker in the barracks. Need the key from the free WW quest to unlock.",
@@ -4192,7 +4192,7 @@ const intelStoreV2 = [
         loc: "[354.96085298811846, 285.5]",
         map: mapDetails.firebaseZ.id,
         name: "Omega Canister",
-        desc: "Part of the Main quest.",
+        desc: "Part of the Main quest. One of many possible canisters that are filled with white and black smoke, the correct one is pure white.",
         img: "tLJkx4S",
     }, {
         id: "DS2Au1",
