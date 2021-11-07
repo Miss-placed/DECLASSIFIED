@@ -3740,7 +3740,7 @@ const intelStoreV2 = [
     }, {
         id: "MS6Ra1",
         faction: factions.maxis,
-        season: seasons.season5,
+        season: seasons.season6,
         intelType: intelTypes.radio,
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
@@ -3749,7 +3749,7 @@ const intelStoreV2 = [
     }, {
         id: "MS6Ra2",
         faction: factions.maxis,
-        season: seasons.season5,
+        season: seasons.season6,
         intelType: intelTypes.radio,
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
