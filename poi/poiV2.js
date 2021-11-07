@@ -2877,7 +2877,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.preseason,
         intelType: intelTypes.audio,
-        loc: "[225.9719187799255, 308]",
+        loc: "[242.10603552472378, 250.03564086943598]",
         map: mapDetails.dieMaschine.id,
         name: "Game Changer",
         desc: "Drop the crate for the Cryo WW upgrade. The log will be near the destroyed crate and flask.",

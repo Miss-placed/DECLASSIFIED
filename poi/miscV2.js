@@ -22,7 +22,6 @@ miscPOI[mapDetails.dieMaschine.id] = [
     new Marker("7WBdI", miscTypes.ammoCrate, [335.7277202921622, 263.875]),
     new Marker("qnd1q", miscTypes.wallbuy, [340.9758521397134, 318.75], "Gallo"),
     new Marker("sLfEw", miscTypes.wallbuy, [194.23292443112652, 256.125], "Hauer 77"),
-    new Marker("kbsaI", miscTypes.trialComputer, [228.211134001311, 304]),
     new Marker("rXxRl", miscTypes.ammoCrate, [203.48479258357526, 282]),
     new Marker("V1v4Z", miscTypes.wallbuy, [179.74021678059745, 256], "Diamatti"),
     new Marker("r5tfe", miscTypes.wunderFizz, [277.920479445641, 297.75], "On the 'Penthouse' level within the Dark Aether. Arrives in the standard map 10 rounds after the power is turned on."),
