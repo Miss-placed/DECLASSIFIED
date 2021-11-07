@@ -1520,7 +1520,7 @@ const intelStoreV2 = [
         loc: "[233.49143289914954, 155]",
         map: mapDetails.golova.id,
         name: "Tesla Storm Canister",
-        desc: "On top of the electrical box.",
+        desc: "On top of the transformer.",
         img: "GCO1WXK",
     }, {
         id: "RS6Ar3",
@@ -3483,7 +3483,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season3,
         intelType: intelTypes.artifact,
-        loc: "[142.5, 129.5]",
+        loc: "[141.77868590098416, 139.47542205060716]",
         map: mapDetails.sanatorium.id,
         name: "Maxis's Goggles",
         desc: "In the market square on one of the round tables.",

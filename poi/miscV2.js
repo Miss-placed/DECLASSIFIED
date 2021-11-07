@@ -345,7 +345,7 @@ miscPOI[mapDetails.ruka.id] = [
     new Marker("QaKjR", miscTypes.dementedEcho, [0, 0]),
     new Marker("3XNUe", miscTypes.dementedEcho, [0, 0]),
     new Marker("18A2Y", miscTypes.dementedEcho, [0, 0]),
-    new Marker("NFpUv", miscTypes.dementedEcho, [0, 0]),
+    new Marker("NFpUv", miscTypes.dementedEcho, [146.8961039621756, 299.61206359787775]),
     new Marker("oKjiO", miscTypes.rift, [235.467130697, 449.5]),
     new Marker("5IzIg", miscTypes.rift, [444.44909558432346, 244.5]),
     new Marker("kbFXC", miscTypes.rift, [287.1108249260276, 62]),
