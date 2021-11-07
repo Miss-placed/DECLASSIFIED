@@ -924,6 +924,7 @@ const intelStoreV2 = [
         map: mapDetails.ruka.id,
         name: "The Berlin Situation",
         desc: "The audio log is on top of a railway tanker.",
+        img: "sDDbhJT",
     }, {
         id: "RS4Au5",
         faction: factions.requiem,
