@@ -2201,7 +2201,7 @@ const intelStoreV2 = [
         map: mapDetails.sanatorium.id,
         name: "His Plan, Our Plan",
         desc: "On the sanatorium Roof. It's on top of the spire with 2 satellite dishes. Requires a Jump pad to get to.",
-        img: "sOqQgk9",
+        img: "RxOyQRb",
     }, {
         id: "OS3Do1",
         faction: factions.omega,
