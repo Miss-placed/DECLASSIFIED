@@ -717,7 +717,7 @@ const intelStoreV2 = [
         map: mapDetails.alpine.id,
         name: "Embarrassment of Riches",
         desc: "In the lodge. On the third floor sitting on the bar.",
-        img: "4JEjpiH",
+        img: "RxOyQRb",
     }, {
         id: "RS3Do1",
         faction: factions.requiem,
