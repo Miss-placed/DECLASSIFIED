@@ -2860,6 +2860,7 @@ const intelStoreV2 = [
         map: mapDetails.forsaken.id,
         name: "The Agreement",
         desc: "In the TV store, drops after using the ARC-XD during the main quest step.",
+        img: "Xtk9lSr",
     }, {
         id: "OS6Au4",
         faction: factions.omega,
