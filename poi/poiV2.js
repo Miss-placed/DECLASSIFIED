@@ -608,6 +608,7 @@ const intelStoreV2 = [
         map: mapDetails.allOutbreakMaps.id,
         name: "Zombie Head",
         desc: "Collected through the Defence objective.",
+        img: "c7IF0Yi",
     }, {
         id: "RS2Ar2",
         faction: factions.requiem,
