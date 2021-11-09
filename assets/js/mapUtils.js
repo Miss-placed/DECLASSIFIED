@@ -129,12 +129,13 @@ function expandImage(ele) {
 function addMiscMarkerToMap(loc, icon, maep, id, name, desc = ``) {
     if (loc != null && JSON.stringify([0, 0]) != JSON.stringify(loc)) { // don't add 0,0 markers to the map for cleanliness
         let bugBtn = genBugButton(id).outerHTML;
+        let descriptionEle = desc ? `<p>${desc}</p>` : '';
         let snippet = $(`<div></div>`)
         snippet = `
         <div class="misc-content">
             <h1>${name}</h1>
             <div class="buttonContainer noselect" data-item="${id}" data-type="${markerTypes.misc.id}">
-                ${desc}
+                ${descriptionEle}
                 ${bugBtn}
             </div>
         </div>`;
