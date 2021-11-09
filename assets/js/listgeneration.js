@@ -15,6 +15,11 @@ function GenerateList(intelToRender) {
 function InitialiseButtons() {
     document.querySelectorAll(".to-intel").forEach(element => {
         element.addEventListener('click', (event) => OpenIntelDetail(event.target.getAttribute('id')));
+        //Event listener for right clicking intel buttons and marking them as collected
+        $(element).contextmenu(function(event) {
+            markIntelCollected(event.target.getAttribute('id'));
+            return false; // Cancels the normal right-click menu
+          });
     });
 }
 
@@ -109,7 +114,7 @@ function goToIntel(item) {
         }
         
         switchAndFly(item.loc, item.map)
-        if (app.isMobile)
+        if (app.isMobile && !v2Test)
             toggleAside()
     }
 }

@@ -1522,7 +1522,7 @@ const intelStoreV2 = [
         loc: "[233.49143289914954, 155]",
         map: mapDetails.golova.id,
         name: "Tesla Storm Canister",
-        desc: "On top of the electrical box.",
+        desc: "On top of the transformer.",
         img: "GCO1WXK",
     }, {
         id: "RS6Ar3",
@@ -1605,7 +1605,7 @@ const intelStoreV2 = [
     }, {
         id: "RS6Do3",
         faction: factions.requiem,
-        season: defaultPOIData.season6,
+        season: seasons.season6,
         intelType: intelTypes.docs,
         loc: defaultPOIData.nullLoc,
         map: mapDetails.forsaken.id,
@@ -3486,7 +3486,7 @@ const intelStoreV2 = [
         faction: factions.maxis,
         season: seasons.season3,
         intelType: intelTypes.artifact,
-        loc: "[142.5, 129.5]",
+        loc: "[141.77868590098416, 139.47542205060716]",
         map: mapDetails.sanatorium.id,
         name: "Maxis's Goggles",
         desc: "In the market square on one of the round tables.",
@@ -3743,7 +3743,7 @@ const intelStoreV2 = [
     }, {
         id: "MS6Ra1",
         faction: factions.maxis,
-        season: seasons.season5,
+        season: seasons.season6,
         intelType: intelTypes.radio,
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
@@ -3752,7 +3752,7 @@ const intelStoreV2 = [
     }, {
         id: "MS6Ra2",
         faction: factions.maxis,
-        season: seasons.season5,
+        season: seasons.season6,
         intelType: intelTypes.radio,
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
@@ -4824,7 +4824,7 @@ const intelStoreV2 = [
     }, {
         id: "DS6Au1",
         faction: factions.darkAether,
-        season: seasons.season5,
+        season: seasons.season6,
         intelType: intelTypes.audio,
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
@@ -4833,7 +4833,7 @@ const intelStoreV2 = [
     }, {
         id: "DS6Au2",
         faction: factions.darkAether,
-        season: seasons.season5,
+        season: seasons.season6,
         intelType: intelTypes.audio,
         loc: "[309.8628684849271, 262.7430596656802]",
         map: mapDetails.allOutbreakMaps.id,
