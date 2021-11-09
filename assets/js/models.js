@@ -184,6 +184,7 @@ const defaultPOIData = {
     nullLoc: "[0,0]"
 }
 
+/////////////////////Challenges/////////////////////////
 const challengeTypes = {
     multiplayer: "Multiplayer",
     zombies: "Zombies",
@@ -191,6 +192,7 @@ const challengeTypes = {
 }
 
 const challengeCategories = {
+    seasonal: "Seasonal",
     career: "Career",
     battleHardened: "Battle Hardened",
     requiemAdvancement: "Requiem Advancement",
@@ -220,6 +222,7 @@ const challengeSubCategories = {
     seasonal: seasons
 }
 
+/////////////////////Misc/////////////////////////
 const miscTypes = {
     dementedEcho: new Item({ title: "Demented Echo", desc: "Destroy it before it touches you to get a reward.", icon: dementedIcon }),
     rift: new Item({ title: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", icon: riftIcon }),
