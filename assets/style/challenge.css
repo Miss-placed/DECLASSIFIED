@@ -3,26 +3,29 @@
 }
 body {
   display: flex;
-  flex-wrap: wrap;
   width: 100%;
   background: var(--clr-black);
 }
 aside {
   padding: 10px;
-  flex: 0 0 33%;
+  width:33%;
   background-color: var(--clr-grey-d);
+  position: sticky;
+  top:0;
+  bottom:0;
+  z-index:50;
 }
 main {
-  flex: 0 0 67%;
-  padding-left: 10px;
+  width: 67%;
 }
 
 #card-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  padding: 5px;
 }
-h1,
+nav  h2,
 #mastery-progress > div > h2 {
   margin: 5px 10px;
   font-size: 1.5em;
@@ -41,6 +44,9 @@ h1,
   border-style: solid;
   border-width: 3px;
   border-color: var(--clr-grey-l);
+}
+.cc-card:hover{
+    border-color:var(--clr-white-d);
 }
 .cc-card[complete] {
   border-color: var(--clr-green);
@@ -85,11 +91,11 @@ h1,
 }
 .pin:hover {
   color: var(--clr-yellow);
-  transition:all .3sec ease;
+  transition: all 0.3sec ease;
 }
 .pin.rotate {
-    transform: rotate(45deg);
-    color: var(--clr-yellow);
+  transform: rotate(45deg);
+  color: var(--clr-yellow);
 }
 .pin.rotate:hover {
   color: var(--clr-white);
@@ -98,13 +104,33 @@ h1,
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  color:var(--clr-white-d)
+  color: var(--clr-white-d);
 }
 
+main nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+nav > ul{
+    display:inline;
+}
+nav > ul > li {
+    display:none;
+}
+
+#mastery-progress {
+  background-color: var(--clr-black);
+  position: sticky;
+  bottom: 0;
+  box-shadow: 0px 0px 28px 0px var(--clr-black);
+}
 @media (max-width: 900px) {
-  aside,
-  main,
   #card-container .cc-card {
     flex: 0 0 calc(100% - 10px);
+  }
+  main,
+  aside {
+    width: 100%;
   }
 }

@@ -14,7 +14,7 @@
     <title>TITLE 'ERE ASSHAT</title>
 </head>
 
-<body>
+<body onload="onLoad()">
     <aside>
         <h1>Tracking challenges</h1>
         <article class="cc-card">
@@ -26,70 +26,71 @@
         </article>
     </aside>
     <main>
-        <h1>Category title</h1>
+        <nav></nav>
+
         <div id="card-container">
             <article class="cc-card">
                 <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
                 <img class="cc-img" alt="Calling card" src="assets\img\cc\placeholder.jpg">
                 <h2 class="cc-title">cc title</h2>
                 <p class="cc-desc">cc desc</p>
-<!--                 <div class="cc-progress"></div>-->
+                <!--                 <div class="cc-progress"></div>-->
             </article>
             <article class="cc-card">
                 <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
                 <img class="cc-img" alt="Calling card" src="assets\img\cc\placeholder.jpg">
                 <h2 class="cc-title">cc title</h2>
                 <p class="cc-desc">cc desc</p>
-<!--                 <div class="cc-progress"></div>-->
+                <!--                 <div class="cc-progress"></div>-->
             </article>
             <article class="cc-card" id="cc-id">
                 <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
                 <img class="cc-img" alt="Calling card" src="assets\img\cc\placeholder.jpg">
                 <h2 class="cc-title">cc title</h2>
                 <p class="cc-desc">cc desc</p>
-<!--                 <div class="cc-progress"></div>-->
+                <!--                 <div class="cc-progress"></div>-->
             </article>
             <article class="cc-card">
                 <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
                 <img class="cc-img" alt="Calling card" src="assets\img\cc\placeholder.jpg">
                 <h2 class="cc-title">cc title</h2>
                 <p class="cc-desc">cc desc</p>
-<!--                 <div class="cc-progress"></div>-->
+                <!--                 <div class="cc-progress"></div>-->
             </article>
             <article class="cc-card">
                 <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
                 <img class="cc-img" alt="Calling card" src="assets\img\cc\placeholder.jpg">
                 <h2 class="cc-title">cc title</h2>
                 <p class="cc-desc">cc desc</p>
-<!--                 <div class="cc-progress"></div>-->
+                <!--                 <div class="cc-progress"></div>-->
             </article>
             <article class="cc-card" id="cc-id">
                 <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
                 <img class="cc-img" alt="Calling card" src="assets\img\cc\placeholder.jpg">
                 <h2 class="cc-title">cc title</h2>
                 <p class="cc-desc">cc desc</p>
-<!--                 <div class="cc-progress"></div>-->
+                <!--                 <div class="cc-progress"></div>-->
             </article>
             <article class="cc-card">
                 <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
                 <img class="cc-img" alt="Calling card" src="assets\img\cc\placeholder.jpg">
                 <h2 class="cc-title">cc title</h2>
                 <p class="cc-desc">cc desc</p>
-<!--                 <div class="cc-progress"></div>-->
+                <!--                 <div class="cc-progress"></div>-->
             </article>
             <article class="cc-card" complete>
                 <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
                 <img class="cc-img" alt="Calling card" src="assets\img\cc\placeholder.jpg">
                 <h2 class="cc-title">cc title</h2>
                 <p class="cc-desc">cc desc</p>
-<!--                 <div class="cc-progress"></div>-->
+                <!--                 <div class="cc-progress"></div>-->
             </article>
             <article class="cc-card" id="cc-id">
                 <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
                 <img class="cc-img" alt="Calling card" src="assets\img\cc\placeholder.jpg">
                 <h2 class="cc-title">cc title</h2>
                 <p class="cc-desc">cc desc</p>
-<!--                 <div class="cc-progress"></div>-->
+                <!--                 <div class="cc-progress"></div>-->
             </article>
         </div>
         <section id="mastery-progress">
@@ -99,8 +100,8 @@
             </div>
             <article class="cc-card">
                 <img class="cc-img" alt="Calling card" src="assets\img\cc\placeholder.jpg">
-<!--            <h2 class="cc-title">cc title</h2> -->
-<!--            <p class="cc-desc">cc desc</p> -->
+                <!--            <h2 class="cc-title">cc title</h2> -->
+                <!--            <p class="cc-desc">cc desc</p> -->
                 <div class="cc-progress"></div>
             </article>
         </section>
@@ -108,11 +109,36 @@
 
 </body>
 <script>
-    function pinCard(element){
+    function pinCard(element) {
         console.log(element.parentNode.getAttribute('id'))
         //do whatever needs to be done to the cards
         console.log(element)
         element.classList.toggle('rotate')
     }
+    
+    const firstOption = ["Campaign", "Multiplayer", "Zombies"];
+    const secondOptions = {
+        "Campaign": ["Story", "Dark Ops"],
+        "Multiplayer": ["Career", "Battle Hardened", "Dark Ops", "Seasonal"],
+        "Zombies": ["Career", "Battle Hardened", "Requiem Advancement", "Dark Ops", "Seasonal"]
+    }
+    const thirdOptions = {
+        "Campaign": {
+            "Story": ["Loyal Agent", "Bloodthirsty", "Explorer", "Clandestine", "Highly Proficient"],
+        },
+        "Multiplayer": {
+            "Career": ["Boot Camp", "Field Specialist", "Elite Operator", "Grizzled Veteran"],
+            "Battle Hardened": ["Killer", "Going Ham", "Humiliation", "Precision", "Return Fire"],
+            "Seasonal": ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6"],
+        },
+        "Zombies": {
+            "Career": ["Die Maschine Report", "Boot Camp", "Grizzled Veteran"],
+            "Battle Hardened": ["Zombie Hunter", "Elementalist", "Tactician", "Silverback Expedition", "Gorilla Stalker"],
+            "Requiem Advancement": ["Forsaken Report", "Mauer Der Toten Report", "Firebase Z Report", "Field Researcher", "Surveyor", "Exterminator"],
+            "Seasonal": ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6"],
+        },
+    }
 </script>
+
+
 </html>
