@@ -73,7 +73,7 @@ function onLoad() {
     initSystemThemeButton();
 
     setVisibilityFromPrefs();
-    
+
     CheckIfSharingURL();
 
     //Intel Search Listeners
@@ -91,11 +91,14 @@ function onLoad() {
 }
 
 if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
-    let sidebar = document.getElementById("aside");
     let worldmap = document.getElementById("worldMap");
-    sidebar.classList.add("mobile-view");
     worldmap.classList.add("mobile-view");
     app.isMobile = true
-    toggleAside(false);
+    // Old V1 code, need to remove at some point
+    if (!v2Test) {
+        toggleAside(false);
+        let sidebar = document.getElementById("aside");
+        sidebar.classList.add("mobile-view");
+    }
 }
 

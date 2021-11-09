@@ -114,7 +114,7 @@ function goToIntel(item) {
         }
         
         switchAndFly(item.loc, item.map)
-        if (app.isMobile)
+        if (app.isMobile && !v2Test)
             toggleAside()
     }
 }
