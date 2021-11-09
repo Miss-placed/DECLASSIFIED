@@ -23,7 +23,7 @@ function InitialiseButtons() {
         });
         //Event listener for right clicking intel buttons and marking them as collected
         $(element).contextmenu(function (event) {
-            markIntelCollected(event.target.getAttribute('id'));
+            toggleIntelCollected(event.target.getAttribute('id'));
             return false; // Cancels the normal right-click menu
         });
     });
@@ -108,7 +108,7 @@ function GenerateIntelListItem(item) {
 /////////////////////Utils/////////////////////////
 function markIntelCollectedForButton(intelId) {
     return function () {
-        markIntelCollected(intelId) // Only used for detail modal button, otherwise use event listeners
+        toggleIntelCollected(intelId) // Only used for detail modal button, otherwise use event listeners
     }
 }
 

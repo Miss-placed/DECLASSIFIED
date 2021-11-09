@@ -20,7 +20,7 @@ mapInstance.on('popupopen', function (e) {
         markButtonAsUnCollected(collectBtnSelector)
 
     $(collectBtnSelector).click(function (e) {
-        markIntelCollected(intelId);
+        toggleIntelCollected(intelId);
     });
     $('.share').click(function () {
         copyToClipboard(`${window.location.origin}${window.location.pathname}?id=${intelId}`, "Link Copied To Clipboard");
@@ -86,8 +86,7 @@ function onLoad() {
     //Initialise bug rep buttons being hidden or not
     $('link[href="assets/style/hideDebugButton.css"]').prop('disabled', !userPrefs.hideBugRepButton);
 
-    CalcStats();
-    TriggerSearch();
+    fullDynamicRefresh();
 }
 
 if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
@@ -100,5 +99,10 @@ if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
         let sidebar = document.getElementById("aside");
         sidebar.classList.add("mobile-view");
     }
+}
+
+function fullDynamicRefresh() {
+    CalcStats();
+    TriggerSearch();
 }
 
