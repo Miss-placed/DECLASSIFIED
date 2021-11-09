@@ -504,7 +504,10 @@ miscPOI[mapDetails.sanatorium.id] = [
     new Marker("BDOca", miscTypes.monkey, [265.106262191878, 348], "Underneath the bridge, on a support pillar."),
     new Marker("bEmlA", miscTypes.monkey, [194.48468256783116, 67.75], "On the top shelf above the bed."),
     new Marker("ZO8MP", miscTypes.projector, [364.45335165809536, 179.5]),
-    new Marker("QN21y", worldEventTypes.orb, [393.4503192055329, 163.5]),
+    new Marker("SFmVd", miscTypes.eehelicopter, [178.2582145549112, 78.59647195866988]),
+    new Marker("g0Vbn", miscTypes.eeorb, [128.51585279728454, 269.42304126372875], "Can spawn in 1 of 3 locations, this one is located on the roof"),
+    new Marker("ecy3g", miscTypes.eeorb, [393.4503192055329, 163.5], "Can spawn in 1 of 3 locations, this one is located on the roof"),
+    new Marker("brKfY", miscTypes.eeorb, [264.5128764056229, 197.08519448344717], "Can spawn in 1 of 3 locations, this one is located in the middle of the pool"),
     //Don't really need this for now, not until we re-work easter eggs
     //new Marker(new Item("oEPK3", "Chopper Gunner", "Hold out until the wave is dead to continue with the Easter Egg"), [-170.51300319205535, 39.25])
 ];
@@ -527,8 +530,8 @@ miscPOI[mapDetails.collateral.id] = [
     new Marker("BUlnd", miscTypes.wunderFizz, [239.15967566031475, 169.77687275024397]),
 ];
 miscPOI[mapDetails.armada.id] = [
-    new Marker("iC2vJ", miscTypes.requiemRadio, [209.4688119545682, 185.25]),
-    new Marker("S1EN7", miscTypes.omegaRadio, [205.7201321079839, 329.5]),
+    new Marker("iC2vJ", miscTypes.requiemRadio, [314.4681601026199, 347.8060741618561]),
+    new Marker("S1EN7", miscTypes.omegaRadio, [182.95659975912724, 183.2198466652555]),
     new Marker("G5tYA", miscTypes.maxisRadio, [251.6097221192863, 312.25]),
     new Marker("9ISs5", miscTypes.fishing, [274.48741453743673, 270.375], "Located at Launch Bay 3"),
     new Marker("DHE7r", miscTypes.fishing, [273.61241453743673, 229.75], "Located at Launch Bay 4"), 

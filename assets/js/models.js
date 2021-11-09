@@ -221,6 +221,9 @@ const miscTypes = {
     klausRadio: new Item({ title: "Klaus recall radio", icon: radioIcon }),
     aetherTunnel: new Item({ title: "Aether Tunnel", icon: ziplineIcon }),
     aetherCrystal: new Item({ title: "Aether Crystal" }),
+
+    eeorb: new Item({ title: "EE Orb"}),
+    eehelicopter: new Item({ title: "EE Helicopter"}),
 }
 
 const worldEventTypes = {
