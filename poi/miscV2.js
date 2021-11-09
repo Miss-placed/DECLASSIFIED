@@ -504,10 +504,10 @@ miscPOI[mapDetails.sanatorium.id] = [
     new Marker("BDOca", miscTypes.monkey, [265.106262191878, 348], "Underneath the bridge, on a support pillar."),
     new Marker("bEmlA", miscTypes.monkey, [194.48468256783116, 67.75], "On the top shelf above the bed."),
     new Marker("ZO8MP", miscTypes.projector, [364.45335165809536, 179.5]),
-    new Marker("SFmVd", miscTypes.eehelicopter, [178.2582145549112, 78.59647195866988]),
-    new Marker("g0Vbn", miscTypes.eeorb, [128.51585279728454, 269.42304126372875], "Can spawn in 1 of 3 locations, this one is located on the roof"),
-    new Marker("ecy3g", miscTypes.eeorb, [393.4503192055329, 163.5], "Can spawn in 1 of 3 locations, this one is located on the roof"),
-    new Marker("brKfY", miscTypes.eeorb, [264.5128764056229, 197.08519448344717], "Can spawn in 1 of 3 locations, this one is located in the middle of the pool"),
+    new Marker("SFmVd", outbreakEE2Steps.step2Helicopter, [178.2582145549112, 78.59647195866988]),
+    new Marker("g0Vbn", outbreakEE2Steps.step3Orb, [128.51585279728454, 269.42304126372875], "Can spawn in 1 of 3 locations, this one is located on the roof"),
+    new Marker("ecy3g", outbreakEE2Steps.step3Orb, [393.4503192055329, 163.5], "Can spawn in 1 of 3 locations, this one is located on the roof"),
+    new Marker("brKfY", outbreakEE2Steps.step3Orb, [264.5128764056229, 197.08519448344717], "Can spawn in 1 of 3 locations, this one is located in the middle of the pool"),
     //Don't really need this for now, not until we re-work easter eggs
     //new Marker(new Item("oEPK3", "Chopper Gunner", "Hold out until the wave is dead to continue with the Easter Egg"), [-170.51300319205535, 39.25])
 ];
