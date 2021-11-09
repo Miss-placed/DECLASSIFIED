@@ -8,34 +8,32 @@ L.control.attribution()
 //loops through all types of intel and makes a marker
 AddMapMarkersFromCache(intelCache);
 
-mapInstance.on('popupopen', function() {
-    $('.mark-collected').click(function(e) {
-        let itemId = $(e.target).closest(".buttonContainer").data("item");
-        if (app.disableMarkers.includes(itemId.toString())) {
-            app.disableMarkers = $.grep(app.disableMarkers, function(value) {
-                return value != itemId.toString();
-            });
-            app.visibleMarkers[itemId].setOpacity(1);
-            removeCollectedIntel(itemId)
-        } else {
-            app.disableMarkers.push(itemId.toString());
-            app.visibleMarkers[itemId].setOpacity(0.35);
-            addCollectedIntel(itemId);
-        }
-    });
-    $('.share').click(function(e) {
-        let itemId = $(e.target).closest(".buttonContainer").data("item");
-        copyToClipboard(`${window.location.origin}${window.location.pathname}?id=${itemId}`, "Link Copied To Clipboard");
-    });
-    $('.bugRep').click(function(e) {
-        let itemId = $(e.target).closest(".buttonContainer").data("item");
-        let type = $(e.target).closest(".buttonContainer").data("type");
+mapInstance.on('popupopen', function (e) {
+    const popup = e.popup._source._popup._wrapper;
+    const intelId = $(popup).find(".buttonContainer").first().data("item");
+    const type = $(popup).find(".buttonContainer").first().data("type");
+    const collectBtnSelector = `#${intelId}-popup-collect-btn`;
+    const isCollected = hasUserCollected(intelId);
+    if (isCollected)
+        markButtonAsCollected(collectBtnSelector)
+    else
+        markButtonAsUnCollected(collectBtnSelector)
 
-        redirectToGithub({ itemType: type, issueType: "Fix", itemId: itemId })
+    $(collectBtnSelector).click(function (e) {
+        markIntelCollected(intelId);
     });
+    $('.share').click(function () {
+        copyToClipboard(`${window.location.origin}${window.location.pathname}?id=${intelId}`, "Link Copied To Clipboard");
+    });
+    $('.bugRep').click(function () {
+        redirectToGithub({ itemType: type, issueType: "Fix", itemId: intelId });
+    });
+    $('.moreInfo').click(function () {
+        OpenIntelDetail(intelId);
+    })
 });
 
-mapInstance.on("click", function(e) {
+mapInstance.on("click", function (e) {
     let location = "[" + e.latlng.lat + ", " + e.latlng.lng + "]";
     if (debug) {
         copyToClipboard(location, "Location Copied to Clipboard")
@@ -44,33 +42,63 @@ mapInstance.on("click", function(e) {
     }
 })
 
-function onLoad() {
-    // needs to be replaced with the new menu highlighter
 
+function onLoadV1() {
+    //Set initial theme
+    setThemeFromPrefs();
+    initSystemThemeButton();
+
+    // needs to be replaced with the new menu highlighter
     document.getElementById(app.currentMap).classList.add("current-map")
     GenerateFullIntelList(intelCache);
-    let urlId = (getUrlVars()["id"] === "" ? undefined : getUrlVars()["id"])
-    if (urlId != undefined) {
-        goToIntelById(urlId)
-    }
+    CheckIfSharingURL();
 
     //Intel Search Listeners
-    $('#intelFilter').find("input[type=checkbox]").change(function() {
-        intelFiltered = TriggerSearch();
+    $('#intelFilter').find("input[type=checkbox]").change(function () {
+        intelFiltered = TriggerSearchV1();
     });
 
-    $('#searchTerm').keyup(function() {
-        intelFiltered = TriggerSearch();
+    $('#searchTerm').keyup(function () {
+        intelFiltered = TriggerSearchV1();
     });
     //Hide aside if toggled off
     if (!userPrefs.asideShow) toggleAside(false);
 }
 
+
+function onLoad() {
+    renderSettingsModal();
+    //Set initial theme
+    setThemeFromPrefs();
+    initSystemThemeButton();
+
+    setVisibilityFromPrefs();
+
+    CheckIfSharingURL();
+
+    //Intel Search Listeners
+    $('#search-term').on('search keyup', function () {
+        TriggerSearch();
+    });
+    $('#intel-filters input[type=checkbox]').click(function (params) {
+        TriggerSearch();
+    });
+    //Initialise bug rep buttons being hidden or not
+    $('link[href="assets/style/hideDebugButton.css"]').prop('disabled', !userPrefs.hideBugRepButton);
+
+    CalcStats();
+    TriggerSearch();
+}
+
 if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
-    let sidebar = document.getElementById("aside");
     let worldmap = document.getElementById("worldMap");
-    sidebar.classList.add("mobile-view");
     worldmap.classList.add("mobile-view");
     app.isMobile = true
-    toggleAside(false);
+    // Old V1 code, need to remove at some point
+    if (!v2Test) {
+        toggleAside(false);
+        let sidebar = document.getElementById("aside");
+        sidebar.classList.add("mobile-view");
+    }
 }
+

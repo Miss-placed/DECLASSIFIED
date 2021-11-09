@@ -1,3 +1,29 @@
+/////////////////////V2/////////////////////////
+
+function GenerateList(intelToRender) {
+    const intelListEle = document.querySelector("#filtered-intel");
+    intelListEle.replaceChildren(); // Empty First
+
+    intelToRender.forEach(intel => {
+        const isCollected = hasUserCollected(intel.id);
+        const buttonTemplate = htmlToElement(`<button class="btn to-intel" faction="${intel.faction}" type="${intel.intelType}"target="intel-detail" id="${intel.id}" ${isCollected ? "collected" : ""}>${intel.name}</button>`);
+        intelListEle.appendChild(buttonTemplate);
+    });
+    InitialiseButtons();
+}
+
+function InitialiseButtons() {
+    document.querySelectorAll(".to-intel").forEach(element => {
+        element.addEventListener('click', (event) => OpenIntelDetail(event.target.getAttribute('id')));
+        //Event listener for right clicking intel buttons and marking them as collected
+        $(element).contextmenu(function(event) {
+            markIntelCollected(event.target.getAttribute('id'));
+            return false; // Cancels the normal right-click menu
+          });
+    });
+}
+
+/////////////////////V1/////////////////////////
 function GenerateFullIntelList(pointsOfInterest) {
     let intelList = document.getElementById("intelList")
     intelList.innerHTML = "";
@@ -56,10 +82,11 @@ function GenerateIntelListItem(item) {
 
     let btnContainer = document.createElement("div");
     btnContainer.className = "buttonContainer";
+    btnContainer.appendChild(genCollectedButton(item.id));
 
     //Only Generate locate and share buttons if intel has location
     if (item.loc[0] != 0 && item.loc[1] != 0) {
-        let location = createElement("button", ["btn", "btn-info", "remove-button"], "Locate Intel");
+        let location = createElement("button", ["btn", "btn-info", "inverted", "remove-button"], "Locate Intel");
         location.onclick = goToIntel(item);
         btnContainer.appendChild(location);
         btnContainer.appendChild(genShareButton(item.id));
@@ -72,43 +99,79 @@ function GenerateIntelListItem(item) {
     return intelItem;
 }
 
+/////////////////////Utils/////////////////////////
+function markIntelCollectedForButton(intelId) {
+    return function () {
+        markIntelCollected(intelId) // Only used for detail modal button, otherwise use event listeners
+    }
+}
+
 function goToIntel(item) {
-    return function() {
+    return function () {
+        // REMOVE THIS IF WHEN WE MOVE TO V2
+        if (typeof closeModal !== "undefined") { 
+            closeModal();
+        }
+        
         switchAndFly(item.loc, item.map)
-        if (app.isMobile)
+        if (app.isMobile && !v2Test)
             toggleAside()
     }
 }
 
 function copyClipboardForButton(intelId) {
-    return function() {
+    return function () {
         copyToClipboard(`${window.location.origin}${window.location.pathname}?id=${intelId}`, "Link Copied To Clipboard")
     }
 }
 
 function redirectToGithubForButton(itemId) {
-    return function() {
+    return function () {
         //This is only for intel in the side panel. Misc markers are only on the map
         redirectToGithub({ itemType: markerTypes.intel.id, issueType: "Fix", itemId: itemId })
     }
 }
 
 function genShareButton(intelId) {
-    let shareBtn = createElement("button", ["btn", "btn-info", "action-buttons", "share", "fas", "fa-external-link-alt"], "")
+    let shareBtn = createElement("button", ["btn", "btn-info", "inverted", "action-buttons", "share", "fas", "fa-link"], "")
     shareBtn.title = "Copy Sharing Link";
     shareBtn.onclick = copyClipboardForButton(intelId);
     return shareBtn;
 }
 
 function genBugButton(itemId) {
-    let bugBtn = createElement("button", ["btn", "btn-info", "action-buttons", "bugRep", "fas", "fa-bug"], "")
+    let bugBtn = createElement("button", ["btn", "btn-info", "inverted", "action-buttons", "bugRep", "fas", "fa-bug"], "")
     bugBtn.title = "Submit Bug Report";
     bugBtn.onclick = redirectToGithubForButton(itemId);
     return bugBtn;
 }
 
+function genCollectedButton(itemId, isForPopup = false) {
+    let collectedBtn = createElement("button", ["btn", "btn-info", "inverted", "action-buttons", "mark-collected"], "Collected:")
+    if(hasUserCollected(itemId))
+        collectedBtn.appendChild(genIcon("fa-check-square"));
+    else 
+        collectedBtn.appendChild(genIcon("fa-square"));
+
+    collectedBtn.id = `${itemId}${isForPopup ? '-popup' : ''}-collect-btn`;
+    collectedBtn.title = "Mark As Collected";
+    collectedBtn.onclick = markIntelCollectedForButton(itemId);
+    return collectedBtn;
+}
+
+function genIcon(fontAwesomeClass) {
+    return htmlToElement(`<i class="fas ${fontAwesomeClass}" aria-hidden="true" style="margin-left: 5px;"></i>`);
+}
+
+
+function genMoreButton(intel) {
+    let moreBtn = createElement("button", ["btn", "btn-info", "inverted", "action-buttons", "moreInfo", "fas", "fa-ellipsis-h"], "")
+    moreBtn.title = "More Info";
+    return moreBtn;
+}
+
 function copyToClipboard(text, notif) {
-    const listener = function(ev) {
+    const listener = function (ev) {
         ev.preventDefault();
         ev.clipboardData.setData('text/plain', text);
     };
@@ -118,7 +181,7 @@ function copyToClipboard(text, notif) {
     showNotification(notif)
 }
 
-function createElement(type, className, inside = undefined, id, map) {
+function createElement(type, className, inside = undefined, id, map, iconClass) {
     element = document.createElement(type)
     if (className != "") {
         if (Array.isArray(className)) {
@@ -140,7 +203,7 @@ function createElement(type, className, inside = undefined, id, map) {
                 tempElement.setAttribute("data-id", id);
             }
             if (map) tempElement.setAttribute("data-map", map);
-            tempElement.onclick = function() {
+            tempElement.onclick = function () {
                 if (this.nextSibling != undefined) this.nextSibling.classList.toggle("visible")
             }
             tempElement.innerHTML = inside
@@ -149,6 +212,9 @@ function createElement(type, className, inside = undefined, id, map) {
         }
         element.appendChild(tempElement)
 
+    }
+    if (iconClass) {
+        element.appendChild(genIcon(iconClass))
     }
     return element
 }

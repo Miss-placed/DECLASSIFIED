@@ -8,7 +8,7 @@ function StartupSettings() {
     let disableMarkers = [],
         visibleMarkers = [];
     //Use default latest map otherwise use last selected map of user
-    let currentMap = mapStrings.armada;
+    let currentMap = mapDetails.forsaken.id;
     let currentContribType;
     if (localStorage.declassifiedPrefs != undefined && JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap)
         currentMap = JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap;
@@ -22,7 +22,7 @@ function StartupSettings() {
 
 //Store and Retrieve user preferences from localStorage
 function userPrefsStartup() {
-    var userPrefs = new UserPrefs(JSON.parse(localStorage.getItem("declassifiedPrefs")) ?? {});
+    var userPrefs = getUserPrefs();
 
     localStorage.setItem("declassifiedPrefs", JSON.stringify(userPrefs));
     return userPrefs;
@@ -30,22 +30,11 @@ function userPrefsStartup() {
 
 function getUserPrefs() {
     //Additional logic can be added here for getting prefs
-    return userPrefsStartup();
+    return new UserPrefs(JSON.parse(localStorage.getItem("declassifiedPrefs")) ?? {});
 }
 
 function setUserPrefs(prefsObj) {
     localStorage.setItem("declassifiedPrefs", JSON.stringify(prefsObj));
-}
-
-function hasUserCollected(intel, getIndex = false) {
-    let currentPrefs = getUserPrefs();
-    //Search all arrays of intel to see if the intel exists
-    let indexOfIntel = currentPrefs.collectedIntel.indexOf(intel);
-    if (indexOfIntel > -1 && getIndex) return indexOfIntel;
-    if (indexOfIntel > -1 && !getIndex) return true;
-
-    //Couldn't find the intel, assume they haven't collected
-    return false;
 }
 
 function addCollectedIntel(intel) {
@@ -74,17 +63,119 @@ function setLastVisitedMap(selectedMap) {
     setUserPrefs(currentPrefs);
 }
 
-//toggleDarkmode function to be depricated on v2 release
-function toggleDarkMode() {
+function toggleDarkModeSetting() {
     let currentPrefs = getUserPrefs();
     currentPrefs.darkmode = !currentPrefs.darkmode
     setUserPrefs(currentPrefs);
-    location.reload();
 }
 
-function changePreferedMode() {
+function changePreferredMode() {
     let currentPrefs = getUserPrefs();
-    currentPrefs.osPreferedMode = document.getElementById("dark-mode").checked
-    setColorScheme()
+    const systemPrefersDarkmode = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    currentPrefs.useSystemTheme = document.getElementById("system-theme").checked;
     setUserPrefs(currentPrefs);
+
+    if (currentPrefs.useSystemTheme && ((currentPrefs.darkmode && !systemPrefersDarkmode) || (!currentPrefs.darkmode && systemPrefersDarkmode))) {
+        setColorScheme();
+    }
+    initSystemThemeButton();
+}
+
+function initSystemThemeButton() {
+    let currentPrefs = getUserPrefs();
+    // Firstly hide the button depending on system theme setting
+    if (currentPrefs.useSystemTheme) {
+        hideDarkmodeButton();
+        document.getElementById("system-theme").checked = true;
+    }
+    else {
+        showDarkmodeButton();
+        document.getElementById("system-theme").checked = false;
+    }
+}
+
+function changeMarkerVisibility(markerType) {
+    let currentPrefs = getUserPrefs();
+
+    switch (markerType) {
+        case markerTypes.intel.id:
+            currentPrefs.hideIntel = !document.getElementById("show-intel").checked;
+            break;
+        case markerTypes.misc.id:
+            currentPrefs.hideMisc = !document.getElementById("show-misc").checked;
+            break;
+        case markerTypes.worldEvents.id:
+        case markerTypes.easterEggs.id:
+        default:
+            break;
+    }
+
+    toggleMarkers(markerType);
+
+    setUserPrefs(currentPrefs);
+}
+
+
+function setColorScheme() {
+    toggleDarkModeSetting();
+    setThemeFromPrefs();
+}
+
+function hideDarkmodeButton() {
+    document.getElementById("color-scheme-toggle").classList = "btn ui -hidden";
+}
+
+function showDarkmodeButton() {
+    document.getElementById("color-scheme-toggle").classList = "btn ui";
+}
+
+function setThemeFromPrefs() {
+    let currentPrefs = getUserPrefs();
+    document.body.classList = currentPrefs.darkmode ? 'dark' : 'light';
+}
+
+function setVisibilityFromPrefs() {
+    let currentPrefs = getUserPrefs();
+    if (currentPrefs.hideIntel) {
+        toggleMarkers(markerTypes.intel.id, true);
+    }
+    if (currentPrefs.hideMisc) {
+        toggleMarkers(markerTypes.misc.id, true);
+    }
+}
+
+function toggleDebugButton() {
+    let currentPrefs = getUserPrefs();
+    currentPrefs.hideBugRepButton = !document.getElementById("debug-button-toggle").checked;
+    setUserPrefs(currentPrefs);
+    $('link[href="assets/style/hideDebugButton.css"]').prop('disabled', !currentPrefs.hideBugRepButton);
+}
+
+function toggleClickCoord() {
+    
+    debug = !debug;
+}
+
+function exportUserPrefs() {
+    const currentPrefs = JSON.stringify(getUserPrefs());
+    document.getElementById("import-export").value = currentPrefs;
+    copyToClipboard(currentPrefs, "User Preferences Copied to Clipboard");
+}
+
+function importUserPrefs() {
+    const importVal = document.getElementById("import-export")?.value;
+    if (importVal && IsJsonString(importVal)) {
+        const newPrefsImport = new UserPrefs(JSON.parse(importVal));
+        if (confirm("This will override your settings with whatever is in the box. Be sure to back it up first if you're not sure what this does!!!") && newPrefsImport instanceof UserPrefs) {
+            setUserPrefs(newPrefsImport);
+            showNotification("Preferences Imported, Reloading...");
+            setTimeout(function () {
+                location.reload();
+            }, 2000);
+        } else {
+            showNotification("Unable to import, there was an issue with the data format.");
+        }
+    } else {
+        showNotification("Unable to import, bad/no data.");
+    }
 }

@@ -1,4 +1,4 @@
-let svg = {
+let mapSVGs = {
     globalStyle: `  
     <style>
         .no-fill{fill:none;}

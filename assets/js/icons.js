@@ -12,92 +12,84 @@ function getIconByFaction(faction) {
             return generalIcon;
     }
 }
+var defaultMarker = {
+    shadowSize: [33, 44],
+    shadowAnchor: [(33 / 2), 44],
+    popupAnchor: [0, -25]
+}
+var defaultIcon = {
+    iconSize: [25, 25],
+    iconAnchor: [12.5, 40],
+}
 
-/////////////////////Factions/////////////////////////
-var darkAetherIcon = L.icon({
-    iconUrl: 'assets/img/icons/faction/darkAether.png',
-    iconSize: [30, 48],
-    iconAnchor: [15, 48],
-    popupAnchor: [0, -30]
-});
-var maxisIcon = L.icon({
-    iconUrl: 'assets/img/icons/faction/maxis.png',
-    iconSize: [34, 48],
-    iconAnchor: [17, 48],
-    popupAnchor: [0, -30]
-});
-var omegaIcon = L.icon({
-    iconUrl: 'assets/img/icons/faction/omega.png',
-    iconSize: [55, 48],
-    iconAnchor: [27.5, 48],
-    popupAnchor: [0, -30]
-});
-var requiemIcon = L.icon({
-    iconUrl: 'assets/img/icons/faction/requiem.png',
-    iconSize: [40, 40],
-    iconAnchor: [24, 48],
-    popupAnchor: [0, -30]
-});
+function intelIconInit(faction, type) {
+    const iconHtml =
+        `<div>
+        <img class="icon" src="assets/img/icons/type/${type}.png" alt="Icon">
+        <img class="background" src="assets/img/icons/markers/${faction}.png" alt="Background">
+        <!-- Shadow here -->
+    </div>`;
+
+    return L.divIcon(Object.assign({
+        html: iconHtml,
+        className: 'intel-icon'
+    },
+        defaultIcon,
+        defaultMarker,
+    ));
+}
+
 /////////////////////Misc/////////////////////////
-var generalIcon = L.icon({
-    iconUrl: 'assets/img/icons/generalIcon.png',
-    iconSize: [30, 30],
+var generalIcon = miscIconInit('generalIcon', 'misc', {
     iconAnchor: [15, 30],
     popupAnchor: [0, -30]
 });
-var riftIcon = L.icon({
-    iconUrl: 'assets/img/icons/Rift.png',
-    iconSize: [22, 48],
-    iconAnchor: [11, 24],
-    popupAnchor: [0, -30]
-});
-var monkeyIcon = L.icon({
-    iconUrl: 'assets/img/icons/monkeyIcon.png',
-    iconSize: [30, 30],
-    iconAnchor: [15, 15],
-    popupAnchor: [0, -30]
-});
-var radioIcon = L.icon({
-    iconUrl: 'assets/img/icons/radioIcon.png',
+var radioIcon = miscIconInit('radioIcon', 'misc', {
     iconSize: [39, 48],
     iconAnchor: [19.5, 24],
     popupAnchor: [0, -30]
 });
-var dementedIcon = L.icon({
-    iconUrl: 'assets/img/icons/dementedIcon.png',
-    iconSize: [48, 48],
-    iconAnchor: [24, 24],
-    popupAnchor: [0, -30]
-});
-var fishingIcon = L.icon({
-    iconUrl: 'assets/img/icons/fishIcon.png',
-    iconSize: [30, 30],
-    iconAnchor: [15, 15],
-    popupAnchor: [0, -30]
-});
-var redRiftIcon = L.icon({
-    iconUrl: 'assets/img/icons/redRiftIcon.png',
+var riftIcon = miscIconInit('rift', 'outbreak', {
     iconSize: [22, 48],
     iconAnchor: [11, 24],
     popupAnchor: [0, -30]
 });
-var wunderFizzIcon = L.icon({
-    iconUrl: 'assets/img/icons/perk/wunderFizz.png',
-    iconSize: [30, 30],
-    iconAnchor: [15, 15],
-    popupAnchor: [0, -15]
+var dementedIcon = miscIconInit('dementedIcon', 'outbreak', {
+    iconSize: [48, 48],
+    iconAnchor: [24, 24],
+    popupAnchor: [0, -30]
 });
-var mysteryBoxIcon = L.icon({
-    iconUrl: 'assets/img/icons/misc/mysteryBox.png',
-    iconSize: [30, 30],
-    iconAnchor: [15, 15],
-    popupAnchor: [0, -15]
+var fishingIcon = miscIconInit('fishIcon', 'outbreak', {
+
+    popupAnchor: [0, -30]
 });
-function iconInit(id, type) {
+var monkeyIcon = miscIconInit('monkeyIcon', 'outbreak', {
+
+    popupAnchor: [0, -30]
+});
+var redRiftIcon = miscIconInit('redRift', 'outbreak', {
+    iconSize: [22, 48],
+    iconAnchor: [11, 24],
+    popupAnchor: [0, -30]
+});
+
+var wunderFizzIcon = miscIconInit('wunderFizz', 'perk')
+var mysteryBoxIcon = miscIconInit('mysteryBox', 'misc')
+var arsenalIcon = miscIconInit('arsenal', 'misc', { iconAnchor: [15, 30] })
+var craftingTableIcon = miscIconInit('craftingTable', 'misc', { iconAnchor: [15, 30] })
+var wallbuyIcon = miscIconInit('wallBuy', 'misc')
+var ammoCrateIcon = miscIconInit('ammoCrate', 'misc')
+var ziplineIcon = miscIconInit('zipline', 'misc')
+var trialComputerIcon = miscIconInit('trialComputer', 'misc')
+var papMachineIcon = miscIconInit('papMachine', 'misc')
+
+function miscIconInit(id, type, bounds = {}) {
+    let { iconSize = [30, 30], iconAnchor = [15, 15], popupAnchor = [0, -15] } = bounds;
     return L.icon({
         iconUrl: `assets/img/icons/${type}/${id}.png`,
-        iconSize: [30, 30],
-        iconAnchor: [15, 15],
-        popupAnchor: [0, -15]
+        iconSize: iconSize,
+        iconAnchor: iconAnchor,
+        popupAnchor: popupAnchor,
+        className: 'misc-icon'
     });
 }

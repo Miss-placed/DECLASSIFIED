@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/style/style2.css">
+</head>
+
+<body>
+
+    <fieldset id="season-multi-select" class="droopy">
+        <legend>Seasons</legend>
+        <label class="title">Seasons</label>
+        <label class="list-selection"></label>
+        <ul>
+            <li>
+                <label for="season0">Pre Season</label>
+                <input type="checkbox" id="season0" class="check">
+            </li>
+            <li>
+                <label for="season1">Season 1</label>
+                <input type="checkbox" id="season1" class="check">
+            </li>
+            <li>
+                <label for="season2">Season 2 </label>
+                <input type="checkbox" id="season2" class="check">
+            </li>
+            <li>
+                <label for="season3">Season 3</label>
+                <input type="checkbox" id="season3" class="check">
+            </li>
+            <li>
+                <label for="season4">Season 4</label>
+                <input type="checkbox" id="season4" class="check">
+            </li>
+            <li>
+                <label for="season5">Season 5</label>
+                <input type="checkbox" id="season5" class="check">
+            </li>
+            <li>
+                <label for="season6">Season 6</label>
+                <input type="checkbox" id="season6" class="check">
+            </li>
+        </ul>
+    </fieldset>
+
+    <fieldset id="faction-multi-select" class="droopy">
+        <legend>Factions</legend>
+        <label class="title">Factions</label>
+        <label class="list-selection"></label>
+        <ul>
+            <li>
+                <label for="requiem">Requiem</label>
+                <input type="checkbox" id="requiem" class="check">
+            </li>
+            <li>
+                <label for="omega">Omega</label>
+                <input type="checkbox" id="omega" class="check">
+            </li>
+            <li>
+                <label for="maxis">Maxis</label>
+                <input type="checkbox" id="maxis" class="check">
+            </li>
+            <li>
+                <label for="darkAether">Dark Aether</label>
+                <input type="checkbox" id="darkAether" class="check">
+            </li>
+        </ul>
+    </fieldset>
+
+    <script>
+        function changeDroopyContents(ele) {
+            console.log(ele.id)
+        }
+
+    </script>
+</body>
+
+</html>
