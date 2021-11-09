@@ -1603,7 +1603,7 @@ const intelStoreV2 = [
     }, {
         id: "RS6Do3",
         faction: factions.requiem,
-        season: defaultPOIData.season6,
+        season: seasons.season6,
         intelType: intelTypes.docs,
         loc: defaultPOIData.nullLoc,
         map: mapDetails.forsaken.id,
@@ -3740,7 +3740,7 @@ const intelStoreV2 = [
     }, {
         id: "MS6Ra1",
         faction: factions.maxis,
-        season: seasons.season5,
+        season: seasons.season6,
         intelType: intelTypes.radio,
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
@@ -3749,7 +3749,7 @@ const intelStoreV2 = [
     }, {
         id: "MS6Ra2",
         faction: factions.maxis,
-        season: seasons.season5,
+        season: seasons.season6,
         intelType: intelTypes.radio,
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
@@ -4821,7 +4821,7 @@ const intelStoreV2 = [
     }, {
         id: "DS6Au1",
         faction: factions.darkAether,
-        season: seasons.season5,
+        season: seasons.season6,
         intelType: intelTypes.audio,
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
@@ -4830,7 +4830,7 @@ const intelStoreV2 = [
     }, {
         id: "DS6Au2",
         faction: factions.darkAether,
-        season: seasons.season5,
+        season: seasons.season6,
         intelType: intelTypes.audio,
         loc: "[309.8628684849271, 262.7430596656802]",
         map: mapDetails.allOutbreakMaps.id,
