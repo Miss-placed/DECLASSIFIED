@@ -608,6 +608,7 @@ const intelStoreV2 = [
         map: mapDetails.allOutbreakMaps.id,
         name: "Zombie Head",
         desc: "Collected through the Defence objective.",
+        img: "c7IF0Yi",
     }, {
         id: "RS2Ar2",
         faction: factions.requiem,
@@ -924,6 +925,7 @@ const intelStoreV2 = [
         map: mapDetails.ruka.id,
         name: "The Berlin Situation",
         desc: "The audio log is on top of a railway tanker.",
+        img: "sDDbhJT",
     }, {
         id: "RS4Au5",
         faction: factions.requiem,
@@ -2859,6 +2861,7 @@ const intelStoreV2 = [
         map: mapDetails.forsaken.id,
         name: "The Agreement",
         desc: "In the TV store, drops after using the ARC-XD during the main quest step.",
+        img: "Xtk9lSr",
     }, {
         id: "OS6Au4",
         faction: factions.omega,
