@@ -161,6 +161,34 @@
             <div id="filtered-intel">
                 <!-- <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button> -->
             </div>
+            <div id="more-options" style="
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 100%;
+                height: auto;
+                padding: 5px;
+                /* display: none; */
+                font-size: small;
+            " class="">
+
+                <button onclick="markSelected()" class="btn" faction="Requiem" type="Artifacts" style="
+                margin-bottom: 0;
+                border: 2px solid black;
+                display: block;
+            ">Declassify
+        <i class="fas fa-check-square" aria-hidden="true" style="margin-left: 5px; color: var(--clr-green);"></i>
+        </button>
+                <button onclick="unmarkSelected()" class="btn" faction="Requiem" type="Artifacts" style="
+                margin-bottom: 0;
+                border: 2px solid black;
+                display: block;
+            ">Classify
+            <i class="fas fa-ban" aria-hidden="true" style="margin-left: 5px; color: var(--clr-red);"></i>
+            </button>
+            </div>
             <label id="curr-map-filter-label" class="chk-btn" for="curr-map-filter" onchange="TriggerSearch()">
                 Filter by Current Map <input type="checkbox" name="curr-map-filter" id="curr-map-filter"
                     class="-small toggle" placeholder="_">

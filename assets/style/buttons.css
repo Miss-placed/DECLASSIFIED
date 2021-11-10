@@ -22,6 +22,10 @@
   box-shadow: var(--shadow-hover);
   transform: translate(0, -1px);
 }
+.btn[selected]{
+  outline: medium solid var(--clr-yellow);
+  outline-offset: 3px;
+}
 
 .btn:active {
   box-shadow: none;
@@ -427,6 +431,10 @@ input[type="search"] {
   border-radius: 2px;
   padding: 2px;
   font-size: .7rem;
+}
+
+#curr-map-filter-label {
+  margin-bottom: 10px;
 }
 
 #curr-map-filter-label,
