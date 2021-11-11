@@ -14,7 +14,7 @@ class Challenge {
      * challenges are directly related to a main category, other are all sub categories.
      * @param {string} name Main name/title of the challenge.
      * @param {string} desc Full description of the challenge, including completion criteria.
-     * @param {string} img Image url to be used for the calling card.
+     * @param {string} img Image imgur id to be used for the calling card.
      * @param {array} requiredChallenges An array of any challenge ids that must be completed in order to complete this challenge. 
      * (This is mainly used for "Master" challenges where all challenges inside a sub category need to be completed)
      */
@@ -24,7 +24,7 @@ class Challenge {
         this.category = category;
         this.name = name;
         this.desc = desc;
-        this.img = img ? `https://i.imgur.com/${img}` : `assets/img/cc/placeholder.jpg`;
+        this.img = img ? `https://i.imgur.com/${img}.jpg` : `assets/img/cc/placeholder.jpg`;
         this.requiredChallenges = requiredChallenges;
     }
 }
