@@ -24,7 +24,7 @@ class Challenge {
         this.category = category;
         this.name = name;
         this.desc = desc;
-        this.img = img ? `https://i.imgur.com/${img}.jpg` : `assets/img/cc/placeholder.jpg`;
+        this.img = img ? `https://i.imgur.com/${img}` : `assets/img/cc/placeholder.jpg`;
         this.requiredChallenges = requiredChallenges;
     }
 }
@@ -52,8 +52,12 @@ class Challenges {
             "The Other Side",
             "Get 500 eliminations in the Dark Aether.",
         ),
-        //... other challenges etc 
-        
+//                     .aMMMb  dMMMMMMP     dMP dMP     dMMMMMP     dMMMMb        .aMMMb     dMP dMP     .aMMMb     dMP     dMP     dMMMMMP     dMMMMb    .aMMMMP     dMMMMMP    .dMMMb         dMMMMMP  dMMMMMMP    .aMMMb                   
+//                     dMP"dMP    dMP       dMP dMP     dMP         dMP.dMP       dMP"VMP    dMP dMP     dMP"dMP    dMP     dMP     dMP         dMP dMP   dMP"        dMP        dMP" VP        dMP         dMP      dMP"VMP                   
+//                     dMP dMP    dMP       dMMMMMP     dMMMP       dMMMMK"       dMP        dMMMMMP     dMMMMMP    dMP     dMP     dMMMP       dMP dMP   dMP MMP"    dMMMP       VMMMb         dMMMP       dMP      dMP                        
+// amr   amr   amr     dMP.aMP    dMP       dMP dMP     dMP         dMP"AMF       dMP.aMP    dMP dMP     dMP dMP    dMP     dMP     dMP         dMP dMP   dMP.dMP     dMP        dP .dMP        dMP         dMP      dMP.aMP     amr   amr   amr 
+// dMP   dMP   dMP      VMMMP"    dMP       dMP dMP     dMMMMMP     dMP dMP        VMMMP"    dMP dMP     dMP dMP    dMMMMMP dMMMMMP dMMMMMP     dMP dMP    VMMMP"     dMMMMMP     VMMMP"        dMMMMMP     dMP       VMMMP"     dMP   dMP   dMP  
+//                                                                                                                                                                                                                                                                                                    |___/                                                
     ];
 
     static masterChallenges = [
