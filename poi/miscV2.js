@@ -308,6 +308,7 @@ miscPOI[mapDetails.zoo.id] = [
     new Marker("AqCfQ", miscTypes.monkey, [204.52540299366723, 279.51968694570735], "Between a wall and a rock."),
     new Marker("t1Csu", miscTypes.monkey, [266.54015544041454, 117.57161206140799], "In the middle of the large shelves."),
     new Marker("a84zo", miscTypes.projector, [241.65018710420264, 295.65660105200925]),
+    new Marker("QDny7", miscTypes.redRift, [194.58900339361654, 392.10299971799157]),
 ];
 miscPOI[mapDetails.duga.id] = [
     new Marker("BcM6G", miscTypes.dementedEcho, [218.2373426139386, 258]),
@@ -335,6 +336,20 @@ miscPOI[mapDetails.duga.id] = [
     new Marker("FIUz1", miscTypes.monkey, [358.4786674447592, 360.5], "At the back on top of the bus stop."),
     new Marker("P79of", miscTypes.monkey, [107.24119968079447, 330], "Behind the wall"),
     new Marker("d2US7", miscTypes.projector, [173.2474009132825, 354.5625]),
+    new Marker("1q0fz", miscTypes.mysteryBox, [394.91828663236106, 377.7967404457413]),
+    new Marker("Fps2a", miscTypes.mysteryBox, [244.24867769247766, 180.47068724767]),
+    new Marker("Sniis", miscTypes.mysteryBox, [154.06970159807457, 395.86233538877013]),
+    new Marker("K53yY", miscTypes.jumpPad, [148.54646545184332, 401.28777829579485]),
+    new Marker("HxnzA", miscTypes.jumpPad, [257.9280438867792, 194.34102447516744]),
+    new Marker("1ycSr", miscTypes.jumpPad, [359.0265436332714, 317.953126549139]),
+    new Marker("k2jH1", miscTypes.arsenal, [326.5927368844101, 212.2958620188356]),
+    new Marker("3Xjvq", miscTypes.arsenal, [196.6219646344271, 445.1421234611733]),
+    new Marker("VIamS", miscTypes.craftingTable, [392.9834590571724, 252.98893825655972]),
+    new Marker("cd9s4", miscTypes.craftingTable, [150.54000918056096, 262.26732211660993]),
+    new Marker("gbIKf", miscTypes.papMachine, [254.77418243078154, 348.7609997299418]),
+    new Marker("QU4JZ", miscTypes.trialComputer, [240.0005248924028, 315.2523023747949]),
+    new Marker("svAvo", miscTypes.wunderFizz, [219.1693079026586, 260.3728463398107]),
+    new Marker("ORM0f", miscTypes.redRift, [391.40929445880636, 252.02191837378084]),
 ];
 miscPOI[mapDetails.ruka.id] = [
     new Marker("vi0sy", miscTypes.dementedEcho, [0, 0]),
@@ -404,7 +419,7 @@ miscPOI[mapDetails.alpine.id] = [
     new Marker("31UO9", miscTypes.wallbuy, [317.30615777129947, 67.41337618919444], "Gallo"),
     new Marker("GpZS_", miscTypes.wallbuy, [139.88254903819504, 197.95937117870153], "AUG"),
     new Marker("K7ay6", miscTypes.wallbuy, [378.35148690180966, 214.6089341851221], "MP5"),
-    new Marker("rYPHj", miscTypes.projector, [0, 0]),
+    new Marker("rYPHj", miscTypes.projector, [199.38751401269195, 138.7419183294555]),
 ];
 miscPOI[mapDetails.golova.id] = [
     new Marker("_9qob", miscTypes.dementedEcho, [0, 0]),
@@ -489,7 +504,10 @@ miscPOI[mapDetails.sanatorium.id] = [
     new Marker("BDOca", miscTypes.monkey, [265.106262191878, 348], "Underneath the bridge, on a support pillar."),
     new Marker("bEmlA", miscTypes.monkey, [194.48468256783116, 67.75], "On the top shelf above the bed."),
     new Marker("ZO8MP", miscTypes.projector, [364.45335165809536, 179.5]),
-    new Marker("QN21y", worldEventTypes.orb, [393.4503192055329, 163.5]),
+    new Marker("SFmVd", outbreakEE2Steps.step2Helicopter, [178.2582145549112, 78.59647195866988]),
+    new Marker("g0Vbn", outbreakEE2Steps.step3Orb, [128.51585279728454, 269.42304126372875], "Can spawn in 1 of 3 locations, this one is located on the roof"),
+    new Marker("ecy3g", outbreakEE2Steps.step3Orb, [393.4503192055329, 163.5], "Can spawn in 1 of 3 locations, this one is located on the roof"),
+    new Marker("brKfY", outbreakEE2Steps.step3Orb, [264.5128764056229, 197.08519448344717], "Can spawn in 1 of 3 locations, this one is located in the middle of the pool"),
     //Don't really need this for now, not until we re-work easter eggs
     //new Marker(new Item("oEPK3", "Chopper Gunner", "Hold out until the wave is dead to continue with the Easter Egg"), [-170.51300319205535, 39.25])
 ];
@@ -497,10 +515,23 @@ miscPOI[mapDetails.collateral.id] = [
     new Marker("0FS1A", miscTypes.requiemRadio, [208.56446345433304, 185.99219645126215]),
     new Marker("W6wPV", miscTypes.omegaRadio, [205.64054514049639, 328.34673879951004]),
     new Marker("bUGza", miscTypes.maxisRadio, [296.69284893739234, 413.4940734223786]),
+    new Marker("T42U3", miscTypes.projector, [276.52649758435535, 255.64213181187142]),
+    new Marker("XLltd", miscTypes.redRift, [268.485236370739, 177.6590598896251]),
+    new Marker("aCqDF", miscTypes.mysteryBox, [278.56354383919887, 398.8710380995699]),
+    new Marker("lt6ZB", miscTypes.mysteryBox, [171.09686412283247, 178.85510249601353]),
+    new Marker("2cDDN", miscTypes.mysteryBox, [337.46799316757017, 172.47532688497765]),
+    new Marker("4n8Cs", miscTypes.jumpPad, [244.23800218110284, 72.15445857118556]),
+    new Marker("ZqhS_", miscTypes.jumpPad, [152.59236547842607, 341.9430405590901]),
+    new Marker("dnh9f", miscTypes.jumpPad, [363.3237348993215, 357.49649577033546]),
+    new Marker("XrSeO", miscTypes.arsenal, [316.7521870319834, 325.9648254914252]),
+    new Marker("Rh08g", miscTypes.craftingTable, [212.93462384001523, 326.75507384946224]),
+    new Marker("Udtir", miscTypes.trialComputer, [218.7558581608214, 303.77651731996417]),
+    new Marker("kJ7vR", miscTypes.papMachine, [217.97483629430047, 226.51124543935873]),
+    new Marker("BUlnd", miscTypes.wunderFizz, [239.15967566031475, 169.77687275024397]),
 ];
 miscPOI[mapDetails.armada.id] = [
-    new Marker("iC2vJ", miscTypes.requiemRadio, [209.4688119545682, 185.25]),
-    new Marker("S1EN7", miscTypes.omegaRadio, [205.7201321079839, 329.5]),
+    new Marker("iC2vJ", miscTypes.requiemRadio, [314.4681601026199, 347.8060741618561]),
+    new Marker("S1EN7", miscTypes.omegaRadio, [182.95659975912724, 183.2198466652555]),
     new Marker("G5tYA", miscTypes.maxisRadio, [251.6097221192863, 312.25]),
     new Marker("9ISs5", miscTypes.fishing, [274.48741453743673, 270.375], "Located at Launch Bay 3"),
     new Marker("DHE7r", miscTypes.fishing, [273.61241453743673, 229.75], "Located at Launch Bay 4"), 
