@@ -67,7 +67,7 @@ function AddMapMarkersFromCache(intelArr) {
         let currmap = miscPOI[maep];
         if (typeof (miscPOI[maep]) !== "undefined") {
             currmap.forEach(item => {
-                addMiscMarkerToMap(item.loc, item.icon, mapLayers[maep], item.id, item.title, item.desc)
+                addMiscMarkerToMap(item.loc, item.icon, mapLayers[maep], item.id, item.title, item.desc, item.layer)
             })
         }
     }
@@ -126,7 +126,7 @@ function expandImage(ele) {
     document.getElementById('lightbox').setAttribute('src', ele.getAttribute('src'))
 }
 
-function addMiscMarkerToMap(loc, icon, maep, id, name, desc = ``) {
+function addMiscMarkerToMap(loc, icon, maep, id, name, desc = ``, layer ) {
     if (loc != null && JSON.stringify([0, 0]) != JSON.stringify(loc)) { // don't add 0,0 markers to the map for cleanliness
         let bugBtn = genBugButton(id).outerHTML;
         let descriptionEle = desc ? `<p>${desc}</p>` : '';
@@ -139,8 +139,8 @@ function addMiscMarkerToMap(loc, icon, maep, id, name, desc = ``) {
                 ${bugBtn}
             </div>
         </div>`;
-        var marker = L.marker(loc, { icon: icon })
-            .addTo(maep.MiscMarkers)
+        L.marker(loc, { icon: icon })
+            .addTo(maep[layer])
             .bindPopup(snippet);
     }
 }

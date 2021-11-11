@@ -269,18 +269,18 @@ miscPOI[mapDetails.forsaken.id] = [
     new Marker("vuLXB", miscTypes.radio, [66.98666073602396, 129.125]),
 ];
 miscPOI[mapDetails.forsakenUnderground.id] = [
-    new Marker("9sxm7", miscTypes.ammoCrate, [284.6965446202828, 98.5]),
-    new Marker("BwlgF", miscTypes.teleporter, [296.91141492649126, 38], "To Tower"),
     new Marker("ndKPG", miscTypes.arsenal, [385.43844929300496, 142]),
-    new Marker("7BgHO", miscTypes.craftingTable, [274.9777694540687, 227.25]),
-    new Marker("jys26", miscTypes.mysteryBox, [297.9818124356213, 396.125]),
-    new Marker("EWbhd", miscTypes.wallbuy, [345.4748735836689, 228.375], "Krig"),
-    new Marker("CCURy", miscTypes.wunderFizz, [165.73875128757373, 263.625]),
-    new Marker("wTePJ", miscTypes.wallbuy, [222.46318007304055, 263.75], "M60"),
+    new Marker("9sxm7", miscTypes.ammoCrate, [284.6965446202828, 98.5]),
     new Marker("lotfM", miscTypes.ammoCrate, [194.4862604176421, 298.25]),
     new Marker("zC3eP", miscTypes.ammoCrate, [168.21140088023225, 424.5]),
-    new Marker("OFSTG", miscTypes.wallbuy, [150.21780597434218, 470.75], "AK-74u"),
+    new Marker("7BgHO", miscTypes.craftingTable, [274.9777694540687, 227.25]),
+    new Marker("BwlgF", miscTypes.teleporter, [296.91141492649126, 38], "To Tower"),
     new Marker("f7d0q", miscTypes.teleporter, [54.983195992134114, 448.5]),
+    new Marker("jys26", miscTypes.mysteryBox, [297.9818124356213, 396.125]),
+    new Marker("CCURy", miscTypes.wunderFizz, [165.73875128757373, 263.625]),
+    new Marker("EWbhd", miscTypes.wallbuy, [345.4748735836689, 228.375], "Krig"),
+    new Marker("wTePJ", miscTypes.wallbuy, [222.46318007304055, 263.75], "M60"),
+    new Marker("OFSTG", miscTypes.wallbuy, [150.21780597434218, 470.75], "AK-74u"),
 ];
 
 /////////////////////Outbreak Misc Items/////////////////////////
