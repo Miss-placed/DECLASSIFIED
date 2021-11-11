@@ -560,6 +560,8 @@ miscPOI[mapDetails.armada.id] = [
     new Marker("wpiVY", miscTypes.arsenal, [251.33845954308796, 290.5]),
     new Marker("Has1o", miscTypes.trialComputer, [336.469312223231, 276.125]),
     new Marker("CKs1g", miscTypes.mysteryBox, [327.47248059142873, 280.5]),
+    new Marker("NT2P2", miscTypes.mysteryBox, [244.86526700981926, 253.48678579054018]),
+    new Marker("6Z1kC", miscTypes.mysteryBox, [203.36468434062894, 265.02048106003724]),
     new Marker("eGoUP", miscTypes.wunderFizz, [347.8323266198514, 283.65625]),
     new Marker("V7fzw", miscTypes.craftingTable, [310.5950163050527, 192.125]),
     new Marker("RlHu9", miscTypes.papMachine, [190.3367491337941, 261.0625]),   
