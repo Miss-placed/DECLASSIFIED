@@ -1,37 +1,8 @@
-class Challenges {
-    static challengeStore = [
-        new Challenge(
-            1,
-            challengeTypes.zombies,
-            challengeSubCategories.seasonal.season1,
-            "Haymaker",
-            "Earn 10 Butcher medals (Killed 5 or more enemies rapidly with a Melee Weapon)."
-        ),
-        new Challenge(
-            2,
-            challengeTypes.zombies,
-            challengeSubCategories.seasonal.season1,
-            "Dead Air",
-            "Kill 30 enemies that are slowed by a Plaguehound's toxic gas."
-        ),
-        new Challenge(
-            3,
-            challengeTypes.zombies,
-            challengeSubCategories.seasonal.season1,
-            "The Other Side",
-            "Get 500 eliminations in the Dark Aether."
-        ),
-        //... other challenges etc 
-        new Challenge(
-            21,
-            challengeTypes.zombies,
-            challengeSubCategories.seasonal.season1,
-            "Season One Zombie Master",
-            "Complete all Season One Challenges.",
-            [1,2,3,4,5,6,7,8,9/*...rest of ids...*/]
-        ),
-    ];
-}
+// Used to generate IDs for all of the below misc markers:
+// https://nanoid.jormaechea.com.ar/?alphabet=0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz&length=5
+// Please use the existing settings included in the URL and check for duplicate ids when possible (it's very very unlikely but still possible).
+
+//https://callofduty.fandom.com/wiki/Challenges/Call_of_Duty:_Black_Ops_Cold_War
 
 class Challenge {
     /**
@@ -43,15 +14,59 @@ class Challenge {
      * challenges are directly related to a main category, other are all sub categories.
      * @param {string} name Main name/title of the challenge.
      * @param {string} desc Full description of the challenge, including completion criteria.
+     * @param {string} img Image url to be used for the calling card.
      * @param {array} requiredChallenges An array of any challenge ids that must be completed in order to complete this challenge. 
      * (This is mainly used for "Master" challenges where all challenges inside a sub category need to be completed)
      */
-    constructor(id, type, category, name, desc, requiredChallenges = null) {
+    constructor(id, type, category, name, desc, img, requiredChallenges = null) {
         this.id = id;
         this.type = type;
         this.category = category;
         this.name = name;
         this.desc = desc;
+        this.img = img ? `https://i.imgur.com/${img}.jpg` : `assets/img/cc/placeholder.jpg`;
         this.requiredChallenges = requiredChallenges;
     }
 }
+
+class Challenges {
+    static challengeStore = [
+        new Challenge(
+            "CERFv",
+            challengeTypes.zombies,
+            challengeSubCategories.seasonal.season1,
+            "Haymaker",
+            "Earn 10 Butcher medals (Killed 5 or more enemies rapidly with a Melee Weapon).",
+        ),
+        new Challenge(
+            "8zOLe",
+            challengeTypes.zombies,
+            challengeSubCategories.seasonal.season1,
+            "Dead Air",
+            "Kill 30 enemies that are slowed by a Plaguehound's toxic gas.",
+        ),
+        new Challenge(
+            "DOFwv",
+            challengeTypes.zombies,
+            challengeSubCategories.seasonal.season1,
+            "The Other Side",
+            "Get 500 eliminations in the Dark Aether.",
+        ),
+        //... other challenges etc 
+        
+    ];
+
+    static masterChallenges = [
+        new Challenge(
+            "cn3a5",
+            challengeTypes.zombies,
+            challengeSubCategories.seasonal.season1,
+            "Season One Zombie Master",
+            "Complete all Season One Challenges.",
+            null,
+            ["CERFv", "8zOLe", "DOFwv", "" /*...rest of ids...*/],
+        ),
+    ]
+}
+
+

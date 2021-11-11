@@ -1,24 +1,41 @@
-const gamemode = {
-    campaign: "Campaign",
-    multiplayer: "Muliplayer",
+/////////////////////Challenges/////////////////////////
+const challengeTypes = {
+    multiplayer: "Multiplayer",
     zombies: "Zombies",
+    campaign: "Campaign",
 }
-const challenges = [
-    {
-        id: "EghVb",
-        name: "Big Hearted",
-        desc: "rescue bla bla bla...",
-        img: "placeholder.jpg",
-        gamemode: gamemode.campaign
+
+const challengeCategories = {
+    seasonal: "Seasonal",
+    career: "Career",
+    battleHardened: "Battle Hardened",
+    requiemAdvancement: "Requiem Advancement",
+    darkOps: "Dark Ops",
+}
+
+const challengeSubCategories = {
+    career: {
+        dieMaschineReport: "",
+        bootCamp: "",
+        grizzledVeteran: "",
     },
-    {
-        id: "Y4yW3",
-        name: "Dilema Solved",
-        desc: "some other description...",
-        img: "placeholder.jpg",
-        gamemode: gamemode.campaign
+    battleHardened: {
+        zombieHunter: "",
+        elementalist: "",
+        tactician: "",
+        silverbackExpedition: "",
+        gorillaStalker: "",
     },
-]
+    requiemAdvancement: {
+        mauerDerTotenReport: "",
+        firebaseZReport: "",
+        fieldResearcher: "",
+        surveyor: "",
+        exterminator: "",
+    },
+    seasonal: seasons
+}
+
 
 function htmlToElements(html) {
     var template = document.createElement('template');
@@ -28,11 +45,11 @@ function htmlToElements(html) {
 
 
 function renderCards() {
-    challenges.forEach(card => {
+    Challenges.challengeStore.forEach(card => {
         let html=
-            `<card class="cc-card" id="${card.id}">
+        `<card class="cc-card" id="${card.id}">
             <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
-            <img class="cc-img" alt="Calling card" src="assets/img/cc/${card.img}">
+            <img class="cc-img" alt="Calling card" src="${card.img}">
             <h2 class="cc-title">${card.name}</h2>
             <p class="cc-desc">${card.desc}</p>
         </card>`

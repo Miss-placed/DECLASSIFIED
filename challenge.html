@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="assets/style/style2.css">
     <link rel="stylesheet" href="assets/style/challenge.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css">
-    <script src="assets/js/challenges.js"></script>
     <title>TITLE 'ERE ASSHAT</title>
 </head>
 
@@ -24,7 +23,7 @@
             <p class="cc-desc">cc desc</p>
             <div class="cc-progress"></div>
         </article>
-        <a href="#nav"class="cc-card -add">
+        <a href="#nav" class="cc-card -add">
             <button><i class="fas fa-plus"></i></button>
             <p>Add A Challenge.</p>
         </a>
@@ -46,7 +45,7 @@
         </nav>
 
         <div id="card-container" onload="renderCards()">
-        
+
         </div>
         <section id="mastery-progress">
             <div>
@@ -61,37 +60,44 @@
             </article>
         </section>
     </main>
+    <script>
+        const page = "challengeTracker";
+    </script>
+    <script src="assets/js/sharedModels.js"></script>
+    <script src="assets/js/challenges.js"></script>
+    <script src="challenges/challengeStore.js"></script>
+
+    <script src="assets/js/userPrefs.js"></script>
+    <script>
+        function pinCard(element) {
+
+            element.classList.toggle('rotate')
+        }
+
+        const firstOption = ["Campaign", "Multiplayer", "Zombies"];
+        const secondOptions = {
+            "Campaign": ["Story", "Dark Ops"],
+            "Multiplayer": ["Career", "Battle Hardened", "Dark Ops", "Seasonal"],
+            "Zombies": ["Career", "Battle Hardened", "Requiem Advancement", "Dark Ops", "Seasonal"]
+        }
+        const thirdOptions = {
+            "Campaign": {
+                "Story": ["Loyal Agent", "Bloodthirsty", "Explorer", "Clandestine", "Highly Proficient"],
+            },
+            "Multiplayer": {
+                "Career": ["Boot Camp", "Field Specialist", "Elite Operator", "Grizzled Veteran"],
+                "Battle Hardened": ["Killer", "Going Ham", "Humiliation", "Precision", "Return Fire"],
+                "Seasonal": ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6"],
+            },
+            "Zombies": {
+                "Career": ["Die Maschine Report", "Boot Camp", "Grizzled Veteran"],
+                "Battle Hardened": ["Zombie Hunter", "Elementalist", "Tactician", "Silverback Expedition", "Gorilla Stalker"],
+                "Requiem Advancement": ["Forsaken Report", "Mauer Der Toten Report", "Firebase Z Report", "Field Researcher", "Surveyor", "Exterminator"],
+                "Seasonal": ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6"],
+            },
+        }
+    </script>
 
 </body>
-<script>
-    function pinCard(element) {
-
-        element.classList.toggle('rotate')
-    }
-    
-    const firstOption = ["Campaign", "Multiplayer", "Zombies"];
-    const secondOptions = {
-        "Campaign": ["Story", "Dark Ops"],
-        "Multiplayer": ["Career", "Battle Hardened", "Dark Ops", "Seasonal"],
-        "Zombies": ["Career", "Battle Hardened", "Requiem Advancement", "Dark Ops", "Seasonal"]
-    }
-    const thirdOptions = {
-        "Campaign": {
-            "Story": ["Loyal Agent", "Bloodthirsty", "Explorer", "Clandestine", "Highly Proficient"],
-        },
-        "Multiplayer": {
-            "Career": ["Boot Camp", "Field Specialist", "Elite Operator", "Grizzled Veteran"],
-            "Battle Hardened": ["Killer", "Going Ham", "Humiliation", "Precision", "Return Fire"],
-            "Seasonal": ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6"],
-        },
-        "Zombies": {
-            "Career": ["Die Maschine Report", "Boot Camp", "Grizzled Veteran"],
-            "Battle Hardened": ["Zombie Hunter", "Elementalist", "Tactician", "Silverback Expedition", "Gorilla Stalker"],
-            "Requiem Advancement": ["Forsaken Report", "Mauer Der Toten Report", "Firebase Z Report", "Field Researcher", "Surveyor", "Exterminator"],
-            "Seasonal": ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6"],
-        },
-    }
-</script>
-
 
 </html>
