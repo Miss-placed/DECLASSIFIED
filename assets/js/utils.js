@@ -473,8 +473,16 @@ function htmlToElement(html) {
  */
 function htmlToElements(html) {
     var template = document.createElement('template');
-    template.innerHTML = html;
+    template.innerHTML = html.trim();
     return template.content.childNodes;
+}
+
+
+function appendToElement(html, navbar) {
+    let elementsToAdd = htmlToElements(html);
+    elementsToAdd.forEach(element => {
+        navbar.append(element);
+    });
 }
 
 /////////////////////Other Util Methods/////////////////////////

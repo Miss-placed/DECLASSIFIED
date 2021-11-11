@@ -34,21 +34,21 @@ class Challenges {
         new Challenge(
             "CERFv",
             challengeTypes.zombies,
-            challengeSubCategories.seasonal.season1,
+            allSubCategories.seasonal.season1,
             "Haymaker",
             "Earn 10 Butcher medals (Killed 5 or more enemies rapidly with a Melee Weapon).",
         ),
         new Challenge(
             "8zOLe",
             challengeTypes.zombies,
-            challengeSubCategories.seasonal.season1,
+            allSubCategories.seasonal.season1,
             "Dead Air",
             "Kill 30 enemies that are slowed by a Plaguehound's toxic gas.",
         ),
         new Challenge(
             "DOFwv",
             challengeTypes.zombies,
-            challengeSubCategories.seasonal.season1,
+            allSubCategories.seasonal.season1,
             "The Other Side",
             "Get 500 eliminations in the Dark Aether.",
         ),
@@ -64,7 +64,7 @@ class Challenges {
         new Challenge(
             "cn3a5",
             challengeTypes.zombies,
-            challengeSubCategories.seasonal.season1,
+            allSubCategories.seasonal.season1,
             "Season One Zombie Master",
             "Complete all Season One Challenges.",
             null,

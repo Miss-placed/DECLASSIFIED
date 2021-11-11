@@ -15,7 +15,7 @@ const allCategories = {
 };
 
 const allSubCategories = {
-    career: {
+    [allCategories.career]: {
         bootCamp: "Boot Camp",
         fieldSpecialist: "Field Specialist",
         eliteOperator: "Elite Operator",
@@ -23,7 +23,7 @@ const allSubCategories = {
         dieMaschineReport: "Die Maschine Report",
         grizzledVeteran: "Grizzled Veteran",
     },
-    battleHardened: {
+    [allCategories.battleHardened]: {
         killer: "Killer",
         goingHam: "Going Ham",
         humiliation: "Humiliation",
@@ -35,7 +35,7 @@ const allSubCategories = {
         silverbackExpedition: "Silverback Expedition",
         gorillaStalker: "Gorilla Stalker",
     },
-    requiemAdvancement: {
+    [allCategories.requiemAdvancement]: {
         forsakenReport: "Forsaken Report",
         mauerDerTotenReport: "Mauer der Toten Report",
         firebaseZReport: "Firebase Z Report",
@@ -43,7 +43,7 @@ const allSubCategories = {
         surveyor: "Surveyor",
         exterminator: "Exterminator",
     },
-    story: {
+    [allCategories.story]: {
         loyalAgent: "Loyal Agent",
         bloodthirsty: "Bloodthirsty",
         explorer: "Explorer",
@@ -54,62 +54,92 @@ const allSubCategories = {
 }
 
 let challengeCategories = {};
-challengeCategories[challengeTypes.multiplayer] = [allCategories.seasonal, allCategories.career, allCategories.battleHardened, allCategories.darkOps];
-challengeCategories[challengeTypes.zombies] = [allCategories.seasonal, allCategories.career, allCategories.battleHardened, allCategories.requiemAdvancement, allCategories.darkOps];
-challengeCategories[challengeTypes.campaign] = [allCategories.story, allCategories.darkOps];
-
 let challengeSubCategories = {};
-challengeSubCategories[challengeTypes.multiplayer][allCategories.career] = [allSubCategories.bootCamp, allSubCategories.fieldSpecialist, allSubCategories.eliteOperator, allSubCategories.counterMeasures, allSubCategories.grizzledVeteran];
-challengeSubCategories[challengeTypes.multiplayer][allCategories.battleHardened] = [allSubCategories.killer, allSubCategories.goingHam, allSubCategories.humiliation, allSubCategories.precision, allSubCategories.returnFire];
+function initCategories() {
+    challengeCategories[challengeTypes.multiplayer] = [allCategories.seasonal, allCategories.career, allCategories.battleHardened, allCategories.darkOps];
+    challengeCategories[challengeTypes.zombies] = [allCategories.seasonal, allCategories.career, allCategories.battleHardened, allCategories.requiemAdvancement, allCategories.darkOps];
+    challengeCategories[challengeTypes.campaign] = [allCategories.story, allCategories.darkOps];
 
-challengeSubCategories[challengeTypes.zombies][allCategories.career] = [allSubCategories.dieMaschineReport, allSubCategories.bootCamp, allSubCategories.grizzledVeteran];
-challengeSubCategories[challengeTypes.zombies][allCategories.battleHardened] = [allSubCategories.zombieHunter, allSubCategories.elementalist, allSubCategories.tactician, allSubCategories.silverbackExpedition, allSubCategories.gorillaStalker];
-challengeSubCategories[challengeTypes.zombies][allCategories.requiemAdvancement] = [allSubCategories.forsakenReport, allSubCategories.mauerDerTotenReport, allSubCategories.firebaseZReport, allSubCategories.fieldResearcher, allSubCategories.surveyor, allSubCategories.exterminator];
+    challengeSubCategories[challengeTypes.multiplayer] = {};
+    challengeSubCategories[challengeTypes.zombies] = {};
+    challengeSubCategories[challengeTypes.campaign] = {};
 
-challengeSubCategories[challengeTypes.campaign][allCategories.story] = [allSubCategories.loyalAgent, allSubCategories.bloodthirsty, allSubCategories.explorer, allSubCategories.clandestine, allSubCategories.highlyProficient];
+    const career = allSubCategories[allCategories.career];
+    const batHard = allSubCategories[allCategories.battleHardened];
+    const reqAd = allSubCategories[allCategories.requiemAdvancement];
+    const story = allSubCategories[allCategories.story];
+    challengeSubCategories[challengeTypes.multiplayer][allCategories.career] = [career.bootCamp, career.fieldSpecialist, career.eliteOperator, career.counterMeasures, career.grizzledVeteran];
+    challengeSubCategories[challengeTypes.multiplayer][allCategories.battleHardened] = [batHard.killer, batHard.goingHam, batHard.humiliation, batHard.precision, batHard.returnFire];
 
-function renderNav(params) {
+    challengeSubCategories[challengeTypes.zombies][allCategories.career] = [career.dieMaschineReport, career.bootCamp, career.grizzledVeteran];
+    challengeSubCategories[challengeTypes.zombies][allCategories.battleHardened] = [batHard.zombieHunter, batHard.elementalist, batHard.tactician, batHard.silverbackExpedition, batHard.gorillaStalker];
+    challengeSubCategories[challengeTypes.zombies][allCategories.requiemAdvancement] = [reqAd.forsakenReport, reqAd.mauerDerTotenReport, reqAd.firebaseZReport, reqAd.fieldResearcher, reqAd.surveyor, reqAd.exterminator];
+
+    challengeSubCategories[challengeTypes.campaign][allCategories.story] = [story.loyalAgent, story.bloodthirsty, story.explorer, story.clandestine, story.highlyProficient];
 
 }
 
-function renderTypes() {
-    let html = `
-    <select name="type">
+initCategories();
+
+function renderNav() {
+    const navbar = document.querySelector('#nav');
+    navbar.replaceChildren();
+    renderTypes(navbar);
+    renderCategories(navbar);
+    renderSubCategories(navbar);
+}
+
+function renderTypes(navbar) {
+    let html = 
+    `<select name="type" id="type">
         <option>${challengeTypes.multiplayer}</option>
-        <option>${challengeTypes.zombies}</option>
+        <option selected>${challengeTypes.zombies}</option>
         <option>${challengeTypes.campaign}</option>
     </select>`
-
     
+    appendToElement(html, navbar);
+
+    $("#type").change(function (e) {
+        //trigger challenge filter
+    });
 }
 
-function renderCategories(selectedType) {
+function renderCategories(navbar, selectedType = challengeTypes.zombies) {
+    const optionArr = challengeCategories[selectedType] ?? [];
     let options;
-    switch (challengeTypes) {
-        case challengeTypes.multiplayer:
-            array.forEach(element => {
-                
-            });
-        options += `<option>${challengeTypes.multiplayer}</option>`;
-            break;
-        case challengeTypes.campaign:
+    optionArr.forEach(option => {
+        options += `<option>${option}</option>`;
+    });
 
-            break;
-        case challengeTypes.zombies:
-        default:
-            break;
-    }
-    let html = `
-    <select name="category" id="">
-        
+    let html = 
+    `<select name="category" id="category">
+        ${options}
     </select>`
+
+    appendToElement(html, navbar);
+
+    $("#category").change(function (e) {
+        //trigger challenge filter
+    });
 }
 
-function renderSubCategories(selectedType, selectedCategory) {
+function renderSubCategories(navbar, selectedType = challengeTypes.zombies, selectedCategory = "") {
+    const optionArr = challengeSubCategories[selectedType][selectedCategory] ?? [];
+    let options;
+    optionArr.forEach(option => {
+        options += `<option>${option}</option>`;
+    });
+
     let html = `
-    <select name="sub-category" id="">
-        
+    <select name="sub-category" id="sub-category">
+        ${options}
     </select>`
+
+    appendToElement(html, navbar);
+
+    $("#sub-category").change(function (e) {
+        //trigger challenge filter
+    });
 }
 
 function renderCards() {
@@ -129,5 +159,6 @@ function renderCards() {
 
 }
 function onLoad() {
-    renderCards()
+    renderNav();
+    renderCards();
 }
