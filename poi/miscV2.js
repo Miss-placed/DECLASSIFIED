@@ -538,6 +538,10 @@ miscPOI[mapDetails.collateral.id] = [
     new Marker("Udtir", miscTypes.trialComputer, [218.7558581608214, 303.77651731996417]),
     new Marker("kJ7vR", miscTypes.papMachine, [217.97483629430047, 226.51124543935873]),
     new Marker("BUlnd", miscTypes.wunderFizz, [239.15967566031475, 169.77687275024397]),
+    new Marker("4cJw9", miscTypes.monkey, [290.36975952797167, 165.5066575212959]),
+    new Marker("99HyM", miscTypes.monkey, [326.52019217560076, 465.05084874379037]),
+    new Marker("IKIOg", miscTypes.monkey, [146.360972989662, 331.4246156410233]),
+    new Marker("DCRf7", miscTypes.monkey, [140.7837614596323, 194.97837875089454]),
 ];
 miscPOI[mapDetails.armada.id] = [
     new Marker("iC2vJ", miscTypes.requiemRadio, [314.4681601026199, 347.8060741618561]),
