@@ -376,7 +376,17 @@ miscPOI[mapDetails.ruka.id] = [
     new Marker("NXZCq", miscTypes.monkey, [312.61036148443907, 345], "Behind some pallets next to the train platform."),
     new Marker("FqjzW", miscTypes.monkey, [366.728066736379, 131], "Leaning against the broken down car."),
     new Marker("SGa0I", miscTypes.monkey, [238.30978121120768, 448.3125], "At the end of the railroad, under rafters."),
-    new Marker("fDb0E", miscTypes.projector, [0, 0]),
+    new Marker("pJjdo", miscTypes.mysteryBox, [235.4553675253349, 249.47430038351064]),
+    new Marker("kOXDv", miscTypes.mysteryBox, [207.93825237571295, 94.9904070205805]),
+    new Marker("lOJAe", miscTypes.mysteryBox, [355.2101735577195, 227.85936691186168]),
+    new Marker("53GwI", miscTypes.arsenal, [347.15083903672115, 234.58658002443053]),
+    new Marker("a02So", miscTypes.jumpPad, [392.29946958579256, 336.5463149934965]),
+    new Marker("Wsn9f", miscTypes.jumpPad, [95.04671795003881, 281.07608728949407]),
+    new Marker("aGIv2", miscTypes.jumpPad, [225.09835126041426, 382.40520100156704]),
+    new Marker("F0zOE", miscTypes.craftingTable, [325.56003778629366, 355.70206934085627]),
+    new Marker("RrsqI", miscTypes.trialComputer, [211.04576192475383, 282.0806769140612]),
+    new Marker("r0FZU", miscTypes.papMachine, [212.21101079768593, 112.00474522680605]),
+    new Marker("Y5RJV", miscTypes.wunderFizz, [294.15625, 257.75]),
 ];
 miscPOI[mapDetails.alpine.id] = [
     new Marker("yfDA4", miscTypes.dementedEcho, [0, 0]),
