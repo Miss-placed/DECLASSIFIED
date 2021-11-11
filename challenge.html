@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/style/style2.css">
     <link rel="stylesheet" href="assets/style/challenge.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css">
-
+    <script src="assets/js/challenges.js"></script>
     <title>TITLE 'ERE ASSHAT</title>
 </head>
 
@@ -24,74 +24,29 @@
             <p class="cc-desc">cc desc</p>
             <div class="cc-progress"></div>
         </article>
+        <a href="#nav"class="cc-card -add">
+            <button><i class="fas fa-plus"></i></button>
+            <p>Add A Challenge.</p>
+        </a>
     </aside>
     <main>
-        <nav></nav>
+        <nav id="nav">
+            <ul>
+                <h2>Campaign</h2>
+                <li></li>
+            </ul>
+            <ul>
+                <h2>Story</h2>
+                <li></li>
+            </ul>
+            <ul>
+                <h2>Battle Hardened</h2>
+                <li></li>
+            </ul>
+        </nav>
 
-        <div id="card-container">
-            <article class="cc-card">
-                <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
-                <img class="cc-img" alt="Calling card" src="assets\img\cc\placeholder.jpg">
-                <h2 class="cc-title">cc title</h2>
-                <p class="cc-desc">cc desc</p>
-                <!--                 <div class="cc-progress"></div>-->
-            </article>
-            <article class="cc-card">
-                <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
-                <img class="cc-img" alt="Calling card" src="assets\img\cc\placeholder.jpg">
-                <h2 class="cc-title">cc title</h2>
-                <p class="cc-desc">cc desc</p>
-                <!--                 <div class="cc-progress"></div>-->
-            </article>
-            <article class="cc-card" id="cc-id">
-                <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
-                <img class="cc-img" alt="Calling card" src="assets\img\cc\placeholder.jpg">
-                <h2 class="cc-title">cc title</h2>
-                <p class="cc-desc">cc desc</p>
-                <!--                 <div class="cc-progress"></div>-->
-            </article>
-            <article class="cc-card">
-                <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
-                <img class="cc-img" alt="Calling card" src="assets\img\cc\placeholder.jpg">
-                <h2 class="cc-title">cc title</h2>
-                <p class="cc-desc">cc desc</p>
-                <!--                 <div class="cc-progress"></div>-->
-            </article>
-            <article class="cc-card">
-                <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
-                <img class="cc-img" alt="Calling card" src="assets\img\cc\placeholder.jpg">
-                <h2 class="cc-title">cc title</h2>
-                <p class="cc-desc">cc desc</p>
-                <!--                 <div class="cc-progress"></div>-->
-            </article>
-            <article class="cc-card" id="cc-id">
-                <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
-                <img class="cc-img" alt="Calling card" src="assets\img\cc\placeholder.jpg">
-                <h2 class="cc-title">cc title</h2>
-                <p class="cc-desc">cc desc</p>
-                <!--                 <div class="cc-progress"></div>-->
-            </article>
-            <article class="cc-card">
-                <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
-                <img class="cc-img" alt="Calling card" src="assets\img\cc\placeholder.jpg">
-                <h2 class="cc-title">cc title</h2>
-                <p class="cc-desc">cc desc</p>
-                <!--                 <div class="cc-progress"></div>-->
-            </article>
-            <article class="cc-card" complete>
-                <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
-                <img class="cc-img" alt="Calling card" src="assets\img\cc\placeholder.jpg">
-                <h2 class="cc-title">cc title</h2>
-                <p class="cc-desc">cc desc</p>
-                <!--                 <div class="cc-progress"></div>-->
-            </article>
-            <article class="cc-card" id="cc-id">
-                <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
-                <img class="cc-img" alt="Calling card" src="assets\img\cc\placeholder.jpg">
-                <h2 class="cc-title">cc title</h2>
-                <p class="cc-desc">cc desc</p>
-                <!--                 <div class="cc-progress"></div>-->
-            </article>
+        <div id="card-container" onload="renderCards()">
+        
         </div>
         <section id="mastery-progress">
             <div>
@@ -110,9 +65,7 @@
 </body>
 <script>
     function pinCard(element) {
-        console.log(element.parentNode.getAttribute('id'))
-        //do whatever needs to be done to the cards
-        console.log(element)
+
         element.classList.toggle('rotate')
     }
     
