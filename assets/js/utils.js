@@ -40,7 +40,7 @@ function GenerateDetailModal(intel) {
     }
 
     const imgEle = intel.img ? `<img src="https://i.imgur.com/${intel.img}.jpg" onclick="expandImage(this)"></img>` : '';
-    
+
     var elementsToAdd = htmlToElements(
         `<button class="close-submodal btn inverted" onclick="openModal(modalSet.intelOverview)"><i class="fas fa-x"></i></button>
     
@@ -152,7 +152,7 @@ function debugModal() {
     elementsToAdd.forEach(element => {
         settingsDetailModal.append(element);
     });
-    
+
     if (settingsDetailModal.classList.contains("-hidden")) {
         openModal(modalSet.settingsDetail);
     } /* else {
@@ -165,7 +165,7 @@ function importExportModal() {
     settingsDetailModal.replaceChildren();
     settingsDetailModal.append(htmlToElement(`<div class="sub-modal" id="settings-desc"></div>`));
     const detailSubModal = document.querySelector("#settings-desc");
-    
+
     var elementsToAdd = htmlToElements(
         `<textarea id="import-export"></textarea>
         <p>Copy the contents of the textbox and save somewhere. Import again any time by copying it back in and pressing import.</p>
@@ -177,7 +177,7 @@ function importExportModal() {
     elementsToAdd.forEach(element => {
         detailSubModal.append(element);
     });
-    
+
     if (settingsDetailModal.classList.contains("-hidden")) {
         openModal(modalSet.settingsDetail);
     } /* else {
@@ -272,36 +272,54 @@ function toggleAside(changePrefs = true) {
 }
 
 /////////////////////Intel Collected/////////////////////////
-function markIntelCollected(intelId) {
+function getIntelSelectors(intelId) {
     const collectButtonSelector = `#${intelId}-collect-btn`;
     const popupCollectButtonSelector = `#${intelId}-popup-collect-btn`;
     const buttonSelector = `#${intelId}.to-intel`;
-    const intelHasMarker = doesIntelHaveMarker(intelId);
-    if (hasUserCollected(intelId)) {
-        // "Un"Collect?
-        $(buttonSelector).removeAttr("collected")
-        markButtonAsUnCollected(collectButtonSelector);
-        markButtonAsUnCollected(popupCollectButtonSelector);
-        if (intelHasMarker) {
-            app.disableMarkers = $.grep(app.disableMarkers, function (value) {
-                return value != intelId.toString();
-            });
-            app.visibleMarkers[intelId].setOpacity(1);
-        }
-        removeCollectedIntel(intelId);
-    } else {
-        // Collect
-        $(buttonSelector).attr("collected", "")
-        markButtonAsCollected(collectButtonSelector);
-        markButtonAsCollected(popupCollectButtonSelector);
-        if (intelHasMarker) {
-            app.disableMarkers.push(intelId.toString());
-            app.visibleMarkers[intelId].setOpacity(0.35);
-        }
-        addCollectedIntel(intelId);
+    return { collectButtonSelector, popupCollectButtonSelector, buttonSelector }
+}
+
+
+function toggleIntelCollected(intelId, options) {
+    const { ignoreCollect = false, ignoreUnmark = false, refresh = true } = options ?? {};
+    const isCollected = hasUserCollected(intelId);
+    if (isCollected && !ignoreUnmark) {
+        unMarkCollectedIntel(intelId);
+    } else if (!isCollected && !ignoreCollect) {
+        markCollectedIntel(intelId);
     }
-    CalcStats();
-    TriggerSearch();
+    if (refresh) {
+        CalcStats();
+        TriggerSearch();
+    }
+}
+
+function markCollectedIntel(intelId) {
+    const { collectButtonSelector, popupCollectButtonSelector, buttonSelector } = getIntelSelectors(intelId);
+    const intelHasMarker = doesIntelHaveMarker(intelId);
+    $(buttonSelector).attr("collected", "");
+    markButtonAsCollected(collectButtonSelector);
+    markButtonAsCollected(popupCollectButtonSelector);
+    if (intelHasMarker) {
+        app.disableMarkers.push(intelId.toString());
+        app.visibleMarkers[intelId].setOpacity(0.35);
+    }
+    addCollectedIntel(intelId);
+}
+
+function unMarkCollectedIntel(intelId) {
+    const { collectButtonSelector, popupCollectButtonSelector, buttonSelector } = getIntelSelectors(intelId);
+    const intelHasMarker = doesIntelHaveMarker(intelId);
+    $(buttonSelector).removeAttr("collected");
+    markButtonAsUnCollected(collectButtonSelector);
+    markButtonAsUnCollected(popupCollectButtonSelector);
+    if (intelHasMarker) {
+        app.disableMarkers = $.grep(app.disableMarkers, function (value) {
+            return value != intelId.toString();
+        });
+        app.visibleMarkers[intelId].setOpacity(1);
+    }
+    removeCollectedIntel(intelId);
 }
 
 function markButtonAsCollected(btnSelector) {
@@ -314,6 +332,32 @@ function markButtonAsUnCollected(btnSelector) {
     $(btnSelector).removeAttr("collected");
     $(btnSelector + " i").removeClass("fa-check-square");
     $(btnSelector + " i").addClass("fa-square");
+}
+
+function markSelected() {
+    let selected = []
+    document.querySelectorAll('[selected]').forEach(element => {
+        const intelId = element.getAttribute('id')
+        selected.push(intelId)
+        toggleIntelCollected(intelId, { ignoreUnmark: true, refresh: false })
+    })
+    fullDynamicRefresh();
+    selected.forEach(id => {
+        document.getElementById(id).toggleAttribute('selected')
+    })
+}
+
+function unmarkSelected() {
+    let selected = []
+    document.querySelectorAll('[selected]').forEach(element => {
+        const intelId = element.getAttribute('id')
+        selected.push(intelId)
+        toggleIntelCollected(intelId, { ignoreCollect: true, refresh: false })
+    })
+    fullDynamicRefresh();
+    selected.forEach(id => {
+        document.getElementById(id).toggleAttribute('selected')
+    })
 }
 
 function hasUserCollected(intelId, getIndex = false) {

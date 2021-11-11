@@ -304,3 +304,9 @@ const easterEggTypes = {
 
     music: "Cassette Tapes",
 }
+
+// Gonna have to add a way to bring through the full description along with the unique description from the misc markers
+const outbreakEE2Steps = {
+    step2Helicopter: new Item({ title: "Crashed Helicopter", desc: `The transport chopper that the Omega Eight were using is located in the "Carved Hills", located south of the lone shack, having crashed by unknown means. Nearing it will spawn a horde needs to be eliminated, as one of the corpses is holding a message from Hugo Jager about where the surviving members of the crash went.`}),
+    step3Orb: new Item({ title: "Red Aetherial Orb", desc: "The Aetherium Orb can spawn within three places and is visually distinct, having a darker hue of red and will not produce Essence upon being damaged. When damaged, it will flee like the standard variant for a total of three times before it will flee to hover over the Recon Rover to where it will stay above, unwilling to enter it."}),
+}
