@@ -7,16 +7,19 @@ body {
   background: var(--clr-black);
 }
 aside {
-  padding: 10px;
-  width:33%;
-  background-color: var(--clr-grey-d);
   position: sticky;
-  top:0;
-  bottom:0;
-  z-index:50;
+  flex: 0 0 33%;
+  padding: 10px;
+  width: 33%;
+  background-color: var(--clr-grey-d);
+  top: 0;
+  bottom: 0;
+  z-index: 50;
 }
 main {
-  width: 67%;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 67%;
 }
 
 #card-container {
@@ -25,7 +28,8 @@ main {
   flex-direction: row;
   padding: 5px;
 }
-nav  h2,
+nav h2,
+aside h1,
 #mastery-progress > div > h2 {
   margin: 5px 10px;
   font-size: 1.5em;
@@ -35,7 +39,7 @@ nav  h2,
   padding: 5px 15px;
 }
 .cc-card {
-  aspect-ratio: 76/7;
+  aspect-ratio: 900 / 300;
   flex: 0 0 calc(50% - 10px);
   position: relative;
   padding: 10px 15px;
@@ -44,9 +48,12 @@ nav  h2,
   border-style: solid;
   border-width: 3px;
   border-color: var(--clr-grey-l);
+  user-select: none;
+  font-size: calc(47px + (60 - 42) * (20% - 768px) / (1440 - 768));
+  text-decoration: none;
 }
-.cc-card:hover{
-    border-color:var(--clr-white-d);
+.cc-card:hover {
+  border-color: var(--clr-white-d);
 }
 .cc-card[complete] {
   border-color: var(--clr-green);
@@ -63,11 +70,12 @@ nav  h2,
   background-color: var(--clr-white);
   position: absolute;
   left: 15px;
-  top: 55%;
+  top: 1rem;
   margin: 0;
   font-family: sans-serif;
   display: inline;
   padding: 0 7px;
+  font-size: 1.8rem;
 }
 
 .cc-card > p {
@@ -80,6 +88,31 @@ nav  h2,
   width: 100%;
   height: 10px;
   background-color: var(--clr-grey-l);
+}
+.cc-card.-add {
+  aspect-ratio: 900 / 240;
+  border-style: dashed;
+  border-spacing: 20px;
+  color: var(--clr-grey-l);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.cc-card.-add:hover {
+  color: var(--clr-white-d);
+}
+.cc-card.-add > p {
+  display: block;
+  color: inherit;
+}
+.cc-card.-add > button {
+  background-color: unset;
+  border: unset;
+  display: block;
+  text-align: center;
+  margin: auto;
+  color: inherit;
 }
 .pin {
   background: unset;
@@ -105,32 +138,50 @@ nav  h2,
   flex-direction: row;
   justify-content: space-between;
   color: var(--clr-white-d);
+  margin-top: auto;
+  background-color: var(--clr-black);
+  position: sticky;
+  bottom: 0;
+  box-shadow: 0px 0px 28px 0px var(--clr-black);
+  margin-top: auto;
 }
 
 main nav {
   position: sticky;
   top: 0;
   z-index: 50;
+  background-color: var(--clr-black);
 }
-nav > ul{
-    display:inline;
+nav > ul {
+  display: inline;
 }
 nav > ul > li {
-    display:none;
+  display: none;
 }
 
-#mastery-progress {
-  background-color: var(--clr-black);
-  position: sticky;
-  bottom: 0;
-  box-shadow: 0px 0px 28px 0px var(--clr-black);
-}
-@media (max-width: 900px) {
+@media (max-width: 950px) {
   #card-container .cc-card {
     flex: 0 0 calc(100% - 10px);
   }
   main,
   aside {
+    flex: 0 0 50%;
+  }
+}
+@media (max-width: 800px) {
+  .-add {
+    display: flex !important;
+  }
+  main,
+  aside {
     width: 100%;
+    flex: 0 0 100%;
+  }
+  aside {
+    position: initial;
+    height: 100vh;
+  }
+  body {
+    flex-direction: column;
   }
 }
