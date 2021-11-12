@@ -42,14 +42,12 @@ aside h1,
   aspect-ratio: 900 / 300;
   flex: 0 0 calc(50% - 10px);
   position: relative;
-  padding: 10px 15px;
   margin: 5px;
   background-color: var(--clr-grey-d);
   border-style: solid;
   border-width: 3px;
   border-color: var(--clr-grey-l);
   user-select: none;
-  font-size: calc(47px + (60 - 42) * (20% - 768px) / (1440 - 768));
   text-decoration: none;
 }
 .cc-card:hover {
@@ -60,28 +58,30 @@ aside h1,
 }
 
 .cc-card > img {
-  width: calc(100% + 30px);
-  margin-inline: -15px;
-  margin-block-start: -10px;
-  margin-bottom: 15px;
+  width:calc(100%);
+  z-index: 1;
 }
 
 .cc-card > h2 {
-  background-color: var(--clr-white);
-  position: absolute;
-  left: 15px;
-  top: 1rem;
-  margin: 0;
+  background-color: var(--clr-black);
+  color:var(--clr-white);
   font-family: sans-serif;
-  display: inline;
-  padding: 0 7px;
-  font-size: 1.8rem;
+  display: block;
+  width:fit-content;
+  padding: 3px 10px;
+  font-size: 1.5rem;
+  z-index:2;
+  font-weight: normal;
+  word-wrap: break-word;
+  text-transform: uppercase;
 }
 
 .cc-card > p {
-  display: inline;
-  color: var(--clr-grey-l);
-  padding-bottom: 5px;
+  font-size: 1rem;
+  color: var(--clr-white);
+  padding-inline: 15px;
+  padding-block: 10px;
+  font-weight: 100;
 }
 
 .cc-card > .cc-progress {
