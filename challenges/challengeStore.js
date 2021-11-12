@@ -18,7 +18,7 @@ class Challenge {
      * @param {array} requiredChallenges An array of any challenge ids that must be completed in order to complete this challenge. 
      * (This is mainly used for "Master" challenges where all challenges inside a sub category need to be completed)
      */
-    constructor(id, type, category, name, desc, img, requiredChallenges = null) {
+    constructor(id, type, category, name, desc, img, requiredChallenges = null, minimumRequired = null) {
         this.id = id;
         this.type = type;
         this.category = category;
@@ -26,6 +26,7 @@ class Challenge {
         this.desc = desc;
         this.img = img ? `https://i.imgur.com/${img}.jpg` : `assets/img/cc/placeholder.jpg`;
         this.requiredChallenges = requiredChallenges;
+        this.minimumRequired = minimumRequired
     }
 }
 
@@ -33,7 +34,7 @@ class Challenges {
     static challengeStore = [
 
         // Zombies ==> Career ==> Die Maschine Report
-        // a/c8gnBVn
+        // https://imgur.com/a/c8gnBVn
         new Challenge(
             "EQolZ",
             challengeTypes.zombies,
@@ -85,7 +86,7 @@ class Challenges {
         // end Zombies ==> Career ==> Die Maschine Report
 
         // Zombies ==> Career ==> Boot Camp
-        // a/d4aWZ8y
+        // https://imgur.com/a/d4aWZ8y
         new Challenge(
             "t70li",
             challengeTypes.zombies,
@@ -137,7 +138,7 @@ class Challenges {
         // end Zombies ==> Career ==> Boot Camp
 
         // Zombies ==> Career ==> Grizzled Veteran
-        // a/YKktetL
+        // https://imgur.com/a/YKktetL
         new Challenge(
             "3bAdC",
             challengeTypes.zombies,
@@ -189,7 +190,7 @@ class Challenges {
         // end Zombies ==> Career ==> Grizzled Veteran
 
         // Zombies ==> Bttle Hardened ==> Zombie Hunter
-        // a/y7We9yI
+        // https://imgur.com/a/y7We9yI
         new Challenge(
             "uH9ef",
             challengeTypes.zombies,
@@ -241,7 +242,7 @@ class Challenges {
         // end Zombies ==> Bttle Hardened ==> Zombie Hunter
 
         // Zombies ==> Bttle Hardened ==> Elementalist
-        // a/xOX9ILz
+        // https://imgur.com/a/xOX9ILz
         new Challenge(
             "ZwMyC",
             challengeTypes.zombies,
@@ -294,7 +295,7 @@ class Challenges {
 
 
         // Zombies ==> Bttle Hardened ==> Tactician
-        // a/D5hEJ99
+        // https://imgur.com/a/D5hEJ99
         new Challenge(
             "zCEQG",
             challengeTypes.zombies,
@@ -347,7 +348,7 @@ class Challenges {
 
 
         // Zombies ==> Bttle Hardened ==> Silverback Expedition
-        // a/6jtGS9f
+        // https://imgur.com/a/6jtGS9f
         new Challenge(
             "ZwMyC",
             challengeTypes.zombies,
@@ -400,7 +401,7 @@ class Challenges {
 
 
         // Zombies ==> Bttle Hardened ==> Gorilla Stalker
-        // a/6jtGS9f
+        // https://imgur.com/a/6jtGS9f
         new Challenge(
             "YNhXq",
             challengeTypes.zombies,
@@ -452,7 +453,7 @@ class Challenges {
         // end Zombies ==> Bttle Hardened ==> Gorilla Stalker
 
         // Zombies ==> Requiem Advancement ==> Forsaken Report
-        // a/OpbBU7l
+        // https://imgur.com/a/OpbBU7l
         new Challenge(
             "GSiVF",
             challengeTypes.zombies,
@@ -504,7 +505,7 @@ class Challenges {
         // end Zombies ==> Requiem Advancement ==> Forsaken Report
 
         // Zombies ==> Requiem Advancement ==> Mauer Der Toten Report
-        // a/W9yOEcw
+        // https://imgur.com/a/W9yOEcw
         new Challenge(
             "Juc14",
             challengeTypes.zombies,
@@ -556,7 +557,7 @@ class Challenges {
         // end Zombies ==> Requiem Advancement ==> Mauer Der Toten Report
 
         // Zombies ==> Requiem Advancement ==> Firebase Z Report
-        // a/H9v37aa
+        // https://imgur.com/a/H9v37aa
         new Challenge(
             "5qkjP",
             challengeTypes.zombies,
@@ -608,7 +609,7 @@ class Challenges {
         // end Zombies ==> Requiem Advancement ==> Firebase Z Report
 
         // Zombies ==> Requiem Advancement ==> Field Researcher
-        // a/H9v37aa
+        // https://imgur.com/a/H9v37aa
         new Challenge(
             "wJ8vM",
             challengeTypes.zombies,
@@ -660,7 +661,7 @@ class Challenges {
         // end Zombies ==> Requiem Advancement ==> Field Researcher
 
         // Zombies ==> Requiem Advancement ==> Surveyor
-        // a/ZVHzvo4
+        // https://imgur.com/a/ZVHzvo4
         new Challenge(
             "SGR6v",
             challengeTypes.zombies,
@@ -712,7 +713,7 @@ class Challenges {
         // end Zombies ==> Requiem Advancement ==> Surveyor
 
         // Zombies ==> Requiem Advancement ==> Exterminator
-        // a/RJn69aU
+        // https://imgur.com/a/RJn69aU
         new Challenge(
             "1wHi9",
             challengeTypes.zombies,
@@ -929,7 +930,7 @@ class Challenges {
             "Die Maschine Report Master",
             "Complete all Die Maschine Report Challenges.",
             "c0kH0zg",
-            ["EQolZ", "i6b8t", "d3nJe", "3CvGf", "GJGwe", "e4V27",],
+            ["EQolZ", "i6b8t", "d3nJe", "3CvGf", "GJGwe", "e4V27"],
         ),
         //Zombies ==> Career ==> Boot Camp
         new Challenge(
@@ -939,7 +940,7 @@ class Challenges {
             "Boot Camp Master",
             "Complete all Boot Camp Challenges.",
             "VxUnfTY",
-            ["t70li", "MTOD3", "1hen9", "wvKRb", "d5rDf", "hbUea",],
+            ["t70li", "MTOD3", "1hen9", "wvKRb", "d5rDf", "hbUea"],
         ),
         //Zombies ==> Career ==> Grizzled Veteran
         new Challenge(
@@ -949,7 +950,7 @@ class Challenges {
             "Grizzled Veteran Master",
             "Complete all Grizzled Veteran Challenges.",
             "ynzLyfT",
-            ["3bAdC", "MlSB7", "9Yr1I", "Y0OuH", "TFC49", "IDhln",],
+            ["3bAdC", "MlSB7", "9Yr1I", "Y0OuH", "TFC49", "IDhln"],
         ),
         // Zombies ==> Bttle Hardened ==> Zombie Hunter
         new Challenge(
@@ -959,7 +960,7 @@ class Challenges {
             "Zombie Hunter Master",
             "Complete all Hunter Challenges.",
             "g5LCmtD",
-            ["uH9ef", "ZmWQa", "5liyT", "Zuvf3", "37z6n", "4QaHw",],
+            ["uH9ef", "ZmWQa", "5liyT", "Zuvf3", "37z6n", "4QaHw"],
         ),
         // Zombies ==> Bttle Hardened ==> Elementalist
         new Challenge(
@@ -969,7 +970,7 @@ class Challenges {
             "Elementalist Master",
             "Complete all Elementalist Challenges.",
             "xGlPjDy",
-            ["ZwMyC", "5M1p9", "Ioxly", "CPC1w", "UBlDr", "WKUZE",],
+            ["ZwMyC", "5M1p9", "Ioxly", "CPC1w", "UBlDr", "WKUZE"],
         ),
         // Zombies ==> Bttle Hardened ==> Tactician
         new Challenge(
@@ -979,7 +980,7 @@ class Challenges {
             "Tactician Master",
             "Complete all Tactician Challenges.",
             "C8rB9vM",
-            ["zCEQG", "CkgJr", "_hAxI", "IhvRL", "SpZB1", "4eDxD",],
+            ["zCEQG", "CkgJr", "_hAxI", "IhvRL", "SpZB1", "4eDxD"],
         ),
         // Zombies ==> Bttle Hardened ==> Silverback Expedition
         new Challenge(
@@ -989,7 +990,7 @@ class Challenges {
             "Silverback Expedition Master",
             "Complete all Silverback Expedition Challenges.",
             "0Nb78yd",
-            ["zCEQG", "CkgJr", "_hAxI", "IhvRL", "SpZB1", "4eDxD",],
+            ["zCEQG", "CkgJr", "_hAxI", "IhvRL", "SpZB1", "4eDxD"],
         ),
         // Zombies ==> Bttle Hardened ==> Gorilla Stalker
         new Challenge(
@@ -999,7 +1000,7 @@ class Challenges {
             "Gorilla Stalker Master",
             "Complete all Gorilla Stalker Challenges.",
             "UTNS3i8",
-            ["YNhXq", "l0JNE", "HdurP", "k3BBG", "ISUok", "zbZWj",],
+            ["YNhXq", "l0JNE", "HdurP", "k3BBG", "ISUok", "zbZWj"],
         ),
         // Zombies ==> Requiem Advancement ==> Forsaken Report
         new Challenge(
@@ -1009,7 +1010,7 @@ class Challenges {
             "Forsaken Master",
             "Complete all Forsaken Challenges.",
             "Gv2rTX4",
-            ["GSiVF", "XUmkS", "Bx12d", "sn5nW", "pSUE4", "LBGue",],
+            ["GSiVF", "XUmkS", "Bx12d", "sn5nW", "pSUE4", "LBGue"],
         ),
         // Zombies ==> Requiem Advancement ==> Mauer Der Toten Report
         new Challenge(
@@ -1019,7 +1020,7 @@ class Challenges {
             "Mauer Der Toten Master",
             "Complete all Mauer Der Toten Challenges.",
             "8MfaTTf",
-            ["Juc14", "XEEn2", "mzocc", "Rrqfp", "W3VcA", "S_FVf",]
+            ["Juc14", "XEEn2", "mzocc", "Rrqfp", "W3VcA", "S_FVf"]
         ),
         // Zombies ==> Requiem Advancement ==> Firebase Z Report
         new Challenge(
@@ -1029,7 +1030,7 @@ class Challenges {
             "Firebase Z Master",
             "Complete all Firebase Z Challenges.",
             "ZuDtpY1",
-            ["5qkjP", "cM_QM", "KoS90", "JqmNC", "UXDeT", "LUVVN",]
+            ["5qkjP", "cM_QM", "KoS90", "JqmNC", "UXDeT", "LUVVN"]
         ),
         // Zombies ==> Requiem Advancement ==> Field Researcher
         new Challenge(
@@ -1039,7 +1040,7 @@ class Challenges {
             "Field Researcher Master",
             "Complete all Field Researcher Challenges.",
             "rGdfNhQ",
-            ["wJ8vM", "wA3bR", "1jnI2", "PoXXg", "M0bY9", "lZ212",]
+            ["wJ8vM", "wA3bR", "1jnI2", "PoXXg", "M0bY9", "lZ212"]
         ),
         // Zombies ==> Requiem Advancement ==> Surveyor
         new Challenge(
@@ -1049,7 +1050,7 @@ class Challenges {
             "Surveyor Master",
             "Complete all Surveyor Challenges.",
             "0WS8sMz",
-            ["SGR6v", "9kYDJ", "K7oqu", "fHL9d", "h3JTF", "BaAl8",]
+            ["SGR6v", "9kYDJ", "K7oqu", "fHL9d", "h3JTF", "BaAl8"]
         ),
         // Zombies ==> Requiem Advancement ==> Exterminator
         new Challenge(
@@ -1059,7 +1060,7 @@ class Challenges {
             "Exterminator Master",
             "Complete all Exterminator Challenges.",
             "G6aGXFn",
-            ["1wHi9", "3NLit", "KoKSl", "VqvYx", "DmiOk", "8Hf5S",]
+            ["1wHi9", "3NLit", "KoKSl", "VqvYx", "DmiOk", "8Hf5S"]
         ),
                 // Zombies ==> Dark Ops
         new Challenge(
@@ -1069,7 +1070,8 @@ class Challenges {
             "Dark Ops Master",
             "Complete 11 Dark Ops Challenges.",
             "G6aGXFn",
-            ["G6Cc0", "QQSU_", "PisZV", "UZWpO", "OO7hk", "9_or5", "TTkVh", "Wboko", "7LQXS", "Pfx05", "nrDVa", "ilfAs", "dRRVJ", "JiOa9", "8Ub5c", "S2los", "6IHj2", "1zKaX", "o6uZp",]
+            ["G6Cc0", "QQSU_", "PisZV", "UZWpO", "OO7hk", "9_or5", "TTkVh", "Wboko", "7LQXS", "Pfx05", "nrDVa", "ilfAs", "dRRVJ", "JiOa9", "8Ub5c", "S2los", "6IHj2", "1zKaX", "o6uZp"],
+            11
         ),
     ]
 }

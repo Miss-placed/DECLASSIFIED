@@ -50,7 +50,14 @@ const allSubCategories = {
         clandestine: "Clandestine",
         highlyProficient: "Highly Proficient",
     },
-    seasonal: seasons
+    [allCategories.seasonal]: {
+        [seasons.season1]: seasons.season1,
+        [seasons.season2]: seasons.season2,
+        [seasons.season3]: seasons.season3,
+        [seasons.season4]: seasons.season4,
+        [seasons.season5]: seasons.season5,
+        [seasons.season6]: seasons.season6
+    }
 }
 
 let challengeCategories = {
@@ -69,88 +76,126 @@ function initSubCategories() {
         [challengeTypes.multiplayer]: {
             [allCategories.career]: [career.bootCamp, career.fieldSpecialist, career.eliteOperator, career.counterMeasures, career.grizzledVeteran],
             [allCategories.battleHardened]: [batHard.killer, batHard.goingHam, batHard.humiliation, batHard.precision, batHard.returnFire],
+            [allCategories.seasonal]: [seasons.season1, seasons.season2, seasons.season3, seasons.season4, seasons.season5, seasons.season6],
         },
         [challengeTypes.zombies]: {
             [allCategories.career]: [career.dieMaschineReport, career.bootCamp, career.grizzledVeteran],
             [allCategories.battleHardened]: [batHard.zombieHunter, batHard.elementalist, batHard.tactician, batHard.silverbackExpedition, batHard.gorillaStalker],
             [allCategories.requiemAdvancement]: [reqAd.forsakenReport, reqAd.mauerDerTotenReport, reqAd.firebaseZReport, reqAd.fieldResearcher, reqAd.surveyor, reqAd.exterminator],
+            [allCategories.seasonal]: [seasons.season1, seasons.season2, seasons.season3, seasons.season4, seasons.season5, seasons.season6],
         },
         [challengeTypes.campaign]: {
             [allCategories.story]: [story.loyalAgent, story.bloodthirsty, story.explorer, story.clandestine, story.highlyProficient],
-        }
+            [allCategories.seasonal]: [],
+        },
     };
 }
 
-function renderNav() {
+function renderNav(selectedType = challengeTypes.zombies, selectedCategory = allCategories.career, selectedSubCategory = allSubCategories[allCategories.career].dieMaschineReport) {
     const navbar = document.querySelector('#nav');
     navbar.replaceChildren();
-    renderTypes(navbar);
-    renderCategories(navbar);
-    renderSubCategories(navbar);
+    renderTypes(navbar, selectedType);
+    renderCategories(navbar, selectedType, selectedCategory);
+    renderSubCategories(navbar, selectedType, selectedCategory, selectedSubCategory);
 }
 
-function renderTypes(navbar) {
+function renderTypes(navbar, selectedType) {
+    const optionArr = [challengeTypes.multiplayer, challengeTypes.zombies, challengeTypes.campaign];
+    let options;
+    optionArr.forEach(option => {
+        options += `<option ${selectedType == option ? "selected" : ""}>${option}</option>`;
+    });
+
     let html =
         `<select name="type" id="type">
-        <option>${challengeTypes.multiplayer}</option>
-        <option selected>${challengeTypes.zombies}</option>
-        <option>${challengeTypes.campaign}</option>
-    </select>`
+            ${options}
+        </select>`
 
     appendToElement(html, navbar);
 
     $("#type").change(function (e) {
-        //trigger challenge filter
+        const selectedType = $("#type").val();
+        renderNav(selectedType);
+        renderCards();
     });
 }
 
-function renderCategories(navbar, selectedType = challengeTypes.zombies) {
+function renderCategories(navbar, selectedType, selectedCategory) {
     const optionArr = challengeCategories[selectedType] ?? [];
     let options;
     optionArr.forEach(option => {
-        options += `<option>${option}</option>`;
+        options += `<option ${selectedCategory == option ? "selected" : ""}>${option}</option>`;
     });
 
     let html =
         `<select name="category" id="category">
-        ${options}
-    </select>`
+            ${options}
+        </select>`
 
     appendToElement(html, navbar);
 
     $("#category").change(function (e) {
-        //trigger challenge filter
+        const selectedType = $("#type").val();
+        const selectedCategory = $("#category").val();
+        renderNav(selectedType, selectedCategory);
+        renderCards();
     });
 }
 
-function renderSubCategories(navbar, selectedType = challengeTypes.zombies, selectedCategory = "") {
+function renderSubCategories(navbar, selectedType, selectedCategory, selectedSubCategory) {
     const optionArr = challengeSubCategories[selectedType][selectedCategory] ?? [];
-    let options;
-    optionArr.forEach(option => {
-        options += `<option>${option}</option>`;
-    });
+    if (optionArr.length > 0) {
+        let options;
+        optionArr.forEach(option => {
+            options += `<option ${selectedSubCategory == option ? "selected" : ""}>${option}</option>`;
+        });
 
-    let html = `
-    <select name="sub-category" id="sub-category">
+        let html =
+            `<select name="sub-category" id="sub-category">
         ${options}
-    </select>`
+        </select>`
 
-    appendToElement(html, navbar);
+        appendToElement(html, navbar);
 
-    $("#sub-category").change(function (e) {
-        //trigger challenge filter
-    });
+        $("#sub-category").change(function (e) {
+            const selectedType = $("#type").val();
+            const selectedCategory = $("#category").val();
+            const selectedSubCategory = $("#sub-category").val();
+            renderNav(selectedType, selectedCategory, selectedSubCategory);
+            renderCards();
+        });
+    }
 }
 
 function renderCards() {
-    Challenges.challengeStore.forEach(card => {
+    let filteredChallenges = Challenges.challengeStore;
+    // const for completed challenges
+    const type = $("#type").val();
+    const category = $("#category").val();
+    const subCategory = $("#sub-category").val();
+    
+    filteredChallenges = filteredChallenges.filter((challenge) => {
+        return challenge.type == type;
+    });
+    if (subCategory) {
+        filteredChallenges = filteredChallenges.filter((challenge) => {
+            return challenge.category == subCategory;
+        });
+    } else if (category) {
+        filteredChallenges = filteredChallenges.filter((challenge) => {
+            return challenge.category == category;
+        });
+    }
+    document.querySelector('#card-container').replaceChildren();
+    filteredChallenges.forEach(card => {
+        //If challenge is complete add the "complete" attribute to the card element
         let html =
             `<card class="cc-card" id="${card.id}">
-            <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
-            <img class="cc-img" alt="Calling card" src="${card.img}">
-            <h2 class="cc-title">${card.name}</h2>
-            <p class="cc-desc">${card.desc}</p>
-        </card>`
+                <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
+                <img class="cc-img" alt="Calling card" src="${card.img}">
+                <h2 class="cc-title">${card.name}</h2>
+                <p class="cc-desc">${card.desc}</p>
+            </card>`
         let cardsToAdd = htmlToElements(html)
         cardsToAdd.forEach(element => {
             document.querySelector('#card-container').append(element);
