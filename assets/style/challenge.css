@@ -35,7 +35,8 @@ main {
 
 nav h2,
 aside h1,
-#mastery-progress>div>h2 {
+.filter h2,
+#mastery-progress > div > h2 {
   margin: 5px 10px;
   font-size: 1.5em;
   background: var(--clr-white-d);
@@ -43,8 +44,34 @@ aside h1,
   display: inline-block;
   padding: 5px 15px;
 }
-
-#mastery-progress>div>p {
+.filter > div > li:nth-of-type(1) {
+  margin-top: -5px;
+}
+.filter > div {
+  position: absolute;
+  width: fit-content;
+}
+.filter > div > li {
+  background-color: var(--clr-black);
+  display: none;
+  width: 100%;
+  color: var(--clr-white-d);
+  padding: 5px 10px;
+  margin-left: 30px;
+  align-items: center;
+}
+.filter.-expanded > div > li {
+  display: flex;
+}
+.filter > div > li > .complete {
+  padding-left: 10px;
+  font-size: 50%;
+  display: none;
+}
+.filter > div > li[complete] > .complete {
+  display: initial;
+}
+#mastery-progress > div > p {
   padding: 5px 15px;
 }
 
@@ -69,12 +96,12 @@ aside h1,
   border-color: var(--clr-green);
 }
 
-.cc-card>img {
+.cc-card > img {
   width: calc(100%);
   z-index: 1;
 }
 
-.cc-card>h2 {
+.cc-card > h2 {
   background-color: var(--clr-black);
   color: var(--clr-white);
   font-family: sans-serif;
@@ -88,7 +115,7 @@ aside h1,
   text-transform: uppercase;
 }
 
-.cc-card>p {
+.cc-card > p {
   font-size: 1rem;
   color: var(--clr-white);
   padding-inline: 15px;
@@ -96,7 +123,7 @@ aside h1,
   font-weight: 100;
 }
 
-.cc-card>.cc-progress {
+.cc-card > .cc-progress {
   width: 100%;
   height: 10px;
   background-color: var(--clr-grey-l);
@@ -117,12 +144,12 @@ aside h1,
   color: var(--clr-white-d);
 }
 
-.cc-card.-add>p {
+.cc-card.-add > p {
   display: block;
   color: inherit;
 }
 
-.cc-card.-add>button {
+.cc-card.-add > button {
   background-color: unset;
   border: unset;
   display: block;
@@ -181,11 +208,11 @@ nav select {
   font-size: 1.5rem;
 }
 
-nav>ul {
+nav > ul {
   display: inline;
 }
 
-nav>ul>li {
+nav > ul > li {
   display: none;
 }
 
@@ -234,7 +261,8 @@ nav>ul>li {
     flex-direction: column;
   }
 
-  html, body{
+  html,
+  body {
     height: unset;
   }
 }

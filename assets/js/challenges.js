@@ -101,20 +101,26 @@ function renderNav(selectedType = challengeTypes.zombies, selectedCategory = all
 
 function renderTypes(navbar, selectedType) {
     const optionArr = [challengeTypes.multiplayer, challengeTypes.zombies, challengeTypes.campaign];
-    let options;
+    let options = ``;
     optionArr.forEach(option => {
-        options += `<option ${selectedType == option ? "selected" : ""}>${option}</option>`;
+        options += `<li onclick="changeTypeMenu(this)" ${selectedType == option ? "selected" : ""} value="${option}">
+                        ${option}
+                        <i class="fas fa-star complete"></i>
+                    </li>`;
     });
 
     let html =
-        `<select name="type" id="type">
+        `<ul name="type" class="filter" id="type" value="${selectedType}">
+            <h2 onclick="expandCategory(this)">${selectedType}<i class="fas fa-caret-down"></i></h2>
+            <div>
             ${options}
-        </select>`
+            </div>
+        </ul>`
 
     appendToElement(html, navbar);
 
     $("#type").change(function (e) {
-        const selectedType = $("#type").val();
+        const selectedType = $("#type").attr('value');
         renderNav(selectedType);
         renderCards();
     });
@@ -122,21 +128,27 @@ function renderTypes(navbar, selectedType) {
 
 function renderCategories(navbar, selectedType, selectedCategory) {
     const optionArr = challengeCategories[selectedType] ?? [];
-    let options;
+    let options = ``;
     optionArr.forEach(option => {
-        options += `<option ${selectedCategory == option ? "selected" : ""}>${option}</option>`;
+        options += `<li onclick="changeCategoryMenu(this)" ${selectedType == option ? "selected" : ""} value="${option}">
+                        ${option}
+                        <i class="fas fa-star complete"></i>
+                    </li>`;
     });
 
     let html =
-        `<select name="category" id="category">
+        `<ul name="category" class="filter" id="category" value="${selectedCategory}">
+            <h2 onclick="expandCategory(this)">${selectedCategory}<i class="fas fa-caret-down"></i></h2>
+            <div>
             ${options}
-        </select>`
+            </div>
+        </ul>`
 
     appendToElement(html, navbar);
 
     $("#category").change(function (e) {
-        const selectedType = $("#type").val();
-        const selectedCategory = $("#category").val();
+        const selectedType = $("#type").attr('value');
+        const selectedCategory = $("#category").attr('value');
         renderNav(selectedType, selectedCategory);
         renderCards();
     });
@@ -145,22 +157,28 @@ function renderCategories(navbar, selectedType, selectedCategory) {
 function renderSubCategories(navbar, selectedType, selectedCategory, selectedSubCategory) {
     const optionArr = challengeSubCategories[selectedType][selectedCategory] ?? [];
     if (optionArr.length > 0) {
-        let options;
+        let options = ``;
         optionArr.forEach(option => {
-            options += `<option ${selectedSubCategory == option ? "selected" : ""}>${option}</option>`;
+            options += `<li onclick="changeSubCategoryMenu(this)" ${selectedType == option ? "selected" : ""} value="${option}">
+                        ${option}
+                        <i class="fas fa-star complete"></i>
+                    </li>`;
         });
 
         let html =
-            `<select name="sub-category" id="sub-category">
-        ${options}
-        </select>`
+            `<ul name="sub-category" class="filter" id="sub-category" value="${selectedSubCategory}">
+            <h2 onclick="expandCategory(this)">${selectedSubCategory}<i class="fas fa-caret-down"></i></h2>
+            <div>
+            ${options}
+            </div>
+        </ul>`
 
         appendToElement(html, navbar);
 
         $("#sub-category").change(function (e) {
-            const selectedType = $("#type").val();
-            const selectedCategory = $("#category").val();
-            const selectedSubCategory = $("#sub-category").val();
+            const selectedType = $("#type").attr('value');
+            const selectedCategory = $("#category").attr('value');
+            const selectedSubCategory = $("#sub-category").attr('value');
             renderNav(selectedType, selectedCategory, selectedSubCategory);
             renderCards();
         });
@@ -173,10 +191,10 @@ function renderCards() {
     const cardCont = document.querySelector('#card-container');
     const masteryCont = document.querySelector('#mastery-progress');
     // const for completed challenges
-    const type = $("#type").val();
-    const category = $("#category").val();
-    const subCategory = $("#sub-category").val();
-    
+    const type = $("#type").attr('value');
+    const category = $("#category").attr('value');
+    const subCategory = $("#sub-category").attr('value');
+
     filteredChallenges = filterList(filteredChallenges, "type", type);
     filteredMasterChallenge = filterList(filteredMasterChallenge, "type", type);
     if (subCategory) {
@@ -232,6 +250,40 @@ function filterList(arrayToFilter, propToFilter, filterVal) {
         return item[propToFilter] == filterVal;
     });
     return arrayToFilter;
+}
+
+function expandCategory(x) {
+    x.parentNode.classList.toggle('-expanded')
+}
+
+function setOption(x) {
+    expandCategory(x);
+    x.parentNode.parentNode.setAttribute('value', x.getAttribute('value'));
+    // x.parentNode.querySelector('h2').querySelector('i').classList = "fas fa-caret-down"
+}
+function changeTypeMenu(x) {
+    setOption(x)
+    const selectedType = $("#type").attr('value');
+    const selectedCategory = $("#category").attr('value');
+    const selectedSubCategory = $("#sub-category").attr('value');
+    renderNav(selectedType)
+    renderCards();
+}
+function changeCategoryMenu(x) {
+    setOption(x)
+    const selectedType = $("#type").attr('value');
+    const selectedCategory = $("#category").attr('value');
+    const selectedSubCategory = $("#sub-category").attr('value');
+    renderNav(selectedType, selectedCategory)
+    renderCards();
+}
+function changeSubCategoryMenu(x) {
+    setOption(x)
+    const selectedType = $("#type").attr('value');
+    const selectedCategory = $("#category").attr('value');
+    const selectedSubCategory = $("#sub-category").attr('value');
+    renderNav(selectedType, selectedCategory, selectedSubCategory)
+    renderCards();
 }
 
 function onLoad() {
