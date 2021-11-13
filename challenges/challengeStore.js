@@ -919,6 +919,319 @@ class Challenges {
             "npv8mXx",
         ),
         // end Zombies ==> Dark Ops
+
+        // Campaign ==> Story ==> Loyal agent
+        // https://imgur.com/a/GH5x9m1
+        new Challenge(
+            "BxN1R",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].loyalAgent,
+            "Big-Hearted",
+            "Rescue Lukas Richter in Brick in the Wall.",
+            "QM94UvG",
+        ),
+        new Challenge(
+            "z8uLI",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].loyalAgent,
+            "Dilemma Solved",
+            "Choose differently on two separate playthroughs of End of the Line.",
+            "G00MFWy",
+        ),
+        new Challenge(
+            "WLFHN",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].loyalAgent,
+            "Disciple",
+            "Follow all of Adler's orders in Break on Through.",
+            "FHFCWfk",
+        ),
+        new Challenge(
+            "CizJj",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].loyalAgent,
+            "By the Book",
+            "Capture Qasim Javadi in Nowhere Left to Run.",
+            "HMPRIAF",
+        ),
+        new Challenge(
+            "a9heU",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].loyalAgent,
+            "The Hunt for Red Circus",
+            "Correctly identify all three of the Operation Red Circus spies.",
+            "zCPBRkH",
+        ),
+        new Challenge(
+            "wTk6v",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].loyalAgent,
+            "Friend of the Crown",
+            "Capture Anton Volkov in Brick in the Wall.",
+            "vFkhPQj",
+        ),
+        // end Zombies ==> Story ==> Loyal Agent
+
+        // Campaign ==> Story ==> Bloodthirsty
+        // https://imgur.com/a/eelHPyP
+        new Challenge(
+            "PsIuj",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].bloodthirsty,
+            "Guilty Bystander",
+            "Give no assistance during exfil in End of the Line.",
+            "8HL9OUJ",
+        ),
+        new Challenge(
+            "7GWSG",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].bloodthirsty,
+            "Volk You",
+            "Kill Anton Volkov in Brick in the Wall.",
+            "vAOH4kV",
+        ),
+        new Challenge(
+            "f2JPl",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].bloodthirsty,
+            "Unhappy Landing",
+            "Throw Qasim Javadi off the roof in Nowhere Left to Run.",
+            "xBOwBvb",
+        ),
+        new Challenge(
+            "Jq1iy",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].bloodthirsty,
+            "No Loose Ends",
+            "Kill Lukas Richter.",
+            "C2EvWYN",
+        ),
+        new Challenge(
+            "HHf3d",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].bloodthirsty,
+            "Kick the Habit",
+            "Refuse to light Adler's cigarette in Ashes to Ashes.",
+            "TmtARhH",
+        ),
+        new Challenge(
+            "k0AUW",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].bloodthirsty,
+            "Chark-Offed",
+            "General Charkov is killed in Desperate Measures.",
+            "OCwutpi",
+        ),
+        // end Zombies ==> Story ==> Bloodthirsty
+
+        // Campaign ==> Story ==> Explorer
+        // https://imgur.com/a/bPtJxHM
+        new Challenge(
+            "4dIYy",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].explorer,
+            "Humint",
+            "Speak to the team on each safehouse visit.",
+            "QUPIeNx",
+        ),
+        new Challenge(
+            "KfRHu",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].explorer,
+            "Imint",
+            "Photograph all six pieces of intel in Redlight, Greenlight.",
+            "aucrz8Q",
+        ),
+        new Challenge(
+            "cQhQu",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].explorer,
+            "Your Worst Nightmare",
+            "Unlock the Redeemer in Echoes of a Cold War.",
+            "CJl8xza",
+        ),
+        new Challenge(
+            "X1VG4",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].explorer,
+            "Red Connection",
+            "Read Lukas Richter's dossier in Brick in the Wall.",
+            "yPDgtWU",
+        ),
+        new Challenge(
+            "_8Px0",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].explorer,
+            "A Long Trip",
+            "Experience all four paths in Break on Through.",
+            "djndZSi",
+        ),
+        new Challenge(
+            "H03C3",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].explorer,
+            "Let's Try this Way",
+            "Complete all ways to get the bunker key in Desperate Measures.",
+            "ckmWVMG",
+        ),
+        // end Zombies ==> Story ==> Explorer
+
+        // Campaign ==> Story ==> Clandestine
+        // https://imgur.com/a/Aizvq2u
+        new Challenge(
+            "EIBZ5",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].clandestine,
+            "Silent but Deadly",
+            "Perform five stealth kills.",
+            "bjtGCJV",
+        ),
+        new Challenge(
+            "sw6lG",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].clandestine,
+            "Alley Cat",
+            "Sneak undetected through the alleys in Brick in the Wall.",
+            "Qw5Sb7B",
+        ),
+        new Challenge(
+            "jt4kG",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].clandestine,
+            "Hey, What's that Sound?",
+            "Sneak undetected through the rice paddies at night in Break on Through.",
+            "Nyc8q6g",
+        ),
+        new Challenge(
+            "ZKYY1",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].clandestine,
+            "Nightcrawlers",
+            "Sneak undetected into the base in Redlight, Greenlight.",
+            "mRyEMT9",
+        ),
+        new Challenge(
+            "0qX_p",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].clandestine,
+            "Edda-Fying",
+            "Get to Franz Kraus' darkroom without knocking out his wife in Brick in the Wall.",
+            "0cf8hid",
+        ),
+        new Challenge(
+            "PASTd",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].clandestine,
+            "Smooth Operator",
+            "Acquire the bunker key in Desperate Measures without killing anyone.",
+            "o3gi4gC",
+        ),
+        // end Zombies ==> Story ==> Clandestine
+
+        // Campaign ==> Story ==> Highly Proficient
+        // https://imgur.com/a/mTT5m8F
+        new Challenge(
+            "oJz4d",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].highlyProficient,
+            "Burning Rubber",
+            "Drive under three vehicles with the RC-XD in Nowhere Left to Run.",
+            "1ggEMCp",
+        ),
+        new Challenge(
+            "zYBxr",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].highlyProficient,
+            "Back to Basics",
+            "Clear the bunker without using weapons or grenades during Echoes of a Cold War.",
+            "wYF8P1s",
+        ),
+        new Challenge(
+            "HMp7M",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].highlyProficient,
+            "Catastrophic",
+            "Kill two enemies with the same Body Shield grenade toss.",
+            "wkWTx4C",
+        ),
+        new Challenge(
+            "IOFg2",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].highlyProficient,
+            "Time to Spare",
+            "Place the last C4 with 45 seconds or more remaining in the Final Countdown.",
+            "g8wqMQK",
+        ),
+        new Challenge(
+            "DQvNQ",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].highlyProficient,
+            "Saving PhD Ryan",
+            "Kill the sniper before he shoots the scientist in End of the Line.",
+            "fq61ZCg",
+        ),
+        new Challenge(
+            "Tbsha",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].highlyProficient,
+            "Targeting Computer",
+            "Destroy the enemy Hind with only rockets in Fracture Jaw.",
+            "3WVPJqI",
+        ),
+        // end Zombies ==> Story ==> Highly Proficient
+
+
+        // Campaign ==> Dark Ops
+        // https://imgur.com/a/SqUYN6H
+        new Challenge(
+            "FLYJ3",
+            challengeTypes.campaign,
+            allCategories.darkOps,
+            "Retro Gamer",
+            `Unlock all arcade machines.`,
+            "PFitFLb",
+        ),
+        new Challenge(
+            "dyZar",
+            challengeTypes.campaign,
+            allCategories.darkOps,
+            "What Do The Numbers Mean?",
+            "Decrypt the Operation Chaos floppy disk.",
+            "xWe9IMq",
+        ),
+        new Challenge(
+            "ca4R3",
+            challengeTypes.campaign,
+            allCategories.darkOps,
+            "Defiant",
+            "Attempt to jump to your death in Break On Through.",
+            "ld1LzEP",
+        ),
+        new Challenge(
+            "CgCkq",
+            challengeTypes.campaign,
+            allCategories.darkOps,
+            "Antihero",
+            "Wipe out your former teammates using brute force in Ashes to Ashes.",
+            "LQcVKkS",
+        ),
+        new Challenge(
+            "zHjep",
+            challengeTypes.campaign,
+            allCategories.darkOps,
+            "Cover Your Tracks",
+            "Stash away five bodies as Belikov in Desperate Measures.",
+            "3dlLqZ5",
+        ),
+        new Challenge(
+            "HMzZ8",
+            challengeTypes.campaign,
+            allCategories.darkOps,
+            "Awkward Chat",
+            "Answer Imran Zakhaev's questions correctly in the elevator in Desperate Measures.",
+            "LarPw0Z",
+        ),
+        // end Campaign ==> Dark Ops
     ];
 
     static masterChallenges = [
@@ -1062,7 +1375,7 @@ class Challenges {
             "G6aGXFn",
             ["1wHi9", "3NLit", "KoKSl", "VqvYx", "DmiOk", "8Hf5S"]
         ),
-                // Zombies ==> Dark Ops
+        // Zombies ==> Dark Ops
         new Challenge(
             "76EI_",
             challengeTypes.zombies,
@@ -1072,6 +1385,72 @@ class Challenges {
             "xJQ4OWW",
             ["G6Cc0", "QQSU_", "PisZV", "UZWpO", "OO7hk", "9_or5", "TTkVh", "Wboko", "7LQXS", "Pfx05", "nrDVa", "ilfAs", "dRRVJ", "JiOa9", "8Ub5c", "S2los", "6IHj2", "1zKaX", "o6uZp"],
             11
+        ),
+        // Campaign ==> Loyal Agent
+        new Challenge(
+            "2CEQT",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].loyalAgent,
+            "Loyal Agent Master",
+            "Complete all Loyal Agent Challenges.",
+            "0OVMorA",
+            ["BxN1R", "z8uLI", "WLFHN", "CizJj", "a9heU", "wTk6v",],
+
+        ),
+        // Campaign ==> Bloodthirsty
+        new Challenge(
+            "z9_ji",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].bloodthirsty,
+            "Bloodthirsty Master",
+            "Complete all Bloodthirsty Challenges.",
+            "j6idgdG",
+            ["PsIuj", "7GWSG", "f2JPl", "Jq1iy", "HHf3d", "k0AUW",],
+
+        ),
+        // Campaign ==> Explorer
+        new Challenge(
+            "n8GC2",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].explorer,
+            "Explorer Master",
+            "Complete all Explorer Challenges.",
+            "z7NaPRv",
+            ["4dIYy", "KfRHu", "cQhQu", "X1VG4", "_8Px0", "H03C3",],
+
+        ),
+        // Campaign ==> Clandestine
+        new Challenge(
+            "RAYiU",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].clandestine,
+            "Clandestine Master",
+            "Complete all Clandestine Challenges.",
+            "gvH6Wl1",
+            ["EIBZ5", "sw6lG", "jt4kG", "ZKYY1", "0qX_p", "PASTd",],
+
+        ),
+        // Campaign ==> Highly Proficient
+        new Challenge(
+            "9e6ZH",
+            challengeTypes.campaign,
+            allSubCategories[allCategories.story].highlyProficient,
+            "Highly Proficient Master",
+            "Complete all Highly Proficient Challenges.",
+            "bOTtgbS",
+            ["oJz4d", "zYBxr", "HMp7M", "IOFg2", "DQvNQ", "Tbsha",],
+
+        ),
+        // Campaign ==> Dark Ops
+        new Challenge(
+            "OZglA",
+            challengeTypes.campaign,
+            allCategories.darkOps,
+            "Dark Ops Master",
+            "Complete all Dark Ops Challenges.",
+            "tCstmXs",
+            ["FLYJ3", "dyZar", "ca4R3", "CgCkq", "zHjep", "HMzZ8",],
+
         ),
     ]
 }
