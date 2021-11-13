@@ -1,4 +1,4 @@
-/////////////////////Challenges/////////////////////////
+/////////////////////Constants/////////////////////////
 const challengeTypes = {
     multiplayer: "Multiplayer",
     zombies: "Zombies",
@@ -93,6 +93,84 @@ function initSubCategories() {
     };
 }
 
+/////////////////////Cards/////////////////////////
+function renderCards() {
+    let filteredChallenges = Challenges.challengeStore;
+    let filteredMasterChallenge = Challenges.masterChallenges;
+    const cardCont = document.querySelector('#card-container');
+    const masteryCont = document.querySelector('#mastery-progress');
+    // const for completed challenges
+    const type = getSelectedType();
+    const category = getSelectedCategory();
+    const subCategory = getSelectedSubCategory();
+
+    filteredChallenges = filterList(filteredChallenges, "type", type);
+    filteredMasterChallenge = filterList(filteredMasterChallenge, "type", type);
+    if (subCategory) {
+        filteredChallenges = filterList(filteredChallenges, "category", subCategory);
+        filteredMasterChallenge = filterList(filteredMasterChallenge, "category", subCategory);
+    } else if (category) {
+        filteredChallenges = filterList(filteredChallenges, "category", category);
+        filteredMasterChallenge = filterList(filteredMasterChallenge, "category", category);
+    }
+    cardCont.replaceChildren();
+    filteredChallenges.forEach(card => {
+        //If challenge is complete add the "complete" attribute to the card element
+        let html = getCardHtml(card);
+        let elementsToAdd = htmlToElements(html)
+        elementsToAdd.forEach(element => {
+            cardCont.append(element);
+        });
+    })
+
+    masteryCont.replaceChildren();
+    if (filteredMasterChallenge[0]) {
+        let html = getMasteryHtml(filteredMasterChallenge[0]);
+        let elementsToAdd = htmlToElements(html)
+        elementsToAdd.forEach(element => {
+            masteryCont.append(element);
+        });
+    }
+
+}
+function getCardHtml(card) {
+    return `<card class="cc-card" id="${card.id}">
+                <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
+                <img class="cc-img" alt="Calling card" src="${card.img}">
+                <h2 class="cc-title">${card.name}</h2>
+                <p class="cc-desc">${card.desc}</p>
+            </card>`;
+}
+
+function getMasteryHtml(card) {
+    return `<div>
+                <h2>${card.name}</h2>
+                <p>${card.desc}</p>
+            </div>
+            <article class="cc-card" id="${card.id}">
+                <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
+                <img class="cc-img" alt="Calling card" src="${card.img}">
+                <div class="cc-progress"></div>
+            </article>`;
+}
+
+function filterList(arrayToFilter, propToFilter, filterVal) {
+    arrayToFilter = arrayToFilter.filter((item) => {
+        return item[propToFilter] == filterVal;
+    });
+    return arrayToFilter;
+}
+
+function expandCategory(x) {
+    document.querySelectorAll('ul').forEach(function (ele) {
+        if (ele != x.parentNode) {
+            ele.classList.remove('-expanded');
+        }
+    });
+    x.parentNode.classList.toggle('-expanded')
+}
+
+/////////////////////Menu Stuff/////////////////////////
 function renderNav(selectedType, selectedCategory, selectedSubCategory) {
     const navbar = document.querySelector('#nav');
     navbar.replaceChildren();
@@ -169,102 +247,47 @@ function renderSubCategories(navbar, selectedType = challengeTypes.zombies, sele
     }
 }
 
-function renderCards() {
-    let filteredChallenges = Challenges.challengeStore;
-    let filteredMasterChallenge = Challenges.masterChallenges;
-    const cardCont = document.querySelector('#card-container');
-    const masteryCont = document.querySelector('#mastery-progress');
-    // const for completed challenges
-    const type = $("#type").attr('value');
-    const category = $("#category").attr('value');
-    const subCategory = $("#sub-category").attr('value');
-
-    filteredChallenges = filterList(filteredChallenges, "type", type);
-    filteredMasterChallenge = filterList(filteredMasterChallenge, "type", type);
-    if (subCategory) {
-        filteredChallenges = filterList(filteredChallenges, "category", subCategory);
-        filteredMasterChallenge = filterList(filteredMasterChallenge, "category", subCategory);
-    } else if (category) {
-        filteredChallenges = filterList(filteredChallenges, "category", category);
-        filteredMasterChallenge = filterList(filteredMasterChallenge, "category", category);
-    }
-    cardCont.replaceChildren();
-    filteredChallenges.forEach(card => {
-        //If challenge is complete add the "complete" attribute to the card element
-        let html = getCardHtml(card);
-        let elementsToAdd = htmlToElements(html)
-        elementsToAdd.forEach(element => {
-            cardCont.append(element);
-        });
-    })
-
-    masteryCont.replaceChildren();
-    if (filteredMasterChallenge[0]) {
-        let html = getMasteryHtml(filteredMasterChallenge[0]);
-        let elementsToAdd = htmlToElements(html)
-        elementsToAdd.forEach(element => {
-            masteryCont.append(element);
-        });
-    }
-
-}
-function getCardHtml(card) {
-    return `<card class="cc-card" id="${card.id}">
-                <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
-                <img class="cc-img" alt="Calling card" src="${card.img}">
-                <h2 class="cc-title">${card.name}</h2>
-                <p class="cc-desc">${card.desc}</p>
-            </card>`;
-}
-
-function getMasteryHtml(card) {
-    return `<div>
-                <h2>${card.name}</h2>
-                <p>${card.desc}</p>
-            </div>
-            <article class="cc-card" id="${card.id}">
-                <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
-                <img class="cc-img" alt="Calling card" src="${card.img}">
-                <div class="cc-progress"></div>
-            </article>`;
-}
-
-function filterList(arrayToFilter, propToFilter, filterVal) {
-    arrayToFilter = arrayToFilter.filter((item) => {
-        return item[propToFilter] == filterVal;
-    });
-    return arrayToFilter;
-}
-
-function expandCategory(x) {
-    x.parentNode.classList.toggle('-expanded')
-}
-
 function setOption(x) {
     expandCategory(x);
     x.parentNode.parentNode.setAttribute('value', x.getAttribute('value'));
     // x.parentNode.querySelector('h2').querySelector('i').classList = "fas fa-caret-down"
 }
+
 function changeTypeMenu(x) {
     setOption(x)
-    const selectedType = $("#type").attr('value');
+    const selectedType = getSelectedType();
     renderNav(selectedType);
     renderCards();
 }
+
 function changeCategoryMenu(x) {
     setOption(x)
-    const selectedType = $("#type").attr('value');
-    const selectedCategory = $("#category").attr('value');
+    const selectedType = getSelectedType();
+    const selectedCategory = getSelectedCategory();
     renderNav(selectedType, selectedCategory);
     renderCards();
 }
+
 function changeSubCategoryMenu(x) {
     setOption(x)
-    const selectedType = $("#type").attr('value');
-    const selectedCategory = $("#category").attr('value');
-    const selectedSubCategory = $("#sub-category").attr('value');
+    const selectedType = getSelectedType();
+    const selectedCategory = getSelectedCategory();
+    const selectedSubCategory = getSelectedSubCategory();
     renderNav(selectedType, selectedCategory, selectedSubCategory);
     renderCards();
+}
+
+/////////////////////Utils/////////////////////////
+function getSelectedType() {
+    return $("#type").attr('value');
+}
+
+function getSelectedCategory() {
+    return $("#category").attr('value');
+}
+
+function getSelectedSubCategory() {
+    return $("#sub-category").attr('value');
 }
 
 function onLoad() {
