@@ -1069,7 +1069,7 @@ class Challenges {
             allCategories.darkOps,
             "Dark Ops Master",
             "Complete 11 Dark Ops Challenges.",
-            "G6aGXFn",
+            "",
             ["G6Cc0", "QQSU_", "PisZV", "UZWpO", "OO7hk", "9_or5", "TTkVh", "Wboko", "7LQXS", "Pfx05", "nrDVa", "ilfAs", "dRRVJ", "JiOa9", "8Ub5c", "S2los", "6IHj2", "1zKaX", "o6uZp"],
             11
         ),

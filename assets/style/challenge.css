@@ -38,6 +38,10 @@ aside h1,
   display: inline-block;
   padding: 5px 15px;
 }
+#mastery-progress > div > p{
+  padding: 5px 15px;
+}
+
 .cc-card {
   aspect-ratio: 900 / 300;
   flex: 0 0 calc(50% - 10px);

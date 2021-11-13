@@ -169,40 +169,72 @@ function renderSubCategories(navbar, selectedType, selectedCategory, selectedSub
 
 function renderCards() {
     let filteredChallenges = Challenges.challengeStore;
+    let filteredMasterChallenge = Challenges.masterChallenges;
+    const cardCont = document.querySelector('#card-container');
+    const masteryCont = document.querySelector('#mastery-progress');
     // const for completed challenges
     const type = $("#type").val();
     const category = $("#category").val();
     const subCategory = $("#sub-category").val();
-    
+
     filteredChallenges = filteredChallenges.filter((challenge) => {
         return challenge.type == type;
     });
     if (subCategory) {
-        filteredChallenges = filteredChallenges.filter((challenge) => {
-            return challenge.category == subCategory;
-        });
+        filteredChallenges = filterList(filteredChallenges, "category", subCategory);
+        filteredMasterChallenge = filterList(filteredMasterChallenge, "category", subCategory);
     } else if (category) {
-        filteredChallenges = filteredChallenges.filter((challenge) => {
-            return challenge.category == category;
-        });
+        filteredChallenges = filterList(filteredChallenges, "category", category);
+        filteredMasterChallenge = filterList(filteredMasterChallenge, "category", category);
     }
-    document.querySelector('#card-container').replaceChildren();
+    cardCont.replaceChildren();
     filteredChallenges.forEach(card => {
         //If challenge is complete add the "complete" attribute to the card element
-        let html =
-            `<card class="cc-card" id="${card.id}">
+        let html = getCardHtml(card);
+        let elementsToAdd = htmlToElements(html)
+        elementsToAdd.forEach(element => {
+            cardCont.append(element);
+        });
+    })
+
+    masteryCont.replaceChildren();
+    if (filteredMasterChallenge[0]) {
+        let html = getMasteryHtml(filteredMasterChallenge[0]);
+        let elementsToAdd = htmlToElements(html)
+        elementsToAdd.forEach(element => {
+            masteryCont.append(element);
+        });
+    }
+
+}
+function getCardHtml(card) {
+    return `<card class="cc-card" id="${card.id}">
                 <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
                 <img class="cc-img" alt="Calling card" src="${card.img}">
                 <h2 class="cc-title">${card.name}</h2>
                 <p class="cc-desc">${card.desc}</p>
-            </card>`
-        let cardsToAdd = htmlToElements(html)
-        cardsToAdd.forEach(element => {
-            document.querySelector('#card-container').append(element);
-        });
-    })
-
+            </card>`;
 }
+
+function getMasteryHtml(card) {
+    return `<div>
+                <h2>${card.name}</h2>
+                <p>${card.desc}</p>
+            </div>
+            <article class="cc-card" id="${card.id}">
+                <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
+                <img class="cc-img" alt="Calling card" src="${card.img}">
+                <div class="cc-progress"></div>
+            </article>`;
+}
+
+function filterList(arrayToFilter, propToFilter, filterVal) {
+    arrayToFilter = arrayToFilter.filter((item) => {
+        return item[propToFilter] == filterVal;
+    });
+    return arrayToFilter;
+}
+
 function onLoad() {
     renderNav();
     renderCards();
