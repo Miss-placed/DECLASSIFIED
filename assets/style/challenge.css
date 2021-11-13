@@ -212,8 +212,17 @@ nav > ul {
   display: inline;
 }
 
-nav > ul > li {
+nav > ul > h2 {
+  cursor: pointer;
+}
+
+nav > ul > h2 i {
+  margin-left: inherit;
+}
+
+nav > ul li {
   display: none;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 576px) {
