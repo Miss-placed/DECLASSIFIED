@@ -176,10 +176,9 @@ function renderCards() {
     const type = $("#type").val();
     const category = $("#category").val();
     const subCategory = $("#sub-category").val();
-
-    filteredChallenges = filteredChallenges.filter((challenge) => {
-        return challenge.type == type;
-    });
+    
+    filteredChallenges = filterList(filteredChallenges, "type", type);
+    filteredMasterChallenge = filterList(filteredMasterChallenge, "type", type);
     if (subCategory) {
         filteredChallenges = filterList(filteredChallenges, "category", subCategory);
         filteredMasterChallenge = filterList(filteredMasterChallenge, "category", subCategory);
