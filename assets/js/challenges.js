@@ -62,7 +62,7 @@ const allSubCategories = {
 
 let challengeCategories = {
     [challengeTypes.multiplayer]: [allCategories.seasonal, allCategories.career, allCategories.battleHardened, allCategories.darkOps],
-    [challengeTypes.zombies]: [allCategories.seasonal, allCategories.career, allCategories.battleHardened, allCategories.requiemAdvancement, allCategories.darkOps],
+    [challengeTypes.zombies]: [/* allCategories.seasonal ,*/ allCategories.career, allCategories.battleHardened, allCategories.requiemAdvancement, allCategories.darkOps],
     [challengeTypes.campaign]: [allCategories.story, allCategories.darkOps],
 };
 let challengeSubCategories = initSubCategories();
@@ -74,24 +74,26 @@ function initSubCategories() {
 
     return {
         [challengeTypes.multiplayer]: {
+            [allCategories.seasonal]: [seasons.season1, seasons.season2, seasons.season3, seasons.season4, seasons.season5, seasons.season6],
             [allCategories.career]: [career.bootCamp, career.fieldSpecialist, career.eliteOperator, career.counterMeasures, career.grizzledVeteran],
             [allCategories.battleHardened]: [batHard.killer, batHard.goingHam, batHard.humiliation, batHard.precision, batHard.returnFire],
-            [allCategories.seasonal]: [seasons.season1, seasons.season2, seasons.season3, seasons.season4, seasons.season5, seasons.season6],
+            [allCategories.darkOps]: [],
         },
         [challengeTypes.zombies]: {
+            [allCategories.seasonal]: [seasons.season1, seasons.season2, seasons.season3, seasons.season4, seasons.season5, seasons.season6],
             [allCategories.career]: [career.dieMaschineReport, career.bootCamp, career.grizzledVeteran],
             [allCategories.battleHardened]: [batHard.zombieHunter, batHard.elementalist, batHard.tactician, batHard.silverbackExpedition, batHard.gorillaStalker],
             [allCategories.requiemAdvancement]: [reqAd.forsakenReport, reqAd.mauerDerTotenReport, reqAd.firebaseZReport, reqAd.fieldResearcher, reqAd.surveyor, reqAd.exterminator],
-            [allCategories.seasonal]: [seasons.season1, seasons.season2, seasons.season3, seasons.season4, seasons.season5, seasons.season6],
+            [allCategories.darkOps]: [],
         },
         [challengeTypes.campaign]: {
             [allCategories.story]: [story.loyalAgent, story.bloodthirsty, story.explorer, story.clandestine, story.highlyProficient],
-            [allCategories.seasonal]: [],
+            [allCategories.darkOps]: [],
         },
     };
 }
 
-function renderNav(selectedType = challengeTypes.zombies, selectedCategory = allCategories.career, selectedSubCategory = allSubCategories[allCategories.career].dieMaschineReport) {
+function renderNav(selectedType, selectedCategory, selectedSubCategory) {
     const navbar = document.querySelector('#nav');
     navbar.replaceChildren();
     renderTypes(navbar, selectedType);
@@ -100,7 +102,7 @@ function renderNav(selectedType = challengeTypes.zombies, selectedCategory = all
 }
 
 function renderTypes(navbar, selectedType) {
-    const optionArr = [challengeTypes.multiplayer, challengeTypes.zombies, challengeTypes.campaign];
+    const optionArr = [/* challengeTypes.multiplayer, */ challengeTypes.zombies, challengeTypes.campaign];
     let options = ``;
     optionArr.forEach(option => {
         options += `<li onclick="changeTypeMenu(this)" ${selectedType == option ? "selected" : ""} value="${option}">
@@ -113,20 +115,15 @@ function renderTypes(navbar, selectedType) {
         `<ul name="type" class="filter" id="type" value="${selectedType}">
             <h2 onclick="expandCategory(this)">${selectedType}<i class="fas fa-caret-down"></i></h2>
             <div>
-            ${options}
+                ${options}
             </div>
         </ul>`
 
     appendToElement(html, navbar);
-
-    $("#type").change(function (e) {
-        const selectedType = $("#type").attr('value');
-        renderNav(selectedType);
-        renderCards();
-    });
 }
 
-function renderCategories(navbar, selectedType, selectedCategory) {
+function renderCategories(navbar, selectedType = challengeTypes.zombies, selectedCategory) {
+    if (!selectedCategory) selectedCategory = challengeCategories[selectedType][0];
     const optionArr = challengeCategories[selectedType] ?? [];
     let options = ``;
     optionArr.forEach(option => {
@@ -145,16 +142,11 @@ function renderCategories(navbar, selectedType, selectedCategory) {
         </ul>`
 
     appendToElement(html, navbar);
-
-    $("#category").change(function (e) {
-        const selectedType = $("#type").attr('value');
-        const selectedCategory = $("#category").attr('value');
-        renderNav(selectedType, selectedCategory);
-        renderCards();
-    });
 }
 
-function renderSubCategories(navbar, selectedType, selectedCategory, selectedSubCategory) {
+function renderSubCategories(navbar, selectedType = challengeTypes.zombies, selectedCategory, selectedSubCategory) {
+    if (!selectedCategory) selectedCategory = challengeCategories[selectedType][0];
+    if (!selectedSubCategory) selectedSubCategory = challengeSubCategories[selectedType][selectedCategory][0];
     const optionArr = challengeSubCategories[selectedType][selectedCategory] ?? [];
     if (optionArr.length > 0) {
         let options = ``;
@@ -174,14 +166,6 @@ function renderSubCategories(navbar, selectedType, selectedCategory, selectedSub
         </ul>`
 
         appendToElement(html, navbar);
-
-        $("#sub-category").change(function (e) {
-            const selectedType = $("#type").attr('value');
-            const selectedCategory = $("#category").attr('value');
-            const selectedSubCategory = $("#sub-category").attr('value');
-            renderNav(selectedType, selectedCategory, selectedSubCategory);
-            renderCards();
-        });
     }
 }
 
@@ -264,17 +248,14 @@ function setOption(x) {
 function changeTypeMenu(x) {
     setOption(x)
     const selectedType = $("#type").attr('value');
-    const selectedCategory = $("#category").attr('value');
-    const selectedSubCategory = $("#sub-category").attr('value');
-    renderNav(selectedType)
+    renderNav(selectedType);
     renderCards();
 }
 function changeCategoryMenu(x) {
     setOption(x)
     const selectedType = $("#type").attr('value');
     const selectedCategory = $("#category").attr('value');
-    const selectedSubCategory = $("#sub-category").attr('value');
-    renderNav(selectedType, selectedCategory)
+    renderNav(selectedType, selectedCategory);
     renderCards();
 }
 function changeSubCategoryMenu(x) {
@@ -282,11 +263,11 @@ function changeSubCategoryMenu(x) {
     const selectedType = $("#type").attr('value');
     const selectedCategory = $("#category").attr('value');
     const selectedSubCategory = $("#sub-category").attr('value');
-    renderNav(selectedType, selectedCategory, selectedSubCategory)
+    renderNav(selectedType, selectedCategory, selectedSubCategory);
     renderCards();
 }
 
 function onLoad() {
-    renderNav();
+    renderNav(challengeTypes.zombies, allCategories.career, allSubCategories[allCategories.career].dieMaschineReport);
     renderCards();
 }
