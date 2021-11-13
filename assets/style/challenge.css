@@ -162,7 +162,11 @@ nav > ul {
 nav > ul > li {
   display: none;
 }
-
+@media screen and (max-width: 576px) {
+  #mastery-progress {
+    flex-direction: column;
+  }
+}
 @media (max-width: 950px) {
   #card-container .cc-card {
     flex: 0 0 calc(100% - 10px);
