@@ -177,6 +177,7 @@ main nav {
 
 nav select {
   width: -webkit-fill-available;
+  font-size: 1.5rem;
 }
 
 nav>ul {
@@ -197,7 +198,7 @@ nav>ul>li {
   }
 }
 
-@media (max-width: 950px) {
+@media screen and (max-width: 1040px) {
   #card-container .cc-card {
     flex: 0 0 calc(100% - 10px);
   }
@@ -205,6 +206,10 @@ nav>ul>li {
   main,
   aside {
     flex: 0 0 50%;
+  }
+
+  main nav {
+    flex-wrap: wrap;
   }
 }
 
