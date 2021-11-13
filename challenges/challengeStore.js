@@ -407,7 +407,7 @@ class Challenges {
             challengeTypes.zombies,
             allSubCategories[allCategories.battleHardened].gorillaStalker,
             "Damage Delivery",
-            "In Dead Ops Arcade, kill 50 zombies with the Mech, Tank, or Hind.",
+            "In Dead Ops Arcade, kill 750 zombies with the Mech, Tank, or Hind.",
             "i7XSo9y",
         ),
         new Challenge(
@@ -423,7 +423,7 @@ class Challenges {
             challengeTypes.zombies,
             allSubCategories[allCategories.battleHardened].gorillaStalker,
             "Tools Of The Trade",
-            "In Dead Ops Arcade, kill 1000 zombies using Booster or Bombs.",
+            "In Dead Ops Arcade, kill 3000 zombies using Booster or Bombs.",
             "LA2yFZY",
         ),
         new Challenge(
