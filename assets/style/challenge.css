@@ -1,286 +1,97 @@
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
-
+body, main, aside {
+	min-height: 100vh;
+}
 body {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  background: var(--clr-black);
-}
+  display:flex;
+  flex-direction: column;
+  background-color:var(--clr-black);
 
+}
+main{
+  display:flex;
+  flex-direction: column;
+}
 aside {
-  position: sticky;
-  flex: 0 0 33%;
-  padding: 10px;
-  width: 33%;
+	padding: 10px;
   background-color: var(--clr-grey-d);
-  top: 0;
-  bottom: 0;
-  z-index: 50;
-  overflow: auto;
 }
-
-main {
-  display: flex;
-  flex-direction: column;
-  flex: 0 0 67%;
-}
-
 #pinned-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  padding: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+  margin-bottom: 10px;
 }
-
 #card-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  padding: 5px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+	padding: 10px;
+  margin-bottom:auto;
 }
-
-nav h2,
-aside h1,
-.filter h2,
-#mastery-progress > div > h2 {
-  margin: 5px 10px;
-  font-size: 1.5em;
-  background: var(--clr-white-d);
-  color: var(--clr-black);
-  display: inline-block;
-  padding: 5px 15px;
-}
-.filter > div > li:nth-of-type(1) {
-  margin-top: -5px;
-}
-.filter > div {
-  position: absolute;
-  width: fit-content;
-}
-.filter > div > li {
-  background-color: var(--clr-black);
-  display: none;
-  width: 100%;
-  color: var(--clr-white-d);
-  padding: 5px 10px;
-  margin-left: 30px;
-  align-items: center;
-}
-.filter.-expanded > div > li {
-  display: flex;
-}
-.filter > div > li > .complete {
-  padding-left: 10px;
-  font-size: 50%;
-  display: none;
-}
-.filter > div > li[complete] > .complete {
-  display: initial;
-}
-#mastery-progress > div > p {
-  padding: 5px 15px;
-}
-
-.cc-card {
-  aspect-ratio: 900 / 300;
-  flex: 0 0 calc(50% - 10px);
-  position: relative;
-  margin: 5px;
-  background-color: var(--clr-grey-d);
-  border-style: solid;
-  border-width: 3px;
-  border-color: var(--clr-grey-l);
-  user-select: none;
-  text-decoration: none;
-}
-
-.cc-card:hover {
-  border-color: var(--clr-white-d);
-}
-
-.cc-card[complete] {
-  border-color: var(--clr-green);
-}
-
-.cc-card > img {
-  width: calc(100%);
-  z-index: 1;
-}
-
-.cc-card > h2 {
-  background-color: var(--clr-black);
-  color: var(--clr-white);
-  font-family: sans-serif;
-  display: block;
-  width: fit-content;
-  padding: 3px 10px;
-  font-size: 1.5rem;
-  z-index: 2;
-  font-weight: normal;
-  word-wrap: break-word;
-  text-transform: uppercase;
-}
-
-.cc-card > p {
-  font-size: 1rem;
-  color: var(--clr-white);
-  padding-inline: 15px;
-  padding-block: 10px;
-  font-weight: 100;
-}
-
-.cc-card > .cc-progress {
-  width: 100%;
-  height: 10px;
-  background-color: var(--clr-grey-l);
-}
-
-.cc-card.-add {
-  aspect-ratio: 900 / 240;
-  border-style: dashed;
-  border-spacing: 20px;
-  color: var(--clr-grey-l);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  display: none;
-}
-
-.cc-card.-add:hover {
-  color: var(--clr-white-d);
-}
-
-.cc-card.-add > p {
-  display: block;
-  color: inherit;
-}
-
-.cc-card.-add > button {
-  background-color: unset;
-  border: unset;
-  display: block;
-  text-align: center;
-  margin: auto;
-  color: inherit;
-}
-
-.pin {
-  background: unset;
-  border: unset;
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  color: white;
-}
-
-.pin:hover {
-  color: var(--clr-yellow);
-  transition: all 0.3sec ease;
-}
-
-.pin.rotate {
-  transform: rotate(45deg);
-  color: var(--clr-yellow);
-}
-
-.pin.rotate:hover {
-  color: var(--clr-white);
-}
-
 #mastery-progress {
-  display: flex;
+	position: sticky;
+	bottom: 0;
+  padding:10px;
+
+  background-color: var(--clr-black);
+  color:var(--clr-white-d);
+}
+
+#mastery-progress p{
+  font-size: .8rem;
+  padding:5px;
+}
+
+.title {
+  user-select: none;
+	display: inline-block;
+	background: var(--clr-white-d);
+	padding: 5px 15px;
+	color: var(--clr-black);
+	font-size: 1.2em;
+}
+nav {
+	display: flex;
+	position: sticky;
+	top: 0;
+	justify-content: center;
+	z-index: 50;
+	background-color: var(--clr-black);
   flex-direction: row;
-  justify-content: space-between;
-  color: var(--clr-white-d);
-  margin-top: auto;
-  background-color: var(--clr-black);
-  position: sticky;
-  bottom: 0;
-  box-shadow: 0px 0px 28px 0px var(--clr-black);
-  margin-top: auto;
+  flex-wrap: wrap;
+  gap:10px;
 }
-
-main nav {
-  display: flex;
-  justify-content: center;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background-color: var(--clr-black);
+nav ul {
+	display: inline;
+	flex-wrap: wrap;
 }
-
-nav select {
-  width: -webkit-fill-available;
-  font-size: 1.5rem;
+nav ul > div {
+	position: absolute;
+	width: fit-content;
 }
-
-nav > ul {
-  display: inline;
+nav ul > div > li:nth-of-type(1) {
+	margin-top: -5px;
 }
-
-nav > ul > h2 {
-  cursor: pointer;
+nav ul > div > li {
+	display: none;
+	align-items: center;
+	margin-left: 30px;
+	background-color: var(--clr-black);
+	padding: 5px 10px;
+	width: 100%;
+	color: var(--clr-white-d);
 }
-
-nav > ul > h2 i {
-  margin-left: inherit;
+nav ul.-expanded > div > li {
+	display: flex;
 }
-
-nav > ul li {
-  display: none;
-  cursor: pointer;
+nav ul > div > li > .complete {
+	display: none;
+	padding-left: 10px;
+	font-size: 50%;
 }
-
-@media screen and (max-width: 576px) {
-  #mastery-progress {
-    flex-direction: column;
-  }
-
-  main nav {
-    flex-wrap: wrap;
-  }
-}
-
-@media screen and (max-width: 1040px) {
-  #pinned-container .cc-card,
-  #card-container .cc-card {
-    flex: 0 0 calc(100% - 10px);
-  }
-
-  main,
-  aside {
-    flex: 0 0 50%;
-  }
-
-  main nav {
-    flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 800px) {
-  .-add {
-    display: flex !important;
-  }
-
-  main,
-  aside {
-    width: 100%;
-    flex: 0 0 100%;
-  }
-
-  aside {
-    position: initial;
-    height: 100vh;
-  }
-
-  body {
-    flex-direction: column;
-  }
-
-  html,
-  body {
-    height: unset;
-  }
+nav ul > div > li[complete] > .complete {
+	display: initial;
 }

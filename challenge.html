@@ -9,17 +9,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/style/style2.css">
     <link rel="stylesheet" href="assets/style/challenge.css">
+    <link rel="stylesheet" href="assets/style/challenge/cards.css">
+    <link rel="stylesheet" href="assets/style/challenge/mobilefirst.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css">
 </head>
 
 <body onload="onLoad()">
     <aside>
         <!-- Potentially make this collapsible, especially useful on mobile to save space if not needed. -->
-        <h1>Tracking challenges</h1>
+        <h1 class="title">Tracking challenges</h1>
         <div id="pinned-container" onload="renderPinnedCards()">
 
         </div>
-        <a href="#nav" class="cc-card -add">
+        <a href="#nav" class="cc-add">
             <button><i class="fas fa-plus"></i></button>
             <p>Add A Challenge.</p>
         </a>

@@ -154,25 +154,26 @@ function renderPinnedCards() {
     addCardsToContainer(pinContainer, challengesToRender, getCardHtml);
 }
 
-function getCardHtml(card) {
-    return `<card class="cc-card" id="${card.id}">
-                <button class="pin ${Challenges.isChallngePinned(card.id) ? "rotate" : ""}" onclick="togglePinChallenge(this)"><i class="fas fa-thumbtack"></i></button>
-                <img class="cc-img" alt="Calling card" src="${card.img}">
-                <h2 class="cc-title">${card.name}</h2>
-                <p class="cc-desc">${card.desc}</p>
-            </card>`;
+function getCardHtml(card, master = false) {
+    return `<article class="cc-card" id="${card.id}">
+                <img class="cc-img" alt="Calling card: ${card.name}" src="${card.img}">
+                <div class="card-btn-container">
+                <button class="complete-card" onclick=""><i class="fas fa-star"></i></button>
+                ${master ? ``:
+                `<button class="pin ${Challenges.isChallngePinned(card.id) ? "rotate" : ""}" onclick="togglePinChallenge(this)"><i class="fas fa-thumbtack"></i></button>`}
+                </div>
+                ${master ? ``:
+                `<h2 class="cc-title">${card.name}</h2>
+                <p class="cc-desc">${card.desc}</p>`}
+            </article>`;
 }
 
 function getMasteryHtml(card) {
     return `<div>
-                <h2>${card.name}</h2>
+                <h2 class="title">${card.name}</h2>
                 <p>${card.desc}</p>
             </div>
-            <article class="cc-card" id="${card.id}">
-                <button class="pin ${Challenges.isChallngePinned(card.id) ? "rotate" : ""}" onclick="togglePinChallenge(this)"><i class="fas fa-thumbtack"></i></button>
-                <img class="cc-img" alt="Calling card" src="${card.img}">
-                <div class="cc-progress"></div>
-            </article>`;
+            ${getCardHtml(card, true)}`;
 }
 
 function filterList(arrayToFilter, propToFilter, filterVal) {
@@ -234,7 +235,7 @@ function renderTypes(navbar, selectedType) {
 
     let html =
         `<ul name="type" class="filter" id="type" value="${selectedType}">
-            <h2 onclick="expandCategory(this)">${selectedType}<i class="fas fa-caret-down"></i></h2>
+            <h2 class="title" onclick="expandCategory(this)">${selectedType}<i class="fas fa-caret-down"></i></h2>
             <div>
                 ${options}
             </div>
@@ -256,7 +257,7 @@ function renderCategories(navbar, selectedType = challengeTypes.zombies, selecte
 
     let html =
         `<ul name="category" class="filter" id="category" value="${selectedCategory}">
-            <h2 onclick="expandCategory(this)">${selectedCategory}<i class="fas fa-caret-down"></i></h2>
+            <h2 class="title" onclick="expandCategory(this)">${selectedCategory}<i class="fas fa-caret-down"></i></h2>
             <div>
             ${options}
             </div>
@@ -280,7 +281,7 @@ function renderSubCategories(navbar, selectedType = challengeTypes.zombies, sele
 
         let html =
             `<ul name="sub-category" class="filter" id="sub-category" value="${selectedSubCategory}">
-            <h2 onclick="expandCategory(this)">${selectedSubCategory}<i class="fas fa-caret-down"></i></h2>
+            <h2 class="title" onclick="expandCategory(this)">${selectedSubCategory}<i class="fas fa-caret-down"></i></h2>
             <div>
             ${options}
             </div>
