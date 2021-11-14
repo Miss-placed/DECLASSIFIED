@@ -16,13 +16,9 @@
     <aside>
         <!-- Potentially make this collapsible, especially useful on mobile to save space if not needed. -->
         <h1>Tracking challenges</h1>
-        <article class="cc-card">
-            <button class="pin"></button>
-            <img class="cc-img" alt="Calling card" src="assets\img\cc\placeholder.jpg">
-            <h2 class="cc-title">cc title</h2>
-            <p class="cc-desc">cc desc</p>
-            <div class="cc-progress"></div>
-        </article>
+        <div id="pinned-container" onload="renderPinnedCards()">
+
+        </div>
         <a href="#nav" class="cc-card -add">
             <button><i class="fas fa-plus"></i></button>
             <p>Add A Challenge.</p>

@@ -100,6 +100,34 @@ function renderCards() {
     const cardCont = document.querySelector('#card-container');
     const masteryCont = document.querySelector('#mastery-progress');
     // const for completed challenges
+    ({ filteredChallenges, filteredMasterChallenge } = filterChallenges(filteredChallenges, filteredMasterChallenge));
+
+    addCardsToContainer(cardCont, filteredChallenges, getCardHtml);
+    addCardsToContainer(masteryCont, filteredMasterChallenge, getMasteryHtml);
+    /*masteryCont.replaceChildren();
+    if (filteredMasterChallenge[0]) {
+        let html = getMasteryHtml(filteredMasterChallenge[0]);
+        let elementsToAdd = htmlToElements(html)
+        elementsToAdd.forEach(element => {
+            masteryCont.append(element);
+        });
+    } */
+
+}
+
+function addCardsToContainer(cardCont, filteredChallenges, htmlMethod) {
+    cardCont.replaceChildren();
+    filteredChallenges.forEach(card => {
+        //If challenge is complete add the "complete" attribute to the card element
+        let html = htmlMethod(card);
+        let elementsToAdd = htmlToElements(html);
+        elementsToAdd.forEach(element => {
+            cardCont.append(element);
+        });
+    });
+}
+
+function filterChallenges(filteredChallenges, filteredMasterChallenge) {
     const type = getSelectedType();
     const category = getSelectedCategory();
     const subCategory = getSelectedSubCategory();
@@ -113,29 +141,22 @@ function renderCards() {
         filteredChallenges = filterList(filteredChallenges, "category", category);
         filteredMasterChallenge = filterList(filteredMasterChallenge, "category", category);
     }
-    cardCont.replaceChildren();
-    filteredChallenges.forEach(card => {
-        //If challenge is complete add the "complete" attribute to the card element
-        let html = getCardHtml(card);
-        let elementsToAdd = htmlToElements(html)
-        elementsToAdd.forEach(element => {
-            cardCont.append(element);
-        });
-    })
-
-    masteryCont.replaceChildren();
-    if (filteredMasterChallenge[0]) {
-        let html = getMasteryHtml(filteredMasterChallenge[0]);
-        let elementsToAdd = htmlToElements(html)
-        elementsToAdd.forEach(element => {
-            masteryCont.append(element);
-        });
-    }
-
+    return { filteredChallenges, filteredMasterChallenge };
 }
+
+function renderPinnedCards() {
+    const pinContainer = document.querySelector('#pinned-container');
+    let currentPrefs = getUserPrefs();
+    const challengesToRender = [];
+    currentPrefs.pinnedChallenges.forEach((challengeId) => {
+        challengesToRender.push(Challenges.getChallengeById(challengeId));
+    });
+    addCardsToContainer(pinContainer, challengesToRender, getCardHtml);
+}
+
 function getCardHtml(card) {
     return `<card class="cc-card" id="${card.id}">
-                <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
+                <button class="pin ${Challenges.isChallngePinned(card.id) ? "rotate" : ""}" onclick="togglePinChallenge(this)"><i class="fas fa-thumbtack"></i></button>
                 <img class="cc-img" alt="Calling card" src="${card.img}">
                 <h2 class="cc-title">${card.name}</h2>
                 <p class="cc-desc">${card.desc}</p>
@@ -148,7 +169,7 @@ function getMasteryHtml(card) {
                 <p>${card.desc}</p>
             </div>
             <article class="cc-card" id="${card.id}">
-                <button class="pin" onclick="pinCard(this)"><i class="fas fa-thumbtack"></i></button>
+                <button class="pin ${Challenges.isChallngePinned(card.id) ? "rotate" : ""}" onclick="togglePinChallenge(this)"><i class="fas fa-thumbtack"></i></button>
                 <img class="cc-img" alt="Calling card" src="${card.img}">
                 <div class="cc-progress"></div>
             </article>`;
@@ -168,6 +189,28 @@ function expandCategory(x) {
         }
     });
     x.parentNode.classList.toggle('-expanded')
+}
+
+
+function togglePinChallenge(ele) {
+    const cardEle = ele.closest('.cc-card');
+    const challengeId = cardEle.id;
+    // Update pin icon or remove card 
+    //document.querySelector(`#${challengeId}`).toggleAttribute("complete"); // Use later for "Completed challenges"
+    cardEle.querySelector('.pin').classList.toggle('rotate')
+    // Push to prefs array
+    let currentPrefs = getUserPrefs();
+
+    const index = currentPrefs.pinnedChallenges.indexOf(challengeId);
+    if (index > -1) {
+        currentPrefs.pinnedChallenges.splice(index, 1); // Remove
+    } else {
+        currentPrefs.pinnedChallenges.push(challengeId); // Add
+    }
+
+    setUserPrefs(currentPrefs);
+    // Move card to pinned area
+    renderPinnedCards()
 }
 
 /////////////////////Menu Stuff/////////////////////////
@@ -293,4 +336,5 @@ function getSelectedSubCategory() {
 function onLoad() {
     renderNav(challengeTypes.zombies, allCategories.career, allSubCategories[allCategories.career].dieMaschineReport);
     renderCards();
+    renderPinnedCards();
 }

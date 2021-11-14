@@ -18,12 +18,20 @@ aside {
   top: 0;
   bottom: 0;
   z-index: 50;
+  overflow: auto;
 }
 
 main {
   display: flex;
   flex-direction: column;
   flex: 0 0 67%;
+}
+
+#pinned-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 5px;
 }
 
 #card-container {
@@ -236,6 +244,7 @@ nav > ul li {
 }
 
 @media screen and (max-width: 1040px) {
+  #pinned-container .cc-card,
   #card-container .cc-card {
     flex: 0 0 calc(100% - 10px);
   }

@@ -1453,6 +1453,34 @@ class Challenges {
 
         ),
     ]
+
+    static getChallengeById(id, includeMastery = true) {
+        const challenge = this.challengeStore.find(x => x.id == id);
+        if (challenge) {
+            return challenge;
+        }
+        if (includeMastery) {
+            return this.getMasteryChallengeById(id);
+        }
+
+        return new Challenge();
+    }
+
+    static getMasteryChallengeById(id) {
+        const challenge = this.masterChallenges.find(x => x.id == id);
+        if (challenge) {
+            return challenge;
+        }
+
+        return new Challenge();
+    }
+
+    static isChallngePinned(id) {
+        const currentPrefs = getUserPrefs();
+        const index = currentPrefs.pinnedChallenges.indexOf(id);
+        if (index > -1) return true;
+        return false;
+    }
 }
 
 
