@@ -2,31 +2,44 @@
   body {
     flex-direction: row;
   }
+
   aside {
     position: sticky;
     top: 0;
     bottom: 0;
     overflow: auto;
   }
+
   .cc-add {
     display: none;
   }
+
   aside,
   main {
     flex: 0 0 50vw;
   }
+
   #mastery-progress {
     position: relative;
   }
+
   .title,
-  .cc-card > h2 {
+  .cc-card>h2 {
     font-size: 1rem;
   }
 }
+
 @media only screen and (min-width: 700px) {
+
+  #mastery-progress div,
+  #mastery-progress article {
+    flex: 0 0 50%;
+  }
+
   body {
     flex-direction: row;
   }
+
   aside {
     position: sticky;
     top: 0;
@@ -34,24 +47,30 @@
     flex: 1 0 calc(100% / 3 * 1);
     overflow: auto;
   }
+
   .cc-add {
     display: none;
   }
+
   main {
     flex: 1 0 calc(100% / 3 * 2);
   }
+
   #card-container {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
   }
+
   .cc-card {
     flex: 1 1 calc(50% - 5px);
   }
+
   #mastery-progress {
     position: sticky;
   }
 }
+
 @media only screen and (min-width: 700px) and (orientation: landscape) {
   #mastery-progress {
     display: flex;
