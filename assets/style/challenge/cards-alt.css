@@ -24,6 +24,10 @@
 .cc-card > div > span {
   font-weight: 800;
 }
+.cc-card .square{
+  height:100%;
+  aspect-ratio: 13/40;
+}
 .cc-card > p {
   border-radius:0 0 10px 10px;
   aspect-ratio: 900/240;
@@ -38,9 +42,9 @@
   height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
   height: fill-available;
 }
-.cc-card > p:hover{
+.cc-card > p:hover, .cc-card > .cc-desc-master{
   color:rgba(0, 0, 0, 0);
-  background-blend-mode: inherit;
+  background-blend-mode: normal;
 }
 
 .cc-card .pin-card,

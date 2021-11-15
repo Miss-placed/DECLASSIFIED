@@ -164,17 +164,18 @@ function getCardHtml(card, forMastery = false) {
                     <p class="cc-desc" style="background-image:url('${card.img}')">${card.desc}</p>
                 </article>` */
     const isComplete = Challenges.isChallengeCompleted(card.id);
-    let html = `<article class="cc-card" data-cc-id="${card.id}" ${isComplete ? "complete" : ""}>
-                    <img class="cc-img" alt="Calling card: ${card.name}" src="${card.img}">
-                    <div class="card-btn-container">
-                    ${card.minimumRequired ? `` : `<button class="complete-card" onclick="${forMastery ? "toggleCompletedMasteryChallenge(this)" : "toggleCompletedChallenge(this)"}"><i class="far ${isComplete ? "fa-check-square" : "fa-square"}"></i></button>`}
-                    ${forMastery || isComplete ? `` :
-            `<button class="pin ${Challenges.isChallengePinned(card.id) ? "rotate" : ""}" onclick="togglePinChallenge(this)"><i class="fas fa-thumbtack"></i></button>`}
-                    </div>
-                    ${forMastery ? `` :
-            `<h2 class="cc-title">${card.name}</h2>
-                    <p class="cc-desc">${card.desc}</p>`}
-                </article>`;
+    const isPinned = Challenges.isChallengePinned(card.id);
+    let html = `
+    <article class="cc-card" data-cc-id="${card.id}" ${isComplete ? "completed" : ""} ${isPinned ? "pinned" : ""} ${forMastery ? '':''}>
+        <div class="card-btn-container">
+            ${card.minimumRequired ? `<span class="square">&nbsp;</span>` : `<button class="complete-card" onclick="${forMastery ? "toggleCompletedMasteryChallenge(this)" : "toggleCompletedChallenge(this)"}"><i class="far ${isComplete ? "fa-check-square" : "fa-square"}"></i></button>`}
+            ${forMastery ? '':`<span>${card.name}</span>`}
+            ${forMastery || isComplete ? `<span class="square">&nbsp;</span>` :`<button class="pin-card" onclick="togglePinChallenge(this)"><i class="fas fa-thumbtack"></i></button>`}
+        </div>
+        <p class="cc-desc${forMastery ? '-master':''}" style="background-image:url('${card.img}')">
+        ${forMastery ? '':`${card.desc}`}
+        </p>
+    </article>`;
 
     return html;
 }

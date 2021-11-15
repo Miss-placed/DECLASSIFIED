@@ -31,10 +31,6 @@
 
 @media only screen and (min-width: 700px) {
 
-  #mastery-progress div,
-  #mastery-progress article {
-    flex: 0 0 50%;
-  }
 
   body {
     flex-direction: row;
@@ -63,11 +59,12 @@
   }
 
   .cc-card {
-    flex: 1 1 calc(50% - 5px);
+    flex: 0 0 calc(50% - 5px);
   }
 
   #mastery-progress {
     position: sticky;
+    justify-content: space-between;
   }
 }
 
@@ -75,5 +72,6 @@
   #mastery-progress {
     display: flex;
     position: sticky;
+
   }
 }
