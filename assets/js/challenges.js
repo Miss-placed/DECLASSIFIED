@@ -168,7 +168,7 @@ function getCardHtml(card, forMastery = false) {
                     <img class="cc-img" alt="Calling card: ${card.name}" src="${card.img}">
                     <div class="card-btn-container">
                     ${card.minimumRequired ? `` : `<button class="complete-card" onclick="${forMastery ? "toggleCompletedMasteryChallenge(this)" : "toggleCompletedChallenge(this)"}"><i class="far ${isComplete ? "fa-check-square" : "fa-square"}"></i></button>`}
-                    ${forMastery ? `` :
+                    ${forMastery || isComplete ? `` :
             `<button class="pin ${Challenges.isChallengePinned(card.id) ? "rotate" : ""}" onclick="togglePinChallenge(this)"><i class="fas fa-thumbtack"></i></button>`}
                     </div>
                     ${forMastery ? `` :
@@ -237,9 +237,11 @@ function toggleCompletedChallenge(ele) {
     } else {
         currentPrefs.completedChallenges.push(challengeId); // Add
     }
+    // Also remove from pinned if completed.
+    if (Challenges.isChallengePinned(challengeId)) currentPrefs.pinnedChallenges.splice(currentPrefs.pinnedChallenges.indexOf(challengeId), 1);
 
     setUserPrefs(currentPrefs);
-    
+
     renderPinnedCards();
     renderCards();
 }
@@ -253,13 +255,17 @@ function toggleCompletedMasteryChallenge(ele) {
     let currentPrefs = getUserPrefs();
     if (areAllCompleted) {
         // Remove from prefs array
-        challenge.requiredChallenges.map((c) => {
-            currentPrefs.completedChallenges.splice(currentPrefs.completedChallenges.indexOf(c), 1);
+        challenge.requiredChallenges.map((id) => {
+            currentPrefs.completedChallenges.splice(currentPrefs.completedChallenges.indexOf(id), 1);
+            // Also remove from pinned if completed.
+            if (Challenges.isChallengePinned(id)) currentPrefs.pinnedChallenges.splice(currentPrefs.pinnedChallenges.indexOf(id), 1);
         });
     } else {
         // Adds all required challenges to completed if not already completed.
-        challenge.requiredChallenges.map((c) => {
-            if (currentPrefs.completedChallenges.indexOf(c) === -1) currentPrefs.completedChallenges.push(c); 
+        challenge.requiredChallenges.map((id) => {
+            if (currentPrefs.completedChallenges.indexOf(id) === -1) currentPrefs.completedChallenges.push(id);
+            // Also remove from pinned if completed.
+            if (Challenges.isChallengePinned(id)) currentPrefs.pinnedChallenges.splice(currentPrefs.pinnedChallenges.indexOf(id), 1);
         });
     }
     setUserPrefs(currentPrefs);
