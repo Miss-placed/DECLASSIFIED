@@ -178,6 +178,7 @@ function getCardHtml(card, forMastery = false) {
     </article>`;
 
     return html;
+    
 }
 
 function getMasteryHtml(card) {
@@ -257,7 +258,9 @@ function toggleCompletedMasteryChallenge(ele) {
     if (areAllCompleted) {
         // Remove from prefs array
         challenge.requiredChallenges.map((id) => {
-            currentPrefs.completedChallenges.splice(currentPrefs.completedChallenges.indexOf(id), 1);
+            currentPrefs.completedChallenges = currentPrefs.completedChallenges.filter(function(x) {
+                return x !== id;
+            });
             // Also remove from pinned if completed.
             if (Challenges.isChallengePinned(id)) currentPrefs.pinnedChallenges.splice(currentPrefs.pinnedChallenges.indexOf(id), 1);
         });
