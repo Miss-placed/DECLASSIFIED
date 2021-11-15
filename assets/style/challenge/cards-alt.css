@@ -1,0 +1,67 @@
+
+:root{
+  --clr-black-100: #0c0c0c;
+}
+.cc-card {
+  border-radius: 10px;
+  background-color: var(--clr-black-100);
+  color: white;
+  display:flex;
+  flex-direction: column;
+}
+.cc-card > div {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  min-height: 40px;
+  line-height: 40px;
+  border-radius: 10px 10px 0 0;
+  background-color: var(--clr-black-100);
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding:0 15px;
+}
+.cc-card > div > span {
+  font-weight: 800;
+}
+.cc-card > p {
+  border-radius:0 0 10px 10px;
+  aspect-ratio: 900/240;
+  transition: all 0.2s ease;
+  padding:10px 25px;
+  font-weight: 100;
+  background-blend-mode: overlay;
+  background-color:var(--clr-black);
+  background-position: center;
+  background-size: cover;
+  height: -moz-available;          /* WebKit-based browsers will ignore this. */
+  height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+  height: fill-available;
+}
+.cc-card > p:hover{
+  color:rgba(0, 0, 0, 0);
+  background-blend-mode: inherit;
+}
+
+.cc-card .pin-card,
+.cc-card .complete-card {
+  border: unset;
+  background: unset;
+  color: white;
+}
+.cc-card .pin-card:hover {
+  color: var(--clr-yellow);
+}
+.cc-card .complete-card:hover {
+  color: var(--clr-green);
+}
+.cc-card[pinned] .pin-card{
+  color: var(--clr-yellow);
+}
+.cc-card[completed] .complete-card {
+  color: var(--clr-green);
+}
+.cc-card[pinned] .pin-card:hover,
+.cc-card[completed] .complete-card:hover{
+  color:white;
+}
