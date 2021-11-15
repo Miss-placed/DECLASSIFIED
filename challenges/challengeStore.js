@@ -28,6 +28,11 @@ class Challenge {
         this.requiredChallenges = requiredChallenges;
         this.minimumRequired = minimumRequired
     }
+
+    areAllChallengesCompleted() {
+        const currentPrefs = getUserPrefs();
+        return this.requiredChallenges.every(i => currentPrefs.completedChallenges.includes(i));
+    }
 }
 
 class Challenges {
@@ -1488,8 +1493,7 @@ class Challenges {
         const isMastery = masteryIdArr.indexOf(id) > -1;
         if (isMastery) {
             const challenge = this.getMasteryChallengeById(id);
-            // Checks if all required challenges are completed
-            return challenge.requiredChallenges.every(i => currentPrefs.completedChallenges.includes(i));
+            return challenge.areAllChallengesCompleted();
         }
         // Checks if normal challenge is in the completed array
         const index = currentPrefs.completedChallenges.indexOf(id);

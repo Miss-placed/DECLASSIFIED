@@ -169,10 +169,10 @@ function getCardHtml(card, forMastery = false) {
                     <div class="card-btn-container">
                     <button class="complete-card" onclick="${forMastery ? "toggleCompletedMasteryChallenge(this)" : "toggleCompletedChallenge(this)"}"><i class="far ${isComplete ? "fa-check-square" : "fa-square"}"></i></button>
                     ${forMastery ? `` :
-                    `<button class="pin ${Challenges.isChallengePinned(card.id) ? "rotate" : ""}" onclick="togglePinChallenge(this)"><i class="fas fa-thumbtack"></i></button>`}
+            `<button class="pin ${Challenges.isChallengePinned(card.id) ? "rotate" : ""}" onclick="togglePinChallenge(this)"><i class="fas fa-thumbtack"></i></button>`}
                     </div>
                     ${forMastery ? `` :
-                    `<h2 class="cc-title">${card.name}</h2>
+            `<h2 class="cc-title">${card.name}</h2>
                     <p class="cc-desc">${card.desc}</p>`}
                 </article>`;
 
@@ -207,9 +207,7 @@ function expandCategory(x) {
 function togglePinChallenge(ele) {
     const cardEle = ele.closest('.cc-card');
     const challengeId = cardEle.getAttribute('data-cc-id');
-    // Update pin icon or remove card 
-    //document.querySelector(`#${challengeId}`).toggleAttribute("complete"); // Use later for "Completed challenges"
-    //cardEle.querySelector('.pin').classList.toggle('rotate')
+
     // Push to prefs array
     let currentPrefs = getUserPrefs();
 
@@ -229,11 +227,6 @@ function togglePinChallenge(ele) {
 function toggleCompletedChallenge(ele) {
     const cardEle = ele.closest('.cc-card');
     const challengeId = cardEle.getAttribute('data-cc-id');
-    // Update completed icon
-    /* cardEle.toggleAttribute('complete');
-    cardEle.querySelector('.complete-card i').classList.toggle('fa-check-square');
-    cardEle.querySelector('.complete-card i').classList.toggle('fa-square'); */
-    
 
     // Push to prefs array
     let currentPrefs = getUserPrefs();
@@ -246,14 +239,32 @@ function toggleCompletedChallenge(ele) {
     }
 
     setUserPrefs(currentPrefs);
-    // Move card to pinned area
+    
     renderPinnedCards();
     renderCards();
 }
 
-function toggleCompletedMasteryChallenge() {
+function toggleCompletedMasteryChallenge(ele) {
     // Should toggle all required challenges to completed (except where minimum required)
-
+    const cardEle = ele.closest('.cc-card');
+    const challengeId = cardEle.getAttribute('data-cc-id');
+    const challenge = Challenges.getMasteryChallengeById(challengeId);
+    const areAllCompleted = challenge.areAllChallengesCompleted();
+    let currentPrefs = getUserPrefs();
+    if (areAllCompleted) {
+        // Remove from prefs array
+        challenge.requiredChallenges.map((c) => {
+            currentPrefs.completedChallenges.splice(currentPrefs.completedChallenges.indexOf(c), 1);
+        });
+    } else {
+        // Adds all required challenges to completed if not already completed.
+        challenge.requiredChallenges.map((c) => {
+            if (currentPrefs.completedChallenges.indexOf(c) === -1) currentPrefs.completedChallenges.push(c); 
+        });
+    }
+    setUserPrefs(currentPrefs);
+    renderPinnedCards();
+    renderCards();
 }
 
 /////////////////////Menu Stuff/////////////////////////
