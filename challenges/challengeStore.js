@@ -1475,9 +1475,24 @@ class Challenges {
         return new Challenge();
     }
 
-    static isChallngePinned(id) {
+    static isChallengePinned(id) {
         const currentPrefs = getUserPrefs();
         const index = currentPrefs.pinnedChallenges.indexOf(id);
+        if (index > -1) return true;
+        return false;
+    }
+
+    static isChallengeCompleted(id) {
+        const currentPrefs = getUserPrefs();
+        const masteryIdArr = Challenges.masterChallenges.map(a => a.id);
+        const isMastery = masteryIdArr.indexOf(id) > -1;
+        if (isMastery) {
+            const challenge = this.getMasteryChallengeById(id);
+            // Checks if all required challenges are completed
+            return challenge.requiredChallenges.every(i => currentPrefs.completedChallenges.includes(i));
+        }
+        // Checks if normal challenge is in the completed array
+        const index = currentPrefs.completedChallenges.indexOf(id);
         if (index > -1) return true;
         return false;
     }

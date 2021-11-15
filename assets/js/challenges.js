@@ -154,18 +154,29 @@ function renderPinnedCards() {
     addCardsToContainer(pinContainer, challengesToRender, getCardHtml);
 }
 
-function getCardHtml(card, master = false) {
-    return `<article class="cc-card" id="${card.id}">
-                <img class="cc-img" alt="Calling card: ${card.name}" src="${card.img}">
-                <div class="card-btn-container">
-                <button class="complete-card" onclick=""><i class="fas fa-star"></i></button>
-                ${master ? ``:
-                `<button class="pin ${Challenges.isChallngePinned(card.id) ? "rotate" : ""}" onclick="togglePinChallenge(this)"><i class="fas fa-thumbtack"></i></button>`}
-                </div>
-                ${master ? ``:
-                `<h2 class="cc-title">${card.name}</h2>
-                <p class="cc-desc">${card.desc}</p>`}
-            </article>`;
+function getCardHtml(card, forMastery = false) {
+    /*     return `<article class="cc-card" data-cc-id="${card.id}">
+                    <div class="card-btn-container">
+                        <button class="complete-card"><i class="fas fa-star"></i></button>
+                        <span>${card.name}</span>
+                        <button class="pin-card"><i class="fas fa-thumbtack"></i></button>
+                    </div>
+                    <p class="cc-desc" style="background-image:url('${card.img}')">${card.desc}</p>
+                </article>` */
+    const isComplete = Challenges.isChallengeCompleted(card.id);
+    let html = `<article class="cc-card" data-cc-id="${card.id}" ${isComplete ? "complete" : ""}>
+                    <img class="cc-img" alt="Calling card: ${card.name}" src="${card.img}">
+                    <div class="card-btn-container">
+                    <button class="complete-card" onclick="${forMastery ? "toggleCompletedMasteryChallenge(this)" : "toggleCompletedChallenge(this)"}"><i class="far ${isComplete ? "fa-check-square" : "fa-square"}"></i></button>
+                    ${forMastery ? `` :
+                    `<button class="pin ${Challenges.isChallengePinned(card.id) ? "rotate" : ""}" onclick="togglePinChallenge(this)"><i class="fas fa-thumbtack"></i></button>`}
+                    </div>
+                    ${forMastery ? `` :
+                    `<h2 class="cc-title">${card.name}</h2>
+                    <p class="cc-desc">${card.desc}</p>`}
+                </article>`;
+
+    return html;
 }
 
 function getMasteryHtml(card) {
@@ -195,10 +206,10 @@ function expandCategory(x) {
 
 function togglePinChallenge(ele) {
     const cardEle = ele.closest('.cc-card');
-    const challengeId = cardEle.id;
+    const challengeId = cardEle.getAttribute('data-cc-id');
     // Update pin icon or remove card 
     //document.querySelector(`#${challengeId}`).toggleAttribute("complete"); // Use later for "Completed challenges"
-    cardEle.querySelector('.pin').classList.toggle('rotate')
+    //cardEle.querySelector('.pin').classList.toggle('rotate')
     // Push to prefs array
     let currentPrefs = getUserPrefs();
 
@@ -211,7 +222,38 @@ function togglePinChallenge(ele) {
 
     setUserPrefs(currentPrefs);
     // Move card to pinned area
-    renderPinnedCards()
+    renderPinnedCards();
+    renderCards();
+}
+
+function toggleCompletedChallenge(ele) {
+    const cardEle = ele.closest('.cc-card');
+    const challengeId = cardEle.getAttribute('data-cc-id');
+    // Update completed icon
+    /* cardEle.toggleAttribute('complete');
+    cardEle.querySelector('.complete-card i').classList.toggle('fa-check-square');
+    cardEle.querySelector('.complete-card i').classList.toggle('fa-square'); */
+    
+
+    // Push to prefs array
+    let currentPrefs = getUserPrefs();
+
+    const index = currentPrefs.completedChallenges.indexOf(challengeId);
+    if (index > -1) {
+        currentPrefs.completedChallenges.splice(index, 1); // Remove
+    } else {
+        currentPrefs.completedChallenges.push(challengeId); // Add
+    }
+
+    setUserPrefs(currentPrefs);
+    // Move card to pinned area
+    renderPinnedCards();
+    renderCards();
+}
+
+function toggleCompletedMasteryChallenge() {
+    // Should toggle all required challenges to completed (except where minimum required)
+
 }
 
 /////////////////////Menu Stuff/////////////////////////
