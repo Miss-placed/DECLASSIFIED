@@ -31,7 +31,16 @@ class Challenge {
 
     areAllChallengesCompleted() {
         const currentPrefs = getUserPrefs();
-        return this.requiredChallenges.every(i => currentPrefs.completedChallenges.includes(i));
+        if (this.minimumRequired) {
+            let completedChallenges = 0;
+            this.requiredChallenges.forEach((id) => {
+                if (Challenges.isChallengeCompleted(id)) completedChallenges++;
+            });
+            // Only check to see if challenges are above minimum required.
+            return (completedChallenges >= this.minimumRequired);
+        } else {
+            return this.requiredChallenges.every(i => currentPrefs.completedChallenges.includes(i));
+        }
     }
 }
 

@@ -167,7 +167,7 @@ function getCardHtml(card, forMastery = false) {
     let html = `<article class="cc-card" data-cc-id="${card.id}" ${isComplete ? "complete" : ""}>
                     <img class="cc-img" alt="Calling card: ${card.name}" src="${card.img}">
                     <div class="card-btn-container">
-                    <button class="complete-card" onclick="${forMastery ? "toggleCompletedMasteryChallenge(this)" : "toggleCompletedChallenge(this)"}"><i class="far ${isComplete ? "fa-check-square" : "fa-square"}"></i></button>
+                    ${card.minimumRequired ? `` : `<button class="complete-card" onclick="${forMastery ? "toggleCompletedMasteryChallenge(this)" : "toggleCompletedChallenge(this)"}"><i class="far ${isComplete ? "fa-check-square" : "fa-square"}"></i></button>`}
                     ${forMastery ? `` :
             `<button class="pin ${Challenges.isChallengePinned(card.id) ? "rotate" : ""}" onclick="togglePinChallenge(this)"><i class="fas fa-thumbtack"></i></button>`}
                     </div>
