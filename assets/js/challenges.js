@@ -166,19 +166,19 @@ function getCardHtml(card, forMastery = false) {
     const isComplete = Challenges.isChallengeCompleted(card.id);
     const isPinned = Challenges.isChallengePinned(card.id);
     let html = `
-    <article class="cc-card" data-cc-id="${card.id}" ${isComplete ? "completed" : ""} ${isPinned ? "pinned" : ""} ${forMastery ? '':''}>
+    <article class="cc-card" data-cc-id="${card.id}" ${isComplete ? "completed" : ""} ${isPinned ? "pinned" : ""} ${forMastery ? '' : ''}>
         <div class="card-btn-container">
             ${card.minimumRequired ? `<span class="square">&nbsp;</span>` : `<button class="complete-card" onclick="${forMastery ? "toggleCompletedMasteryChallenge(this)" : "toggleCompletedChallenge(this)"}"><i class="far ${isComplete ? "fa-check-square" : "fa-square"}"></i></button>`}
-            ${forMastery ? '':`<span>${card.name}</span>`}
-            ${forMastery || isComplete ? `<span class="square">&nbsp;</span>` :`<button class="pin-card" onclick="togglePinChallenge(this)"><i class="fas fa-thumbtack"></i></button>`}
+            ${forMastery ? '' : `<span>${card.name}</span>`}
+            ${forMastery || isComplete ? `<span class="square">&nbsp;</span>` : `<button class="pin-card" onclick="togglePinChallenge(this)"><i class="fas fa-thumbtack"></i></button>`}
         </div>
-        <p class="cc-desc${forMastery ? '-master':''}" style="background-image:url('${card.img}')">
-        ${forMastery ? '':`${card.desc}`}
+        <p class="cc-desc${forMastery ? '-master' : ''}" style="background-image:url('${card.img}')">
+        ${forMastery ? '' : `${card.desc}`}
         </p>
     </article>`;
 
     return html;
-    
+
 }
 
 function getMasteryHtml(card) {
@@ -215,7 +215,7 @@ function togglePinChallenge(ele) {
 
     const index = currentPrefs.pinnedChallenges.indexOf(challengeId);
     if (index > -1) {
-        currentPrefs.pinnedChallenges.splice(index, 1); // Remove
+        currentPrefs.pinnedChallenges = removeAllInstances(currentPrefs.pinnedChallenges, challengeId); // Remove
     } else {
         currentPrefs.pinnedChallenges.push(challengeId); // Add
     }
@@ -235,18 +235,21 @@ function toggleCompletedChallenge(ele) {
 
     const index = currentPrefs.completedChallenges.indexOf(challengeId);
     if (index > -1) {
-        currentPrefs.completedChallenges.splice(index, 1); // Remove
+        // Remove All
+        currentPrefs.completedChallenges = removeAllInstances(currentPrefs.completedChallenges, challengeId);
     } else {
         currentPrefs.completedChallenges.push(challengeId); // Add
     }
-    // Also remove from pinned if completed.
-    if (Challenges.isChallengePinned(challengeId)) currentPrefs.pinnedChallenges.splice(currentPrefs.pinnedChallenges.indexOf(challengeId), 1);
+    // Also remove all from pinned if completed.
+    if (Challenges.isChallengePinned(challengeId)) currentPrefs.pinnedChallenges = removeAllInstances(currentPrefs.pinnedChallenges, challengeId);
 
     setUserPrefs(currentPrefs);
 
     renderPinnedCards();
     renderCards();
 }
+
+
 
 function toggleCompletedMasteryChallenge(ele) {
     // Should toggle all required challenges to completed (except where minimum required)
@@ -258,18 +261,19 @@ function toggleCompletedMasteryChallenge(ele) {
     if (areAllCompleted) {
         // Remove from prefs array
         challenge.requiredChallenges.map((id) => {
-            currentPrefs.completedChallenges = currentPrefs.completedChallenges.filter(function(x) {
+            currentPrefs.completedChallenges = currentPrefs.completedChallenges.filter(function (x) {
                 return x !== id;
             });
             // Also remove from pinned if completed.
-            if (Challenges.isChallengePinned(id)) currentPrefs.pinnedChallenges.splice(currentPrefs.pinnedChallenges.indexOf(id), 1);
+            
+            if (Challenges.isChallengePinned(id)) currentPrefs.pinnedChallenges = removeAllInstances(currentPrefs.pinnedChallenges, id);
         });
     } else {
         // Adds all required challenges to completed if not already completed.
         challenge.requiredChallenges.map((id) => {
             if (currentPrefs.completedChallenges.indexOf(id) === -1) currentPrefs.completedChallenges.push(id);
             // Also remove from pinned if completed.
-            if (Challenges.isChallengePinned(id)) currentPrefs.pinnedChallenges.splice(currentPrefs.pinnedChallenges.indexOf(id), 1);
+            if (Challenges.isChallengePinned(id)) currentPrefs.pinnedChallenges = removeAllInstances(currentPrefs.pinnedChallenges, id);
         });
     }
     setUserPrefs(currentPrefs);
@@ -397,7 +401,7 @@ function getCategory(typeId, sbCatId) {
                 type = typeKey;
                 category = categoryKey;
                 subCategory = allSubCategories[categoryKey][sbCatId];
-            } 
+            }
         }
         return;
     });

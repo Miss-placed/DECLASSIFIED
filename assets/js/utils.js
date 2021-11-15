@@ -494,3 +494,9 @@ function IsJsonString(str) {
     }
     return true;
 }
+
+function removeAllInstances(array, id) {
+    return array.filter(function (x) {
+        return x !== id;
+    });
+}
