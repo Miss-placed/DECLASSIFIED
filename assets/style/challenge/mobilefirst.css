@@ -24,13 +24,12 @@
   }
 
   .title,
-  .cc-card>h2 {
+  .cc-card > h2 {
     font-size: 1rem;
   }
 }
 
 @media only screen and (min-width: 700px) {
-
   body {
     flex-direction: row;
   }
@@ -39,7 +38,7 @@
     position: sticky;
     top: 0;
     bottom: 0;
-    flex: 1 0 calc(100% / 5 * 2);
+    flex: 1 0 calc(100% / 2 * 1);
     overflow: auto;
   }
 
@@ -48,22 +47,22 @@
   }
 
   main {
-    flex: 1 0 calc(100% / 5 * 3);
+    flex: 1 0 calc(100% / 2 * 1);
   }
 
   #card-container {
     flex-direction: row;
     flex-wrap: wrap;
-    width: 100%;
-  }
-
-  .cc-card {
-    flex: 0 0 calc(100% / 3 - 10px);
+    /* width: 100%; */
   }
 
   #mastery-progress {
     position: sticky;
     justify-content: space-between;
+  }
+  .cc-card {
+    flex-basis: calc(100%);
+    flex-shrink: 1;
   }
 }
 
@@ -71,6 +70,27 @@
   #mastery-progress {
     display: flex;
     position: sticky;
-
+  }
+}
+@media only screen and (min-width: 1024px) {
+  aside {
+    flex: 1 0 calc(100% / 3 * 1);
+    max-width: 600px;
+  }
+  .cc-card {
+    flex-basis: calc(100% / 2 - 10px);
+    flex-shrink: 1;
+  }
+  main {
+    flex: 1 0 calc(100% / 3 * 2);
+    max-width: 800px;
+    margin: auto;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #pinned-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }

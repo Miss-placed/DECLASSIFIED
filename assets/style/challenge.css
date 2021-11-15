@@ -2,8 +2,9 @@
 	box-sizing: border-box;
 }
 body, main, aside {
-	min-height: 100vh;
+	/* min-height: 100vh; */
 }
+/* html,body{height:initial} */
 body {
   display:flex;
   flex-direction: column;

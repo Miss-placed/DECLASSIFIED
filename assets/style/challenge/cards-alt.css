@@ -23,27 +23,31 @@
 }
 .cc-card > div > span {
   font-weight: 800;
+  word-break: break-word;
 }
 .cc-card .square{
   height:100%;
   aspect-ratio: 13/40;
 }
 .cc-card > p {
+  height:-webkit-fill-available;
+  height:-moz-available;
+  aspect-ratio: 900/249;
   border-radius:0 0 10px 10px;
-  aspect-ratio: 900/240;
   transition: all 0.2s ease;
   padding:10px 25px;
   font-weight: 100;
   background-blend-mode: overlay;
   background-color:var(--clr-black);
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  height: -moz-available;          /* WebKit-based browsers will ignore this. */
-  height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
-  height: fill-available;
+  color:rgb(255, 255, 255);
+  transition: all 0.3s ease;
+
 }
 .cc-card > p:hover, .cc-card > .cc-desc-master, .cc-card[completed] > p{
-  color:rgba(0, 0, 0, 0);
+  color:rgba(255, 255, 255, 0);
   background-blend-mode: normal;
 }
 
@@ -52,15 +56,27 @@
   border: unset;
   background: unset;
   color: white;
+  transform:scale(100%)  rotate(0);
+  transition: all 0.3s ease;
+
 }
+.cc-card .pin-card:hover,
+.cc-card .complete-card:hover {
+  transform:scale(130%)
+}
+
 .cc-card .pin-card:hover {
   color: var(--clr-yellow);
+  transform:  scale(130%) rotate(45deg);
+
 }
 .cc-card .complete-card:hover {
   color: var(--clr-green);
 }
 .cc-card[pinned] .pin-card{
   color: var(--clr-yellow);
+  
+  transform:rotate(45deg);
 }
 .cc-card[completed] .complete-card {
   color: var(--clr-green);
@@ -68,4 +84,5 @@
 .cc-card[pinned] .pin-card:hover,
 .cc-card[completed] .complete-card:hover{
   color:white;
+  transform:  scale(130%) rotate(0deg);
 }
