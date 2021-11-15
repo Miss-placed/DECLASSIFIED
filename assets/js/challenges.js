@@ -381,6 +381,26 @@ function changeSubCategoryMenu(x) {
     renderCards();
 }
 
+function getCategory(typeId, sbCatId) {
+    let type = challengeTypes.zombies; category = allCategories.career; subCategory = allSubCategories[allCategories.career].dieMaschineReport;
+    Object.keys(allCategories).forEach((ct) => {
+        const typeKey = challengeTypes[typeId];
+        const categoryKey = allCategories[ct];
+
+        if (allSubCategories[categoryKey]) {
+
+
+            if (allSubCategories[categoryKey][sbCatId]) {
+                type = typeKey;
+                category = categoryKey;
+                subCategory = allSubCategories[categoryKey][sbCatId];
+            } 
+        }
+        return;
+    });
+    return { type, category, subCategory }
+}
+
 /////////////////////Utils/////////////////////////
 function getSelectedType() {
     return $("#type").attr('value');
@@ -394,8 +414,21 @@ function getSelectedSubCategory() {
     return $("#sub-category").attr('value');
 }
 
+function getCategories() {
+    //First Check the URL
+    let typeId = getUrlVars()["type"] ?? "";
+    let categoryId = getUrlVars()["category"] ?? "";
+    if (typeId && categoryId) {
+        return getCategory(typeId, categoryId);
+    }
+    // Otherwise get defaults from user prefs
+
+}
+
 function onLoad() {
-    renderNav(challengeTypes.zombies, allCategories.career, allSubCategories[allCategories.career].dieMaschineReport);
+    const { type, category, subCategory } = getCategories();
+    renderNav(type, category, subCategory);
     renderCards();
     renderPinnedCards();
+
 }
