@@ -82,3 +82,7 @@
 .cc-add > p {
   display: block;
 }
+
+.cc-card button {
+  cursor: pointer;
+}
