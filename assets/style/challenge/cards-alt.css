@@ -42,9 +42,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  color:rgb(255, 255, 255);
+  transition: all 0.3s ease;
+
 }
 .cc-card > p:hover, .cc-card > .cc-desc-master, .cc-card[completed] > p{
-  color:rgba(211, 82, 82, 0);
+  color:rgba(255, 255, 255, 0);
   background-blend-mode: normal;
 }
 
@@ -53,15 +56,27 @@
   border: unset;
   background: unset;
   color: white;
+  transform:scale(100%)  rotate(0);
+  transition: all 0.3s ease;
+
 }
+.cc-card .pin-card:hover,
+.cc-card .complete-card:hover {
+  transform:scale(130%)
+}
+
 .cc-card .pin-card:hover {
   color: var(--clr-yellow);
+  transform:  scale(130%) rotate(45deg);
+
 }
 .cc-card .complete-card:hover {
   color: var(--clr-green);
 }
 .cc-card[pinned] .pin-card{
   color: var(--clr-yellow);
+  
+  transform:rotate(45deg);
 }
 .cc-card[completed] .complete-card {
   color: var(--clr-green);
@@ -69,4 +84,5 @@
 .cc-card[pinned] .pin-card:hover,
 .cc-card[completed] .complete-card:hover{
   color:white;
+  transform:  scale(130%) rotate(0deg);
 }
