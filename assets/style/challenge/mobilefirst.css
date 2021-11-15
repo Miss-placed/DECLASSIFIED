@@ -31,7 +31,6 @@
 
 @media only screen and (min-width: 700px) {
 
-
   body {
     flex-direction: row;
   }
@@ -40,7 +39,7 @@
     position: sticky;
     top: 0;
     bottom: 0;
-    flex: 1 0 calc(100% / 3 * 1);
+    flex: 1 0 calc(100% / 5 * 2);
     overflow: auto;
   }
 
@@ -49,7 +48,7 @@
   }
 
   main {
-    flex: 1 0 calc(100% / 3 * 2);
+    flex: 1 0 calc(100% / 5 * 3);
   }
 
   #card-container {
@@ -59,7 +58,7 @@
   }
 
   .cc-card {
-    flex: 0 0 calc(50% - 5px);
+    flex: 0 0 calc(100% / 3 - 10px);
   }
 
   #mastery-progress {

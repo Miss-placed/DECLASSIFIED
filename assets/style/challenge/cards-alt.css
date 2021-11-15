@@ -42,7 +42,7 @@
   height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
   height: fill-available;
 }
-.cc-card > p:hover, .cc-card > .cc-desc-master{
+.cc-card > p:hover, .cc-card > .cc-desc-master, .cc-card[completed] > p{
   color:rgba(0, 0, 0, 0);
   background-blend-mode: normal;
 }
