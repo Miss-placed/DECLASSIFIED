@@ -4,6 +4,14 @@
 
 //https://callofduty.fandom.com/wiki/Challenges/Call_of_Duty:_Black_Ops_Cold_War
 
+// FIND DUPLICATE ID'S CHECKER - PASTE THIS IN THE CONSOLE
+/* const lookup = Challenges.challengeStore.reduce((a, e) => {
+  a[e.id] = ++a[e.id] || 0;
+  return a;
+}, {});
+
+console.log(Challenges.challengeStore.filter(e => lookup[e.id])); */
+
 class Challenge {
     /**
      * 
@@ -364,7 +372,7 @@ class Challenges {
         // Zombies ==> Bttle Hardened ==> Silverback Expedition
         // https://imgur.com/a/6jtGS9f
         new Challenge(
-            "ZwMyC",
+            "IqTMF",
             challengeTypes.zombies,
             allSubCategories[allCategories.battleHardened].silverbackExpedition,
             "Full Arsenal",
@@ -372,7 +380,7 @@ class Challenges {
             "shLJQaw",
         ),
         new Challenge(
-            "5M1p9",
+            "HAIww",
             challengeTypes.zombies,
             allSubCategories[allCategories.battleHardened].silverbackExpedition,
             "Archaeologist",
@@ -380,7 +388,7 @@ class Challenges {
             "apsAyI0",
         ),
         new Challenge(
-            "Ioxly",
+            "_gsPh",
             challengeTypes.zombies,
             allSubCategories[allCategories.battleHardened].silverbackExpedition,
             "Moving On Up",
@@ -388,7 +396,7 @@ class Challenges {
             "UomVQ6y",
         ),
         new Challenge(
-            "CPC1w",
+            "chVqk",
             challengeTypes.zombies,
             allSubCategories[allCategories.battleHardened].silverbackExpedition,
             "Bonus Round",
@@ -396,7 +404,7 @@ class Challenges {
             "6d36spJ",
         ),
         new Challenge(
-            "UBlDr",
+            "dqX3v",
             challengeTypes.zombies,
             allSubCategories[allCategories.battleHardened].silverbackExpedition,
             "Invictus",
@@ -404,7 +412,7 @@ class Challenges {
             "C174GHF",
         ),
         new Challenge(
-            "WKUZE",
+            "FbKhL",
             challengeTypes.zombies,
             allSubCategories[allCategories.battleHardened].silverbackExpedition,
             "Topple Mama",
@@ -1311,13 +1319,13 @@ class Challenges {
         ),
         // Zombies ==> Bttle Hardened ==> Silverback Expedition
         new Challenge(
-            "DqHZu",
+            "RECeB",
             challengeTypes.zombies,
             allSubCategories[allCategories.battleHardened].silverbackExpedition,
             "Silverback Expedition Master",
             "Complete all Silverback Expedition Challenges.",
             "0Nb78yd",
-            ["zCEQG", "CkgJr", "_hAxI", "IhvRL", "SpZB1", "4eDxD"],
+            ["IqTMF", "HAIww", "_gsPh", "chVqk", "dqX3v", "FbKhL"],
         ),
         // Zombies ==> Bttle Hardened ==> Gorilla Stalker
         new Challenge(
