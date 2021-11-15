@@ -67,6 +67,7 @@ nav {
 nav ul {
 	display: inline;
 	flex-wrap: wrap;
+	cursor: pointer;
 }
 nav ul > div {
 	position: absolute;
@@ -86,6 +87,7 @@ nav ul > div > li {
 }
 nav ul.-expanded > div > li {
 	display: flex;
+	cursor: pointer;
 }
 nav ul > div > li > .complete {
 	display: none;
