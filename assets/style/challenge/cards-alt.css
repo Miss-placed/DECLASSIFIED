@@ -23,27 +23,28 @@
 }
 .cc-card > div > span {
   font-weight: 800;
+  word-break: break-word;
 }
 .cc-card .square{
   height:100%;
   aspect-ratio: 13/40;
 }
 .cc-card > p {
+  height:-webkit-fill-available;
+  height:-moz-available;
+  aspect-ratio: 900/249;
   border-radius:0 0 10px 10px;
-  aspect-ratio: 900/240;
   transition: all 0.2s ease;
   padding:10px 25px;
   font-weight: 100;
   background-blend-mode: overlay;
   background-color:var(--clr-black);
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  height: -moz-available;          /* WebKit-based browsers will ignore this. */
-  height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
-  height: fill-available;
 }
 .cc-card > p:hover, .cc-card > .cc-desc-master, .cc-card[completed] > p{
-  color:rgba(0, 0, 0, 0);
+  color:rgba(211, 82, 82, 0);
   background-blend-mode: normal;
 }
 
