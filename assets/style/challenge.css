@@ -1,59 +1,69 @@
 * {
 	box-sizing: border-box;
 }
-body, main, aside {
+
+body,
+main,
+aside {
 	/* min-height: 100vh; */
 }
+
 /* html,body{height:initial} */
 body {
-  display:flex;
-  flex-direction: column;
-  background-color:var(--clr-black);
+	display: flex;
+	flex-direction: column;
+	background-color: var(--clr-black);
 
 }
-main{
-  display:flex;
-  flex-direction: column;
+
+main {
+	display: flex;
+	flex-direction: column;
 }
+
 aside {
 	padding: 10px;
-  background-color: var(--clr-grey-d);
+	background-color: var(--clr-grey-d);
 }
+
 #pinned-container {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-  margin-bottom: 10px;
+	margin-bottom: 10px;
 }
+
 #card-container {
-  display:flex;
-  flex-direction:column;
-  gap:10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 	padding: 10px;
-  margin-bottom:auto;
+	margin-bottom: auto;
 }
+
 #mastery-progress {
 	position: sticky;
 	bottom: 0;
-  padding:10px;
+	padding: 10px;
 
-  background-color: var(--clr-black);
-  color:var(--clr-white-d);
+	background-color: var(--clr-black);
+	color: var(--clr-white-d);
 }
 
-#mastery-progress p{
-  font-size: .8rem;
-  padding:5px;
+#mastery-progress p {
+	font-size: .8rem;
+	padding: 5px;
 }
 
 .title {
-  user-select: none;
+	user-select: none;
 	display: inline-block;
 	background: var(--clr-white-d);
 	padding: 5px 15px;
 	color: var(--clr-black);
 	font-size: 1.2em;
 }
+
 nav {
 	display: flex;
 	position: sticky;
@@ -61,23 +71,27 @@ nav {
 	justify-content: center;
 	z-index: 50;
 	background-color: var(--clr-black);
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap:10px;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 10px;
 }
+
 nav ul {
 	display: inline;
 	flex-wrap: wrap;
 	cursor: pointer;
 }
-nav ul > div {
+
+nav ul>div {
 	position: absolute;
 	width: fit-content;
 }
-nav ul > div > li:nth-of-type(1) {
+
+nav ul>div>li:nth-of-type(1) {
 	margin-top: -5px;
 }
-nav ul > div > li {
+
+nav ul>div>li {
 	display: none;
 	align-items: center;
 	margin-left: 30px;
@@ -86,15 +100,18 @@ nav ul > div > li {
 	width: 100%;
 	color: var(--clr-white-d);
 }
-nav ul.-expanded > div > li {
+
+nav ul.-expanded>div>li {
 	display: flex;
 	cursor: pointer;
 }
-nav ul > div > li > .complete {
+
+nav ul>div>li>.complete {
 	display: none;
 	padding-left: 10px;
 	font-size: 50%;
 }
-nav ul > div > li[complete] > .complete {
+
+nav ul>div>li[complete]>.complete {
 	display: initial;
 }

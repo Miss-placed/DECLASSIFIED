@@ -8,6 +8,7 @@
   color: white;
   display:flex;
   flex-direction: column;
+  user-select: none;
 }
 .cc-card > div {
   display: flex;
@@ -85,4 +86,7 @@
 .cc-card[completed] .complete-card:hover{
   color:white;
   transform:  scale(130%) rotate(0deg);
+}
+.cc-card button {
+  cursor: pointer;
 }
