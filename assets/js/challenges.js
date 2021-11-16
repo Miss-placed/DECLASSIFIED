@@ -94,25 +94,29 @@ function initSubCategories() {
 }
 
 /////////////////////Cards/////////////////////////
-function renderCards() {
+function renderCards(setState = true) {
     let filteredChallenges = Challenges.challengeStore;
     let filteredMasterChallenge = Challenges.masterChallenges;
     const cardCont = document.querySelector('#card-container');
     const masteryCont = document.querySelector('#mastery-progress');
-    // const for completed challenges
-    ({ filteredChallenges, filteredMasterChallenge } = filterChallenges(filteredChallenges, filteredMasterChallenge));
+    
+    const type = getSelectedType();
+    const category = getSelectedCategory();
+    const subCategory = getSelectedSubCategory();
+    ({ filteredChallenges, filteredMasterChallenge } = filterChallenges(type, category, subCategory, filteredChallenges, filteredMasterChallenge));
 
     addCardsToContainer(cardCont, filteredChallenges, getCardHtml);
     addCardsToContainer(masteryCont, filteredMasterChallenge, getMasteryHtml);
-    /*masteryCont.replaceChildren();
-    if (filteredMasterChallenge[0]) {
-        let html = getMasteryHtml(filteredMasterChallenge[0]);
-        let elementsToAdd = htmlToElements(html)
-        elementsToAdd.forEach(element => {
-            masteryCont.append(element);
+    const typeId = getKeyByValue(challengeTypes, type);
+    let subCategoryId = getKeyByValue(allCategories, allCategories.darkOps); 
+    if (category !== allCategories.darkOps) {
+        Object.values(allCategories).forEach((ct) => {
+            const categoryKey = allSubCategories[ct];
+            const foundId = getKeyByValue(categoryKey, subCategory);
+            if (foundId) subCategoryId = foundId;
         });
-    } */
-
+    }
+    if (setState) window.history.pushState(`type=${typeId}&category=${subCategoryId}`, "Cold War Challenge Tracker", `?type=${typeId}&category=${subCategoryId}`);
 }
 
 function addCardsToContainer(cardCont, filteredChallenges, htmlMethod) {
@@ -127,11 +131,7 @@ function addCardsToContainer(cardCont, filteredChallenges, htmlMethod) {
     });
 }
 
-function filterChallenges(filteredChallenges, filteredMasterChallenge) {
-    const type = getSelectedType();
-    const category = getSelectedCategory();
-    const subCategory = getSelectedSubCategory();
-
+function filterChallenges(type, category, subCategory, filteredChallenges, filteredMasterChallenge) {
     filteredChallenges = filterList(filteredChallenges, "type", type);
     filteredMasterChallenge = filterList(filteredMasterChallenge, "type", type);
     if (subCategory) {
@@ -265,7 +265,6 @@ function toggleCompletedMasteryChallenge(ele) {
                 return x !== id;
             });
             // Also remove from pinned if completed.
-
             if (Challenges.isChallengePinned(id)) currentPrefs.pinnedChallenges = removeAllInstances(currentPrefs.pinnedChallenges, id);
         });
     } else {
@@ -391,6 +390,12 @@ function changeSubCategoryMenu(x) {
 function getCategory(typeId, sbCatId) {
     let type = challengeTypes.zombies; category = allCategories.career; subCategory = allSubCategories[allCategories.career].dieMaschineReport;
     if (typeId && sbCatId) {
+        if (allCategories[sbCatId] === allCategories.darkOps){
+            type = challengeTypes[typeId];
+            category = allCategories[sbCatId];
+            subCategory = "";
+            return { type, category, subCategory }
+        }
         Object.keys(allCategories).forEach((ct) => {
             const typeKey = challengeTypes[typeId];
             const categoryKey = allCategories[ct];
@@ -433,9 +438,18 @@ function getCategories() {
 }
 
 function onLoad() {
+    LoadApp();
+
+    window.onpopstate = function(event) {
+        // https://developer.mozilla.org/en-US/docs/Web/API/History_API
+        // console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
+        LoadApp(false);
+      };
+}
+
+function LoadApp(setState = true) {
     const { type, category, subCategory } = getCategories();
     renderNav(type, category, subCategory);
-    renderCards();
+    renderCards(setState);
     renderPinnedCards();
-
 }
