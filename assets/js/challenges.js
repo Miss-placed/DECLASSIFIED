@@ -265,7 +265,7 @@ function toggleCompletedMasteryChallenge(ele) {
                 return x !== id;
             });
             // Also remove from pinned if completed.
-            
+
             if (Challenges.isChallengePinned(id)) currentPrefs.pinnedChallenges = removeAllInstances(currentPrefs.pinnedChallenges, id);
         });
     } else {
@@ -390,21 +390,20 @@ function changeSubCategoryMenu(x) {
 
 function getCategory(typeId, sbCatId) {
     let type = challengeTypes.zombies; category = allCategories.career; subCategory = allSubCategories[allCategories.career].dieMaschineReport;
-    Object.keys(allCategories).forEach((ct) => {
-        const typeKey = challengeTypes[typeId];
-        const categoryKey = allCategories[ct];
-
-        if (allSubCategories[categoryKey]) {
-
-
-            if (allSubCategories[categoryKey][sbCatId]) {
-                type = typeKey;
-                category = categoryKey;
-                subCategory = allSubCategories[categoryKey][sbCatId];
+    if (typeId && sbCatId) {
+        Object.keys(allCategories).forEach((ct) => {
+            const typeKey = challengeTypes[typeId];
+            const categoryKey = allCategories[ct];
+            if (allSubCategories[categoryKey]) {
+                if (allSubCategories[categoryKey][sbCatId]) {
+                    type = typeKey;
+                    category = categoryKey;
+                    subCategory = allSubCategories[categoryKey][sbCatId];
+                }
             }
-        }
-        return;
-    });
+            return;
+        });
+    }
     return { type, category, subCategory }
 }
 
@@ -429,7 +428,8 @@ function getCategories() {
         return getCategory(typeId, categoryId);
     }
     // Otherwise get defaults from user prefs
-
+    // TODO : get defaults from user prefs
+    return getCategory();
 }
 
 function onLoad() {
