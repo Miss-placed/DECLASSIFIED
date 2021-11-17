@@ -116,6 +116,7 @@ function renderCards(setState = true) {
             if (foundId) subCategoryId = foundId;
         });
     }
+    // Updates the state of the URL actively
     if (setState) window.history.pushState(`type=${typeId}&category=${subCategoryId}`, "Cold War Challenge Tracker", `?type=${typeId}&category=${subCategoryId}`);
 }
 
