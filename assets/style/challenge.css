@@ -13,7 +13,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	background-color: var(--clr-black);
-
 }
 
 main {
@@ -22,8 +21,11 @@ main {
 }
 
 aside {
-	padding: 10px;
 	background-color: var(--clr-grey-d);
+}
+
+#ct-header {
+	padding: 10px 10px 0;
 }
 
 #pinned-container {
@@ -31,6 +33,7 @@ aside {
 	flex-direction: column;
 	gap: 10px;
 	margin-bottom: 10px;
+	padding: 10px;
 }
 
 #card-container {

@@ -117,7 +117,12 @@ function renderCards(setState = true) {
         });
     }
     // Updates the state of the URL actively
-    if (setState) window.history.pushState(`type=${typeId}&category=${subCategoryId}`, "Cold War Challenge Tracker", `?type=${typeId}&category=${subCategoryId}`);
+    const state = `?type=${typeId}&category=${subCategoryId}`;
+    if (setState) window.history.pushState(`type=${typeId}&category=${subCategoryId}`, "Cold War Challenge Tracker", state);
+
+    let currentPrefs = getUserPrefs();
+    currentPrefs.challengeTrackerState = state;
+    setUserPrefs(currentPrefs);
 }
 
 function addCardsToContainer(cardCont, filteredChallenges, htmlMethod) {
@@ -249,8 +254,6 @@ function toggleCompletedChallenge(ele) {
     renderPinnedCards();
     renderCards();
 }
-
-
 
 function toggleCompletedMasteryChallenge(ele) {
     // Should toggle all required challenges to completed (except where minimum required)
@@ -433,8 +436,10 @@ function getCategories() {
     if (typeId && categoryId) {
         return getCategory(typeId, categoryId);
     }
-    // Otherwise get defaults from user prefs
-    // TODO : get defaults from user prefs
+    // Otherwise get defaults from user prefs    
+    let currentPrefs = getUserPrefs();
+    if (currentPrefs.challengeTrackerState) window.location.search = currentPrefs.challengeTrackerState;
+
     return getCategory();
 }
 

@@ -1,6 +1,6 @@
 
 class UserPrefs {
-    constructor({ lastSelectedMap, collectedIntel, asideShow, hideIntel, hideMisc, hideBugRepButton, pinnedChallenges, completedChallenges, darkmode, useSystemTheme }) {
+    constructor({ lastSelectedMap, collectedIntel, asideShow, hideIntel, hideMisc, hideBugRepButton, pinnedChallenges, completedChallenges, challengeTrackerState, darkmode, useSystemTheme }) {
         // Interactive Map
         this.lastSelectedMap = lastSelectedMap ?? app.currentMap;
         this.collectedIntel = collectedIntel ?? [];
@@ -11,6 +11,7 @@ class UserPrefs {
         // Challenge Tracker 
         this.pinnedChallenges = pinnedChallenges ?? [];
         this.completedChallenges = completedChallenges ?? [];
+        this.challengeTrackerState = challengeTrackerState ?? "";
         // Shared
         // If the user is using system theme then follow that, else set to previous setting else default to true. (because darkmode is best)
         this.darkmode = useSystemTheme ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) : darkmode ?? true;
