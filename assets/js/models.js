@@ -1,20 +1,23 @@
 /////////////////////Classes/////////////////////////
 class Item {
-    constructor({ id, title, desc, icon }) {
+    constructor({ id, title, desc, icon, layer }) {
         this.id = id;
         this.title = title ?? "";
         this.desc = desc ?? "";
         this.icon = icon ?? generalIcon;
+        this.layer = layer ?? "MiscMarkers"
     }
 }
 
 class Marker {
-    constructor(id, item, loc, uniqueDesc) {
+    constructor(id, item, loc, uniqueDesc, layer) {
         this.id = id;
         if (item instanceof Item) {
             this.title = item.title ?? "";
             this.desc = item.desc ?? "";
             this.icon = item.icon ?? generalIcon;
+    // TODO STANDARDISE STRING
+            this.layer = item.layer ?? "MiscMarkers"
         }
         //Override static description with unique description
         if (uniqueDesc) this.desc = uniqueDesc;
@@ -167,7 +170,8 @@ const miscTypes = {
     rift: new Item({ title: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", icon: riftIcon }),
     redRift: new Item({ title: "Red Aether Rift", desc: "Jump through all the rifts to continue the Easter Egg", icon: redRiftIcon }),
     radio: new Item({ title: "Radio", icon: radioIcon }),
-    requiemRadio: new Item({ title: "Requiem Radio", icon: radioIcon }),
+    //TODO STANDARDISE STRING
+    requiemRadio: new Item({ title: "Requiem Radio", icon: radioIcon, layer: "Markers" }),
     omegaRadio: new Item({ title: "Omega Radio", icon: radioIcon }),
     maxisRadio: new Item({ title: "Maxis Radio", icon: radioIcon }),
     monkey: new Item({ title: "Stone Monkey", icon: monkeyIcon }),

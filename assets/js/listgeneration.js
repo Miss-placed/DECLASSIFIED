@@ -15,6 +15,7 @@ function GenerateList(intelToRender) {
 function InitialiseButtons() {
     document.querySelectorAll(".to-intel").forEach(element => {
         element.addEventListener('click', (event) => {
+            // Allows multi selecting
             if (event.ctrlKey) {
                 element.toggleAttribute('selected')
             } else {

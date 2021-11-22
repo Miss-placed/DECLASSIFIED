@@ -334,6 +334,14 @@ function markButtonAsUnCollected(btnSelector) {
     $(btnSelector + " i").addClass("fa-square");
 }
 
+function selectAll() {
+    $("#filtered-intel button").attr("selected", true);
+}
+
+function deSelectAll() {
+    $("#filtered-intel button").attr("selected", false);
+}
+
 function markSelected() {
     let selected = []
     document.querySelectorAll('[selected]').forEach(element => {
@@ -343,7 +351,7 @@ function markSelected() {
     })
     fullDynamicRefresh();
     selected.forEach(id => {
-        document.getElementById(id).toggleAttribute('selected')
+        document.getElementById(id)?.toggleAttribute('selected')
     })
 }
 
@@ -356,7 +364,7 @@ function unmarkSelected() {
     })
     fullDynamicRefresh();
     selected.forEach(id => {
-        document.getElementById(id).toggleAttribute('selected')
+        document.getElementById(id)?.toggleAttribute('selected')
     })
 }
 

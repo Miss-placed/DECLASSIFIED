@@ -265,7 +265,7 @@
   background-position: center;
   width: 200px;
   height: 120px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .type::before {
@@ -431,10 +431,6 @@ input[type="search"] {
   border-radius: 2px;
   padding: 2px;
   font-size: .7rem;
-}
-
-#curr-map-filter-label {
-  margin-bottom: 10px;
 }
 
 #curr-map-filter-label,
