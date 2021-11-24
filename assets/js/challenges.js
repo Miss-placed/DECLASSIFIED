@@ -51,18 +51,18 @@ const allSubCategories = {
         highlyProficient: "Highly Proficient",
     },
     [allCategories.seasonal]: {
-        [seasons.season1]: seasons.season1,
-        [seasons.season2]: seasons.season2,
-        [seasons.season3]: seasons.season3,
-        [seasons.season4]: seasons.season4,
-        [seasons.season5]: seasons.season5,
-        [seasons.season6]: seasons.season6
+        season1: seasons.season1,
+        season2: seasons.season2,
+        season3: seasons.season3,
+        season4: seasons.season4,
+        season5: seasons.season5,
+        season6: seasons.season6
     }
 }
 
 let challengeCategories = {
     [challengeTypes.multiplayer]: [allCategories.seasonal, allCategories.career, allCategories.battleHardened, allCategories.darkOps],
-    [challengeTypes.zombies]: [/* allCategories.seasonal ,*/ allCategories.career, allCategories.battleHardened, allCategories.requiemAdvancement, allCategories.darkOps],
+    [challengeTypes.zombies]: [allCategories.seasonal, allCategories.career, allCategories.battleHardened, allCategories.requiemAdvancement, allCategories.darkOps],
     [challengeTypes.campaign]: [allCategories.story, allCategories.darkOps],
 };
 let challengeSubCategories = initSubCategories();
@@ -294,7 +294,7 @@ function renderNav(selectedType, selectedCategory, selectedSubCategory) {
 }
 
 function renderTypes(navbar, selectedType) {
-    const optionArr = [/* challengeTypes.multiplayer, */ challengeTypes.zombies, challengeTypes.campaign];
+    const optionArr = [challengeTypes.multiplayer, challengeTypes.zombies, challengeTypes.campaign];
     let options = ``;
     optionArr.forEach(option => {
         options += `<li onclick="changeTypeMenu(this)" ${selectedType == option ? "selected" : ""} value="${option}">

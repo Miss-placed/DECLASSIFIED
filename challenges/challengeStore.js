@@ -54,8 +54,9 @@ class Challenge {
 
 class Challenges {
     static challengeStore = [
+        //#region Zombies
 
-        // Zombies ==> Career ==> Die Maschine Report
+        //#region Zombies ==> Career ==> Die Maschine Report
         // https://imgur.com/a/c8gnBVn
         new Challenge(
             "EQolZ",
@@ -105,9 +106,9 @@ class Challenges {
             "Travel to every area in a single game.",
             "cEwSzfX",
         ),
-        // end Zombies ==> Career ==> Die Maschine Report
+        //#endregion Zombies ==> Career ==> Die Maschine Report
 
-        // Zombies ==> Career ==> Boot Camp
+        //#region Zombies ==> Career ==> Boot Camp
         // https://imgur.com/a/d4aWZ8y
         new Challenge(
             "t70li",
@@ -157,9 +158,9 @@ class Challenges {
             "Kill 100 enemies with Equipment.",
             "EuInbF9",
         ),
-        // end Zombies ==> Career ==> Boot Camp
+        //#endregion Zombies ==> Career ==> Boot Camp
 
-        // Zombies ==> Career ==> Grizzled Veteran
+        //#region Zombies ==> Career ==> Grizzled Veteran
         // https://imgur.com/a/YKktetL
         new Challenge(
             "3bAdC",
@@ -209,9 +210,9 @@ class Challenges {
             "Kill 5000 enemies using a Pack-A-Punched weapon.",
             "6miGplr",
         ),
-        // end Zombies ==> Career ==> Grizzled Veteran
+        //#endregion Zombies ==> Career ==> Grizzled Veteran
 
-        // Zombies ==> Bttle Hardened ==> Zombie Hunter
+        //#region Zombies ==> Battle Hardened ==> Zombie Hunter
         // https://imgur.com/a/y7We9yI
         new Challenge(
             "uH9ef",
@@ -261,9 +262,9 @@ class Challenges {
             "Kill 30 enemies with a single Support. Sentry Turret does not count.",
             "zgBNTXS",
         ),
-        // end Zombies ==> Bttle Hardened ==> Zombie Hunter
+        //#endregion Zombies ==> Battle Hardened ==> Zombie Hunter
 
-        // Zombies ==> Bttle Hardened ==> Elementalist
+        //#region Zombies ==> Battle Hardened ==> Elementalist
         // https://imgur.com/a/xOX9ILz
         new Challenge(
             "ZwMyC",
@@ -313,10 +314,10 @@ class Challenges {
             "Kill 500 enemies that have been damaged by two types of elemental damage.",
             "0pUv3n8",
         ),
-        // end Zombies ==> Bttle Hardened ==> Elementalist
+        //#endregion Zombies ==> Battle Hardened ==> Elementalist
 
 
-        // Zombies ==> Bttle Hardened ==> Tactician
+        //#region Zombies ==> Battle Hardened ==> Tactician
         // https://imgur.com/a/D5hEJ99
         new Challenge(
             "zCEQG",
@@ -366,10 +367,10 @@ class Challenges {
             "Earn 10 Extermination Medals (kill 25 or more enemies rapidly).",
             "0kLzuW3",
         ),
-        // end Zombies ==> Bttle Hardened ==> Tactician
+        //#endregion Zombies ==> Battle Hardened ==> Tactician
 
 
-        // Zombies ==> Bttle Hardened ==> Silverback Expedition
+        //#region Zombies ==> Battle Hardened ==> Silverback Expedition
         // https://imgur.com/a/6jtGS9f
         new Challenge(
             "IqTMF",
@@ -419,10 +420,10 @@ class Challenges {
             "In Dead Ops Arcade, defeat the Mamaback.",
             "kg1ncVI",
         ),
-        // end Zombies ==> Bttle Hardened ==> Silverback Expedition
+        //#endregion Zombies ==> Battle Hardened ==> Silverback Expedition
 
 
-        // Zombies ==> Bttle Hardened ==> Gorilla Stalker
+        //#region Zombies ==> Battle Hardened ==> Gorilla Stalker
         // https://imgur.com/a/6jtGS9f
         new Challenge(
             "YNhXq",
@@ -472,9 +473,9 @@ class Challenges {
             "In Dead Ops Arcade, kill 1000 zombies using chickens.",
             "WkFGfPZ",
         ),
-        // end Zombies ==> Bttle Hardened ==> Gorilla Stalker
+        //#endregion Zombies ==> Battle Hardened ==> Gorilla Stalker
 
-        // Zombies ==> Requiem Advancement ==> Forsaken Report
+        //#region Zombies ==> Requiem Advancement ==> Forsaken Report
         // https://imgur.com/a/OpbBU7l
         new Challenge(
             "GSiVF",
@@ -524,9 +525,9 @@ class Challenges {
             "Unlock the Pack-A-Punch.",
             "p4BClpc",
         ),
-        // end Zombies ==> Requiem Advancement ==> Forsaken Report
+        //#endregion Zombies ==> Requiem Advancement ==> Forsaken Report
 
-        // Zombies ==> Requiem Advancement ==> Mauer Der Toten Report
+        //#region Zombies ==> Requiem Advancement ==> Mauer Der Toten Report
         // https://imgur.com/a/W9yOEcw
         new Challenge(
             "Juc14",
@@ -576,9 +577,9 @@ class Challenges {
             "Choose the door with the best prize.",
             "G15B1pB",
         ),
-        // end Zombies ==> Requiem Advancement ==> Mauer Der Toten Report
+        //#endregion Zombies ==> Requiem Advancement ==> Mauer Der Toten Report
 
-        // Zombies ==> Requiem Advancement ==> Firebase Z Report
+        //#region Zombies ==> Requiem Advancement ==> Firebase Z Report
         // https://imgur.com/a/H9v37aa
         new Challenge(
             "5qkjP",
@@ -628,9 +629,9 @@ class Challenges {
             "Travel to every area in a single game.",
             "F9doQy5",
         ),
-        // end Zombies ==> Requiem Advancement ==> Firebase Z Report
+        //#endregion Zombies ==> Requiem Advancement ==> Firebase Z Report
 
-        // Zombies ==> Requiem Advancement ==> Field Researcher
+        //#region Zombies ==> Requiem Advancement ==> Field Researcher
         // https://imgur.com/a/H9v37aa
         new Challenge(
             "wJ8vM",
@@ -680,9 +681,9 @@ class Challenges {
             "In Outbreak, kill 500 enemies with the Aether Canister Field Upgrade during the Retrieve Objective.",
             "zpgNJNs",
         ),
-        // end Zombies ==> Requiem Advancement ==> Field Researcher
+        //#endregion Zombies ==> Requiem Advancement ==> Field Researcher
 
-        // Zombies ==> Requiem Advancement ==> Surveyor
+        //#region Zombies ==> Requiem Advancement ==> Surveyor
         // https://imgur.com/a/ZVHzvo4
         new Challenge(
             "SGR6v",
@@ -732,9 +733,9 @@ class Challenges {
             "In Outbreak, get 5000 eliminations with weapons found in chests.",
             "E6ITPCp",
         ),
-        // end Zombies ==> Requiem Advancement ==> Surveyor
+        //#endregion Zombies ==> Requiem Advancement ==> Surveyor
 
-        // Zombies ==> Requiem Advancement ==> Exterminator
+        //#region Zombies ==> Requiem Advancement ==> Exterminator
         // https://imgur.com/a/RJn69aU
         new Challenge(
             "1wHi9",
@@ -784,10 +785,10 @@ class Challenges {
             "In Outbreak, Eliminate 1000 enemies while in vehicles.",
             "9TqImWe",
         ),
-        // end Zombies ==> Requiem Advancement ==> Exterminator
+        //#endregion Zombies ==> Requiem Advancement ==> Exterminator
 
 
-        // Zombies ==> Dark Ops
+        //#region Zombies ==> Dark Ops
         new Challenge(
             "G6Cc0",
             challengeTypes.zombies,
@@ -940,9 +941,976 @@ class Challenges {
             "Complete the Main Quest in Forsaken.",
             "npv8mXx",
         ),
-        // end Zombies ==> Dark Ops
+        //#endregion Zombies ==> Dark Ops
 
-        // Campaign ==> Story ==> Loyal agent
+
+        //#region Zombies ==> Seasonal
+        //TODO: Imgur Album Link
+        //#region Zombies ==> Season 1
+        new Challenge("ZhUlw", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
+            "Haymaker", "Earn 10 Butcher medals (Kill 5 or more enemies rapidly with a Melee weapon).",
+        ),
+        new Challenge("QDNyq", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
+            "Dead Air", "Kill 30 enemies that are slowed by a Plaguehound's toxic gas.",
+        ),
+        new Challenge("djKEm", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
+            "The Other Side", "Get 500 eliminations in the Dark Aether.",
+        ),
+        new Challenge("GjT8r", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
+            "Counter Contamination", "Block 15 Megaton projectiles with Ring of Fire.",
+        ),
+        new Challenge("aYMLN", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
+            "The Great Escape", "Successfully exfil from Die Maschine after Round 30.",
+        ),
+        new Challenge("qzyiR", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
+            "Bottoms Up", "Drink 6 Perks in 6 seconds.",
+        ),
+        new Challenge("Gz9fc", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
+            "Help From Beyond", "Earn 5 Spectral Salvation medals (Revived a teammate while cloaked in the Aether Shroud).",
+        ),
+        new Challenge("PVhOc", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
+            "Seeing Double", "Split the Megaton while it is dazed from a Stun Grenade.",
+        ),
+        new Challenge("8CHPN", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
+            "Old Faithful", "Upgrade a loadout weapon to Legendary quality at the Arsenal.",
+        ),
+        new Challenge("95qXU", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
+            "Scientific Advantage", "Get 500 eliminations with the D.I.E. weapon.",
+        ),
+        new Challenge("NwmOh", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
+            "Suction Please!", "Earn 5 Easy Target medals (Killed a Megaton while it's caught by the D.I.E.).",
+        ),
+        new Challenge("0d2rS", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
+            "Toxic Bomb", "Kill 3 Megatons with C4.",
+        ),
+        new Challenge("1PE3z", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
+            "Prime Positioning", "Earn 5 Crackdown medals (Kill 5 or more enemies rapidly with the Sentry Turret).",
+        ),
+        new Challenge("UffdG", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
+            "Biggest Bang", "Kill 15 enemies with a single Energy Mine 5 times.",
+        ),
+        new Challenge("qUnDP", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
+            "That Escalated Quickly", "Get 500 eliminations shortly after mantling.",
+        ),
+        new Challenge("5P4CK", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
+            "Night Vision", "Get 500 eliminations with the flashlight on.",
+        ),
+        new Challenge("uBiJo", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
+            "Elite Gamer", "Redeem 5 Legendary Rewards from Trials.",
+        ),
+        new Challenge("LPj0X", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
+            "Armor Breaker", "Destroy 50 pieces of armor on zombies.",
+        ),
+        new Challenge("fKo1t", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
+            "Push Your Luck", "Move the Mystery Box 10 times.",
+        ),
+        new Challenge("dy1dd", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
+            "Triple Trouble", "Earn 5 Double Trouble medals (Killed both halves of a Megaton within a short time of one another).",
+        ),
+        //#endregion Zombies ==> Season 1
+
+        //#region Zombies ==> Season 2
+        new Challenge("neUpQ", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season2,
+            "Contraband", "Purchase Wonder Weapon ammo 10 times.",
+        ),
+        new Challenge("xqrnT", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season2,
+            "Strategic Operations", "Capture 25 Aether Reactors in Firebase Z.",
+        ),
+        new Challenge("wGAcn", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season2,
+            "Overheating", "Get 250 kills with the Death Machine.",
+        ),
+        new Challenge("yuI6t", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season2,
+            "Hide and Seek", "Force 10 Mimics to reveal themselves by shooting their hidden form.",
+        ),
+        new Challenge("JoCDN", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season2,
+            "Disarmed", "Destroy 10 Mangler arm cannons.",
+        ),
+        new Challenge("N2dD9", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season2,
+            "Field Of Fire", "Kill 25 enemies that are on fire from a Hellhound's explosion",
+        ),
+        new Challenge("PhfqK", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season2,
+            "Bigger Brother", "Get 1500 Eliminations using the Rai K-84.",
+        ),
+        new Challenge("cVCfB", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season2,
+            "Fire Discipline", "Rapidly kill 3 or more enemies with an Artillery Strike 10 times.",
+        ),
+        new Challenge("h2xmg", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season2,
+            "Who's Who?", "Revive yourself using Tombstone Soda 10 times.",
+        ),
+        new Challenge("mgzlO", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season2,
+            "Close And Personal", "Kill 10 Manglers using a melee attack.",
+        ),
+        new Challenge("OJPD3", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season2,
+            "Army Reserves", "Kill a Mangler using a zombie inflicted with your Brain Rot.",
+        ),
+        new Challenge("Wcrz0", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season2,
+            "Feel The Heat", "Kill 500 enemies with the Molotov equipment.",
+        ),
+        new Challenge("tMaio", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season2,
+            "Now That's A Knife", "Get 500 kills using a primary melee weapon.",
+        ),
+        new Challenge("ORmsi", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season2,
+            "Shadow Assassin", "Kill 100 enemies while in Tombstone shadow form.",
+        ),
+        new Challenge("tlvNT", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season2,
+            "Big Stop", "Eliminate 10 Ordas.",
+        ),
+        new Challenge("Qkf3K", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season2,
+            "Deep Pockets", "Exfil with 30,000 Essence.",
+        ),
+        new Challenge("q2Pu8", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season2,
+            "Fool Me Once", "Eliminate 20 Mimics.",
+        ),
+        new Challenge("6DfWd", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season2,
+            "Bird In The Sky", "Get 250 kills with the Chopper Gunner.",
+        ),
+        new Challenge("9EMSp", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season2,
+            "Ice Burn", "Kill 25 Hellhounds with Frost Blast",
+        ),
+        new Challenge("a3sXk", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season2,
+            "That Burns", "Kill 10 enemies with a single Napalm Strike 5 time(s).",
+        ),
+        //#endregion Zombies ==> Season 2
+
+        //#region Zombies ==> Season 3
+        new Challenge("RwUEL", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season3,
+            "Flock of Birds", "Earn 50 kills with the Chopper Gunner at any Exfil site.",
+        ),
+        new Challenge("WzbjY", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season3,
+            "Don't Look Back", "In Outbreak, kill 25 enemies with vehicle explosions.",
+        ),
+        new Challenge("nRuv3", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season3,
+            "Gun Show", "Kill 100 enemies with your fists.",
+        ),
+        new Challenge("Vjncb", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season3,
+            "Hard Day's Work", "In Outbreak, complete 5 Objectives and exfil successfully.",
+        ),
+        new Challenge("6TAPg", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season3,
+            "Two Is Better Than One", "Get 500 Eliminations using a weapon with a dual wield attachment.",
+        ),
+        new Challenge("AU1Ij", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season3,
+            "Lord Of The Horde", "Have 3 brain rotted enemies under your control at once.",
+        ),
+        new Challenge("RfKAI", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season3,
+            "Electric Cherry Pop", "Stun 25 enemies by reloading with the Tier V Elemental Pop Perk.",
+        ),
+        new Challenge("yAbEy", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season3,
+            "Immovable Object", "In Outbreak, kill 5 Special or Elite enemies by running them over with vehicles.",
+        ),
+        new Challenge("zczyD", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season3,
+            "Hedgehog's Dilemma", "Kill 50 enemies that hit you while Tier III of Frenzied Guard is active.",
+        ),
+        new Challenge("CsPTc", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season3,
+            "Deadeye", "Get 500 Eliminations with Sniper Rifles.",
+        ),
+        new Challenge("RwiPF", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season3,
+            "Untouchable", "In Outbreak, complete an Escort Objective without the Rover taking any damage.",
+        ),
+        new Challenge("XMXBC", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season3,
+            "Crack The Shell", "Destroy 50 pieces of armor with the Shatter Blast Ammo Mod.",
+        ),
+        new Challenge("HNVOO", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season3,
+            "Suppressing Fire", "In Outbreak, kill 10 Hellhounds before they enter the structure during the Holdout Objective.",
+        ),
+        new Challenge("E5uub", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season3,
+            "Rude Awakening", "Revive yourself 10 times by killing an enemy while downed with the Tier V Quick Revive Perk.",
+        ),
+        new Challenge("I3e70", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season3,
+            "Blood Transfusion", "Heal yourself for 5,000 health using Tier V of the Melee Weapon Class Skill.",
+        ),
+        new Challenge("FUQGR", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season3,
+            "Back In My Day", "In Outbreak, complete 3 Objectives and exfil with only your loadout weapon with no upgrades.",
+        ),
+        new Challenge("SrZFc", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season3,
+            "Specially Made", "Eliminate 50 Special or Elite enemies with launcher or special weapons.",
+        ),
+        new Challenge("R2Wmq", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season3,
+            "Pull!", "Shoot down 25 Tempest bolts.",
+        ),
+        new Challenge("qBEsA", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season3,
+            "Unshakable", "Survive 5 Demented Echo ambushes.",
+        ),
+        new Challenge("sdHFl", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season3,
+            "Salvageable", "Kill 250 enemies with lethal equipment.",
+        ),
+        //#endregion Zombies ==> Season 3
+
+        //#region Zombies ==> Season 4
+        new Challenge("46hVl", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season4,
+            "Drop The Hammer", "In Outbreak, get 25 Eliminations shortly after landing from a parachute.",
+        ),
+        new Challenge("UfO01", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season4,
+            "Weed Killer", "Earn 10 Overgrowth medals (Killed 5 or more enemies rapidly with your Toxic Growth).",
+        ),
+        new Challenge("sMNem", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season4,
+            "Vehicular Assistance", "Earn 25 Gunner medals (Killed 3 or more enemies rapidly using a vehicle's weapons).",
+        ),
+        new Challenge("CNS24", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season4,
+            "Harvest Time", "In Outbreak, collect 5 rewards from rockets in the Secure Objective.",
+        ),
+        new Challenge("9tGW2", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season4,
+            "Infradead", "Get 500 Eliminations while aiming down a thermal scope attachment.",
+        ),
+        new Challenge("l3dmG", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season4,
+            "Look Out Below", "In Outbreak, kill an Orda with a melee finisher.",
+        ),
+        new Challenge("bY6l8", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season4,
+            "Out Of Body Experience", "Use a Chopper Gunner or Cruise Missile Support with 5 or more enemies in close proximity.",
+        ),
+        new Challenge("mCthD", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season4,
+            "Gone Fishing", "In Outbreak, collect 25 items from fishing.",
+        ),
+        new Challenge("heAsr", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season4,
+            "Blinded By The Light", "Kill 25 enemies stunned by Healing Aura.",
+        ),
+        new Challenge("nstYT", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season4,
+            "Hipster", "Earn 500 Critical Kills without aiming down sights.",
+        ),
+        new Challenge("5akvf", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season4,
+            "On A Budget", "Kill 100 enemies distracted by a Decoy tactical equipment using a Frag or Semtex.",
+        ),
+        new Challenge("1BLOi", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season4,
+            "Pit Stop", "Earn 100 Freelancer medals (Killed 3 enemies rapidly with an equipped weapon on a vehicle).",
+        ),
+        new Challenge("OyBae", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season4,
+            "Root Canal", "In Outbreak, complete 5 Fury Crystal world events.",
+        ),
+        new Challenge("YIdVg", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season4,
+            "Growth Spurt", "Upgrade a base weapon to Pack-A-Punch Level III in one purchase menu session.",
+        ),
+        new Challenge("EMdrj", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season4,
+            "A Good Compromise", "Get 500 Eliminations with Tactical Rifles.",
+        ),
+        new Challenge("KcMXP", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season4,
+            "He Had To Split", "Kill 10 Specials or Elites with the Tomahawk lethal equipment.",
+        ),
+        new Challenge("a4LeH", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season4,
+            "Like Butter", "Kill 100 enemies with their elemental damage weakness.",
+        ),
+        new Challenge("qbQrK", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season4,
+            "To The Bitter End", "Earn 5 Loot Piñata medals (Destroy the Aether Orb in Outbreak).",
+        ),
+        new Challenge("r855I", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season4,
+            "Staycation", "In Round Based, reach Round 20 without leaving the starting area.",
+        ),
+        new Challenge("Sge6y", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season4,
+            "My Way", "Get 1,000 Eliminations with a found Legendary rarity weapon that you applied a Blueprint to.",
+        ),
+        //#endregion Zombies ==> Season 4
+
+        //#region Zombies ==> Season 5
+        new Challenge("HQBWK", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season5,
+            "Rooftop Escape", "In Mauer Der Toten, successfully Exfil at Round 21 or higher 3 times.",
+        ),
+        new Challenge("uo1Se", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season5,
+            "Trained To Kill", "In Mauer Der Toten, use Trains to kill 50 enemies.",
+        ),
+        new Challenge("nz4d6", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season5,
+            "Fast Burn", "Kill 25 Specials or Elites with the Flamethrower Support.",
+        ),
+        new Challenge("C3hjf", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season5,
+            "Slow Burn", "Get 250 Napalm Burst Burn Kills.",
+        ),
+        new Challenge("RYOo6", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season5,
+            "Bad Ass", "Get 1,000 Eliminations with a 3rd primary weapon using the Mule Kick Perk.",
+        ),
+        new Challenge("A3ACV", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season5,
+            "Did It Crack?", "In Outbreak, fall a distance of 60 meters without using a parachute or Jump Pad and survive.",
+        ),
+        new Challenge("Ehxle", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season5,
+            "Bloodlust", "Earn 5 Bloodbath medals using a primary melee weapon (Killed 20 enemies rapidly).",
+        ),
+        new Challenge("nCyRB", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season5,
+            "Livin' Thing", "In Mauer Der Toten, kill 100 enemies with Klaus.",
+        ),
+        new Challenge("rDkxJ", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season5,
+            "Lacking Discipline", "Kill 50 enemies using a Brain Rotted Disciple.",
+        ),
+        new Challenge("mGkbB", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season5,
+            "Quiet Reflection", "Get 1,000 Eliminations using a weapon with a 2x magnified scope or greater.",
+        ),
+        new Challenge("O_mR4", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season5,
+            "Limbo", "In Mauer Der Toten, stay in 'Death Strip' for 5 consecutive Rounds.",
+        ),
+        new Challenge("RJbSw", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season5,
+            "Weather The Storm", "Kill 100 enemies stunned by the Tesla Storm Field Upgrade.",
+        ),
+        new Challenge("0bbhY", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season5,
+            "Height Impaired", "Get 250 Eliminations from a lower elevation of 5 meters or more.",
+        ),
+        new Challenge("Dsj47", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season5,
+            "Tormented", "In Mauer Der Toten, kill 50 enemies with Tormentor explosions.",
+        ),
+        new Challenge("yqBkz", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season5,
+            "Aim For The Sky", "Get 1,000 Critical Kills with Shotguns.",
+        ),
+        new Challenge("g4bLm", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season5,
+            "Too Hot To Handle", "Stun 15 Disciples by shooting their hand while they are draining a player's health.",
+        ),
+        new Challenge("c7XbO", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season5,
+            "Suck It Up", "Earn 10 Event Horizon Medals (Kill 3 or more enemies with a LT53 Kazimir portal).",
+        ),
+        new Challenge("DvrL1", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season5,
+            "Jackalope", "In Outbreak, earn 25 Jackrabbit medals during Objectives (Killed 20 or more enemies consecutively without getting hit).",
+        ),
+        new Challenge("aEUIH", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season5,
+            "Heavy Metal", "Earn 10 Scrap Metal medals (Killed a Krasny Soldat).",
+        ),
+        new Challenge("3G1jK", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season5,
+            "Megadeath", "Get 1,000 Eliminations with the CRBR-S Wonder Weapon.",
+        ),
+        //#endregion Zombies ==> Season 5
+
+        //#region Zombies ==> Season 6
+        new Challenge("", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season6,
+            "War of Attrition", "In Forsaken, stay inside Burger Town for 5 consecutive Rounds.", "Q2iycOT",
+        ),
+        new Challenge("", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season6,
+            "Explosive Finish", "Kill 15 Special or Elite enemies with Equipment: Frag, Semtex, C4, or Cymbal Monkey.", "mXFSzYv",
+        ),
+        new Challenge("", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season6,
+            "Odd Couple", "In Outbreak, complete 5 Black Chest World Events.", "7zGaPfv",
+        ),
+        new Challenge("", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season6,
+            "Death From Below", "Kill 50 enemies with the ARC-XD Support.", "n7vuQ5w",
+        ),
+        new Challenge("", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season6,
+            "High Frequency", "Complete 50 Rounds with the Rampage Inducer active.", "BSRWtgq",
+        ),
+        new Challenge("", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season6,
+            "Hard Headed", "Kill an Abomination while it still has all three heads.", "CqSZxmR",
+        ),
+        new Challenge("", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season6,
+            "Sixth Sense", "Open 25 chests with the Death Perception Tier V Perk equipped.", "k9GqNAL",
+        ),
+        new Challenge("", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season6,
+            "Highest Caliber", "Kill 5 Elites with the Hand Cannon Support.", "TjtxfEM",
+        ),
+        new Challenge("", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season6,
+            "Sea Legs", "In Outbreak, kill 100 enemies while in sea vehicles.", "hjXkDmU",
+        ),
+        new Challenge("", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season6,
+            "The Radioactive Slide", "Kill 250 enemies with explosions generated from the PHD Slider Perk.", "IwSMw0k",
+        ),
+        new Challenge("", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season6,
+            "Under Pressure", "In Forsaken, survive through Round 10 in the Staging Area.", "pNWBzih",
+        ),
+        new Challenge("", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season6,
+            "Coin Line", "In Forsaken, spend 10 Arcade Tokens at the Arcade.", "ViOX6l6",
+        ),
+        new Challenge("", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season6,
+            "No Turning Back", "Enter a LT53 Kazimir portal 5 times.", "mNdD67R",
+        ),
+        new Challenge("", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season6,
+            "Stunning Performance", "Kill 20 Special or Elite enemies stunned by a Tesla Storm Field Upgrade.", "7vgT3t4",
+        ),
+        new Challenge("", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season6,
+            "Crystalline Boom", "Earn 250 Melee Kills with the Chrysalax Savager Wonder Weapon.", "wx4ssUB",
+        ),
+        new Challenge("", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season6,
+            "10 Course Meal", "Drink 10 different Perks in 10 consecutive Rounds.", "C6GIe1V",
+        ),
+        new Challenge("", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season6,
+            "Close the Gap", "Kill 25 enemies shortly after using the Grapple Gun tactical equipment.", "NOpgM6r",
+        ),
+        new Challenge("", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season6,
+            "Overkill", "In Outbreak, kill 100 enemies as the driver or gunner in a tank.", "eerGfhW",
+        ),
+        new Challenge("", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season6,
+            "Pillage And Plunder", "In Outbreak, destroy 5 Omega helicopters.", "yJ3LGAA",
+        ),
+        new Challenge("", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season6,
+            "Wunderbar!", "Get 1,000 Eliminations with Packed Wonder Weapons.", "vTJEykj",
+        ),
+        //#endregion Zombies ==> Season 6
+
+        //#endregion Zombies ==> Seasonal 
+        //#endregion Zombies
+
+        //#region Multiplayer
+        new Challenge("HxOBu", challengeTypes.multiplayer, allSubCategories[allCategories.career].bootCamp,
+            "Stalking Prey", "Kill 50 enemies while crouched.", "",
+        ),
+        new Challenge("pbdAf", challengeTypes.multiplayer, allSubCategories[allCategories.career].bootCamp,
+            "Frogman", "Get 10 underwater kills.", "",
+        ),
+        new Challenge("qiQJW", challengeTypes.multiplayer, allSubCategories[allCategories.career].bootCamp,
+            "Clear Skies", "Destroy 10 airbourne Scorestreaks with a Launcher by shooting at them.", "",
+        ),
+        new Challenge("e9RJF", challengeTypes.multiplayer, allSubCategories[allCategories.career].bootCamp,
+            "Tag Team", "Get a kill with both your primary and your secondary weapon in the same life 10 times.", "",
+        ),
+        new Challenge("QVwfL", challengeTypes.multiplayer, allSubCategories[allCategories.career].bootCamp,
+            "Guerilla Warfare", "Kill 10 enemies with any weapon that you picked up.", "",
+        ),
+        new Challenge("Ei29F", challengeTypes.multiplayer, allSubCategories[allCategories.career].bootCamp,
+            "Field Clearance", "Shoot and destroy 10 enemy deployed Field Upgrades.", "",
+        ),
+        new Challenge("i7mPR", challengeTypes.multiplayer, allSubCategories[allCategories.career].fieldSpecialist,
+            "Master Chef", "Kill 100 enemies with a cooked Frag Grenade", "",
+        ),
+        new Challenge("vv4HK", challengeTypes.multiplayer, allSubCategories[allCategories.career].fieldSpecialist,
+            "Gunner", "Kills 100 using vehicle mounted or stationary turrets", "",
+        ),
+        new Challenge("wpkYk", challengeTypes.multiplayer, allSubCategories[allCategories.career].fieldSpecialist,
+            "Peek A Boo", "Kill 100 enemies that are detected by your Field Mic or Spy Plane", "",
+        ),
+        new Challenge("Lm8tZ", challengeTypes.multiplayer, allSubCategories[allCategories.career].fieldSpecialist,
+            "Bang For The Buck", "Get 10 double kills or better using Lethal Equipment: Frag Grenade, Semtex, Molotov, or C4", "",
+        ),
+        new Challenge("iTJsw", challengeTypes.multiplayer, allSubCategories[allCategories.career].fieldSpecialist,
+            "Finish Them", "Kill 100 enemies that are disorientated or affected by your Flashbang, Stun Grenade, or Gas Mine", "",
+        ),
+        new Challenge("AMimD", challengeTypes.multiplayer, allSubCategories[allCategories.career].fieldSpecialist,
+            "Fog Of War", "Capture 50 objectives under the cover of a Smoke Grenade", "",
+        ),
+        new Challenge("XZSFo", challengeTypes.multiplayer, allSubCategories[allCategories.career].eliteOperator,
+            "Top Dog", "Finish with the highest score of all players in any team game mode 25 times.", "",
+        ),
+        new Challenge("3G0gq", challengeTypes.multiplayer, allSubCategories[allCategories.career].eliteOperator,
+            "Score Superior", "Complete 50 matches among the Top 3 players Core Public Match games.", "",
+        ),
+        new Challenge("ZRBLA", challengeTypes.multiplayer, allSubCategories[allCategories.career].eliteOperator,
+            "Hardcore Superior", "Complete 50 Hardcore matches among the Top 3 players in Hardcore Public Match games.", "",
+        ),
+        new Challenge("RSmdU", challengeTypes.multiplayer, allSubCategories[allCategories.career].eliteOperator,
+            "Vanquisher", "Finish in 1st place in 15 matches with Free-For-All or Squad vs Squad (Fireteam) rules.", "",
+        ),
+        new Challenge("gHeI7", challengeTypes.multiplayer, allSubCategories[allCategories.career].eliteOperator,
+            "Superstar", "Win a Team Deathmatch, Free-For-All, or Search and Destroy game and have the most Eliminations and fewest deaths of all players in the game.", "",
+        ),
+        new Challenge("Bbnwq", challengeTypes.multiplayer, allSubCategories[allCategories.career].eliteOperator,
+            "The Best Around", "Get featured in the Best Play 25 times.", "",
+        ),
+        new Challenge("rvcLo", challengeTypes.multiplayer, allSubCategories[allCategories.career].counterMeasures,
+            "Shutdown", "Destroy 50 lethal enemy controlled Scorestreaks.", "",
+        ),
+        new Challenge("cYzZT", challengeTypes.multiplayer, allSubCategories[allCategories.career].counterMeasures,
+            "Totaled", "Destroy 100 enemy driven or piloted vehicles.", "",
+        ),
+        new Challenge("UFu1X", challengeTypes.multiplayer, allSubCategories[allCategories.career].counterMeasures,
+            "Hard Counter", "Use a Scorestreak to destroy an enemy Scorestreak 10 times.", "",
+        ),
+        new Challenge("Qr836", challengeTypes.multiplayer, allSubCategories[allCategories.career].counterMeasures,
+            "Buckle Up", "Shoot and kill the driver or pilot of an enemy vehicle without destroying the vehicle 5 times.", "",
+        ),
+        new Challenge("2ObJV", challengeTypes.multiplayer, allSubCategories[allCategories.career].counterMeasures,
+            "Heart Breaker", "Destroy or end a player's lethal Scorestreak before it gets a single kill 5 times.", "",
+        ),
+        new Challenge("Qk_tA", challengeTypes.multiplayer, allSubCategories[allCategories.career].counterMeasures,
+            "Risk Taker", "Destroy 15 enemy controlled Tanks with C4.", "",
+        ),
+        new Challenge("hldBh", challengeTypes.multiplayer, allSubCategories[allCategories.career].grizzledVeteran,
+            "Winner", "Win 1000 [citation needed] games or finish top 3 in games with Free-For-All or Squads vs. Squad rules.", "",
+        ),
+        new Challenge("OYu0L", challengeTypes.multiplayer, allSubCategories[allCategories.career].grizzledVeteran,
+            "Aggression", "Get 1000 [citation needed] objective Eliminations in Objective Games.", "",
+        ),
+        new Challenge("zDjPq", challengeTypes.multiplayer, allSubCategories[allCategories.career].grizzledVeteran,
+            "Elimination Collector", "Get 10000 Eliminations", "",
+        ),
+        new Challenge("m4XcI", challengeTypes.multiplayer, allSubCategories[allCategories.career].grizzledVeteran,
+            "Headshot Collector", "Get 1000 Headshots.", "",
+        ),
+        new Challenge("z3cyt", challengeTypes.multiplayer, allSubCategories[allCategories.career].grizzledVeteran,
+            "Hardcore Kill Collector", "Get 2500 Kills in Hardcore.", "",
+        ),
+        new Challenge("7Xj_J", challengeTypes.multiplayer, allSubCategories[allCategories.career].grizzledVeteran,
+            "Dialed In", "Get 500 Scorestreak Kills.", "",
+        ),
+        new Challenge("_pGlM", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].killer,
+            "Bloodthirsty Killer", "Get 5 kills without dying 50 times.", "",
+        ),
+        new Challenge("mojKO", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].killer,
+            "Merciless Killer", "Get 10 kills without dying 10 times.", "",
+        ),
+        new Challenge("7Y0mg", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].killer,
+            "Ruthless Killer", "Earn a Ruthless medal (15 kills without dying).", "",
+        ),
+        new Challenge("gGduq", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].killer,
+            "Double Killer", "Earn 50 Double Kill medals (2 rapid kills).", "",
+        ),
+        new Challenge("9BrbH", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].killer,
+            "Triple Killer", "Earn 25 Triple Kill medals (3 rapid kills).", "",
+        ),
+        new Challenge("3Hpui", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].killer,
+            "Fury Killer", "Earn 1 Fury Kill medal (4 rapid kills).", "",
+        ),
+        new Challenge("JT0iE", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].goingHam,
+            "Four Piece Dinner", "Earn 5 [citation needed] Quad Feed medals (4 uninterrupted kills in the kill feed).", "",
+        ),
+        new Challenge("KHjkl", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].goingHam,
+            "Pest Control", "Rapidly kill 2 or more enemy squad members from the same squad and elminiate the final member of that squad 10 times.", "",
+        ),
+        new Challenge("2eIoH", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].goingHam,
+            "Say Hello", "Get a Triple Kill medal or better while shooting from the hip with a full auto SMG or LMG.", "",
+        ),
+        new Challenge("bUO0i", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].goingHam,
+            "BAMF", "Get the most Eliminations and fewest deaths while winning a game or finishing in Top 3 in Free-For-All or Squad vs Squad rules 3 times.", "",
+        ),
+        new Challenge("OEr7c", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].goingHam,
+            "Reaper", "Get a Double Kill medal (2 or more rapid kills) or better against attackers or defenders in objective games 20 times.", "",
+        ),
+        new Challenge("KI79l", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].goingHam,
+            "Overwhelming Force", "Get 4 or more kills with a single use of a player controlled or player targeted Scorestreak 5 times.", "",
+        ),
+        new Challenge("1DphZ", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].humiliation,
+            "Blunt Trauma", "Get 100 [citation needed] Nosebreaker medals (killed an enemy with a Gun Butt).", "",
+        ),
+        new Challenge("TgT9A", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].humiliation,
+            "Tick Tock Boom", "Get 50 Stick medals (kill the enemy by sticking them with Semtex).", "",
+        ),
+        new Challenge("WRYbH", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].humiliation,
+            "Backfire", "Get 50 [citation needed] Backfire medals (killed the enemy with their own weapon).", "",
+        ),
+        new Challenge("zLZkp", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].humiliation,
+            "Surprise", "Get 250 Point Blank medals (killed the enemy at close range).", "",
+        ),
+        new Challenge("T3N0y", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].humiliation,
+            "Hit Job", "Get 25 Finishing Moves.", "",
+        ),
+        new Challenge("83j0u", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].humiliation,
+            "Circus Act", "Get 5 Bankshot medals (your Tomahawk bounced off a surface to kill the enemy).", "",
+        ),
+        new Challenge("I6GTY", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].precision,
+            "Headhunter", "Get 5 Headshot medals in a game 25 times.", "",
+        ),
+        new Challenge("_sI8K", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].precision,
+            "One Shot Kill", "Get 300 One Shot, One Kill medals.", "",
+        ),
+        new Challenge("7zDOO", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].precision,
+            "Hail Mary", "Get a long distance kill with the Tomahawk.", "",
+        ),
+        new Challenge("pIl7r", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].precision,
+            "Hard Stop", "Get a headshot medal and On Shot, One Kill medal with the same shot 100 times.", "",
+        ),
+        new Challenge("5ZDZi", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].precision,
+            "Far Sighted", "Get 3 Longshot medals (killed enemy with Long Distance shot) in one life.", "",
+        ),
+        new Challenge("E4yaB", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].precision,
+            "Two For One", "Earn 5 Collateral medals (kill 2 or more enemies with a single bullet).", "",
+        ),
+        new Challenge("quncz", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].returnFire,
+            "Problem Solver", "Kill 100 enemies that are shooting at you from partial Cover.", "",
+        ),
+        new Challenge("aohni", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].returnFire,
+            "Resistance", "Get a Bloodthirsty medal or better against attackers while guarding a single objective (5 or more kills without dying).", "",
+        ),
+        new Challenge("y0mbJ", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].returnFire,
+            "Death Race", "Kill an enemy with gunfire that is dealing gun damage to you 100 times.", "",
+        ),
+        new Challenge("FFEzW", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].returnFire,
+            "Nope", "Get 50 Eliminations against an enemy that shot you from the side or behind.", "",
+        ),
+        new Challenge("WTUOL", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].returnFire,
+            "Shake It Off", "Get 10 Kills against the enemy that flashed or stunned you while you are flashed or concussed, without Tactical Mask equipped.", "",
+        ),
+        new Challenge("bPpLH", challengeTypes.multiplayer, allSubCategories[allCategories.battleHardened].returnFire,
+            "Hot Potato", "Kill 1 enemy with a thrown back Frag Grenade.", "",
+        ),
+        new Challenge("U2K38", challengeTypes.multiplayer, allCategories.darkOps,
+            "Relentless Killer", "Earn 10 Relentless medals (20 kills without dying).", "",
+        ),
+        new Challenge("cJPcg", challengeTypes.multiplayer, allCategories.darkOps,
+            "Brutal Killer", "Earn a Brutal medal (25 Killstreak)", "",
+        ),
+        new Challenge("bllEj", challengeTypes.multiplayer, allCategories.darkOps,
+            "Nuclear Killer", "Earn a Nuclear medal (30 killstreak)", "",
+        ),
+        new Challenge("kq8p7", challengeTypes.multiplayer, allCategories.darkOps,
+            "Frenzy Killer", "Earn 5 Rapid Kills.", "",
+        ),
+        new Challenge("gU1OD", challengeTypes.multiplayer, allCategories.darkOps,
+            "Mega Killer", "Earn 6 Rapid Kills.", "",
+        ),
+        new Challenge("0OuTg", challengeTypes.multiplayer, allCategories.darkOps,
+            "Ultra Killer", "Earn 7 Rapid Kills.", "",
+        ),
+        new Challenge("OMPEs", challengeTypes.multiplayer, allCategories.darkOps,
+            "Chain Killer", "Earn 8 Rapid Kills.", "",
+        ),
+        new Challenge("139", challengeTypes.multiplayer, allCategories.darkOps,
+            "From The Depths", "Get 25 kills against enemies that are on land or a ship’s surface when you are shooting at them from underwater with a primary or secondary weapon.", "",
+        ),
+        new Challenge("uTL8M", challengeTypes.multiplayer, allCategories.darkOps,
+            "Hard Wipe", "Single handily eliminate an entire squad of 4 players in a Fireteam mode.", "",
+        ),
+        new Challenge("d6aqJ", challengeTypes.multiplayer, allCategories.darkOps,
+            "Back At You", "Throw a Frag Grenade back and kill the enemy that threw the grenade at you.", "",
+        ),
+        new Challenge("zMGwC", challengeTypes.multiplayer, allCategories.darkOps,
+            "Nuked Out", "Earn a Nuclear medal in free for all with out using lethal score streaks.", "",
+        ),
+        new Challenge("RkjEN", challengeTypes.multiplayer, allCategories.darkOps,
+            "Underwater Ops", "While underwater, plant C4 on an enemy occupied Gunboat or Wakerunner and detonate to destroy the vehicle and kill the occupants 5 times.", "",
+        ),
+        new Challenge("3gvu4", challengeTypes.multiplayer, allCategories.darkOps,
+            "Very Nuclear", "Earn a Nuclear medal with 21 different weapons with all kills coming from that weapon.", "",
+        ),
+        new Challenge("YiClE", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season1,
+            "Car Bomb", "Use C4 to destroy 10 enemy ground vehicles.", "",
+        ),
+        new Challenge("QuLbY", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season1,
+            "Swift Brutality", "Earn 25 Double Kill or better medals.", "",
+        ),
+        new Challenge("Kk2zJ", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season1,
+            "Good Intelligence", "Kill 100 enemies detected by a Spy Plane, UAV, or Field Mic.", "",
+        ),
+        new Challenge("TS_UL", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season1,
+            "Kill List", "In Warzone, survive or kill 5 Most Wanted contracts.", "",
+        ),
+        new Challenge("Hg3Ur", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season1,
+            "Eliminations", "Eliminate 1000 enemies.", "",
+        ),
+        new Challenge("vnz5a", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season1,
+            "Mass Causalities", "Kill 2 or more enemies with a single Scorestreak 5 times.", "",
+        ),
+        new Challenge("z5uxh", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season1,
+            "Vehicular Assault", "Get 25 Eliminations while seated in a vehicle.", "",
+        ),
+        new Challenge("hyB8L", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season1,
+            "Prison Break", "In Warzone, win 25 one on one fights as a prisoner.", "",
+        ),
+        new Challenge("qNwON", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season1,
+            "Takedown", "Execute 15 Finishing Moves.", "",
+        ),
+        new Challenge("W_fz8", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season1,
+            "Strike Coordinates", "Kill 50 with Scorestreaks or Killstreaks.", "",
+        ),
+        new Challenge("iHSka", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season1,
+            "Annihilation", "Earn 3 Quad Feed medals (4 uninterrupted kills in the kill feed).", "",
+        ),
+        new Challenge("LLozr", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season1,
+            "Rigged To Blow", "Get 30 kills with Proximity Mines.", "",
+        ),
+        new Challenge("Me6QD", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season1,
+            "Scrambled", "Kill 30 enemies scrambled by your Counter UAV or Jammer Field upgrade.", "",
+        ),
+        new Challenge("IFnBC", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season1,
+            "Hired Gun", "In Warzone, complete 3 Contracts in a single match 15 times.", "",
+        ),
+        new Challenge("7J3lG", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season1,
+            "Assault Rifle Eliminations", "Get 500 eliminations using Assault Rifles.", "",
+        ),
+        new Challenge("fteHv", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season1,
+            "Chemical Warfare", "Kill 25 enemies who are under the effect of Gas.", "",
+        ),
+        new Challenge("Thdgo", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season1,
+            "Fly Swatter", "Destroy 15 aerial Scorestreaks or vehicles.", "",
+        ),
+        new Challenge("c0bSG", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season1,
+            "Execution", "Eliminate 25 downed enemies.", "",
+        ),
+        new Challenge("wxZtr", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season1,
+            "Act of Intimidation", "Get 5 kills without dying 20 times.", "",
+        ),
+        new Challenge("xvvtz", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season1,
+            "Top Brass", "In Warzone or Fireteam, earn a top 3 placement with your team 5 times.", "",
+        ),
+        new Challenge("gI_5g", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season2,
+            "Protective Overwatch", "Use a Sniper Rifle to kill an enemy who is injuring a teammate 10 times.", "",
+        ),
+        new Challenge("l9xby", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season2,
+            "Hot Drop", "Kill an enemy shortly after skydiving 25 times.", "",
+        ),
+        new Challenge("4Uv2s", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season2,
+            "Guerrilla Warfare", "Get 100 Eliminations using a weapon that you have picked up.", "",
+        ),
+        new Challenge("wxqrQ", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season2,
+            "Clean Kill", "Kill an enemy without taking damage 100 times.", "",
+        ),
+        new Challenge("kICbI", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season2,
+            "Suppressing Fire", "Get 500 Eliminations with LMGs.", "",
+        ),
+        new Challenge("x8tMD", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season2,
+            "Incendiary Warfare", "Get 15 kills with Molotov Lethal Equipment.", "",
+        ),
+        new Challenge("epAHP", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season2,
+            "Cybersecurity Threat", "Using the Spycraft or Spotter perk, kill an enemy with a hacked Field Upgrade.", "",
+        ),
+        new Challenge("6jBer", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season2,
+            "Shelled", "Get 50 Point Blank kills with Shotguns.", "",
+        ),
+        new Challenge("C7DPO", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season2,
+            "Arms Dealer", "Acquire 50 Scorestreaks or Killstreaks from Care Packages, Supply Caches, or Buy Stations.", "",
+        ),
+        new Challenge("wOs6N", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season2,
+            "Brap Brap", "Get 100 multi kills with SMGs.", "",
+        ),
+        new Challenge("LWDKz", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season2,
+            "Good Ammunition", "Kill 50 enemies while using ammo acquired from the Assault Pack or Munitions Box.", "",
+        ),
+        new Challenge("x4s5w", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season2,
+            "Deception", "Kill 25 enemies that are near your active Decoy Grenade.", "",
+        ),
+        new Challenge("cWjZx", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season2,
+            "Bump In The Road", "Use Proximity Mines to destroy 10 enemy ground vehicles.", "",
+        ),
+        new Challenge("gqZZX", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season2,
+            "Toxic Behavior", "Kill 50 enemies with gas or who are affected by gas.", "",
+        ),
+        new Challenge("AnSbY", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season2,
+            "Well Rounded", "Get a kill with at least two different weapons without dying 100 times.", "",
+        ),
+        new Challenge("yxcnt", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season2,
+            "Looting And Pillaging", "Replenish ammo 250 times while using the Scavenger Perk.", "",
+        ),
+        new Challenge("YPQWg", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season2,
+            "Bullseye", "Get 10 kills with the Tomahawk or Throwing Knife Lethal Equipment.", "",
+        ),
+        new Challenge("foCEu", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season2,
+            "In Their Heads", "Get 100 Headshot kills.", "",
+        ),
+        new Challenge("4u3jF", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season2,
+            "Iron Sight Assassin", "Get 300 Eliminations using weapons without a scope or optic attachment.", "",
+        ),
+        new Challenge("i7Shn", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season2,
+            "Anti-Vehicle", "Destroy 75 enemy ground vehicles.", "",
+        ),
+        new Challenge("dnFY0", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season3,
+            "Three's Company", "Earn 25 Triple Kill or better Medals.", "",
+        ),
+        new Challenge("xwmbM", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season3,
+            "Prepare & Survive", "Get 100 kills while near your deployed non-lethal Field Upgrades.", "",
+        ),
+        new Challenge("O_FWS", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season3,
+            "Nothing Special", "Get 150 Eliminations using Special Weapons.", "",
+        ),
+        new Challenge("yzXU9", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season3,
+            "It's A Banger", "Get 100 kills with Lethal Equipment.", "",
+        ),
+        new Challenge("nipMJ", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season3,
+            "On A Roll", "Get 250 total kills while on a Streak.", "",
+        ),
+        new Challenge("socRp", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season3,
+            "Batteries Not Included", "Get 25 kills with the RC-XD.", "",
+        ),
+        new Challenge("0xKhr", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season3,
+            "Lost Signal", "Destroy 100 enemy deployed Field Upgrades.", "",
+        ),
+        new Challenge("PIQ9w", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season3,
+            "Death From Above", "Get 50 kills with player-targeted airborne Scorestreak or Killstreak strikes.", "",
+        ),
+        new Challenge("DE9JU", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season3,
+            "Top Performer", "Complete 25 matches among the top 25% of players.", "",
+        ),
+        new Challenge("vJkOD", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season3,
+            "Let's Get Tactical", "Get 500 Eliminations with Tactical Rifles.", "",
+        ),
+        new Challenge("SzgHZ", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season3,
+            "Reduce Reuse Recycle", "Using the Spycraft or Spotter Perk, intercept 25 enemy projectiles with a hacked Trophy System.", "",
+        ),
+        new Challenge("VrJfI", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season3,
+            "Remote Assistance", "Call in 5 Scorestreaks or Killstreaks in a match 25 times.", "",
+        ),
+        new Challenge("HwmK5", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season3,
+            "Picked Off", "Get 50 Longshot Headshot kills using Sniper Rifles.", "",
+        ),
+        new Challenge("gcdht", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season3,
+            "Hot Air", "Get 300 kills while aiming down sights using a weapon with an attached thermal scope.", "",
+        ),
+        new Challenge("Hts55", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season3,
+            "Second Fiddle", "Get 300 Eliminations with a Primary Weapon in your Secondary Slot.", "",
+        ),
+        new Challenge("oys8K", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season3,
+            "Silent Assassin", "Using Ninja or Dead Silence, kill an enemy at close range without taking damage 50 times.", "",
+        ),
+        new Challenge("3rRsf", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season3,
+            "Vehicular Warfare", "Use a vehicle or player-controlled Scorestreak to destroy an enemy vehicle 25 times.", "",
+        ),
+        new Challenge("As8Qx", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season3,
+            "Beamed", "Get 300 Eliminations using a weapon with a laser body attachment.", "",
+        ),
+        new Challenge("cb8IC", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season3,
+            "Bring In The Big Guns", "Get 100 kills with Scorestreak Weapons or while using Stopping Power rounds.", "",
+        ),
+        new Challenge("bkLGd", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season3,
+            "Merciless", "Get 10 kills without dying.", "",
+        ),
+        new Challenge("hUSHW", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season4,
+            "Soldier Of Fortune", "Get 500 Eliminations with full-auto weapons.", "",
+        ),
+        new Challenge("5Jw1h", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season4,
+            "No Camping Allowed", "Kill an enemy that hasn't recently moved from one location 25 times.", "",
+        ),
+        new Challenge("dv_h7", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season4,
+            "Daily Grind", "Complete 9 Daily Challenges in Multiplayer or Warzone.", "",
+        ),
+        new Challenge("sRt5A", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season4,
+            "Head Count", "Get 2 Headshot kills in a single life 25 times.", "",
+        ),
+        new Challenge("ieAF6", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season4,
+            "Warlord", "Get 5 kills with Scorestreaks or Killstreaks in a single game 9 times.", "",
+        ),
+        new Challenge("InVpN", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season4,
+            "YOLO", "Get 75 Eliminations in single-life elimination modes.", "",
+        ),
+        new Challenge("0nT1k", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season4,
+            "Hill To Die On", "Kill 75 enemies who are at a lower elevation.", "",
+        ),
+        new Challenge("ZHT7n", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season4,
+            "One, Two Punch", "Rapidly get a kill with both weapons that you are carrying 30 times.", "",
+        ),
+        new Challenge("dfIY2", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season4,
+            "Double Down", "Complete a match with at least twice the number of Eliminations than deaths 9 times.", "",
+        ),
+        new Challenge("9vTx9", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season4,
+            "Below The Belt", "Get 50 kills while sliding.", "",
+        ),
+        new Challenge("T2Dg6", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season4,
+            "Nothing But The Hits", "Using a Sniper Rifle, fire 3 consecutive shots that deal damage to enemies 5 time(s).", "",
+        ),
+        new Challenge("lHbhl", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season4,
+            "Write Off", "Destroy 50 enemy Scorestreaks or vehicles.", "",
+        ),
+        new Challenge("ki9UK", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season4,
+            "Just A Second", "Get 250 Eliminations with Secondary weapons.", "",
+        ),
+        new Challenge("ghZZ9", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season4,
+            "Strong Support System", "Earn 200 Support Assists with Scorestreaks, Equipment, or Field Upgrades.", "",
+        ),
+        new Challenge("bhTNj", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season4,
+            "Take A Closer Look", "Get 250 kills while aiming down sights using a weapon with an attached 2x magnified scope or greater.", "",
+        ),
+        new Challenge("bk4_p", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season4,
+            "Far And Away", "Using a Sniper Rifle, kill an enemy more than 250 meters away.", "",
+        ),
+        new Challenge("VF7J0", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season4,
+            "Tools Of The Trade", "Get a kill with both a weapon and a piece of equipment in the same life 50 times.", "",
+        ),
+        new Challenge("1geyt", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season4,
+            "Turn The Tables", "Kill an enemy that had previously damaged you first 30 times.", "",
+        ),
+        new Challenge("siIK1", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season4,
+            "Pumping Iron", "Get 75 Headshot kills using iron sight weapons.", "",
+        ),
+        new Challenge("z4kiK", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season4,
+            "Top 10", "Complete a public match with a score or placement among the top 10% of players 5 time(s).", "",
+        ),
+        new Challenge("TZGtK", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season5,
+            "Making A Killing", "Earn 125,000 total Cold War Score or Warzone Battle Royale Cash", "",
+        ),
+        new Challenge("gWuEs", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season5,
+            "Powder Keg", "Kill 2 or more enemies with damage caused by a single explosion 5 times.", "",
+        ),
+        new Challenge("gmyUp", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season5,
+            "Playing The Objective", "Complete a Warzone contract or earn a Wipeout Medal 15 times (cleared your objective of 2 or more attackers).", "",
+        ),
+        new Challenge("QeWHq", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season5,
+            "Full-On Assault", "Get 3 kills with Assault Rifles without dying 25 times.", "",
+        ),
+        new Challenge("7Bfx9", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season5,
+            "One By One", "Get 250 Eliminations with semi-auto weapons.", "",
+        ),
+        new Challenge("SKnXo", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season5,
+            "Data Breach", "Using the Spycraft or Spotter Perk, get 75 kills, assists, destructions, or interceptions with hacked Field Upgrades.", "",
+        ),
+        new Challenge("oN3pT", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season5,
+            "Bulwarked", "Kill 50 enemies while you are protected by partial cover.", "",
+        ),
+        new Challenge("NBt6Y", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season5,
+            "From Downtown", "Kill an enemy with a piece of Lethal Equipment that was thrown or dropped a long distance.", "",
+        ),
+        new Challenge("Fen_N", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season5,
+            "SMG Go BRR", "Get 500 Eliminations with SMGs.", "",
+        ),
+        new Challenge("qny36", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season5,
+            "Run & Gun", "Kill an enemy while you are sprinting or shortly after sprinting 50 times.", "",
+        ),
+        new Challenge("wAq2z", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season5,
+            "Wall Banger", "Get a kill with a bullet that has penetrated through a wall or other surface 3 times.", "",
+        ),
+        new Challenge("GBA19", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season5,
+            "Bottomless Clip", "Get 300 Eliminations while using a Magazine attachment that increases your weapon's Magazine Ammo Capacity.", "",
+        ),
+        new Challenge("p9wWY", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season5,
+            "Hat Trick", "Get 3 Headshot kills in a single game 10 times.", "",
+        ),
+        new Challenge("bNpYx", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season5,
+            "Splash Damage", "Get 30 kills or destructions with Launchers.", "",
+        ),
+        new Challenge("kPOoc", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season5,
+            "Adrenaline Junkie", "Get 5 or more kills without dying while using the Stim Shot to regain health at least once 10 time(s).", "",
+        ),
+        new Challenge("GluMr", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season5,
+            "Top Marksman", "Using a Sniper Rifle, kill an enemy Sniper who is sniping at you 5 times.", "",
+        ),
+        new Challenge("6v5pK", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season5,
+            "Slice & Dice", "Get 3 Melee kills in a single game 10 times.", "",
+        ),
+        new Challenge("DTFar", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season5,
+            "Follow In Their Footsteps", "Using the Tracker Perk, kill a nearby tracked enemy from behind without receiving returning fire 25 times.", "",
+        ),
+        new Challenge("uiKcs", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season5,
+            "Clutch Performer", "Win a Gunfight Match or your Gulag fight 15 times.", "",
+        ),
+        new Challenge("yTxI4", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season5,
+            "Dead Drop", "Kill an enemy shortly after dropping nearby from a higher elevation 10 times.", "",
+        ),
+        new Challenge("4CijS", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season6,
+            "Playing For Keeps", "Complete a Warzone Bounty Contract or finish a Multiplayer match with 5 or more objective kills 15 times.", "",
+        ),
+        new Challenge("uMYqf", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season6,
+            "Boom Goes The Dynamite", "Get 100 kills with explosives.", "",
+        ),
+        new Challenge("8ROcH", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season6,
+            "Two For Two", "Rapidly earn 2 or more One Shot Kills 10 times (does not count in Hardcore).", "",
+        ),
+        new Challenge("yglFa", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season6,
+            "Headhunter", "Get 75 Headshot Kills with Assault Rifles.", "",
+        ),
+        new Challenge("IBwIq", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season6,
+            "Burst Your Bubble", "Get 250 Eliminations with burst fire weapons.", "",
+        ),
+        new Challenge("XrR0U", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season6,
+            "Fire In The Hole!", "Use Lethal Equipment to kill an enemy that can't see you 25 times.", "",
+        ),
+        new Challenge("0sIw2", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season6,
+            "Eye In The Sky", "Rapidly kill 2 or more enemies while your Spy Plane, H.A.R.P., or UAV is active 15 times.", "",
+        ),
+        new Challenge("8wQ68", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season6,
+            "Thanks For Dropping By", "Kill 3 skydiving or parachuting enemies.", "",
+        ),
+        new Challenge("g9_Xe", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season6,
+            "Quick On The Draw", "Get 150 kills while aiming down sights with a SMG equipped with a Handle Attachment that improves Aim Down Sight Time.", "",
+        ),
+        new Challenge("QRIMI", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season6,
+            "The Damage Is Done", "Deal 30,000 total damage.", "",
+        ),
+        new Challenge("iT_K2", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season6,
+            "Fire-Breather", "Get 50 kills with fire damage.", "",
+        ),
+        new Challenge("jhHcO", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season6,
+            "Moonshot", "Kill an enemy at long distance with a rocket fired from a free-fire Launcher.", "",
+        ),
+        new Challenge("hGNw3", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season6,
+            "Squad Wipe", "Kill the last player alive in a Fireteam or Squad of 3 or more players.", "",
+        ),
+        new Challenge("3fd0n", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season6,
+            "Reel in the Big One", "Use a Proximity Mine, Gas Mine, C4, or Claymore to kill an enemy who's recently used a zipline, rappel, or ladder.", "",
+        ),
+        new Challenge("wndQr", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season6,
+            "Turn It Off And On Again", "Use the Jammer or EMP Drone to jam or disable 25 enemy deployed Field Upgrades or Scorestreaks.", "",
+        ),
+        new Challenge("F933z", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season6,
+            "Big Shot", "Rapidly kill 2 or more enemies while using a Scorestreak Weapon or Stopping Power Rounds 15 times.", "",
+        ),
+        new Challenge("OkPbi", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season6,
+            "Shelling Out", "Get 3 kills with Shotguns without dying 25 times.", "",
+        ),
+        new Challenge("jtfN9", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season6,
+            "Jack of All Trades", "Get a kill with a Primary Weapon, Secondary Weapon, Lethal Equipment, and Scorestreak in the same game 15 times.", "",
+        ),
+        new Challenge("Erluw", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season6,
+            "Hold Down the Fort", "Get 3 kills without moving from one location 15 times.", "",
+        ),
+        new Challenge("6BRQ6", challengeTypes.multiplayer, allSubCategories[allCategories.seasonal].season6,
+            "Fit of Fury", "Earn a Fury Kill or better Medal (kill 4 players rapidly).", "",
+        ),
+        //#endregion Multiplayer
+
+        //#region Campaign
+        //#region Campaign ==> Story ==> Loyal agent
         // https://imgur.com/a/GH5x9m1
         new Challenge(
             "BxN1R",
@@ -992,9 +1960,9 @@ class Challenges {
             "Capture Anton Volkov in Brick in the Wall.",
             "vFkhPQj",
         ),
-        // end Zombies ==> Story ==> Loyal Agent
+        //#endregion Zombies ==> Story ==> Loyal Agent
 
-        // Campaign ==> Story ==> Bloodthirsty
+        //#region Campaign ==> Story ==> Bloodthirsty
         // https://imgur.com/a/eelHPyP
         new Challenge(
             "PsIuj",
@@ -1044,9 +2012,9 @@ class Challenges {
             "General Charkov is killed in Desperate Measures.",
             "OCwutpi",
         ),
-        // end Zombies ==> Story ==> Bloodthirsty
+        //#endregion Zombies ==> Story ==> Bloodthirsty
 
-        // Campaign ==> Story ==> Explorer
+        //#region Campaign ==> Story ==> Explorer
         // https://imgur.com/a/bPtJxHM
         new Challenge(
             "4dIYy",
@@ -1096,9 +2064,9 @@ class Challenges {
             "Complete all ways to get the bunker key in Desperate Measures.",
             "ckmWVMG",
         ),
-        // end Zombies ==> Story ==> Explorer
+        //#endregion Zombies ==> Story ==> Explorer
 
-        // Campaign ==> Story ==> Clandestine
+        //#region Campaign ==> Story ==> Clandestine
         // https://imgur.com/a/Aizvq2u
         new Challenge(
             "EIBZ5",
@@ -1148,9 +2116,9 @@ class Challenges {
             "Acquire the bunker key in Desperate Measures without killing anyone.",
             "o3gi4gC",
         ),
-        // end Zombies ==> Story ==> Clandestine
+        //#endregion Zombies ==> Story ==> Clandestine
 
-        // Campaign ==> Story ==> Highly Proficient
+        //#region Campaign ==> Story ==> Highly Proficient
         // https://imgur.com/a/mTT5m8F
         new Challenge(
             "oJz4d",
@@ -1200,10 +2168,10 @@ class Challenges {
             "Destroy the enemy Hind with only rockets in Fracture Jaw.",
             "3WVPJqI",
         ),
-        // end Zombies ==> Story ==> Highly Proficient
+        //#endregion Zombies ==> Story ==> Highly Proficient
 
 
-        // Campaign ==> Dark Ops
+        //#region Campaign ==> Dark Ops
         // https://imgur.com/a/SqUYN6H
         new Challenge(
             "FLYJ3",
@@ -1253,11 +2221,13 @@ class Challenges {
             "Answer Imran Zakhaev's questions correctly in the elevator in Desperate Measures.",
             "LarPw0Z",
         ),
-        // end Campaign ==> Dark Ops
+        //#endregion Campaign ==> Dark Ops
+        //#endregion Campaign
     ];
 
     static masterChallenges = [
-        //Zombies ==> Career ==> Die Maschine Report
+        //#region Zombies
+        // Zombies ==> Career ==> Die Maschine Report
         new Challenge(
             "mMTqi",
             challengeTypes.zombies,
@@ -1267,7 +2237,7 @@ class Challenges {
             "c0kH0zg",
             ["EQolZ", "i6b8t", "d3nJe", "3CvGf", "GJGwe", "e4V27"],
         ),
-        //Zombies ==> Career ==> Boot Camp
+        // Zombies ==> Career ==> Boot Camp
         new Challenge(
             "DsOD5",
             challengeTypes.zombies,
@@ -1277,7 +2247,7 @@ class Challenges {
             "VxUnfTY",
             ["t70li", "MTOD3", "1hen9", "wvKRb", "d5rDf", "hbUea"],
         ),
-        //Zombies ==> Career ==> Grizzled Veteran
+        // Zombies ==> Career ==> Grizzled Veteran
         new Challenge(
             "HWNm0",
             challengeTypes.zombies,
@@ -1287,7 +2257,7 @@ class Challenges {
             "ynzLyfT",
             ["3bAdC", "MlSB7", "9Yr1I", "Y0OuH", "TFC49", "IDhln"],
         ),
-        // Zombies ==> Bttle Hardened ==> Zombie Hunter
+        // Zombies ==> Battle Hardened ==> Zombie Hunter
         new Challenge(
             "nYgXb",
             challengeTypes.zombies,
@@ -1297,7 +2267,7 @@ class Challenges {
             "g5LCmtD",
             ["uH9ef", "ZmWQa", "5liyT", "Zuvf3", "37z6n", "4QaHw"],
         ),
-        // Zombies ==> Bttle Hardened ==> Elementalist
+        // Zombies ==> Battle Hardened ==> Elementalist
         new Challenge(
             "Qxe9A",
             challengeTypes.zombies,
@@ -1307,7 +2277,7 @@ class Challenges {
             "xGlPjDy",
             ["ZwMyC", "5M1p9", "Ioxly", "CPC1w", "UBlDr", "WKUZE"],
         ),
-        // Zombies ==> Bttle Hardened ==> Tactician
+        // Zombies ==> Battle Hardened ==> Tactician
         new Challenge(
             "DqHZu",
             challengeTypes.zombies,
@@ -1317,7 +2287,7 @@ class Challenges {
             "C8rB9vM",
             ["zCEQG", "CkgJr", "_hAxI", "IhvRL", "SpZB1", "4eDxD"],
         ),
-        // Zombies ==> Bttle Hardened ==> Silverback Expedition
+        // Zombies ==> Battle Hardened ==> Silverback Expedition
         new Challenge(
             "RECeB",
             challengeTypes.zombies,
@@ -1327,7 +2297,7 @@ class Challenges {
             "0Nb78yd",
             ["IqTMF", "HAIww", "_gsPh", "chVqk", "dqX3v", "FbKhL"],
         ),
-        // Zombies ==> Bttle Hardened ==> Gorilla Stalker
+        // Zombies ==> Battle Hardened ==> Gorilla Stalker
         new Challenge(
             "FscZy",
             challengeTypes.zombies,
@@ -1408,6 +2378,12 @@ class Challenges {
             ["G6Cc0", "QQSU_", "PisZV", "UZWpO", "OO7hk", "9_or5", "TTkVh", "Wboko", "7LQXS", "Pfx05", "nrDVa", "ilfAs", "dRRVJ", "JiOa9", "8Ub5c", "S2los", "6IHj2", "1zKaX", "o6uZp"],
             11
         ),
+        //#endregion Zombies
+
+        //#region Multiplayer
+        //#endregion Multiplayer
+
+        //#region Campaign
         // Campaign ==> Loyal Agent
         new Challenge(
             "2CEQT",
@@ -1474,8 +2450,10 @@ class Challenges {
             ["FLYJ3", "dyZar", "ca4R3", "CgCkq", "zHjep", "HMzZ8",],
 
         ),
+        //#endregion Campaign
     ]
 
+    /* #region Helper Methods   */
     static getChallengeById(id, includeMastery = true) {
         const challenge = this.challengeStore.find(x => x.id == id);
         if (challenge) {
@@ -1517,6 +2495,7 @@ class Challenges {
         if (index > -1) return true;
         return false;
     }
+    /* #endregion */
 }
 
 
