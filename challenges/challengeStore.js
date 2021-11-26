@@ -2400,12 +2400,6 @@ class Challenges {
         //#endregion Zombies
 
         //#region Multiplayer
-        new Challenge("", challengeTypes.zombies, allSubCategories[allCategories.career].dieMaschineReport,
-            "Die Maschine Report Master", "Complete all Die Maschine Report Challenges.",
-            "",
-            [],
-        ),
-
         new Challenge("0ifQA", challengeTypes.multiplayer, allSubCategories[allCategories.career].bootCamp,
             "Boot Camp Master", "Complete all Boot Camp challenges.", "", ["HxOBu", "pbdAf", "qiQJW", "e9RJF", "QVwfL", "Ei29F"],
         ),
