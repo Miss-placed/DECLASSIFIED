@@ -400,6 +400,7 @@ select.faction-list>option:hover {
 
 #more-options {
   display: flex;
+  gap:5px;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-evenly;
@@ -412,13 +413,12 @@ select.faction-list>option:hover {
 }
 #more-options #select-options,
 #more-options #action-options {
+  gap:inherit;
   display: flex;
   width: inherit;
 }
 
 #more-options button { 
-  margin-bottom: 0;
-  border: 2px solid black;
   display: block;
   width: 100%;
 }
