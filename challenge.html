@@ -14,32 +14,32 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css">
 </head>
 
-<body onload="onLoad()">
+<body onload="onLoadChallengeTracker()">
     <aside>
         <!-- Potentially make this collapsible, especially useful on mobile to save space if not needed. -->
         <div id="ct-header">
             <h1 class="title">Challenge Tracker</h1>
             <a href="./index.html" class="title"><i class="fas fa-map-marked-alt"></i></a>
         </div>
-        <div id="pinned-container" onload="renderPinnedCards()">
+        <div id="pinned-container">
 
         </div>
-    <div style="padding:10px">
-        <a class="cc-add" href="#nav">
-            <div class="card-btn-container">
-                <span class="">Pin A Challenge</span>
+        <div style="padding:10px">
+            <a class="cc-add" href="#nav">
+                <div class="card-btn-container">
+                    <span class="">Pin A Challenge</span>
                 </div>
-            <p class="cc-desc" style="background-image:url('${card.img}')">
-                <i class="fas fa-thumb-tack"></i>
-            </p>
-        </a>
-    </div>
+                <p class="cc-desc">
+                    <i class="fas fa-thumb-tack"></i>
+                </p>
+            </a>
+        </div>
     </aside>
     <main>
         <nav id="nav" class="noselect">
         </nav>
 
-        <div id="card-container" onload="renderCards()">
+        <div id="card-container">
         </div>
 
         <section id="mastery-progress">

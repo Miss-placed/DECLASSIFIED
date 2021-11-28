@@ -251,8 +251,13 @@ function CheckIfSharingURL() {
 }
 
 function getUrlVars() {
+    /* #region  Trim anchor tags off the URL first */
+    let url = window.location.href;
+    var n = url.indexOf('#');
+    url = url.substring(0, n != -1 ? n : url.length);
+    /* #endregion */
     let vars = {};
-    let parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+    let parts = url.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
         vars[key] = value;
     });
     return vars;
@@ -511,4 +516,4 @@ function removeAllInstances(array, id) {
 
 function getKeyByValue(object = {}, value = "") {
     return Object.keys(object).find(key => object[key] === value);
-  }
+}

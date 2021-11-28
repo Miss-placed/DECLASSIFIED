@@ -443,17 +443,17 @@ function getCategories() {
     return getCategory();
 }
 
-function onLoad() {
-    LoadApp();
+function onLoadChallengeTracker() {
+    LoadChallengeTracker();
 
     window.onpopstate = function(event) {
         // https://developer.mozilla.org/en-US/docs/Web/API/History_API
         // console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
-        LoadApp(false);
+        LoadChallengeTracker(false);
       };
 }
 
-function LoadApp(setState = true) {
+function LoadChallengeTracker(setState = true) {
     const { type, category, subCategory } = getCategories();
     renderNav(type, category, subCategory);
     renderCards(setState);
