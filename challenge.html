@@ -24,10 +24,16 @@
         <div id="pinned-container" onload="renderPinnedCards()">
 
         </div>
-        <a href="#nav" class="cc-add">
-            <button><i class="fas fa-plus"></i></button>
-            <p>Add A Challenge.</p>
+    <div style="padding:10px">
+        <a class="cc-add" href="#nav">
+            <div class="card-btn-container">
+                <span class="">Pin A challenge</span>
+                </div>
+            <p class="cc-desc" style="background-image:url('${card.img}')">
+                <i class="fas fa-thumb-tack"></i>
+            </p>
         </a>
+    </div>
     </aside>
     <main>
         <nav id="nav" class="noselect">
