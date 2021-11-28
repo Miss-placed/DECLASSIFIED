@@ -4835,7 +4835,7 @@ const intelStoreV2 = [
         faction: factions.darkAether,
         season: seasons.season6,
         intelType: intelTypes.audio,
-        loc: "[309.8628684849271, 262.7430596656802]",
+        loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
         name: "Lost Souls: Piotr 4",
         desc: defaultPOIData.challenge

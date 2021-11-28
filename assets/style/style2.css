@@ -410,27 +410,18 @@ select.faction-list>option:hover {
 
 #more-options {
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
-  align-items: center;
+  gap: 5px;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
   height: auto;
   padding: 5px;
-  /* display: none; */
   font-size: small;
-}
-#more-options #select-options,
-#more-options #action-options {
-  display: flex;
-  width: inherit;
 }
 
 #more-options button { 
-  margin-bottom: 0;
-  border: 2px solid black;
   display: block;
-  width: 100%;
+  flex: 0 1 calc(50% - 5px);
 }
 #more-options button i {
   margin-left: 5px; 
