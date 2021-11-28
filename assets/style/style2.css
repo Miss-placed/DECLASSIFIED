@@ -1,9 +1,13 @@
 @import url("global.css");
 @import url("buttons.css");
 
+html,
 body {
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
 }
 
 #worldMap {
@@ -125,6 +129,7 @@ header>ul>li:focus-within>ul {
   justify-content: space-around;
   align-items: center;
   user-select: none;
+  justify-content: space-evenly;
 }
 
 .modal.-big {
@@ -159,7 +164,7 @@ select.faction-list>option:hover {
   margin: 0 auto;
   flex-wrap: nowrap;
   flex-direction: column;
-  width: 250px;
+  width: inherit;
   align-items: center;
   z-index: 1;
 }
@@ -168,23 +173,22 @@ select.faction-list>option:hover {
   width: -webkit-fill-available;
 }
 
-#filtered-intel {
-  aspect-ratio: var(--modal-col-1);
-}
-
 .button-list a {
   margin-bottom: 10px;
 }
 
 #filtered-intel {
+  aspect-ratio: var(--modal-col-1);
   overflow-y: scroll;
   overflow-x: hidden;
   padding-right: 5px;
+  height: 80%;
+  padding: 10px;
 }
 
-#intel-list button.btn,
+#intel-list #filtered-intel button.btn,
 .settings>div>.btn {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   flex-direction: column;
   width: 100%;
 }
@@ -392,4 +396,29 @@ select.faction-list>option:hover {
   color: var(--clr-color-inverted);
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+#more-options {
+  display: flex;
+  gap: 5px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  font-size: small;
+}
+
+#more-options button { 
+  display: block;
+  flex: 0 1 calc(50% - 5px);
+}
+#more-options button i {
+  margin-left: 5px; 
+}
+#more-options button i.fa-check-square{ 
+  color: var(--clr-green);
+}
+#more-options button i.fa-ban{ 
+  color: var(--clr-red);
 }

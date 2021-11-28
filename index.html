@@ -59,11 +59,6 @@
     <section class="modal-bg -hidden">
         <!-- FILTERS -->
         <div class="modal -hidden" id="intel-filters">
-            <label id="show-collected-filter-label" class="chk-btn" for="show-collected-filter"
-                onchange="TriggerSearch()">
-                Hide Collected <input type="checkbox" name="show-collected-filter" id="show-collected-filter"
-                    class="-small toggle" placeholder="_">
-            </label>
 
             <fieldset id="season-multi-select" class="droopy">
                 <legend>Seasons</legend>
@@ -132,6 +127,7 @@
             </fieldset>
 
 
+
             <div id="intel-type-select">
                 <span>
                     <input type="checkbox" id="document-check" class="type-check -hidden" data-filter="docs">
@@ -150,6 +146,16 @@
                     <label class="btn type" type="Radio Transmissions" value="5 / 10" for="radio-check"></label>
                 </span>
             </div>
+
+            <label id="curr-map-filter-label" class="chk-btn" for="curr-map-filter" onchange="TriggerSearch()">
+                Filter by Current Map <input type="checkbox" name="curr-map-filter" id="curr-map-filter"
+                    class="-small toggle" placeholder="_">
+            </label>
+            <label id="show-collected-filter-label" class="chk-btn" for="show-collected-filter"
+                onchange="TriggerSearch()">
+                Hide Collected <input type="checkbox" name="show-collected-filter" id="show-collected-filter"
+                    class="-small toggle" placeholder="_">
+            </label>
         </div>
 
 
@@ -161,10 +167,20 @@
             <div id="filtered-intel">
                 <!-- <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button> -->
             </div>
-            <label id="curr-map-filter-label" class="chk-btn" for="curr-map-filter" onchange="TriggerSearch()">
-                Filter by Current Map <input type="checkbox" name="curr-map-filter" id="curr-map-filter"
-                    class="-small toggle" placeholder="_">
-            </label>
+            <div id="more-options">
+                    <button onclick="selectAll()" class="btn">Select All
+                        <i class="fas fa-plus-square" aria-hidden="true"></i>
+                    </button>
+                    <button onclick="deSelectAll()" class="btn">Deselect All
+                        <i class="fas fa-minus-square" aria-hidden="true"></i>
+                    </button>
+                    <button onclick="markSelected()" class="btn">Declassify
+                        <i class="fas fa-check-square" aria-hidden="true"></i>
+                    </button>
+                    <button onclick="unmarkSelected()" class="btn">Classify
+                        <i class="fas fa-ban" aria-hidden="true"></i>
+                    </button>
+            </div>
         </div>
         <div class="modal -big -hidden" id="intel-detail">
             <div class="sub-modal" id="description">

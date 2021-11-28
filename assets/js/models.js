@@ -1,20 +1,23 @@
 /////////////////////Classes/////////////////////////
 class Item {
-    constructor({ id, title, desc, icon }) {
+    constructor({ id, title, desc, icon, layer }) {
         this.id = id;
         this.title = title ?? "";
         this.desc = desc ?? "";
         this.icon = icon ?? generalIcon;
+        this.layer = layer ?? "MiscMarkers"
     }
 }
 
 class Marker {
-    constructor(id, item, loc, uniqueDesc) {
+    constructor(id, item, loc, uniqueDesc, layer) {
         this.id = id;
         if (item instanceof Item) {
             this.title = item.title ?? "";
             this.desc = item.desc ?? "";
             this.icon = item.icon ?? generalIcon;
+    // TODO STANDARDISE STRING
+            this.layer = item.layer ?? "MiscMarkers"
         }
         //Override static description with unique description
         if (uniqueDesc) this.desc = uniqueDesc;
@@ -189,7 +192,8 @@ const miscTypes = {
     rift: new Item({ title: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", icon: riftIcon }),
     redRift: new Item({ title: "Red Aether Rift", desc: "Jump through all the rifts to continue the Easter Egg", icon: redRiftIcon }),
     radio: new Item({ title: "Radio", icon: radioIcon }),
-    requiemRadio: new Item({ title: "Requiem Radio", icon: radioIcon }),
+    //TODO STANDARDISE STRING
+    requiemRadio: new Item({ title: "Requiem Radio", icon: radioIcon, layer: "Markers" }),
     omegaRadio: new Item({ title: "Omega Radio", icon: radioIcon }),
     maxisRadio: new Item({ title: "Maxis Radio", icon: radioIcon }),
     monkey: new Item({ title: "Stone Monkey", icon: monkeyIcon }),
@@ -264,4 +268,10 @@ const easterEggTypes = {
     outbreakEE2: "Entrapment", //https://callofduty.fandom.com/wiki/Entrapment
 
     music: "Cassette Tapes",
+}
+
+// Gonna have to add a way to bring through the full description along with the unique description from the misc markers
+const outbreakEE2Steps = {
+    step2Helicopter: new Item({ title: "Crashed Helicopter", desc: `The transport chopper that the Omega Eight were using is located in the "Carved Hills", located south of the lone shack, having crashed by unknown means. Nearing it will spawn a horde needs to be eliminated, as one of the corpses is holding a message from Hugo Jager about where the surviving members of the crash went.`}),
+    step3Orb: new Item({ title: "Red Aetherial Orb", desc: "The Aetherium Orb can spawn within three places and is visually distinct, having a darker hue of red and will not produce Essence upon being damaged. When damaged, it will flee like the standard variant for a total of three times before it will flee to hover over the Recon Rover to where it will stay above, unwilling to enter it."}),
 }

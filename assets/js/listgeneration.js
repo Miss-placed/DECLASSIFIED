@@ -14,7 +14,19 @@ function GenerateList(intelToRender) {
 
 function InitialiseButtons() {
     document.querySelectorAll(".to-intel").forEach(element => {
-        element.addEventListener('click', (event) => OpenIntelDetail(event.target.getAttribute('id')));
+        element.addEventListener('click', (event) => {
+            // Allows multi selecting
+            if (event.ctrlKey) {
+                element.toggleAttribute('selected')
+            } else {
+                OpenIntelDetail(event.target.getAttribute('id'))
+            }
+        });
+        //Event listener for right clicking intel buttons and marking them as collected
+        $(element).contextmenu(function (event) {
+            toggleIntelCollected(event.target.getAttribute('id'));
+            return false; // Cancels the normal right-click menu
+        });
     });
 }
 
@@ -97,19 +109,19 @@ function GenerateIntelListItem(item) {
 /////////////////////Utils/////////////////////////
 function markIntelCollectedForButton(intelId) {
     return function () {
-        markIntelCollected(intelId) // Only used for detail modal button, otherwise use event listeners
+        toggleIntelCollected(intelId) // Only used for detail modal button, otherwise use event listeners
     }
 }
 
 function goToIntel(item) {
     return function () {
         // REMOVE THIS IF WHEN WE MOVE TO V2
-        if (typeof closeModal !== "undefined") { 
+        if (typeof closeModal !== "undefined") {
             closeModal();
         }
-        
+
         switchAndFly(item.loc, item.map)
-        if (app.isMobile)
+        if (app.isMobile && !v2Test)
             toggleAside()
     }
 }
@@ -143,9 +155,9 @@ function genBugButton(itemId) {
 
 function genCollectedButton(itemId, isForPopup = false) {
     let collectedBtn = createElement("button", ["btn", "btn-info", "inverted", "action-buttons", "mark-collected"], "Collected:")
-    if(hasUserCollected(itemId))
+    if (hasUserCollected(itemId))
         collectedBtn.appendChild(genIcon("fa-check-square"));
-    else 
+    else
         collectedBtn.appendChild(genIcon("fa-square"));
 
     collectedBtn.id = `${itemId}${isForPopup ? '-popup' : ''}-collect-btn`;

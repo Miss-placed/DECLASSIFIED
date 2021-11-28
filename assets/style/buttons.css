@@ -22,6 +22,10 @@
   box-shadow: var(--shadow-hover);
   transform: translate(0, -1px);
 }
+.btn[selected]{
+  outline: medium solid var(--clr-yellow);
+  outline-offset: 3px;
+}
 
 .btn:active {
   box-shadow: none;
@@ -261,7 +265,7 @@
   background-position: center;
   width: 200px;
   height: 120px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .type::before {
