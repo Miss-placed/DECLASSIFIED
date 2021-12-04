@@ -511,6 +511,7 @@ miscPOI[mapDetails.golova.id] = [
     new Marker("yYjve", miscTypes.trialComputer, [251.31629509255035, 307.3456855569068], "Possible Location"),
     new Marker("p_19C", miscTypes.trialComputer, [212.27251614100095, 336.3092409664307], "Possible Location"),
     new Marker("IlqAS", miscTypes.mysteryBox, [162.53961558131536, 289.1094253248955]),
+    new Marker("2iQrl", miscTypes.mysteryBox, [357.2445605708355, 135.4251857136415]),
     new Marker("_xuqv", miscTypes.arsenal, [173.76893185342092, 349.62966512210227]),
     new Marker("X9QAq", miscTypes.papMachine, [171.8265448249648, 315.8620137043266]),
     new Marker("rI6qv", miscTypes.craftingTable, [211.81979569292037, 321.0915172424777]),
