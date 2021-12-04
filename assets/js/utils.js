@@ -251,8 +251,13 @@ function CheckIfSharingURL() {
 }
 
 function getUrlVars() {
+    /* #region  Trim anchor tags off the URL first */
+    let url = window.location.href;
+    var n = url.indexOf('#');
+    url = url.substring(0, n != -1 ? n : url.length);
+    /* #endregion */
     let vars = {};
-    let parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+    let parts = url.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
         vars[key] = value;
     });
     return vars;
@@ -481,8 +486,16 @@ function htmlToElement(html) {
  */
 function htmlToElements(html) {
     var template = document.createElement('template');
-    template.innerHTML = html;
+    template.innerHTML = html.trim();
     return template.content.childNodes;
+}
+
+
+function appendToElement(html, navbar) {
+    let elementsToAdd = htmlToElements(html);
+    elementsToAdd.forEach(element => {
+        navbar.append(element);
+    });
 }
 
 /////////////////////Other Util Methods/////////////////////////
@@ -493,4 +506,14 @@ function IsJsonString(str) {
         return false;
     }
     return true;
+}
+
+function removeAllInstances(array, id) {
+    return array.filter(function (x) {
+        return x !== id;
+    });
+}
+
+function getKeyByValue(object = {}, value = "") {
+    return Object.keys(object).find(key => object[key] === value);
 }

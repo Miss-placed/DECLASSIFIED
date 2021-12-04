@@ -8,7 +8,10 @@ function StartupSettings() {
     let disableMarkers = [],
         visibleMarkers = [];
     //Use default latest map otherwise use last selected map of user
-    let currentMap = mapDetails.forsaken.id;
+    let currentMap;
+    if (page == "map") {
+        currentMap = mapDetails.forsaken.id;
+    }
     let currentContribType;
     if (localStorage.declassifiedPrefs != undefined && JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap)
         currentMap = JSON.parse(localStorage.declassifiedPrefs).lastSelectedMap;

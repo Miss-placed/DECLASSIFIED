@@ -44,6 +44,7 @@
             <button class="btn ui" onclick="openModal(modalSet.intelOverview)"><i class="fas fa-folder-open"></i>
             </button>
             <button class="btn ui" onclick="openModal(modalSet.settingsMain)"><i class="fas fa-gear"></i> </button>
+            <a class="btn ui" href="./challenge.html"><i class="fas fa-list"></i> </a>
         </div>
         <div>
             <button class="btn ui" id="color-scheme-toggle" onclick="setColorScheme()"><i class="fas fa-moon"></i>
@@ -230,7 +231,8 @@
         <img id="lightbox" src="#">
     </section>
     <script>
-        var v2Test = 'hi'
+        const v2Test = 'hi'
+        const page = "map";
 
         function hideElement(ele) {
             ele.classList.toggle('-hidden')
@@ -254,6 +256,7 @@
     <script src="" async defer></script>
     <script src="assets/js/mapsvg.js"></script>
     <script src="assets/js/icons.js"></script>
+    <script src="assets/js/sharedModels.js"></script>
     <script src="assets/js/models.js"></script>
 
     <script src="assets/js/userPrefs.js"></script>
