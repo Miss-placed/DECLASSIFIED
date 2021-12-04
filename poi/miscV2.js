@@ -495,6 +495,8 @@ miscPOI[mapDetails.sanatorium.id] = [
     new Marker("mPRat", miscTypes.jumpPad, [140.72089296826385, 201.17866696747996]),
     new Marker("z4Nqp", miscTypes.jumpPad, [251, 302.50180499137497]),
     new Marker("1moS1", miscTypes.mysteryBox, [124.72686683260734, 136.90174686563316]),
+    new Marker("fqc3I", miscTypes.mysteryBox, [335.982215715215, 149.75814251584396]),
+    new Marker("HpgRm", miscTypes.mysteryBox, [244.99933781783668, 216.7945360007589]),
     new Marker("oTXPr", miscTypes.craftingTable, [126.86940339141258, 276.0485423985561]),
     new Marker("A1YB4", miscTypes.wunderFizz, [190.5554099253267, 262.79783535307956]),
     new Marker("EyYLJ", miscTypes.papMachine, [272.10535750680924, 208.98565144365352]),
