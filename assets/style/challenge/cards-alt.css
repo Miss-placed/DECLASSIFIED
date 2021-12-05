@@ -31,8 +31,8 @@
   aspect-ratio: 13/40;
 }
 .cc-card > p {
-  height:-webkit-fill-available;
-  height:-moz-available;
+  /* height:-webkit-fill-available; */
+  /* height:-moz-available; */
   aspect-ratio: 900/249;
   border-radius:0 0 10px 10px;
   transition: all 0.2s ease;
