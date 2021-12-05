@@ -36,6 +36,10 @@ aside {
 	padding: 10px;
 }
 
+#pinned-container .cc-desc {
+	aspect-ratio: unset;
+}
+
 #card-container {
 	display: flex;
 	flex-direction: column;
