@@ -180,6 +180,7 @@ const miscTypes = {
     fishing: new Item({ title: "Fishing", desc: "Fish up to 3 times for a small reward each time.", icon: fishingIcon }),
     essenceDrop: new Item({ title: "Essence Drop" }),
     scrapHeap: new Item({ title: "Scrap Heap" }),
+    thermophasic: new Item({ title: "D.I.E. Thermophasic Upgrade" }),
 
     wunderFizz: new Item({ title: "Der Wunderfizz", icon: wunderFizzIcon }),
     trialComputer: new Item({ title: "Trial Computer", icon: trialComputerIcon }),

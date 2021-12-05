@@ -294,12 +294,12 @@ miscPOI[mapDetails.zoo.id] = [
     new Marker("AuC64", miscTypes.dementedEcho, [211.47346160666785, 323]),
     new Marker("tzc4_", miscTypes.dementedEcho, [163.36993130570124, 296.445005309222]), //issue #8 by markisdabomb214
     new Marker("cl6IT", miscTypes.dementedEcho, [203.0904837783254, 333.7537888538516]), //issue #7 by markisdabomb214
-    new Marker("lL22O", miscTypes.rift, [435.44962759354496, 270]), //done
-    new Marker("9JAf2", miscTypes.rift, [207.47388721404502, 468.5]), //done
-    new Marker("6Z0Tt", miscTypes.rift, [120.48314417449899, 180]), //done
-    new Marker("NFKKy", miscTypes.rift, [288.9652154637347, 43.5]), //done
-    new Marker("9gKgQ", miscTypes.fishing, [248.9694715375066, 345.5]), //done
-    new Marker("dz6u_", miscTypes.fishing, [172.47761127859548, 332.5]), //done
+    new Marker("lL22O", miscTypes.rift, [435.44962759354496, 270]), 
+    new Marker("9JAf2", miscTypes.rift, [207.47388721404502, 468.5]), 
+    new Marker("6Z0Tt", miscTypes.rift, [120.48314417449899, 180]), 
+    new Marker("NFKKy", miscTypes.rift, [288.9652154637347, 43.5]), 
+    new Marker("9gKgQ", miscTypes.fishing, [248.9694715375066, 345.5]), 
+    new Marker("dz6u_", miscTypes.fishing, [172.47761127859548, 332.5]), 
     new Marker("XHBng", miscTypes.wallbuy, [169.788791011143, 373.51495741647], "Krig 6"),
     new Marker("C48eX", miscTypes.wallbuy, [199.8618860850235, 339.953248441663], "Hauer"),
     new Marker("hUgNo", miscTypes.wallbuy, [226.05336642166992, 284.46966314770833], "QBZ-83"),
@@ -329,10 +329,14 @@ miscPOI[mapDetails.zoo.id] = [
     new Marker("Tlb6u", miscTypes.craftingTable, [194.31913199538405, 220.12767796156717]),
     new Marker("4tp_E", miscTypes.papMachine, [273.84851828842864, 297.746094221808]),
     new Marker("DFsPI", miscTypes.mysteryBox, [193.12781735790279, 293.3206171971081]),
+    new Marker("AUjar", miscTypes.mysteryBox, [356.7659005934825, 397.0672338086722]),
+    new Marker("Zxydg", miscTypes.mysteryBox, [181.58349779739913, 374.11064389955226]),
     new Marker("qjbmY", miscTypes.trialComputer, [150.6289514492613, 324.5962181095381]),
-    new Marker("RDvrx", miscTypes.requiemRadio, [382.4552668912928, 277.5]), //done
-    new Marker("dsmm6", miscTypes.omegaRadio, [116.98351658095407, 376]), //done
-    new Marker("g64Z9", miscTypes.maxisRadio, [262.9679819116865, 118]), //done
+    new Marker("KkvCk", miscTypes.trialComputer, [189.44671176451865, 373.2189392228686]),
+    new Marker("Krmmb", miscTypes.trialComputer, [267.6000979346463, 299.1927779603539]),
+    new Marker("RDvrx", miscTypes.requiemRadio, [382.4552668912928, 277.5]), 
+    new Marker("dsmm6", miscTypes.omegaRadio, [116.98351658095407, 376]), 
+    new Marker("g64Z9", miscTypes.maxisRadio, [262.9679819116865, 118]), 
     new Marker("G6f1o", miscTypes.monkey, [357.6836499712147, 349.54995004995004], "Midway up the stairs in the book nook."),
     new Marker("dkJOS", miscTypes.monkey, [334.6704087507196, 262.5942934616404], "In the corner on a green cabinet."),
     new Marker("AqCfQ", miscTypes.monkey, [204.52540299366723, 279.51968694570735], "Between a wall and a rock."),
@@ -342,7 +346,7 @@ miscPOI[mapDetails.zoo.id] = [
 ];
 miscPOI[mapDetails.duga.id] = [
     new Marker("BcM6G", miscTypes.dementedEcho, [218.2373426139386, 258]),
-    new Marker("X69Ma", miscTypes.dementedEcho, [0, 0]),
+    new Marker("X69Ma", miscTypes.dementedEcho, [168.83660953980305, 352.95720859235564]),
     new Marker("M6PhI", miscTypes.dementedEcho, [0, 0]),
     new Marker("ZeAyZ", miscTypes.dementedEcho, [0, 0]),
     new Marker("UtKcD", miscTypes.dementedEcho, [0, 0]),
@@ -365,10 +369,15 @@ miscPOI[mapDetails.duga.id] = [
     new Marker("WSe9N", miscTypes.ammoCrate, [170.29069147945606, 363.0748283756314]),
     new Marker("3oKQj", miscTypes.ammoCrate, [232.54680567576682, 372.5778360713054]),
     new Marker("9VHyi", miscTypes.ammoCrate, [265.4029415114675, 446.12229526918975]),
+    new Marker("6sxKz", miscTypes.ammoCrate, [290.2862557988399, 280.76045465863615]),
+    new Marker("BXt8R", miscTypes.ammoCrate, [154.37664743655102, 207.31244648201488]),
+    new Marker("mGa6x", miscTypes.ammoCrate, [295.8560155969824, 211.28179076416518]),
     new Marker("pWj7D", miscTypes.wallbuy, [240.40983939603782, 309.6215067926123], "FFAR 1"),
     new Marker("_et7e", miscTypes.wallbuy, [179.7866999930869, 311.14179392441775], "Magnum"),
     new Marker("QJLeT", miscTypes.wallbuy, [162.5180873040452, 353.77125671112447], "Hauer 77"),
     new Marker("Aa7h5", miscTypes.wallbuy, [218.9804723907548, 387.53389130258694], "QBZ"),
+    new Marker("Z2G7z", miscTypes.wallbuy, [295.8011933010631, 273.74144329217023], "FFAR 1"),
+    new Marker("jyPt2", miscTypes.wallbuy, [329.9425791075898, 236.51538664159438], "Diamatti"),
     new Marker("JFoDx", miscTypes.requiemRadio, [218.18265982443694, 262.5]),
     new Marker("SpPAk", miscTypes.omegaRadio, [292.4610125908848, 261.5]),
     new Marker("JG472", miscTypes.maxisRadio, [170.99728786132295, 358.5]),
@@ -389,6 +398,7 @@ miscPOI[mapDetails.duga.id] = [
     new Marker("cd9s4", miscTypes.craftingTable, [150.54000918056096, 262.26732211660993]),
     new Marker("gbIKf", miscTypes.papMachine, [254.77418243078154, 348.7609997299418]),
     new Marker("QU4JZ", miscTypes.trialComputer, [240.0005248924028, 315.2523023747949]),
+    new Marker("kHQFd", miscTypes.trialComputer, [222.46786422999594, 251.42072927638944]),
     new Marker("svAvo", miscTypes.wunderFizz, [219.1693079026586, 260.3728463398107]),
     new Marker("ORM0f", miscTypes.redRift, [391.40929445880636, 252.02191837378084]),
 ];
@@ -400,7 +410,7 @@ miscPOI[mapDetails.ruka.id] = [
     new Marker("izKFx", miscTypes.dementedEcho, [0, 0]),
     new Marker("QaKjR", miscTypes.dementedEcho, [0, 0]),
     new Marker("3XNUe", miscTypes.dementedEcho, [0, 0]),
-    new Marker("18A2Y", miscTypes.dementedEcho, [0, 0]),
+    new Marker("18A2Y", miscTypes.dementedEcho, [332.61885317644305, 225.16827101672993]),
     new Marker("NFpUv", miscTypes.dementedEcho, [146.8961039621756, 299.61206359787775]),
     new Marker("lWHWs", miscTypes.mysteryBox, [235.4553675253349, 249.47430038351064]),
     new Marker("yzLM0", miscTypes.mysteryBox, [207.93825237571295, 94.9904070205805]),
@@ -417,7 +427,7 @@ miscPOI[mapDetails.ruka.id] = [
     new Marker("5IzIg", miscTypes.rift, [444.44909558432346, 244.5]),
     new Marker("kbFXC", miscTypes.rift, [287.1108249260276, 62]),
     new Marker("7jxeH", miscTypes.rift, [61.506318847812906, 204]),
-    new Marker("KDAvD", miscTypes.redRift, [244.73564018442983, 88.5]), //done
+    new Marker("KDAvD", miscTypes.redRift, [244.73564018442983, 88.5]), 
     new Marker("WD73g", miscTypes.fishing, [244.5885797297779, 319]),
     new Marker("qRfcl", miscTypes.fishing, [292.11059320523333, 226.5]),
     new Marker("osAam", miscTypes.fishing, [289.1092028804677, 101]),
@@ -429,6 +439,7 @@ miscPOI[mapDetails.ruka.id] = [
     new Marker("FqjzW", miscTypes.monkey, [366.728066736379, 131], "Leaning against the broken down car."),
     new Marker("SGa0I", miscTypes.monkey, [238.30978121120768, 448.3125], "At the end of the railroad, under rafters."),
     new Marker("fDb0E", miscTypes.projector, [0, 0]),
+    new Marker("YeH4n", miscTypes.thermophasic, [94.0042121017423, 334.3317226785948]),
 ];
 miscPOI[mapDetails.alpine.id] = [
     new Marker("yfDA4", miscTypes.dementedEcho, [0, 0]),
@@ -612,6 +623,7 @@ miscPOI[mapDetails.sanatorium.id] = [
     //new Marker(new Item("oEPK3", "Chopper Gunner", "Hold out until the wave is dead to continue with the Easter Egg"), [-170.51300319205535, 39.25])
 ];
 miscPOI[mapDetails.collateral.id] = [
+    new Marker("LZtAf", miscTypes.dementedEcho, [302.1582217610988, 414.1356865122179]),
     new Marker("0FS1A", miscTypes.requiemRadio, [208.56446345433304, 185.99219645126215]),
     new Marker("W6wPV", miscTypes.omegaRadio, [205.64054514049639, 328.34673879951004]),
     new Marker("bUGza", miscTypes.maxisRadio, [296.69284893739234, 413.4940734223786]),
@@ -620,6 +632,12 @@ miscPOI[mapDetails.collateral.id] = [
     new Marker("aCqDF", miscTypes.mysteryBox, [278.56354383919887, 398.8710380995699]),
     new Marker("lt6ZB", miscTypes.mysteryBox, [171.09686412283247, 178.85510249601353]),
     new Marker("2cDDN", miscTypes.mysteryBox, [337.46799316757017, 172.47532688497765]),
+    new Marker("K1b_U", miscTypes.wallbuy, [274.1902735759488, 271.97980445743264], "Bullfrog"),
+    new Marker("1NE2i", miscTypes.wallbuy, [329.35910463308284, 392.12343294135957], "Stoner 63"),
+    new Marker("WfKIX", miscTypes.ammoCrate, [270.11233204955715, 273.39039433171195]),
+    new Marker("Et8uN", miscTypes.ammoCrate, [342.8775753456348, 401.3405720635541]),
+    new Marker("0P_Uk", miscTypes.ammoCrate, [366.0879054071596, 315.2256099277464]),
+    new Marker("VuK7w", miscTypes.ammoCrate, [361.2630236225512, 154.59725384849298]),
     new Marker("4n8Cs", miscTypes.jumpPad, [244.23800218110284, 72.15445857118556]),
     new Marker("ZqhS_", miscTypes.jumpPad, [152.59236547842607, 341.9430405590901]),
     new Marker("dnh9f", miscTypes.jumpPad, [363.3237348993215, 357.49649577033546]),
