@@ -41,7 +41,7 @@ function setMap(selectedMapId, navHtml) {
 
 function changeMapTo(mapId, targetElement) {
     const currentMap = findMapById(mapId);
-    document.querySelector("header").querySelector("h1").innerHTML = currentMap.title;
+    document.querySelector("header").querySelector("h1").innerHTML = currentMap.title + '  <i class="fas fa-angle-down"></i>';
     setMap(mapId, targetElement);
     setVisibilityFromPrefs();
     collapseMenu();
