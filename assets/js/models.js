@@ -181,6 +181,9 @@ const miscTypes = {
     essenceDrop: new Item({ title: "Essence Drop" }),
     scrapHeap: new Item({ title: "Scrap Heap" }),
     thermophasic: new Item({ title: "D.I.E. Thermophasic Upgrade" }),
+    nova5: new Item({ title: "D.I.E. Nova-5 Upgrade" }),
+    electrobolt: new Item({ title: "D.I.E. Electrobolt Upgrade" }),
+    cryoemitter: new Item({ title: "D.I.E. Cryo-Emitter Upgrade" }),
 
     wunderFizz: new Item({ title: "Der Wunderfizz", icon: wunderFizzIcon }),
     trialComputer: new Item({ title: "Trial Computer", icon: trialComputerIcon }),
