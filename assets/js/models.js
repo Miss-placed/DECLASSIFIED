@@ -27,19 +27,6 @@ class Marker {
     }
 }
 
-class UserPrefs {
-    constructor({ lastSelectedMap, collectedIntel, darkmode, asideShow, useSystemTheme, hideIntel, hideMisc, hideBugRepButton }) {
-        this.lastSelectedMap = lastSelectedMap ?? app.currentMap;
-        this.collectedIntel = collectedIntel ?? [];
-        this.useSystemTheme = useSystemTheme ?? false;
-        // If the user is using system theme then follow that, else set to previous setting else default to true. (because darkmode is best)
-        this.darkmode = useSystemTheme ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) : darkmode ?? true;
-        this.asideShow = asideShow ?? true;
-        this.hideIntel = hideIntel ?? false;
-        this.hideMisc = hideMisc ?? false;
-        this.hideBugRepButton = hideBugRepButton ?? false;
-    }
-}
 
 /////////////////////Maps/////////////////////////
 
@@ -146,16 +133,6 @@ const intelTypes = {
     artifact: "Artifacts",
 }
 
-const seasons = {
-    preseason: "Preseason",
-    onslaught: "Onslaught",
-    season1: "Season 1",
-    season2: "Season 2",
-    season3: "Season 3",
-    season4: "Season 4",
-    season5: "Season 5",
-    season6: "Season 6",
-}
 
 /////////////////////Perks/////////////////////////
 const perks = {
@@ -187,6 +164,7 @@ const defaultPOIData = {
     nullLoc: "[0,0]"
 }
 
+/////////////////////Misc/////////////////////////
 const miscTypes = {
     dementedEcho: new Item({ title: "Demented Echo", desc: "Destroy it before it touches you to get a reward.", icon: dementedIcon }),
     rift: new Item({ title: "Aether Rift", desc: "Jump through to teleport and gain a random powerup.", icon: riftIcon }),
@@ -202,6 +180,10 @@ const miscTypes = {
     fishing: new Item({ title: "Fishing", desc: "Fish up to 3 times for a small reward each time.", icon: fishingIcon }),
     essenceDrop: new Item({ title: "Essence Drop" }),
     scrapHeap: new Item({ title: "Scrap Heap" }),
+    thermophasic: new Item({ title: "D.I.E. Thermophasic Upgrade" }),
+    nova5: new Item({ title: "D.I.E. Nova-5 Upgrade" }),
+    electrobolt: new Item({ title: "D.I.E. Electrobolt Upgrade" }),
+    cryoemitter: new Item({ title: "D.I.E. Cryo-Emitter Upgrade" }),
 
     wunderFizz: new Item({ title: "Der Wunderfizz", icon: wunderFizzIcon }),
     trialComputer: new Item({ title: "Trial Computer", icon: trialComputerIcon }),

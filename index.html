@@ -44,6 +44,7 @@
             <button class="btn ui" onclick="openModal(modalSet.intelOverview)"><i class="fas fa-folder-open"></i>
             </button>
             <button class="btn ui" onclick="openModal(modalSet.settingsMain)"><i class="fas fa-gear"></i> </button>
+            <a class="btn ui" href="./challenge.html"><i class="fas fa-list"></i> </a>
         </div>
         <div>
             <button class="btn ui" id="color-scheme-toggle" onclick="setColorScheme()"><i class="fas fa-moon"></i>
@@ -59,11 +60,6 @@
     <section class="modal-bg -hidden">
         <!-- FILTERS -->
         <div class="modal -hidden" id="intel-filters">
-            <label id="show-collected-filter-label" class="chk-btn" for="show-collected-filter"
-                onchange="TriggerSearch()">
-                Hide Collected <input type="checkbox" name="show-collected-filter" id="show-collected-filter"
-                    class="-small toggle" placeholder="_">
-            </label>
 
             <fieldset id="season-multi-select" class="droopy">
                 <legend>Seasons</legend>
@@ -132,6 +128,7 @@
             </fieldset>
 
 
+
             <div id="intel-type-select">
                 <span>
                     <input type="checkbox" id="document-check" class="type-check -hidden" data-filter="docs">
@@ -150,6 +147,16 @@
                     <label class="btn type" type="Radio Transmissions" value="5 / 10" for="radio-check"></label>
                 </span>
             </div>
+
+            <label id="curr-map-filter-label" class="chk-btn" for="curr-map-filter" onchange="TriggerSearch()">
+                Filter by Current Map <input type="checkbox" name="curr-map-filter" id="curr-map-filter"
+                    class="-small toggle" placeholder="_">
+            </label>
+            <label id="show-collected-filter-label" class="chk-btn" for="show-collected-filter"
+                onchange="TriggerSearch()">
+                Hide Collected <input type="checkbox" name="show-collected-filter" id="show-collected-filter"
+                    class="-small toggle" placeholder="_">
+            </label>
         </div>
 
 
@@ -161,38 +168,20 @@
             <div id="filtered-intel">
                 <!-- <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button> -->
             </div>
-            <div id="more-options" style="
-                display: flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
-                justify-content: space-evenly;
-                align-items: center;
-                width: 100%;
-                height: auto;
-                padding: 5px;
-                /* display: none; */
-                font-size: small;
-            " class="">
-
-                <button onclick="markSelected()" class="btn" faction="Requiem" type="Artifacts" style="
-                margin-bottom: 0;
-                border: 2px solid black;
-                display: block;
-            ">Declassify
-        <i class="fas fa-check-square" aria-hidden="true" style="margin-left: 5px; color: var(--clr-green);"></i>
-        </button>
-                <button onclick="unmarkSelected()" class="btn" faction="Requiem" type="Artifacts" style="
-                margin-bottom: 0;
-                border: 2px solid black;
-                display: block;
-            ">Classify
-            <i class="fas fa-ban" aria-hidden="true" style="margin-left: 5px; color: var(--clr-red);"></i>
-            </button>
+            <div id="more-options">
+                    <button onclick="selectAll()" class="btn">Select All
+                        <i class="fas fa-plus-square" aria-hidden="true"></i>
+                    </button>
+                    <button onclick="deSelectAll()" class="btn">Deselect All
+                        <i class="fas fa-minus-square" aria-hidden="true"></i>
+                    </button>
+                    <button onclick="markSelected()" class="btn">Declassify
+                        <i class="fas fa-check-square" aria-hidden="true"></i>
+                    </button>
+                    <button onclick="unmarkSelected()" class="btn">Classify
+                        <i class="fas fa-ban" aria-hidden="true"></i>
+                    </button>
             </div>
-            <label id="curr-map-filter-label" class="chk-btn" for="curr-map-filter" onchange="TriggerSearch()">
-                Filter by Current Map <input type="checkbox" name="curr-map-filter" id="curr-map-filter"
-                    class="-small toggle" placeholder="_">
-            </label>
         </div>
         <div class="modal -big -hidden" id="intel-detail">
             <div class="sub-modal" id="description">
@@ -242,7 +231,8 @@
         <img id="lightbox" src="#">
     </section>
     <script>
-        var v2Test = 'hi'
+        const v2Test = 'hi'
+        const page = "map";
 
         function hideElement(ele) {
             ele.classList.toggle('-hidden')
@@ -266,6 +256,7 @@
     <script src="" async defer></script>
     <script src="assets/js/mapsvg.js"></script>
     <script src="assets/js/icons.js"></script>
+    <script src="assets/js/sharedModels.js"></script>
     <script src="assets/js/models.js"></script>
 
     <script src="assets/js/userPrefs.js"></script>

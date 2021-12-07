@@ -1,0 +1,127 @@
+
+:root{
+  --clr-black-100: #0c0c0c;
+}
+.cc-card {
+  border-radius: 10px;
+  background-color: var(--clr-black-100);
+  color: white;
+  display:flex;
+  flex-direction: column;
+  user-select: none;
+}
+.cc-card > div {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  min-height: 40px;
+  line-height: 40px;
+  border-radius: 10px 10px 0 0;
+  background-color: var(--clr-black-100);
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding:0 15px;
+}
+.cc-card > div > span {
+  font-weight: 800;
+  word-break: break-word;
+}
+.cc-card .square{
+  height:100%;
+  aspect-ratio: 13/40;
+}
+.cc-card > p {
+  /* height:-webkit-fill-available; */
+  /* height:-moz-available; */
+  aspect-ratio: 900/249;
+  border-radius:0 0 10px 10px;
+  transition: all 0.2s ease;
+  padding:10px 25px;
+  font-weight: 100;
+  background-blend-mode: overlay;
+  background-color:var(--clr-black);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:rgb(255, 255, 255);
+  transition: all 0.3s ease;
+
+}
+.cc-card > p:hover, .cc-card > .cc-desc-master, .cc-card[completed] > p{
+  color:rgba(255, 255, 255, 0);
+  background-blend-mode: normal;
+}
+
+.cc-card .pin-card,
+.cc-card .complete-card {
+  border: unset;
+  background: unset;
+  color: white;
+  transform:scale(100%)  rotate(0);
+  transition: all 0.3s ease;
+
+}
+.cc-card .pin-card:hover,
+.cc-card .complete-card:hover {
+  transform:scale(130%)
+}
+
+.cc-card .pin-card:hover {
+  color: var(--clr-yellow);
+  transform:  scale(130%) rotate(45deg);
+
+}
+.cc-card .complete-card:hover {
+  color: var(--clr-green);
+}
+.cc-card[pinned] .pin-card{
+  color: var(--clr-yellow);
+  
+  transform:rotate(45deg);
+}
+.cc-card[completed] .complete-card {
+  color: var(--clr-green);
+}
+.cc-card[pinned] .pin-card:hover,
+.cc-card[completed] .complete-card:hover{
+  color:white;
+  transform:  scale(130%) rotate(0deg);
+}
+.cc-card button {
+  cursor: pointer;
+}
+
+/*#region add card*/
+.cc-add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-style: dashed;
+  border-spacing: 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--clr-grey-l);
+  aspect-ratio: calc(512 - 60) / 128;
+}
+.cc-add:hover {
+  color: var(--clr-white-d);
+}
+.cc-add > .cc-desc {
+  /* --add-width:100%; */
+  display: block;
+  margin: auto;
+  border: unset;
+  background-color: unset;
+  text-align: center;
+  color: inherit;
+  font-size: 4rem;
+}
+.cc-add > .card-btn-container{
+  padding-top:15px;
+}
+.cc-add > .cc-desc > i {
+  transform:rotate(45deg) scale(90%);
+  /* scale: 90%; */
+}
+/*#endregion add card*/
