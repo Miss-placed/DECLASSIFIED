@@ -4370,7 +4370,7 @@ const intelStoreV2 = [
         intelType: intelTypes.audio,
         loc: defaultPOIData.nullLoc,
         map: mapDetails.allOutbreakMaps.id,
-        name: "Great and Terrible.",
+        name: "Great and Terrible",
         desc: defaultPOIData.challenge
     }, {
         id: "DS3Do1",
