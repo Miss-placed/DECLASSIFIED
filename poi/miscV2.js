@@ -137,6 +137,7 @@ miscPOI[mapDetails.firebaseZSpawn.id] = [
     new Marker("8Tm13", miscTypes.wallbuy, [315.20624122108813, 328], "Bullfrog"),
     new Marker("3qsWY", miscTypes.papMachine, [380.469758404345, 257.875]),
     new Marker("GTe1y", miscTypes.wunderFizz, [379.844980803446, 215.375]),
+    new Marker("oQwxc", miscTypes.omegaRadio, [300.9558734823382, 330.3515634503805], "On top of a table, outside the bedroom. You will have to turn on the power first."),
     new Marker("d1zVX", miscTypes.arsenal, [364.850318381871, 169.25]),
     new Marker("PN5cS", miscTypes.rampageInducer, [256.4956901395262, 188.375]),
     new Marker("zQK69", miscTypes.wallbuy, [115.12184661485156, 215.125], "Gallo"),
