@@ -129,7 +129,6 @@
   border-radius: 10px;
   text-decoration: none;
   color: var(--clr-grey-l);
-  aspect-ratio: calc(512 - 60) / 128;
 }
 
 .cc-add:hover {
