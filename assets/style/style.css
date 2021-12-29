@@ -57,7 +57,7 @@ header h1 {
   margin: auto;
   height: 90px;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   box-shadow: var(--shadow);
   /* text-transform: uppercase; */
   font-weight: 900;
