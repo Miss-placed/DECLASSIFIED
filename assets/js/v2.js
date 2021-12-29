@@ -22,7 +22,7 @@ function renderHeader() {
 
 
     let navbarHtmlToAdd = htmlToElements(
-        `<h1 onclick="expandMenu(this)">${currentMap.title}</h1>
+        `<h1 onclick="expandMenu(this)">${currentMap.title}<i class="fas fa-angle-down"></i></h1>
     <ul>
         <li>
             <h2 onclick="expandMenu(this)">Die Maschine</h2>
