@@ -40,6 +40,11 @@ aside {
 	aspect-ratio: unset;
 }
 
+#pinned-container p.cc-desc span {
+	font-size: smaller;
+	font-style: italic;
+}
+
 #card-container {
 	display: flex;
 	flex-direction: column;

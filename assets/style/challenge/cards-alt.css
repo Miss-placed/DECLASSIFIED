@@ -15,7 +15,6 @@
   text-align: center;
   justify-content: space-between;
   min-height: 40px;
-  line-height: 40px;
   border-radius: 10px 10px 0 0;
   background-color: var(--clr-black-100);
   flex-direction: row;
@@ -23,6 +22,10 @@
   padding:0 15px;
 }
 .cc-card > div > span {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 800;
   word-break: break-word;
 }
@@ -53,14 +56,18 @@
 }
 
 .cc-card .pin-card,
+.cc-card .goto-card,
 .cc-card .complete-card {
   border: unset;
   background: unset;
   color: white;
   transform:scale(100%)  rotate(0);
   transition: all 0.3s ease;
-
 }
+.cc-card .goto-card {
+  margin-left: 5px;
+}
+
 .cc-card .pin-card:hover,
 .cc-card .complete-card:hover {
   transform:scale(130%)

@@ -99,7 +99,7 @@ function renderCards(setState = true) {
     let filteredMasterChallenge = Challenges.masterChallenges;
     const cardCont = document.querySelector('#card-container');
     const masteryCont = document.querySelector('#mastery-progress');
-    
+
     const type = getSelectedType();
     const category = getSelectedCategory();
     const subCategory = getSelectedSubCategory();
@@ -107,29 +107,45 @@ function renderCards(setState = true) {
 
     addCardsToContainer(cardCont, filteredChallenges, getCardHtml);
     addCardsToContainer(masteryCont, filteredMasterChallenge, getMasteryHtml);
+    var { typeId, subCategoryId } = getIdsFromReadable(type, category, subCategory);
+
+    setStateInURL(typeId, subCategoryId, setState);
+}
+
+function getIdsFromReadable(type, category, subCategory) {
     const typeId = getKeyByValue(challengeTypes, type);
-    let subCategoryId = getKeyByValue(allCategories, allCategories.darkOps); 
+    let subCategoryId = getKeyByValue(allCategories, allCategories.darkOps);
     if (category !== allCategories.darkOps) {
         Object.values(allCategories).forEach((ct) => {
             const categoryKey = allSubCategories[ct];
             const foundId = getKeyByValue(categoryKey, subCategory);
-            if (foundId) subCategoryId = foundId;
+            if (foundId)
+                subCategoryId = foundId;
         });
     }
-    // Updates the state of the URL actively
+    return { typeId, subCategoryId };
+}
+
+function setStateInURL(typeId, subCategoryId, setState = true, reloadPage = false) {
     const state = `?type=${typeId}&category=${subCategoryId}`;
-    if (setState) window.history.pushState(`type=${typeId}&category=${subCategoryId}`, "Cold War Challenge Tracker", state);
 
     let currentPrefs = getUserPrefs();
     currentPrefs.challengeTrackerState = state;
     setUserPrefs(currentPrefs);
+
+    // Updates the state of the URL actively (i.e. doesn't reload page)
+    //https://developer.mozilla.org/en-US/docs/Web/API/History
+    if (setState) window.history.pushState(`type=${typeId}&category=${subCategoryId}`, "Cold War Challenge Tracker", state);
+
+    if (reloadPage) location.reload();
+    // TODO: Change this to have an option to reload the card nav area and focus to card Id with e.g: document.getElementById("iKo1Y").scrollIntoView({behavior: "smooth"})
 }
 
-function addCardsToContainer(cardCont, filteredChallenges, htmlMethod) {
+function addCardsToContainer(cardCont, filteredChallenges, htmlMethod, forPinned = false) {
     cardCont.replaceChildren();
     filteredChallenges.forEach(card => {
         //If challenge is complete add the "complete" attribute to the card element
-        let html = htmlMethod(card);
+        let html = htmlMethod({ card: card, forPinned });
         let elementsToAdd = htmlToElements(html);
         elementsToAdd.forEach(element => {
             cardCont.append(element);
@@ -157,10 +173,10 @@ function renderPinnedCards() {
     currentPrefs.pinnedChallenges.forEach((challengeId) => {
         challengesToRender.push(Challenges.getChallengeById(challengeId));
     });
-    addCardsToContainer(pinContainer, challengesToRender, getCardHtml);
+    addCardsToContainer(pinContainer, challengesToRender, getCardHtml, true);
 }
 
-function getCardHtml(card, forMastery = false) {
+function getCardHtml({ card, forMastery = false, miniVersion = false, forPinned = false }) {
     /*     return `<article class="cc-card" data-cc-id="${card.id}">
                     <div class="card-btn-container">
                         <button class="complete-card"><i class="fas fa-star"></i></button>
@@ -171,15 +187,19 @@ function getCardHtml(card, forMastery = false) {
                 </article>` */
     const isComplete = Challenges.isChallengeCompleted(card.id);
     const isPinned = Challenges.isChallengePinned(card.id);
+    let cardTitle = card.name;
+
+    if (forPinned) cardTitle = `${card.name}`;
     let html = `
-    <article class="cc-card" data-cc-id="${card.id}" ${isComplete ? "completed" : ""} ${isPinned ? "pinned" : ""} ${forMastery ? '' : ''}>
+    <article id="${card.id}" class="cc-card" data-cc-id="${card.id}" ${isComplete ? "completed" : ""} ${isPinned ? "pinned" : ""} ${forMastery ? '' : ''}>
         <div class="card-btn-container">
             ${card.minimumRequired ? `<span class="square">&nbsp;</span>` : `<button class="complete-card" onclick="${forMastery ? "toggleCompletedMasteryChallenge(this)" : "toggleCompletedChallenge(this)"}"><i class="far ${isComplete ? "fa-check-square" : "fa-square"}"></i></button>`}
-            ${forMastery ? '' : `<span>${card.name}</span>`}
+            ${forMastery ? '' : `<span>${cardTitle} ${forPinned ? `<button class="goto-card" onclick="goToChallenge(this)"><i class="fas fa-external-link-alt"></i></button>` : ''}</span>`}
             ${forMastery || isComplete ? `<span class="square">&nbsp;</span>` : `<button class="pin-card" onclick="togglePinChallenge(this)"><i class="fas fa-thumbtack"></i></button>`}
         </div>
         <p class="cc-desc${forMastery ? '-master' : ''}" style="background-image:url('${card.img}')">
-        ${forMastery ? '' : `${card.desc}`}
+        ${forMastery ? '' : `${card.desc}<br/>`}
+        ${forPinned ? `<span>${card.type} - ${card.category}</span>` : ''}
         </p>
     </article>`;
 
@@ -187,12 +207,12 @@ function getCardHtml(card, forMastery = false) {
 
 }
 
-function getMasteryHtml(card) {
+function getMasteryHtml({ card }) {
     return `<div>
                 <h2 class="title">${card.name}</h2>
                 <p>${card.desc}</p>
             </div>
-            ${getCardHtml(card, true)}`;
+            ${getCardHtml({ card, forMastery: true })}`;
 }
 
 function filterList(arrayToFilter, propToFilter, filterVal) {
@@ -282,6 +302,16 @@ function toggleCompletedMasteryChallenge(ele) {
     setUserPrefs(currentPrefs);
     renderPinnedCards();
     renderCards();
+}
+
+function goToChallenge(ele) {
+    const cardEle = ele.closest('.cc-card');
+    const challengeId = cardEle.getAttribute('data-cc-id');
+    let challenge = Challenges.getChallengeById(challengeId);
+
+    var { typeId, subCategoryId } = getIdsFromReadable(challenge.type, "", challenge.category);
+
+    setStateInURL(typeId, subCategoryId, true, true);
 }
 
 /////////////////////Menu Stuff/////////////////////////
@@ -394,7 +424,7 @@ function changeSubCategoryMenu(x) {
 function getCategory(typeId, sbCatId) {
     let type = challengeTypes.zombies; category = allCategories.career; subCategory = allSubCategories[allCategories.career].dieMaschineReport;
     if (typeId && sbCatId) {
-        if (allCategories[sbCatId] === allCategories.darkOps){
+        if (allCategories[sbCatId] === allCategories.darkOps) {
             type = challengeTypes[typeId];
             category = allCategories[sbCatId];
             subCategory = "";
@@ -446,11 +476,11 @@ function getCategories() {
 function onLoadChallengeTracker() {
     LoadChallengeTracker();
 
-    window.onpopstate = function(event) {
+    window.onpopstate = function (event) {
         // https://developer.mozilla.org/en-US/docs/Web/API/History_API
         // console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
         LoadChallengeTracker(false);
-      };
+    };
 }
 
 function LoadChallengeTracker(setState = true) {
