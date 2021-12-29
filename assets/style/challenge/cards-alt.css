@@ -34,7 +34,8 @@
   aspect-ratio: 13/40;
 }
 .cc-card > p {
-  /* height:-webkit-fill-available; */
+  height: -webkit-fill-available;
+  max-height: 185px; /* Stops the cards getting too big on iOS that doesn't like the height prop above */
   /* height:-moz-available; */
   aspect-ratio: 900/249;
   border-radius:0 0 10px 10px;
