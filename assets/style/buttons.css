@@ -106,16 +106,17 @@
 /*------------UI Button------------*/
 
 .btn.ui {
+  --width:50px;
   border-radius: 10px;
   border: none;
-  width: 50px;
-  height: 50px;
+  width: var(--width);
+  height:  var(--width);
   padding: 5px 0;
   pointer-events: auto;
 }
 
 .btn.ui i {
-  font-size: 1.6em;
+  font-size:  calc(var(--width)/1.6);
   margin: auto;
 }
 
@@ -153,6 +154,27 @@
   background-color: var(--clr-yellow);
   color: var(--clr-white);
 }
+
+/* zoom buttons */
+.zoom-container{
+  display:flex;
+  flex-direction: column;
+}
+.zoom-.btn{border-radius: 0;}
+
+.zoom-container :first-child{
+  border-top-left-radius: calc(var(--width) / 5);
+  border-top-right-radius: calc(var(--width) / 5);
+}
+.zoom-container :last-child{
+  border-bottom-left-radius: calc(var(--width) / 5);
+  border-bottom-right-radius: calc(var(--width) / 5);
+}
+.zoom-.btn{
+  --width:calc(50px / 1.4);
+
+}
+
 
 /*------------Checkbox-slider------------*/
 
