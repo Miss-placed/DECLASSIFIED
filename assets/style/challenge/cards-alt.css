@@ -38,11 +38,11 @@
 }
 
 .cc-card>p {
+  /* None of this works on iOS chrome, kill me */
   height: 100%;
   height: -moz-available;
   height: -webkit-fill-available;
   
-  /* Stops the cards getting too big on iOS that doesn't like the height prop above */
   aspect-ratio: 900/249;
   border-radius: 0 0 10px 10px;
   transition: all 0.2s ease;
@@ -58,6 +58,7 @@
 
 }
 #pinned-container .cc-card>p {
+  /* Stops the cards getting too big on iOS that doesn't like the height prop above */
   max-height: 90px;
 }
 
