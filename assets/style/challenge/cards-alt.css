@@ -1,16 +1,17 @@
-
-:root{
+:root {
   --clr-black-100: #0c0c0c;
 }
+
 .cc-card {
   border-radius: 10px;
   background-color: var(--clr-black-100);
   color: white;
-  display:flex;
+  display: flex;
   flex-direction: column;
   user-select: none;
 }
-.cc-card > div {
+
+.cc-card>div {
   display: flex;
   text-align: center;
   justify-content: space-between;
@@ -19,9 +20,10 @@
   background-color: var(--clr-black-100);
   flex-direction: row;
   flex-wrap: nowrap;
-  padding:0 15px;
+  padding: 0 15px;
 }
-.cc-card > div > span {
+
+.cc-card>div>span {
   text-align: center;
   display: flex;
   justify-content: center;
@@ -29,30 +31,40 @@
   font-weight: 800;
   word-break: break-word;
 }
-.cc-card .square{
-  height:100%;
+
+.cc-card .square {
+  height: 100%;
   aspect-ratio: 13/40;
 }
-.cc-card > p {
+
+.cc-card>p {
+  height: 100%;
+  height: -moz-available;
   height: -webkit-fill-available;
-  max-height: 185px; /* Stops the cards getting too big on iOS that doesn't like the height prop above */
-  /* height:-moz-available; */
+  
+  /* Stops the cards getting too big on iOS that doesn't like the height prop above */
   aspect-ratio: 900/249;
-  border-radius:0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
   transition: all 0.2s ease;
-  padding:10px 25px;
+  padding: 10px 25px;
   font-weight: 100;
   background-blend-mode: overlay;
-  background-color:var(--clr-black);
+  background-color: var(--clr-black);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   transition: all 0.3s ease;
 
 }
-.cc-card > p:hover, .cc-card > .cc-desc-master, .cc-card[completed] > p{
-  color:rgba(255, 255, 255, 0);
+#pinned-container .cc-card>p {
+  max-height: 90px;
+}
+
+.cc-card>p:hover,
+.cc-card>.cc-desc-master,
+.cc-card[completed]>p {
+  color: rgba(255, 255, 255, 0);
   background-blend-mode: normal;
 }
 
@@ -62,39 +74,45 @@
   border: unset;
   background: unset;
   color: white;
-  transform:scale(100%)  rotate(0);
+  transform: scale(100%) rotate(0);
   transition: all 0.3s ease;
 }
+
 .cc-card .goto-card {
   margin-left: 5px;
 }
 
 .cc-card .pin-card:hover,
 .cc-card .complete-card:hover {
-  transform:scale(130%)
+  transform: scale(130%)
 }
 
 .cc-card .pin-card:hover {
   color: var(--clr-yellow);
-  transform:  scale(130%) rotate(45deg);
+  transform: scale(130%) rotate(45deg);
 
 }
+
 .cc-card .complete-card:hover {
   color: var(--clr-green);
 }
-.cc-card[pinned] .pin-card{
+
+.cc-card[pinned] .pin-card {
   color: var(--clr-yellow);
-  
-  transform:rotate(45deg);
+
+  transform: rotate(45deg);
 }
+
 .cc-card[completed] .complete-card {
   color: var(--clr-green);
 }
+
 .cc-card[pinned] .pin-card:hover,
-.cc-card[completed] .complete-card:hover{
-  color:white;
-  transform:  scale(130%) rotate(0deg);
+.cc-card[completed] .complete-card:hover {
+  color: white;
+  transform: scale(130%) rotate(0deg);
 }
+
 .cc-card button {
   cursor: pointer;
 }
@@ -112,10 +130,12 @@
   color: var(--clr-grey-l);
   aspect-ratio: calc(512 - 60) / 128;
 }
+
 .cc-add:hover {
   color: var(--clr-white-d);
 }
-.cc-add > .cc-desc {
+
+.cc-add>.cc-desc {
   /* --add-width:100%; */
   display: block;
   margin: auto;
@@ -125,11 +145,14 @@
   color: inherit;
   font-size: 4rem;
 }
-.cc-add > .card-btn-container{
-  padding-top:15px;
+
+.cc-add>.card-btn-container {
+  padding-top: 15px;
 }
-.cc-add > .cc-desc > i {
-  transform:rotate(45deg) scale(90%);
+
+.cc-add>.cc-desc>i {
+  transform: rotate(45deg) scale(90%);
   /* scale: 90%; */
 }
+
 /*#endregion add card*/
