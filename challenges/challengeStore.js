@@ -1004,6 +1004,9 @@ class Challenges {
         new Challenge("fKo1t", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
             "Push Your Luck", "Move the Mystery Box 10 times.", "isnQqc5",
         ),
+        new Challenge("dy1dd", challengeTypes.zombies, allSubCategories[allCategories.seasonal].season1,
+            "Triple Trouble", "Earn 5 Double Trouble medals (Killed both halves of a Megaton within a short time of one another).", "D59WJ0N",
+        ),
         //#endregion Zombies ==> Season 1
 
         //#region Zombies ==> Season 2
