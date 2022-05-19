@@ -1590,7 +1590,7 @@ const intelStoreV2 = [
         season: seasons.season6,
         intelType: intelTypes.docs,
         loc: defaultPOIData.nullLoc,
-        map: mapDetails.forsaken.id,
+        map: mapDetails.allOutbreakMaps.id,
         name: "Page Six",
         desc: defaultPOIData.special
     }, {
@@ -1599,7 +1599,7 @@ const intelStoreV2 = [
         season: seasons.season6,
         intelType: intelTypes.docs,
         loc: defaultPOIData.nullLoc,
-        map: mapDetails.forsaken.id,
+        map: mapDetails.allOutbreakMaps.id,
         name: "B-14 Wiretap Transcript",
         desc: defaultPOIData.special
     }, {
@@ -3728,7 +3728,7 @@ const intelStoreV2 = [
         season: seasons.season6,
         intelType: intelTypes.docs,
         loc: defaultPOIData.nullLoc,
-        map: mapDetails.forsaken.id,
+        map: mapDetails.allOutbreakMaps.id,
         name: "Samantha Letter",
         desc: defaultPOIData.special
     }, {
