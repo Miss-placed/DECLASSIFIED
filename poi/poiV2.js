@@ -2907,7 +2907,7 @@ const intelStoreV2 = [
         season: seasons.season6,
         intelType: intelTypes.docs,
         loc: defaultPOIData.nullLoc,
-        map: mapDetails.duga.id,
+        map: mapDetails.forsaken.id,
         name: "Order Of Operations",
         desc: defaultPOIData.special
     }, {
