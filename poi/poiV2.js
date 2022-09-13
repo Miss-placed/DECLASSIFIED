@@ -2898,7 +2898,7 @@ const intelStoreV2 = [
         season: seasons.season6,
         intelType: intelTypes.docs,
         loc: defaultPOIData.nullLoc,
-        map: mapDetails.zoo.id,
+        map: mapDetails.forsaken.id,
         name: "Operatsiya Izbavitel Approval",
         desc: defaultPOIData.special
     }, {
