@@ -5147,7 +5147,7 @@ const intelStoreV2 = [
     },
     {
         id: "OOnDo24",
-        faction: factions.omega,
+        faction: factions.requiem,
         season: seasons.onslaught,
         intelType: intelTypes.docs,
         loc: defaultPOIData.nullLoc,
