@@ -2163,7 +2163,7 @@ const intelStoreV2 = [
         loc: "[252.46909913105162, 213.5]",
         map: mapDetails.ruka.id,
         name: "Omega Group Patch",
-        desc: "On top of the climbable net in the obstacle course. (might currently be bugged)",
+        desc: "On top of one of the posts of the climbable nets in the obstacle course. Jump and grab, climb the ropes or parachute down to get it.",
         img: "nAPQUJs",
     }, {
         id: "OS3Au1",
