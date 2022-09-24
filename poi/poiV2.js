@@ -866,7 +866,7 @@ const intelStoreV2 = [
         map: mapDetails.golova.id,
         name: "Transformed Apple Crate",
         desc: "In the barn of the lower farmstead. Should be pretty easy to spot.",
-        img: "gxqZ2hl",
+        img: "R6GJJPc",
     }, {
         id: "RS3Ar5",
         faction: factions.requiem,
