@@ -2372,7 +2372,7 @@ const intelStoreV2 = [
         loc: "[167.97809008689484, 313.5]",
         map: mapDetails.zoo.id,
         name: "Greater Threat",
-        desc: "On a couch on the first floor of the Restaurant",
+        desc: "On a couch upstairs in the Restaurant",
         img: "7o9yGgU",
     }, {
         id: "OS4Au2",
