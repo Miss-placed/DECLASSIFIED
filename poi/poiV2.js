@@ -5435,7 +5435,7 @@ const intelStoreV2 = [
         intelType: intelTypes.docs,
         loc: defaultPOIData.nullLoc,
         map: mapDetails.garrison.id,
-        name: "Soviet ar Hero",
+        name: "Soviet War Hero",
         desc: defaultPOIData.onslaught,
     },
     {
