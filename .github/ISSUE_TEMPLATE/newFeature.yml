@@ -1,0 +1,20 @@
+name: New Feature Idea
+description: Got a new idea that you think will improve the app? Leave your suggestion using this template.
+title: "Feature Request: DESCRIBE_YOUR_FEATURE"
+labels: ["enhancement"]
+assignees:
+  - Odinnh
+  - sol3uk
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to help us improve our app! 
+        Please try and describe the feature idea in as much detail as possible, screenshots and mockup/sketches are much appreciated but required.
+  - type: textarea
+    id: intelDescription
+    attributes:
+      label: Description
+      description: What would you like the app to be able to do?
+    validations:
+      required: true
