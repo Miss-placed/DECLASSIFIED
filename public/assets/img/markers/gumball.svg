@@ -1,0 +1,16 @@
+<svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 32H14L15 27H23L24 32Z" fill="black" stroke="black" stroke-width="0.7"/>
+<path d="M22.7131 27.35L23.5731 31.65H14.4269L15.2869 27.35H22.7131Z" fill="black" stroke="white" stroke-width="0.7"/>
+<path d="M20.5 30.7143C20.5 31.6611 19.8284 32 19 32C18.1716 32 17.5 31.6611 17.5 30.7143C17.5 29.7675 18.1716 29 19 29C19.8284 29 20.5 29.7675 20.5 30.7143Z" fill="white"/>
+<circle cx="19" cy="18" r="9.65" fill="white" stroke="black" stroke-width="0.7"/>
+<circle cx="16.5" cy="19.5" r="3.15" fill="black" stroke="white" stroke-width="0.7"/>
+<circle cx="19.5" cy="17.5" r="2.15" fill="black" stroke="white" stroke-width="0.7"/>
+<circle cx="13.5" cy="21.5" r="2.15" fill="black" stroke="white" stroke-width="0.7"/>
+<circle cx="22.5" cy="19.5" r="2.15" fill="black" stroke="white" stroke-width="0.7"/>
+<circle cx="25" cy="21" r="2.65" fill="black" stroke="white" stroke-width="0.7"/>
+<circle cx="16.5" cy="23.5" r="3.15" fill="black" stroke="white" stroke-width="0.7"/>
+<circle cx="21" cy="23" r="3.65" fill="black" stroke="white" stroke-width="0.7"/>
+<circle cx="19" cy="18" r="9.65" stroke="black" stroke-width="0.7"/>
+<rect x="13.35" y="6.35" width="11.3" height="3.3" fill="white" stroke="black" stroke-width="0.7"/>
+<path d="M14.5 8H23.5" stroke="black" stroke-width="0.7"/>
+</svg>
