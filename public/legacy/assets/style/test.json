@@ -1,0 +1,17 @@
+{
+    "requiem": {
+        "4": {
+            "Audio": {
+                "2": {
+                    "name": "this",
+                    "loc": [-97.51888189395284, 154.75],
+                    "dec": "",
+                    "map": "ruka"
+                }
+            }
+        }
+    },
+    "omega": { "4": { "Audio": { "0": {} }, "Radio": { "0": {} }, "Documents": { "0": {} }, "Artifacts": { "0": {} } } },
+    "maxis": { "4": { "Audio": { "0": {} }, "Radio": { "0": {} }, "Documents": { "0": {} }, "Artifacts": { "0": {} } } },
+    "darkAether": { "4": { "Audio": { "0": {} }, "Radio": { "0": {} }, "Documents": { "0": {} }, "Artifacts": { "0": {} } } }
+}

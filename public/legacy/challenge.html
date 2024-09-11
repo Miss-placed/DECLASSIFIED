@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DECLASSIFIED - Call of Duty: Black Ops Cold War Challenge Tracker</title>
+    <meta name="description" content="Track your challenges in Call of Duty: Black Ops Cold War and work towards that favourite calling card.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="./favicon-32x32.png" type="image/png">
+    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="assets/style/challenge.css">
+    <link rel="stylesheet" href="assets/style/challenge/cards-alt.css">
+    <link rel="stylesheet" href="assets/style/challenge/mobilefirst.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css">
+</head>
+
+<body onload="onLoadChallengeTracker()">
+    <aside>
+        <!-- Potentially make this collapsible, especially useful on mobile to save space if not needed. -->
+        <div id="ct-header">
+            <h1 class="title">Challenge Tracker</h1>
+            <a href="./index.html" class="title"><i class="fas fa-map-marked-alt"></i></a>
+        </div>
+        <div id="pinned-container">
+
+        </div>
+        <div style="padding:10px">
+            <a class="cc-add" href="#nav">
+                <div class="card-btn-container">
+                    <span class="">Pin A Challenge</span>
+                </div>
+                <p class="cc-desc">
+                    <i class="fas fa-thumb-tack"></i>
+                </p>
+            </a>
+        </div>
+    </aside>
+    <main>
+        <nav id="nav" class="noselect">
+        </nav>
+
+        <div id="card-container">
+        </div>
+
+        <section id="mastery-progress">
+        </section>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        const page = "challengeTracker";
+    </script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/sharedModels.js"></script>
+    <script src="assets/js/challenges.js"></script>
+    <script src="challenges/challengeStore.js"></script>
+
+    <script src="assets/js/userPrefs.js"></script>
+
+</body>
+
+</html>
