@@ -11,6 +11,7 @@ export function redirectToGithub(
 	currentMap,
 	location = ''
 ) {
+	console.log("itemType: ", itemType)
 	const domain = `${RepoDomain}/issues/new`;
 	let assignees = 'Odinnh,sol3uk';
 
@@ -21,7 +22,7 @@ export function redirectToGithub(
 	let label = '';
 	let issueTemplate = '';
 	let entityName = '';
-	let map = currentMap ?? '';
+	let map = currentMap.id ?? '';
 	if (isIntel) {
 		if (issueType !== 'New') {
 			issueTemplate = ContribTemplates.intel.editId;
@@ -33,7 +34,7 @@ export function redirectToGithub(
 			//NEW Issue
 			issueTemplate = ContribTemplates.intel.newId;
 			label = ContribTemplates.intel.newTitle;
-			map = currentMap.id ?? '';
+			map = currentMap ?? '';
 		}
 	} else if (isMisc) {
 		issueTemplate =
@@ -48,6 +49,7 @@ export function redirectToGithub(
 		entityName = miscItem ? miscItem.title : '';
 		// Don't yet keep map against misc markers, need to change this, this will do for now since miscs are only on the current map
 		map = currentMap.id;
+		console.log("label: ", label)
 	}
 	let labels = `${label},${map}`;
 	let intelIdPlaceholder = id ? `[${id}]` : '';
@@ -63,6 +65,7 @@ export function redirectToGithub(
 		let miscParams = `&markerId=${id}&markerName=${entityName}&markerLocation=${location}&markerMap=${map}`;
 		finalURL += miscParams;
 	}
+	console.log("finalURL: ", finalURL);
 	window.open(encodeURI(finalURL));
 }
 

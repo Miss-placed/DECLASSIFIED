@@ -84,7 +84,7 @@ export const MiscDetailItem = ({
 								<LocationOnIcon htmlColor="var(--clr-blue)" />
 							</Button>}
 							<ShareButton id={id} />
-							<BugReportButton id={id} typeDesc={typeDesc} mapItem={miscItemMap} />
+							<BugReportButton id={id} typeDesc={icon} mapItem={miscItemMap} /> {/* TODO: standardise the typeDesc to all come from the same icon id store */}
 						</ActionContainer>
 					</MiscDetailItemContainer>
 				</StyledAccordionDetails>
