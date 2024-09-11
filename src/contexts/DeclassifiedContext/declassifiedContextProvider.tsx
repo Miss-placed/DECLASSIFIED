@@ -208,7 +208,7 @@ export const DeclassifiedContextProvider = ({ children }) => {
 				setUserPreferences(data!);
 
 				if (checkUserHasUnmigratedPreferences()) {
-					var dialogMessage = `Looks like you're a returning user! Would you like us to migrate your old settings & progress?`;
+					var dialogMessage = `Looks like you're a returning user! Would you like us to migrate your old settings & progress? (The legacy app is still available in the settings menu)`;
 					triggerDialog(dialogMessage, { trueText: 'Yes', falseText: 'No (I want to start fresh)' },
 						(result) => {
 							if (result) {

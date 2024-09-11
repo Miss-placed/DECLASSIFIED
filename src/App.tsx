@@ -37,6 +37,7 @@ function App() {
 						<Route path="/:id" Component={MapWithItemId} />
 						<Route path="/" Component={MapProvider} />
 						<Route path="/legacy" Component={LegacySite} />
+						<Route path="/challenge" Component={LegacyChallengeSite} />
 					</Routes>
 				</UserContextProvider>
 			</BaseLayout>
@@ -47,6 +48,12 @@ function App() {
 const LegacySite = () => {
 	// Redirects the user to the index file of your legacy site
 	window.location.href = '/legacy/index.html'; // Or any starting page in your legacy folder
+	return null;
+}
+
+const LegacyChallengeSite = () => {
+	// Redirects the user to the index file of your legacy site
+	window.location.href = '/legacy/challenge.html'; // Or any starting page in your legacy folder
 	return null;
 }
 

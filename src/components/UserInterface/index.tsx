@@ -4,6 +4,7 @@ import {
 	faAdd,
 	faFolderOpen,
 	faGear,
+	faList,
 	faMinus,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -86,6 +87,9 @@ export const UserInterface = () => {
 					<button className="btn ui" onClick={toggleDrawer(true, <SettingsDrawerContent />)}>
 						<FontAwesomeIcon icon={faGear}></FontAwesomeIcon>
 					</button>
+					<a className="btn ui" href="./legacy/challenge.html" target="_blank" rel="noopener noreferrer">
+						<FontAwesomeIcon icon={faList}></FontAwesomeIcon>
+					</a>
 					{/* <a className="btn ui" href="./challenge.html"><FontAwesomeIcon icon={faList}></FontAwesomeIcon > </a> */}
 				</div>
 				<div className="bottom-right-ui">

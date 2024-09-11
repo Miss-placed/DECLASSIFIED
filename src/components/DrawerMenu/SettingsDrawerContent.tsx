@@ -3,6 +3,7 @@ import BugReportIcon from '@mui/icons-material/BugReport';
 import CoffeeIcon from '@mui/icons-material/Coffee';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
+import HistoryIcon from '@mui/icons-material/History';
 import RateReviewIcon from '@mui/icons-material/RateReview';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import { Checkbox, Collapse, FormControlLabel, List, ListItemButton, ListItemIcon, ListItemText, Paper, Typography } from "@mui/material";
@@ -49,7 +50,6 @@ export const SettingsDrawerContent = () => {
                                 inputProps={{ 'aria-label': 'controlled' }}
                             />} label="" />
                     </ListItemButton>
-
                     <ListItemButton onClick={handleClick}>
                         <ListItemIcon>
                             <VolunteerActivismIcon />
@@ -85,6 +85,12 @@ export const SettingsDrawerContent = () => {
                             </ListItemButton>
                         </List>
                     </Collapse>
+                    <ListItemButton component="a" href="/legacy">
+                        <ListItemIcon>
+                            <HistoryIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Legacy App" />
+                    </ListItemButton>
                 </List>
 
 

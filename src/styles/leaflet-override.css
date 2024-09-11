@@ -130,6 +130,10 @@
 	accent-color: var(--clr-red) !important;
 }
 
+.leaflet-container a {
+	color: var(--clr-color-inverted);
+}
+
 .leaflet-tile {
 	border: solid black 5px !important;
 }
