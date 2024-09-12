@@ -1,61 +1,47 @@
+import { LatLngExpression } from 'leaflet';
 import { MapItem, MiscMarker } from '../classes';
 import { IconFileNames } from '../data/icons';
 import { IntelStore, IntelType, MapIds } from '../data/intel';
 import { AllMiscStores } from '../data/misc';
-import { ContribTemplates, RepoDomain } from './models';
+import { ContributionTemplates, RepoDomain } from './models';
 
-export function redirectToGithub(
-	id = '',
+export type GithubIssueType = 'New' | 'Fix';
+const githubAssignees = 'Odinnh,sol3uk';
+const domain = `${RepoDomain}/issues/new`;
+
+export const redirectBugReportToGithub = (
+	id: string,
 	itemType: IntelType | IconFileNames,
-	issueType = 'New',
-	currentMap,
-	location = ''
-) {
-	console.log("itemType: ", itemType)
-	const domain = `${RepoDomain}/issues/new`;
-	let assignees = 'Odinnh,sol3uk';
-
+	currentMap: MapItem,
+	location: LatLngExpression | null = null
+) => {
 	const isIntel = Object.values(IntelType).includes(itemType as IntelType);
-	const isMisc = Object.values(IconFileNames).includes(
-		itemType as IconFileNames
-	);
-	let label = '';
+	const isMisc = Object.values(IconFileNames).includes(itemType as IconFileNames);
 	let issueTemplate = '';
+	let label = '';
 	let entityName = '';
 	let map = currentMap.id ?? '';
 	if (isIntel) {
-		if (issueType !== 'New') {
-			issueTemplate = ContribTemplates.intel.editId;
-			label = ContribTemplates.intel.editTitle;
-			let intel = getIntelById(id);
-			entityName = intel ? intel.title : '';
-			map = intel ? intel.map : '';
-		} else {
-			//NEW Issue
-			issueTemplate = ContribTemplates.intel.newId;
-			label = ContribTemplates.intel.newTitle;
-			map = currentMap ?? '';
-		}
+		issueTemplate = ContributionTemplates.intelEditId;
+		label = ContributionTemplates.intelEditTitle;
+		let intel = getIntelById(id);
+		entityName = intel?.title ?? '';
+		map = intel?.map ?? '';
 	} else if (isMisc) {
-		issueTemplate =
-			issueType === 'New'
-				? ContribTemplates.misc.newId
-				: ContribTemplates.misc.editId;
-		label =
-			issueType === 'New'
-				? ContribTemplates.misc.newTitle
-				: ContribTemplates.misc.editTitle;
-		let miscItem = getMiscMarkerByIdAndMap(id, currentMap);
-		entityName = miscItem ? miscItem.title : '';
-		// Don't yet keep map against misc markers, need to change this, this will do for now since miscs are only on the current map
-		map = currentMap.id;
-		console.log("label: ", label)
+		issueTemplate = ContributionTemplates.miscEditId;
+		label = ContributionTemplates.miscEditTitle;
+		const miscResult = getMiscMarkerById(id);
+		if (miscResult) {
+			const [mapId, miscItem] = miscResult;
+			entityName = miscItem.title ?? '';
+			map = mapId;
+		}
 	}
 	let labels = `${label},${map}`;
 	let intelIdPlaceholder = id ? `[${id}]` : '';
 
 	let issueTitle = `${label}: ${entityName} [${map}]${intelIdPlaceholder}`;
-	let finalURL = `${domain}?assignees=${assignees}&labels=${labels}&template=${issueTemplate}.yml&title=${issueTitle}`;
+	let finalURL = `${domain}?assignees=${githubAssignees}&labels=${labels}&template=${issueTemplate}.yml&title=${issueTitle}`;
 
 	if (isIntel) {
 		let intelParams = `&intelId=${id}&intelName=${entityName}&intelLocation=${location}&intelMap=${map}`;
@@ -65,7 +51,42 @@ export function redirectToGithub(
 		let miscParams = `&markerId=${id}&markerName=${entityName}&markerLocation=${location}&markerMap=${map}`;
 		finalURL += miscParams;
 	}
-	console.log("finalURL: ", finalURL);
+	window.open(encodeURI(finalURL));
+}
+
+export const redirectNewContributionToGithub = (
+	id: string | null,
+	newMarkerName: string | null,
+	itemType: IntelType | IconFileNames,
+	currentMap: MapItem,
+	location: LatLngExpression | null = null
+) => {
+	const isIntel = Object.values(IntelType).includes(itemType as IntelType);
+	const isMisc = Object.values(IconFileNames).includes(itemType as IconFileNames);
+	let issueTemplate = '';
+	let label = '';
+	let map = currentMap.id ?? '';
+	if (isIntel) {
+		issueTemplate = ContributionTemplates.intelNewId;
+		label = ContributionTemplates.intelNewTitle;
+	}
+	else if (isMisc) {
+		issueTemplate = ContributionTemplates.miscNewId;
+		label = ContributionTemplates.miscNewTitle;
+	}
+	let labels = `${label},${map}`;
+
+	let issueTitle = `${label}: ${newMarkerName ?? 'YOUR_NEW_MARKER_NAME'} [${map}]`;
+	let finalURL = `${domain}?assignees=${githubAssignees}&labels=${labels}&template=${issueTemplate}.yml&title=${issueTitle}`;
+
+	if (isIntel) {
+		let intelParams = `&intelId=${id}&intelName=${newMarkerName}&intelLocation=${location}&intelMap=${map}`;
+		finalURL += intelParams;
+	}
+	if (isMisc) {
+		let miscParams = `&markerId=${id}&markerName=${newMarkerName}&markerLocation=${location}&markerMap=${map}`;
+		finalURL += miscParams;
+	}
 	window.open(encodeURI(finalURL));
 }
 
@@ -77,7 +98,7 @@ export const getIntelById = (intelId: string) => {
 	return null;
 };
 
-const getMiscMarkerByIdAndMap = (itemId, currentMap: MapItem) => {
+const getMiscMarkerByIdAndMap = (itemId: string, currentMap: MapItem) => {
 	if (itemId) {
 		let matchedMisc = AllMiscStores()[currentMap.id!].find(
 			item => item.id === itemId
