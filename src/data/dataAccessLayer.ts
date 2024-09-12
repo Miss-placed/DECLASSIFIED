@@ -25,7 +25,7 @@ export async function getSetUserPreferences(
 			return db.userPrefs.get(username);
 		}
 	} catch (error) {
-		console.log('ERROR - getSetUserPreferences: ', error);
+		console.error('ERROR - getSetUserPreferences: ', error);
 	}
 }
 
@@ -37,7 +37,7 @@ export async function updateUserPreferences(
 		const currentUserPrefs = await getSetUserPreferences(defaultUsername);
 
 		if (!currentUserPrefs) {
-			console.log(
+			console.error(
 				'ERROR - updateUserPreferences: Could not retrieve or set user preferences.'
 			);
 			return undefined;
@@ -52,7 +52,7 @@ export async function updateUserPreferences(
 		// Return the updated preferences
 		return updatedPrefs;
 	} catch (error) {
-		console.log('ERROR - updateUserPreferences: ', error);
+		console.error('ERROR - updateUserPreferences: ', error);
 		return undefined;
 	}
 }
@@ -70,7 +70,7 @@ export async function addCollectedIntel(intelIds: string[]) {
 			})
 		);
 	} catch (error) {
-		console.log('ERROR - addCollectedIntel: ', error);
+		console.error('ERROR - addCollectedIntel: ', error);
 	}
 }
 
@@ -84,7 +84,7 @@ export async function deleteCollectedIntel(intelIds: string[]) {
 			})
 		);
 	} catch (error) {
-		console.log('ERROR - deleteCollectedIntel: ', error);
+		console.error('ERROR - deleteCollectedIntel: ', error);
 	}
 }
 
@@ -113,7 +113,7 @@ export async function addCompletedChallenges(challengeIds: string[]) {
 			}
 		}
 	} catch (error) {
-		console.log('ERROR - addCompletedChallenges: ', error);
+		console.error('ERROR - addCompletedChallenges: ', error);
 	}
 }
 
@@ -142,6 +142,6 @@ export async function addPinnedChallenges(challengeIds: string[]) {
 			}
 		}
 	} catch (error) {
-		console.log('ERROR - addPinnedChallenges: ', error);
+		console.error('ERROR - addPinnedChallenges: ', error);
 	}
 }

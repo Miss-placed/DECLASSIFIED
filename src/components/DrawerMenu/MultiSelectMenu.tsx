@@ -48,10 +48,7 @@ export const MultiSelectMenu = ({ multiSelectState: selectedIntel, setMultiSelec
         }
     };
 
-    // Functionality for additional buttons
     const handleButtonAction = (actionType) => {
-        console.log(`Button ${actionType} clicked!`);
-
         if (actionType === "collect") {
             addCollectedIntel([...selectedIntel])
         } else if (actionType === "un-collect") {
@@ -61,14 +58,9 @@ export const MultiSelectMenu = ({ multiSelectState: selectedIntel, setMultiSelec
 
     return (
         <MultiSelectMenuContent>
-            {/* Render the checkbox button */}
             {renderCheckBoxIcon()}
-
-            {/* Render additional buttons next to the checkbox */}
-
             <ButtonGroup disabled={selectedIntel.length === 0} fullWidth variant="contained">
                 <Button
-
                     title="DECLASSIFY"
                     onClick={() => handleButtonAction("collect")}
                 >
@@ -90,7 +82,12 @@ display: flex;
 align-items: center;
 gap: 10px;
 padding: 10px 10px 0 10px;
+justify-content: space-between;
+.MuiButtonGroup-root{
+    max-width: 80%;
+}
 button{
     text-wrap: nowrap;
+    font-size: initial;
 }
 `

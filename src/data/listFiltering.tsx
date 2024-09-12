@@ -75,8 +75,6 @@ export function filterIntel(
             });
         }
     }
-    // console.log({ seasonsArr, intelTypeArr, results });
-    // console.log("INTEL FILTERED END: ", results);
     return results;
 }
 

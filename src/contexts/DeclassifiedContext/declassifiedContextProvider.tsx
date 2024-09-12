@@ -60,6 +60,7 @@ export const DeclassifiedContext =
 
 export const DeclassifiedContextProvider = ({ children }) => {
 	const mapInstance = useMapEvents({});
+	const { isDebugMode } = useUserContext();
 	const [userPrefs, setUserPreferences] =
 		useState<DeclassifiedUserPreferences | null>(null);
 	const [currentMap, setCurrentMap] = useState<MapItem | null>(null);
@@ -83,12 +84,16 @@ export const DeclassifiedContextProvider = ({ children }) => {
 	const [isMapLoaded, setIsMapLoaded] = useState(false);
 
 	const setCurrentMapWithValidation = async (newMap: MapItem) => {
-		console.log('Setting current map to: ', newMap);
+		if (isDebugMode) {
+			console.log('Setting current map to: ', newMap);
+		}
 		if (newMap.mapOverlay !== null && newMap.mapOverlay !== undefined) {
 			setCurrentMap(newMap);
 			Object.entries(MapGroupings).forEach(([key, mapItem]) => {
 				if (newMap && mapItem.mapLayers.includes(newMap)) {
-					console.log('Setting current map GROUP to: ', mapItem);
+					if (isDebugMode) {
+						console.log('Setting current map GROUP to: ', mapItem);
+					}
 					setCurrentMapGroup(mapItem);
 				}
 			});
@@ -102,7 +107,9 @@ export const DeclassifiedContextProvider = ({ children }) => {
 
 	const toggleDrawer =
 		(isOpen: boolean, content?: JSX.Element) => (event: React.KeyboardEvent | React.MouseEvent) => {
-			console.log('toggleDrawer: ', isOpen, content);
+			if (isDebugMode) {
+				console.log('toggleDrawer: ', isOpen, content);
+			}
 			if (
 				event &&
 				event.type === 'keydown' &&
@@ -117,10 +124,9 @@ export const DeclassifiedContextProvider = ({ children }) => {
 	useMapEvent('baselayerchange', props => {
 		let currentMapKey = GetMapByTitle(props.name);
 		if (currentMapKey) {
-			console.log(
-				'setCurrentMapWithValidation with baselayerchange: ',
-				currentMapKey
-			);
+			if (isDebugMode) {
+				console.log('setCurrentMapWithValidation with baselayerchange: ', currentMapKey);
+			}
 			setCurrentMapWithValidation(MapDetails[currentMapKey]);
 		}
 	});
@@ -128,14 +134,18 @@ export const DeclassifiedContextProvider = ({ children }) => {
 	const focusOnSharedItem = useCallback(async () => {
 		if (isMapLoaded) {
 			if (sharedMapItemId) {
-				console.log('Focus on shared item: ', sharedMapItemId);
+				if (isDebugMode) {
+					console.log('Focus on shared item: ', sharedMapItemId);
+				}
 				let intelItem = getIntelById(sharedMapItemId);
 				if (intelItem && intelItem.map) {
 					const IntelHasLocation = intelItem.loc !== DefaultPOIData.nullLoc;
 					if (IntelHasLocation) {
 						const intelItemMap = GetMapById(intelItem.map)!;
-						console.log('setCurrentMapWithValidation with INTEL: ', intelItem);
-						console.log('intelItemMap: ', intelItemMap);
+						if (isDebugMode) {
+							console.log('setCurrentMapWithValidation with INTEL: ', intelItem);
+							console.log('intelItemMap: ', intelItemMap);
+						}
 						await setCurrentMapWithValidation(intelItemMap);
 						mapInstance.flyTo(intelItem.loc, 4);
 						return;
@@ -150,11 +160,10 @@ export const DeclassifiedContextProvider = ({ children }) => {
 							const MiscHasLocation = miscItem.loc !== DefaultPOIData.nullLoc;
 							if (MiscHasLocation) {
 								const miscItemMap = GetMapById(miscMapId)!;
-								console.log(
-									'setCurrentMapWithValidation with MISC: ',
-									miscItem
-								);
-								console.log('miscItemMap: ', miscItemMap);
+								if (isDebugMode) {
+									console.log('setCurrentMapWithValidation with MISC: ', miscItem);
+									console.log('miscItemMap: ', miscItemMap);
+								}
 								await setCurrentMapWithValidation(miscItemMap);
 								mapInstance.flyTo(miscItem.loc, 4);
 								return;
@@ -220,10 +229,9 @@ export const DeclassifiedContextProvider = ({ children }) => {
 
 				const userPrefsCurrentMap = GetMapById(data!.currentMap);
 				if (!sharedMapItemId && userPrefsCurrentMap) {
-					console.log(
-						'Setting current map from user preferences: ',
-						userPrefsCurrentMap
-					);
+					if (isDebugMode) {
+						console.log('Setting current map from user preferences: ', userPrefsCurrentMap);
+					}
 					setCurrentMap(userPrefsCurrentMap);
 					Object.entries(MapGroupings).forEach(([key, mapItem]) => {
 						if (
@@ -248,7 +256,7 @@ export const DeclassifiedContextProvider = ({ children }) => {
 		if (isMapLoaded) {
 			focusOnSharedItem();
 		}
-	}, [focusOnSharedItem, isMapLoaded, sharedMapItemId, triggerDialog]);
+	}, [focusOnSharedItem, isDebugMode, isMapLoaded, sharedMapItemId, triggerDialog]);
 
 	if (isLoading) {
 		return null;

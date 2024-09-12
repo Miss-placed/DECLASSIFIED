@@ -48,7 +48,6 @@ export const IntelDetailsItem = ({
 
 	function handleSelectIntel(event, isSelected: boolean): void {
 		event.stopPropagation();
-		console.log("handleSelectIntel: ", isSelected);
 		setIsSelected(isSelected);
 		addRemoveItemMultiSelect!(id);
 	}

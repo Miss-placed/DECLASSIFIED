@@ -40,7 +40,6 @@ export const checkUserHasUnmigratedPreferences = (): boolean => {
     var localStorageResult = localStorage.getItem("declassifiedPrefs");
     if (!localStorageResult) return false;
     var parsedOldPrefs = new OldDeclassifiedUserPreferences(JSON.parse(localStorageResult) ?? {});
-    console.log(parsedOldPrefs);
     if (parsedOldPrefs.hasBeenMigrated === undefined ||
         parsedOldPrefs.hasBeenMigrated === null ||
         parsedOldPrefs.hasBeenMigrated === false) {

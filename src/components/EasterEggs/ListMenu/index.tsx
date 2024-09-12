@@ -4,6 +4,7 @@ import { Accordion, AccordionDetails, AccordionSummary, TextField } from "@mui/m
 import { useContext, useState } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { DeclassifiedContext } from "../../../contexts/DeclassifiedContext/declassifiedContextProvider";
+import { useUserContext } from "../../../contexts/UserContext/userContextProvider";
 import { EggType } from "../../../data/easterEggs";
 
 
@@ -13,8 +14,8 @@ export type EggFormInputs = {
 };
 
 export const EggListMenu = () => {
-    const { currentEggFilter, setCurrentEggFilter, filteredEggStore } =
-        useContext(DeclassifiedContext);
+    const { currentEggFilter, setCurrentEggFilter, filteredEggStore } = useContext(DeclassifiedContext);
+    const { isDebugMode } = useUserContext();
     const [expand, setExpand] = useState(false);
     const toggleAcordion = () => {
         setExpand(prev => !prev);
@@ -34,7 +35,9 @@ export const EggListMenu = () => {
     const onSubmit: SubmitHandler<EggFormInputs> = data => {
         // TODO: set filter value in context
         setCurrentEggFilter(data);
-        console.log('EGG FORM SUBMIT: ', data);
+        if (isDebugMode) {
+            console.log('EGG FORM SUBMIT: ', data);
+        }
     };
     const totalEggOfType = filteredEggStore.length;
 
