@@ -117,3 +117,7 @@ body.custom-color {
 .collected-marker {
 	opacity: 0.35;
 }
+
+.contributing {
+	cursor: crosshair !important;
+}
