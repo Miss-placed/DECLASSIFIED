@@ -48,28 +48,11 @@ body:
     validations:
       required: false
 
-  - type: dropdown
+  - type: input
     id: markerMap
     attributes:
       label: Map
       description: What map can you find the Misc Marker? (The map should have auto filled in the title, check this is also set)
-      options:
-        - allOutbreakMaps
-        - zoo
-        - ruka
-        - duga
-        - alpine
-        - golova
-        - sanatorium
-        - collateral
-        - armada
-        - dieMaschine
-        - dieMaschine_underground
-        - firebaseZ
-        - firebaseZ_spawn
-        - mauerDerToten
-        - mauerDerToten_streets
-        - other (what? a new map?!)
     validations:
       required: true
 
