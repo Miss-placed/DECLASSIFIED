@@ -1,4 +1,4 @@
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@mui/material';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, TextField } from '@mui/material';
 import React, { ReactNode, useRef, useState } from 'react';
 import NotificationBanner from '../../components/NotificationBanner/NotificationBanner';
 import { NotificationContext } from './notificationContext';
@@ -52,7 +52,7 @@ export const NotificationProvider: React.FC<{ children: ReactNode }> = ({ childr
 			<Dialog
 				open={dialogOpen}
 				onClose={() => handleDialogClose(false)}>
-				<DialogTitle>Notification</DialogTitle>
+				{/* <DialogTitle>Notification</DialogTitle> */}
 				<form
 					onSubmit={formFields ? (event: React.FormEvent<HTMLFormElement>) => {
 						event.preventDefault();

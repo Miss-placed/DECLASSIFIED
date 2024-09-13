@@ -35,7 +35,6 @@ ${({ $isContributing }) =>
 
 const MapProvider = () => {
 	const { isMobile, contributionState } = useUserContext();
-	console.log("isContributing MAP: ", contributionState.isContributing)
 
 	return (
 		<MapWrapper $isContributing={contributionState.isContributing} >

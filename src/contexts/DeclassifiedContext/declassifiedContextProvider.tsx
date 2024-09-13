@@ -105,7 +105,6 @@ export const DeclassifiedContextProvider = ({ children }) => {
 	}, [isDebugMode]);
 
 	const toggleDrawer = ({ isOpen, content, clickEvent }: ToggleDrawerOptions) => {
-		console.log('toggleDrawer: ', isOpen, content);
 		if (isDebugMode) {
 			console.log('toggleDrawer: ', isOpen, content);
 		}

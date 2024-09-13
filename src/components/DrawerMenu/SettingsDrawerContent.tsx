@@ -51,7 +51,6 @@ export const SettingsDrawerContent = () => {
         triggerDialog("Click on the map to select the location of your contribution, after clicking you will be redirected to github. Thanks for helping out!",
             { trueText: 'I Understand', falseText: 'Nevermind' },
             (userAgreed, formData) => {
-                console.log(userAgreed, formData);
                 if (userAgreed) {
                     setContributionState({ isIntel: isIntel, isContributing: true, markerName: formData.markerName, itemType: formData.itemType });
                 }
