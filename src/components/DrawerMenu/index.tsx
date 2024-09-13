@@ -25,8 +25,8 @@ export const DrawerMenu = ({ children }: BaseLayoutProps) => {
 		<StyledSwipeableDrawer
 			anchor={width > 900 ? 'left' : 'bottom'}
 			open={drawerState.isOpen}
-			onClose={toggleDrawer(false)}
-			onOpen={toggleDrawer(true)}
+			onClose={(event) => toggleDrawer({ isOpen: false, clickEvent: event })}
+			onOpen={(event) => toggleDrawer({ isOpen: true, clickEvent: event })}
 		>
 			{children}
 		</StyledSwipeableDrawer>

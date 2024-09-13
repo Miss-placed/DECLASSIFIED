@@ -81,10 +81,10 @@ export const UserInterface = () => {
 			</div>
 			<div>
 				<div className="bottom-left-ui">
-					<button className="btn ui" onClick={toggleDrawer(true, <IntelAndEasterEggDrawerContent />)}>
+					<button className="btn ui" onClick={() => toggleDrawer({ isOpen: true, content: <IntelAndEasterEggDrawerContent /> })}>
 						<FontAwesomeIcon icon={faFolderOpen}></FontAwesomeIcon>
 					</button>
-					<button className="btn ui" onClick={toggleDrawer(true, <SettingsDrawerContent />)}>
+					<button className="btn ui" onClick={() => toggleDrawer({ isOpen: true, content: <SettingsDrawerContent /> })}>
 						<FontAwesomeIcon icon={faGear}></FontAwesomeIcon>
 					</button>
 					<a className="btn ui" href="./legacy/challenge.html" target="_blank" rel="noopener noreferrer">

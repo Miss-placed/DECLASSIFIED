@@ -1,10 +1,9 @@
-import { useContext } from 'react';
-import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
-import { MapGroupings } from '../MapControls/types';
-import { Button, Drawer, Menu, MenuItem } from '@mui/material';
-import React from 'react';
-import { useUserContext } from '../../contexts/UserContext/userContextProvider';
 import styled from '@emotion/styled';
+import { Button, Drawer, Menu, MenuItem } from '@mui/material';
+import React, { useContext } from 'react';
+import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
+import { useUserContext } from '../../contexts/UserContext/userContextProvider';
+import { MapGroupings } from '../MapControls/types';
 
 const StyledHeader = styled.header`
 	user-select: none;
@@ -68,7 +67,7 @@ const Header = () => {
 
 	const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
-	const toggleDrawer =
+	const toggleHeader =
 		(open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
 			if (
 				event.type === 'keydown' &&
@@ -85,13 +84,13 @@ const Header = () => {
 		<>
 			{isMobile ? (
 				<StyledHeader>
-					<Button onClick={toggleDrawer(true)}>
+					<Button onClick={toggleHeader(true)}>
 						{currentMapGroup!.mapName}
 					</Button>
 					<MapDrawer
 						anchor={'top'}
 						open={isDrawerOpen}
-						onClose={toggleDrawer(false)}
+						onClose={toggleHeader(false)}
 					>
 						{Object.entries(MapGroupings).map(([key, mapItem]) => (
 							<MenuItem

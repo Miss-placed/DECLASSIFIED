@@ -5,7 +5,6 @@ import { IntelStore, IntelType, MapIds } from '../data/intel';
 import { AllMiscStores } from '../data/misc';
 import { ContributionTemplates, RepoDomain } from './models';
 
-export type GithubIssueType = 'New' | 'Fix';
 const githubAssignees = 'Odinnh,sol3uk';
 const domain = `${RepoDomain}/issues/new`;
 

@@ -6,6 +6,13 @@ import { MapGroupItem } from '../../components/MapControls/types';
 import { DeclassifiedIntelCollected } from '../../data/db';
 import { IntelItem } from '../../data/intel';
 
+
+export interface ToggleDrawerOptions {
+	isOpen: boolean;
+	content?: JSX.Element;
+	clickEvent?: React.SyntheticEvent<any, any> | React.KeyboardEvent | React.MouseEvent;
+}
+
 export interface DeclassifiedContextProps {
 	currentMap: MapItem | null;
 	setCurrentMapWithValidation: (newMap: MapItem) => Promise<boolean>;
@@ -19,10 +26,7 @@ export interface DeclassifiedContextProps {
 	setCurrentIntelFilter: Dispatch<SetStateAction<IntelFormInputs>>;
 
 	drawerState: DrawerMenuProps;
-	toggleDrawer: (
-		isOpen: boolean,
-		content?: JSX.Element
-	) => (event: React.KeyboardEvent | React.MouseEvent) => void;
+	toggleDrawer: ({ isOpen, content, clickEvent }: ToggleDrawerOptions) => void;
 	collectedIntel: DeclassifiedIntelCollected[] | undefined;
 
 	currentEggFilter: EggFormInputs

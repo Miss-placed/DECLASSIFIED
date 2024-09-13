@@ -7,7 +7,9 @@ import HistoryIcon from '@mui/icons-material/History';
 import RateReviewIcon from '@mui/icons-material/RateReview';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import { Checkbox, Collapse, FormControlLabel, List, ListItemButton, ListItemIcon, ListItemText, Paper, Typography } from "@mui/material";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { DeclassifiedContext } from "../../contexts/DeclassifiedContext/declassifiedContextProvider";
+import { useNotification } from "../../contexts/NotificationContext/notificationContext";
 import { useUserContext } from "../../contexts/UserContext/userContextProvider";
 
 
@@ -19,20 +21,39 @@ const SettingsMenuBackground = styled.div`
         height: 100%;
         padding: 10px;
     `;
+
+enum ContributionType {
+    Intel,
+    Misc
+}
+
 const SettingsMenuContainer = styled(Paper)`
     padding: 10px;
 `
 export const SettingsDrawerContent = () => {
     const { isDebugMode, setIsDebugMode } = useUserContext();
-    const [open, setOpen] = useState(true);
+    const { toggleDrawer } = useContext(DeclassifiedContext);
+    const { triggerDialog } = useNotification();
+    const [contributeOpen, setContributeOpen] = useState(true);
 
-    const handleClick = () => {
-        setOpen(!open);
+    const handleExpandContribute = () => {
+        setContributeOpen(!contributeOpen);
     };
 
     const handleIsDebugChange = () => {
         setIsDebugMode(!isDebugMode);
     };
+
+    const handleContributeNewMarker = (contributionType: ContributionType): void => {
+
+        triggerDialog("Click on the map to select the location of your contribution, after clicking you will be redirected to github. Thanks for helping out!", { trueText: 'I Understand', falseText: 'Nevermind' },
+            (userAgreed) => {
+                console.log(userAgreed);
+                if (userAgreed) {
+                    toggleDrawer({ isOpen: false });
+                }
+            });
+    }
 
     return (
         <SettingsMenuBackground>
@@ -50,22 +71,22 @@ export const SettingsDrawerContent = () => {
                                 inputProps={{ 'aria-label': 'controlled' }}
                             />} label="" />
                     </ListItemButton>
-                    <ListItemButton onClick={handleClick}>
+                    <ListItemButton onClick={handleExpandContribute}>
                         <ListItemIcon>
                             <VolunteerActivismIcon />
                         </ListItemIcon>
                         <ListItemText primary="Contribute" />
-                        {open ? <ExpandLess /> : <ExpandMore />}
+                        {contributeOpen ? <ExpandLess /> : <ExpandMore />}
                     </ListItemButton>
-                    <Collapse in={open} timeout="auto" unmountOnExit>
+                    <Collapse in={contributeOpen} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                            {/* <ListItemButton sx={{ pl: 4 }}> // TODO: Add these
+                            {/* <ListItemButton sx={{ pl: 4 }} onClick={() => handleContributeNewMarker(ContributionType.Intel)}>
                                 <ListItemIcon>
                                     <AddCircleOutlineIcon />
                                 </ListItemIcon>
                                 <ListItemText primary="Add New Intel" />
                             </ListItemButton>
-                            <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemButton sx={{ pl: 4 }} onClick={() => handleContributeNewMarker(ContributionType.Misc)}>
                                 <ListItemIcon>
                                     <AddCircleOutlineIcon />
                                 </ListItemIcon>

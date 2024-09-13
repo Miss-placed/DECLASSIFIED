@@ -28,7 +28,7 @@ import { useNotification } from '../NotificationContext/notificationContext';
 import {
 	useUserContext,
 } from '../UserContext/userContextProvider';
-import { DeclassifiedContextProps } from './types';
+import { DeclassifiedContextProps, ToggleDrawerOptions } from './types';
 
 const initialContextValues = {
 	userPrefs: {},
@@ -55,8 +55,7 @@ async function updateUserPreferencesInDB(
 	return await updateUserPreferences(updates);
 }
 
-export const DeclassifiedContext =
-	createContext<DeclassifiedContextProps>(initialContextValues);
+export const DeclassifiedContext = createContext<DeclassifiedContextProps>(initialContextValues);
 
 export const DeclassifiedContextProvider = ({ children }) => {
 	const mapInstance = useMapEvents({});
@@ -83,7 +82,7 @@ export const DeclassifiedContextProvider = ({ children }) => {
 	const { triggerDialog } = useNotification();
 	const [isMapLoaded, setIsMapLoaded] = useState(false);
 
-	const setCurrentMapWithValidation = async (newMap: MapItem) => {
+	const setCurrentMapWithValidation = useCallback(async (newMap: MapItem) => {
 		if (isDebugMode) {
 			console.log('Setting current map to: ', newMap);
 		}
@@ -103,23 +102,23 @@ export const DeclassifiedContextProvider = ({ children }) => {
 			console.error("Cannot set a map that doesn't exist.");
 			return false;
 		}
-	};
+	}, [isDebugMode]);
 
-	const toggleDrawer =
-		(isOpen: boolean, content?: JSX.Element) => (event: React.KeyboardEvent | React.MouseEvent) => {
-			if (isDebugMode) {
-				console.log('toggleDrawer: ', isOpen, content);
-			}
-			if (
-				event &&
-				event.type === 'keydown' &&
-				((event as React.KeyboardEvent).key === 'Tab' ||
-					(event as React.KeyboardEvent).key === 'Shift')
-			) {
-				return;
-			}
-			setDrawerState({ isOpen, content: content ?? <></> });
-		};
+	const toggleDrawer = ({ isOpen, content, clickEvent }: ToggleDrawerOptions) => {
+		console.log('toggleDrawer: ', isOpen, content);
+		if (isDebugMode) {
+			console.log('toggleDrawer: ', isOpen, content);
+		}
+		if (
+			clickEvent &&
+			clickEvent.type === 'keydown' &&
+			((clickEvent as React.KeyboardEvent).key === 'Tab' ||
+				(clickEvent as React.KeyboardEvent).key === 'Shift')
+		) {
+			return;
+		}
+		setDrawerState({ isOpen, content: content ?? <></> });
+	};
 
 	useMapEvent('baselayerchange', props => {
 		let currentMapKey = GetMapByTitle(props.name);
@@ -174,7 +173,7 @@ export const DeclassifiedContextProvider = ({ children }) => {
 				}
 			}
 		}
-	}, [isMapLoaded, mapInstance, sharedMapItemId]);
+	}, [isDebugMode, isMapLoaded, mapInstance, setCurrentMapWithValidation, sharedMapItemId]);
 
 	const collectedIntel = useLiveQuery(async () => {
 		return await db.intelCollected.toArray();
