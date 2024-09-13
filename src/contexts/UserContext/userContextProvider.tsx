@@ -9,6 +9,7 @@ const initialContextValues = {
 	sharedMapItemId: null,
 	updateMapItemId: () => { },
 	contributionState: {
+		isIntel: false,
 		isContributing: false,
 		markerName: null,
 		itemType: null,
@@ -24,10 +25,12 @@ export const UserContextProvider = ({ children }) => {
 	const [isDebugMode, setIsDebugMode] = useState(initialContextValues.isDebugMode);
 	const [sharedMapItemId, setMapItemId] = useState<string | null>(null);
 	const [contributionState, setContributionStateState] = useState<{
+		isIntel: boolean;
 		isContributing: boolean;
 		markerName: string | null;
 		itemType: string | null;
 	}>({
+		isIntel: initialContextValues.contributionState.isIntel,
 		isContributing: initialContextValues.contributionState.isContributing,
 		markerName: initialContextValues.contributionState.markerName,
 		itemType: initialContextValues.contributionState.itemType,

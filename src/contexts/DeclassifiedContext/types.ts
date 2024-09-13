@@ -54,12 +54,14 @@ export interface UserContextProps {
 	sharedMapItemId: string | null;
 	updateMapItemId: (id: string) => void;
 	contributionState: {
+		isIntel: boolean;
 		isContributing: boolean;
 		markerName: string | null;
 		itemType: string | null;
 	}
 	setContributionState: (
 		newState: Partial<{
+			isIntel: boolean;
 			isContributing: boolean;
 			markerName: string | null;
 			itemType: string | null;

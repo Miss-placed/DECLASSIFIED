@@ -57,7 +57,7 @@ export const UserInterface = () => {
 		}
 
 		if (contributionState.isContributing && currentMap) {
-			redirectNewContributionToGithub(contributionState.markerName, contributionState.itemType, currentMap, clickLocation);
+			redirectNewContributionToGithub(contributionState.isIntel, contributionState.markerName, contributionState.itemType, currentMap, clickLocation);
 			setContributionState({ isContributing: false, markerName: null, itemType: null });
 		}
 	});

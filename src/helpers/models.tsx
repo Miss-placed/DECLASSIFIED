@@ -11,11 +11,11 @@ export const RepoDomain = 'https://github.com/Miss-placed/DECLASSIFIED';
 export const AppDomain = 'https://declassified.netlify.app/';
 
 export enum ContributionTemplates {
-	intelNewId = 'newIntel',
+	intelNewId = 'newIntelV2',
 	intelNewTitle = 'New Intel',
 	intelEditId = 'editIntel',
 	intelEditTitle = 'Intel Fix',
-	miscNewId = 'newMisc',
+	miscNewId = 'newMiscV2',
 	miscNewTitle = 'New Misc Marker',
 	miscEditId = 'editMisc',
 	miscEditTitle = 'Misc Marker Fix',

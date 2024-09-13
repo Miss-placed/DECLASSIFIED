@@ -45,7 +45,7 @@ export const SettingsDrawerContent = () => {
         setIsDebugMode(!isDebugMode);
     };
 
-    const handleContributeNewMarker = (): void => {
+    const handleContributeNewMarker = (isIntel: boolean): void => {
         toggleDrawer({ isOpen: false });
 
         triggerDialog("Click on the map to select the location of your contribution, after clicking you will be redirected to github. Thanks for helping out!",
@@ -53,12 +53,12 @@ export const SettingsDrawerContent = () => {
             (userAgreed, formData) => {
                 console.log(userAgreed, formData);
                 if (userAgreed) {
-                    setContributionState({ isContributing: true, markerName: formData.markerName, itemType: formData.itemType });
+                    setContributionState({ isIntel: isIntel, isContributing: true, markerName: formData.markerName, itemType: formData.itemType });
                 }
             },
             {
                 markerName: "Marker Name (Title of Intel or Name of Point of Interest)",
-                itemType: "What Type Of Marker Is This? e.g. Intel, EE, Misc"
+                itemType: "What Type Of Marker Is This? e.g. Artifact, Collectible, Workbench, Trap, etc"
             });
     }
 
@@ -87,11 +87,17 @@ export const SettingsDrawerContent = () => {
                     </ListItemButton>
                     <Collapse in={contributeOpen} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                            <ListItemButton sx={{ pl: 4 }} onClick={() => handleContributeNewMarker()}>
+                            <ListItemButton sx={{ pl: 4 }} onClick={() => handleContributeNewMarker(true)}>
                                 <ListItemIcon>
                                     <AddCircleOutlineIcon />
                                 </ListItemIcon>
-                                <ListItemText primary="Add New Intel" />
+                                <ListItemText primary="Add New Intel Marker" />
+                            </ListItemButton>
+                            <ListItemButton sx={{ pl: 4 }} onClick={() => handleContributeNewMarker(false)}>
+                                <ListItemIcon>
+                                    <AddCircleOutlineIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Add Other Marker" />
                             </ListItemButton>
                             <ListItemButton sx={{ pl: 4 }} component="a" href="https://github.com/Miss-placed/DECLASSIFIED/issues/new/choose" target="_blank" rel="noopener noreferrer">
                                 <ListItemIcon>

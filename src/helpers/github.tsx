@@ -54,13 +54,12 @@ export const redirectBugReportToGithub = (
 }
 
 export const redirectNewContributionToGithub = (
+	isIntel: boolean,
 	newMarkerName: string | null,
-	itemType: IntelType | IconFileNames | string | null, // TODO : Add dropdowns to form so I can enforce only types we have
+	itemType: string | null, //TODO: Maybe refactor this to enforce dropdown selection?
 	currentMap: MapItem,
 	location: LatLngTuple
 ) => {
-	const isIntel = Object.values(IntelType).includes(itemType as IntelType);
-	const isMisc = Object.values(IconFileNames).includes(itemType as IconFileNames);
 	let issueTemplate = '';
 	let label = '';
 	let map = currentMap.id || '';
@@ -68,7 +67,7 @@ export const redirectNewContributionToGithub = (
 		issueTemplate = ContributionTemplates.intelNewId;
 		label = ContributionTemplates.intelNewTitle;
 	}
-	else if (isMisc) {
+	else if (!isIntel) {
 		issueTemplate = ContributionTemplates.miscNewId;
 		label = ContributionTemplates.miscNewTitle;
 	}
@@ -78,11 +77,10 @@ export const redirectNewContributionToGithub = (
 	let finalURL = `${domain}?assignees=${githubAssignees}&labels=${labels}&template=${issueTemplate}.yml&title=${issueTitle}`;
 
 	if (isIntel) {
-		let intelParams = `&intelName=${markerName}&intelLocation=${JSON.stringify(location)}&intelMap=${map}`;
+		let intelParams = `&intelName=${markerName}&intelType=${itemType}&intelLocation=${JSON.stringify(location)}&intelMap=${map}`;
 		finalURL += intelParams;
-	}
-	if (isMisc) {
-		let miscParams = `&markerName=${markerName}&markerLocation=${JSON.stringify(location)}&markerMap=${map}`;
+	} else if (!isIntel) {
+		let miscParams = `&markerName=${markerName}&markerType=${itemType}&markerLocation=${JSON.stringify(location)}&markerMap=${map}`;
 		finalURL += miscParams;
 	}
 	window.open(encodeURI(finalURL));
@@ -92,16 +90,6 @@ export const getIntelById = (intelId: string) => {
 	if (intelId) {
 		let matchedIntel = IntelStore.find(item => item.id === intelId);
 		return matchedIntel;
-	}
-	return null;
-};
-
-const getMiscMarkerByIdAndMap = (itemId: string, currentMap: MapItem) => {
-	if (itemId) {
-		let matchedMisc = AllMiscStores()[currentMap.id!].find(
-			item => item.id === itemId
-		);
-		return matchedMisc;
 	}
 	return null;
 };
