@@ -30,64 +30,12 @@ body:
     validations:
       required: true
 
-  - type: dropdown
+  - type: input
     id: markerType
     attributes:
       label: Type of Misc Marker
-      description: What type of Misc Marker is it?
-      options:
-        - Aether Crystal
-        - Aether Reactor
-        - Aether Rift
-        - Aetherial Orb
-        - Air Support Console
-        - Ammo Crate
-        - Arsenal
-        - Collection Unit
-        - Crafting Table
-        - Deadshot Daiquiri
-        - Death Perception
-        - Demented Echo
-        - Der Wunderfizz
-        - Dragon Rocket
-        - Elemental Pop
-        - Escort
-        - Essence Drop
-        - Fishing
-        - Horde
-        - Jugger-Nog
-        - Jump Pad
-        - Klaus Recall Radio
-        - Landing Pad
-        - Maxis Radio
-        - Mule Kick
-        - Music radio
-        - Mystery Box Location
-        - Omega Radio
-        - Orda
-        - PHD Slider
-        - Pack-a-Punch
-        - Power Switch
-        - Projector
-        - Purple Challenge
-        - Quick Revive
-        - Radio
-        - Rampage Inducer
-        - Red Aether
-        - Red Challenge Chest
-        - Requiem Radio
-        - Scrap Heap
-        - Signal
-        - Speed Cola
-        - Stamin-Up
-        - Stone Monkey
-        - Teleporter
-        - Tombstone
-        - Trap
-        - Trial Computer
-        - Wall Buy
-        - Zipline
-        - other (please specify in "Any Other Info")
+      description: What type of Marker is it?
+      placeholder: e.g. Easter Egg Step, Crafting Table, Mystery Box, Radio, Trap etc.
     validations:
       required: true
 

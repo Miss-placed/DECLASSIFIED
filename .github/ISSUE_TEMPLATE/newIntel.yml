@@ -56,16 +56,12 @@ body:
         - Season 6
     validations:
       required: true
-  - type: dropdown
+  - type: input
     id: intelType
     attributes:
       label: Type of intel
       description: What type of intel is it?
-      options:
-        - Radio Transmission
-        - Audio Log
-        - Document
-        - Artifact
+      placeholder: e.g. Radio Transmission, Audio Log, Document, Artifact
     validations:
       required: true
   - type: textarea
