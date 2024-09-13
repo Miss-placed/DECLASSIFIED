@@ -1,0 +1,91 @@
+name: New Misc Marker
+description: Help us by identifying a new Misc Marker we do not have yet.
+title: 'New Misc Marker: MARKER_NAME [MAP]'
+labels: ['New Misc Marker']
+assignees:
+  - Odinnh
+  - sol3uk
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to help us improve our app! 
+        Please put the name of the Misc Marker in the title of the issue.
+  - type: dropdown
+    id: gameId
+    attributes:
+      label: Game
+      description: Which game are we talking about?
+      options:
+        - Cold War
+        - Black Ops 6
+    validations:
+      required: true
+  - type: input
+    id: markerName
+    attributes:
+      label: Name
+      description: Provide the title of the Marker, close as possible to what is in-game.
+      placeholder: e.g. Demented Echo
+    validations:
+      required: true
+
+  - type: input
+    id: markerType
+    attributes:
+      label: Type of Misc Marker
+      description: What type of Marker is it?
+      placeholder: e.g. Easter Egg Step, Crafting Table, Mystery Box, Radio, Trap etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: markerDescription
+    attributes:
+      label: Description
+      description: What can you do with it? Where do you find it?
+      placeholder: e.g. Destroy it before it touches you to get a reward.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: markerMap
+    attributes:
+      label: Map
+      description: What map can you find the Misc Marker? (The map should have auto filled in the title, check this is also set)
+      options:
+        - allOutbreakMaps
+        - zoo
+        - ruka
+        - duga
+        - alpine
+        - golova
+        - sanatorium
+        - collateral
+        - armada
+        - dieMaschine
+        - dieMaschine_underground
+        - firebaseZ
+        - firebaseZ_spawn
+        - mauerDerToten
+        - mauerDerToten_streets
+        - other (what? a new map?!)
+    validations:
+      required: true
+
+  - type: input
+    id: markerLocation
+    attributes:
+      label: Location Coordinates
+      description: These are coordinates, you can get them by pressing f12 type "debug = true" and clicking on the map. Alternatively, use the contribute button and you'll be redirected here with the location automatically populated.
+      placeholder: e.g. [-110.29555128702799, 137.5]
+    validations:
+      required: true
+
+  - type: textarea
+    id: extraInfo
+    attributes:
+      label: Any Other Info
+      description: is there any other/extra info you need to provide us?
+    validations:
+      required: false
