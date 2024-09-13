@@ -1,7 +1,7 @@
 name: New Intel
 description: Help us by identifying a new piece of intel we do not have yet.
-title: "New Intel: INTEL_NAME [MAP]"
-labels: ["New Intel"]
+title: 'New Intel: INTEL_NAME [MAP]'
+labels: ['New Intel']
 assignees:
   - Odinnh
   - sol3uk
@@ -11,6 +11,16 @@ body:
       value: |
         Thanks for taking the time to help us improve our app! 
         Please put the name of the intel in the title of the issue.
+  - type: dropdown
+    id: gameId
+    attributes:
+      label: Game
+      description: Which game are we talking about?
+      options:
+        - Cold War
+        - Black Ops 6
+    validations:
+      required: true
   - type: input
     id: intelName
     attributes:
@@ -70,7 +80,7 @@ body:
     id: intelMap
     attributes:
       label: Map
-      description: What map can you find the intel? (The map should have auto filled as a label as well, check this is also set)
+      description: What map can you find the intel?
       options:
         - allOutbreakMaps
         - zoo
@@ -89,6 +99,8 @@ body:
         - mauerDerToten_streets
         - forsaken
         - forsaken_underground
+        - liberty_falls
+        - terminus
         - other (what? a new map?!)
     validations:
       required: true
@@ -100,7 +112,7 @@ body:
       placeholder: e.g. [-110.29555128702799, 137.5]
     validations:
       required: true
-      
+
   - type: textarea
     id: extraInfo
     attributes:

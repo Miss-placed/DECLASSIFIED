@@ -1,7 +1,7 @@
 name: Misc Marker Fix
 description: Help us by submitting an edit to an existing Misc Marker where the information may be incorrect.
-title: "Misc Marker Fix: MARKER_NAME [MAP][ID]"
-labels: ["Misc Marker Fix"]
+title: 'Misc Marker Fix: MARKER_NAME [MAP][ID]'
+labels: ['Misc Marker Fix']
 assignees:
   - Odinnh
   - sol3uk
@@ -11,7 +11,16 @@ body:
       value: |
         Thanks for taking the time to help us improve our app! 
         Please put the name of the Misc Marker in the title of the issue if not automatically populated.
-
+  - type: dropdown
+    id: gameId
+    attributes:
+      label: Game
+      description: Which game are we talking about?
+      options:
+        - Cold War
+        - Black Ops 6
+    validations:
+      required: true
   - type: input
     id: markerName
     attributes:

@@ -1,7 +1,7 @@
 name: New Misc Marker
 description: Help us by identifying a new Misc Marker we do not have yet.
-title: "New Misc Marker: MARKER_NAME [MAP]"
-labels: ["New Misc Marker"]
+title: 'New Misc Marker: MARKER_NAME [MAP]'
+labels: ['New Misc Marker']
 assignees:
   - Odinnh
   - sol3uk
@@ -11,7 +11,16 @@ body:
       value: |
         Thanks for taking the time to help us improve our app! 
         Please put the name of the Misc Marker in the title of the issue.
-
+  - type: dropdown
+    id: gameId
+    attributes:
+      label: Game
+      description: Which game are we talking about?
+      options:
+        - Cold War
+        - Black Ops 6
+    validations:
+      required: true
   - type: input
     id: markerName
     attributes:
@@ -33,7 +42,7 @@ body:
         - Aetherial Orb
         - Air Support Console
         - Ammo Crate
-        - Arsenal 
+        - Arsenal
         - Collection Unit
         - Crafting Table
         - Deadshot Daiquiri
