@@ -72,32 +72,11 @@ body:
       placeholder: Obtained from a Mimic drop.
     validations:
       required: false
-  - type: dropdown
+  - type: input
     id: intelMap
     attributes:
       label: Map
       description: What map can you find the intel?
-      options:
-        - allOutbreakMaps
-        - zoo
-        - ruka
-        - duga
-        - alpine
-        - golova
-        - sanatorium
-        - collateral
-        - armada
-        - dieMaschine
-        - dieMaschine_underground
-        - firebaseZ
-        - firebaseZ_spawn
-        - mauerDerToten
-        - mauerDerToten_streets
-        - forsaken
-        - forsaken_underground
-        - liberty_falls
-        - terminus
-        - other (what? a new map?!)
     validations:
       required: true
   - type: input
