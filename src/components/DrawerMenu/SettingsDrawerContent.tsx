@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import BugReportIcon from '@mui/icons-material/BugReport';
 import CoffeeIcon from '@mui/icons-material/Coffee';
 import ExpandLess from '@mui/icons-material/ExpandLess';
@@ -31,7 +32,7 @@ const SettingsMenuContainer = styled(Paper)`
     padding: 10px;
 `
 export const SettingsDrawerContent = () => {
-    const { isDebugMode, setIsDebugMode } = useUserContext();
+    const { isDebugMode, setIsDebugMode, setContributionState } = useUserContext();
     const { toggleDrawer } = useContext(DeclassifiedContext);
     const { triggerDialog } = useNotification();
     const [contributeOpen, setContributeOpen] = useState(true);
@@ -44,14 +45,20 @@ export const SettingsDrawerContent = () => {
         setIsDebugMode(!isDebugMode);
     };
 
-    const handleContributeNewMarker = (contributionType: ContributionType): void => {
+    const handleContributeNewMarker = (): void => {
+        toggleDrawer({ isOpen: false });
 
-        triggerDialog("Click on the map to select the location of your contribution, after clicking you will be redirected to github. Thanks for helping out!", { trueText: 'I Understand', falseText: 'Nevermind' },
-            (userAgreed) => {
-                console.log(userAgreed);
+        triggerDialog("Click on the map to select the location of your contribution, after clicking you will be redirected to github. Thanks for helping out!",
+            { trueText: 'I Understand', falseText: 'Nevermind' },
+            (userAgreed, formData) => {
+                console.log(userAgreed, formData);
                 if (userAgreed) {
-                    toggleDrawer({ isOpen: false });
+                    setContributionState({ isContributing: true, markerName: formData.markerName, itemType: formData.itemType });
                 }
+            },
+            {
+                markerName: "Marker Name (Title of Intel or Name of Point of Interest)",
+                itemType: "What Type Of Marker Is This? e.g. Intel, EE, Misc"
             });
     }
 
@@ -80,18 +87,12 @@ export const SettingsDrawerContent = () => {
                     </ListItemButton>
                     <Collapse in={contributeOpen} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                            {/* <ListItemButton sx={{ pl: 4 }} onClick={() => handleContributeNewMarker(ContributionType.Intel)}>
+                            <ListItemButton sx={{ pl: 4 }} onClick={() => handleContributeNewMarker()}>
                                 <ListItemIcon>
                                     <AddCircleOutlineIcon />
                                 </ListItemIcon>
                                 <ListItemText primary="Add New Intel" />
                             </ListItemButton>
-                            <ListItemButton sx={{ pl: 4 }} onClick={() => handleContributeNewMarker(ContributionType.Misc)}>
-                                <ListItemIcon>
-                                    <AddCircleOutlineIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Add New Miscellaneous or Easter Egg Marker" />
-                            </ListItemButton> */}
                             <ListItemButton sx={{ pl: 4 }} component="a" href="https://github.com/Miss-placed/DECLASSIFIED/issues/new/choose" target="_blank" rel="noopener noreferrer">
                                 <ListItemIcon>
                                     <RateReviewIcon />

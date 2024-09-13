@@ -8,11 +8,13 @@ import {
 	faMinus,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { LatLngTuple } from 'leaflet';
 import { useContext } from 'react';
 import { useMapEvent, useMapEvents } from 'react-leaflet';
 import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { useNotification } from '../../contexts/NotificationContext/notificationContext';
 import { useUserContext } from '../../contexts/UserContext/userContextProvider';
+import { redirectNewContributionToGithub } from '../../helpers/github';
 import { IntelAndEasterEggDrawerContent } from '../DrawerMenu/IntelAndEasterEggDrawerContent';
 import { SettingsDrawerContent } from '../DrawerMenu/SettingsDrawerContent';
 
@@ -40,22 +42,24 @@ const StyledUiContainer = styled.div<{ $isMobile?: boolean }>`
 `;
 
 export const UserInterface = () => {
-	const { isMobile, isDebugMode } = useUserContext();
+	const { isMobile, isDebugMode, contributionState, setContributionState } = useUserContext();
 	const { triggerNotification } = useNotification();
-	const { toggleDrawer } = useContext(DeclassifiedContext);
+	const { toggleDrawer, currentMap } = useContext(DeclassifiedContext);
 	const mapInstance = useMapEvents({});
 
 	useMapEvent('click', props => {
+		let clickLocation: LatLngTuple = [props.latlng.lat, props.latlng.lng]
+
 		if (isDebugMode) {
-			let location = '[' + props.latlng.lat + ', ' + props.latlng.lng + ']';
-			console.log(location);
-			navigator.clipboard.writeText(location);
+			console.log(clickLocation);
+			navigator.clipboard.writeText(clickLocation.toString());
 			triggerNotification('Location Copied to Clipboard');
 		}
-		// TODO : Add the ability to submit a new location to the map
-		// else if (app.submittingLocation) {
-		//     redirectToGithub({ itemType: app.currentContribType, issueType: "New", location: location });
-		// }
+
+		if (contributionState.isContributing && currentMap) {
+			redirectNewContributionToGithub(contributionState.markerName, contributionState.itemType, currentMap, clickLocation);
+			setContributionState({ isContributing: false, markerName: null, itemType: null });
+		}
 	});
 
 	return (

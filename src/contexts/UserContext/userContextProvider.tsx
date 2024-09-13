@@ -8,6 +8,12 @@ const initialContextValues = {
 	setIsDebugMode: () => { },
 	sharedMapItemId: null,
 	updateMapItemId: () => { },
+	contributionState: {
+		isContributing: false,
+		markerName: null,
+		itemType: null,
+	},
+	setContributionState: () => { },
 };
 
 export const UserContext =
@@ -15,10 +21,30 @@ export const UserContext =
 
 export const UserContextProvider = ({ children }) => {
 	const [isMobile, setIsMobile] = useState(initialContextValues.isMobile);
-	const [isDebugMode, setIsDebugMode] = useState(
-		initialContextValues.isDebugMode
-	);
+	const [isDebugMode, setIsDebugMode] = useState(initialContextValues.isDebugMode);
 	const [sharedMapItemId, setMapItemId] = useState<string | null>(null);
+	const [contributionState, setContributionStateState] = useState<{
+		isContributing: boolean;
+		markerName: string | null;
+		itemType: string | null;
+	}>({
+		isContributing: initialContextValues.contributionState.isContributing,
+		markerName: initialContextValues.contributionState.markerName,
+		itemType: initialContextValues.contributionState.itemType,
+	});
+
+	const setContributionState = (
+		newState: Partial<{
+			isContributing: boolean;
+			markerName: string | null;
+			itemType: string | null;
+		}>
+	) => {
+		setContributionStateState((prevState) => ({
+			...prevState,
+			...newState,
+		}));
+	};
 
 	const updateMapItemId = (id: string | undefined) => {
 		if (id) {
@@ -42,6 +68,8 @@ export const UserContextProvider = ({ children }) => {
 				setIsDebugMode,
 				sharedMapItemId,
 				updateMapItemId,
+				contributionState,
+				setContributionState,
 			}}
 		>
 			{children}

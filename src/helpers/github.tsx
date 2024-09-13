@@ -1,4 +1,4 @@
-import { LatLngExpression } from 'leaflet';
+import { LatLngExpression, LatLngTuple } from 'leaflet';
 import { MapItem, MiscMarker } from '../classes';
 import { IconFileNames } from '../data/icons';
 import { IntelStore, IntelType, MapIds } from '../data/intel';
@@ -19,20 +19,20 @@ export const redirectBugReportToGithub = (
 	let issueTemplate = '';
 	let label = '';
 	let entityName = '';
-	let map = currentMap.id ?? '';
+	let map = currentMap.id || '';
 	if (isIntel) {
 		issueTemplate = ContributionTemplates.intelEditId;
 		label = ContributionTemplates.intelEditTitle;
 		let intel = getIntelById(id);
-		entityName = intel?.title ?? '';
-		map = intel?.map ?? '';
+		entityName = intel?.title || '';
+		map = intel?.map || '';
 	} else if (isMisc) {
 		issueTemplate = ContributionTemplates.miscEditId;
 		label = ContributionTemplates.miscEditTitle;
 		const miscResult = getMiscMarkerById(id);
 		if (miscResult) {
 			const [mapId, miscItem] = miscResult;
-			entityName = miscItem.title ?? '';
+			entityName = miscItem.title || '';
 			map = mapId;
 		}
 	}
@@ -54,17 +54,16 @@ export const redirectBugReportToGithub = (
 }
 
 export const redirectNewContributionToGithub = (
-	id: string | null,
 	newMarkerName: string | null,
-	itemType: IntelType | IconFileNames,
+	itemType: IntelType | IconFileNames | string | null, // TODO : Add dropdowns to form so I can enforce only types we have
 	currentMap: MapItem,
-	location: LatLngExpression | null = null
+	location: LatLngTuple
 ) => {
 	const isIntel = Object.values(IntelType).includes(itemType as IntelType);
 	const isMisc = Object.values(IconFileNames).includes(itemType as IconFileNames);
 	let issueTemplate = '';
 	let label = '';
-	let map = currentMap.id ?? '';
+	let map = currentMap.id || '';
 	if (isIntel) {
 		issueTemplate = ContributionTemplates.intelNewId;
 		label = ContributionTemplates.intelNewTitle;
@@ -74,16 +73,16 @@ export const redirectNewContributionToGithub = (
 		label = ContributionTemplates.miscNewTitle;
 	}
 	let labels = `${label},${map}`;
-
-	let issueTitle = `${label}: ${newMarkerName ?? 'YOUR_NEW_MARKER_NAME'} [${map}]`;
+	let markerName = newMarkerName || 'YOUR_NEW_MARKER_NAME';
+	let issueTitle = `${label}: ${markerName} [${map}]`;
 	let finalURL = `${domain}?assignees=${githubAssignees}&labels=${labels}&template=${issueTemplate}.yml&title=${issueTitle}`;
 
 	if (isIntel) {
-		let intelParams = `&intelId=${id}&intelName=${newMarkerName}&intelLocation=${location}&intelMap=${map}`;
+		let intelParams = `&intelName=${markerName}&intelLocation=${JSON.stringify(location)}&intelMap=${map}`;
 		finalURL += intelParams;
 	}
 	if (isMisc) {
-		let miscParams = `&markerId=${id}&markerName=${newMarkerName}&markerLocation=${location}&markerMap=${map}`;
+		let miscParams = `&markerName=${markerName}&markerLocation=${JSON.stringify(location)}&markerMap=${map}`;
 		finalURL += miscParams;
 	}
 	window.open(encodeURI(finalURL));

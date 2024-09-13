@@ -5,7 +5,9 @@ interface NotificationContextProps {
 	triggerDialog: (message: string, buttonText: {
 		trueText: string;
 		falseText: string;
-	} | undefined, callback: (result: boolean) => void) => void
+	} | undefined, callback: (result: boolean, formData?: any) => void, formFields?: {
+		[key: string]: string;
+	}) => void
 }
 
 export const NotificationContext = createContext<

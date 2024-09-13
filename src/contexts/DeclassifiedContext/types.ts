@@ -53,4 +53,16 @@ export interface UserContextProps {
 	setIsDebugMode: (state: boolean) => void;
 	sharedMapItemId: string | null;
 	updateMapItemId: (id: string) => void;
+	contributionState: {
+		isContributing: boolean;
+		markerName: string | null;
+		itemType: string | null;
+	}
+	setContributionState: (
+		newState: Partial<{
+			isContributing: boolean;
+			markerName: string | null;
+			itemType: string | null;
+		}>
+	) => void;
 }
