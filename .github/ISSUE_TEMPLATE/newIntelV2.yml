@@ -1,0 +1,118 @@
+name: New Intel
+description: Help us by identifying a new piece of intel we do not have yet.
+title: 'New Intel: INTEL_NAME [MAP]'
+labels: ['New Intel']
+assignees:
+  - Odinnh
+  - sol3uk
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to help us improve our app! 
+        Please put the name of the intel in the title of the issue.
+  - type: dropdown
+    id: gameId
+    attributes:
+      label: Game
+      description: Which game are we talking about?
+      options:
+        - Cold War
+        - Black Ops 6
+    validations:
+      required: true
+  - type: input
+    id: intelName
+    attributes:
+      label: Name
+      description: Provide the title of the intel, close as possible to what is in-game.
+      placeholder: e.g. Maxis Scarf
+    validations:
+      required: true
+  - type: dropdown
+    id: intelFaction
+    attributes:
+      label: Faction
+      description: What faction does the intel belong to?
+      options:
+        - Requiem
+        - Omega
+        - Maxis
+        - Dark Aether
+    validations:
+      required: true
+  - type: dropdown
+    id: intelSeason
+    attributes:
+      label: Season
+      description: What season did the intel get released?
+      options:
+        - PreSeason
+        - Season 1
+        - Season 2
+        - Season 3
+        - Season 4
+        - Season 5
+        - Season 6
+    validations:
+      required: true
+  - type: input
+    id: intelType
+    attributes:
+      label: Type of intel
+      description: What type of intel is it?
+      placeholder: e.g. Radio Transmission, Audio Log, Document, Artifact
+    validations:
+      required: true
+  - type: textarea
+    id: intelDescription
+    attributes:
+      label: Description
+      description: Where do you find it? How does it drop?
+      placeholder: Obtained from a Mimic drop.
+    validations:
+      required: false
+  - type: dropdown
+    id: intelMap
+    attributes:
+      label: Map
+      description: What map can you find the intel?
+      options:
+        - allOutbreakMaps
+        - zoo
+        - ruka
+        - duga
+        - alpine
+        - golova
+        - sanatorium
+        - collateral
+        - armada
+        - dieMaschine
+        - dieMaschine_underground
+        - firebaseZ
+        - firebaseZ_spawn
+        - mauerDerToten
+        - mauerDerToten_streets
+        - forsaken
+        - forsaken_underground
+        - liberty_falls
+        - terminus
+        - other (what? a new map?!)
+    validations:
+      required: true
+  - type: input
+    id: intelLocation
+    attributes:
+      label: Location Coordinates
+      description: These are coordinates, you can get them by pressing f12 type "debug = true" and clicking on the map. Alternatively, use the submit new intel button and you'll be redirected here with the location automatically populated.
+      placeholder: e.g. [-110.29555128702799, 137.5]
+    validations:
+      required: true
+
+  - type: textarea
+    id: extraInfo
+    attributes:
+      label: Any Other Info
+      description: is there any other/extra info you need to provide us?
+    validations:
+      required: false
