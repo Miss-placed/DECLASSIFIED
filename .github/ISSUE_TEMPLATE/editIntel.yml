@@ -1,7 +1,7 @@
 name: Intel Fix
 description: Help us by submitting an edit to an existing piece of intel where the information may be incorrect.
-title: "Intel Fix: INTEL_NAME [MAP][ID]"
-labels: ["Intel Fix"]
+title: 'Intel Fix: INTEL_NAME [MAP][ID]'
+labels: ['Intel Fix']
 assignees:
   - Odinnh
   - sol3uk
@@ -11,7 +11,16 @@ body:
       value: |
         Thanks for taking the time to help us improve our app! 
         Please put the name of the intel in the title of the issue if not automatically populated.
-        
+  - type: dropdown
+    id: gameId
+    attributes:
+      label: Game
+      description: Which game are we talking about?
+      options:
+        - Cold War
+        - Black Ops 6
+    validations:
+      required: true
   - type: input
     id: intelName
     attributes:
@@ -29,7 +38,7 @@ body:
       placeholder: e.g. MS3Ar2
     validations:
       required: false
-      
+
   - type: textarea
     id: intelFixNeeded
     attributes:
