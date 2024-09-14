@@ -46,7 +46,11 @@ export const MapMarkers = () => {
 	const renderedAudioMarkers = renderIntelMapMarkers(currentMap!.id!, IntelType.Audio);
 	const renderedArtifactMarkers = renderIntelMapMarkers(currentMap!.id!, IntelType.Artifact);
 
-	// TODO : Refactor this so it's neater. This is a hacky solution to force the layer controls to be rendered in order
+	function AnyResultsInMarkerStore(markerStore: IMisc) {
+		return markerStore[currentMap!.id!] && markerStore[currentMap!.id!].length > 0;
+	}
+
+	// TODO : Refactor this so it's neater. This is a hacky solution to force the layer controls to be rendered in order (I don't think this works)
 	const renderOrderOfLayers = [
 		renderedAudioMarkers.length > 0 ? (
 			<LayersControl.Overlay
@@ -70,7 +74,7 @@ export const MapMarkers = () => {
 			</LayersControl.Overlay>
 		) : null
 		,
-		PerkStore[currentMap!.id!] ? (
+		AnyResultsInMarkerStore(PerkStore) ? (
 			<LayersControl.Overlay
 				name={MarkerLayerTypes.perks.title}
 				checked={isChecked /* TODO: SWAP WITH USER PREFS */}
@@ -79,7 +83,7 @@ export const MapMarkers = () => {
 			</LayersControl.Overlay>
 		) : null
 		,
-		MiscStore[currentMap!.id!] ? (
+		AnyResultsInMarkerStore(MiscStore) ? (
 			<LayersControl.Overlay
 				name={MarkerLayerTypes.misc.title}
 				checked={isChecked /* TODO: SWAP WITH USER PREFS */}
@@ -88,7 +92,7 @@ export const MapMarkers = () => {
 			</LayersControl.Overlay>
 		) : null
 		,
-		StaticEggStore[currentMap!.id!] ? (<LayersControl.Overlay
+		AnyResultsInMarkerStore(StaticEggStore) ? (<LayersControl.Overlay
 			name={MarkerLayerTypes.easterEggs.title}
 			checked={isChecked /* TODO: SWAP WITH USER PREFS */}
 		>
@@ -136,3 +140,4 @@ export const MapMarkers = () => {
 		</>
 	);
 };
+
