@@ -1,0 +1,77 @@
+import styled from '@emotion/styled';
+import L from 'leaflet';
+import { useContext, useEffect, useState } from 'react';
+import { Marker, Popup, useMapEvents } from 'react-leaflet';
+import { MiscMarker } from '../../classes';
+import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
+import { useUserContext } from '../../contexts/UserContext/userContextProvider';
+import { customMiscIconBounds, getMiscIconUri } from '../../data/icons';
+import { MiscDetailItem } from '../MiscDetailsItem';
+
+export const MiscMapMarker = ({
+	id,
+	title,
+	desc,
+	icon,
+	typeDesc,
+	loc,
+}: MiscMarker) => {
+	const { setCurrentMapWithValidation: setCurrentMap, currentMap } = useContext(DeclassifiedContext);
+	const mapInstance = useMapEvents({});
+	const renderedIcon = miscIconInit(icon);
+	const [markerInstance, setPopupInstance] = useState<L.Marker | null>(null); // State to hold the Popup instance
+	const { sharedMapItemId } = useUserContext();
+
+	useEffect(() => {
+		if (sharedMapItemId === id && markerInstance) {
+			markerInstance.openPopup();
+		}
+	}, [sharedMapItemId, id, markerInstance, mapInstance]);
+
+	return (
+		<Marker position={loc} icon={renderedIcon} ref={setPopupInstance}>
+			<StyledPopup>
+				<MiscDetailItem
+					id={id}
+					title={title}
+					desc={desc}
+					typeDesc={typeDesc}
+					loc={loc}
+					icon={icon}
+					isMarker={true} />
+			</StyledPopup>
+		</Marker>
+	);
+};
+
+export const miscIconInit = (iconFileName?: string) => {
+	const { iconSize, iconAnchor, popupAnchor } =
+		(iconFileName && customMiscIconBounds[iconFileName]) ?? {};
+	return L.icon({
+		iconUrl: getMiscIconUri(iconFileName),
+		iconSize: iconSize ?? [30, 30],
+		iconAnchor: iconAnchor ?? [15, 15],
+		popupAnchor: popupAnchor ?? [0, -15],
+		className: 'misc-icon',
+	});
+};
+
+
+
+const StyledPopup = styled(Popup)`
+	background-color: var(--clr-bg-inverted);
+	border-radius: 12px !important;
+	box-shadow: unset !important;
+	margin: 0 !important;
+	.leaflet-popup-content-wrapper {
+		.leaflet-popup-content {
+			padding: 0 !important;
+			margin: 0 !important;
+		}
+	}
+	.leaflet-popup-close-button {
+		display: none !important;
+	}
+`;
+
+

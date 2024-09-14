@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DECLASSIFIED - Call of Duty: Black Ops Cold War Intel Map</title>
+    <meta name="description"
+        content="An unofficial Call of Duty: Black Ops Cold War interactive collectables map and calling card challenge tracker. Keep track of your progress on which intel and calling cards you still need to collect.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="icon" href="./favicon-32x32.png" type="image/png">
+    <script>
+        let debug = false
+    </script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css">
+    <link rel="stylesheet" href="assets/style/leaflet-override.css">
+    <link rel="stylesheet" href="assets/style/hideDebugButton.css" disabled>
+
+</head>
+
+<body onload="onLoad()" class="dark">
+    <header>
+        <!-- Header nav Generated in v2.js -->
+    </header>
+    <div id="worldMap"></div>
+    <!-- UI -->
+
+    <div id="ui">
+            <div>
+                <div class="zoom-container ui">
+                    <button class="zoom- btn ui" onclick="mapInstance.zoomIn()"><i class="fas fa-add"></i></button>
+                    <button class="zoom- btn ui" onclick="mapInstance.zoomOut()"> <i class="fas fa-minus"></i></button>
+                </div>
+                <div>
+                    <!-- <button class="btn ui" id="color-scheme-toggle">
+                        <i class="fas fa-layer-group"></i>
+                    </button> -->
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button class="btn ui" onclick="openModal(modalSet.intelOverview)"><i
+                            class="fas fa-folder-open"></i>
+                    </button>
+                    <button class="btn ui" onclick="openModal(modalSet.settingsMain)"><i class="fas fa-gear"></i>
+                    </button>
+                    <a class="btn ui" href="./challenge.html"><i class="fas fa-list"></i> </a>
+                </div>
+                <div>
+                    <button class="btn ui" id="color-scheme-toggle" onclick="setColorScheme()"><i
+                            class="fas fa-moon"></i>
+                    </button>
+                    <a title="Join us on discord!" href="https://discord.gg/4Xqj8XntFe" target="_blank" class="btn ui"
+                        id="discord"><i class="fab fa-discord"></i> </a>
+                    <a title="Help us out on Github!" href="https://github.com/Miss-placed/DECLASSIFIED" target="_blank"
+                        class="btn ui" id="github"><i class="fab fa-github"></i> </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal popups -->
+        <section class="modal-bg -hidden">
+            <!-- FILTERS -->
+            <div class="modal -hidden" id="intel-filters">
+
+                <fieldset id="season-multi-select" class="droopy">
+                    <legend>Seasons</legend>
+                    <label class="title">Seasons</label>
+                    <label class="list-selection"></label>
+                    <ul>
+                        <li>
+                            <label for="onslaught">Onslaught</label>
+                            <input type="checkbox" id="onslaught" value="Onslaught" class="check"
+                                data-filter="onslaught">
+                        </li>
+                        <li>
+                            <label for="season0">Pre Season</label>
+                            <input type="checkbox" id="season0" value="Pre Season" class="check"
+                                data-filter="preseason">
+                        </li>
+                        <li>
+                            <label for="season1">Season 1</label>
+                            <input type="checkbox" id="season1" value="Season 1" class="check" data-filter="season1">
+                        </li>
+                        <li>
+                            <label for="season2">Season 2 </label>
+                            <input type="checkbox" id="season2" value="Season 2" class="check" data-filter="season2">
+                        </li>
+                        <li>
+                            <label for="season3">Season 3</label>
+                            <input type="checkbox" id="season3" value="Season 3" class="check" data-filter="season3">
+                        </li>
+                        <li>
+                            <label for="season4">Season 4</label>
+                            <input type="checkbox" id="season4" value="Season 4" class="check" data-filter="season4">
+                        </li>
+                        <li>
+                            <label for="season5">Season 5</label>
+                            <input type="checkbox" id="season5" value="Season 5" class="check" data-filter="season5">
+                        </li>
+                        <li>
+                            <label for="season6">Season 6</label>
+                            <input type="checkbox" id="season6" value="Season 6" class="check" data-filter="season6">
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <fieldset id="faction-multi-select" class="droopy">
+                    <legend>Factions</legend>
+                    <label class="title">Factions</label>
+                    <label
+                        class="list-selection"><span>Requiem</span><span>Requiem</span><span>Requiem</span><span>Requiem</span><span>Requiem</span></label>
+                    <ul>
+                        <li>
+                            <label for="requiem">Requiem</label>
+                            <input type="checkbox" id="requiem" value="Requiem" class="check" data-filter="requiem">
+                        </li>
+                        <li>
+                            <label for="omega">Omega</label>
+                            <input type="checkbox" id="omega" value="Omega" class="check" data-filter="omega">
+                        </li>
+                        <li>
+                            <label for="maxis">Maxis</label>
+                            <input type="checkbox" id="maxis" value="Maxis" class="check" data-filter="maxis">
+                        </li>
+                        <li>
+                            <label for="darkAether">Dark Aether</label>
+                            <input type="checkbox" id="darkAether" value="Dark Aether" class="check"
+                                data-filter="darkAether">
+                        </li>
+                    </ul>
+                </fieldset>
+
+
+
+                <div id="intel-type-select">
+                    <span>
+                        <input type="checkbox" id="document-check" class="type-check -hidden" data-filter="docs">
+                        <label class="btn type" type="Documents" value="5 / 10" for="document-check"></label>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="artifact-check" class="type-check -hidden" data-filter="artifact">
+                        <label class="btn type" type="Artifacts" value="5 / 10" for="artifact-check"></label>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="audio-check" class="type-check -hidden" data-filter="audio">
+                        <label class="btn type" type="Audio Logs" value="5 / 10" for="audio-check"></label>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="radio-check" class="type-check -hidden" data-filter="radio">
+                        <label class="btn type" type="Radio Transmissions" value="5 / 10" for="radio-check"></label>
+                    </span>
+                </div>
+
+                <label id="curr-map-filter-label" class="chk-btn" for="curr-map-filter" onchange="TriggerSearch()">
+                    Filter by Current Map <input type="checkbox" name="curr-map-filter" id="curr-map-filter"
+                        class="-small toggle" placeholder="_">
+                </label>
+                <label id="show-collected-filter-label" class="chk-btn" for="show-collected-filter"
+                    onchange="TriggerSearch()">
+                    Hide Collected <input type="checkbox" name="show-collected-filter" id="show-collected-filter"
+                        class="-small toggle" placeholder="_">
+                </label>
+            </div>
+
+
+            <div class="modal -hidden" id="intel-list">
+                <div id="search-form">
+                    <input id="search-term" type="search" placeholder="Search Intel...">
+                </div>
+
+                <div id="filtered-intel">
+                    <!-- <button class="btn to-intel" target="intel-desc" id="RS0Au1">The Incident</button> -->
+                </div>
+                <div id="more-options">
+                    <button onclick="selectAll()" class="btn">Select All
+                        <i class="fas fa-plus-square" aria-hidden="true"></i>
+                    </button>
+                    <button onclick="deSelectAll()" class="btn">Deselect All
+                        <i class="fas fa-minus-square" aria-hidden="true"></i>
+                    </button>
+                    <button onclick="markSelected()" class="btn">Declassify
+                        <i class="fas fa-check-square" aria-hidden="true"></i>
+                    </button>
+                    <button onclick="unmarkSelected()" class="btn">Classify
+                        <i class="fas fa-ban" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="modal -big -hidden" id="intel-detail">
+                <div class="sub-modal" id="description">
+
+                </div>
+            </div>
+            <!-- intel stats modal -->
+            <!-- displays totals as a list and as donuts, includes searchbar -->
+            <div class="modal -hidden" id="intel-stats">
+                <div class="sub-modal ">
+                    <div id="faction-donut" class="graph "></div>
+                    <div id="totals">
+                        <ul class="submodal-list" id="icons-faction">
+                            <li><img class="faction-list-icon " src="assets/img/icons/faction-requiem-icon.png "
+                                    alt="Requiem total ">
+                            </li>
+                            <li><img class="faction-list-icon " src="assets/img/icons/faction-omega-icon.png "
+                                    alt="Omega total ">
+                            </li>
+                            <li><img class="faction-list-icon " src="assets/img/icons/faction-maxis-icon.png "
+                                    alt="Maxis total ">
+                            </li>
+                            <li><img class="faction-list-icon " src="assets/img/icons/faction-darkAether-icon.png "
+                                    alt="Dark aether total ">
+                            </li>
+                        </ul>
+
+                        <ul class="submodal-list" id="faction-total-collected">
+                            <li id="requiem-totals"></li>
+                            <li id="omega-totals"></li>
+                            <li id="maxis-totals"></li>
+                            <li id="dark-aether-totals"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal settings -hidden" id="settings">
+
+            </div>
+            <div class="modal settings -hidden" id="settings-detail">
+
+            </div>
+        </section>
+
+
+        <section id="lightbox-container" class="-hidden" onclick="hideElement(this)">
+            <img id="lightbox" src="#">
+        </section>
+        <script>
+            const v2Test = 'hi'
+            const page = "map";
+
+            function hideElement(ele) {
+                ele.classList.toggle('-hidden')
+            }
+
+        </script>
+        <!-- Notifications -->
+        <section id="notification-popup"></section>
+        <section id="error-notif">
+            <h1 id="title">ERROR</h1>
+            <p id="error-p"></p>
+            <button id="error-button"></button>
+        </section>
+        <i id="hidden-svg"></i>
+
+        <!-- scripts -->
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="" async defer></script>
+        <script src="assets/js/mapsvg.js"></script>
+        <script src="assets/js/icons.js"></script>
+        <script src="assets/js/sharedModels.js"></script>
+        <script src="assets/js/models.js"></script>
+
+        <script src="assets/js/userPrefs.js"></script>
+        <script src="poi/miscV2.js"></script>
+        <script src="poi/poiV2.js"></script>
+        <script src="assets/js/maps.js"></script>
+        <script src="assets/js/mapUtils.js"></script>
+        <script src="assets/js/utils.js"></script>
+        <script src="assets/js/listgeneration.js"></script>
+        <script src="assets/js/filtering.js"></script>
+        <!-- js for generating the Donut in the stats modal -->
+        <script src="assets/js/donut.js"></script>
+        <script src="assets/js/index.js"></script>
+        <script src="assets/js/v2.js"></script>
+        <script>
+            document.querySelectorAll(".droopy").forEach(ele => {
+                ele.addEventListener('change', () => {
+                    let innerHTML = ''
+
+                    ele.querySelectorAll("input[type='checkbox']:checked").forEach(chk => {
+                        innerHTML += `<span>${chk.getAttribute('value')}</span>`
+                    })
+                    if (innerHTML != '') {
+                        ele.classList.add('filled')
+                    } else {
+                        ele.classList.remove('filled')
+                    }
+
+                    ele.querySelector('.list-selection').innerHTML = innerHTML
+                })
+            });
+        </script>
+
+</body>
+
+</html>
