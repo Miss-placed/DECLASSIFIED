@@ -149,6 +149,7 @@ export const MiscStore: IMisc = {
 		new MiscMarker(`qXZCX`, MiscTypes.craftingTable, [307.4422328657983, 199.5]),
 		new MiscMarker(`2Z69d`, MiscTypes.arsenal, [189.36420253469458, 208.85605371524963]),
 		new MiscMarker(`rvI3J`, MiscTypes.mysteryBox, [378.6772711270868, 219]),
+		new MiscMarker(`i1xqT`, MiscTypes.mysteryBox, [174.0092857867172, 308.57965377836797]),
 		new MiscMarker(`htMzr`, MiscTypes.zipline, [146.61019806933353, 174.85745117171348]),
 		new MiscMarker(`qUsdq`, MiscTypes.wallbuy, [333.1876563339571, 200.75], `Krig 6`),
 		new MiscMarker(`_MhF2`, MiscTypes.wallbuy, [287.957458635193, 312], `M16`),
