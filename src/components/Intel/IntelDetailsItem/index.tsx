@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+import ClearIcon from '@mui/icons-material/Clear';
+import DoneIcon from '@mui/icons-material/Done';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Accordion, AccordionDetails, AccordionSummary, Button, Typography } from "@mui/material";
@@ -108,11 +110,11 @@ export const IntelDetailsItem = ({
 									title="collected"
 									onClick={() => deleteCollectedIntel([id])}
 								>
-									<CheckBoxIcon htmlColor="var(--clr-blue)" />
+									<ClearIcon htmlColor="var(--clr-blue)" />
 								</Button>
 							) : (
 								<Button title="collected" onClick={() => addCollectedIntel([id])}>
-									<CheckBoxOutlineBlankIcon htmlColor="var(--clr-blue)" />
+									<DoneIcon htmlColor="var(--clr-blue)" />
 								</Button>
 							)}
 							{IntelHasLocation && mapItem?.mapCanRender ? (
@@ -133,9 +135,7 @@ export const IntelDetailsItem = ({
 									<LocationOnIcon htmlColor="var(--clr-blue)" />
 								</Button>
 							) : (
-								<Button disabled>
-									<LocationOnIcon htmlColor="var(--clr-blue)" />
-								</Button>
+								<></>
 							)}
 							<ShareButton id={id} />
 							<BugReportButton id={id} typeDesc={typeDesc} mapItem={mapItem} />
@@ -246,7 +246,7 @@ const IntelDetails = styled.div`
 
 const StyledIntelActionContainer = styled.div`
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 `;
 
 const IntelSubheading = styled(Typography)`
