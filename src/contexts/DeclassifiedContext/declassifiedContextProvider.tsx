@@ -6,7 +6,6 @@ import {
 	useState,
 } from 'react';
 import { useMapEvent, useMapEvents } from 'react-leaflet';
-import { useNavigate } from 'react-router-dom';
 import { MapItem, MiscMarker } from '../../classes';
 import { EggFormInputs, getEggFilterDefaults } from '../../components/EasterEggs/ListMenu';
 import {
@@ -56,20 +55,6 @@ async function updateUserPreferencesInDB(
 	return await updateUserPreferences(updates);
 }
 
-function debounce<T extends (...args: any[]) => void>(func: T, delay: number): (...args: Parameters<T>) => void {
-	let timeoutId: ReturnType<typeof setTimeout>;
-
-	return (...args: Parameters<T>) => {
-		if (timeoutId) {
-			clearTimeout(timeoutId);
-		}
-		timeoutId = setTimeout(() => {
-			func(...args);
-		}, delay);
-	};
-}
-
-
 export const DeclassifiedContext = createContext<DeclassifiedContextProps>(initialContextValues);
 
 export const DeclassifiedContextProvider = ({ children }) => {
@@ -96,11 +81,6 @@ export const DeclassifiedContextProvider = ({ children }) => {
 	const { sharedMapItemId } = useUserContext();
 	const { triggerDialog } = useNotification();
 	const [isMapLoaded, setIsMapLoaded] = useState(false);
-	const navigate = useNavigate();
-	const debouncedNavigate = useCallback(
-		debounce((path) => navigate(path), 500),
-		[navigate]
-	);
 
 	const setCurrentMapWithValidation = useCallback(async (newMap: MapItem) => {
 		if (isDebugMode) {
@@ -114,18 +94,17 @@ export const DeclassifiedContextProvider = ({ children }) => {
 						console.log('Setting current map GROUP to: ', mapItem);
 					}
 					setCurrentMapGroup(mapItem);
+					window.history.replaceState(null, "", `/${newMap.id}`);
+					console.log('Setting url map to: ', newMap.id);
 				}
 			});
 			await updateUserPreferencesInDB({ currentMap: newMap.id });
-			if (sharedMapItemId !== newMap.id) {
-				debouncedNavigate(`/${newMap.id}`);
-			}
 			return true;
 		} else {
 			console.error("Cannot set a map that doesn't exist.");
 			return false;
 		}
-	}, [isDebugMode, debouncedNavigate, sharedMapItemId]);
+	}, [isDebugMode]);
 
 	const toggleDrawer = ({ isOpen, content, clickEvent }: ToggleDrawerOptions) => {
 		if (isDebugMode) {
