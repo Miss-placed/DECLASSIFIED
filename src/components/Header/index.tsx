@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Button, Drawer, Menu, MenuItem } from '@mui/material';
 import React, { useContext } from 'react';
 import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
@@ -10,11 +11,11 @@ const StyledHeader = styled.header`
 	margin: 0 auto;
 	position: absolute;
 	z-index: var(--z-index-menu);
-	left: calc((100vw - 400px) / 2);
+	left: calc((100vw - 375px) / 2);
 
 	button {
 		color: var(--clr-white);
-		width: 400px;
+		width: 375px;
 		background: var(--clr-grey-d);
 		background: linear-gradient(
 			135deg,
@@ -25,10 +26,10 @@ const StyledHeader = styled.header`
 		);
 		background-position-x: -454px;
 		background-repeat: no-repeat;
-		background-size: 800%;
+		background-size: 825%;
 		display: flex;
 		margin: auto;
-		height: 90px;
+		height: 70px;
 		align-items: center;
 		justify-content: space-evenly;
 		box-shadow: var(--shadow);
@@ -86,6 +87,7 @@ const Header = () => {
 				<StyledHeader>
 					<Button onClick={toggleHeader(true)}>
 						{currentMapGroup!.mapName}
+						<KeyboardArrowDownIcon />
 					</Button>
 					<MapDrawer
 						anchor={'top'}
@@ -112,6 +114,7 @@ const Header = () => {
 						onClick={handleMenuClick}
 					>
 						{currentMapGroup!.mapName}
+						<KeyboardArrowDownIcon />
 					</Button>
 					<MapMenu
 						anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
