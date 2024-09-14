@@ -5,7 +5,8 @@
 
 █████████  ██████  ████████████
 # [DECLASSIFIED](https://declassified.netlify.app/)
-This is an interactive map for the game COD:Cold War. [Interactive Map](https://declassified.netlify.app/)
+
+This is an interactive map for CoD:Zombies, covering the games Cold War & Black Ops 6. [Interactive Map](https://declassified.netlify.app/)
 With every season more Intel becomes available, now this is the place to follow track and hunt for the next intel.
 
 ████ ██████████ █ ███████ ████
