@@ -866,6 +866,7 @@ const intelStoreV2 = [
         map: mapDetails.golova.id,
         name: "Transformed Apple Crate",
         desc: "In the barn of the lower farmstead. Should be pretty easy to spot.",
+        img: "R6GJJPc",
     }, {
         id: "RS3Ar5",
         faction: factions.requiem,
@@ -2162,7 +2163,7 @@ const intelStoreV2 = [
         loc: "[252.46909913105162, 213.5]",
         map: mapDetails.ruka.id,
         name: "Omega Group Patch",
-        desc: "On top of the climbable net in the obstacle course. (might currently be bugged)",
+        desc: "On top of one of the posts of the climbable nets in the obstacle course. Jump and grab, climb the ropes or parachute down to get it.",
         img: "nAPQUJs",
     }, {
         id: "OS3Au1",
@@ -2371,7 +2372,7 @@ const intelStoreV2 = [
         loc: "[167.97809008689484, 313.5]",
         map: mapDetails.zoo.id,
         name: "Greater Threat",
-        desc: "On a couch on the first floor of the Restaurant",
+        desc: "On a couch upstairs in the Restaurant",
         img: "7o9yGgU",
     }, {
         id: "OS4Au2",
@@ -2898,7 +2899,7 @@ const intelStoreV2 = [
         season: seasons.season6,
         intelType: intelTypes.docs,
         loc: defaultPOIData.nullLoc,
-        map: mapDetails.zoo.id,
+        map: mapDetails.forsaken.id,
         name: "Operatsiya Izbavitel Approval",
         desc: defaultPOIData.special
     }, {
@@ -2907,7 +2908,7 @@ const intelStoreV2 = [
         season: seasons.season6,
         intelType: intelTypes.docs,
         loc: defaultPOIData.nullLoc,
-        map: mapDetails.duga.id,
+        map: mapDetails.forsaken.id,
         name: "Order Of Operations",
         desc: defaultPOIData.special
     }, {
@@ -5147,7 +5148,7 @@ const intelStoreV2 = [
     },
     {
         id: "OOnDo24",
-        faction: factions.omega,
+        faction: factions.requiem,
         season: seasons.onslaught,
         intelType: intelTypes.docs,
         loc: defaultPOIData.nullLoc,
@@ -5434,7 +5435,7 @@ const intelStoreV2 = [
         intelType: intelTypes.docs,
         loc: defaultPOIData.nullLoc,
         map: mapDetails.garrison.id,
-        name: "Soviet ar Hero",
+        name: "Soviet War Hero",
         desc: defaultPOIData.onslaught,
     },
     {
