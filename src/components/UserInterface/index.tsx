@@ -8,8 +8,11 @@ import {
 	faMinus,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import CoffeeIcon from '@mui/icons-material/Coffee';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { Button, Menu, MenuItem } from '@mui/material';
 import { LatLngTuple } from 'leaflet';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { useMapEvent, useMapEvents } from 'react-leaflet';
 import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { useNotification } from '../../contexts/NotificationContext/notificationContext';
@@ -46,6 +49,15 @@ export const UserInterface = () => {
 	const { triggerNotification } = useNotification();
 	const { toggleDrawer, currentMap } = useContext(DeclassifiedContext);
 	const mapInstance = useMapEvents({});
+
+	const [socialsMenuAnchorEl, setSocialsAnchorEl] = useState<null | HTMLElement>(null);
+	const socialsMenuOpen = Boolean(socialsMenuAnchorEl);
+	const handleSocialsClick = (event: React.MouseEvent<HTMLElement>) => {
+		setSocialsAnchorEl(event.currentTarget);
+	};
+	const handleSocialsClose = () => {
+		setSocialsAnchorEl(null);
+	};
 
 	useMapEvent('click', props => {
 		let clickLocation: LatLngTuple = [props.latlng.lat, props.latlng.lng]
@@ -99,7 +111,65 @@ export const UserInterface = () => {
 				<div className="bottom-right-ui">
 					{/* <button className="btn ui" id="color-scheme-toggle" onClick="setColorScheme()"><i className="fas fa-moon"></i>
                     </button> */}
-					<a
+					{isMobile ? (
+						<>
+							<Button
+								id="socials"
+								className='btn ui'
+								aria-controls={socialsMenuOpen ? 'socials-menu' : undefined}
+								aria-haspopup="true"
+								aria-expanded={socialsMenuOpen ? 'true' : undefined}
+								onClick={handleSocialsClick}
+							>
+								<KeyboardArrowUpIcon />
+							</Button>
+							<Menu
+								id="socials-menu"
+								aria-labelledby="socials"
+								anchorEl={socialsMenuAnchorEl}
+								open={socialsMenuOpen}
+								onClose={handleSocialsClose}
+								anchorOrigin={{
+									vertical: 'top',
+									horizontal: 'center',
+								}}
+								transformOrigin={{
+									vertical: 'bottom',
+									horizontal: 'center',
+								}}
+							>
+								<MenuItem onClick={handleSocialsClose}><a
+									title="Join us on discord!"
+									href="https://discord.gg/4Xqj8XntFe"
+									target="_blank"
+									className="btn ui"
+									id="discord"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon icon={faDiscord}></FontAwesomeIcon>{' '}
+								</a></MenuItem>
+								<MenuItem onClick={handleSocialsClose}><a
+									title="Help us out on Github!"
+									href="https://github.com/Miss-placed/DECLASSIFIED"
+									target="_blank"
+									className="btn ui"
+									id="github"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>{' '}
+								</a></MenuItem>
+								<MenuItem onClick={handleSocialsClose}><a
+									title="Buy us a coffee!"
+									href="https://buymeacoffee.com/declassified.map"
+									target="_blank"
+									className="btn ui"
+									id="coffee"
+									rel="noreferrer"
+								>
+									<CoffeeIcon />
+								</a></MenuItem>
+							</Menu></>
+					) : (<><a
 						title="Join us on discord!"
 						href="https://discord.gg/4Xqj8XntFe"
 						target="_blank"
@@ -109,16 +179,27 @@ export const UserInterface = () => {
 					>
 						<FontAwesomeIcon icon={faDiscord}></FontAwesomeIcon>{' '}
 					</a>
-					<a
-						title="Help us out on Github!"
-						href="https://github.com/Miss-placed/DECLASSIFIED"
-						target="_blank"
-						className="btn ui"
-						id="github"
-						rel="noreferrer"
-					>
-						<FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>{' '}
-					</a>
+						<a
+							title="Help us out on Github!"
+							href="https://github.com/Miss-placed/DECLASSIFIED"
+							target="_blank"
+							className="btn ui"
+							id="github"
+							rel="noreferrer"
+						>
+							<FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>{' '}
+						</a>
+						<a
+							title="Buy us a coffee!"
+							href="https://buymeacoffee.com/declassified.map"
+							target="_blank"
+							className="btn ui"
+							id="coffee"
+							rel="noreferrer"
+						>
+							<CoffeeIcon />
+						</a></>)}
+
 				</div>
 			</div>
 		</StyledUiContainer>
