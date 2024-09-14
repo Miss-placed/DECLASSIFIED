@@ -6,6 +6,7 @@ import {
 	useState,
 } from 'react';
 import { useMapEvent, useMapEvents } from 'react-leaflet';
+import { useNavigate } from 'react-router-dom';
 import { MapItem, MiscMarker } from '../../classes';
 import { EggFormInputs, getEggFilterDefaults } from '../../components/EasterEggs/ListMenu';
 import {
@@ -55,6 +56,20 @@ async function updateUserPreferencesInDB(
 	return await updateUserPreferences(updates);
 }
 
+function debounce<T extends (...args: any[]) => void>(func: T, delay: number): (...args: Parameters<T>) => void {
+	let timeoutId: ReturnType<typeof setTimeout>;
+
+	return (...args: Parameters<T>) => {
+		if (timeoutId) {
+			clearTimeout(timeoutId);
+		}
+		timeoutId = setTimeout(() => {
+			func(...args);
+		}, delay);
+	};
+}
+
+
 export const DeclassifiedContext = createContext<DeclassifiedContextProps>(initialContextValues);
 
 export const DeclassifiedContextProvider = ({ children }) => {
@@ -81,6 +96,11 @@ export const DeclassifiedContextProvider = ({ children }) => {
 	const { sharedMapItemId } = useUserContext();
 	const { triggerDialog } = useNotification();
 	const [isMapLoaded, setIsMapLoaded] = useState(false);
+	const navigate = useNavigate();
+	const debouncedNavigate = useCallback(
+		debounce((path) => navigate(path), 500),
+		[navigate]
+	);
 
 	const setCurrentMapWithValidation = useCallback(async (newMap: MapItem) => {
 		if (isDebugMode) {
@@ -97,12 +117,15 @@ export const DeclassifiedContextProvider = ({ children }) => {
 				}
 			});
 			await updateUserPreferencesInDB({ currentMap: newMap.id });
+			if (sharedMapItemId !== newMap.id) {
+				debouncedNavigate(`/${newMap.id}`);
+			}
 			return true;
 		} else {
 			console.error("Cannot set a map that doesn't exist.");
 			return false;
 		}
-	}, [isDebugMode]);
+	}, [isDebugMode, debouncedNavigate, sharedMapItemId]);
 
 	const toggleDrawer = ({ isOpen, content, clickEvent }: ToggleDrawerOptions) => {
 		if (isDebugMode) {
@@ -132,6 +155,13 @@ export const DeclassifiedContextProvider = ({ children }) => {
 	const focusOnSharedItem = useCallback(async () => {
 		if (isMapLoaded) {
 			if (sharedMapItemId) {
+				const sharedMapItem = GetMapById(sharedMapItemId)
+				if (sharedMapItem) {
+					// Map id sharing - TODO make this better to allow sharing of the urls, and possibly have the id as always fixed in the URL and the ID goes on the end
+					setCurrentMapWithValidation(sharedMapItem);
+
+					return;
+				}
 				if (isDebugMode) {
 					console.log('Focus on shared item: ', sharedMapItemId);
 				}
@@ -215,14 +245,13 @@ export const DeclassifiedContextProvider = ({ children }) => {
 				setUserPreferences(data!);
 
 				if (checkUserHasUnmigratedPreferences()) {
-					var dialogMessage = `Looks like you're a returning user! Would you like us to migrate your old settings & progress? (The legacy app is still available in the settings menu)`;
-					triggerDialog(dialogMessage, { trueText: 'Yes', falseText: 'No (I want to start fresh)' },
-						(result) => {
-							if (result) {
-								migrateOldUserPreferences();
-							}
-							markAsMigrated();
-						});
+					var dialogMessage = `Looks like you're a returning user! Would you like us to migrate your old settings & progress?`;
+					triggerDialog(dialogMessage, { trueText: 'Yes', falseText: 'No' }, (result) => {
+						if (result) {
+							migrateOldUserPreferences();
+						}
+						markAsMigrated();
+					});
 				}
 
 				const userPrefsCurrentMap = GetMapById(data!.currentMap);
@@ -230,31 +259,31 @@ export const DeclassifiedContextProvider = ({ children }) => {
 					if (isDebugMode) {
 						console.log('Setting current map from user preferences: ', userPrefsCurrentMap);
 					}
-					setCurrentMap(userPrefsCurrentMap);
-					Object.entries(MapGroupings).forEach(([key, mapItem]) => {
-						if (
-							userPrefsCurrentMap &&
-							mapItem.mapLayers.includes(userPrefsCurrentMap)
-						) {
-							setCurrentMapGroup(mapItem);
-						}
-					});
+					setCurrentMapWithValidation(userPrefsCurrentMap);
 				}
 
 				setIsMapLoaded(true);
 			} catch (error) {
 				console.error('Failed to fetch user preferences: ', error);
 			} finally {
-				setIsLoading(false); // Set loading to false after fetching preferences
+				setIsLoading(false);
 			}
 		};
 
 		fetchPreferences();
 
-		if (isMapLoaded) {
+		if (isMapLoaded && sharedMapItemId) {
 			focusOnSharedItem();
 		}
-	}, [focusOnSharedItem, isDebugMode, isMapLoaded, sharedMapItemId, triggerDialog]);
+	}, [
+		focusOnSharedItem,
+		isDebugMode,
+		isMapLoaded,
+		setCurrentMapWithValidation,
+		sharedMapItemId,
+		triggerDialog
+	]);
+
 
 	if (isLoading) {
 		return null;
