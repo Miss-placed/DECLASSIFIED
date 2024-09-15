@@ -9,6 +9,7 @@ import {
 import { useContext, useState } from 'react';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { DeclassifiedContext } from '../../../contexts/DeclassifiedContext/declassifiedContextProvider';
+import { useUserContext } from '../../../contexts/UserContext/userContextProvider';
 import { Faction, IntelType, Season } from '../../../data/intel';
 import { MenuFooter } from '../../MenuFooter';
 import { IntelFilterMenu } from '../IntelFilterMenu';
@@ -23,8 +24,8 @@ export type IntelFormInputs = {
 };
 
 export const IntelListMenu = () => {
-	const { currentIntelFilter, setCurrentIntelFilter, collectedIntel, filteredIntelStore } =
-		useContext(DeclassifiedContext);
+	const { currentIntelFilter, setCurrentIntelFilter, collectedIntel, filteredIntelStore } = useContext(DeclassifiedContext);
+	const { isDebugMode } = useUserContext();
 	const [expand, setExpand] = useState(false);
 	const toggleAcordion = () => {
 		setExpand(prev => !prev);
@@ -44,7 +45,9 @@ export const IntelListMenu = () => {
 	const onSubmit: SubmitHandler<IntelFormInputs> = data => {
 		// TODO: set filter value in context
 		setCurrentIntelFilter(data);
-		console.log('INTEL FORM SUBMIT: ', data);
+		if (isDebugMode) {
+			console.log('INTEL FORM SUBMIT: ', data);
+		}
 	};
 	const totalIntelOfType = filteredIntelStore.length;
 	const totalIntelCollectedOfType = filteredIntelStore.filter(intel => collectedIntel && collectedIntel.find(({ intelId }) => intelId === intel.id)).length;
