@@ -12,7 +12,8 @@ if (workbox) {
 	workbox.routing.registerRoute(
 		({ url }) =>
 			url.origin === 'https://declassified.app' ||
-			url.origin === 'https://declassified.netlify.app', // Adjust this to your API domain
+			url.origin === 'https://declassified.netlify.app' ||
+			url.origin === 'https://devbranch--declassified.netlify.app',
 		new workbox.strategies.NetworkFirst({
 			cacheName: 'api-cache',
 			networkTimeoutSeconds: 10, // Optional timeout to fallback to cache
@@ -20,6 +21,22 @@ if (workbox) {
 		})
 	);
 
+	// Cache-first strategy for app routes
+	workbox.routing.registerRoute(
+		({ request }) =>
+			request.mode === 'navigate' || request.destination === 'document',
+		new workbox.strategies.CacheFirst({
+			cacheName: 'app-cache',
+			plugins: [
+				new workbox.expiration.ExpirationPlugin({
+					maxEntries: 50, // Max number of entries to cache
+					maxAgeSeconds: 24 * 60 * 60, // Cache for 1 day
+				}),
+			],
+		})
+	);
+
+	// Stale-while-revalidate strategy for static resources (scripts, styles, images)
 	workbox.routing.registerRoute(
 		({ request }) =>
 			request.destination === 'script' ||
