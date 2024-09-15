@@ -35,6 +35,21 @@ if (workbox) {
 		})
 	);
 
+	// Cache and serve static HTML files under /legacy
+	workbox.routing.registerRoute(
+		({ url }) =>
+			url.pathname.startsWith('/legacy') && url.pathname !== '/legacy',
+		new workbox.strategies.CacheFirst({
+			cacheName: 'legacy-html-cache',
+			plugins: [
+				new workbox.expiration.ExpirationPlugin({
+					maxEntries: 50, // Max number of entries to cache
+					maxAgeSeconds: 7 * 24 * 60 * 60, // Cache for 1 week
+				}),
+			],
+		})
+	);
+
 	// Cache-first strategy for all other requests (static assets)
 	workbox.routing.registerRoute(
 		({ request }) =>
