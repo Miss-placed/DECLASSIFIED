@@ -12,20 +12,6 @@ import {
 } from './contexts/UserContext/userContextProvider';
 import { BaseLayout } from './pages/layouts/BaseLayout';
 
-const MapWithItemId = () => {
-	const { id } = useParams();
-	const { updateMapItemId } = useUserContext();
-
-	// Update the global state with the 'id' parameter
-	useEffect(() => {
-		if (id) {
-			updateMapItemId(id);
-		}
-	}, [id, updateMapItemId]);
-
-	return <MapProvider />;
-};
-
 function App() {
 	document.body.classList.add('dark'); // TODO: remove this when re-working themes
 
@@ -44,6 +30,20 @@ function App() {
 		</Router>
 	);
 }
+
+const MapWithItemId = () => {
+	const { id } = useParams();
+	const { updateMapItemId } = useUserContext();
+
+	// Update the global state with the 'id' parameter
+	useEffect(() => {
+		if (id) {
+			updateMapItemId(id);
+		}
+	}, [id, updateMapItemId]);
+
+	return <MapProvider />;
+};
 
 const LegacySite = () => {
 	// Redirects the user to the index file of your legacy site
