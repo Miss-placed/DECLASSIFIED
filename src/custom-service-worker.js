@@ -21,10 +21,9 @@ if (workbox) {
 		})
 	);
 
-	// Cache-first strategy for app routes
+	// Cache-first strategy for the root URL
 	workbox.routing.registerRoute(
-		({ request }) =>
-			request.mode === 'navigate' || request.destination === 'document',
+		({ request }) => request.mode === 'navigate', // Match all navigation requests
 		new workbox.strategies.CacheFirst({
 			cacheName: 'app-cache',
 			plugins: [
@@ -36,12 +35,14 @@ if (workbox) {
 		})
 	);
 
-	// Stale-while-revalidate strategy for static resources (scripts, styles, images)
+	// Cache-first strategy for all other requests (static assets)
 	workbox.routing.registerRoute(
 		({ request }) =>
 			request.destination === 'script' ||
 			request.destination === 'style' ||
-			request.destination === 'image',
+			request.destination === 'image' ||
+			request.destination === 'font' ||
+			request.destination === 'manifest',
 		new workbox.strategies.StaleWhileRevalidate({
 			cacheName: 'static-resources',
 		})
