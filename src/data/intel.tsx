@@ -2168,7 +2168,7 @@ const staticIntelStore: IIntelItem[] = [
 		faction: Faction.Omega,
 		season: Season.Season1,
 		typeDesc: IntelType.Audio,
-		loc: DefaultPOIData.nullLoc,
+		loc: [388.2945395012534, 305.1142133058241],
 		map: MapIds.firebaseZ,
 		title: 'To Dust You Will Return',
 		desc: 'Inside the OPC(part of the main quest).',
