@@ -23,37 +23,37 @@
 			"type": "image/png"
 		},
 		{
-			"src": "favicon.png",
+			"src": "favicon72.png",
 			"sizes": "72x72",
 			"type": "image/png"
 		},
 		{
-			"src": "favicon.png",
+			"src": "favicon96.png",
 			"sizes": "96x96",
 			"type": "image/png"
 		},
 		{
-			"src": "favicon.png",
+			"src": "favicon120.png",
 			"sizes": "120x120",
 			"type": "image/png"
 		},
 		{
-			"src": "favicon.png",
+			"src": "favicon128.png",
 			"sizes": "128x128",
 			"type": "image/png"
 		},
 		{
-			"src": "favicon.png",
+			"src": "favicon144.png",
 			"sizes": "144x144",
 			"type": "image/png"
 		},
 		{
-			"src": "favicon.png",
+			"src": "favicon152.png",
 			"sizes": "152x152",
 			"type": "image/png"
 		},
 		{
-			"src": "favicon.png",
+			"src": "favicon180.png",
 			"sizes": "180x180",
 			"type": "image/png"
 		},
@@ -63,7 +63,7 @@
 			"type": "image/png"
 		},
 		{
-			"src": "favicon.png",
+			"src": "favicon384.png",
 			"sizes": "384x384",
 			"type": "image/png"
 		},
