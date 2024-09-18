@@ -1,7 +1,7 @@
 importScripts(
 	'https://storage.googleapis.com/workbox-cdn/releases/6.5.0/workbox-sw.js'
 );
-
+const cacheVersion = 'v1';
 if (workbox) {
 	console.log('Workbox is loaded!');
 
@@ -15,7 +15,7 @@ if (workbox) {
 			url.origin === 'https://declassified.netlify.app' ||
 			url.origin === 'https://devbranch--declassified.netlify.app',
 		new workbox.strategies.NetworkFirst({
-			cacheName: 'api-cache',
+			cacheName: `api-cache${cacheVersion}`,
 			networkTimeoutSeconds: 10, // Optional timeout to fallback to cache
 			plugins: [],
 		})
@@ -25,7 +25,7 @@ if (workbox) {
 	workbox.routing.registerRoute(
 		({ request }) => request.mode === 'navigate', // Match all navigation requests
 		new workbox.strategies.CacheFirst({
-			cacheName: 'app-cache',
+			cacheName: `app-cache${cacheVersion}`,
 			plugins: [
 				new workbox.expiration.ExpirationPlugin({
 					maxEntries: 50, // Max number of entries to cache
@@ -40,7 +40,7 @@ if (workbox) {
 		({ url }) =>
 			url.pathname.startsWith('/legacy') && url.pathname !== '/legacy',
 		new workbox.strategies.CacheFirst({
-			cacheName: 'legacy-html-cache',
+			cacheName: `legacy-html-cache${cacheVersion}`,
 			plugins: [
 				new workbox.expiration.ExpirationPlugin({
 					maxEntries: 50, // Max number of entries to cache
@@ -59,7 +59,7 @@ if (workbox) {
 			request.destination === 'font' ||
 			request.destination === 'manifest',
 		new workbox.strategies.StaleWhileRevalidate({
-			cacheName: 'static-resources',
+			cacheName: `static-resources${cacheVersion}`,
 		})
 	);
 } else {
