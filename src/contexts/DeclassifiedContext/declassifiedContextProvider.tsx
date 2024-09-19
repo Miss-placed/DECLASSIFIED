@@ -95,7 +95,9 @@ export const DeclassifiedContextProvider = ({ children }) => {
 					}
 					setCurrentMapGroup(mapItem);
 					window.history.replaceState(null, "", `/${newMap.id}`);
-					console.log('Setting url map to: ', newMap.id);
+					if (isDebugMode) {
+						console.log('Setting url map to: ', newMap.id);
+					}
 				}
 			});
 			await updateUserPreferencesInDB({ currentMap: newMap.id });
