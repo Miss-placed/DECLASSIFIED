@@ -33,14 +33,15 @@ function App() {
 
 const MapWithItemId = () => {
 	const { id } = useParams();
-	const { updateMapItemId } = useUserContext();
+	const { setSharedMapItemId, isDebugMode } = useUserContext();
 
 	// Update the global state with the 'id' parameter
 	useEffect(() => {
-		if (id) {
-			updateMapItemId(id);
+		if (isDebugMode) {
+			console.log('setSharedMapItemId: ', id);
 		}
-	}, [id, updateMapItemId]);
+		setSharedMapItemId(id);
+	}, [id, isDebugMode, setSharedMapItemId]);
 
 	return <MapProvider />;
 };

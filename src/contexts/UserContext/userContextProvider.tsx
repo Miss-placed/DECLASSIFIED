@@ -7,7 +7,7 @@ const initialContextValues = {
 	isDebugMode: false,
 	setIsDebugMode: () => { },
 	sharedMapItemId: null,
-	updateMapItemId: () => { },
+	setSharedMapItemId: () => { },
 	contributionState: {
 		isIntel: false,
 		isContributing: false,
@@ -49,7 +49,7 @@ export const UserContextProvider = ({ children }) => {
 		}));
 	};
 
-	const updateMapItemId = (id: string | undefined) => {
+	const setSharedMapItemId = (id: string | undefined) => {
 		if (id) {
 			setMapItemId(id);
 		}
@@ -70,7 +70,7 @@ export const UserContextProvider = ({ children }) => {
 				isDebugMode,
 				setIsDebugMode,
 				sharedMapItemId,
-				updateMapItemId,
+				setSharedMapItemId,
 				contributionState,
 				setContributionState,
 			}}

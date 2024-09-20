@@ -52,7 +52,7 @@ export interface UserContextProps {
 	isDebugMode: boolean;
 	setIsDebugMode: (state: boolean) => void;
 	sharedMapItemId: string | null;
-	updateMapItemId: (id: string) => void;
+	setSharedMapItemId: (id: string | undefined) => void;
 	contributionState: {
 		isIntel: boolean;
 		isContributing: boolean;
