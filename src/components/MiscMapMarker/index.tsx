@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
 import L from 'leaflet';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Marker, Popup, useMapEvents } from 'react-leaflet';
 import { MiscMarker } from '../../classes';
-import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { useUserContext } from '../../contexts/UserContext/userContextProvider';
 import { customMiscIconBounds, getMiscIconUri } from '../../data/icons';
 import { MiscDetailItem } from '../MiscDetailsItem';
@@ -16,7 +15,6 @@ export const MiscMapMarker = ({
 	typeDesc,
 	loc,
 }: MiscMarker) => {
-	const { setCurrentMapWithValidation: setCurrentMap, currentMap } = useContext(DeclassifiedContext);
 	const mapInstance = useMapEvents({});
 	const renderedIcon = miscIconInit(icon);
 	const [markerInstance, setPopupInstance] = useState<L.Marker | null>(null); // State to hold the Popup instance
