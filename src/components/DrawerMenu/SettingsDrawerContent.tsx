@@ -46,7 +46,7 @@ export const SettingsDrawerContent = () => {
     };
 
     const handleContributeNewMarker = (isIntel: boolean): void => {
-        toggleDrawer({ isOpen: false });
+        // toggleDrawer({ isOpen: false });
 
         triggerDialog("Click on the map to select the location of your contribution, after clicking you will be redirected to github. Thanks for helping out!",
             { trueText: 'I Understand', falseText: 'Nevermind' },
