@@ -51,6 +51,10 @@ export const UserContextProvider = ({ children }) => {
 
 	const setSharedMapItemId = (id: string | undefined) => {
 		if (id) {
+			window.history.replaceState(null, "", `/${id}`);
+			if (isDebugMode) {
+				console.log('Setting url to: ', id);
+			}
 			setMapItemId(id);
 		}
 	};

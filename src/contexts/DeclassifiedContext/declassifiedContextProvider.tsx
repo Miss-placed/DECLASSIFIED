@@ -59,7 +59,7 @@ export const DeclassifiedContext = createContext<DeclassifiedContextProps>(initi
 
 export const DeclassifiedContextProvider = ({ children }) => {
 	const mapInstance = useMapEvents({});
-	const { isDebugMode } = useUserContext();
+	const { isDebugMode, setSharedMapItemId } = useUserContext();
 	const [userPrefs, setUserPreferences] =
 		useState<DeclassifiedUserPreferences | null>(null);
 	const [currentMap, setCurrentMap] = useState<MapItem | null>(null);
@@ -94,19 +94,17 @@ export const DeclassifiedContextProvider = ({ children }) => {
 						console.log('Setting current map GROUP to: ', mapItem);
 					}
 					setCurrentMapGroup(mapItem);
-					window.history.replaceState(null, "", `/${newMap.id}`);
-					if (isDebugMode) {
-						console.log('Setting url map to: ', newMap.id);
-					}
+					setSharedMapItemId(newMap.id);
 				}
 			});
 			await updateUserPreferencesInDB({ currentMap: newMap.id });
+
 			return true;
 		} else {
 			console.error("Cannot set a map that doesn't exist.");
 			return false;
 		}
-	}, [isDebugMode]);
+	}, [isDebugMode, setSharedMapItemId]);
 
 	const toggleDrawer = ({ isOpen, content, clickEvent }: ToggleDrawerOptions) => {
 		if (isDebugMode) {
