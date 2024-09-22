@@ -77,6 +77,7 @@ const EETypes = {
 	electrobolt: new Item({ title: `D.I.E. Electrobolt Upgrade`, icon: IconFileNames.upgrade, }),
 	cryoemitter: new Item({ title: `D.I.E. Cryo-Emitter Upgrade`, icon: IconFileNames.upgrade, }),
 	// Outbreak specific
+	dementedEcho: new Item({ title: 'Demented Echo', desc: 'Possible location. Starts spawning from round 2 onwards. Destroy it before it touches you to get a reward.', icon: IconFileNames.demented, }),
 	aetherialOrb: new Item({ title: `Aetherial Orb`, desc: `Possible location.\nCan be shot for essence, follow it to all locations in order to destroy it at the end to gain loot.`, icon: IconFileNames.orb, }),
 	monkey: new Item({ title: 'Stone Monkey', desc: `Used in a portion of the main quest to obtain the microfilm, otherwise just drops minor loot.`, icon: IconFileNames.monkey }),
 	projector: new Item({ title: 'Projector', desc: 'The projector for the Main Quest', icon: IconFileNames.projector, }), signal: new Item({ title: 'Signal' }),

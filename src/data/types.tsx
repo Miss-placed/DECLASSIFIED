@@ -3,19 +3,17 @@ import { IconFileNames } from "./icons";
 
 /////////////////////Misc/////////////////////////
 export const MiscTypes = {
-    dementedEcho: new Item({ title: 'Demented Echo', desc: 'Possible location. Starts spawning from round 2 onwards. Destroy it before it touches you to get a reward.', icon: IconFileNames.demented, }),
-    rift: new Item({ title: 'Aether Rift', desc: 'Jump through to teleport and gain a random powerup.', icon: IconFileNames.rift, }),
-
-    radio: new Item({ title: 'Radio', icon: IconFileNames.radio }),
-    exfillRadio: new Item({ title: 'Exfill Radio', icon: IconFileNames.radio }),
     //TODO STANDARDISE STRING
-    requiemRadio: new Item({ title: 'Requiem Radio', icon: IconFileNames.radio, layer: 'Markers', }),
-    omegaRadio: new Item({ title: 'Omega Radio', icon: IconFileNames.radio }),
-    maxisRadio: new Item({ title: 'Maxis Radio', icon: IconFileNames.radio }),
     essenceDrop: new Item({ title: 'Essence Drop' }),
     scrapHeap: new Item({ title: 'Scrap Heap' }),
     fishing: new Item({ title: 'Fishing', desc: 'Fish up to 3 times for a small reward each time.', icon: IconFileNames.fishing, }),
+    rift: new Item({ title: 'Aether Rift', desc: 'Jump through to teleport and gain a random powerup.', icon: IconFileNames.rift, }),
 
+    requiemRadio: new Item({ title: 'Requiem Radio', icon: IconFileNames.radio, layer: 'Markers', }),
+    omegaRadio: new Item({ title: 'Omega Radio', icon: IconFileNames.radio }),
+    maxisRadio: new Item({ title: 'Maxis Radio', icon: IconFileNames.radio }),
+    radio: new Item({ title: 'Radio', icon: IconFileNames.radio }),
+    exfillRadio: new Item({ title: 'Exfill Radio', icon: IconFileNames.radio }),
     trialComputer: new Item({ title: 'Trial Computer', desc: `Possible spawn, start and complete trials to earn rewards and intel.`, icon: IconFileNames.trialComputer, }),
     papMachine: new Item({ title: 'Pack-a-Punch', icon: IconFileNames.papMachine, }),
     mysteryBox: new Item({ title: 'Mystery Box Location', icon: IconFileNames.mysteryBox, }),
