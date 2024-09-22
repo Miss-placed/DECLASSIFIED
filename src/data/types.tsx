@@ -3,21 +3,20 @@ import { IconFileNames } from "./icons";
 
 /////////////////////Misc/////////////////////////
 export const MiscTypes = {
-    dementedEcho: new Item({ title: 'Demented Echo', desc: 'Destroy it before it touches you to get a reward.', icon: IconFileNames.demented, }),
+    dementedEcho: new Item({ title: 'Demented Echo', desc: 'Possible location. Starts spawning from round 2 onwards. Destroy it before it touches you to get a reward.', icon: IconFileNames.demented, }),
     rift: new Item({ title: 'Aether Rift', desc: 'Jump through to teleport and gain a random powerup.', icon: IconFileNames.rift, }),
-    redRift: new Item({ title: 'Red Aether Rift', desc: 'Jump through all the rifts to continue the Easter Egg', icon: IconFileNames.redRift, }),
+
     radio: new Item({ title: 'Radio', icon: IconFileNames.radio }),
     exfillRadio: new Item({ title: 'Exfill Radio', icon: IconFileNames.radio }),
     //TODO STANDARDISE STRING
     requiemRadio: new Item({ title: 'Requiem Radio', icon: IconFileNames.radio, layer: 'Markers', }),
     omegaRadio: new Item({ title: 'Omega Radio', icon: IconFileNames.radio }),
     maxisRadio: new Item({ title: 'Maxis Radio', icon: IconFileNames.radio }),
-    monkey: new Item({ title: 'Stone Monkey', icon: IconFileNames.monkey }),
-    projector: new Item({ title: 'Projector', desc: 'The projector for the Main Quest', icon: IconFileNames.projector, }), signal: new Item({ title: 'Signal' }), fishing: new Item({ title: 'Fishing', desc: 'Fish up to 3 times for a small reward each time.', icon: IconFileNames.fishing, }),
     essenceDrop: new Item({ title: 'Essence Drop' }),
     scrapHeap: new Item({ title: 'Scrap Heap' }),
+    fishing: new Item({ title: 'Fishing', desc: 'Fish up to 3 times for a small reward each time.', icon: IconFileNames.fishing, }),
 
-    trialComputer: new Item({ title: 'Trial Computer', icon: IconFileNames.trialComputer, }),
+    trialComputer: new Item({ title: 'Trial Computer', desc: `Possible spawn, start and complete trials to earn rewards and intel.`, icon: IconFileNames.trialComputer, }),
     papMachine: new Item({ title: 'Pack-a-Punch', icon: IconFileNames.papMachine, }),
     mysteryBox: new Item({ title: 'Mystery Box Location', icon: IconFileNames.mysteryBox, }),
     wallbuy: new Item({ title: 'Wall Buy', icon: IconFileNames.wallbuy }),
@@ -56,19 +55,6 @@ export const MarkerLayerTypes = {
     perks: new Item({ id: 'perks', title: 'Perks' }),
     misc: new Item({ id: 'misc', title: 'Miscellaneous' }),
     easterEggs: new Item({ id: 'easterEggs', title: 'Easter Eggs' }),
-    worldEvents: new Item({ id: 'worldEvents', title: 'World Events' }),
-};
-
-//TODO: Decide the structure for how we store and retrieve EE steps (maybe new datastore)
-/*  
-    These are just the initial labels for the easter eggs.
-    We will need to break these down further and make step-by-step markers 
-*/
-
-// Gonna have to add a way to bring through the full description along with the unique description from the misc markers
-export const OutbreakEE2Steps = {
-    step2Helicopter: new Item({ title: 'Crashed Helicopter', desc: `The transport chopper that the Omega Eight were using is located in the "Carved Hills", located south of the lone shack, having crashed by unknown means. Nearing it will spawn a horde needs to be eliminated, as one of the corpses is holding a message from Hugo Jager about where the surviving members of the crash went.`, }),
-    step3Orb: new Item({ title: 'Red Aetherial Orb', desc: 'The Aetherium Orb can spawn within three places and is visually distinct, having a darker hue of red and will not produce Essence upon being damaged. When damaged, it will flee like the standard variant for a total of three times before it will flee to hover over the Recon Rover to where it will stay above, unwilling to enter it.', icon: IconFileNames.orb, }),
 };
 
 export interface IMisc {

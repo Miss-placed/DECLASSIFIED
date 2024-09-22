@@ -76,6 +76,22 @@ const EETypes = {
 	nova5: new Item({ title: `D.I.E. Nova-5 Upgrade`, icon: IconFileNames.upgrade, }),
 	electrobolt: new Item({ title: `D.I.E. Electrobolt Upgrade`, icon: IconFileNames.upgrade, }),
 	cryoemitter: new Item({ title: `D.I.E. Cryo-Emitter Upgrade`, icon: IconFileNames.upgrade, }),
+	// Outbreak specific
+	aetherialOrb: new Item({ title: `Aetherial Orb`, desc: `Possible location.\nCan be shot for essence, follow it to all locations in order to destroy it at the end to gain loot.`, icon: IconFileNames.orb, }),
+	monkey: new Item({ title: 'Stone Monkey', desc: `Used in a portion of the main quest to obtain the microfilm, otherwise just drops minor loot.`, icon: IconFileNames.monkey }),
+	projector: new Item({ title: 'Projector', desc: 'The projector for the Main Quest', icon: IconFileNames.projector, }), signal: new Item({ title: 'Signal' }),
+	redRift: new Item({ title: 'Red Aether Rift', desc: 'Jump through all the rifts to continue the quest.', icon: IconFileNames.redRift, }),
+	maxisQuestRadio: new Item({ title: 'Maxis Radio Signal', desc: 'Power on and then match the tone of the 3 surrounding amplifiers. Using subtitles is recommended.', icon: IconFileNames.mainQuest, }),
+	maxisAmp: new Item({ title: 'Maxis Radio Amplifier', desc: 'Tune all of the 3 amplifiers to the same tone as the central radio in order to fix the radio and trigger the start of quest.', icon: IconFileNames.objective, }),
+	bunny: new Item({ title: 'Mr Peeks', desc: 'Used in the quest, when picked up, provides a aetherium burst ability. Must be brought to the rover to continue the quest.', icon: IconFileNames.objective, }),
+	unknownSignal: new Item({ title: 'Unknown Signal Radio', desc: 'Possible location, only one can spawn. Power on and then match the tone of the 3 surrounding amplifiers to be rewarded with an easter egg song and essence. Using subtitles is recommended.', icon: IconFileNames.cassette, }),
+	unknownSignalAmp: new Item({ title: 'Unknown Signal Amplifier', desc: 'Tune all of the 3 amplifiers to the same tone as the central radio in order to fix the radio to be rewarded with an easter egg song and essence.', icon: IconFileNames.interactable, }),
+	zooMask: new Item({ title: 'Tiger Mask', desc: `Part of the super easter egg, can be interacted with in order to make the next warp be guaranteed to be Zoo.`, icon: IconFileNames.secretArea }),
+};
+
+const OutbreakEE2Steps = {
+	step2Helicopter: new Item({ title: 'Crashed Helicopter', desc: `The transport chopper that the Omega Eight were using is located in the "Carved Hills", located south of the lone shack, having crashed by unknown means. Nearing it will spawn a horde needs to be eliminated, as one of the corpses is holding a message from Hugo Jager about where the surviving members of the crash went.`, icon: IconFileNames.mainQuest }),
+	step3Orb: new Item({ title: 'Red Aetherial Orb', desc: 'The Aetherium Orb can spawn within three places and is visually distinct, having a darker hue of red and will not produce Essence upon being damaged. When damaged, it will flee like the standard variant for a total of three times before it will flee to hover over the Recon Rover to where it will stay above, unwilling to enter it.', icon: IconFileNames.redOrb, }),
 };
 
 // Used to generate IDs for all of the below misc markers:
