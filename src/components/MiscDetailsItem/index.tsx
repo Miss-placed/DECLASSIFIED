@@ -63,7 +63,7 @@ export const MiscDetailItem = ({
 				<StyledAccordionDetails>
 					{/* <CustomImage src={img} altText="Placeholder" /> */}
 					<MiscDetailItemContainer>
-						{/* <PopupTitle variant="h2">{title}</PopupTitle> */}
+						{!isMarker && miscItemMap && miscItemMap.title ? (<Subheading variant="h2">{miscItemMap.title}</Subheading>) : null}
 						<MiscDescription>{desc}</MiscDescription>
 						<ActionContainer>
 							{ItemHasLocation && miscItemMap?.mapCanRender ? <Button onClick={async () => {
@@ -102,8 +102,9 @@ const MiscDetailItemContainer = styled(Paper)`
 	justify-content: center;
 	flex-direction: column;
 `;
-const PopupTitle = styled(Typography)`
-	font-size: 1.1rem;
+const Subheading = styled(Typography)`
+	font-size: 0.8rem;
+	font-weight: 550;
 	margin: 0 auto;
 	white-space: nowrap;
 	overflow: hidden;
@@ -173,6 +174,7 @@ const MiscItemSummary = styled(AccordionSummary)`
 		align-self: stretch;
 		object-fit: contain;
 		height: unset;
+		width: 50px;
 	}
 
 	.miscItemTitle {
