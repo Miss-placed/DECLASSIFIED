@@ -72,7 +72,7 @@ export class MiscMarker extends BaseMarker {
 		loc: LatLngExpression,
 		uniqueDesc?: string
 	) {
-		desc = uniqueDesc ?? desc;
+		desc = uniqueDesc ? `${uniqueDesc}\n${desc}` : desc;
 		super({ id, title, desc, icon, loc, typeDesc: 'Misc' });
 	}
 }
