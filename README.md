@@ -4,9 +4,9 @@
 ██████
 
 █████████  ██████  ████████████
-# [DECLASSIFIED](https://declassified.netlify.app/)
+# [DECLASSIFIED](https://declassified.app/)
 
-This is an interactive map for CoD:Zombies, covering the games Cold War & Black Ops 6. [Interactive Map](https://declassified.netlify.app/)
+This is an interactive map for CoD:Zombies, covering the games Cold War & Black Ops 6. [Interactive Map](https://declassified.app/)
 With every season more Intel becomes available, now this is the place to follow track and hunt for the next intel.
 
 ████ ██████████ █ ███████ ████
@@ -26,6 +26,7 @@ Previously I contributed to [the Red Dead Redemption 2 Collectors map](https://j
  - Bola2010 [1](https://github.com/bola2010)
  - NanikOs [1](https://github.com/Nanik0s)
  - EdicionGamerYT [1](https://github.com/EdicionGamer) [2](https://www.youtube.com/channel/UCLFdusOixGf1Pto6oHfFdog)
+ - MysteryHQ [1](https://www.youtube.com/@MysteryHQ)
  - JeanRopke [1](https://github.com/jeanropke)
  - Everyone from the Intel Hunters Discord [1](https://discord.gg/vu5cr7GWCR)
 
