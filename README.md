@@ -6,7 +6,7 @@
 █████████  ██████  ████████████
 # [DECLASSIFIED](https://declassified.app/)
 
-This is an interactive map for CoD:Zombies, covering the games Cold War & Black Ops 6. [Interactive Map](https://declassified.app/)
+This is an [interactive Map](https://declassified.app/) for CoD:Zombies, covering the games Cold War & Black Ops 6.
 With every season more Intel becomes available, now this is the place to follow track and hunt for the next intel.
 
 ████ ██████████ █ ███████ ████
