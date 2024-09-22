@@ -27,6 +27,7 @@ Previously I contributed to [the Red Dead Redemption 2 Collectors map](https://j
  - NanikOs [1](https://github.com/Nanik0s)
  - EdicionGamerYT [1](https://github.com/EdicionGamer) [2](https://www.youtube.com/channel/UCLFdusOixGf1Pto6oHfFdog)
  - MysteryHQ [1](https://www.youtube.com/@MysteryHQ)
+ - insanegamer52 [1](https://www.youtube.com/@insanegamer52)
  - JeanRopke [1](https://github.com/jeanropke)
  - Everyone from the Intel Hunters Discord [1](https://discord.gg/vu5cr7GWCR)
 
