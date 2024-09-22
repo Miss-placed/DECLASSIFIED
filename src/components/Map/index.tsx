@@ -22,9 +22,9 @@ const StyledMapContainer = styled(MapContainer)`
 	}
 `;
 
-const MapWrapper = styled.div <{ $isContributing?: boolean }>`
-${({ $isContributing }) =>
-		$isContributing &&
+const MapWrapper = styled.div <{ $shouldShowCrosshair?: boolean }>`
+${({ $shouldShowCrosshair }) =>
+		$shouldShowCrosshair &&
 		`
 		#worldMap {
 			cursor: crosshair;
@@ -34,10 +34,10 @@ ${({ $isContributing }) =>
 `
 
 const MapProvider = () => {
-	const { isMobile, contributionState } = useUserContext();
+	const { isMobile, contributionState, isDebugMode } = useUserContext();
 
 	return (
-		<MapWrapper $isContributing={contributionState.isContributing} >
+		<MapWrapper $shouldShowCrosshair={contributionState.isContributing || isDebugMode} >
 			<StyledMapContainer
 				id={'worldMap'}
 				center={[256, 256]}
