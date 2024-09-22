@@ -5,15 +5,13 @@ export enum IconFileNames {
 
 	//misc icons
 	demented = 'demented_echo',
+	orb = 'aether_orb',
 	fishing = 'fishing',
-	monkey = 'monkey',
 	radio = 'radio',
 	trialComputer = 'trial_computer',
 	trialChallenge = 'trials',
 	rampageInducer = 'rampage_inducer',
 	trap = 'trap',
-	projector = 'projector',
-	orb = 'aether_orb',
 	reactor = 'collection_unit',
 	power = 'power',
 
@@ -23,9 +21,12 @@ export enum IconFileNames {
 	mainQuest = 'main_quest',
 	secretArea = 'secret_door',
 	clue = 'visual_clue',
+	projector = 'projector',
+	monkey = 'monkey',
+	redOrb = 'red_aether_orb',
+	redRift = 'tunnel_red',
 
 	//movement icons
-	redRift = 'tunnel_red',
 	rift = 'tunnel_pink',
 	wunderFizz = 'wunder_fizz',
 	zipline = 'zipline',
@@ -83,6 +84,7 @@ export const SvgIcons = {
 	[IconFileNames.landingPad]: true,
 	[IconFileNames.demented]: true,
 	[IconFileNames.orb]: true,
+	[IconFileNames.redOrb]: true,
 	[IconFileNames.reactor]: true,
 	[IconFileNames.power]: true,
 	[IconFileNames.ammoCrate]: true,
@@ -105,7 +107,7 @@ export const SvgIcons = {
 	[IconFileNames.secretArea]: true,
 	[IconFileNames.clue]: true,
 };
-const svgIconProperties = { popupAnchor: [5, -20], iconSize: [40, 40] };
+const svgIconProperties = { popupAnchor: [0, -30], iconAnchor: [20, 20], iconSize: [40, 40] };
 export const customMiscIconBounds = {
 	[IconFileNames.general]: {
 		iconAnchor: [15, 30],
@@ -144,6 +146,7 @@ export const customMiscIconBounds = {
 	[IconFileNames.jumpPad]: svgIconProperties,
 	[IconFileNames.landingPad]: svgIconProperties,
 	[IconFileNames.orb]: svgIconProperties,
+	[IconFileNames.redOrb]: svgIconProperties,
 	[IconFileNames.power]: svgIconProperties,
 	[IconFileNames.ammoCrate]: svgIconProperties,
 	[IconFileNames.wallbuy]: svgIconProperties,
