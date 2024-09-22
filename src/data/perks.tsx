@@ -135,7 +135,7 @@ export const PerkStore: IMisc = {
 	/////////////////////Outbreak/////////////////////////
 
 	[MapIds.zoo]: [
-		new MiscMarker(`LPQNf`, Perks.wunderFizz, [185.75872880079808, 324.37261753718536]),
+		new MiscMarker(`LPQNf`, Perks.wunderFizz, [187.39455541323238, 324.080828854942]),
 	],
 	[MapIds.duga]: [
 		new MiscMarker(`svAvo`, Perks.wunderFizz, [219.1693079026586, 260.3728463398107]),
