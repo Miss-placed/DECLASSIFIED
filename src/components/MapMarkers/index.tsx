@@ -54,7 +54,7 @@ export const MapMarkers = () => {
 	const renderOrderOfLayers = [
 		renderedAudioMarkers.length > 0 ? (
 			<LayersControl.Overlay
-				name="Intel - Audio Logs"
+				name={MarkerLayerTypes.intelAudio.title}
 				checked={isChecked /* TODO: SWAP WITH USER PREFS */}
 			>
 				<LayerGroup>
@@ -65,7 +65,7 @@ export const MapMarkers = () => {
 		,
 		renderedArtifactMarkers.length > 0 ? (
 			<LayersControl.Overlay
-				name="Intel - Artifacts"
+				name={MarkerLayerTypes.intelArtifacts.title}
 				checked={isChecked /* TODO: SWAP WITH USER PREFS */}
 			>
 				<LayerGroup>
