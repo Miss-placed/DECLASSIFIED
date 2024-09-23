@@ -1,7 +1,6 @@
 export enum IconFileNames {
 	//default iocn
 	general = 'general',
-	objective = 'objective',
 
 	//misc icons
 	demented = 'demented_echo',
@@ -19,12 +18,16 @@ export enum IconFileNames {
 	cassette = 'cassette_tape',
 	interactable = 'interactable',
 	mainQuest = 'main_quest',
+	objective = 'objective',
 	secretArea = 'secret_door',
 	clue = 'visual_clue',
 	projector = 'projector',
 	monkey = 'monkey',
 	redOrb = 'red_aether_orb',
 	redRift = 'tunnel_red',
+	crystal = 'main_quest',
+	chest = 'interactable',
+	pizza = 'interactable',
 
 	//movement icons
 	rift = 'tunnel_pink',

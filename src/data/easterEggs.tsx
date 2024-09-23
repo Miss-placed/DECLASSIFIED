@@ -3,36 +3,24 @@ import { IconFileNames } from './icons';
 import { MapIds } from './intel';
 import { IMisc } from './types';
 
+// TODO : Move as many of these as I can inside the EE Types, too much refactoring for refactoring sake
 export enum EggType {
 	dieMaschineEE = `Seal the Deal`, //https://callofduty.fandom.com/wiki/Seal_the_Deal
 	dieMaschineWW = `D.I.E. Wonder Weapon`,
-	dieMaschineBonusChest = `Coffin Dance`,
-	dieMaschineRadioAlign = `Radio Alignment`,
-	dieMaschineOrdaHand = `Orda Hand`,
 
 	firebaseZEE = `Maxis Potential`, //https://callofduty.fandom.com/wiki/Maxis_Potential
 	firebaseZWW = `Rai K-84`,
-	firebaseZBonusChest = `Bunny Scare`,
 	firebaseZSafe = `Sergei's Safe`,
 	firebaseZMonkeyUpgrade = `Monkey bomb upgrade`,
 	firebaseZFreeJump = `Free Jump pad`,
 
 	mauerDerTotenEE = `Tin Man Heart`, //https://callofduty.fandom.com/wiki/Tin_Man_Heart
 	mauerDerTotenWW = `CRBR-S`,
-	mauerDerTotenBonusChest = `Hasenbau Club`,
 	mauerDerTotenTargets = `Target Practice`,
-	mauerDerTotenEssenceHarvester = `Essence Harvester`,
 	mauerDerTotenKlaus = `Klaus`,
 
 	outbreakEE1 = `Ravenov Implications`, //https://callofduty.fandom.com/wiki/Ravenov_Implications
 	outbreakEE2 = `Entrapment`, //https://callofduty.fandom.com/wiki/Entrapment
-
-	mainQuest = `Main Quest`,
-	questCollectible = `Quest Collectible`,
-	clue = `Visual Clue`,
-	interactable = `Interactable Object`,
-	secretArea = `Secret Area`,
-	music = `Cassette Tape`,
 };
 
 export const WorldEventTypes = {
@@ -50,28 +38,72 @@ export const WorldEventTypes = {
 };
 
 const EETypes = {
+	// A required main quest step or interactable
 	mainQuest: new Item({
-		title: EggType.mainQuest, icon: IconFileNames.mainQuest,
+		title: `Main Quest`, icon: IconFileNames.mainQuest,
 	}),
-	cassetteTape: new Item({
-		title: EggType.music, icon: IconFileNames.cassette,
-	}),
-	clue: new Item({ title: EggType.clue, icon: IconFileNames.clue }),
-	secretArea: new Item({
-		title: EggType.secretArea, icon: IconFileNames.secretArea,
-	}),
-	interactable: new Item({
-		title: EggType.interactable, icon: IconFileNames.interactable,
-	}),
+	// Required for quests, usually visible on the leaderboard menu
 	questCollectible: new Item({
-		title: EggType.questCollectible, icon: IconFileNames.mainQuest,
+		title: `Quest Collectible`, icon: IconFileNames.objective,
+	}),
+	// Part of the music easter egg quest
+	cassetteTape: new Item({
+		title: `Cassette Tape`, icon: IconFileNames.cassette,
+	}),
+	clue: new Item({ title: `Visual Clue`, icon: IconFileNames.clue }),
+	// An initially hidden area, or interactable, that makes available a new area that is not immediately accessible.
+	secretArea: new Item({
+		title: `Secret Area`, icon: IconFileNames.secretArea,
+	}),
+	// Can be interacted with, but provides no direct reward
+	interactable: new Item({
+		title: `Interactable Object`, icon: IconFileNames.interactable,
+	}),
+	// A bonus interactable or side quest that provides a reward
+	bonus: new Item({
+		title: `Bonus Item`, icon: IconFileNames.interactable,
+	}),
+	darkAetherPortal: new Item({
+		title: `Dark Aether Portal`, icon: IconFileNames.orb, desc: `Possible spawn location.\nUsed to enter the Dark Aether.\nWill reopen after 25 kills if the objective associated with it is not completed.`,
+	}),
+	dieMaschinePaPPortal: new Item({
+		title: `Dark Aether Portal`, icon: IconFileNames.orb, desc: `The first aether portal to spawn after turning on power, used to craft PaP.`,
+	}),
+	// Die Maschine specific
+	dieMaschineBonusChest: new Item({
+		title: "Coffin Dance", icon: IconFileNames.chest,
+	}),
+	dieMaschineAntenna: new Item({
+		title: "Radio Alignment", icon: IconFileNames.interactable,
+	}),
+	dieMaschineOrdaHand: new Item({
+		title: "Orda Hand", icon: IconFileNames.interactable,
+	}),
+	dieMaschineFloatingBodies: new Item({
+		title: "Floating Bodies", icon: IconFileNames.interactable,
+	}),
+	// Firebase Z specific
+	firebaseZBonusChest: new Item({
+		title: `Bunny Scare`, icon: IconFileNames.chest,
+	}),
+	// Maeur Der Toten specific
+	mauerDerTotenBonusChest: new Item({
+		title: `Hasenbau Club`, icon: IconFileNames.chest,
 	}),
 	essenceHarvester: new Item({
-		title: EggType.mauerDerTotenEssenceHarvester, icon: IconFileNames.reactor,
+		title: `Essence Harvester`, icon: IconFileNames.reactor,
 	}),
-	bonus: new Item({
-		title: EggType.interactable, icon: IconFileNames.interactable,
+	// Forsaken specific
+	forsakenBonusChest: new Item({
+		title: "Bonus Chest", icon: IconFileNames.chest,
 	}),
+	forsakenPizza: new Item({
+		title: `Ronald Raygun Pizza`, icon: IconFileNames.pizza,
+	}),
+	forsakenAetherCrystals: new Item({
+		title: `Large Aether Crystal`, icon: IconFileNames.crystal,
+	}),
+	// D.I.E. Wonder Weapon Specific
 	thermophasic: new Item({ title: `D.I.E. Thermophasic Upgrade`, icon: IconFileNames.upgrade, }),
 	nova5: new Item({ title: `D.I.E. Nova-5 Upgrade`, icon: IconFileNames.upgrade, }),
 	electrobolt: new Item({ title: `D.I.E. Electrobolt Upgrade`, icon: IconFileNames.upgrade, }),
@@ -101,46 +133,68 @@ const OutbreakEE2Steps = {
 
 export const StaticEggStore: IMisc = {
 	[MapIds.dieMaschine]: [
+		new MiscMarker(`3WQ2t`, EETypes.cassetteTape, [162.08070435536573, 256.7927495340165], `1 of 3 needed for the easter egg song\nIn the fridge.`),
+		new MiscMarker(`hHYOo`, EETypes.dieMaschineAntenna, [246.73749910857293, 412.077060366895], `1 of 3 satellite dishes that can be shot to readjust them, once all 3 are pointing at the central building, electricity will hit an antenna and produce essence.`),
+		new MiscMarker(`4ELTq`, EETypes.dieMaschineAntenna, [417.49920845357474, 232.99036862739175], `1 of 3 satellite dishes that can be shot to readjust them, once all 3 are pointing at the central building, electricity will hit an antenna and produce essence.`),
+		new MiscMarker(`V8VJ_`, EETypes.dieMaschineAntenna, [184.41720294197458, 26.708698357113562], `1 of 3 satellite dishes that can be shot to readjust them, once all 3 are pointing at the central building, electricity will hit an antenna and produce essence.`),
+		new MiscMarker(`8tI4t`, EETypes.clue, [221.30221321842092, 14.634501196702029], `Orda Bigfoot\nVisual easter egg that starts around round 42. Screen-shake will happen and the Orda can be spotted walking along the treeline.`),
+		new MiscMarker(`Ro0Nv`, EETypes.dieMaschineFloatingBodies, [209.88016350392178, 52.82697992955854], `1 of 5 locations, they spawn in one at a time, only in the dark aether. After shooting them all, one will spawn above the lake. Stand directly underneath and shoot it to earn your reward!`),
+		new MiscMarker(`3hdzn`, EETypes.dieMaschineFloatingBodies, [399.77174000747004, 244.14631264741922], `1 of 5 locations, they spawn in one at a time, only in the dark aether. After shooting them all, one will spawn above the lake. Stand directly underneath and shoot it to earn your reward!`),
+		new MiscMarker(`mdXJT`, EETypes.dieMaschineFloatingBodies, [61.036578161854806, 348.729455345802], `1 of 5 locations, they spawn in one at a time, only in the dark aether. After shooting them all, one will spawn above the lake. Stand directly underneath and shoot it to earn your reward!`),
+		new MiscMarker(`4Wsb9`, EETypes.dieMaschineFloatingBodies, [221.30221321842092, 157.05318357436323], `Final Floating Body\nOnly in the dark aether, will only spawn after shooting all 5 others. Stand directly underneath and shoot it to earn your reward!`),
 		new MiscMarker(`w_xnt`, EETypes.thermophasic, [223.35366309316512, 223.1585943917737], `Unlocked after following the steps with the fuse in the Dark Aether.`),
 		new MiscMarker(`9ySyg`, EETypes.nova5, [315.29654358848376, 295.69795800010473], `Unlocked after following the steps with the cannister in the Dark Aether.`),
-		new MiscMarker(`XW3JZ`, EETypes.bonus, [174.74870507815817, 257.415635207116], `Crack in the wall where you can remotely activate the D.I.E Wonder Weapon after acquiring the D.I.E remote.`),
+		new MiscMarker(`P7XG4`, EETypes.darkAetherPortal, [260.11042243500134, 282.13590175409416], `If yours spawns here, the first aetherscope part will be the antenna under the stairs.`),
+		new MiscMarker(`HTstG`, EETypes.darkAetherPortal, [244.00586459413896, 75.84893284213877], `If yours spawns here, the first aetherscope part will be on the crashed plane engine.`),
+		new MiscMarker(`XW3JZ`, EETypes.mainQuest, [174.74870507815817, 257.415635207116], `Crack in the wall where you can remotely activate the D.I.E Wonder Weapon after acquiring the D.I.E remote.`),
 		new MiscMarker(`wgKEY`, EETypes.questCollectible, [196.29722988085663, 307.495182630813], `1 of 3 Aetherscope Parts, one will spawn randomly when entering the Dark Aether, dogs spawn after picking it up.`),
 		new MiscMarker(`N29aN`, EETypes.questCollectible, [356.6938648779643, 343.9768501463755], `1 of 3 Aetherscope Parts, one will spawn randomly when entering the Dark Aether, dogs spawn after picking it up.`),
 		new MiscMarker(`yLQtN`, EETypes.questCollectible, [133.03685434894203, 282.6545483161539], `Cannister used in nova 5 steps, can only be retrieved with the alt fire of the D.I.E.`),
 		new MiscMarker(`3eput`, EETypes.questCollectible, [314.69833497058926, 344.089550203993], `Box containing a fuse used in the Thermophasic upgrade steps, hidden under the plane nose, inaccessible unless in the Dark Aether.`),
 		new MiscMarker(`G7SE2`, EETypes.questCollectible, [242.97643511037063, 255.9881891661138], `Crate containing the vial used in the Cryo upgrade steps. Shoot the crate with the D.I.E to knock it down.`),
 		new MiscMarker(`O0QxP`, EETypes.questCollectible, [256.63368476295705, 206.02147315077295], `Tree fungus used in the Cryo upgrade steps\nHave a Megaton shoot the fungus to activate it\nInteract whilst holding the vial to place it underneath the fungus and fill the vial.`),
+		new MiscMarker(`mlZBU`, EETypes.darkAetherPortal, [243.40377385527123, 207.31551716379568], `Unlocked after completing the 3 ghostly dialogue steps.\nUsed specifically for the Thermophasic upgrade chest.`),
 		new MiscMarker(`nS4PT`, EETypes.questCollectible, [258.3778460127693, 335.23982709555946], `1 of 3 Crystals used in the Electrobolt upgrade steps, use the alt fire of the D.I.E to collect the energy, then run down to the upgrade box and shoot it to progress.`),
 		new MiscMarker(`Vc_0w`, EETypes.questCollectible, [377.14480548250435, 224.28934027831147], `1 of 3 Crystals used in the Electrobolt upgrade steps, use the alt fire of the D.I.E to collect the energy, then run down to the upgrade box and shoot it to progress.`),
 		new MiscMarker(`nhHde`, EETypes.questCollectible, [258.5949702531161, 173.9165165178388], `1 of 3 Crystals used in the Electrobolt upgrade steps, use the alt fire of the D.I.E to collect the energy, then run down to the upgrade box and shoot it to progress.`),
 		new MiscMarker(`pfJ2L`, EETypes.mainQuest, [160.42537161357052, 375.00631403381794], `Broken tank that needs to be interacted with 3 times whilst holding the wrench\nShoot the zombie that pops out, then throw a lethal explosive into the now open hatch. This causes the gun to fire, dropping the Decontamination Agent from the tree it shoots.`),
-		new MiscMarker(`TbPJZ`, EETypes.mainQuest, [257.59332755993654, 349.50282422284494], `Final ghostly dialogue anomaly before the boss fight\nInteract with it and the family portrait will spawn\nPicking up the photo will start the ending boss fight.`),
+		new MiscMarker(`vm_wB`, EETypes.darkAetherPortal, [228.68530832965382, 267.7869413601128], `Final portal, used to find the last ghostly dialogue before the boss fight.`),
+		new MiscMarker(`TbPJZ`, EETypes.mainQuest, [257.59332755993654, 349.50282422284494], `Final ghostly dialogue anomaly before the boss fight\nInteract with it and Orlov will talk about his family and place the family photo on the table.\nPicking up the photo when out of the dark aether will start the boss fight immediately.`),
 	],
 	[MapIds.dieMaschineUnderground]: [
-		new MiscMarker(`1m5tF`, EETypes.bonus, [147.39538299834174, 388.52809723485626], `Downstairs, hidden behind the top left of the zombie spawn window\n1 of 5 blue orbs that you can shoot for a bonus chest.`),
-		new MiscMarker(`PxlsM`, EETypes.bonus, [76.10682851697437, 358.63289696847636], `1 of 5 blue orbs that you can shoot for a bonus chest.`),
-		new MiscMarker(`ONsCv`, EETypes.bonus, [201.05343475851072, 301.68965836584806], `High up on the wall\n1 of 5 blue orbs that you can shoot for a bonus chest.`),
-		new MiscMarker(`RFgwR`, EETypes.bonus, [221.09307449751262, 347.24424924795073], `1 of 5 blue orbs that you can shoot for a bonus chest.`),
-		new MiscMarker(`7TACp`, EETypes.bonus, [134.79653471600014, 401.6474904867542], `Hidden behind the grating\n1 of 5 blue orbs that you can shoot for a bonus chest.`),
+		new MiscMarker(`se3Jv`, EETypes.cassetteTape, [349.60922508562146, 350.0557392855062], `1 of 3 needed for the easter egg song\nIn Vogel's office on the bottom shelf by the zombie spawn window.`),
+		new MiscMarker(`AJI8t`, EETypes.cassetteTape, [149.7210717465117, 329.38635784232576], `1 of 3 needed for the easter egg song\nOn the very top corner of a bloodied beige monitoring device. It's at eye level, easily missed.`),
+		new MiscMarker(`4Edp9`, EETypes.dieMaschineOrdaHand, [345.24724776945624, 316.846711383994], `Down the inaccessible hallway. Can only be activated in the dark aether. You need to shoot 4 buttons to turn on 4 green lights, when activated there will be a large green light from the closest left door. Once this is activated, shoot the button of the door with the large green light to trigger the Orda Hand. After 15 zombies are caught you are rewarded with a legendary weapon upgrade.`),
+		new MiscMarker(`teuED`, EETypes.dieMaschineFloatingBodies, [113.86355809141334, 264.13489964779274], `1 of 5 locations, they spawn in one at a time, only in the dark aether. After shooting them all, one will spawn above the lake. Stand directly underneath and shoot it to earn your reward!`),
+		new MiscMarker(`2TA2d`, EETypes.dieMaschineFloatingBodies, [324.45759970249134, 279.48327895165096], `1 of 5 locations, they spawn in one at a time, only in the dark aether. After shooting them all, one will spawn above the lake. Stand directly underneath and shoot it to earn your reward!`),
+		new MiscMarker(`1m5tF`, EETypes.dieMaschineBonusChest, [147.39538299834174, 388.52809723485626], `Downstairs, hidden behind the top left of the zombie spawn window\n1 of 5 blue orbs that you can shoot for a bonus chest.`),
+		new MiscMarker(`PxlsM`, EETypes.dieMaschineBonusChest, [76.10682851697437, 358.63289696847636], `1 of 5 blue orbs that you can shoot for a bonus chest.`),
+		new MiscMarker(`ONsCv`, EETypes.dieMaschineBonusChest, [201.05343475851072, 301.68965836584806], `High up on the wall\n1 of 5 blue orbs that you can shoot for a bonus chest.`),
+		new MiscMarker(`RFgwR`, EETypes.dieMaschineBonusChest, [221.09307449751262, 347.24424924795073], `1 of 5 blue orbs that you can shoot for a bonus chest.`),
+		new MiscMarker(`7TACp`, EETypes.dieMaschineBonusChest, [134.79653471600014, 401.6474904867542], `Hidden behind the grating\n1 of 5 blue orbs that you can shoot for a bonus chest.`),
 		new MiscMarker(`UTXXu`, EETypes.secretArea, [293.1716173546175, 370.9160154554998], `Only accessible after using the Aether Tunnel above ground. 1 of 2 places the PaP part can spawn.`),
 		new MiscMarker(`6WnTv`, EETypes.secretArea, [206.2697306892794, 176.17280788708192], `Only accessible after using the Aether Tunnel above ground. 1 of 2 places the PaP part can spawn.`),
 		new MiscMarker(`VpIJu`, EETypes.cryoemitter, [297.2665148522491, 349.81279151873895], `Unlocked after pouring the liquid gathered from the fungus near the lake, onto the crate.`),
 		new MiscMarker(`VNWWl`, EETypes.electrobolt, [113.39539786187888, 353.078013760189], `Unlocked after gathering the energy from 3 crystals and shooting it at the box. The bulbs around the box indicate the progress.`),
 		new MiscMarker(`5M9A0`, EETypes.mainQuest, [211.50810943751497, 233.52599646325353], `D.I.E upgrade chest, requires the fuse and can only be interacted with when in the Dark Aether. Re-appears as open, above ground, on the back of the truck.`),
 		new MiscMarker(`5oG2A`, EETypes.interactable, [198.7906869627428, 178.82125886330365], `Plaguehound Gas condenser\nInteract whilst holding the canister to place it, then kill a Plaguehound near it to fill it with gas.`),
-		new MiscMarker(`af5QE`, EETypes.questCollectible, [324.47444670325746, 318.8136922248336], `1 of 3 Orbs that spawn in the Dark Aether after acquiring the Aetherscope. Interact with it to trigger the ghostly figure dialogue.`),
+		new MiscMarker(`af5QE`, EETypes.questCollectible, [326.5807091917049, 308.47697244514126], `Next to speed cola, in the corner.\n1 of 3 Orbs that spawn in the Dark Aether after acquiring the Aetherscope. Interact with it to trigger the ghostly figure dialogue.`),
 		new MiscMarker(`xpxgz`, EETypes.questCollectible, [235.5479859749598, 273.1385305408606], `1 of 3 Orbs that spawn in the Dark Aether after acquiring the Aetherscope. Interact with it to trigger the ghostly figure dialogue.`),
 		new MiscMarker(`rj9BH`, EETypes.questCollectible, [181.93046504375246, 348.6110192429405], `1 of 3 Orbs that spawn in the Dark Aether after acquiring the Aetherscope. Interact with it to trigger the ghostly figure dialogue.`),
 		new MiscMarker(`Kgdjc`, EETypes.questCollectible, [215.23791437285269, 305.50159134986285], `1 of 3 Aetherscope Parts, one will spawn randomly when entering the Dark Aether, dogs spawn after picking it up.`),
 		new MiscMarker(`JFz4Z`, EETypes.mainQuest, [339.1999615318702, 326.4211594207544], `Vogel's Computer\n After activating all 3 ghostly dialogues, interact with it 3 times to insert the password.`),
-		new MiscMarker(`mR1Ye`, EETypes.interactable, [273.33595868320293, 353.86231995501794], `A portal that appears after shooting all 4 canisters of the containment device with the corresponding D.I.E upgrade.`),
+		new MiscMarker(`LHGAv`, EETypes.dieMaschinePaPPortal, [172.09764607654128, 361.8028852234136], `The first aether portal to spawn after turning on power, used to craft PaP.`),
+		new MiscMarker(`mR1Ye`, EETypes.darkAetherPortal, [273.33595868320293, 353.86231995501794], `An aether portal that appears after shooting all 4 canisters of the containment device with the corresponding D.I.E upgrade.`),
+		new MiscMarker(`270nl`, EETypes.darkAetherPortal, [170.1085037631566, 387.66173529741445], `Unlocked after completing the 3 ghostly dialogue steps.\nUsed specifically for the Electrobolt upgrade chest.`),
+		new MiscMarker(`mSMsk`, EETypes.darkAetherPortal, [121.83927074468262, 403.6735944951819], `If yours spawns here, the first aetherscope part will be the one in the particle accelerator room.`),
+		new MiscMarker(`sHpo9`, EETypes.darkAetherPortal, [311.82894335858725, 299.6633680932173], `Spawns after building the aetherscope. Used to get the diary and trigger the first of the ghostly dialogues.`),
 		new MiscMarker(`fwG9Z`, EETypes.mainQuest, [329.39656431710233, 325.66999226629395], `Ghostly dialogue that appears after entering the portal that appears after shooting after shooting all 4 canisters of the containment device\nSpawns the Dark Aether Wrench.`),
 		new MiscMarker(`UyMmA`, EETypes.mainQuest, [310.66531882982684, 339.46395788705297], `Containment device on the roof with four canisters pointing down. Shoot each one with the corresponding elemental version of the D.I.E\nAfter placing the decontamination agent, this will allow you to trap both halves of a Megaton. Furthering the main quest.`),
 	],
 	[MapIds.firebaseZSpawn]: [
 		new MiscMarker(`Xst99`, EETypes.cassetteTape, [361.3527921527954, 188.83980649518872], `1 of 3 needed for the easter egg song\nUp the stairs on the book shelf.`),
 		new MiscMarker(`ALMtJ`, EETypes.cassetteTape, [158.88932890084, 205.2850129398853], `1 of 3 needed for the easter egg song\nInside a pigeon hole next to the locker containing one of the compounds for the main quest.`),
-		new MiscMarker(`tdq5M`, EETypes.bonus, [324.0469269977337, 242.0591502874637], `Mr Peeks\nStare at the bunny in outside of the map bounds in order to be teleported to the Dark Aether and obtain a bonus chest.`),
+		new MiscMarker(`tdq5M`, EETypes.firebaseZBonusChest, [324.0469269977337, 242.0591502874637], `Mr Peeks\nStare at the bunny in outside of the map bounds in order to be teleported to the Dark Aether and obtain a bonus chest.`),
 		new MiscMarker(`sDGIO`, EETypes.bonus, [370.180211499256, 197.93612737161737], `Dart Board / Aetherium Converter\nUsing a code found in the weapon lab PC, it can be shot in order (then the bullseye) to drop 1 of 3 parts used to create a free RAI K-84.`),
 		new MiscMarker(`sdUX5`, EETypes.mainQuest, [382.9324256232408, 267.11524328413856], `Sergei Ravenov\nMust be interacted with to start the main quest.`),
 		new MiscMarker(`xkABv`, EETypes.questCollectible, [164.40213154389374, 204.72718267730167], `Compound S16\n1 of 3 compounds required as part of the truth serum in the main quest.`),
@@ -168,7 +222,7 @@ export const StaticEggStore: IMisc = {
 		new MiscMarker(`dMdFW`, EETypes.mainQuest, [389.48725462947607, 253.659943176447], `Computer\n Used after placing all 3 Crystals in the reactors. Will display a world map to realign a satellite, each will have a flag in the bottom right corner. When you see a location with a question mark, align with that one to activate the OPC and allow you to begin the boss fight.`),
 	],
 	[MapIds.mauerDerToten]: [
-		new MiscMarker(`_n0MB`, EETypes.bonus, [193.68010197590363, 264.8048544502154], `1 of 6 Mr Peeks pieces used to access the bonus chest room.`),
+		new MiscMarker(`_n0MB`, EETypes.mauerDerTotenBonusChest, [193.68010197590363, 264.8048544502154], `1 of 6 Mr Peeks pieces used to access the bonus chest room.`),
 		new MiscMarker(`2wAit`, EETypes.clue, [384.32068891654967, 272.1759937481422], `#0 Blacklight locker`),
 		new MiscMarker(`G107e`, EETypes.clue, [181.79736917081456, 459.6975460903231], `#2 Blacklight numbers`),
 		new MiscMarker(`I_o9o`, EETypes.mainQuest, [341.84342386218685, 203.37097788580076], `Klaus\nUsed at various points in the quest, must be activated with 2 parts, his hands, found in the hotel room and his battery, dropped by killing the first Krasny Soldat.\nAfter this he can be called in at various locations around the map. He can also be upgraded 2 times, once with a hacking helm to finish the main quest, and a second, optional time, to upgrade his firepower.`),
@@ -192,11 +246,11 @@ export const StaticEggStore: IMisc = {
 		new MiscMarker(`ook1f`, EETypes.cassetteTape, [364.594308702165, 411.59576707869667], `1 of 3 needed for the easter egg song.`),
 		new MiscMarker(`YMZPe`, EETypes.cassetteTape, [175.42748080394747, 324.57693567676864], `1 of 3 needed for the easter egg song.`),
 		new MiscMarker(`00CEF`, EETypes.cassetteTape, [185.86657193523203, 70.19853360643957], `1 of 3 needed for the easter egg song.`),
-		new MiscMarker(`pufCN`, EETypes.bonus, [310.47106934268305, 281.8460771337832], `1 of 6 Mr Peeks pieces used to access the bonus chest room.`),
-		new MiscMarker(`9z8Uu`, EETypes.bonus, [315.8911862106404, 75.03474289078483], `1 of 6 Mr Peeks pieces used to access the bonus chest room.`),
-		new MiscMarker(`1uxx8`, EETypes.bonus, [317.22176766835554, 386.3680282265149], `1 of 6 Mr Peeks pieces used to access the bonus chest room.`),
-		new MiscMarker(`IC0Xq`, EETypes.bonus, [172.9720302577955, 466.15217502439106], `1 of 6 Mr Peeks pieces used to access the bonus chest room.`),
-		new MiscMarker(`r79fA`, EETypes.bonus, [152.2094092404965, 343.9680542153249], `1 of 6 Mr Peeks pieces used to access the bonus chest room.`),
+		new MiscMarker(`pufCN`, EETypes.mauerDerTotenBonusChest, [310.47106934268305, 281.8460771337832], `1 of 6 Mr Peeks pieces used to access the bonus chest room.`),
+		new MiscMarker(`9z8Uu`, EETypes.mauerDerTotenBonusChest, [315.8911862106404, 75.03474289078483], `1 of 6 Mr Peeks pieces used to access the bonus chest room.`),
+		new MiscMarker(`1uxx8`, EETypes.mauerDerTotenBonusChest, [317.22176766835554, 386.3680282265149], `1 of 6 Mr Peeks pieces used to access the bonus chest room.`),
+		new MiscMarker(`IC0Xq`, EETypes.mauerDerTotenBonusChest, [172.9720302577955, 466.15217502439106], `1 of 6 Mr Peeks pieces used to access the bonus chest room.`),
+		new MiscMarker(`r79fA`, EETypes.mauerDerTotenBonusChest, [152.2094092404965, 343.9680542153249], `1 of 6 Mr Peeks pieces used to access the bonus chest room.`),
 		new MiscMarker(`PwmRS`, EETypes.clue, [110.80096229476811, 298.4347086625506], `#1 Blacklight numbers`),
 		new MiscMarker(`muHxa`, EETypes.clue, [302.33874571909564, 311.0221039512368], `#3 Blacklight numbers`),
 		new MiscMarker(`0ZFbr`, EETypes.secretArea, [118.31471157271051, 467.80515920170296], `Hotel Room 305 & Klaus Part\nUse a brain rot zombie to open door and get Klaus hands and the safe for CRBR-S.`),
@@ -224,9 +278,45 @@ export const StaticEggStore: IMisc = {
 		new MiscMarker(`yg8rq`, EETypes.mainQuest, [244.90656540916956, 296.09692296650684], `1 of 2 Cleansed Rocks\nUsed in the main quest to arm the warhead placed in the lab. They both require the same steps, with different Megaton spawn locations.`),
 	],
 	[MapIds.forsaken]: [
-
+		new MiscMarker(`VzBDN`, EETypes.cassetteTape, [160.83297381918277, 202.37192487696], `Bubby Defense\nActivate him by placing the aether bunny inside his back panel. Survive the timer by defending him to obtain a gold reward chest.`),
+		new MiscMarker(`aIGFd`, EETypes.bonus, [130.6702681516008, 187.2383874312874], `PHD Slide Spot\nWhen you cause a PHD explosion at this spot in order to obtain a powerup, or the Aether Bunny, used in the Bubby easter egg.`),
+		new MiscMarker(`yjPIh`, EETypes.bonus, [52.55243726963396, 147.19548401911365], `PHD Slide Spot\nWhen you cause a PHD explosion at this spot in order to obtain a powerup, or the Aether Bunny, used in the Bubby easter egg.`),
+		new MiscMarker(`JcFu8`, EETypes.bonus, [145.65459465472622, 153.68343923758698], `PHD Slide Spot\nWhen you cause a PHD explosion at this spot in order to obtain a powerup, or the Aether Bunny, used in the Bubby easter egg.`),
+		new MiscMarker(`u2RLm`, EETypes.bonus, [133.8172435222692, 112.61549892471038], `Pistol Blueprint\nWhen interacted with, it starts a small shooting gallery in the store front, when completed successfully it upgrades the held weapons rarity by 1 level.`),
+		new MiscMarker(`UKMsS`, EETypes.bonus, [399.518718750346, 162.32261744868782], `SMG Blueprint\nWhen interacted with, it starts run and gun shooting gallery throughout the pizza store and up the stairs on the left side, when completed successfully it upgrades the held weapons rarity by 1 level.`),
+		new MiscMarker(`fiK5X`, EETypes.bonus, [78.67637077654524, 112.73252751643948], `Sniper Blueprint\nWhen interacted with, it starts a shooting gallery across the skyline of the stores, when completed successfully it upgrades the held weapons rarity by 1 level.`),
+		new MiscMarker(`j21QQ`, EETypes.bonus, [89.5625, 101.65625], `Arcade Token Dispenser\nDispenses tokens for 10k essence, or if knifed for the first time.`),
+		new MiscMarker(`vHgbN`, EETypes.bonus, [126.06004598884398, 220.60508048047697], `Anytown Grand Prix\nWhen impacted by a PHD explosion, activates and allows you to race ARC-XDs around the map with friends.`),
+		new MiscMarker(`E5bOF`, EETypes.forsakenBonusChest, [97.79068103184147, 71.92250393932072], `World At War\nUses an arcade token, teleports you to Nacht, fight through the waves in the time limit to earn the maximum reward.`),
+		new MiscMarker(`SsF1e`, EETypes.forsakenBonusChest, [112.51909400070444, 83.36132213341226], `Der Eisendrache\nUses an arcade token, teleports you to the top of the pyramid, starting a dragon trial from outbreak, will reward you with a loot chest.`),
+		new MiscMarker(`YCmuv`, EETypes.bonus, [98.43470550590929, 90.45351316759233], `Enduro\nUses an arcade token, drive around in a room with an ARC-XD to collect as much essence as possible.`),
+		new MiscMarker(`VMpbM`, EETypes.mainQuest, [105.26703279268563, 77.52976775995383], `Activision Grand Prix\nCost: 2000 Essence\nActivated after killing a zombie with deadwire next to it. You will need to drive the ARC-XD behind the loose ventilation shaft in the TV store.`),
+		new MiscMarker(`UjJ2J`, EETypes.secretArea, [425.378151687563, 169.59318438272373], `Ronald Raygun\nSecret room that can be teleported into using the upgraded aether shroud ability whilst facing the door.\nDeliver pizzas to 3 locations around the map and interact with him to receive a reward each time.`),
+		new MiscMarker(`SfL7b`, EETypes.forsakenPizza, [86.25331875878506, 102.71430028850807], `Pizza Delivery\nInteractable when holding a pizza from Ronald Raygun.`),
+		new MiscMarker(`dquTj`, EETypes.forsakenPizza, [162.7646126643831, 138.09457142299507], `Pizza Delivery\nInteractable when holding a pizza from Ronald Raygun.`),
+		new MiscMarker(`m8uSv`, EETypes.forsakenPizza, [167.45318425512843, 244.97965375670142], `Pizza Delivery\nInteractable when holding a pizza from Ronald Raygun.`),
+		new MiscMarker(`5m8bE`, EETypes.forsakenPizza, [105.75984994618577, 219.02958149971576], `Pizza Delivery\nInteractable when holding a pizza from Ronald Raygun.`),
+		new MiscMarker(`1QoYt`, EETypes.questCollectible, [76.34043931284971, 93.08541305858377], `Circuit Board\n Found somewhere on the side in the backroom between the video store and the arcade. Used to repair the teleporter and get to the basement.`),
+		new MiscMarker(`aWlqt`, EETypes.questCollectible, [171.2979612374162, 151.22479395215734], `Focusing Lens\nFound in the cinema entrance. Used to repair the teleporter and get to the basement.`),
+		new MiscMarker(`rhCLH`, EETypes.questCollectible, [118.87891298990084, 175.87422735426276], `Cathode-Ray Tube\n Found in the TV Store. Used to repair the teleporter and get to the basement.`),
+		new MiscMarker(`veYA5`, EETypes.questCollectible, [179.37100229248503, 228.78204497293126], `Fryer Cage\nFound in Burger Town. Used to repair the teleporter and get to the basement.`),
+		new MiscMarker(`Ja2jc`, EETypes.questCollectible, [423.88068477781434, 127.8243562109435], `Polymorphic Crystal Core\nWill spawn after pressing the shutter button, after round 8-9. When interacted with it will spawn a large wave of zombies, fend them off to allow it to be picked up.\nUsed to build the wonder weapon quest, also counts as an intel item.`),
+		new MiscMarker(`XFd3U`, EETypes.questCollectible, [383.1791506219179, 177.57780040015749], `Tempered Crystal Heart\nDropped by a tormentor, only when killed using a flamethrower.\nUsed to build the wonder weapon quest, also counts as an intel item.`),
+		new MiscMarker(`pKjFl`, EETypes.questCollectible, [245.7535763129745, 264.45501216733527], `Broken Teleporter\nMust be repaired in order to get to the basement and enable power.`),
+		new MiscMarker(`ae_ve`, EETypes.mainQuest, [236.66438512209962, 331.39708807762185], `Button For Shutters\nPress to begin the easter egg and enter the first cutscene.`),
+		new MiscMarker(`Jvfzd`, EETypes.questCollectible, [221.49957076603778, 264.8502010445337], `Fuel Tank\nObtained by interacting with one of the large white fuel tanks and completing the lockdown.`),
+		new MiscMarker(`RV0mf`, EETypes.questCollectible, [113.2661885050118, 164.47601941465607], `Monitoring Device\nDrops from a hole in the wall in the TV Store after using the Activision Grand Prix arcade machine.`),
+		new MiscMarker(`ldDz3`, EETypes.forsakenAetherCrystals, [271.9707732304297, 91.92974890168614], `Large Dark Aether Crystal #2\nSpawns 3 floating orbs that must be shot before the main crystal can be destroyed with the Crysalax Savager.\nThis will drop a Crystal Shard. These must be thrown in the mouth of an abomination, turning it's tail orange. Then it must be killed to obtain a Catalyzed Crystal Shard. Do this for all 3 crystals around the map.`),
+		new MiscMarker(`MUexS`, EETypes.forsakenAetherCrystals, [350.61973067962373, 191.0702416911157], `Large Dark Aether Crystal #3\nSpawns 3 floating orbs that must be shot before the main crystal can be destroyed with the Crysalax Savager.\nThis will drop a Crystal Shard. These must be thrown in the mouth of an abomination, turning it's tail orange. Then it must be killed to obtain a Catalyzed Crystal Shard. Do this for all 3 crystals around the map.`),
+		new MiscMarker(`JCpmh`, EETypes.mainQuest, [383.32564714876884, 269.6057051613007], `Aetherium Neutralizer\nUsed to trigger the start of the boss battle. Once constructed will prompt you to Activate it. When activated it will start an escort mission through the tunnel ahead. Collect orange crystals along the way to fuel the Neutralizer. Once you reach the end power up stations will spawn, before you begin the boss fight. `),
+		new MiscMarker(`8JYiv`, EETypes.mainQuest, [107.80007127817684, 410.8341478679704], `The Forsaken\nBoss battle spawn location.`),
 	],
 	[MapIds.forsakenUnderground]: [
+		new MiscMarker(`BhVQV`, EETypes.mainQuest, [296.8934702338299, 46.20376039078092], `Abomination Spawn\nWill spawn upon the first time approaching the portal, must be defeated to lift lockdown and enable power.`),
+		new MiscMarker(`mVUTb`, EETypes.questCollectible, [186.7283472806809, 448.0908425556309], `Energetic Geode\nCan be dropped from any dark aether crystal, only when it is destroyed by the electrical beam of an abomination.\nUsed to build the wonder weapon quest, also counts as an intel item.`),
+		new MiscMarker(`BjO0P`, EETypes.mainQuest, [407.98348792558136, 223.89943180145679], `Chrysalax Savager\nIs crafted inside the water tank using the 3 required components, after placing the items you must get melee kills near the tank in order to charge/craft the weapon.`),
+		new MiscMarker(`rN5Pg`, EETypes.questCollectible, [220.32935092146133, 373.6915310551705], `Housing Unit\nDrops from the wall when charged at by an abomination. Used as part of constructing the Aetherium Neutralizer`),
+		new MiscMarker(`mVIvK`, EETypes.forsakenAetherCrystals, [296.373367239989, 339.2622775270375], `Large Dark Aether Crystal #1\nSpawns 3 floating orbs that must be shot before the main crystal can be destroyed with the Crysalax Savager.\nThis will drop a Crystal Shard. These must be thrown in the mouth of an abomination, turning it's tail orange. Then it must be killed to obtain a Catalyzed Crystal Shard. Do this for all 3 crystals around the map.`),
 
 	],
 	/////////////////////Outbreak Items/////////////////////////
