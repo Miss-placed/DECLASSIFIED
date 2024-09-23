@@ -99,7 +99,7 @@ export const MapDetails = {
 	}),
 };
 
-export const allOutbreakMapsArr = [
+export const allOutbreakMapsArr: string[] = [
 	MapIds.zoo,
 	MapIds.ruka,
 	MapIds.duga,

@@ -139,7 +139,7 @@ export class IntelItem implements IIntelItem {
 	season!: Season;
 	typeDesc!: IntelType;
 	loc!: LatLngExpression;
-	map!: string | undefined;
+	map!: MapIds | undefined;
 	title!: string;
 	desc!: string;
 	img?: string | undefined;

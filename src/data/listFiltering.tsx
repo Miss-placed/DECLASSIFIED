@@ -1,7 +1,8 @@
 import { MiscMarker } from "../classes";
 import { MapGroupItem } from "../components/MapControls/types";
 import { EggType } from "./easterEggs";
-import { Faction, IntelItem, IntelType, Season } from "./intel";
+import { Faction, IntelItem, IntelType, MapIds, Season } from "./intel";
+import { allOutbreakMapsArr } from "./mapDetails";
 import { IMisc } from "./types";
 
 export function filterIntel(
@@ -46,7 +47,8 @@ export function filterIntel(
     if (currentMapOnly) {
         results = results.filter(intel => {
             return (
-                currentMapGroup.mapLayers.filter(map => map.id === intel.map).length > 0
+                currentMapGroup.mapLayers.filter(map => map.id === intel.map || // if map is in current map group
+                    (map.id && intel.map === MapIds.allOutbreakMaps && allOutbreakMapsArr.includes(map.id))).length > 0 // or if map is an outbreak map and intel could be found in any outbreak map
             );
         });
     }
