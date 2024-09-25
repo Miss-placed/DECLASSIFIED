@@ -573,6 +573,10 @@ export const MiscStore: IMisc = {
 	],
 	[MapIds.collateral]: [
 		new MiscMarker(`s3prM`, MiscTypes.rift, [360.1169342915705, 99.93675688474205]),
+		new MiscMarker(`QLHj6`, MiscTypes.rift, [415.05477050632334, 445.1493762227939]),
+		new MiscMarker(`um8zN`, MiscTypes.rift, [94.29643124494113, 32.351701145205865]),
+		new MiscMarker(`QGO50`, MiscTypes.rift, [365.3986710741469, 94.79800800688231]),
+		new MiscMarker(`gN7QK`, MiscTypes.rift, [217.564156544341, 474.02205681353286]),
 		new MiscMarker(`0FS1A`, MiscTypes.requiemRadio, [208.56446345433304, 185.99219645126215]),
 		new MiscMarker(`W6wPV`, MiscTypes.omegaRadio, [205.64054514049639, 328.34673879951004]),
 		new MiscMarker(`bUGza`, MiscTypes.maxisRadio, [296.69284893739234, 413.4940734223786]),
