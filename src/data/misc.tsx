@@ -572,6 +572,7 @@ export const MiscStore: IMisc = {
 		new MiscMarker(`of73n`, MiscTypes.maxisRadio, [168.48744901578294, 140.25]),
 	],
 	[MapIds.collateral]: [
+		new MiscMarker(`s3prM`, MiscTypes.rift, [360.1169342915705, 99.93675688474205]),
 		new MiscMarker(`0FS1A`, MiscTypes.requiemRadio, [208.56446345433304, 185.99219645126215]),
 		new MiscMarker(`W6wPV`, MiscTypes.omegaRadio, [205.64054514049639, 328.34673879951004]),
 		new MiscMarker(`bUGza`, MiscTypes.maxisRadio, [296.69284893739234, 413.4940734223786]),
