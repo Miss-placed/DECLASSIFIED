@@ -2,10 +2,14 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { UserContextProps } from '../DeclassifiedContext/types';
 
 const initialContextValues = {
+	isOnStartup: true,
+	setIsOnStartup: () => { },
 	isMobile: window.innerWidth <= 768,
 	setIsMobile: () => { },
 	isDebugMode: false,
 	setIsDebugMode: () => { },
+	initiallySharedMapItemId: null,
+	setInitiallySharedMapItemId: () => { },
 	sharedMapItemId: null,
 	setSharedMapItemId: () => { },
 	contributionState: {
@@ -21,8 +25,10 @@ export const UserContext =
 	createContext<UserContextProps>(initialContextValues);
 
 export const UserContextProvider = ({ children }) => {
+	const [isOnStartup, setIsOnStartup] = useState(true);
 	const [isMobile, setIsMobile] = useState(initialContextValues.isMobile);
 	const [isDebugMode, setIsDebugMode] = useState(initialContextValues.isDebugMode);
+	const [initiallySharedMapItemId, setInitialSharedMapItemId] = useState<string | null>(initialContextValues.initiallySharedMapItemId);
 	const [sharedMapItemId, setMapItemId] = useState<string | null>(null);
 	const [contributionState, setContributionStateState] = useState<{
 		isIntel: boolean;
@@ -59,6 +65,13 @@ export const UserContextProvider = ({ children }) => {
 		}
 	};
 
+	const setInitiallySharedMapItemId = (id: string | undefined) => {
+		if (isDebugMode) {
+			console.log('Setting setInitiallySharedMapItemId to: ', id);
+		}
+		setInitialSharedMapItemId(id || null);
+	}
+
 	useEffect(() => {
 		const handleResize = () => setIsMobile(window.innerWidth <= 768);
 		window.addEventListener('resize', handleResize);
@@ -69,10 +82,14 @@ export const UserContextProvider = ({ children }) => {
 	return (
 		<UserContext.Provider
 			value={{
+				isOnStartup,
+				setIsOnStartup,
 				isMobile,
 				setIsMobile,
 				isDebugMode,
 				setIsDebugMode,
+				initiallySharedMapItemId,
+				setInitiallySharedMapItemId,
 				sharedMapItemId,
 				setSharedMapItemId,
 				contributionState,

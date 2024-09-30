@@ -30,6 +30,8 @@ import {
 } from '../UserContext/userContextProvider';
 import { DeclassifiedContextProps, ToggleDrawerOptions } from './types';
 
+let timeoutId: ReturnType<typeof setTimeout> | null = null;
+
 const initialContextValues = {
 	userPrefs: {},
 	currentMap: null,
@@ -59,7 +61,7 @@ export const DeclassifiedContext = createContext<DeclassifiedContextProps>(initi
 
 export const DeclassifiedContextProvider = ({ children }) => {
 	const mapInstance = useMapEvents({});
-	const { isDebugMode, setSharedMapItemId } = useUserContext();
+	const { isOnStartup, isDebugMode, setSharedMapItemId } = useUserContext();
 	const [userPrefs, setUserPreferences] =
 		useState<DeclassifiedUserPreferences | null>(null);
 	const [currentMap, setCurrentMap] = useState<MapItem | null>(null);
@@ -78,7 +80,7 @@ export const DeclassifiedContextProvider = ({ children }) => {
 	const [drawerState, setDrawerState] = useState(
 		initialContextValues.drawerState
 	);
-	const { sharedMapItemId } = useUserContext();
+	const { initiallySharedMapItemId, setInitiallySharedMapItemId, setIsOnStartup } = useUserContext();
 	const { triggerDialog } = useNotification();
 	const [isMapLoaded, setIsMapLoaded] = useState(false);
 
@@ -131,7 +133,7 @@ export const DeclassifiedContextProvider = ({ children }) => {
 		}
 	});
 
-	const focusOnSharedItem = useCallback(async () => {
+	const focusOnSharedItem = useCallback(async (sharedMapItemId) => {
 		if (isMapLoaded) {
 			if (sharedMapItemId) {
 				const sharedMapItem = GetMapById(sharedMapItemId)
@@ -181,7 +183,7 @@ export const DeclassifiedContextProvider = ({ children }) => {
 				}
 			}
 		}
-	}, [isDebugMode, isMapLoaded, mapInstance, setCurrentMapWithValidation, sharedMapItemId]);
+	}, [isDebugMode, isMapLoaded, mapInstance, setCurrentMapWithValidation]);
 
 	const collectedIntel = useLiveQuery(async () => {
 		return await db.intelCollected.toArray();
@@ -233,12 +235,14 @@ export const DeclassifiedContextProvider = ({ children }) => {
 					});
 				}
 
-				const userPrefsCurrentMap = GetMapById(data!.currentMap);
-				if (!sharedMapItemId && userPrefsCurrentMap) {
-					if (isDebugMode) {
-						console.log('Setting current map from user preferences: ', userPrefsCurrentMap);
+				if (!initiallySharedMapItemId && isOnStartup && data!.currentMap !== initiallySharedMapItemId) {
+					const userPrefsCurrentMap = GetMapById(data!.currentMap);
+					if (userPrefsCurrentMap) {
+						if (isDebugMode) {
+							console.log('Setting current map from user preferences: ', userPrefsCurrentMap);
+						}
+						setCurrentMapWithValidation(userPrefsCurrentMap);
 					}
-					setCurrentMapWithValidation(userPrefsCurrentMap);
 				}
 
 				setIsMapLoaded(true);
@@ -251,17 +255,22 @@ export const DeclassifiedContextProvider = ({ children }) => {
 
 		fetchPreferences();
 
-		if (isMapLoaded && sharedMapItemId) {
-			focusOnSharedItem();
+		if (initiallySharedMapItemId) {
+			if (isDebugMode) {
+				console.log('isMapLoaded && initiallySharedMapItemId: ', isMapLoaded, initiallySharedMapItemId);
+			}
+
+			if (timeoutId) {
+				clearTimeout(timeoutId); // Clear the previous timeout if any
+			}
+
+			timeoutId = setTimeout(() => {
+				focusOnSharedItem(initiallySharedMapItemId);
+				setIsOnStartup(false);
+			}, 100);
+			setInitiallySharedMapItemId(undefined);
 		}
-	}, [
-		focusOnSharedItem,
-		isDebugMode,
-		isMapLoaded,
-		setCurrentMapWithValidation,
-		sharedMapItemId,
-		triggerDialog
-	]);
+	}, [focusOnSharedItem, initiallySharedMapItemId, isDebugMode, isMapLoaded, isOnStartup, setCurrentMapWithValidation, setInitiallySharedMapItemId, setIsOnStartup, triggerDialog]);
 
 
 	if (isLoading) {

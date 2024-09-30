@@ -47,10 +47,14 @@ export interface DrawerMenuProps {
 export type Anchor = 'top' | 'left' | 'bottom' | 'right';
 
 export interface UserContextProps {
+	isOnStartup: boolean;
+	setIsOnStartup: (state: boolean) => void;
 	isMobile: boolean;
 	setIsMobile: (state: boolean) => void;
 	isDebugMode: boolean;
 	setIsDebugMode: (state: boolean) => void;
+	initiallySharedMapItemId: string | null;
+	setInitiallySharedMapItemId: (state: string | undefined) => void;
 	sharedMapItemId: string | null;
 	setSharedMapItemId: (id: string | undefined) => void;
 	contributionState: {

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import {
 	Route,
 	BrowserRouter as Router,
@@ -33,8 +33,8 @@ function App() {
 
 const MapWithItemId = () => {
 	const { id } = useParams();
-	const { setSharedMapItemId, isDebugMode } = useUserContext();
-	var [isOnStartup, setIsOnStartup] = useState(true);
+	const { isOnStartup, setSharedMapItemId, isDebugMode, setInitiallySharedMapItemId } = useUserContext();
+
 
 	// Update the global state with the 'id' parameter
 	useEffect(() => {
@@ -42,10 +42,10 @@ const MapWithItemId = () => {
 			if (isDebugMode) {
 				console.log('setSharedMapItemId: ', id);
 			}
+			setInitiallySharedMapItemId(id);
 			setSharedMapItemId(id);
-			setIsOnStartup(false);
 		}
-	}, [id, isDebugMode, isOnStartup, setSharedMapItemId]);
+	}, [id, isDebugMode, isOnStartup, setInitiallySharedMapItemId, setSharedMapItemId]);
 
 	return <MapProvider />;
 };
