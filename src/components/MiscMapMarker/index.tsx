@@ -18,13 +18,13 @@ export const MiscMapMarker = ({
 	const mapInstance = useMapEvents({});
 	const renderedIcon = miscIconInit(icon);
 	const [markerInstance, setPopupInstance] = useState<L.Marker | null>(null); // State to hold the Popup instance
-	const { sharedMapItemId } = useUserContext();
+	const { initiallySharedMapItemId } = useUserContext();
 
 	useEffect(() => {
-		if (sharedMapItemId === id && markerInstance) {
+		if (initiallySharedMapItemId === id && markerInstance) {
 			markerInstance.openPopup();
 		}
-	}, [sharedMapItemId, id, markerInstance, mapInstance]);
+	}, [initiallySharedMapItemId, id, markerInstance, mapInstance]);
 
 	return (
 		<Marker position={loc} icon={renderedIcon} ref={setPopupInstance}>

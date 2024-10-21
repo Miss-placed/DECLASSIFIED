@@ -38,15 +38,15 @@ export const IntelMapMarker = ({
 }: IntelItem) => {
 	const mapInstance = useMapEvents({});
 	const [markerInstance, setPopupInstance] = useState<L.Marker | null>(null); // State to hold the Popup instance
-	const { sharedMapItemId } = useUserContext();
+	const { initiallySharedMapItemId } = useUserContext();
 	const isCollected = useLiveQuery(() => db.intelCollected.get(id ?? ''));
 	const markerIcon = renderLeafletIcon(isCollected, faction, typeDesc);
 
 	useEffect(() => {
-		if (sharedMapItemId === id && markerInstance) {
+		if (initiallySharedMapItemId === id && markerInstance) {
 			markerInstance.openPopup();
 		}
-	}, [sharedMapItemId, id, markerInstance, mapInstance]);
+	}, [initiallySharedMapItemId, id, markerInstance, mapInstance]);
 
 	return loc !== null && loc.toString() === [0, 0].toString() ? (
 		<></>
