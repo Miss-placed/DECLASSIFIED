@@ -1,8 +1,8 @@
 importScripts(
 	'https://storage.googleapis.com/workbox-cdn/releases/6.5.0/workbox-sw.js'
 );
-const cacheVersion = 'v1.1';
-if (workbox) {
+const cacheVersion = 'v1.2';
+if (!workbox) {
 	console.log('Workbox is loaded!');
 
 	// Precache the files defined by the Webpack build process
@@ -21,10 +21,9 @@ if (workbox) {
 		})
 	);
 
-	// Cache-first strategy for the root URL
 	workbox.routing.registerRoute(
 		({ request }) => request.mode === 'navigate', // Match all navigation requests
-		new workbox.strategies.CacheFirst({
+		new workbox.strategies.NetworkFirst({
 			cacheName: `app-cache${cacheVersion}`,
 			plugins: [
 				new workbox.expiration.ExpirationPlugin({
@@ -50,7 +49,6 @@ if (workbox) {
 		})
 	);
 
-	// Cache-first strategy for all other requests (static assets)
 	workbox.routing.registerRoute(
 		({ request }) =>
 			request.destination === 'script' ||
@@ -58,7 +56,7 @@ if (workbox) {
 			request.destination === 'image' ||
 			request.destination === 'font' ||
 			request.destination === 'manifest',
-		new workbox.strategies.StaleWhileRevalidate({
+		new workbox.strategies.NetworkFirst({
 			cacheName: `static-resources${cacheVersion}`,
 		})
 	);
