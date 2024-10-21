@@ -246,6 +246,7 @@ export const DeclassifiedContextProvider = ({ children }) => {
 				}
 
 				setIsMapLoaded(true);
+				setIsOnStartup(false);
 			} catch (error) {
 				console.error('Failed to fetch user preferences: ', error);
 			} finally {
@@ -265,9 +266,9 @@ export const DeclassifiedContextProvider = ({ children }) => {
 			}
 
 			timeoutId = setTimeout(() => {
-				focusOnSharedItem(initiallySharedMapItemId);
 				setIsOnStartup(false);
-			}, 100);
+				focusOnSharedItem(initiallySharedMapItemId);
+			}, 200);
 			setInitiallySharedMapItemId(undefined);
 		}
 	}, [focusOnSharedItem, initiallySharedMapItemId, isDebugMode, isMapLoaded, isOnStartup, setCurrentMapWithValidation, setInitiallySharedMapItemId, setIsOnStartup, triggerDialog]);
