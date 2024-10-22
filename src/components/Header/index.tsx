@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { Button, Drawer, Menu, MenuItem } from '@mui/material';
+import { Button, Divider, Drawer, Menu, MenuItem } from '@mui/material';
 import React, { useContext } from 'react';
 import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { useUserContext } from '../../contexts/UserContext/userContextProvider';
-import { MapGroupings } from '../MapControls/types';
+import { Game, MapGroupings, MapGroupItem } from '../MapControls/types';
 
 const StyledHeader = styled.header`
 	user-select: none;
@@ -49,6 +49,13 @@ const MapMenu = styled(Menu)`
 	}
 `;
 
+const GameSeparator = styled(Divider)`
+	font-size: 0.8rem;
+	font-weight: 900;
+	width: 100%;
+	padding: 0 3rem;
+`
+
 const Header = () => {
 	const { isMobile } = useUserContext();
 	const { currentMapGroup } = useContext(DeclassifiedContext);
@@ -81,6 +88,14 @@ const Header = () => {
 			setIsDrawerOpen(open);
 		};
 
+	const bo6Maps = Object.entries(MapGroupings).filter(([key, mapGroupItem]) => mapGroupItem.game === Game.bo6);
+	const coldWarMaps = Object.entries(MapGroupings).filter(([key, mapGroupItem]) => mapGroupItem.game === Game.coldWar);
+	const MapMenuItems = [
+		<GameSeparator key="BlackOps6" >Black Ops 6</GameSeparator>,
+		buildMapItems(bo6Maps),
+		<GameSeparator key="BlackOpsColdWar" >Black Ops: Cold War</GameSeparator>,
+		buildMapItems(coldWarMaps),
+	];
 	return (
 		<>
 			{isMobile ? (
@@ -94,14 +109,7 @@ const Header = () => {
 						open={isDrawerOpen}
 						onClose={toggleHeader(false)}
 					>
-						{Object.entries(MapGroupings).map(([key, mapItem]) => (
-							<MenuItem
-								onClick={() => setCurrentMap(mapItem.mapLayers[0])}
-								key={key}
-							>
-								{mapItem.mapName}
-							</MenuItem>
-						))}
+						{MapMenuItems}
 					</MapDrawer>
 				</StyledHeader>
 			) : (
@@ -127,19 +135,22 @@ const Header = () => {
 							'aria-labelledby': 'basic-button',
 						}}
 					>
-						{Object.entries(MapGroupings).map(([key, mapItem]) => (
-							<MenuItem
-								onClick={() => setCurrentMap(mapItem.mapLayers[0])}
-								key={key}
-							>
-								{mapItem.mapName}
-							</MenuItem>
-						))}
+						{MapMenuItems}
 					</MapMenu>
 				</StyledHeader>
 			)}
 		</>
 	);
+
+	function buildMapItems(mapGroup: [string, MapGroupItem][]) {
+		return mapGroup ? (
+			mapGroup.map(([key, mapGroupItem]) => (
+				<MenuItem onClick={() => setCurrentMap(mapGroupItem.mapLayers[0])} key={key}>
+					{mapGroupItem.mapName}
+				</MenuItem>
+			))
+		) : null;
+	}
 };
 
 export default Header;

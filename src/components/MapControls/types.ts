@@ -1,9 +1,15 @@
 import { MapItem } from '../../classes';
 import { MapDetails } from '../../data/mapDetails';
 
+
+export enum Game {
+	coldWar = "Black Ops: Cold War",
+	bo6 = "Black Ops 6"
+}
 export interface MapGroupItem {
 	mapName: string;
 	mapLayers: MapItem[];
+	game: Game;
 }
 
 export type MapGroupDictionary = Record<string, MapGroupItem>;
@@ -12,18 +18,22 @@ export const MapGroupings: MapGroupDictionary = {
 	dieMachine_Group: {
 		mapName: 'Die Maschine',
 		mapLayers: [MapDetails.dieMaschine, MapDetails.dieMaschineUnderground],
+		game: Game.coldWar,
 	},
 	firebaseZ_Group: {
 		mapName: 'Firebase Z',
 		mapLayers: [MapDetails.firebaseZ, MapDetails.firebaseZSpawn],
+		game: Game.coldWar,
 	},
 	mauerDerToten_Group: {
 		mapName: 'Mauer Der Toten',
 		mapLayers: [MapDetails.mauerDerTotenStreets, MapDetails.mauerDerToten],
+		game: Game.coldWar,
 	},
 	forsaken_Group: {
 		mapName: 'Forsaken',
 		mapLayers: [MapDetails.forsaken, MapDetails.forsakenUnderground],
+		game: Game.coldWar,
 	},
 	outbreak_Group: {
 		mapName: 'Outbreak',
@@ -37,10 +47,12 @@ export const MapGroupings: MapGroupDictionary = {
 			MapDetails.collateral,
 			MapDetails.armada,
 		],
+		game: Game.coldWar,
 	},
 	liberty_falls: {
 		mapName: 'Liberty Falls',
 		mapLayers: [MapDetails.libertyFalls],
+		game: Game.bo6,
 	},
 };
 
