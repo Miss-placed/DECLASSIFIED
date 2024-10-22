@@ -36,7 +36,7 @@ const StyledUiContainer = styled.div<{ $isMobile?: boolean }>`
 	> div {
 		display: flex;
 		justify-content: ${props =>
-		props.$isMobile ? 'flex-start' : 'space-between'};
+			props.$isMobile ? 'flex-start' : 'space-between'};
 
 		.zoom-container {
 			visibility: ${props => (props.$isMobile ? 'hidden' : 'visible')};
@@ -45,12 +45,14 @@ const StyledUiContainer = styled.div<{ $isMobile?: boolean }>`
 `;
 
 export const UserInterface = () => {
-	const { isMobile, isDebugMode, contributionState, setContributionState } = useUserContext();
+	const { isMobile, isDebugMode, contributionState, setContributionState } =
+		useUserContext();
 	const { triggerNotification } = useNotification();
 	const { toggleDrawer, currentMap } = useContext(DeclassifiedContext);
 	const mapInstance = useMapEvents({});
 
-	const [socialsMenuAnchorEl, setSocialsAnchorEl] = useState<null | HTMLElement>(null);
+	const [socialsMenuAnchorEl, setSocialsAnchorEl] =
+		useState<null | HTMLElement>(null);
 	const socialsMenuOpen = Boolean(socialsMenuAnchorEl);
 	const handleSocialsClick = (event: React.MouseEvent<HTMLElement>) => {
 		setSocialsAnchorEl(event.currentTarget);
@@ -60,7 +62,7 @@ export const UserInterface = () => {
 	};
 
 	useMapEvent('click', props => {
-		let clickLocation: LatLngTuple = [props.latlng.lat, props.latlng.lng]
+		let clickLocation: LatLngTuple = [props.latlng.lat, props.latlng.lng];
 
 		if (isDebugMode) {
 			console.log(clickLocation);
@@ -69,8 +71,18 @@ export const UserInterface = () => {
 		}
 
 		if (contributionState.isContributing && currentMap) {
-			redirectNewContributionToGithub(contributionState.isIntel, contributionState.markerName, contributionState.itemType, currentMap, clickLocation);
-			setContributionState({ isContributing: false, markerName: null, itemType: null });
+			redirectNewContributionToGithub(
+				contributionState.isIntel,
+				contributionState.markerName,
+				contributionState.itemType,
+				currentMap,
+				clickLocation
+			);
+			setContributionState({
+				isContributing: false,
+				markerName: null,
+				itemType: null,
+			});
 		}
 	});
 
@@ -97,15 +109,28 @@ export const UserInterface = () => {
 			</div>
 			<div>
 				<div className="bottom-left-ui">
-					<button className="btn ui" onClick={() => toggleDrawer({ isOpen: true, content: <IntelAndEasterEggDrawerContent /> })}>
+					<button
+						className="btn ui"
+						onClick={() =>
+							toggleDrawer({
+								isOpen: true,
+								content: <IntelAndEasterEggDrawerContent />,
+							})
+						}
+					>
 						<FontAwesomeIcon icon={faFolderOpen}></FontAwesomeIcon>
 					</button>
-					<button className="btn ui" onClick={() => toggleDrawer({ isOpen: true, content: <SettingsDrawerContent /> })}>
+					<button
+						className="btn ui"
+						onClick={() =>
+							toggleDrawer({ isOpen: true, content: <SettingsDrawerContent /> })
+						}
+					>
 						<FontAwesomeIcon icon={faGear}></FontAwesomeIcon>
 					</button>
-					<a className="btn ui" href="./legacy/challenge.html" target="_blank" rel="noopener noreferrer">
+					{/*					<a className="btn ui" href="./legacy/challenge.html" target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faList}></FontAwesomeIcon>
-					</a>
+					</a>*/}
 					{/* <a className="btn ui" href="./challenge.html"><FontAwesomeIcon icon={faList}></FontAwesomeIcon > </a> */}
 				</div>
 				<div className="bottom-right-ui">
@@ -115,7 +140,7 @@ export const UserInterface = () => {
 						<>
 							<Button
 								id="socials"
-								className='btn ui'
+								className="btn ui"
 								aria-controls={socialsMenuOpen ? 'socials-menu' : undefined}
 								aria-haspopup="true"
 								aria-expanded={socialsMenuOpen ? 'true' : undefined}
@@ -138,68 +163,78 @@ export const UserInterface = () => {
 									horizontal: 'center',
 								}}
 							>
-								<MenuItem onClick={handleSocialsClose}><a
-									title="Join us on discord!"
-									href="https://discord.gg/4Xqj8XntFe"
-									target="_blank"
-									className="btn ui"
-									id="discord"
-									rel="noreferrer"
-								>
-									<FontAwesomeIcon icon={faDiscord}></FontAwesomeIcon>{' '}
-								</a></MenuItem>
-								<MenuItem onClick={handleSocialsClose}><a
-									title="Help us out on Github!"
-									href="https://github.com/Miss-placed/DECLASSIFIED"
-									target="_blank"
-									className="btn ui"
-									id="github"
-									rel="noreferrer"
-								>
-									<FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>{' '}
-								</a></MenuItem>
-								<MenuItem onClick={handleSocialsClose}><a
-									title="Buy us a coffee!"
-									href="https://buymeacoffee.com/declassified.map"
-									target="_blank"
-									className="btn ui"
-									id="coffee"
-									rel="noreferrer"
-								>
-									<CoffeeIcon />
-								</a></MenuItem>
-							</Menu></>
-					) : (<><a
-						title="Join us on discord!"
-						href="https://discord.gg/4Xqj8XntFe"
-						target="_blank"
-						className="btn ui"
-						id="discord"
-						rel="noreferrer"
-					>
-						<FontAwesomeIcon icon={faDiscord}></FontAwesomeIcon>{' '}
-					</a>
-						<a
-							title="Help us out on Github!"
-							href="https://github.com/Miss-placed/DECLASSIFIED"
-							target="_blank"
-							className="btn ui"
-							id="github"
-							rel="noreferrer"
-						>
-							<FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>{' '}
-						</a>
-						<a
-							title="Buy us a coffee!"
-							href="https://buymeacoffee.com/declassified.map"
-							target="_blank"
-							className="btn ui"
-							id="coffee"
-							rel="noreferrer"
-						>
-							<CoffeeIcon />
-						</a></>)}
-
+								<MenuItem onClick={handleSocialsClose}>
+									<a
+										title="Join us on discord!"
+										href="https://discord.gg/4Xqj8XntFe"
+										target="_blank"
+										className="btn ui"
+										id="discord"
+										rel="noreferrer"
+									>
+										<FontAwesomeIcon icon={faDiscord}></FontAwesomeIcon>{' '}
+									</a>
+								</MenuItem>
+								<MenuItem onClick={handleSocialsClose}>
+									<a
+										title="Help us out on Github!"
+										href="https://github.com/Miss-placed/DECLASSIFIED"
+										target="_blank"
+										className="btn ui"
+										id="github"
+										rel="noreferrer"
+									>
+										<FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>{' '}
+									</a>
+								</MenuItem>
+								<MenuItem onClick={handleSocialsClose}>
+									<a
+										title="Buy us a coffee!"
+										href="https://buymeacoffee.com/declassified.map"
+										target="_blank"
+										className="btn ui"
+										id="coffee"
+										rel="noreferrer"
+									>
+										<CoffeeIcon />
+									</a>
+								</MenuItem>
+							</Menu>
+						</>
+					) : (
+						<>
+							<a
+								title="Join us on discord!"
+								href="https://discord.gg/4Xqj8XntFe"
+								target="_blank"
+								className="btn ui"
+								id="discord"
+								rel="noreferrer"
+							>
+								<FontAwesomeIcon icon={faDiscord}></FontAwesomeIcon>{' '}
+							</a>
+							<a
+								title="Help us out on Github!"
+								href="https://github.com/Miss-placed/DECLASSIFIED"
+								target="_blank"
+								className="btn ui"
+								id="github"
+								rel="noreferrer"
+							>
+								<FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>{' '}
+							</a>
+							<a
+								title="Buy us a coffee!"
+								href="https://buymeacoffee.com/declassified.map"
+								target="_blank"
+								className="btn ui"
+								id="coffee"
+								rel="noreferrer"
+							>
+								<CoffeeIcon />
+							</a>
+						</>
+					)}
 				</div>
 			</div>
 		</StyledUiContainer>
