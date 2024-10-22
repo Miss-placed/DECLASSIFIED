@@ -12,8 +12,15 @@ export const CustomIntelFilterCheckbox = ({ name, defaultChecked }) => {
 	let [checked, setChecked] = React.useState(defaultChecked || false);
 	const checkbox = useRef<HTMLInputElement | null>(null);
 	const { ref, ...rest } = register('intelTypes');
-	const totalIntelOfType = IntelStore.filter(intel => intel.typeDesc === checkboxValue).length;
-	const totalIntelCollectedOfType = IntelStore.filter(intel => intel.typeDesc === checkboxValue && collectedIntel && collectedIntel.find(({ intelId }) => intelId === intel.id)).length;
+	const totalIntelOfType = IntelStore.filter(
+		intel => intel.typeDesc === checkboxValue
+	).length;
+	const totalIntelCollectedOfType = IntelStore.filter(
+		intel =>
+			intel.typeDesc === checkboxValue &&
+			collectedIntel &&
+			collectedIntel.find(({ intelId }) => intelId === intel.id)
+	).length;
 
 	return (
 		<>
@@ -56,7 +63,9 @@ export const CustomIntelFilterCheckbox = ({ name, defaultChecked }) => {
 						alt="Placeholder"
 						loading="lazy"
 					/>
-					<div className="intel-count">{totalIntelCollectedOfType} /{totalIntelOfType}</div>
+					<div className="intel-count">
+						{totalIntelCollectedOfType} /{totalIntelOfType}
+					</div>
 				</div>
 			</StyledCustomIntelFilterCheckbox>
 		</>
@@ -64,10 +73,10 @@ export const CustomIntelFilterCheckbox = ({ name, defaultChecked }) => {
 };
 
 const StyledCustomIntelFilterCheckbox = styled.div`
-	padding: 5px;
 	.container {
 		background-color: var(--clr-white-d);
 		display: grid;
+		border-radius: 5px;
 		grid-template-columns: 40% 40% 20%;
 		justify-items: center;
 		align-items: center;
@@ -91,6 +100,8 @@ const StyledCustomIntelFilterCheckbox = styled.div`
 		display: flex;
 		align-items: center;
 		padding: 0.2rem;
+		border-top-right-radius: var(--radius);
+		border-bottom-right-radius: var(--radius);
 	}
 	.checked {
 		outline: 3px solid var(--clr-yellow);

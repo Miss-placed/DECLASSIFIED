@@ -33,8 +33,12 @@ function App() {
 
 const MapWithItemId = () => {
 	const { id } = useParams();
-	const { isOnStartup, setSharedMapItemId, isDebugMode, setInitiallySharedMapItemId } = useUserContext();
-
+	const {
+		isOnStartup,
+		setSharedMapItemId,
+		isDebugMode,
+		setInitiallySharedMapItemId,
+	} = useUserContext();
 
 	// Update the global state with the 'id' parameter
 	useEffect(() => {
@@ -45,7 +49,13 @@ const MapWithItemId = () => {
 			setInitiallySharedMapItemId(id);
 			setSharedMapItemId(id);
 		}
-	}, [id, isDebugMode, isOnStartup, setInitiallySharedMapItemId, setSharedMapItemId]);
+	}, [
+		id,
+		isDebugMode,
+		isOnStartup,
+		setInitiallySharedMapItemId,
+		setSharedMapItemId,
+	]);
 
 	return <MapProvider />;
 };
@@ -54,12 +64,12 @@ const LegacySite = () => {
 	// Redirects the user to the index file of your legacy site
 	window.location.href = '/legacy/index.html'; // Or any starting page in your legacy folder
 	return null;
-}
+};
 
 const LegacyChallengeSite = () => {
 	// Redirects the user to the index file of your legacy site
 	window.location.href = '/legacy/challenge.html'; // Or any starting page in your legacy folder
 	return null;
-}
+};
 
 export default App;

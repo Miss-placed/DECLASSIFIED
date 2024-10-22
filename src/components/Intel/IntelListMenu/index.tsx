@@ -24,7 +24,12 @@ export type IntelFormInputs = {
 };
 
 export const IntelListMenu = () => {
-	const { currentIntelFilter, setCurrentIntelFilter, collectedIntel, filteredIntelStore } = useContext(DeclassifiedContext);
+	const {
+		currentIntelFilter,
+		setCurrentIntelFilter,
+		collectedIntel,
+		filteredIntelStore,
+	} = useContext(DeclassifiedContext);
 	const { isDebugMode } = useUserContext();
 	const [expand, setExpand] = useState(false);
 	const toggleAcordion = () => {
@@ -50,7 +55,11 @@ export const IntelListMenu = () => {
 		}
 	};
 	const totalIntelOfType = filteredIntelStore.length;
-	const totalIntelCollectedOfType = filteredIntelStore.filter(intel => collectedIntel && collectedIntel.find(({ intelId }) => intelId === intel.id)).length;
+	const totalIntelCollectedOfType = filteredIntelStore.filter(
+		intel =>
+			collectedIntel &&
+			collectedIntel.find(({ intelId }) => intelId === intel.id)
+	).length;
 
 	watch((data, { name, type }) => handleSubmit(onSubmit)());
 
@@ -76,11 +85,13 @@ export const IntelListMenu = () => {
 							variant="outlined"
 							{...register('searchTerm')}
 						/>
-						{totalIntelCollectedOfType}/{totalIntelOfType}
+						<StyledResultsCounter>
+							{totalIntelCollectedOfType}/{totalIntelOfType}
+						</StyledResultsCounter>
 					</StyledAccordionSummary>
-					<AccordionDetails>
+					<StyledAccordionDetails>
 						<IntelFilterMenu />
-					</AccordionDetails>
+					</StyledAccordionDetails>
 					<MenuFooter />
 				</StyledAccordion>
 			</StyledExpandableMenu>
@@ -108,15 +119,29 @@ const StyledExpandableMenu = styled.form`
 `;
 
 const StyledAccordionSummary = styled(AccordionSummary)`
-.MuiAccordionSummary-content {
-	display: flex;
-	justify-content: space-between;
-    align-items: center;
-}
-`
+	background-color: var(--clr-grey-l);
+
+	.MuiAccordionSummary-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	#intelSearch,
+	#intelSearch input {
+		background-color: white;
+		border-radius: var(--radius);
+		border: unset;
+	}
+`;
 
 const StyledAccordion = styled(Accordion)`
 	width: 100%;
 	margin: 0;
 	box-shadow: none;
+`;
+const StyledAccordionDetails = styled(AccordionDetails)`
+	background: var(--clr-grey-l);
+`;
+const StyledResultsCounter = styled.div`
+	color: var(--clr-white-d);
 `;
