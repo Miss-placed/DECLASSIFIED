@@ -30,6 +30,7 @@ body {
 	--clr-pink: #cc358b;
 	/* backgrounds */
 	--clr-bg: var(--clr-white-d);
+	--clr-bg-lighter: color-mix(in srgb, var(--clr-grey-d) 90%, white 10%);
 	--clr-bg-inverted: var(--clr-grey-d);
 	/* text color */
 	--clr-color: var(--clr-grey-d);
@@ -62,7 +63,7 @@ body.dark {
 	/* whites and blacks */
 	--svg-border: var(--clr-red);
 	--svg-roads: var(--clr-black);
-	--svg-background: var(--clr-grey-d);
+	--svg-background: color-mix(in srgb, var(--clr-grey-d) 90%, black 10%);
 	--svg-field: var(--clr-grey);
 	--svg-features: var(--clr-grey-l);
 	--svg-buildings: var(--clr-white);

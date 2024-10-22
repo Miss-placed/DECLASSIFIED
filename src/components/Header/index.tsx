@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { Button, Divider, Drawer, Menu, MenuItem } from '@mui/material';
+import { Button, Chip, Divider, Drawer, Menu, MenuItem } from '@mui/material';
 import React, { useContext } from 'react';
 import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { useUserContext } from '../../contexts/UserContext/userContextProvider';
@@ -39,21 +39,33 @@ const StyledHeader = styled.header`
 `;
 
 const MapDrawer = styled(Drawer)`
-	.MuiPaper-root {
+	.MuiPaper-root{
+		background-color: var(--clr-bg-inverted);
+	}
+	.MuiPaper-root li {
 		background-color: var(--clr-bg-inverted);
 	}
 `;
 const MapMenu = styled(Menu)`
-	.MuiPaper-root {
+	.MuiPaper-root{
 		background-color: var(--clr-bg-inverted);
 	}
-`;
+	.MuiPaper-root li {
+		background-color: var(--clr-bg-inverted);
+	}
+	`;
 
 const GameSeparator = styled(Divider)`
-	font-size: 0.8rem;
-	font-weight: 900;
+	background-color: var(--clr-bg-inverted);
+	color: var(--clr-color);
+	font-size: 0.6rem;
+	margin-bottom: 8px;
+	font-weight: lighter;
 	width: 100%;
-	padding: 0 3rem;
+`
+const GameTitle = styled(Chip)`
+	background-color: var(--clr-bg);
+	color: var(--clr-color);
 `
 
 const Header = () => {
@@ -91,9 +103,14 @@ const Header = () => {
 	const bo6Maps = Object.entries(MapGroupings).filter(([key, mapGroupItem]) => mapGroupItem.game === Game.bo6);
 	const coldWarMaps = Object.entries(MapGroupings).filter(([key, mapGroupItem]) => mapGroupItem.game === Game.coldWar);
 	const MapMenuItems = [
-		<GameSeparator key="BlackOps6" >Black Ops 6</GameSeparator>,
+		<GameSeparator key="BlackOps6">
+			<GameTitle label="Black Ops 6" size="small" />
+		</GameSeparator>,
 		buildMapItems(bo6Maps),
-		<GameSeparator key="BlackOpsColdWar" >Black Ops: Cold War</GameSeparator>,
+
+		<GameSeparator key="BlackOpsColdWar" >
+			<GameTitle label="Black Ops: Cold War" size="small" />
+		</GameSeparator>,
 		buildMapItems(coldWarMaps),
 	];
 	return (
