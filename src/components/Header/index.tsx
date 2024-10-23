@@ -17,11 +17,12 @@ const StyledHeader = styled.header`
 		color: var(--clr-white);
 		width: 375px;
 		background: var(--clr-grey-d);
+		//TODO: change the --clr-orange depending on the map pack vars
 		background: linear-gradient(
 			135deg,
 			var(--clr-grey-d) 15%,
-			var(--clr-red) 15%,
-			var(--clr-red) 16%,
+			var(--clr-orange) 15%,
+			var(--clr-orange) 16%,
 			var(--clr-grey-d) 16%
 		);
 		background-position-x: -454px;
@@ -39,7 +40,7 @@ const StyledHeader = styled.header`
 `;
 
 const MapDrawer = styled(Drawer)`
-	.MuiPaper-root{
+	.MuiPaper-root {
 		background-color: var(--clr-bg-inverted);
 	}
 	.MuiPaper-root li {
@@ -47,26 +48,38 @@ const MapDrawer = styled(Drawer)`
 	}
 `;
 const MapMenu = styled(Menu)`
-	.MuiPaper-root{
+	.MuiPaper-root {
+		width: 375px;
 		background-color: var(--clr-bg-inverted);
+	}
+	.MuiPaper-root ul {
+		padding: unset !important;
 	}
 	.MuiPaper-root li {
 		background-color: var(--clr-bg-inverted);
+		transition: all 0.3s ease;
+		&:hover {
+			background-color: color-mix(in srgb, var(--clr-bg-inverted), black 7%);
+		}
 	}
-	`;
+`;
 
 const GameSeparator = styled(Divider)`
 	background-color: var(--clr-bg-inverted);
 	color: var(--clr-color);
 	font-size: 0.6rem;
 	margin-bottom: 8px;
+	padding: 1ch;
 	font-weight: lighter;
-	width: 100%;
-`
+`;
 const GameTitle = styled(Chip)`
-	background-color: var(--clr-bg);
+	// TODO: needs to be dynamic once we add more shit
+	--clr-map-pack: var(--game-base-color, var(--clr-bg));
+	background-color: var(--clr-map-pack);
+	padding: 1.7ch;
+	border-radius: 5em;
 	color: var(--clr-color);
-`
+`;
 
 const Header = () => {
 	const { isMobile } = useUserContext();
@@ -100,15 +113,27 @@ const Header = () => {
 			setIsDrawerOpen(open);
 		};
 
-	const bo6Maps = Object.entries(MapGroupings).filter(([key, mapGroupItem]) => mapGroupItem.game === Game.bo6);
-	const coldWarMaps = Object.entries(MapGroupings).filter(([key, mapGroupItem]) => mapGroupItem.game === Game.coldWar);
+	const bo6Maps = Object.entries(MapGroupings).filter(
+		([key, mapGroupItem]) => mapGroupItem.game === Game.bo6
+	);
+	const coldWarMaps = Object.entries(MapGroupings).filter(
+		([key, mapGroupItem]) => mapGroupItem.game === Game.coldWar
+	);
+	// TODO: set --game-base-color to somethingdynamic from the mappacks
+	const bo6StyleVars = {
+		'--game-base-color': 'var(--clr-orange)',
+	} as React.CSSProperties;
+	// TODO: set --game-base-color to somethingdynamic from the mappacks
+	const bocwStyleVars = {
+		'--game-base-color': 'var(--clr-purple)',
+	} as React.CSSProperties;
+
 	const MapMenuItems = [
-		<GameSeparator key="BlackOps6">
+		<GameSeparator key="BlackOps6" style={bo6StyleVars}>
 			<GameTitle label="Black Ops 6" size="small" />
 		</GameSeparator>,
 		buildMapItems(bo6Maps),
-
-		<GameSeparator key="BlackOpsColdWar" >
+		<GameSeparator key="BlackOpsColdWar" style={bocwStyleVars}>
 			<GameTitle label="Black Ops: Cold War" size="small" />
 		</GameSeparator>,
 		buildMapItems(coldWarMaps),
@@ -160,13 +185,16 @@ const Header = () => {
 	);
 
 	function buildMapItems(mapGroup: [string, MapGroupItem][]) {
-		return mapGroup ? (
-			mapGroup.map(([key, mapGroupItem]) => (
-				<MenuItem onClick={() => setCurrentMap(mapGroupItem.mapLayers[0])} key={key}>
-					{mapGroupItem.mapName}
-				</MenuItem>
-			))
-		) : null;
+		return mapGroup
+			? mapGroup.map(([key, mapGroupItem]) => (
+					<MenuItem
+						onClick={() => setCurrentMap(mapGroupItem.mapLayers[0])}
+						key={key}
+					>
+						{mapGroupItem.mapName}
+					</MenuItem>
+				))
+			: null;
 	}
 };
 

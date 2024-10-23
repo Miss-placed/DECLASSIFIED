@@ -1,10 +1,10 @@
 import { MapItem } from '../../classes';
 import { MapDetails } from '../../data/mapDetails';
 
-
+// TODO: add game styles per game preferably {baseColor: string, textColor:string}
 export enum Game {
-	coldWar = "Black Ops: Cold War",
-	bo6 = "Black Ops 6"
+	coldWar = 'Black Ops: Cold War',
+	bo6 = 'Black Ops 6',
 }
 export interface MapGroupItem {
 	mapName: string;
