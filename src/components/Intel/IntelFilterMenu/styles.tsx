@@ -2,15 +2,19 @@ import styled from '@emotion/styled';
 import { Theme } from '@mui/material';
 
 export const StyledIntelFilterMenu = styled.div`
-	/* background-color: var(--clr-grey-d); */
 	display: grid;
 	justify-items: center;
 	grid-template-columns: 50% 50%;
+	gap: var(--radius);
 	.MuiFormControl-root {
 		width: 100%;
 	}
-	.MuiInputLabel-root {
-		background-color: var(--clr-white);
+	.MuiFormControl-root {
+		background-color: var(--clr-white-d);
+		border-radius: var(--radius);
+	}
+	.MuiOutlinedInput-notchedOutline {
+		border-width: 0px;
 	}
 `;
 export function getStyles(

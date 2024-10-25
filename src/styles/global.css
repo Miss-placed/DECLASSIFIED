@@ -44,7 +44,7 @@ body {
 	--z-index-ui: 1050;
 	--z-index-menu: 800;
 	--z-index-map: 0;
-
+	--radius: 10px;
 	/* whites and blacks */
 	--svg-border: var(--clr-red);
 	--svg-roads: var(--clr-grey-l);
