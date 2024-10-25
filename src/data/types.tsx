@@ -50,6 +50,7 @@ export const MiscTypes = {
 export const MarkerLayerTypes = {
     intelAudio: new Item({ id: 'intel', title: 'Intel - Audio Logs' }),
     intelArtifacts: new Item({ id: 'intel', title: 'Intel - Artifacts' }),
+    intelDocuments: new Item({ id: 'intel', title: 'Intel - Documents' }),
     perks: new Item({ id: 'perks', title: 'Perks' }),
     misc: new Item({ id: 'misc', title: 'Miscellaneous' }),
     easterEggs: new Item({ id: 'easterEggs', title: 'Easter Eggs' }),

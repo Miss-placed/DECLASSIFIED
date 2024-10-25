@@ -28,14 +28,10 @@ const MapWrapper = styled.div <{ $shouldShowCrosshair?: boolean, $isStartingUp?:
 		opacity: ${({ $isStartingUp }) => ($isStartingUp ? `0` : `1`)};
 	}
 
-${({ $shouldShowCrosshair }) =>
-		$shouldShowCrosshair ??
-		`
 	#worldMap {
-		cursor: crosshair;
+		cursor: ${({ $shouldShowCrosshair }) => ($shouldShowCrosshair ? `crosshair` : ``)};
 	}
-	`
-	}
+
 `
 
 const LoaderWrapper = styled.div`

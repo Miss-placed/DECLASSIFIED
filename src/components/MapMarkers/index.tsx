@@ -45,6 +45,7 @@ export const MapMarkers = () => {
 
 	const renderedAudioMarkers = renderIntelMapMarkers(currentMap!.id!, IntelType.Audio);
 	const renderedArtifactMarkers = renderIntelMapMarkers(currentMap!.id!, IntelType.Artifact);
+	const renderedDocumentMarkers = renderIntelMapMarkers(currentMap!.id!, IntelType.Docs);
 
 	function AnyResultsInMarkerStore(markerStore: IMisc) {
 		return markerStore[currentMap!.id!] && markerStore[currentMap!.id!].length > 0;
@@ -70,6 +71,17 @@ export const MapMarkers = () => {
 			>
 				<LayerGroup>
 					{renderedArtifactMarkers}
+				</LayerGroup>
+			</LayersControl.Overlay>
+		) : null
+		,
+		renderedDocumentMarkers.length > 0 ? (
+			<LayersControl.Overlay
+				name={MarkerLayerTypes.intelDocuments.title}
+				checked={isChecked /* TODO: SWAP WITH USER PREFS */}
+			>
+				<LayerGroup>
+					{renderedDocumentMarkers}
 				</LayerGroup>
 			</LayersControl.Overlay>
 		) : null
@@ -106,6 +118,7 @@ export const MapMarkers = () => {
 			{renderOrderOfLayers[2]}
 			{renderOrderOfLayers[3]}
 			{renderOrderOfLayers[4]}
+			{renderOrderOfLayers[5]}
 
 
 			{/* <LayersControl.Overlay checked name="Misc Markers">

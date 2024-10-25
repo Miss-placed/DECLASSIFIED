@@ -62,6 +62,7 @@ export enum Faction {
 	Omega = 'Omega',
 	Maxis = 'Maxis',
 	Dark_Aether = 'Dark Aether',
+	None = 'None',
 }
 
 export enum Season {
@@ -158,6 +159,19 @@ export class IntelItem implements IIntelItem {
 }
 
 const staticIntelStore: IIntelItem[] = [
+	// TODO: Refactor this out into its own BO6 Intel list and clean up the constructor to make faction a non issue
+	/////////////////////Black Ops 6/////////////////////////
+	{
+		id: 'BO6S0LFDo1',
+		faction: Faction.None,
+		season: Season.Preseason,
+		typeDesc: IntelType.Docs,
+		loc: [257.9435454592807, 288.089779420659],
+		map: MapIds.libertyFalls,
+		title: 'Politics, Politics',
+		desc: 'Can be found in deposit boxes of the Bank Vault.',
+		img: '',
+	},
 	/////////////////////Requiem/////////////////////////
 	{
 		id: 'RS0Au1',

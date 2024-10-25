@@ -591,6 +591,24 @@ export const StaticEggStore: IMisc = {
 		new MiscMarker(`SaBpE`, EETypes.projector, [322.80314185151997, 353.37968827572143]),
 		new MiscMarker(`gLRQZ`, EETypes.redRift, [281.5872778794272, 99.5338716371389], `Underwater, used to start the main quest.`),
 		new MiscMarker(`6OweP`, EETypes.zooMask, [251.06749530113694, 258.1062871710513], `On the desk inside the ship, opposite the box.`),
-	]
+	],
 	/////////////////////Bo6 Items/////////////////////////
+	[MapIds.libertyFalls]: [
+		new MiscMarker(`yGbi1`, EETypes.cassetteTape, [164.25934212296625, 319.5391735432103], `1 of 3 needed for the easter egg song.`),
+		new MiscMarker(`91uL5`, EETypes.cassetteTape, [292.69235875192874, 273.4487864638555], `1 of 3 needed for the easter egg song.`),
+		new MiscMarker(`W79dg`, EETypes.cassetteTape, [190.2183565265511, 98.67280276106689], `1 of 3 needed for the easter egg song.`),
+		new MiscMarker(`GCP5X`, EETypes.mainQuest, [192.74919588520245, 336.28228145349664], `Jet Gun Room\nA room that will burst open with zombies when approached. Contains a workbench and hints on how to build the Wonder Weapon.`),
+		new MiscMarker(`7RCQd`, EETypes.mainQuest, [209.9971117591179, 111.23062643890167], `Some sort of Aetherium canister device that is missing 1 of it's 3 canisters. The missing canister can be found in the comic book store in the roof.`),
+		new MiscMarker(`SvGXG`, EETypes.mainQuest, [309.71024070860136, 323.1210254565541], `Missing Aetherium Canister\nStuck in the roof, Used in some way during the main quest, probably linked to the device in the church.`),
+		new MiscMarker(`xG8zU`, EETypes.mainQuest, [219.50905939855957, 413.9982260079434], `Unknown device linked to a quest. Emits a damaging purple cloud that only hurts players.`),
+		new MiscMarker(`mrMRU`, EETypes.questCollectible, [157.61254240360353, 214.89424677771137], `1 of 3 Unknown devices linked to a quest. They seem to be some form of surveying equipment.`),
+		new MiscMarker(`9uYMI`, EETypes.questCollectible, [283.47680491477615, 218.01350931794695], `1 of 3 Unknown devices linked to a quest. They seem to be some form of surveying equipment.`),
+		new MiscMarker(`SkNCT`, EETypes.questCollectible, [233.46875, 328.78125], `1 of 3 Unknown devices linked to a quest. They seem to be some form of surveying equipment.`),
+		new MiscMarker(`DzJw9`, EETypes.mainQuest, [257.1898821141628, 285.095345453075], `Bank Vault\nOpened by finding 3, 2 digit numbers around the map. After gaining entry player can bring a loot key (dropped by elites) to open any of the 9 lootable deposit boxes.`),
+		new MiscMarker(`59M0p`, EETypes.questCollectible, [313.2238913426472, 326.38618562722263], `1 of 3 numbers needed for the bank vault.`),
+		new MiscMarker(`AmVI8`, EETypes.questCollectible, [144.84576970738917, 255.81102392565194], `1 of 3 numbers needed for the bank vault.`),
+		new MiscMarker(`Wa3zX`, EETypes.questCollectible, [243.625, 293.28125], `1 of 3 numbers needed for the bank vault.`),
+		new MiscMarker(`ycopO`, EETypes.clue, [297.32875445409906, 383.9627368184202], `Set of binoculars that can be used for 50 essence. A dancing zombie can be spotted on a rock. The zombies will not attack you whilst in use.`),
+		new MiscMarker(`Xvkv1`, EETypes.clue, [282.07221275373934, 388.5203872504264], `Set of binoculars that can be used for 50 essence. A dancing zombie can be spotted on a rock. The zombies will not attack you whilst in use.`),
+	]
 };
