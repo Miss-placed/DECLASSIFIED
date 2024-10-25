@@ -56,8 +56,8 @@ export const IntelAndEasterEggDrawerContent = () => {
 	const addRemoveItemMultiSelect = (value: string) => {
 		intelMultiSelectState.includes(value)
 			? setIntelMultiSelectState(
-					intelMultiSelectState.filter(item => item !== value)
-				)
+				intelMultiSelectState.filter(item => item !== value)
+			)
 			: setIntelMultiSelectState([...intelMultiSelectState, value]);
 	};
 
@@ -125,7 +125,6 @@ const StyledAppBar = styled(AppBar)`
 `;
 
 const StyledTabPanel = styled(TabPanel)`
-	background-color: hotpink;
 	height: inherit;
 	.MuiBox-root {
 		padding: unset;
