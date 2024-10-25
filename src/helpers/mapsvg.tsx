@@ -16068,7 +16068,7 @@ export const mapSVGs = {
 					y2="260.4"
 				/>
 				<polygon
-					className="cls-4 feature-stroke "
+					className="cls-5 feature-stroke "
 					points="213 364.1 231.2 333.9 218.8 325.7 214.8 326.9 198 355 213 364.1"
 				/>
 				<line
