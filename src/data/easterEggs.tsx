@@ -122,6 +122,8 @@ const EETypes = {
 	zooMask: new Item({ title: 'Tiger Mask', desc: `Part of the super easter egg, can be interacted with in order to make the next warp be guaranteed to be Zoo.`, icon: IconFileNames.secretArea }),
 	// BO6 Specific
 	bankVault: new Item({ title: 'Bank Vault', icon: IconFileNames.secretArea }),
+	mrPeeksGame: new Item({ title: 'Mr Peeks Game', desc: 'Find all collectibles on the map to be teleported to a location and start a side game for a reward!', icon: IconFileNames.mrPeeks, }),
+	mrPeeksCollectible: new Item({ title: 'Mr Peeks Collectible', desc: 'Shoot this object as part of the Mr Peeks game for this map.', icon: IconFileNames.mrPeeksBlue, }),
 };
 
 const OutbreakEE2Steps = {
@@ -609,6 +611,13 @@ export const StaticEggStore: IMisc = {
 		new MiscMarker(`KnYD1`, EETypes.bonus, [320.4359118273686, 335.96476838651415], `1 of 9 Aetherella Statues\n Must be collected with Jet Gun.`),
 		new MiscMarker(`7xM7R`, EETypes.bonus, [200.86456177774397, 141.34366589801542], `1 of 9 Aetherella Statues\n Must be collected with Jet Gun.\nOn the edge of the window on the outside of the church entrance. Look up and to the right.`),
 		new MiscMarker(`gKJVw`, EETypes.bonus, [244.43444833982815, 340.1405042456944], `1 of 9 Aetherella Statues\n Must be collected with Jet Gun.\nCan be grabbed when looking at the video store roof when stood on the roof of Yummy Freeze.`),
+		new MiscMarker(`mZN2H`, EETypes.bonus, [269.68018735607296, 99.48248959488959], `Free Deadshot\nShoot all of the cans on the fence outside the cemetary to be rewarded with a free deadshot perk. You're timed and only one person can get it per game.`),
+		new MiscMarker(`uqQGR`, EETypes.mrPeeksGame, [130.4233520842571, 270.3960054771881], `Bowling Game!\nAfter shooting all the shoes you will be teleported here to bowl! Score 300 for a darkops challenge, you'll always get a reward.`),
+		new MiscMarker(`C1_lA`, EETypes.mrPeeksCollectible, [263.07941062405075, 71.73609264466869], `Bowling Shoe\nOutside the map hanging from a tree.\nShoot all of them to be teleported to a game of bowling for a reward!`),
+		new MiscMarker(`XDpvp`, EETypes.mrPeeksCollectible, [205.1716488687219, 266.0576454274178], `Bowling Shoe\nOn top of the casket on the left.\nShoot all of them to be teleported to a game of bowling for a reward!`),
+		new MiscMarker(`TVoa1`, EETypes.mrPeeksCollectible, [258.9359914503427, 183.38343504085915], `Bowling Shoe\nUnder the chair on the right.\nShoot all of them to be teleported to a game of bowling for a reward!`),
+		new MiscMarker(`VQG2f`, EETypes.mrPeeksCollectible, [338.20461000783763, 361.3635060584787], `Bowling Shoe\nOn the shelving to the right.\nShoot all of them to be teleported to a game of bowling for a reward!`),
+		new MiscMarker(`dtAm9`, EETypes.mrPeeksCollectible, [194.2381625762071, 431.0707322886372], `Bowling Shoe\nUnder spawn, on the fuel station counter.\nShoot all of them to be teleported to a game of bowling for a reward!`),
 		new MiscMarker(`DzJw9`, EETypes.bankVault, [257.1898821141628, 285.095345453075], `Opened by finding 3, 2 digit numbers around the map.\nAfter gaining entry player can bring a loot key (dropped by elites) to open any of the 9 lootable deposit boxes.`),
 		new MiscMarker(`59M0p`, EETypes.clue, [313.2238913426472, 326.38618562722263], `1 of 3 numbers needed for the bank vault.`),
 		new MiscMarker(`AmVI8`, EETypes.clue, [144.84576970738917, 255.81102392565194], `1 of 3 numbers needed for the bank vault.`),

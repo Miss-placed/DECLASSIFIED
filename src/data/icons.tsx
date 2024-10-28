@@ -28,6 +28,8 @@ export enum IconFileNames {
 	crystal = 'main_quest',
 	chest = 'interactable',
 	pizza = 'interactable',
+	mrPeeks = 'mr_peeks',
+	mrPeeksBlue = 'mr_peeks_blue',
 
 	//movement icons
 	rift = 'tunnel_pink',
@@ -109,6 +111,8 @@ export const SvgIcons = {
 	[IconFileNames.mainQuest]: true,
 	[IconFileNames.secretArea]: true,
 	[IconFileNames.clue]: true,
+	[IconFileNames.mrPeeks]: true,
+	[IconFileNames.mrPeeksBlue]: true,
 };
 const svgIconProperties = { popupAnchor: [0, -30], iconAnchor: [20, 20], iconSize: [40, 40] };
 export const customMiscIconBounds = {
@@ -135,7 +139,14 @@ export const customMiscIconBounds = {
 		iconSize: [40, 40],
 		popupAnchor: [5, -20],
 	},
-
+	[IconFileNames.mrPeeks]: {
+		iconSize: [40, 40],
+		popupAnchor: [5, -20],
+	},
+	[IconFileNames.mrPeeksBlue]: {
+		iconSize: [40, 40],
+		popupAnchor: [5, -20],
+	},
 	[IconFileNames.demented]: svgIconProperties,
 	[IconFileNames.rampageInducer]: svgIconProperties,
 	[IconFileNames.portal]: svgIconProperties,
