@@ -46,9 +46,13 @@ const EETypes = {
 	questCollectible: new Item({
 		title: `Quest Collectible`, icon: IconFileNames.objective,
 	}),
-	// Part of the music easter egg quest
+	// Part of the music easter egg quests for Cold War
 	cassetteTape: new Item({
 		title: `Cassette Tape`, icon: IconFileNames.cassette,
+	}),
+	// Part of the music easter egg quests for BO6
+	mrPeeksHeadphones: new Item({
+		title: `Mr Peeks Headphones`, icon: IconFileNames.cassette,
 	}),
 	clue: new Item({ title: `Visual Clue`, icon: IconFileNames.clue }),
 	// An initially hidden area, or interactable, that makes available a new area that is not immediately accessible.
@@ -68,6 +72,9 @@ const EETypes = {
 	}),
 	dieMaschinePaPPortal: new Item({
 		title: `Dark Aether Portal`, icon: IconFileNames.orb, desc: `The first aether portal to spawn after turning on power, used to craft PaP.`,
+	}),
+	freePowerUp: new Item({
+		title: `Free Power Up`, icon: IconFileNames.interactable,
 	}),
 	// Die Maschine specific
 	dieMaschineBonusChest: new Item({
@@ -598,9 +605,9 @@ export const StaticEggStore: IMisc = {
 	],
 	/////////////////////Bo6 Items/////////////////////////
 	[MapIds.libertyFalls]: [
-		new MiscMarker(`yGbi1`, EETypes.cassetteTape, [164.25934212296625, 319.5391735432103], `1 of 3 needed for the easter egg song.`),
-		new MiscMarker(`91uL5`, EETypes.cassetteTape, [292.69235875192874, 273.4487864638555], `1 of 3 needed for the easter egg song.`),
-		new MiscMarker(`W79dg`, EETypes.cassetteTape, [190.2183565265511, 98.67280276106689], `1 of 3 needed for the easter egg song.`),
+		new MiscMarker(`yGbi1`, EETypes.mrPeeksHeadphones, [164.25934212296625, 319.5391735432103], `1 of 3 needed for the easter egg song.`),
+		new MiscMarker(`91uL5`, EETypes.mrPeeksHeadphones, [292.69235875192874, 273.4487864638555], `1 of 3 needed for the easter egg song.`),
+		new MiscMarker(`W79dg`, EETypes.mrPeeksHeadphones, [190.2183565265511, 98.67280276106689], `1 of 3 needed for the easter egg song.`),
 		new MiscMarker(`0JqXi`, EETypes.bonus, [171.02883650135874, 340.44541021518586], `Vending Machine\nWhen meleed correctly can drop bonus items each round. When hit with Melee Machiatto it blows up and offers one last reward.`),
 		new MiscMarker(`YeXWV`, EETypes.bonus, [269.5062750742712, 231.81422099725725], `1 of 9 Aetherella Statues\n Must be collected with Jet Gun. Up on top of an air conditioning unit.`),
 		new MiscMarker(`zM2jb`, EETypes.bonus, [205.28419151815734, 340.36086600016], `1 of 9 Aetherella Statues\n Must be collected with Jet Gun.\nOn top of the motel sign, top left.`),
@@ -615,10 +622,11 @@ export const StaticEggStore: IMisc = {
 		new MiscMarker(`9G12F`, EETypes.bonus, [225.68311592941944, 177.1593431115426], `Black And Gold Car\n1 of 3 Possible locations of the Mr Peeks sat in the back of the car, indicating a spot for loot and an intel item.`),
 		new MiscMarker(`Z0ygP`, EETypes.bonus, [293.8925195350405, 330.2987196842777], `Black And Gold Car\n1 of 3 Possible locations of the Mr Peeks sat in the back of the car, indicating a spot for loot and an intel item.`),
 		new MiscMarker(`tQAjx`, EETypes.bonus, [282.96580199111264, 174.92431395814236], `Black And Gold Car\n1 of 3 Possible locations of the Mr Peeks sat in the back of the car, indicating a spot for loot and an intel item.`),
-		new MiscMarker(`j7eXX`, EETypes.bonus, [237.08720300956975, 462.99502722954236], `Bonus Power Up\nMax Ammo\nLook down at the yellow bridge between the barrier and the start of the yellow steel beams. Shoot the small golden object to spawn a free power up.`),
-		new MiscMarker(`jBX9A`, EETypes.bonus, [330.02159775218337, 331.85260972373345], `Bonus Power Up\nBonus Points\nLook up at the window, shoot the small golden object to spawn a free power up.`),
-		new MiscMarker(`n0XYI`, EETypes.bonus, [234.8822157104421, 295.15912981387015], `Bonus Power Up\nNuke\nLook down through the bank roof, shoot the small golden object to spawn a free power up.`),
-		new MiscMarker(`HZhs_`, EETypes.bonus, [209.83458802045342, 79.00247078947527], `Bonus Power Up\nInsta-Kill\nUp on the top of the church roof. Shoot the small golden object to spawn a free power up.`),
+		new MiscMarker(`j7eXX`, EETypes.freePowerUp, [237.08720300956975, 462.99502722954236], `Max Ammo\nLook down at the yellow bridge between the barrier and the start of the yellow steel beams. Shoot the small golden object to spawn a free power up.`),
+		new MiscMarker(`jBX9A`, EETypes.freePowerUp, [330.02159775218337, 331.85260972373345], `Bonus Points\nLook up at the window, shoot the small golden object to spawn a free power up.`),
+		new MiscMarker(`n0XYI`, EETypes.freePowerUp, [234.8822157104421, 295.15912981387015], `Nuke\nLook down through the bank roof, shoot the small golden object to spawn a free power up.`),
+		new MiscMarker(`HZhs_`, EETypes.freePowerUp, [209.83458802045342, 79.00247078947527], `Insta-Kill\nUp on the top of the church roof. Shoot the small golden object to spawn a free power up.`),
+		new MiscMarker(`W_IvO`, EETypes.freePowerUp, [316.3963689820304, 180.48306806482694], `Double Points\nUp on the water tower, shoot or grenade it to spawn a free power up.`),
 		new MiscMarker(`W0cQ7`, EETypes.bonus, [182.19997530423058, 134.13828286183295], `Falling Zombies!\nCook a grenade and throw it at the zombie head on the roof to trigger a zombie rain that drop loot.`),
 		new MiscMarker(`uqQGR`, EETypes.mrPeeksGame, [130.4233520842571, 270.3960054771881], `Bowling Game!\nAfter shooting all the shoes you will be teleported here to bowl! Score 300 for a darkops challenge, you'll always get a reward.`),
 		new MiscMarker(`C1_lA`, EETypes.mrPeeksCollectible, [263.07941062405075, 71.73609264466869], `Bowling Shoe\nOutside the map hanging from a tree.\nShoot all of them to be teleported to a game of bowling for a reward!`),
