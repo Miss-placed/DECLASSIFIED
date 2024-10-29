@@ -14,6 +14,7 @@ export const MiscMapMarker = ({
 	icon,
 	typeDesc,
 	loc,
+	img,
 }: MiscMarker) => {
 	const mapInstance = useMapEvents({});
 	const renderedIcon = miscIconInit(icon);
@@ -36,6 +37,7 @@ export const MiscMapMarker = ({
 					typeDesc={typeDesc}
 					loc={loc}
 					icon={icon}
+					img={img}
 					isMarker={true} />
 			</StyledPopup>
 		</Marker>

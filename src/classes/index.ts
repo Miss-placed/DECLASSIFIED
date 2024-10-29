@@ -30,18 +30,19 @@ export class Item {
 export class BaseMarker extends Item {
 	typeDesc: IntelType;
 	loc: LatLngExpression;
+	img?: string;
 
-	constructor({ id, title, desc, icon, layer, typeDesc, loc }: any) {
+	constructor({ id, title, desc, icon, layer, typeDesc, loc, img }: any) {
 		super({ id, title, desc, icon, layer });
 		this.typeDesc = typeDesc;
 		this.loc = loc ?? [0, 0];
+		this.img = img ?? '';
 	}
 }
 
 export class IntelMarker extends BaseMarker {
 	faction: Faction;
 	season: Season;
-	img?: string;
 	map: string;
 
 	constructor({
@@ -57,10 +58,9 @@ export class IntelMarker extends BaseMarker {
 		img,
 		map,
 	}: any) {
-		super({ id, title, desc, icon, layer, typeDesc, loc });
+		super({ id, title, desc, icon, layer, typeDesc, loc, img });
 		this.faction = faction;
 		this.season = season;
-		this.img = img;
 		this.map = map;
 	}
 }
@@ -70,10 +70,13 @@ export class MiscMarker extends BaseMarker {
 		id: string,
 		{ title, desc, icon }: any,
 		loc: LatLngExpression,
-		uniqueDesc?: string
+		optional?: {
+			uniqueDesc?: string,
+			img?: string
+		}
 	) {
-		desc = uniqueDesc ? `${uniqueDesc}\n${desc}` : desc;
-		super({ id, title, desc, icon, loc, typeDesc: 'Misc' });
+		desc = optional?.uniqueDesc ? `${optional?.uniqueDesc}\n${desc}` : desc;
+		super({ id, title, desc, icon, loc, typeDesc: 'Misc', img: optional?.img });
 	}
 }
 

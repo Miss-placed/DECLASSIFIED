@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Box, CircularProgress, Modal } from '@mui/material';
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const StyledImageContainer = styled.div`
 	display: flex;
@@ -56,7 +56,9 @@ export const CustomImage = ({ src: imageId, altText = 'Placeholder' }) => {
 						/>
 					</>
 				) : (
-					<img src={placeholderSrc} alt={altText} />
+					<></>
+					// This is ugly but we are only doing it temporarily
+					// <img src={placeholderSrc} alt={altText} />
 				)}
 			</StyledImageContainer>
 

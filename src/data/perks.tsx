@@ -72,11 +72,10 @@ export const Perks = {
 
 export const PerkStore: IMisc = {
 	[MapIds.dieMaschine]: [
-		new MiscMarker(`ospc7`, Perks.staminup, [251.96478134656803, 349.75], `Upstairs`),
+		new MiscMarker(`ospc7`, Perks.staminup, [251.96478134656803, 349.75], { uniqueDesc: `Upstairs` }),
 		new MiscMarker(`fcM5h`, Perks.jugg, [362.1755501451447, 259.75]),
 		new MiscMarker(`bTuJZ`, Perks.quick, [184.8576278031701, 135.6785230479871]),
-		new MiscMarker(`r5tfe`, Perks.wunderFizz, [277.920479445641, 297.75],
-			`On the 'Penthouse' level within the Dark Aether. Arrives in the standard map 10 rounds after the power is turned on.`),
+		new MiscMarker(`r5tfe`, Perks.wunderFizz, [277.920479445641, 297.75], { uniqueDesc: `On the 'Penthouse' level within the Dark Aether. Arrives in the standard map 10 rounds after the power is turned on.` }),
 	],
 	[MapIds.dieMaschineUnderground]: [
 		new MiscMarker(`tbKp7`, Perks.deadshot, [195.98761430452765, 227.875]),

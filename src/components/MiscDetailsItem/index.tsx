@@ -11,6 +11,7 @@ import { GetMapById } from "../../data/mapDetails";
 import { getMiscMarkerById } from "../../helpers/github";
 import { BugReportButton } from "../ActionButtons/BugReportButton";
 import { ShareButton } from "../ActionButtons/ShareButton";
+import { CustomImage } from "../CustomImage";
 
 export const MiscDetailItem = ({
 	id,
@@ -19,7 +20,7 @@ export const MiscDetailItem = ({
 	typeDesc,
 	loc,
 	icon,
-	img = undefined,
+	img,
 	isMarker = false, }) => {
 	const { setCurrentMapWithValidation: setCurrentMap, currentMap } = useContext(DeclassifiedContext);
 	const mapInstance = useMapEvents({});
@@ -61,7 +62,7 @@ export const MiscDetailItem = ({
 			</MiscItemSummary>
 			{isMarker || expanded ? (
 				<StyledAccordionDetails>
-					{/* <CustomImage src={img} altText="Placeholder" /> */}
+					<CustomImage src={img} altText="Placeholder" />
 					<MiscDetailItemContainer>
 						{!isMarker && miscItemMap && miscItemMap.title ? (<Subheading variant="h2">{miscItemMap.title}</Subheading>) : null}
 						<MiscDescription>{desc}</MiscDescription>
