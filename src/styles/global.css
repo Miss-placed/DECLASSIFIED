@@ -12,7 +12,8 @@ html {
 body {
 	/* whites and blacks */
 	--clr-white: #ffffff;
-	--clr-white-d: color-mix(in srgb, #c7bbb2 50%, white 50%);
+	--clr-white-d: #e3ddd9;
+	--clr-white-extra-dark: #d3ceca;
 	--clr-grey-l: #6a6a6b;
 	--clr-grey: #565555;
 	--clr-grey-d: #3c3c3b;
@@ -30,7 +31,7 @@ body {
 	--clr-pink: #cc358b;
 	/* backgrounds */
 	--clr-bg: var(--clr-white-d);
-	--clr-bg-lighter: color-mix(in srgb, var(--clr-grey-d) 90%, white 10%);
+	--clr-bg-lighter: #50504f;
 	--clr-bg-inverted: var(--clr-grey-d);
 	/* text color */
 	--clr-color: var(--clr-grey-d);
@@ -63,7 +64,7 @@ body.dark {
 	/* whites and blacks */
 	--svg-border: var(--clr-red);
 	--svg-roads: var(--clr-black);
-	--svg-background: color-mix(in srgb, var(--clr-grey-d) 90%, black 10%);
+	--svg-background: #363635;
 	--svg-field: var(--clr-grey);
 	--svg-features: var(--clr-grey-l);
 	--svg-buildings: var(--clr-white);

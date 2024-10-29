@@ -59,7 +59,7 @@ const MapMenu = styled(Menu)`
 		background-color: var(--clr-bg-inverted);
 		transition: all 0.3s ease;
 		&:hover {
-			background-color: color-mix(in srgb, var(--clr-bg-inverted), black 7%);
+			background-color: var(--clr-white-extra-dark);
 		}
 	}
 `;
@@ -187,13 +187,13 @@ const Header = () => {
 	function buildMapItems(mapGroup: [string, MapGroupItem][]) {
 		return mapGroup
 			? mapGroup.map(([key, mapGroupItem]) => (
-					<MenuItem
-						onClick={() => setCurrentMap(mapGroupItem.mapLayers[0])}
-						key={key}
-					>
-						{mapGroupItem.mapName}
-					</MenuItem>
-				))
+				<MenuItem
+					onClick={() => setCurrentMap(mapGroupItem.mapLayers[0])}
+					key={key}
+				>
+					{mapGroupItem.mapName}
+				</MenuItem>
+			))
 			: null;
 	}
 };
