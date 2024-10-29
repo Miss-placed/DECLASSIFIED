@@ -180,6 +180,10 @@ const StyledAccordion = styled(Accordion)`
 		background-color: var(--clr-purple);
 	}
 
+	.intel-item-header .icon {
+		background-color: var(--clr-red);
+	}
+
 	.intelTitle {
 		padding-left: 7px;
 	}
