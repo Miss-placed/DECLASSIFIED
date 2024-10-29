@@ -1,7 +1,7 @@
 importScripts(
 	'https://storage.googleapis.com/workbox-cdn/releases/6.5.0/workbox-sw.js'
 );
-const cacheVersion = 'v1.2';
+const cacheVersion = 'v1.3';
 if (!workbox) {
 	console.log('Workbox is loaded!');
 
