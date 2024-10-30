@@ -658,5 +658,6 @@ export const StaticEggStore: IMisc = {
 		new MiscMarker(`Xvkv1`, EETypes.clue, [282.07221275373934, 388.5203872504264], { uniqueDesc: `Set of binoculars that can be used for 50 essence. A dancing zombie can be spotted on a rock. The zombies will not attack you whilst in use. When both binoculars are focused on the dancing zombie, a party will start!` }),
 		new MiscMarker(`9DjTf`, EETypes.bonus, [196.2236235990396, 77.3084034954576], { uniqueDesc: `Unlit Candles\n 1 of 2 candle racks that can be shot with Napalm burst to trigger a fire trap inside the main church building. Useful for the final battle.` }),
 		new MiscMarker(`jgS2I`, EETypes.bonus, [218.4032735692863, 81.15692723458717], { uniqueDesc: `Unlit Candles\n 1 of 2 candle racks that can be shot with Napalm burst to trigger a fire trap inside the main church building. Useful for the final battle.` }),
+		new MiscMarker(`C0jxR`, EETypes.bonus, [181.73527564128713, 323.1526631072432], { uniqueDesc: `Pool of Blood\nSpawns a loot orb and or power up when 3 semtex are thrown into it during a vermin round.` }),
 	]
 };
