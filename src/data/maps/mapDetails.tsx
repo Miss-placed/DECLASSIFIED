@@ -1,6 +1,6 @@
-import { MapItem } from '../classes';
-import { mapSVGs } from '../helpers/mapsvg';
-import { MapIds } from './intel';
+import { MapItem } from '../../classes';
+import { MapIds } from '../intel';
+import { mapSVGs } from './mapSVGs';
 
 export const GetMapById = (mapId: string) =>
 	Object.values(MapDetails).find(map => map.id === mapId);

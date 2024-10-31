@@ -1,5 +1,5 @@
 import { MapItem } from '../../classes';
-import { MapDetails } from '../../data/mapDetails';
+import { MapDetails } from '../../data/maps/mapDetails';
 
 // TODO: add game styles per game preferably {baseColor: string, textColor:string}
 export enum Game {

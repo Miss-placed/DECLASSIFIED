@@ -21,7 +21,7 @@ import { db, DeclassifiedUserPreferences } from '../../data/db';
 import { StaticEggStore } from '../../data/easterEggs';
 import { DefaultPOIData, IntelItem, IntelStore } from '../../data/intel';
 import { filterIntel, filterMisc } from '../../data/listFiltering';
-import { GetMapById, GetMapByTitle, MapDetails } from '../../data/mapDetails';
+import { GetMapById, GetMapByTitle, MapDetails } from '../../data/maps/mapDetails';
 import { checkUserHasUnmigratedPreferences, markAsMigrated, migrateOldUserPreferences } from '../../data/migration';
 import { getIntelById, getMiscMarkerById } from '../../helpers/github';
 import { useNotification } from '../NotificationContext/notificationContext';

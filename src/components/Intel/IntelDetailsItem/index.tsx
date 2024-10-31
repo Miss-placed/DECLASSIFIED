@@ -13,7 +13,7 @@ import { DeclassifiedContext } from "../../../contexts/DeclassifiedContext/decla
 import { addCollectedIntel, deleteCollectedIntel } from "../../../data/dataAccessLayer";
 import { db } from "../../../data/db";
 import { DefaultPOIData, IIntelItem } from "../../../data/intel";
-import { GetMapById } from "../../../data/mapDetails";
+import { GetMapById } from "../../../data/maps/mapDetails";
 import { BugReportButton } from "../../ActionButtons/BugReportButton";
 import { ShareButton } from "../../ActionButtons/ShareButton";
 import { CustomImage } from "../../CustomImage";
