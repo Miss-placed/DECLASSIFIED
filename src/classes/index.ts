@@ -71,8 +71,8 @@ export class MiscMarker extends BaseMarker {
 		{ title, desc, icon }: any,
 		loc: LatLngExpression,
 		optional?: {
-			uniqueDesc?: string,
-			img?: string
+			uniqueDesc?: string;
+			img?: string;
 		}
 	) {
 		desc = optional?.uniqueDesc ? `${optional?.uniqueDesc}\n${desc}` : desc;

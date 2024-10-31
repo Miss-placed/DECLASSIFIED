@@ -696,7 +696,7 @@ export const MiscStore: IMisc = {
 		new MiscMarker(`DmP2D`, MiscTypes.ziplineDown, [203.66373158219196, 430.34678589522406]),
 		new MiscMarker(`S9oX1`, MiscTypes.zipline, [270.376852396145, 270.7240114943104]),
 		new MiscMarker(`AVYOm`, MiscTypes.zipline, [281.3297528282866, 299.3614827206834]),
-	],
+	],[MapIds.terminusBiolabs]: []
 };
 
 

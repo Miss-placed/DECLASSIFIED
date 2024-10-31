@@ -6,11 +6,13 @@ import { MapGroupItem } from '../../components/MapControls/types';
 import { DeclassifiedIntelCollected } from '../../data/db';
 import { IntelItem } from '../../data/intel';
 
-
 export interface ToggleDrawerOptions {
 	isOpen: boolean;
 	content?: JSX.Element;
-	clickEvent?: React.SyntheticEvent<any, any> | React.KeyboardEvent | React.MouseEvent;
+	clickEvent?:
+		| React.SyntheticEvent<any, any>
+		| React.KeyboardEvent
+		| React.MouseEvent;
 }
 
 export interface DeclassifiedContextProps {
@@ -29,10 +31,10 @@ export interface DeclassifiedContextProps {
 	toggleDrawer: ({ isOpen, content, clickEvent }: ToggleDrawerOptions) => void;
 	collectedIntel: DeclassifiedIntelCollected[] | undefined;
 
-	currentEggFilter: EggFormInputs
+	currentEggFilter: EggFormInputs;
 	setCurrentEggFilter: Dispatch<SetStateAction<EggFormInputs>>;
 
-	filteredEggStore: MiscMarker[],
+	filteredEggStore: MiscMarker[];
 }
 
 export interface IntelContextProviderProps {
@@ -40,8 +42,8 @@ export interface IntelContextProviderProps {
 }
 
 export interface DrawerMenuProps {
-	isOpen: boolean,
-	content: JSX.Element
+	isOpen: boolean;
+	content: JSX.Element;
 }
 
 export type Anchor = 'top' | 'left' | 'bottom' | 'right';
@@ -62,7 +64,7 @@ export interface UserContextProps {
 		isContributing: boolean;
 		markerName: string | null;
 		itemType: string | null;
-	}
+	};
 	setContributionState: (
 		newState: Partial<{
 			isIntel: boolean;

@@ -97,6 +97,10 @@ export const MapDetails = {
 		title: 'Liberty Falls',
 		mapOverlay: mapSVGs.liberty_falls,
 	}),
+	terminusBiolabs: new MapItem(MapIds.terminusBiolabs, {
+		title: 'Terminus Biolabs',
+		mapOverlay: mapSVGs.terminus_biolab,
+	}),
 };
 
 export const allOutbreakMapsArr: string[] = [

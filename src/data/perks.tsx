@@ -131,6 +131,7 @@ export const PerkStore: IMisc = {
 		new MiscMarker(`juvMH`, Perks.jugg, [285.06369615742574, 302.10071909885824]),
 		new MiscMarker(`8Kr_R`, Perks.wunderFizz, [267.38969773283367, 308.0772348330578]),
 	],
+	[MapIds.terminusBiolabs]: [],
 
 	/////////////////////Outbreak/////////////////////////
 

@@ -54,6 +54,11 @@ export const MapGroupings: MapGroupDictionary = {
 		mapLayers: [MapDetails.libertyFalls],
 		game: Game.bo6,
 	},
+	terminus_Group: {
+		mapName: 'Terminus',
+		mapLayers: [MapDetails.terminusBiolabs],
+		game: Game.bo6,
+	},
 };
 
 export interface MapControlsProps {
