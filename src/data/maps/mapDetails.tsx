@@ -102,7 +102,7 @@ export const MapDetails = {
 		mapOverlay: mapSVGs.terminus_biolab,
 	}),
 	terminusPrison: new MapItem(MapIds.terminusPrison, {
-		title: 'Terminus Biolabs',
+		title: 'Terminus Prison',
 		mapOverlay: mapSVGs.terminus_prison,
 	}),
 };
