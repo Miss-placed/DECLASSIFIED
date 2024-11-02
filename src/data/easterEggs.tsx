@@ -661,5 +661,10 @@ export const StaticEggStore: IMisc = {
 		new MiscMarker(`jgS2I`, EETypes.bonus, [218.4032735692863, 81.15692723458717], { uniqueDesc: `Unlit Candles\n 1 of 2 candle racks that can be shot with Napalm burst to trigger a fire trap inside the main church building. Useful for the final battle.` }),
 		new MiscMarker(`C0jxR`, EETypes.bonus, [181.73527564128713, 323.1526631072432], { uniqueDesc: `Pool of Blood\nSpawns a loot orb and or power up when 3 semtex are thrown into it during a vermin round.` }),
 	],
-	[MapIds.terminusBiolabs]: []
+	[MapIds.terminusBiolabs]: [
+
+	],
+	[MapIds.terminusPrison]: [
+
+	]
 };
