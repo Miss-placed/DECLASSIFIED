@@ -44,6 +44,7 @@ export const MiscTypes = {
     door: new Item({ title: 'Door Buy', icon: IconFileNames.door }),
     doorPower: new Item({ title: 'Power Door', desc: 'enable power to open this door', icon: IconFileNames.doorPower, }),
     gumball: new Item({ title: 'Gobblegum Machine', icon: IconFileNames.gobblegum }),
+    ampUnit: new Item({ title: 'A.M.P Unit', desc: `Protect for a short time to provide local power to the area.`, icon: IconFileNames.power }),
 };
 
 /////////////////////Markers/////////////////////////
