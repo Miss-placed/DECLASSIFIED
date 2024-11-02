@@ -56,7 +56,7 @@ export const MapGroupings: MapGroupDictionary = {
 	},
 	terminus_Group: {
 		mapName: 'Terminus',
-		mapLayers: [MapDetails.terminusBiolabs, MapDetails.terminusPrison],
+		mapLayers: [MapDetails.terminusBiolabs, MapDetails.terminusPrison, MapDetails.terminusIslands],
 		game: Game.bo6,
 	},
 };
