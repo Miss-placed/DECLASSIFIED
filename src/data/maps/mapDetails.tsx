@@ -101,6 +101,10 @@ export const MapDetails = {
 		title: 'Terminus Biolabs',
 		mapOverlay: mapSVGs.terminus_biolab,
 	}),
+	terminusPrison: new MapItem(MapIds.terminusPrison, {
+		title: 'Terminus Biolabs',
+		mapOverlay: mapSVGs.terminus_prison,
+	}),
 };
 
 export const allOutbreakMapsArr: string[] = [

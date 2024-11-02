@@ -56,6 +56,7 @@ export enum MapIds {
 	//b06
 	libertyFalls = `liberty_falls`,
 	terminusBiolabs = `terminusBiolabs`,
+	terminusPrison = `terminusPrison`,
 }
 
 export enum Faction {

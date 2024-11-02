@@ -16185,133 +16185,2711 @@ export const mapSVGs = {
 			<defs>
 				<style>
 					{globalStyle}
-					{`
-      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12 {
+					{` 
+      .st0, .st1, .st2, .st3, .st4, .st5, .st6, .st7, .st8, .st9, .st10, .st11 {
         fill: none;
       }
 
-      .cls-2, .cls-3, .cls-13, .cls-5, .cls-14, .cls-6, .cls-7, .cls-8, .cls-9, .cls-15, .cls-16, .cls-17, .cls-18, .cls-19, .cls-10, .cls-11, .cls-20, .cls-21, .cls-22, .cls-23, .cls-24, .cls-25, .cls-26, .cls-27, .cls-12 {
+      .st12, .st1, .st2, .st13, .st14, .st15, .st16, .st17, .st18, .st19, .st20, .st21, .st22, .st23, .st24, .st25, .st26, .st27, .st28, .st29, .st30, .st31, .st32, .st4, .st5, .st6, .st7, .st8, .st9, .st33, .st34, .st35, .st10, .st36, .st11, .st37 {
         stroke-miterlimit: 10;
       }
 
-      .cls-2, .cls-3, .cls-13, .cls-7, .cls-15, .cls-16, .cls-17, .cls-18, .cls-19, .cls-10, .cls-20, .cls-21, .cls-22, .cls-23, .cls-24, .cls-25, .cls-26, .cls-27 {
-        stroke-width: 3px;
-      }
-
-      .cls-2, .cls-13, .cls-5, .cls-14, .cls-7, .cls-8, .cls-15, .cls-16, .cls-17, .cls-18, .cls-19, .cls-10, .cls-11, .cls-20, .cls-21, .cls-22, .cls-23, .cls-24, .cls-25, .cls-26, .cls-27, .cls-12 {
+      .st12, .st1, .st13, .st14, .st15, .st16, .st17, .st18, .st19, .st20, .st21, .st22, .st23, .st24, .st25, .st26, .st27, .st28, .st29, .st30, .st31, .st32, .st4, .st5, .st6, .st7, .st8, .st9, .st33, .st35, .st10, .st36, .st11, .st37 {
         stroke: #6b6b6b;
       }
 
-      .cls-3 {
-        stroke: #565555;
-      }
-
-      .cls-4, .cls-28 {
-        stroke: #7b4848;
-        stroke-width: 4.32px;
-      }
-
-      .cls-13 {
-        fill: url(#_10_lpi_60_);
-      }
-
-      .cls-29, .cls-19 {
-        fill: #011833;
-      }
-
-      .cls-30, .cls-28 {
-        fill: #6b6b6b;
-      }
-
-      .cls-31 {
-        fill: #2c2c2c;
-      }
-
-      .cls-32, .cls-14, .cls-18 {
+      .st12, .st38, .st35 {
         fill: #565555;
       }
 
-      .cls-5 {
-        stroke-dasharray: 0 0 4.01 4.01;
+      .st1 {
+        stroke-dasharray: 0 0 .7 .7;
       }
 
-      .cls-5, .cls-8, .cls-9, .cls-12 {
-        stroke-width: 4px;
+      .st1, .st9, .st36 {
+        stroke-width: .5px;
       }
 
-      .cls-14 {
-        stroke-width: 2px;
-      }
-
-      .cls-6 {
+      .st2, .st34 {
         stroke: #7c2728;
-        stroke-width: 5px;
+        stroke-width: 1.6px;
       }
 
-      .cls-7 {
-        stroke-dasharray: 0 0 4.01 4.01;
+      .st13 {
+        fill: url(#_10_lpi_60_-3);
       }
 
-      .cls-9 {
-        stroke: #2c2c2c;
+      .st13, .st14, .st15, .st16, .st17, .st18, .st20, .st21, .st22, .st23, .st24, .st25, .st26, .st27, .st28, .st29, .st31, .st6, .st33, .st37 {
+        stroke-width: 1px;
       }
 
-      .cls-15 {
+      .st14 {
+        fill: url(#_10_lpi_60_-2);
+      }
+
+      .st15 {
+        fill: url(#_10_lpi_60_-6);
+      }
+
+      .st16 {
+        fill: url(#_10_lpi_60_-4);
+      }
+
+      .st17 {
+        fill: url(#_10_lpi_60_-8);
+      }
+
+      .st18 {
+        fill: url(#_10_lpi_60_-9);
+      }
+
+      .st39, .st36 {
+        fill: #2c2c2c;
+      }
+
+      .st19 {
+        fill: url(#_10_lpi_60_-5);
+        stroke-width: .8px;
+      }
+
+      .st20 {
         fill: url(#_10_lpi_60_2);
       }
 
-      .cls-16 {
-        fill: url(#_10_lpi_60_2-10);
+      .st3 {
+        stroke: #7b4848;
+        stroke-width: 4.3px;
       }
 
-      .cls-17 {
-        fill: #565656;
+      .st21 {
+        fill: url(#_10_lpi_60_-10);
       }
 
-      .cls-10 {
-        stroke-dasharray: 0 0 3.99 3.99;
-      }
-
-      .cls-11 {
-        stroke-width: 7px;
-      }
-
-      .cls-20 {
-        fill: url(#_10_lpi_60_2-4);
-      }
-
-      .cls-21 {
-        fill: url(#_10_lpi_60_2-5);
-      }
-
-      .cls-22 {
-        fill: url(#_10_lpi_60_2-2);
-      }
-
-      .cls-23 {
-        fill: url(#_10_lpi_60_2-3);
-      }
-
-      .cls-24 {
-        fill: url(#_10_lpi_60_2-9);
-      }
-
-      .cls-25 {
-        fill: url(#_10_lpi_60_2-8);
-      }
-
-      .cls-26 {
-        fill: url(#_10_lpi_60_2-6);
-      }
-
-      .cls-27 {
+      .st22 {
         fill: url(#_10_lpi_60_2-7);
       }
 
-      .cls-12 {
-        stroke-dasharray: 0 0 3.91 3.91;
+      .st23 {
+        fill: url(#_10_lpi_60_2-2);
       }
-				            `}
+
+      .st24 {
+        fill: url(#_10_lpi_60_2-3);
+      }
+
+      .st25 {
+        fill: url(#_10_lpi_60_2-6);
+      }
+
+      .st26 {
+        fill: url(#_10_lpi_60_2-9);
+      }
+
+      .st27 {
+        fill: url(#_10_lpi_60_2-8);
+      }
+
+      .st28 {
+        fill: url(#_10_lpi_60_2-5);
+      }
+
+      .st29 {
+        fill: url(#_10_lpi_60_2-4);
+      }
+
+      .st30, .st31 {
+        fill: #565656;
+      }
+
+      .st30, .st8 {
+        stroke-width: .5px;
+      }
+
+      .st32 {
+        fill: url(#_10_lpi_60_-7);
+      }
+
+      .st4, .st5, .st10, .st11 {
+        stroke-width: .5px;
+      }
+
+      .st5 {
+        stroke-dasharray: 0 0 .7 .7;
+      }
+
+      .st7 {
+        stroke-width: .8px;
+      }
+
+      .st33 {
+        fill: url(#_10_lpi_60_2-10);
+      }
+
+      .st34 {
+        fill: #011833;
+      }
+
+      .st35 {
+        stroke-width: .2px;
+      }
+
+      .st10 {
+        stroke-dasharray: 0 0 .7 .7;
+      }
+
+      .st40 {
+        fill: #6b6b6b;
+      }
+
+      .st11 {
+        stroke-dasharray: 0 0 .7 .7;
+      }
+
+      .st37 {
+        fill: url(#_10_lpi_60_);
+      }
+     `}
+				</style>
+				<pattern
+					id="_10_lpi_60_"
+					data-name=" 10 lpi 60 "
+					x="0"
+					y="0"
+					width="72"
+					height="72"
+					patternTransform="translate(-14046.2 -1084.2) rotate(-46) scale(.2 -.2)"
+					patternUnits="userSpaceOnUse"
+					viewBox="0 0 72 72"
+				>
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<line className="st3" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								<line className="st3" x1="71.8" y1="18" x2="144.2" y2="18" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="32.4"
+									x2="144.2"
+									y2="32.4"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="46.8"
+									x2="144.2"
+									y2="46.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="61.2"
+									x2="144.2"
+									y2="61.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="10.8"
+									x2="144.2"
+									y2="10.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="25.2"
+									x2="144.2"
+									y2="25.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="39.6"
+									x2="144.2"
+									y2="39.6"
+								/>
+								<line className="st3" x1="71.8" y1="54" x2="144.2" y2="54" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="68.4"
+									x2="144.2"
+									y2="68.4"
+								/>
+							</g>
+							<g>
+								<line className="st3" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								<line className="st3" x1="-.2" y1="18" x2="72.2" y2="18" />
+								<line className="st3" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+								<line className="st3" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+								<line className="st3" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+								<line className="st3" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+								<line className="st3" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+								<line className="st3" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+								<line className="st3" x1="-.2" y1="54" x2="72.2" y2="54" />
+								<line className="st3" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+							</g>
+							<g>
+								<line className="st3" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								<line className="st3" x1="-72.2" y1="18" x2=".2" y2="18" />
+								<line className="st3" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+								<line className="st3" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+								<line className="st3" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+								<line className="st3" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+								<line className="st3" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+								<line className="st3" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+								<line className="st3" x1="-72.2" y1="54" x2=".2" y2="54" />
+								<line className="st3" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern
+					id="_10_lpi_60_-2"
+					data-name=" 10 lpi 60 -2"
+					x="0"
+					y="0"
+					width="72"
+					height="72"
+					patternTransform="translate(-14046.2 -1085.2) rotate(-46) scale(.2 -.2)"
+					patternUnits="userSpaceOnUse"
+					viewBox="0 0 72 72"
+				>
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<line className="st3" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								<line className="st3" x1="71.8" y1="18" x2="144.2" y2="18" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="32.4"
+									x2="144.2"
+									y2="32.4"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="46.8"
+									x2="144.2"
+									y2="46.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="61.2"
+									x2="144.2"
+									y2="61.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="10.8"
+									x2="144.2"
+									y2="10.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="25.2"
+									x2="144.2"
+									y2="25.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="39.6"
+									x2="144.2"
+									y2="39.6"
+								/>
+								<line className="st3" x1="71.8" y1="54" x2="144.2" y2="54" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="68.4"
+									x2="144.2"
+									y2="68.4"
+								/>
+							</g>
+							<g>
+								<line className="st3" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								<line className="st3" x1="-.2" y1="18" x2="72.2" y2="18" />
+								<line className="st3" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+								<line className="st3" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+								<line className="st3" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+								<line className="st3" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+								<line className="st3" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+								<line className="st3" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+								<line className="st3" x1="-.2" y1="54" x2="72.2" y2="54" />
+								<line className="st3" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+							</g>
+							<g>
+								<line className="st3" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								<line className="st3" x1="-72.2" y1="18" x2=".2" y2="18" />
+								<line className="st3" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+								<line className="st3" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+								<line className="st3" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+								<line className="st3" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+								<line className="st3" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+								<line className="st3" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+								<line className="st3" x1="-72.2" y1="54" x2=".2" y2="54" />
+								<line className="st3" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern
+					id="_10_lpi_60_-3"
+					data-name=" 10 lpi 60 -3"
+					x="0"
+					y="0"
+					width="72"
+					height="72"
+					patternTransform="translate(-14044.6 -1085.2) rotate(-46) scale(.2 -.2)"
+					patternUnits="userSpaceOnUse"
+					viewBox="0 0 72 72"
+				>
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<line className="st3" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								<line className="st3" x1="71.8" y1="18" x2="144.2" y2="18" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="32.4"
+									x2="144.2"
+									y2="32.4"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="46.8"
+									x2="144.2"
+									y2="46.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="61.2"
+									x2="144.2"
+									y2="61.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="10.8"
+									x2="144.2"
+									y2="10.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="25.2"
+									x2="144.2"
+									y2="25.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="39.6"
+									x2="144.2"
+									y2="39.6"
+								/>
+								<line className="st3" x1="71.8" y1="54" x2="144.2" y2="54" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="68.4"
+									x2="144.2"
+									y2="68.4"
+								/>
+							</g>
+							<g>
+								<line className="st3" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								<line className="st3" x1="-.2" y1="18" x2="72.2" y2="18" />
+								<line className="st3" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+								<line className="st3" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+								<line className="st3" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+								<line className="st3" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+								<line className="st3" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+								<line className="st3" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+								<line className="st3" x1="-.2" y1="54" x2="72.2" y2="54" />
+								<line className="st3" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+							</g>
+							<g>
+								<line className="st3" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								<line className="st3" x1="-72.2" y1="18" x2=".2" y2="18" />
+								<line className="st3" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+								<line className="st3" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+								<line className="st3" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+								<line className="st3" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+								<line className="st3" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+								<line className="st3" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+								<line className="st3" x1="-72.2" y1="54" x2=".2" y2="54" />
+								<line className="st3" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern
+					id="_10_lpi_60_-4"
+					data-name=" 10 lpi 60 -4"
+					x="0"
+					y="0"
+					width="72"
+					height="72"
+					patternTransform="translate(-14044.6 -1085.2) rotate(-46) scale(.2 -.2)"
+					patternUnits="userSpaceOnUse"
+					viewBox="0 0 72 72"
+				>
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<line className="st3" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								<line className="st3" x1="71.8" y1="18" x2="144.2" y2="18" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="32.4"
+									x2="144.2"
+									y2="32.4"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="46.8"
+									x2="144.2"
+									y2="46.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="61.2"
+									x2="144.2"
+									y2="61.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="10.8"
+									x2="144.2"
+									y2="10.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="25.2"
+									x2="144.2"
+									y2="25.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="39.6"
+									x2="144.2"
+									y2="39.6"
+								/>
+								<line className="st3" x1="71.8" y1="54" x2="144.2" y2="54" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="68.4"
+									x2="144.2"
+									y2="68.4"
+								/>
+							</g>
+							<g>
+								<line className="st3" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								<line className="st3" x1="-.2" y1="18" x2="72.2" y2="18" />
+								<line className="st3" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+								<line className="st3" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+								<line className="st3" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+								<line className="st3" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+								<line className="st3" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+								<line className="st3" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+								<line className="st3" x1="-.2" y1="54" x2="72.2" y2="54" />
+								<line className="st3" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+							</g>
+							<g>
+								<line className="st3" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								<line className="st3" x1="-72.2" y1="18" x2=".2" y2="18" />
+								<line className="st3" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+								<line className="st3" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+								<line className="st3" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+								<line className="st3" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+								<line className="st3" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+								<line className="st3" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+								<line className="st3" x1="-72.2" y1="54" x2=".2" y2="54" />
+								<line className="st3" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern
+					id="_10_lpi_60_-5"
+					data-name=" 10 lpi 60 -5"
+					x="0"
+					y="0"
+					width="72"
+					height="72"
+					patternTransform="translate(-14392.8 -751.4) rotate(-46) scale(.1 -.1)"
+					patternUnits="userSpaceOnUse"
+					viewBox="0 0 72 72"
+				>
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<line className="st3" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								<line className="st3" x1="71.8" y1="18" x2="144.2" y2="18" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="32.4"
+									x2="144.2"
+									y2="32.4"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="46.8"
+									x2="144.2"
+									y2="46.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="61.2"
+									x2="144.2"
+									y2="61.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="10.8"
+									x2="144.2"
+									y2="10.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="25.2"
+									x2="144.2"
+									y2="25.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="39.6"
+									x2="144.2"
+									y2="39.6"
+								/>
+								<line className="st3" x1="71.8" y1="54" x2="144.2" y2="54" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="68.4"
+									x2="144.2"
+									y2="68.4"
+								/>
+							</g>
+							<g>
+								<line className="st3" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								<line className="st3" x1="-.2" y1="18" x2="72.2" y2="18" />
+								<line className="st3" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+								<line className="st3" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+								<line className="st3" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+								<line className="st3" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+								<line className="st3" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+								<line className="st3" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+								<line className="st3" x1="-.2" y1="54" x2="72.2" y2="54" />
+								<line className="st3" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+							</g>
+							<g>
+								<line className="st3" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								<line className="st3" x1="-72.2" y1="18" x2=".2" y2="18" />
+								<line className="st3" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+								<line className="st3" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+								<line className="st3" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+								<line className="st3" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+								<line className="st3" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+								<line className="st3" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+								<line className="st3" x1="-72.2" y1="54" x2=".2" y2="54" />
+								<line className="st3" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern
+					id="_10_lpi_60_-6"
+					data-name=" 10 lpi 60 -6"
+					x="0"
+					y="0"
+					width="72"
+					height="72"
+					patternTransform="translate(-14045.1 -1085) rotate(-46) scale(.2 -.2)"
+					patternUnits="userSpaceOnUse"
+					viewBox="0 0 72 72"
+				>
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<line className="st3" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								<line className="st3" x1="71.8" y1="18" x2="144.2" y2="18" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="32.4"
+									x2="144.2"
+									y2="32.4"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="46.8"
+									x2="144.2"
+									y2="46.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="61.2"
+									x2="144.2"
+									y2="61.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="10.8"
+									x2="144.2"
+									y2="10.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="25.2"
+									x2="144.2"
+									y2="25.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="39.6"
+									x2="144.2"
+									y2="39.6"
+								/>
+								<line className="st3" x1="71.8" y1="54" x2="144.2" y2="54" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="68.4"
+									x2="144.2"
+									y2="68.4"
+								/>
+							</g>
+							<g>
+								<line className="st3" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								<line className="st3" x1="-.2" y1="18" x2="72.2" y2="18" />
+								<line className="st3" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+								<line className="st3" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+								<line className="st3" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+								<line className="st3" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+								<line className="st3" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+								<line className="st3" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+								<line className="st3" x1="-.2" y1="54" x2="72.2" y2="54" />
+								<line className="st3" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+							</g>
+							<g>
+								<line className="st3" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								<line className="st3" x1="-72.2" y1="18" x2=".2" y2="18" />
+								<line className="st3" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+								<line className="st3" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+								<line className="st3" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+								<line className="st3" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+								<line className="st3" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+								<line className="st3" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+								<line className="st3" x1="-72.2" y1="54" x2=".2" y2="54" />
+								<line className="st3" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern
+					id="_10_lpi_60_-7"
+					data-name=" 10 lpi 60 -7"
+					x="0"
+					y="0"
+					width="72"
+					height="72"
+					patternTransform="translate(-14045 -1084.4) rotate(-46) scale(.2 -.2)"
+					patternUnits="userSpaceOnUse"
+					viewBox="0 0 72 72"
+				>
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<line className="st3" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								<line className="st3" x1="71.8" y1="18" x2="144.2" y2="18" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="32.4"
+									x2="144.2"
+									y2="32.4"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="46.8"
+									x2="144.2"
+									y2="46.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="61.2"
+									x2="144.2"
+									y2="61.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="10.8"
+									x2="144.2"
+									y2="10.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="25.2"
+									x2="144.2"
+									y2="25.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="39.6"
+									x2="144.2"
+									y2="39.6"
+								/>
+								<line className="st3" x1="71.8" y1="54" x2="144.2" y2="54" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="68.4"
+									x2="144.2"
+									y2="68.4"
+								/>
+							</g>
+							<g>
+								<line className="st3" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								<line className="st3" x1="-.2" y1="18" x2="72.2" y2="18" />
+								<line className="st3" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+								<line className="st3" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+								<line className="st3" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+								<line className="st3" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+								<line className="st3" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+								<line className="st3" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+								<line className="st3" x1="-.2" y1="54" x2="72.2" y2="54" />
+								<line className="st3" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+							</g>
+							<g>
+								<line className="st3" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								<line className="st3" x1="-72.2" y1="18" x2=".2" y2="18" />
+								<line className="st3" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+								<line className="st3" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+								<line className="st3" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+								<line className="st3" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+								<line className="st3" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+								<line className="st3" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+								<line className="st3" x1="-72.2" y1="54" x2=".2" y2="54" />
+								<line className="st3" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern
+					id="_10_lpi_60_-8"
+					data-name=" 10 lpi 60 -8"
+					x="0"
+					y="0"
+					width="72"
+					height="72"
+					patternTransform="translate(-14045.2 -1084.2) rotate(-46) scale(.2 -.2)"
+					patternUnits="userSpaceOnUse"
+					viewBox="0 0 72 72"
+				>
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<line className="st3" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								<line className="st3" x1="71.8" y1="18" x2="144.2" y2="18" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="32.4"
+									x2="144.2"
+									y2="32.4"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="46.8"
+									x2="144.2"
+									y2="46.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="61.2"
+									x2="144.2"
+									y2="61.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="10.8"
+									x2="144.2"
+									y2="10.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="25.2"
+									x2="144.2"
+									y2="25.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="39.6"
+									x2="144.2"
+									y2="39.6"
+								/>
+								<line className="st3" x1="71.8" y1="54" x2="144.2" y2="54" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="68.4"
+									x2="144.2"
+									y2="68.4"
+								/>
+							</g>
+							<g>
+								<line className="st3" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								<line className="st3" x1="-.2" y1="18" x2="72.2" y2="18" />
+								<line className="st3" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+								<line className="st3" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+								<line className="st3" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+								<line className="st3" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+								<line className="st3" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+								<line className="st3" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+								<line className="st3" x1="-.2" y1="54" x2="72.2" y2="54" />
+								<line className="st3" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+							</g>
+							<g>
+								<line className="st3" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								<line className="st3" x1="-72.2" y1="18" x2=".2" y2="18" />
+								<line className="st3" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+								<line className="st3" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+								<line className="st3" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+								<line className="st3" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+								<line className="st3" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+								<line className="st3" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+								<line className="st3" x1="-72.2" y1="54" x2=".2" y2="54" />
+								<line className="st3" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern
+					id="_10_lpi_60_-9"
+					data-name=" 10 lpi 60 -9"
+					x="0"
+					y="0"
+					width="72"
+					height="72"
+					patternTransform="translate(-14046 -1085.3) rotate(-46) scale(.2 -.2)"
+					patternUnits="userSpaceOnUse"
+					viewBox="0 0 72 72"
+				>
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<line className="st3" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								<line className="st3" x1="71.8" y1="18" x2="144.2" y2="18" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="32.4"
+									x2="144.2"
+									y2="32.4"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="46.8"
+									x2="144.2"
+									y2="46.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="61.2"
+									x2="144.2"
+									y2="61.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="10.8"
+									x2="144.2"
+									y2="10.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="25.2"
+									x2="144.2"
+									y2="25.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="39.6"
+									x2="144.2"
+									y2="39.6"
+								/>
+								<line className="st3" x1="71.8" y1="54" x2="144.2" y2="54" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="68.4"
+									x2="144.2"
+									y2="68.4"
+								/>
+							</g>
+							<g>
+								<line className="st3" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								<line className="st3" x1="-.2" y1="18" x2="72.2" y2="18" />
+								<line className="st3" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+								<line className="st3" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+								<line className="st3" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+								<line className="st3" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+								<line className="st3" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+								<line className="st3" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+								<line className="st3" x1="-.2" y1="54" x2="72.2" y2="54" />
+								<line className="st3" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+							</g>
+							<g>
+								<line className="st3" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								<line className="st3" x1="-72.2" y1="18" x2=".2" y2="18" />
+								<line className="st3" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+								<line className="st3" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+								<line className="st3" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+								<line className="st3" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+								<line className="st3" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+								<line className="st3" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+								<line className="st3" x1="-72.2" y1="54" x2=".2" y2="54" />
+								<line className="st3" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern
+					id="_10_lpi_60_-10"
+					data-name=" 10 lpi 60 -10"
+					x="0"
+					y="0"
+					width="72"
+					height="72"
+					patternTransform="translate(-14012.8 -1106.4) rotate(-45.3) scale(.2 -.2)"
+					patternUnits="userSpaceOnUse"
+					viewBox="0 0 72 72"
+				>
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<line className="st3" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								<line className="st3" x1="71.8" y1="18" x2="144.2" y2="18" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="32.4"
+									x2="144.2"
+									y2="32.4"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="46.8"
+									x2="144.2"
+									y2="46.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="61.2"
+									x2="144.2"
+									y2="61.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="10.8"
+									x2="144.2"
+									y2="10.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="25.2"
+									x2="144.2"
+									y2="25.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="39.6"
+									x2="144.2"
+									y2="39.6"
+								/>
+								<line className="st3" x1="71.8" y1="54" x2="144.2" y2="54" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="68.4"
+									x2="144.2"
+									y2="68.4"
+								/>
+							</g>
+							<g>
+								<line className="st3" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								<line className="st3" x1="-.2" y1="18" x2="72.2" y2="18" />
+								<line className="st3" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+								<line className="st3" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+								<line className="st3" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+								<line className="st3" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+								<line className="st3" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+								<line className="st3" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+								<line className="st3" x1="-.2" y1="54" x2="72.2" y2="54" />
+								<line className="st3" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+							</g>
+							<g>
+								<line className="st3" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								<line className="st3" x1="-72.2" y1="18" x2=".2" y2="18" />
+								<line className="st3" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+								<line className="st3" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+								<line className="st3" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+								<line className="st3" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+								<line className="st3" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+								<line className="st3" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+								<line className="st3" x1="-72.2" y1="54" x2=".2" y2="54" />
+								<line className="st3" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern
+					id="_10_lpi_60_2"
+					data-name=" 10 lpi 60 2"
+					x="0"
+					y="0"
+					width="72"
+					height="72"
+					patternTransform="translate(-14486.8 -621.6) rotate(-46) scale(.1 -.1)"
+					patternUnits="userSpaceOnUse"
+					viewBox="0 0 72 72"
+				>
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<line className="st3" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								<line className="st3" x1="71.8" y1="18" x2="144.2" y2="18" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="32.4"
+									x2="144.2"
+									y2="32.4"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="46.8"
+									x2="144.2"
+									y2="46.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="61.2"
+									x2="144.2"
+									y2="61.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="10.8"
+									x2="144.2"
+									y2="10.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="25.2"
+									x2="144.2"
+									y2="25.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="39.6"
+									x2="144.2"
+									y2="39.6"
+								/>
+								<line className="st3" x1="71.8" y1="54" x2="144.2" y2="54" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="68.4"
+									x2="144.2"
+									y2="68.4"
+								/>
+							</g>
+							<g>
+								<line className="st3" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								<line className="st3" x1="-.2" y1="18" x2="72.2" y2="18" />
+								<line className="st3" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+								<line className="st3" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+								<line className="st3" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+								<line className="st3" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+								<line className="st3" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+								<line className="st3" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+								<line className="st3" x1="-.2" y1="54" x2="72.2" y2="54" />
+								<line className="st3" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+							</g>
+							<g>
+								<line className="st3" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								<line className="st3" x1="-72.2" y1="18" x2=".2" y2="18" />
+								<line className="st3" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+								<line className="st3" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+								<line className="st3" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+								<line className="st3" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+								<line className="st3" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+								<line className="st3" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+								<line className="st3" x1="-72.2" y1="54" x2=".2" y2="54" />
+								<line className="st3" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern
+					id="_10_lpi_60_2-2"
+					data-name=" 10 lpi 60 2-2"
+					x="0"
+					y="0"
+					width="72"
+					height="72"
+					patternTransform="translate(-14490.9 -627.4) rotate(-46) scale(.1 -.1)"
+					patternUnits="userSpaceOnUse"
+					viewBox="0 0 72 72"
+				>
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<line className="st3" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								<line className="st3" x1="71.8" y1="18" x2="144.2" y2="18" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="32.4"
+									x2="144.2"
+									y2="32.4"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="46.8"
+									x2="144.2"
+									y2="46.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="61.2"
+									x2="144.2"
+									y2="61.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="10.8"
+									x2="144.2"
+									y2="10.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="25.2"
+									x2="144.2"
+									y2="25.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="39.6"
+									x2="144.2"
+									y2="39.6"
+								/>
+								<line className="st3" x1="71.8" y1="54" x2="144.2" y2="54" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="68.4"
+									x2="144.2"
+									y2="68.4"
+								/>
+							</g>
+							<g>
+								<line className="st3" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								<line className="st3" x1="-.2" y1="18" x2="72.2" y2="18" />
+								<line className="st3" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+								<line className="st3" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+								<line className="st3" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+								<line className="st3" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+								<line className="st3" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+								<line className="st3" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+								<line className="st3" x1="-.2" y1="54" x2="72.2" y2="54" />
+								<line className="st3" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+							</g>
+							<g>
+								<line className="st3" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								<line className="st3" x1="-72.2" y1="18" x2=".2" y2="18" />
+								<line className="st3" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+								<line className="st3" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+								<line className="st3" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+								<line className="st3" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+								<line className="st3" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+								<line className="st3" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+								<line className="st3" x1="-72.2" y1="54" x2=".2" y2="54" />
+								<line className="st3" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern
+					id="_10_lpi_60_2-3"
+					data-name=" 10 lpi 60 2-3"
+					x="0"
+					y="0"
+					width="72"
+					height="72"
+					patternTransform="translate(-14491.8 -626.2) rotate(-46) scale(.1 -.1)"
+					patternUnits="userSpaceOnUse"
+					viewBox="0 0 72 72"
+				>
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<line className="st3" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								<line className="st3" x1="71.8" y1="18" x2="144.2" y2="18" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="32.4"
+									x2="144.2"
+									y2="32.4"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="46.8"
+									x2="144.2"
+									y2="46.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="61.2"
+									x2="144.2"
+									y2="61.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="10.8"
+									x2="144.2"
+									y2="10.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="25.2"
+									x2="144.2"
+									y2="25.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="39.6"
+									x2="144.2"
+									y2="39.6"
+								/>
+								<line className="st3" x1="71.8" y1="54" x2="144.2" y2="54" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="68.4"
+									x2="144.2"
+									y2="68.4"
+								/>
+							</g>
+							<g>
+								<line className="st3" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								<line className="st3" x1="-.2" y1="18" x2="72.2" y2="18" />
+								<line className="st3" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+								<line className="st3" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+								<line className="st3" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+								<line className="st3" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+								<line className="st3" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+								<line className="st3" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+								<line className="st3" x1="-.2" y1="54" x2="72.2" y2="54" />
+								<line className="st3" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+							</g>
+							<g>
+								<line className="st3" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								<line className="st3" x1="-72.2" y1="18" x2=".2" y2="18" />
+								<line className="st3" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+								<line className="st3" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+								<line className="st3" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+								<line className="st3" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+								<line className="st3" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+								<line className="st3" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+								<line className="st3" x1="-72.2" y1="54" x2=".2" y2="54" />
+								<line className="st3" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern
+					id="_10_lpi_60_2-4"
+					data-name=" 10 lpi 60 2-4"
+					x="0"
+					y="0"
+					width="72"
+					height="72"
+					patternTransform="translate(-14491.8 -626.2) rotate(-46) scale(.1 -.1)"
+					patternUnits="userSpaceOnUse"
+					viewBox="0 0 72 72"
+				>
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<line className="st3" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								<line className="st3" x1="71.8" y1="18" x2="144.2" y2="18" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="32.4"
+									x2="144.2"
+									y2="32.4"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="46.8"
+									x2="144.2"
+									y2="46.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="61.2"
+									x2="144.2"
+									y2="61.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="10.8"
+									x2="144.2"
+									y2="10.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="25.2"
+									x2="144.2"
+									y2="25.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="39.6"
+									x2="144.2"
+									y2="39.6"
+								/>
+								<line className="st3" x1="71.8" y1="54" x2="144.2" y2="54" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="68.4"
+									x2="144.2"
+									y2="68.4"
+								/>
+							</g>
+							<g>
+								<line className="st3" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								<line className="st3" x1="-.2" y1="18" x2="72.2" y2="18" />
+								<line className="st3" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+								<line className="st3" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+								<line className="st3" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+								<line className="st3" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+								<line className="st3" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+								<line className="st3" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+								<line className="st3" x1="-.2" y1="54" x2="72.2" y2="54" />
+								<line className="st3" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+							</g>
+							<g>
+								<line className="st3" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								<line className="st3" x1="-72.2" y1="18" x2=".2" y2="18" />
+								<line className="st3" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+								<line className="st3" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+								<line className="st3" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+								<line className="st3" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+								<line className="st3" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+								<line className="st3" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+								<line className="st3" x1="-72.2" y1="54" x2=".2" y2="54" />
+								<line className="st3" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern
+					id="_10_lpi_60_2-5"
+					data-name=" 10 lpi 60 2-5"
+					x="0"
+					y="0"
+					width="72"
+					height="72"
+					patternTransform="translate(-14491.8 -626.2) rotate(-46) scale(.1 -.1)"
+					patternUnits="userSpaceOnUse"
+					viewBox="0 0 72 72"
+				>
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<line className="st3" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								<line className="st3" x1="71.8" y1="18" x2="144.2" y2="18" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="32.4"
+									x2="144.2"
+									y2="32.4"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="46.8"
+									x2="144.2"
+									y2="46.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="61.2"
+									x2="144.2"
+									y2="61.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="10.8"
+									x2="144.2"
+									y2="10.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="25.2"
+									x2="144.2"
+									y2="25.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="39.6"
+									x2="144.2"
+									y2="39.6"
+								/>
+								<line className="st3" x1="71.8" y1="54" x2="144.2" y2="54" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="68.4"
+									x2="144.2"
+									y2="68.4"
+								/>
+							</g>
+							<g>
+								<line className="st3" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								<line className="st3" x1="-.2" y1="18" x2="72.2" y2="18" />
+								<line className="st3" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+								<line className="st3" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+								<line className="st3" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+								<line className="st3" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+								<line className="st3" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+								<line className="st3" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+								<line className="st3" x1="-.2" y1="54" x2="72.2" y2="54" />
+								<line className="st3" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+							</g>
+							<g>
+								<line className="st3" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								<line className="st3" x1="-72.2" y1="18" x2=".2" y2="18" />
+								<line className="st3" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+								<line className="st3" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+								<line className="st3" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+								<line className="st3" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+								<line className="st3" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+								<line className="st3" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+								<line className="st3" x1="-72.2" y1="54" x2=".2" y2="54" />
+								<line className="st3" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern
+					id="_10_lpi_60_2-6"
+					data-name=" 10 lpi 60 2-6"
+					x="0"
+					y="0"
+					width="72"
+					height="72"
+					patternTransform="translate(-14491.8 -626.2) rotate(-46) scale(.1 -.1)"
+					patternUnits="userSpaceOnUse"
+					viewBox="0 0 72 72"
+				>
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<line className="st3" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								<line className="st3" x1="71.8" y1="18" x2="144.2" y2="18" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="32.4"
+									x2="144.2"
+									y2="32.4"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="46.8"
+									x2="144.2"
+									y2="46.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="61.2"
+									x2="144.2"
+									y2="61.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="10.8"
+									x2="144.2"
+									y2="10.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="25.2"
+									x2="144.2"
+									y2="25.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="39.6"
+									x2="144.2"
+									y2="39.6"
+								/>
+								<line className="st3" x1="71.8" y1="54" x2="144.2" y2="54" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="68.4"
+									x2="144.2"
+									y2="68.4"
+								/>
+							</g>
+							<g>
+								<line className="st3" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								<line className="st3" x1="-.2" y1="18" x2="72.2" y2="18" />
+								<line className="st3" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+								<line className="st3" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+								<line className="st3" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+								<line className="st3" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+								<line className="st3" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+								<line className="st3" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+								<line className="st3" x1="-.2" y1="54" x2="72.2" y2="54" />
+								<line className="st3" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+							</g>
+							<g>
+								<line className="st3" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								<line className="st3" x1="-72.2" y1="18" x2=".2" y2="18" />
+								<line className="st3" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+								<line className="st3" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+								<line className="st3" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+								<line className="st3" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+								<line className="st3" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+								<line className="st3" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+								<line className="st3" x1="-72.2" y1="54" x2=".2" y2="54" />
+								<line className="st3" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern
+					id="_10_lpi_60_2-7"
+					data-name=" 10 lpi 60 2-7"
+					x="0"
+					y="0"
+					width="72"
+					height="72"
+					patternTransform="translate(-14491.8 -626.2) rotate(-46) scale(.1 -.1)"
+					patternUnits="userSpaceOnUse"
+					viewBox="0 0 72 72"
+				>
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<line className="st3" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								<line className="st3" x1="71.8" y1="18" x2="144.2" y2="18" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="32.4"
+									x2="144.2"
+									y2="32.4"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="46.8"
+									x2="144.2"
+									y2="46.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="61.2"
+									x2="144.2"
+									y2="61.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="10.8"
+									x2="144.2"
+									y2="10.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="25.2"
+									x2="144.2"
+									y2="25.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="39.6"
+									x2="144.2"
+									y2="39.6"
+								/>
+								<line className="st3" x1="71.8" y1="54" x2="144.2" y2="54" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="68.4"
+									x2="144.2"
+									y2="68.4"
+								/>
+							</g>
+							<g>
+								<line className="st3" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								<line className="st3" x1="-.2" y1="18" x2="72.2" y2="18" />
+								<line className="st3" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+								<line className="st3" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+								<line className="st3" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+								<line className="st3" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+								<line className="st3" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+								<line className="st3" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+								<line className="st3" x1="-.2" y1="54" x2="72.2" y2="54" />
+								<line className="st3" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+							</g>
+							<g>
+								<line className="st3" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								<line className="st3" x1="-72.2" y1="18" x2=".2" y2="18" />
+								<line className="st3" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+								<line className="st3" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+								<line className="st3" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+								<line className="st3" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+								<line className="st3" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+								<line className="st3" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+								<line className="st3" x1="-72.2" y1="54" x2=".2" y2="54" />
+								<line className="st3" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern
+					id="_10_lpi_60_2-8"
+					data-name=" 10 lpi 60 2-8"
+					x="0"
+					y="0"
+					width="72"
+					height="72"
+					patternTransform="translate(-14486.7 -621.4) rotate(-46) scale(.1 -.1)"
+					patternUnits="userSpaceOnUse"
+					viewBox="0 0 72 72"
+				>
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<line className="st3" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								<line className="st3" x1="71.8" y1="18" x2="144.2" y2="18" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="32.4"
+									x2="144.2"
+									y2="32.4"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="46.8"
+									x2="144.2"
+									y2="46.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="61.2"
+									x2="144.2"
+									y2="61.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="10.8"
+									x2="144.2"
+									y2="10.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="25.2"
+									x2="144.2"
+									y2="25.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="39.6"
+									x2="144.2"
+									y2="39.6"
+								/>
+								<line className="st3" x1="71.8" y1="54" x2="144.2" y2="54" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="68.4"
+									x2="144.2"
+									y2="68.4"
+								/>
+							</g>
+							<g>
+								<line className="st3" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								<line className="st3" x1="-.2" y1="18" x2="72.2" y2="18" />
+								<line className="st3" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+								<line className="st3" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+								<line className="st3" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+								<line className="st3" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+								<line className="st3" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+								<line className="st3" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+								<line className="st3" x1="-.2" y1="54" x2="72.2" y2="54" />
+								<line className="st3" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+							</g>
+							<g>
+								<line className="st3" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								<line className="st3" x1="-72.2" y1="18" x2=".2" y2="18" />
+								<line className="st3" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+								<line className="st3" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+								<line className="st3" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+								<line className="st3" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+								<line className="st3" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+								<line className="st3" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+								<line className="st3" x1="-72.2" y1="54" x2=".2" y2="54" />
+								<line className="st3" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern
+					id="_10_lpi_60_2-9"
+					data-name=" 10 lpi 60 2-9"
+					x="0"
+					y="0"
+					width="72"
+					height="72"
+					patternTransform="translate(-15369.4 284.2) rotate(-46) scale(0 0)"
+					patternUnits="userSpaceOnUse"
+					viewBox="0 0 72 72"
+				>
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<line className="st3" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								<line className="st3" x1="71.8" y1="18" x2="144.2" y2="18" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="32.4"
+									x2="144.2"
+									y2="32.4"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="46.8"
+									x2="144.2"
+									y2="46.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="61.2"
+									x2="144.2"
+									y2="61.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="10.8"
+									x2="144.2"
+									y2="10.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="25.2"
+									x2="144.2"
+									y2="25.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="39.6"
+									x2="144.2"
+									y2="39.6"
+								/>
+								<line className="st3" x1="71.8" y1="54" x2="144.2" y2="54" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="68.4"
+									x2="144.2"
+									y2="68.4"
+								/>
+							</g>
+							<g>
+								<line className="st3" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								<line className="st3" x1="-.2" y1="18" x2="72.2" y2="18" />
+								<line className="st3" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+								<line className="st3" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+								<line className="st3" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+								<line className="st3" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+								<line className="st3" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+								<line className="st3" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+								<line className="st3" x1="-.2" y1="54" x2="72.2" y2="54" />
+								<line className="st3" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+							</g>
+							<g>
+								<line className="st3" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								<line className="st3" x1="-72.2" y1="18" x2=".2" y2="18" />
+								<line className="st3" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+								<line className="st3" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+								<line className="st3" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+								<line className="st3" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+								<line className="st3" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+								<line className="st3" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+								<line className="st3" x1="-72.2" y1="54" x2=".2" y2="54" />
+								<line className="st3" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern
+					id="_10_lpi_60_2-10"
+					data-name=" 10 lpi 60 2-10"
+					x="0"
+					y="0"
+					width="72"
+					height="72"
+					patternTransform="translate(-15189.2 60.4) rotate(-46) scale(0 0)"
+					patternUnits="userSpaceOnUse"
+					viewBox="0 0 72 72"
+				>
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<line className="st3" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								<line className="st3" x1="71.8" y1="18" x2="144.2" y2="18" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="32.4"
+									x2="144.2"
+									y2="32.4"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="46.8"
+									x2="144.2"
+									y2="46.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="61.2"
+									x2="144.2"
+									y2="61.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="10.8"
+									x2="144.2"
+									y2="10.8"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="25.2"
+									x2="144.2"
+									y2="25.2"
+								/>
+								<line
+									className="st3"
+									x1="71.8"
+									y1="39.6"
+									x2="144.2"
+									y2="39.6"
+								/>
+								<line className="st3" x1="71.8" y1="54" x2="144.2" y2="54" />
+								<line
+									className="st3"
+									x1="71.8"
+									y1="68.4"
+									x2="144.2"
+									y2="68.4"
+								/>
+							</g>
+							<g>
+								<line className="st3" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								<line className="st3" x1="-.2" y1="18" x2="72.2" y2="18" />
+								<line className="st3" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+								<line className="st3" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+								<line className="st3" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+								<line className="st3" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+								<line className="st3" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+								<line className="st3" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+								<line className="st3" x1="-.2" y1="54" x2="72.2" y2="54" />
+								<line className="st3" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+							</g>
+							<g>
+								<line className="st3" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								<line className="st3" x1="-72.2" y1="18" x2=".2" y2="18" />
+								<line className="st3" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+								<line className="st3" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+								<line className="st3" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+								<line className="st3" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+								<line className="st3" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+								<line className="st3" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+								<line className="st3" x1="-72.2" y1="54" x2=".2" y2="54" />
+								<line className="st3" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+							</g>
+						</g>
+					</g>
+				</pattern>
+			</defs>
+			<g id="Ocean">
+				<path
+					className="st34"
+					d="M356.6,46.8l44.9,48.6,13.5,31.8,59.5,65.3-4.9,27.5-27.1,32.9,8.7,30.8-36.8,89.6-135.8,66.4-80.1.5-42.2-50.7-36.8-4.9-42.2-71.2,37.3-102-2.7-37.8,13-21.6,1.6-29.2,23.3-37.2s57.4-27,97.9-31.3l108.8-7.6h0Z"
+				/>
+			</g>
+			<g id="MapBorder">
+				<path
+					className="st2"
+					d="M356.6,46.8l44.9,48.6,13.5,31.8,59.5,65.3-4.9,27.5-27.1,32.9,8.7,30.8-36.8,89.6-135.8,66.4-80.1.5-42.2-50.7-36.8-4.9-42.2-71.2,37.3-102-2.7-37.8,13-21.6,1.6-29.2,23.3-37.2s57.4-27,97.9-31.3l108.8-7.6h0Z"
+				/>
+			</g>
+			<g id="Island">
+				<path
+					className="st39"
+					d="M182,191.7s1.9-2.6,2.9-2.2,1.9-1.9.7-2,2.8-2.4,5.9.2-2.2-3.5,2.4-3.1,4.6,2.9,4.6,2.9c0,0,2.2-.6,2.8-2.4s1.7-.7.6,3.3-.2,9.2-.2,9.2c0,0,1.1,2.9-1.1,3.9,0,0-1.7,5.4-7.2,4.2,0,0,.7,4.4-.7,4.4,0,0-1.1-2.8-3.7-2.4,0,0-2.9-.9-4.8,2.2,0,0-2.6-.9.2-3.3,0,0-2.8-2,.2-4.2,0,0-1.1-2.9-2-3.1s-.6-7.6-.6-7.6h0Z"
+				/>
+				<path
+					className="st39"
+					d="M194.2,223.3s-2.2-5.5,3.9-6.6c0,0,2.6-1.1,3.7,4.2,0,0-.2-.6.6-4.1,0,0,5.4-3.9,5.4,1.9,0,0,6.1-.7,2.9,2.9l2-.6s-2,3.9,2.4,7.9l-1.5.7,1.1,1.5s5.5,6.3.6,8.1c0,0-5.2-1.5-2.4,3.1,0,0,.4,4.4-1.7,4.4s-3.7-.7-5.7-.4-4.1-1.7-1.9-2.4-2.2-1.5-3.1-.2-6.1-1.5-6.1-1.5c0,0-2.8-2.8.4-3.7,0,0,1.1-3.1-1.7-3.1,0,0-4.2-.4-2.8-2.6,0,0-1.1-2.8-3.7-3.1,0,0,2.2-2.9,4.8-3.5,0,0,.4-3.5,2.8-3.1h0Z"
+				/>
+				<path
+					className="st39"
+					d="M204.6,285.5s6.3-4.1,9.2-2.6c0,0,2.4-.5,2.8-2s.7-3.5,2.8-3.9.6-1.7-.9-2.2.7-2.8-2.8-1.5l-.4-5.5-1.3,2.8s-1.1-.7-3.5,3c0,0-2.8-2-3.5-.4,0,0-6.3-1.5-3.7,2,0,0,1.3.7,1.1,2s.2,2.4,2.4,1.1.7,3.7-.4,4.1-1.9,3.1-1.9,3.1h0Z"
+				/>
+				<path
+					className="st39"
+					d="M195.9,311.3s-.7-6.5-7.8-5.4-4.2,8.9-4.2,8.9l1.5,2.6s-3.5,5.5.6,5.2.7,1.7.7,1.7c0,0,1.9.7,2.8,2.4s3.5-2.4,3.5-2.4c0,0,1.3,1.5,2.8,1.1s2.8-2.6,1.1-3,.7-1.7,2-1.5,2.6-3.5.4-4.1.6-1.9.6-1.9c0,0,1.5-2.6-3.9-3.7h0Z"
+				/>
+				<path
+					className="st39"
+					d="M353.3,310.2l-3,3.5s-3.9,1.1-5,3.1-4.6-.5-3.9-3.1-1.7-1.1-1.7-1.1c0,0-1.3-1.5-.4-2.2s-.4-4.1-2-3.5-.5-1.9-.5-1.9c0,0-2.4-1.9,0-2.8,0,0,.7-2.4.9-3.9s2.8.7,2.8.7c0,0,.9-1.3-1.5-2s2-2.8,2-2.8c0,0,.9-3.5,3-.9,0,0,3-2,5-.5,0,0,1.9-1.3,3.3,1.9l1.5.4-.5,15.1h0Z"
+				/>
+				<path
+					className="st39"
+					d="M353.9,223.5s-1.1-2.4-4.1-.4c0,0-3.7.2-5.2-1.3s-.2,3.5,2.4,4.6l-1.5,1.5,1.3,1.9-1.5,1.7s-2.6,1.9,2.4,1.1c0,0,2.8,2,5.2-.6,0,0,.9-9,.9-8.5h0Z"
+				/>
+				<path
+					className="st39"
+					d="M339.3,161.6s2.2,2,3.1,4.4,3.7,2.6,3.7,2.6c0,0-1.7,2.9-4.1,2.8s.4,2,.4,2l-1.5,1.1s-2,3.7-1.1,5.4-5-5.2-9-2.4c0,0-1.3-2.6-2.8-2.2s-3.1-2.2-2.4-3.3c0,0-1.9-2-1.1-2.9,0,0-2.2-1.3-2-2.4s-4.6-3.3,2.8-5h14,0Z"
+				/>
+				<path
+					className="st39"
+					d="M239.7,353.3s-12.9-5.1-16.1-4.1-16.3,16.4-16.3,16.4c0,0-7.4,7.5-8.1,9.2s-4.5,2.2-4.1,5.9-3.4,26.4,9.5,29.1c12.9,2.7,45.4-8,47-7,1.7,1,48.9,2.4,55.9-8.4,0,0,3.6-3.4,3.9-5.1,0,0,3-2.4,3.4-3.6,0,0,1-1,1.4-1.3s-.3-6.2-2.9-6.5c0,0-2.9-13.5-9.2-16.8-6.3-3.3-22.6-1.3-26.9,1.5s-5.2,7.3-15.6,4c0,0-7.4-2.1-7.7-9.1s-10.4-3.9-10.4-3.9c0,0-2.8.3-3.9-.2h0Z"
+				/>
+				<path
+					className="st39"
+					d="M205.8,356.2s-3.9-2.4-6.5-1.2-.3,2.9-.3,2.9c0,0-2.9,2.3-2.1,2.8.8.4,4.4-2.2,4.4-2.2,0,0-2.1,2.7-.7,2.9s6.1-1.8,6.1-1.8l-.9-3.3h0Z"
+				/>
+				<path
+					className="st39"
+					d="M234.4,406.3s-3.5,4.8-.6,5.5c0,0,1.4,3.8,4,.3s5-.1,5-.1c0,0,4.2,1.3,5.9-2.2s-3.1-1.7-3.1-1.7l-.6-3.5-10.6,1.7h0Z"
+				/>
+				<path
+					className="st39"
+					d="M261.7,406s4.1,5.6,5.8,6.5,3.2-.8,3.3-1.7,3.5-5.3,4.4-4.9,3.6,3,3.6,3.8,2.2-.4,2.4.1,1.9.7,2.8-1,6.1-2.1,6.2-.7,1,3,2.5,2.9,3.5-2.1,3.2-3.9c-.3-1.8-27.4-5.2-34.3-1.2Z"
+				/>
+				<path
+					className="st39"
+					d="M313.1,371.9s3.5-3.9,3.2-5.3-4.4-1.7-4.4-1.7l1.2,7Z"
+				/>
+				<path
+					className="st39"
+					d="M212.2,410.4s1.4,3.9,2.2,3.8,1.4-2.8,1.4-2.8c0,0-.6,2.7.8,2.5s3.9-3.5,3.9-4.3-8.3.8-8.3.8h0Z"
+				/>
+				<path
+					className="st39"
+					d="M403.7,217.1s-2.5-1-2.7-2.5c0-.6-.5-1.4-1.1-2s.2-.7-.6-1.1c-.8-.4-.2-4.4-1.3-5-.5-.3-1,.2-1.2.1-1.3-.5-1.5-.5-2.5.6-1.4,1.4-4.4,6.1-6.2,9.8-1,2-1.4,3.9-1.4,4.9,0,2.9-.3,6.1,1.4,7,1.5.8,1.5,2.3,2.1,2.6.3.1,1.9,0,3.8-1.2,1.5-1,3.3-2,5.2-3,2.6-1.4,5.7-7.9,4.6-10.2h0Z"
+				/>
+				<path
+					className="st39"
+					d="M404.4,225.3s.5-2,.6-2.7c0-.5-.1-1.5-.1-1.5,0,0,0-3.1,1-3.4s2.5-2.2,3.1-3.6,8.4-16.4,12.6-17.1,8.3-.7,10,3.9.7,6,1.9,7.5,2.6,6.5,2,7.1-.3,3.1-.4,3.6.1,1.6-1.1,3.8c0,0-.5.9-.4,1.9s-.4,4.4-.9,4.8-3.3,3.4-3.3,6.6c0,3.2-.6,5.6-3,7s-4,2.1-6.2,2.1-1.5.2-3.2.5-6.1-1.1-7.5-2.7-2.2-3-2.5-4.3-1.5-3.8-1.9-4.6-1.8-6.3-.9-8.9h0Z"
+				/>
+				<path
+					className="st39"
+					d="M404,221.8s.1-.2.5-.2,0-.5-.4-.4-.5.6-.2.6Z"
+				/>
+				<path
+					className="st39"
+					d="M433.4,225.8s1.2-.4,2-.3,1.1-1.1.9-1.1-1.8-.2-.7-1.1-.2-1-.7-1-1.5-.6-1.5-.6l-.2,4.1Z"
+				/>
+				<path
+					className="st39"
+					d="M413.7,206.7s-2.4,0-2.6.5-.4,3-.2,3.4,2.8-3.9,2.8-3.9h0Z"
+				/>
+				<path
+					className="st1"
+					d="M409.5,212.9s-1.9,4.9-4.1,4.6c-2.2-.3-4-1.4-4.3-2.6-.3-1.1-.6-1.8-1.1-2.2-.6-.4.2-.9-.7-1.2s-.4-4.6-1.3-5.1-1.1.3-1.6,0c-1.1-.7-2.2.4-3.3,1.8-.9,1.2-1.9,3-4.7,7.6-3,5-1.8,9.8-1.7,10.6s.4,2.2,1.3,2.7c1.5.8,1.4,2.2,1.8,2.3.9.2,3.4-.4,5.5-2.2.4-.3,3.7-1.1,6.6-4.2,0,0,3-1.6,2.3,1.4-.7,3,1,7.6,1,7.6,0,0,1.7,3.2,2.2,5.6s3.1,4,3.6,4.4c1.4,1,4.5,2,6.4,1.5,1.9-.5,2.5-.3,4.3-.5s7.7-2.3,7.7-7,1.2-6.4,2.7-7.8c1.5-1.4,1.6-4.6,1.5-5.7s.9-2.5,1.3-3.8-.3-3.4.6-5.2c.9-1.8-1.6-6.2-2.5-7.9-.6-1.2-.3-2.9-.7-4.4s-1.8-4.9-3.4-5.7-6.9-1.5-9.7.5-9.1,13.7-9.9,15h0Z"
+				/>
+				<path
+					className="st39"
+					d="M221.1,111.1l-3.4-2.2s-2.6-.7-4.6-.3c-5.6,1.1-8.1-.2-9.8-.2s-3.2-.3-3.7-.7c-.9-.5-3.5-2.1-6.4-.4,0,0-1.1,0-2.1.1-1.4,0-3.3,1.1-4.8,1.6s-3.7.7-4.4,1.6c-.5.6-2,1.1-2,1.1,0,0-2.7.5-4.6,4s-4,5.4-3.4,8.6-1,6.5-1.1,8c-.1,2,1.5,3.4,2.5,4.7.5.6.6,1.8,1.2,2.2,1.6,1,1.3,1.5,2.2,2.2,1.7,1.4,3.3,2,4.2,3.3s3.7.6,4.6.8,3.8,1.1,5.1.9,4.3,0,7.3-2.7c3.5-3.2,1.5-9.8,1.3-12.4s1.2-2.3.7-4.8c-.3-1.6,4-3.5,4.3-4.2,1.3-3.9,4.1-5.1,7.2-6.6,2.4-1.2,2.9-.3,3.9-1.2s2.4-2.3,3.1-2.7c1.3-.6,2.8-.9,2.8-.9h0Z"
+				/>
+				<path
+					className="st39"
+					d="M226.2,110.8s.3-2.8,1.8-3.5,2.1-1.9,2.1-1.9c0,0,.3-.8,1.6-1.1s1.8-.7,3-.8,5.9.8,4.1,4.3c-1.5,3-5.6,3.6-8.8,3.2-2.2-.3-3.9-.2-3.9-.2h0Z"
+				/>
+				<path
+					className="st1"
+					d="M229.9,105.3s-1.4,1.8-3.7,2.8c-1.9.8-4.8,1.3-8.6.8-4.6-.7-5.2,0-6.9.1-2.8.2-4.2.2-6.2-.3-2.4-.6-3.5.2-6.1-1.4-2.7-1.7-5.1.3-6,.2-1.4-.2-4.2.7-6.2,1.6-2,1-3.8.6-4.6,1.7-.3.3-1.8.9-3.4,1.6-1.7.6-5.6,6.9-6.3,8.3-.7,1.4,0,6.5-.3,7.9-.4,1.4-2.1,5.4.8,7.7,1.6,1.2,1.1,3,2.8,3.8.9.5,1.1,2.1,2.8,2.5s2.6,3.7,5.3,3.2c3.4-.6,5.4,1.4,6.6,1.1,1-.2,2.9-.7,4-.5s5.6-3.4,5.9-5.7c.6-4.7-1.2-9.9-.3-11.1,1-1.3.4-2.9.6-3.4.8-1.6,1.7-1.8,3.3-3s1.6-3.5,3.5-4.8c1.9-1.3,4.8-3.2,7.2-3.3,1.9,0,2.4-2.3,4.3-3.3,2.5-1.3,11.3-.8,14.5-.7,2.8,0,6.4-2.8,6.4-4.7s-2.4-3.9-5.6-3-3.7,1.8-3.7,1.8h0Z"
+				/>
+				<path
+					className="st39"
+					d="M381.8,282.9l1.6-5.4-.3-2.7,3.2.5.5-1.3h3v2.7s7,3.2.3,8.9v2.4l-3.5.3v-3h-1.9v2.4l-1.6-4-1.3-.8h0Z"
+				/>
+				<path
+					className="st39"
+					d="M366.2,198.8c.4,0,4.9,4.5,7.4-.8,0,0,5.1.8,6-4.1,0,0,6.5.1-1.3-4.4,0,0-1.3-3.8-3.5-4.4,0,0-1.1-2.4-2.5-2.3s-.2,1.8-.2,1.8l-2-.2s1.4-5.1-2.9-2.8c0,0-3.7-.6-3,1.9,0,0,.6,1.2-5.2.7,0,0,4.1,3.6,1.9,4.2s-3.6,1.8-3,2,2.9,0,2.1,3.3c0,0-3.5,1,.5,2.1,0,0,1.2,3.2,5.7,2.9h0Z"
+				/>
+				<path
+					className="st39"
+					d="M325.3,161.6s-1.1-3.1,2.2-3.4-.1-2.6-.8-2.6-.2-2.5,3-.8c3.2,1.7,8.1,5.9,8.4,7.9s-12.7-1-12.7-1h0Z"
+				/>
+				<path
+					className="st39"
+					d="M320,117.8s-3.5,1-1.4,2.1,1.4,1.8,2.2,2.2,3,1.2,7.1.7.4,1.2.4,1.2c0,0-.5,2.2.5,3.1.9.9-1.9,1.2-1.9,1.2,0,0-.8,1.5,4.4.7,0,0,.4,3.5,1.8,1.2s1.2-2.1,4.8-2.1,2-5,2-5c0,0,2.3.9,1.4-3.8,0,0,1.4-.6,0-2.7,0,0-2.1-3.2-.5-3.7,0,0,2.7-3.6-4.9-4.3,0,0-2.7-1.4-2.6-2.9s-5.5-1.7-4.6,1.2c0,0-2.9.7-2.4,4.6,0,0-1.3,1.7-2.7,1.9s-3.7,1.9-3.4,4.3h0Z"
+				/>
+				<path
+					className="st39"
+					d="M316.3,120.8s2.8-.6,2.2,3.9c0,0-2.3,2.1-4.1.3s1.5-2.4,1.5-2.4l.4-1.8h0Z"
+				/>
+				<path
+					className="st39"
+					d="M277.9,101.1s15.9.2,13.6,9.8c0,0,5.4-1.1,4.5,3.4-.9,4.5-6.8.4-6.8.4l.5,3.4s-4.1-.9-4.1-2-2-4.3-5.4-2.2-3.6-3.9,0-4.1.2-8.4-2.3-8.8h0Z"
+				/>
+				<path
+					className="st39"
+					d="M306.2,82.3s8.2.5,8.2-4.1c0,0,3.9,1.6,1.4,4.1s3.8,1.4,4.7,1.2,2.9,5.6-4.8,3.4c0,0-1.2,3.6,1.1,4.1s1.2,4.1-7.9,3.9-3.6-7.3-3.6-7.3c0,0,.9-5.4.9-5.4Z"
+				/>
+				<path className="st39" d="M323.3,83s2.7,1.4,1.6,2-2.7-.7-1.6-2Z" />
+				<path
+					className="st39"
+					d="M307.5,76.6s3.2,1.4,3.4.5,0,3.2-2.7,2.9-.7-3.4-.7-3.4h0Z"
+				/>
+				<path
+					className="st39"
+					d="M154,212.5s4.7,2.5,8.2,0,1.1,8.6-.4,9,0,3.6,0,3.6c0,0-6.1-.7-7.9.4s-6.8-3.9-3.2-6.4c0,0-.2-3.6,1.6-4.3s-.5-2,1.6-2.1h0Z"
+				/>
+				<path
+					className="st39"
+					d="M228.9,327.7s2.9-3.4,6.6-.7,2.7,4.8.4,6.5-12.4-1.1-6.8-4.5l-.2-1.2h0Z"
+				/>
+				<path
+					className="st39"
+					d="M281.2,330.8s2-3.2,2.3-4.8,1.8-3.2,5.5-2.5,5.2-2.7,9.7-.7,6.3,9.1-.4,12.2c0,0-2,4.1-6.5,2.9,0,0-1.4-.4-4.1,1.2s-8.1-7.5-6.6-8.2h0Z"
+				/>
+				<path
+					className="st39"
+					d="M335.4,344.8s2-5,3.4-5.4c0,0,.2-2.7,2.3-1.6s3.4.5,3.4.5c0,0,.5-1.1,2.7-.2s4.1.4,4.1.4c0,0-.4,2.9-2.5,3.2s-.9,5-.9,5c0,0-1.6,2.9.2,3.4s-.4,3.6-5.2,2.3c0,0-3,.9-3.6,2.7s-9-2.7-4.7-3.9c0,0-2-2.9,0-3.6l.7-2.9h0Z"
+				/>
+				<path
+					className="st0"
+					d="M266.8,190.6l-15.6,12.1-.6,15.9,10.2,9.8,11.1,1.5,2.4-1.7c3.1-2.4,5.5.7,6.7,1.2,1.2.6,3.2,0,3.2,0h9.9l9.6-9.6v-14.6l-14.6-14.6h-22.2,0Z"
+				/>
+				<path
+					className="st0"
+					d="M273.1,233.1c-.6-.1-.6-2.5-.6-2.5v3.2c-.1,0-3.1,0-3.5.1s.5,1.4-.3,1.4-1.5-1.4-1.5-1.4h-6.1c0,0,2,2.3,2,2.3,0,0,1.3,1.1,1.1,1.8-.3.6.8,1.8,1.3,1.9.5,0,1.3,1.3,1.3,1.3,1,.3,1.3.9,1.3.9.5,2,2.4.5,1.9-.4s1.6-1.8,1.6-1.8c1.3-.5,2.2-.6,2.2-.6.1-.6-.5-2.6-.5-2.6,0,0,.4-3.4-.3-3.5h0Z"
+				/>
+				<path
+					className="st0"
+					d="M243.7,213.6c2.2-1.1-.7-2.9-.7-2.9l1.1-2.3s-1.3-3.7-.7-6.3l-4,13.6s-.3,1.9,2.4.7l.7,1.2,3.1,5.9,3-.3,1.1-1.3-4.5-3.9s-3.6-3.2-1.4-4.3h0Z"
+				/>
+				<path
+					className="st0"
+					d="M277.9,233c-.5-.4-2.4-.2-2.9,0s-.5,5.8-.5,5.8c1.3-.2,1.3,1.4,1.3,1.4.9-.2.7,1.6.7,1.6.7.5.9,3.7,1.6,4.6.7.9.9-.1.9-.1v-13.2c0,0-.7.4-1.1,0Z"
+				/>
+				<path
+					className="st0"
+					d="M282.3,233.9c-1.1-.3-1.8-1.1-1.8-1.1l.2,12.6s.5.7.9.6c.4,0,0-.4.5-.4s.9-.6.4-.8.3-1.3.3-1.3c-.3-1.2,2.5-2.2,2.5-2.2,1.1-2.2,3.8-4.5,3.8-4.5,0,0,1.2-.7.7-1.4-.5-.7.8-1.5.8-1.5,0,0-7.1.4-8.3,0h0Z"
+				/>
+				<path
+					className="st0"
+					d="M266.8,190.6l-15.6,12.1-.6,15.9,10.2,9.8,11.1,1.5,2.4-1.7c3.1-2.4,5.5.7,6.7,1.2,1.2.6,3.2,0,3.2,0h9.9l9.6-9.6v-14.6l-14.6-14.6h-22.2,0Z"
+				/>
+				<path
+					className="st0"
+					d="M267.1,245.1c-.5.2-.9-.4-.9-.4,0,0-.7,1.1-1.7.4-1-.7-.2-2.3-.4-2.6-.1-.3.6-.9.6-.9-.3,0-.6-.3-.6-.3-.9-.7,0-.9,0-1s-.6-.9-.6-.9c0,0,.4,2.1.4,4.4s-.8,4.6-.8,4.6c0,1.4-3,3.6-3,3.6l-4.5,4.5s-1.2.5-1.1,1-.5,1.9-.5,1.9l.9-1.6c.3-1.7,1.7-.8,1.8-.9,0,0,0,0,0,.1.2.3,1,.3,1.1,0s1-.9,1-.9c0,0,1.1-.6.2-.6-.9,0-1.1-1.5,0-1.7,1-.2,1.3,1.5,1.3,1.5l.8-.4c1.2-.3.2-1.1.2-1.1-2.1-1.6.3-3,1-3.4.6-.5,1-2.1,1-2.1,0,0,.7-.2,1.7-1,1-.7,2.2-.7,2.2-.7-.3-.2,0-1.5,0-1.5h0Z"
+				/>
+				<path
+					className="st0"
+					d="M273.1,233.1c-.6-.1-.6-2.5-.6-2.5v3.2c-.1,0-3.1,0-3.5.1s.5,1.4-.3,1.4-1.5-1.4-1.5-1.4h-6.1c0,0,2,2.3,2,2.3,0,0,1.3,1.1,1.1,1.8-.3.6.8,1.8,1.3,1.9.5,0,1.3,1.3,1.3,1.3,1,.3,1.3.9,1.3.9.5,2,2.4.5,1.9-.4s1.6-1.8,1.6-1.8c1.3-.5,2.2-.6,2.2-.6.1-.6-.5-2.6-.5-2.6,0,0,.4-3.4-.3-3.5h0Z"
+				/>
+				<path
+					className="st0"
+					d="M276.6,241.8c.7.5.9,3.7,1.6,4.6.7.9.9-.1.9-.1v-13.2c0,0-.7.4-1.1,0s-2.4-.2-2.9,0-.5,5.8-.5,5.8c1.3-.2,1.3,1.4,1.3,1.4.9-.2.7,1.6.7,1.6Z"
+				/>
+				<path
+					className="st0"
+					d="M243.7,213.6c2.2-1.1-.7-2.9-.7-2.9l1.1-2.3s-1.3-3.7-.7-6.3l-4,13.6s-.3,1.9,2.4.7l.7,1.2,3.1,5.9,3-.3,1.1-1.3-4.5-3.9s-3.6-3.2-1.4-4.3h0Z"
+				/>
+				<path
+					className="st0"
+					d="M282.3,233.9c-1.1-.3-1.8-1.1-1.8-1.1l.2,12.6s.5.7.9.6c.4,0,0-.4.5-.4s.9-.6.4-.8.3-1.3.3-1.3c-.3-1.2,2.5-2.2,2.5-2.2,1.1-2.2,3.8-4.5,3.8-4.5,0,0,1.2-.7.7-1.4-.5-.7.8-1.5.8-1.5,0,0-7.1.4-8.3,0h0Z"
+				/>
+				<path
+					className="st0"
+					d="M266.8,190.6l-15.6,12.1-.6,15.9,10.2,9.8,11.1,1.5,2.4-1.7c3.1-2.4,5.5.7,6.7,1.2,1.2.6,3.2,0,3.2,0h9.9l9.6-9.6v-14.6l-14.6-14.6h-22.2,0Z"
+				/>
+				<g>
+					<path
+						className="st0"
+						d="M243.7,213.6c2.2-1.1-.7-2.9-.7-2.9l1.1-2.3s-1.3-3.7-.7-6.3l-4,13.6s-.3,1.9,2.4.7l.7,1.2,3.1,5.9,3-.3,1.1-1.3-4.5-3.9s-3.6-3.2-1.4-4.3h0Z"
+					/>
+					<path
+						className="st0"
+						d="M273.1,233.1c-.6-.1-.6-2.5-.6-2.5v3.2c-.1,0-3.1,0-3.5.1s.5,1.4-.3,1.4-1.5-1.4-1.5-1.4h-6.1c0,0,2,2.3,2,2.3,0,0,1.3,1.1,1.1,1.8-.3.6.8,1.8,1.3,1.9.5,0,1.3,1.3,1.3,1.3,1,.3,1.3.9,1.3.9.5,2,2.4.5,1.9-.4s1.6-1.8,1.6-1.8c1.3-.5,2.2-.6,2.2-.6.1-.6-.5-2.6-.5-2.6,0,0,.4-3.4-.3-3.5h0Z"
+					/>
+					<path
+						className="st0"
+						d="M276.6,241.8c.7.5.9,3.7,1.6,4.6.7.9.9-.1.9-.1v-13.2c0,0-.7.4-1.1,0s-2.4-.2-2.9,0-.5,5.8-.5,5.8c1.3-.2,1.3,1.4,1.3,1.4.9-.2.7,1.6.7,1.6Z"
+					/>
+					<path
+						className="st0"
+						d="M268.4,165.1c14.6,1.9,16.1-3.5,16.1-3.5,0,0,.2,0,.6,0,0-1.7.2-5.8.9-6.4.9-.7,0-14,0-14h-24.2v18.4s4.8.8,6.6,5.4h0Z"
+					/>
+					<path
+						className="st0"
+						d="M280.5,251s-1-1.6-1.5-.4-3.1.9-3.1.9c0,0-.1.4,1,2,1,1.6,1.7,1.1,2.1,1.9.4.8,3.1.9,1.2-1.2s.3-3.2.3-3.2h0Z"
+					/>
+					<path
+						className="st0"
+						d="M267.1,245.1c-.5.2-.9-.4-.9-.4,0,0-.7,1.1-1.7.4-1-.7-.2-2.3-.4-2.6-.1-.3.6-.9.6-.9-.3,0-.6-.3-.6-.3-.9-.7,0-.9,0-1s-.6-.9-.6-.9c0,0,.4,2.1.4,4.4s-.8,4.6-.8,4.6c0,1.4-3,3.6-3,3.6l-4.5,4.5s-1.2.5-1.1,1-.5,1.9-.5,1.9l.9-1.6c.3-1.7,1.7-.8,1.8-.9,0,0,0,0,0,.1.2.3,1,.3,1.1,0s1-.9,1-.9c0,0,1.1-.6.2-.6-.9,0-1.1-1.5,0-1.7,1-.2,1.3,1.5,1.3,1.5l.8-.4c1.2-.3.2-1.1.2-1.1-2.1-1.6.3-3,1-3.4.6-.5,1-2.1,1-2.1,0,0,.7-.2,1.7-1,1-.7,2.2-.7,2.2-.7-.3-.2,0-1.5,0-1.5h0Z"
+					/>
+					<path
+						className="st0"
+						d="M266.8,190.6l-15.6,12.1-.6,15.9,10.2,9.8,11.1,1.5,2.4-1.7c3.1-2.4,5.5.7,6.7,1.2,1.2.6,3.2,0,3.2,0h9.9l9.6-9.6v-14.6l-14.6-14.6h-22.2,0Z"
+					/>
+					<path
+						className="st0"
+						d="M310.8,249.4c-3.2.1-3.5-3.3-3.5-3.3,0,0,3.2-2.3,3.2-2.9s1.9-1.6,1.9-1.6c1.8.3,3.5-3.3,2.1-2-1.3,1.2-2.6.1-2.6.1,0,0,.1.8-.7,1.3s-1.2,2.5-1.2,2.5c0,0-2.2,1.7-3.6,2.6s2.3,5.9,2.7,5.9,1-1,1-1c.4-2,1.8-.9,1.8-.9,0,0,1.6,1.4,3.6.8s.7-5.4.7-5.4c0,0-2.1,3.6-5.3,3.7h0Z"
+					/>
+					<path
+						className="st0"
+						d="M283.7,244.9s-1,1.8-.2,2.8c.9,1-1.3,1.3-1.3,1.3,0,0,.6.4,1.2.3,0,0-2.1,1.1-.7,2.4,1.4,1.2,2.8,1.3,2.8,1.3,0,0-.3-.5-.2-.9s-.9-.1-1-.5c-.1-.4-1.1-3,1-3.7s2.7-3.8,2.7-3.8c0,0-.7,1.5-4.3.8h0Z"
+					/>
+					<path
+						className="st0"
+						d="M282.3,233.9c-1.1-.3-1.8-1.1-1.8-1.1l.2,12.6s.5.7.9.6c.4,0,0-.4.5-.4s.9-.6.4-.8.3-1.3.3-1.3c-.3-1.2,2.5-2.2,2.5-2.2,1.1-2.2,3.8-4.5,3.8-4.5,0,0,1.2-.7.7-1.4-.5-.7.8-1.5.8-1.5,0,0-7.1.4-8.3,0h0Z"
+					/>
+					<path
+						className="st39"
+						d="M341.7,257.6c-2.6.9-2.2-5.4-5.4-2.4-3.1,3-5.5-4.4-3.9-5s-5.2-5,.4-6.8-2.2-4.1-2.2-4.1c0,0-3-9-6.8-7.9s-1.1-5.9-1.1-5.9c0,0-8.5-5.9-4.1-13.5,0,0,1.9.2,3.3-3.1,1.5-3.3,3.5-5.4,3.5-5.4,0,0,2.8-7.6-.5-7.6s-2-6.6-2-6.6c0,0-5.7-2.4-.7-3.9s0-8.7-1.7-6.5-6.1.4-3.9-3.7c0,0,.4-6.1-3.1-5.9s-6.3-2.2-6.3-2.2c0,0-1-5-4.3-5.7-1.4-4.9-11.7-5.7-11.7-5.7l.5-19.2c-2.5-4.7-5.4-.2-5.4-.2h-24.9c-3.2-4.8-5.4.4-5.4.4l-.4,21.5-11.2,3s.6.2,1.7.5h-3.6s-3.1,1-3.7,3.2-.9,4.4-2.4,4.1-1.1,2.2-1.1,2.2c0,0-2,1.3-2.6.6-.6-.7-.9,3.1.4,4.4,0,0-2.6,2-2.2,3.5.4,1.5-1.1,2.8-4.1,2.4,0,0-5,2.4-.4,6.5,0,0-1.5,1.9-.9,2.9s-2.4,1.9-.4,4.4c2,2.6,2.4,5,2.4,5,0,0-2,6.1-1.3,8.5,0,0-2.4,4.1-1.1,7.6,0,0-.2,4.8,2,6.1,0,0-.2,3.1,1.5,3.3,0,0-.2,4.2,1.1,5.5s-1.1,1.7-1.1,1.7c0,0-.4,10.1-1.7,10.7-1.3.6-2.4,2.9-.2,4.8,0,0-1.5,2.6,2,4.1,0,0-2,4.2.7,7,0,0-5.2,4.4-.4,5.2,0,0,2,1.7,1.5,3.3s2,2.8,2,2.8c0,0-2.9,1.3-.9,3.1,0,0-2,3.5-.7,4.1,0,0-1.9-.4-3.5,1.7s-2.8,2.6-1.7,3.3-6.1-.9-6.6,8.3c0,0-6.5,8.7-2.2,12l.9,3.7s-2.6,2,.2,4.1c0,0-2.4,2.6-.6,4.1,0,0-1.5,5.2.2,4.2s2.4,3.9,2.4,3.9c0,0,2.4,2.4,9.4-5.4,0,0,.2,1.9,1.9,2s3.3-3,3.9-.7,1.7,4.8,5,3.1,6.6,1.3,6.6,1.3c0,0,3.1,1.9,4.8-1.1,1.7-3,2.2-.4,2.2-.4,0,0,2.2,2.6,5.2.4s.7-.7,1.9.2,1.9-.9,3.3-.9,3.1,0,4.6-1.7c1.5-1.7,2.6-5.4,3.7-5.7s2.6-15.7,10.3-7.9,9.6,12,17.7,6.8,10.9-11.3,10.9-11.3c0,0,4.8-3.1-.2-5-5-1.9.2-4.2.2-4.2,0,0-5.5-8.5-12.7-6.5,0,0-2,5.9-5.7,7.9s-7.8,8.3-6.3-5.2l3-6.3s5.7,0,6.1-3.5,3.9-2.6,3.9-2.6c0,0,5.2-1.5,2.4-3.1s6.1.2,6.1.2c0,0,2-.9,3.1,2.6s4.6,2.2,4.6,2.2c0,0-.5,3.9.7,4.1,1.3.2,5.4-2.6,5.4-2.6,0,0,1.5,1.3-.5,2.8-2,1.5,6.1,1.1,7.6-.5,1.5-1.7,4.1.4,4.1.4,0,0,.5-2.8,2.2-2.6,1.7.2.9-3.7.9-3.7,0,0,3.1-3.3,4.2-2.6,1.1.7,3.5-2.8,3.5-6.8s.9-7,.9-7c0,0-.7-3.9-3.3-3h0ZM261.8,141.2h24.2s.9,13.3,0,14c-.7.6-.9,4.7-.9,6.4-.4,0-.6,0-.6,0,0,0-1.5,5.4-16.1,3.5-1.8-4.6-6.6-5.4-6.6-5.4v-18.4h0ZM248.5,223.2l-3,.3-3.1-5.9-.7-1.2c-2.7,1.2-2.4-.7-2.4-.7l4-13.6c-.7,2.6.7,6.3.7,6.3l-1.1,2.3s2.9,1.7.7,2.9,1.4,4.3,1.4,4.3l4.5,3.9-1.1,1.3h0ZM264.9,247.3c-1,.7-1.7,1-1.7,1,0,0-.3,1.6-1,2.1-.6.5-3.1,1.9-1,3.4,0,0,1,.8-.2,1.1l-.8.4s-.2-1.7-1.3-1.5c-1,.2-.9,1.6,0,1.7.9,0-.2.6-.2.6,0,0-1,.6-1,.9s-.9.3-1.1,0c0,0,0,0,0-.1-.1.1-1.5-.8-1.8.9l-.9,1.6s.6-1.4.5-1.9,1.1-1,1.1-1l4.5-4.5s3-2.2,3-3.6c0,0,.8-2.3.8-4.6s-.4-4.4-.4-4.4c0,0,.5.9.6.9s-.8.3,0,1c0,0,.3.3.6.3,0,0-.7.6-.6.9s-.6,1.9.4,2.6c1,.7,1.7-.4,1.7-.4,0,0,.4.7.9.4,0,0-.3,1.3,0,1.5,0,0-1.2,0-2.2.7h0ZM273.9,239.2s-1,.1-2.2.6c0,0-2.1.9-1.6,1.8.5.9-1.4,2.4-1.9.4,0,0-.4-.6-1.3-.9,0,0-.8-1.2-1.3-1.3s-1.6-1.3-1.3-1.9c.3-.6-1.1-1.8-1.1-1.8l-2-2.2h6.1c0,0,.7,1.4,1.5,1.4s0-1.2.3-1.4,3.4-.1,3.4-.1v-3.2c.1,0,0,2.4.7,2.5.6.1.3,3.5.3,3.5,0,0,.6,2,.5,2.6h0ZM274.6,238.8s0-5.6.5-5.8c.5-.2,2.4-.4,2.9,0s1.2,0,1.2,0v13.2c0,0-.2,1.1-1,.1-.7-.9-.9-4.1-1.6-4.6,0,0,.2-1.8-.7-1.6,0,0,0-1.6-1.3-1.4ZM279,255.5c-.4-.8-1-.3-2.1-1.9-1-1.6-1-2-1-2,0,0,2.6.4,3.1-.9s1.5.4,1.5.4c0,0-2.1,1.1-.3,3.2,1.8,2.1-.9,2-1.2,1.2h0ZM285.3,248c-2.1.8-1,3.4-1,3.7.1.4,1,.1,1,.5-.1.4.2.9.2.9,0,0-1.3-.1-2.8-1.3-1.4-1.2.7-2.4.7-2.4-.7.1-1.2-.3-1.2-.3,0,0,2.2-.4,1.3-1.3-.9-1,.2-2.8.2-2.8,3.6.8,4.3-.8,4.3-.8,0,0-.6,3.1-2.7,3.8h0ZM289.8,235.3c.5.7-.7,1.4-.7,1.4,0,0-2.7,2.3-3.8,4.5,0,0-2.8,1-2.5,2.2,0,0-.8,1.1-.3,1.3.5.3,0,.8-.4.8s-.2.3-.5.4-.9-.6-.9-.6l-.2-12.6s.7.8,1.8,1.1,8.3,0,8.3,0c0,0-1.2.8-.8,1.5h0ZM303.6,219.8l-9.6,9.6h-9.9s-2,.7-3.2,0-3.6-3.7-6.7-1.2l-2.4,1.7-11.1-1.5-10.2-9.8.6-15.9,15.6-12.1h22.2l14.6,14.6v14.6h0ZM315.4,251c-2,.7-3.6-.8-3.6-.8,0,0-1.4-1.1-1.8.9,0,0-.6,1-1,1s-4.1-5.1-2.7-5.9,3.6-2.6,3.6-2.6c0,0,.5-1.9,1.2-2.5s.7-1.3.7-1.3c0,0,1.2,1.1,2.6-.1s-.3,2.3-2.1,2c0,0-1.9,1.1-1.9,1.6s-3.2,2.9-3.2,2.9c0,0,.4,3.4,3.5,3.3,3.2-.1,5.3-3.7,5.3-3.7,0,0,1.3,4.7-.7,5.4h0Z"
+					/>
+				</g>
+			</g>
+			<g id="OutdoorPaths_Boat">
+				<g>
+					<path
+						className="st12"
+						d="M254.4,230.6l.8-2.5-4.1-3.1,1.3-1.6-2-2-1.2,1.5-3.6.3-1.9,1.9-.6,1-3,2v1.4l-4.4,7.8-1.6,8,3.8,6.1,2.8.9.5,1.8-5.8,2.2s3.6,11.2,5,12.4c0,0,3.2,0,6.6,4.5,0,0,1.3,1.7,2.5,2.1v1.3s1.5-.6,2.8,0l1.6,1.6,5.3,2.6,4.8-2.6.5-3.4-2.7-4.3-5.1-2.4s-.3-2.4-4.5-6.3l1.7-4.6,8.2-8.9s2.9-9.3-1.5-11.7l-6.3-5.8h0Z"
+					/>
+					<path
+						className="st12"
+						d="M247,273.2h-9.6v2.8h-2.9v30.2l5.6,5.8h21.6l2.9-2.6v-7.2h6.6v-17h-.8v-10.4l-11.2,5.9-5.5-2.6s-1-2.5-4.2-1.5v-1.3s-1.6-1-2.5-2.1h0Z"
+					/>
+					<path
+						className="st12"
+						d="M300.6,224.1v2.8l-1.7,1.6s0,3.6.5,4.6l-.7,2.2s-3.5,1.2-8.4,7.1l-.3,1.1s-1.4,3.8-4.4,5.1v1.1l2.2,2.6s.4,3.8-.3,4.6-3.2,2.4-3.3,5.9,0,10.2,0,10.2h4.5s-.2-3.6,3.1-3.5h3.1s1.1-5.8,6-3.9l1.5.7s3.9-5.2,5.6-5.8l.5-1.6s-2.7-1.3-1.6-3.9l1.8-1.8-3.5-5.6s-.8-1.9,1-3.1,3.7-3.3,4.5-5.9-3.1-2.7-1.1-5.1c0,0,1.6-.8,0-4.4,0,0,.7-2.9-1.3-3.8l-5.9-3"
+					/>
+				</g>
+				<path
+					className="st36"
+					d="M137.8,269.8s-8.7-9.8-18-10.6c0,0-4.1,12.3-2.2,20.4,1.9,8.2,33,68.6,33,68.6l21-7.6-33.8-70.8h0Z"
+				/>
+				<path
+					className="st40"
+					d="M120.7,280.1s8.4-7.6,14.4-7.1c0,0,.5,1.1-1.4,1.9s-11.2,4.4-12,6.3l-1.1-1.1h0Z"
+				/>
+				<polygon
+					className="st40"
+					points="123.4 284.7 136.7 278.5 137.3 280.4 135.6 280.9 138.1 286.4 128.8 290.5 126.1 285.3 123.9 285.8 123.4 284.7"
+				/>
+				<polyline
+					className="st9"
+					points="132.8 312.5 137.5 310.3 131 297.3 142.7 292.4 148.7 304.6 153.3 302.7"
+				/>
+				<polygon
+					className="st9"
+					points="139.7 306.3 142.2 306.3 142.2 298.6 138.6 298.6 139.7 306.3"
+				/>
+				<polygon
+					className="st9"
+					points="145.7 312.3 148.4 313.1 146.5 319.6 143.3 318.8 145.7 312.3"
+				/>
+				<polygon
+					className="st9"
+					points="139.5 324 143.5 322.6 147.1 329.7 143 331.3 139.5 324"
+				/>
+				<polygon
+					className="st9"
+					points="154.7 316.9 159.1 316.1 162.9 322.3 158.8 323.7 154.7 316.9"
+				/>
+				<polygon
+					className="st9"
+					points="149.8 329.7 153.1 329.7 152.3 336.8 149 336.5 149.8 329.7"
+				/>
+				<polygon
+					className="st9"
+					points="158.3 335.7 165.3 337.3 164.8 340 158.5 339.2 158.3 335.7"
+				/>
+				<path className="st7" d="M270.7,275s5.5,5,8,3.9l.5-.4.7-2.2" />
+				<polyline
+					className="st7"
+					points="279.8 276.2 283.9 272.9 289.5 272.9 289.5 277.6 286.4 280.4 292.8 286"
+				/>
+			</g>
+			<g id="docks">
+				<g>
+					<path
+						className="st8"
+						d="M270.7,275s4.9,5.7,8.7,3.8l.5-2.6,4.1-3.3h5.6c0,0,0,4.7,0,4.7l-3.1,2.8,6.1,5.4-4,4-2.6-2.2-.5,8.8,5.1,5.7,3.4-.9s2-2.8,2.2-4.3c.3-2.4,2-1.5,2.1-2.5.3-2.4,1.3-2.9,2.4-3,2.4-.1,5.5-1,6.3,4.8,0,0,.9,2.1,3,2.3,0,0,1.6,1.9-1.6,3l-4,6v4.6h-1.9l-.5-2.8-2.2-2.2s-4,2.6-4.5,3.8l-3.8,4.5-9.8-10.1-.4.5-10.1-.3v-20.4h-.6c0,0,.1-9.8.1-9.8h0Z"
+					/>
+					<g>
+						<path
+							className="st38"
+							d="M289.9,301.9l3.6-1s2.1-2.9,2.4-4.6c.3-2.5,2.1-1.6,2.2-2.7.3-2.5,1.3-3.1,2.5-3.1,2.5-.1,5.8-1.1,6.6,5.1,0,0,.9,2.2,3.1,2.5,0,0,2,2.4-1.5,3.6l-3.9,6.2v4.3c-.1,0-1.5,0-1.5,0l-2.2-6.2-2.2,1.8"
+						/>
+						<g>
+							<line
+								className="st4"
+								x1="289.9"
+								y1="301.9"
+								x2="290.3"
+								y2="301.8"
+							/>
+							<path
+								className="st10"
+								d="M291,301.6l2.5-.7s2.1-2.9,2.4-4.6c.3-2.5,2.1-1.6,2.2-2.7.3-2.5,1.3-3.1,2.5-3.1,2.5-.1,5.8-1.1,6.6,5.1,0,0,.9,2.2,3.1,2.5,0,0,2,2.4-1.5,3.6l-3.9,6.2v3.5"
+							/>
+							<polyline
+								className="st4"
+								points="304.8 311.8 304.8 312.2 304.4 312.2"
+							/>
+							<polyline
+								className="st4"
+								points="303.8 312.1 303.5 312.1 303.3 311.8"
+							/>
+							<line
+								className="st11"
+								x1="303.1"
+								y1="311.1"
+								x2="301.5"
+								y2="306.5"
+							/>
+							<polyline
+								className="st4"
+								points="301.3 306.2 301.2 305.9 300.9 306.1"
+							/>
+							<line
+								className="st5"
+								x1="300.4"
+								y1="306.5"
+								x2="299.6"
+								y2="307.2"
+							/>
+							<line className="st4" x1="299.3" y1="307.4" x2="299" y2="307.6" />
+						</g>
+					</g>
+					<path
+						className="st38"
+						d="M270.7,275s4.9,5.7,8.7,3.8l.5-2.6,4.1-3.3h5.6c0,0,0,4.7,0,4.7l-3.1,2.8,6.4,5.6-4,4-2.8-2.4-.5,8.8,5.1,5.7,3.4-.9s2-2.8,2.2-4.3c.3-2.4,2-1.5,2.1-2.5.3-2.4,1.3-2.9,2.4-3,2.4-.1,5.5-1,6.3,4.8,0,0,.9,2.1,3,2.3,0,0,1.6,1.9-1.6,3l-4,6v4.6h-1.9l-.5-2.8-2.2-2.2s-4,2.6-4.5,3.8l-3.8,4.5-9.8-10.1-.7.7h-1.6s0-.3,0-.3l-8.2-.2v-20.4h-.6c0,0,.1-9.8.1-9.8h0Z"
+					/>
+				</g>
+				<polyline
+					className="st9"
+					points="274.3 300.6 274.3 289.3 278.3 289.3 278.3 288.1"
+				/>
+				<polyline
+					className="st6"
+					points="292.8 286 285.9 280.2 289.5 277.6 289.5 272.9 284.2 273 279.8 276.2 279.1 278.5"
+				/>
+				<polyline
+					className="st6"
+					points="285.8 288.3 285.4 296.4 290.5 302 292.6 301.2"
+				/>
+				<polyline
+					className="st6"
+					points="271.2 302.2 271.2 305.2 279.4 305.2"
+				/>
+				<path
+					className="st6"
+					d="M281.2,305.5l.8-.7,9.4,10.4,3.8-4.5s3-4.1,4.4-3.5c.2,0,2.3,1.9,2.3,1.9l.5,2.8"
+				/>
+			</g>
+			<g id="BioLab">
+				<path
+					className="st12"
+					d="M302.2,196.5l3.9-4.1-3.3-3.3-4.2,3.9-8.6-8.5h-7.9c0,0,0-5.3,0-5.3h-10c0,0,0,5.5,0,5.5h-7.9c0,0-17.1,16.4-17.1,16.4v18.6l14.3,13.3h10.6v-7.9s-9,0-9,0l9.8-9.6h0c1.2.7,2.6,1.1,4,1.1s2.8-.4,4-1.1h0l9.7,9.6h-8.8v7.9h11.1l13.6-13.3v-18.7l-4.6-4.5h0ZM275,200.3c-3.6.9-6.2,4.1-6.2,8s.5,3.4,1.5,4.7l-10.4,10.1-6.5-7v-11.7h1.3l12.7-12.6h7.6s0,4.3,0,8.5h0ZM300.9,216l-6.8,7.2-10.3-10.2c.9-1.3,1.5-3,1.5-4.7,0-3.8-2.6-7.1-6.1-8,0-4.3,0-8.7,0-8.6h7.8l12.5,12.6h1.4v11.8h0Z"
+				/>
+				<circle className="st35" cx="302.6" cy="192.6" r="1.6" />
+			</g>
+			<g id="Redstripes">
+				<path
+					className="st30"
+					d="M293.8,250.2l1-3.2s-3.3-5.1,2.2-5.5,4.9,2.8,4.9,2.8l.4,9.4-.8,2.1-7,2.3s-2.2,0-2.4-2.8h-1.4c0,0-1.7-4.8.3-4.8l2.8-.3h0Z"
+				/>
+				<path
+					className="st30"
+					d="M302.4,236.1s1.3-3,2.2.2-2.2,2.4-2.2,2.4c0,0-2.6-1.6,0-2.5h0Z"
+				/>
+				<path
+					className="st30"
+					d="M243.9,231.6s3.3,1.6,4.1-1.3c0,0-.9-2-3.2-1.4,0,0-.9,1.2-1.4,1.2s.5,1.5.5,1.5Z"
+				/>
+				<path
+					className="st30"
+					d="M238.8,237.5l.9-1.2s2.5-.7,2.9.7c.4,1.3.8,2.4-1.8,2.8,0,0-2.4.5-2.4-.8s.4-1.4.4-1.4h0Z"
+				/>
+				<path
+					className="st30"
+					d="M245.1,243.3l-.8-1.8-2.2-.2-1.6,1.4-.8,3.4,1.9,2.4s2.1-1.8,3.5-5.1h0Z"
+				/>
+				<path
+					className="st30"
+					d="M252.7,242.2s-.6-5.4,2.4-2.2,1.5,6.4,1.5,6.4c0,0-.6,2.4-2.1,3,0,0-5.6,6.1-6,8.8-.4,2.7-2.4.2-2.4.2,0,0-3.3-2.4-.5-2.4,0,0-.2-1.9,1.3-2.2,0,0,3.2-3.4,3.6-3.2s3-5.6,2.2-8.4h0Z"
+				/>
+				<path
+					className="st31"
+					d="M250.2,272s2.3,1,2.3-1.3c0,0-1-2.9-1.8-2.9,0,0,.2-3.2-3.3-3.4,0,0-.8-2-2.9-1.9s-3.6-.2-3.4,1.5,9,8,9,8h0Z"
+				/>
+				<path
+					className="st30"
+					d="M249.5,276.7v22.4c0,0,3,2.6,3,2.6h4.7c0,0,2.4-2,2.4-2l-.2-19.3-5.8-2.4s-1.1-1.9-4-1.3h0Z"
+				/>
+				<polygon
+					className="st30"
+					points="277.8 287.1 282.4 285.1 285.2 287.9 284.3 289.6 281 291 277.5 289.1 277.8 287.1"
+				/>
+				<path
+					className="st30"
+					d="M240.9,311.3s4.4-5.3,6.2-2.9,0,2.9,0,2.9h-6.2Z"
+				/>
+				<path
+					className="st37"
+					d="M293.8,250.2l1-3.2s-3.3-5.1,2.2-5.5,4.9,2.8,4.9,2.8l.4,9.4-.8,2.1-7,2.3s-2.2,0-2.4-2.8h-1.4c0,0-1.7-4.8.3-4.8l2.8-.3h0Z"
+				/>
+				<path
+					className="st14"
+					d="M302.4,236.1s1.3-3,2.2.2-2.2,2.4-2.2,2.4c0,0-2.6-1.6,0-2.5h0Z"
+				/>
+				<path
+					className="st13"
+					d="M243.9,231.6s3.3,1.6,4.1-1.3c0,0-.9-2-3.2-1.4,0,0-.9,1.2-1.4,1.2s.5,1.5.5,1.5Z"
+				/>
+				<path
+					className="st16"
+					d="M238.8,237.5l.9-1.2s2.5-.7,2.9.7c.4,1.3.8,2.4-1.8,2.8,0,0-2.4.5-2.4-.8s.4-1.4.4-1.4h0Z"
+				/>
+				<path
+					className="st19"
+					d="M245.1,243.3l-.8-1.8-2.2-.2-1.6,1.4-.8,3.4,1.9,2.4s2.1-1.8,3.5-5.1h0Z"
+				/>
+				<path
+					className="st15"
+					d="M252.7,242.2s-.6-5.4,2.4-2.2,1.5,6.4,1.5,6.4c0,0-.6,2.4-2.1,3,0,0-5.6,6.1-6,8.8-.4,2.7-2.4.2-2.4.2,0,0-3.3-2.4-.5-2.4,0,0-.2-1.9,1.3-2.2,0,0,3.2-3.4,3.6-3.2s3-5.6,2.2-8.4h0Z"
+				/>
+				<path
+					className="st32"
+					d="M250.2,272s2.3,1,2.3-1.3c0,0-1-2.9-1.8-2.9,0,0,.2-3.2-3.3-3.4,0,0-.8-2-2.9-1.9s-3.6-.2-3.4,1.5,9,8,9,8h0Z"
+				/>
+				<path
+					className="st17"
+					d="M249.5,276.7v22.4c0,0,3,2.6,3,2.6h4.7c0,0,2.4-2,2.4-2l-.2-19.3-5.8-2.4s-1.1-1.9-4-1.3h0Z"
+				/>
+				<polygon
+					className="st18"
+					points="277.8 287.1 282.4 285.1 285.2 287.9 284.3 289.6 281 291 277.5 289.1 277.8 287.1"
+				/>
+				<path
+					className="st21"
+					d="M240.9,311.3s4.5-5.3,6.2-2.8,0,2.9,0,2.9h-6.2c0,0,0,0,0,0Z"
+				/>
+				<path
+					className="st30"
+					d="M214.5,374.3s4.8-12.1,15-11.9c10.1.2,6.3-12.3,4-14s-12.2-4.3-19.3-.9-4.6,4.6-9.3,7.5c-.9.5-1.2,2.3.2,4.4s1.2,3.8-1.1,5.9c-2.3,2.1-2.4,2.3.1,4.4,0,0,2.5,4.6,2.5,5.9s4.7,4.1,7.9-1.3h0Z"
+				/>
+				<path
+					className="st30"
+					d="M247.7,354.8s-4.7-.1-6.2,5.4,7.8,5,8.6,4.3,4.7-7.3-2.4-9.6h0Z"
+				/>
+				<path
+					className="st30"
+					d="M273.3,371.6s14.6-1.4,13.9,8.1c-.8,9.5-16.8,3.2-16.8,3.2,0,0-9.1-8.8,3-11.2h0Z"
+				/>
+				<path
+					className="st30"
+					d="M280.3,357.7s2.2-.4,2.8,0,2.8-3.7,6.4-2.8,7.4,1.3,9.3,1,11,2.6,13.9,11.6c2.8,9-7.4,11.6-7.4,11.6,0,0-2.2,1.8-2,3.7s-3,2-5.5-2.4-4.3-8.8-9.9-9.3c-5.7-.4-12.7-5.6-7.6-13.3h0Z"
+				/>
+				<path
+					className="st30"
+					d="M227.6,367.9s-6.9.3-9.2,7.6,5,8.7,10.1,5.6c0,0,2.7-7.2,2.6-8.7s-.4-3.6-3.6-4.5h0Z"
+				/>
+				<path
+					className="st30"
+					d="M237.4,367.7s1.5-.2,3.3.9,4.4,1.3,8.5.4c4.2-.9,7.8,1.5,6.1,5.9,0,0-4.9,3-6.8,3.5s-5.1,1.5-6.2,2.6-5.7.1-7.1-5.4,2.2-8,2.2-8h0Z"
+				/>
+				<path
+					className="st30"
+					d="M196.1,386.7s6.9.5,8.9,0,7.8-1.8,11.2.1,10.9-.4,10.9-.4c0,0,10.4.1,12.6.1s12.2-5.4,12.2-5.4c0,0,3.3-1.5,12.2,3s20.2,6.4,20.2,6.4c0,0,3.4.2,5.2-.8s3.3-1.4,4.9-1.3,3.7-3,6.4-1.2,6.7,5.2,7,6,1.4,2.5-1.2,5.7c-2.6,3.2-5.4,4-8.5,8.2,0,0-10.6.8-12.1,1.8-1.5,1-7.1-1.5-7.1-1.5l-8.4,1.1s-2.7,1.5-5.1-1.9h-5.5c0,.1-2.4-.8-3.1-1.9s-2.2-3.3-8.9-.8c-6.8,2.5-7.6,4.7-17.6,3.3l-5.6,2.7s-3.5,1.9-8.9.7h-3.9s-2.3-1-3.7,0-15.1-4-12.2-23.9h0Z"
+				/>
+				<path
+					className="st20"
+					d="M214.5,374.3s4.8-12.1,15-11.9c10.1.2,6.3-12.3,4-14s-12.2-4.3-19.3-.9-4.6,4.6-9.3,7.5c-.9.5-1.2,2.3.2,4.4s1.2,3.8-1.1,5.9c-2.3,2.1-2.4,2.3.1,4.4,0,0,2.5,4.6,2.5,5.9s4.7,4.1,7.9-1.3h0Z"
+				/>
+				<path
+					className="st23"
+					d="M247.7,354.8s-4.7-.1-6.2,5.4,7.8,5,8.6,4.3,4.7-7.3-2.4-9.6h0Z"
+				/>
+				<path
+					className="st24"
+					d="M273.3,371.6s14.6-1.4,13.9,8.1c-.8,9.5-16.8,3.2-16.8,3.2,0,0-9.1-8.8,3-11.2h0Z"
+				/>
+				<path
+					className="st29"
+					d="M280.3,357.7s2.2-.4,2.8,0,2.8-3.7,6.4-2.8,7.4,1.3,9.3,1,11,2.6,13.9,11.6c2.8,9-7.4,11.6-7.4,11.6,0,0-2.2,1.8-2,3.7s-3,2-5.5-2.4-4.3-8.8-9.9-9.3c-5.7-.4-12.7-5.6-7.6-13.3h0Z"
+				/>
+				<path
+					className="st28"
+					d="M227.6,367.9s-6.9.3-9.2,7.6,5,8.7,10.1,5.6c0,0,2.7-7.2,2.6-8.7s-.4-3.6-3.6-4.5h0Z"
+				/>
+				<path
+					className="st25"
+					d="M237.4,367.7s1.5-.2,3.3.9,4.4,1.3,8.5.4c4.2-.9,7.8,1.5,6.1,5.9,0,0-4.9,3-6.8,3.5s-5.1,1.5-6.2,2.6-5.7.1-7.1-5.4,2.2-8,2.2-8h0Z"
+				/>
+				<path
+					className="st22"
+					d="M196.1,386.7s6.9.5,8.9,0,7.8-1.8,11.2.1,10.9-.4,10.9-.4c0,0,10.4.1,12.6.1s12.2-5.4,12.2-5.4c0,0,3.3-1.5,12.2,3s20.2,6.4,20.2,6.4c0,0,3.4.2,5.2-.8s3.3-1.4,4.9-1.3,3.7-3,6.4-1.2,6.7,5.2,7,6,1.4,2.5-1.2,5.7c-2.6,3.2-5.4,4-8.5,8.2,0,0-10.6.8-12.1,1.8-1.5,1-7.1-1.5-7.1-1.5l-8.4,1.1s-2.7,1.5-5.1-1.9h-5.5c0,.1-2.4-.8-3.1-1.9s-2.2-3.3-8.9-.8c-6.8,2.5-7.6,4.7-17.6,3.3l-5.6,2.7s-3.5,1.9-8.9.7h-3.9s-2.3-1-3.7,0-15.1-4-12.2-23.9h0Z"
+				/>
+				<path
+					className="st30"
+					d="M259.3,360.8s3.4-1.3,5.8-.1,2.9,1.5,2.9,1.5c0,0,1.6,1.9,2,2.2s.1,2.9.1,2.9l-3.8,3.9s-4.2.3-5.2-.7-2.3-2.8-2.3-2.8c0,0-1.2-5,.4-6.8h0Z"
+				/>
+				<path
+					className="st27"
+					d="M259.3,360.7s3.4-1.3,5.8-.1,2.9,1.5,2.9,1.5c0,0,1.6,1.9,2,2.2s.1,2.9.1,2.9l-3.8,3.9s-4.2.3-5.2-.7-2.3-2.8-2.3-2.8c0,0-1.2-5,.4-6.8h0Z"
+				/>
+				<path
+					className="st30"
+					d="M418.9,208.9s.4-3.6,1.9-4,3.6,0,5.4,2.2,3.7,6.4,3.8,7.7.6,3.8-.3,5.1-1.7,2.9-1.8,3.9-1,3.6-2.1,5.2-1.3,2.4-1.3,2.4c0,0,.1,2.3-.8,3.8s-1.4,2.1-2.6,2-2.6-.5-2.9-1.7,0-2.4-2.1-2.5-5.9-7.8-5.8-9.2,1.9-12.3,3.4-13.5l2.5-1.4h2.9c0,0,0,0,0,0Z"
+				/>
+				<path
+					className="st26"
+					d="M418.9,208.9s.4-3.6,1.9-4,3.6,0,5.4,2.2,3.7,6.4,3.8,7.7.6,3.8-.3,5.1-1.7,2.9-1.8,3.9-1,3.6-2.1,5.2-1.3,2.4-1.3,2.4c0,0,.1,2.3-.8,3.8s-1.4,2.1-2.6,2-2.6-.5-2.9-1.7,0-2.4-2.1-2.5-5.9-7.8-5.8-9.2,1.9-12.3,3.4-13.5l2.5-1.4h2.9c0,0,0,0,0,0Z"
+				/>
+				<path
+					className="st30"
+					d="M188.3,128.9s-.3-2.3,1.9-2.1,4.6.4,5.1-2.8-.8-3.2-1.4-3.9-1.3-6.4-5.7-6.2c-4.4.2-5.4,1.6-5.9,2s-1.4,1.9-2.3,2.6-2.4,4.7-2.4,4.7c0,0-3.3,5.9-3.1,9s1.7,3.2,2.4,3.2,2.4.4,3.7,1.1,4.2,0,5.8-2.3,2.6-3.2,1.8-5.4h0Z"
+				/>
+				<path
+					className="st33"
+					d="M188.3,128.9s-.3-2.3,1.9-2.1,4.6.4,5.1-2.8-.8-3.2-1.4-3.9-1.3-6.4-5.7-6.2c-4.4.2-5.4,1.6-5.9,2s-1.4,1.9-2.3,2.6-2.4,4.7-2.4,4.7c0,0-3.3,5.9-3.1,9s1.7,3.2,2.4,3.2,2.4.4,3.7,1.1,4.2,0,5.8-2.3,2.6-3.2,1.8-5.4h0Z"
+				/>
+				<polyline className="st37" points="288.8 290 286 287.6 285.2 287.9" />
+			</g>
+		</SVGOverlay>
+	),
+	terminus_prison: (
+		<SVGOverlay attributes={{ viewBox: '0 0 512 512' }} bounds={ImageBounds}>
+			<defs>
+				<style>
+					{globalStyle}
+					{` .st0, .st1, .st2, .st3, .st4 {
+        fill: none;
+      }
+
+      .st5, .st6 {
+        fill: #363635;
+      }
+
+      .st1 {
+        stroke-dasharray: 0 0 .7 .7;
+        stroke-width: .5px;
+      }
+
+      .st1, .st2, .st4, .st7, .st8, .st6 {
+        stroke-miterlimit: 10;
+      }
+
+      .st1, .st4, .st8, .st6 {
+        stroke: #6b6b6b;
+      }
+
+      .st2, .st7 {
+        stroke: #7c2728;
+        stroke-width: 1.6px;
+      }
+
+      .st9 {
+        fill: #2c2c2c;
+      }
+
+      .st3 {
+        stroke: #7b4848;
+        stroke-width: 4.3px;
+      }
+
+      .st10 {
+        fill: #565555;
+      }
+
+      .st4 {
+        stroke-width: .8px;
+      }
+
+      .st7 {
+        fill: #011833;
+      }
+
+      .st11 {
+        fill: #6b6b6b;
+      }
+
+      .st8 {
+        fill: url(#_10_lpi_60_);
+      }
+
+      .st8, .st6 {
+        stroke-width: .5px;
+      } `}
 				</style>
 				<pattern
 					id="_10_lpi_60_"
@@ -16734,466 +19312,360 @@ export const mapSVGs = {
 					href="#_10_lpi_60_2"
 				/>
 			</defs>
-			<g id="Map_border">
+			<g id="Ocean">
 				<path
-					className="cls-6"
-					d="M1283.78,20.41l135.67,147.12,40.87,96.44,179.81,197.79-14.71,83.37-81.73,99.71,26.15,93.17-111.15,271.35-410.29,201.06-241.92,1.63-127.5-153.66-111.15-14.71-127.5-215.77,112.79-308.94-8.17-114.42,39.23-65.39,4.9-88.27,70.29-112.79s173.27-81.73,295.87-94.81l328.56-22.88Z"
+					className="st7"
+					d="M356.6,46.8l44.9,48.6,13.5,31.8,59.5,65.3-4.9,27.5-27.1,32.9,8.7,30.8-36.8,89.6-135.8,66.4-80.1.5-42.2-50.7-36.8-4.9-42.2-71.2,37.3-102-2.7-37.8,13-21.6,1.6-29.2,23.3-37.2s57.4-27,97.9-31.3l108.8-7.6h0Z"
 				/>
 			</g>
-			<g id="ocean">
+			<g id="MapBorder">
 				<path
-					className="cls-29"
-					d="M1283.78,20.41l135.67,147.12,40.87,96.44,179.81,197.79-14.71,83.37-81.73,99.71,26.15,93.17-111.15,271.35-410.29,201.06-241.92,1.63-127.5-153.66-111.15-14.71-127.5-215.77,112.79-308.94-8.17-114.42,39.23-65.39,4.9-88.27,70.29-112.79s173.27-81.73,295.87-94.81l328.56-22.88Z"
+					className="st2"
+					d="M356.6,46.8l44.9,48.6,13.5,31.8,59.5,65.3-4.9,27.5-27.1,32.9,8.7,30.8-36.8,89.6-135.8,66.4-80.1.5-42.2-50.7-36.8-4.9-42.2-71.2,37.3-102-2.7-37.8,13-21.6,1.6-29.2,23.3-37.2s57.4-27,97.9-31.3l108.8-7.6h0Z"
 				/>
 			</g>
-			<g id="Island_Layer">
+			<g id="Island">
 				<path
-					className="cls-31"
-					d="M1022.17,376.35s-10.11-12.35-12.35-8.98c0,0-2.81,5.05-5.05,4.49s-3.37-6.18-3.37-6.18l-57.83,.56s-9.55,2.81-11.23,9.55-2.81,13.48-7.3,12.35-3.37,6.74-3.37,6.74c0,0-6.18,3.93-7.86,1.68s-2.81,9.55,1.12,13.48c0,0-7.86,6.18-6.74,10.67,1.12,4.49-3.37,8.42-12.35,7.3,0,0-15.16,7.3-1.12,19.65,0,0-4.49,5.61-2.81,8.98s-7.3,5.61-1.12,13.48c6.18,7.86,7.3,15.16,7.3,15.16,0,0-6.18,18.53-3.93,25.83,0,0-7.3,12.35-3.37,23.02,0,0-.56,14.6,6.18,18.53,0,0-.56,9.55,4.49,10.11,0,0-.56,12.91,3.37,16.84s-3.37,5.05-3.37,5.05c0,0-1.12,30.88-5.05,32.57s-7.3,8.98-.56,14.6c0,0-4.49,7.86,6.18,12.35,0,0-6.18,12.91,2.25,21.34,0,0-15.72,13.48-1.12,15.72,0,0,6.18,5.05,4.49,10.11s6.18,8.42,6.18,8.42c0,0-8.98,3.93-2.81,9.55,0,0-6.18,10.67-2.25,12.35,0,0-5.61-1.12-10.67,5.05-5.05,6.18-8.42,7.86-5.05,10.11s-18.53-2.81-20.21,25.27c0,0-19.65,26.39-6.74,36.5l2.81,11.23s-7.86,6.18,.56,12.35c0,0-7.3,7.86-1.68,12.35,0,0-4.49,15.72,.56,12.91,5.05-2.81,7.3,11.79,7.3,11.79,0,0,7.3,7.3,28.64-16.28,0,0,.56,5.61,5.61,6.18s10.11-8.98,11.79-2.25c1.68,6.74,5.05,14.6,15.16,9.55,10.11-5.05,20.21,3.93,20.21,3.93,0,0,9.55,5.61,14.6-3.37,5.05-8.98,6.74-1.12,6.74-1.12,0,0,6.74,7.86,15.72,1.12s2.25-2.25,5.61,.56,5.61-2.81,10.11-2.81,9.55,0,14.04-5.05c4.49-5.05,7.86-16.28,11.23-17.41s7.86-47.73,31.44-24.14c23.58,23.58,29.2,36.5,53.9,20.78s33.13-34.25,33.13-34.25c0,0,14.6-9.55-.56-15.16-15.16-5.61,.56-12.91,.56-12.91,0,0-16.84-25.83-38.74-19.65,0,0-6.18,17.97-17.41,24.14s-23.58,25.27-19.09-15.72l8.98-19.09s17.41,0,18.53-10.67c1.12-10.67,11.79-7.86,11.79-7.86,0,0,15.72-4.49,7.3-9.55-8.42-5.05,18.53,.56,18.53,.56,0,0,6.18-2.81,9.55,7.86,3.37,10.67,14.04,6.74,14.04,6.74,0,0-1.68,11.79,2.25,12.35s16.28-7.86,16.28-7.86c0,0,4.49,3.93-1.68,8.42-6.18,4.49,18.53,3.37,23.02-1.68,4.49-5.05,12.35,1.12,12.35,1.12,0,0,1.68-8.42,6.74-7.86s2.81-11.23,2.81-11.23c0,0,9.55-10.11,12.91-7.86s10.67-8.42,10.67-20.78,2.81-21.34,2.81-21.34c0,0-2.25-11.79-10.11-8.98-7.86,2.81-6.74-16.28-16.28-7.3-9.55,8.98-16.84-13.48-11.79-15.16,5.05-1.68-15.72-15.16,1.12-20.78,16.84-5.61-6.74-12.35-6.74-12.35,0,0-8.98-27.51-20.78-24.14-11.79,3.37-3.37-17.97-3.37-17.97,0,0-25.83-17.97-12.35-40.99,0,0,5.61,.56,10.11-9.55,4.49-10.11,10.67-16.28,10.67-16.28,0,0,8.42-23.02-1.68-23.02s-6.18-20.21-6.18-20.21c0,0-17.41-7.3-2.25-11.79s0-26.39-5.05-19.65c-5.05,6.74-18.53,1.12-11.79-11.23,0,0,1.12-18.53-9.55-17.97s-19.09-6.74-19.09-6.74c0,0-3.93-19.09-16.84-17.41-12.91,1.68-52.22,.56-52.22,.56,0,0-4.49,16.28-48.85,10.67Z"
-				/>
-				<path
-					className="cls-31"
-					d="M759.4,457.21s5.61-7.86,8.98-6.74,5.61-5.61,2.25-6.18,8.42-7.3,17.97,.56c9.55,7.86-6.74-10.67,7.3-9.55,14.04,1.12,14.04,8.98,14.04,8.98,0,0,6.74-1.68,8.42-7.3s5.05-2.25,1.68,10.11-.56,28.07-.56,28.07c0,0,3.37,8.98-3.37,11.79,0,0-5.05,16.28-21.9,12.91,0,0,2.25,13.48-2.25,13.48,0,0-3.37-8.42-11.23-7.3,0,0-8.98-2.81-14.6,6.74,0,0-7.86-2.81,.56-10.11,0,0-8.42-6.18,.56-12.91,0,0-3.37-8.98-6.18-9.55s-1.68-23.02-1.68-23.02Z"
+					className="st9"
+					d="M182,191.7s1.9-2.6,2.9-2.2,1.9-1.9.7-2,2.8-2.4,5.9.2-2.2-3.5,2.4-3.1,4.6,2.9,4.6,2.9c0,0,2.2-.6,2.8-2.4s1.7-.7.6,3.3-.2,9.2-.2,9.2c0,0,1.1,2.9-1.1,3.9,0,0-1.7,5.4-7.2,4.2,0,0,.7,4.4-.7,4.4,0,0-1.1-2.8-3.7-2.4,0,0-2.9-.9-4.8,2.2,0,0-2.6-.9.2-3.3,0,0-2.8-2,.2-4.2,0,0-1.1-2.9-2-3.1s-.6-7.6-.6-7.6h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M796.46,553.22s-6.74-16.84,11.79-20.21c0,0,7.86-3.37,11.23,12.91,0,0-.56-1.68,1.68-12.35,0,0,16.28-11.79,16.28,5.61,0,0,18.53-2.25,8.98,8.98l6.18-1.68s-6.18,11.79,7.3,24.14l-4.49,2.25,3.37,4.49s16.84,19.09,1.68,24.71c0,0-15.72-4.49-7.3,9.55,0,0,1.12,13.48-5.05,13.48s-11.23-2.25-17.41-1.12c-6.18,1.12-12.35-5.05-5.61-7.3,6.74-2.25-6.74-4.49-9.55-.56s-18.53-4.49-18.53-4.49c0,0-8.42-8.42,1.12-11.23,0,0,3.37-9.55-5.05-9.55,0,0-12.91-1.12-8.42-7.86,0,0-3.37-8.42-11.23-9.55,0,0,6.74-8.98,14.6-10.67,0,0,1.12-10.67,8.42-9.55Z"
+					className="st9"
+					d="M194.2,223.3s-2.2-5.5,3.9-6.6c0,0,2.6-1.1,3.7,4.2,0,0-.2-.6.6-4.1,0,0,5.4-3.9,5.4,1.9,0,0,6.1-.7,2.9,2.9l2-.6s-2,3.9,2.4,7.9l-1.5.7,1.1,1.5s5.5,6.3.6,8.1c0,0-5.2-1.5-2.4,3.1,0,0,.4,4.4-1.7,4.4s-3.7-.7-5.7-.4-4.1-1.7-1.9-2.4-2.2-1.5-3.1-.2-6.1-1.5-6.1-1.5c0,0-2.8-2.8.4-3.7,0,0,1.1-3.1-1.7-3.1,0,0-4.2-.4-2.8-2.6,0,0-1.1-2.8-3.7-3.1,0,0,2.2-2.9,4.8-3.5,0,0,.4-3.5,2.8-3.1h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M827.9,742.44s19.09-12.35,28.07-7.86c0,0,7.3-1.68,8.42-6.18s2.25-10.67,8.42-11.79c6.18-1.12,1.68-5.05-2.81-6.74s2.25-8.42-8.42-4.49l-1.12-16.84-3.93,8.42s-3.37-2.25-10.67,8.98c0,0-8.42-6.18-10.67-1.12,0,0-19.09-4.49-11.23,6.18,0,0,3.93,2.25,3.37,6.18s.56,7.3,7.3,3.37,2.25,11.23-1.12,12.35-5.61,9.55-5.61,9.55Z"
+					className="st9"
+					d="M204.6,285.5s6.3-4.1,9.2-2.6c0,0,2.4-.5,2.8-2s.7-3.5,2.8-3.9.6-1.7-.9-2.2.7-2.8-2.8-1.5l-.4-5.5-1.3,2.8s-1.1-.7-3.5,3c0,0-2.8-2-3.5-.4,0,0-6.3-1.5-3.7,2,0,0,1.3.7,1.1,2s.2,2.4,2.4,1.1.7,3.7-.4,4.1-1.9,3.1-1.9,3.1h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M801.51,821.05s-2.25-19.65-23.58-16.28c-21.34,3.37-12.91,26.95-12.91,26.95l4.49,7.86s-10.67,16.84,1.68,15.72,2.25,5.05,2.25,5.05c0,0,5.61,2.25,8.42,7.3s10.67-7.3,10.67-7.3c0,0,3.93,4.49,8.42,3.37s8.42-7.86,3.37-8.98,2.25-5.05,6.18-4.49,7.86-10.67,1.12-12.35,1.68-5.61,1.68-5.61c0,0,4.49-7.86-11.79-11.23Z"
+					className="st9"
+					d="M195.9,311.3s-.7-6.5-7.8-5.4-4.2,8.9-4.2,8.9l1.5,2.6s-3.5,5.5.6,5.2.7,1.7.7,1.7c0,0,1.9.7,2.8,2.4s3.5-2.4,3.5-2.4c0,0,1.3,1.5,2.8,1.1s2.8-2.6,1.1-3,.7-1.7,2-1.5,2.6-3.5.4-4.1.6-1.9.6-1.9c0,0,1.5-2.6-3.9-3.7h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M1280.46,817.68l-8.98,10.67s-11.79,3.37-15.16,9.55-14.04-1.68-11.79-9.55c2.25-7.86-5.05-3.37-5.05-3.37,0,0-3.93-4.49-1.12-6.74,2.81-2.25-1.12-12.35-6.18-10.67-5.05,1.68-1.68-5.61-1.68-5.61,0,0-7.3-5.61,0-8.42,0,0,2.25-7.3,2.81-11.79s8.42,2.25,8.42,2.25c0,0,2.81-3.93-4.49-6.18s6.18-8.42,6.18-8.42c0,0,2.81-10.67,8.98-2.81,0,0,8.98-6.18,15.16-1.68,0,0,5.61-3.93,10.11,5.61l4.49,1.12-1.68,46.04Z"
+					className="st9"
+					d="M353.3,310.2l-3,3.5s-3.9,1.1-5,3.1-4.6-.5-3.9-3.1-1.7-1.1-1.7-1.1c0,0-1.3-1.5-.4-2.2s-.4-4.1-2-3.5-.5-1.9-.5-1.9c0,0-2.4-1.9,0-2.8,0,0,.7-2.4.9-3.9s2.8.7,2.8.7c0,0,.9-1.3-1.5-2s2-2.8,2-2.8c0,0,.9-3.5,3-.9,0,0,3-2,5-.5,0,0,1.9-1.3,3.3,1.9l1.5.4-.5,15.1h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M1282.14,553.78s-3.37-7.3-12.35-1.12c0,0-11.23,.56-15.72-3.93s-.56,10.67,7.3,14.04l-4.49,4.49,3.93,5.61-4.49,5.05s-7.86,5.61,7.3,3.37c0,0,8.42,6.18,15.72-1.68,0,0,2.81-27.51,2.81-25.83Z"
+					className="st9"
+					d="M353.9,223.5s-1.1-2.4-4.1-.4c0,0-3.7.2-5.2-1.3s-.2,3.5,2.4,4.6l-1.5,1.5,1.3,1.9-1.5,1.7s-2.6,1.9,2.4,1.1c0,0,2.8,2,5.2-.6,0,0,.9-9,.9-8.5h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M1237.79,365.68s6.74,6.18,9.55,13.48c2.81,7.3,11.23,7.86,11.23,7.86,0,0-5.05,8.98-12.35,8.42s1.12,6.18,1.12,6.18l-4.49,3.37s-6.18,11.23-3.37,16.28c2.81,5.05-15.16-15.72-27.51-7.3,0,0-3.93-7.86-8.42-6.74s-9.55-6.74-7.3-10.11c0,0-5.61-6.18-3.37-8.98,0,0-6.74-3.93-6.18-7.3s-14.04-10.11,8.42-15.16h42.67Z"
+					className="st9"
+					d="M339.3,161.6s2.2,2,3.1,4.4,3.7,2.6,3.7,2.6c0,0-1.7,2.9-4.1,2.8s.4,2,.4,2l-1.5,1.1s-2,3.7-1.1,5.4-5-5.2-9-2.4c0,0-1.3-2.6-2.8-2.2s-3.1-2.2-2.4-3.3c0,0-1.9-2-1.1-2.9,0,0-2.2-1.3-2-2.4s-4.6-3.3,2.8-5h14,0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M934.71,948.73s-39.37-15.48-49.13-12.45-49.47,49.81-49.47,49.81c0,0-22.55,22.88-24.57,27.93s-13.8,6.73-12.45,17.84-10.43,80.43,28.94,88.51c39.37,8.08,137.98-24.23,143.03-21.2s148.75,7.4,169.95-25.58c0,0,11.11-10.43,11.78-15.48,0,0,9.09-7.4,10.43-11.11,0,0,3.03-3.03,4.37-4.04s-1.01-18.85-8.75-19.86c0,0-8.75-41.06-27.93-51.15s-68.65-4.04-81.78,4.71-15.82,22.21-47.45,12.12c0,0-22.55-6.39-23.56-27.6s-31.63-11.78-31.63-11.78c0,0-8.41,1.01-11.78-.67Z"
+					className="st9"
+					d="M239.7,353.3s-12.9-5.1-16.1-4.1-16.3,16.4-16.3,16.4c0,0-7.4,7.5-8.1,9.2s-4.5,2.2-4.1,5.9-3.4,26.4,9.5,29.1c12.9,2.7,45.4-8,47-7,1.7,1,48.9,2.4,55.9-8.4,0,0,3.6-3.4,3.9-5.1,0,0,3-2.4,3.4-3.6,0,0,1-1,1.4-1.3s-.3-6.2-2.9-6.5c0,0-2.9-13.5-9.2-16.8-6.3-3.3-22.6-1.3-26.9,1.5s-5.2,7.3-15.6,4c0,0-7.4-2.1-7.7-9.1s-10.4-3.9-10.4-3.9c0,0-2.8.3-3.9-.2h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M831.73,957.48s-11.78-7.4-19.86-3.7-1.01,8.75-1.01,8.75c0,0-8.75,7.07-6.39,8.41,2.36,1.35,13.46-6.73,13.46-6.73,0,0-6.39,8.08-2.02,8.75,4.37,.67,18.51-5.38,18.51-5.38l-2.69-10.1Z"
+					className="st9"
+					d="M205.8,356.2s-3.9-2.4-6.5-1.2-.3,2.9-.3,2.9c0,0-2.9,2.3-2.1,2.8.8.4,4.4-2.2,4.4-2.2,0,0-2.1,2.7-.7,2.9s6.1-1.8,6.1-1.8l-.9-3.3h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M918.55,1109.93s-10.77,14.47-1.68,16.83c0,0,4.37,11.44,12.12,1.01,7.74-10.43,15.14-.34,15.14-.34,0,0,12.79,4.04,17.84-6.73s-9.42-5.05-9.42-5.05l-1.68-10.77-32.31,5.05Z"
+					className="st9"
+					d="M234.4,406.3s-3.5,4.8-.6,5.5c0,0,1.4,3.8,4,.3s5-.1,5-.1c0,0,4.2,1.3,5.9-2.2s-3.1-1.7-3.1-1.7l-.6-3.5-10.6,1.7h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M1001.67,1108.92s12.45,17.16,17.5,19.86,9.76-2.36,10.1-5.05,10.77-16.15,13.46-14.81,11.11,9.09,11.11,11.44,6.73-1.35,7.4,.34,5.72,2.02,8.41-3.03,18.51-6.39,18.85-2.02,3.03,9.09,7.74,8.75c4.71-.34,10.77-6.39,9.76-11.78-1.01-5.38-83.46-15.82-104.32-3.7Z"
+					className="st9"
+					d="M261.7,406s4.1,5.6,5.8,6.5,3.2-.8,3.3-1.7,3.5-5.3,4.4-4.9,3.6,3,3.6,3.8,2.2-.4,2.4.1,1.9.7,2.8-1,6.1-2.1,6.2-.7,1,3,2.5,2.9,3.5-2.1,3.2-3.9c-.3-1.8-27.4-5.2-34.3-1.2Z"
 				/>
 				<path
-					className="cls-31"
-					d="M1158.16,1005.27s10.77-11.78,9.76-16.15c-1.01-4.37-13.46-5.05-13.46-5.05l3.7,21.2Z"
+					className="st9"
+					d="M313.1,371.9s3.5-3.9,3.2-5.3-4.4-1.7-4.4-1.7l1.2,7Z"
 				/>
 				<path
-					className="cls-31"
-					d="M851.25,1122.38s4.37,11.78,6.73,11.44,4.37-8.41,4.37-8.41c0,0-1.68,8.08,2.36,7.74s11.78-10.77,11.78-13.12-25.24,2.36-25.24,2.36Z"
+					className="st9"
+					d="M212.2,410.4s1.4,3.9,2.2,3.8,1.4-2.8,1.4-2.8c0,0-.6,2.7.8,2.5s3.9-3.5,3.9-4.3-8.3.8-8.3.8h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M1433.58,534.37s-7.52-2.95-8.31-7.64c-.29-1.73-1.66-4.24-3.49-6.06-1.21-1.21,.58-2.24-1.94-3.49-2.33-1.15-.78-13.46-3.93-15.34-1.48-.88-2.99,.72-3.77,.44-4.06-1.45-4.6-1.38-7.77,1.94-4.19,4.39-13.22,18.44-18.93,29.79-3.11,6.2-4.26,11.86-4.15,15.06,.28,8.69-.88,18.53,4.21,21.32,4.54,2.49,4.54,6.98,6.53,7.81,.88,.37,5.77,.2,11.63-3.71,4.45-2.97,10.14-6.01,15.95-9.14,7.81-4.21,17.44-23.88,13.96-30.99Z"
+					className="st9"
+					d="M403.7,217.1s-2.5-1-2.7-2.5c0-.6-.5-1.4-1.1-2s.2-.7-.6-1.1c-.8-.4-.2-4.4-1.3-5-.5-.3-1,.2-1.2.1-1.3-.5-1.5-.5-2.5.6-1.4,1.4-4.4,6.1-6.2,9.8-1,2-1.4,3.9-1.4,4.9,0,2.9-.3,6.1,1.4,7,1.5.8,1.5,2.3,2.1,2.6.3.1,1.9,0,3.8-1.2,1.5-1,3.3-2,5.2-3,2.6-1.4,5.7-7.9,4.6-10.2h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M1435.91,559.29s1.45-6.1,1.83-8.22c.25-1.41-.42-4.57-.42-4.57,0,0-.17-9.39,3.07-10.47s7.73-6.65,9.55-11.05,25.59-49.93,38.3-52,25.17-1.99,30.32,11.96c5.15,13.96,2.08,18.36,5.9,22.68s7.89,19.77,6.15,21.43-.91,9.47-1.16,11.05,.33,4.82-3.24,11.46c0,0-1.5,2.58-1.16,5.81,.33,3.24-1.25,13.46-2.66,14.62s-10.05,10.3-10.13,19.94c-.08,9.64-1.83,17.11-9.05,21.35-7.23,4.24-12.21,6.4-19.02,6.48s-4.65,.75-9.64,1.58-18.44-3.41-22.84-8.14c-4.4-4.74-6.65-9.14-7.48-13.04s-4.4-11.55-5.73-13.96-5.4-19.11-2.58-26.91Z"
+					className="st9"
+					d="M404.4,225.3s.5-2,.6-2.7c0-.5-.1-1.5-.1-1.5,0,0,0-3.1,1-3.4s2.5-2.2,3.1-3.6,8.4-16.4,12.6-17.1,8.3-.7,10,3.9.7,6,1.9,7.5,2.6,6.5,2,7.1-.3,3.1-.4,3.6.1,1.6-1.1,3.8c0,0-.5.9-.4,1.9s-.4,4.4-.9,4.8-3.3,3.4-3.3,6.6c0,3.2-.6,5.6-3,7s-4,2.1-6.2,2.1-1.5.2-3.2.5-6.1-1.1-7.5-2.7-2.2-3-2.5-4.3-1.5-3.8-1.9-4.6-1.8-6.3-.9-8.9h0Z"
+				/>
+				<path className="st9" d="M404,221.8s.1-.2.5-.2,0-.5-.4-.4-.5.6-.2.6Z" />
+				<path
+					className="st9"
+					d="M433.4,225.8s1.2-.4,2-.3,1.1-1.1.9-1.1-1.8-.2-.7-1.1-.2-1-.7-1-1.5-.6-1.5-.6l-.2,4.1Z"
 				/>
 				<path
-					className="cls-31"
-					d="M1434.66,548.74s.33-.66,1.58-.58,.08-1.41-1.08-1.33-1.58,1.74-.5,1.91Z"
+					className="st9"
+					d="M413.7,206.7s-2.4,0-2.6.5-.4,3-.2,3.4,2.8-3.9,2.8-3.9h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M1524,560.91s3.74-1.25,6.11-.87,3.24-3.36,2.87-3.49-5.36-.75-1.99-3.24c3.36-2.49-.75-3.12-1.99-3.12s-4.49-1.87-4.49-1.87l-.5,12.59Z"
+					className="st1"
+					d="M409.5,212.9s-1.9,4.9-4.1,4.6c-2.2-.3-4-1.4-4.3-2.6-.3-1.1-.6-1.8-1.1-2.2-.6-.4.2-.9-.7-1.2s-.4-4.6-1.3-5.1-1.1.3-1.6,0c-1.1-.7-2.2.4-3.3,1.8-.9,1.2-1.9,3-4.7,7.6-3,5-1.8,9.8-1.7,10.6s.4,2.2,1.3,2.7c1.5.8,1.4,2.2,1.8,2.3.9.2,3.4-.4,5.5-2.2.4-.3,3.7-1.1,6.6-4.2,0,0,3-1.6,2.3,1.4-.7,3,1,7.6,1,7.6,0,0,1.7,3.2,2.2,5.6s3.1,4,3.6,4.4c1.4,1,4.5,2,6.4,1.5,1.9-.5,2.5-.3,4.3-.5s7.7-2.3,7.7-7,1.2-6.4,2.7-7.8c1.5-1.4,1.6-4.6,1.5-5.7s.9-2.5,1.3-3.8-.3-3.4.6-5.2c.9-1.8-1.6-6.2-2.5-7.9-.6-1.2-.3-2.9-.7-4.4s-1.8-4.9-3.4-5.7-6.9-1.5-9.7.5-9.1,13.7-9.9,15h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M1464.07,502.97s-7.23-.25-7.97,1.5-1.25,9.22-.5,10.47,8.47-11.96,8.47-11.96Z"
+					className="st9"
+					d="M221.1,111.1l-3.4-2.2s-2.6-.7-4.6-.3c-5.6,1.1-8.1-.2-9.8-.2s-3.2-.3-3.7-.7c-.9-.5-3.5-2.1-6.4-.4,0,0-1.1,0-2.1.1-1.4,0-3.3,1.1-4.8,1.6s-3.7.7-4.4,1.6c-.5.6-2,1.1-2,1.1,0,0-2.7.5-4.6,4s-4,5.4-3.4,8.6-1,6.5-1.1,8c-.1,2,1.5,3.4,2.5,4.7.5.6.6,1.8,1.2,2.2,1.6,1,1.3,1.5,2.2,2.2,1.7,1.4,3.3,2,4.2,3.3s3.7.6,4.6.8,3.8,1.1,5.1.9,4.3,0,7.3-2.7c3.5-3.2,1.5-9.8,1.3-12.4s1.2-2.3.7-4.8c-.3-1.6,4-3.5,4.3-4.2,1.3-3.9,4.1-5.1,7.2-6.6,2.4-1.2,2.9-.3,3.9-1.2s2.4-2.3,3.1-2.7c1.3-.6,2.8-.9,2.8-.9h0Z"
 				/>
 				<path
-					className="cls-7"
-					d="M1451.23,521.66s-5.86,14.95-12.59,13.96c-6.73-1-12.09-4.36-12.96-7.85-.87-3.49-1.74-5.48-3.49-6.73s.5-2.62-2.12-3.74-1.12-14.08-3.86-15.45c-2.74-1.37-3.24,.87-4.86-.12-3.24-1.99-6.59,1.07-9.97,5.48-2.87,3.74-5.86,9.1-14.2,23.18-9.1,15.34-5.48,29.66-5.23,32.27,.25,2.61,1.17,6.83,3.99,8.35,4.61,2.49,4.15,6.76,5.61,7.1,2.77,.64,10.3-1.15,16.57-6.73,1.12-1,11.21-3.49,20.19-12.71,0,0,9.1-4.73,7.1,4.36-1.99,9.1,3.12,23.18,3.12,23.18,0,0,5.11,9.72,6.73,16.95s9.55,12.2,11.09,13.33c4.24,3.12,13.58,5.98,19.44,4.49,5.86-1.5,7.48-.87,12.96-1.5,5.48-.62,23.43-7.1,23.3-21.18-.12-14.08,3.74-19.44,8.35-23.8,4.61-4.36,4.98-13.96,4.49-17.44s2.74-7.73,3.99-11.59c1.25-3.86-.87-10.47,1.74-15.95,2.62-5.49-4.79-18.97-7.48-24.17-1.87-3.61-.87-8.97-1.99-13.46-1.12-4.49-5.61-14.95-10.34-17.44-4.74-2.49-20.93-4.49-29.41,1.5-8.47,5.98-27.66,41.74-30.15,45.73Z"
+					className="st9"
+					d="M226.2,110.8s.3-2.8,1.8-3.5,2.1-1.9,2.1-1.9c0,0,.3-.8,1.6-1.1s1.8-.7,3-.8,5.9.8,4.1,4.3c-1.5,3-5.6,3.6-8.8,3.2-2.2-.3-3.9-.2-3.9-.2h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M878.33,212.02l-10.44-6.61s-7.79-2.02-14.15-.81c-17.05,3.25-24.71-.46-29.69-.46-5.68,0-9.74-1.07-11.37-1.97-2.82-1.56-10.67-6.26-19.49-1.16,0,0-3.25,.23-6.5,.35-4.2,.15-10.09,3.25-14.73,4.87s-11.37,2.13-13.34,4.76c-1.39,1.86-6.03,3.25-6.03,3.25,0,0-8.12,1.39-14.15,12.06-6.03,10.67-12.06,16.47-10.21,26.21s-2.96,19.87-3.31,24.42c-.46,6.03,4.47,10.38,7.71,14.32,1.47,1.78,1.81,5.57,3.65,6.73,4.99,3.13,4.05,4.44,6.84,6.73,5.1,4.18,9.92,6.21,12.7,10.15s11.13,1.68,14.15,2.38,11.6,3.48,15.54,2.78,13.16,.17,22.15-8.24c10.55-9.86,4.67-29.81,4.06-37.7s3.51-6.94,2.09-14.61c-.93-4.99,12.27-10.65,12.99-12.76,4.06-11.83,12.53-15.47,21.81-20.18,7.31-3.71,8.94-1.06,11.71-3.71s7.18-7.08,9.4-8.12c3.94-1.86,8.58-2.67,8.58-2.67Z"
+					className="st1"
+					d="M229.9,105.3s-1.4,1.8-3.7,2.8c-1.9.8-4.8,1.3-8.6.8-4.6-.7-5.2,0-6.9.1-2.8.2-4.2.2-6.2-.3-2.4-.6-3.5.2-6.1-1.4-2.7-1.7-5.1.3-6,.2-1.4-.2-4.2.7-6.2,1.6-2,1-3.8.6-4.6,1.7-.3.3-1.8.9-3.4,1.6-1.7.6-5.6,6.9-6.3,8.3-.7,1.4,0,6.5-.3,7.9-.4,1.4-2.1,5.4.8,7.7,1.6,1.2,1.1,3,2.8,3.8.9.5,1.1,2.1,2.8,2.5s2.6,3.7,5.3,3.2c3.4-.6,5.4,1.4,6.6,1.1,1-.2,2.9-.7,4-.5s5.6-3.4,5.9-5.7c.6-4.7-1.2-9.9-.3-11.1,1-1.3.4-2.9.6-3.4.8-1.6,1.7-1.8,3.3-3s1.6-3.5,3.5-4.8c1.9-1.3,4.8-3.2,7.2-3.3,1.9,0,2.4-2.3,4.3-3.3,2.5-1.3,11.3-.8,14.5-.7,2.8,0,6.4-2.8,6.4-4.7s-2.4-3.9-5.6-3-3.7,1.8-3.7,1.8h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M893.75,211.21s1-8.4,5.45-10.67,6.26-5.92,6.26-5.92c0,0,.87-2.52,4.99-3.25s5.43-2.18,9.04-2.42,17.96,2.4,12.61,13.13c-4.53,9.09-17.13,10.98-26.64,9.59-6.63-.97-11.71-.46-11.71-.46Z"
+					className="st9"
+					d="M381.8,282.9l1.6-5.4-.3-2.7,3.2.5.5-1.3h3v2.7s7,3.2.3,8.9v2.4l-3.5.3v-3h-1.9v2.4l-1.6-4-1.3-.8h0Z"
 				/>
 				<path
-					className="cls-10"
-					d="M905.01,194.5s-4.1,5.53-11.13,8.35c-5.88,2.36-14.68,4.11-26.1,2.32-14.03-2.2-15.86,.06-20.88,.35-8.36,.48-12.64,.71-19.02-.81-7.28-1.74-10.67,.46-18.44-4.41-8.2-5.14-15.66,.93-18.21,.58-4.16-.57-12.76,1.97-18.79,4.99s-11.6,1.83-14.15,5.1c-.81,1.04-5.45,2.9-10.32,4.76-5.06,1.93-17.05,20.99-19.14,25.17-2.09,4.18,.12,19.72-1.04,24.13s-6.49,16.35,2.44,23.31c4.76,3.71,3.44,9.01,8.58,11.48,2.9,1.39,3.48,6.5,8.35,7.66,4.87,1.16,8,11.18,16.01,9.74,10.32-1.86,16.59,4.26,19.95,3.48,3.02-.7,8.82-2.09,12.29-1.39,3.48,.7,16.93-10.26,17.86-17.4,1.86-14.27-3.81-30.14-1.04-33.87,3.02-4.06,1.2-8.85,1.97-10.32,2.47-4.73,5.1-5.57,9.97-9.05,4.87-3.48,4.87-10.55,10.67-14.5s14.61-9.68,22.04-9.97c5.8-.23,7.18-6.98,12.99-9.97,7.66-3.94,34.33-2.32,44.08-2.09,8.38,.2,19.49-8.58,19.49-14.15s-7.42-11.83-17.17-9.05-11.25,5.57-11.25,5.57Z"
+					className="st9"
+					d="M366.2,198.8c.4,0,4.9,4.5,7.4-.8,0,0,5.1.8,6-4.1,0,0,6.5.1-1.3-4.4,0,0-1.3-3.8-3.5-4.4,0,0-1.1-2.4-2.5-2.3s-.2,1.8-.2,1.8l-2-.2s1.4-5.1-2.9-2.8c0,0-3.7-.6-3,1.9,0,0,.6,1.2-5.2.7,0,0,4.1,3.6,1.9,4.2s-3.6,1.8-3,2,2.9,0,2.1,3.3c0,0-3.5,1,.5,2.1,0,0,1.2,3.2,5.7,2.9h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M1367.14,734.74l4.9-16.35-.82-8.17,9.81,1.63,1.63-4.09h8.99v8.17s21.25,9.81,.82,26.97v7.36l-10.63,.82v-8.99h-5.72v7.36l-4.9-12.26-4.09-2.45Z"
+					className="st9"
+					d="M325.3,161.6s-1.1-3.1,2.2-3.4-.1-2.6-.8-2.6-.2-2.5,3-.8c3.2,1.7,8.1,5.9,8.4,7.9s-12.7-1-12.7-1h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M1319.56,478.83c1.09-.09,14.89,13.8,22.52-2.54,0,0,15.62,2.54,18.16-12.35,0,0,19.62,.36-4-13.44,0,0-4-11.62-10.53-13.44,0,0-3.27-7.27-7.63-6.9s-.73,5.45-.73,5.45l-6.18-.73s4.36-15.62-8.72-8.35c0,0-11.26-1.82-9.08,5.81,0,0,1.82,3.63-15.98,2.18,0,0,12.35,10.9,5.81,12.71s-10.9,5.45-9.08,6.18,8.72,0,6.54,10.17c0,0-10.53,2.91,1.45,6.54,0,0,3.63,9.81,17.44,8.72Z"
+					className="st9"
+					d="M320,117.8s-3.5,1-1.4,2.1,1.4,1.8,2.2,2.2,3,1.2,7.1.7.4,1.2.4,1.2c0,0-.5,2.2.5,3.1.9.9-1.9,1.2-1.9,1.2,0,0-.8,1.5,4.4.7,0,0,.4,3.5,1.8,1.2s1.2-2.1,4.8-2.1,2-5,2-5c0,0,2.3.9,1.4-3.8,0,0,1.4-.6,0-2.7,0,0-2.1-3.2-.5-3.7,0,0,2.7-3.6-4.9-4.3,0,0-2.7-1.4-2.6-2.9s-5.5-1.7-4.6,1.2c0,0-2.9.7-2.4,4.6,0,0-1.3,1.7-2.7,1.9s-3.7,1.9-3.4,4.3h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M1195.11,365.68s-3.42-9.27,6.75-10.36-.36-7.99-2.54-7.99-.73-7.63,9.08-2.54,24.7,17.8,25.43,23.97-38.72-3.08-38.72-3.08Z"
+					className="st9"
+					d="M316.3,120.8s2.8-.6,2.2,3.9c0,0-2.3,2.1-4.1.3s1.5-2.4,1.5-2.4l.4-1.8h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M1178.89,232.36s-10.63,3-4.36,6.27,4.36,5.45,6.81,6.81,9.26,3.54,21.52,2.18,1.09,3.54,1.09,3.54c0,0-1.36,6.81,1.36,9.54s-5.72,3.54-5.72,3.54c0,0-2.45,4.63,13.35,2.18,0,0,1.09,10.63,5.45,3.54s3.54-6.27,14.44-6.27,5.99-15.26,5.99-15.26c0,0,7.08,2.72,4.36-11.44,0,0,4.36-1.91,0-8.17,0,0-6.27-9.81-1.63-11.17,0,0,8.17-10.9-14.98-13.08,0,0-8.17-4.36-7.9-8.72s-16.89-5.18-13.89,3.81c0,0-8.72,2.18-7.36,13.89,0,0-4.09,5.18-8.17,5.72s-11.17,5.72-10.35,13.08Z"
+					className="st9"
+					d="M277.9,101.1s15.9.2,13.6,9.8c0,0,5.4-1.1,4.5,3.4-.9,4.5-6.8.4-6.8.4l.5,3.4s-4.1-.9-4.1-2-2-4.3-5.4-2.2-3.6-3.9,0-4.1.2-8.4-2.3-8.8h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M1167.72,241.63s8.45-1.91,6.81,11.99c0,0-7.08,6.27-12.53,.82s4.63-7.36,4.63-7.36l1.09-5.45Z"
+					className="st9"
+					d="M306.2,82.3s8.2.5,8.2-4.1c0,0,3.9,1.6,1.4,4.1s3.8,1.4,4.7,1.2,2.9,5.6-4.8,3.4c0,0-1.2,3.6,1.1,4.1s1.2,4.1-7.9,3.9-3.6-7.3-3.6-7.3c0,0,.9-5.4.9-5.4Z"
+				/>
+				<path className="st9" d="M323.3,83s2.7,1.4,1.6,2-2.7-.7-1.6-2Z" />
+				<path
+					className="st9"
+					d="M307.5,76.6s3.2,1.4,3.4.5,0,3.2-2.7,2.9-.7-3.4-.7-3.4h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M1051.12,181.69s48.49,.54,41.41,29.97c0,0,16.35-3.27,13.62,10.35s-20.71,1.09-20.71,1.09l1.63,10.35s-12.53-2.72-12.53-5.99-5.99-13.08-16.35-6.54-10.9-11.99,0-12.53,.54-25.61-7.08-26.7Z"
+					className="st9"
+					d="M154,212.5s4.7,2.5,8.2,0,1.1,8.6-.4,9,0,3.6,0,3.6c0,0-6.1-.7-7.9.4s-6.8-3.9-3.2-6.4c0,0-.2-3.6,1.6-4.3s-.5-2,1.6-2.1h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M1137.21,124.48s25.06,1.63,25.06-12.53c0,0,11.99,4.9,4.36,12.53s11.44,4.36,14.17,3.81,8.72,16.89-14.71,10.35c0,0-3.81,10.9,3.27,12.53s3.81,12.53-23.97,11.99-10.9-22.34-10.9-22.34l2.72-16.35Z"
+					className="st9"
+					d="M228.9,327.7s2.9-3.4,6.6-.7,2.7,4.8.4,6.5-12.4-1.1-6.8-4.5l-.2-1.2h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M1188.97,126.66s8.17,4.36,4.9,5.99-8.17-2.18-4.9-5.99Z"
+					className="st9"
+					d="M281.2,330.8s2-3.2,2.3-4.8,1.8-3.2,5.5-2.5,5.2-2.7,9.7-.7,6.3,9.1-.4,12.2c0,0-2,4.1-6.5,2.9,0,0-1.4-.4-4.1,1.2s-8.1-7.5-6.6-8.2h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M1141.02,107.04s9.81,4.36,10.35,1.63,0,9.81-8.17,8.72-2.18-10.35-2.18-10.35Z"
+					className="st9"
+					d="M335.4,344.8s2-5,3.4-5.4c0,0,.2-2.7,2.3-1.6s3.4.5,3.4.5c0,0,.5-1.1,2.7-.2s4.1.4,4.1.4c0,0-.4,2.9-2.5,3.2s-.9,5-.9,5c0,0-1.6,2.9.2,3.4s-.4,3.6-5.2,2.3c0,0-3,.9-3.6,2.7s-9-2.7-4.7-3.9c0,0-2-2.9,0-3.6l.7-2.9h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M674.06,520.6s14.17,7.63,25.06,0,3.27,26.15-1.09,27.24,0,10.9,0,10.9c0,0-18.53-2.18-23.97,1.09s-20.71-11.99-9.81-19.62c0,0-.54-10.9,4.9-13.08s-1.63-5.99,4.9-6.54Z"
+					className="st0"
+					d="M266.8,190.6l-15.6,12.1-.6,15.9,10.2,9.8,11.1,1.5,2.4-1.7c3.1-2.4,5.5.7,6.7,1.2,1.2.6,3.2,0,3.2,0h9.9l9.6-9.6v-14.6l-14.6-14.6h-22.2,0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M901.82,870.96s8.72-10.35,20.16-2.18,8.17,14.71,1.09,19.62-37.6-3.27-20.71-13.62l-.54-3.81Z"
+					className="st0"
+					d="M273.1,233.1c-.6-.1-.6-2.5-.6-2.5v3.2c-.1,0-3.1,0-3.5.1s.5,1.4-.3,1.4-1.5-1.4-1.5-1.4h-6.1c0,0,2,2.3,2,2.3,0,0,1.3,1.1,1.1,1.8-.3.6.8,1.8,1.3,1.9.5,0,1.3,1.3,1.3,1.3,1,.3,1.3.9,1.3.9.5,2,2.4.5,1.9-.4s1.6-1.8,1.6-1.8c1.3-.5,2.2-.6,2.2-.6.1-.6-.5-2.6-.5-2.6,0,0,.4-3.4-.3-3.5h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M1060.92,880.22s5.99-9.81,7.08-14.71,5.45-9.81,16.89-7.63,15.8-8.17,29.42-2.18,19.07,27.79-1.09,37.05c0,0-5.99,12.53-19.62,8.72,0,0-4.36-1.09-12.53,3.81s-24.52-22.88-20.16-25.06Z"
+					className="st0"
+					d="M243.7,213.6c2.2-1.1-.7-2.9-.7-2.9l1.1-2.3s-1.3-3.7-.7-6.3l-4,13.6s-.3,1.9,2.4.7l.7,1.2,3.1,5.9,3-.3,1.1-1.3-4.5-3.9s-3.6-3.2-1.4-4.3h0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M1226.02,922.72s5.99-15.26,10.35-16.35c0,0,.54-8.17,7.08-4.9s10.35,1.63,10.35,1.63c0,0,1.63-3.27,8.17-.54s12.53,1.09,12.53,1.09c0,0-1.09,8.72-7.63,9.81s-2.72,15.26-2.72,15.26c0,0-4.9,8.72,.54,10.35s-1.09,10.9-15.8,7.08c0,0-9.26,2.72-10.9,8.17s-27.24-8.17-14.17-11.99c0,0-5.99-8.72,0-10.9l2.18-8.72Z"
+					className="st0"
+					d="M277.9,233c-.5-.4-2.4-.2-2.9,0s-.5,5.8-.5,5.8c1.3-.2,1.3,1.4,1.3,1.4.9-.2.7,1.6.7,1.6.7.5.9,3.7,1.6,4.6.7.9.9-.1.9-.1v-13.2c0,0-.7.4-1.1,0Z"
 				/>
 				<path
-					className="cls-31"
-					d="M949.5,364.49l34.05-8.99,1.09-65.39s6.54-15.8,16.35-1.09h75.74s8.72-13.62,16.35,.54l-1.63,58.3s33.78,2.72,35.96,19.07l-54.49,1.09s0-19.62,2.72-21.8,0-42.5,0-42.5h-73.56v56.12s14.59,2.46,20.1,16.49-72.68-11.86-72.68-11.86Z"
-				/>
-			</g>
-			<g id="boat">
-				<path
-					className="cls-18"
-					d="M664.25,931.44l59.94-21.8-96.99-212.5s-19.62-29.42-55.58-33.78c0,0-14.17,19.62-7.63,56.67l100.26,211.41Z"
-				/>
-				<path className="cls-11" d="M573.8,726.56s18.53-17.44,43.59-20.71" />
-				<line
-					className="cls-11"
-					x1="585.79"
-					y1="738.55"
-					x2="621.75"
-					y2="723.3"
-				/>
-				<polyline
-					className="cls-2"
-					points="608.68 822.46 625.02 815.92 605.41 777.78 641.37 762.53 657.72 799.58 671.88 794.13"
-				/>
-				<polygon
-					className="cls-17"
-					points="628.29 783.23 640.28 782.14 641.37 803.94 629.38 803.94 628.29 783.23"
-				/>
-				<polygon
-					className="cls-17"
-					points="650.09 823.55 658.81 826.82 653.36 845.35 643.55 843.17 650.09 823.55"
-				/>
-				<polygon
-					className="cls-17"
-					points="698.04 856.25 686.05 856.25 676.24 839.9 689.32 832.27 698.04 856.25"
-				/>
-				<polygon
-					className="cls-17"
-					points="686.05 894.39 706.75 898.75 705.66 907.46 686.05 904.19 686.05 894.39"
-				/>
-				<polygon
-					className="cls-17"
-					points="659.9 897.66 671.88 898.75 670.79 874.77 658.81 874.77 659.9 897.66"
-				/>
-				<polygon
-					className="cls-17"
-					points="639.19 880.22 651.18 874.77 642.46 855.16 629.38 859.51 639.19 880.22"
-				/>
-				<polygon
-					className="cls-30"
-					points="590.7 738.01 595.6 753.54 621.75 743.73 616.03 726.56 590.7 738.01"
-				/>
-			</g>
-			<g id="Layer_3">
-				<path
-					className="cls-18"
-					d="M1029.09,432.23v-16.18h31.12v17.01h24.89l26.55,26.55,12.24-12.24,10.99,10.99-12.03,12.03,14.31,14.31v58.29l-12.14,12.14,16.91,9.44s4.98,4.15,2.07,9.13l2.49,9.54s1.24,3.32-1.24,5.39-3.73,5.39,1.66,8.71c0,0,0,17.42-11.2,22.82-11.2,5.39,6.22,26.97,6.22,26.97l-6.64,5.81s-.83,7.47,7.05,11.2l-19.08,20.33s-15.77-7.05-24.06,9.13c0,0-20.74,.41-18.67,11.62l-14.11,.41s-.83-40.66,4.15-44.81c4.98-4.15,9.13-11.2,7.05-18.25,0,0-10.79-8.3-3.32-11.2,0,0,24.06-38.17,37.34-38.58l.41-19.5,4.98-4.98-.41-7.88-20.33,21.57-33.6,.83-.83-23.23,26.55-.83-30.7-30.7s-14.11,7.88-25.72,.83l-31.12,29.87h27.38l.41,24.89h-32.78l-44.39-41.9,.83-56.42,51.86-51.86,24.89-1.24Z"
+					className="st0"
+					d="M282.3,233.9c-1.1-.3-1.8-1.1-1.8-1.1l.2,12.6s.5.7.9.6c.4,0,0-.4.5-.4s.9-.6.4-.8.3-1.3.3-1.3c-.3-1.2,2.5-2.2,2.5-2.2,1.1-2.2,3.8-4.5,3.8-4.5,0,0,1.2-.7.7-1.4-.5-.7.8-1.5.8-1.5,0,0-7.1.4-8.3,0h0Z"
 				/>
 				<path
-					className="cls-18"
-					d="M954.41,706.87l-29.46-.41v7.47l-8.71,.41v88.78l16.59,18.67h64.72l11.2-7.47v-21.16h19.08v-51.03h-1.8l1.24-32.78-21.16,12.86,.83-12.86-8.16-12.45-7.88-2.07-4.15-3.73s-12.03-19.08-17.01-19.08l5.39-14.52,25.72-26.14s5.39-28.63-5.81-35.68l-18.25-15.77,2.9-7.47-17.01-17.01-12.03,1.24-7.88,6.64v3.32l-8.71,5.81-.41,4.15s-8.71,11.62-13.28,21.57-4.56,26.97-4.56,26.97c0,0,6.64,16.18,19.91,18.25l1.24,6.64-16.59,5.81s7.47,31.12,14.94,36.09c0,0,16.59,6.22,19.08,14.94Z"
+					className="st0"
+					d="M266.8,190.6l-15.6,12.1-.6,15.9,10.2,9.8,11.1,1.5,2.4-1.7c3.1-2.4,5.5.7,6.7,1.2,1.2.6,3.2,0,3.2,0h9.9l9.6-9.6v-14.6l-14.6-14.6h-22.2,0Z"
 				/>
 				<path
-					className="cls-18"
-					d="M1028.67,710.19s12.72,18.53,24.06,12.86l1.38-7.47,12.31-9.96,17.01,.28v12.17l-9.4,8.57,17.29,17.56-10.79,10.79-9.54-8.44v28.21l15.49,17.15,10.37-2.77s6.19-8.33,6.78-13c.89-7.18,6.04-4.65,6.46-7.69,.99-7.1,3.87-8.77,7.37-8.91,7.23-.29,16.59-3.18,18.95,14.52,0,0,2.63,6.22,8.99,7.05,0,0,4.98,5.81-4.98,9.13l-12.17,17.98v13.83h-5.81l-1.66-8.57-6.64-6.64s-12.17,7.74-13.55,11.34l-9.96,11.89-30.42-29.87-1.94,2.21-30.42-.83v-59.47l-.55-.28,1.38-31.67Z"
-				/>
-				<circle className="cls-14" cx="1124.23" cy="458.23" r="5.12" />
-				<polygon
-					className="cls-29"
-					points="1078.87 755.4 1091.13 741.58 1097.26 747.56 1085.27 760.25 1078.87 755.4"
-				/>
-				<polyline
-					className="cls-2"
-					points="1049.78 749.24 1049.78 753.66 1038.17 753.66 1038.17 787.96"
-				/>
-				<line
-					className="cls-3"
-					x1="1070.99"
-					y1="746.56"
-					x2="1070.99"
-					y2="768.04"
-				/>
-				<line
-					className="cls-3"
-					x1="1051.26"
-					y1="802.16"
-					x2="1058.27"
-					y2="802.16"
+					className="st0"
+					d="M267.1,245.1c-.5.2-.9-.4-.9-.4,0,0-.7,1.1-1.7.4-1-.7-.2-2.3-.4-2.6-.1-.3.6-.9.6-.9-.3,0-.6-.3-.6-.3-.9-.7,0-.9,0-1s-.6-.9-.6-.9c0,0,.4,2.1.4,4.4s-.8,4.6-.8,4.6c0,1.4-3,3.6-3,3.6l-4.5,4.5s-1.2.5-1.1,1-.5,1.9-.5,1.9l.9-1.6c.3-1.7,1.7-.8,1.8-.9,0,0,0,0,0,.1.2.3,1,.3,1.1,0s1-.9,1-.9c0,0,1.1-.6.2-.6-.9,0-1.1-1.5,0-1.7,1-.2,1.3,1.5,1.3,1.5l.8-.4c1.2-.3.2-1.1.2-1.1-2.1-1.6.3-3,1-3.4.6-.5,1-2.1,1-2.1,0,0,.7-.2,1.7-1,1-.7,2.2-.7,2.2-.7-.3-.2,0-1.5,0-1.5h0Z"
 				/>
 				<path
-					className="cls-9"
-					d="M1124.37,821.93l3.87,.14v-13.83l12.17-17.98s9.4-2.77,4.98-9.13c0,0-7.74,.55-9.68-11.06-1.94-11.62-11.75-12.17-19.64-10.23-7.88,1.94-3.32,8.02-8.16,10.65s-3.46,2.63-4.29,5.67-4.01,10.93-6.91,12.72"
+					className="st0"
+					d="M273.1,233.1c-.6-.1-.6-2.5-.6-2.5v3.2c-.1,0-3.1,0-3.5.1s.5,1.4-.3,1.4-1.5-1.4-1.5-1.4h-6.1c0,0,2,2.3,2,2.3,0,0,1.3,1.1,1.1,1.8-.3.6.8,1.8,1.3,1.9.5,0,1.3,1.3,1.3,1.3,1,.3,1.3.9,1.3.9.5,2,2.4.5,1.9-.4s1.6-1.8,1.6-1.8c1.3-.5,2.2-.6,2.2-.6.1-.6-.5-2.6-.5-2.6,0,0,.4-3.4-.3-3.5h0Z"
+				/>
+				<path
+					className="st0"
+					d="M276.6,241.8c.7.5.9,3.7,1.6,4.6.7.9.9-.1.9-.1v-13.2c0,0-.7.4-1.1,0s-2.4-.2-2.9,0-.5,5.8-.5,5.8c1.3-.2,1.3,1.4,1.3,1.4.9-.2.7,1.6.7,1.6Z"
+				/>
+				<path
+					className="st0"
+					d="M243.7,213.6c2.2-1.1-.7-2.9-.7-2.9l1.1-2.3s-1.3-3.7-.7-6.3l-4,13.6s-.3,1.9,2.4.7l.7,1.2,3.1,5.9,3-.3,1.1-1.3-4.5-3.9s-3.6-3.2-1.4-4.3h0Z"
+				/>
+				<path
+					className="st0"
+					d="M282.3,233.9c-1.1-.3-1.8-1.1-1.8-1.1l.2,12.6s.5.7.9.6c.4,0,0-.4.5-.4s.9-.6.4-.8.3-1.3.3-1.3c-.3-1.2,2.5-2.2,2.5-2.2,1.1-2.2,3.8-4.5,3.8-4.5,0,0,1.2-.7.7-1.4-.5-.7.8-1.5.8-1.5,0,0-7.1.4-8.3,0h0Z"
+				/>
+				<path
+					className="st0"
+					d="M266.8,190.6l-15.6,12.1-.6,15.9,10.2,9.8,11.1,1.5,2.4-1.7c3.1-2.4,5.5.7,6.7,1.2,1.2.6,3.2,0,3.2,0h9.9l9.6-9.6v-14.6l-14.6-14.6h-22.2,0Z"
 				/>
 				<g>
-					<polyline
-						className="cls-8"
-						points="1124.37 821.93 1128.24 822.07 1128.24 820.07"
+					<path
+						className="st0"
+						d="M243.7,213.6c2.2-1.1-.7-2.9-.7-2.9l1.1-2.3s-1.3-3.7-.7-6.3l-4,13.6s-.3,1.9,2.4.7l.7,1.2,3.1,5.9,3-.3,1.1-1.3-4.5-3.9s-3.6-3.2-1.4-4.3h0Z"
 					/>
 					<path
-						className="cls-5"
-						d="M1128.24,816.06v-7.82l12.17-17.98s5.65-1.66,6.13-5.37"
+						className="st0"
+						d="M273.1,233.1c-.6-.1-.6-2.5-.6-2.5v3.2c-.1,0-3.1,0-3.5.1s.5,1.4-.3,1.4-1.5-1.4-1.5-1.4h-6.1c0,0,2,2.3,2,2.3,0,0,1.3,1.1,1.1,1.8-.3.6.8,1.8,1.3,1.9.5,0,1.3,1.3,1.3,1.3,1,.3,1.3.9,1.3.9.5,2,2.4.5,1.9-.4s1.6-1.8,1.6-1.8c1.3-.5,2.2-.6,2.2-.6.1-.6-.5-2.6-.5-2.6,0,0,.4-3.4-.3-3.5h0Z"
 					/>
 					<path
-						className="cls-8"
-						d="M1146.32,782.91c-.19-.56-.49-1.15-.93-1.77,0,0-.81,.06-1.98-.26"
+						className="st0"
+						d="M276.6,241.8c.7.5.9,3.7,1.6,4.6.7.9.9-.1.9-.1v-13.2c0,0-.7.4-1.1,0s-2.4-.2-2.9,0-.5,5.8-.5,5.8c1.3-.2,1.3,1.4,1.3,1.4.9-.2.7,1.6.7,1.6Z"
 					/>
 					<path
-						className="cls-12"
-						d="M1140.01,779.03c-1.78-1.56-3.52-4.27-4.3-8.96-1.94-11.62-11.75-12.17-19.64-10.23-7.88,1.94-3.32,8.02-8.16,10.65-4.84,2.63-3.46,2.63-4.29,5.67-.58,2.13-2.32,6.65-4.31,9.78"
+						className="st0"
+						d="M268.4,165.1c14.6,1.9,16.1-3.5,16.1-3.5,0,0,.2,0,.6,0,0-1.7.2-5.8.9-6.4.9-.7,0-14,0-14h-24.2v18.4s4.8.8,6.6,5.4h0Z"
 					/>
 					<path
-						className="cls-8"
-						d="M1098.17,787.53c-.49,.59-.98,1.05-1.46,1.35"
+						className="st0"
+						d="M280.5,251s-1-1.6-1.5-.4-3.1.9-3.1.9c0,0-.1.4,1,2,1,1.6,1.7,1.1,2.1,1.9.4.8,3.1.9,1.2-1.2s.3-3.2.3-3.2h0Z"
+					/>
+					<path
+						className="st0"
+						d="M267.1,245.1c-.5.2-.9-.4-.9-.4,0,0-.7,1.1-1.7.4-1-.7-.2-2.3-.4-2.6-.1-.3.6-.9.6-.9-.3,0-.6-.3-.6-.3-.9-.7,0-.9,0-1s-.6-.9-.6-.9c0,0,.4,2.1.4,4.4s-.8,4.6-.8,4.6c0,1.4-3,3.6-3,3.6l-4.5,4.5s-1.2.5-1.1,1-.5,1.9-.5,1.9l.9-1.6c.3-1.7,1.7-.8,1.8-.9,0,0,0,0,0,.1.2.3,1,.3,1.1,0s1-.9,1-.9c0,0,1.1-.6.2-.6-.9,0-1.1-1.5,0-1.7,1-.2,1.3,1.5,1.3,1.5l.8-.4c1.2-.3.2-1.1.2-1.1-2.1-1.6.3-3,1-3.4.6-.5,1-2.1,1-2.1,0,0,.7-.2,1.7-1,1-.7,2.2-.7,2.2-.7-.3-.2,0-1.5,0-1.5h0Z"
+					/>
+					<path
+						className="st0"
+						d="M266.8,190.6l-15.6,12.1-.6,15.9,10.2,9.8,11.1,1.5,2.4-1.7c3.1-2.4,5.5.7,6.7,1.2,1.2.6,3.2,0,3.2,0h9.9l9.6-9.6v-14.6l-14.6-14.6h-22.2,0Z"
+					/>
+					<path
+						className="st0"
+						d="M310.8,249.4c-3.2.1-3.5-3.3-3.5-3.3,0,0,3.2-2.3,3.2-2.9s1.9-1.6,1.9-1.6c1.8.3,3.5-3.3,2.1-2-1.3,1.2-2.6.1-2.6.1,0,0,.1.8-.7,1.3s-1.2,2.5-1.2,2.5c0,0-2.2,1.7-3.6,2.6s2.3,5.9,2.7,5.9,1-1,1-1c.4-2,1.8-.9,1.8-.9,0,0,1.6,1.4,3.6.8s.7-5.4.7-5.4c0,0-2.1,3.6-5.3,3.7h0Z"
+					/>
+					<path
+						className="st0"
+						d="M283.7,244.9s-1,1.8-.2,2.8c.9,1-1.3,1.3-1.3,1.3,0,0,.6.4,1.2.3,0,0-2.1,1.1-.7,2.4,1.4,1.2,2.8,1.3,2.8,1.3,0,0-.3-.5-.2-.9s-.9-.1-1-.5c-.1-.4-1.1-3,1-3.7s2.7-3.8,2.7-3.8c0,0-.7,1.5-4.3.8h0Z"
+					/>
+					<path
+						className="st0"
+						d="M282.3,233.9c-1.1-.3-1.8-1.1-1.8-1.1l.2,12.6s.5.7.9.6c.4,0,0-.4.5-.4s.9-.6.4-.8.3-1.3.3-1.3c-.3-1.2,2.5-2.2,2.5-2.2,1.1-2.2,3.8-4.5,3.8-4.5,0,0,1.2-.7.7-1.4-.5-.7.8-1.5.8-1.5,0,0-7.1.4-8.3,0h0Z"
+					/>
+					<path
+						className="st9"
+						d="M341.7,257.6c-2.6.9-2.2-5.4-5.4-2.4-3.1,3-5.5-4.4-3.9-5s-5.2-5,.4-6.8-2.2-4.1-2.2-4.1c0,0-3-9-6.8-7.9s-1.1-5.9-1.1-5.9c0,0-8.5-5.9-4.1-13.5,0,0,1.9.2,3.3-3.1,1.5-3.3,3.5-5.4,3.5-5.4,0,0,2.8-7.6-.5-7.6s-2-6.6-2-6.6c0,0-5.7-2.4-.7-3.9s0-8.7-1.7-6.5-6.1.4-3.9-3.7c0,0,.4-6.1-3.1-5.9s-6.3-2.2-6.3-2.2c0,0-1-5-4.3-5.7-1.4-4.9-11.7-5.7-11.7-5.7l.5-19.2c-2.5-4.7-5.4-.2-5.4-.2h-24.9c-3.2-4.8-5.4.4-5.4.4l-.4,21.5-11.2,3s.6.2,1.7.5h-3.6s-3.1,1-3.7,3.2-.9,4.4-2.4,4.1-1.1,2.2-1.1,2.2c0,0-2,1.3-2.6.6-.6-.7-.9,3.1.4,4.4,0,0-2.6,2-2.2,3.5.4,1.5-1.1,2.8-4.1,2.4,0,0-5,2.4-.4,6.5,0,0-1.5,1.9-.9,2.9s-2.4,1.9-.4,4.4c2,2.6,2.4,5,2.4,5,0,0-2,6.1-1.3,8.5,0,0-2.4,4.1-1.1,7.6,0,0-.2,4.8,2,6.1,0,0-.2,3.1,1.5,3.3,0,0-.2,4.2,1.1,5.5s-1.1,1.7-1.1,1.7c0,0-.4,10.1-1.7,10.7-1.3.6-2.4,2.9-.2,4.8,0,0-1.5,2.6,2,4.1,0,0-2,4.2.7,7,0,0-5.2,4.4-.4,5.2,0,0,2,1.7,1.5,3.3s2,2.8,2,2.8c0,0-2.9,1.3-.9,3.1,0,0-2,3.5-.7,4.1,0,0-1.9-.4-3.5,1.7s-2.8,2.6-1.7,3.3-6.1-.9-6.6,8.3c0,0-6.5,8.7-2.2,12l.9,3.7s-2.6,2,.2,4.1c0,0-2.4,2.6-.6,4.1,0,0-1.5,5.2.2,4.2s2.4,3.9,2.4,3.9c0,0,2.4,2.4,9.4-5.4,0,0,.2,1.9,1.9,2s3.3-3,3.9-.7,1.7,4.8,5,3.1,6.6,1.3,6.6,1.3c0,0,3.1,1.9,4.8-1.1,1.7-3,2.2-.4,2.2-.4,0,0,2.2,2.6,5.2.4s.7-.7,1.9.2,1.9-.9,3.3-.9,3.1,0,4.6-1.7c1.5-1.7,2.6-5.4,3.7-5.7s2.6-15.7,10.3-7.9,9.6,12,17.7,6.8,10.9-11.3,10.9-11.3c0,0,4.8-3.1-.2-5-5-1.9.2-4.2.2-4.2,0,0-5.5-8.5-12.7-6.5,0,0-2,5.9-5.7,7.9s-7.8,8.3-6.3-5.2l3-6.3s5.7,0,6.1-3.5,3.9-2.6,3.9-2.6c0,0,5.2-1.5,2.4-3.1s6.1.2,6.1.2c0,0,2-.9,3.1,2.6s4.6,2.2,4.6,2.2c0,0-.5,3.9.7,4.1,1.3.2,5.4-2.6,5.4-2.6,0,0,1.5,1.3-.5,2.8-2,1.5,6.1,1.1,7.6-.5,1.5-1.7,4.1.4,4.1.4,0,0,.5-2.8,2.2-2.6,1.7.2.9-3.7.9-3.7,0,0,3.1-3.3,4.2-2.6,1.1.7,3.5-2.8,3.5-6.8s.9-7,.9-7c0,0-.7-3.9-3.3-3h0ZM261.8,141.2h24.2s.9,13.3,0,14c-.7.6-.9,4.7-.9,6.4-.4,0-.6,0-.6,0,0,0-1.5,5.4-16.1,3.5-1.8-4.6-6.6-5.4-6.6-5.4v-18.4h0ZM248.5,223.2l-3,.3-3.1-5.9-.7-1.2c-2.7,1.2-2.4-.7-2.4-.7l4-13.6c-.7,2.6.7,6.3.7,6.3l-1.1,2.3s2.9,1.7.7,2.9,1.4,4.3,1.4,4.3l4.5,3.9-1.1,1.3h0ZM264.9,247.3c-1,.7-1.7,1-1.7,1,0,0-.3,1.6-1,2.1-.6.5-3.1,1.9-1,3.4,0,0,1,.8-.2,1.1l-.8.4s-.2-1.7-1.3-1.5c-1,.2-.9,1.6,0,1.7.9,0-.2.6-.2.6,0,0-1,.6-1,.9s-.9.3-1.1,0c0,0,0,0,0-.1-.1.1-1.5-.8-1.8.9l-.9,1.6s.6-1.4.5-1.9,1.1-1,1.1-1l4.5-4.5s3-2.2,3-3.6c0,0,.8-2.3.8-4.6s-.4-4.4-.4-4.4c0,0,.5.9.6.9s-.8.3,0,1c0,0,.3.3.6.3,0,0-.7.6-.6.9s-.6,1.9.4,2.6c1,.7,1.7-.4,1.7-.4,0,0,.4.7.9.4,0,0-.3,1.3,0,1.5,0,0-1.2,0-2.2.7h0ZM273.9,239.2s-1,.1-2.2.6c0,0-2.1.9-1.6,1.8.5.9-1.4,2.4-1.9.4,0,0-.4-.6-1.3-.9,0,0-.8-1.2-1.3-1.3s-1.6-1.3-1.3-1.9c.3-.6-1.1-1.8-1.1-1.8l-2-2.2h6.1c0,0,.7,1.4,1.5,1.4s0-1.2.3-1.4,3.4-.1,3.4-.1v-3.2c.1,0,0,2.4.7,2.5.6.1.3,3.5.3,3.5,0,0,.6,2,.5,2.6h0ZM274.6,238.8s0-5.6.5-5.8c.5-.2,2.4-.4,2.9,0s1.2,0,1.2,0v13.2c0,0-.2,1.1-1,.1-.7-.9-.9-4.1-1.6-4.6,0,0,.2-1.8-.7-1.6,0,0,0-1.6-1.3-1.4ZM279,255.5c-.4-.8-1-.3-2.1-1.9-1-1.6-1-2-1-2,0,0,2.6.4,3.1-.9s1.5.4,1.5.4c0,0-2.1,1.1-.3,3.2,1.8,2.1-.9,2-1.2,1.2h0ZM285.3,248c-2.1.8-1,3.4-1,3.7.1.4,1,.1,1,.5-.1.4.2.9.2.9,0,0-1.3-.1-2.8-1.3-1.4-1.2.7-2.4.7-2.4-.7.1-1.2-.3-1.2-.3,0,0,2.2-.4,1.3-1.3-.9-1,.2-2.8.2-2.8,3.6.8,4.3-.8,4.3-.8,0,0-.6,3.1-2.7,3.8h0ZM289.8,235.3c.5.7-.7,1.4-.7,1.4,0,0-2.7,2.3-3.8,4.5,0,0-2.8,1-2.5,2.2,0,0-.8,1.1-.3,1.3.5.3,0,.8-.4.8s-.2.3-.5.4-.9-.6-.9-.6l-.2-12.6s.7.8,1.8,1.1,8.3,0,8.3,0c0,0-1.2.8-.8,1.5h0ZM303.6,219.8l-9.6,9.6h-9.9s-2,.7-3.2,0-3.6-3.7-6.7-1.2l-2.4,1.7-11.1-1.5-10.2-9.8.6-15.9,15.6-12.1h22.2l14.6,14.6v14.6h0ZM315.4,251c-2,.7-3.6-.8-3.6-.8,0,0-1.4-1.1-1.8.9,0,0-.6,1-1,1s-4.1-5.1-2.7-5.9,3.6-2.6,3.6-2.6c0,0,.5-1.9,1.2-2.5s.7-1.3.7-1.3c0,0,1.2,1.1,2.6-.1s-.3,2.3-2.1,2c0,0-1.9,1.1-1.9,1.6s-3.2,2.9-3.2,2.9c0,0,.4,3.4,3.5,3.3,3.2-.1,5.3-3.7,5.3-3.7,0,0,1.3,4.7-.7,5.4h0Z"
 					/>
 				</g>
+			</g>
+			<g id="L1BG">
 				<path
-					className="cls-19"
-					d="M1052.74,455.6v27.38s13.28,3.6,15.77,14.94c2.49,11.34-2.21,21.3-2.21,21.3l31.81,31.53,19.64-20.19,.28-35.68h-4.15l-38.72-39-22.4-.28Z"
-				/>
-				<path
-					className="cls-19"
-					d="M1015.12,455.6h22.13v27.93s-9.13,3.6-13.28,11.06-4.43,17.7,1.11,24.34l-32.08,31.53-20.19-19.64,.28-35.96h2.49l39.55-39.27Z"
-				/>
-				<path
-					className="cls-29"
-					d="M1003.09,557.93l30.42-29.59s8.44,8.57,21.99-1.38l30.98,30.98-25.17,.69,.55,25.03,34.02-.55,21.3-22.96v6.91l-5.53,5.26s.55,5.26-2.21,8.85-14.11,4.43-14.11,4.43l-7.47,.83-4.15,1.11v5.26s-3.87,4.43-6.64,4.15-4.7,9.68-4.7,9.68c0,0-2.21,3.6-8.02,3.87s-1.66,9.13-1.66,9.13l-5.26,2.77s-5.53-3.87-5.81-2.77c0,0-.55,7.19-4.43,1.94-3.87-5.26-5.81-18.53-5.81-18.53,0,0-5.81-6.08-16.59,2.49,0,0,1.11,9.96-5.53,6.64,0,0-8.57-9.13-10.51-9.4l-12.45-18.25,32.91-.28-.28-26.28h-25.86Z"
-				/>
-				<circle className="cls-18" cx="1046.1" cy="506.86" r="24.76" />
-				<rect
-					className="cls-32"
-					x="1038.08"
-					y="477.82"
-					width="13.92"
-					height="10.97"
-				/>
-				<path
-					className="cls-32"
-					d="M1021.48,523.64l6.59-6.59,7.47,7.47-7.88,7.51s-6.36-8.39-6.18-8.39Z"
-				/>
-				<polygon
-					className="cls-32"
-					points="1068.04 522.16 1060.76 530 1053.1 521.61 1061.31 515.89 1068.04 522.16"
+					className="st11"
+					d="M311.7,273.9v-14.3h2.9v-8.8h2.7v-15h-11.6v-25.2h-8v-10.1l3.1-2.6h3.6l3-3.4-7.8-7.1-10.5,9.4v9.1h-4.5v1.2h-15.5v1.1h-6.8v-2.9s-7.6,0-7.6,0v23s-7.8-.1-10.9,10.6v4.2c-.1,0-4.7,0-4.7,0v8.9h-3.8v21.7h1.2v2.2h-2.7v30.3l5.2,5.3v.8h8.6v-.3h14.4l2.8-2.9v-6.7h6.8v-.7h16.7v2.5l7.9,7.7,2-2.4h7.6l.9-.7,2.6,2.7,6.7-6.4v-10.9c0,0-8.6-8.4-8.6-8.4h-2.7v-12.2h7ZM288.1,294v4.2h-17.1s-.1-4.1,0-4c0,0,2.6-3.1,5.8-6,2-1.9,4.6-3.8,6.3-4.7l7.7,7.7-2.7,2.7h0ZM299.3,286.2h-3.4l-1.4,1.5-7.1-6.9,2.7-2.4s0-4.5,0-4.5h9.1v12.2h0Z"
 				/>
 			</g>
-			<g id="RedStripes">
+			<g id="rooms">
 				<path
-					className="cls-17"
-					d="M1101.55,635.48l3.13-9.66s-9.95-15.35,6.82-16.77c16.77-1.42,14.78,8.53,14.78,8.53l1.14,28.42-2.56,6.25-21.03,7.11s-6.82,0-7.39-8.53l-4.26,.28s-5.12-14.78,.85-14.78l8.53-.85Z"
+					className="st10"
+					d="M285.2,211.4h10.3v2.9h-2.4v2.9h-7.2v2.5h-2.7v-4.3h2.1s0-4,0-4h0Z"
 				/>
 				<path
-					className="cls-17"
-					d="M1127.41,590s3.98-9.1,6.82,.57c2.84,9.66-6.82,7.11-6.82,7.11,0,0-7.96-4.83,0-7.67Z"
+					className="st10"
+					d="M269.1,225.7h-5.3v3.5h-8.2s-6.1,0-10.5,8c0,0-.1-.1-.7,6.7h-4.6v8.4h11.4v21.1h25.3v-14.5h-6.1v-10.9h.5v-8.2h-1.8s0-14,0-14h0Z"
 				/>
 				<path
-					className="cls-17"
-					d="M945.5,576.35s9.95,4.83,12.51-3.98c0,0-2.84-5.97-9.66-4.26,0,0-2.84,3.7-4.26,3.7s1.42,4.55,1.42,4.55Z"
+					className="st10"
+					d="M269.8,239.1v-10.4h16v10.4h-3.8v8.9h-10.4v-8.9s-2,0-1.8,0h0Z"
 				/>
 				<path
-					className="cls-17"
-					d="M929.87,594.26l2.84-3.7s7.67-1.99,8.81,1.99,2.56,7.11-5.4,8.53c0,0-7.11,1.42-7.39-2.56s1.14-4.26,1.14-4.26Z"
+					className="st10"
+					d="M287.1,273.3h8.8v-15.4h9.2v-7h-3.9v-.2h-4.7v-5h.6v4.4h4v-14.2h3.9v-6.8h-18.7v10.8h9.4v-3.7h.5v4.2h-10.6v-.6h-3.2v7s9.2,0,9.2,0v-1h.6v7.3h-2v2.5h-3.3s0,17.8,0,17.8h0Z"
 				/>
 				<path
-					className="cls-17"
-					d="M955.73,613.59l-2.84-6.82-8.24-.85-5.97,5.12-3.13,12.79,7.11,8.81s7.67-6.54,13.08-19.04Z"
+					className="st10"
+					d="M249.1,273.9h-11.7v2.2h9.1v.8h-11.9v29.5l5.2,5.5h21.9l2.6-2.6v-6.7h-12.3l-2.9-3s0-25.7,0-25.7h0Z"
 				/>
 				<path
-					className="cls-17"
-					d="M973.64,608.76s-1.71-16.2,7.39-6.82c9.1,9.38,4.55,19.33,4.55,19.33,0,0-1.71,7.39-6.25,9.1,0,0-17.05,18.48-18.19,26.72s-7.39,.57-7.39,.57c0,0-9.95-7.39-1.42-7.11,0,0-.57-5.68,3.98-6.54,0,0,9.66-10.23,10.8-9.66s9.1-17.05,6.54-25.58Z"
+					className="st10"
+					d="M249.8,274h28.3v12.2c0,0-6.3,6-7.5,7.6v4.8h21.9v3h-21.1v.6l-19.2-.2-2.5-2.5s.2-25.6.1-25.5h0Z"
 				/>
 				<path
-					className="cls-17"
-					d="M965.68,701.14s7.11,3.13,7.11-3.98c0,0-3.13-8.81-5.4-8.81,0,0,.57-9.66-9.95-10.23,0,0-2.56-5.97-8.81-5.68s-10.8-.57-10.23,4.55,27.29,24.16,27.29,24.16Z"
+					className="st10"
+					d="M278.7,285.7l4.4-3.1,10.9,10.8,1.2-1.2v-2.6c.1,0-8.8-8.8-8.8-8.8l2.9-2.5v-4.4h-10.8s.1,11.6.1,11.8h0Z"
+				/>
+				<path className="st10" d="M300,273.9h4v15.2h-3.9s0-15.2,0-15.2Z" />
+				<polygon
+					className="st10"
+					points="315.3 294.8 315.3 305 309.4 310.7 306.9 308.1 305.7 309.3 297.9 309.3 296.1 311.2 289 304.3 289 294.1 296.5 286.9 307.1 286.9 315.3 294.8"
+				/>
+			</g>
+			<g id="Walls">
+				<polyline
+					className="st4"
+					points="256.2 245.8 256.2 258 253.5 258 253.5 270.3 257.8 270.3"
+				/>
+				<line className="st4" x1="263.1" y1="247.1" x2="263.1" y2="258.3" />
+				<polyline
+					className="st4"
+					points="256.9 231.5 256.9 233.9 259.3 236.5 266.3 236.5 266.3 233.2"
+				/>
+				<polyline className="st4" points="268 248.4 268 258.4 276.8 258.4" />
+			</g>
+			<g id="Stripe_Rooms">
+				<path
+					className="st8"
+					d="M255.5,220.1h7.3v5.4h.3v2.7h-7.7s-.2-8.1,0-8.1h0Z"
 				/>
 				<path
-					className="cls-17"
-					d="M964.26,715.92l.28,67.93,8.81,7.96,14.21,.28,7.11-6.25-.57-58.55-17.62-7.39s-3.41-5.68-12.22-3.98Z"
+					className="st8"
+					d="M257.2,234.6l-1.6.8h-4.3l-1,1.2v1.5c0,0-.4.5-.4.5l.4,2.1h1.1c0,0,2,.8,2,.8h3.5c0,0,1.8-.9,1.8-.9v-4s-1.6-2-1.5-1.9h0Z"
+				/>
+				<path
+					className="st8"
+					d="M282.6,247.3h9.3v5.1h-2.2v2.6h-2.7v-7h-4.4s0-.9,0-.7h0Z"
+				/>
+				<path
+					className="st8"
+					d="M256.3,276.7h8.2s.9,10.5-1.2,12.5h-6.3s-.9-4.7-.7-7c0,0,0-5.6,0-5.5h0Z"
+				/>
+				<path className="st8" d="M241,311.7h5.7s.4-4-3.2-2.2l-2.4,2.2Z" />
+			</g>
+			<g id="dark_rooms">
+				<polygon
+					className="st6"
+					points="305.9 290.3 298 290.3 292.5 295.9 292.6 303.8 298 309.4 305.9 309.4 311.6 303.9 311.6 296.3 305.9 290.3"
 				/>
 				<polygon
-					className="cls-17"
-					points="1052.37 744.06 1066.3 738.09 1074.83 746.33 1071.99 751.73 1062.04 755.99 1051.52 750.03 1052.37 744.06"
-				/>
-				<path
-					className="cls-17"
-					d="M934.22,823.08s13.45-16.11,18.76-8.72,0,8.72,0,8.72h-18.76Z"
-				/>
-				<path
-					className="cls-13"
-					d="M1101.55,635.48l3.13-9.66s-9.95-15.35,6.82-16.77c16.77-1.42,14.78,8.53,14.78,8.53l1.14,28.42-2.56,6.25-21.03,7.11s-6.82,0-7.39-8.53l-4.26,.28s-5.12-14.78,.85-14.78l8.53-.85Z"
-				/>
-				<path
-					className="cls-13"
-					d="M1127.41,590s3.98-9.1,6.82,.57c2.84,9.66-6.82,7.11-6.82,7.11,0,0-7.96-4.83,0-7.67Z"
-				/>
-				<path
-					className="cls-13"
-					d="M945.5,576.35s9.95,4.83,12.51-3.98c0,0-2.84-5.97-9.66-4.26,0,0-2.84,3.7-4.26,3.7s1.42,4.55,1.42,4.55Z"
-				/>
-				<path
-					className="cls-13"
-					d="M929.87,594.26l2.84-3.7s7.67-1.99,8.81,1.99,2.56,7.11-5.4,8.53c0,0-7.11,1.42-7.39-2.56s1.14-4.26,1.14-4.26Z"
-				/>
-				<path
-					className="cls-13"
-					d="M955.73,613.59l-2.84-6.82-8.24-.85-5.97,5.12-3.13,12.79,7.11,8.81s7.67-6.54,13.08-19.04Z"
-				/>
-				<path
-					className="cls-13"
-					d="M973.64,608.76s-1.71-16.2,7.39-6.82c9.1,9.38,4.55,19.33,4.55,19.33,0,0-1.71,7.39-6.25,9.1,0,0-17.05,18.48-18.19,26.72s-7.39,.57-7.39,.57c0,0-9.95-7.39-1.42-7.11,0,0-.57-5.68,3.98-6.54,0,0,9.66-10.23,10.8-9.66s9.1-17.05,6.54-25.58Z"
-				/>
-				<path
-					className="cls-13"
-					d="M965.68,701.14s7.11,3.13,7.11-3.98c0,0-3.13-8.81-5.4-8.81,0,0,.57-9.66-9.95-10.23,0,0-2.56-5.97-8.81-5.68s-10.8-.57-10.23,4.55,27.29,24.16,27.29,24.16Z"
-				/>
-				<path
-					className="cls-13"
-					d="M964.26,715.92l.28,67.93,8.81,7.96,14.21,.28,7.11-6.25-.57-58.55-17.62-7.39s-3.41-5.68-12.22-3.98Z"
+					className="st5"
+					points="306.7 194.7 299.7 188.1 294.3 193 299.5 198.4 300.7 197.3 304.4 197.3 306.7 194.7"
 				/>
 				<polygon
-					className="cls-13"
-					points="1052.37 744.06 1066.3 738.09 1074.83 746.33 1071.99 751.73 1062.04 755.99 1051.52 750.03 1052.37 744.06"
+					className="st5"
+					points="293.7 193.4 299.2 198.8 297.2 200.3 297.2 210.8 284.7 210.8 284.7 215 282.5 215 282.5 217 269.8 217 269.8 207.7 285.2 207.7 285.2 206.6 289.8 206.6 289.8 197.1 293.7 193.4"
 				/>
 				<path
-					className="cls-13"
-					d="M934.22,823.08s13.45-16.11,18.76-8.72,0,8.72,0,8.72h-18.76Z"
+					className="st5"
+					d="M269.2,218.6v6.5h-6s0-3.6,0-5.4h-7.7s0-13.6,0-13.7h6.2v2.8h7.4v9.8h0Z"
 				/>
 				<path
-					className="cls-17"
-					d="M861.4,1011.52s14.55-36.7,45.29-36.04c30.75,.66,19.18-37.36,12.23-42.32-6.94-4.96-37.03-12.89-58.52-2.64-21.49,10.25-14,13.85-28.1,22.81-2.63,1.67-3.64,6.94,.66,13.22,4.3,6.28,3.64,11.57-3.31,17.85s-7.27,6.94,.33,13.22c0,0,7.6,13.89,7.6,17.85s14.22,12.56,23.8-3.97Z"
+					className="st5"
+					d="M269.8,217.5v2.2h5v.4h-5v8.2h16v-8.2h-5.2v-.3h2v-2.2s-12.9-.1-12.8,0h0Z"
 				/>
 				<path
-					className="cls-17"
-					d="M961.91,952.34s-14.22-.33-18.84,16.2c-4.63,16.53,23.47,15.21,26.12,12.89,2.64-2.31,14.22-22.15-7.27-29.09Z"
+					className="st5"
+					d="M305.2,214.8h-11.6v2.7h-7.1v11h18.8s0-13.8,0-13.8h0Z"
+				/>
+				<path className="st5" d="M295.9,211.3h9.2v3h-9.2s0-3,0-3h0Z" />
+				<path
+					className="st5"
+					d="M301.8,236.4h15v14h-2.8v8.8h-8.1v-8.7h-4s0-14,0-14h0Z"
 				/>
 				<path
-					className="cls-17"
-					d="M1039.27,1003.26s44.3-4.3,41.99,24.47c-2.31,28.76-50.91,9.59-50.91,9.59,0,0-27.44-26.78,8.93-34.05Z"
+					className="st5"
+					d="M296.4,258.3h8.8v1.3h6v13.8h-14.8s0-15.2,0-15.1h0Z"
 				/>
 				<path
-					className="cls-17"
-					d="M1060.43,961.27s6.61-1.32,8.6,0c1.98,1.32,8.6-11.24,19.51-8.6,10.91,2.64,22.48,3.97,28.1,2.98s33.39,7.93,41.99,35.04c8.6,27.11-22.48,35.04-22.48,35.04,0,0-6.61,5.29-5.95,11.24,.66,5.95-8.93,5.95-16.53-7.27-7.6-13.22-12.89-26.78-30.09-28.1-17.19-1.32-38.35-16.86-23.14-40.33Z"
+					className="st5"
+					d="M271.1,248.5h15.4v24.9h-9.1v-15.1h-6.3s.1-9.8,0-9.8h0Z"
 				/>
-				<path
-					className="cls-17"
-					d="M901.08,992.02s-20.83,.99-27.77,23.14c-6.94,22.15,15.21,26.45,30.75,16.86,0,0,8.27-21.82,7.93-26.45s-1.32-10.91-10.91-13.55Z"
-				/>
-				<path
-					className="cls-17"
-					d="M930.5,991.36s4.63-.66,9.92,2.64,13.22,3.97,25.79,1.32,23.47,4.63,18.51,17.85c0,0-14.88,8.93-20.5,10.58s-15.54,4.63-18.84,7.93c-3.31,3.31-17.19,.33-21.49-16.2s6.61-24.13,6.61-24.13Z"
-				/>
-				<path
-					className="cls-17"
-					d="M805.53,1048.88s20.83,1.65,27.11,0,23.47-5.29,34.05,.33c10.58,5.62,33.06-1.32,33.06-1.32,0,0,31.41,.33,38.02,.33s37.03-16.2,37.03-16.2c0,0,9.92-4.63,37.03,8.93,27.11,13.55,61.16,19.51,61.16,19.51,0,0,10.25,.66,15.87-2.31,5.62-2.98,9.92-4.3,14.88-3.97,4.96,.33,11.24-8.93,19.51-3.64s20.17,15.87,21.16,18.18,4.3,7.6-3.64,17.19c-7.93,9.59-16.2,12.23-25.79,24.8,0,0-32.07,2.31-36.7,5.29s-21.49-4.63-21.49-4.63l-25.46,3.31s-8.27,4.63-15.54-5.62l-16.53,.33s-7.27-2.64-9.26-5.95c-1.98-3.31-6.61-9.92-27.11-2.31-20.5,7.6-23.14,14.22-53.23,9.92l-16.86,8.27s-10.58,5.62-27.11,1.98h-11.9s-6.94-2.98-11.24,0c-4.3,2.98-45.62-12.23-37.03-72.4Z"
-				/>
-				<path
-					className="cls-15"
-					d="M861.4,1011.52s14.55-36.7,45.29-36.04c30.75,.66,19.18-37.36,12.23-42.32-6.94-4.96-37.03-12.89-58.52-2.64-21.49,10.25-14,13.85-28.1,22.81-2.63,1.67-3.64,6.94,.66,13.22,4.3,6.28,3.64,11.57-3.31,17.85s-7.27,6.94,.33,13.22c0,0,7.6,13.89,7.6,17.85s14.22,12.56,23.8-3.97Z"
-				/>
-				<path
-					className="cls-22"
-					d="M961.91,952.34s-14.22-.33-18.84,16.2c-4.63,16.53,23.47,15.21,26.12,12.89,2.64-2.31,14.22-22.15-7.27-29.09Z"
-				/>
-				<path
-					className="cls-23"
-					d="M1039.27,1003.26s44.3-4.3,41.99,24.47c-2.31,28.76-50.91,9.59-50.91,9.59,0,0-27.44-26.78,8.93-34.05Z"
-				/>
-				<path
-					className="cls-20"
-					d="M1060.43,961.27s6.61-1.32,8.6,0c1.98,1.32,8.6-11.24,19.51-8.6,10.91,2.64,22.48,3.97,28.1,2.98s33.39,7.93,41.99,35.04c8.6,27.11-22.48,35.04-22.48,35.04,0,0-6.61,5.29-5.95,11.24,.66,5.95-8.93,5.95-16.53-7.27-7.6-13.22-12.89-26.78-30.09-28.1-17.19-1.32-38.35-16.86-23.14-40.33Z"
-				/>
-				<path
-					className="cls-21"
-					d="M901.08,992.02s-20.83,.99-27.77,23.14c-6.94,22.15,15.21,26.45,30.75,16.86,0,0,8.27-21.82,7.93-26.45s-1.32-10.91-10.91-13.55Z"
-				/>
-				<path
-					className="cls-26"
-					d="M930.5,991.36s4.63-.66,9.92,2.64,13.22,3.97,25.79,1.32,23.47,4.63,18.51,17.85c0,0-14.88,8.93-20.5,10.58s-15.54,4.63-18.84,7.93c-3.31,3.31-17.19,.33-21.49-16.2s6.61-24.13,6.61-24.13Z"
-				/>
-				<path
-					className="cls-27"
-					d="M805.53,1048.88s20.83,1.65,27.11,0,23.47-5.29,34.05,.33c10.58,5.62,33.06-1.32,33.06-1.32,0,0,31.41,.33,38.02,.33s37.03-16.2,37.03-16.2c0,0,9.92-4.63,37.03,8.93,27.11,13.55,61.16,19.51,61.16,19.51,0,0,10.25,.66,15.87-2.31,5.62-2.98,9.92-4.3,14.88-3.97,4.96,.33,11.24-8.93,19.51-3.64s20.17,15.87,21.16,18.18,4.3,7.6-3.64,17.19c-7.93,9.59-16.2,12.23-25.79,24.8,0,0-32.07,2.31-36.7,5.29s-21.49-4.63-21.49-4.63l-25.46,3.31s-8.27,4.63-15.54-5.62l-16.53,.33s-7.27-2.64-9.26-5.95c-1.98-3.31-6.61-9.92-27.11-2.31-20.5,7.6-23.14,14.22-53.23,9.92l-16.86,8.27s-10.58,5.62-27.11,1.98h-11.9s-6.94-2.98-11.24,0c-4.3,2.98-45.62-12.23-37.03-72.4Z"
-				/>
-				<path
-					className="cls-17"
-					d="M996.95,970.64s10.14-3.97,17.63-.44,8.82,4.41,8.82,4.41c0,0,4.85,5.73,6.17,6.61s.44,8.82,.44,8.82l-11.46,11.9s-12.78,.88-15.87-2.2c-3.09-3.09-7.05-8.38-7.05-8.38,0,0-3.53-14.99,1.32-20.72Z"
-				/>
-				<path
-					className="cls-25"
-					d="M997.06,970.31s10.14-3.97,17.63-.44c7.49,3.53,8.82,4.41,8.82,4.41,0,0,4.85,5.73,6.17,6.61s.44,8.82,.44,8.82l-11.46,11.9s-12.78,.88-15.87-2.2-7.05-8.38-7.05-8.38c0,0-3.53-14.99,1.32-20.72Z"
-				/>
-				<path
-					className="cls-17"
-					d="M1480.24,510.6s1.05-10.93,5.59-12.21,10.91,.06,16.22,6.59,11.18,19.26,11.4,23.25c.22,3.99,1.77,11.62-.77,15.39-2.55,3.76-5.26,8.91-5.54,11.85s-3.1,10.79-6.42,15.67-3.87,7.31-3.87,7.31c0,0,.44,6.97-2.38,11.51s-4.32,6.37-8.03,6.14-7.92-1.49-8.69-5.04c-.77-3.54-.17-7.31-6.42-7.64-6.26-.33-17.71-23.64-17.55-27.73s5.7-37.14,10.13-40.96l7.58-4.32,8.75,.19Z"
-				/>
-				<path
-					className="cls-24"
-					d="M1480.24,510.6s1.05-10.93,5.59-12.21,10.91,.06,16.22,6.59,11.18,19.26,11.4,23.25c.22,3.99,1.77,11.62-.77,15.39-2.55,3.76-5.26,8.91-5.54,11.85s-3.1,10.79-6.42,15.67-3.87,7.31-3.87,7.31c0,0,.44,6.97-2.38,11.51s-4.32,6.37-8.03,6.14-7.92-1.49-8.69-5.04c-.77-3.54-.17-7.31-6.42-7.64-6.26-.33-17.71-23.64-17.55-27.73s5.7-37.14,10.13-40.96l7.58-4.32,8.75,.19Z"
-				/>
-				<path
-					className="cls-17"
-					d="M781.93,268.27s-.94-6.91,5.86-6.38,14.02,1.26,15.59-8.48c1.57-9.73-2.41-9.52-4.08-11.83s-3.98-19.26-17.16-18.73-16.22,4.81-17.79,6.18-4.19,5.65-7.01,7.85-7.33,14.23-7.33,14.23c0,0-10.05,17.9-9.52,27.32s5.13,9.73,7.22,9.63,7.22,1.36,11.09,3.45,12.77-.1,17.69-7.01,7.75-9.73,5.44-16.22Z"
-				/>
-				<path
-					className="cls-16"
-					d="M781.93,268.27s-.94-6.91,5.86-6.38,14.02,1.26,15.59-8.48c1.57-9.73-2.41-9.52-4.08-11.83s-3.98-19.26-17.16-18.73-16.22,4.81-17.79,6.18-4.19,5.65-7.01,7.85-7.33,14.23-7.33,14.23c0,0-10.05,17.9-9.52,27.32s5.13,9.73,7.22,9.63,7.22,1.36,11.09,3.45,12.77-.1,17.69-7.01,7.75-9.73,5.44-16.22Z"
-				/>
+				<path className="st5" d="M236.1,273.4v-20.6h14.5v20.6h-14.5Z" />
+				<circle className="st6" cx="303.7" cy="190.6" r="2" />
 			</g>
 		</SVGOverlay>
 	),
