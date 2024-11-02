@@ -18832,840 +18832,722 @@ export const mapSVGs = {
 			<defs>
 				<style>
 					{globalStyle}
-					{` .st0, .st1, .st2, .st3, .st4 {
+					{` .st0, .st1, .st2, .st3, .st4, .st5 {
         fill: none;
       }
 
-      .st5, .st6 {
+      .st6, .st7 {
         fill: #363635;
       }
 
-      .st1 {
-        stroke-dasharray: 0 0 .7 .7;
-        stroke-width: .5px;
+      .st8 {
+        fill: url(#_10_lpi_60_2-10);
       }
 
-      .st1, .st2, .st4, .st7, .st8, .st6 {
+      .st8, .st1, .st9, .st3, .st4, .st5, .st10, .st11, .st12, .st13, .st14, .st15, .st16, .st17, .st18, .st19, .st20, .st21, .st7 {
         stroke-miterlimit: 10;
       }
 
-      .st1, .st4, .st8, .st6 {
+      .st8, .st9, .st3, .st4, .st5, .st10, .st11, .st12, .st13, .st14, .st15, .st16, .st17, .st18, .st20, .st21, .st7 {
         stroke: #6b6b6b;
       }
 
-      .st2, .st7 {
+      .st1, .st19 {
         stroke: #7c2728;
         stroke-width: 1.6px;
       }
 
-      .st9 {
+      .st22, .st21 {
         fill: #2c2c2c;
       }
 
-      .st3 {
+      .st2 {
         stroke: #7b4848;
         stroke-width: 4.3px;
       }
 
-      .st10 {
+      .st23 {
         fill: #565555;
+      }
+
+      .st9 {
+        fill: #565656;
+      }
+
+      .st9, .st3, .st5, .st20, .st21, .st7 {
+        stroke-width: .5px;
+      }
+
+      .st3 {
+        stroke-dasharray: 0 0 .7 .7;
       }
 
       .st4 {
         stroke-width: .8px;
       }
 
-      .st7 {
-        fill: #011833;
+      .st10 {
+        fill: url(#_10_lpi_60_2-3);
       }
 
       .st11 {
+        fill: url(#_10_lpi_60_2-2);
+      }
+
+      .st12 {
+        fill: url(#_10_lpi_60_2-6);
+      }
+
+      .st13 {
+        fill: url(#_10_lpi_60_2-7);
+      }
+
+      .st14 {
+        fill: url(#_10_lpi_60_2-5);
+      }
+
+      .st15 {
+        fill: url(#_10_lpi_60_2-4);
+      }
+
+      .st16 {
+        fill: url(#_10_lpi_60_2-9);
+      }
+
+      .st17 {
+        fill: url(#_10_lpi_60_2-8);
+      }
+
+      .st18 {
+        fill: url(#_10_lpi_60_1);
+      }
+
+      .st19 {
+        fill: #011833;
+      }
+
+      .st24 {
         fill: #6b6b6b;
       }
 
-      .st8 {
+      .st20 {
         fill: url(#_10_lpi_60_);
-      }
-
-      .st8, .st6 {
-        stroke-width: .5px;
       } `}
 				</style>
-				<pattern
-					id="_10_lpi_60_"
-					data-name="10 lpi 60%"
-					x="0"
-					y="0"
-					width="72"
-					height="72"
-					patternTransform="translate(-1730.52 -7479.98) rotate(-46) scale(.52)"
-					patternUnits="userSpaceOnUse"
-					viewBox="0 0 72 72"
-				>
+				<pattern id="_10_lpi_60_" data-name=" 10 lpi 60 " x="0" y="0" width="72" height="72" patternTransform="translate(-19666.1 -5974.2) rotate(-46) scale(.2)" patternUnits="userSpaceOnUse" viewBox="0 0 72 72">
 					<g>
-						<rect className="cls-1" width="72" height="72" />
+						<rect className="st0" width="72" height="72" />
 						<g>
-							<line
-								className="cls-4"
-								x1="71.75"
-								y1="68.4"
-								x2="144.25"
-								y2="68.4"
-							/>
-							<line className="cls-4" x1="71.75" y1="54" x2="144.25" y2="54" />
-							<line
-								className="cls-4"
-								x1="71.75"
-								y1="39.6"
-								x2="144.25"
-								y2="39.6"
-							/>
-							<line
-								className="cls-4"
-								x1="71.75"
-								y1="25.2"
-								x2="144.25"
-								y2="25.2"
-							/>
-							<line
-								className="cls-4"
-								x1="71.75"
-								y1="10.8"
-								x2="144.25"
-								y2="10.8"
-							/>
-							<line
-								className="cls-4"
-								x1="71.75"
-								y1="61.2"
-								x2="144.25"
-								y2="61.2"
-							/>
-							<line
-								className="cls-4"
-								x1="71.75"
-								y1="46.8"
-								x2="144.25"
-								y2="46.8"
-							/>
-							<line
-								className="cls-4"
-								x1="71.75"
-								y1="32.4"
-								x2="144.25"
-								y2="32.4"
-							/>
-							<line className="cls-4" x1="71.75" y1="18" x2="144.25" y2="18" />
-							<line
-								className="cls-4"
-								x1="71.75"
-								y1="3.6"
-								x2="144.25"
-								y2="3.6"
-							/>
-						</g>
-						<g>
-							<line
-								className="cls-4"
-								x1="-.25"
-								y1="68.4"
-								x2="72.25"
-								y2="68.4"
-							/>
-							<line className="cls-4" x1="-.25" y1="54" x2="72.25" y2="54" />
-							<line
-								className="cls-4"
-								x1="-.25"
-								y1="39.6"
-								x2="72.25"
-								y2="39.6"
-							/>
-							<line
-								className="cls-4"
-								x1="-.25"
-								y1="25.2"
-								x2="72.25"
-								y2="25.2"
-							/>
-							<line
-								className="cls-4"
-								x1="-.25"
-								y1="10.8"
-								x2="72.25"
-								y2="10.8"
-							/>
-							<line
-								className="cls-4"
-								x1="-.25"
-								y1="61.2"
-								x2="72.25"
-								y2="61.2"
-							/>
-							<line
-								className="cls-4"
-								x1="-.25"
-								y1="46.8"
-								x2="72.25"
-								y2="46.8"
-							/>
-							<line
-								className="cls-4"
-								x1="-.25"
-								y1="32.4"
-								x2="72.25"
-								y2="32.4"
-							/>
-							<line className="cls-4" x1="-.25" y1="18" x2="72.25" y2="18" />
-							<line className="cls-4" x1="-.25" y1="3.6" x2="72.25" y2="3.6" />
-						</g>
-						<g>
-							<line
-								className="cls-4"
-								x1="-72.25"
-								y1="68.4"
-								x2=".25"
-								y2="68.4"
-							/>
-							<line className="cls-4" x1="-72.25" y1="54" x2=".25" y2="54" />
-							<line
-								className="cls-4"
-								x1="-72.25"
-								y1="39.6"
-								x2=".25"
-								y2="39.6"
-							/>
-							<line
-								className="cls-4"
-								x1="-72.25"
-								y1="25.2"
-								x2=".25"
-								y2="25.2"
-							/>
-							<line
-								className="cls-4"
-								x1="-72.25"
-								y1="10.8"
-								x2=".25"
-								y2="10.8"
-							/>
-							<line
-								className="cls-4"
-								x1="-72.25"
-								y1="61.2"
-								x2=".25"
-								y2="61.2"
-							/>
-							<line
-								className="cls-4"
-								x1="-72.25"
-								y1="46.8"
-								x2=".25"
-								y2="46.8"
-							/>
-							<line
-								className="cls-4"
-								x1="-72.25"
-								y1="32.4"
-								x2=".25"
-								y2="32.4"
-							/>
-							<line className="cls-4" x1="-72.25" y1="18" x2=".25" y2="18" />
-							<line className="cls-4" x1="-72.25" y1="3.6" x2=".25" y2="3.6" />
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<rect className="st0" width="72" height="72" />
+								<g>
+									<line className="st2" x1="71.8" y1="68.4" x2="144.2" y2="68.4" />
+									<line className="st2" x1="71.8" y1="54" x2="144.2" y2="54" />
+									<line className="st2" x1="71.8" y1="39.6" x2="144.2" y2="39.6" />
+									<line className="st2" x1="71.8" y1="25.2" x2="144.2" y2="25.2" />
+									<line className="st2" x1="71.8" y1="10.8" x2="144.2" y2="10.8" />
+									<line className="st2" x1="71.8" y1="61.2" x2="144.2" y2="61.2" />
+									<line className="st2" x1="71.8" y1="46.8" x2="144.2" y2="46.8" />
+									<line className="st2" x1="71.8" y1="32.4" x2="144.2" y2="32.4" />
+									<line className="st2" x1="71.8" y1="18" x2="144.2" y2="18" />
+									<line className="st2" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								</g>
+								<g>
+									<line className="st2" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+									<line className="st2" x1="-.2" y1="54" x2="72.2" y2="54" />
+									<line className="st2" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+									<line className="st2" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+									<line className="st2" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+									<line className="st2" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+									<line className="st2" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+									<line className="st2" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+									<line className="st2" x1="-.2" y1="18" x2="72.2" y2="18" />
+									<line className="st2" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								</g>
+								<g>
+									<line className="st2" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+									<line className="st2" x1="-72.2" y1="54" x2=".2" y2="54" />
+									<line className="st2" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+									<line className="st2" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+									<line className="st2" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+									<line className="st2" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+									<line className="st2" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+									<line className="st2" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+									<line className="st2" x1="-72.2" y1="18" x2=".2" y2="18" />
+									<line className="st2" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								</g>
+							</g>
 						</g>
 					</g>
 				</pattern>
-				<pattern
-					id="_10_lpi_60_2"
-					data-name="10 lpi 60% 2"
-					x="0"
-					y="0"
-					width="72"
-					height="72"
-					patternTransform="translate(-3001.34 -7530.18) rotate(-46) scale(.4)"
-					patternUnits="userSpaceOnUse"
-					viewBox="0 0 72 72"
-				>
+				<pattern id="_10_lpi_60_1" data-name=" 10 lpi 60 " patternTransform="translate(-21265.5 -6452.8) rotate(-46) scale(0)" xlinkHref="#_10_lpi_60_" />
+				<pattern id="_10_lpi_60_2-2" data-name=" 10 lpi 60 2-2" x="0" y="0" width="72" height="72" patternTransform="translate(-21269.6 -6447) rotate(-46) scale(0)" patternUnits="userSpaceOnUse" viewBox="0 0 72 72">
 					<g>
-						<rect className="cls-1" width="72" height="72" />
+						<rect className="st0" width="72" height="72" />
 						<g>
-							<line
-								className="cls-28"
-								x1="71.75"
-								y1="68.4"
-								x2="144.25"
-								y2="68.4"
-							/>
-							<line className="cls-28" x1="71.75" y1="54" x2="144.25" y2="54" />
-							<line
-								className="cls-28"
-								x1="71.75"
-								y1="39.6"
-								x2="144.25"
-								y2="39.6"
-							/>
-							<line
-								className="cls-28"
-								x1="71.75"
-								y1="25.2"
-								x2="144.25"
-								y2="25.2"
-							/>
-							<line
-								className="cls-28"
-								x1="71.75"
-								y1="10.8"
-								x2="144.25"
-								y2="10.8"
-							/>
-							<line
-								className="cls-28"
-								x1="71.75"
-								y1="61.2"
-								x2="144.25"
-								y2="61.2"
-							/>
-							<line
-								className="cls-28"
-								x1="71.75"
-								y1="46.8"
-								x2="144.25"
-								y2="46.8"
-							/>
-							<line
-								className="cls-28"
-								x1="71.75"
-								y1="32.4"
-								x2="144.25"
-								y2="32.4"
-							/>
-							<line className="cls-28" x1="71.75" y1="18" x2="144.25" y2="18" />
-							<line
-								className="cls-28"
-								x1="71.75"
-								y1="3.6"
-								x2="144.25"
-								y2="3.6"
-							/>
-						</g>
-						<g>
-							<line
-								className="cls-28"
-								x1="-.25"
-								y1="68.4"
-								x2="72.25"
-								y2="68.4"
-							/>
-							<line className="cls-28" x1="-.25" y1="54" x2="72.25" y2="54" />
-							<line
-								className="cls-28"
-								x1="-.25"
-								y1="39.6"
-								x2="72.25"
-								y2="39.6"
-							/>
-							<line
-								className="cls-28"
-								x1="-.25"
-								y1="25.2"
-								x2="72.25"
-								y2="25.2"
-							/>
-							<line
-								className="cls-28"
-								x1="-.25"
-								y1="10.8"
-								x2="72.25"
-								y2="10.8"
-							/>
-							<line
-								className="cls-28"
-								x1="-.25"
-								y1="61.2"
-								x2="72.25"
-								y2="61.2"
-							/>
-							<line
-								className="cls-28"
-								x1="-.25"
-								y1="46.8"
-								x2="72.25"
-								y2="46.8"
-							/>
-							<line
-								className="cls-28"
-								x1="-.25"
-								y1="32.4"
-								x2="72.25"
-								y2="32.4"
-							/>
-							<line className="cls-28" x1="-.25" y1="18" x2="72.25" y2="18" />
-							<line className="cls-28" x1="-.25" y1="3.6" x2="72.25" y2="3.6" />
-						</g>
-						<g>
-							<line
-								className="cls-28"
-								x1="-72.25"
-								y1="68.4"
-								x2=".25"
-								y2="68.4"
-							/>
-							<line className="cls-28" x1="-72.25" y1="54" x2=".25" y2="54" />
-							<line
-								className="cls-28"
-								x1="-72.25"
-								y1="39.6"
-								x2=".25"
-								y2="39.6"
-							/>
-							<line
-								className="cls-28"
-								x1="-72.25"
-								y1="25.2"
-								x2=".25"
-								y2="25.2"
-							/>
-							<line
-								className="cls-28"
-								x1="-72.25"
-								y1="10.8"
-								x2=".25"
-								y2="10.8"
-							/>
-							<line
-								className="cls-28"
-								x1="-72.25"
-								y1="61.2"
-								x2=".25"
-								y2="61.2"
-							/>
-							<line
-								className="cls-28"
-								x1="-72.25"
-								y1="46.8"
-								x2=".25"
-								y2="46.8"
-							/>
-							<line
-								className="cls-28"
-								x1="-72.25"
-								y1="32.4"
-								x2=".25"
-								y2="32.4"
-							/>
-							<line className="cls-28" x1="-72.25" y1="18" x2=".25" y2="18" />
-							<line className="cls-28" x1="-72.25" y1="3.6" x2=".25" y2="3.6" />
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<rect className="st0" width="72" height="72" />
+								<g>
+									<line className="st2" x1="71.8" y1="68.4" x2="144.2" y2="68.4" />
+									<line className="st2" x1="71.8" y1="54" x2="144.2" y2="54" />
+									<line className="st2" x1="71.8" y1="39.6" x2="144.2" y2="39.6" />
+									<line className="st2" x1="71.8" y1="25.2" x2="144.2" y2="25.2" />
+									<line className="st2" x1="71.8" y1="10.8" x2="144.2" y2="10.8" />
+									<line className="st2" x1="71.8" y1="61.2" x2="144.2" y2="61.2" />
+									<line className="st2" x1="71.8" y1="46.8" x2="144.2" y2="46.8" />
+									<line className="st2" x1="71.8" y1="32.4" x2="144.2" y2="32.4" />
+									<line className="st2" x1="71.8" y1="18" x2="144.2" y2="18" />
+									<line className="st2" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								</g>
+								<g>
+									<line className="st2" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+									<line className="st2" x1="-.2" y1="54" x2="72.2" y2="54" />
+									<line className="st2" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+									<line className="st2" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+									<line className="st2" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+									<line className="st2" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+									<line className="st2" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+									<line className="st2" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+									<line className="st2" x1="-.2" y1="18" x2="72.2" y2="18" />
+									<line className="st2" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								</g>
+								<g>
+									<line className="st2" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+									<line className="st2" x1="-72.2" y1="54" x2=".2" y2="54" />
+									<line className="st2" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+									<line className="st2" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+									<line className="st2" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+									<line className="st2" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+									<line className="st2" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+									<line className="st2" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+									<line className="st2" x1="-72.2" y1="18" x2=".2" y2="18" />
+									<line className="st2" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								</g>
+							</g>
 						</g>
 					</g>
 				</pattern>
-				<pattern
-					id="_10_lpi_60_2-2"
-					data-name="10 lpi 60% 2"
-					patternTransform="translate(-3013.71 -7512.76) rotate(-46) scale(.4)"
-					href="#_10_lpi_60_2"
-				/>
-				<pattern
-					id="_10_lpi_60_2-3"
-					data-name="10 lpi 60% 2"
-					patternTransform="translate(-3016.27 -7516.34) rotate(-46) scale(.4)"
-					href="#_10_lpi_60_2"
-				/>
-				<pattern
-					id="_10_lpi_60_2-4"
-					data-name="10 lpi 60% 2"
-					patternTransform="translate(-3016.27 -7516.34) rotate(-46) scale(.4)"
-					href="#_10_lpi_60_2"
-				/>
-				<pattern
-					id="_10_lpi_60_2-5"
-					data-name="10 lpi 60% 2"
-					patternTransform="translate(-3016.27 -7516.34) rotate(-46) scale(.4)"
-					href="#_10_lpi_60_2"
-				/>
-				<pattern
-					id="_10_lpi_60_2-6"
-					data-name="10 lpi 60% 2"
-					patternTransform="translate(-3016.27 -7516.34) rotate(-46) scale(.4)"
-					href="#_10_lpi_60_2"
-				/>
-				<pattern
-					id="_10_lpi_60_2-7"
-					data-name="10 lpi 60% 2"
-					patternTransform="translate(-3016.27 -7516.34) rotate(-46) scale(.4)"
-					href="#_10_lpi_60_2"
-				/>
-				<pattern
-					id="_10_lpi_60_2-8"
-					data-name="10 lpi 60% 2"
-					patternTransform="translate(-3001.01 -7530.84) rotate(-46) scale(.4)"
-					href="#_10_lpi_60_2"
-				/>
-				<pattern
-					id="_10_lpi_60_2-9"
-					data-name="10 lpi 60% 2"
-					patternTransform="translate(-5661.36 -7574.55) rotate(-46) scale(.15)"
-					href="#_10_lpi_60_2"
-				/>
-				<pattern
-					id="_10_lpi_60_2-10"
-					data-name="10 lpi 60% 2"
-					patternTransform="translate(-5113.64 -7537.16) rotate(-46) scale(.2)"
-					href="#_10_lpi_60_2"
-				/>
+				<pattern id="_10_lpi_60_2-3" data-name=" 10 lpi 60 2-3" x="0" y="0" width="72" height="72" patternTransform="translate(-21270.5 -6448.2) rotate(-46) scale(0)" patternUnits="userSpaceOnUse" viewBox="0 0 72 72">
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<rect className="st0" width="72" height="72" />
+								<g>
+									<line className="st2" x1="71.8" y1="68.4" x2="144.2" y2="68.4" />
+									<line className="st2" x1="71.8" y1="54" x2="144.2" y2="54" />
+									<line className="st2" x1="71.8" y1="39.6" x2="144.2" y2="39.6" />
+									<line className="st2" x1="71.8" y1="25.2" x2="144.2" y2="25.2" />
+									<line className="st2" x1="71.8" y1="10.8" x2="144.2" y2="10.8" />
+									<line className="st2" x1="71.8" y1="61.2" x2="144.2" y2="61.2" />
+									<line className="st2" x1="71.8" y1="46.8" x2="144.2" y2="46.8" />
+									<line className="st2" x1="71.8" y1="32.4" x2="144.2" y2="32.4" />
+									<line className="st2" x1="71.8" y1="18" x2="144.2" y2="18" />
+									<line className="st2" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								</g>
+								<g>
+									<line className="st2" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+									<line className="st2" x1="-.2" y1="54" x2="72.2" y2="54" />
+									<line className="st2" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+									<line className="st2" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+									<line className="st2" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+									<line className="st2" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+									<line className="st2" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+									<line className="st2" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+									<line className="st2" x1="-.2" y1="18" x2="72.2" y2="18" />
+									<line className="st2" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								</g>
+								<g>
+									<line className="st2" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+									<line className="st2" x1="-72.2" y1="54" x2=".2" y2="54" />
+									<line className="st2" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+									<line className="st2" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+									<line className="st2" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+									<line className="st2" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+									<line className="st2" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+									<line className="st2" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+									<line className="st2" x1="-72.2" y1="18" x2=".2" y2="18" />
+									<line className="st2" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								</g>
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern id="_10_lpi_60_2-4" data-name=" 10 lpi 60 2-4" x="0" y="0" width="72" height="72" patternTransform="translate(-21270.5 -6448.2) rotate(-46) scale(0)" patternUnits="userSpaceOnUse" viewBox="0 0 72 72">
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<rect className="st0" width="72" height="72" />
+								<g>
+									<line className="st2" x1="71.8" y1="68.4" x2="144.2" y2="68.4" />
+									<line className="st2" x1="71.8" y1="54" x2="144.2" y2="54" />
+									<line className="st2" x1="71.8" y1="39.6" x2="144.2" y2="39.6" />
+									<line className="st2" x1="71.8" y1="25.2" x2="144.2" y2="25.2" />
+									<line className="st2" x1="71.8" y1="10.8" x2="144.2" y2="10.8" />
+									<line className="st2" x1="71.8" y1="61.2" x2="144.2" y2="61.2" />
+									<line className="st2" x1="71.8" y1="46.8" x2="144.2" y2="46.8" />
+									<line className="st2" x1="71.8" y1="32.4" x2="144.2" y2="32.4" />
+									<line className="st2" x1="71.8" y1="18" x2="144.2" y2="18" />
+									<line className="st2" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								</g>
+								<g>
+									<line className="st2" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+									<line className="st2" x1="-.2" y1="54" x2="72.2" y2="54" />
+									<line className="st2" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+									<line className="st2" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+									<line className="st2" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+									<line className="st2" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+									<line className="st2" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+									<line className="st2" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+									<line className="st2" x1="-.2" y1="18" x2="72.2" y2="18" />
+									<line className="st2" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								</g>
+								<g>
+									<line className="st2" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+									<line className="st2" x1="-72.2" y1="54" x2=".2" y2="54" />
+									<line className="st2" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+									<line className="st2" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+									<line className="st2" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+									<line className="st2" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+									<line className="st2" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+									<line className="st2" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+									<line className="st2" x1="-72.2" y1="18" x2=".2" y2="18" />
+									<line className="st2" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								</g>
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern id="_10_lpi_60_2-5" data-name=" 10 lpi 60 2-5" x="0" y="0" width="72" height="72" patternTransform="translate(-21270.5 -6448.2) rotate(-46) scale(0)" patternUnits="userSpaceOnUse" viewBox="0 0 72 72">
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<rect className="st0" width="72" height="72" />
+								<g>
+									<line className="st2" x1="71.8" y1="68.4" x2="144.2" y2="68.4" />
+									<line className="st2" x1="71.8" y1="54" x2="144.2" y2="54" />
+									<line className="st2" x1="71.8" y1="39.6" x2="144.2" y2="39.6" />
+									<line className="st2" x1="71.8" y1="25.2" x2="144.2" y2="25.2" />
+									<line className="st2" x1="71.8" y1="10.8" x2="144.2" y2="10.8" />
+									<line className="st2" x1="71.8" y1="61.2" x2="144.2" y2="61.2" />
+									<line className="st2" x1="71.8" y1="46.8" x2="144.2" y2="46.8" />
+									<line className="st2" x1="71.8" y1="32.4" x2="144.2" y2="32.4" />
+									<line className="st2" x1="71.8" y1="18" x2="144.2" y2="18" />
+									<line className="st2" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								</g>
+								<g>
+									<line className="st2" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+									<line className="st2" x1="-.2" y1="54" x2="72.2" y2="54" />
+									<line className="st2" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+									<line className="st2" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+									<line className="st2" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+									<line className="st2" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+									<line className="st2" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+									<line className="st2" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+									<line className="st2" x1="-.2" y1="18" x2="72.2" y2="18" />
+									<line className="st2" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								</g>
+								<g>
+									<line className="st2" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+									<line className="st2" x1="-72.2" y1="54" x2=".2" y2="54" />
+									<line className="st2" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+									<line className="st2" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+									<line className="st2" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+									<line className="st2" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+									<line className="st2" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+									<line className="st2" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+									<line className="st2" x1="-72.2" y1="18" x2=".2" y2="18" />
+									<line className="st2" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								</g>
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern id="_10_lpi_60_2-6" data-name=" 10 lpi 60 2-6" x="0" y="0" width="72" height="72" patternTransform="translate(-21270.5 -6448.2) rotate(-46) scale(0)" patternUnits="userSpaceOnUse" viewBox="0 0 72 72">
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<rect className="st0" width="72" height="72" />
+								<g>
+									<line className="st2" x1="71.8" y1="68.4" x2="144.2" y2="68.4" />
+									<line className="st2" x1="71.8" y1="54" x2="144.2" y2="54" />
+									<line className="st2" x1="71.8" y1="39.6" x2="144.2" y2="39.6" />
+									<line className="st2" x1="71.8" y1="25.2" x2="144.2" y2="25.2" />
+									<line className="st2" x1="71.8" y1="10.8" x2="144.2" y2="10.8" />
+									<line className="st2" x1="71.8" y1="61.2" x2="144.2" y2="61.2" />
+									<line className="st2" x1="71.8" y1="46.8" x2="144.2" y2="46.8" />
+									<line className="st2" x1="71.8" y1="32.4" x2="144.2" y2="32.4" />
+									<line className="st2" x1="71.8" y1="18" x2="144.2" y2="18" />
+									<line className="st2" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								</g>
+								<g>
+									<line className="st2" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+									<line className="st2" x1="-.2" y1="54" x2="72.2" y2="54" />
+									<line className="st2" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+									<line className="st2" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+									<line className="st2" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+									<line className="st2" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+									<line className="st2" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+									<line className="st2" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+									<line className="st2" x1="-.2" y1="18" x2="72.2" y2="18" />
+									<line className="st2" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								</g>
+								<g>
+									<line className="st2" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+									<line className="st2" x1="-72.2" y1="54" x2=".2" y2="54" />
+									<line className="st2" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+									<line className="st2" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+									<line className="st2" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+									<line className="st2" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+									<line className="st2" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+									<line className="st2" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+									<line className="st2" x1="-72.2" y1="18" x2=".2" y2="18" />
+									<line className="st2" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								</g>
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern id="_10_lpi_60_2-7" data-name=" 10 lpi 60 2-7" x="0" y="0" width="72" height="72" patternTransform="translate(-21270.5 -6448.2) rotate(-46) scale(0)" patternUnits="userSpaceOnUse" viewBox="0 0 72 72">
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<rect className="st0" width="72" height="72" />
+								<g>
+									<line className="st2" x1="71.8" y1="68.4" x2="144.2" y2="68.4" />
+									<line className="st2" x1="71.8" y1="54" x2="144.2" y2="54" />
+									<line className="st2" x1="71.8" y1="39.6" x2="144.2" y2="39.6" />
+									<line className="st2" x1="71.8" y1="25.2" x2="144.2" y2="25.2" />
+									<line className="st2" x1="71.8" y1="10.8" x2="144.2" y2="10.8" />
+									<line className="st2" x1="71.8" y1="61.2" x2="144.2" y2="61.2" />
+									<line className="st2" x1="71.8" y1="46.8" x2="144.2" y2="46.8" />
+									<line className="st2" x1="71.8" y1="32.4" x2="144.2" y2="32.4" />
+									<line className="st2" x1="71.8" y1="18" x2="144.2" y2="18" />
+									<line className="st2" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								</g>
+								<g>
+									<line className="st2" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+									<line className="st2" x1="-.2" y1="54" x2="72.2" y2="54" />
+									<line className="st2" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+									<line className="st2" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+									<line className="st2" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+									<line className="st2" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+									<line className="st2" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+									<line className="st2" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+									<line className="st2" x1="-.2" y1="18" x2="72.2" y2="18" />
+									<line className="st2" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								</g>
+								<g>
+									<line className="st2" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+									<line className="st2" x1="-72.2" y1="54" x2=".2" y2="54" />
+									<line className="st2" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+									<line className="st2" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+									<line className="st2" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+									<line className="st2" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+									<line className="st2" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+									<line className="st2" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+									<line className="st2" x1="-72.2" y1="18" x2=".2" y2="18" />
+									<line className="st2" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								</g>
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern id="_10_lpi_60_2-8" data-name=" 10 lpi 60 2-8" x="0" y="0" width="72" height="72" patternTransform="translate(-21265.4 -6453) rotate(-46) scale(0)" patternUnits="userSpaceOnUse" viewBox="0 0 72 72">
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<rect className="st0" width="72" height="72" />
+								<g>
+									<line className="st2" x1="71.8" y1="68.4" x2="144.2" y2="68.4" />
+									<line className="st2" x1="71.8" y1="54" x2="144.2" y2="54" />
+									<line className="st2" x1="71.8" y1="39.6" x2="144.2" y2="39.6" />
+									<line className="st2" x1="71.8" y1="25.2" x2="144.2" y2="25.2" />
+									<line className="st2" x1="71.8" y1="10.8" x2="144.2" y2="10.8" />
+									<line className="st2" x1="71.8" y1="61.2" x2="144.2" y2="61.2" />
+									<line className="st2" x1="71.8" y1="46.8" x2="144.2" y2="46.8" />
+									<line className="st2" x1="71.8" y1="32.4" x2="144.2" y2="32.4" />
+									<line className="st2" x1="71.8" y1="18" x2="144.2" y2="18" />
+									<line className="st2" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								</g>
+								<g>
+									<line className="st2" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+									<line className="st2" x1="-.2" y1="54" x2="72.2" y2="54" />
+									<line className="st2" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+									<line className="st2" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+									<line className="st2" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+									<line className="st2" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+									<line className="st2" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+									<line className="st2" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+									<line className="st2" x1="-.2" y1="18" x2="72.2" y2="18" />
+									<line className="st2" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								</g>
+								<g>
+									<line className="st2" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+									<line className="st2" x1="-72.2" y1="54" x2=".2" y2="54" />
+									<line className="st2" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+									<line className="st2" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+									<line className="st2" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+									<line className="st2" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+									<line className="st2" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+									<line className="st2" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+									<line className="st2" x1="-72.2" y1="18" x2=".2" y2="18" />
+									<line className="st2" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								</g>
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern id="_10_lpi_60_2-9" data-name=" 10 lpi 60 2-9" x="0" y="0" width="72" height="72" patternTransform="translate(41 -15519.3) scale(1 -1)" patternUnits="userSpaceOnUse" viewBox="0 0 72 72">
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<rect className="st0" width="72" height="72" />
+								<g>
+									<line className="st2" x1="71.8" y1="68.4" x2="144.2" y2="68.4" />
+									<line className="st2" x1="71.8" y1="54" x2="144.2" y2="54" />
+									<line className="st2" x1="71.8" y1="39.6" x2="144.2" y2="39.6" />
+									<line className="st2" x1="71.8" y1="25.2" x2="144.2" y2="25.2" />
+									<line className="st2" x1="71.8" y1="10.8" x2="144.2" y2="10.8" />
+									<line className="st2" x1="71.8" y1="61.2" x2="144.2" y2="61.2" />
+									<line className="st2" x1="71.8" y1="46.8" x2="144.2" y2="46.8" />
+									<line className="st2" x1="71.8" y1="32.4" x2="144.2" y2="32.4" />
+									<line className="st2" x1="71.8" y1="18" x2="144.2" y2="18" />
+									<line className="st2" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								</g>
+								<g>
+									<line className="st2" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+									<line className="st2" x1="-.2" y1="54" x2="72.2" y2="54" />
+									<line className="st2" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+									<line className="st2" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+									<line className="st2" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+									<line className="st2" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+									<line className="st2" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+									<line className="st2" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+									<line className="st2" x1="-.2" y1="18" x2="72.2" y2="18" />
+									<line className="st2" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								</g>
+								<g>
+									<line className="st2" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+									<line className="st2" x1="-72.2" y1="54" x2=".2" y2="54" />
+									<line className="st2" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+									<line className="st2" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+									<line className="st2" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+									<line className="st2" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+									<line className="st2" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+									<line className="st2" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+									<line className="st2" x1="-72.2" y1="18" x2=".2" y2="18" />
+									<line className="st2" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								</g>
+							</g>
+						</g>
+					</g>
+				</pattern>
+				<pattern id="_10_lpi_60_2-10" data-name=" 10 lpi 60 2-10" x="0" y="0" width="72" height="72" patternTransform="translate(41 -15519.3) scale(1 -1)" patternUnits="userSpaceOnUse" viewBox="0 0 72 72">
+					<g>
+						<rect className="st0" width="72" height="72" />
+						<g>
+							<rect className="st0" width="72" height="72" />
+							<g>
+								<rect className="st0" width="72" height="72" />
+								<g>
+									<line className="st2" x1="71.8" y1="68.4" x2="144.2" y2="68.4" />
+									<line className="st2" x1="71.8" y1="54" x2="144.2" y2="54" />
+									<line className="st2" x1="71.8" y1="39.6" x2="144.2" y2="39.6" />
+									<line className="st2" x1="71.8" y1="25.2" x2="144.2" y2="25.2" />
+									<line className="st2" x1="71.8" y1="10.8" x2="144.2" y2="10.8" />
+									<line className="st2" x1="71.8" y1="61.2" x2="144.2" y2="61.2" />
+									<line className="st2" x1="71.8" y1="46.8" x2="144.2" y2="46.8" />
+									<line className="st2" x1="71.8" y1="32.4" x2="144.2" y2="32.4" />
+									<line className="st2" x1="71.8" y1="18" x2="144.2" y2="18" />
+									<line className="st2" x1="71.8" y1="3.6" x2="144.2" y2="3.6" />
+								</g>
+								<g>
+									<line className="st2" x1="-.2" y1="68.4" x2="72.2" y2="68.4" />
+									<line className="st2" x1="-.2" y1="54" x2="72.2" y2="54" />
+									<line className="st2" x1="-.2" y1="39.6" x2="72.2" y2="39.6" />
+									<line className="st2" x1="-.2" y1="25.2" x2="72.2" y2="25.2" />
+									<line className="st2" x1="-.2" y1="10.8" x2="72.2" y2="10.8" />
+									<line className="st2" x1="-.2" y1="61.2" x2="72.2" y2="61.2" />
+									<line className="st2" x1="-.2" y1="46.8" x2="72.2" y2="46.8" />
+									<line className="st2" x1="-.2" y1="32.4" x2="72.2" y2="32.4" />
+									<line className="st2" x1="-.2" y1="18" x2="72.2" y2="18" />
+									<line className="st2" x1="-.2" y1="3.6" x2="72.2" y2="3.6" />
+								</g>
+								<g>
+									<line className="st2" x1="-72.2" y1="68.4" x2=".2" y2="68.4" />
+									<line className="st2" x1="-72.2" y1="54" x2=".2" y2="54" />
+									<line className="st2" x1="-72.2" y1="39.6" x2=".2" y2="39.6" />
+									<line className="st2" x1="-72.2" y1="25.2" x2=".2" y2="25.2" />
+									<line className="st2" x1="-72.2" y1="10.8" x2=".2" y2="10.8" />
+									<line className="st2" x1="-72.2" y1="61.2" x2=".2" y2="61.2" />
+									<line className="st2" x1="-72.2" y1="46.8" x2=".2" y2="46.8" />
+									<line className="st2" x1="-72.2" y1="32.4" x2=".2" y2="32.4" />
+									<line className="st2" x1="-72.2" y1="18" x2=".2" y2="18" />
+									<line className="st2" x1="-72.2" y1="3.6" x2=".2" y2="3.6" />
+								</g>
+							</g>
+						</g>
+					</g>
+				</pattern>
 			</defs>
 			<g id="Ocean">
-				<path
-					className="st7"
-					d="M356.6,46.8l44.9,48.6,13.5,31.8,59.5,65.3-4.9,27.5-27.1,32.9,8.7,30.8-36.8,89.6-135.8,66.4-80.1.5-42.2-50.7-36.8-4.9-42.2-71.2,37.3-102-2.7-37.8,13-21.6,1.6-29.2,23.3-37.2s57.4-27,97.9-31.3l108.8-7.6h0Z"
-				/>
+				<path className="st19" d="M356.6,46.8l44.9,48.6,13.5,31.8,59.5,65.3-4.9,27.5-27.1,32.9,8.7,30.8-36.8,89.6-135.8,66.4-80.1.5-42.2-50.7-36.8-4.9-42.2-71.2,37.3-102-2.7-37.8,13-21.6,1.6-29.2,23.3-37.2s57.4-27,97.9-31.3l108.8-7.6h0Z" />
 			</g>
 			<g id="MapBorder">
-				<path
-					className="st2"
-					d="M356.6,46.8l44.9,48.6,13.5,31.8,59.5,65.3-4.9,27.5-27.1,32.9,8.7,30.8-36.8,89.6-135.8,66.4-80.1.5-42.2-50.7-36.8-4.9-42.2-71.2,37.3-102-2.7-37.8,13-21.6,1.6-29.2,23.3-37.2s57.4-27,97.9-31.3l108.8-7.6h0Z"
-				/>
+				<path className="st1" d="M356.6,46.8l44.9,48.6,13.5,31.8,59.5,65.3-4.9,27.5-27.1,32.9,8.7,30.8-36.8,89.6-135.8,66.4-80.1.5-42.2-50.7-36.8-4.9-42.2-71.2,37.3-102-2.7-37.8,13-21.6,1.6-29.2,23.3-37.2s57.4-27,97.9-31.3l108.8-7.6h0Z" />
 			</g>
 			<g id="Island">
-				<path
-					className="st9"
-					d="M182,191.7s1.9-2.6,2.9-2.2,1.9-1.9.7-2,2.8-2.4,5.9.2-2.2-3.5,2.4-3.1,4.6,2.9,4.6,2.9c0,0,2.2-.6,2.8-2.4s1.7-.7.6,3.3-.2,9.2-.2,9.2c0,0,1.1,2.9-1.1,3.9,0,0-1.7,5.4-7.2,4.2,0,0,.7,4.4-.7,4.4,0,0-1.1-2.8-3.7-2.4,0,0-2.9-.9-4.8,2.2,0,0-2.6-.9.2-3.3,0,0-2.8-2,.2-4.2,0,0-1.1-2.9-2-3.1s-.6-7.6-.6-7.6h0Z"
-				/>
-				<path
-					className="st9"
-					d="M194.2,223.3s-2.2-5.5,3.9-6.6c0,0,2.6-1.1,3.7,4.2,0,0-.2-.6.6-4.1,0,0,5.4-3.9,5.4,1.9,0,0,6.1-.7,2.9,2.9l2-.6s-2,3.9,2.4,7.9l-1.5.7,1.1,1.5s5.5,6.3.6,8.1c0,0-5.2-1.5-2.4,3.1,0,0,.4,4.4-1.7,4.4s-3.7-.7-5.7-.4-4.1-1.7-1.9-2.4-2.2-1.5-3.1-.2-6.1-1.5-6.1-1.5c0,0-2.8-2.8.4-3.7,0,0,1.1-3.1-1.7-3.1,0,0-4.2-.4-2.8-2.6,0,0-1.1-2.8-3.7-3.1,0,0,2.2-2.9,4.8-3.5,0,0,.4-3.5,2.8-3.1h0Z"
-				/>
-				<path
-					className="st9"
-					d="M204.6,285.5s6.3-4.1,9.2-2.6c0,0,2.4-.5,2.8-2s.7-3.5,2.8-3.9.6-1.7-.9-2.2.7-2.8-2.8-1.5l-.4-5.5-1.3,2.8s-1.1-.7-3.5,3c0,0-2.8-2-3.5-.4,0,0-6.3-1.5-3.7,2,0,0,1.3.7,1.1,2s.2,2.4,2.4,1.1.7,3.7-.4,4.1-1.9,3.1-1.9,3.1h0Z"
-				/>
-				<path
-					className="st9"
-					d="M195.9,311.3s-.7-6.5-7.8-5.4-4.2,8.9-4.2,8.9l1.5,2.6s-3.5,5.5.6,5.2.7,1.7.7,1.7c0,0,1.9.7,2.8,2.4s3.5-2.4,3.5-2.4c0,0,1.3,1.5,2.8,1.1s2.8-2.6,1.1-3,.7-1.7,2-1.5,2.6-3.5.4-4.1.6-1.9.6-1.9c0,0,1.5-2.6-3.9-3.7h0Z"
-				/>
-				<path
-					className="st9"
-					d="M353.3,310.2l-3,3.5s-3.9,1.1-5,3.1-4.6-.5-3.9-3.1-1.7-1.1-1.7-1.1c0,0-1.3-1.5-.4-2.2s-.4-4.1-2-3.5-.5-1.9-.5-1.9c0,0-2.4-1.9,0-2.8,0,0,.7-2.4.9-3.9s2.8.7,2.8.7c0,0,.9-1.3-1.5-2s2-2.8,2-2.8c0,0,.9-3.5,3-.9,0,0,3-2,5-.5,0,0,1.9-1.3,3.3,1.9l1.5.4-.5,15.1h0Z"
-				/>
-				<path
-					className="st9"
-					d="M353.9,223.5s-1.1-2.4-4.1-.4c0,0-3.7.2-5.2-1.3s-.2,3.5,2.4,4.6l-1.5,1.5,1.3,1.9-1.5,1.7s-2.6,1.9,2.4,1.1c0,0,2.8,2,5.2-.6,0,0,.9-9,.9-8.5h0Z"
-				/>
-				<path
-					className="st9"
-					d="M339.3,161.6s2.2,2,3.1,4.4,3.7,2.6,3.7,2.6c0,0-1.7,2.9-4.1,2.8s.4,2,.4,2l-1.5,1.1s-2,3.7-1.1,5.4-5-5.2-9-2.4c0,0-1.3-2.6-2.8-2.2s-3.1-2.2-2.4-3.3c0,0-1.9-2-1.1-2.9,0,0-2.2-1.3-2-2.4s-4.6-3.3,2.8-5h14,0Z"
-				/>
-				<path
-					className="st9"
-					d="M239.7,353.3s-12.9-5.1-16.1-4.1-16.3,16.4-16.3,16.4c0,0-7.4,7.5-8.1,9.2s-4.5,2.2-4.1,5.9-3.4,26.4,9.5,29.1c12.9,2.7,45.4-8,47-7,1.7,1,48.9,2.4,55.9-8.4,0,0,3.6-3.4,3.9-5.1,0,0,3-2.4,3.4-3.6,0,0,1-1,1.4-1.3s-.3-6.2-2.9-6.5c0,0-2.9-13.5-9.2-16.8-6.3-3.3-22.6-1.3-26.9,1.5s-5.2,7.3-15.6,4c0,0-7.4-2.1-7.7-9.1s-10.4-3.9-10.4-3.9c0,0-2.8.3-3.9-.2h0Z"
-				/>
-				<path
-					className="st9"
-					d="M205.8,356.2s-3.9-2.4-6.5-1.2-.3,2.9-.3,2.9c0,0-2.9,2.3-2.1,2.8.8.4,4.4-2.2,4.4-2.2,0,0-2.1,2.7-.7,2.9s6.1-1.8,6.1-1.8l-.9-3.3h0Z"
-				/>
-				<path
-					className="st9"
-					d="M234.4,406.3s-3.5,4.8-.6,5.5c0,0,1.4,3.8,4,.3s5-.1,5-.1c0,0,4.2,1.3,5.9-2.2s-3.1-1.7-3.1-1.7l-.6-3.5-10.6,1.7h0Z"
-				/>
-				<path
-					className="st9"
-					d="M261.7,406s4.1,5.6,5.8,6.5,3.2-.8,3.3-1.7,3.5-5.3,4.4-4.9,3.6,3,3.6,3.8,2.2-.4,2.4.1,1.9.7,2.8-1,6.1-2.1,6.2-.7,1,3,2.5,2.9,3.5-2.1,3.2-3.9c-.3-1.8-27.4-5.2-34.3-1.2Z"
-				/>
-				<path
-					className="st9"
-					d="M313.1,371.9s3.5-3.9,3.2-5.3-4.4-1.7-4.4-1.7l1.2,7Z"
-				/>
-				<path
-					className="st9"
-					d="M212.2,410.4s1.4,3.9,2.2,3.8,1.4-2.8,1.4-2.8c0,0-.6,2.7.8,2.5s3.9-3.5,3.9-4.3-8.3.8-8.3.8h0Z"
-				/>
-				<path
-					className="st9"
-					d="M403.7,217.1s-2.5-1-2.7-2.5c0-.6-.5-1.4-1.1-2s.2-.7-.6-1.1c-.8-.4-.2-4.4-1.3-5-.5-.3-1,.2-1.2.1-1.3-.5-1.5-.5-2.5.6-1.4,1.4-4.4,6.1-6.2,9.8-1,2-1.4,3.9-1.4,4.9,0,2.9-.3,6.1,1.4,7,1.5.8,1.5,2.3,2.1,2.6.3.1,1.9,0,3.8-1.2,1.5-1,3.3-2,5.2-3,2.6-1.4,5.7-7.9,4.6-10.2h0Z"
-				/>
-				<path
-					className="st9"
-					d="M404.4,225.3s.5-2,.6-2.7c0-.5-.1-1.5-.1-1.5,0,0,0-3.1,1-3.4s2.5-2.2,3.1-3.6,8.4-16.4,12.6-17.1,8.3-.7,10,3.9.7,6,1.9,7.5,2.6,6.5,2,7.1-.3,3.1-.4,3.6.1,1.6-1.1,3.8c0,0-.5.9-.4,1.9s-.4,4.4-.9,4.8-3.3,3.4-3.3,6.6c0,3.2-.6,5.6-3,7s-4,2.1-6.2,2.1-1.5.2-3.2.5-6.1-1.1-7.5-2.7-2.2-3-2.5-4.3-1.5-3.8-1.9-4.6-1.8-6.3-.9-8.9h0Z"
-				/>
-				<path className="st9" d="M404,221.8s.1-.2.5-.2,0-.5-.4-.4-.5.6-.2.6Z" />
-				<path
-					className="st9"
-					d="M433.4,225.8s1.2-.4,2-.3,1.1-1.1.9-1.1-1.8-.2-.7-1.1-.2-1-.7-1-1.5-.6-1.5-.6l-.2,4.1Z"
-				/>
-				<path
-					className="st9"
-					d="M413.7,206.7s-2.4,0-2.6.5-.4,3-.2,3.4,2.8-3.9,2.8-3.9h0Z"
-				/>
-				<path
-					className="st1"
-					d="M409.5,212.9s-1.9,4.9-4.1,4.6c-2.2-.3-4-1.4-4.3-2.6-.3-1.1-.6-1.8-1.1-2.2-.6-.4.2-.9-.7-1.2s-.4-4.6-1.3-5.1-1.1.3-1.6,0c-1.1-.7-2.2.4-3.3,1.8-.9,1.2-1.9,3-4.7,7.6-3,5-1.8,9.8-1.7,10.6s.4,2.2,1.3,2.7c1.5.8,1.4,2.2,1.8,2.3.9.2,3.4-.4,5.5-2.2.4-.3,3.7-1.1,6.6-4.2,0,0,3-1.6,2.3,1.4-.7,3,1,7.6,1,7.6,0,0,1.7,3.2,2.2,5.6s3.1,4,3.6,4.4c1.4,1,4.5,2,6.4,1.5,1.9-.5,2.5-.3,4.3-.5s7.7-2.3,7.7-7,1.2-6.4,2.7-7.8c1.5-1.4,1.6-4.6,1.5-5.7s.9-2.5,1.3-3.8-.3-3.4.6-5.2c.9-1.8-1.6-6.2-2.5-7.9-.6-1.2-.3-2.9-.7-4.4s-1.8-4.9-3.4-5.7-6.9-1.5-9.7.5-9.1,13.7-9.9,15h0Z"
-				/>
-				<path
-					className="st9"
-					d="M221.1,111.1l-3.4-2.2s-2.6-.7-4.6-.3c-5.6,1.1-8.1-.2-9.8-.2s-3.2-.3-3.7-.7c-.9-.5-3.5-2.1-6.4-.4,0,0-1.1,0-2.1.1-1.4,0-3.3,1.1-4.8,1.6s-3.7.7-4.4,1.6c-.5.6-2,1.1-2,1.1,0,0-2.7.5-4.6,4s-4,5.4-3.4,8.6-1,6.5-1.1,8c-.1,2,1.5,3.4,2.5,4.7.5.6.6,1.8,1.2,2.2,1.6,1,1.3,1.5,2.2,2.2,1.7,1.4,3.3,2,4.2,3.3s3.7.6,4.6.8,3.8,1.1,5.1.9,4.3,0,7.3-2.7c3.5-3.2,1.5-9.8,1.3-12.4s1.2-2.3.7-4.8c-.3-1.6,4-3.5,4.3-4.2,1.3-3.9,4.1-5.1,7.2-6.6,2.4-1.2,2.9-.3,3.9-1.2s2.4-2.3,3.1-2.7c1.3-.6,2.8-.9,2.8-.9h0Z"
-				/>
-				<path
-					className="st9"
-					d="M226.2,110.8s.3-2.8,1.8-3.5,2.1-1.9,2.1-1.9c0,0,.3-.8,1.6-1.1s1.8-.7,3-.8,5.9.8,4.1,4.3c-1.5,3-5.6,3.6-8.8,3.2-2.2-.3-3.9-.2-3.9-.2h0Z"
-				/>
-				<path
-					className="st1"
-					d="M229.9,105.3s-1.4,1.8-3.7,2.8c-1.9.8-4.8,1.3-8.6.8-4.6-.7-5.2,0-6.9.1-2.8.2-4.2.2-6.2-.3-2.4-.6-3.5.2-6.1-1.4-2.7-1.7-5.1.3-6,.2-1.4-.2-4.2.7-6.2,1.6-2,1-3.8.6-4.6,1.7-.3.3-1.8.9-3.4,1.6-1.7.6-5.6,6.9-6.3,8.3-.7,1.4,0,6.5-.3,7.9-.4,1.4-2.1,5.4.8,7.7,1.6,1.2,1.1,3,2.8,3.8.9.5,1.1,2.1,2.8,2.5s2.6,3.7,5.3,3.2c3.4-.6,5.4,1.4,6.6,1.1,1-.2,2.9-.7,4-.5s5.6-3.4,5.9-5.7c.6-4.7-1.2-9.9-.3-11.1,1-1.3.4-2.9.6-3.4.8-1.6,1.7-1.8,3.3-3s1.6-3.5,3.5-4.8c1.9-1.3,4.8-3.2,7.2-3.3,1.9,0,2.4-2.3,4.3-3.3,2.5-1.3,11.3-.8,14.5-.7,2.8,0,6.4-2.8,6.4-4.7s-2.4-3.9-5.6-3-3.7,1.8-3.7,1.8h0Z"
-				/>
-				<path
-					className="st9"
-					d="M381.8,282.9l1.6-5.4-.3-2.7,3.2.5.5-1.3h3v2.7s7,3.2.3,8.9v2.4l-3.5.3v-3h-1.9v2.4l-1.6-4-1.3-.8h0Z"
-				/>
-				<path
-					className="st9"
-					d="M366.2,198.8c.4,0,4.9,4.5,7.4-.8,0,0,5.1.8,6-4.1,0,0,6.5.1-1.3-4.4,0,0-1.3-3.8-3.5-4.4,0,0-1.1-2.4-2.5-2.3s-.2,1.8-.2,1.8l-2-.2s1.4-5.1-2.9-2.8c0,0-3.7-.6-3,1.9,0,0,.6,1.2-5.2.7,0,0,4.1,3.6,1.9,4.2s-3.6,1.8-3,2,2.9,0,2.1,3.3c0,0-3.5,1,.5,2.1,0,0,1.2,3.2,5.7,2.9h0Z"
-				/>
-				<path
-					className="st9"
-					d="M325.3,161.6s-1.1-3.1,2.2-3.4-.1-2.6-.8-2.6-.2-2.5,3-.8c3.2,1.7,8.1,5.9,8.4,7.9s-12.7-1-12.7-1h0Z"
-				/>
-				<path
-					className="st9"
-					d="M320,117.8s-3.5,1-1.4,2.1,1.4,1.8,2.2,2.2,3,1.2,7.1.7.4,1.2.4,1.2c0,0-.5,2.2.5,3.1.9.9-1.9,1.2-1.9,1.2,0,0-.8,1.5,4.4.7,0,0,.4,3.5,1.8,1.2s1.2-2.1,4.8-2.1,2-5,2-5c0,0,2.3.9,1.4-3.8,0,0,1.4-.6,0-2.7,0,0-2.1-3.2-.5-3.7,0,0,2.7-3.6-4.9-4.3,0,0-2.7-1.4-2.6-2.9s-5.5-1.7-4.6,1.2c0,0-2.9.7-2.4,4.6,0,0-1.3,1.7-2.7,1.9s-3.7,1.9-3.4,4.3h0Z"
-				/>
-				<path
-					className="st9"
-					d="M316.3,120.8s2.8-.6,2.2,3.9c0,0-2.3,2.1-4.1.3s1.5-2.4,1.5-2.4l.4-1.8h0Z"
-				/>
-				<path
-					className="st9"
-					d="M277.9,101.1s15.9.2,13.6,9.8c0,0,5.4-1.1,4.5,3.4-.9,4.5-6.8.4-6.8.4l.5,3.4s-4.1-.9-4.1-2-2-4.3-5.4-2.2-3.6-3.9,0-4.1.2-8.4-2.3-8.8h0Z"
-				/>
-				<path
-					className="st9"
-					d="M306.2,82.3s8.2.5,8.2-4.1c0,0,3.9,1.6,1.4,4.1s3.8,1.4,4.7,1.2,2.9,5.6-4.8,3.4c0,0-1.2,3.6,1.1,4.1s1.2,4.1-7.9,3.9-3.6-7.3-3.6-7.3c0,0,.9-5.4.9-5.4Z"
-				/>
-				<path className="st9" d="M323.3,83s2.7,1.4,1.6,2-2.7-.7-1.6-2Z" />
-				<path
-					className="st9"
-					d="M307.5,76.6s3.2,1.4,3.4.5,0,3.2-2.7,2.9-.7-3.4-.7-3.4h0Z"
-				/>
-				<path
-					className="st9"
-					d="M154,212.5s4.7,2.5,8.2,0,1.1,8.6-.4,9,0,3.6,0,3.6c0,0-6.1-.7-7.9.4s-6.8-3.9-3.2-6.4c0,0-.2-3.6,1.6-4.3s-.5-2,1.6-2.1h0Z"
-				/>
-				<path
-					className="st9"
-					d="M228.9,327.7s2.9-3.4,6.6-.7,2.7,4.8.4,6.5-12.4-1.1-6.8-4.5l-.2-1.2h0Z"
-				/>
-				<path
-					className="st9"
-					d="M281.2,330.8s2-3.2,2.3-4.8,1.8-3.2,5.5-2.5,5.2-2.7,9.7-.7,6.3,9.1-.4,12.2c0,0-2,4.1-6.5,2.9,0,0-1.4-.4-4.1,1.2s-8.1-7.5-6.6-8.2h0Z"
-				/>
-				<path
-					className="st9"
-					d="M335.4,344.8s2-5,3.4-5.4c0,0,.2-2.7,2.3-1.6s3.4.5,3.4.5c0,0,.5-1.1,2.7-.2s4.1.4,4.1.4c0,0-.4,2.9-2.5,3.2s-.9,5-.9,5c0,0-1.6,2.9.2,3.4s-.4,3.6-5.2,2.3c0,0-3,.9-3.6,2.7s-9-2.7-4.7-3.9c0,0-2-2.9,0-3.6l.7-2.9h0Z"
-				/>
-				<path
-					className="st0"
-					d="M266.8,190.6l-15.6,12.1-.6,15.9,10.2,9.8,11.1,1.5,2.4-1.7c3.1-2.4,5.5.7,6.7,1.2,1.2.6,3.2,0,3.2,0h9.9l9.6-9.6v-14.6l-14.6-14.6h-22.2,0Z"
-				/>
-				<path
-					className="st0"
-					d="M273.1,233.1c-.6-.1-.6-2.5-.6-2.5v3.2c-.1,0-3.1,0-3.5.1s.5,1.4-.3,1.4-1.5-1.4-1.5-1.4h-6.1c0,0,2,2.3,2,2.3,0,0,1.3,1.1,1.1,1.8-.3.6.8,1.8,1.3,1.9.5,0,1.3,1.3,1.3,1.3,1,.3,1.3.9,1.3.9.5,2,2.4.5,1.9-.4s1.6-1.8,1.6-1.8c1.3-.5,2.2-.6,2.2-.6.1-.6-.5-2.6-.5-2.6,0,0,.4-3.4-.3-3.5h0Z"
-				/>
-				<path
-					className="st0"
-					d="M243.7,213.6c2.2-1.1-.7-2.9-.7-2.9l1.1-2.3s-1.3-3.7-.7-6.3l-4,13.6s-.3,1.9,2.4.7l.7,1.2,3.1,5.9,3-.3,1.1-1.3-4.5-3.9s-3.6-3.2-1.4-4.3h0Z"
-				/>
-				<path
-					className="st0"
-					d="M277.9,233c-.5-.4-2.4-.2-2.9,0s-.5,5.8-.5,5.8c1.3-.2,1.3,1.4,1.3,1.4.9-.2.7,1.6.7,1.6.7.5.9,3.7,1.6,4.6.7.9.9-.1.9-.1v-13.2c0,0-.7.4-1.1,0Z"
-				/>
-				<path
-					className="st0"
-					d="M282.3,233.9c-1.1-.3-1.8-1.1-1.8-1.1l.2,12.6s.5.7.9.6c.4,0,0-.4.5-.4s.9-.6.4-.8.3-1.3.3-1.3c-.3-1.2,2.5-2.2,2.5-2.2,1.1-2.2,3.8-4.5,3.8-4.5,0,0,1.2-.7.7-1.4-.5-.7.8-1.5.8-1.5,0,0-7.1.4-8.3,0h0Z"
-				/>
-				<path
-					className="st0"
-					d="M266.8,190.6l-15.6,12.1-.6,15.9,10.2,9.8,11.1,1.5,2.4-1.7c3.1-2.4,5.5.7,6.7,1.2,1.2.6,3.2,0,3.2,0h9.9l9.6-9.6v-14.6l-14.6-14.6h-22.2,0Z"
-				/>
-				<path
-					className="st0"
-					d="M267.1,245.1c-.5.2-.9-.4-.9-.4,0,0-.7,1.1-1.7.4-1-.7-.2-2.3-.4-2.6-.1-.3.6-.9.6-.9-.3,0-.6-.3-.6-.3-.9-.7,0-.9,0-1s-.6-.9-.6-.9c0,0,.4,2.1.4,4.4s-.8,4.6-.8,4.6c0,1.4-3,3.6-3,3.6l-4.5,4.5s-1.2.5-1.1,1-.5,1.9-.5,1.9l.9-1.6c.3-1.7,1.7-.8,1.8-.9,0,0,0,0,0,.1.2.3,1,.3,1.1,0s1-.9,1-.9c0,0,1.1-.6.2-.6-.9,0-1.1-1.5,0-1.7,1-.2,1.3,1.5,1.3,1.5l.8-.4c1.2-.3.2-1.1.2-1.1-2.1-1.6.3-3,1-3.4.6-.5,1-2.1,1-2.1,0,0,.7-.2,1.7-1,1-.7,2.2-.7,2.2-.7-.3-.2,0-1.5,0-1.5h0Z"
-				/>
-				<path
-					className="st0"
-					d="M273.1,233.1c-.6-.1-.6-2.5-.6-2.5v3.2c-.1,0-3.1,0-3.5.1s.5,1.4-.3,1.4-1.5-1.4-1.5-1.4h-6.1c0,0,2,2.3,2,2.3,0,0,1.3,1.1,1.1,1.8-.3.6.8,1.8,1.3,1.9.5,0,1.3,1.3,1.3,1.3,1,.3,1.3.9,1.3.9.5,2,2.4.5,1.9-.4s1.6-1.8,1.6-1.8c1.3-.5,2.2-.6,2.2-.6.1-.6-.5-2.6-.5-2.6,0,0,.4-3.4-.3-3.5h0Z"
-				/>
-				<path
-					className="st0"
-					d="M276.6,241.8c.7.5.9,3.7,1.6,4.6.7.9.9-.1.9-.1v-13.2c0,0-.7.4-1.1,0s-2.4-.2-2.9,0-.5,5.8-.5,5.8c1.3-.2,1.3,1.4,1.3,1.4.9-.2.7,1.6.7,1.6Z"
-				/>
-				<path
-					className="st0"
-					d="M243.7,213.6c2.2-1.1-.7-2.9-.7-2.9l1.1-2.3s-1.3-3.7-.7-6.3l-4,13.6s-.3,1.9,2.4.7l.7,1.2,3.1,5.9,3-.3,1.1-1.3-4.5-3.9s-3.6-3.2-1.4-4.3h0Z"
-				/>
-				<path
-					className="st0"
-					d="M282.3,233.9c-1.1-.3-1.8-1.1-1.8-1.1l.2,12.6s.5.7.9.6c.4,0,0-.4.5-.4s.9-.6.4-.8.3-1.3.3-1.3c-.3-1.2,2.5-2.2,2.5-2.2,1.1-2.2,3.8-4.5,3.8-4.5,0,0,1.2-.7.7-1.4-.5-.7.8-1.5.8-1.5,0,0-7.1.4-8.3,0h0Z"
-				/>
-				<path
-					className="st0"
-					d="M266.8,190.6l-15.6,12.1-.6,15.9,10.2,9.8,11.1,1.5,2.4-1.7c3.1-2.4,5.5.7,6.7,1.2,1.2.6,3.2,0,3.2,0h9.9l9.6-9.6v-14.6l-14.6-14.6h-22.2,0Z"
-				/>
+				<path className="st22" d="M182,191.7s1.9-2.6,2.9-2.2,1.9-1.9.7-2,2.8-2.4,5.9.2-2.2-3.5,2.4-3.1,4.6,2.9,4.6,2.9c0,0,2.2-.6,2.8-2.4s1.7-.7.6,3.3-.2,9.2-.2,9.2c0,0,1.1,2.9-1.1,3.9,0,0-1.7,5.4-7.2,4.2,0,0,.7,4.4-.7,4.4,0,0-1.1-2.8-3.7-2.4,0,0-2.9-.9-4.8,2.2,0,0-2.6-.9.2-3.3,0,0-2.8-2,.2-4.2,0,0-1.1-2.9-2-3.1s-.6-7.6-.6-7.6h0Z" />
+				<path className="st22" d="M194.2,223.3s-2.2-5.5,3.9-6.6c0,0,2.6-1.1,3.7,4.2,0,0-.2-.6.6-4.1,0,0,5.4-3.9,5.4,1.9,0,0,6.1-.7,2.9,2.9l2-.6s-2,3.9,2.4,7.9l-1.5.7,1.1,1.5s5.5,6.3.6,8.1c0,0-5.2-1.5-2.4,3.1,0,0,.4,4.4-1.7,4.4s-3.7-.7-5.7-.4-4.1-1.7-1.9-2.4-2.2-1.5-3.1-.2-6.1-1.5-6.1-1.5c0,0-2.8-2.8.4-3.7,0,0,1.1-3.1-1.7-3.1,0,0-4.2-.4-2.8-2.6,0,0-1.1-2.8-3.7-3.1,0,0,2.2-2.9,4.8-3.5,0,0,.4-3.5,2.8-3.1h0v.2Z" />
+				<path className="st22" d="M204.6,285.5s6.3-4.1,9.2-2.6c0,0,2.4-.5,2.8-2s.7-3.5,2.8-3.9.6-1.7-.9-2.2.7-2.8-2.8-1.5l-.4-5.5-1.3,2.8s-1.1-.7-3.5,3c0,0-2.8-2-3.5-.4,0,0-6.3-1.5-3.7,2,0,0,1.3.7,1.1,2s.2,2.4,2.4,1.1.7,3.7-.4,4.1-1.9,3.1-1.9,3.1h0Z" />
+				<path className="st22" d="M195.9,311.3s-.7-6.5-7.8-5.4-4.2,8.9-4.2,8.9l1.5,2.6s-3.5,5.5.6,5.2.7,1.7.7,1.7c0,0,1.9.7,2.8,2.4s3.5-2.4,3.5-2.4c0,0,1.3,1.5,2.8,1.1s2.8-2.6,1.1-3,.7-1.7,2-1.5,2.6-3.5.4-4.1.6-1.9.6-1.9c0,0,1.5-2.6-3.9-3.7h-.1Z" />
+				<path className="st22" d="M353.3,310.2l-3,3.5s-3.9,1.1-5,3.1-4.6-.5-3.9-3.1-1.7-1.1-1.7-1.1c0,0-1.3-1.5-.4-2.2s-.4-4.1-2-3.5-.5-1.9-.5-1.9c0,0-2.4-1.9,0-2.8,0,0,.7-2.4.9-3.9s2.8.7,2.8.7c0,0,.9-1.3-1.5-2s2-2.8,2-2.8c0,0,.9-3.5,3-.9,0,0,3-2,5-.5,0,0,1.9-1.3,3.3,1.9l1.5.4-.5,15.1h0Z" />
+				<path className="st22" d="M353.9,223.5s-1.1-2.4-4.1-.4c0,0-3.7.2-5.2-1.3s-.2,3.5,2.4,4.6l-1.5,1.5,1.3,1.9-1.5,1.7s-2.6,1.9,2.4,1.1c0,0,2.8,2,5.2-.6,0,0,.9-9,.9-8.5h.1Z" />
+				<path className="st22" d="M339.3,161.6s2.2,2,3.1,4.4,3.7,2.6,3.7,2.6c0,0-1.7,2.9-4.1,2.8s.4,2,.4,2l-1.5,1.1s-2,3.7-1.1,5.4-5-5.2-9-2.4c0,0-1.3-2.6-2.8-2.2s-3.1-2.2-2.4-3.3c0,0-1.9-2-1.1-2.9,0,0-2.2-1.3-2-2.4s-4.6-3.3,2.8-5h14Z" />
+				<path className="st22" d="M239.7,353.3s-12.9-5.1-16.1-4.1-16.3,16.4-16.3,16.4c0,0-7.4,7.5-8.1,9.2s-4.5,2.2-4.1,5.9-3.4,26.4,9.5,29.1,45.4-8,47-7c1.7,1,48.9,2.4,55.9-8.4,0,0,3.6-3.4,3.9-5.1,0,0,3-2.4,3.4-3.6,0,0,1-1,1.4-1.3s-.3-6.2-2.9-6.5c0,0-2.9-13.5-9.2-16.8-6.3-3.3-22.6-1.3-26.9,1.5s-5.2,7.3-15.6,4c0,0-7.4-2.1-7.7-9.1s-10.4-3.9-10.4-3.9c0,0-2.8.3-3.9-.2h.1Z" />
+				<path className="st22" d="M205.8,356.2s-3.9-2.4-6.5-1.2-.3,2.9-.3,2.9c0,0-2.9,2.3-2.1,2.8.8.4,4.4-2.2,4.4-2.2,0,0-2.1,2.7-.7,2.9s6.1-1.8,6.1-1.8l-.9-3.3h0Z" />
+				<path className="st22" d="M234.4,406.3s-3.5,4.8-.6,5.5c0,0,1.4,3.8,4,.3s5-.1,5-.1c0,0,4.2,1.3,5.9-2.2s-3.1-1.7-3.1-1.7l-.6-3.5-10.6,1.7h0Z" />
+				<path className="st22" d="M261.7,406s4.1,5.6,5.8,6.5,3.2-.8,3.3-1.7,3.5-5.3,4.4-4.9,3.6,3,3.6,3.8,2.2-.4,2.4.1,1.9.7,2.8-1,6.1-2.1,6.2-.7,1,3,2.5,2.9,3.5-2.1,3.2-3.9-27.4-5.2-34.3-1.2h.1Z" />
+				<path className="st22" d="M313.1,371.9s3.5-3.9,3.2-5.3-4.4-1.7-4.4-1.7l1.2,7h0Z" />
+				<path className="st22" d="M212.2,410.4s1.4,3.9,2.2,3.8,1.4-2.8,1.4-2.8c0,0-.6,2.7.8,2.5s3.9-3.5,3.9-4.3-8.3.8-8.3.8h0Z" />
+				<path className="st22" d="M403.7,217.1s-2.5-1-2.7-2.5c0-.6-.5-1.4-1.1-2s.2-.7-.6-1.1-.2-4.4-1.3-5c-.5-.3-1,.2-1.2.1-1.3-.5-1.5-.5-2.5.6-1.4,1.4-4.4,6.1-6.2,9.8-1,2-1.4,3.9-1.4,4.9,0,2.9-.3,6.1,1.4,7,1.5.8,1.5,2.3,2.1,2.6.3.1,1.9,0,3.8-1.2,1.5-1,3.3-2,5.2-3,2.6-1.4,5.7-7.9,4.6-10.2h0Z" />
+				<path className="st22" d="M404.4,225.3s.5-2,.6-2.7c0-.5-.1-1.5-.1-1.5,0,0,0-3.1,1-3.4s2.5-2.2,3.1-3.6,8.4-16.4,12.6-17.1,8.3-.7,10,3.9.7,6,1.9,7.5,2.6,6.5,2,7.1-.3,3.1-.4,3.6.1,1.6-1.1,3.8c0,0-.5.9-.4,1.9s-.4,4.4-.9,4.8-3.3,3.4-3.3,6.6-.6,5.6-3,7-4,2.1-6.2,2.1-1.5.2-3.2.5-6.1-1.1-7.5-2.7-2.2-3-2.5-4.3-1.5-3.8-1.9-4.6-1.8-6.3-.9-8.9h.2Z" />
+				<path className="st22" d="M404,221.8s.1-.2.5-.2,0-.5-.4-.4-.5.6-.2.6h.1Z" />
+				<path className="st22" d="M433.4,225.8s1.2-.4,2-.3,1.1-1.1.9-1.1-1.8-.2-.7-1.1-.2-1-.7-1-1.5-.6-1.5-.6l-.2,4.1h.2Z" />
+				<path className="st22" d="M413.7,206.7s-2.4,0-2.6.5-.4,3-.2,3.4,2.8-3.9,2.8-3.9h0Z" />
+				<path className="st3" d="M409.5,212.9s-1.9,4.9-4.1,4.6c-2.2-.3-4-1.4-4.3-2.6-.3-1.1-.6-1.8-1.1-2.2-.6-.4.2-.9-.7-1.2s-.4-4.6-1.3-5.1-1.1.3-1.6,0c-1.1-.7-2.2.4-3.3,1.8-.9,1.2-1.9,3-4.7,7.6-3,5-1.8,9.8-1.7,10.6s.4,2.2,1.3,2.7c1.5.8,1.4,2.2,1.8,2.3.9.2,3.4-.4,5.5-2.2.4-.3,3.7-1.1,6.6-4.2,0,0,3-1.6,2.3,1.4s1,7.6,1,7.6c0,0,1.7,3.2,2.2,5.6s3.1,4,3.6,4.4c1.4,1,4.5,2,6.4,1.5s2.5-.3,4.3-.5,7.7-2.3,7.7-7,1.2-6.4,2.7-7.8c1.5-1.4,1.6-4.6,1.5-5.7s.9-2.5,1.3-3.8-.3-3.4.6-5.2-1.6-6.2-2.5-7.9c-.6-1.2-.3-2.9-.7-4.4s-1.8-4.9-3.4-5.7-6.9-1.5-9.7.5-9.1,13.7-9.9,15h.2Z" />
+				<path className="st22" d="M221.1,111.1l-3.4-2.2s-2.6-.7-4.6-.3c-5.6,1.1-8.1-.2-9.8-.2s-3.2-.3-3.7-.7c-.9-.5-3.5-2.1-6.4-.4,0,0-1.1,0-2.1,0-1.4,0-3.3,1.1-4.8,1.6s-3.7.7-4.4,1.6c-.5.6-2,1.1-2,1.1,0,0-2.7.5-4.6,4s-4,5.4-3.4,8.6-1,6.5-1.1,8c-.1,2,1.5,3.4,2.5,4.7.5.6.6,1.8,1.2,2.2,1.6,1,1.3,1.5,2.2,2.2,1.7,1.4,3.3,2,4.2,3.3s3.7.6,4.6.8,3.8,1.1,5.1.9,4.3,0,7.3-2.7c3.5-3.2,1.5-9.8,1.3-12.4s1.2-2.3.7-4.8c-.3-1.6,4-3.5,4.3-4.2,1.3-3.9,4.1-5.1,7.2-6.6,2.4-1.2,2.9-.3,3.9-1.2s2.4-2.3,3.1-2.7c1.3-.6,2.8-.9,2.8-.9h0v.2Z" />
+				<path className="st22" d="M226.2,110.8s.3-2.8,1.8-3.5,2.1-1.9,2.1-1.9c0,0,.3-.8,1.6-1.1s1.8-.7,3-.8,5.9.8,4.1,4.3c-1.5,3-5.6,3.6-8.8,3.2-2.2-.3-3.9-.2-3.9-.2h0Z" />
+				<path className="st3" d="M229.9,105.3s-1.4,1.8-3.7,2.8c-1.9.8-4.8,1.3-8.6.8-4.6-.7-5.2,0-6.9,0-2.8.2-4.2.2-6.2-.3s-3.5.2-6.1-1.4c-2.7-1.7-5.1.3-6,.2-1.4-.2-4.2.7-6.2,1.6-2,1-3.8.6-4.6,1.7-.3.3-1.8.9-3.4,1.6-1.7.6-5.6,6.9-6.3,8.3s0,6.5-.3,7.9c-.4,1.4-2.1,5.4.8,7.7,1.6,1.2,1.1,3,2.8,3.8.9.5,1.1,2.1,2.8,2.5s2.6,3.7,5.3,3.2c3.4-.6,5.4,1.4,6.6,1.1,1-.2,2.9-.7,4-.5s5.6-3.4,5.9-5.7c.6-4.7-1.2-9.9-.3-11.1,1-1.3.4-2.9.6-3.4.8-1.6,1.7-1.8,3.3-3s1.6-3.5,3.5-4.8,4.8-3.2,7.2-3.3c1.9,0,2.4-2.3,4.3-3.3,2.5-1.3,11.3-.8,14.5-.7,2.8,0,6.4-2.8,6.4-4.7s-2.4-3.9-5.6-3-3.7,1.8-3.7,1.8h-.1Z" />
+				<path className="st22" d="M381.8,282.9l1.6-5.4-.3-2.7,3.2.5.5-1.3h3v2.7s7,3.2.3,8.9v2.4l-3.5.3v-3h-1.9v2.4l-1.6-4-1.3-.8h0Z" />
+				<path className="st22" d="M366.2,198.8c.4,0,4.9,4.5,7.4-.8,0,0,5.1.8,6-4.1,0,0,6.5.1-1.3-4.4,0,0-1.3-3.8-3.5-4.4,0,0-1.1-2.4-2.5-2.3s-.2,1.8-.2,1.8l-2-.2s1.4-5.1-2.9-2.8c0,0-3.7-.6-3,1.9,0,0,.6,1.2-5.2.7,0,0,4.1,3.6,1.9,4.2s-3.6,1.8-3,2,2.9,0,2.1,3.3c0,0-3.5,1,.5,2.1,0,0,1.2,3.2,5.7,2.9h0Z" />
+				<path className="st22" d="M325.3,161.6s-1.1-3.1,2.2-3.4-.1-2.6-.8-2.6-.2-2.5,3-.8,8.1,5.9,8.4,7.9-12.7-1-12.7-1h-.1Z" />
+				<path className="st22" d="M320,117.8s-3.5,1-1.4,2.1,1.4,1.8,2.2,2.2,3,1.2,7.1.7.4,1.2.4,1.2c0,0-.5,2.2.5,3.1.9.9-1.9,1.2-1.9,1.2,0,0-.8,1.5,4.4.7,0,0,.4,3.5,1.8,1.2s1.2-2.1,4.8-2.1,2-5,2-5c0,0,2.3.9,1.4-3.8,0,0,1.4-.6,0-2.7,0,0-2.1-3.2-.5-3.7,0,0,2.7-3.6-4.9-4.3,0,0-2.7-1.4-2.6-2.9s-5.5-1.7-4.6,1.2c0,0-2.9.7-2.4,4.6,0,0-1.3,1.7-2.7,1.9s-3.7,1.9-3.4,4.3h-.2Z" />
+				<path className="st22" d="M316.3,120.8s2.8-.6,2.2,3.9c0,0-2.3,2.1-4.1.3s1.5-2.4,1.5-2.4l.4-1.8h0Z" />
+				<path className="st22" d="M277.9,101.1s15.9.2,13.6,9.8c0,0,5.4-1.1,4.5,3.4s-6.8.4-6.8.4l.5,3.4s-4.1-.9-4.1-2-2-4.3-5.4-2.2-3.6-3.9,0-4.1.2-8.4-2.3-8.8h0Z" />
+				<path className="st22" d="M306.2,82.3s8.2.5,8.2-4.1c0,0,3.9,1.6,1.4,4.1s3.8,1.4,4.7,1.2,2.9,5.6-4.8,3.4c0,0-1.2,3.6,1.1,4.1s1.2,4.1-7.9,3.9-3.6-7.3-3.6-7.3l.9-5.4h0Z" />
+				<path className="st22" d="M323.3,83s2.7,1.4,1.6,2-2.7-.7-1.6-2Z" />
+				<path className="st22" d="M307.5,76.6s3.2,1.4,3.4.5,0,3.2-2.7,2.9-.7-3.4-.7-3.4h0Z" />
+				<path className="st22" d="M154,212.5s4.7,2.5,8.2,0,1.1,8.6-.4,9,0,3.6,0,3.6c0,0-6.1-.7-7.9.4s-6.8-3.9-3.2-6.4c0,0-.2-3.6,1.6-4.3s-.5-2,1.6-2.1h0v-.2Z" />
+				<path className="st22" d="M228.9,327.7s2.9-3.4,6.6-.7,2.7,4.8.4,6.5-12.4-1.1-6.8-4.5l-.2-1.2h0Z" />
+				<path className="st22" d="M281.2,330.8s2-3.2,2.3-4.8,1.8-3.2,5.5-2.5,5.2-2.7,9.7-.7,6.3,9.1-.4,12.2c0,0-2,4.1-6.5,2.9,0,0-1.4-.4-4.1,1.2s-8.1-7.5-6.6-8.2h.1Z" />
+				<path className="st22" d="M335.4,344.8s2-5,3.4-5.4c0,0,.2-2.7,2.3-1.6s3.4.5,3.4.5c0,0,.5-1.1,2.7-.2s4.1.4,4.1.4c0,0-.4,2.9-2.5,3.2s-.9,5-.9,5c0,0-1.6,2.9.2,3.4s-.4,3.6-5.2,2.3c0,0-3,.9-3.6,2.7s-9-2.7-4.7-3.9c0,0-2-2.9,0-3.6l.7-2.9h.1Z" />
+				<path className="st0" d="M266.8,190.6l-15.6,12.1-.6,15.9,10.2,9.8,11.1,1.5,2.4-1.7c3.1-2.4,5.5.7,6.7,1.2,1.2.6,3.2,0,3.2,0h9.9l9.6-9.6v-14.6l-14.6-14.6h-22.3Z" />
+				<path className="st0" d="M273.1,233.1c-.6-.1-.6-2.5-.6-2.5v3.2c-.1,0-3.1,0-3.5.1s.5,1.4-.3,1.4-1.5-1.4-1.5-1.4h-6.1l2,2.3s1.3,1.1,1.1,1.8c-.3.6.8,1.8,1.3,1.9.5,0,1.3,1.3,1.3,1.3,1,.3,1.3.9,1.3.9.5,2,2.4.5,1.9-.4s1.6-1.8,1.6-1.8c1.3-.5,2.2-.6,2.2-.6.1-.6-.5-2.6-.5-2.6,0,0,.4-3.4-.3-3.5h.1Z" />
+				<path className="st0" d="M243.7,213.6c2.2-1.1-.7-2.9-.7-2.9l1.1-2.3s-1.3-3.7-.7-6.3l-4,13.6s-.3,1.9,2.4.7l.7,1.2,3.1,5.9,3-.3,1.1-1.3-4.5-3.9s-3.6-3.2-1.4-4.3h-.1Z" />
+				<path className="st0" d="M277.9,233c-.5-.4-2.4-.2-2.9,0s-.5,5.8-.5,5.8c1.3-.2,1.3,1.4,1.3,1.4.9-.2.7,1.6.7,1.6.7.5.9,3.7,1.6,4.6.7.9.9-.1.9-.1v-13.2s-.7.4-1.1,0h0Z" />
+				<path className="st0" d="M282.3,233.9c-1.1-.3-1.8-1.1-1.8-1.1l.2,12.6s.5.7.9.6c.4,0,0-.4.5-.4s.9-.6.4-.8.3-1.3.3-1.3c-.3-1.2,2.5-2.2,2.5-2.2,1.1-2.2,3.8-4.5,3.8-4.5,0,0,1.2-.7.7-1.4s.8-1.5.8-1.5c0,0-7.1.4-8.3,0h0Z" />
+				<path className="st0" d="M266.8,190.6l-15.6,12.1-.6,15.9,10.2,9.8,11.1,1.5,2.4-1.7c3.1-2.4,5.5.7,6.7,1.2,1.2.6,3.2,0,3.2,0h9.9l9.6-9.6v-14.6l-14.6-14.6h-22.3Z" />
+				<path className="st0" d="M267.1,245.1c-.5.2-.9-.4-.9-.4,0,0-.7,1.1-1.7.4-1-.7-.2-2.3-.4-2.6-.1-.3.6-.9.6-.9-.3,0-.6-.3-.6-.3-.9-.7,0-.9,0-1s-.6-.9-.6-.9c0,0,.4,2.1.4,4.4s-.8,4.6-.8,4.6c0,1.4-3,3.6-3,3.6l-4.5,4.5s-1.2.5-1.1,1-.5,1.9-.5,1.9l.9-1.6c.3-1.7,1.7-.8,1.8-.9h0c.2.4,1,.4,1.1.1s1-.9,1-.9c0,0,1.1-.6.2-.6s-1.1-1.5,0-1.7c1-.2,1.3,1.5,1.3,1.5l.8-.4c1.2-.3.2-1.1.2-1.1-2.1-1.6.3-3,1-3.4.6-.5,1-2.1,1-2.1,0,0,.7-.2,1.7-1,1-.7,2.2-.7,2.2-.7-.3-.2,0-1.5,0-1.5h-.1Z" />
+				<path className="st0" d="M273.1,233.1c-.6-.1-.6-2.5-.6-2.5v3.2c-.1,0-3.1,0-3.5.1s.5,1.4-.3,1.4-1.5-1.4-1.5-1.4h-6.1l2,2.3s1.3,1.1,1.1,1.8c-.3.6.8,1.8,1.3,1.9.5,0,1.3,1.3,1.3,1.3,1,.3,1.3.9,1.3.9.5,2,2.4.5,1.9-.4s1.6-1.8,1.6-1.8c1.3-.5,2.2-.6,2.2-.6.1-.6-.5-2.6-.5-2.6,0,0,.4-3.4-.3-3.5h.1Z" />
+				<path className="st0" d="M276.6,241.8c.7.5.9,3.7,1.6,4.6.7.9.9-.1.9-.1v-13.2s-.7.4-1.1,0-2.4-.2-2.9,0-.5,5.8-.5,5.8c1.3-.2,1.3,1.4,1.3,1.4.9-.2.7,1.6.7,1.6h0Z" />
+				<path className="st0" d="M243.7,213.6c2.2-1.1-.7-2.9-.7-2.9l1.1-2.3s-1.3-3.7-.7-6.3l-4,13.6s-.3,1.9,2.4.7l.7,1.2,3.1,5.9,3-.3,1.1-1.3-4.5-3.9s-3.6-3.2-1.4-4.3h-.1Z" />
+				<path className="st0" d="M282.3,233.9c-1.1-.3-1.8-1.1-1.8-1.1l.2,12.6s.5.7.9.6c.4,0,0-.4.5-.4s.9-.6.4-.8.3-1.3.3-1.3c-.3-1.2,2.5-2.2,2.5-2.2,1.1-2.2,3.8-4.5,3.8-4.5,0,0,1.2-.7.7-1.4s.8-1.5.8-1.5c0,0-7.1.4-8.3,0h0Z" />
+				<path className="st0" d="M266.8,190.6l-15.6,12.1-.6,15.9,10.2,9.8,11.1,1.5,2.4-1.7c3.1-2.4,5.5.7,6.7,1.2,1.2.6,3.2,0,3.2,0h9.9l9.6-9.6v-14.6l-14.6-14.6h-22.3Z" />
 				<g>
-					<path
-						className="st0"
-						d="M243.7,213.6c2.2-1.1-.7-2.9-.7-2.9l1.1-2.3s-1.3-3.7-.7-6.3l-4,13.6s-.3,1.9,2.4.7l.7,1.2,3.1,5.9,3-.3,1.1-1.3-4.5-3.9s-3.6-3.2-1.4-4.3h0Z"
-					/>
-					<path
-						className="st0"
-						d="M273.1,233.1c-.6-.1-.6-2.5-.6-2.5v3.2c-.1,0-3.1,0-3.5.1s.5,1.4-.3,1.4-1.5-1.4-1.5-1.4h-6.1c0,0,2,2.3,2,2.3,0,0,1.3,1.1,1.1,1.8-.3.6.8,1.8,1.3,1.9.5,0,1.3,1.3,1.3,1.3,1,.3,1.3.9,1.3.9.5,2,2.4.5,1.9-.4s1.6-1.8,1.6-1.8c1.3-.5,2.2-.6,2.2-.6.1-.6-.5-2.6-.5-2.6,0,0,.4-3.4-.3-3.5h0Z"
-					/>
-					<path
-						className="st0"
-						d="M276.6,241.8c.7.5.9,3.7,1.6,4.6.7.9.9-.1.9-.1v-13.2c0,0-.7.4-1.1,0s-2.4-.2-2.9,0-.5,5.8-.5,5.8c1.3-.2,1.3,1.4,1.3,1.4.9-.2.7,1.6.7,1.6Z"
-					/>
-					<path
-						className="st0"
-						d="M268.4,165.1c14.6,1.9,16.1-3.5,16.1-3.5,0,0,.2,0,.6,0,0-1.7.2-5.8.9-6.4.9-.7,0-14,0-14h-24.2v18.4s4.8.8,6.6,5.4h0Z"
-					/>
-					<path
-						className="st0"
-						d="M280.5,251s-1-1.6-1.5-.4-3.1.9-3.1.9c0,0-.1.4,1,2,1,1.6,1.7,1.1,2.1,1.9.4.8,3.1.9,1.2-1.2s.3-3.2.3-3.2h0Z"
-					/>
-					<path
-						className="st0"
-						d="M267.1,245.1c-.5.2-.9-.4-.9-.4,0,0-.7,1.1-1.7.4-1-.7-.2-2.3-.4-2.6-.1-.3.6-.9.6-.9-.3,0-.6-.3-.6-.3-.9-.7,0-.9,0-1s-.6-.9-.6-.9c0,0,.4,2.1.4,4.4s-.8,4.6-.8,4.6c0,1.4-3,3.6-3,3.6l-4.5,4.5s-1.2.5-1.1,1-.5,1.9-.5,1.9l.9-1.6c.3-1.7,1.7-.8,1.8-.9,0,0,0,0,0,.1.2.3,1,.3,1.1,0s1-.9,1-.9c0,0,1.1-.6.2-.6-.9,0-1.1-1.5,0-1.7,1-.2,1.3,1.5,1.3,1.5l.8-.4c1.2-.3.2-1.1.2-1.1-2.1-1.6.3-3,1-3.4.6-.5,1-2.1,1-2.1,0,0,.7-.2,1.7-1,1-.7,2.2-.7,2.2-.7-.3-.2,0-1.5,0-1.5h0Z"
-					/>
-					<path
-						className="st0"
-						d="M266.8,190.6l-15.6,12.1-.6,15.9,10.2,9.8,11.1,1.5,2.4-1.7c3.1-2.4,5.5.7,6.7,1.2,1.2.6,3.2,0,3.2,0h9.9l9.6-9.6v-14.6l-14.6-14.6h-22.2,0Z"
-					/>
-					<path
-						className="st0"
-						d="M310.8,249.4c-3.2.1-3.5-3.3-3.5-3.3,0,0,3.2-2.3,3.2-2.9s1.9-1.6,1.9-1.6c1.8.3,3.5-3.3,2.1-2-1.3,1.2-2.6.1-2.6.1,0,0,.1.8-.7,1.3s-1.2,2.5-1.2,2.5c0,0-2.2,1.7-3.6,2.6s2.3,5.9,2.7,5.9,1-1,1-1c.4-2,1.8-.9,1.8-.9,0,0,1.6,1.4,3.6.8s.7-5.4.7-5.4c0,0-2.1,3.6-5.3,3.7h0Z"
-					/>
-					<path
-						className="st0"
-						d="M283.7,244.9s-1,1.8-.2,2.8c.9,1-1.3,1.3-1.3,1.3,0,0,.6.4,1.2.3,0,0-2.1,1.1-.7,2.4,1.4,1.2,2.8,1.3,2.8,1.3,0,0-.3-.5-.2-.9s-.9-.1-1-.5c-.1-.4-1.1-3,1-3.7s2.7-3.8,2.7-3.8c0,0-.7,1.5-4.3.8h0Z"
-					/>
-					<path
-						className="st0"
-						d="M282.3,233.9c-1.1-.3-1.8-1.1-1.8-1.1l.2,12.6s.5.7.9.6c.4,0,0-.4.5-.4s.9-.6.4-.8.3-1.3.3-1.3c-.3-1.2,2.5-2.2,2.5-2.2,1.1-2.2,3.8-4.5,3.8-4.5,0,0,1.2-.7.7-1.4-.5-.7.8-1.5.8-1.5,0,0-7.1.4-8.3,0h0Z"
-					/>
-					<path
-						className="st9"
-						d="M341.7,257.6c-2.6.9-2.2-5.4-5.4-2.4-3.1,3-5.5-4.4-3.9-5s-5.2-5,.4-6.8-2.2-4.1-2.2-4.1c0,0-3-9-6.8-7.9s-1.1-5.9-1.1-5.9c0,0-8.5-5.9-4.1-13.5,0,0,1.9.2,3.3-3.1,1.5-3.3,3.5-5.4,3.5-5.4,0,0,2.8-7.6-.5-7.6s-2-6.6-2-6.6c0,0-5.7-2.4-.7-3.9s0-8.7-1.7-6.5-6.1.4-3.9-3.7c0,0,.4-6.1-3.1-5.9s-6.3-2.2-6.3-2.2c0,0-1-5-4.3-5.7-1.4-4.9-11.7-5.7-11.7-5.7l.5-19.2c-2.5-4.7-5.4-.2-5.4-.2h-24.9c-3.2-4.8-5.4.4-5.4.4l-.4,21.5-11.2,3s.6.2,1.7.5h-3.6s-3.1,1-3.7,3.2-.9,4.4-2.4,4.1-1.1,2.2-1.1,2.2c0,0-2,1.3-2.6.6-.6-.7-.9,3.1.4,4.4,0,0-2.6,2-2.2,3.5.4,1.5-1.1,2.8-4.1,2.4,0,0-5,2.4-.4,6.5,0,0-1.5,1.9-.9,2.9s-2.4,1.9-.4,4.4c2,2.6,2.4,5,2.4,5,0,0-2,6.1-1.3,8.5,0,0-2.4,4.1-1.1,7.6,0,0-.2,4.8,2,6.1,0,0-.2,3.1,1.5,3.3,0,0-.2,4.2,1.1,5.5s-1.1,1.7-1.1,1.7c0,0-.4,10.1-1.7,10.7-1.3.6-2.4,2.9-.2,4.8,0,0-1.5,2.6,2,4.1,0,0-2,4.2.7,7,0,0-5.2,4.4-.4,5.2,0,0,2,1.7,1.5,3.3s2,2.8,2,2.8c0,0-2.9,1.3-.9,3.1,0,0-2,3.5-.7,4.1,0,0-1.9-.4-3.5,1.7s-2.8,2.6-1.7,3.3-6.1-.9-6.6,8.3c0,0-6.5,8.7-2.2,12l.9,3.7s-2.6,2,.2,4.1c0,0-2.4,2.6-.6,4.1,0,0-1.5,5.2.2,4.2s2.4,3.9,2.4,3.9c0,0,2.4,2.4,9.4-5.4,0,0,.2,1.9,1.9,2s3.3-3,3.9-.7,1.7,4.8,5,3.1,6.6,1.3,6.6,1.3c0,0,3.1,1.9,4.8-1.1,1.7-3,2.2-.4,2.2-.4,0,0,2.2,2.6,5.2.4s.7-.7,1.9.2,1.9-.9,3.3-.9,3.1,0,4.6-1.7c1.5-1.7,2.6-5.4,3.7-5.7s2.6-15.7,10.3-7.9,9.6,12,17.7,6.8,10.9-11.3,10.9-11.3c0,0,4.8-3.1-.2-5-5-1.9.2-4.2.2-4.2,0,0-5.5-8.5-12.7-6.5,0,0-2,5.9-5.7,7.9s-7.8,8.3-6.3-5.2l3-6.3s5.7,0,6.1-3.5,3.9-2.6,3.9-2.6c0,0,5.2-1.5,2.4-3.1s6.1.2,6.1.2c0,0,2-.9,3.1,2.6s4.6,2.2,4.6,2.2c0,0-.5,3.9.7,4.1,1.3.2,5.4-2.6,5.4-2.6,0,0,1.5,1.3-.5,2.8-2,1.5,6.1,1.1,7.6-.5,1.5-1.7,4.1.4,4.1.4,0,0,.5-2.8,2.2-2.6,1.7.2.9-3.7.9-3.7,0,0,3.1-3.3,4.2-2.6,1.1.7,3.5-2.8,3.5-6.8s.9-7,.9-7c0,0-.7-3.9-3.3-3h0ZM261.8,141.2h24.2s.9,13.3,0,14c-.7.6-.9,4.7-.9,6.4-.4,0-.6,0-.6,0,0,0-1.5,5.4-16.1,3.5-1.8-4.6-6.6-5.4-6.6-5.4v-18.4h0ZM248.5,223.2l-3,.3-3.1-5.9-.7-1.2c-2.7,1.2-2.4-.7-2.4-.7l4-13.6c-.7,2.6.7,6.3.7,6.3l-1.1,2.3s2.9,1.7.7,2.9,1.4,4.3,1.4,4.3l4.5,3.9-1.1,1.3h0ZM264.9,247.3c-1,.7-1.7,1-1.7,1,0,0-.3,1.6-1,2.1-.6.5-3.1,1.9-1,3.4,0,0,1,.8-.2,1.1l-.8.4s-.2-1.7-1.3-1.5c-1,.2-.9,1.6,0,1.7.9,0-.2.6-.2.6,0,0-1,.6-1,.9s-.9.3-1.1,0c0,0,0,0,0-.1-.1.1-1.5-.8-1.8.9l-.9,1.6s.6-1.4.5-1.9,1.1-1,1.1-1l4.5-4.5s3-2.2,3-3.6c0,0,.8-2.3.8-4.6s-.4-4.4-.4-4.4c0,0,.5.9.6.9s-.8.3,0,1c0,0,.3.3.6.3,0,0-.7.6-.6.9s-.6,1.9.4,2.6c1,.7,1.7-.4,1.7-.4,0,0,.4.7.9.4,0,0-.3,1.3,0,1.5,0,0-1.2,0-2.2.7h0ZM273.9,239.2s-1,.1-2.2.6c0,0-2.1.9-1.6,1.8.5.9-1.4,2.4-1.9.4,0,0-.4-.6-1.3-.9,0,0-.8-1.2-1.3-1.3s-1.6-1.3-1.3-1.9c.3-.6-1.1-1.8-1.1-1.8l-2-2.2h6.1c0,0,.7,1.4,1.5,1.4s0-1.2.3-1.4,3.4-.1,3.4-.1v-3.2c.1,0,0,2.4.7,2.5.6.1.3,3.5.3,3.5,0,0,.6,2,.5,2.6h0ZM274.6,238.8s0-5.6.5-5.8c.5-.2,2.4-.4,2.9,0s1.2,0,1.2,0v13.2c0,0-.2,1.1-1,.1-.7-.9-.9-4.1-1.6-4.6,0,0,.2-1.8-.7-1.6,0,0,0-1.6-1.3-1.4ZM279,255.5c-.4-.8-1-.3-2.1-1.9-1-1.6-1-2-1-2,0,0,2.6.4,3.1-.9s1.5.4,1.5.4c0,0-2.1,1.1-.3,3.2,1.8,2.1-.9,2-1.2,1.2h0ZM285.3,248c-2.1.8-1,3.4-1,3.7.1.4,1,.1,1,.5-.1.4.2.9.2.9,0,0-1.3-.1-2.8-1.3-1.4-1.2.7-2.4.7-2.4-.7.1-1.2-.3-1.2-.3,0,0,2.2-.4,1.3-1.3-.9-1,.2-2.8.2-2.8,3.6.8,4.3-.8,4.3-.8,0,0-.6,3.1-2.7,3.8h0ZM289.8,235.3c.5.7-.7,1.4-.7,1.4,0,0-2.7,2.3-3.8,4.5,0,0-2.8,1-2.5,2.2,0,0-.8,1.1-.3,1.3.5.3,0,.8-.4.8s-.2.3-.5.4-.9-.6-.9-.6l-.2-12.6s.7.8,1.8,1.1,8.3,0,8.3,0c0,0-1.2.8-.8,1.5h0ZM303.6,219.8l-9.6,9.6h-9.9s-2,.7-3.2,0-3.6-3.7-6.7-1.2l-2.4,1.7-11.1-1.5-10.2-9.8.6-15.9,15.6-12.1h22.2l14.6,14.6v14.6h0ZM315.4,251c-2,.7-3.6-.8-3.6-.8,0,0-1.4-1.1-1.8.9,0,0-.6,1-1,1s-4.1-5.1-2.7-5.9,3.6-2.6,3.6-2.6c0,0,.5-1.9,1.2-2.5s.7-1.3.7-1.3c0,0,1.2,1.1,2.6-.1s-.3,2.3-2.1,2c0,0-1.9,1.1-1.9,1.6s-3.2,2.9-3.2,2.9c0,0,.4,3.4,3.5,3.3,3.2-.1,5.3-3.7,5.3-3.7,0,0,1.3,4.7-.7,5.4h0Z"
-					/>
+					<path className="st0" d="M243.7,213.6c2.2-1.1-.7-2.9-.7-2.9l1.1-2.3s-1.3-3.7-.7-6.3l-4,13.6s-.3,1.9,2.4.7l.7,1.2,3.1,5.9,3-.3,1.1-1.3-4.5-3.9s-3.6-3.2-1.4-4.3h-.1Z" />
+					<path className="st0" d="M273.1,233.1c-.6-.1-.6-2.5-.6-2.5v3.2c-.1,0-3.1,0-3.5.1s.5,1.4-.3,1.4-1.5-1.4-1.5-1.4h-6.1l2,2.3s1.3,1.1,1.1,1.8c-.3.6.8,1.8,1.3,1.9.5,0,1.3,1.3,1.3,1.3,1,.3,1.3.9,1.3.9.5,2,2.4.5,1.9-.4s1.6-1.8,1.6-1.8c1.3-.5,2.2-.6,2.2-.6.1-.6-.5-2.6-.5-2.6,0,0,.4-3.4-.3-3.5h.1Z" />
+					<path className="st0" d="M276.6,241.8c.7.5.9,3.7,1.6,4.6.7.9.9-.1.9-.1v-13.2s-.7.4-1.1,0-2.4-.2-2.9,0-.5,5.8-.5,5.8c1.3-.2,1.3,1.4,1.3,1.4.9-.2.7,1.6.7,1.6h0Z" />
+					<path className="st0" d="M268.4,165.1c14.6,1.9,16.1-3.5,16.1-3.5h.6c0-1.7.2-5.8.9-6.4.9-.7,0-14,0-14h-24.2v18.4s4.8.8,6.6,5.4h0Z" />
+					<path className="st0" d="M280.5,251s-1-1.6-1.5-.4-3.1.9-3.1.9c0,0-.1.4,1,2,1,1.6,1.7,1.1,2.1,1.9s3.1.9,1.2-1.2.3-3.2.3-3.2h0Z" />
+					<path className="st0" d="M267.1,245.1c-.5.2-.9-.4-.9-.4,0,0-.7,1.1-1.7.4-1-.7-.2-2.3-.4-2.6-.1-.3.6-.9.6-.9-.3,0-.6-.3-.6-.3-.9-.7,0-.9,0-1s-.6-.9-.6-.9c0,0,.4,2.1.4,4.4s-.8,4.6-.8,4.6c0,1.4-3,3.6-3,3.6l-4.5,4.5s-1.2.5-1.1,1-.5,1.9-.5,1.9l.9-1.6c.3-1.7,1.7-.8,1.8-.9h0c.2.4,1,.4,1.1.1s1-.9,1-.9c0,0,1.1-.6.2-.6s-1.1-1.5,0-1.7c1-.2,1.3,1.5,1.3,1.5l.8-.4c1.2-.3.2-1.1.2-1.1-2.1-1.6.3-3,1-3.4.6-.5,1-2.1,1-2.1,0,0,.7-.2,1.7-1,1-.7,2.2-.7,2.2-.7-.3-.2,0-1.5,0-1.5h-.1Z" />
+					<path className="st0" d="M266.8,190.6l-15.6,12.1-.6,15.9,10.2,9.8,11.1,1.5,2.4-1.7c3.1-2.4,5.5.7,6.7,1.2,1.2.6,3.2,0,3.2,0h9.9l9.6-9.6v-14.6l-14.6-14.6h-22.3Z" />
+					<path className="st0" d="M310.8,249.4c-3.2.1-3.5-3.3-3.5-3.3,0,0,3.2-2.3,3.2-2.9s1.9-1.6,1.9-1.6c1.8.3,3.5-3.3,2.1-2-1.3,1.2-2.6.1-2.6.1,0,0,.1.8-.7,1.3s-1.2,2.5-1.2,2.5c0,0-2.2,1.7-3.6,2.6s2.3,5.9,2.7,5.9,1-1,1-1c.4-2,1.8-.9,1.8-.9,0,0,1.6,1.4,3.6.8s.7-5.4.7-5.4c0,0-2.1,3.6-5.3,3.7h0v.2Z" />
+					<path className="st0" d="M283.7,244.9s-1,1.8-.2,2.8c.9,1-1.3,1.3-1.3,1.3,0,0,.6.4,1.2.3,0,0-2.1,1.1-.7,2.4,1.4,1.2,2.8,1.3,2.8,1.3,0,0-.3-.5-.2-.9s-.9-.1-1-.5-1.1-3,1-3.7,2.7-3.8,2.7-3.8c0,0-.7,1.5-4.3.8h0Z" />
+					<path className="st0" d="M282.3,233.9c-1.1-.3-1.8-1.1-1.8-1.1l.2,12.6s.5.7.9.6c.4,0,0-.4.5-.4s.9-.6.4-.8.3-1.3.3-1.3c-.3-1.2,2.5-2.2,2.5-2.2,1.1-2.2,3.8-4.5,3.8-4.5,0,0,1.2-.7.7-1.4s.8-1.5.8-1.5c0,0-7.1.4-8.3,0h0Z" />
+					<path className="st22" d="M341.7,257.6c-2.6.9-2.2-5.4-5.4-2.4-3.1,3-5.5-4.4-3.9-5s-5.2-5,.4-6.8-2.2-4.1-2.2-4.1c0,0-3-9-6.8-7.9s-1.1-5.9-1.1-5.9c0,0-8.5-5.9-4.1-13.5,0,0,1.9.2,3.3-3.1,1.5-3.3,3.5-5.4,3.5-5.4,0,0,2.8-7.6-.5-7.6s-2-6.6-2-6.6c0,0-5.7-2.4-.7-3.9s0-8.7-1.7-6.5-6.1.4-3.9-3.7c0,0,.4-6.1-3.1-5.9s-6.3-2.2-6.3-2.2c0,0-1-5-4.3-5.7-1.4-4.9-11.7-5.7-11.7-5.7l.5-19.2c-2.5-4.7-5.4-.2-5.4-.2h-24.9c-3.2-4.8-5.4.4-5.4.4l-.4,21.5-11.2,3s.6.2,1.7.5h-3.6s-3.1,1-3.7,3.2-.9,4.4-2.4,4.1-1.1,2.2-1.1,2.2c0,0-2,1.3-2.6.6s-.9,3.1.4,4.4c0,0-2.6,2-2.2,3.5.4,1.5-1.1,2.8-4.1,2.4,0,0-5,2.4-.4,6.5,0,0-1.5,1.9-.9,2.9s-2.4,1.9-.4,4.4c2,2.6,2.4,5,2.4,5,0,0-2,6.1-1.3,8.5,0,0-2.4,4.1-1.1,7.6,0,0-.2,4.8,2,6.1,0,0-.2,3.1,1.5,3.3,0,0-.2,4.2,1.1,5.5s-1.1,1.7-1.1,1.7c0,0-.4,10.1-1.7,10.7-1.3.6-2.4,2.9-.2,4.8,0,0-1.5,2.6,2,4.1,0,0-2,4.2.7,7,0,0-5.2,4.4-.4,5.2,0,0,2,1.7,1.5,3.3s2,2.8,2,2.8c0,0-2.9,1.3-.9,3.1,0,0-2,3.5-.7,4.1,0,0-1.9-.4-3.5,1.7s-2.8,2.6-1.7,3.3-6.1-.9-6.6,8.3c0,0-6.5,8.7-2.2,12l.9,3.7s-2.6,2,.2,4.1c0,0-2.4,2.6-.6,4.1,0,0-1.5,5.2.2,4.2s2.4,3.9,2.4,3.9c0,0,2.4,2.4,9.4-5.4,0,0,.2,1.9,1.9,2s3.3-3,3.9-.7,1.7,4.8,5,3.1,6.6,1.3,6.6,1.3c0,0,3.1,1.9,4.8-1.1s2.2-.4,2.2-.4c0,0,2.2,2.6,5.2.4s.7-.7,1.9.2,1.9-.9,3.3-.9,3.1,0,4.6-1.7,2.6-5.4,3.7-5.7,2.6-15.7,10.3-7.9,9.6,12,17.7,6.8,10.9-11.3,10.9-11.3c0,0,4.8-3.1-.2-5s.2-4.2.2-4.2c0,0-5.5-8.5-12.7-6.5,0,0-2,5.9-5.7,7.9s-7.8,8.3-6.3-5.2l3-6.3s5.7,0,6.1-3.5,3.9-2.6,3.9-2.6c0,0,5.2-1.5,2.4-3.1s6.1.2,6.1.2c0,0,2-.9,3.1,2.6s4.6,2.2,4.6,2.2c0,0-.5,3.9.7,4.1,1.3.2,5.4-2.6,5.4-2.6,0,0,1.5,1.3-.5,2.8s6.1,1.1,7.6-.5c1.5-1.7,4.1.4,4.1.4,0,0,.5-2.8,2.2-2.6,1.7.2.9-3.7.9-3.7,0,0,3.1-3.3,4.2-2.6,1.1.7,3.5-2.8,3.5-6.8s.9-7,.9-7c0,0-.7-3.9-3.3-3h.1ZM261.8,141.2h24.2s.9,13.3,0,14c-.7.6-.9,4.7-.9,6.4h-.6s-1.5,5.4-16.1,3.5c-1.8-4.6-6.6-5.4-6.6-5.4v-18.4h0ZM248.5,223.2l-3,.3-3.1-5.9-.7-1.2c-2.7,1.2-2.4-.7-2.4-.7l4-13.6c-.7,2.6.7,6.3.7,6.3l-1.1,2.3s2.9,1.7.7,2.9,1.4,4.3,1.4,4.3l4.5,3.9-1.1,1.3h.1ZM264.9,247.3c-1,.7-1.7,1-1.7,1,0,0-.3,1.6-1,2.1-.6.5-3.1,1.9-1,3.4,0,0,1,.8-.2,1.1l-.8.4s-.2-1.7-1.3-1.5c-1,.2-.9,1.6,0,1.7.9,0-.2.6-.2.6,0,0-1,.6-1,.9s-.9.3-1.1,0h0c-.1,0-1.5-.9-1.8.8l-.9,1.6s.6-1.4.5-1.9,1.1-1,1.1-1l4.5-4.5s3-2.2,3-3.6c0,0,.8-2.3.8-4.6s-.4-4.4-.4-4.4c0,0,.5.9.6.9s-.8.3,0,1c0,0,.3.3.6.3,0,0-.7.6-.6.9s-.6,1.9.4,2.6c1,.7,1.7-.4,1.7-.4,0,0,.4.7.9.4,0,0-.3,1.3,0,1.5,0,0-1.2,0-2.2.7h.1ZM273.9,239.2s-1,.1-2.2.6c0,0-2.1.9-1.6,1.8.5.9-1.4,2.4-1.9.4,0,0-.4-.6-1.3-.9,0,0-.8-1.2-1.3-1.3s-1.6-1.3-1.3-1.9c.3-.6-1.1-1.8-1.1-1.8l-2-2.2h6.1s.7,1.4,1.5,1.4,0-1.2.3-1.4,3.4-.1,3.4-.1v-3.2c.1,0,0,2.4.7,2.5.6.1.3,3.5.3,3.5,0,0,.6,2,.5,2.6h-.1ZM274.6,238.8s0-5.6.5-5.8,2.4-.4,2.9,0,1.2,0,1.2,0v13.2s-.2,1.1-1,.1c-.7-.9-.9-4.1-1.6-4.6,0,0,.2-1.8-.7-1.6,0,0,0-1.6-1.3-1.4h0ZM279,255.5c-.4-.8-1-.3-2.1-1.9-1-1.6-1-2-1-2,0,0,2.6.4,3.1-.9s1.5.4,1.5.4c0,0-2.1,1.1-.3,3.2,1.8,2.1-.9,2-1.2,1.2h0ZM285.3,248c-2.1.8-1,3.4-1,3.7.1.4,1,.1,1,.5-.1.4.2.9.2.9,0,0-1.3-.1-2.8-1.3-1.4-1.2.7-2.4.7-2.4-.7.1-1.2-.3-1.2-.3,0,0,2.2-.4,1.3-1.3-.9-1,.2-2.8.2-2.8,3.6.8,4.3-.8,4.3-.8,0,0-.6,3.1-2.7,3.8h0ZM289.8,235.3c.5.7-.7,1.4-.7,1.4,0,0-2.7,2.3-3.8,4.5,0,0-2.8,1-2.5,2.2,0,0-.8,1.1-.3,1.3.5.3,0,.8-.4.8s-.2.3-.5.4-.9-.6-.9-.6l-.2-12.6s.7.8,1.8,1.1,8.3,0,8.3,0c0,0-1.2.8-.8,1.5h0ZM303.6,219.8l-9.6,9.6h-9.9s-2,.7-3.2,0-3.6-3.7-6.7-1.2l-2.4,1.7-11.1-1.5-10.2-9.8.6-15.9,15.6-12.1h22.2l14.6,14.6v14.6h.1ZM315.4,251c-2,.7-3.6-.8-3.6-.8,0,0-1.4-1.1-1.8.9,0,0-.6,1-1,1s-4.1-5.1-2.7-5.9,3.6-2.6,3.6-2.6c0,0,.5-1.9,1.2-2.5s.7-1.3.7-1.3c0,0,1.2,1.1,2.6-.1s-.3,2.3-2.1,2c0,0-1.9,1.1-1.9,1.6s-3.2,2.9-3.2,2.9c0,0,.4,3.4,3.5,3.3,3.2-.1,5.3-3.7,5.3-3.7,0,0,1.3,4.7-.7,5.4h0v-.2Z" />
 				</g>
 			</g>
 			<g id="L1BG">
-				<path
-					className="st11"
-					d="M311.7,273.9v-14.3h2.9v-8.8h2.7v-15h-11.6v-25.2h-8v-10.1l3.1-2.6h3.6l3-3.4-7.8-7.1-10.5,9.4v9.1h-4.5v1.2h-15.5v1.1h-6.8v-2.9s-7.6,0-7.6,0v23s-7.8-.1-10.9,10.6v4.2c-.1,0-4.7,0-4.7,0v8.9h-3.8v21.7h1.2v2.2h-2.7v30.3l5.2,5.3v.8h8.6v-.3h14.4l2.8-2.9v-6.7h6.8v-.7h16.7v2.5l7.9,7.7,2-2.4h7.6l.9-.7,2.6,2.7,6.7-6.4v-10.9c0,0-8.6-8.4-8.6-8.4h-2.7v-12.2h7ZM288.1,294v4.2h-17.1s-.1-4.1,0-4c0,0,2.6-3.1,5.8-6,2-1.9,4.6-3.8,6.3-4.7l7.7,7.7-2.7,2.7h0ZM299.3,286.2h-3.4l-1.4,1.5-7.1-6.9,2.7-2.4s0-4.5,0-4.5h9.1v12.2h0Z"
-				/>
+				<path className="st24" d="M311.7,273.9v-14.3h2.9v-8.8h2.7v-15h-11.6v-25.2h-8v-10.1l3.1-2.6h3.6l3-3.4-7.8-7.1-10.5,9.4v9.1h-4.5v1.2h-15.5v1.1h-6.8v-2.9h-7.6v23s-7.8-.1-10.9,10.6v4.2h-4.7v8.9h-3.8v21.7h1.2v2.2h-2.7v30.3l5.2,5.3v.8h8.6v-.3h14.4l2.8-2.9v-6.7h6.8v-.7h16.7v2.5l7.9,7.7,2-2.4h7.6l.9-.7,2.6,2.7,6.7-6.4v-10.9l-8.6-8.4h-2.7v-12.2h7v.3ZM288.1,294v4.2h-17.1s-.1-4.1,0-4c0,0,2.6-3.1,5.8-6,2-1.9,4.6-3.8,6.3-4.7l7.7,7.7-2.7,2.7h0ZM299.3,286.2h-3.4l-1.4,1.5-7.1-6.9,2.7-2.4v-4.5h9.1v12.2h0Z" />
 			</g>
 			<g id="rooms">
-				<path
-					className="st10"
-					d="M285.2,211.4h10.3v2.9h-2.4v2.9h-7.2v2.5h-2.7v-4.3h2.1s0-4,0-4h0Z"
-				/>
-				<path
-					className="st10"
-					d="M269.1,225.7h-5.3v3.5h-8.2s-6.1,0-10.5,8c0,0-.1-.1-.7,6.7h-4.6v8.4h11.4v21.1h25.3v-14.5h-6.1v-10.9h.5v-8.2h-1.8s0-14,0-14h0Z"
-				/>
-				<path
-					className="st10"
-					d="M269.8,239.1v-10.4h16v10.4h-3.8v8.9h-10.4v-8.9s-2,0-1.8,0h0Z"
-				/>
-				<path
-					className="st10"
-					d="M287.1,273.3h8.8v-15.4h9.2v-7h-3.9v-.2h-4.7v-5h.6v4.4h4v-14.2h3.9v-6.8h-18.7v10.8h9.4v-3.7h.5v4.2h-10.6v-.6h-3.2v7s9.2,0,9.2,0v-1h.6v7.3h-2v2.5h-3.3s0,17.8,0,17.8h0Z"
-				/>
-				<path
-					className="st10"
-					d="M249.1,273.9h-11.7v2.2h9.1v.8h-11.9v29.5l5.2,5.5h21.9l2.6-2.6v-6.7h-12.3l-2.9-3s0-25.7,0-25.7h0Z"
-				/>
-				<path
-					className="st10"
-					d="M249.8,274h28.3v12.2c0,0-6.3,6-7.5,7.6v4.8h21.9v3h-21.1v.6l-19.2-.2-2.5-2.5s.2-25.6.1-25.5h0Z"
-				/>
-				<path
-					className="st10"
-					d="M278.7,285.7l4.4-3.1,10.9,10.8,1.2-1.2v-2.6c.1,0-8.8-8.8-8.8-8.8l2.9-2.5v-4.4h-10.8s.1,11.6.1,11.8h0Z"
-				/>
-				<path className="st10" d="M300,273.9h4v15.2h-3.9s0-15.2,0-15.2Z" />
-				<polygon
-					className="st10"
-					points="315.3 294.8 315.3 305 309.4 310.7 306.9 308.1 305.7 309.3 297.9 309.3 296.1 311.2 289 304.3 289 294.1 296.5 286.9 307.1 286.9 315.3 294.8"
-				/>
+				<path className="st23" d="M285.2,211.4h10.3v2.9h-2.4v2.9h-7.2v2.5h-2.7v-4.3h2.1v-4h0Z" />
+				<path className="st23" d="M269.1,225.7h-5.3v3.5h-8.2s-6.1,0-10.5,8c0,0-.1-.1-.7,6.7h-4.6v8.4h11.4v21.1h25.3v-14.5h-6.1v-10.9h.5v-8.2h-1.8v-14h0Z" />
+				<path className="st23" d="M269.8,239.1v-10.4h16v10.4h-3.8v8.9h-10.4v-8.9s-2,0-1.8,0h0Z" />
+				<path className="st23" d="M287.1,273.3h8.8v-15.4h9.2v-7h-3.9v-.2h-4.7v-5h.6v4.4h4v-14.2h3.9v-6.8h-18.7v10.8h9.4v-3.7h.5v4.2h-10.6v-.6h-3.2v7h9.2v-1h.6v7.3h-2v2.5h-3.3v17.8h.2Z" />
+				<path className="st23" d="M249.1,273.9h-11.7v2.2h9.1v.8h-11.9v29.5l5.2,5.5h21.9l2.6-2.6v-6.7h-12.3l-2.9-3v-25.7h0Z" />
+				<path className="st23" d="M249.8,274h28.3v12.2s-6.3,6-7.5,7.6v4.8h21.9v3h-21.1v.6l-19.2-.2-2.5-2.5s.2-25.6.1-25.5h0Z" />
+				<path className="st23" d="M278.7,285.7l4.4-3.1,10.9,10.8,1.2-1.2v-2.6c.1,0-8.8-8.8-8.8-8.8l2.9-2.5v-4.4h-10.8s.1,11.6.1,11.8h0Z" />
+				<path className="st23" d="M300,273.9h4v15.2h-3.9v-15.2h-.1Z" />
+				<polygon className="st23" points="315.3 294.8 315.3 305 309.4 310.7 306.9 308.1 305.7 309.3 297.9 309.3 296.1 311.2 289 304.3 289 294.1 296.5 286.9 307.1 286.9 315.3 294.8" />
 			</g>
 			<g id="Walls">
-				<polyline
-					className="st4"
-					points="256.2 245.8 256.2 258 253.5 258 253.5 270.3 257.8 270.3"
-				/>
+				<polyline className="st4" points="256.2 245.8 256.2 258 253.5 258 253.5 270.3 257.8 270.3" />
 				<line className="st4" x1="263.1" y1="247.1" x2="263.1" y2="258.3" />
-				<polyline
-					className="st4"
-					points="256.9 231.5 256.9 233.9 259.3 236.5 266.3 236.5 266.3 233.2"
-				/>
+				<polyline className="st4" points="256.9 231.5 256.9 233.9 259.3 236.5 266.3 236.5 266.3 233.2" />
 				<polyline className="st4" points="268 248.4 268 258.4 276.8 258.4" />
 			</g>
 			<g id="Stripe_Rooms">
-				<path
-					className="st8"
-					d="M255.5,220.1h7.3v5.4h.3v2.7h-7.7s-.2-8.1,0-8.1h0Z"
-				/>
-				<path
-					className="st8"
-					d="M257.2,234.6l-1.6.8h-4.3l-1,1.2v1.5c0,0-.4.5-.4.5l.4,2.1h1.1c0,0,2,.8,2,.8h3.5c0,0,1.8-.9,1.8-.9v-4s-1.6-2-1.5-1.9h0Z"
-				/>
-				<path
-					className="st8"
-					d="M282.6,247.3h9.3v5.1h-2.2v2.6h-2.7v-7h-4.4s0-.9,0-.7h0Z"
-				/>
-				<path
-					className="st8"
-					d="M256.3,276.7h8.2s.9,10.5-1.2,12.5h-6.3s-.9-4.7-.7-7c0,0,0-5.6,0-5.5h0Z"
-				/>
-				<path className="st8" d="M241,311.7h5.7s.4-4-3.2-2.2l-2.4,2.2Z" />
+				<path className="st20" d="M255.5,220.1h7.3v5.4h.3v2.7h-7.7s-.2-8.1,0-8.1h.1Z" />
+				<path className="st20" d="M257.2,234.6l-1.6.8h-4.3l-1,1.2v1.5l-.4.5.4,2.1h1.1l2,.8h3.5l1.8-.9v-4s-1.6-2-1.5-1.9h0Z" />
+				<path className="st20" d="M282.6,247.3h9.3v5.1h-2.2v2.6h-2.7v-7h-4.4s0-.9,0-.7h0Z" />
+				<path className="st20" d="M256.3,276.7h8.2s.9,10.5-1.2,12.5h-6.3s-.9-4.7-.7-7c0,0,0-5.6,0-5.5h0Z" />
+				<path className="st20" d="M241,311.7h5.7s.4-4-3.2-2.2l-2.4,2.2h-.1Z" />
 			</g>
 			<g id="dark_rooms">
-				<polygon
-					className="st6"
-					points="305.9 290.3 298 290.3 292.5 295.9 292.6 303.8 298 309.4 305.9 309.4 311.6 303.9 311.6 296.3 305.9 290.3"
-				/>
-				<polygon
-					className="st5"
-					points="306.7 194.7 299.7 188.1 294.3 193 299.5 198.4 300.7 197.3 304.4 197.3 306.7 194.7"
-				/>
-				<polygon
-					className="st5"
-					points="293.7 193.4 299.2 198.8 297.2 200.3 297.2 210.8 284.7 210.8 284.7 215 282.5 215 282.5 217 269.8 217 269.8 207.7 285.2 207.7 285.2 206.6 289.8 206.6 289.8 197.1 293.7 193.4"
-				/>
-				<path
-					className="st5"
-					d="M269.2,218.6v6.5h-6s0-3.6,0-5.4h-7.7s0-13.6,0-13.7h6.2v2.8h7.4v9.8h0Z"
-				/>
-				<path
-					className="st5"
-					d="M269.8,217.5v2.2h5v.4h-5v8.2h16v-8.2h-5.2v-.3h2v-2.2s-12.9-.1-12.8,0h0Z"
-				/>
-				<path
-					className="st5"
-					d="M305.2,214.8h-11.6v2.7h-7.1v11h18.8s0-13.8,0-13.8h0Z"
-				/>
-				<path className="st5" d="M295.9,211.3h9.2v3h-9.2s0-3,0-3h0Z" />
-				<path
-					className="st5"
-					d="M301.8,236.4h15v14h-2.8v8.8h-8.1v-8.7h-4s0-14,0-14h0Z"
-				/>
-				<path
-					className="st5"
-					d="M296.4,258.3h8.8v1.3h6v13.8h-14.8s0-15.2,0-15.1h0Z"
-				/>
-				<path
-					className="st5"
-					d="M271.1,248.5h15.4v24.9h-9.1v-15.1h-6.3s.1-9.8,0-9.8h0Z"
-				/>
-				<path className="st5" d="M236.1,273.4v-20.6h14.5v20.6h-14.5Z" />
-				<circle className="st6" cx="303.7" cy="190.6" r="2" />
+				<polygon className="st7" points="305.9 290.3 298 290.3 292.5 295.9 292.6 303.8 298 309.4 305.9 309.4 311.6 303.9 311.6 296.3 305.9 290.3" />
+				<polygon className="st6" points="306.7 194.7 299.7 188.1 294.3 193 299.5 198.4 300.7 197.3 304.4 197.3 306.7 194.7" />
+				<polygon className="st6" points="293.7 193.4 299.2 198.8 297.2 200.3 297.2 210.8 284.7 210.8 284.7 215 282.5 215 282.5 217 269.8 217 269.8 207.7 285.2 207.7 285.2 206.6 289.8 206.6 289.8 197.1 293.7 193.4" />
+				<path className="st6" d="M269.2,218.6v6.5h-6v-5.4h-7.7v-13.7h6.2v2.8h7.4v9.8h.1Z" />
+				<path className="st6" d="M269.8,217.5v2.2h5v.4h-5v8.2h16v-8.2h-5.2v-.3h2v-2.2s-12.9-.1-12.8,0h0Z" />
+				<path className="st6" d="M305.2,214.8h-11.6v2.7h-7.1v11h18.8v-13.8h0Z" />
+				<path className="st6" d="M295.9,211.3h9.2v3h-9.2v-3h0Z" />
+				<path className="st6" d="M301.8,236.4h15v14h-2.8v8.8h-8.1v-8.7h-4v-14h-.1Z" />
+				<path className="st6" d="M296.4,258.3h8.8v1.3h6v13.8h-14.8s0-15.2,0-15.1h0Z" />
+				<path className="st6" d="M271.1,248.5h15.4v24.9h-9.1v-15.1h-6.3s.1-9.8,0-9.8h0Z" />
+				<path className="st6" d="M236.1,273.4v-20.6h14.5v20.6h-14.5Z" />
+				<circle className="st7" cx="303.7" cy="190.6" r="2" />
+			</g>
+			<g id="Boat">
+				<path className="st21" d="M137.8,269.8s-8.7-9.8-18-10.6c0,0-4.1,12.3-2.2,20.4,1.9,8.2,33,68.6,33,68.6l21-7.6-33.8-70.8h0Z" />
+				<path className="st24" d="M120.7,280.1s8.4-7.6,14.4-7.1c0,0,.5,1.1-1.4,1.9s-11.2,4.4-12,6.3l-1.1-1.1h0Z" />
+				<polygon className="st24" points="123.4 284.7 136.7 278.5 137.3 280.4 135.6 280.9 138.1 286.4 128.8 290.5 126.1 285.3 123.9 285.8 123.4 284.7" />
+				<polyline className="st5" points="132.8 312.5 137.5 310.3 131 297.3 142.7 292.4 148.7 304.6 153.3 302.7" />
+				<polygon className="st5" points="139.7 306.3 142.2 306.3 142.2 298.6 138.6 298.6 139.7 306.3" />
+				<polygon className="st5" points="145.7 312.3 148.4 313.1 146.5 319.6 143.3 318.8 145.7 312.3" />
+				<polygon className="st5" points="139.5 324 143.5 322.6 147.1 329.7 143 331.3 139.5 324" />
+				<polygon className="st5" points="154.7 316.9 159.1 316.1 162.9 322.3 158.8 323.7 154.7 316.9" />
+				<polygon className="st5" points="149.8 329.7 153.1 329.7 152.3 336.8 149 336.5 149.8 329.7" />
+				<polygon className="st5" points="158.3 335.7 165.3 337.3 164.8 340 158.5 339.2 158.3 335.7" />
+			</g>
+			<g id="red_lines">
+				<path className="st9" d="M214.5,374.3s4.8-12.1,15-11.9c10.1.2,6.3-12.3,4-14s-12.2-4.3-19.3-.9-4.6,4.6-9.3,7.5c-.9.5-1.2,2.3.2,4.4s1.2,3.8-1.1,5.9-2.4,2.3.1,4.4c0,0,2.5,4.6,2.5,5.9s4.7,4.1,7.9-1.3h0Z" />
+				<path className="st9" d="M247.7,354.8s-4.7-.1-6.2,5.4,7.8,5,8.6,4.3,4.7-7.3-2.4-9.6h0Z" />
+				<path className="st9" d="M273.3,371.6s14.6-1.4,13.9,8.1c-.8,9.5-16.8,3.2-16.8,3.2,0,0-9.1-8.8,3-11.2h-.1Z" />
+				<path className="st9" d="M280.3,357.7s2.2-.4,2.8,0,2.8-3.7,6.4-2.8,7.4,1.3,9.3,1,11,2.6,13.9,11.6c2.8,9-7.4,11.6-7.4,11.6,0,0-2.2,1.8-2,3.7s-3,2-5.5-2.4-4.3-8.8-9.9-9.3c-5.7-.4-12.7-5.6-7.6-13.3h0Z" />
+				<path className="st9" d="M227.6,367.9s-6.9.3-9.2,7.6,5,8.7,10.1,5.6c0,0,2.7-7.2,2.6-8.7s-.4-3.6-3.6-4.5h0Z" />
+				<path className="st9" d="M237.4,367.7s1.5-.2,3.3.9,4.4,1.3,8.5.4c4.2-.9,7.8,1.5,6.1,5.9,0,0-4.9,3-6.8,3.5s-5.1,1.5-6.2,2.6-5.7.1-7.1-5.4,2.2-8,2.2-8h0Z" />
+				<path className="st9" d="M196.1,386.7s6.9.5,8.9,0,7.8-1.8,11.2.1,10.9-.4,10.9-.4c0,0,10.4.1,12.6.1s12.2-5.4,12.2-5.4c0,0,3.3-1.5,12.2,3,8.9,4.5,20.2,6.4,20.2,6.4,0,0,3.4.2,5.2-.8s3.3-1.4,4.9-1.3,3.7-3,6.4-1.2,6.7,5.2,7,6,1.4,2.5-1.2,5.7-5.4,4-8.5,8.2c0,0-10.6.8-12.1,1.8s-7.1-1.5-7.1-1.5l-8.4,1.1s-2.7,1.5-5.1-1.9h-5.5c0,.1-2.4-.8-3.1-1.9s-2.2-3.3-8.9-.8c-6.8,2.5-7.6,4.7-17.6,3.3l-5.6,2.7s-3.5,1.9-8.9.7h-3.9s-2.3-1-3.7,0-15.1-4-12.2-23.9h.1Z" />
+				<path className="st18" d="M214.5,374.3s4.8-12.1,15-11.9c10.1.2,6.3-12.3,4-14s-12.2-4.3-19.3-.9-4.6,4.6-9.3,7.5c-.9.5-1.2,2.3.2,4.4s1.2,3.8-1.1,5.9-2.4,2.3.1,4.4c0,0,2.5,4.6,2.5,5.9s4.7,4.1,7.9-1.3h0Z" />
+				<path className="st11" d="M247.7,354.8s-4.7-.1-6.2,5.4,7.8,5,8.6,4.3,4.7-7.3-2.4-9.6h0Z" />
+				<path className="st10" d="M273.3,371.6s14.6-1.4,13.9,8.1c-.8,9.5-16.8,3.2-16.8,3.2,0,0-9.1-8.8,3-11.2h-.1Z" />
+				<path className="st15" d="M280.3,357.7s2.2-.4,2.8,0,2.8-3.7,6.4-2.8,7.4,1.3,9.3,1,11,2.6,13.9,11.6c2.8,9-7.4,11.6-7.4,11.6,0,0-2.2,1.8-2,3.7s-3,2-5.5-2.4-4.3-8.8-9.9-9.3c-5.7-.4-12.7-5.6-7.6-13.3h0Z" />
+				<path className="st14" d="M227.6,367.9s-6.9.3-9.2,7.6,5,8.7,10.1,5.6c0,0,2.7-7.2,2.6-8.7s-.4-3.6-3.6-4.5h0Z" />
+				<path className="st12" d="M237.4,367.7s1.5-.2,3.3.9,4.4,1.3,8.5.4c4.2-.9,7.8,1.5,6.1,5.9,0,0-4.9,3-6.8,3.5s-5.1,1.5-6.2,2.6-5.7.1-7.1-5.4,2.2-8,2.2-8h0Z" />
+				<path className="st13" d="M196.1,386.7s6.9.5,8.9,0,7.8-1.8,11.2.1,10.9-.4,10.9-.4c0,0,10.4.1,12.6.1s12.2-5.4,12.2-5.4c0,0,3.3-1.5,12.2,3,8.9,4.5,20.2,6.4,20.2,6.4,0,0,3.4.2,5.2-.8s3.3-1.4,4.9-1.3,3.7-3,6.4-1.2,6.7,5.2,7,6,1.4,2.5-1.2,5.7-5.4,4-8.5,8.2c0,0-10.6.8-12.1,1.8s-7.1-1.5-7.1-1.5l-8.4,1.1s-2.7,1.5-5.1-1.9h-5.5c0,.1-2.4-.8-3.1-1.9s-2.2-3.3-8.9-.8c-6.8,2.5-7.6,4.7-17.6,3.3l-5.6,2.7s-3.5,1.9-8.9.7h-3.9s-2.3-1-3.7,0-15.1-4-12.2-23.9h.1Z" />
+				<path className="st9" d="M259.3,360.8s3.4-1.3,5.8-.1,2.9,1.5,2.9,1.5c0,0,1.6,1.9,2,2.2s.1,2.9.1,2.9l-3.8,3.9s-4.2.3-5.2-.7-2.3-2.8-2.3-2.8c0,0-1.2-5,.4-6.8h.1Z" />
+				<path className="st17" d="M259.3,360.7s3.4-1.3,5.8-.1,2.9,1.5,2.9,1.5c0,0,1.6,1.9,2,2.2s.1,2.9.1,2.9l-3.8,3.9s-4.2.3-5.2-.7-2.3-2.8-2.3-2.8c0,0-1.2-5,.4-6.8h.1Z" />
+				<path className="st9" d="M418.9,208.9s.4-3.6,1.9-4,3.6,0,5.4,2.2,3.7,6.4,3.8,7.7.6,3.8-.3,5.1-1.7,2.9-1.8,3.9-1,3.6-2.1,5.2-1.3,2.4-1.3,2.4c0,0,.1,2.3-.8,3.8s-1.4,2.1-2.6,2-2.6-.5-2.9-1.7,0-2.4-2.1-2.5-5.9-7.8-5.8-9.2,1.9-12.3,3.4-13.5l2.5-1.4h2.9-.2Z" />
+				<path className="st16" d="M418.9,208.9s.4-3.6,1.9-4,3.6,0,5.4,2.2,3.7,6.4,3.8,7.7.6,3.8-.3,5.1-1.7,2.9-1.8,3.9-1,3.6-2.1,5.2-1.3,2.4-1.3,2.4c0,0,.1,2.3-.8,3.8s-1.4,2.1-2.6,2-2.6-.5-2.9-1.7,0-2.4-2.1-2.5-5.9-7.8-5.8-9.2,1.9-12.3,3.4-13.5l2.5-1.4h2.9-.2Z" />
+				<path className="st9" d="M188.3,128.9s-.3-2.3,1.9-2.1,4.6.4,5.1-2.8-.8-3.2-1.4-3.9-1.3-6.4-5.7-6.2c-4.4.2-5.4,1.6-5.9,2s-1.4,1.9-2.3,2.6-2.4,4.7-2.4,4.7c0,0-3.3,5.9-3.1,9s1.7,3.2,2.4,3.2,2.4.4,3.7,1.1,4.2,0,5.8-2.3,2.6-3.2,1.8-5.4h0Z" />
+				<path className="st8" d="M188.3,128.9s-.3-2.3,1.9-2.1,4.6.4,5.1-2.8-.8-3.2-1.4-3.9-1.3-6.4-5.7-6.2c-4.4.2-5.4,1.6-5.9,2s-1.4,1.9-2.3,2.6-2.4,4.7-2.4,4.7c0,0-3.3,5.9-3.1,9s1.7,3.2,2.4,3.2,2.4.4,3.7,1.1,4.2,0,5.8-2.3,2.6-3.2,1.8-5.4h0Z" />
 			</g>
 		</SVGOverlay>
 	),
