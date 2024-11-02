@@ -164,15 +164,15 @@ const staticIntelStore: IIntelItem[] = [
 	// TODO: Refactor this out into its own BO6 Intel list and clean up the constructor to make faction a non issue
 	/////////////////////Black Ops 6/////////////////////////
 	{
-		id: `BO6S0BLAu1`,
+		id: `BO6S0BLDo1`,
 		faction: Faction.None,
 		season: Season.Preseason,
-		typeDesc: IntelType.Audio,
+		typeDesc: IntelType.Docs,
 		loc: [323.2880447222861, 334.59734013642395],
 		map: MapIds.terminusBiolabs,
-		title: `TEST INTEL`,
-		desc: `TEST DESCRIPTION`,
-		img: ``,
+		title: `Last Minute Transfer`,
+		desc: `Throw a grenade into the blue bin behind the door in the mess hall.`,
+		img: `Vkn1OvH`,
 	},
 	{
 		id: `BO6S0LFAu1`,
