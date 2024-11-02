@@ -98,12 +98,15 @@ export const MapDetails = {
 		mapOverlay: mapSVGs.liberty_falls,
 	}),
 	terminusBiolabs: new MapItem(MapIds.terminusBiolabs, {
-		title: 'Terminus Biolabs',
+		title: 'Terminus Biolabs & Islands',
 		mapOverlay: mapSVGs.terminus_biolab,
 	}),
 	terminusPrison: new MapItem(MapIds.terminusPrison, {
 		title: 'Terminus Prison',
 		mapOverlay: mapSVGs.terminus_prison,
+	}),
+	terminusIslands: new MapItem(MapIds.terminusIslands, {
+		title: 'Terminus Islands',// TODO: add a way of showing the same marker over multiple map layers e.g. terminus and its islands vs the main island
 	}),
 };
 
