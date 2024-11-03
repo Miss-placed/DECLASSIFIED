@@ -42,9 +42,11 @@ export const MiscTypes = {
     //bo6 new markers
     wallArmor: new Item({ title: 'Armour Wall Buy', icon: IconFileNames.armourWall, }),
     door: new Item({ title: 'Door Buy', icon: IconFileNames.door }),
-    doorPower: new Item({ title: 'Power Door', desc: 'enable power to open this door', icon: IconFileNames.doorPower, }),
-    gumball: new Item({ title: 'Gobblegum Machine', icon: IconFileNames.gobblegum }),
+    boatStation: new Item({ title: 'Boat Station', icon: IconFileNames.boatStation }),
+    doorPower: new Item({ title: 'Power Door', desc: 'Enable power to open this door.', icon: IconFileNames.doorPower, }),
+    gobblegum: new Item({ title: 'Gobblegum Machine', icon: IconFileNames.gobblegum }),
     ampUnit: new Item({ title: 'A.M.P Unit', desc: `Protect for a short time to provide local power to the area.`, icon: IconFileNames.power }),
+    elevator: new Item({ title: 'Elevator', icon: IconFileNames.jumpPad, }),
 };
 
 /////////////////////Markers/////////////////////////
