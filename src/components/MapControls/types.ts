@@ -54,11 +54,28 @@ export const MapGroupings: MapGroupDictionary = {
 		mapLayers: [MapDetails.libertyFalls],
 		game: Game.bo6,
 	},
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+	terminus_Group: {
+		mapName: 'Terminus',
+		mapLayers: [MapDetails.terminusBiolabs, MapDetails.terminusPrison], // TODO eventually fix the layer issue with icons over multiple layers. Might need to add it here
+		game: Game.bo6,
+	},
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 	terminus_Group: {
 		mapName: 'Terminus',
 		mapLayers: [MapDetails.terminusBiolabs, MapDetails.terminusPrison, MapDetails.terminusIslands],
 		game: Game.bo6,
 	},
+<<<<<<< Updated upstream
+=======
+>>>>>>> 2274e5d01172006f534eb04158cea1faa47e27ab
+>>>>>>> Stashed changes
 };
 
 export interface MapControlsProps {

@@ -663,11 +663,27 @@ export const MiscStore: IMisc = {
 		new MiscMarker(`yKD_3`, MiscTypes.mysteryBox, [289.0465690418408, 386.26998235550224]),
 		new MiscMarker(`O_v_V`, MiscTypes.mysteryBox, [241.86744727778193, 143.2587358957769]),
 		new MiscMarker(`sgFiB`, MiscTypes.mysteryBox, [112.85477143676464, 283.8924472587057]),
+<<<<<<< Updated upstream
 		new MiscMarker(`H78fX`, MiscTypes.wallArmor, [251.33910903655286, 80.67403768502217], { uniqueDesc: `Level 3 Vest\nCost: 10,000\n(Or 14,000 if lvl 2 vest not acquired)` }),
 		new MiscMarker(`HlOSF`, MiscTypes.wallArmor, [189.81620216547734, 297.6305458498488], { uniqueDesc: `Level 2 Vest\nCost: 4,000` }),
 		new MiscMarker(`4qnBp`, MiscTypes.wallArmor, [324.3945658910249, 325.0106960799565], { uniqueDesc: `Level 2 Vest\nCost: 4,000` }),
+<<<<<<< Updated upstream
 		new MiscMarker(`JtuLa`, MiscTypes.trap, [255.93020667226358, 236.28036037571204], { uniqueDesc: `D.A.G.F\nCost: 1,500` }),
 		new MiscMarker(`Dw9iZ`, MiscTypes.trap, [187.7030591664732, 380.98305147341716], { uniqueDesc: `D.A.G.F\nCost: 1,500` }),
+=======
+<<<<<<< HEAD
+=======
+		new MiscMarker(`H78fX`, MiscTypes.wallArmor2, [251.33910903655286, 80.67403768502217]),
+		new MiscMarker(`HlOSF`, MiscTypes.wallArmor1, [189.81620216547734, 297.6305458498488]),
+		new MiscMarker(`4qnBp`, MiscTypes.wallArmor1, [324.3945658910249, 325.0106960799565]),
+		new MiscMarker(`JtuLa`, MiscTypes.trap, [255.93020667226358, 236.28036037571204], { uniqueDesc: `D.A.G.F\nCost: 1,500` }),
+		new MiscMarker(`Dw9iZ`, MiscTypes.trap, [187.7030591664732, 380.98305147341716], { uniqueDesc: `D.A.G.F\nCost: 1,500` }),
+>>>>>>> Stashed changes
+=======
+		new MiscMarker(`JtuLa`, MiscTypes.trap, [255.93020667226358, 236.28036037571204], { uniqueDesc: `D.A.G.F\nCost: 1,500` }),
+		new MiscMarker(`Dw9iZ`, MiscTypes.trap, [187.7030591664732, 380.98305147341716], { uniqueDesc: `D.A.G.F\nCost: 1,500` }),
+>>>>>>> 2274e5d01172006f534eb04158cea1faa47e27ab
+>>>>>>> Stashed changes
 		new MiscMarker(`GjGRM`, MiscTypes.trap, [320.1978721464099, 311.77385159299655], { uniqueDesc: `Aetherella\nCost: 1,500` }),
 		new MiscMarker(`mwkhJ`, MiscTypes.gobblegum, [211.2828200542964, 167.54363459758397]),
 		new MiscMarker(`rS0yi`, MiscTypes.gobblegum, [193.35074294486756, 304.35491128156957]),
@@ -697,13 +713,29 @@ export const MiscStore: IMisc = {
 		new MiscMarker(`S9oX1`, MiscTypes.zipline, [270.376852396145, 270.7240114943104]),
 		new MiscMarker(`AVYOm`, MiscTypes.zipline, [281.3297528282866, 299.3614827206834]),
 	],
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> 2274e5d01172006f534eb04158cea1faa47e27ab
+>>>>>>> Stashed changes
 	[MapIds.terminusBiolabs]: [
 		// ISLANDS //
 		new MiscMarker(`YGTWY`, MiscTypes.ammoCrate, [131.30501111814215, 260.23775464607394]),
 		new MiscMarker(`aviwJ`, MiscTypes.boatStation, [148.26672438814606, 272.6921594946782]),
 		new MiscMarker(`tXr0K`, MiscTypes.craftingTable, [126.56047593772148, 201.99858530641018]),
 		new MiscMarker(`JYpUP`, MiscTypes.wallbuy, [127.03492945576355, 232.95667735865507]),
+<<<<<<< Updated upstream
 		new MiscMarker(`4koGm`, MiscTypes.wallArmor, [124.54404848604268, 290.48416642125574]),
+=======
+<<<<<<< HEAD
+		new MiscMarker(`4koGm`, MiscTypes.wallArmor1, [124.54404848604268, 290.48416642125574]),
+=======
+		new MiscMarker(`4koGm`, MiscTypes.wallArmor, [124.54404848604268, 290.48416642125574]),
+>>>>>>> 2274e5d01172006f534eb04158cea1faa47e27ab
+>>>>>>> Stashed changes
 
 		new MiscMarker(`pO_yK`, MiscTypes.ammoCrate, [393.0149681101784, 194.9966144035364]),
 		new MiscMarker(`p98WR`, MiscTypes.boatStation, [396.22556611972817, 211.42732186417336]),
@@ -740,8 +772,18 @@ export const MiscStore: IMisc = {
 		new MiscMarker(`_lR_D`, MiscTypes.trap, [289.8405469569529, 251.39354225446272]),
 		new MiscMarker(`gI_wA`, MiscTypes.trap, [288.67757667054457, 300.80676946317465]),
 		new MiscMarker(`Pnuab`, MiscTypes.papMachine, [283.4170410459684, 276.74330644029885]),
+<<<<<<< Updated upstream
 		new MiscMarker(`hco6o`, MiscTypes.wallArmor, [324.0575364488697, 262.9676000002204], { uniqueDesc: `Level 3 Vest\nCost: 10,000\n(Or 14,000 if lvl 2 vest not acquired)` }),
 		new MiscMarker(`mgha7`, MiscTypes.wallArmor, [201.37727824593725, 251.0767090000584], { uniqueDesc: `Level 2 Vest\nCost: 4,000` }),
+=======
+<<<<<<< HEAD
+		new MiscMarker(`hco6o`, MiscTypes.wallArmor2, [324.0575364488697, 262.9676000002204]),
+		new MiscMarker(`mgha7`, MiscTypes.wallArmor1, [201.37727824593725, 251.0767090000584]),
+=======
+		new MiscMarker(`hco6o`, MiscTypes.wallArmor, [324.0575364488697, 262.9676000002204], { uniqueDesc: `Level 3 Vest\nCost: 10,000\n(Or 14,000 if lvl 2 vest not acquired)` }),
+		new MiscMarker(`mgha7`, MiscTypes.wallArmor, [201.37727824593725, 251.0767090000584], { uniqueDesc: `Level 2 Vest\nCost: 4,000` }),
+>>>>>>> 2274e5d01172006f534eb04158cea1faa47e27ab
+>>>>>>> Stashed changes
 		new MiscMarker(`EQ96g`, MiscTypes.wallbuy, [325.9300249223915, 286.60776697843335]),
 		new MiscMarker(`JHQR3`, MiscTypes.wallbuy, [283.26596956730333, 308.3863220984108]),
 		new MiscMarker(`F4Mjn`, MiscTypes.wallbuy, [241.88025981670182, 258.4050398521217]),
@@ -769,7 +811,15 @@ export const MiscStore: IMisc = {
 		new MiscMarker(`mnhja`, MiscTypes.trap, [302.6875, 285]),
 		new MiscMarker(`tJ0GF`, MiscTypes.trap, [227.61998640526338, 271.4110057517518], { uniqueDesc: `Void Canon Trap` }),
 		new MiscMarker(`Ojr9B`, MiscTypes.mysteryBox, [264.21875, 240.59375]),
+<<<<<<< Updated upstream
 		new MiscMarker(`Kqbwl`, MiscTypes.wallArmor, [206.81535488460307, 290.64553908053466], { uniqueDesc: `Level 2 Vest\nCost: 4,000` }),
+=======
+<<<<<<< HEAD
+		new MiscMarker(`Kqbwl`, MiscTypes.wallArmor1, [206.81535488460307, 290.64553908053466]),
+=======
+		new MiscMarker(`Kqbwl`, MiscTypes.wallArmor, [206.81535488460307, 290.64553908053466], { uniqueDesc: `Level 2 Vest\nCost: 4,000` }),
+>>>>>>> 2274e5d01172006f534eb04158cea1faa47e27ab
+>>>>>>> Stashed changes
 		new MiscMarker(`w0fbt`, MiscTypes.wallbuy, [301.5634536941064, 294.6754273738092]),
 		new MiscMarker(`KsBG8`, MiscTypes.wallbuy, [294.19030976573237, 289.04240130454195]),
 		new MiscMarker(`1bjPY`, MiscTypes.wallbuy, [302.34375, 255.90625]),
@@ -778,6 +828,13 @@ export const MiscStore: IMisc = {
 		new MiscMarker(`HhY0_`, MiscTypes.wallbuy, [213.9061948934098, 253.16855562546598]),
 		new MiscMarker(`h5zvQ`, MiscTypes.zipline, [204.6971343038483, 293.9191527053375]),
 	]
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+=======
+>>>>>>> 2274e5d01172006f534eb04158cea1faa47e27ab
+>>>>>>> Stashed changes
 };
 
 

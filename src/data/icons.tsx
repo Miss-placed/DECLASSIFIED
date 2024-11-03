@@ -1,12 +1,12 @@
 export enum IconFileNames {
 	//default iocn
-	general = 'general',
+	general = 'general', // Update with new icon
 
 	//misc icons
 	demented = 'demented_echo',
 	orb = 'aether_orb',
-	fishing = 'fishing',
-	radio = 'radio',
+	fishing = 'fishing', // Update with new icon if at all?
+	radio = 'radio_amp',
 	trialComputer = 'trial_computer',
 	trialChallenge = 'trials',
 	rampageInducer = 'rampage_inducer',
@@ -22,18 +22,19 @@ export enum IconFileNames {
 	secretArea = 'secret_door',
 	clue = 'visual_clue',
 	projector = 'projector',
-	monkey = 'monkey',
+	monkey = 'monkey', // Update with new icon
 	redOrb = 'red_aether_orb',
 	redRift = 'tunnel_red',
-	crystal = 'main_quest',
+	crystal = 'aether_crystal',
 	chest = 'interactable',
-	pizza = 'interactable',
+	pizza = 'pizza',
 	mrPeeks = 'mr_peeks',
 	mrPeeksBlue = 'mr_peeks_blue',
+	workbench = 'workbench',
+	mask = 'secret_door', // Update with new icon
 
 	//movement icons
 	rift = 'tunnel_pink',
-	wunderFizz = 'wunder_fizz',
 	zipline = 'zipline',
 	ziplineUp = 'zipline_up',
 	ziplineDown = 'zipline_down',
@@ -48,18 +49,27 @@ export enum IconFileNames {
 	boatStation = 'upgrade', // Update with new icon
 
 	//powerup icons
-	mysteryBox = 'mystery_box',
+	mysteryBox = 'mystery_box', // Update with new icon
 	papMachine = 'pap_machine',
 	ammoCrate = 'ammo_crate',
 	arsenal = 'arsenal',
 	craftingTable = 'crafting_table',
 	wallbuy = 'wall_buy',
 	gobblegum = 'gumball',
-	armourWall = 'armor_wall',
-	workbench = 'workbench',
+	armorWall1 = 'armor_wall_1',
+	armorWall2 = 'armor_wall_2',
 	upgrade = 'upgrade',
+	bonusPoints = 'boner_points',
+	fullPower = 'full_power',
+	nuke = 'nuke',
+	maxAmmo = 'max_ammo',
+	maxArmour = 'max_armor',
+	doublePoints = 'double_points',
+	instaKill = 'insta_kill',
+	fireSale = 'fire_sale',// TODO - Make SVG?
 
-	//perk icons
+	//perk icons // Update with new icons
+	wunderFizz = 'wunder_fizz',
 	staminUp = 'stamin_up',
 	quickRevive = 'quick_revive',
 	juggernog = 'juggernog',
@@ -74,46 +84,22 @@ export enum IconFileNames {
 }
 
 
-export const SvgIcons = {
-	[IconFileNames.rampageInducer]: true,
-	[IconFileNames.portal]: true,
-	[IconFileNames.zipline]: true,
-	[IconFileNames.ziplineUp]: true,
-	[IconFileNames.ziplineDown]: true,
-	[IconFileNames.redRift]: true,
-	[IconFileNames.rift]: true,
-	[IconFileNames.tunnel]: true,
-	[IconFileNames.upgrade]: true,
-	[IconFileNames.trap]: true,
-	[IconFileNames.projector]: true,
-	[IconFileNames.jumpPad]: true,
-	[IconFileNames.landingPad]: true,
-	[IconFileNames.demented]: true,
-	[IconFileNames.orb]: true,
-	[IconFileNames.redOrb]: true,
-	[IconFileNames.reactor]: true,
-	[IconFileNames.power]: true,
-	[IconFileNames.ammoCrate]: true,
-	[IconFileNames.wallbuy]: true,
-	[IconFileNames.trialComputer]: true,
-	[IconFileNames.papMachine]: true,
-	[IconFileNames.arsenal]: true,
-	[IconFileNames.craftingTable]: true,
-	[IconFileNames.workbench]: true,
-	[IconFileNames.objective]: true,
-	[IconFileNames.door]: true,
-	[IconFileNames.doorPower]: true,
-	[IconFileNames.armourWall]: true,
-	[IconFileNames.trialChallenge]: true,
-	[IconFileNames.gobblegum]: true,
-	[IconFileNames.meleeMacchiato]: true,
-	[IconFileNames.cassette]: true,
-	[IconFileNames.interactable]: true,
-	[IconFileNames.mainQuest]: true,
-	[IconFileNames.secretArea]: true,
-	[IconFileNames.clue]: true,
-	[IconFileNames.mrPeeks]: true,
-	[IconFileNames.mrPeeksBlue]: true,
+export const LegacyIcons = {
+	[IconFileNames.wunderFizz]: true,
+	[IconFileNames.tombstoneSoda]: true,
+	[IconFileNames.staminUp]: true,
+	[IconFileNames.speedCola]: true,
+	[IconFileNames.quickRevive]: true,
+	[IconFileNames.phdSlider]: true,
+	[IconFileNames.mysteryBox]: true,
+	[IconFileNames.muleKick]: true,
+	[IconFileNames.monkey]: true,
+	[IconFileNames.juggernog]: true,
+	[IconFileNames.general]: true,
+	[IconFileNames.fishing]: true,
+	[IconFileNames.elementalPop]: true,
+	[IconFileNames.deathPerception]: true,
+	[IconFileNames.deadshotDaiquiri]: true,
 };
 const svgIconProperties = { popupAnchor: [0, -30], iconAnchor: [20, 20], iconSize: [40, 40] };
 export const customMiscIconBounds = {
@@ -148,6 +134,14 @@ export const customMiscIconBounds = {
 		iconSize: [40, 40],
 		popupAnchor: [5, -20],
 	},
+	[IconFileNames.pizza]: {
+		iconSize: [40, 40],
+		popupAnchor: [5, -20],
+	},
+	[IconFileNames.crystal]: {
+		iconSize: [40, 40],
+		popupAnchor: [5, -20],
+	},
 	[IconFileNames.demented]: svgIconProperties,
 	[IconFileNames.rampageInducer]: svgIconProperties,
 	[IconFileNames.portal]: svgIconProperties,
@@ -173,7 +167,8 @@ export const customMiscIconBounds = {
 	[IconFileNames.objective]: svgIconProperties,
 	[IconFileNames.door]: svgIconProperties,
 	[IconFileNames.doorPower]: svgIconProperties,
-	[IconFileNames.armourWall]: svgIconProperties,
+	[IconFileNames.armorWall2]: svgIconProperties,
+	[IconFileNames.armorWall1]: svgIconProperties,
 	[IconFileNames.trialChallenge]: svgIconProperties,
 	[IconFileNames.gobblegum]: svgIconProperties,
 	[IconFileNames.meleeMacchiato]: svgIconProperties,
@@ -184,5 +179,5 @@ export const customMiscIconBounds = {
 	[IconFileNames.clue]: svgIconProperties,
 };
 export function getMiscIconUri(id: string | undefined): string {
-	return `assets/img/markers/${(id ?? '').toLowerCase()}.${SvgIcons[id ?? ''] ? 'svg' : 'png'}`;
+	return `assets/img/markers/${(id ?? '').toLowerCase()}.${LegacyIcons[id ?? ''] ? 'png' : 'svg'}`;
 }

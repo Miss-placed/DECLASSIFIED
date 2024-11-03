@@ -5,7 +5,7 @@ import { Accordion, AccordionDetails, AccordionSummary, Button, Paper, Typograph
 import { useContext, useState } from "react";
 import { useMapEvents } from "react-leaflet";
 import { DeclassifiedContext } from "../../contexts/DeclassifiedContext/declassifiedContextProvider";
-import { SvgIcons } from "../../data/icons";
+import { LegacyIcons } from "../../data/icons";
 import { DefaultPOIData } from "../../data/intel";
 import { GetMapById } from "../../data/maps/mapDetails";
 import { getMiscMarkerById } from "../../helpers/github";
@@ -34,7 +34,7 @@ export const MiscDetailItem = ({
 			miscItemMap = GetMapById(miscMapId)!;
 		}
 	}
-	const iconSource = `assets/img/markers/${(icon ?? '').toLowerCase()}.${SvgIcons[icon ?? ''] ? 'svg' : 'png'}`;
+	const iconSource = `assets/img/markers/${(icon ?? '').toLowerCase()}.${LegacyIcons[icon ?? ''] ? 'png' : 'svg'}`;
 	const ItemHasLocation = loc !== DefaultPOIData.nullLoc;
 	const ItemIsOnAnotherMap = miscMapId !== currentMap!.id;
 
