@@ -665,6 +665,6 @@ export const StaticEggStore: IMisc = {
 
 	],
 	[MapIds.terminusPrison]: [
-
+		new MiscMarker(`wer5F`, EETypes.freePowerUp, [285.2117140929566, 261.9035177539375], { uniqueDesc: `Max Armour\nIn back left the corner of the interrogation room inside a bucket.` }),
 	]
 };
