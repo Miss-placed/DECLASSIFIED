@@ -7,7 +7,7 @@ import { useMapEvents } from "react-leaflet";
 import { DeclassifiedContext } from "../../contexts/DeclassifiedContext/declassifiedContextProvider";
 import { SvgIcons } from "../../data/icons";
 import { DefaultPOIData } from "../../data/intel";
-import { GetMapById } from "../../data/mapDetails";
+import { GetMapById } from "../../data/maps/mapDetails";
 import { getMiscMarkerById } from "../../helpers/github";
 import { BugReportButton } from "../ActionButtons/BugReportButton";
 import { ShareButton } from "../ActionButtons/ShareButton";

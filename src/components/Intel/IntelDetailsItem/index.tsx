@@ -12,8 +12,8 @@ import { useMapEvents } from "react-leaflet";
 import { DeclassifiedContext } from "../../../contexts/DeclassifiedContext/declassifiedContextProvider";
 import { addCollectedIntel, deleteCollectedIntel } from "../../../data/dataAccessLayer";
 import { db } from "../../../data/db";
-import { DefaultPOIData, IIntelItem } from "../../../data/intel";
-import { GetMapById } from "../../../data/mapDetails";
+import { DefaultPOIData, Faction, IIntelItem } from "../../../data/intel";
+import { GetMapById } from "../../../data/maps/mapDetails";
 import { BugReportButton } from "../../ActionButtons/BugReportButton";
 import { ShareButton } from "../../ActionButtons/ShareButton";
 import { CustomImage } from "../../CustomImage";
@@ -101,7 +101,7 @@ export const IntelDetailsItem = ({
 					<CustomImage src={img} altText="Placeholder" />
 					<IntelDetails>
 						<IntelSubheading variant="h3">
-							{mapItem?.title} - {season} - {typeDesc} - {faction}
+							{!isMarker ? `${mapItem?.title} - ` : ``}{season} - {typeDesc}{faction !== Faction.None ? ` - ${faction}` : ''}
 						</IntelSubheading>
 						<IntelDescription>{desc}</IntelDescription>
 						<StyledIntelActionContainer>

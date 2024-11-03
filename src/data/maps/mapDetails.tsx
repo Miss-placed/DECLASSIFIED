@@ -1,6 +1,6 @@
-import { MapItem } from '../classes';
-import { mapSVGs } from '../helpers/mapsvg';
-import { MapIds } from './intel';
+import { MapItem } from '../../classes';
+import { MapIds } from '../intel';
+import { mapSVGs } from './mapSVGs';
 
 export const GetMapById = (mapId: string) =>
 	Object.values(MapDetails).find(map => map.id === mapId);
@@ -96,6 +96,17 @@ export const MapDetails = {
 	libertyFalls: new MapItem(MapIds.libertyFalls, {
 		title: 'Liberty Falls',
 		mapOverlay: mapSVGs.liberty_falls,
+	}),
+	terminusBiolabs: new MapItem(MapIds.terminusBiolabs, {
+		title: 'Terminus Biolabs & Islands',
+		mapOverlay: mapSVGs.terminus_biolab,
+	}),
+	terminusPrison: new MapItem(MapIds.terminusPrison, {
+		title: 'Terminus Prison',
+		mapOverlay: mapSVGs.terminus_prison,
+	}),
+	terminusIslands: new MapItem(MapIds.terminusIslands, {
+		title: 'Terminus Islands',// TODO: add a way of showing the same marker over multiple map layers e.g. terminus and its islands vs the main island
 	}),
 };
 

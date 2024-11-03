@@ -1,5 +1,5 @@
 import { MapItem } from '../../classes';
-import { MapDetails } from '../../data/mapDetails';
+import { MapDetails } from '../../data/maps/mapDetails';
 
 // TODO: add game styles per game preferably {baseColor: string, textColor:string}
 export enum Game {
@@ -52,6 +52,11 @@ export const MapGroupings: MapGroupDictionary = {
 	liberty_falls: {
 		mapName: 'Liberty Falls',
 		mapLayers: [MapDetails.libertyFalls],
+		game: Game.bo6,
+	},
+	terminus_Group: {
+		mapName: 'Terminus',
+		mapLayers: [MapDetails.terminusBiolabs, MapDetails.terminusPrison, MapDetails.terminusIslands],
 		game: Game.bo6,
 	},
 };
