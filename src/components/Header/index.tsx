@@ -187,13 +187,13 @@ const Header = () => {
 	function buildMapItems(mapGroup: [string, MapGroupItem][]) {
 		return mapGroup
 			? mapGroup.map(([key, mapGroupItem]) => (
-				<MenuItem
-					onClick={() => setCurrentMap(mapGroupItem.mapLayers[0])}
-					key={key}
-				>
-					{mapGroupItem.mapName}
-				</MenuItem>
-			))
+					<MenuItem
+						onClick={() => setCurrentMap(mapGroupItem.mapLayers[0])}
+						key={key}
+					>
+						{mapGroupItem.mapName}
+					</MenuItem>
+				))
 			: null;
 	}
 };

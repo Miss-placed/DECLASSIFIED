@@ -40,10 +40,14 @@ export const MiscTypes = {
     aetherCrystal: new Item({ title: 'Aether Crystal' }),
 
     //bo6 new markers
-    wallArmor: new Item({ title: 'Armour Wall Buy', icon: IconFileNames.armourWall, }),
+    wallArmor1: new Item({ title: 'Armor Wall Buy', icon: IconFileNames.armorWall1, desc: `Level 2 Vest\nCost: 4,000` }),
+    wallArmor2: new Item({ title: 'Armor Wall Buy', icon: IconFileNames.armorWall2, desc: `Level 3 Vest\nCost: 10,000\n(Or 14,000 if lvl 2 vest not acquired)` }),
     door: new Item({ title: 'Door Buy', icon: IconFileNames.door }),
-    doorPower: new Item({ title: 'Power Door', desc: 'enable power to open this door', icon: IconFileNames.doorPower, }),
-    gumball: new Item({ title: 'Gobblegum Machine', icon: IconFileNames.gobblegum }),
+    boatStation: new Item({ title: 'Boat Station', icon: IconFileNames.boatStation }),
+    doorPower: new Item({ title: 'Power Door', desc: 'Enable power to open this door.', icon: IconFileNames.doorPower, }),
+    gobblegum: new Item({ title: 'Gobblegum Machine', icon: IconFileNames.gobblegum }),
+    ampUnit: new Item({ title: 'A.M.P Unit', desc: `Protect for a short time to provide local power to the area.`, icon: IconFileNames.power }),
+    elevator: new Item({ title: 'Elevator', icon: IconFileNames.jumpPad, }),
 };
 
 /////////////////////Markers/////////////////////////

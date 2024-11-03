@@ -2,7 +2,7 @@ import { MiscMarker } from "../classes";
 import { MapGroupItem } from "../components/MapControls/types";
 import { EggType } from "./easterEggs";
 import { Faction, IntelItem, IntelType, MapIds, Season } from "./intel";
-import { allOutbreakMapsArr } from "./mapDetails";
+import { allOutbreakMapsArr } from "./maps/mapDetails";
 import { IMisc } from "./types";
 
 export function filterIntel(

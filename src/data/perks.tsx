@@ -60,7 +60,7 @@ export const Perks = {
 	}),
 	phd: new Item({
 		id: 'phdSlider',
-		title: 'PHD Slider',
+		title: 'PHD',
 		icon: IconFileNames.phdSlider,
 	}),
 	meleeMacchiato: new Item({
@@ -130,6 +130,18 @@ export const PerkStore: IMisc = {
 		new MiscMarker(`YksKA`, Perks.quick, [303.4512230353636, 338.6077383572001]),
 		new MiscMarker(`juvMH`, Perks.jugg, [285.06369615742574, 302.10071909885824]),
 		new MiscMarker(`8Kr_R`, Perks.wunderFizz, [267.38969773283367, 308.0772348330578]),
+	],
+	[MapIds.terminusBiolabs]: [
+		new MiscMarker(`gwiR8`, Perks.deadshot, [202.68742727157954, 261.91067882280566]),
+		new MiscMarker(`nP_tL`, Perks.speed, [263.81746456832025, 243.56795749921676]),
+		new MiscMarker(`4HdKo`, Perks.phd, [253.81568374876306, 287.67417127726407]),
+		new MiscMarker(`y7Jgo`, Perks.meleeMacchiato, [325.31137424059085, 276.8607440345454]),
+	],
+	[MapIds.terminusPrison]: [
+		new MiscMarker(`N3iU1`, Perks.quick, [292.77832269240974, 268.2533852720715]),
+		new MiscMarker(`__Aeo`, Perks.staminup, [291.9164241267842, 304.58624666837596]),
+		new MiscMarker(`KIuKk`, Perks.jugg, [239.63390968267203, 278.29268337414294]),
+		new MiscMarker(`JubO2`, Perks.elemental, [208.15153148056928, 309.7389992873544]),
 	],
 
 	/////////////////////Outbreak/////////////////////////

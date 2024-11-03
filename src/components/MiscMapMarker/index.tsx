@@ -49,9 +49,9 @@ export const miscIconInit = (iconFileName?: string) => {
 		(iconFileName && customMiscIconBounds[iconFileName]) ?? {};
 	return L.icon({
 		iconUrl: getMiscIconUri(iconFileName),
-		iconSize: iconSize ?? [30, 30],
-		iconAnchor: iconAnchor ?? [15, 15],
-		popupAnchor: popupAnchor ?? [0, -15],
+		iconSize: iconSize ?? [40, 40],
+		iconAnchor: iconAnchor ?? [20, 20],
+		popupAnchor: popupAnchor ?? [0, -30],
 		className: 'misc-icon',
 	});
 };
