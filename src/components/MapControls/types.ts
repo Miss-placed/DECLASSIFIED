@@ -56,7 +56,7 @@ export const MapGroupings: MapGroupDictionary = {
 	},
 	terminus_Group: {
 		mapName: 'Terminus',
-		mapLayers: [MapDetails.terminusBiolabs, MapDetails.terminusPrison, MapDetails.terminusIslands],
+		mapLayers: [MapDetails.terminusBiolabs, MapDetails.terminusPrison], // TODO eventually fix the layer issue with icons over multiple layers. Might need to add it here
 		game: Game.bo6,
 	},
 };

@@ -73,8 +73,32 @@ const EETypes = {
 	dieMaschinePaPPortal: new Item({
 		title: `Dark Aether Portal`, icon: IconFileNames.orb, desc: `The first aether portal to spawn after turning on power, used to craft PaP.`,
 	}),
-	freePowerUp: new Item({
-		title: `Free Power Up`, icon: IconFileNames.interactable,
+	fullPower: new Item({
+		title: `Full Power`, icon: IconFileNames.fullPower,
+	}),
+	bonusPoints: new Item({
+		title: `Bonus Points`, icon: IconFileNames.bonusPoints,
+	}),
+	nuke: new Item({
+		title: `Nuke`, icon: IconFileNames.nuke,
+	}),
+	maxAmmo: new Item({
+		title: `Max Ammo`, icon: IconFileNames.maxAmmo,
+	}),
+	maxArmour: new Item({
+		title: `Max Armour`, icon: IconFileNames.maxArmour,
+	}),
+	doublePoints: new Item({
+		title: `Double Points`, icon: IconFileNames.doublePoints,
+	}),
+	instaKill: new Item({
+		title: `Insta Kill`, icon: IconFileNames.instaKill,
+	}),
+	randomPerk: new Item({
+		title: `Random Perk`, icon: IconFileNames.randomPerk,
+	}),
+	perkChallenge: new Item({
+		title: `Perk Challenge`, icon: IconFileNames.randomPerk,
 	}),
 	// Die Maschine specific
 	dieMaschineBonusChest: new Item({
@@ -126,7 +150,7 @@ const EETypes = {
 	bunny: new Item({ title: 'Mr Peeks', desc: 'Used in the quest, when picked up, provides a aetherium burst ability. Must be brought to the rover to continue the quest.', icon: IconFileNames.objective, }),
 	unknownSignal: new Item({ title: 'Unknown Signal Radio', desc: 'Possible location, only one can spawn. Power on and then match the tone of the 3 surrounding amplifiers to be rewarded with an easter egg song and essence. Using subtitles is recommended.', icon: IconFileNames.cassette, }),
 	unknownSignalAmp: new Item({ title: 'Unknown Signal Amplifier', desc: 'Tune all of the 3 amplifiers to the same tone as the central radio in order to fix the radio to be rewarded with an easter egg song and essence.', icon: IconFileNames.interactable, }),
-	zooMask: new Item({ title: 'Tiger Mask', desc: `Part of the super easter egg, can be interacted with in order to make the next warp be guaranteed to be Zoo.`, icon: IconFileNames.secretArea }),
+	zooMask: new Item({ title: 'Tiger Mask', desc: `Part of the super easter egg, can be interacted with in order to make the next warp be guaranteed to be Zoo.`, icon: IconFileNames.mask }),
 	// BO6 Specific
 	bankVault: new Item({ title: 'Bank Vault', icon: IconFileNames.secretArea }),
 	mrPeeksGame: new Item({ title: 'Mr Peeks Game', desc: 'Find all collectibles on the map to be teleported to a location and start a side game for a reward!', icon: IconFileNames.mrPeeks, }),
@@ -616,17 +640,17 @@ export const StaticEggStore: IMisc = {
 		new MiscMarker(`KnYD1`, EETypes.bonus, [320.4359118273686, 335.96476838651415], { uniqueDesc: `1 of 9 Aetherella Statues\n Must be collected with Jet Gun.` }),
 		new MiscMarker(`7xM7R`, EETypes.bonus, [200.86456177774397, 141.34366589801542], { uniqueDesc: `1 of 9 Aetherella Statues\n Must be collected with Jet Gun.\nOn the edge of the window on the outside of the church entrance. Look up and to the right.` }),
 		new MiscMarker(`gKJVw`, EETypes.bonus, [244.43444833982815, 340.1405042456944], { uniqueDesc: `1 of 9 Aetherella Statues\n Must be collected with Jet Gun.\nCan be grabbed when looking at the video store roof when stood on the roof of Yummy Freeze.` }),
-		new MiscMarker(`mZN2H`, EETypes.bonus, [269.68018735607296, 99.48248959488959], { uniqueDesc: `Free Deadshot\nShoot all of the cans on the fence outside the cemetary to be rewarded with a free deadshot perk. You're timed and only one person can get it per game.` }),
 		new MiscMarker(`9G12F`, EETypes.bonus, [225.68311592941944, 177.1593431115426], { uniqueDesc: `Black And Gold Car\n1 of 3 Possible locations of the Mr Peeks sat in the back of the car, indicating a spot for loot and an intel item.` }),
 		new MiscMarker(`Z0ygP`, EETypes.bonus, [293.8925195350405, 330.2987196842777], { uniqueDesc: `Black And Gold Car\n1 of 3 Possible locations of the Mr Peeks sat in the back of the car, indicating a spot for loot and an intel item.` }),
 		new MiscMarker(`tQAjx`, EETypes.bonus, [282.96580199111264, 174.92431395814236], { uniqueDesc: `Black And Gold Car\n1 of 3 Possible locations of the Mr Peeks sat in the back of the car, indicating a spot for loot and an intel item.` }),
-		new MiscMarker(`j7eXX`, EETypes.freePowerUp, [237.08720300956975, 462.99502722954236], { uniqueDesc: `Max Ammo\nLook down at the yellow bridge between the barrier and the start of the yellow steel beams. Shoot the small golden object to spawn a free power up.` }),
-		new MiscMarker(`jBX9A`, EETypes.freePowerUp, [330.02159775218337, 331.85260972373345], { uniqueDesc: `Bonus Points\nLook up at the window, shoot the small golden object to spawn a free power up.` }),
-		new MiscMarker(`n0XYI`, EETypes.freePowerUp, [234.8822157104421, 295.15912981387015], { uniqueDesc: `Nuke\nLook down through the bank roof, shoot the small golden object to spawn a free power up.` }),
-		new MiscMarker(`HZhs_`, EETypes.freePowerUp, [209.83458802045342, 79.00247078947527], { uniqueDesc: `Insta-Kill\nUp on the top of the church roof. Shoot the small golden object to spawn a free power up.` }),
-		new MiscMarker(`W_IvO`, EETypes.freePowerUp, [316.3963689820304, 180.48306806482694], { uniqueDesc: `Double Points\nUp on the water tower, shoot or grenade it to spawn a free power up.` }),
-		new MiscMarker(`BZuaH`, EETypes.freePowerUp, [317.1206977585009, 266.7174080485405], { uniqueDesc: `Max Armour\nThrough the barricade in the bottom right corner of the room on a tray.`, img: `2te9o40` }),
-		new MiscMarker(`wwGl1`, EETypes.freePowerUp, [142.8486545607668, 226.59081368495958], { uniqueDesc: `Full Power\nBehind the barrier between the cars. Might need to go up on top of the verge by the scope in order to see it.` }),
+		new MiscMarker(`mZN2H`, EETypes.perkChallenge, [269.68018735607296, 99.48248959488959], { uniqueDesc: `Free Deadshot\nShoot all of the cans on the fence outside the cemetary to be rewarded with a free deadshot perk. You're timed and only one person can get it per game.` }),
+		new MiscMarker(`j7eXX`, EETypes.maxAmmo, [237.08720300956975, 462.99502722954236], { uniqueDesc: `Look down at the yellow bridge between the barrier and the start of the yellow steel beams. Shoot the small golden object to spawn a free power up.` }),
+		new MiscMarker(`jBX9A`, EETypes.bonusPoints, [330.02159775218337, 331.85260972373345], { uniqueDesc: `Look up at the window, shoot the small golden object to spawn a free power up.` }),
+		new MiscMarker(`n0XYI`, EETypes.nuke, [234.8822157104421, 295.15912981387015], { uniqueDesc: `Look down through the bank roof, shoot the small golden object to spawn a free power up.` }),
+		new MiscMarker(`HZhs_`, EETypes.instaKill, [209.83458802045342, 79.00247078947527], { uniqueDesc: `Up on the top of the church roof. Shoot the small golden object to spawn a free power up.` }),
+		new MiscMarker(`W_IvO`, EETypes.doublePoints, [316.3963689820304, 180.48306806482694], { uniqueDesc: `Up on the water tower, shoot or grenade it to spawn a free power up.` }),
+		new MiscMarker(`BZuaH`, EETypes.maxArmour, [317.1206977585009, 266.7174080485405], { uniqueDesc: `Through the barricade in the bottom right corner of the room on a tray.`, img: `2te9o40` }),
+		new MiscMarker(`wwGl1`, EETypes.fullPower, [142.8486545607668, 226.59081368495958], { uniqueDesc: `Behind the barrier between the cars. Might need to go up on top of the verge by the scope in order to see it.` }),
 		new MiscMarker(`W0cQ7`, EETypes.bonus, [182.19997530423058, 134.13828286183295], { uniqueDesc: `Falling Zombies!\nCook a grenade and throw it at the zombie head on the roof to trigger a zombie rain that drop loot.` }),
 		new MiscMarker(`uqQGR`, EETypes.mrPeeksGame, [130.4233520842571, 270.3960054771881], { uniqueDesc: `Bowling Game!\nAfter shooting all the shoes you will be teleported here to bowl! Score 300 for a darkops challenge, you'll always get a reward.` }),
 		new MiscMarker(`C1_lA`, EETypes.mrPeeksCollectible, [263.07941062405075, 71.73609264466869], { uniqueDesc: `Bowling Shoe\nOutside the map hanging from a tree.\nShoot all of them to be teleported to a game of bowling for a reward!` }),
@@ -665,6 +689,6 @@ export const StaticEggStore: IMisc = {
 
 	],
 	[MapIds.terminusPrison]: [
-		new MiscMarker(`wer5F`, EETypes.freePowerUp, [285.2117140929566, 261.9035177539375], { uniqueDesc: `Max Armour\nIn back left the corner of the interrogation room inside a bucket.` }),
+		new MiscMarker(`wer5F`, EETypes.maxArmour, [285.2117140929566, 261.9035177539375], { uniqueDesc: `In back left the corner of the interrogation room inside a bucket.` }),
 	]
 };
