@@ -49,7 +49,7 @@ export enum IconFileNames {
 	boatStation = 'upgrade', // Update with new icon
 
 	//powerup icons
-	mysteryBox = 'mystery_box', // Update with new icon
+	mysteryBox = 'mystery_box',
 	papMachine = 'pap_machine',
 	ammoCrate = 'ammo_crate',
 	arsenal = 'arsenal',
@@ -91,7 +91,6 @@ export const LegacyIcons = {
 	[IconFileNames.speedCola]: true,
 	[IconFileNames.quickRevive]: true,
 	[IconFileNames.phdSlider]: true,
-	[IconFileNames.mysteryBox]: true,
 	[IconFileNames.muleKick]: true,
 	[IconFileNames.monkey]: true,
 	[IconFileNames.juggernog]: true,
