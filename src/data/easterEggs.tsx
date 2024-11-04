@@ -686,6 +686,9 @@ export const StaticEggStore: IMisc = {
 		new MiscMarker(`C0jxR`, EETypes.bonus, [181.73527564128713, 323.1526631072432], { uniqueDesc: `Pool of Blood\nSpawns a loot orb and or power up when 3 semtex are thrown into it during a vermin round.` }),
 	],
 	[MapIds.terminusBiolabs]: [
+		new MiscMarker(`Xwbf2`, EETypes.mrPeeksHeadphones, [254.37898898728324, 291.83434043830323], { uniqueDesc: `1 of 3 needed for the easter egg song.` }),
+		new MiscMarker(`mbyjQ`, EETypes.mrPeeksHeadphones, [328.84799887062195, 280.98342779446585], { uniqueDesc: `1 of 3 needed for the easter egg song.` }),
+
 		new MiscMarker(`Rih5O`, EETypes.bonusPoints, [226.7090285465238, 139.67940147050612], { uniqueDesc: `In the top right window of the bridge of the shipwreck.` }),
 		new MiscMarker(`2GqLm`, EETypes.nuke, [133.88706403572309, 286.350442197677], { uniqueDesc: `In the bottom left corner of the spawn window.` }),
 		new MiscMarker(`Re2c7`, EETypes.instaKill, [383.0952276129594, 185.65191122042563], { uniqueDesc: `Up on the ruins, left side.` }),
@@ -694,6 +697,7 @@ export const StaticEggStore: IMisc = {
 
 	],
 	[MapIds.terminusPrison]: [
+		new MiscMarker(`PKXhh`, EETypes.mrPeeksHeadphones, [255.34375, 288], { uniqueDesc: `1 of 3 needed for the easter egg song.` }),
 		new MiscMarker(`wer5F`, EETypes.maxArmour, [285.2117140929566, 261.9035177539375], { uniqueDesc: `In back left the corner of the interrogation room inside a bucket.` }),
 		new MiscMarker(`jYMo6`, EETypes.maxAmmo, [280.5586664702618, 271.8260457258232], { uniqueDesc: `In the guard tower, can be shot from south side, or hit with explosives from spawn side.` }),
 	]
