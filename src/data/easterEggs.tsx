@@ -686,9 +686,15 @@ export const StaticEggStore: IMisc = {
 		new MiscMarker(`C0jxR`, EETypes.bonus, [181.73527564128713, 323.1526631072432], { uniqueDesc: `Pool of Blood\nSpawns a loot orb and or power up when 3 semtex are thrown into it during a vermin round.` }),
 	],
 	[MapIds.terminusBiolabs]: [
+		new MiscMarker(`Rih5O`, EETypes.bonusPoints, [226.7090285465238, 139.67940147050612], { uniqueDesc: `In the top right window of the bridge of the shipwreck.` }),
+		new MiscMarker(`2GqLm`, EETypes.nuke, [133.88706403572309, 286.350442197677], { uniqueDesc: `In the bottom left corner of the spawn window.` }),
+		new MiscMarker(`Re2c7`, EETypes.instaKill, [383.0952276129594, 185.65191122042563], { uniqueDesc: `Up on the ruins, left side.` }),
+		new MiscMarker(`BnruQ`, EETypes.fullPower, [233.55369505082754, 325.4311732512999], { uniqueDesc: `In a hanging square beneath the south side of the unreachable sea tower.` }),
+		new MiscMarker(`1aV73`, EETypes.doublePoints, [331.3125, 272.96875], { uniqueDesc: `Behind some boxes in the meeting room.` }),
 
 	],
 	[MapIds.terminusPrison]: [
 		new MiscMarker(`wer5F`, EETypes.maxArmour, [285.2117140929566, 261.9035177539375], { uniqueDesc: `In back left the corner of the interrogation room inside a bucket.` }),
+		new MiscMarker(`jYMo6`, EETypes.maxAmmo, [280.5586664702618, 271.8260457258232], { uniqueDesc: `In the guard tower, can be shot from south side, or hit with explosives from spawn side.` }),
 	]
 };
