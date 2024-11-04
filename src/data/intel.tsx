@@ -203,7 +203,7 @@ const staticIntelStore: IIntelItem[] = [
 		faction: Faction.None,
 		season: Season.Preseason,
 		typeDesc: IntelType.Audio,
-		loc: [285.4135477991127, 287.7343262037477],
+		loc: [286.1447135273741, 293.99774168592984],
 		map: MapIds.terminusPrison,
 		title: `Ship Manifest Destiny`,
 		desc: `Near a computer under a weather radar in the control center.`,
