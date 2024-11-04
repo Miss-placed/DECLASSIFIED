@@ -279,7 +279,7 @@ export const MiscStore: IMisc = {
 		new MiscMarker(`i4Hh4`, MiscTypes.trialComputer, [264.67736094203576, 289.5625]),
 		new MiscMarker(`seF1D`, MiscTypes.papMachine, [274.98619135686863, 306.875]),
 		new MiscMarker(`GBsU3`, MiscTypes.papMachine, [264.8125, 453.25]),
-		new MiscMarker(`vuLXB`, MiscTypes.radio, [66.98666073602396, 129.125]),
+		new MiscMarker(`vuLXB`, MiscTypes.exfillRadio, [66.98666073602396, 129.125]),
 		new MiscMarker(`lYdiz`, MiscTypes.power, [253.15739094428088, 302.7173034571824], { uniqueDesc: `Lift the lockdown to unlock PaP.` }),
 		new MiscMarker(`apJ9z`, MiscTypes.workbench, [382.11455064812753, 258.9058334403415], { uniqueDesc: `Used to construct the Aetherium Neutralizer.` }),
 	],
@@ -633,6 +633,7 @@ export const MiscStore: IMisc = {
 
 	/////////////////////Bo6 Misc Items/////////////////////////
 	[MapIds.libertyFalls]: [
+		new MiscMarker(`H_NLx`, MiscTypes.exfillRadio, [224.56798984839506, 427.08537604242576]),
 		new MiscMarker(`inkLG`, MiscTypes.rampageInducer, [208.75375886106806, 442.6306441636993]),
 		new MiscMarker(`3f0zk`, MiscTypes.papMachine, [203.68095003781633, 80.27425677960997]),
 		new MiscMarker(`p2HuK`, MiscTypes.ammoCrate, [262.6225707216955, 91.95580351782239]),
@@ -752,6 +753,7 @@ export const MiscStore: IMisc = {
 		new MiscMarker(`jUmOE`, MiscTypes.zipline, [204.6971343038483, 293.9191527053375]),
 	],
 	[MapIds.terminusPrison]: [
+		new MiscMarker(`GXy8r`, MiscTypes.exfillRadio, [290.22714548031007, 296.58722156641704]),
 		new MiscMarker(`TF47b`, MiscTypes.rampageInducer, [314.63327035966546, 291.02666056153294]),
 		new MiscMarker(`mirN9`, MiscTypes.ampUnit, [295.5744850277463, 273.7837097402733]),
 		new MiscMarker(`qXjPU`, MiscTypes.ampUnit, [251.1875, 278.59375]),

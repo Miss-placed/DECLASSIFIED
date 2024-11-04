@@ -152,7 +152,8 @@ const EETypes = {
 	unknownSignalAmp: new Item({ title: 'Unknown Signal Amplifier', desc: 'Tune all of the 3 amplifiers to the same tone as the central radio in order to fix the radio to be rewarded with an easter egg song and essence.', icon: IconFileNames.interactable, }),
 	zooMask: new Item({ title: 'Tiger Mask', desc: `Part of the super easter egg, can be interacted with in order to make the next warp be guaranteed to be Zoo.`, icon: IconFileNames.mask }),
 	// BO6 Specific
-	bankVault: new Item({ title: 'Bank Vault', icon: IconFileNames.secretArea }),
+	bankVault: new Item({ title: 'Bank Vault', desc: `Opened by finding 3, 2 digit numbers around the map.\nAfter gaining entry player can bring a loot key (dropped by specials & elites) to open any of the 9 lootable deposit boxes.`, icon: IconFileNames.secretArea }),
+	armoury: new Item({ title: 'Armoury', desc: `Can be entered at any time with cool-downs in between. Used to claim loot key rewards, unlike Liberty Falls, the doors are not finite and will re-lock.`, icon: IconFileNames.secretArea }),
 	mrPeeksGame: new Item({ title: 'Mr Peeks Game', desc: 'Find all collectibles on the map to be teleported to a location and start a side game for a reward!', icon: IconFileNames.mrPeeks, }),
 	mrPeeksCollectible: new Item({ title: 'Mr Peeks Collectible', desc: 'Shoot this object as part of the Mr Peeks game for this map.', icon: IconFileNames.mrPeeksBlue, }),
 };
@@ -659,7 +660,7 @@ export const StaticEggStore: IMisc = {
 		new MiscMarker(`VQG2f`, EETypes.mrPeeksCollectible, [338.20461000783763, 361.3635060584787], { uniqueDesc: `Bowling Shoe\nOn the shelving to the right.\nShoot all of them to be teleported to a game of bowling for a reward!` }),
 		new MiscMarker(`dtAm9`, EETypes.mrPeeksCollectible, [194.2381625762071, 431.0707322886372], { uniqueDesc: `Bowling Shoe\nUnder spawn, on the fuel station counter.\nShoot all of them to be teleported to a game of bowling for a reward!` }),
 		new MiscMarker(`bw8QU`, EETypes.mrPeeksCollectible, [163.66353585351, 283.1703256475334], { uniqueDesc: `Bonus Bowling Shoe\nSpawns a couple of rounds after bowling, can be shot to play bowling again!` }),
-		new MiscMarker(`DzJw9`, EETypes.bankVault, [257.1898821141628, 285.095345453075], { uniqueDesc: `Opened by finding 3, 2 digit numbers around the map.\nAfter gaining entry player can bring a loot key (dropped by elites) to open any of the 9 lootable deposit boxes.` }),
+		new MiscMarker(`DzJw9`, EETypes.bankVault, [257.1898821141628, 285.095345453075]),
 		new MiscMarker(`59M0p`, EETypes.clue, [313.2238913426472, 326.38618562722263], { uniqueDesc: `1 of 3 numbers needed for the bank vault.` }),
 		new MiscMarker(`AmVI8`, EETypes.clue, [144.84576970738917, 255.81102392565194], { uniqueDesc: `1 of 3 numbers needed for the bank vault.` }),
 		new MiscMarker(`Wa3zX`, EETypes.clue, [243.625, 293.28125], { uniqueDesc: `1 of 3 numbers needed for the bank vault.` }),
@@ -697,6 +698,7 @@ export const StaticEggStore: IMisc = {
 
 	],
 	[MapIds.terminusPrison]: [
+		new MiscMarker(`gAmnT`, EETypes.armoury, [297.56070260000484, 297.0739620832109]),
 		new MiscMarker(`PKXhh`, EETypes.mrPeeksHeadphones, [255.34375, 288], { uniqueDesc: `1 of 3 needed for the easter egg song.` }),
 		new MiscMarker(`wer5F`, EETypes.maxArmour, [285.2117140929566, 261.9035177539375], { uniqueDesc: `In back left the corner of the interrogation room inside a bucket.` }),
 		new MiscMarker(`jYMo6`, EETypes.maxAmmo, [280.5586664702618, 271.8260457258232], { uniqueDesc: `In the guard tower, can be shot from south side, or hit with explosives from spawn side.` }),
