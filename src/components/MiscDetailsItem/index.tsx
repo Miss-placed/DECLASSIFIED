@@ -21,7 +21,8 @@ export const MiscDetailItem = ({
 	loc,
 	icon,
 	img,
-	isMarker = false, }) => {
+	isMarker = false,
+	linkedItem }) => {
 	const { setCurrentMapWithValidation: setCurrentMap, currentMap } = useContext(DeclassifiedContext);
 	const mapInstance = useMapEvents({});
 	const [expanded, setExpanded] = useState(false);
@@ -65,7 +66,14 @@ export const MiscDetailItem = ({
 					<CustomImage src={img} altText="Placeholder" />
 					<MiscDetailItemContainer>
 						{!isMarker && miscItemMap && miscItemMap.title ? (<Subheading variant="h2">{miscItemMap.title}</Subheading>) : null}
-						<MiscDescription>{desc}</MiscDescription>
+						<MiscDescription>
+							{desc}
+							{linkedItem ? (
+								<>
+									<br />
+									<a target="blank" href={"/" + linkedItem}>More Info...</a>
+								</>) : null}
+						</MiscDescription>
 						<ActionContainer>
 							{ItemHasLocation && miscItemMap?.mapCanRender ? <Button onClick={async () => {
 								if (ItemIsOnAnotherMap) {

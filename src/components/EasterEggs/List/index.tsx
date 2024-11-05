@@ -43,6 +43,7 @@ export const EggList = () => {
             loc={egg.loc}
             icon={egg.icon}
             img={egg.img}
+            linkedItem={egg.linkedItem}
         />;
     });
     if (RenderedEggList.length === 0) {
