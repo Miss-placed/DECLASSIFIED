@@ -792,6 +792,7 @@ export const MiscStore: IMisc = {
 		new MiscMarker(`EeAjA`, MiscTypes.wallbuy, [260.26474908706786, 292.5024709259978], { uniqueDesc: `C9` }),
 		new MiscMarker(`kzPC1`, MiscTypes.wallbuy, [248.8489336765139, 263.518870815491], { uniqueDesc: `Marine-SP` }),
 		new MiscMarker(`HhY0_`, MiscTypes.wallbuy, [213.9061948934098, 253.16855562546598], { uniqueDesc: `Goblin MK2` }),
+		new MiscMarker(`3XxrN`, MiscTypes.workbench, [262.28125, 275.125]),
 		new MiscMarker(`h5zvQ`, MiscTypes.zipline, [204.6971343038483, 293.9191527053375]),
 	]
 };

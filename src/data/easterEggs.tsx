@@ -97,8 +97,11 @@ const EETypes = {
 	randomPerk: new Item({
 		title: `Random Perk`, icon: IconFileNames.randomPerk,
 	}),
-	perkChallenge: new Item({
-		title: `Perk Challenge`, icon: IconFileNames.randomPerk,
+	freePerk: new Item({
+		title: `Free Perk / Challenge`, icon: IconFileNames.randomPerk,
+	}),
+	shovel: new Item({
+		title: `Shovel`, desc: `Used to dig up spots on the map.`, icon: IconFileNames.shovel,
 	}),
 	// Die Maschine specific
 	dieMaschineBonusChest: new Item({
@@ -154,8 +157,47 @@ const EETypes = {
 	// BO6 Specific
 	bankVault: new Item({ title: 'Bank Vault', desc: `Opened by finding 3, 2 digit numbers around the map.\nAfter gaining entry player can bring a loot key (dropped by specials & elites) to open any of the 9 lootable deposit boxes.`, icon: IconFileNames.secretArea }),
 	armoury: new Item({ title: 'Armoury', desc: `Can be entered at any time with cool-downs in between. Used to claim loot key rewards, unlike Liberty Falls, the doors are not finite and will re-lock.`, icon: IconFileNames.secretArea }),
-	mrPeeksGame: new Item({ title: 'Mr Peeks Game', desc: 'Find all collectibles on the map to be teleported to a location and start a side game for a reward!', icon: IconFileNames.mrPeeks, }),
-	mrPeeksCollectible: new Item({ title: 'Mr Peeks Collectible', desc: 'Shoot this object as part of the Mr Peeks game for this map.', icon: IconFileNames.mrPeeksBlue, }),
+	mrPeeksBowling: new Item({ title: 'Mr Peeks - Bowling!', desc: 'Find all collectibles on the map to be teleported to the bowling alley for a game and a reward!', icon: IconFileNames.mrPeeks, }),
+	mrPeeksBowlingShoe: new Item({ title: 'Mr Peeks - Bowling Shoe', desc: 'Shoot all of the shoes to start a bowling mini game!', icon: IconFileNames.mrPeeksBlue, }),
+	sporesEgg: new Item({
+		title: `Free Perk - Spores`, desc: `Final Spores Location\nAfter shooting all the spore islands shoot all spores here to be rewarded with a Random Perk powerup.`, icon: IconFileNames.randomPerk,
+	}),
+	sporesEggIsland: new Item({
+		title: `Spore Island`, desc: `1 of 4 potential islands covered in spores. Shoot all spores on this island (you'll get an audio cue if done right), then find more islands over the next 2 rounds (can only find one per round) and repeat.\nAfter completing the last island look here:`, icon: IconFileNames.interactable,
+	}),
+	megaStuffyMain: new Item({
+		title: `Mega-Stuffy!`, desc: `Collect 6 stuffed animals around the map. After collecting all of them, head back here and interact with all of the animals, now located on the bunk beds. And when all are interacted with your new friend will spawn!`, icon: IconFileNames.mrPeeks,
+	}),
+	megaStuffyCollectible: new Item({
+		title: `Stuffed Animal`, desc: `1 of 6 Stuffed animals that need to be interacted with/shot in order to spawn a friendly NPC.`, icon: IconFileNames.mrPeeksBlue,
+	}),
+	meteorMain: new Item({
+		title: `Meteor Landing Site`, desc: `Landing site of a meteor that can be shot down by the Void Canon trap, after activating the 2 towers with dead wire.`, icon: IconFileNames.mrPeeks,
+	}),
+	meteorTower: new Item({
+		title: `Meteor Tower`, desc: `1 of 2 Towers that need to be shot with a weapon equipt with dead wire, once they are both activated and the red light on top stays lit, cycle to the next round and activate the Void Canon.`, icon: IconFileNames.interactable,
+	}),
+	mrPeeksBoatRace: new Item({
+		title: `Mr Peeks - Boat Race!`, desc: `Underwater there is a pink boat, with a flashing red light. Interact with it to be teleported into a boat race game and play for a reward!`, icon: IconFileNames.mrPeeks,
+	}),
+	whackACrab: new Item({
+		title: `Free Perk - Whack A Crab`, desc: `Throw a grenade/molotov at the crab cage up in the trees. 4 crab spots will spawn around the island, melee them to start a small mini game, win to be rewarded with loot & perks. `, icon: IconFileNames.randomPerk,
+	}),
+	cursedTreasureHunt: new Item({
+		title: `Cursed Treasure Hunt`, desc: `Break the stalagmites with a melee attack with melee macchiato equipt to begin a side quest. Collect a watch first, then go to each location on the map, defeating a HVT at each highlighted location. After returning 3 coins you will be rewarded with legendary weapons.`, icon: IconFileNames.mrPeeks,
+	}),
+	cursedTreasureHuntSkeleton: new Item({
+		title: `Cursed Skeleton`, desc: `1 of 3 skeletons that will spawn a HVT that drop a cursed coin, when set on fire after delivering the watch during the cursed treasure hunt.`, icon: IconFileNames.mrPeeks,
+	}),
+	bossFight: new Item({
+		title: `Boss Fight`, desc: `A boss fight for this map, follow the main quest to begin.`, icon: IconFileNames.boss,
+	}),
+	culinaryDelight: new Item({
+		title: `Culinary Delight`, desc: `Side quest involving Oil (located directly to the right of the hobs).\nFish (obtained from blowing up/shocking any fish around the map), and 5 different ingredients.\nAfter collecting any or all of them, interacting with the pan, then waiting 1 round and interacting with the pan, will then unlock the achievement.`, icon: IconFileNames.workbench,
+	}),
+	culinaryDelightIngredient: new Item({
+		title: `Culinary Delight - Ingredient`, desc: `An ingredient involved in the Culinary Delight side egg.`, icon: IconFileNames.interactable,
+	}),
 };
 
 const OutbreakEE2Steps = {
@@ -644,7 +686,7 @@ export const StaticEggStore: IMisc = {
 		new MiscMarker(`9G12F`, EETypes.bonus, [225.68311592941944, 177.1593431115426], { uniqueDesc: `Black And Gold Car\n1 of 3 Possible locations of the Mr Peeks sat in the back of the car, indicating a spot for loot and an intel item.` }),
 		new MiscMarker(`Z0ygP`, EETypes.bonus, [293.8925195350405, 330.2987196842777], { uniqueDesc: `Black And Gold Car\n1 of 3 Possible locations of the Mr Peeks sat in the back of the car, indicating a spot for loot and an intel item.` }),
 		new MiscMarker(`tQAjx`, EETypes.bonus, [282.96580199111264, 174.92431395814236], { uniqueDesc: `Black And Gold Car\n1 of 3 Possible locations of the Mr Peeks sat in the back of the car, indicating a spot for loot and an intel item.` }),
-		new MiscMarker(`mZN2H`, EETypes.perkChallenge, [269.68018735607296, 99.48248959488959], { uniqueDesc: `Free Deadshot\nShoot all of the cans on the fence outside the cemetary to be rewarded with a free deadshot perk. You're timed and only one person can get it per game.` }),
+		new MiscMarker(`mZN2H`, EETypes.freePerk, [269.68018735607296, 99.48248959488959], { uniqueDesc: `Free Deadshot\nShoot all of the cans on the fence outside the cemetary to be rewarded with a free deadshot perk. You're timed and only one person can get it per game.` }),
 		new MiscMarker(`j7eXX`, EETypes.maxAmmo, [237.08720300956975, 462.99502722954236], { uniqueDesc: `Look down at the yellow bridge between the barrier and the start of the yellow steel beams. Shoot the small golden object to spawn a free power up.` }),
 		new MiscMarker(`jBX9A`, EETypes.bonusPoints, [330.02159775218337, 331.85260972373345], { uniqueDesc: `Look up at the window, shoot the small golden object to spawn a free power up.` }),
 		new MiscMarker(`n0XYI`, EETypes.nuke, [234.8822157104421, 295.15912981387015], { uniqueDesc: `Look down through the bank roof, shoot the small golden object to spawn a free power up.` }),
@@ -653,13 +695,13 @@ export const StaticEggStore: IMisc = {
 		new MiscMarker(`BZuaH`, EETypes.maxArmour, [317.1206977585009, 266.7174080485405], { uniqueDesc: `Through the barricade in the bottom right corner of the room on a tray.`, img: `2te9o40` }),
 		new MiscMarker(`wwGl1`, EETypes.fullPower, [142.8486545607668, 226.59081368495958], { uniqueDesc: `Behind the barrier between the cars. Might need to go up on top of the verge by the scope in order to see it.` }),
 		new MiscMarker(`W0cQ7`, EETypes.bonus, [182.19997530423058, 134.13828286183295], { uniqueDesc: `Falling Zombies!\nCook a grenade and throw it at the zombie head on the roof to trigger a zombie rain that drop loot.` }),
-		new MiscMarker(`uqQGR`, EETypes.mrPeeksGame, [130.4233520842571, 270.3960054771881], { uniqueDesc: `Bowling Game!\nAfter shooting all the shoes you will be teleported here to bowl! Score 300 for a darkops challenge, you'll always get a reward.` }),
-		new MiscMarker(`C1_lA`, EETypes.mrPeeksCollectible, [263.07941062405075, 71.73609264466869], { uniqueDesc: `Bowling Shoe\nOutside the map hanging from a tree.\nShoot all of them to be teleported to a game of bowling for a reward!` }),
-		new MiscMarker(`XDpvp`, EETypes.mrPeeksCollectible, [205.1716488687219, 266.0576454274178], { uniqueDesc: `Bowling Shoe\nOn top of the casket on the left.\nShoot all of them to be teleported to a game of bowling for a reward!` }),
-		new MiscMarker(`TVoa1`, EETypes.mrPeeksCollectible, [258.9359914503427, 183.38343504085915], { uniqueDesc: `Bowling Shoe\nUnder the chair on the right.\nShoot all of them to be teleported to a game of bowling for a reward!` }),
-		new MiscMarker(`VQG2f`, EETypes.mrPeeksCollectible, [338.20461000783763, 361.3635060584787], { uniqueDesc: `Bowling Shoe\nOn the shelving to the right.\nShoot all of them to be teleported to a game of bowling for a reward!` }),
-		new MiscMarker(`dtAm9`, EETypes.mrPeeksCollectible, [194.2381625762071, 431.0707322886372], { uniqueDesc: `Bowling Shoe\nUnder spawn, on the fuel station counter.\nShoot all of them to be teleported to a game of bowling for a reward!` }),
-		new MiscMarker(`bw8QU`, EETypes.mrPeeksCollectible, [163.66353585351, 283.1703256475334], { uniqueDesc: `Bonus Bowling Shoe\nSpawns a couple of rounds after bowling, can be shot to play bowling again!` }),
+		new MiscMarker(`uqQGR`, EETypes.mrPeeksBowling, [130.4233520842571, 270.3960054771881], { uniqueDesc: `After shooting all the shoes you will be teleported here to bowl! Score 300 for a darkops challenge, you'll always get a reward.` }),
+		new MiscMarker(`C1_lA`, EETypes.mrPeeksBowlingShoe, [263.07941062405075, 71.73609264466869], { uniqueDesc: `Bowling Shoe\nOutside the map hanging from a tree.\nShoot all of them to be teleported to a game of bowling for a reward!` }),
+		new MiscMarker(`XDpvp`, EETypes.mrPeeksBowlingShoe, [205.1716488687219, 266.0576454274178], { uniqueDesc: `Bowling Shoe\nOn top of the casket on the left.\nShoot all of them to be teleported to a game of bowling for a reward!` }),
+		new MiscMarker(`TVoa1`, EETypes.mrPeeksBowlingShoe, [258.9359914503427, 183.38343504085915], { uniqueDesc: `Bowling Shoe\nUnder the chair on the right.\nShoot all of them to be teleported to a game of bowling for a reward!` }),
+		new MiscMarker(`VQG2f`, EETypes.mrPeeksBowlingShoe, [338.20461000783763, 361.3635060584787], { uniqueDesc: `Bowling Shoe\nOn the shelving to the right.\nShoot all of them to be teleported to a game of bowling for a reward!` }),
+		new MiscMarker(`dtAm9`, EETypes.mrPeeksBowlingShoe, [194.2381625762071, 431.0707322886372], { uniqueDesc: `Bowling Shoe\nUnder spawn, on the fuel station counter.\nShoot all of them to be teleported to a game of bowling for a reward!` }),
+		new MiscMarker(`bw8QU`, EETypes.mrPeeksBowlingShoe, [163.66353585351, 283.1703256475334], { uniqueDesc: `Bonus Bowling Shoe\nSpawns a couple of rounds after bowling, can be shot to play bowling again!` }),
 		new MiscMarker(`DzJw9`, EETypes.bankVault, [257.1898821141628, 285.095345453075]),
 		new MiscMarker(`59M0p`, EETypes.clue, [313.2238913426472, 326.38618562722263], { uniqueDesc: `1 of 3 numbers needed for the bank vault.` }),
 		new MiscMarker(`AmVI8`, EETypes.clue, [144.84576970738917, 255.81102392565194], { uniqueDesc: `1 of 3 numbers needed for the bank vault.` }),
@@ -687,8 +729,33 @@ export const StaticEggStore: IMisc = {
 		new MiscMarker(`C0jxR`, EETypes.bonus, [181.73527564128713, 323.1526631072432], { uniqueDesc: `Pool of Blood\nSpawns a loot orb and or power up when 3 semtex are thrown into it during a vermin round.` }),
 	],
 	[MapIds.terminusBiolabs]: [
+		new MiscMarker(`24MSZ`, EETypes.culinaryDelightIngredient, [293.65625, 253.4375], { linkedItem: `N_OVB`, uniqueDesc: `Brain\nOn a scale.` }),
 		new MiscMarker(`Xwbf2`, EETypes.mrPeeksHeadphones, [254.37898898728324, 291.83434043830323], { uniqueDesc: `1 of 3 needed for the easter egg song.` }),
 		new MiscMarker(`mbyjQ`, EETypes.mrPeeksHeadphones, [328.84799887062195, 280.98342779446585], { uniqueDesc: `1 of 3 needed for the easter egg song.` }),
+		new MiscMarker(`mP6tq`, EETypes.shovel, [271.4209361682479, 298.8296841956614]),
+		new MiscMarker(`Vx0wi`, EETypes.shovel, [232.8970978462404, 266.30525532789403]),
+		new MiscMarker(`0VwZX`, EETypes.shovel, [371.23351810209493, 193.45052613878218]),
+		new MiscMarker(`sNuAP`, EETypes.shovel, [312.19225980747797, 420.56146341736144]),
+		new MiscMarker(`aFker`, EETypes.freePerk, [322.50688078091434, 253.46419422564134], { uniqueDesc: `Prison Cages\nShoot all of the zombies in the cages to progress this egg. Come back each round and kill the next set of enemies in the cages. Do this for a total of 3 rounds in order to get a Random Perk powerup.` }),
+		new MiscMarker(`e2wmE`, EETypes.sporesEgg, [245.29420895882905, 246.69189675916428]),
+		new MiscMarker(`K1Qqi`, EETypes.sporesEggIsland, [320.37235194976347, 369.51501360577436], { linkedItem: `e2wmE` }),
+		new MiscMarker(`Wwi1L`, EETypes.sporesEggIsland, [181.70559599805756, 292.15948970467394], { linkedItem: `e2wmE` }),
+		new MiscMarker(`IrCcu`, EETypes.sporesEggIsland, [394.71637855757484, 331.71296617807366], { linkedItem: `e2wmE` }),
+		new MiscMarker(`rVsH3`, EETypes.sporesEggIsland, [280.65565928903317, 202.6034936879411], { linkedItem: `e2wmE` }),
+		new MiscMarker(`zp3ym`, EETypes.megaStuffyCollectible, [252.61507336172045, 307.0092031071911], { linkedItem: `gyHuC`, uniqueDesc: `Elephant` }),
+		new MiscMarker(`jRnGe`, EETypes.megaStuffyCollectible, [196.82120749690176, 157.19676798949905], { linkedItem: `gyHuC`, uniqueDesc: `Duck\nWell hidden inside the corner of the dumpster.`, }),
+		new MiscMarker(`XjZgQ`, EETypes.megaStuffyCollectible, [124.32855827930155, 213.8187024856514], { linkedItem: `gyHuC`, uniqueDesc: `Giraffe\nBehind the light on the right side.` }),
+		new MiscMarker(`523nW`, EETypes.megaStuffyCollectible, [290.40625, 298.9375], { linkedItem: `gyHuC`, uniqueDesc: `Bear\nNear the arsenal, on a medical table near the floor.` }),
+		new MiscMarker(`3ZEt8`, EETypes.meteorMain, [292.60321553883165, 393.8504359712161]),
+		new MiscMarker(`O7hw0`, EETypes.mrPeeksBoatRace, [293.2228119896759, 440.84162572153747]),
+		new MiscMarker(`YqWno`, EETypes.whackACrab, [144.1335293480531, 244.13413732050765]),
+		new MiscMarker(`BP6Xq`, EETypes.cursedTreasureHunt, [276.04996791307724, 234.638024611905], { linkedItem: `BO6S0TAr5` }),
+		new MiscMarker(`3Ig9c`, EETypes.cursedTreasureHuntSkeleton, [383.0625, 191.78125], { linkedItem: `BP6Xq` }),
+		new MiscMarker(`ZlkGz`, EETypes.cursedTreasureHuntSkeleton, [274.3935309560461, 425.7227774089735], { linkedItem: `BP6Xq` }),
+		new MiscMarker(`nTqHJ`, EETypes.cursedTreasureHuntSkeleton, [189.625, 150.25], { linkedItem: `BP6Xq` }),
+		new MiscMarker(`HfuK3`, EETypes.bossFight, [360.10967416535937, 272.479679992889], { uniqueDesc: `Final Fight\nAfter defeating Nathan and defusing the bombs, you can begin the bossfight to end the main quest.` }),
+		new MiscMarker(`hDBzb`, EETypes.bossFight, [303.5568376364614, 276.72878485193456]),
+		new MiscMarker(`3LAwr`, EETypes.bonus, [394.47230643559845, 179.2489780265029], { uniqueDesc: `Sentinel Marking - Fast Travel\nShoot the marking on the rock with the alt fire of the beamsmasher, to be teleported back to the main island.` }),
 
 		new MiscMarker(`Rih5O`, EETypes.bonusPoints, [226.7090285465238, 139.67940147050612], { uniqueDesc: `In the top right window of the bridge of the shipwreck.` }),
 		new MiscMarker(`2GqLm`, EETypes.nuke, [133.88706403572309, 286.350442197677], { uniqueDesc: `In the bottom left corner of the spawn window.` }),
@@ -698,8 +765,21 @@ export const StaticEggStore: IMisc = {
 
 	],
 	[MapIds.terminusPrison]: [
+		new MiscMarker(`cDHde`, EETypes.clue, [320.0708098674256, 302.4346663766197], { uniqueDesc: `Jump continuously after activating the elevator to have a chance at activating an alternate elevator ride down to the biolabs.` }),
+		new MiscMarker(`gyHuC`, EETypes.megaStuffyMain, [245.6052073558197, 281.6402480556143]),
 		new MiscMarker(`gAmnT`, EETypes.armoury, [297.56070260000484, 297.0739620832109]),
 		new MiscMarker(`PKXhh`, EETypes.mrPeeksHeadphones, [255.34375, 288], { uniqueDesc: `1 of 3 needed for the easter egg song.` }),
+		new MiscMarker(`Rs0K4`, EETypes.bonus, [253.64108322189168, 279.26921133637927], { uniqueDesc: `Basketball Bonus Points\nShoot the ball with a pack-a-punched weapon, from the east side (near engineering) in order to make it land in the hoop on the other side of the building and drop 2000 essence.` }),
+		new MiscMarker(`qjQEz`, EETypes.bonus, [290.612569909373, 281.3581262851448], { uniqueDesc: `Oxygen Mask\nBlow up a rock underneath PaP that gives off bubbles, to uncover an oxygen mask which will greatly increase your breathing time.` }),
+		new MiscMarker(`N_OVB`, EETypes.culinaryDelight, [241.46875, 249.53125]),
+		new MiscMarker(`lZCQo`, EETypes.culinaryDelightIngredient, [256.96875, 249.5625], { linkedItem: `N_OVB`, uniqueDesc: `Beans\nBetween two crates.` }),
+		new MiscMarker(`zQvyy`, EETypes.culinaryDelightIngredient, [246.13847407960418, 302.7807642719513], { linkedItem: `N_OVB`, uniqueDesc: `Battery\nOn the desk in the middle of the room.` }),
+		new MiscMarker(`Ygw12`, EETypes.culinaryDelightIngredient, [278.7177567942043, 255.77817285834016], { linkedItem: `N_OVB`, uniqueDesc: `Mushroom\nBy the right of the stairs when looking up.` }),
+		new MiscMarker(`kL_5g`, EETypes.culinaryDelightIngredient, [257.6907948564727, 271.995229023223], { linkedItem: `N_OVB`, uniqueDesc: `Snowball\nOn top of the fridge.` }),
+		new MiscMarker(`0cv_q`, EETypes.megaStuffyCollectible, [295.40625, 304.625], { linkedItem: `gyHuC`, uniqueDesc: `Unicorn` }),
+		new MiscMarker(`gmj3c`, EETypes.megaStuffyCollectible, [237.59375, 298.8125], { linkedItem: `gyHuC`, uniqueDesc: `Monkey` }),
+		new MiscMarker(`PvId2`, EETypes.meteorTower, [248.07976653247508, 308.22281601773426], { linkedItem: `3ZEt8`, uniqueDesc: `Visible from the stairs south of spawn, either side.` }),
+		new MiscMarker(`sesSc`, EETypes.meteorTower, [313.01988207230005, 260.52399603518677], { linkedItem: `3ZEt8`, uniqueDesc: `Visible from the stairs south of spawn, either side.` }),
 		new MiscMarker(`wer5F`, EETypes.maxArmour, [285.2117140929566, 261.9035177539375], { uniqueDesc: `In back left the corner of the interrogation room inside a bucket.` }),
 		new MiscMarker(`jYMo6`, EETypes.maxAmmo, [280.5586664702618, 271.8260457258232], { uniqueDesc: `In the guard tower, can be shot from south side, or hit with explosives from spawn side.` }),
 	]
