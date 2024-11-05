@@ -129,13 +129,14 @@ export const PerkStore: IMisc = {
 		new MiscMarker(`1hoGs`, Perks.staminup, [143.9206383159653, 300.3575686763833]),
 		new MiscMarker(`YksKA`, Perks.quick, [303.4512230353636, 338.6077383572001]),
 		new MiscMarker(`juvMH`, Perks.jugg, [285.06369615742574, 302.10071909885824]),
-		new MiscMarker(`8Kr_R`, Perks.wunderFizz, [267.38969773283367, 308.0772348330578]),
+		new MiscMarker(`8Kr_R`, Perks.wunderFizz, [267.38969773283367, 308.0772348330578], { uniqueDesc: `Spawns at round 25.` }),
 	],
 	[MapIds.terminusBiolabs]: [
 		new MiscMarker(`gwiR8`, Perks.deadshot, [202.68742727157954, 261.91067882280566]),
 		new MiscMarker(`nP_tL`, Perks.speed, [263.81746456832025, 243.56795749921676]),
 		new MiscMarker(`4HdKo`, Perks.phd, [253.81568374876306, 287.67417127726407]),
 		new MiscMarker(`y7Jgo`, Perks.meleeMacchiato, [325.31137424059085, 276.8607440345454]),
+		new MiscMarker(`Tfw4f`, Perks.wunderFizz, [250.921668074456, 120.83816594406575], { uniqueDesc: `Spawns at round 25.` }),
 	],
 	[MapIds.terminusPrison]: [
 		new MiscMarker(`N3iU1`, Perks.quick, [292.77832269240974, 268.2533852720715]),
