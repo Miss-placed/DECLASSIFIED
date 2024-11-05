@@ -1,10 +1,14 @@
-import { Box, Container, Grid, Paper, Typography } from '@mui/material';
+import { Box, Container, Grid, Paper, styled, Typography } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const HomePageContainer = styled(Container)`
+    background: var(--clr-bg);
+`
+
 const HomePage: React.FC = () => {
     return (
-        <Container>
+        <HomePageContainer>
             <Typography variant="h4" gutterBottom>
                 Declassified.app
             </Typography>
@@ -24,21 +28,21 @@ const HomePage: React.FC = () => {
                 <Grid item xs={12} sm={6} md={6}>
                     <Paper component={Link} to="/challenge">
                         <Box p={2}>
-                            <Typography variant="h6">Challenge tracker</Typography>
-                            <Typography>Coming Soon</Typography>
+                            <Typography variant="h6">Legacy Challenge Tracker</Typography>
+                            <Typography>New Version Coming Soon...</Typography>
                         </Box>
                     </Paper>
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
-                    <Paper>
+                    <Paper component={Link} target='blank' to="https://nebula.emca.app/">
                         <Box p={2}>
                             <Typography variant="h6">Camo Tracker</Typography>
-                            <Typography>Link to the nebular tracker or make our own?</Typography>
+                            <Typography>A camo tracker we highly endorse!</Typography>
                         </Box>
                     </Paper>
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
-                    <Paper>
+                    <Paper component={Link} to="https://discord.gg/4Xqj8XntFe">
                         <Box p={2}>
                             <Typography variant="h6">Github/Discord</Typography>
                             <Typography>Socials go here</Typography>
@@ -46,7 +50,7 @@ const HomePage: React.FC = () => {
                     </Paper>
                 </Grid>
             </Grid>
-        </Container>
+        </HomePageContainer>
     );
 };
 
