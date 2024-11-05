@@ -32,6 +32,8 @@ export enum IconFileNames {
 	mrPeeksBlue = 'mr_peeks_blue',
 	workbench = 'workbench',
 	mask = 'secret_door', // Update with new icon
+	shovel = 'shovel',
+	boss = 'boss',
 
 	//movement icons
 	rift = 'tunnel_pink',
