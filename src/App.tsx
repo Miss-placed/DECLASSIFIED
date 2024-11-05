@@ -10,6 +10,7 @@ import {
 	UserContextProvider,
 	useUserContext,
 } from './contexts/UserContext/userContextProvider';
+import HomePage from './pages/HomePage';
 import { BaseLayout } from './pages/layouts/BaseLayout';
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
 				<UserContextProvider>
 					<Routes>
 						<Route path="/:id" Component={MapWithItemId} />
-						<Route path="/" Component={MapProvider} />
+						<Route path="/" Component={HomePage} />
+						<Route path="/map" Component={MapProvider} />
 						<Route path="/legacy" Component={LegacySite} />
 						<Route path="/challenge" Component={LegacyChallengeSite} />
 					</Routes>
