@@ -756,6 +756,7 @@ export const StaticEggStore: IMisc = {
 		new MiscMarker(`HfuK3`, EETypes.bossFight, [360.10967416535937, 272.479679992889], { uniqueDesc: `Final Fight\nAfter defeating Nathan and defusing the bombs, you can begin the bossfight to end the main quest.` }),
 		new MiscMarker(`hDBzb`, EETypes.bossFight, [303.5568376364614, 276.72878485193456]),
 		new MiscMarker(`3LAwr`, EETypes.bonus, [394.47230643559845, 179.2489780265029], { uniqueDesc: `Sentinel Marking - Fast Travel\nShoot the marking on the rock with the alt fire of the beamsmasher, to be teleported back to the main island.` }),
+		new MiscMarker(`qjQEz`, EETypes.bonus, [290.612569909373, 281.3581262851448], { uniqueDesc: `Oxygen Mask\nBlow up a rock underneath PaP that gives off bubbles, to uncover an oxygen mask which will greatly increase your breathing time.` }),
 
 		new MiscMarker(`Rih5O`, EETypes.bonusPoints, [226.7090285465238, 139.67940147050612], { uniqueDesc: `In the top right window of the bridge of the shipwreck.` }),
 		new MiscMarker(`2GqLm`, EETypes.nuke, [133.88706403572309, 286.350442197677], { uniqueDesc: `In the bottom left corner of the spawn window.` }),
@@ -770,7 +771,6 @@ export const StaticEggStore: IMisc = {
 		new MiscMarker(`gAmnT`, EETypes.armoury, [297.56070260000484, 297.0739620832109]),
 		new MiscMarker(`PKXhh`, EETypes.mrPeeksHeadphones, [255.34375, 288], { uniqueDesc: `1 of 3 needed for the easter egg song.` }),
 		new MiscMarker(`Rs0K4`, EETypes.bonus, [253.64108322189168, 279.26921133637927], { uniqueDesc: `Basketball Bonus Points\nShoot the ball with a pack-a-punched weapon, from the east side (near engineering) in order to make it land in the hoop on the other side of the building and drop 2000 essence.` }),
-		new MiscMarker(`qjQEz`, EETypes.bonus, [290.612569909373, 281.3581262851448], { uniqueDesc: `Oxygen Mask\nBlow up a rock underneath PaP that gives off bubbles, to uncover an oxygen mask which will greatly increase your breathing time.` }),
 		new MiscMarker(`N_OVB`, EETypes.culinaryDelight, [241.46875, 249.53125]),
 		new MiscMarker(`lZCQo`, EETypes.culinaryDelightIngredient, [256.96875, 249.5625], { linkedItem: `N_OVB`, uniqueDesc: `Beans\nBetween two crates.` }),
 		new MiscMarker(`zQvyy`, EETypes.culinaryDelightIngredient, [246.13847407960418, 302.7807642719513], { linkedItem: `N_OVB`, uniqueDesc: `Battery\nOn the desk in the middle of the room.` }),
