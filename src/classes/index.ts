@@ -73,13 +73,15 @@ export class MiscMarker extends BaseMarker {
 		{ title, desc, icon }: any,
 		loc: LatLngExpression,
 		optional?: {
+			uniqueTitle?: string;
 			uniqueDesc?: string;
 			img?: string;
 			linkedItem?: string;
 		}
 	) {
+		var newTitle = optional?.uniqueTitle ? optional?.uniqueTitle : title;
 		desc = optional?.uniqueDesc ? `${optional?.uniqueDesc}\n${desc}` : desc;
-		super({ id, title, desc, icon, loc, typeDesc: 'Misc', img: optional?.img, linkedItem: optional?.linkedItem });
+		super({ id, title: newTitle, desc, icon, loc, typeDesc: title, img: optional?.img, linkedItem: optional?.linkedItem });
 	}
 }
 

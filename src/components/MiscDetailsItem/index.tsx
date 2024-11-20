@@ -65,7 +65,12 @@ export const MiscDetailItem = ({
 				<StyledAccordionDetails>
 					<CustomImage src={img} altText="Placeholder" />
 					<MiscDetailItemContainer>
-						{!isMarker && miscItemMap && miscItemMap.title ? (<Subheading variant="h2">{miscItemMap.title}</Subheading>) : null}
+						<Subheading variant="h3">
+							{typeDesc === title ? null : typeDesc}
+							{!isMarker && miscItemMap && miscItemMap.title ? (
+								miscItemMap.title
+							) : null}
+						</Subheading>
 						<MiscDescription>
 							{desc}
 							{linkedItem ? (
@@ -90,7 +95,7 @@ export const MiscDetailItem = ({
 							}}>
 								<LocationOnIcon htmlColor="var(--clr-blue)" />
 							</Button> : <Button disabled>
-								<LocationOnIcon htmlColor="var(--clr-blue)" />
+								<LocationOnIcon htmlColor="var(--clr-grey)" />
 							</Button>}
 							<ShareButton id={id} />
 							<BugReportButton id={id} typeDesc={icon} mapItem={miscItemMap} /> {/* TODO: standardise the typeDesc to all come from the same icon id store */}

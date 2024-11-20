@@ -21,6 +21,7 @@ import { db, DeclassifiedUserPreferences } from '../../data/db';
 import { StaticEggStore } from '../../data/easterEggs';
 import { DefaultPOIData, IntelItem, IntelStore } from '../../data/intel';
 import { filterIntel, filterMisc } from '../../data/listFiltering';
+import { StaticQuestStore } from '../../data/mainQuest';
 import { GetMapById, GetMapByTitle, MapDetails } from '../../data/maps/mapDetails';
 import { checkUserHasUnmigratedPreferences, markAsMigrated, migrateOldUserPreferences } from '../../data/migration';
 import { getIntelById, getMiscMarkerById } from '../../helpers/github';
@@ -207,10 +208,11 @@ export const DeclassifiedContextProvider = ({ children }) => {
 	}, [collectedIntel, currentIntelFilter, currentMapGroup])
 
 	useEffect(() => {
-		if (currentMapGroup && StaticEggStore) {
+		if (currentMapGroup && StaticEggStore && StaticQuestStore) {
 			var filteredMisc = filterMisc(
 				currentMapGroup,
 				StaticEggStore,
+				StaticQuestStore,
 				currentEggFilter.searchTerm,
 				currentEggFilter.easterEggTypes,
 			);

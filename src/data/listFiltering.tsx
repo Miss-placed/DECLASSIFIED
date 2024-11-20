@@ -3,7 +3,7 @@ import { MapGroupItem } from "../components/MapControls/types";
 import { EggType } from "./easterEggs";
 import { Faction, IntelItem, IntelType, MapIds, Season } from "./intel";
 import { allOutbreakMapsArr } from "./maps/mapDetails";
-import { IMisc } from "./types";
+import { MarkerStore } from "./types";
 
 export function filterIntel(
     collectedIntel,
@@ -82,7 +82,8 @@ export function filterIntel(
 
 export function filterMisc(
     currentMapGroup: MapGroupItem,
-    miscStore: IMisc,
+    miscStore: MarkerStore,
+    staticQuestStore: MarkerStore,
     searchTermDirty: string,
     eggTypeArr: EggType[] = [],
 ) {
@@ -91,6 +92,10 @@ export function filterMisc(
     currentMapGroup.mapLayers.forEach(map => {
         if (map.id && miscStore[map.id]) {
             results.push(...miscStore[map.id]);
+        };
+        // Might be a duplication bug to fix here
+        if (map.id && staticQuestStore[map.id]) {
+            results.push(...staticQuestStore[map.id]);
         };
     });
 
