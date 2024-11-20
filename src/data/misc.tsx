@@ -793,6 +793,7 @@ export const MiscStore: MarkerStore = {
 		new MiscMarker(`EeAjA`, MiscTypes.wallbuy, [260.26474908706786, 292.5024709259978], { uniqueTitle: `C9` }),
 		new MiscMarker(`kzPC1`, MiscTypes.wallbuy, [248.8489336765139, 263.518870815491], { uniqueTitle: `Marine-SP` }),
 		new MiscMarker(`HhY0_`, MiscTypes.wallbuy, [213.9061948934098, 253.16855562546598], { uniqueTitle: `Goblin MK2` }),
+		new MiscMarker(`QpYZL`, MiscTypes.wallbuy, [222.14994470956643, 301.70984599036944], { uniqueTitle: `PP-919`, uniqueDesc: `On the ramp up from the docks. Under the bridge from engineering.` }),
 		new MiscMarker(`3XxrN`, MiscTypes.workbench, [262.28125, 275.125]),
 		new MiscMarker(`h5zvQ`, MiscTypes.zipline, [204.6971343038483, 293.9191527053375]),
 	]
