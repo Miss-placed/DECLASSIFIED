@@ -1,6 +1,6 @@
 import { Item, MiscMarker } from '../classes';
 import { IconFileNames } from './icons';
-import { MapIds } from './intel';
+import { DefaultPOIData, MapIds } from './intel';
 import { MarkerStore } from './types';
 
 const markers = {
@@ -76,8 +76,8 @@ const OutbreakEE2Steps = {
 
 export const StaticQuestStore: MarkerStore = {
 	[MapIds.dieMaschine]: [
-		new MiscMarker(`w_xnt`, markers.thermophasic, [223.35366309316512, 223.1585943917737], { uniqueDesc: `Unlocked after following the steps with the fuse in the Dark Aether.`, linkedItem: `3eput` }),
-		new MiscMarker(`9ySyg`, markers.nova5, [315.29654358848376, 295.69795800010473], { uniqueDesc: `Unlocked after following the steps with the cannister in the Dark Aether.`, linkedItem: `yLQtN` }),
+		new MiscMarker(`w_xnt`, markers.thermophasic, [223.35366309316512, 223.1585943917737], { uniqueDesc: `Unlocked after following the steps with the fuse in the Dark Aether.`, linkedItems: `3eput` }),
+		new MiscMarker(`9ySyg`, markers.nova5, [315.29654358848376, 295.69795800010473], { uniqueDesc: `Unlocked after following the steps with the cannister in the Dark Aether.`, linkedItems: `yLQtN` }),
 		new MiscMarker(`XW3JZ`, markers.wonderWeapon, [174.74870507815817, 257.415635207116], { uniqueDesc: `Can be obtained after collecting the D.I.E remote and using it against the crack in the wall, activating the weapon and then hording enough zombies in front of the door to charge and shoot it.` }),
 		new MiscMarker(`P7XG4`, markers.darkAetherPortal, [260.11042243500134, 282.13590175409416], { uniqueDesc: `If yours spawns here, the first aetherscope part will be the antenna under the stairs.` }),
 		new MiscMarker(`HTstG`, markers.darkAetherPortal, [244.00586459413896, 75.84893284213877], { uniqueDesc: `If yours spawns here, the first aetherscope part will be on the crashed plane engine.` }),
@@ -100,9 +100,9 @@ export const StaticQuestStore: MarkerStore = {
 		new MiscMarker(`6WnTv`, markers.secretArea, [206.2697306892794, 176.17280788708192], { uniqueDesc: `Only accessible after using the Aether Tunnel above ground. 1 of 2 places the PaP part can spawn.` }),
 		new MiscMarker(`5M9A0`, markers.mainQuest, [211.50810943751497, 233.52599646325353], { uniqueTitle: `Dark Aether Laser Cutting`, uniqueDesc: `Requires the fuse and can only be interacted with when in the Dark Aether. Re-appears as open, above ground, on the back of the truck.` }),
 		new MiscMarker(`5oG2A`, markers.interactable, [198.7906869627428, 178.82125886330365], { uniqueTitle: `Plaguehound Gas Condenser`, uniqueDesc: `Interact whilst holding the canister to place it, then kill a Plaguehound near it to fill it with gas.` }),
-		new MiscMarker(`VpIJu`, markers.cryoemitter, [297.2665148522491, 349.81279151873895], { uniqueDesc: `Unlocked after pouring the liquid gathered from the fungus near the lake, onto the crate.`, linkedItem: `O0QxP` }),
-		new MiscMarker(`VNWWl`, markers.electrobolt, [113.39539786187888, 353.078013760189], { uniqueDesc: `Unlocked after gathering the energy from 3 crystals and shooting it at the box. The bulbs around the box indicate the progress.`, linkedItem: `270nl` }),
-		new MiscMarker(`EKc_L`, markers.wonderWeaponCollectible, [168.36179238711205, 199.31315219969227], { uniqueTitle: `D.I.E Remote`, uniqueDesc: `Inside a drawer that can be interacted with after finding the keycard, dropped by the first Megaton. Open to collect the D.I.E remote.`, linkedItem: `XW3JZ` }),
+		new MiscMarker(`VpIJu`, markers.cryoemitter, [297.2665148522491, 349.81279151873895], { uniqueDesc: `Unlocked after pouring the liquid gathered from the fungus near the lake, onto the crate.`, linkedItems: `O0QxP` }),
+		new MiscMarker(`VNWWl`, markers.electrobolt, [113.39539786187888, 353.078013760189], { uniqueDesc: `Unlocked after gathering the energy from 3 crystals and shooting it at the box. The bulbs around the box indicate the progress.`, linkedItems: `270nl` }),
+		new MiscMarker(`EKc_L`, markers.wonderWeaponCollectible, [168.36179238711205, 199.31315219969227], { uniqueTitle: `D.I.E Remote`, uniqueDesc: `Inside a drawer that can be interacted with after finding the keycard, dropped by the first Megaton. Open to collect the D.I.E remote.`, linkedItems: `XW3JZ` }),
 		new MiscMarker(`af5QE`, markers.questCollectible, [326.5807091917049, 308.47697244514126], { uniqueTitle: `Ghostly Dialog Orb`, uniqueDesc: `Next to speed cola, in the corner.\n1 of 3, will spawn in the Dark Aether after acquiring the Aetherscope. Interact with it to trigger the ghostly figure dialogue.` }),
 		new MiscMarker(`xpxgz`, markers.questCollectible, [235.5479859749598, 273.1385305408606], { uniqueTitle: `Ghostly Dialog Orb`, uniqueDesc: `1 of 3, will spawn in the Dark Aether after acquiring the Aetherscope. Interact with it to trigger the ghostly figure dialogue.` }),
 		new MiscMarker(`rj9BH`, markers.questCollectible, [181.93046504375246, 348.6110192429405], { uniqueTitle: `Ghostly Dialog Orb`, uniqueDesc: `1 of 3, will spawn in the Dark Aether after acquiring the Aetherscope. Interact with it to trigger the ghostly figure dialogue.` }),
@@ -115,7 +115,7 @@ export const StaticQuestStore: MarkerStore = {
 		new MiscMarker(`sHpo9`, markers.darkAetherPortal, [311.82894335858725, 299.6633680932173], { uniqueDesc: `Spawns after building the aetherscope. Used to get the diary and trigger the first of the ghostly dialogues.` }),
 		new MiscMarker(`fwG9Z`, markers.mainQuest, [329.39656431710233, 325.66999226629395], { uniqueTitle: `Ghostly Dialogue`, uniqueDesc: `Appears after entering the portal that appears after shooting after shooting all 4 canisters of the containment device\nSpawns the Dark Aether Wrench.` }),
 		new MiscMarker(`UyMmA`, markers.mainQuest, [310.66531882982684, 339.46395788705297], { uniqueTitle: `Containment Device`, uniqueDesc: `Up on the roof with four canisters pointing down. Shoot each one with the corresponding elemental version of the D.I.E\nAfter placing the decontamination agent, this will allow you to trap both halves of a Megaton. Furthering the main quest.` }),
-		new MiscMarker(``, markers.bossFight, [188.234154595668, 343.69573623599854], { uniqueTitle: `Defend Orlov`, uniqueDesc: `Once you pick up the family photo you are teleported into the particle accelerator room and must defend Orlov whilst he shuts down the station.`, linkedItem: `TbPJZ` }),
+		new MiscMarker(``, markers.bossFight, [188.234154595668, 343.69573623599854], { uniqueTitle: `Defend Orlov`, uniqueDesc: `Once you pick up the family photo you are teleported into the particle accelerator room and must defend Orlov whilst he shuts down the station.`, linkedItems: `TbPJZ` }),
 	],
 	[MapIds.firebaseZSpawn]: [
 		new MiscMarker(`sdUX5`, markers.mainQuest, [382.9324256232408, 267.11524328413856], { uniqueTitle: `Sergei Ravenov`, uniqueDesc: `Must be interacted with to start the main quest.` }),
@@ -146,7 +146,7 @@ export const StaticQuestStore: MarkerStore = {
 	],
 	[MapIds.mauerDerToten]: [
 		new MiscMarker(`2wAit`, markers.wonderWeaponStep, [384.32068891654967, 272.1759937481422], { uniqueTitle: `Blacklight Locker`, uniqueDesc: `Opened by using Klaus next to the locker door. Gives access to the blacklight.` }),
-		new MiscMarker(`G107e`, markers.wonderWeaponCollectible, [181.79736917081456, 459.6975460903231], { uniqueTitle: `#2 Blacklight Numbers`, uniqueDesc: `needed for free CRBR-S side quest. Must be read using the blacklight acquired from the locker.`, linkedItem: `2wAit` }),
+		new MiscMarker(`G107e`, markers.wonderWeaponCollectible, [181.79736917081456, 459.6975460903231], { uniqueTitle: `#2 Blacklight Numbers`, uniqueDesc: `needed for free CRBR-S side quest. Must be read using the blacklight acquired from the locker.`, linkedItems: `2wAit` }),
 		new MiscMarker(`I_o9o`, markers.mainQuest, [341.84342386218685, 203.37097788580076], { uniqueTitle: `Klaus`, uniqueDesc: `Used at various points in the quest, must be activated with 2 parts, his hands, found in the hotel room and his battery, dropped by killing the first Krasny Soldat.\nAfter this he can be called in at various locations around the map. He can also be upgraded 2 times, once with a hacking helm to finish the main quest, and a second, optional time, to upgrade his firepower.` }),
 		new MiscMarker(`h8fAY`, markers.questCollectible, [258.4350330544544, 328.8458598698313], { uniqueTitle: `Klaus Part - Electronic Chips`, uniqueDesc: `Box with green light, shoot with CRBR-S.` }),
 		new MiscMarker(`GYRE6`, markers.interactable, [359.9483781264314, 284.16977220507744], { uniqueTitle: `Train Line Controls`, uniqueDesc: `Used to switch train tracks during the main quest.` }),
@@ -161,9 +161,9 @@ export const StaticQuestStore: MarkerStore = {
 		new MiscMarker(`BcQMe`, markers.mainQuest, [167.82182159774044, 39.754294782294636], { uniqueTitle: `Klaus Escort`, uniqueDesc: `Klaus will still need to be escorted whilst carrying the warhead in order to successfully finish the bossfight.` }),
 	],
 	[MapIds.mauerDerTotenStreets]: [
-		new MiscMarker(`PwmRS`, markers.wonderWeaponCollectible, [110.80096229476811, 298.4347086625506], { uniqueTitle: `#1 Blacklight Numbers`, uniqueDesc: `Needed for free CRBR-S side quest. Must be read using the blacklight acquired from the locker.`, linkedItem: `2wAit` }),
-		new MiscMarker(`muHxa`, markers.wonderWeaponCollectible, [302.33874571909564, 311.0221039512368], { uniqueTitle: `#3 Blacklight Numbers`, uniqueDesc: `Needed for free CRBR-S side quest. Must be read using the blacklight acquired from the locker.`, linkedItem: `2wAit` }),
-		new MiscMarker(`msude`, markers.wonderWeapon, [110.16024664719373, 451.7354570039043], { uniqueTitle: `Free CRBR-S`, uniqueDesc: `Open the safe by finding the 3 numbers around the map with the blacklight.`, linkedItem: `2wAit` }),
+		new MiscMarker(`PwmRS`, markers.wonderWeaponCollectible, [110.80096229476811, 298.4347086625506], { uniqueTitle: `#1 Blacklight Numbers`, uniqueDesc: `Needed for free CRBR-S side quest. Must be read using the blacklight acquired from the locker.`, linkedItems: `2wAit` }),
+		new MiscMarker(`muHxa`, markers.wonderWeaponCollectible, [302.33874571909564, 311.0221039512368], { uniqueTitle: `#3 Blacklight Numbers`, uniqueDesc: `Needed for free CRBR-S side quest. Must be read using the blacklight acquired from the locker.`, linkedItems: `2wAit` }),
+		new MiscMarker(`msude`, markers.wonderWeapon, [110.16024664719373, 451.7354570039043], { uniqueTitle: `Free CRBR-S`, uniqueDesc: `Open the safe by finding the 3 numbers around the map with the blacklight.`, linkedItems: `2wAit` }),
 		new MiscMarker(`0ZFbr`, markers.secretArea, [118.31471157271051, 467.80515920170296], { uniqueTitle: `Hotel Room 305 & Klaus Part`, uniqueDesc: `Use a brain rot zombie to open door and get Klaus hands and the safe for CRBR-S.` }),
 		new MiscMarker(`p3Ots`, markers.questCollectible, [267.02354016528875, 171.06511860475285], { uniqueTitle: `Klaus Part - Battery`, uniqueDesc: `Obtained from killing the first Krasny Soldat.` }),
 		new MiscMarker(`eOTNC`, markers.questCollectible, [373.50680516628154, 388.36535534693917], { uniqueTitle: `Klaus Part - Transistor`, uniqueDesc: `Shoot radios in the room with CRBR-S until one of them drops the part.` }),
@@ -338,9 +338,20 @@ export const StaticQuestStore: MarkerStore = {
 		new MiscMarker(`xG8zU`, markers.mainQuest, [219.50905939855957, 413.9982260079434], { uniqueTitle: `Uncharged Aetherium Canister`, uniqueDesc: `Used in the main quest after charging the first canister. Must be retrieved and charged in the same way as the first canister using the L.T.G, HVT and a D.A.G.F trap.` }),
 	],
 	[MapIds.terminusBiolabs]: [
-		new MiscMarker(`HfuK3`, markers.bossFight, [360.10967416535937, 272.479679992889], { uniqueTitle: `Final Fight`, uniqueDesc: `After defeating Nathan and defusing the bombs, you can begin the bossfight to end the main quest.` }),
+		new MiscMarker(`HfuK3`, markers.bossFight, [327.2210225067579, 277.0954343324285], { uniqueTitle: `Final Fight`, uniqueDesc: `After defeating Nathan and defusing the bombs.` }),
 		new MiscMarker(`hDBzb`, markers.bossFight, [303.5568376364614, 276.72878485193456], { uniqueTitle: `Nathan`, uniqueDesc: `After obtaining the hard drive in the main quest, open his cage using 3 numbers found around the map in this order: Interrogation Rooms, Food Hall, Engineering.` }),
+		new MiscMarker(`B1eCK`, markers.wonderWeaponStep, [284.7725288507301, 392.2537610808635], { linkedItems: `MFkM_`, uniqueTitle: `Orb #1 - Blue`, uniqueDesc: `Spawns after waiting for the resonator to calibrate at round 9.\n1 of 3, energetic orbs that charge a zombie with energy, the energy packet that is dropped must be carried to the orb.` }),
+		new MiscMarker(`H01OH`, markers.wonderWeaponStep, [136.17720324583186, 260.8916789457183], { linkedItems: `B1eCK`, uniqueTitle: `Orb #2 - Green`, uniqueDesc: `2 of 3, energetic orbs that charge a zombie with energy, the energy packet that is dropped must be carried to the orb.` }),
+		new MiscMarker(`1z76S`, markers.wonderWeaponCollectible, [397.9117982033145, 201.5820329335165], { linkedItems: `H01OH`, uniqueTitle: `AMP Munition & Orb #3 - Purple`, uniqueDesc: `3 of 3, once finished the AMP munition can be picked straight up off the floor where the orb was.` }),
+		new MiscMarker(`kpoPI`, markers.wonderWeaponStep, [223.75, 275.5625], { linkedItems: ``, uniqueTitle: `Harmonic Triangulator`, uniqueDesc: `1 of 3 computers that must be activated after plugging the injector into the resonator, the diagram representing the number (X, Y or Z) will appear as a yellow note below the resonator when activated. We recommend the following calculator if you're struggling: \nhub.tcno.co/games/bo6/terminus/` }),
 	],
 	[MapIds.terminusPrison]: [
+		new MiscMarker(`Ou1IZ`, markers.secretArea, [253.5625, 273.53125], { uniqueTitle: `Aanya Tonovsky's Lab`, uniqueDesc: `Can be opened by shooting electrical boxes on a weapon with deadwire equipped, whilst riding the inclined lift up from biolabs.` }),
+		new MiscMarker(`qqgUA`, markers.wonderWeaponCollectible, [257.59375, 272.625], { linkedItems: `YPTol`, uniqueTitle: `Briefcase Chip`, uniqueDesc: `An electronic chip used to open the briefcase in the Sea Tower.` }),
+		new MiscMarker(`YPTol`, markers.wonderWeaponCollectible, [205.0625, 298.78125], { linkedItems: `MFkM_`, uniqueTitle: `Multiphasic Injector`, uniqueDesc: `A briefcase chained to Aanya's hand. Opens when interacting with it, only after obtaining the chip.` }),
+		new MiscMarker(`MFkM_`, markers.wonderWeaponStep, [256.0625, 275.71875], { linkedItems: `kpoPI,LfFld,Mf27c`, uniqueTitle: `Multiphasic Resonator`, uniqueDesc: `A machine that is used to begin the orb step. Plug in the Multiphasic Injector and then activate the 3 Harmonic Triangulators around the map. return when you have activated all 3 and input the code, calculated using the information on the whiteboards.` }),
+		new MiscMarker(`Mf27c`, markers.wonderWeaponStep, [277.25, 259.375], { linkedItems: ``, uniqueTitle: `Harmonic Triangulator`, uniqueDesc: `1 of 3 computers that must be activated after plugging the injector into the resonator, the diagram representing the number (X, Y or Z) will appear as a yellow note below the resonator when activated. We recommend the following calculator if you're struggling: \nhub.tcno.co/games/bo6/terminus/` }),
+		new MiscMarker(`LfFld`, markers.wonderWeaponStep, [273.5625, 287.96875], { linkedItems: ``, uniqueTitle: `Harmonic Triangulator`, uniqueDesc: `1 of 3 computers that must be activated after plugging the injector into the resonator, the diagram representing the number (X, Y or Z) will appear as a yellow note below the resonator when activated. We recommend the following calculator if you're struggling: \nhub.tcno.co/games/bo6/terminus/` }),
+		new MiscMarker(`da69a`, markers.questCollectible, DefaultPOIData.nullLoc, { linkedItems: ``, uniqueTitle: `Hard Drive`, uniqueDesc: `Can be found in any of 4 locations. Required to progress the main quest and find Nathan.` }),
 	]
 };

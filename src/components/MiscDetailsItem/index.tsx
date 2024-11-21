@@ -22,11 +22,13 @@ export const MiscDetailItem = ({
 	icon,
 	img,
 	isMarker = false,
-	linkedItem }) => {
+	linkedItems }) => {
 	const { setCurrentMapWithValidation: setCurrentMap, currentMap } = useContext(DeclassifiedContext);
 	const mapInstance = useMapEvents({});
 	const [expanded, setExpanded] = useState(false);
 	let miscItemResult = getMiscMarkerById(id!);
+	const linkedItemsArray = linkedItems ? linkedItems?.split(',') : [];
+	const subheading: string[] = [];
 	let miscItemMap, miscMapId, miscItem;
 	if (miscItemResult) {
 		[miscMapId, miscItem] = miscItemResult;
@@ -38,6 +40,8 @@ export const MiscDetailItem = ({
 	const iconSource = `assets/img/markers/${(icon ?? '').toLowerCase()}.${LegacyIcons[icon ?? ''] ? 'png' : 'svg'}`;
 	const ItemHasLocation = loc !== DefaultPOIData.nullLoc;
 	const ItemIsOnAnotherMap = miscMapId !== currentMap!.id;
+	if (typeDesc !== title) subheading.push(typeDesc)
+	if (!isMarker && miscItemMap && miscItemMap.title) subheading.push(miscItemMap.title)
 
 	return (
 
@@ -66,18 +70,13 @@ export const MiscDetailItem = ({
 					<CustomImage src={img} altText="Placeholder" />
 					<MiscDetailItemContainer>
 						<Subheading variant="h3">
-							{typeDesc === title ? null : typeDesc}
-							{!isMarker && miscItemMap && miscItemMap.title ? (
-								miscItemMap.title
-							) : null}
+							{subheading.join(' - ')}
 						</Subheading>
 						<MiscDescription>
 							{desc}
-							{linkedItem ? (
-								<>
-									<br />
-									<a target="blank" href={"/" + linkedItem}>More Info...</a>
-								</>) : null}
+							{linkedItemsArray.length > 0 ? linkedItemsArray.map((item, index) => (
+								<a key={index} target="blank" href={"/" + item}>Related{index !== 0 ? ` #${index + 1}` : null}<br /></a>
+							)) : null}
 						</MiscDescription>
 						<ActionContainer>
 							{ItemHasLocation && miscItemMap?.mapCanRender ? <Button onClick={async () => {

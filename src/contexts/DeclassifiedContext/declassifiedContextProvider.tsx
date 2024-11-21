@@ -139,7 +139,6 @@ export const DeclassifiedContextProvider = ({ children }) => {
 			if (sharedMapItemId) {
 				const sharedMapItem = GetMapById(sharedMapItemId)
 				if (sharedMapItem) {
-					// Map id sharing - TODO make this better to allow sharing of the urls, and possibly have the id as always fixed in the URL and the ID goes on the end
 					setCurrentMapWithValidation(sharedMapItem);
 
 					return;
