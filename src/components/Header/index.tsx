@@ -186,14 +186,20 @@ const Header = () => {
 
 	function buildMapItems(mapGroup: [string, MapGroupItem][]) {
 		return mapGroup
-			? mapGroup.map(([key, mapGroupItem]) => (
-					<MenuItem
-						onClick={() => setCurrentMap(mapGroupItem.mapLayers[0])}
-						key={key}
-					>
-						{mapGroupItem.mapName}
-					</MenuItem>
-				))
+			? mapGroup.map(([key, mapGroupItem]) => {
+				// TODO : maybe swap this out for some better styling instead of removing the current map
+				if (currentMapGroup!.mapName !== mapGroupItem.mapName) {
+					return (
+						<MenuItem
+							onClick={() => setCurrentMap(mapGroupItem.mapLayers[0])}
+							key={key}
+						>
+							{mapGroupItem.mapName}
+						</MenuItem>
+					)
+				}
+				return null;
+			})
 			: null;
 	}
 };

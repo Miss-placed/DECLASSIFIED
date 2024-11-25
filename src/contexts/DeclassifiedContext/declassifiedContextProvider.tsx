@@ -3,6 +3,7 @@ import {
 	createContext,
 	useCallback,
 	useEffect,
+	useRef,
 	useState,
 } from 'react';
 import { useMapEvent, useMapEvents } from 'react-leaflet';
@@ -84,6 +85,7 @@ export const DeclassifiedContextProvider = ({ children }) => {
 	const { initiallySharedMapItemId, setInitiallySharedMapItemId, setIsOnStartup } = useUserContext();
 	const { triggerDialog } = useNotification();
 	const [isMapLoaded, setIsMapLoaded] = useState(false);
+	const timeoutIdRef = useRef<NodeJS.Timeout | null>(null);
 
 	const setCurrentMapWithValidation = useCallback(async (newMap: MapItem) => {
 		if (isDebugMode) {
@@ -258,19 +260,30 @@ export const DeclassifiedContextProvider = ({ children }) => {
 		fetchPreferences();
 
 		if (initiallySharedMapItemId) {
-			if (isDebugMode) {
-				console.log('isMapLoaded && initiallySharedMapItemId: ', isMapLoaded, initiallySharedMapItemId);
-			}
+			const checkMapLoaded = () => {
+				if (isDebugMode) {
+					console.log('isMapLoaded && initiallySharedMapItemId: ', isMapLoaded, initiallySharedMapItemId);
+				}
 
-			if (timeoutId) {
-				clearTimeout(timeoutId); // Clear the previous timeout if any
-			}
+				if (timeoutIdRef.current) {
+					clearTimeout(timeoutIdRef.current); // Clear the previous timeout if any
+				}
 
-			timeoutId = setTimeout(() => {
-				setIsOnStartup(false);
-				focusOnSharedItem(initiallySharedMapItemId);
-			}, 200);
-			setInitiallySharedMapItemId(undefined);
+				timeoutIdRef.current = setTimeout(() => {
+					if (isMapLoaded) {
+						setIsOnStartup(false);
+						focusOnSharedItem(initiallySharedMapItemId);
+						setInitiallySharedMapItemId(undefined);
+					} else {
+						if (isDebugMode) {
+							console.log('RETRYING FOCUS: ', isMapLoaded, initiallySharedMapItemId);
+						}
+						timeoutIdRef.current = setTimeout(checkMapLoaded, 50);
+					}
+				}, 50);
+			};
+
+			checkMapLoaded();
 		}
 	}, [focusOnSharedItem, initiallySharedMapItemId, isDebugMode, isMapLoaded, isOnStartup, setCurrentMapWithValidation, setInitiallySharedMapItemId, setIsOnStartup, triggerDialog]);
 
