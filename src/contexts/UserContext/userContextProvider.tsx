@@ -6,7 +6,7 @@ const initialContextValues = {
 	setIsOnStartup: () => { },
 	isMobile: window.innerWidth <= 768,
 	setIsMobile: () => { },
-	isDebugMode: true,
+	isDebugMode: false,
 	setIsDebugMode: () => { },
 	initiallySharedMapItemId: null,
 	setInitiallySharedMapItemId: () => { },
