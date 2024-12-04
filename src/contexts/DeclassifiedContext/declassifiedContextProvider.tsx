@@ -3,6 +3,7 @@ import {
 	createContext,
 	useCallback,
 	useEffect,
+	useRef,
 	useState,
 } from 'react';
 import { useMapEvent, useMapEvents } from 'react-leaflet';
@@ -21,6 +22,7 @@ import { db, DeclassifiedUserPreferences } from '../../data/db';
 import { StaticEggStore } from '../../data/easterEggs';
 import { DefaultPOIData, IntelItem, IntelStore } from '../../data/intel';
 import { filterIntel, filterMisc } from '../../data/listFiltering';
+import { StaticQuestStore } from '../../data/mainQuest';
 import { GetMapById, GetMapByTitle, MapDetails } from '../../data/maps/mapDetails';
 import { checkUserHasUnmigratedPreferences, markAsMigrated, migrateOldUserPreferences } from '../../data/migration';
 import { getIntelById, getMiscMarkerById } from '../../helpers/github';
@@ -83,6 +85,7 @@ export const DeclassifiedContextProvider = ({ children }) => {
 	const { initiallySharedMapItemId, setInitiallySharedMapItemId, setIsOnStartup } = useUserContext();
 	const { triggerDialog } = useNotification();
 	const [isMapLoaded, setIsMapLoaded] = useState(false);
+	const timeoutIdRef = useRef<NodeJS.Timeout | null>(null);
 
 	const setCurrentMapWithValidation = useCallback(async (newMap: MapItem) => {
 		if (isDebugMode) {
@@ -138,7 +141,6 @@ export const DeclassifiedContextProvider = ({ children }) => {
 			if (sharedMapItemId) {
 				const sharedMapItem = GetMapById(sharedMapItemId)
 				if (sharedMapItem) {
-					// Map id sharing - TODO make this better to allow sharing of the urls, and possibly have the id as always fixed in the URL and the ID goes on the end
 					setCurrentMapWithValidation(sharedMapItem);
 
 					return;
@@ -207,10 +209,11 @@ export const DeclassifiedContextProvider = ({ children }) => {
 	}, [collectedIntel, currentIntelFilter, currentMapGroup])
 
 	useEffect(() => {
-		if (currentMapGroup && StaticEggStore) {
+		if (currentMapGroup && StaticEggStore && StaticQuestStore) {
 			var filteredMisc = filterMisc(
 				currentMapGroup,
 				StaticEggStore,
+				StaticQuestStore,
 				currentEggFilter.searchTerm,
 				currentEggFilter.easterEggTypes,
 			);
@@ -257,19 +260,30 @@ export const DeclassifiedContextProvider = ({ children }) => {
 		fetchPreferences();
 
 		if (initiallySharedMapItemId) {
-			if (isDebugMode) {
-				console.log('isMapLoaded && initiallySharedMapItemId: ', isMapLoaded, initiallySharedMapItemId);
-			}
+			const checkMapLoaded = () => {
+				if (isDebugMode) {
+					console.log('isMapLoaded && initiallySharedMapItemId: ', isMapLoaded, initiallySharedMapItemId);
+				}
 
-			if (timeoutId) {
-				clearTimeout(timeoutId); // Clear the previous timeout if any
-			}
+				if (timeoutIdRef.current) {
+					clearTimeout(timeoutIdRef.current); // Clear the previous timeout if any
+				}
 
-			timeoutId = setTimeout(() => {
-				setIsOnStartup(false);
-				focusOnSharedItem(initiallySharedMapItemId);
-			}, 200);
-			setInitiallySharedMapItemId(undefined);
+				timeoutIdRef.current = setTimeout(() => {
+					if (isMapLoaded) {
+						setIsOnStartup(false);
+						focusOnSharedItem(initiallySharedMapItemId);
+						setInitiallySharedMapItemId(undefined);
+					} else {
+						if (isDebugMode) {
+							console.log('RETRYING FOCUS: ', isMapLoaded, initiallySharedMapItemId);
+						}
+						timeoutIdRef.current = setTimeout(checkMapLoaded, 50);
+					}
+				}, 50);
+			};
+
+			checkMapLoaded();
 		}
 	}, [focusOnSharedItem, initiallySharedMapItemId, isDebugMode, isMapLoaded, isOnStartup, setCurrentMapWithValidation, setInitiallySharedMapItemId, setIsOnStartup, triggerDialog]);
 

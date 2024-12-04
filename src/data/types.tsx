@@ -51,15 +51,27 @@ export const MiscTypes = {
 };
 
 /////////////////////Markers/////////////////////////
-export const MarkerLayerTypes = {
+export type LayerGroupings = {
+    intelAudio: Item;
+    intelArtifacts: Item;
+    intelDocuments: Item;
+    perks: Item;
+    misc: Item;
+    easterEggs: Item;
+    mainQuest: Item;
+};
+
+//TODO: combine this type with MarkerStore as this should really just be one single thing
+export const MarkerLayerTypes: LayerGroupings = {
     intelAudio: new Item({ id: 'intel', title: 'Intel - Audio Logs' }),
     intelArtifacts: new Item({ id: 'intel', title: 'Intel - Artifacts' }),
     intelDocuments: new Item({ id: 'intel', title: 'Intel - Documents' }),
     perks: new Item({ id: 'perks', title: 'Perks' }),
     misc: new Item({ id: 'misc', title: 'Miscellaneous' }),
     easterEggs: new Item({ id: 'easterEggs', title: 'Easter Eggs' }),
+    mainQuest: new Item({ id: 'mainQuest', title: 'Main Quest' }),
 };
 
-export interface IMisc {
+export interface MarkerStore {
     [key: string]: MiscMarker[];
 }

@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { Marker, Popup, useMapEvents } from 'react-leaflet';
 import { useUserContext } from '../../../contexts/UserContext/userContextProvider';
 import { db, DeclassifiedIntelCollected } from '../../../data/db';
-import { Faction, IntelItem } from '../../../data/intel';
+import { DefaultPOIData, Faction, IntelItem } from '../../../data/intel';
 import { intelIconInit } from '../../../helpers/icons';
 import { IntelDetailsItem } from '../IntelDetailsItem';
 
@@ -48,7 +48,7 @@ export const IntelMapMarker = ({
 		}
 	}, [initiallySharedMapItemId, id, markerInstance, mapInstance]);
 
-	return loc !== null && loc.toString() === [0, 0].toString() ? (
+	return loc !== null && loc.toString() === DefaultPOIData.nullLoc.toString() ? (
 		<></>
 	) : (
 		<>

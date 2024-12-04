@@ -1,7 +1,7 @@
 import { Item, MiscMarker } from '../classes';
 import { IconFileNames } from './icons';
 import { MapIds } from './intel';
-import { IMisc } from './types';
+import { MarkerStore } from './types';
 
 // Used to generate IDs for all of the below misc markers:
 // https://nanoid.jormaechea.com.ar/?alphabet=0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz&length=5
@@ -70,7 +70,7 @@ export const Perks = {
 	}),
 };
 
-export const PerkStore: IMisc = {
+export const PerkStore: MarkerStore = {
 	[MapIds.dieMaschine]: [
 		new MiscMarker(`ospc7`, Perks.staminup, [251.96478134656803, 349.75], { uniqueDesc: `Upstairs` }),
 		new MiscMarker(`fcM5h`, Perks.jugg, [362.1755501451447, 259.75]),

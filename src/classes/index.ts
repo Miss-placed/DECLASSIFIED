@@ -31,14 +31,14 @@ export class BaseMarker extends Item {
 	typeDesc: IntelType;
 	loc: LatLngExpression;
 	img?: string;
-	linkedItem?: string;
+	linkedItems?: string;
 
-	constructor({ id, title, desc, icon, layer, typeDesc, loc, img, linkedItem }: any) {
+	constructor({ id, title, desc, icon, layer, typeDesc, loc, img, linkedItems }: any) {
 		super({ id, title, desc, icon, layer });
 		this.typeDesc = typeDesc;
 		this.loc = loc ?? [0, 0];
 		this.img = img ?? '';
-		this.linkedItem = linkedItem ?? '';
+		this.linkedItems = linkedItems ?? '';
 	}
 }
 
@@ -73,13 +73,15 @@ export class MiscMarker extends BaseMarker {
 		{ title, desc, icon }: any,
 		loc: LatLngExpression,
 		optional?: {
+			uniqueTitle?: string;
 			uniqueDesc?: string;
 			img?: string;
-			linkedItem?: string;
+			linkedItems?: string;
 		}
 	) {
+		var newTitle = optional?.uniqueTitle ? optional?.uniqueTitle : title;
 		desc = optional?.uniqueDesc ? `${optional?.uniqueDesc}\n${desc}` : desc;
-		super({ id, title, desc, icon, loc, typeDesc: 'Misc', img: optional?.img, linkedItem: optional?.linkedItem });
+		super({ id, title: newTitle, desc, icon, loc, typeDesc: title, img: optional?.img, linkedItems: optional?.linkedItems });
 	}
 }
 

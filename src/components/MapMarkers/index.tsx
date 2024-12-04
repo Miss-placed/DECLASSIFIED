@@ -1,11 +1,13 @@
 import { useContext, useState } from 'react';
 import { LayerGroup, LayersControl } from 'react-leaflet';
+import { Item } from '../../classes';
 import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { StaticEggStore } from '../../data/easterEggs';
 import { IntelStore, IntelType } from '../../data/intel';
+import { StaticQuestStore } from '../../data/mainQuest';
 import { MiscStore } from '../../data/misc';
 import { PerkStore } from '../../data/perks';
-import { IMisc, MarkerLayerTypes } from '../../data/types';
+import { MarkerLayerTypes, MarkerStore } from '../../data/types';
 import { IntelMapMarker } from '../Intel/IntelMapMarker';
 import { MiscMapMarker } from '../MiscMapMarker';
 
@@ -24,7 +26,7 @@ const renderIntelMapMarkers = (
 	}
 };
 
-const renderMiscMapMarkers = (markerStore: IMisc, mapId: string): JSX.Element[] => {
+const renderMiscMapMarkers = (markerStore: MarkerStore, mapId: string): JSX.Element[] => {
 	if (mapId && markerStore[mapId]) {
 		return markerStore[mapId].map((misc, index) => {
 			return <MiscMapMarker key={index} {...misc} />;
@@ -47,7 +49,7 @@ export const MapMarkers = () => {
 	const renderedArtifactMarkers = renderIntelMapMarkers(currentMap!.id!, IntelType.Artifact);
 	const renderedDocumentMarkers = renderIntelMapMarkers(currentMap!.id!, IntelType.Docs);
 
-	function AnyResultsInMarkerStore(markerStore: IMisc) {
+	function AnyResultsInMarkerStore(markerStore: MarkerStore) {
 		return markerStore[currentMap!.id!] && markerStore[currentMap!.id!].length > 0;
 	}
 
@@ -86,30 +88,10 @@ export const MapMarkers = () => {
 			</LayersControl.Overlay>
 		) : null
 		,
-		AnyResultsInMarkerStore(PerkStore) ? (
-			<LayersControl.Overlay
-				name={MarkerLayerTypes.perks.title}
-				checked={isChecked /* TODO: SWAP WITH USER PREFS */}
-			>
-				<LayerGroup>{renderMiscMapMarkers(PerkStore, currentMap!.id!)}</LayerGroup>
-			</LayersControl.Overlay>
-		) : null
-		,
-		AnyResultsInMarkerStore(MiscStore) ? (
-			<LayersControl.Overlay
-				name={MarkerLayerTypes.misc.title}
-				checked={isChecked /* TODO: SWAP WITH USER PREFS */}
-			>
-				<LayerGroup>{renderMiscMapMarkers(MiscStore, currentMap!.id!)}</LayerGroup>
-			</LayersControl.Overlay>
-		) : null
-		,
-		AnyResultsInMarkerStore(StaticEggStore) ? (<LayersControl.Overlay
-			name={MarkerLayerTypes.easterEggs.title}
-			checked={isChecked /* TODO: SWAP WITH USER PREFS */}
-		>
-			<LayerGroup>{renderMiscMapMarkers(StaticEggStore, currentMap!.id!)}</LayerGroup>
-		</LayersControl.Overlay>) : null
+		RenderLayerControlGroup(PerkStore, MarkerLayerTypes.perks),
+		RenderLayerControlGroup(MiscStore, MarkerLayerTypes.misc),
+		RenderLayerControlGroup(StaticEggStore, MarkerLayerTypes.easterEggs),
+		RenderLayerControlGroup(StaticQuestStore, MarkerLayerTypes.mainQuest),
 	]
 	return (
 		<>
@@ -119,6 +101,7 @@ export const MapMarkers = () => {
 			{renderOrderOfLayers[3]}
 			{renderOrderOfLayers[4]}
 			{renderOrderOfLayers[5]}
+			{renderOrderOfLayers[6]}
 
 
 			{/* <LayersControl.Overlay checked name="Misc Markers">
@@ -152,5 +135,16 @@ export const MapMarkers = () => {
             </LayersControl.Overlay> */}
 		</>
 	);
+
+	function RenderLayerControlGroup(markerStore: MarkerStore, markerLayerType: Item) {
+		return AnyResultsInMarkerStore(markerStore) ? (
+			<LayersControl.Overlay
+				name={markerLayerType.title}
+				checked={isChecked /* TODO: SWAP WITH USER PREFS */}
+			>
+				<LayerGroup>{renderMiscMapMarkers(markerStore, currentMap!.id!)}</LayerGroup>
+			</LayersControl.Overlay>
+		) : null;
+	}
 };
 
