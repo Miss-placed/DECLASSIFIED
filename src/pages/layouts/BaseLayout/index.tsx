@@ -16,12 +16,18 @@ export interface BaseLayoutProps {
 export const BaseLayout = ({ children }: BaseLayoutProps) => {
 	// TODO: Apply and use this properly throughout the app so we can have theme switching
 	const defaultTheme = createTheme({
+		// typography: {
+		// 	fontFamily: [
+		// 		'Open Sans',
+		// 	].join(','),
+		// },
 		palette: {
 			background: {
-				default: 'var(--clr-bg)'
+				default: '#1f2223'
 			},
 			text: {
-				primary: 'var(--clr-white-d)'
+				// primary: '#e3ddd9'
+				secondary: '#e3ddd9'
 			},
 			primary: {
 				// main: '#3c3c3b'
