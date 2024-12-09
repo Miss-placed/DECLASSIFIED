@@ -108,6 +108,10 @@ export const MapDetails = {
 	terminusIslands: new MapItem(MapIds.terminusIslands, {
 		title: 'Terminus Islands',// TODO: add a way of showing the same marker over multiple map layers e.g. terminus and its islands vs the main island
 	}),
+	citadelle: new MapItem(MapIds.citadelle, {
+		title: 'Citadelle Des Morts',
+		mapOverlay: mapSVGs.citadelle,
+	}),
 };
 
 export const allOutbreakMapsArr: string[] = [

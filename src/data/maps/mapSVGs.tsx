@@ -19551,4 +19551,720 @@ export const mapSVGs = {
 			</g>
 		</SVGOverlay>
 	),
+	citadelle: (
+		<SVGOverlay attributes={{ viewBox: '0 0 512 512' }} bounds={ImageBounds}>
+			<defs>
+				<style>
+					{globalStyle}
+					{` .cls-1 {
+        fill: #2c2c2c;
+      }
+
+      .cls-2 {
+        fill: #6b6b6b;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
+        stroke: #6b6b6b;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2, .cls-4 {
+        stroke-width: 2px;
+      }
+
+      .cls-3 {
+        fill: #7c2728;
+      }
+
+      .cls-4, .cls-5 {
+        fill: none;
+      }
+
+      .cls-6 {
+        fill: #363635;
+      }
+
+      .cls-6, .cls-7 {
+        stroke-width: 3px;
+      }
+
+      .cls-7 {
+        fill: #555;
+        stroke: #7c2728;
+      } `}
+				</style>
+			</defs>
+			<g
+				id="layer1"
+				transform="translate(57.452764,-144.69841)">
+				<g
+					id="FloorGround"
+					transform="matrix(0.30791086,0,0,0.30791086,-375.28714,45.68768)">
+					<path
+						className="cls-16"
+						d="m 2445.36,828.15 v 108.57 h -81.6 c -2.09,-32.06 -6.21,-77.88 3.2,-108.57 z"
+						id="path25"
+						style="opacity:0.25;fill:#ffffff" />
+					<path
+						className="cls-6"
+						d="m 2536.09,748.87 v 85.27 c -11.24,18.53 -38.04,22.34 -67.82,23.11 -2.89,1.36 -17.53,9.34 -18.03,31.92 -0.54,25.07 0,47.95 0,47.95 h -61.57 v 32.7 c 0,0 -0.52,31.67 -66.53,42.02 v 28.79 H 2187.61 V 911.06 h -49.58 v 63.36 H 2019.25 V 741.51 h 118.78 v 115.68 h 49.58 v -5.04 h 24.52 v -44.44 h 53.81 v 44.44 h 56.2 v 127.72 c 10.48,2.29 43.02,6.96 42.56,-23.68 -0.08,-5.54 -0.46,-12.15 -0.94,-19.47 -2.09,-32.06 -6.21,-77.88 3.2,-108.57 1.32,-4.33 2.92,-8.35 4.82,-11.99 l -25.06,-21.25 16.34,-25.61 -1.09,-7.63 25.07,-23.97 h 13.62 l 24.52,-13.62 12.16,24.79 z"
+						id="path26"
+						style="fill:#555555;stroke:#7c2728;stroke-width:3px;stroke-miterlimit:10" />
+				</g>
+				<g
+					id="Layer_6"
+					data-name="Layer 6"
+					transform="matrix(0.30791086,0,0,0.30791086,-375.28714,45.68768)">
+					<rect
+						className="cls-15"
+						x="2072.6499"
+						y="851.58002"
+						width="12.53"
+						height="12.53"
+						id="rect26"
+						style="fill:none;stroke:#6b6b6b;stroke-miterlimit:10" />
+					<rect
+						className="cls-15"
+						x="2073.1084"
+						y="796.79327"
+						width="12.53"
+						height="12.53"
+						id="rect26-4"
+						style="fill:none;stroke:#6b6b6b;stroke-miterlimit:10" />
+					<rect
+						className="cls-15"
+						x="2072.6499"
+						y="908.78998"
+						width="12.53"
+						height="12.53"
+						id="rect27"
+						style="fill:none;stroke:#6b6b6b;stroke-miterlimit:10" />
+					<rect
+						className="cls-15"
+						x="2217.5801"
+						y="898.44"
+						width="12.53"
+						height="12.53"
+						id="rect28"
+						style="fill:none;stroke:#6b6b6b;stroke-miterlimit:10" />
+					<rect
+						className="cls-15"
+						x="2280.0601"
+						y="898.44"
+						width="12.53"
+						height="12.53"
+						id="rect28-1"
+						style="fill:none;stroke:#6b6b6b;stroke-miterlimit:10" />
+					<rect
+						className="cls-15"
+						x="2217.5801"
+						y="932.77002"
+						width="12.53"
+						height="12.53"
+						id="rect29"
+						style="fill:none;stroke:#6b6b6b;stroke-miterlimit:10" />
+					<rect
+						className="cls-15"
+						x="2280.0601"
+						y="932.77002"
+						width="12.53"
+						height="12.53"
+						id="rect30"
+						style="fill:none;stroke:#6b6b6b;stroke-miterlimit:10" />
+					<rect
+						className="cls-15"
+						x="2280.0601"
+						y="967.21985"
+						width="12.53"
+						height="12.53"
+						id="rect31"
+						style="fill:none;stroke:#6b6b6b;stroke-miterlimit:10" />
+					<rect
+						className="cls-15"
+						x="2280.0601"
+						y="1004.33"
+						width="12.53"
+						height="12.53"
+						id="rect32"
+						style="fill:none;stroke:#6b6b6b;stroke-miterlimit:10" />
+					<rect
+						className="cls-15"
+						x="2217.5801"
+						y="967.21985"
+						width="12.53"
+						height="12.53"
+						id="rect32-5"
+						style="fill:none;stroke:#6b6b6b;stroke-miterlimit:10" />
+					<rect
+						className="cls-15"
+						x="2217.5801"
+						y="1004.33"
+						width="12.53"
+						height="12.53"
+						id="rect32-5-7"
+						style="fill:none;stroke:#6b6b6b;stroke-miterlimit:10" />
+					<rect
+						className="cls-15"
+						x="2396.6699"
+						y="883"
+						width="12.53"
+						height="12.53"
+						id="rect33"
+						style="fill:none;stroke:#6b6b6b;stroke-miterlimit:10" />
+					<rect
+						className="cls-15"
+						x="2486.03"
+						y="798.72998"
+						width="12.53"
+						height="12.53"
+						id="rect34"
+						style="fill:none;stroke:#6b6b6b;stroke-miterlimit:10" />
+					<rect
+						className="cls-15"
+						x="2416.28"
+						y="802.35999"
+						width="33.349998"
+						height="33.349998"
+						id="rect35"
+						style="fill:none;stroke:#6b6b6b;stroke-miterlimit:10" />
+				</g>
+			</g>
+			<g
+				id="layer2"
+				transform="translate(-36.60016)">
+				<g
+					id="Layer_5"
+					data-name="Layer 5"
+					transform="matrix(0.35555556,0,0,0.35555556,-434.82979,-112.757)">
+					<path
+						className="cls-7"
+						d="m 2249.25,1305.18 v -120.15 l -11.44,-9.81 h -18.8 l -114.42,-89.9 h 9.81 l 8.99,-6.54 v -76.83 h 18.8 v -80.91 h -62.93 l -18.58,-12.84 h -90.08 c -0.05,0.13 -0.03,-12.44 -0.03,-12.44 h 31.66 V 768.2 h 41.06 c 35.14,-2.45 40.87,-46.59 40.87,-46.59 v -53.13 h 24.52 V 570.4 h 35.14 c 15.53,0.82 17.16,19.62 17.16,19.62 v 57.21 h 26.15 v -52.31 c 0.82,-40.05 -35.96,-53.13 -35.96,-53.13 h -53.94 v -67.84 h -134.04 v 52.31 h -90.72 v 44.95 h -8.99 v -1.63 h -0.03 v -4.36 H 1753.1 v 4.36 h -23.2 v -4.36 h -26.62 v 4.36 h -10.9 v 21.8 h 10.9 v 62.06 h -10.9 v 24.03 h 47.31 v -24.03 h -9.79 v -62.06 h 23.2 v 114.57 h 48.75 v 29.3 h 61.6 v -33.78 h 25.4 v 194.27 h 26.32 v 26.66 c -8.78,-2.02 -14.52,-5.91 -14.52,-12.87 0,-0.46 0.02,-0.9 0.08,-1.35 h -71.1 v 12.23 h -83.1 v 82.2 h 15.98 v 88.67 c 0.41,-0.05 3.85,-2.31 8.61,-4.89 3.5,-1.9 8.13,-4.33 10.63,-4.36 1.59,-0.02 3.16,0 4.74,0.06 l -19.45,30.18 h -16.35 l -12.26,33.51 c 0,0 -75.19,8.99 -66.2,74.38 l -52.31,-1.63 c 0,0 0.82,49.04 12.26,72.74 v 89.9 l 20.43,36.78 c 0,0 17.98,10.63 53.94,14.71 0,0 14.71,-2.45 13.89,23.7 l 19.62,0.82 c 0,0 15.53,13.89 -1.63,26.15 l 17.98,13.89 h 88.27 v 47.4 h 9.81 v 43.32 h 47.4 v 18.8 h 53.94 v -22.07 h 40.05 l 36.78,-11.44 v -102.16 h 76.83 v 7.36 h 40.87 v -44.95 l 26.97,-51.49 26.97,17.98 16.35,-2.45 10.63,-21.25 -3.27,-10.63 14.71,-35.96 h 7.36 l 5.72,-11.44 1.63,-13.08 h -8.17 z m -188.8,-610.53 c 0,0 0.82,46.59 -17.98,48.22 -16.96,1.47 -39.23,1.91 -40.05,1.09 l -0.2,-38.81 h -8.79 v -10.5 z m -135.84,10.5 v -16.92 h -10.96 v -25.38 h -50.2 v -71.46 h 0.03 v -7.08 h 9.81 v 40.87 h 87.45 v -19.62 h 22.07 v 49.04 h -13.08 v 50.55 z"
+						id="path1" />
+				</g>
+				<g
+					id="DarkRoom"
+					transform="matrix(0.35555556,0,0,0.35555556,-434.82979,-112.757)">
+					<rect
+						className="cls-6"
+						x="1749.5"
+						y="923.62"
+						width="69.290001"
+						height="75.910004"
+						id="rect2" />
+					<rect
+						className="cls-6"
+						x="2067.26"
+						y="924.26001"
+						width="71.589996"
+						height="74.529999"
+						id="rect3" />
+					<polygon
+						className="cls-6"
+						points="1885.27,1452.3 1813.35,1451.21 1813.35,1321.53 1974.63,1321.53 1974.63,1394.54 1885.27,1394.54 "
+						id="polygon3" />
+					<rect
+						className="cls-6"
+						x="1764.05"
+						y="1220.45"
+						width="75.739998"
+						height="75.739998"
+						transform="rotate(-45,1801.9143,1258.3227)"
+						id="rect4" />
+				</g>
+				<g
+					id="Fence"
+					transform="matrix(0.35555556,0,0,0.35555556,-434.82979,-112.757)">
+					<rect
+						className="cls-4"
+						x="1999.97"
+						y="502.57999"
+						width="82.550003"
+						height="145.48"
+						id="rect5" />
+					<line
+						className="cls-2"
+						x1="1798.91"
+						y1="592.47998"
+						x2="1829.15"
+						y2="592.47998"
+						id="line5" />
+					<line
+						className="cls-2"
+						x1="1836.5"
+						y1="617"
+						x2="1836.5"
+						y2="636.62"
+						id="line6" />
+					<polyline
+						className="cls-4"
+						points="1890.72 776.38 1925.59 776.38 1925.59 801.72"
+						id="polyline6" />
+					<polyline
+						className="cls-4"
+						points="1964.82 802.53 1964.82 777.2 2000.42 777.2"
+						id="polyline7" />
+					<line
+						className="cls-4"
+						x1="2096.4099"
+						y1="579.40997"
+						x2="2096.4099"
+						y2="639.07001"
+						id="line7" />
+					<polyline
+						className="cls-4"
+						points="1913.6 934.12 1913.6 970.63 1818.8 970.63"
+						id="polyline8" />
+					<line
+						className="cls-4"
+						x1="1913.6"
+						y1="970.63"
+						x2="2011.14"
+						y2="970.63"
+						id="line8" />
+					<polyline
+						className="cls-4"
+						points="1921.23 970.63 1921.23 983.16 1921.23 1034.38 1897.26 1034.38"
+						id="polyline9" />
+					<line
+						className="cls-4"
+						x1="1887.45"
+						y1="983.71002"
+						x2="1921.23"
+						y2="983.71002"
+						id="line9" />
+					<polyline
+						className="cls-4"
+						points="1817.98 1000.05 1824.52 1000.05 1832.69 1010.95"
+						id="polyline10" />
+					<polyline
+						className="cls-4"
+						points="1853.12 1015.85 1866.75 1015.85 1881.46 1002.23"
+						id="polyline11" />
+					<polyline
+						className="cls-4"
+						points="1802.45 999.51 1802.45 1055.08 1846.04 1097.04 1876.55 1097.04 1876.55 1074.16 1884.73 1074.16"
+						id="polyline12" />
+					<polyline
+						className="cls-4"
+						points="1919.05 1077.42 2011.68 1077.42 2011.68 1097.04 2041.65 1097.04 2084.7 1053.99 2084.7 999.23 2062.36 999.23 2052 1009.59 2022.58 1009.59 2011.95 998.96"
+						id="polyline13" />
+					<line
+						className="cls-4"
+						x1="2026.9399"
+						y1="970.63"
+						x2="2066.71"
+						y2="970.63"
+						id="line13" />
+					<polyline
+						className="cls-4"
+						points="2028.03 946.11 2049.28 946.11 2049.28 970.63"
+						id="polyline14" />
+					<polyline
+						className="cls-4"
+						points="1961.01 930.04 1968.09 930.04 1968.09 892.98 1983.89 892.98"
+						id="polyline15" />
+					<polyline
+						className="cls-4"
+						points="2025.3 927.04 2049.28 927.04 2049.28 909.87"
+						id="polyline16" />
+					<line
+						className="cls-4"
+						x1="2031.84"
+						y1="1068.71"
+						x2="2050.9099"
+						y2="1087.78"
+						id="line16" />
+					<line
+						className="cls-4"
+						x1="2058.54"
+						y1="1042.55"
+						x2="2076.8"
+						y2="1060.8101"
+						id="line17" />
+					<polyline
+						className="cls-4"
+						points="1889.63 1028.93 1908.16 1008.77 1920.69 1008.77"
+						id="polyline17" />
+					<line
+						className="cls-4"
+						x1="1966.46"
+						y1="1030.02"
+						x2="1966.46"
+						y2="970.63"
+						id="line18" />
+					<polyline
+						className="cls-4"
+						points="1838.41 910.42 1838.41 928.13 1859.66 928.13"
+						id="polyline18" />
+					<polyline
+						className="cls-4"
+						points="1838.96 970.63 1838.96 944.47 1860.75 944.47"
+						id="polyline19" />
+					<polyline
+						className="cls-4"
+						points="1789.37 1134.09 1804.9 1122.65 1813.08 1129.19"
+						id="polyline20" />
+					<line
+						className="cls-4"
+						x1="1731.62"
+						y1="1191.3"
+						x2="1800.8199"
+						y2="1191.3"
+						id="line20" />
+					<polyline
+						className="cls-4"
+						points="1796.73 1319.08 1772.48 1299.19 1779.02 1287.75"
+						id="polyline21" />
+					<line
+						className="cls-4"
+						x1="1656.42"
+						y1="1258.87"
+						x2="1659.15"
+						y2="1306.8199"
+						id="line21" />
+					<line
+						className="cls-4"
+						x1="1657.51"
+						y1="1330.25"
+						x2="1657.51"
+						y2="1365.66"
+						id="line22" />
+					<line
+						className="cls-4"
+						x1="1668.96"
+						y1="1314.45"
+						x2="1668.96"
+						y2="1365.66"
+						id="line23" />
+					<polyline
+						className="cls-4"
+						points="1679.85 1386.91 1730.07 1386.64 1730.07 1361.03"
+						id="polyline23" />
+					<line
+						className="cls-4"
+						x1="1689.12"
+						y1="1374.9301"
+						x2="1729.4399"
+						y2="1374.9301"
+						id="line24" />
+					<polyline
+						className="cls-4"
+						points="2166.43 1378.2 2141.36 1428.14 2149.45 1431.96"
+						id="polyline24" />
+					<polyline
+						className="cls-4"
+						points="2150.08 1231.62 2150.08 1279.03 2140.27 1279.03"
+						id="polyline25" />
+					<circle
+						className="cls-4"
+						cx="1682.58"
+						cy="1257.23"
+						r="13.08"
+						id="circle25" />
+					<g
+						id="g36">
+						<line
+							className="cls-5"
+							x1="2140.27"
+							y1="1275.76"
+							x2="2149.8101"
+							y2="1275.76"
+							id="line25" />
+						<line
+							className="cls-5"
+							x1="2140.27"
+							y1="1272.95"
+							x2="2149.8101"
+							y2="1272.95"
+							id="line26" />
+						<line
+							className="cls-5"
+							x1="2140.27"
+							y1="1270.14"
+							x2="2149.8101"
+							y2="1270.14"
+							id="line27" />
+						<line
+							className="cls-5"
+							x1="2140.27"
+							y1="1267.33"
+							x2="2149.8101"
+							y2="1267.33"
+							id="line28" />
+						<line
+							className="cls-5"
+							x1="2140.27"
+							y1="1264.51"
+							x2="2149.8101"
+							y2="1264.51"
+							id="line29" />
+						<line
+							className="cls-5"
+							x1="2140.27"
+							y1="1261.7"
+							x2="2149.8101"
+							y2="1261.7"
+							id="line30" />
+						<line
+							className="cls-5"
+							x1="2140.27"
+							y1="1258.89"
+							x2="2149.8101"
+							y2="1258.89"
+							id="line31" />
+						<line
+							className="cls-5"
+							x1="2140.27"
+							y1="1256.08"
+							x2="2149.8101"
+							y2="1256.08"
+							id="line32" />
+						<line
+							className="cls-5"
+							x1="2140.27"
+							y1="1253.27"
+							x2="2149.8101"
+							y2="1253.27"
+							id="line33" />
+						<line
+							className="cls-5"
+							x1="2140.27"
+							y1="1250.46"
+							x2="2149.8101"
+							y2="1250.46"
+							id="line34" />
+						<line
+							className="cls-5"
+							x1="2140.27"
+							y1="1247.65"
+							x2="2149.8101"
+							y2="1247.65"
+							id="line35" />
+						<line
+							className="cls-5"
+							x1="2140.27"
+							y1="1244.84"
+							x2="2149.8101"
+							y2="1244.84"
+							id="line36" />
+					</g>
+					<g
+						id="g48">
+						<line
+							className="cls-5"
+							x1="2155.3501"
+							y1="1399.8101"
+							x2="2163.8799"
+							y2="1403.8101"
+							id="line37" />
+						<line
+							className="cls-5"
+							x1="2154.1899"
+							y1="1402.1"
+							x2="2162.73"
+							y2="1406.1"
+							id="line38" />
+						<line
+							className="cls-5"
+							x1="2153.04"
+							y1="1404.4"
+							x2="2161.5701"
+							y2="1408.4"
+							id="line39" />
+						<line
+							className="cls-5"
+							x1="2151.8799"
+							y1="1406.6899"
+							x2="2160.4199"
+							y2="1410.6899"
+							id="line40" />
+						<line
+							className="cls-5"
+							x1="2150.72"
+							y1="1408.99"
+							x2="2159.26"
+							y2="1412.99"
+							id="line41" />
+						<line
+							className="cls-5"
+							x1="2149.5701"
+							y1="1411.28"
+							x2="2158.1101"
+							y2="1415.28"
+							id="line42" />
+						<line
+							className="cls-5"
+							x1="2148.4099"
+							y1="1413.58"
+							x2="2156.95"
+							y2="1417.58"
+							id="line43" />
+						<line
+							className="cls-5"
+							x1="2147.26"
+							y1="1415.87"
+							x2="2155.79"
+							y2="1419.87"
+							id="line44" />
+						<line
+							className="cls-5"
+							x1="2146.1001"
+							y1="1418.17"
+							x2="2154.6399"
+							y2="1422.17"
+							id="line45" />
+						<line
+							className="cls-5"
+							x1="2144.95"
+							y1="1420.47"
+							x2="2153.48"
+							y2="1424.46"
+							id="line46" />
+						<line
+							className="cls-5"
+							x1="2143.79"
+							y1="1422.76"
+							x2="2152.3301"
+							y2="1426.76"
+							id="line47" />
+						<line
+							className="cls-5"
+							x1="2142.6299"
+							y1="1425.0601"
+							x2="2151.1699"
+							y2="1429.05"
+							id="line48" />
+					</g>
+					<polyline
+						className="cls-4"
+						points="2124.61 1350.41 2141.36 1358.17 2122.97 1402.17"
+						id="polyline48" />
+					<g
+						id="g60">
+						<line
+							className="cls-5"
+							x1="2103.6799"
+							y1="1392.27"
+							x2="2123.4299"
+							y2="1401.85"
+							id="line49" />
+						<line
+							className="cls-5"
+							x1="2104.6699"
+							y1="1389.8101"
+							x2="2124.4199"
+							y2="1399.39"
+							id="line50" />
+						<line
+							className="cls-5"
+							x1="2105.6599"
+							y1="1387.35"
+							x2="2125.4099"
+							y2="1396.9301"
+							id="line51" />
+						<line
+							className="cls-5"
+							x1="2106.6499"
+							y1="1384.89"
+							x2="2126.3999"
+							y2="1394.47"
+							id="line52" />
+						<line
+							className="cls-5"
+							x1="2107.6399"
+							y1="1382.4301"
+							x2="2127.3899"
+							y2="1392.01"
+							id="line53" />
+						<line
+							className="cls-5"
+							x1="2108.6299"
+							y1="1379.97"
+							x2="2128.3799"
+							y2="1389.55"
+							id="line54" />
+						<line
+							className="cls-5"
+							x1="2109.6201"
+							y1="1377.51"
+							x2="2129.3701"
+							y2="1387.09"
+							id="line55" />
+						<line
+							className="cls-5"
+							x1="2110.6101"
+							y1="1375.05"
+							x2="2130.3601"
+							y2="1384.63"
+							id="line56" />
+						<line
+							className="cls-5"
+							x1="2111.6001"
+							y1="1372.59"
+							x2="2131.3501"
+							y2="1382.17"
+							id="line57" />
+						<line
+							className="cls-5"
+							x1="2112.5901"
+							y1="1370.13"
+							x2="2132.3401"
+							y2="1379.71"
+							id="line58" />
+						<line
+							className="cls-5"
+							x1="2113.5801"
+							y1="1367.67"
+							x2="2133.3301"
+							y2="1377.25"
+							id="line59" />
+						<line
+							className="cls-5"
+							x1="2114.5701"
+							y1="1365.21"
+							x2="2134.3201"
+							y2="1374.79"
+							id="line60" />
+					</g>
+				</g>
+				<g
+					id="deadzones"
+					transform="matrix(0.35555556,0,0,0.35555556,-434.82979,-112.757)">
+					<path
+						className="cls-3"
+						d="m 1682.58,1319.35 h 15.8 v -25.61 h 26.15 v 26.7 c 0,0 5.99,0.54 5.99,8.17 v 32.69 h -49.04 c 0,0 -0.27,-40.59 1.09,-41.96 z"
+						id="path60" />
+					<circle
+						className="cls-3"
+						cx="1945.21"
+						cy="1492.62"
+						r="16.35"
+						id="circle60" />
+					<rect
+						className="cls-3"
+						x="2165.3401"
+						y="1231.08"
+						width="63.209999"
+						height="63.209999"
+						id="rect60" />
+					<path
+						className="cls-3"
+						d="m 1999.75,747.26 46.63,-1.82 c 0,0 18.77,-0.42 17.56,-51.89 h -71.6 v 12.8 h 6.8 c 0,0 0.61,39.69 0.61,40.9 z"
+						id="path61" />
+					<path
+						className="cls-3"
+						d="m 1910.34,1129.73 v 22.88 h 67.56 v -22.88 h 41.41 l 7.63,5.45 h 39.23 l 10.9,-13.08 49.04,47.95 v 54.49 h 14.17 v 66.47 l -13.08,34.87 -5.45,-4.36 -7.63,19.62 11.99,6.54 -21.8,42.5 v 42.5 h -27.24 v 5.45 h -39.23 v -13.08 h -43.59 v -95.9 h -18.53 v -8.17 h -162.37 v 131.32 c 0,0 -53.4,6.54 -61.03,-41.41 0,0 -2.18,-20.71 14.17,-29.42 l 2.18,-39.23 c 0,0 2.18,-19.62 30.51,-25.06 l 58.03,-58.03 -54.22,-54.76 v -12.53 h -10.35 l 20.16,-63.21 8.17,3.27 c 0,0 90.45,-1.09 89.36,-2.18 z"
+						id="path62" />
+					<path
+						className="cls-3"
+						d="m 1862.11,583.22 h 12.26 v 40.59 h 85 v -19.34 h 24.79 v 51.76 h -13.35 v 50.13 h -47.68 v -16.89 h -10.63 v -25.34 h -50.4 c 0,0 0,-81.46 0,-80.91 z"
+						id="path63" />
+				</g>
+			</g>
+		</SVGOverlay>
+	),
 };
