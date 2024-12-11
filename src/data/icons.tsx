@@ -84,6 +84,7 @@ export enum IconFileNames {
 	deadshotDaiquiri = 'deadshot_daiquiri',
 	phdSlider = 'phd_slider',
 	meleeMacchiato = 'melee_macchiato',
+	vulture = 'vulture_aid',
 }
 
 
