@@ -57,6 +57,7 @@ export type LayerGroupings = {
     intelDocuments: Item;
     perks: Item;
     misc: Item;
+    wallbuy: Item;
     easterEggs: Item;
     mainQuest: Item;
 };
@@ -68,6 +69,7 @@ export const MarkerLayerTypes: LayerGroupings = {
     intelDocuments: new Item({ id: 'intel', title: 'Intel - Documents' }),
     perks: new Item({ id: 'perks', title: 'Perks' }),
     misc: new Item({ id: 'misc', title: 'Miscellaneous' }),
+    wallbuy: new Item({ id: 'wallbuy', title: 'Wall Buys' }),
     easterEggs: new Item({ id: 'easterEggs', title: 'Easter Eggs' }),
     mainQuest: new Item({ id: 'mainQuest', title: 'Main Quest' }),
 };

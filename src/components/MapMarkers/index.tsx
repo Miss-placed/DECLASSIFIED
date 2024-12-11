@@ -8,6 +8,7 @@ import { StaticQuestStore } from '../../data/mainQuest';
 import { MiscStore } from '../../data/misc';
 import { PerkStore } from '../../data/perks';
 import { MarkerLayerTypes, MarkerStore } from '../../data/types';
+import { WallbuyStore } from '../../data/wallbuys';
 import { IntelMapMarker } from '../Intel/IntelMapMarker';
 import { MiscMapMarker } from '../MiscMapMarker';
 
@@ -90,6 +91,7 @@ export const MapMarkers = () => {
 		,
 		RenderLayerControlGroup(PerkStore, MarkerLayerTypes.perks),
 		RenderLayerControlGroup(MiscStore, MarkerLayerTypes.misc),
+		RenderLayerControlGroup(WallbuyStore, MarkerLayerTypes.wallbuy),
 		RenderLayerControlGroup(StaticEggStore, MarkerLayerTypes.easterEggs),
 		RenderLayerControlGroup(StaticQuestStore, MarkerLayerTypes.mainQuest),
 	]
@@ -102,6 +104,7 @@ export const MapMarkers = () => {
 			{renderOrderOfLayers[4]}
 			{renderOrderOfLayers[5]}
 			{renderOrderOfLayers[6]}
+			{renderOrderOfLayers[7]}
 
 
 			{/* <LayersControl.Overlay checked name="Misc Markers">
