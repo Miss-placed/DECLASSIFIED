@@ -174,6 +174,10 @@ const markers = {
 	culinaryDelightIngredient: new Item({
 		title: `Culinary Delight - Ingredient`, desc: `An ingredient involved in the Culinary Delight side egg.`, icon: IconFileNames.interactable,
 	}),
+	// Citadelle Des Morts
+	pointOfPower: new Item({
+		title: `Point Of Power Trap`, desc: `Cost: 1600\nUsed to boost your damage against and slow zombies. Used as part of the main quest, the symbol on the floor will light up with a different pattern after activating PaP.`, icon: IconFileNames.trap,
+	}),
 };
 
 // Used to generate IDs for all of the below misc markers:
@@ -529,5 +533,13 @@ export const StaticEggStore: MarkerStore = {
 		new MiscMarker(`sesSc`, markers.meteorTower, [313.01988207230005, 260.52399603518677], { linkedItems: `3ZEt8`, uniqueDesc: `Visible from the stairs south of spawn, either side.` }),
 		new MiscMarker(`wer5F`, markers.maxArmour, [285.2117140929566, 261.9035177539375], { uniqueDesc: `In back left the corner of the interrogation room inside a bucket.` }),
 		new MiscMarker(`jYMo6`, markers.maxAmmo, [280.5586664702618, 271.8260457258232], { uniqueDesc: `In the guard tower, can be shot from south side, or hit with explosives from spawn side.` }),
+	],
+	[MapIds.citadelle]: [
+		new MiscMarker(``, markers.pointOfPower, [323.55385236404203, 376.13837088011826], { uniqueDesc: `` }),
+		new MiscMarker(``, markers.pointOfPower, [354.7299089317141, 444.3757334270622], { uniqueDesc: `` }),
+		new MiscMarker(``, markers.pointOfPower, [398.0672220860039, 170.86692346643366], { uniqueDesc: `` }),
+		new MiscMarker(``, markers.pointOfPower, [249.81997914264485, 219.42950745312723], { uniqueDesc: `` }),
+		new MiscMarker(``, markers.pointOfPower, [192.49981801841787, 132.5426584987053], { uniqueDesc: `` }),
+		new MiscMarker(``, markers.pointOfPower, [156.40214500790114, 294.00889124478766], { uniqueDesc: `` }),
 	]
 };

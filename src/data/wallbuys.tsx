@@ -202,13 +202,13 @@ export const WallbuyStore: MarkerStore = {
 	],
 	[MapIds.citadelle]: [
 		new MiscMarker(``, MiscTypes.wallbuy, [127.73649367629511, 228.42558032860603], { uniqueTitle: `GS45` }),
-		new MiscMarker(``, MiscTypes.wallbuy, [165.96601156989868, 139.6872831798305], { uniqueTitle: `` }),
+		new MiscMarker(``, MiscTypes.wallbuy, [165.96601156989868, 139.6872831798305], { uniqueTitle: `Kompakt 92` }),
 		new MiscMarker(``, MiscTypes.wallbuy, [205.5005706224356, 285.15195458461994], { uniqueTitle: `XM4` }),
-		new MiscMarker(``, MiscTypes.wallbuy, [222.90325641504634, 188.4240737755952], { uniqueTitle: `` }),
-		new MiscMarker(``, MiscTypes.wallbuy, [273.98949585701473, 230.92895315329292], { uniqueTitle: `` }),
+		new MiscMarker(``, MiscTypes.wallbuy, [222.90325641504634, 188.4240737755952], { uniqueTitle: `LR 7.62` }),
+		new MiscMarker(``, MiscTypes.wallbuy, [273.98949585701473, 230.92895315329292], { uniqueTitle: `AS VAL` }),
 		new MiscMarker(``, MiscTypes.wallbuy, [374.75612089105084, 170.90119089726755], { uniqueTitle: `Marine SP` }),
-		new MiscMarker(``, MiscTypes.wallbuy, [422.86317549059004, 233.27140868730157], { uniqueTitle: `` }),
-		new MiscMarker(``, MiscTypes.wallbuy, [378.52897328670235, 443.23262884685033], { uniqueTitle: `` }),
-		new MiscMarker(``, MiscTypes.wallbuy, [381.386189260236, 325.7815918407204], { uniqueTitle: `` }),
+		new MiscMarker(``, MiscTypes.wallbuy, [422.86317549059004, 233.27140868730157], { uniqueTitle: `Tanto .22` }),
+		new MiscMarker(``, MiscTypes.wallbuy, [378.52897328670235, 443.23262884685033], { uniqueTitle: `KSV` }),
+		new MiscMarker(``, MiscTypes.wallbuy, [381.386189260236, 325.7815918407204], { uniqueTitle: `GPMG-7` }),
 	]
 };
