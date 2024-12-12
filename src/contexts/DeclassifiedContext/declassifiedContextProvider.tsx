@@ -6,7 +6,7 @@ import {
 	useRef,
 	useState,
 } from 'react';
-import { useMapEvent, useMapEvents } from 'react-leaflet';
+import { useMapEvents } from 'react-leaflet';
 import { MapItem, MiscMarker } from '../../classes';
 import { EggFormInputs, getEggFilterDefaults } from '../../components/EasterEggs/ListMenu';
 import {
@@ -63,7 +63,7 @@ export const DeclassifiedContext = createContext<DeclassifiedContextProps>(initi
 
 export const DeclassifiedContextProvider = ({ children }) => {
 	const mapInstance = useMapEvents({});
-	const { isOnStartup, isDebugMode, setSharedMapItemId } = useUserContext();
+	const { isOnStartup, isDebugMode, setSharedMapItemId, saveLayerCheckboxState: saveLayerCheckboxState } = useUserContext();
 	const [userPrefs, setUserPreferences] =
 		useState<DeclassifiedUserPreferences | null>(null);
 	const [currentMap, setCurrentMap] = useState<MapItem | null>(null);
@@ -126,13 +126,27 @@ export const DeclassifiedContextProvider = ({ children }) => {
 		setDrawerState({ isOpen, content: content ?? <></> });
 	};
 
-	useMapEvent('baselayerchange', props => {
-		let currentMapKey = GetMapByTitle(props.name);
-		if (currentMapKey) {
-			if (isDebugMode) {
-				console.log('setCurrentMapWithValidation with baselayerchange: ', currentMapKey);
+	useMapEvents({
+		baselayerchange: (props) => {
+			let currentMapKey = GetMapByTitle(props.name);
+			if (currentMapKey) {
+				if (isDebugMode) {
+					console.log('setCurrentMapWithValidation with baselayerchange: ', currentMapKey);
+				}
+				setCurrentMapWithValidation(MapDetails[currentMapKey]);
 			}
-			setCurrentMapWithValidation(MapDetails[currentMapKey]);
+		},
+		overlayadd: (props) => {
+			if (isDebugMode) {
+				console.log('overlayadd: ', props);
+			}
+			saveLayerCheckboxState(props.name, true);
+		},
+		overlayremove: (props) => {
+			if (isDebugMode) {
+				console.log('overlayremove: ', props);
+			}
+			saveLayerCheckboxState(props.name, false);
 		}
 	});
 

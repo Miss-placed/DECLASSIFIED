@@ -1,12 +1,23 @@
 import { createContext, useContext, useEffect, useState } from 'react';
+import { MarkerLayerTypes } from '../../data/types';
 import { UserContextProps } from '../DeclassifiedContext/types';
+
+const initializeCheckboxStates = () => {
+	const initialLayerCheckboxStates: { [key: string]: boolean; } = {};
+	for (const key in MarkerLayerTypes) {
+		if (Object.prototype.hasOwnProperty.call(MarkerLayerTypes, key)) {
+			initialLayerCheckboxStates[MarkerLayerTypes[key].id] = true;
+		}
+	}
+	return initialLayerCheckboxStates;
+}
 
 const initialContextValues = {
 	isOnStartup: true,
 	setIsOnStartup: () => { },
 	isMobile: window.innerWidth <= 768,
 	setIsMobile: () => { },
-	isDebugMode: false,
+	isDebugMode: JSON.parse(localStorage.getItem('isDebugMode') || 'null') || false,
 	setIsDebugMode: () => { },
 	initiallySharedMapItemId: null,
 	setInitiallySharedMapItemId: () => { },
@@ -19,6 +30,9 @@ const initialContextValues = {
 		itemType: null,
 	},
 	setContributionState: () => { },
+	//set default value from local storage or default value
+	layerCheckboxStates: JSON.parse(localStorage.getItem('layerCheckboxStates') || 'null') || initializeCheckboxStates(), // Default value, if we add more than 20 layers we need to update this
+	saveLayerCheckboxState: () => { },
 };
 
 export const UserContext =
@@ -27,9 +41,11 @@ export const UserContext =
 export const UserContextProvider = ({ children }) => {
 	const [isOnStartup, setIsOnStartup] = useState(true);
 	const [isMobile, setIsMobile] = useState(initialContextValues.isMobile);
-	const [isDebugMode, setIsDebugMode] = useState(initialContextValues.isDebugMode);
+	const [isDebugMode, setIsDebugModeState] = useState(initialContextValues.isDebugMode);
 	const [initiallySharedMapItemId, setInitialSharedMapItemId] = useState<string | null>(initialContextValues.initiallySharedMapItemId);
 	const [sharedMapItemId, setMapItemId] = useState<string | null>(null);
+	const [layerCheckboxStates, setLayerCheckboxState] = useState(initialContextValues.layerCheckboxStates ?? initialContextValues.layerCheckboxStates);
+
 	const [contributionState, setContributionStateState] = useState<{
 		isIntel: boolean;
 		isContributing: boolean;
@@ -65,6 +81,11 @@ export const UserContextProvider = ({ children }) => {
 		}
 	};
 
+	const setIsDebugMode = (state: boolean) => {
+		localStorage.setItem('isDebugMode', JSON.stringify(state));
+		setIsDebugModeState(state);
+	};
+
 	const setInitiallySharedMapItemId = (id: string | undefined) => {
 		if (isDebugMode) {
 			console.log('Setting setInitiallySharedMapItemId to: ', id);
@@ -78,6 +99,16 @@ export const UserContextProvider = ({ children }) => {
 
 		return () => window.removeEventListener('resize', handleResize);
 	}, []);
+
+	const saveLayerCheckboxState = (layer: string, state: boolean) => {
+		const updatedLayerCheckboxStates = layerCheckboxStates;
+		updatedLayerCheckboxStates[layer] = state;
+		setLayerCheckboxState(updatedLayerCheckboxStates);
+		localStorage.setItem('layerCheckboxStates', JSON.stringify(updatedLayerCheckboxStates));
+		if (isDebugMode) {
+			console.log('UPDATED layerCheckboxStates', updatedLayerCheckboxStates);
+		}
+	};
 
 	return (
 		<UserContext.Provider
@@ -94,6 +125,8 @@ export const UserContextProvider = ({ children }) => {
 				setSharedMapItemId,
 				contributionState,
 				setContributionState,
+				layerCheckboxStates,
+				saveLayerCheckboxState
 			}}
 		>
 			{children}

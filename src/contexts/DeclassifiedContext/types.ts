@@ -10,9 +10,9 @@ export interface ToggleDrawerOptions {
 	isOpen: boolean;
 	content?: JSX.Element;
 	clickEvent?:
-		| React.SyntheticEvent<any, any>
-		| React.KeyboardEvent
-		| React.MouseEvent;
+	| React.SyntheticEvent<any, any>
+	| React.KeyboardEvent
+	| React.MouseEvent;
 }
 
 export interface DeclassifiedContextProps {
@@ -73,4 +73,6 @@ export interface UserContextProps {
 			itemType: string | null;
 		}>
 	) => void;
+	layerCheckboxStates: { [key: string]: boolean };
+	saveLayerCheckboxState: (layer: string, state: boolean) => void;
 }
