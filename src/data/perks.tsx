@@ -72,7 +72,7 @@ export const Perks = {
 		id: 'vultureAid',
 		title: 'Vulture Aid',
 		// icon: IconFileNames.vulture,
-		icon: IconFileNames.general,
+		icon: IconFileNames.vulture,
 	}),
 };
 

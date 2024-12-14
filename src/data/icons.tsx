@@ -68,7 +68,7 @@ export enum IconFileNames {
 	maxArmour = 'max_armor',
 	doublePoints = 'double_points',
 	instaKill = 'insta_kill',
-	fireSale = 'fire_sale',// TODO - Make SVG?
+	fireSale = 'fire_sale',
 	randomPerk = 'random_perk',
 
 	//perk icons // Update with new icons

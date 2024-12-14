@@ -80,6 +80,9 @@ const markers = {
 	instaKill: new Item({
 		title: `Insta Kill`, icon: IconFileNames.instaKill,
 	}),
+	fireSale: new Item({
+		title: `Fire Sale`, icon: IconFileNames.fireSale,
+	}),
 	randomPerk: new Item({
 		title: `Random Perk`, icon: IconFileNames.randomPerk,
 	}),
