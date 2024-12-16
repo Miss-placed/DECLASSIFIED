@@ -1,5 +1,5 @@
 import { MapItem } from '../../classes';
-import { MapIds } from '../intel';
+import { MapIds } from '../../components/MapControls/MapIds';
 import { mapSVGs } from './mapSVGs';
 
 export const GetMapById = (mapId: string) =>
@@ -44,7 +44,7 @@ export const MapDetails = {
 	}),
 	dieMaschineUnderground: new MapItem(MapIds.dieMaschineUnderground, {
 		title: 'Die Maschine Underground',
-		mapOverlay: mapSVGs.dieMaschine_underground,
+		mapOverlay: mapSVGs.dieMaschineUnderground,
 	}),
 	firebaseZ: new MapItem(MapIds.firebaseZ, {
 		title: 'Firebase Z',
@@ -52,7 +52,7 @@ export const MapDetails = {
 	}),
 	firebaseZSpawn: new MapItem(MapIds.firebaseZSpawn, {
 		title: 'Firebase Z Spawn',
-		mapOverlay: mapSVGs.firebaseZ_spawn,
+		mapOverlay: mapSVGs.firebaseZSpawn,
 	}),
 	mauerDerToten: new MapItem(MapIds.mauerDerToten, {
 		title: 'Mauer Der Toten Underground',
@@ -60,7 +60,7 @@ export const MapDetails = {
 	}),
 	mauerDerTotenStreets: new MapItem(MapIds.mauerDerTotenStreets, {
 		title: 'Mauer Der Toten',
-		mapOverlay: mapSVGs.mauerDerToten_streets,
+		mapOverlay: mapSVGs.mauerDerTotenStreets,
 	}),
 	forsaken: new MapItem(MapIds.forsaken, {
 		title: 'Forsaken',
@@ -68,7 +68,7 @@ export const MapDetails = {
 	}),
 	forsakenUnderground: new MapItem(MapIds.forsakenUnderground, {
 		title: 'Forsaken Underground',
-		mapOverlay: mapSVGs.forsaken_underground,
+		mapOverlay: mapSVGs.forsakenUnderground,
 	}),
 	//onslaught
 	miami: new MapItem(MapIds.miami, { title: 'Miami' }),
@@ -95,7 +95,7 @@ export const MapDetails = {
 	//bo6
 	libertyFalls: new MapItem(MapIds.libertyFalls, {
 		title: 'Liberty Falls',
-		mapOverlay: mapSVGs.liberty_falls,
+		mapOverlay: mapSVGs.libertyFalls,
 	}),
 	terminusBiolabs: new MapItem(MapIds.terminusBiolabs, {
 		title: 'Terminus Biolabs & Islands',

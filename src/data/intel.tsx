@@ -1,4 +1,5 @@
 import { LatLngExpression } from 'leaflet';
+import { MapId, MapIds } from '../components/MapControls/MapIds';
 
 interface IDefaultPOIData {
 	challenge: string;
@@ -15,51 +16,6 @@ export const DefaultPOIData: IDefaultPOIData = {
 	onslaught: `Dropped during the onslaught gamemode.`,
 	nullLoc: [0, 0],
 };
-
-export enum MapIds {
-	allOutbreakMaps = `outbreak`,
-	zoo = `zoo`,
-	ruka = `ruka`,
-	duga = `duga`,
-	alpine = `alpine`,
-	golova = `golova`,
-	sanatorium = `sanatorium`,
-	collateral = `collateral`,
-	armada = `armada`,
-	dieMaschine = `dieMaschine`,
-	dieMaschineUnderground = `dieMaschine_underground`,
-	firebaseZ = `firebaseZ`,
-	firebaseZSpawn = `firebaseZ_spawn`,
-	mauerDerToten = `mauerDerToten`,
-	mauerDerTotenStreets = `mauerDerToten_streets`,
-	forsaken = `forsaken`,
-	forsakenUnderground = `forsaken_underground`,
-	miami = `miami`,
-	satellite = `satellite`,
-	moscow = `moscow`,
-	nuketown = `nuketown`,
-	thePines = `thePines`,
-	express = `express`,
-	rush = `rush`,
-	echelon = `echelon`,
-	driveIn = `driveIn`,
-	cartel = `cartel`,
-	crossroads = `crossroads`,
-	raid = `raid`,
-	apocalypse = `apocalypse`,
-	yamantau = `yamantau`,
-	standoff = `standoff`,
-	collateralOn = `collateralOn`,
-	checkmate = `checkmate`,
-	garrison = `garrison`,
-	deprogram = `deprogram`,
-	//b06
-	libertyFalls = `liberty_falls`,
-	terminusBiolabs = `terminusBiolabs`,
-	terminusPrison = `terminusPrison`,
-	terminusIslands = `terminusBiolabs`, // TODO: change thisto be unique when the refactoring for multiple layer markers is done 
-	citadelle = `citadelle`, // TODO: change thisto be unique when the refactoring for multiple layer markers is done 
-}
 
 export enum Faction {
 	Requiem = `Requiem`,
@@ -144,7 +100,7 @@ export class IntelItem implements IIntelItem {
 	season!: Season;
 	typeDesc!: IntelType;
 	loc!: LatLngExpression;
-	map!: MapIds | undefined;
+	map!: MapId | undefined;
 	title!: string;
 	desc!: string;
 	img?: string | undefined;
@@ -6728,6 +6684,8 @@ function getIntelStore(intelStore: IIntelItem[]): IntelItem[] {
 
 export const IntelStore: IntelItem[] = getIntelStore(staticIntelStore);
 
+
+export { MapIds };
 //Needed to parse location back from a string.
 /* export const IntelCache = IntelStore.slice();
 let intelFiltered = IntelCache.slice(); */

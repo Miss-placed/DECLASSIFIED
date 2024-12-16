@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Button, Chip, Divider, Drawer, Menu, MenuItem } from '@mui/material';
 import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { useUserContext } from '../../contexts/UserContext/userContextProvider';
 import { Game, MapGroupings, MapGroupItem } from '../MapControls/types';
@@ -82,6 +83,7 @@ const GameTitle = styled(Chip)`
 `;
 
 const Header = () => {
+	const navigate = useNavigate();
 	const { isMobile } = useUserContext();
 	const { currentMapGroup } = useContext(DeclassifiedContext);
 	const { setCurrentMapWithValidation: setCurrentMap } =
@@ -185,13 +187,19 @@ const Header = () => {
 	);
 
 	function buildMapItems(mapGroup: [string, MapGroupItem][]) {
+
 		return mapGroup
 			? mapGroup.map(([key, mapGroupItem]) => {
 				// TODO : maybe swap this out for some better styling instead of removing the current map
 				if (currentMapGroup!.mapName !== mapGroupItem.mapName) {
 					return (
 						<MenuItem
-							onClick={() => setCurrentMap(mapGroupItem.mapLayers[0])}
+							onClick={
+								() => {
+									setCurrentMap(mapGroupItem.mapLayers[0])
+									navigate(`/${mapGroupItem.mapLayers[0].id!}`, { replace: true })
+								}
+							}
 							key={key}
 						>
 							{mapGroupItem.mapName}

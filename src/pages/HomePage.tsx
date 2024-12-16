@@ -154,7 +154,7 @@ const HomePage: React.FC = () => {
                     </Paper>
                 </Grid>
                 <Grid size={{ xs: 6, sm: 3 }} sx={{ height: '100px' }}>
-                    <Paper component={Link} to="/mauerDerToten_streets">
+                    <Paper component={Link} to="/mauerDerTotenStreets">
                         <Box className='homepage-box' p={2}>
                             <Typography color="text.secondary" variant="h6">Mauer Der Toten</Typography>
                         </Box>

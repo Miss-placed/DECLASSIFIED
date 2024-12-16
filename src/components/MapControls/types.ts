@@ -49,7 +49,7 @@ export const MapGroupings: MapGroupDictionary = {
 		],
 		game: Game.coldWar,
 	},
-	liberty_falls: {
+	libertyFalls: {
 		mapName: 'Liberty Falls',
 		mapLayers: [MapDetails.libertyFalls],
 		game: Game.bo6,

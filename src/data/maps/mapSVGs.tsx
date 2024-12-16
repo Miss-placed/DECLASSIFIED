@@ -12247,7 +12247,7 @@ export const mapSVGs = {
 			/>
 		</SVGOverlay>
 	),
-	dieMaschine_underground: (
+	dieMaschineUnderground: (
 		<SVGOverlay attributes={{ viewBox: '0 0 512 512' }} bounds={ImageBounds}>
 			<defs>
 				<style>
@@ -12954,7 +12954,7 @@ export const mapSVGs = {
 			<path className="e no-fill border-stroke" d="M301.4,391l-1.64-34.72" />
 		</SVGOverlay>
 	),
-	firebaseZ_spawn: (
+	firebaseZSpawn: (
 		<SVGOverlay attributes={{ viewBox: '0 0 512 512' }} bounds={ImageBounds}>
 			<defs>
 				<style>
@@ -13703,7 +13703,7 @@ export const mapSVGs = {
 			/>
 		</SVGOverlay>
 	),
-	mauerDerToten_streets: (
+	mauerDerTotenStreets: (
 		<SVGOverlay attributes={{ viewBox: '0 0 512 512' }} bounds={ImageBounds}>
 			<defs>
 				<style>
@@ -15395,7 +15395,7 @@ export const mapSVGs = {
 			/>
 		</SVGOverlay>
 	),
-	forsaken_underground: (
+	forsakenUnderground: (
 		<SVGOverlay attributes={{ viewBox: '0 0 512 512' }} bounds={ImageBounds}>
 			<defs>
 				<style>
@@ -15661,7 +15661,7 @@ export const mapSVGs = {
 		</SVGOverlay>
 	),
 	//#TODO: set up styling to use global colors instead of local colors.
-	liberty_falls: (
+	libertyFalls: (
 		<SVGOverlay attributes={{ viewBox: '0 0 512 512' }} bounds={ImageBounds}>
 			<defs>
 				<style>

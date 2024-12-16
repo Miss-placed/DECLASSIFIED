@@ -7,16 +7,17 @@ import {
 	useState,
 } from 'react';
 import { useMapEvents } from 'react-leaflet';
+import { useParams } from 'react-router-dom';
 import { MapItem, MiscMarker } from '../../classes';
 import { EggFormInputs, getEggFilterDefaults } from '../../components/EasterEggs/ListMenu';
 import {
 	getIntelFilterDefaults,
 	IntelFormInputs,
 } from '../../components/Intel/IntelListMenu';
+import { IsValidMapId } from '../../components/MapControls/MapIds';
 import { MapGroupings, MapGroupItem } from '../../components/MapControls/types';
 import {
-	getSetUserPreferences,
-	updateUserPreferences,
+	getSetUserPreferences
 } from '../../data/dataAccessLayer';
 import { db, DeclassifiedUserPreferences } from '../../data/db';
 import { StaticEggStore } from '../../data/easterEggs';
@@ -53,22 +54,32 @@ const initialContextValues = {
 	filteredEggStore: [],
 };
 
-async function updateUserPreferencesInDB(
-	updates: Partial<Omit<DeclassifiedUserPreferences, 'username'>>
-): Promise<DeclassifiedUserPreferences | undefined> {
-	return await updateUserPreferences(updates);
-}
-
 export const DeclassifiedContext = createContext<DeclassifiedContextProps>(initialContextValues);
 
 export const DeclassifiedContextProvider = ({ children }) => {
+	const { id: sharedMapItemId } = useParams();
 	const mapInstance = useMapEvents({});
 	const { isOnStartup, isDebugMode, setSharedMapItemId, saveLayerCheckboxState: saveLayerCheckboxState } = useUserContext();
-	const [userPrefs, setUserPreferences] =
-		useState<DeclassifiedUserPreferences | null>(null);
-	const [currentMap, setCurrentMap] = useState<MapItem | null>(null);
+	const [userPrefs, setUserPreferences] = useState<DeclassifiedUserPreferences | null>(null);
+
+	var initialMap: MapItem | null = MapDetails.citadelle;
+	var initialMapGroupItem: MapGroupItem | null = MapGroupings.citadelle_Group;
+	if (sharedMapItemId && IsValidMapId(sharedMapItemId)) {
+		initialMap = GetMapById(sharedMapItemId) ?? null;
+		Object.entries(MapGroupings).forEach(([key, mapGroupItem]) => {
+			if (initialMap && mapGroupItem.mapLayers.includes(initialMap)) {
+				if (isDebugMode) {
+					console.log('Setting current map GROUP to: ', mapGroupItem);
+				}
+				initialMapGroupItem = mapGroupItem;
+			}
+		});
+
+	}
+
+	const [currentMap, setCurrentMap] = useState<MapItem | null>(initialMap);
 	const [currentMapGroup, setCurrentMapGroup] = useState<MapGroupItem | null>(
-		null
+		initialMapGroupItem
 	);
 	const [isLoading, setIsLoading] = useState(true); // Add loading state
 	const [filteredIntelStore, setFilteredIntelStore] = useState<IntelItem[]>([]);
@@ -82,7 +93,7 @@ export const DeclassifiedContextProvider = ({ children }) => {
 	const [drawerState, setDrawerState] = useState(
 		initialContextValues.drawerState
 	);
-	const { initiallySharedMapItemId, setInitiallySharedMapItemId, setIsOnStartup } = useUserContext();
+	const { setIsOnStartup } = useUserContext();
 	const { triggerDialog } = useNotification();
 	const [isMapLoaded, setIsMapLoaded] = useState(false);
 	const timeoutIdRef = useRef<NodeJS.Timeout | null>(null);
@@ -93,16 +104,15 @@ export const DeclassifiedContextProvider = ({ children }) => {
 		}
 		if (newMap.mapOverlay !== null && newMap.mapOverlay !== undefined) {
 			setCurrentMap(newMap);
-			Object.entries(MapGroupings).forEach(([key, mapItem]) => {
-				if (newMap && mapItem.mapLayers.includes(newMap)) {
+			Object.entries(MapGroupings).forEach(([key, mapGroupItem]) => {
+				if (newMap && mapGroupItem.mapLayers.includes(newMap)) {
 					if (isDebugMode) {
-						console.log('Setting current map GROUP to: ', mapItem);
+						console.log('Setting current map GROUP to: ', mapGroupItem);
 					}
-					setCurrentMapGroup(mapItem);
+					setCurrentMapGroup(mapGroupItem);
 					setSharedMapItemId(newMap.id);
 				}
 			});
-			await updateUserPreferencesInDB({ currentMap: newMap.id });
 
 			return true;
 		} else {
@@ -153,12 +163,6 @@ export const DeclassifiedContextProvider = ({ children }) => {
 	const focusOnSharedItem = useCallback(async (sharedMapItemId) => {
 		if (isMapLoaded) {
 			if (sharedMapItemId) {
-				const sharedMapItem = GetMapById(sharedMapItemId)
-				if (sharedMapItem) {
-					setCurrentMapWithValidation(sharedMapItem);
-
-					return;
-				}
 				if (isDebugMode) {
 					console.log('Focus on shared item: ', sharedMapItemId);
 				}
@@ -237,6 +241,34 @@ export const DeclassifiedContextProvider = ({ children }) => {
 	}, [collectedIntel, currentEggFilter.easterEggTypes, currentEggFilter.searchTerm, currentIntelFilter, currentMapGroup])
 
 	useEffect(() => {
+		if (sharedMapItemId) {
+			const checkMapLoaded = () => {
+				if (isDebugMode) {
+					console.log('isMapLoaded && initiallySharedMapItemId: ', isMapLoaded, sharedMapItemId);
+				}
+
+				if (timeoutIdRef.current) {
+					clearTimeout(timeoutIdRef.current); // Clear the previous timeout if any
+				}
+
+				timeoutIdRef.current = setTimeout(() => {
+					if (isMapLoaded) {
+						setIsOnStartup(false);
+						focusOnSharedItem(sharedMapItemId);
+					} else {
+						if (isDebugMode) {
+							console.log('RETRYING FOCUS: ', isMapLoaded, sharedMapItemId);
+						}
+						timeoutIdRef.current = setTimeout(checkMapLoaded, 50);
+					}
+				}, 50);
+			};
+
+			checkMapLoaded();
+		}
+	}, [focusOnSharedItem, isDebugMode, isMapLoaded, setIsOnStartup, sharedMapItemId])
+
+	useEffect(() => {
 		const fetchPreferences = async () => {
 			try {
 				const data = await getSetUserPreferences();
@@ -252,16 +284,6 @@ export const DeclassifiedContextProvider = ({ children }) => {
 					});
 				}
 
-				if (!initiallySharedMapItemId && isOnStartup && data!.currentMap !== initiallySharedMapItemId) {
-					const userPrefsCurrentMap = GetMapById(data!.currentMap);
-					if (userPrefsCurrentMap) {
-						if (isDebugMode) {
-							console.log('Setting current map from user preferences: ', userPrefsCurrentMap);
-						}
-						setCurrentMapWithValidation(userPrefsCurrentMap);
-					}
-				}
-
 				setIsMapLoaded(true);
 				setIsOnStartup(false);
 			} catch (error) {
@@ -272,34 +294,7 @@ export const DeclassifiedContextProvider = ({ children }) => {
 		};
 
 		fetchPreferences();
-
-		if (initiallySharedMapItemId) {
-			const checkMapLoaded = () => {
-				if (isDebugMode) {
-					console.log('isMapLoaded && initiallySharedMapItemId: ', isMapLoaded, initiallySharedMapItemId);
-				}
-
-				if (timeoutIdRef.current) {
-					clearTimeout(timeoutIdRef.current); // Clear the previous timeout if any
-				}
-
-				timeoutIdRef.current = setTimeout(() => {
-					if (isMapLoaded) {
-						setIsOnStartup(false);
-						focusOnSharedItem(initiallySharedMapItemId);
-						setInitiallySharedMapItemId(undefined);
-					} else {
-						if (isDebugMode) {
-							console.log('RETRYING FOCUS: ', isMapLoaded, initiallySharedMapItemId);
-						}
-						timeoutIdRef.current = setTimeout(checkMapLoaded, 50);
-					}
-				}, 50);
-			};
-
-			checkMapLoaded();
-		}
-	}, [focusOnSharedItem, initiallySharedMapItemId, isDebugMode, isMapLoaded, isOnStartup, setCurrentMapWithValidation, setInitiallySharedMapItemId, setIsOnStartup, triggerDialog]);
+	}, [setIsOnStartup, triggerDialog]);
 
 
 	if (isLoading) {

@@ -19,8 +19,6 @@ const initialContextValues = {
 	setIsMobile: () => { },
 	isDebugMode: JSON.parse(localStorage.getItem('isDebugMode') || 'null') || false,
 	setIsDebugMode: () => { },
-	initiallySharedMapItemId: null,
-	setInitiallySharedMapItemId: () => { },
 	sharedMapItemId: null,
 	setSharedMapItemId: () => { },
 	contributionState: {
@@ -42,7 +40,6 @@ export const UserContextProvider = ({ children }) => {
 	const [isOnStartup, setIsOnStartup] = useState(true);
 	const [isMobile, setIsMobile] = useState(initialContextValues.isMobile);
 	const [isDebugMode, setIsDebugModeState] = useState(initialContextValues.isDebugMode);
-	const [initiallySharedMapItemId, setInitialSharedMapItemId] = useState<string | null>(initialContextValues.initiallySharedMapItemId);
 	const [sharedMapItemId, setMapItemId] = useState<string | null>(null);
 	const [layerCheckboxStates, setLayerCheckboxState] = useState(initialContextValues.layerCheckboxStates ?? initialContextValues.layerCheckboxStates);
 
@@ -86,13 +83,6 @@ export const UserContextProvider = ({ children }) => {
 		setIsDebugModeState(state);
 	};
 
-	const setInitiallySharedMapItemId = (id: string | undefined) => {
-		if (isDebugMode) {
-			console.log('Setting setInitiallySharedMapItemId to: ', id);
-		}
-		setInitialSharedMapItemId(id || null);
-	}
-
 	useEffect(() => {
 		const handleResize = () => setIsMobile(window.innerWidth <= 768);
 		window.addEventListener('resize', handleResize);
@@ -119,8 +109,6 @@ export const UserContextProvider = ({ children }) => {
 				setIsMobile,
 				isDebugMode,
 				setIsDebugMode,
-				initiallySharedMapItemId,
-				setInitiallySharedMapItemId,
 				sharedMapItemId,
 				setSharedMapItemId,
 				contributionState,

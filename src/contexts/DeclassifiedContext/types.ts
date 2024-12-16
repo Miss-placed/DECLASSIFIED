@@ -55,8 +55,6 @@ export interface UserContextProps {
 	setIsMobile: (state: boolean) => void;
 	isDebugMode: boolean;
 	setIsDebugMode: (state: boolean) => void;
-	initiallySharedMapItemId: string | null;
-	setInitiallySharedMapItemId: (state: string | undefined) => void;
 	sharedMapItemId: string | null;
 	setSharedMapItemId: (id: string | undefined) => void;
 	contributionState: {
