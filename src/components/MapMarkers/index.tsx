@@ -66,17 +66,10 @@ export const MapMarkers = () => {
 	]
 	return (
 		<>
-			{renderOrderOfLayers[0]}
-			{renderOrderOfLayers[1]}
-			{renderOrderOfLayers[2]}
-			{renderOrderOfLayers[3]}
-			{renderOrderOfLayers[4]}
-			{renderOrderOfLayers[5]}
-			{renderOrderOfLayers[6]}
-			{renderOrderOfLayers[7]}
-
-
-			{/* <LayersControl.Overlay checked name="Misc Markers">
+			{renderOrderOfLayers.map((layer) => layer)}
+			{/* 
+			Example of how we could use shape overlays and point to point connections
+			<LayersControl.Overlay checked name="Misc Markers">
                 <LayerGroup>
                     <Circle
                         center={center}
