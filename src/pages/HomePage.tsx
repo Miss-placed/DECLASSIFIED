@@ -6,6 +6,7 @@ import { Box, Container, Paper, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { MapIds } from '../components/MapControls/MapIds';
 
 const HomePageContainer = styled(Container)`
     /* background: var(--clr-bg-lighter); */
@@ -27,6 +28,11 @@ const HomePageContainer = styled(Container)`
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        &:hover {
+            background: var(--clr-bg);
+            color: var(--clr-white-d);
+        }
+
     }
 
     .filled {
@@ -34,18 +40,74 @@ const HomePageContainer = styled(Container)`
         color: var(--clr-white-d);
     }
 
+    .filled-btn {
+        background: var(--clr-bg);
+        color: var(--clr-white-d);
+        &:hover {
+            background: none;
+            color: var(--clr-white-d);
+        }
+    }
+
+    .MuiTypography-root {
+        color: var(--clr-white-d);
+    }
+
+    .rounded-box {
+        border-radius: 8px;
+        border: 1px solid;
+        border-color: var(--clr-grey-d);
+        padding: 10px;
+        height: 100%;
+        width: 100%;
+    }
+
+    .header-container {
+        margin-bottom: 24px;
+    }
+
+    .title {
+        font-weight: 700;
+        align-content: center;
+    }
+
+    .socials {
+        justify-content: right;
+        align-items: center;
+    }
+
+    //media queries for smaller screens
+    @media (max-width: 600px) {
+        .socials {
+            justify-content: center;
+            align-items: top;
+            margin-bottom: 10px;
+        }
+
+        .header-container {
+            gap: 0;
+        }
+
+        .title {
+            font-size: 7vw;
+        }
+    }
+
 `
 
 const HomePage: React.FC = () => {
     return (
         <HomePageContainer>
-            <Grid container spacing={2}>
-                <Grid size={{ xs: 6, md: 8 }}>
-                    <Typography color="text.secondary" variant="h4" gutterBottom>
-                        Declassified
-                    </Typography>
+            <Grid className='header-container' container spacing={2}>
+                <Grid size={{ xs: 12, sm: 8 }}>
+                    <Grid sx={{ display: 'flex' }}>
+                        <img style={{ height: '50px', margin: '10px' }} src="/favicon120.png" alt="Declassified Logo" />
+                        <Typography variant="h4" className='title'>
+                            Declassified
+                        </Typography>
+                    </Grid>
                 </Grid>
-                <Grid size={{ xs: 6, md: 4 }} sx={{ display: 'flex', justifyContent: 'right' }}>
+                <Grid size={{ xs: 12, sm: 4 }} className='socials' sx={{ display: 'flex', }}>
 
                     <a
                         title="Join us on discord!"
@@ -64,6 +126,7 @@ const HomePage: React.FC = () => {
                         className="btn ui"
                         id="github"
                         rel="noreferrer"
+                        style={{ alignContent: 'center' }}
                     >
                         <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>{' '}
                     </a>
@@ -81,104 +144,98 @@ const HomePage: React.FC = () => {
                 </Grid>
 
             </Grid>
-            <Grid container>
-                <Typography color="text.secondary" gutterBottom>
-                    The #1 interactive map for CoD Zombies.
-                </Typography>
-                <Typography color="text.secondary" gutterBottom>
-                    Track Intel and Calling Cards. Discover Main Quest and side Easter Eggs and explore the maps.
-                </Typography>
-                <Typography color="text.secondary" gutterBottom>
-                    Always free, no ads, totally open source. Now and forever.
-                </Typography>
-            </Grid>
-            <Typography sx={{ mt: 3 }} color="text.secondary" variant="h5" gutterBottom>
+            <Typography className='rounded-box filled'>
+                The #1 interactive map for CoD Zombies. <br />
+                Track Intel and Calling Cards. Discover Main Quest and side Easter Eggs and explore the maps.<br />
+                Always free, no ads, totally open source. Now and forever.
+            </Typography>
+            <Typography sx={{ mt: 4 }} className='title' variant="h5" gutterBottom>
                 Call of Duty: Black Ops 6
             </Typography>
             <Grid container spacing={2}>
                 <Grid size={{ xs: 6, sm: 4 }} sx={{ height: '100px' }}>
-                    <Paper component={Link} to="/libertyFalls">
+                    <Paper component={Link} to={`/${MapIds.libertyFalls}`}>
                         <Box className='homepage-box' p={2}>
-                            <Typography color="text.secondary" variant="h6">Liberty Falls</Typography>
+                            <Typography variant="h6">Liberty Falls</Typography>
                         </Box>
                     </Paper>
                 </Grid>
                 <Grid size={{ xs: 6, sm: 4 }} sx={{ height: '100px' }}>
-                    <Paper component={Link} to="/terminusBiolabs">
+                    <Paper component={Link} to={`/${MapIds.terminusPrison}`}>
                         <Box className='homepage-box' p={2}>
-                            <Typography color="text.secondary" variant="h6">Terminus</Typography>
+                            <Typography variant="h6">Terminus</Typography>
                         </Box>
                     </Paper>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 4 }} sx={{ height: '100px' }}>
-                    <Paper component={Link} to="/citadelle">
+                    <Paper component={Link} to={`/${MapIds.citadelle}`}>
                         <Box className='homepage-box' p={2}>
-                            <Typography color="text.secondary" variant="h6">Citadelle Des Morts</Typography>
+                            <Typography variant="h6">Citadelle Des Morts</Typography>
                         </Box>
                     </Paper>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '150px' }}>
                     <Paper component={Link} to="/challenge">
-                        <Box className='homepage-box filled' p={2}>
-                            <Typography color="text.secondary" variant="h6">Calling Cards</Typography>
-                            <Typography color="text.secondary">New Version Coming Soon...</Typography>
+                        <Box className='homepage-box filled-btn' p={2}>
+                            <Typography variant="h6">Calling Cards</Typography>
+                            <Typography >New Version Coming Soon...</Typography>
                         </Box>
                     </Paper>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '150px' }}>
                     <Paper component={Link} target='blank' to="https://nebula.emca.app/zombies">
-                        <Box className='homepage-box filled' p={2}>
-                            <Typography color="text.secondary" variant="h6">Camo Tracker</Typography>
-                            <Typography color="text.secondary">Made by our friends ❤️</Typography>
+                        <Box className='homepage-box filled-btn' p={2}>
+                            <Typography variant="h6">Nebula Camo Tracker</Typography>
+                            <Typography >Made by our friends ❤️</Typography>
                         </Box>
                     </Paper>
                 </Grid>
             </Grid>
 
-            <Typography sx={{ mt: 3 }} color="text.secondary" variant="h5" gutterBottom>
+            <Typography sx={{ mt: 4 }} className='title' variant="h5" gutterBottom>
                 Call of Duty: Black Ops Cold War
             </Typography>
             <Grid container spacing={2}>
                 <Grid size={{ xs: 6, sm: 3 }} sx={{ height: '100px' }}>
-                    <Paper component={Link} to="/dieMaschine">
+                    <Paper component={Link} to={`/${MapIds.dieMaschine}`}>
                         <Box className='homepage-box' p={2}>
-                            <Typography color="text.secondary" variant="h6">Die Maschine</Typography>
+                            <Typography variant="h6">Die Maschine</Typography>
                         </Box>
                     </Paper>
                 </Grid>
                 <Grid size={{ xs: 6, sm: 3 }} sx={{ height: '100px' }}>
-                    <Paper component={Link} to="/firebaseZ">
+                    <Paper component={Link} to={`/${MapIds.firebaseZ}`}>
                         <Box className='homepage-box' p={2}>
-                            <Typography color="text.secondary" variant="h6">Firebase Z</Typography>
+                            <Typography variant="h6">Firebase Z</Typography>
                         </Box>
                     </Paper>
                 </Grid>
                 <Grid size={{ xs: 6, sm: 3 }} sx={{ height: '100px' }}>
-                    <Paper component={Link} to="/mauerDerTotenStreets">
+                    <Paper component={Link} to={`/${MapIds.mauerDerTotenStreets}`}>
                         <Box className='homepage-box' p={2}>
-                            <Typography color="text.secondary" variant="h6">Mauer Der Toten</Typography>
+                            <Typography variant="h6">Mauer Der Toten</Typography>
                         </Box>
                     </Paper>
                 </Grid>
                 <Grid size={{ xs: 6, sm: 3 }} sx={{ height: '100px' }}>
-                    <Paper component={Link} to="/forsaken">
+                    <Paper component={Link} to={`/${MapIds.forsaken}`}>
                         <Box className='homepage-box' p={2}>
-                            <Typography color="text.secondary" variant="h6">Forsaken</Typography>
+                            <Typography variant="h6">Forsaken</Typography>
                         </Box>
                     </Paper>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '150px' }}>
                     <Paper component={Link} to="/challenge">
-                        <Box className='homepage-box filled' p={2}>
-                            <Typography color="text.secondary" variant="h6">Calling Cards</Typography>
+                        <Box className='homepage-box filled-btn' p={2}>
+                            <Typography variant="h6">Calling Cards</Typography>
                         </Box>
                     </Paper>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '150px' }}>
                     <Paper component={Link} target='blank' to="https://coldwar.vercel.app/aether">
-                        <Box className='homepage-box filled' p={2}>
-                            <Typography color="text.secondary" variant="h6">Camo Tracker</Typography>
-                            <Typography color="text.secondary">Made by our friends ❤️️</Typography>
+                        <Box className='homepage-box filled-btn' p={2}>
+                            <Typography variant="h6">Coldwar Camo Tracker</Typography>
+                            <Typography >Made by our friends ❤️️</Typography>
                         </Box>
                     </Paper>
                 </Grid>

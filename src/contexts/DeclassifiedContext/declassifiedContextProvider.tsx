@@ -33,8 +33,6 @@ import {
 } from '../UserContext/userContextProvider';
 import { DeclassifiedContextProps, ToggleDrawerOptions } from './types';
 
-let timeoutId: ReturnType<typeof setTimeout> | null = null;
-
 const initialContextValues = {
 	userPrefs: {},
 	currentMap: null,
@@ -59,7 +57,7 @@ export const DeclassifiedContext = createContext<DeclassifiedContextProps>(initi
 export const DeclassifiedContextProvider = ({ children }) => {
 	const { id: sharedMapItemId } = useParams();
 	const mapInstance = useMapEvents({});
-	const { isOnStartup, isDebugMode, setSharedMapItemId, saveLayerCheckboxState: saveLayerCheckboxState } = useUserContext();
+	const { isDebugMode, setSharedMapItemId, saveLayerCheckboxState } = useUserContext();
 	const [userPrefs, setUserPreferences] = useState<DeclassifiedUserPreferences | null>(null);
 
 	var initialMap: MapItem | null = MapDetails.citadelle;

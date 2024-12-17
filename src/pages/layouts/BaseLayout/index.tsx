@@ -25,10 +25,10 @@ export const BaseLayout = ({ children }: BaseLayoutProps) => {
 			background: {
 				default: '#1f2223'
 			},
-			text: {
-				// primary: '#e3ddd9'
-				secondary: '#e3ddd9'
-			},
+			// 	text: {
+			// 		primary: '#e3ddd9',
+			// 		secondary: '#e3ddd9'
+			// 	},
 			primary: {
 				// main: '#3c3c3b'
 				main: '#b33536'
