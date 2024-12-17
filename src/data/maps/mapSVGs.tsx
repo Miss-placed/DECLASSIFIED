@@ -19662,18 +19662,6 @@ export const mapSVGs = {
 			<path d="M236 237H228" stroke="#6B6B6B" strokeWidth="0.7" />
 			<path d="M262 125H234V120.5" stroke="#6B6B6B" strokeWidth="0.5" strokeDasharray="1 1" />
 			<path d="M145.431 123.623C145.251 123.803 145.251 124.095 145.431 124.276L148.371 127.215C148.551 127.395 148.843 127.395 149.024 127.215C149.204 127.035 149.204 126.742 149.024 126.562L146.411 123.949L149.024 121.337C149.204 121.156 149.204 120.864 149.024 120.683C148.843 120.503 148.551 120.503 148.371 120.683L145.431 123.623ZM145.758 124.411H146.496V123.487H145.758V124.411ZM147.972 124.411H149.447V123.487H147.972V124.411ZM150.923 124.411H151.661V123.487H150.923V124.411Z" fill="#7C2728" />
-			{/* <defs>
-				<filter id="filter0_d_833_24" x="150.033" y="114.731" width="316.074" height="35.2007" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-					<feFlood floodOpacity="0" result="BackgroundImageFix" />
-					<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-					<feOffset dy="4" />
-					<feGaussianBlur stdDeviation="2" />
-					<feComposite in2="hardAlpha" operator="out" />
-					<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-					<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_833_24" />
-					<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_833_24" result="shape" />
-				</filter>
-			</defs> */}
 		</SVGOverlay>
 	),
 };
