@@ -201,14 +201,14 @@ export const WallbuyStore: MarkerStore = {
 		new MiscMarker(`QpYZL`, MiscTypes.wallbuy, [222.14994470956643, 301.70984599036944], { uniqueTitle: `PP-919`, uniqueDesc: `On the ramp up from the docks. Under the bridge from engineering.` }),
 	],
 	[MapIds.citadelle]: [
-		new MiscMarker(``, MiscTypes.wallbuy, [127.73649367629511, 228.42558032860603], { uniqueTitle: `GS45` }),
-		new MiscMarker(``, MiscTypes.wallbuy, [165.96601156989868, 139.6872831798305], { uniqueTitle: `Kompakt 92` }),
-		new MiscMarker(``, MiscTypes.wallbuy, [205.5005706224356, 285.15195458461994], { uniqueTitle: `XM4` }),
-		new MiscMarker(``, MiscTypes.wallbuy, [222.90325641504634, 188.4240737755952], { uniqueTitle: `LR 7.62` }),
-		new MiscMarker(``, MiscTypes.wallbuy, [273.98949585701473, 230.92895315329292], { uniqueTitle: `AS VAL` }),
-		new MiscMarker(``, MiscTypes.wallbuy, [374.75612089105084, 170.90119089726755], { uniqueTitle: `Marine SP` }),
-		new MiscMarker(``, MiscTypes.wallbuy, [422.86317549059004, 233.27140868730157], { uniqueTitle: `Tanto .22` }),
-		new MiscMarker(``, MiscTypes.wallbuy, [378.52897328670235, 443.23262884685033], { uniqueTitle: `KSV` }),
-		new MiscMarker(``, MiscTypes.wallbuy, [381.386189260236, 325.7815918407204], { uniqueTitle: `GPMG-7` }),
+		new MiscMarker(`rOi2C`, MiscTypes.wallbuy, [127.73649367629511, 228.42558032860603], { uniqueTitle: `GS45` }),
+		new MiscMarker(`eVI5z`, MiscTypes.wallbuy, [165.96601156989868, 139.6872831798305], { uniqueTitle: `Kompakt 92` }),
+		new MiscMarker(`N9JkV`, MiscTypes.wallbuy, [205.5005706224356, 285.15195458461994], { uniqueTitle: `XM4` }),
+		new MiscMarker(`tzQO6`, MiscTypes.wallbuy, [222.90325641504634, 188.4240737755952], { uniqueTitle: `LR 7.62` }),
+		new MiscMarker(`l1BrO`, MiscTypes.wallbuy, [273.98949585701473, 230.92895315329292], { uniqueTitle: `AS VAL` }),
+		new MiscMarker(`XHeyD`, MiscTypes.wallbuy, [374.75612089105084, 170.90119089726755], { uniqueTitle: `Marine SP` }),
+		new MiscMarker(`yk4zv`, MiscTypes.wallbuy, [422.86317549059004, 233.27140868730157], { uniqueTitle: `Tanto .22` }),
+		new MiscMarker(`eLJ0c`, MiscTypes.wallbuy, [378.52897328670235, 443.23262884685033], { uniqueTitle: `KSV` }),
+		new MiscMarker(`QkZXh`, MiscTypes.wallbuy, [381.386189260236, 325.7815918407204], { uniqueTitle: `GPMG-7` }),
 	]
 };
