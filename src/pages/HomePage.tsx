@@ -66,7 +66,7 @@ const HomePageContainer = styled(Container)`
         margin-bottom: 24px;
     }
 
-    .title {
+    .title,.main-title {
         font-weight: 700;
         align-content: center;
     }
@@ -91,6 +91,14 @@ const HomePageContainer = styled(Container)`
         .title {
             font-size: 7vw;
         }
+
+        .main-title {
+            font-size: 10vw;
+        }
+
+        .blurb {
+            font-size: 3vw;
+        }
     }
 
 `
@@ -102,7 +110,7 @@ const HomePage: React.FC = () => {
                 <Grid size={{ xs: 12, sm: 8 }}>
                     <Grid sx={{ display: 'flex' }}>
                         <img style={{ height: '50px', margin: '10px' }} src="/favicon120.png" alt="Declassified Logo" />
-                        <Typography variant="h4" className='title'>
+                        <Typography variant="h4" className='main-title'>
                             Declassified
                         </Typography>
                     </Grid>
@@ -144,7 +152,7 @@ const HomePage: React.FC = () => {
                 </Grid>
 
             </Grid>
-            <Typography className='rounded-box filled'>
+            <Typography className='blurb rounded-box filled'>
                 The #1 interactive map for CoD Zombies. <br />
                 Track Intel and Calling Cards. Discover Main Quest and side Easter Eggs and explore the maps.<br />
                 Always free, no ads, totally open source. Now and forever.
@@ -153,14 +161,14 @@ const HomePage: React.FC = () => {
                 Call of Duty: Black Ops 6
             </Typography>
             <Grid container spacing={2}>
-                <Grid size={{ xs: 6, sm: 4 }} sx={{ height: '100px' }}>
+                <Grid size={{ xs: 12, sm: 4 }} sx={{ height: '100px' }}>
                     <Paper component={Link} to={`/${MapIds.libertyFalls}`}>
                         <Box className='homepage-box' p={2}>
                             <Typography variant="h6">Liberty Falls</Typography>
                         </Box>
                     </Paper>
                 </Grid>
-                <Grid size={{ xs: 6, sm: 4 }} sx={{ height: '100px' }}>
+                <Grid size={{ xs: 12, sm: 4 }} sx={{ height: '100px' }}>
                     <Paper component={Link} to={`/${MapIds.terminusPrison}`}>
                         <Box className='homepage-box' p={2}>
                             <Typography variant="h6">Terminus</Typography>
@@ -196,28 +204,28 @@ const HomePage: React.FC = () => {
                 Call of Duty: Black Ops Cold War
             </Typography>
             <Grid container spacing={2}>
-                <Grid size={{ xs: 6, sm: 3 }} sx={{ height: '100px' }}>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }} sx={{ height: '100px' }}>
                     <Paper component={Link} to={`/${MapIds.dieMaschine}`}>
                         <Box className='homepage-box' p={2}>
                             <Typography variant="h6">Die Maschine</Typography>
                         </Box>
                     </Paper>
                 </Grid>
-                <Grid size={{ xs: 6, sm: 3 }} sx={{ height: '100px' }}>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }} sx={{ height: '100px' }}>
                     <Paper component={Link} to={`/${MapIds.firebaseZ}`}>
                         <Box className='homepage-box' p={2}>
                             <Typography variant="h6">Firebase Z</Typography>
                         </Box>
                     </Paper>
                 </Grid>
-                <Grid size={{ xs: 6, sm: 3 }} sx={{ height: '100px' }}>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }} sx={{ height: '100px' }}>
                     <Paper component={Link} to={`/${MapIds.mauerDerTotenStreets}`}>
                         <Box className='homepage-box' p={2}>
                             <Typography variant="h6">Mauer Der Toten</Typography>
                         </Box>
                     </Paper>
                 </Grid>
-                <Grid size={{ xs: 6, sm: 3 }} sx={{ height: '100px' }}>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }} sx={{ height: '100px' }}>
                     <Paper component={Link} to={`/${MapIds.forsaken}`}>
                         <Box className='homepage-box' p={2}>
                             <Typography variant="h6">Forsaken</Typography>
