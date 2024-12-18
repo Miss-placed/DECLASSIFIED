@@ -13,7 +13,6 @@ const StyledHeader = styled.header`
 	position: absolute;
 	z-index: var(--z-index-menu);
 	left: calc((100vw - 375px) / 2);
-
 	button {
 		color: var(--clr-white);
 		width: 375px;
@@ -49,6 +48,14 @@ const MapDrawer = styled(Drawer)`
 	}
 `;
 const MapMenu = styled(Menu)`
+	.current-map-indicator {
+		height: 10px;
+		width: 10px;
+		background-color: var(--clr-red);
+		border-radius: 50%;
+		display: inline-block;
+		margin-left: 10px;
+	}
 	.MuiPaper-root {
 		width: 375px;
 		background-color: var(--clr-bg-inverted);
@@ -190,23 +197,20 @@ const Header = () => {
 
 		return mapGroup
 			? mapGroup.map(([key, mapGroupItem]) => {
-				// TODO : maybe swap this out for some better styling instead of removing the current map
-				if (currentMapGroup!.mapName !== mapGroupItem.mapName) {
-					return (
-						<MenuItem
-							onClick={
-								() => {
-									setCurrentMap(mapGroupItem.mapLayers[0])
-									navigate(`/${mapGroupItem.mapLayers[0].id!}`, { replace: true })
-								}
+				return (
+					<MenuItem
+						onClick={
+							() => {
+								setCurrentMap(mapGroupItem.mapLayers[0])
+								navigate(`/${mapGroupItem.mapLayers[0].id!}`, { replace: true })
 							}
-							key={key}
-						>
-							{mapGroupItem.mapName}
-						</MenuItem>
-					)
-				}
-				return null;
+						}
+						key={key}
+					>
+						{mapGroupItem.mapName}
+						<span className={currentMapGroup!.mapName === mapGroupItem.mapName ? 'current-map-indicator' : ''}></span>
+					</MenuItem>
+				)
 			})
 			: null;
 	}
