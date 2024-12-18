@@ -22,12 +22,14 @@ export const MiscDetailItem = ({
 	icon,
 	img,
 	isMarker = false,
-	linkedItems }) => {
+	linkedItems,
+	externalLinks }) => {
 	const { setCurrentMapWithValidation: setCurrentMap, currentMap } = useContext(DeclassifiedContext);
 	const mapInstance = useMapEvents({});
 	const [expanded, setExpanded] = useState(false);
 	let miscItemResult = getMiscMarkerById(id!);
 	const linkedItemsArray = linkedItems ? linkedItems?.split(',') : [];
+	const externalLinkArray = externalLinks ? externalLinks?.split(',') : [];
 	const subheading: string[] = [];
 	let miscItemMap, miscMapId, miscItem;
 	if (miscItemResult) {
@@ -73,11 +75,24 @@ export const MiscDetailItem = ({
 							{subheading.join(' - ')}
 						</Subheading>
 						<MiscDescription>
-							{desc}<br />
-							{linkedItemsArray.length > 0 ? linkedItemsArray.map((item, index) => (
-								<a key={index} target="blank" href={"/" + item}>Related{index !== 0 ? ` #${index + 1}` : null}<br /></a>
-							)) : null}
+							{desc}
 						</MiscDescription>
+						{externalLinkArray.length > 0 || linkedItemsArray.length > 0 ? (
+							<LinksArea>
+								{externalLinkArray.length > 0 ? externalLinkArray.map((externalLink, index) => (
+									<a key={"ext:" + index} target="blank" href={"https://" + externalLink}>{externalLink}{index !== 0 ? ` #${index + 1}` : null}<br /></a>
+								)) : null}
+								{linkedItemsArray.length > 0 ? (
+									<>
+										<b>Related Markers</b>
+										<br />
+									</>
+								) : null}
+								{linkedItemsArray.length > 0 ? linkedItemsArray.map((internalItemId, index) => (
+									<a key={"int:" + index} target="blank" href={"/" + internalItemId}>Marker{index !== 0 ? ` #${index + 1}` : null}<br /></a>
+								)) : null}
+							</LinksArea>
+						) : null}
 						<ActionContainer>
 							{ItemHasLocation && miscItemMap?.mapCanRender ? <Button onClick={async () => {
 								if (ItemIsOnAnotherMap) {
@@ -129,7 +144,14 @@ const MiscDescription = styled(Typography)`
 	margin: 0px !important;
 	font-size: 0.7rem;
 	white-space: pre-wrap;
-	/* width: 10rem; */
+`;
+
+const LinksArea = styled.span`
+	text-align: center;
+	margin: 0px !important;
+	font-size: 0.7rem;
+	white-space: pre-wrap;
+	margin: 0px !important;
 `;
 
 const ActionContainer = styled.div`

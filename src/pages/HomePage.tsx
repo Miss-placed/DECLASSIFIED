@@ -9,6 +9,24 @@ import { Link } from 'react-router-dom';
 import { MapIds } from '../components/MapControls/MapIds';
 
 const HomePageContainer = styled(Container)`
+    .text-sm {
+        font-size: var(--fs-sm) !important;
+    }
+    .text-base {
+        font-size: var(--fs-base) !important;
+    }
+    .text-md {
+        font-size: var(--fs-md) !important;
+    }
+    .text-lg {
+        font-size: var(--fs-lg) !important;
+    }
+    .text-xl {
+        font-size: var(--fs-xl) !important;
+    }
+    .text-xxl {
+        font-size: var(--fs-xxl) !important;
+    }
     /* background: var(--clr-bg-lighter); */
     padding: 20px;
     border-radius: 8px;
@@ -32,7 +50,6 @@ const HomePageContainer = styled(Container)`
             background: var(--clr-bg);
             color: var(--clr-white-d);
         }
-
     }
 
     .filled {
@@ -47,6 +64,14 @@ const HomePageContainer = styled(Container)`
             background: none;
             color: var(--clr-white-d);
         }
+    }
+
+    .MuiTypography-h6 {
+        font-size: var(--fs-base);
+    }
+
+    .MuiTypography-body1 {
+        font-size: var(--fs-sm);
     }
 
     .MuiTypography-root {
@@ -87,18 +112,6 @@ const HomePageContainer = styled(Container)`
         .header-container {
             gap: 0;
         }
-
-        .title {
-            font-size: 7vw;
-        }
-
-        .main-title {
-            font-size: 10vw;
-        }
-
-        .blurb {
-            font-size: 3vw;
-        }
     }
 
 `
@@ -110,7 +123,7 @@ const HomePage: React.FC = () => {
                 <Grid size={{ xs: 12, sm: 8 }}>
                     <Grid sx={{ display: 'flex' }}>
                         <img style={{ height: '50px', margin: '10px' }} src="/favicon120.png" alt="Declassified Logo" />
-                        <Typography variant="h4" className='main-title'>
+                        <Typography variant="h4" className='main-title text-xl'>
                             Declassified
                         </Typography>
                     </Grid>
@@ -152,12 +165,12 @@ const HomePage: React.FC = () => {
                 </Grid>
 
             </Grid>
-            <Typography className='blurb rounded-box filled'>
+            <Typography className='rounded-box filled text-sm'>
                 The #1 interactive map for CoD Zombies. <br />
                 Track Intel and Calling Cards. Discover Main Quest and side Easter Eggs and explore the maps.<br />
                 Always free, no ads, totally open source. Now and forever.
             </Typography>
-            <Typography sx={{ mt: 4 }} className='title' variant="h5" gutterBottom>
+            <Typography sx={{ mt: 4 }} className='title text-md' variant="h5" gutterBottom>
                 Call of Duty: Black Ops 6
             </Typography>
             <Grid container spacing={2}>
@@ -200,7 +213,7 @@ const HomePage: React.FC = () => {
                 </Grid>
             </Grid>
 
-            <Typography sx={{ mt: 4 }} className='title' variant="h5" gutterBottom>
+            <Typography sx={{ mt: 4 }} className='title text-md' variant="h5" gutterBottom>
                 Call of Duty: Black Ops Cold War
             </Typography>
             <Grid container spacing={2}>

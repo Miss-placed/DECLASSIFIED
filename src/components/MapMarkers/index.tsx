@@ -104,6 +104,7 @@ export const MapMarkers = () => {
 	function RenderLayerControlGroup(markerStore: MarkerStore, markerLayerType: LayerGrouping) {
 		return AnyResultsInMarkerStore(markerStore) ? (
 			<LayersControl.Overlay
+				key={markerLayerType.id}
 				name={markerLayerType.id}
 				checked={layerCheckboxStates[markerLayerType.id!]}
 			>
@@ -116,6 +117,7 @@ export const MapMarkers = () => {
 		var renderedIntelMarkers = renderIntelMapMarkers(currentMap!.id!, layerGroup.intelType!);
 		return renderedIntelMarkers.length > 0 ? (
 			<LayersControl.Overlay
+				key={layerGroup.id}
 				name={layerGroup.id}
 				checked={layerCheckboxStates[layerGroup.id!]}
 			>

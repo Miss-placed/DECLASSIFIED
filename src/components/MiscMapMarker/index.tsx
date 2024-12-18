@@ -17,6 +17,7 @@ export const MiscMapMarker = ({
 	loc,
 	img,
 	linkedItems,
+	externalLinks,
 }: MiscMarker) => {
 	const { id: sharedMapItemId } = useParams();
 	const mapInstance = useMapEvents({});
@@ -43,7 +44,8 @@ export const MiscMapMarker = ({
 					icon={icon}
 					img={img}
 					isMarker={true}
-					linkedItems={linkedItems} />
+					linkedItems={linkedItems}
+					externalLinks={externalLinks} />
 			</StyledPopup>
 		</Marker>
 	);

@@ -44,6 +44,7 @@ export const EggList = () => {
             icon={egg.icon}
             img={egg.img}
             linkedItems={egg.linkedItems}
+            externalLinks={egg.externalLinks}
         />;
     });
     if (RenderedEggList.length === 0) {
