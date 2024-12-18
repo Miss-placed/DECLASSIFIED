@@ -196,7 +196,7 @@ const HomePage: React.FC = () => {
                     </Paper>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '150px' }}>
-                    <Paper component={Link} to="/challenge">
+                    <Paper component={Link} target='blank' to="/challenge">
                         <Box className='homepage-box filled-btn' p={2}>
                             <Typography variant="h6">Calling Cards</Typography>
                             <Typography >New Version Coming Soon...</Typography>
@@ -246,7 +246,7 @@ const HomePage: React.FC = () => {
                     </Paper>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '150px' }}>
-                    <Paper component={Link} to="/challenge">
+                    <Paper component={Link} target='blank' to="/challenge">
                         <Box className='homepage-box filled-btn' p={2}>
                             <Typography variant="h6">Calling Cards</Typography>
                         </Box>
