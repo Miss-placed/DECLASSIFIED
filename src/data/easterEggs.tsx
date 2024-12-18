@@ -178,8 +178,12 @@ const markers = {
 		title: `Culinary Delight - Ingredient`, desc: `An ingredient involved in the Culinary Delight side egg.`, icon: IconFileNames.interactable,
 	}),
 	// Citadelle Des Morts
-	pointOfPower: new Item({
-		title: `Point Of Power Trap`, desc: `Cost: 1600\nUsed to boost your damage against and slow zombies. Used as part of the main quest, the symbol on the floor will light up with a different pattern after activating PaP.`, icon: IconFileNames.trap,
+	cannonPart: new Item({
+		title: `Cannon Upgrade Part`, icon: IconFileNames.interactable,
+	}),
+	mrPeeksHideNSeek: new Item({ title: `Mr Peeks - Hide 'N Seek!`, desc: 'Find all Mr Peeks dolls in a specific order, to unlock a free perk! Originally found by one of the creators!', icon: IconFileNames.mrPeeks, }),
+	cannonEgg: new Item({
+		title: `Clock Tower Monkey Bomb`, icon: IconFileNames.interactable,
 	}),
 };
 
@@ -467,6 +471,7 @@ export const StaticEggStore: MarkerStore = {
 		new MiscMarker(`W_IvO`, markers.doublePoints, [316.3963689820304, 180.48306806482694], { uniqueDesc: `Up on the water tower, shoot or grenade it to spawn a free power up.` }),
 		new MiscMarker(`BZuaH`, markers.maxArmour, [317.1206977585009, 266.7174080485405], { uniqueDesc: `Through the barricade in the bottom right corner of the room on a tray.`, img: `2te9o40` }),
 		new MiscMarker(`wwGl1`, markers.fullPower, [142.8486545607668, 226.59081368495958], { uniqueDesc: `Behind the barrier between the cars. Might need to go up on top of the verge by the scope in order to see it.` }),
+		new MiscMarker(``, markers.fireSale, [183.74874653681505, 199.47129553364073], { uniqueDesc: `Only appears after shooting all 7 other power ups.\nInside the bin.` }),
 		new MiscMarker(`W0cQ7`, markers.bonus, [182.19997530423058, 134.13828286183295], { uniqueTitle: `Falling Zombies!`, uniqueDesc: `Cook a grenade and throw it at the zombie head on the roof to trigger a zombie rain that drop loot.` }),
 		new MiscMarker(`uqQGR`, markers.mrPeeksBowling, [130.4233520842571, 270.3960054771881], { uniqueDesc: `After shooting all the shoes you will be teleported here to bowl! Score 300 for a darkops challenge, you'll always get a reward.` }),
 		new MiscMarker(`C1_lA`, markers.mrPeeksBowlingShoe, [263.07941062405075, 71.73609264466869], { uniqueDesc: `Outside the map hanging from a tree.\nShoot all of them to be teleported to a game of bowling for a reward!` }),
@@ -536,13 +541,23 @@ export const StaticEggStore: MarkerStore = {
 		new MiscMarker(`sesSc`, markers.meteorTower, [313.01988207230005, 260.52399603518677], { linkedItems: `3ZEt8`, uniqueDesc: `Visible from the stairs south of spawn, either side.` }),
 		new MiscMarker(`wer5F`, markers.maxArmour, [285.2117140929566, 261.9035177539375], { uniqueDesc: `In back left the corner of the interrogation room inside a bucket.` }),
 		new MiscMarker(`jYMo6`, markers.maxAmmo, [280.5586664702618, 271.8260457258232], { uniqueDesc: `In the guard tower, can be shot from south side, or hit with explosives from spawn side.` }),
+		new MiscMarker(``, markers.fireSale, [291.875, 281.8125], { uniqueDesc: `Only appears after shooting all 7 other power ups.\nInside the zombie spawn area, to the left hand side.` }),
 	],
 	[MapIds.citadelle]: [
-		new MiscMarker(``, markers.pointOfPower, [323.55385236404203, 376.13837088011826], { uniqueDesc: `` }),
-		new MiscMarker(``, markers.pointOfPower, [354.7299089317141, 444.3757334270622], { uniqueDesc: `` }),
-		new MiscMarker(``, markers.pointOfPower, [398.0672220860039, 170.86692346643366], { uniqueDesc: `` }),
-		new MiscMarker(``, markers.pointOfPower, [249.81997914264485, 219.42950745312723], { uniqueDesc: `` }),
-		new MiscMarker(``, markers.pointOfPower, [192.49981801841787, 132.5426584987053], { uniqueDesc: `` }),
-		new MiscMarker(``, markers.pointOfPower, [156.40214500790114, 294.00889124478766], { uniqueDesc: `` }),
+		new MiscMarker(`WAuh7`, markers.cannonPart, [55.356495828412775, 215.06621647574312], { uniqueTitle: `Cannon Part - Wheel`, uniqueDesc: `Inside a box of banana's at spawn, only appears after turning the cannon the first time.`, linkedItems: `8A54Q` }),
+		new MiscMarker(`OQb8p`, markers.cannonPart, [452.7139095318371, 267.30296959540743], { uniqueTitle: `Cannon Part - Blowtorch`, uniqueDesc: `In the back right corner of the dining hall, beside the standing light.`, linkedItems: `8A54Q` }),
+		new MiscMarker(``, markers.cannonEgg, [50.716709743542346, 232.2881346817492], { uniqueDesc: `Requires a lot of patience and 50k essence. You must go through the cannon 100 times total, on the 100th firing you will fly into the bell and it will drop 2 monkey bombs and behave as a monkey bomb for a prolonged time.`, linkedItems: `8A54Q` }),
+		new MiscMarker(``, markers.mrPeeksHideNSeek, [274.9339382527714, 175.17588285723193], { uniqueTitle: `Free Perk - Peeks #1`, uniqueDesc: `Can only be seen and shot through the window from inside, must be the first one shot.` }),
+		new MiscMarker(``, markers.mrPeeksHideNSeek, [212.94478731131198, 211.63320047876994], { uniqueTitle: `Free Perk - Peeks #2`, uniqueDesc: `Can be seen from inside the barn, inside the castle wall, far away from the barn. A scope is recommended but not required, must be the second one shot. Listen for the audio queue and pink light.` }),
+		new MiscMarker(``, markers.mrPeeksHideNSeek, [468.1521385344881, 217.2399669136197], { uniqueTitle: `Free Perk - Peeks #3`, uniqueDesc: `In the window of a tower far in the distance. Similar to #2, a scope is recommended but not required.` }),
+		new MiscMarker(``, markers.mrPeeksHideNSeek, [363.0794046143011, 467.78574547136486], { uniqueTitle: `Free Perk - Peeks #4`, uniqueDesc: `Final location, sat on the bench inside the cell.` }),
+		new MiscMarker(``, markers.maxAmmo, [194.21912956177317, 326.5493771655113], { uniqueDesc: `On a windowsill beneath the lighting rod antenna.` }),
+		new MiscMarker(``, markers.maxArmour, [337.0669348876571, 219.78489385812136], { uniqueDesc: `High up in the rafters. Against a vertical beam.` }),
+		new MiscMarker(``, markers.instaKill, [157.95748405308314, 238.17956014301313], { uniqueDesc: `Up on the scaffolding. Can be seen from the stairs.` }),
+		new MiscMarker(``, markers.doublePoints, [445.670754224332, 204.0609344031147], { uniqueDesc: `Low to the ground, on a shelf on the left side inside the zombie spawn.` }),
+		new MiscMarker(``, markers.fullPower, [397.7516315336668, 253.32894063964844], { uniqueDesc: `Up on the roof, balancing on a broken wooden beam.` }),
+		new MiscMarker(``, markers.nuke, [219.35233018019147, 136.03922734946804], { uniqueDesc: `Can be seen out in the distance against the castle walls when viewing from the barn gate next to the ammo box.` }),
+		new MiscMarker(``, markers.bonusPoints, [315.6406753213818, 396.0295154596503], { uniqueDesc: `Behind the back of the sofa.` }),
+		new MiscMarker(``, markers.fireSale, [153.85879467104604, 305.31552106045706], { uniqueDesc: `Only appears after shooting all 7 other power ups.\nInside the well.` }),
 	]
 };

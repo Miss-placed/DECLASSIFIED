@@ -49,6 +49,8 @@ export const MiscTypes = {
     gobblegum: new Item({ title: 'Gobblegum Machine', icon: IconFileNames.gobblegum }),
     ampUnit: new Item({ title: 'A.M.P Unit', desc: `Protect for a short time to provide local power to the area.`, icon: IconFileNames.power }),
     elevator: new Item({ title: 'Elevator', icon: IconFileNames.jumpPad, }),
+    cannon: new Item({ title: 'Cannon', icon: IconFileNames.jumpPad, }),
+    caveSlide: new Item({ title: 'Cave Slide', icon: IconFileNames.landingPad, }),
 };
 
 /////////////////////Markers/////////////////////////

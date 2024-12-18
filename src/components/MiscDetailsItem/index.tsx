@@ -73,7 +73,7 @@ export const MiscDetailItem = ({
 							{subheading.join(' - ')}
 						</Subheading>
 						<MiscDescription>
-							{desc}
+							{desc}<br />
 							{linkedItemsArray.length > 0 ? linkedItemsArray.map((item, index) => (
 								<a key={index} target="blank" href={"/" + item}>Related{index !== 0 ? ` #${index + 1}` : null}<br /></a>
 							)) : null}
