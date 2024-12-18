@@ -83,7 +83,7 @@ export class MiscMarker extends BaseMarker {
 		}
 	) {
 		var newTitle = optional?.uniqueTitle ? optional?.uniqueTitle : title;
-		desc = optional?.uniqueDesc ? `${optional?.uniqueDesc}\n${desc}` : desc;
+		desc = optional?.uniqueDesc ? `${desc}\n${optional?.uniqueDesc}` : desc;
 		super({ id, title: newTitle, desc, icon, loc, typeDesc: title, img: optional?.img, linkedItems: optional?.linkedItems, externalLinks: optional?.externalLinks });
 	}
 }
