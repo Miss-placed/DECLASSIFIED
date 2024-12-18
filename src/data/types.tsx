@@ -1,5 +1,6 @@
 import { Item, MiscMarker } from "../classes";
 import { IconFileNames } from "./icons";
+import { IntelType } from "./intel";
 
 /////////////////////Misc/////////////////////////
 export const MiscTypes = {
@@ -43,33 +44,62 @@ export const MiscTypes = {
     wallArmor1: new Item({ title: 'Armor Wall Buy', icon: IconFileNames.armorWall1, desc: `Level 2 Vest\nCost: 4,000` }),
     wallArmor2: new Item({ title: 'Armor Wall Buy', icon: IconFileNames.armorWall2, desc: `Level 3 Vest\nCost: 10,000\n(Or 14,000 if lvl 2 vest not acquired)` }),
     door: new Item({ title: 'Door Buy', icon: IconFileNames.door }),
-    boatStation: new Item({ title: 'Boat Station', icon: IconFileNames.boatStation }),
     doorPower: new Item({ title: 'Power Door', desc: 'Enable power to open this door.', icon: IconFileNames.doorPower, }),
+    boatStation: new Item({ title: 'Boat Station', icon: IconFileNames.boatStation }),
     gobblegum: new Item({ title: 'Gobblegum Machine', icon: IconFileNames.gobblegum }),
     ampUnit: new Item({ title: 'A.M.P Unit', desc: `Protect for a short time to provide local power to the area.`, icon: IconFileNames.power }),
     elevator: new Item({ title: 'Elevator', icon: IconFileNames.jumpPad, }),
+    cannon: new Item({ title: 'Cannon', icon: IconFileNames.jumpPad, }),
+    caveSlide: new Item({ title: 'Cave Slide', icon: IconFileNames.landingPad, }),
 };
 
 /////////////////////Markers/////////////////////////
-export type LayerGroupings = {
-    intelAudio: Item;
-    intelArtifacts: Item;
-    intelDocuments: Item;
-    perks: Item;
-    misc: Item;
-    easterEggs: Item;
-    mainQuest: Item;
+export class LayerGrouping {
+    id: LayerGroupingId;
+    intelType: IntelType | null;
+    constructor(id: LayerGroupingId, intelType: IntelType | null) {
+        this.id = id;
+        if (intelType) {
+            this.intelType = intelType;
+        } else {
+            this.intelType = null;
+        }
+    }
+}
+export type LayerGroupingId =
+    'Intel - Audio' |
+    'Intel - Artifacts' |
+    'Intel - Documents' |
+    'Perks' |
+    'Miscellaneous' |
+    'Doors' |
+    'Wall Buys' |
+    'Easter Eggs' |
+    'Main Quest';
+
+type LayerGroupings = {
+    intelAudio: LayerGrouping;
+    intelArtifacts: LayerGrouping;
+    intelDocuments: LayerGrouping;
+    perks: LayerGrouping;
+    misc: LayerGrouping;
+    doors: LayerGrouping;
+    wallbuy: LayerGrouping;
+    easterEggs: LayerGrouping;
+    mainQuest: LayerGrouping;
 };
 
 //TODO: combine this type with MarkerStore as this should really just be one single thing
 export const MarkerLayerTypes: LayerGroupings = {
-    intelAudio: new Item({ id: 'intel', title: 'Intel - Audio Logs' }),
-    intelArtifacts: new Item({ id: 'intel', title: 'Intel - Artifacts' }),
-    intelDocuments: new Item({ id: 'intel', title: 'Intel - Documents' }),
-    perks: new Item({ id: 'perks', title: 'Perks' }),
-    misc: new Item({ id: 'misc', title: 'Miscellaneous' }),
-    easterEggs: new Item({ id: 'easterEggs', title: 'Easter Eggs' }),
-    mainQuest: new Item({ id: 'mainQuest', title: 'Main Quest' }),
+    intelAudio: new LayerGrouping('Intel - Audio', IntelType.Audio),
+    intelArtifacts: new LayerGrouping('Intel - Artifacts', IntelType.Artifact),
+    intelDocuments: new LayerGrouping('Intel - Documents', IntelType.Docs),
+    perks: new LayerGrouping('Perks', null),
+    misc: new LayerGrouping('Miscellaneous', null),
+    doors: new LayerGrouping('Doors', null),
+    wallbuy: new LayerGrouping('Wall Buys', null),
+    easterEggs: new LayerGrouping('Easter Eggs', null),
+    mainQuest: new LayerGrouping('Main Quest', null),
 };
 
 export interface MarkerStore {

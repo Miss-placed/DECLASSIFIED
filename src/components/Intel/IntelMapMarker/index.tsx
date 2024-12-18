@@ -3,7 +3,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import L, { DivIconOptions } from 'leaflet';
 import { useEffect, useState } from 'react';
 import { Marker, Popup, useMapEvents } from 'react-leaflet';
-import { useUserContext } from '../../../contexts/UserContext/userContextProvider';
+import { useParams } from 'react-router-dom';
 import { db, DeclassifiedIntelCollected } from '../../../data/db';
 import { DefaultPOIData, Faction, IntelItem } from '../../../data/intel';
 import { intelIconInit } from '../../../helpers/icons';
@@ -36,17 +36,17 @@ export const IntelMapMarker = ({
 	img,
 	map,
 }: IntelItem) => {
+	const { id: sharedMapItemId } = useParams();
 	const mapInstance = useMapEvents({});
 	const [markerInstance, setPopupInstance] = useState<L.Marker | null>(null); // State to hold the Popup instance
-	const { initiallySharedMapItemId } = useUserContext();
 	const isCollected = useLiveQuery(() => db.intelCollected.get(id ?? ''));
 	const markerIcon = renderLeafletIcon(isCollected, faction, typeDesc);
 
 	useEffect(() => {
-		if (initiallySharedMapItemId === id && markerInstance) {
+		if (sharedMapItemId === id && markerInstance) {
 			markerInstance.openPopup();
 		}
-	}, [initiallySharedMapItemId, id, markerInstance, mapInstance]);
+	}, [sharedMapItemId, id, markerInstance, mapInstance]);
 
 	return loc !== null && loc.toString() === DefaultPOIData.nullLoc.toString() ? (
 		<></>

@@ -4,8 +4,8 @@ import {
 	faAdd,
 	faFolderOpen,
 	faGear,
-	faList,
-	faMinus,
+	faHome,
+	faMinus
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CoffeeIcon from '@mui/icons-material/Coffee';
@@ -14,6 +14,7 @@ import { Button, Menu, MenuItem } from '@mui/material';
 import { LatLngTuple } from 'leaflet';
 import { useContext, useState } from 'react';
 import { useMapEvent, useMapEvents } from 'react-leaflet';
+import { useNavigate } from 'react-router-dom';
 import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { useNotification } from '../../contexts/NotificationContext/notificationContext';
 import { useUserContext } from '../../contexts/UserContext/userContextProvider';
@@ -36,7 +37,7 @@ const StyledUiContainer = styled.div<{ $isMobile?: boolean }>`
 	> div {
 		display: flex;
 		justify-content: ${props =>
-			props.$isMobile ? 'flex-start' : 'space-between'};
+		props.$isMobile ? 'flex-start' : 'space-between'};
 
 		.zoom-container {
 			visibility: ${props => (props.$isMobile ? 'hidden' : 'visible')};
@@ -45,6 +46,7 @@ const StyledUiContainer = styled.div<{ $isMobile?: boolean }>`
 `;
 
 export const UserInterface = () => {
+	const navigate = useNavigate();
 	const { isMobile, isDebugMode, contributionState, setContributionState } =
 		useUserContext();
 	const { triggerNotification } = useNotification();
@@ -127,6 +129,14 @@ export const UserInterface = () => {
 						}
 					>
 						<FontAwesomeIcon icon={faGear}></FontAwesomeIcon>
+					</button>
+					<button
+						className="btn ui"
+						onClick={() =>
+							navigate('/', { replace: true })
+						}
+					>
+						<FontAwesomeIcon icon={faHome}></FontAwesomeIcon>
 					</button>
 					{/*					<a className="btn ui" href="./legacy/challenge.html" target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faList}></FontAwesomeIcon>

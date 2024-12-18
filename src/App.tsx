@@ -1,15 +1,14 @@
-import { useEffect } from 'react';
 import {
 	Route,
 	BrowserRouter as Router,
 	Routes,
-	useParams,
+	useParams
 } from 'react-router-dom';
 import MapProvider from './components/Map';
 import {
-	UserContextProvider,
-	useUserContext,
+	UserContextProvider
 } from './contexts/UserContext/userContextProvider';
+import HomePage from './pages/HomePage';
 import { BaseLayout } from './pages/layouts/BaseLayout';
 
 function App() {
@@ -20,8 +19,8 @@ function App() {
 			<BaseLayout>
 				<UserContextProvider>
 					<Routes>
-						<Route path="/:id" Component={MapWithItemId} />
-						<Route path="/" Component={MapProvider} />
+						<Route path="/" Component={HomePage} />
+						<Route path="/:id" Component={MapWithIdRoute} />
 						<Route path="/legacy" Component={LegacySite} />
 						<Route path="/challenge" Component={LegacyChallengeSite} />
 					</Routes>
@@ -31,32 +30,10 @@ function App() {
 	);
 }
 
-const MapWithItemId = () => {
+const MapWithIdRoute = () => {
 	const { id } = useParams();
-	const {
-		isOnStartup,
-		setSharedMapItemId,
-		isDebugMode,
-		setInitiallySharedMapItemId,
-	} = useUserContext();
-
-	// Update the global state with the 'id' parameter
-	useEffect(() => {
-		if (isOnStartup) {
-			if (isDebugMode) {
-				console.log('setSharedMapItemId: ', id);
-			}
-			setInitiallySharedMapItemId(id);
-			setSharedMapItemId(id);
-		}
-	}, [
-		id,
-		isDebugMode,
-		isOnStartup,
-		setInitiallySharedMapItemId,
-		setSharedMapItemId,
-	]);
-
+	// could validate here for only known ids if we want to do this. 
+	// (might need to use a Regex for this, lookup would be too slow)
 	return <MapProvider />;
 };
 

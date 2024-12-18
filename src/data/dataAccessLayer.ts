@@ -1,10 +1,8 @@
 import { db, DeclassifiedUserPreferences } from './db';
-import { MapIds } from './intel';
 
 const defaultUsername = 'defaultUser';
 const defaultUserPrefs: DeclassifiedUserPreferences = {
 	username: defaultUsername,
-	currentMap: MapIds.dieMaschine,
 	challengeTrackerState: '',
 	darkMode: true,
 	hideBugRepButton: false,

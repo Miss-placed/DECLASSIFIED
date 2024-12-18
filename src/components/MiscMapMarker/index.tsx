@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import L from 'leaflet';
 import { useEffect, useState } from 'react';
 import { Marker, Popup, useMapEvents } from 'react-leaflet';
+import { useParams } from 'react-router-dom';
 import { MiscMarker } from '../../classes';
-import { useUserContext } from '../../contexts/UserContext/userContextProvider';
 import { customMiscIconBounds, getMiscIconUri } from '../../data/icons';
 import { DefaultPOIData } from '../../data/intel';
 import { MiscDetailItem } from '../MiscDetailsItem';
@@ -17,17 +17,18 @@ export const MiscMapMarker = ({
 	loc,
 	img,
 	linkedItems,
+	externalLinks,
 }: MiscMarker) => {
+	const { id: sharedMapItemId } = useParams();
 	const mapInstance = useMapEvents({});
 	const renderedIcon = miscIconInit(icon);
 	const [markerInstance, setPopupInstance] = useState<L.Marker | null>(null); // State to hold the Popup instance
-	const { initiallySharedMapItemId } = useUserContext();
 
 	useEffect(() => {
-		if (initiallySharedMapItemId === id && markerInstance) {
+		if (sharedMapItemId === id && markerInstance) {
 			markerInstance.openPopup();
 		}
-	}, [initiallySharedMapItemId, id, markerInstance, mapInstance]);
+	}, [sharedMapItemId, id, markerInstance, mapInstance]);
 
 	return loc !== null && loc.toString() === DefaultPOIData.nullLoc.toString() ? (
 		<></>
@@ -43,7 +44,8 @@ export const MiscMapMarker = ({
 					icon={icon}
 					img={img}
 					isMarker={true}
-					linkedItems={linkedItems} />
+					linkedItems={linkedItems}
+					externalLinks={externalLinks} />
 			</StyledPopup>
 		</Marker>
 	);

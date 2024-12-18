@@ -49,7 +49,7 @@ export const MapGroupings: MapGroupDictionary = {
 		],
 		game: Game.coldWar,
 	},
-	liberty_falls: {
+	libertyFalls: {
 		mapName: 'Liberty Falls',
 		mapLayers: [MapDetails.libertyFalls],
 		game: Game.bo6,
@@ -57,6 +57,11 @@ export const MapGroupings: MapGroupDictionary = {
 	terminus_Group: {
 		mapName: 'Terminus',
 		mapLayers: [MapDetails.terminusBiolabs, MapDetails.terminusPrison], // TODO eventually fix the layer issue with icons over multiple layers. Might need to add it here
+		game: Game.bo6,
+	},
+	citadelle_Group: {
+		mapName: 'Citadelle Des Morts',
+		mapLayers: [MapDetails.citadelle],
 		game: Game.bo6,
 	},
 };

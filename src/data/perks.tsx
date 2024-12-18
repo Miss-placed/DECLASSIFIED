@@ -68,6 +68,12 @@ export const Perks = {
 		title: 'Melee Macchiato',
 		icon: IconFileNames.meleeMacchiato,
 	}),
+	vulture: new Item({
+		id: 'vultureAid',
+		title: 'Vulture Aid',
+		// icon: IconFileNames.vulture,
+		icon: IconFileNames.vulture,
+	}),
 };
 
 export const PerkStore: MarkerStore = {
@@ -143,6 +149,17 @@ export const PerkStore: MarkerStore = {
 		new MiscMarker(`__Aeo`, Perks.staminup, [291.9164241267842, 304.58624666837596]),
 		new MiscMarker(`KIuKk`, Perks.jugg, [239.63390968267203, 278.29268337414294]),
 		new MiscMarker(`JubO2`, Perks.elemental, [208.15153148056928, 309.7389992873544]),
+	],
+	[MapIds.citadelle]: [
+		new MiscMarker(`sHBxE`, Perks.deadshot, [171.46832853492387, 152.85308855237312]),
+		new MiscMarker(`p_SKt`, Perks.speed, [214.2486937122144, 303.9718379759372]),
+		new MiscMarker(`w63q8`, Perks.meleeMacchiato, [293.3875225716126, 284.21916249124973]),
+		new MiscMarker(`cP_Ms`, Perks.elemental, [293.94318075830125, 153.0838304327259]),
+		new MiscMarker(`miVTY`, Perks.jugg, [324.64228661377797, 225.70260122669285]),
+		new MiscMarker(`xa_D0`, Perks.staminup, [406.76607975552446, 153.4224091921224]),
+		new MiscMarker(`wwGqo`, Perks.vulture, [452.7095809502072, 254.33556167620338]),
+		new MiscMarker(`Hub2S`, Perks.quick, [371.53318266103963, 421.4483055393233]),
+		new MiscMarker(`LAuUx`, Perks.wunderFizz, [152.04365048882423, 175.6295951969671], { uniqueDesc: `Spawns at round 25.` }),
 	],
 
 	/////////////////////Outbreak/////////////////////////
