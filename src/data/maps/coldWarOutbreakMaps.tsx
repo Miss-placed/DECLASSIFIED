@@ -1,5 +1,5 @@
 import { SVGOverlay } from "react-leaflet";
-import { ImageBounds, globalStyle } from "./mapSVGs";
+import { ImageBounds, globalStyle } from './sharedSVGProperties';
 
 
 export const coldWarOutbreakMaps = {

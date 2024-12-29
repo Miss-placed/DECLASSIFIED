@@ -122,5 +122,5 @@ export const allOutbreakMapsArr: string[] = [
 	MapIds.golova,
 	MapIds.sanatorium,
 	MapIds.collateral,
-	MapIds.armada,
+	MapIds.armada
 ];
