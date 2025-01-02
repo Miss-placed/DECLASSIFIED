@@ -57,7 +57,6 @@ export interface UserContextProps {
 	setIsDebugMode: (state: boolean) => void;
 	sharedMapItemId: string | null;
 	setSharedMapItemId: (id: string | undefined) => void;
-	setSharedMapItemIdWithNavigation: (id: string | undefined) => void;
 	contributionState: {
 		isIntel: boolean;
 		isContributing: boolean;

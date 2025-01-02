@@ -1,5 +1,4 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { MarkerLayerTypes } from '../../data/types';
 import { UserContextProps } from '../DeclassifiedContext/types';
 
@@ -22,7 +21,6 @@ const initialContextValues = {
 	setIsDebugMode: () => { },
 	sharedMapItemId: null,
 	setSharedMapItemId: () => { },
-	setSharedMapItemIdWithNavigation: () => { },
 	contributionState: {
 		isIntel: false,
 		isContributing: false,
@@ -44,7 +42,6 @@ export const UserContextProvider = ({ children }) => {
 	const [isDebugMode, setIsDebugModeState] = useState(initialContextValues.isDebugMode);
 	const [sharedMapItemId, setMapItemId] = useState<string | null>(null);
 	const [layerCheckboxStates, setLayerCheckboxState] = useState(initialContextValues.layerCheckboxStates ?? initialContextValues.layerCheckboxStates);
-	const navigate = useNavigate();
 
 	const [contributionState, setContributionStateState] = useState<{
 		isIntel: boolean;
@@ -69,16 +66,6 @@ export const UserContextProvider = ({ children }) => {
 			...prevState,
 			...newState,
 		}));
-	};
-
-	const setSharedMapItemIdWithNavigation = (id: string | undefined) => {
-		if (id) {
-			if (isDebugMode) {
-				console.log('Setting url to: ', id);
-			}
-			navigate(`/${id}`);
-			setMapItemId(id);
-		}
 	};
 
 	const setSharedMapItemId = (id: string | undefined) => {
@@ -123,7 +110,6 @@ export const UserContextProvider = ({ children }) => {
 				setIsDebugMode,
 				sharedMapItemId,
 				setSharedMapItemId,
-				setSharedMapItemIdWithNavigation,
 				contributionState,
 				setContributionState,
 				layerCheckboxStates,
