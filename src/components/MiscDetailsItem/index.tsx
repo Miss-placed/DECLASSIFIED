@@ -135,10 +135,11 @@ const MiscDetailItemContainer = styled(Paper)`
 	flex-direction: column;
 `;
 const Subheading = styled(Typography)`
+	width: 100%;
 	font-size: 0.8rem;
 	font-weight: 550;
 	margin: 0 auto;
-	white-space: nowrap;
+	/* white-space: nowrap; */
 	overflow: hidden;
 	text-align: center;
 `;

@@ -128,7 +128,7 @@ const StyledAccordionSummary = styled(AccordionSummary)`
 	}
 	#intelSearch,
 	#intelSearch input {
-		background-color: white;
+		background-color: var(--clr-white);
 		border-radius: var(--radius);
 		border: unset;
 	}
