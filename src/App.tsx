@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import {
 	Route,
 	BrowserRouter as Router,
@@ -5,8 +6,10 @@ import {
 	useParams
 } from 'react-router-dom';
 import MapProvider from './components/Map';
+import { IsValidMapId } from './components/MapControls/MapIds';
 import {
-	UserContextProvider
+	UserContextProvider,
+	useUserContext
 } from './contexts/UserContext/userContextProvider';
 import HomePage from './pages/HomePage';
 import { BaseLayout } from './pages/layouts/BaseLayout';
@@ -31,9 +34,14 @@ function App() {
 }
 
 const MapWithIdRoute = () => {
-	const { id } = useParams();
-	// could validate here for only known ids if we want to do this. 
-	// (might need to use a Regex for this, lookup would be too slow)
+	const { id: mapUrlId } = useParams();
+	const { setSharedMapItemId } = useUserContext();
+	useEffect(() => {
+		if (mapUrlId && !IsValidMapId(mapUrlId)) {
+			setSharedMapItemId(mapUrlId);
+		}
+	}, [mapUrlId, setSharedMapItemId]);
+
 	return <MapProvider />;
 };
 

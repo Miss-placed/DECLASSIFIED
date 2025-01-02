@@ -5,6 +5,7 @@ import { Accordion, AccordionDetails, AccordionSummary, Button, Paper, Typograph
 import { useContext, useState } from "react";
 import { useMapEvents } from "react-leaflet";
 import { DeclassifiedContext } from "../../contexts/DeclassifiedContext/declassifiedContextProvider";
+import { useUserContext } from "../../contexts/UserContext/userContextProvider";
 import { LegacyIcons } from "../../data/icons";
 import { DefaultPOIData } from "../../data/intel";
 import { GetMapById } from "../../data/maps/mapDetails";
@@ -24,6 +25,7 @@ export const MiscDetailItem = ({
 	isMarker = false,
 	linkedItems,
 	externalLinks }) => {
+	const { setSharedMapItemId } = useUserContext();
 	const { setCurrentMapWithValidation: setCurrentMap, currentMap } = useContext(DeclassifiedContext);
 	const mapInstance = useMapEvents({});
 	const [expanded, setExpanded] = useState(false);
@@ -101,10 +103,12 @@ export const MiscDetailItem = ({
 
 										if (mapSetResult) {
 											mapInstance.flyTo(loc, 4);
+											setSharedMapItemId(id);
 										}
 									}
 								} else {
 									mapInstance.flyTo(loc, 4);
+									setSharedMapItemId(id);
 								}
 							}}>
 								<LocationOnIcon htmlColor="var(--clr-blue)" />

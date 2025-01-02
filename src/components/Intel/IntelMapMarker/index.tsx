@@ -3,7 +3,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import L, { DivIconOptions } from 'leaflet';
 import { useEffect, useState } from 'react';
 import { Marker, Popup, useMapEvents } from 'react-leaflet';
-import { useParams } from 'react-router-dom';
+import { useUserContext } from '../../../contexts/UserContext/userContextProvider';
 import { db, DeclassifiedIntelCollected } from '../../../data/db';
 import { DefaultPOIData, Faction, IntelItem } from '../../../data/intel';
 import { intelIconInit } from '../../../helpers/icons';
@@ -36,7 +36,7 @@ export const IntelMapMarker = ({
 	img,
 	map,
 }: IntelItem) => {
-	const { id: sharedMapItemId } = useParams();
+	const { sharedMapItemId } = useUserContext();
 	const mapInstance = useMapEvents({});
 	const [markerInstance, setPopupInstance] = useState<L.Marker | null>(null); // State to hold the Popup instance
 	const isCollected = useLiveQuery(() => db.intelCollected.get(id ?? ''));
