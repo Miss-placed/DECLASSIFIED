@@ -196,12 +196,9 @@ export const DeclassifiedContextProvider = ({ children }) => {
 						}
 					}
 				}
-
-				// setSharedMapItemId('');
-				return;
 			}
 		}
-	}, [isDebugMode, isMapLoaded, mapInstance, setCurrentMapWithValidation, setSharedMapItemId]);
+	}, [isDebugMode, isMapLoaded, mapInstance, setCurrentMapWithValidation]);
 
 	const collectedIntel = useLiveQuery(async () => {
 		return await db.intelCollected.toArray();
