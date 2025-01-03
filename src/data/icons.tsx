@@ -34,6 +34,8 @@ export enum IconFileNames {
 	mask = 'secret_door', // Update with new icon
 	shovel = 'shovel',
 	boss = 'boss',
+	sword = 'sword',
+	swordUpgrade = 'sword_upgrade',
 
 	//movement icons
 	rift = 'tunnel_pink',
