@@ -77,7 +77,7 @@ export const MiscDetailItem = ({
 							{subheading.join(' - ')}
 						</Subheading>
 						<MiscDescription>
-							{desc}
+							{desc.trim()}
 						</MiscDescription>
 						{externalLinkArray.length > 0 || linkedItemsArray.length > 0 ? (
 							<LinksArea>
