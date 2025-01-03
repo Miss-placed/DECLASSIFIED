@@ -121,6 +121,191 @@ export class IntelItem implements IIntelItem {
 const staticIntelStore: IIntelItem[] = [
 	// TODO: Refactor this out into its own BO6 Intel list and clean up the constructor to make faction a non issue
 	/////////////////////Black Ops 6/////////////////////////
+	/////////////////////Citadelle/////////////////////////
+	// -
+	//  - 
+	//  -
+	//  - 
+	//  - 
+	//  - 
+	//  -
+	//  - 
+
+	{
+		id: `BO6S1CAu1`,
+		faction: Faction.None,
+		season: Season.Season1,
+		typeDesc: IntelType.Audio,
+		loc: [237.17900824189033, 253.2549143097046],
+		map: MapIds.citadelle,
+		title: `Good Afternoon Mr.Richtofen`,
+		desc: `On a crate next to the right entrance to the courtyard, on the right side coming from the village.`,
+		img: `10mXIgQ`,
+	},
+	{
+		id: `BO6S1CAu2`,
+		faction: Faction.None,
+		season: Season.Season1,
+		typeDesc: IntelType.Audio,
+		loc: [271.89541611223524, 153.01448244970268],
+		map: MapIds.citadelle,
+		title: `You Would've Done the Same`,
+		desc: `In the hillside ramparts, on a box in the corner opposite to elemental pop.`,
+		img: `1fead803`,
+	},
+	{
+		id: `BO6S1CAu3`,
+		faction: Faction.None,
+		season: Season.Season1,
+		typeDesc: IntelType.Audio,
+		loc: [130.4277463404875, 180.85193167755722],
+		map: MapIds.citadelle,
+		title: `Historically Speaking`,
+		desc: `In a table in the pub top floor, next to the pool table.`,
+		img: `LKLj3Mu`,
+	},
+	{
+		id: `BO6S1CAu4`,
+		faction: Faction.None,
+		season: Season.Season1,
+		typeDesc: IntelType.Audio,
+		loc: [314.788227931163, 307.5907835326099],
+		map: MapIds.citadelle,
+		title: `Get It Done`,
+		desc: `On a table in the undercroft, in a corner.`,
+		img: `gVoBrrW`,
+	},
+	{
+		id: `BO6S1CAu5`,
+		faction: Faction.None,
+		season: Season.Season1,
+		typeDesc: IntelType.Audio,
+		loc: [308.69795327718265, 202.16464474224415],
+		map: MapIds.citadelle,
+		title: `Do Your Damn Job`,
+		desc: `In the entrance hall, left side of the door after shooting it open.`,
+		img: `JjR1jqF`,
+	},
+	{
+		id: `BO6S1CAu6`,
+		faction: Faction.None,
+		season: Season.Season1,
+		typeDesc: IntelType.Audio,
+		loc: [356.48219119951125, 424.9411843294237],
+		map: MapIds.citadelle,
+		title: `Fair Enough`,
+		desc: `On a shelf next to quick revive in the dungeon.`,
+		img: `QdZ4jfE`,
+	},
+	{
+		id: `BO6S1CAu7`,
+		faction: Faction.None,
+		season: Season.Season1,
+		typeDesc: IntelType.Audio,
+		loc: [167.02137448114985, 326.9796560116043],
+		map: MapIds.citadelle,
+		title: `Survival of the Fittest`,
+		desc: `Opposite the Lion door in the village and well, near the ammo crate.`,
+		img: `BMLH44Q`,
+	},
+	{
+		id: `BO6S1CAu8`,
+		faction: Faction.None,
+		season: Season.Season1,
+		typeDesc: IntelType.Audio,
+		loc: [154.81883140081982, 122.0546575475295],
+		map: MapIds.citadelle,
+		title: `The Foundling`,
+		desc: `In the hilltop, on a stone wall near the Kompakt 92 wall buy.`,
+		img: `HzlEIz2`,
+	},
+	{
+		id: `BO6S1CAu9`,
+		faction: Faction.None,
+		season: Season.Season1,
+		typeDesc: IntelType.Audio,
+		loc: [362.59559727242817, 173.63390153439246],
+		map: MapIds.citadelle,
+		title: `New Horizons`,
+		desc: `In an archway next to the ammo crate in the sitting rooms.`,
+		img: `Lee4TBq`,
+	},
+	{
+		id: `BO6S1CAu10`,
+		faction: Faction.None,
+		season: Season.Season1,
+		typeDesc: IntelType.Audio,
+		loc: [386.8785784960977, 239.6467407387063],
+		map: MapIds.citadelle,
+		title: `The Four Bastards`,
+		desc: `In the top floor of the dining hall, above the ammo crate next to some rope.`,
+		img: `3mUnHnj`,
+	},
+	{
+		id: `BO6S1CDo1`,
+		faction: Faction.None,
+		season: Season.Season1,
+		typeDesc: IntelType.Docs,
+		loc: [176.8630632587379, 169.3939458462175],
+		map: MapIds.citadelle,
+		title: `Family Book`,
+		desc: `Shoot a stack of papers up in the rafters.`,
+		img: `qkRltUS`,
+	},
+	{
+		id: `BO6S1CDo2`,
+		faction: Faction.None,
+		season: Season.Season1,
+		typeDesc: IntelType.Docs,
+		loc: [133.97653520449398, 216.31435052380724],
+		map: MapIds.citadelle,
+		title: `Some Context`,
+		desc: `Grab it from the roof of the pub whilst sliding, after being fired from the cannon.`,
+		img: `sNskyit`,
+	},
+	{
+		id: `BO6S1CDo3`,
+		faction: Faction.None,
+		season: Season.Season1,
+		typeDesc: IntelType.Docs,
+		loc: [152.56358549282945, 309.0457562294816],
+		map: MapIds.citadelle,
+		title: `Intake Form`,
+		desc: `Drops from the well when throwing a grenade in the well.`,
+		img: `rHBe5jL`,
+	},
+	{
+		id: `BO6S1CDo4`,
+		faction: Faction.None,
+		season: Season.Season1,
+		typeDesc: IntelType.Docs,
+		loc: [410.213359214897, 199.63624487112563],
+		map: MapIds.citadelle,
+		title: `Statuesque`,
+		desc: `Interact with different drawers in the alchemy lab until it drops.`,
+		img: `K3nhmy0`,
+	},
+
+	// The Bastard Sword- Acquire the bastard sword.
+	// Caliburn- Acquire Caliburn.
+	// Durendal-Acquire Caliburn.
+	// Balmung- Acquire Balmung.
+	// Solais- Acquire Solais.
+	// Obscurus Altilium- Complete the Main Easter Egg. This intel is currently bugged, it is not unlocking when it's picked up.
+	// Space Race- from the bartending ee. On the counter.
+	// {
+	// 	id: ``,
+	// 	faction: Faction.None,
+	// 	season: Season.Season1,
+	// 	typeDesc: IntelType.,
+	// 	loc: [],
+	// 	map: MapIds.citadelle,
+	// 	title: ``,
+	// 	desc: ``,
+	// 	img: ``,
+	// },
+	//Create a new filled out intel entry for each of the intels above, using the template I have created above:
+
 	/////////////////////Terminus/////////////////////////
 	{
 		id: `BO6S0TAu1`,
