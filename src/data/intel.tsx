@@ -122,15 +122,6 @@ const staticIntelStore: IIntelItem[] = [
 	// TODO: Refactor this out into its own BO6 Intel list and clean up the constructor to make faction a non issue
 	/////////////////////Black Ops 6/////////////////////////
 	/////////////////////Citadelle/////////////////////////
-	// -
-	//  - 
-	//  -
-	//  - 
-	//  - 
-	//  - 
-	//  -
-	//  - 
-
 	{
 		id: `BO6S1CAu1`,
 		faction: Faction.None,
@@ -285,27 +276,83 @@ const staticIntelStore: IIntelItem[] = [
 		desc: `Interact with different drawers in the alchemy lab until it drops.`,
 		img: `K3nhmy0`,
 	},
-
-	// The Bastard Sword- Acquire the bastard sword.
-	// Caliburn- Acquire Caliburn.
-	// Durendal-Acquire Caliburn.
-	// Balmung- Acquire Balmung.
-	// Solais- Acquire Solais.
-	// Obscurus Altilium- Complete the Main Easter Egg. This intel is currently bugged, it is not unlocking when it's picked up.
-	// Space Race- from the bartending ee. On the counter.
-	// {
-	// 	id: ``,
-	// 	faction: Faction.None,
-	// 	season: Season.Season1,
-	// 	typeDesc: IntelType.,
-	// 	loc: [],
-	// 	map: MapIds.citadelle,
-	// 	title: ``,
-	// 	desc: ``,
-	// 	img: ``,
-	// },
-	//Create a new filled out intel entry for each of the intels above, using the template I have created above:
-
+	{
+		id: `BO6S1CAr1`,
+		faction: Faction.None,
+		season: Season.Season1,
+		typeDesc: IntelType.Artifact,
+		loc: [414.9190982026128, 254.16395537826983],
+		map: MapIds.citadelle,
+		title: `The Bastard Sword`,
+		desc: `Acquire any of the bastard swords from the statues using a stamp dropped from the medieval helmeted zombies that spawn on round 10.`,
+		img: `3CFgnu4`,
+	},
+	{
+		id: `BO6S1CAr2`,
+		faction: Faction.None,
+		season: Season.Season1,
+		typeDesc: IntelType.Artifact,
+		loc: [359.6393618745068, 219.52537395857806],
+		map: MapIds.citadelle,
+		title: `Caliburn`,
+		desc: `Acquire the sword through the Dragon sword upgrade quest.`,
+		img: `c2ItRjG`,
+	},
+	{
+		id: `BO6S1CAr3`,
+		faction: Faction.None,
+		season: Season.Season1,
+		typeDesc: IntelType.Artifact,
+		loc: [256.47471713594445, 157.6967812528588],
+		map: MapIds.citadelle,
+		title: `Durendal`,
+		desc: `Acquire the sword through the Stag sword upgrade main quest.`,
+		img: `F80RZgs`,
+	},
+	{
+		id: `BO6S1CAr4`,
+		faction: Faction.None,
+		season: Season.Season1,
+		typeDesc: IntelType.Artifact,
+		loc: [131.21974809406814, 220.4834266507181],
+		map: MapIds.citadelle,
+		title: `Balmung`,
+		desc: `Acquire the sword through the Raven sword upgrade main quest.`,
+		img: `WzChpMD`,
+	},
+	{
+		id: `BO6S1CAr5`,
+		faction: Faction.None,
+		season: Season.Season1,
+		typeDesc: IntelType.Artifact,
+		loc: [169.36996220522448, 305.7367286902535],
+		map: MapIds.citadelle,
+		title: `Solais`,
+		desc: `Acquire the sword through the Lion sword upgrade main quest.`,
+		img: `S2JO9eO`,
+	},
+	{
+		id: `BO6S1CAr6`,
+		faction: Faction.None,
+		season: Season.Season1,
+		typeDesc: IntelType.Artifact,
+		loc: [93.99040847306705, 220.07244946876693],
+		map: MapIds.citadelle,
+		title: `Obscurus Altilium`,
+		desc: `Acquire by beating the boss during the main quest.`,
+		img: `Ef8dI4l`,
+	},
+	{
+		id: `BO6S1CAr7`,
+		faction: Faction.None,
+		season: Season.Season1,
+		typeDesc: IntelType.Artifact,
+		loc: [140.4178932339102, 182.2182716666704],
+		map: MapIds.citadelle,
+		title: `Space Race`,
+		desc: `Complete the bartending easter egg and it will appear on the counter afterwards.`,
+		img: `NhMQe3g`,
+	},
 	/////////////////////Terminus/////////////////////////
 	{
 		id: `BO6S0TAu1`,
