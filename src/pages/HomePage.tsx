@@ -94,6 +94,7 @@ const HomePageContainer = styled(Container)`
     .title,.main-title {
         font-weight: 700;
         align-content: center;
+        text-wrap: pretty;
     }
 
     .socials {
