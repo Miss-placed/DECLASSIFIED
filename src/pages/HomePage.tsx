@@ -256,7 +256,7 @@ const HomePage: React.FC = () => {
                 <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '150px' }}>
                     <Paper component={Link} target='blank' to="https://coldwar.vercel.app/aether">
                         <Box className='homepage-box filled-btn' p={2}>
-                            <Typography variant="h6">Coldwar Camo Tracker</Typography>
+                            <Typography variant="h6">Cold War Camo Tracker</Typography>
                             <Typography >Made by our friends ❤️️</Typography>
                         </Box>
                     </Paper>
