@@ -1,13 +1,15 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { LayerGroup, LayersControl } from 'react-leaflet';
-import { Item } from '../../classes';
 import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
+import { useUserContext } from '../../contexts/UserContext/userContextProvider';
+import { DoorStore } from '../../data/doors';
 import { StaticEggStore } from '../../data/easterEggs';
 import { IntelStore, IntelType } from '../../data/intel';
 import { StaticQuestStore } from '../../data/mainQuest';
 import { MiscStore } from '../../data/misc';
 import { PerkStore } from '../../data/perks';
-import { MarkerLayerTypes, MarkerStore } from '../../data/types';
+import { LayerGrouping, MarkerLayerTypes, MarkerStore } from '../../data/types';
+import { WallbuyStore } from '../../data/wallbuys';
 import { IntelMapMarker } from '../Intel/IntelMapMarker';
 import { MiscMapMarker } from '../MiscMapMarker';
 
@@ -43,11 +45,8 @@ export const MapMarkers = () => {
 	//     [0, 0],
 	// ]
 	const { currentMap } = useContext(DeclassifiedContext);
-	const [isChecked, setIsChecked] = useState(true);
-
-	const renderedAudioMarkers = renderIntelMapMarkers(currentMap!.id!, IntelType.Audio);
-	const renderedArtifactMarkers = renderIntelMapMarkers(currentMap!.id!, IntelType.Artifact);
-	const renderedDocumentMarkers = renderIntelMapMarkers(currentMap!.id!, IntelType.Docs);
+	//set state of isLayerChecked to be true for every array entry:
+	const { layerCheckboxStates } = useUserContext();
 
 	function AnyResultsInMarkerStore(markerStore: MarkerStore) {
 		return markerStore[currentMap!.id!] && markerStore[currentMap!.id!].length > 0;
@@ -55,56 +54,22 @@ export const MapMarkers = () => {
 
 	// TODO : Refactor this so it's neater. This is a hacky solution to force the layer controls to be rendered in order (I don't think this works)
 	const renderOrderOfLayers = [
-		renderedAudioMarkers.length > 0 ? (
-			<LayersControl.Overlay
-				name={MarkerLayerTypes.intelAudio.title}
-				checked={isChecked /* TODO: SWAP WITH USER PREFS */}
-			>
-				<LayerGroup>
-					{renderedAudioMarkers}
-				</LayerGroup>
-			</LayersControl.Overlay>
-		) : null
-		,
-		renderedArtifactMarkers.length > 0 ? (
-			<LayersControl.Overlay
-				name={MarkerLayerTypes.intelArtifacts.title}
-				checked={isChecked /* TODO: SWAP WITH USER PREFS */}
-			>
-				<LayerGroup>
-					{renderedArtifactMarkers}
-				</LayerGroup>
-			</LayersControl.Overlay>
-		) : null
-		,
-		renderedDocumentMarkers.length > 0 ? (
-			<LayersControl.Overlay
-				name={MarkerLayerTypes.intelDocuments.title}
-				checked={isChecked /* TODO: SWAP WITH USER PREFS */}
-			>
-				<LayerGroup>
-					{renderedDocumentMarkers}
-				</LayerGroup>
-			</LayersControl.Overlay>
-		) : null
-		,
+		RenderIntelLayerControlGroup(MarkerLayerTypes.intelAudio),
+		RenderIntelLayerControlGroup(MarkerLayerTypes.intelArtifacts),
+		RenderIntelLayerControlGroup(MarkerLayerTypes.intelDocuments),
 		RenderLayerControlGroup(PerkStore, MarkerLayerTypes.perks),
 		RenderLayerControlGroup(MiscStore, MarkerLayerTypes.misc),
+		RenderLayerControlGroup(DoorStore, MarkerLayerTypes.doors),
+		RenderLayerControlGroup(WallbuyStore, MarkerLayerTypes.wallbuy),
 		RenderLayerControlGroup(StaticEggStore, MarkerLayerTypes.easterEggs),
 		RenderLayerControlGroup(StaticQuestStore, MarkerLayerTypes.mainQuest),
 	]
 	return (
 		<>
-			{renderOrderOfLayers[0]}
-			{renderOrderOfLayers[1]}
-			{renderOrderOfLayers[2]}
-			{renderOrderOfLayers[3]}
-			{renderOrderOfLayers[4]}
-			{renderOrderOfLayers[5]}
-			{renderOrderOfLayers[6]}
-
-
-			{/* <LayersControl.Overlay checked name="Misc Markers">
+			{renderOrderOfLayers.map((layer) => layer)}
+			{/* 
+			Example of how we could use shape overlays and point to point connections
+			<LayersControl.Overlay checked name="Misc Markers">
                 <LayerGroup>
                     <Circle
                         center={center}
@@ -136,15 +101,31 @@ export const MapMarkers = () => {
 		</>
 	);
 
-	function RenderLayerControlGroup(markerStore: MarkerStore, markerLayerType: Item) {
+	function RenderLayerControlGroup(markerStore: MarkerStore, markerLayerType: LayerGrouping) {
 		return AnyResultsInMarkerStore(markerStore) ? (
 			<LayersControl.Overlay
-				name={markerLayerType.title}
-				checked={isChecked /* TODO: SWAP WITH USER PREFS */}
+				key={markerLayerType.id}
+				name={markerLayerType.id}
+				checked={layerCheckboxStates[markerLayerType.id!]}
 			>
 				<LayerGroup>{renderMiscMapMarkers(markerStore, currentMap!.id!)}</LayerGroup>
 			</LayersControl.Overlay>
 		) : null;
+	}
+
+	function RenderIntelLayerControlGroup(layerGroup: LayerGrouping) {
+		var renderedIntelMarkers = renderIntelMapMarkers(currentMap!.id!, layerGroup.intelType!);
+		return renderedIntelMarkers.length > 0 ? (
+			<LayersControl.Overlay
+				key={layerGroup.id}
+				name={layerGroup.id}
+				checked={layerCheckboxStates[layerGroup.id!]}
+			>
+				<LayerGroup>
+					{renderedIntelMarkers}
+				</LayerGroup>
+			</LayersControl.Overlay>
+		) : null
 	}
 };
 

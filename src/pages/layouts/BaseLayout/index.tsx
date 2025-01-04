@@ -1,3 +1,4 @@
+import { CssBaseline } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import '../../../styles/buttons.css';
 import '../../../styles/challenge/cards-alt.css';
@@ -14,8 +15,20 @@ export interface BaseLayoutProps {
 
 export const BaseLayout = ({ children }: BaseLayoutProps) => {
 	// TODO: Apply and use this properly throughout the app so we can have theme switching
-	const theme = createTheme({
+	const defaultTheme = createTheme({
+		// typography: {
+		// 	fontFamily: [
+		// 		'Open Sans',
+		// 	].join(','),
+		// },
 		palette: {
+			background: {
+				default: '#1f2223'
+			},
+			// 	text: {
+			// 		primary: '#e3ddd9',
+			// 		secondary: '#e3ddd9'
+			// 	},
 			primary: {
 				// main: '#3c3c3b'
 				main: '#b33536'
@@ -39,10 +52,11 @@ export const BaseLayout = ({ children }: BaseLayoutProps) => {
 			},
 		}
 	});
+	// TODO : make light theme
 	return (
 		<>
-			{/* <header>Test Header</header> */}
-			<ThemeProvider theme={theme}>
+			<ThemeProvider theme={defaultTheme}>
+				<CssBaseline />
 				{children}
 			</ThemeProvider>
 		</>

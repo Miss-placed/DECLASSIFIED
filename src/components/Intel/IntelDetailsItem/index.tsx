@@ -10,6 +10,7 @@ import { useLiveQuery } from "dexie-react-hooks";
 import { useContext, useEffect, useState } from "react";
 import { useMapEvents } from "react-leaflet";
 import { DeclassifiedContext } from "../../../contexts/DeclassifiedContext/declassifiedContextProvider";
+import { useUserContext } from "../../../contexts/UserContext/userContextProvider";
 import { addCollectedIntel, deleteCollectedIntel } from "../../../data/dataAccessLayer";
 import { db } from "../../../data/db";
 import { DefaultPOIData, Faction, IIntelItem } from "../../../data/intel";
@@ -38,8 +39,8 @@ export const IntelDetailsItem = ({
 	multiSelectState,
 	addRemoveItemMultiSelect,
 }: IIntelItemWithHandler) => {
-	const { setCurrentMapWithValidation: setCurrentMap, currentMap } =
-		useContext(DeclassifiedContext);
+	const { setSharedMapItemId } = useUserContext();
+	const { setCurrentMapWithValidation: setCurrentMap, currentMap } = useContext(DeclassifiedContext);
 	const mapInstance = useMapEvents({});
 	const [expanded, setExpanded] = useState(false);
 	const [isSelected, setIsSelected] = useState(multiSelectState?.includes(id) ?? false);
@@ -62,7 +63,6 @@ export const IntelDetailsItem = ({
 		<StyledAccordion
 			defaultExpanded={isMarker}
 			onChange={(event) => {
-				// if(event)
 				setExpanded(!expanded)
 			}}
 		>
@@ -125,10 +125,12 @@ export const IntelDetailsItem = ({
 												var mapSetResult = await setCurrentMap(mapItem);
 												if (mapSetResult) {
 													mapInstance.flyTo(loc, 4);
+													setSharedMapItemId(id);
 												}
 											}
 										} else {
 											mapInstance.flyTo(loc, 4);
+											setSharedMapItemId(id);
 										}
 									}}
 								>

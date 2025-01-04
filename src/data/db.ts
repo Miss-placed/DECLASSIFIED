@@ -2,7 +2,6 @@ import Dexie, { type EntityTable } from 'dexie';
 
 interface DeclassifiedUserPreferences {
 	username: string; // TODO - Use this as a feature to allow multiple users to have their own preferences
-	currentMap: string;
 	challengeTrackerState: string;
 	darkMode: boolean;
 	hideBugRepButton: boolean;
@@ -33,7 +32,7 @@ const db = new Dexie('DeclassifiedV1') as Dexie & {
 // Schema declaration:
 db.version(1).stores({
 	userPrefs:
-		'&username, currentMap, challengeTrackerState, darkMode, hideBugRepButton, hideIntel, hideMisc, useSystemTheme',
+		'&username, challengeTrackerState, darkMode, hideBugRepButton, hideIntel, hideMisc, useSystemTheme',
 	intelCollected: '&intelId, dateCollected',
 	challenges: '&challengeId, isCompleted, isPinned, dateCompleted, datePinned',
 });

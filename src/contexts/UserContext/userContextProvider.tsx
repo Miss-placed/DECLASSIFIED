@@ -1,15 +1,24 @@
 import { createContext, useContext, useEffect, useState } from 'react';
+import { MarkerLayerTypes } from '../../data/types';
 import { UserContextProps } from '../DeclassifiedContext/types';
+
+const initializeCheckboxStates = () => {
+	const initialLayerCheckboxStates: { [key: string]: boolean; } = {};
+	for (const key in MarkerLayerTypes) {
+		if (Object.prototype.hasOwnProperty.call(MarkerLayerTypes, key)) {
+			initialLayerCheckboxStates[MarkerLayerTypes[key].id] = true;
+		}
+	}
+	return initialLayerCheckboxStates;
+}
 
 const initialContextValues = {
 	isOnStartup: true,
 	setIsOnStartup: () => { },
 	isMobile: window.innerWidth <= 768,
 	setIsMobile: () => { },
-	isDebugMode: false,
+	isDebugMode: JSON.parse(localStorage.getItem('isDebugMode') || 'null') || false,
 	setIsDebugMode: () => { },
-	initiallySharedMapItemId: null,
-	setInitiallySharedMapItemId: () => { },
 	sharedMapItemId: null,
 	setSharedMapItemId: () => { },
 	contributionState: {
@@ -19,6 +28,9 @@ const initialContextValues = {
 		itemType: null,
 	},
 	setContributionState: () => { },
+	//set default value from local storage or default value
+	layerCheckboxStates: JSON.parse(localStorage.getItem('layerCheckboxStates') || 'null') || initializeCheckboxStates(), // Default value, if we add more than 20 layers we need to update this
+	saveLayerCheckboxState: () => { },
 };
 
 export const UserContext =
@@ -27,9 +39,10 @@ export const UserContext =
 export const UserContextProvider = ({ children }) => {
 	const [isOnStartup, setIsOnStartup] = useState(true);
 	const [isMobile, setIsMobile] = useState(initialContextValues.isMobile);
-	const [isDebugMode, setIsDebugMode] = useState(initialContextValues.isDebugMode);
-	const [initiallySharedMapItemId, setInitialSharedMapItemId] = useState<string | null>(initialContextValues.initiallySharedMapItemId);
+	const [isDebugMode, setIsDebugModeState] = useState(initialContextValues.isDebugMode);
 	const [sharedMapItemId, setMapItemId] = useState<string | null>(null);
+	const [layerCheckboxStates, setLayerCheckboxState] = useState(initialContextValues.layerCheckboxStates ?? initialContextValues.layerCheckboxStates);
+
 	const [contributionState, setContributionStateState] = useState<{
 		isIntel: boolean;
 		isContributing: boolean;
@@ -57,20 +70,17 @@ export const UserContextProvider = ({ children }) => {
 
 	const setSharedMapItemId = (id: string | undefined) => {
 		if (id) {
-			window.history.replaceState(null, "", `/${id}`);
 			if (isDebugMode) {
-				console.log('Setting url to: ', id);
+				console.log('Setting sharedMapItemId to: ', id);
 			}
 			setMapItemId(id);
 		}
 	};
 
-	const setInitiallySharedMapItemId = (id: string | undefined) => {
-		if (isDebugMode) {
-			console.log('Setting setInitiallySharedMapItemId to: ', id);
-		}
-		setInitialSharedMapItemId(id || null);
-	}
+	const setIsDebugMode = (state: boolean) => {
+		localStorage.setItem('isDebugMode', JSON.stringify(state));
+		setIsDebugModeState(state);
+	};
 
 	useEffect(() => {
 		const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -78,6 +88,16 @@ export const UserContextProvider = ({ children }) => {
 
 		return () => window.removeEventListener('resize', handleResize);
 	}, []);
+
+	const saveLayerCheckboxState = (layer: string, state: boolean) => {
+		const updatedLayerCheckboxStates = layerCheckboxStates;
+		updatedLayerCheckboxStates[layer] = state;
+		setLayerCheckboxState(updatedLayerCheckboxStates);
+		localStorage.setItem('layerCheckboxStates', JSON.stringify(updatedLayerCheckboxStates));
+		if (isDebugMode) {
+			console.log('UPDATED layerCheckboxStates', updatedLayerCheckboxStates);
+		}
+	};
 
 	return (
 		<UserContext.Provider
@@ -88,12 +108,12 @@ export const UserContextProvider = ({ children }) => {
 				setIsMobile,
 				isDebugMode,
 				setIsDebugMode,
-				initiallySharedMapItemId,
-				setInitiallySharedMapItemId,
 				sharedMapItemId,
 				setSharedMapItemId,
 				contributionState,
 				setContributionState,
+				layerCheckboxStates,
+				saveLayerCheckboxState
 			}}
 		>
 			{children}
