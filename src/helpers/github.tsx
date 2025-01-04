@@ -1,7 +1,8 @@
 import { LatLngExpression, LatLngTuple } from 'leaflet';
 import { MapItem, MiscMarker } from '../classes';
+import { MapId } from '../components/MapControls/MapIds';
 import { IconFileNames } from '../data/icons';
-import { IntelStore, IntelType, MapIds } from '../data/intel';
+import { IntelStore, IntelType } from '../data/intel';
 import { AllMiscStores } from '../data/misc';
 import { ContributionTemplates, RepoDomain } from './models';
 
@@ -96,15 +97,15 @@ export const getIntelById = (intelId: string) => {
 
 export const getMiscMarkerById = (
 	markerId: string
-): [MapIds, MiscMarker] | null => {
+): [MapId, MiscMarker] | null => {
 	if (markerId) {
 		let matchedMiscMarker: MiscMarker | undefined;
-		let foundMap: MapIds | undefined;
+		let foundMap: MapId | undefined;
 		Object.entries(AllMiscStores()).map(([key, miscMarkersForMap]) => {
 			let matchedMisc = miscMarkersForMap.find(item => item.id === markerId);
 			if (matchedMisc) {
 				matchedMiscMarker = matchedMisc;
-				foundMap = key as MapIds;
+				foundMap = key as MapId;
 				return [foundMap, matchedMiscMarker];
 			}
 		});

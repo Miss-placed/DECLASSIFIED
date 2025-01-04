@@ -4,7 +4,6 @@ import { addCollectedIntel, addCompletedChallenges, addPinnedChallenges, getSetU
 class OldDeclassifiedUserPreferences {
     hasBeenMigrated: boolean | null;
 
-    lastSelectedMap: string | null;
     collectedIntel: string[] | null;
     asideShow: boolean | null;
     hideIntel: boolean | null;
@@ -15,9 +14,8 @@ class OldDeclassifiedUserPreferences {
     challengeTrackerState: string | null;
     darkmode: boolean | null;
     useSystemTheme: boolean | null;
-    constructor({ lastSelectedMap, collectedIntel, asideShow, hideIntel, hideMisc, hideBugRepButton, pinnedChallenges, completedChallenges, challengeTrackerState, darkmode, useSystemTheme, hasBeenMigrated }) {
+    constructor({ collectedIntel, asideShow, hideIntel, hideMisc, hideBugRepButton, pinnedChallenges, completedChallenges, challengeTrackerState, darkmode, useSystemTheme, hasBeenMigrated }) {
         // Interactive Map
-        this.lastSelectedMap = lastSelectedMap;
         this.collectedIntel = collectedIntel;
         this.asideShow = asideShow;
         this.hideIntel = hideIntel;
@@ -64,7 +62,6 @@ export const migrateOldUserPreferences = async () => {
             return false;
         }
 
-        updatedUserPreferences.currentMap = parsedOldPrefs.lastSelectedMap ?? updatedUserPreferences.currentMap;
         updatedUserPreferences.challengeTrackerState = parsedOldPrefs.challengeTrackerState ?? updatedUserPreferences.challengeTrackerState;
         updatedUserPreferences.darkMode = parsedOldPrefs.darkmode ?? updatedUserPreferences.darkMode;
         updatedUserPreferences.hideBugRepButton = parsedOldPrefs.hideBugRepButton ?? updatedUserPreferences.hideBugRepButton;

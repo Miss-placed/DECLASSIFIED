@@ -3,13 +3,15 @@ import {
 	Route,
 	BrowserRouter as Router,
 	Routes,
-	useParams,
+	useParams
 } from 'react-router-dom';
 import MapProvider from './components/Map';
+import { IsValidMapId } from './components/MapControls/MapIds';
 import {
 	UserContextProvider,
-	useUserContext,
+	useUserContext
 } from './contexts/UserContext/userContextProvider';
+import HomePage from './pages/HomePage';
 import { BaseLayout } from './pages/layouts/BaseLayout';
 
 function App() {
@@ -20,8 +22,8 @@ function App() {
 			<BaseLayout>
 				<UserContextProvider>
 					<Routes>
-						<Route path="/:id" Component={MapWithItemId} />
-						<Route path="/" Component={MapProvider} />
+						<Route path="/" Component={HomePage} />
+						<Route path="/:id" Component={MapWithIdRoute} />
 						<Route path="/legacy" Component={LegacySite} />
 						<Route path="/challenge" Component={LegacyChallengeSite} />
 					</Routes>
@@ -31,31 +33,14 @@ function App() {
 	);
 }
 
-const MapWithItemId = () => {
-	const { id } = useParams();
-	const {
-		isOnStartup,
-		setSharedMapItemId,
-		isDebugMode,
-		setInitiallySharedMapItemId,
-	} = useUserContext();
-
-	// Update the global state with the 'id' parameter
+const MapWithIdRoute = () => {
+	const { id: mapUrlId } = useParams();
+	const { setSharedMapItemId } = useUserContext();
 	useEffect(() => {
-		if (isOnStartup) {
-			if (isDebugMode) {
-				console.log('setSharedMapItemId: ', id);
-			}
-			setInitiallySharedMapItemId(id);
-			setSharedMapItemId(id);
+		if (mapUrlId && !IsValidMapId(mapUrlId)) {
+			setSharedMapItemId(mapUrlId);
 		}
-	}, [
-		id,
-		isDebugMode,
-		isOnStartup,
-		setInitiallySharedMapItemId,
-		setSharedMapItemId,
-	]);
+	}, [mapUrlId, setSharedMapItemId]);
 
 	return <MapProvider />;
 };

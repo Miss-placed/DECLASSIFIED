@@ -47,15 +47,22 @@ export const EggListMenu = () => {
 
     // watch((data, { name, type }) => console.log(data, name, type))
 
+    const onModalClick = (e) => {
+        e.stopPropagation();
+    };
+
     return (
         <FormProvider {...methods}>
             <StyledExpandableMenu
                 id="easterEgg-expandable-menu"
                 onSubmit={handleSubmit(onSubmit)}
             >
-                <StyledAccordion expanded={expand}>
+                <StyledAccordion expanded={expand}
+                    onClick={onModalClick}>
                     <StyledAccordionSummary
-                        expandIcon={<FilterAltIcon onClick={toggleAcordion} />}
+                        expandIcon={<FilterAltIcon
+                        // onClick={toggleAcordion} // Temporarily disabled until filter is implemented
+                        />}
                         aria-controls="easterEgg-filter"
                         id="easterEgg-filter-header"
                     >
@@ -65,12 +72,14 @@ export const EggListMenu = () => {
                             variant="outlined"
                             {...register('searchTerm')}
                         />
-                        {totalEggOfType}
+                        <StyledResultsCounter>
+                            {totalEggOfType}
+                        </StyledResultsCounter>
                     </StyledAccordionSummary>
-                    <AccordionDetails>
+                    <StyledAccordionDetails>
                         {/* <EggFilterMenu /> */}
                         Filter Easter Eggs Here
-                    </AccordionDetails>
+                    </StyledAccordionDetails>
                 </StyledAccordion>
             </StyledExpandableMenu>
         </FormProvider>
@@ -92,10 +101,19 @@ const StyledExpandableMenu = styled.form`
 `;
 
 const StyledAccordionSummary = styled(AccordionSummary)`
+background-color: var(--clr-grey-l);
+
 .MuiAccordionSummary-content {
 	display: flex;
 	justify-content: space-between;
     align-items: center;
+
+    #easterEggSearch,
+    #easterEggSearch input {
+		background-color: var(--clr-white);
+		border-radius: var(--radius);
+		border: unset;
+	}
 }
 `
 
@@ -103,4 +121,12 @@ const StyledAccordion = styled(Accordion)`
 	width: 100%;
 	margin: 0;
 	box-shadow: none;
+`;
+
+const StyledAccordionDetails = styled(AccordionDetails)`
+	background: var(--clr-grey-l);
+`;
+
+const StyledResultsCounter = styled.div`
+	color: var(--clr-white-d);
 `;
