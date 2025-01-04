@@ -1,5 +1,5 @@
 name: General Bug Report
-description: "Can you see an issue with the app, that doesn't relate to a specific marker? Use this template. If your issue does relate to a specific marker, please use the bug report buttons in the app to help us see exactly which item you're referring to."
+description: "Can you see an issue with the app, that doesn't relate to a specific marker? Use this template."
 title: 'Bug: TITLE_YOUR_BUG'
 labels: ['bug']
 assignees:
