@@ -64,6 +64,11 @@ export const MapGroupings: MapGroupDictionary = {
 		mapLayers: [MapDetails.citadelle],
 		game: Game.bo6,
 	},
+	tomb_Group: {
+		mapName: 'The Tomb',
+		mapLayers: [MapDetails.tomb],
+		game: Game.bo6,
+	},
 };
 
 export interface MapControlsProps {

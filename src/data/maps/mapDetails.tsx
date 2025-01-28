@@ -112,6 +112,10 @@ export const MapDetails = {
 		title: 'Citadelle Des Morts',
 		mapOverlay: allGameMapSVGs.citadelle,
 	}),
+	tomb: new MapItem(MapIds.tomb, {
+		title: 'The Tomb Spawn',
+		mapOverlay: allGameMapSVGs.tomb,
+	}),
 };
 
 export const allOutbreakMapsArr: string[] = [

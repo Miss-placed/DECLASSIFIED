@@ -175,24 +175,31 @@ const HomePage: React.FC = () => {
                 Call of Duty: Black Ops 6
             </Typography>
             <Grid container spacing={2}>
-                <Grid size={{ xs: 12, sm: 4 }} sx={{ height: '100px' }}>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }} sx={{ height: '100px' }}>
                     <Paper component={Link} to={`/${MapIds.libertyFalls}`}>
                         <Box className='homepage-box' p={2}>
                             <Typography variant="h6">Liberty Falls</Typography>
                         </Box>
                     </Paper>
                 </Grid>
-                <Grid size={{ xs: 12, sm: 4 }} sx={{ height: '100px' }}>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }} sx={{ height: '100px' }}>
                     <Paper component={Link} to={`/${MapIds.terminusPrison}`}>
                         <Box className='homepage-box' p={2}>
                             <Typography variant="h6">Terminus</Typography>
                         </Box>
                     </Paper>
                 </Grid>
-                <Grid size={{ xs: 12, sm: 4 }} sx={{ height: '100px' }}>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }} sx={{ height: '100px' }}>
                     <Paper component={Link} to={`/${MapIds.citadelle}`}>
                         <Box className='homepage-box' p={2}>
                             <Typography variant="h6">Citadelle Des Morts</Typography>
+                        </Box>
+                    </Paper>
+                </Grid>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }} sx={{ height: '100px' }}>
+                    <Paper component={Link} to={`/${MapIds.tomb}`}>
+                        <Box className='homepage-box' p={2}>
+                            <Typography variant="h6">The Tomb</Typography>
                         </Box>
                     </Paper>
                 </Grid>
