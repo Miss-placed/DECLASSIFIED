@@ -665,7 +665,7 @@ export const MiscStore: MarkerStore = {
 		// new MiscMarker(`eY40z`, MiscTypes.wallArmor2, [332.60800553028236, 383.6976824570178]),
 		new MiscMarker(`2eDbW`, MiscTypes.craftingTable, [424.70315771129896, 284.78157474439814]),
 		new MiscMarker(`TIDzH`, MiscTypes.craftingTable, [318.4537090577151, 174.40078282145365]),
-		new MiscMarker(`J8gVp`, MiscTypes.craftingTable, [190.40188862438046, 282.66559872004217]),
+		new MiscMarker(`J8gVp`, MiscTypes.craftingTable, [188.95604673989442, 288.05141711664356]),
 		new MiscMarker(`py94o`, MiscTypes.ammoCrate, [321.05298609672786, 66.28305945569619]),
 		new MiscMarker(`3FMLo`, MiscTypes.ammoCrate, [400.1516039083366, 136.61931390610658]),
 		new MiscMarker(`KnBon`, MiscTypes.ammoCrate, [408.59453849578176, 219.75919207154422]),
