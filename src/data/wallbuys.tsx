@@ -176,10 +176,14 @@ export const WallbuyStore: MarkerStore = {
 		new MiscMarker(`ycejl`, MiscTypes.wallbuy, [306.853841906432, 286.6399279147556], { uniqueTitle: `ASG-89` }),
 		new MiscMarker(`78Nsj`, MiscTypes.wallbuy, [240.25637620775572, 331.2362333030811], { uniqueTitle: `C9` }),
 		new MiscMarker(`yVyNb`, MiscTypes.wallbuy, [266.64290906700586, 301.1046331431583], { uniqueTitle: `XM4` }),
+		new MiscMarker(`HlOSF`, MiscTypes.wallArmor1, [189.81620216547734, 297.6305458498488]),
+		new MiscMarker(`4qnBp`, MiscTypes.wallArmor1, [324.3945658910249, 325.0106960799565]),
+		new MiscMarker(`H78fX`, MiscTypes.wallArmor2, [251.33910903655286, 80.67403768502217]),
 	],
 	[MapIds.terminusBiolabs]: [
 		// ISLANDS // CRAB ISLAND //
 		new MiscMarker(`JYpUP`, MiscTypes.wallbuy, [127.03492945576355, 232.95667735865507], { uniqueTitle: `Tsarkov 7.62` }),
+		new MiscMarker(`4koGm`, MiscTypes.wallArmor1, [124.54404848604268, 290.48416642125574]),
 		// TEMPLE //
 		new MiscMarker(`uTBhc`, MiscTypes.wallbuy, [398.6807293035015, 184.42052684266662], { uniqueTitle: `PU-21` }),
 		// CASTLE ROCK //
@@ -190,6 +194,8 @@ export const WallbuyStore: MarkerStore = {
 		new MiscMarker(`EQ96g`, MiscTypes.wallbuy, [325.9300249223915, 286.60776697843335], { uniqueTitle: `XM4` }),
 		new MiscMarker(`JHQR3`, MiscTypes.wallbuy, [283.26596956730333, 308.3863220984108], { uniqueTitle: `AK-74` }),
 		new MiscMarker(`F4Mjn`, MiscTypes.wallbuy, [241.88025981670182, 258.4050398521217], { uniqueTitle: `AS VAL` }),
+		new MiscMarker(`mgha7`, MiscTypes.wallArmor1, [201.37727824593725, 251.0767090000584]),
+		new MiscMarker(`hco6o`, MiscTypes.wallArmor2, [324.0575364488697, 262.9676000002204]),
 	],
 	[MapIds.terminusPrison]: [
 		new MiscMarker(`w0fbt`, MiscTypes.wallbuy, [301.5634536941064, 294.6754273738092], { uniqueTitle: `GS45` }),
@@ -199,6 +205,7 @@ export const WallbuyStore: MarkerStore = {
 		new MiscMarker(`kzPC1`, MiscTypes.wallbuy, [248.8489336765139, 263.518870815491], { uniqueTitle: `Marine-SP` }),
 		new MiscMarker(`HhY0_`, MiscTypes.wallbuy, [213.9061948934098, 253.16855562546598], { uniqueTitle: `Goblin MK2` }),
 		new MiscMarker(`QpYZL`, MiscTypes.wallbuy, [222.14994470956643, 301.70984599036944], { uniqueTitle: `PP-919`, uniqueDesc: `On the ramp up from the docks. Under the bridge from engineering.` }),
+		new MiscMarker(`Kqbwl`, MiscTypes.wallArmor1, [206.81535488460307, 290.64553908053466]),
 	],
 	[MapIds.citadelle]: [
 		new MiscMarker(`rOi2C`, MiscTypes.wallbuy, [127.73649367629511, 228.42558032860603], { uniqueTitle: `GS45` }),
@@ -210,6 +217,10 @@ export const WallbuyStore: MarkerStore = {
 		new MiscMarker(`yk4zv`, MiscTypes.wallbuy, [422.86317549059004, 233.27140868730157], { uniqueTitle: `Tanto .22` }),
 		new MiscMarker(`eLJ0c`, MiscTypes.wallbuy, [378.52897328670235, 443.23262884685033], { uniqueTitle: `KSV` }),
 		new MiscMarker(`QkZXh`, MiscTypes.wallbuy, [381.386189260236, 325.7815918407204], { uniqueTitle: `GPMG-7` }),
+		new MiscMarker(`Q3kLb`, MiscTypes.wallArmor1, [123.51237768859781, 181.8022970559544]),
+		new MiscMarker(`tBdk7`, MiscTypes.wallArmor1, [324.64228661377797, 213.6064892958248]),
+		new MiscMarker(`5vP1u`, MiscTypes.wallArmor2, [435.7880203647192, 199.42468944036344]),
+		new MiscMarker(`1chs0`, MiscTypes.wallArmor2, [332.60800553028236, 383.6976824570178]),
 	],
 	[MapIds.tomb]: [
 		new MiscMarker(`J4vyx`, MiscTypes.wallbuy, [370.0069767694419, 126.08009238307785], { uniqueTitle: `Marine-SP` }),
@@ -218,5 +229,7 @@ export const WallbuyStore: MarkerStore = {
 		new MiscMarker(`Fege1`, MiscTypes.wallbuy, [262.1312677969873, 243.71051641994927], { uniqueTitle: `XM4` }),
 		new MiscMarker(`1v00J`, MiscTypes.wallbuy, [295.52716237981883, 157.30526535643273], { uniqueTitle: `Kompakt 92` }),
 		new MiscMarker(`5IRJi`, MiscTypes.wallbuy, [370.406423483121, 347.57449314672755], { uniqueTitle: `GPMG-7` }),
+		new MiscMarker(`UNACg`, MiscTypes.wallArmor1, [355.83170251307746, 96.32222758351942]),
+		new MiscMarker(`gHOcH`, MiscTypes.wallArmor2, [352.2496499085841, 420.4929115498063]),
 	]
 };
