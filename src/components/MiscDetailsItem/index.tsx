@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import { Accordion, AccordionDetails, AccordionSummary, Button, Paper, Typography } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Button, Paper, Tooltip, Typography } from "@mui/material";
 import { useContext, useState } from "react";
 import { useMapEvents } from "react-leaflet";
 import { DeclassifiedContext } from "../../contexts/DeclassifiedContext/declassifiedContextProvider";
@@ -96,25 +96,27 @@ export const MiscDetailItem = ({
 							</LinksArea>
 						) : null}
 						<ActionContainer>
-							{ItemHasLocation && miscItemMap?.mapCanRender ? <Button onClick={async () => {
-								if (ItemIsOnAnotherMap) {
-									if (miscItemMap && miscItemMap.mapCanRender) {
-										var mapSetResult = await setCurrentMap(miscItemMap);
+							<Tooltip title="Locate on Map">
+								{ItemHasLocation && miscItemMap?.mapCanRender ? <Button onClick={async () => {
+									if (ItemIsOnAnotherMap) {
+										if (miscItemMap && miscItemMap.mapCanRender) {
+											var mapSetResult = await setCurrentMap(miscItemMap);
 
-										if (mapSetResult) {
-											mapInstance.flyTo(loc, 4);
-											setSharedMapItemId(id);
+											if (mapSetResult) {
+												mapInstance.flyTo(loc, 4);
+												setSharedMapItemId(id);
+											}
 										}
+									} else {
+										mapInstance.flyTo(loc, 4);
+										setSharedMapItemId(id);
 									}
-								} else {
-									mapInstance.flyTo(loc, 4);
-									setSharedMapItemId(id);
-								}
-							}}>
-								<LocationOnIcon htmlColor="var(--clr-blue)" />
-							</Button> : <Button disabled>
-								<LocationOnIcon htmlColor="var(--clr-grey)" />
-							</Button>}
+								}}>
+									<LocationOnIcon htmlColor="var(--clr-blue)" />
+								</Button> : <Button disabled>
+									<LocationOnIcon htmlColor="var(--clr-grey)" />
+								</Button>}
+							</Tooltip>
 							<ShareButton id={id} />
 							<BugReportButton id={id} typeDesc={icon} mapItem={miscItemMap} /> {/* TODO: standardise the typeDesc to all come from the same icon id store */}
 						</ActionContainer>
