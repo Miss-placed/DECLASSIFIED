@@ -24,6 +24,7 @@ export const MiscTypes = {
     landingPad: new Item({ title: 'Landing Pad', icon: IconFileNames.landingPad, }),
     airSupport: new Item({ title: 'Air Support Console' }),
     teleporter: new Item({ title: 'Teleporter', icon: IconFileNames.portal }),
+    portal: new Item({ title: 'Portal', icon: IconFileNames.portal }),
     collector: new Item({ title: 'Collection Unit', icon: IconFileNames.reactor, }),
     reactor: new Item({ title: 'Aether Reactor', icon: IconFileNames.reactor }),
     craftingTable: new Item({ title: 'Crafting Table', icon: IconFileNames.craftingTable, }),
@@ -51,6 +52,10 @@ export const MiscTypes = {
     elevator: new Item({ title: 'Elevator', icon: IconFileNames.jumpPad, }),
     cannon: new Item({ title: 'Cannon', icon: IconFileNames.jumpPad, }),
     caveSlide: new Item({ title: 'Cave Slide', icon: IconFileNames.landingPad, }),
+    portalYellow: new Item({ title: 'Yellow Gateway', icon: IconFileNames.portalYellow }),
+    portalRed: new Item({ title: 'Red Gateway', icon: IconFileNames.portalRed }),
+    portalGreen: new Item({ title: 'Green Gateway', icon: IconFileNames.portalGreen }),
+    portalBlue: new Item({ title: 'Blue Gateway', icon: IconFileNames.portalBlue }),
 };
 
 /////////////////////Markers/////////////////////////

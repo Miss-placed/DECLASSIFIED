@@ -36,6 +36,8 @@ export enum IconFileNames {
 	boss = 'boss',
 	sword = 'sword',
 	swordUpgrade = 'sword_upgrade',
+	goldenArmour = 'golden_armour',
+	digSite = 'dig_site',
 
 	//movement icons
 	rift = 'tunnel_pink',
@@ -46,6 +48,10 @@ export enum IconFileNames {
 	tunnelRed = 'tunnel_red',
 	tunnelPink = 'tunnel_pink',
 	portal = 'portal',
+	portalYellow = 'portal_yellow',
+	portalRed = 'portal_red',
+	portalGreen = 'portal_green',
+	portalBlue = 'portal_blue',
 	landingPad = 'landingpad',
 	jumpPad = 'jumppad',
 	door = 'door_buy',
@@ -103,7 +109,6 @@ export const LegacyIcons = {
 	[IconFileNames.fishing]: true,
 	[IconFileNames.elementalPop]: true,
 	[IconFileNames.deathPerception]: true,
-	[IconFileNames.deadshotDaiquiri]: true,
 };
 export const customMiscIconBounds = {
 	[IconFileNames.general]: {
