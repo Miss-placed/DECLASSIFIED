@@ -559,5 +559,15 @@ export const StaticEggStore: MarkerStore = {
 		new MiscMarker(`VY87x`, markers.nuke, [219.35233018019147, 136.03922734946804], { uniqueDesc: `Can be seen out in the distance against the castle walls when viewing from the barn gate next to the ammo box.` }),
 		new MiscMarker(`t6inq`, markers.bonusPoints, [315.6406753213818, 396.0295154596503], { uniqueDesc: `Behind the back of the sofa.` }),
 		new MiscMarker(`9ZtlS`, markers.fireSale, [153.85879467104604, 305.31552106045706], { uniqueDesc: `Only appears after shooting all 7 other power ups.\nInside the well.` }),
+	],
+	[MapIds.tomb]: [
+		new MiscMarker(`EebS9`, markers.maxAmmo, [408.13582523828796, 328.04940101732626], { img: `g7Eq31z`, uniqueDesc: `Up on a cliff edge.` }),
+		new MiscMarker(`iO9Lu`, markers.maxArmour, [253.92185324162836, 278.09031879113274], { img: `pavRMVm`, uniqueDesc: `Inside a square hole in the wall close to the ceiling.` }),
+		new MiscMarker(`jO5Mk`, markers.instaKill, [390.2136431442132, 446.6577177503342], { img: `AaUNzMn`, uniqueDesc: `Up on the rocks inside a hole, stand near the arsenal machine.` }),
+		new MiscMarker(`3Bo51`, markers.doublePoints, [120.42157197552262, 320.82209956225785], { img: `gg0CEis`, uniqueDesc: `Up against the rock face.` }),
+		new MiscMarker(`IQjN6`, markers.fullPower, [455.1475822130036, 278.5325955128256], { img: `2Aby0Mj`, uniqueDesc: `Behind the campfire.` }),
+		new MiscMarker(`_r_Cw`, markers.nuke, [232.8490296578811, 155.51403249466094], { img: `MHkYqi9`, uniqueDesc: `Out in the distance on top of a stalagmite.` }),
+		new MiscMarker(`PdHEG`, markers.bonusPoints, [266.4492028811934, 336.4167235840454], { img: `7jw8XCP`, uniqueDesc: `Down a zombie spawn hole.` }),
+		new MiscMarker(`F3kdK`, markers.fireSale, [321.03075937868476, 29.83142970995522], { img: `6xOeUmj`, uniqueDesc: `Only appears after shooting all 7 other power ups.\nIn a fire above the wall.` }),
 	]
 };
