@@ -161,14 +161,14 @@ export const PerkStore: MarkerStore = {
 		new MiscMarker(`LAuUx`, Perks.wunderFizz, [152.04365048882423, 175.6295951969671], { uniqueDesc: `Spawns at round 25.` }),
 	],
 	[MapIds.tomb]: [
-		new MiscMarker(``, Perks.phd, [305.0816389023074, 61.91143283347559]),
-		new MiscMarker(``, Perks.death, [428.56163535866716, 137.88504789800595]),
-		new MiscMarker(``, Perks.staminup, [463.3277034688893, 245.7339580099989]),
-		new MiscMarker(``, Perks.quick, [360.42935894115567, 467.2823104856576]),
-		new MiscMarker(``, Perks.speed, [275.9038898089378, 303.01583273813975]),
-		new MiscMarker(``, Perks.deadshot, [294.7227678421485, 132.0511102669367]),
-		new MiscMarker(``, Perks.jugg, [207.645586434241, 422.62734566108963]),
-		new MiscMarker(``, Perks.wunderFizz, [150.86998830014747, 280.05042225693336], { uniqueDesc: `Spawns at round 25.` }),
+		new MiscMarker(`hYJma`, Perks.phd, [305.0816389023074, 61.91143283347559]),
+		new MiscMarker(`j80yL`, Perks.death, [428.56163535866716, 137.88504789800595]),
+		new MiscMarker(`zCVq_`, Perks.staminup, [463.3277034688893, 245.7339580099989]),
+		new MiscMarker(`PUbZj`, Perks.quick, [360.42935894115567, 467.2823104856576]),
+		new MiscMarker(`eUCAn`, Perks.speed, [275.9038898089378, 303.01583273813975]),
+		new MiscMarker(`1e9Yb`, Perks.deadshot, [294.7227678421485, 132.0511102669367]),
+		new MiscMarker(`fsBhA`, Perks.jugg, [207.645586434241, 422.62734566108963]),
+		new MiscMarker(`xUrx3`, Perks.wunderFizz, [150.86998830014747, 280.05042225693336], { uniqueDesc: `Spawns at round 25.` }),
 	],
 
 	/////////////////////Outbreak/////////////////////////

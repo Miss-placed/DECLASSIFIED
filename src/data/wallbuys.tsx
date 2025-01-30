@@ -212,11 +212,11 @@ export const WallbuyStore: MarkerStore = {
 		new MiscMarker(`QkZXh`, MiscTypes.wallbuy, [381.386189260236, 325.7815918407204], { uniqueTitle: `GPMG-7` }),
 	],
 	[MapIds.tomb]: [
-		new MiscMarker(``, MiscTypes.wallbuy, [370.0069767694419, 126.08009238307785], { uniqueTitle: `Marine-SP` }),
-		new MiscMarker(``, MiscTypes.wallbuy, [409.8879312795094, 152.03244266907794], { uniqueTitle: `Tanto .22` }),
-		new MiscMarker(``, MiscTypes.wallbuy, [441.1645204132873, 215.29110790957597], { uniqueTitle: `AK-74` }),
-		new MiscMarker(``, MiscTypes.wallbuy, [262.1312677969873, 243.71051641994927], { uniqueTitle: `XM4` }),
-		new MiscMarker(``, MiscTypes.wallbuy, [295.52716237981883, 157.30526535643273], { uniqueTitle: `Kompakt 92` }),
-		new MiscMarker(``, MiscTypes.wallbuy, [370.406423483121, 347.57449314672755], { uniqueTitle: `GPMG-7` }),
+		new MiscMarker(`J4vyx`, MiscTypes.wallbuy, [370.0069767694419, 126.08009238307785], { uniqueTitle: `Marine-SP` }),
+		new MiscMarker(`V9N1e`, MiscTypes.wallbuy, [409.8879312795094, 152.03244266907794], { uniqueTitle: `Tanto .22` }),
+		new MiscMarker(`V_qPr`, MiscTypes.wallbuy, [441.1645204132873, 215.29110790957597], { uniqueTitle: `AK-74` }),
+		new MiscMarker(`Fege1`, MiscTypes.wallbuy, [262.1312677969873, 243.71051641994927], { uniqueTitle: `XM4` }),
+		new MiscMarker(`1v00J`, MiscTypes.wallbuy, [295.52716237981883, 157.30526535643273], { uniqueTitle: `Kompakt 92` }),
+		new MiscMarker(`5IRJi`, MiscTypes.wallbuy, [370.406423483121, 347.57449314672755], { uniqueTitle: `GPMG-7` }),
 	]
 };
