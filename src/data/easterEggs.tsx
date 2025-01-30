@@ -580,26 +580,42 @@ export const StaticEggStore: MarkerStore = {
 		new MiscMarker(`_r_Cw`, markers.nuke, [232.8490296578811, 155.51403249466094], { img: `MHkYqi9`, uniqueDesc: `Out in the distance on top of a stalagmite.` }),
 		new MiscMarker(`PdHEG`, markers.bonusPoints, [266.4492028811934, 336.4167235840454], { img: `7jw8XCP`, uniqueDesc: `Down a zombie spawn hole.` }),
 		new MiscMarker(`F3kdK`, markers.fireSale, [321.03075937868476, 29.83142970995522], { img: `6xOeUmj`, uniqueDesc: `Only appears after shooting all 7 other power ups.\nIn a fire above the wall.` }),
-		new MiscMarker(``, markers.goldArmour, [358.33289414137914, 154.09789069042847], { img: ``, uniqueDesc: `Only appears after completing the blood sacrifice. Provides armour regeneration.` }),
+		new MiscMarker(`VVEzJ`, markers.goldArmour, [358.33289414137914, 154.09789069042847], { img: ``, uniqueDesc: `Only appears after completing the blood sacrifice. Provides armour regeneration.` }),
 
-		new MiscMarker(``, markers.shovel, [348.94636878925763, 461.0482070074297], { uniqueDesc: `` }),
-		new MiscMarker(``, markers.shovel, [371.7782991256511, 353.9439157727601], { uniqueDesc: `` }),
-		new MiscMarker(``, markers.shovel, [400.22064142917174, 148.69124492832142], { uniqueDesc: `` }),
-		new MiscMarker(``, markers.shovel, [289.0625, 240.15625], { uniqueDesc: `` }),
-		new MiscMarker(``, markers.digSite, [383.87000500126817, 149.35235920522422], { uniqueDesc: `` }),
-		new MiscMarker(``, markers.digSite, [368.4555116841055, 450.6056368057272], { uniqueDesc: `` }),
-		new MiscMarker(``, markers.digSite, [293.75261603680326, 268.01207416479804], { uniqueDesc: `` }),
-		new MiscMarker(``, markers.digSite, [290.4543073866913, 150.9035006506923], { uniqueDesc: `` }),
-		new MiscMarker(``, markers.digSite, [338.99548229579756, 46.0303651409175], { uniqueDesc: `` }),
-		new MiscMarker(``, markers.digSite, [344.5897910655892, 92.15887604972609], { uniqueDesc: `` }),
-		new MiscMarker(``, markers.digSite, [425.86395856637154, 151.52534532134177], { uniqueDesc: `` }),
+		new MiscMarker(`cfACw`, markers.shovel, [348.94636878925763, 461.0482070074297], { uniqueDesc: `` }),
+		new MiscMarker(`Isy4y`, markers.shovel, [371.7782991256511, 353.9439157727601], { uniqueDesc: `` }),
+		new MiscMarker(`XsUGD`, markers.shovel, [400.22064142917174, 148.69124492832142], { uniqueDesc: `` }),
+		new MiscMarker(`jsDXJ`, markers.shovel, [289.0625, 240.15625], { uniqueDesc: `` }),
+		new MiscMarker(`HFx9Q`, markers.digSite, [383.87000500126817, 149.35235920522422], { uniqueDesc: `` }),
+		new MiscMarker(`WC4Ap`, markers.digSite, [368.4555116841055, 450.6056368057272], { uniqueDesc: `` }),
+		new MiscMarker(`XNgr9`, markers.digSite, [293.75261603680326, 268.01207416479804], { uniqueDesc: `` }),
+		new MiscMarker(`5SaPg`, markers.digSite, [290.4543073866913, 150.9035006506923], { uniqueDesc: `` }),
+		new MiscMarker(`9qC45`, markers.digSite, [338.99548229579756, 46.0303651409175], { uniqueDesc: `` }),
+		new MiscMarker(`VLvXV`, markers.digSite, [344.5897910655892, 92.15887604972609], { uniqueDesc: `` }),
+		new MiscMarker(`q7MLM`, markers.digSite, [425.86395856637154, 151.52534532134177], { uniqueDesc: `` }),
 
-		new MiscMarker(``, markers.statueHead, [197.54924602120346, 436.30162049825793], { uniqueDesc: `Next to Jugg.` }),
-		new MiscMarker(``, markers.statueHead, [144.31276039740175, 260.2387250682816], { uniqueDesc: `Under a leafy bush.` }),
+		new MiscMarker(`thyY2`, markers.statueHead, [197.54924602120346, 436.30162049825793], { uniqueDesc: `Next to Jugg.` }),
+		new MiscMarker(`mGqQL`, markers.statueHead, [144.31276039740175, 260.2387250682816], { uniqueDesc: `Under a leafy bush.` }),
 
-		new MiscMarker(``, markers.interactable, [116.83626836111173, 290.397391651169], { uniqueTitle: `Waterfall`, uniqueDesc: `Freeze both waterfalls with cryofreeze or the ice staff to get a reward.` }),
-		new MiscMarker(``, markers.interactable, [209.68441399107735, 277.41558405548994], { uniqueTitle: `Waterfall`, uniqueDesc: `Freeze both waterfalls with cryofreeze or the ice staff to get a reward.` }),
+		new MiscMarker(`TcECm`, markers.interactable, [116.83626836111173, 290.397391651169], { uniqueTitle: `Waterfall`, uniqueDesc: `Freeze both waterfalls with cryofreeze or the ice staff to get a reward.` }),
+		new MiscMarker(`V7HfA`, markers.interactable, [209.68441399107735, 277.41558405548994], { uniqueTitle: `Waterfall`, uniqueDesc: `Freeze both waterfalls with cryofreeze or the ice staff to get a reward.` }),
 
-		new MiscMarker(``, markers.bossFight, [246.22458823737037, 437.5389143191502], { uniqueDesc: `The bridge will open up after the last step. Cross it and interact with the artifact to start the fight.` }),
+		new MiscMarker(`JdMge`, markers.bossFight, [246.22458823737037, 437.5389143191502], { uniqueDesc: `The bridge will open up after the last step. Cross it and interact with the artifact to start the fight.` }),
 	]
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
