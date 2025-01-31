@@ -38,6 +38,7 @@ export enum IconFileNames {
 	swordUpgrade = 'sword_upgrade',
 	goldenArmour = 'golden_armour',
 	digSite = 'dig_site',
+	bottle = 'bottle',
 
 	//movement icons
 	rift = 'tunnel_pink',
@@ -108,7 +109,6 @@ export const LegacyIcons = {
 	[IconFileNames.general]: true,
 	[IconFileNames.fishing]: true,
 	[IconFileNames.elementalPop]: true,
-	[IconFileNames.deathPerception]: true,
 };
 export const customMiscIconBounds = {
 	[IconFileNames.general]: {
