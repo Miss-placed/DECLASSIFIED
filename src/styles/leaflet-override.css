@@ -109,6 +109,13 @@
 	border-radius: 10px !important;
 	/* box-shadow: var(--shadow) !important; TODO get this right */
 }
+.leaflet-control-layers.leaflet-control label {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+}
 
 .leaflet-container .leaflet-control-layers-toggle {
 	background-color: var(--clr-grey-d) !important;
