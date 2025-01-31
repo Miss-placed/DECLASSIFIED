@@ -33,14 +33,16 @@ export class BaseMarker extends Item {
 	img?: string;
 	linkedItems?: string;
 	externalLinks?: string;
+	stepNumber?: number;
 
-	constructor({ id, title, desc, icon, layer, typeDesc, loc, img, linkedItems, externalLinks }: any) {
+	constructor({ id, title, desc, icon, layer, typeDesc, loc, img, linkedItems, externalLinks, stepNumber }: any) {
 		super({ id, title, desc, icon, layer });
 		this.typeDesc = typeDesc;
 		this.loc = loc ?? [0, 0];
 		this.img = img ?? '';
 		this.linkedItems = linkedItems ?? '';
 		this.externalLinks = externalLinks ?? '';
+		this.stepNumber = stepNumber ?? null;
 	}
 }
 
@@ -80,6 +82,7 @@ export class MiscMarker extends BaseMarker {
 			img?: string;
 			linkedItems?: string;
 			externalLinks?: string;
+			stepNumber?: number;
 		}
 	) {
 		var newTitle = optional?.uniqueTitle ? optional?.uniqueTitle : title;
