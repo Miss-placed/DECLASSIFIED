@@ -45,6 +45,7 @@ const markers = {
 	// Part of the music easter egg quests for BO6
 	mrPeeksHeadphones: new Item({
 		title: `Mr Peeks Headphones`, icon: IconFileNames.cassette,
+		desc: `1 of 3 needed for the easter egg song.`,
 	}),
 	clue: new Item({ title: `Visual Clue`, icon: IconFileNames.clue }),
 	// An initially hidden area, or interactable, that makes available a new area that is not immediately accessible.
@@ -555,6 +556,9 @@ export const StaticEggStore: MarkerStore = {
 		new MiscMarker(`R2HHT`, markers.fireSale, [291.875, 281.8125], { uniqueDesc: `Only appears after shooting all 7 other power ups.\nInside the zombie spawn area, to the left hand side.` }),
 	],
 	[MapIds.citadelle]: [
+		new MiscMarker(`doiWV`, markers.mrPeeksHeadphones, [124.18454730355482, 194.89700645145751]),
+		new MiscMarker(`gb211`, markers.mrPeeksHeadphones, [249.83157921171673, 267.0733542845365]),
+		new MiscMarker(`1OLl5`, markers.mrPeeksHeadphones, [356.8083933970118, 335.6863666985874]),
 		new MiscMarker(`WAuh7`, markers.cannonPart, [55.356495828412775, 215.06621647574312], { uniqueTitle: `Cannon Part - Wheel`, uniqueDesc: `Inside a box of banana's at spawn, only appears after turning the cannon the first time.`, linkedItems: `8A54Q` }),
 		new MiscMarker(`OQb8p`, markers.cannonPart, [452.7139095318371, 267.30296959540743], { uniqueTitle: `Cannon Part - Blowtorch`, uniqueDesc: `In the back right corner of the dining hall, beside the standing light.`, linkedItems: `8A54Q` }),
 		new MiscMarker(`9PVYZ`, markers.cannonEgg, [50.716709743542346, 232.2881346817492], { uniqueDesc: `Requires a lot of patience and 50k essence. You must go through the cannon 100 times total, on the 100th firing you will fly into the bell and it will drop 2 monkey bombs and behave as a monkey bomb for a prolonged time.`, linkedItems: `8A54Q` }),
@@ -568,10 +572,13 @@ export const StaticEggStore: MarkerStore = {
 		new MiscMarker(`932Ke`, markers.doublePoints, [445.670754224332, 204.0609344031147], { uniqueDesc: `Low to the ground, on a shelf on the left side inside the zombie spawn.` }),
 		new MiscMarker(`exYPu`, markers.fullPower, [397.7516315336668, 253.32894063964844], { uniqueDesc: `Up on the roof, balancing on a broken wooden beam.` }),
 		new MiscMarker(`VY87x`, markers.nuke, [219.35233018019147, 136.03922734946804], { uniqueDesc: `Can be seen out in the distance against the castle walls when viewing from the barn gate next to the ammo box.` }),
-		new MiscMarker(`t6inq`, markers.bonusPoints, [315.6406753213818, 396.0295154596503], { uniqueDesc: `Behind the back of the sofa.` }),
+		new MiscMarker(`t6inq`, markers.bonusPoints, [347.47224826471984, 338.68078174235944], { uniqueDesc: `Behind the back of the sofa.` }),
 		new MiscMarker(`9ZtlS`, markers.fireSale, [153.85879467104604, 305.31552106045706], { uniqueDesc: `Only appears after shooting all 7 other power ups.\nInside the well.` }),
 	],
 	[MapIds.tomb]: [
+		new MiscMarker(`dNdWq`, markers.mrPeeksHeadphones, [458.1253815969317, 230.47884344636978], { uniqueDesc: `Besides the statue.` }),
+		new MiscMarker(`3cTsU`, markers.mrPeeksHeadphones, [321.15026131123483, 271.0065801134739], { uniqueDesc: `Next to the stairs, inside the alcove.` }),
+		new MiscMarker(`QxSwa`, markers.mrPeeksHeadphones, [129.0912301010784, 414.1414585193946], { uniqueDesc: `On the floor by a plant.` }),
 		new MiscMarker(`EebS9`, markers.maxAmmo, [408.13582523828796, 328.04940101732626], { img: `g7Eq31z`, uniqueDesc: `Up on a cliff edge.` }),
 		new MiscMarker(`iO9Lu`, markers.maxArmour, [253.92185324162836, 278.09031879113274], { img: `pavRMVm`, uniqueDesc: `Inside a square hole in the wall close to the ceiling.` }),
 		new MiscMarker(`jO5Mk`, markers.instaKill, [390.2136431442132, 446.6577177503342], { img: `AaUNzMn`, uniqueDesc: `Up on the rocks inside a hole, stand near the arsenal machine.` }),

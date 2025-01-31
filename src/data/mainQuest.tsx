@@ -437,5 +437,8 @@ export const StaticQuestStore: MarkerStore = {
 		new MiscMarker(`JKqce`, markers.mainQuest, [90.29487190696896, 187.47728224104117], { linkedItems: `6UGOZ`, uniqueTitle: `Orb Pedestal - The Stag`, uniqueDesc: `Requires the Orb to begin. Starts a timed event to complete, kill zombies with any electrical effect, including the alt fire of the Stag sword to charge the orb, when completed correctly the orb will have a coloured effect flying around it. They can be completed in any order, must be picked up to begin another.` },),
 		new MiscMarker(`mPlz7`, markers.questCollectible, [418.39903763765665, 122.84038315591837], { linkedItems: `fKytn`, img: `ZkW20YW`, uniqueTitle: `Guardian Key`, uniqueDesc: `Found after opening the Study door with the charged orb by performing all 4 orb rituals. This recording can be activated and collected in order to begin the bossfight, back at spawn.` },),
 		new MiscMarker(`fKytn`, markers.bossFight, [93.99040847306705, 220.07244946876693], { linkedItems: `mPlz7` },),
+	],
+	[MapIds.tomb]: [
+
 	]
 };
