@@ -182,6 +182,14 @@ const markers = {
 	cannonPart: new Item({
 		title: `Cannon Upgrade Part`, icon: IconFileNames.interactable,
 	}),
+	alcoholBottle: new Item({
+		title: `Alcohol Bottle`, icon: IconFileNames.bottle,
+		desc: `1 of 3 needed for the bar easter egg.`,
+	}),
+	barEgg: new Item({
+		title: `Bartending Egg`, icon: IconFileNames.bottle,
+		desc: `After collecting all 3 bottles, you can come back here to trigger the easter egg that rewards you with intel and a free PHD flopper perk.`,
+	}),
 	mrPeeksHideNSeek: new Item({ title: `Mr Peeks - Hide 'N Seek!`, desc: 'Find all Mr Peeks dolls in a specific order, to unlock a free perk! Originally found by one of the creators!', icon: IconFileNames.mrPeeks, }),
 	cannonEgg: new Item({
 		title: `Clock Tower Monkey Bomb`, icon: IconFileNames.interactable,
@@ -559,6 +567,10 @@ export const StaticEggStore: MarkerStore = {
 		new MiscMarker(`doiWV`, markers.mrPeeksHeadphones, [124.18454730355482, 194.89700645145751]),
 		new MiscMarker(`gb211`, markers.mrPeeksHeadphones, [249.83157921171673, 267.0733542845365]),
 		new MiscMarker(`1OLl5`, markers.mrPeeksHeadphones, [356.8083933970118, 335.6863666985874]),
+		new MiscMarker(`XfhFB`, markers.alcoholBottle, [390.2999582769362, 272.637598477095], { uniqueDesc: `In the corner of the dining hall.`, linkedItems: `NDa_G` }),
+		new MiscMarker(`QG2Bi`, markers.alcoholBottle, [402.24816278849784, 179.36024659410995], { uniqueDesc: `On the shelf beside the sofa.`, linkedItems: `NDa_G` }),
+		new MiscMarker(`YphwX`, markers.alcoholBottle, [352.90222177431343, 334.31000109077763], { uniqueDesc: `Underneath the chessboard table.`, linkedItems: `NDa_G` }),
+		new MiscMarker(`NDa_G`, markers.barEgg, [143.4544739262676, 174.75649181149487], { uniqueDesc: `Interact with the silver tray at the end of the bar to activate. `, linkedItems: `XfhFB,QG2Bi,YphwX` }),
 		new MiscMarker(`WAuh7`, markers.cannonPart, [55.356495828412775, 215.06621647574312], { uniqueTitle: `Cannon Part - Wheel`, uniqueDesc: `Inside a box of banana's at spawn, only appears after turning the cannon the first time.`, linkedItems: `8A54Q` }),
 		new MiscMarker(`OQb8p`, markers.cannonPart, [452.7139095318371, 267.30296959540743], { uniqueTitle: `Cannon Part - Blowtorch`, uniqueDesc: `In the back right corner of the dining hall, beside the standing light.`, linkedItems: `8A54Q` }),
 		new MiscMarker(`9PVYZ`, markers.cannonEgg, [50.716709743542346, 232.2881346817492], { uniqueDesc: `Requires a lot of patience and 50k essence. You must go through the cannon 100 times total, on the 100th firing you will fly into the bell and it will drop 2 monkey bombs and behave as a monkey bomb for a prolonged time.`, linkedItems: `8A54Q` }),
@@ -611,10 +623,10 @@ export const StaticEggStore: MarkerStore = {
 		new MiscMarker(`thyY2`, markers.statueHead, [197.54924602120346, 436.30162049825793], { uniqueDesc: `Next to Jugg.` }),
 		new MiscMarker(`mGqQL`, markers.statueHead, [144.31276039740175, 260.2387250682816], { uniqueDesc: `Under a leafy bush.` }),
 
+		new MiscMarker(`_husd`, markers.interactable, [211.6185981937529, 401.81299946293166], { uniqueTitle: `Spinning Rocks`, uniqueDesc: `Shoot the rocks in the air until they start spinning. Hit all of the moving rocks within quick succession to be rewarded with PaP tier 1 and cryofreeze (at the central altar).` }),
+
 		new MiscMarker(`TcECm`, markers.interactable, [116.83626836111173, 290.397391651169], { uniqueTitle: `Waterfall`, uniqueDesc: `Freeze both waterfalls with cryofreeze or the ice staff to get a reward.` }),
 		new MiscMarker(`V7HfA`, markers.interactable, [209.68441399107735, 277.41558405548994], { uniqueTitle: `Waterfall`, uniqueDesc: `Freeze both waterfalls with cryofreeze or the ice staff to get a reward.` }),
-
-		new MiscMarker(`JdMge`, markers.bossFight, [246.22458823737037, 437.5389143191502], { uniqueDesc: `The bridge will open up after the last step. Cross it and interact with the artifact to start the fight.` }),
 	]
 };
 
