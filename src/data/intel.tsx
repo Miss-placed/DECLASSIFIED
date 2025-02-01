@@ -79,7 +79,7 @@ export enum MiscIconTypes {
 	deathPerception = `death_perception`,
 	tombstoneSoda = `tombstone_soda`,
 	deadshotDaiquiri = `deadshot_daiquiri`,
-	phdSlider = `phd_slider`,
+	phdSlider = `phd`,
 }
 
 export interface IIntelItem {
