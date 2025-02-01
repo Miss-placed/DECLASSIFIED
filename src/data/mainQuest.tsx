@@ -25,6 +25,7 @@ const markers = {
 		title: `Boss Fight`, desc: `A boss fight for this map, follow the main quest to begin.`, icon: IconFileNames.boss,
 	}),
 	clue: new Item({ title: `Visual Clue`, icon: IconFileNames.clue }),
+
 	// An initially hidden area, or interactable, that makes available a new area that is not immediately accessible.
 	secretArea: new Item({
 		title: `Secret Area`, icon: IconFileNames.secretArea,
@@ -49,8 +50,8 @@ const markers = {
 	essenceHarvester: new Item({
 		title: `Essence Harvester`, icon: IconFileNames.reactor,
 	}),
-	// Forsaken specific
-	forsakenAetherCrystals: new Item({
+	//Forsaken specific
+	largeAetherCrystal: new Item({
 		title: `Large Aether Crystal`, icon: IconFileNames.crystal,
 	}),
 	// Outbreak specific
@@ -78,6 +79,15 @@ const markers = {
 	}),
 	ritualStep: new Item({
 		title: `Ritual Step`, icon: IconFileNames.objective,
+	}),
+	// Tomb
+	crystalStep: new Item({
+		title: `Dark Aether Pillar`, icon: IconFileNames.crystal,
+		desc: `The pillar needs to be charged by completing a trial associated with the statue in front of it. Each statue will have a coloured crystal appear one after another, they can be initiated by shooting the crystal with the healing beam (alt fire) from the upgraded ice staff. The colour corresponds to the door where you can find the podium for the trial. The first one is blue/vermin.`
+	}),
+	aetherCrystalPodium: new Item({
+		title: `Crystal Podium`, icon: IconFileNames.objective,
+		desc: `This is the podium associated with the one in the dark aether. Each will have a statue of the special enemy associated with it. After completing the lockdown you need to take the energy from the podium back to the associated pillar in the aether. Try not to get hit.`
 	}),
 };
 
@@ -213,8 +223,8 @@ export const StaticQuestStore: MarkerStore = {
 		new MiscMarker(`ae_ve`, markers.mainQuest, [236.66438512209962, 331.39708807762185], { uniqueTitle: `Button For Shutters`, uniqueDesc: `Press to begin the easter egg and enter the first cutscene.` }),
 		new MiscMarker(`Jvfzd`, markers.questCollectible, [221.49957076603778, 264.8502010445337], { uniqueTitle: `Fuel Tank`, uniqueDesc: `Obtained by interacting with one of the large white fuel tanks and completing the lockdown.` }),
 		new MiscMarker(`RV0mf`, markers.questCollectible, [113.2661885050118, 164.47601941465607], { uniqueTitle: `Monitoring Device`, uniqueDesc: `Drops from a hole in the wall in the TV Store after using the Activision Grand Prix arcade machine.` }),
-		new MiscMarker(`ldDz3`, markers.forsakenAetherCrystals, [271.9707732304297, 91.92974890168614], { uniqueTitle: `Large Dark Aether Crystal #2`, uniqueDesc: `Spawns 3 floating orbs that must be shot before the main crystal can be destroyed with the Crysalax Savager.\nThis will drop a Crystal Shard. These must be thrown in the mouth of an abomination, turning it's tail orange. Then it must be killed to obtain a Catalyzed Crystal Shard. Do this for all 3 crystals around the map.` }),
-		new MiscMarker(`MUexS`, markers.forsakenAetherCrystals, [350.61973067962373, 191.0702416911157], { uniqueTitle: `Large Dark Aether Crystal #3`, uniqueDesc: `Spawns 3 floating orbs that must be shot before the main crystal can be destroyed with the Crysalax Savager.\nThis will drop a Crystal Shard. These must be thrown in the mouth of an abomination, turning it's tail orange. Then it must be killed to obtain a Catalyzed Crystal Shard. Do this for all 3 crystals around the map.` }),
+		new MiscMarker(`ldDz3`, markers.largeAetherCrystal, [271.9707732304297, 91.92974890168614], { uniqueTitle: `Large Dark Aether Crystal #2`, uniqueDesc: `Spawns 3 floating orbs that must be shot before the main crystal can be destroyed with the Crysalax Savager.\nThis will drop a Crystal Shard. These must be thrown in the mouth of an abomination, turning it's tail orange. Then it must be killed to obtain a Catalyzed Crystal Shard. Do this for all 3 crystals around the map.` }),
+		new MiscMarker(`MUexS`, markers.largeAetherCrystal, [350.61973067962373, 191.0702416911157], { uniqueTitle: `Large Dark Aether Crystal #3`, uniqueDesc: `Spawns 3 floating orbs that must be shot before the main crystal can be destroyed with the Crysalax Savager.\nThis will drop a Crystal Shard. These must be thrown in the mouth of an abomination, turning it's tail orange. Then it must be killed to obtain a Catalyzed Crystal Shard. Do this for all 3 crystals around the map.` }),
 		new MiscMarker(`JCpmh`, markers.mainQuest, [383.32564714876884, 269.6057051613007], { uniqueTitle: `Aetherium Neutralizer`, uniqueDesc: `Used to trigger the start of the boss battle. Once constructed will prompt you to Activate it. When activated it will start an escort mission through the tunnel ahead. Collect orange crystals along the way to fuel the Neutralizer. Once you reach the end power up stations will spawn, before you begin the boss fight. ` }),
 		new MiscMarker(`8JYiv`, markers.bossFight, [107.80007127817684, 410.8341478679704], { uniqueTitle: `The Forsaken`, uniqueDesc: `Boss battle spawn location.` }),
 	],
@@ -223,7 +233,7 @@ export const StaticQuestStore: MarkerStore = {
 		new MiscMarker(`rN5Pg`, markers.questCollectible, [220.32935092146133, 373.6915310551705], { uniqueTitle: `Housing Unit`, uniqueDesc: `Drops from the wall when charged at by an abomination. Used as part of constructing the Aetherium Neutralizer` }),
 		new MiscMarker(`mVUTb`, markers.wonderWeaponCollectible, [186.7283472806809, 448.0908425556309], { uniqueTitle: `Energetic Geode`, uniqueDesc: `Can be dropped from any dark aether crystal, only when it is destroyed by the electrical beam of an abomination.\nUsed to build the wonder weapon quest, also counts as an intel item.` }),
 		new MiscMarker(`BjO0P`, markers.wonderWeapon, [407.98348792558136, 223.89943180145679], { uniqueTitle: `Chrysalax Savager`, uniqueDesc: `Is crafted inside the water tank using the 3 required components, after placing the items you must get melee kills near the tank in order to charge/craft the weapon.` }),
-		new MiscMarker(`mVIvK`, markers.forsakenAetherCrystals, [296.373367239989, 339.2622775270375], { uniqueTitle: `Large Dark Aether Crystal #1`, uniqueDesc: `Spawns 3 floating orbs that must be shot before the main crystal can be destroyed with the Crysalax Savager.\nThis will drop a Crystal Shard. These must be thrown in the mouth of an abomination, turning it's tail orange. Then it must be killed to obtain a Catalyzed Crystal Shard. Do this for all 3 crystals around the map.` }),
+		new MiscMarker(`mVIvK`, markers.largeAetherCrystal, [296.373367239989, 339.2622775270375], { uniqueTitle: `Large Dark Aether Crystal #1`, uniqueDesc: `Spawns 3 floating orbs that must be shot before the main crystal can be destroyed with the Crysalax Savager.\nThis will drop a Crystal Shard. These must be thrown in the mouth of an abomination, turning it's tail orange. Then it must be killed to obtain a Catalyzed Crystal Shard. Do this for all 3 crystals around the map.` }),
 	],
 	/////////////////////Outbreak Items/////////////////////////
 	[MapIds.zoo]: [
@@ -437,5 +447,26 @@ export const StaticQuestStore: MarkerStore = {
 		new MiscMarker(`JKqce`, markers.mainQuest, [90.29487190696896, 187.47728224104117], { linkedItems: `6UGOZ`, uniqueTitle: `Orb Pedestal - The Stag`, uniqueDesc: `Requires the Orb to begin. Starts a timed event to complete, kill zombies with any electrical effect, including the alt fire of the Stag sword to charge the orb, when completed correctly the orb will have a coloured effect flying around it. They can be completed in any order, must be picked up to begin another.` },),
 		new MiscMarker(`mPlz7`, markers.questCollectible, [418.39903763765665, 122.84038315591837], { linkedItems: `fKytn`, img: `ZkW20YW`, uniqueTitle: `Guardian Key`, uniqueDesc: `Found after opening the Study door with the charged orb by performing all 4 orb rituals. This recording can be activated and collected in order to begin the bossfight, back at spawn.` },),
 		new MiscMarker(`fKytn`, markers.bossFight, [93.99040847306705, 220.07244946876693], { linkedItems: `mPlz7` },),
+	],
+	[MapIds.tomb]: [
+		new MiscMarker(`r6Fa8`, markers.questCollectible, [420.55463697027795, 173.13252270483], { uniqueTitle: `Tombs Mural`, uniqueDesc: `First obtain the monocle from the first shock mimic. Then shoot aetheric lanterns (and wait for them to respawn) until one is opposite the mural on the left side. Then shoot the lit symbols in order (roman numerals) to trigger a lockdown. The reward is 1 of 2 ice staff parts.`, stepNumber: 1 }),
+		new MiscMarker(`ToSQg`, markers.questCollectible, [325.17435628016256, 174.23427512204256], { uniqueTitle: `Caves Mural`, uniqueDesc: `First obtain the monocle from the first shock mimic. Then shoot aetheric lanterns (and wait for them to respawn) until one is opposite the mural. Then shoot the lit symbols in order (roman numerals) to trigger a lockdown. The reward is 1 of 2 ice staff parts.`, stepNumber: 1 }),
+		new MiscMarker(`_pOlx`, markers.mainQuest, [186.83734382308813, 354.6147706924116], { uniqueTitle: `Nexus Altar`, uniqueDesc: `Take the ice staff parts here and interact with it to trigger a defend event. Stop the staff being destroyed and you'll earn the base ice staff.`, stepNumber: 2 }),
+		new MiscMarker(`nTUaW`, markers.mainQuest, [172.99231014236906, 370.83612752533963], { uniqueTitle: `Floating Rocks`, uniqueDesc: `Shoot 3 aetheric lanterns within 10 seconds of eachother, with the ice staff, then enter the dark aether and look up to see 3 rocks with symbols on them. Shoot them with the staff to lower them, make a note of the symbols.`, stepNumber: 3 }),
+		new MiscMarker(`uYOYi`, markers.mainQuest, [171.7013227532469, 345.0163797428965], { uniqueTitle: `Purple Orb`, uniqueDesc: `After the floating rocks are lowered, one of the doors will close off. Go to the other side of the door and shoot the 3 symbols that were on the rocks. If you do it correctly the door will reopen and the 3 symbols will glow on the floor of the door. After entering you'll be dropped on top of the floating rock with the purple orb. Interact with it to trigger a moving soul box, move it by killing nearby the orb, when it ends interact with the alter and the ice staff will be upgraded.`, stepNumber: 4 }),
+
+		new MiscMarker(`lCTn_`, markers.crystalStep, [146.84566686502382, 374.5832845750799], { uniqueTitle: `Vermin Crystal`, stepNumber: 5 }),
+		new MiscMarker(`diD9k`, markers.aetherCrystalPodium, [354.33351467626574, 45.504981560781104], { uniqueTitle: `Vermin Podium`, uniqueDesc: `Located in Dig Site.`, stepNumber: 6 }),
+
+		new MiscMarker(`e4htw`, markers.crystalStep, [144.37034150436426, 331.0478857343452], { uniqueTitle: `Parasite Crystal`, stepNumber: 7 }),
+		new MiscMarker(`CPBgu`, markers.aetherCrystalPodium, [447.5815793619323, 246.3399112048164], { uniqueTitle: `Parasite Podium`, uniqueDesc: `Purple energy will infect the parasites. Kill them and bring the energy balls back to the podium to charge it.`, stepNumber: 8 }),
+
+		new MiscMarker(`mMyTR`, markers.crystalStep, [202.95409409968445, 338.9471435474322], { uniqueTitle: `Doppelghast Crystal`, stepNumber: 9 }),
+		new MiscMarker(`pno4V`, markers.aetherCrystalPodium, [292.38929209419456, 289.42554184227856], { uniqueTitle: `Doppelghast Podium`, uniqueDesc: `Spawns lasers and purple explosions that you should avoid.`, stepNumber: 10 }),
+
+		new MiscMarker(`cOvgh`, markers.crystalStep, [200.192813907852, 373.4631459453377], { uniqueTitle: `Amalgam Crystal`, stepNumber: 11 }),
+		new MiscMarker(`oM3Br`, markers.aetherCrystalPodium, [359.5270605963886, 433.10297767778144], { uniqueTitle: `Amalgam Podium`, uniqueDesc: `Spawns a single elite amalgam, when he has a bubble around him you should kill the tethered zombie first before you can continue dealing damage.`, stepNumber: 12 }),
+
+		new MiscMarker(`JdMge`, markers.bossFight, [246.22458823737037, 437.5389143191502], { uniqueDesc: `The bridge will open up after the last step. Cross it and interact with the artifact to start the fight.`, stepNumber: 13 }),
 	]
 };

@@ -38,6 +38,7 @@ export enum IconFileNames {
 	swordUpgrade = 'sword_upgrade',
 	goldenArmour = 'golden_armour',
 	digSite = 'dig_site',
+	bottle = 'bottle',
 
 	//movement icons
 	rift = 'tunnel_pink',
@@ -90,7 +91,7 @@ export enum IconFileNames {
 	deathPerception = 'death_perception',
 	tombstoneSoda = 'tombstone_soda',
 	deadshotDaiquiri = 'deadshot_daiquiri',
-	phdSlider = 'phd_slider',
+	phd = 'phd',
 	meleeMacchiato = 'melee_macchiato',
 	vulture = 'vulture_aid',
 }
@@ -98,17 +99,11 @@ export enum IconFileNames {
 
 export const LegacyIcons = {
 	[IconFileNames.tombstoneSoda]: true,
-	[IconFileNames.staminUp]: true,
 	[IconFileNames.speedCola]: true,
-	[IconFileNames.quickRevive]: true,
-	[IconFileNames.phdSlider]: true,
 	[IconFileNames.muleKick]: true,
 	[IconFileNames.monkey]: true,
-	[IconFileNames.juggernog]: true,
 	[IconFileNames.general]: true,
 	[IconFileNames.fishing]: true,
-	[IconFileNames.elementalPop]: true,
-	[IconFileNames.deathPerception]: true,
 };
 export const customMiscIconBounds = {
 	[IconFileNames.general]: {

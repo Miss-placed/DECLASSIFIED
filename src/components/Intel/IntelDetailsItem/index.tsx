@@ -5,7 +5,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 import DoneIcon from '@mui/icons-material/Done';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import { Accordion, AccordionDetails, AccordionSummary, Button, Typography } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Button, Tooltip, Typography } from "@mui/material";
 import { useLiveQuery } from "dexie-react-hooks";
 import { useContext, useEffect, useState } from "react";
 import { useMapEvents } from "react-leaflet";
@@ -118,24 +118,26 @@ export const IntelDetailsItem = ({
 								</Button>
 							)}
 							{IntelHasLocation && mapItem?.mapCanRender ? (
-								<Button
-									onClick={async () => {
-										if (IntelIsOnAnotherMap) {
-											if (mapItem && mapItem.mapCanRender) {
-												var mapSetResult = await setCurrentMap(mapItem);
-												if (mapSetResult) {
-													mapInstance.flyTo(loc, 4);
-													setSharedMapItemId(id);
+								<Tooltip title="Locate on Map">
+									<Button
+										onClick={async () => {
+											if (IntelIsOnAnotherMap) {
+												if (mapItem && mapItem.mapCanRender) {
+													var mapSetResult = await setCurrentMap(mapItem);
+													if (mapSetResult) {
+														mapInstance.flyTo(loc, 4);
+														setSharedMapItemId(id);
+													}
 												}
+											} else {
+												mapInstance.flyTo(loc, 4);
+												setSharedMapItemId(id);
 											}
-										} else {
-											mapInstance.flyTo(loc, 4);
-											setSharedMapItemId(id);
-										}
-									}}
-								>
-									<LocationOnIcon htmlColor="var(--clr-blue)" />
-								</Button>
+										}}
+									>
+										<LocationOnIcon htmlColor="var(--clr-blue)" />
+									</Button>
+								</Tooltip>
 							) : (
 								<></>
 							)}
