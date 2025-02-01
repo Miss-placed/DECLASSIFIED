@@ -455,16 +455,16 @@ export const StaticQuestStore: MarkerStore = {
 		new MiscMarker(`nTUaW`, markers.mainQuest, [172.99231014236906, 370.83612752533963], { uniqueTitle: `Floating Rocks`, uniqueDesc: `Shoot 3 aetheric lanterns within 10 seconds of eachother, with the ice staff, then enter the dark aether and look up to see 3 rocks with symbols on them. Shoot them with the staff to lower them, make a note of the symbols.`, stepNumber: 3 }),
 		new MiscMarker(`uYOYi`, markers.mainQuest, [171.7013227532469, 345.0163797428965], { uniqueTitle: `Purple Orb`, uniqueDesc: `After the floating rocks are lowered, one of the doors will close off. Go to the other side of the door and shoot the 3 symbols that were on the rocks. If you do it correctly the door will reopen and the 3 symbols will glow on the floor of the door. After entering you'll be dropped on top of the floating rock with the purple orb. Interact with it to trigger a moving soul box, move it by killing nearby the orb, when it ends interact with the alter and the ice staff will be upgraded.`, stepNumber: 4 }),
 
-		new MiscMarker(`lCTn_`, markers.crystalStep, [146.84566686502382, 374.5832845750799], { uniqueTitle: `Vermin Crystal`, uniqueDesc: ``, stepNumber: 5 }),
+		new MiscMarker(`lCTn_`, markers.crystalStep, [146.84566686502382, 374.5832845750799], { uniqueTitle: `Vermin Crystal`, stepNumber: 5 }),
 		new MiscMarker(`diD9k`, markers.aetherCrystalPodium, [354.33351467626574, 45.504981560781104], { uniqueTitle: `Vermin Podium`, uniqueDesc: `Located in Dig Site.`, stepNumber: 6 }),
 
-		new MiscMarker(`e4htw`, markers.crystalStep, [144.37034150436426, 331.0478857343452], { uniqueTitle: `Parasite Crystal`, uniqueDesc: ``, stepNumber: 7 }),
+		new MiscMarker(`e4htw`, markers.crystalStep, [144.37034150436426, 331.0478857343452], { uniqueTitle: `Parasite Crystal`, stepNumber: 7 }),
 		new MiscMarker(`CPBgu`, markers.aetherCrystalPodium, [447.5815793619323, 246.3399112048164], { uniqueTitle: `Parasite Podium`, uniqueDesc: `Purple energy will infect the parasites. Kill them and bring the energy balls back to the podium to charge it.`, stepNumber: 8 }),
 
-		new MiscMarker(`mMyTR`, markers.crystalStep, [202.95409409968445, 338.9471435474322], { uniqueTitle: `Doppelghast Crystal`, uniqueDesc: ``, stepNumber: 9 }),
+		new MiscMarker(`mMyTR`, markers.crystalStep, [202.95409409968445, 338.9471435474322], { uniqueTitle: `Doppelghast Crystal`, stepNumber: 9 }),
 		new MiscMarker(`pno4V`, markers.aetherCrystalPodium, [292.38929209419456, 289.42554184227856], { uniqueTitle: `Doppelghast Podium`, uniqueDesc: `Spawns lasers and purple explosions that you should avoid.`, stepNumber: 10 }),
 
-		new MiscMarker(`cOvgh`, markers.crystalStep, [200.192813907852, 373.4631459453377], { uniqueTitle: `Amalgam Crystal`, uniqueDesc: ``, stepNumber: 11 }),
+		new MiscMarker(`cOvgh`, markers.crystalStep, [200.192813907852, 373.4631459453377], { uniqueTitle: `Amalgam Crystal`, stepNumber: 11 }),
 		new MiscMarker(`oM3Br`, markers.aetherCrystalPodium, [359.5270605963886, 433.10297767778144], { uniqueTitle: `Amalgam Podium`, uniqueDesc: `Spawns a single elite amalgam, when he has a bubble around him you should kill the tethered zombie first before you can continue dealing damage.`, stepNumber: 12 }),
 
 		new MiscMarker(`JdMge`, markers.bossFight, [246.22458823737037, 437.5389143191502], { uniqueDesc: `The bridge will open up after the last step. Cross it and interact with the artifact to start the fight.`, stepNumber: 13 }),

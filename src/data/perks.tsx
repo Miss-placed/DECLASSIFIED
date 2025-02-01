@@ -61,7 +61,7 @@ export const Perks = {
 	phd: new Item({
 		id: 'phdSlider',
 		title: 'PHD',
-		icon: IconFileNames.phdSlider,
+		icon: IconFileNames.phd,
 	}),
 	meleeMacchiato: new Item({
 		id: 'meleeMacchiato',
