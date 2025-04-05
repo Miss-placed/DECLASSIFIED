@@ -232,5 +232,23 @@ export const WallbuyStore: MarkerStore = {
 		new MiscMarker(`UNACg`, MiscTypes.wallArmor1, [355.83170251307746, 96.32222758351942]),
 		new MiscMarker(`gHOcH`, MiscTypes.wallArmor2, [352.2496499085841, 420.4929115498063]),
 	],
-	[MapIds.shatteredVeil]: []
+	[MapIds.shatteredVeil]: [
+		new MiscMarker(``, MiscTypes.wallbuy, [112.82110149651656, 132.38350474553886], { uniqueTitle: `GS45` }),
+		new MiscMarker(``, MiscTypes.wallbuy, [85.49704358574752, 229.69354993185902], { uniqueTitle: `Henge Buy` }),
+		new MiscMarker(``, MiscTypes.wallbuy, [231.8525575565643, 210.4313973475339], { uniqueTitle: `Conservatory Buy` }),
+		new MiscMarker(``, MiscTypes.wallbuy, [183.0249129624509, 365.1047747392093], { uniqueTitle: `Driveway Buy` }),
+		new MiscMarker(``, MiscTypes.wallbuy, [297.68968570811126, 404.3073866239473], { uniqueTitle: `Southeast House Buy` }),
+		new MiscMarker(``, MiscTypes.wallbuy, [397.541711948763, 462.3988691798405], { uniqueTitle: `East House Buy` }),
+		new MiscMarker(``, MiscTypes.wallbuy, [321.7194957613522, 354.3813735036215], { uniqueTitle: `TRex Buy` }),
+		new MiscMarker(``, MiscTypes.wallbuy, [311.22103505847997, 304.9219586367566], { uniqueTitle: `West House Buy` }),
+		new MiscMarker(``, MiscTypes.wallbuy, [339.9168276463308, 339.6835285196003], { uniqueTitle: `West Hallway Buy` }),
+		new MiscMarker(``, MiscTypes.wallbuy, [456.7996901383086, 357.6475612778484], { uniqueTitle: `Double Tap Buy` }),
+		new MiscMarker(``, MiscTypes.wallArmor1, [321.72595971005677, 451.75487656166956]),
+		new MiscMarker(``, MiscTypes.wallArmor1, [311.44793870891823, 271.05292593700176]),
+		new MiscMarker(``, MiscTypes.wallArmor2, [371.44289850626166, 352.08197522504724]),
+
+		new MiscMarker(``, MiscTypes.wallbuy, [374.6316295074078, 191.7520677012112]),
+		new MiscMarker(``, MiscTypes.wallbuy, [293.71967276331935, 100.9082013731512]),
+		new MiscMarker(``, MiscTypes.wallArmor2, [358.60814871193367, 126.7311662914773]),
+	]
 };
