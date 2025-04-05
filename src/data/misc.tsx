@@ -689,7 +689,37 @@ export const MiscStore: MarkerStore = {
 		new MiscMarker(`heefk`, MiscTypes.portalRed, [50.38489493549658, 357.1787839929967], { uniqueDesc: `Back To Temple` }),
 		new MiscMarker(`U88BN`, MiscTypes.portalGreen, [176.74282516640164, 230.2932632392069], { uniqueDesc: `Back To Ossuary` }),
 	],
-	[MapIds.shatteredVeil]: []
+	[MapIds.shatteredVeil]: [
+		new MiscMarker(``, MiscTypes.rampageInducer, [97.16910074569752, 173.88154870282716]),
+		new MiscMarker(``, MiscTypes.ammoCrate, [109.61041989515407, 105.58466156845391]),
+		new MiscMarker(``, MiscTypes.ammoCrate, [113.87398964397526, 259.86317444041293]),
+		new MiscMarker(``, MiscTypes.ammoCrate, [201.24750705982441, 240.00628619727206]),
+		new MiscMarker(``, MiscTypes.ammoCrate, [215.58404495030334, 320.3936794518342]),
+		new MiscMarker(``, MiscTypes.ammoCrate, [340.58054949852334, 432.77688702973535]),
+		new MiscMarker(``, MiscTypes.ammoCrate, [327.53962017667425, 295.9987678633649]),
+		new MiscMarker(``, MiscTypes.ammoCrate, [456.73580369080685, 370.6050146813851]),
+		new MiscMarker(``, MiscTypes.arsenal, [285.6333743339657, 372.63801722732427]),
+		new MiscMarker(``, MiscTypes.arsenal, [433.3500482573053, 320.05279350056907]),
+		new MiscMarker(``, MiscTypes.craftingTable, [131.941106805313, 373.5941122041744]),
+		new MiscMarker(``, MiscTypes.craftingTable, [411.3598637897531, 367.8575423430738]),
+		new MiscMarker(``, MiscTypes.trap, [132.61424209462155, 107.74907170188001], { uniqueTitle: `D.A.G.F`, uniqueDesc: `Cost: 1,500` }),
+		new MiscMarker(``, MiscTypes.trap, [197.73730740894464, 189.15290334478385], { uniqueTitle: ``, uniqueDesc: `Cost: ` }),
+		new MiscMarker(``, MiscTypes.trap, [307.5584766435531, 286.8375013162685], { uniqueTitle: ``, uniqueDesc: `Cost: ` }),
+		new MiscMarker(``, MiscTypes.trap, [328.2794519708377, 398.7307680836054], { uniqueTitle: ``, uniqueDesc: `Cost: ` }),
+		new MiscMarker(``, MiscTypes.portal, [82.1361614539949, 159.2319513468483], { uniqueTitle: `To Underground Lab`, uniqueDesc: `Cost: 500` }),
+		new MiscMarker(``, MiscTypes.gobblegum, [144.75869140807464, 166.0275845984664]),
+		new MiscMarker(``, MiscTypes.gobblegum, [138.39474789905117, 268.423664750664]),
+		new MiscMarker(``, MiscTypes.gobblegum, [389.1306555779884, 362.8380437146108]),
+
+		new MiscMarker(``, MiscTypes.papMachine, [378.73681880211603, 169.6370156942345]),
+		new MiscMarker(``, MiscTypes.arsenal, [274.78283182321354, 117.9910858575823]),
+		new MiscMarker(``, MiscTypes.craftingTable, [421.377817282634, 190.82508947337385]),
+		new MiscMarker(``, MiscTypes.gobblegum, [328.94484542113855, 177.45011790029213]),
+		new MiscMarker(``, MiscTypes.trap, [328.6799944988993, 141.2979670146356], { uniqueTitle: `D.A.G.F`, uniqueDesc: `Cost: 1,500` }),
+		new MiscMarker(``, MiscTypes.ziplineUp, [435.6797670835531, 169.76944115535412]),
+		new MiscMarker(``, MiscTypes.ammoCrate, [420.03923513397575, 149.51577106213]),
+		new MiscMarker(``, MiscTypes.ammoCrate, [336.63794295935963, 60.04893036572361]),
+	]
 };
 
 
