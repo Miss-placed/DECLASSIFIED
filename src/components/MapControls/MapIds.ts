@@ -43,6 +43,7 @@ export const MapIds = {
     terminusIslands: `terminusBiolabs`, // TODO: change thisto be unique when the refactoring for multiple layer markers is done 
     citadelle: `citadelle`,
     tomb: `tomb`,
+    shatteredVeil: `shatteredVeil`,
 } as const;
 
 export type MapId = (typeof MapIds)[keyof typeof MapIds];

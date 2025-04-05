@@ -94,6 +94,7 @@ export enum IconFileNames {
 	phd = 'phd',
 	meleeMacchiato = 'melee_macchiato',
 	vulture = 'vulture_aid',
+	doubleTap = 'double_tap',
 }
 
 

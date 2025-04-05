@@ -688,7 +688,8 @@ export const MiscStore: MarkerStore = {
 		new MiscMarker(`Jj_G9`, MiscTypes.portalYellow, [180.96354934947988, 477.7332184721692], { uniqueDesc: `Back To Shrine` }),
 		new MiscMarker(`heefk`, MiscTypes.portalRed, [50.38489493549658, 357.1787839929967], { uniqueDesc: `Back To Temple` }),
 		new MiscMarker(`U88BN`, MiscTypes.portalGreen, [176.74282516640164, 230.2932632392069], { uniqueDesc: `Back To Ossuary` }),
-	]
+	],
+	[MapIds.shatteredVeil]: []
 };
 
 

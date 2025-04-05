@@ -627,7 +627,8 @@ export const StaticEggStore: MarkerStore = {
 
 		new MiscMarker(`TcECm`, markers.interactable, [116.83626836111173, 290.397391651169], { uniqueTitle: `Waterfall`, uniqueDesc: `Freeze both waterfalls with cryofreeze or the ice staff to get a reward.` }),
 		new MiscMarker(`V7HfA`, markers.interactable, [209.68441399107735, 277.41558405548994], { uniqueTitle: `Waterfall`, uniqueDesc: `Freeze both waterfalls with cryofreeze or the ice staff to get a reward.` }),
-	]
+	],
+	[MapIds.shatteredVeil]: []
 };
 
 

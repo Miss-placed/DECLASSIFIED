@@ -113,8 +113,12 @@ export const MapDetails = {
 		mapOverlay: allGameMapSVGs.citadelle,
 	}),
 	tomb: new MapItem(MapIds.tomb, {
-		title: 'The Tomb Spawn',
+		title: 'The Tomb',
 		mapOverlay: allGameMapSVGs.tomb,
+	}),
+	shatteredVeil: new MapItem(MapIds.shatteredVeil, {
+		title: 'Shattered Veil',
+		mapOverlay: allGameMapSVGs.shatteredVeil,
 	}),
 };
 

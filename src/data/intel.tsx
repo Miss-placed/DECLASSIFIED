@@ -121,6 +121,8 @@ export class IntelItem implements IIntelItem {
 const staticIntelStore: IIntelItem[] = [
 	// TODO: Refactor this out into its own BO6 Intel list and clean up the constructor to make faction a non issue
 	/////////////////////Black Ops 6/////////////////////////
+	/////////////////////Shattered Veil/////////////////////////
+
 	/////////////////////The Tomb/////////////////////////
 	{
 		id: `BO6S2CAu1`,

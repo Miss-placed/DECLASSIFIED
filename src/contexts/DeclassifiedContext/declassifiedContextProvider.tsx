@@ -60,7 +60,7 @@ export const DeclassifiedContextProvider = ({ children }) => {
 	const { isDebugMode, setSharedMapItemId, saveLayerCheckboxState } = useUserContext();
 	const [userPrefs, setUserPreferences] = useState<DeclassifiedUserPreferences | null>(null);
 
-	var initialMap: MapItem | null = MapDetails.tomb;
+	var initialMap: MapItem | null = MapDetails.shatteredVeil;
 	var initialMapGroupItem: MapGroupItem | null = MapGroupings.tomb_Group;
 	if (mapUrlId && IsValidMapId(mapUrlId)) {
 		initialMap = GetMapById(mapUrlId) ?? null;

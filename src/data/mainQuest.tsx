@@ -468,5 +468,6 @@ export const StaticQuestStore: MarkerStore = {
 		new MiscMarker(`oM3Br`, markers.aetherCrystalPodium, [359.5270605963886, 433.10297767778144], { uniqueTitle: `Amalgam Podium`, uniqueDesc: `Spawns a single elite amalgam, when he has a bubble around him you should kill the tethered zombie first before you can continue dealing damage.`, stepNumber: 12 }),
 
 		new MiscMarker(`JdMge`, markers.bossFight, [246.22458823737037, 437.5389143191502], { uniqueDesc: `The bridge will open up after the last step. Cross it and interact with the artifact to start the fight.`, stepNumber: 13 }),
-	]
+	],
+	[MapIds.shatteredVeil]: []
 };

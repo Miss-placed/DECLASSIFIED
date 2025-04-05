@@ -69,6 +69,11 @@ export const MapGroupings: MapGroupDictionary = {
 		mapLayers: [MapDetails.tomb],
 		game: Game.bo6,
 	},
+	shatteredVeil_Group: {
+		mapName: 'Shattered Veil',
+		mapLayers: [MapDetails.shatteredVeil],
+		game: Game.bo6,
+	},
 };
 
 export interface MapControlsProps {

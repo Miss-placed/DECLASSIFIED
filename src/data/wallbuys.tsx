@@ -231,5 +231,6 @@ export const WallbuyStore: MarkerStore = {
 		new MiscMarker(`5IRJi`, MiscTypes.wallbuy, [370.406423483121, 347.57449314672755], { uniqueTitle: `GPMG-7` }),
 		new MiscMarker(`UNACg`, MiscTypes.wallArmor1, [355.83170251307746, 96.32222758351942]),
 		new MiscMarker(`gHOcH`, MiscTypes.wallArmor2, [352.2496499085841, 420.4929115498063]),
-	]
+	],
+	[MapIds.shatteredVeil]: []
 };

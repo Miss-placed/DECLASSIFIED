@@ -48,7 +48,7 @@ export const Perks = {
 		title: 'Death Perception',
 		icon: IconFileNames.deathPerception,
 	}),
-	tomb: new Item({
+	tombstone: new Item({
 		id: 'tombstoneSoda',
 		title: 'Tombstone',
 		icon: IconFileNames.tombstoneSoda,
@@ -73,6 +73,11 @@ export const Perks = {
 		title: 'Vulture Aid',
 		icon: IconFileNames.vulture,
 	}),
+	doubleTap: new Item({
+		id: 'doubleTap',
+		title: 'Double Tap',
+		icon: IconFileNames.doubleTap,
+	}),
 };
 
 export const PerkStore: MarkerStore = {
@@ -88,7 +93,7 @@ export const PerkStore: MarkerStore = {
 		new MiscMarker(`bNKSM`, Perks.speed, [320.16749670765864, 330]),
 	],
 	[MapIds.firebaseZ]: [
-		new MiscMarker(`ZehFH`, Perks.tomb, [277.9856821799794, 285.375]),
+		new MiscMarker(`ZehFH`, Perks.tombstone, [277.9856821799794, 285.375]),
 		new MiscMarker(`P3Ykk`, Perks.jugg, [320.0880419514936, 208.125]),
 		new MiscMarker(`dGeon`, Perks.staminup, [366.6949433467553, 355.25]),
 		new MiscMarker(`8arCc`, Perks.speed, [168.88305552954398, 328.25]),
@@ -106,7 +111,7 @@ export const PerkStore: MarkerStore = {
 		new MiscMarker(`5Jio9`, Perks.jugg, [328.1014850567898, 386.125]),
 		new MiscMarker(`npHck`, Perks.speed, [154.97101221026105, 300]),
 		new MiscMarker(`YWNji`, Perks.staminup, [119.88167256489595, 364.5]),
-		new MiscMarker(`kU1ty`, Perks.tomb, [290.1182070000556, 384.25]),
+		new MiscMarker(`kU1ty`, Perks.tombstone, [290.1182070000556, 384.25]),
 		new MiscMarker(`KMuzB`, Perks.quick, [349.96564996205154, 243.66029463523287]),
 		new MiscMarker(`Awvc5`, Perks.wunderFizz, [316.19672138741174, 57.20469016157574]),
 	],
@@ -115,7 +120,7 @@ export const PerkStore: MarkerStore = {
 		new MiscMarker(`rBir5`, Perks.jugg, [396.847115834816, 98]),
 		new MiscMarker(`yixf9`, Perks.phd, [237.61886646689766, 296.75]),
 		new MiscMarker(`x_U2D`, Perks.quick, [354.6048998033524, 223.75]),
-		new MiscMarker(`_EJAx`, Perks.tomb, [367.60832474950837, 248]),
+		new MiscMarker(`_EJAx`, Perks.tombstone, [367.60832474950837, 248]),
 		new MiscMarker(`elRzv`, Perks.staminup, [416.8465375971533, 186.5]),
 		new MiscMarker(`5UsEQ`, Perks.elemental, [156.10418812622905, 240.5]),
 		new MiscMarker(`guJMC`, Perks.mule, [61.63438992415021, 109]),
@@ -169,6 +174,16 @@ export const PerkStore: MarkerStore = {
 		new MiscMarker(`1e9Yb`, Perks.deadshot, [294.7227678421485, 132.0511102669367]),
 		new MiscMarker(`fsBhA`, Perks.jugg, [207.645586434241, 422.62734566108963]),
 		new MiscMarker(`xUrx3`, Perks.wunderFizz, [150.86998830014747, 280.05042225693336], { uniqueDesc: `Spawns at round 25.` }),
+	],
+	[MapIds.shatteredVeil]: [
+		new MiscMarker(`V0gob`, Perks.quick, [213.24637618213714, 155.5444155681471]),
+		new MiscMarker(`m5mJp`, Perks.speed, [91.46342528119638, 302.10646532273955]),
+		new MiscMarker(`V93ey`, Perks.jugg, [279.3175984176603, 334.7499773759611]),
+		new MiscMarker(`v1P3F`, Perks.phd, [295.33139678339165, 268.2311226260001]),
+		new MiscMarker(`RneKw`, Perks.staminup, [331.9783584280461, 412.66326557846173]),
+		new MiscMarker(`QkalJ`, Perks.elemental, [424.3656566918808, 438.22375143145604]),
+		new MiscMarker(`MJgFd`, Perks.death, [382.4834148122757, 333.2101890715639]),
+		new MiscMarker(`6gTBO`, Perks.doubleTap, [440.03063160978655, 361.2441947120343]),
 	],
 
 	/////////////////////Outbreak/////////////////////////
