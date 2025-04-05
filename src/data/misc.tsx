@@ -710,15 +710,17 @@ export const MiscStore: MarkerStore = {
 		new MiscMarker(``, MiscTypes.gobblegum, [144.75869140807464, 166.0275845984664]),
 		new MiscMarker(``, MiscTypes.gobblegum, [138.39474789905117, 268.423664750664]),
 		new MiscMarker(``, MiscTypes.gobblegum, [389.1306555779884, 362.8380437146108]),
+		new MiscMarker(``, MiscTypes.ziplineDown, [362.1378062501507, 356.3949492480494], { uniqueTitle: `To Underground Lab` }),
 
 		new MiscMarker(``, MiscTypes.papMachine, [378.73681880211603, 169.6370156942345]),
 		new MiscMarker(``, MiscTypes.arsenal, [274.78283182321354, 117.9910858575823]),
 		new MiscMarker(``, MiscTypes.craftingTable, [421.377817282634, 190.82508947337385]),
 		new MiscMarker(``, MiscTypes.gobblegum, [328.94484542113855, 177.45011790029213]),
 		new MiscMarker(``, MiscTypes.trap, [328.6799944988993, 141.2979670146356], { uniqueTitle: `D.A.G.F`, uniqueDesc: `Cost: 1,500` }),
-		new MiscMarker(``, MiscTypes.ziplineUp, [435.6797670835531, 169.76944115535412]),
+		new MiscMarker(``, MiscTypes.ziplineUp, [435.6797670835531, 169.76944115535412], { uniqueTitle: `To House` }),
 		new MiscMarker(``, MiscTypes.ammoCrate, [420.03923513397575, 149.51577106213]),
 		new MiscMarker(``, MiscTypes.ammoCrate, [336.63794295935963, 60.04893036572361]),
+		new MiscMarker(``, MiscTypes.portal, [269.2909924051579, 105.4975982683246], { uniqueTitle: `To Spawn`, uniqueDesc: `Cost: 500` }),
 	]
 };
 
