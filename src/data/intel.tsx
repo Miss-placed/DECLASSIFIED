@@ -1,5 +1,6 @@
 import { LatLngExpression } from 'leaflet';
 import { MapId, MapIds } from '../components/MapControls/MapIds';
+const placeholderSrc = 'placeholder'; // Any intel using this needs to be updated to use a real image
 
 interface IDefaultPOIData {
 	challenge: string;
@@ -132,7 +133,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `Bodily Harm (Minor Chord)`,
 		desc: `On the piano in the Nursery.`,
-		img: ``,
+		img: `8U5ML1F`,
 	},
 	{
 		id: `BO6S3SVAu2`,
@@ -143,7 +144,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `Prime Time (An overlook in security)`,
 		desc: `On the security console in the Security Overlook.`,
-		img: ``,
+		img: `CZejaqu`,
 	},
 	{
 		id: `BO6S3SVAu3`,
@@ -154,7 +155,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `Specter (the most important meal of the day)`,
 		desc: `In the Kitchen next to a plate of waffles.`,
-		img: ``,
+		img: `i3mPlDI`,
 	},
 	{
 		id: `BO6S3SVAu4`,
@@ -165,7 +166,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `Particulars (tunnel vision)`,
 		desc: `On a Blue Barrel in the Service Tunnel.`,
-		img: ``,
+		img: `jes3Sf8`,
 	},
 	{
 		id: `BO6S3SVAu5`,
@@ -176,7 +177,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `Obstacles (computer deck-top)`,
 		desc: `Next to the computer on the deck in the Conservatory.`,
-		img: ``,
+		img: `LZUXNoy`,
 	},
 	{
 		id: `BO6S3SVAu6`,
@@ -187,7 +188,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `A Way In (bench press)`,
 		desc: `On a bench directly across from speed cola in Shem's Henge.`,
-		img: ``,
+		img: `ujooTWw`,
 	},
 	{
 		id: `BO6S3SVAu7`,
@@ -198,7 +199,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `Within Reach (dino might)`,
 		desc: `On a box next to a fire extinguisher in the overlook.`,
-		img: ``,
+		img: `dO5c2UC`,
 	},
 	{
 		id: `BO6S3SVAu8`,
@@ -209,7 +210,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `Cracking Eggheads (car wreck)`,
 		desc: `On a box on the Edge of the Motor Court.`,
-		img: ``,
+		img: `vedaa11`,
 	},
 	{
 		id: `BO6S3SVAu9`,
@@ -220,7 +221,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `Shadow Benefactor (water under the bridge)`,
 		desc: `Under the bridge in Garden Pond.`,
-		img: ``,
+		img: `pouuJ44`,
 	},
 	{
 		id: `BO6S3SVAu10`,
@@ -231,7 +232,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `Shem's Folly (shhhhh)`,
 		desc: `On a box of files in a corner of the Library.`,
-		img: ``,
+		img: `gAAtHjQ`,
 	},
 	{
 		id: `BO6S3SVAu11`,
@@ -242,7 +243,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `Thesis Statement (terrace trees)`,
 		desc: `On the cement in from of the plant in West Balcony.`,
-		img: ``,
+		img: `ES5vmsG`,
 	},
 	{
 		id: `BO6S3SVAu12`,
@@ -253,7 +254,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `Serpent Mound (helmet head)`,
 		desc: `On a bench inside the Armory.`,
-		img: ``,
+		img: `yHFO3Q3`,
 	},
 	{
 		id: `BO6S3SVDo1`,
@@ -264,7 +265,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `Regretfully Yours (top shelf material)`,
 		desc: `On top of a shelf in the Study.`,
-		img: ``,
+		img: `OBUZqCy`,
 	},
 	{
 		id: `BO6S3SVDo2`,
@@ -275,7 +276,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `My Warheads (woodsman)`,
 		desc: `Throw a combat axe at the wood pile/zombie immediately behind you in the Garden Pond when you spawn in.`,
-		img: ``,
+		img: `WMK0mIL`,
 	},
 	{
 		id: `BO6S3SVDo3`,
@@ -286,7 +287,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `A Monstrous Proposal (sleepwalking)`,
 		desc: `Complete the sleeping easter egg.\nInteract with this clock at round 11, then go to bed in the Directors Quarters on round 12.`,
-		img: ``,
+		img: `WO7ey4L`,
 	},
 	{
 		id: `BO6S3SVAr1`,
@@ -297,7 +298,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `Rentals (Bed Head)`,
 		desc: `On the bed in the Directors Quarters.`,
-		img: ``,
+		img: `NNSban6`,
 	},
 	{
 		id: `BO6S3SVAr2`,
@@ -308,7 +309,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `Hip Flask`,
 		desc: `Acquire the ritual item at the bar using the bell and a brain-rotted zombie.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S3SVAr3`,
@@ -319,7 +320,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `Antler Carving`,
 		desc: `Acquire the ritual item from the safe using the code from the walls around the elevator, after completing all 3 chalices.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S3SVAr4`,
@@ -330,7 +331,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `Ray Gun Mk.II`,
 		desc: `To open, acquire the severed hand from the doppleghast in the airlock.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S3SVAr5`,
@@ -341,7 +342,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `Nuclear Plant Inspection`,
 		desc: `Acquire the ritual item from the secret room in the Library, after finding the 3 hidden books on the east side of the map, using aether shroud.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S3SVAr6`,
@@ -352,7 +353,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `Z-Rex Tooth`,
 		desc: `Defeat the final boss.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S3SVAr7`,
@@ -363,7 +364,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `Deed of Sale (Pain in the glass)`,
 		desc: `Jump scare easter egg.`,
-		img: ``,
+		img: `4eZ0Ub8`,
 	},
 	{
 		id: `BO6S3SVAr8`,
@@ -374,7 +375,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `Unwelcome Guests (what the truck?!)`,
 		desc: `Throw a grenade into the back of the truck trapped between the big cargo doors at the very end of the Service Tunnel.`,
-		img: ``,
+		img: `DSMW3Pu`,
 	},
 	{
 		id: `BO6S3SVAr9`,
@@ -385,7 +386,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.shatteredVeil,
 		title: `Family Portrait (Playtime)`,
 		desc: `Interact with the books in the Nursery.`,
-		img: ``,
+		img: `kjb56KL`,
 	},
 	/////////////////////The Tomb/////////////////////////
 	{
@@ -1203,7 +1204,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.libertyFalls,
 		title: `Quantum Mechanical Failure`,
 		desc: `On the windowsill Inside Olly's Comics.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S0LFAu2`,
@@ -1214,7 +1215,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.libertyFalls,
 		title: `Conspiracy Theorist`,
 		desc: `On the table next to Speed Cola in Washington Ave.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S0LFAu3`,
@@ -1225,7 +1226,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.libertyFalls,
 		title: `One Lit Match`,
 		desc: `Near the woodpile at the back of the Groundskeeper's hut. Need to have spoken with Panos in the main EE first.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S0LFAu4`,
@@ -1236,7 +1237,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.libertyFalls,
 		title: `The House Josiah Built`,
 		desc: `In the cemetery back area, on a wall ledge near the armour buy.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S0LFAu5`,
@@ -1247,7 +1248,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.libertyFalls,
 		title: `The Scientist and The Moonshiner`,
 		desc: `In the Jet Gun room, on a table next to an open pizza box.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S0LFAu6`,
@@ -1258,7 +1259,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.libertyFalls,
 		title: `Limited Run`,
 		desc: `After completing the Aetherella Easter Egg, in Olly's Comics near one the door leading into the alley.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S0LFAu7`,
@@ -1269,7 +1270,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.libertyFalls,
 		title: `Steel Mountain Rescue`,
 		desc: `On a barrel behind the bus with an ammo crate outside of bowling alley.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S0LFAu8`,
@@ -1280,7 +1281,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.libertyFalls,
 		title: `Bear Witness`,
 		desc: `On a bench inside the church near the front door.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S0LFAu9`,
@@ -1291,7 +1292,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.libertyFalls,
 		title: `Money Talks`,
 		desc: `On floor in the corner of the vault.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S0LFDo1`,
@@ -1302,7 +1303,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.libertyFalls,
 		title: `We Only Take Cash`,
 		desc: `Look for the black and gold car with Mr Peeks in the back seat. Then shoot it with either the mangler canon, the crossfire of an actual mangler or the mutant injection.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S0LFDo2`,
@@ -1313,7 +1314,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.libertyFalls,
 		title: `Politics, Politics`,
 		desc: `Can be found in deposit boxes of the Bank Vault.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S0LFDo3`,
@@ -1324,7 +1325,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.libertyFalls,
 		title: `Fine Man`,
 		desc: `In the backstreets parking, shoot the tapes in the video store behind the barrier.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S0LFDo4`,
@@ -1335,7 +1336,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.libertyFalls,
 		title: `Final Issue`,
 		desc: `Interact With the white boxes In Olly's Comics.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S0LFAr1`,
@@ -1346,7 +1347,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.libertyFalls,
 		title: `Limited Transdimensional Gateway Device`,
 		desc: `Part of the main easter egg, must be acquired to progress.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S0LFAr2`,
@@ -1357,7 +1358,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.libertyFalls,
 		title: `Aetherella Statue`,
 		desc: `Hidden around the map, there are 9 in total to collect, but only one should be required for the intel.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S0LFAr3`,
@@ -1368,7 +1369,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.libertyFalls,
 		title: `Aetheric Bowling Ball`,
 		desc: `Part of the Mr Peeks bowling game.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S0LFAr4`,
@@ -1379,7 +1380,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.libertyFalls,
 		title: `Thrustodyne Model 23`,
 		desc: `Acquired after building and picking up the Jet Gun.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	{
 		id: `BO6S0LFAr5`,
@@ -1390,7 +1391,7 @@ const staticIntelStore: IIntelItem[] = [
 		map: MapIds.libertyFalls,
 		title: `Mr. Peeks' Misplaced Bowling Shoes`,
 		desc: `Part of the Mr Peeks bowling game, shoot any of the shoes to acquire the intel.`,
-		img: ``,
+		img: placeholderSrc,
 	},
 	/////////////////////Requiem/////////////////////////
 	{

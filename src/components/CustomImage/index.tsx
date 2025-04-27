@@ -21,11 +21,15 @@ const style = {
 	padding: '14px',
 };
 
-export const CustomImage = ({ src: imageId, altText = 'Placeholder' }) => {
-	const hasImage = imageId !== '' && imageId !== null && imageId !== undefined;
-	const thumbnailSrc = `https://i.imgur.com/${imageId}l.jpg?t=${new Date().getTime()}`; // the "l" is used for imgur api to scale the image
-	const fullSizeSrc = `https://i.imgur.com/${imageId}.jpg?t=${new Date().getTime()}`;
+export const CustomImage = ({ src: imageId, altText = 'Placeholder' }) => { // TODO: replace "Placeholder" with a more descriptive alt text from the image metadata
 	const placeholderSrc = './assets/img/intelScreenshot/placeholder.png';
+	const hasImage = imageId !== '' && imageId !== null && imageId !== undefined;
+	const thumbnailSrc = imageId === 'placeholder'
+		? placeholderSrc
+		: `https://i.imgur.com/${imageId}l.jpg?t=${new Date().getTime()}`; // the "l" is used for imgur api to scale the image
+	const fullSizeSrc = imageId === 'placeholder'
+		? placeholderSrc
+		: `https://i.imgur.com/${imageId}.jpg?t=${new Date().getTime()}`;
 	const [imgLoaded, setImageLoaded] = useState(false);
 	const [modalImageLoaded, setModalImageLoaded] = useState(false);
 	const [open, setOpen] = useState(false);
@@ -57,8 +61,6 @@ export const CustomImage = ({ src: imageId, altText = 'Placeholder' }) => {
 					</>
 				) : (
 					<></>
-					// This is ugly but we are only doing it temporarily
-					// <img src={placeholderSrc} alt={altText} />
 				)}
 			</StyledImageContainer>
 
