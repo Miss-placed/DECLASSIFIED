@@ -469,5 +469,37 @@ export const StaticQuestStore: MarkerStore = {
 
 		new MiscMarker(`JdMge`, markers.bossFight, [246.22458823737037, 437.5389143191502], { uniqueDesc: `The bridge will open up after the last step. Cross it and interact with the artifact to start the fight.`, stepNumber: 13 }),
 	],
-	[MapIds.shatteredVeil]: []
+	[MapIds.shatteredVeil]: [
+		// Step 1: Reach Round 10 & Open Pack-a-Punch
+		new MiscMarker(``, markers.questCollectible, [310.12, 200.45], { uniqueTitle: `Elevator Fuse`, uniqueDesc: `Shoot a zombie body in the library to collect the fuse.` }),
+		new MiscMarker(``, markers.questCollectible, [330.78, 220.34], { uniqueTitle: `Elevator Circuit Board`, uniqueDesc: `Shoot Rictofen's computer to eject a circuit board.` }),
+		new MiscMarker(``, markers.mainQuest, [340.56, 230.12], { uniqueTitle: `Elevator`, uniqueDesc: `Repair the elevator from the back side and use it to reach the mainframe chamber.` }),
+
+		// Step 2: Obtain Ray Gun Mark 2
+		new MiscMarker(``, markers.questCollectible, [300.45, 180.67], { uniqueTitle: `Lab Technician Zombie`, uniqueDesc: `Defeat a Lab Technician Zombie in the Service Tunnel or Mainframe Chamber to get a floppy disk.` }),
+		new MiscMarker(``, markers.interactable, [310.78, 190.45], { uniqueTitle: `Fax Machine`, uniqueDesc: `Insert the floppy disk near the T-Rex skeleton in East Foyer and defend it to print Project Janus paper.` }),
+		new MiscMarker(``, markers.clue, [320.12, 200.34], { uniqueTitle: `Nursery Room Chalkboard`, uniqueDesc: `Convert the four-letter word into a four-digit code and input it on the keypad in the Service Tunnel.` }),
+		new MiscMarker(``, markers.secretArea, [330.45, 210.78], { uniqueTitle: `Service Tunnel Keypad`, uniqueDesc: `Input the code to unlock the glass door, kill the Doppelgast, and retrieve the severed arm.` }),
+		new MiscMarker(``, markers.wonderWeapon, [340.67, 220.12], { uniqueTitle: `Armory Keypad`, uniqueDesc: `Use the severed arm to unlock the Ray Gun M2.` }),
+
+		// Step 4: Collect Upgrade Canisters for Ray Gun Variants
+		new MiscMarker(``, markers.questCollectible, [350.45, 230.78], { uniqueTitle: `MK2 R Canister`, uniqueDesc: `Throw a Kazimir Grenade at a window barrier behind Double Tap to pull in the canister.` }),
+		new MiscMarker(``, markers.questCollectible, [360.12, 240.34], { uniqueTitle: `MK2 W Canister`, uniqueDesc: `Break blue crystals/rocks around the map to retrieve the canister.` }),
+		new MiscMarker(``, markers.questCollectible, [370.78, 250.45], { uniqueTitle: `MK2 P Canister`, uniqueDesc: `Use Tomahawks on gas valves and shatter glass in the Mainframe Chamber to retrieve the canister.` }),
+
+		// Step 5: Build MK2 R & Complete R Quest
+		new MiscMarker(``, markers.questCollectible, [380.45, 260.78], { uniqueTitle: `Conservatory Planters`, uniqueDesc: `Plant and charge seeds to craft the Toxic Canister for MK2 R.` }),
+		new MiscMarker(``, markers.mainQuest, [390.12, 270.34], { uniqueTitle: `Library Portal`, uniqueDesc: `Charge the portal with MK2 R, talk to ghost Colton, and retrieve items using Aether Shroud.` }),
+
+		// Step 6: Build MK2 P & Complete P Quest
+		new MiscMarker(``, markers.mainQuest, [400.78, 280.45], { uniqueTitle: `Serpent Mound`, uniqueDesc: `Blow rubble in Service Tunnel to access the Serpent Mound and complete the refractor puzzle.` }),
+		new MiscMarker(``, markers.mainQuest, [410.45, 290.78], { uniqueTitle: `Banquet Hall Portal`, uniqueDesc: `Charge the portal with MK2 P and retrieve the antler carving from the safe in West Hallway.` }),
+
+		// Step 7: Build MK2 W & Complete W Quest
+		new MiscMarker(``, markers.mainQuest, [420.12, 300.34], { uniqueTitle: `Shems Henge`, uniqueDesc: `Place the canister, lure Abominations to charge blue rocks, and defend the power siphon.` }),
+		new MiscMarker(``, markers.interactable, [430.78, 310.45], { uniqueTitle: `Grand Foyer Puzzle`, uniqueDesc: `Use the sconce to start the Simon Says puzzle and access the Distillery.` }),
+
+		// Final Step: Boss Fight
+		new MiscMarker(``, markers.bossFight, [440.45, 320.78], { uniqueTitle: `SAM AI Platform`, uniqueDesc: `Initiate the final boss fight by interacting with the platform.` }),
+	],
 };
