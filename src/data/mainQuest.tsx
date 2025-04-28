@@ -13,9 +13,6 @@ const markers = {
 	wonderWeaponStep: new Item({
 		title: `Wonder Weapon Step`, icon: IconFileNames.objective,
 	}),
-	wonderWeaponStep: new Item({
-		title: `Wonder Weapon Step`, icon: IconFileNames.objective,
-	}),
 	// A required main quest step or interactable
 	mainQuest: new Item({
 		title: `Main Quest`, icon: IconFileNames.mainQuest,
