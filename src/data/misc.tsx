@@ -714,6 +714,7 @@ export const MiscStore: MarkerStore = {
 		new MiscMarker(`x5z67`, MiscTypes.workbench, [262.28125, 275.125], { uniqueTitle: `Used to craft the Blue Mk2 W Variant` }),
 		new MiscMarker(`L62F6`, MiscTypes.workbench, [262.28125, 275.125], { uniqueTitle: `Used to craft the Purple Mk2 P Variant` }),
 		new MiscMarker(`Y1hFo`, MiscTypes.ziplineDown, [362.1378062501507, 356.3949492480494], { uniqueTitle: `To Underground Lab` }),
+
 		new MiscMarker(`ZTi11`, MiscTypes.papMachine, [378.73681880211603, 169.6370156942345]),
 		new MiscMarker(`FeuuR`, MiscTypes.arsenal, [274.78283182321354, 117.9910858575823]),
 		new MiscMarker(`w20lv`, MiscTypes.craftingTable, [421.377817282634, 190.82508947337385]),
