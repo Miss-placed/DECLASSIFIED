@@ -308,7 +308,7 @@ const staticIntelStore: IIntelItem[] = [
 		loc: [255.73817935412447, 383.1743037162531],
 		map: MapIds.shatteredVeil,
 		title: `Hip Flask`,
-		desc: `Acquire the ritual item at the bar using the bell and a brain-rotted zombie.`,
+		desc: `Acquire the ritual item at the bar using the service bell and a brain-rotted zombie.`,
 		img: placeholderSrc,
 	},
 	{
