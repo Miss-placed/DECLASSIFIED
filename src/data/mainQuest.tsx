@@ -91,11 +91,11 @@ const markers = {
 	}),
 	// Shattered Veil
 	blueCrystal: new Item({
-		title: 'Blue Crystal', icon: IconFileNames.crystal,
+		title: 'Blue Crystal', icon: IconFileNames.crystalBlue,
 		desc: `1 of 4 total crystals around the map, visible with death perception, that can be shot with the Ray Gun Mk2 and will drop scrap and one of them will drop the canister needed for one of the Mk2 W Upgrade.`
 	}),
 	ritualChalice: new Item({
-		title: 'Ritual Chalice', icon: IconFileNames.crystal,
+		title: 'Ritual Chalice', icon: IconFileNames.interactable,
 		desc: `1 of 3 total chalices around the map, that can be interacted with after obtaining the Ritual Elixir from the Purple Banquet Hall liminal space.`
 	}),
 
@@ -480,49 +480,51 @@ export const StaticQuestStore: MarkerStore = {
 		new MiscMarker(`JdMge`, markers.bossFight, [246.22458823737037, 437.5389143191502], { uniqueDesc: `The bridge will open up after the last step. Cross it and interact with the artifact to start the fight.`, stepNumber: 13 }),
 	],
 	[MapIds.shatteredVeil]: [
-		// Step 1: Reach Round 10 & Open Pack-a-Punch
-		new MiscMarker(``, markers.questCollectible, [310.12, 200.45], { uniqueTitle: `Elevator Fuse`, uniqueDesc: `Shoot a zombie body in the library to collect the fuse.` }),
-		new MiscMarker(``, markers.questCollectible, [330.78, 220.34], { uniqueTitle: `Elevator Circuit Board`, uniqueDesc: `Shoot Rictofen's computer to eject a circuit board.` }),
-		new MiscMarker(``, markers.mainQuest, [340.56, 230.12], { uniqueTitle: `Elevator`, uniqueDesc: `Repair the elevator from the back side and use it to reach the mainframe chamber.` }),
+		new MiscMarker(`qYnw9`, markers.questCollectible, [328.03120230952925, 459.44431393811743], { uniqueTitle: `Elevator Fuse`, uniqueDesc: `Shoot a zombie body in the library to collect the fuse.` }),
+		new MiscMarker(`L_Z5J`, markers.questCollectible, [366.40182459802924, 308.97128535576456], { uniqueTitle: `Elevator Circuit Board`, uniqueDesc: `Shoot Rictofen's computer to eject a circuit board.` }),
+		new MiscMarker(`hyuEe`, markers.mainQuest, [354.6147706924116, 356.6210777401763], { stepNumber: 1, uniqueTitle: `Elevator`, uniqueDesc: `Repair the elevator from the back side and use it to reach the mainframe chamber.` }),
 
-		// Step 2: Obtain Ray Gun Mark 2
-		new MiscMarker(``, markers.questCollectible, [300.45, 180.67], { uniqueTitle: `Lab Technician Zombie`, uniqueDesc: `Defeat a Lab Technician Zombie in the Service Tunnel or Mainframe Chamber to get a floppy disk.` }),
-		new MiscMarker(``, markers.interactable, [310.78, 190.45], { uniqueTitle: `Fax Machine`, uniqueDesc: `Insert the floppy disk near the T-Rex skeleton in East Foyer and defend it to print Project Janus paper.` }),
-		new MiscMarker(``, markers.clue, [320.12, 200.34], { uniqueTitle: `Nursery Room Chalkboard`, uniqueDesc: `Convert the four-letter word into a four-digit code and input it on the keypad in the Service Tunnel.` }),
-		new MiscMarker(``, markers.secretArea, [330.45, 210.78], { uniqueTitle: `Service Tunnel Keypad`, uniqueDesc: `Input the code to unlock the glass door, kill the Doppelgast, and retrieve the severed arm.` }),
-		new MiscMarker(``, markers.wonderWeapon, [340.67, 220.12], { uniqueTitle: `Armory Keypad`, uniqueDesc: `Use the severed arm to unlock the Ray Gun M2.` }),
+		// Obtain Ray Gun Mark 2
+		new MiscMarker(`tS3jp`, markers.questCollectible, [405.0232352674998, 177.55817372717638], { uniqueTitle: `Lab Technician Zombie`, uniqueDesc: `Defeat a Lab Technician Zombie in the Service Tunnel or Mainframe Chamber to get a floppy disk.` }),
+		new MiscMarker(`uwMYC`, markers.interactable, [322.0590751657544, 398.76634047339945], { stepNumber: 2, uniqueTitle: `Fax Machine`, uniqueDesc: `Insert the floppy disk near the T-Rex skeleton in East Foyer and defend it to print Project Janus paper.` }),
+		new MiscMarker(`X0A_C`, markers.clue, [301.92355525146394, 268.14189871983166], { img: `9GkVxOl`, uniqueTitle: `Nursery Room Chalkboard`, uniqueDesc: `Convert the four-letter word into a four-digit code and input it on the keypad in the Service Tunnel.` }),
+		new MiscMarker(`ZHWDN`, markers.secretArea, [327.0269772351021, 169.45531025663544], { stepNumber: 3, uniqueTitle: `Service Tunnel Keypad`, uniqueDesc: `Input the code to unlock the glass door, kill the Doppelgast, and retrieve the severed arm.` }),
+		new MiscMarker(`s4lOm`, markers.wonderWeapon, [278.91781207521643, 90.40023948682904], { stepNumber: 4, uniqueTitle: `Raygun Keypad`, uniqueDesc: `Use the severed arm to unlock the Ray Gun Mk2.` }),
 
-		// Step 4: Collect Upgrade Canisters for Ray Gun Variants
-		new MiscMarker(``, markers.questCollectible, [350.45, 230.78], { linkedItems: `qXCsN`, uniqueTitle: `Yellow Mk2 R Canister`, uniqueDesc: `Throw a Kazimir Grenade at a window barrier behind Double Tap to pull in the canister.` }),
-		new MiscMarker(``, markers.questCollectible, [380.45, 260.78], { uniqueTitle: `Conservatory Charging Spot`, uniqueDesc: `Place the canister, and then plant and charge 4 seeds from the 4 plants around the map (Use explosives on them) to charge the Toxic Canister for Mk2 R.` }),
-		new MiscMarker(``, markers.secretArea, [390.12, 270.34], { uniqueTitle: `Yellow Library Liminal Space`, uniqueDesc: `Open the liminal space by interacting with the machine to the left, then kill zombies with the Yellow Mk2 R, talk to ghost Colton, and retrieve items using Aether Shroud.` }),
-		new MiscMarker(``, markers.ritualStep, [410.45, 290.78], { uniqueTitle: `Yellow Ritual`, uniqueDesc: `After obtaining the Nuclear Plant Inspection Report, return here to start a mini bossfight that requires the Yellow Mk2 R to beat the boss and complete 1 of 3 rituals.` }),
+		// Collect Upgrade Canisters for Ray Gun Variants
+		new MiscMarker(`g1Jjf`, markers.questCollectible, [445.4029481233795, 361.5339699025494], { linkedItems: `qXCsN`, uniqueTitle: `Yellow Mk2 R Canister`, uniqueDesc: `Throw a Kazimir Grenade at a window barrier behind Double Tap to pull in the canister.` }),
+		new MiscMarker(`KOsFu`, markers.mainQuest, [198.7551265373924, 219.70121715608718], { stepNumber: 5, uniqueTitle: `Conservatory Charging Spot`, uniqueDesc: `Place the canister, and then plant and charge 4 seeds from the 4 plants around the map (Use explosives on them) to charge the Toxic Canister for Mk2 R.` }),
+		new MiscMarker(`2m7Oo`, markers.secretArea, [360.1785531999947, 463.20027135210097], { stepNumber: 6, uniqueTitle: `Yellow Library Liminal Space`, uniqueDesc: `Open the liminal space by interacting with the machine to the left, then kill zombies with the Yellow Mk2 R, talk to ghost Colton, and retrieve blue books on the east side of the map using Aether Shroud.` }),
+		new MiscMarker(`zLikw`, markers.secretArea, [357.71429913925766, 438.9551910771068], { stepNumber: 7, uniqueTitle: `Hidden Vault`, uniqueDesc: `The door to the vault that will open after collecting the 3 blue aether books and activating them in the correct order, indicated by the order of books in the yellow liminal space.` }),
+		new MiscMarker(`Dhelk`, markers.ritualStep, [362.56331519425646, 481.72192284086697], { stepNumber: 8, uniqueTitle: `Yellow Ritual`, uniqueDesc: `After obtaining the Nuclear Plant Inspection Report, return here to start a mini bossfight that requires the Yellow Mk2 R to beat the boss and complete 1 of 3 rituals.` }),
 
-		new MiscMarker(``, markers.questCollectible, [360.12, 240.34], { linkedItems: `x5z67`, uniqueTitle: `Blue Mk2 W Canister`, uniqueDesc: `Break blue crystals/rocks around the map with the Ray Gun Mk2 to retrieve the canister.` }),
-		new MiscMarker(``, markers.blueCrystal, [370.78, 250.45], { uniqueDesc: `Conservatory Roof.` }),
-		new MiscMarker(``, markers.blueCrystal, [370.78, 250.45], { uniqueDesc: `South West Balcony - On the wall.` }),
-		new MiscMarker(``, markers.blueCrystal, [370.78, 250.45], { uniqueDesc: `East Foyer - Up in the stairwell.` }),
-		new MiscMarker(``, markers.blueCrystal, [370.78, 250.45], { uniqueDesc: `Service Tunnel Ceiling.` }),
-		new MiscMarker(``, markers.mainQuest, [420.12, 300.34], { uniqueTitle: `Shems Henge`, uniqueDesc: `Place the canister, lure Abominations to charge blue rocks with a beam attack, then have them bash into the rocks with their charge attack. Once the rocks are floating, defend the power siphon from vermin.` }),
-		new MiscMarker(``, markers.interactable, [430.78, 310.45], { uniqueTitle: `Sconce`, uniqueDesc: `Found in a box in the banquet room, just before getting to the elevator. Used to open the distillery.` }),
-		new MiscMarker(``, markers.interactable, [430.78, 310.45], { uniqueTitle: `Grand Foyer Puzzle`, uniqueDesc: `Use the sconce to start the Simon Says puzzle and access the Distillery.` }),
-		new MiscMarker(``, markers.secretArea, [430.78, 310.45], { uniqueTitle: `Blue Distillery Liminal Space`, uniqueDesc: `Open the liminal space by interacting with the machine to the left, then kill zombies with the Blue Mk2 W near it, to open it.` }),
-		new MiscMarker(``, markers.interactable, [430.78, 310.45], { uniqueTitle: `Service Bell`, uniqueDesc: `Can be found around the study hallway, in a display cabinet, or on a table or the floor. Must be placed at the bar in the grand foyer and rang after brain-rotting a zombie near it.` }),
-		new MiscMarker(``, markers.ritualStep, [410.45, 290.78], { uniqueTitle: `Blue Ritual`, uniqueDesc: `After obtaining the Hip Flask, return here to start a mini bossfight that requires the Blue Mk2 W to beat the boss and complete 1 of 3 rituals.` }),
+		new MiscMarker(`Pk1Og`, markers.questCollectible, DefaultPOIData.nullLoc, { stepNumber: 9, linkedItems: `x5z67`, uniqueTitle: `Blue Mk2 W Canister`, uniqueDesc: `Break blue crystals/rocks around the map with the Ray Gun Mk2 to retrieve the canister.` }),
+		new MiscMarker(`b6R76`, markers.blueCrystal, [183.73476117417513, 168.04033380510796], { uniqueDesc: `Conservatory Roof.` }),
+		new MiscMarker(`spNfW`, markers.blueCrystal, [271.75136319063455, 281.25774380888356], { uniqueDesc: `South West Balcony - On the wall.` }),
+		new MiscMarker(`PFBY6`, markers.blueCrystal, [299.6148925889505, 410.41339772578345], { uniqueDesc: `East Foyer - Up in the stairwell.` }),
+		new MiscMarker(`Vel0p`, markers.blueCrystal, [325.58402024595557, 79.40815081869772], { uniqueDesc: `Service Tunnel Ceiling.` }),
+		new MiscMarker(`hktdR`, markers.mainQuest, [108.19976354551736, 298.2870754107103], { stepNumber: 10, uniqueTitle: `Shems Henge Charging Spot`, uniqueDesc: `Place the canister, lure Abominations to charge blue rocks with a beam attack, then have them bash into the rocks with their charge attack. Once the rocks are floating, defend the power siphon from vermin.` }),
+		new MiscMarker(`sb2v4`, markers.interactable, [395.4504706992557, 343.28917536841556], { uniqueTitle: `Sconce`, uniqueDesc: `Found in a box in the banquet room, just before getting to the elevator. Used to open the distillery.` }),
+		new MiscMarker(`mRA9W`, markers.secretArea, [292.65515816475795, 335.1242190242615], { stepNumber: 11, uniqueTitle: `Hidden Distillery Room`, uniqueDesc: `Use the sconce to start the Simon Says puzzle and access the Distillery.` }),
+		new MiscMarker(`AUQIF`, markers.secretArea, [311.4835074837569, 318.2687166324841], { stepNumber: 12, uniqueTitle: `Blue Distillery Liminal Space`, uniqueDesc: `Open the liminal space by interacting with the machine to the left, then kill zombies with the Blue Mk2 W near it, to open it.` }),
+		new MiscMarker(`bDTg6`, markers.interactable, [397.25302768774293, 456.37573054721605], { uniqueTitle: `Service Bell`, uniqueDesc: `Can be found around the study hallway, in a display cabinet, or on a table or the floor. Must be placed at the bar in the grand foyer and rang after brain-rotting a zombie near it.` }),
+		new MiscMarker(`YKzSt`, markers.interactable, [251.0527385029055, 386.8629403703979], { stepNumber: 13, uniqueTitle: `Bar`, uniqueDesc: `Where you obtain the Hip Flask, place the service bell and then brain rot a zombie nearby, ring the bell after brain rotting.` }),
+		new MiscMarker(`RoSpw`, markers.ritualStep, [326.96429377974954, 318.94765610388873], { stepNumber: 14, uniqueTitle: `Blue Ritual`, uniqueDesc: `After obtaining the Hip Flask, return here to start a mini bossfight that requires the Blue Mk2 W to beat the boss and complete 1 of 3 rituals.` }),
 
-		new MiscMarker(``, markers.questCollectible, [370.78, 250.45], { linkedItems: `L62F6`, uniqueTitle: `Purple Mk2 P Canister`, uniqueDesc: `Use Tomahawks on gas valves and shatter glass chamber with fire/exposives in the Mainframe Chamber to retrieve the canister.` }),
-		new MiscMarker(``, markers.interactable, [370.78, 250.45], { uniqueTitle: `Gas Valves`, uniqueDesc: `Depending on the letter displayed by the chamber, hit the middle and then corresponding letter valve, with the tomahawks in order to guide the gas to the chamber.` }),
-		new MiscMarker(``, markers.questCollectible, [400.78, 280.45], { uniqueTitle: `Reflector`, uniqueDesc: `Blow rubble in Service Tunnel to access the Serpent Mound and complete the refractor puzzle.` }),
-		new MiscMarker(``, markers.questCollectible, [400.78, 280.45], { uniqueTitle: `Reflector`, uniqueDesc: `Blow rubble in Service Tunnel to access the Serpent Mound and complete the refractor puzzle.` }),
-		new MiscMarker(``, markers.mainQuest, [400.78, 280.45], { uniqueTitle: `Serpent Mound - Entrance Rubble`, uniqueDesc: `A wall of rubble that must be removed with a yellow bomb that can be found in any of the Project Janus boxes around the map.` }),
-		new MiscMarker(``, markers.mainQuest, [400.78, 280.45], { uniqueTitle: `Serpent Mound`, uniqueDesc: `Place the canister, charge it by killing doppleghasts, spawned by solving the reflector puzzle in the room.` }),
-		new MiscMarker(``, markers.secretArea, [410.45, 290.78], { uniqueTitle: `Banquet Hall Liminal Space`, uniqueDesc: `Open the liminal space by interacting with the machine to the left, then kill zombies with the Purple Mk2 P. Then retrieve the code for the antler carving from the safe in West Hallway by completing the chalice rituals and returning to the area around the elevator.` }),
-		new MiscMarker(``, markers.ritualChalice, [410.45, 290.78], { uniqueDesc: `On the stone bench at spawn.` }),
-		new MiscMarker(``, markers.ritualChalice, [410.45, 290.78], { uniqueDesc: `On a table in the wine cellar.` }),
-		new MiscMarker(``, markers.ritualChalice, [410.45, 290.78], { uniqueDesc: `On a wooden bench above the entrance to the mansion, on the overlook.` }),
-		new MiscMarker(``, markers.ritualStep, [410.45, 290.78], { uniqueTitle: `Purple Ritual`, uniqueDesc: `After obtaining the Antler Carving, return here to start a mini bossfight that requires the Purple Mk2 P to beat the boss and complete 1 of 3 rituals.` }),
+		new MiscMarker(`Kfdhp`, markers.questCollectible, [424.9294165237805, 185.08620216635984], { stepNumber: 14, linkedItems: `L62F6`, uniqueTitle: `Purple Mk2 P Canister`, uniqueDesc: `Use Tomahawks on gas valves and shatter glass chamber with fire/exposives in the Mainframe Chamber to retrieve the canister.` }),
+		new MiscMarker(`YHvIl`, markers.interactable, [332.2610008155861, 193.4013839301408], { uniqueTitle: `Gas Valves`, uniqueDesc: `Depending on the letter displayed by the chamber, hit the middle and then corresponding letter valve, with the tomahawks in order to guide the gas to the chamber.` }),
+		new MiscMarker(`yb2C7`, markers.questCollectible, [231.15067969531404, 160.4038884122439], { uniqueTitle: `Reflector`, uniqueDesc: `Used in the serpent mount puzzle, found in dried up fountains around the map.` }),
+		new MiscMarker(`eanec`, markers.questCollectible, [298.5411880005021, 264.43718585633223], { uniqueTitle: `Reflector`, uniqueDesc: `Used in the serpent mount puzzle, found in dried up fountains around the map.` }),
+		new MiscMarker(`GMrCh`, markers.secretArea, [358.8921245278053, 110.640326578005], { stepNumber: 15, uniqueTitle: `Serpent Mound - Entrance Rubble`, uniqueDesc: `A wall of rubble that must be removed with a yellow bomb that can be found in any of the Project Janus boxes around the map.` }),
+		new MiscMarker(`kcfL2`, markers.mainQuest, [390.23583335132554, 93.59399532517085], { stepNumber: 16, uniqueTitle: `Serpent Mound Charging Spot`, uniqueDesc: `Place the canister, charge it by killing doppleghasts, spawned by solving the reflector puzzle in the room.` }),
+		new MiscMarker(`rFYYN`, markers.secretArea, [377.7405926168005, 378.22705828662254], { stepNumber: 17, uniqueTitle: `Banquet Hall Liminal Space`, uniqueDesc: `Open the liminal space by interacting with the machine to the left, then kill zombies with the Purple Mk2 P. Then retrieve the code for the antler carving from the safe in West Hallway by completing the chalice rituals and returning to the area around the elevator.` }),
+		new MiscMarker(`fOhbp`, markers.ritualChalice, [134.54693012902433, 133.01425557914123], { uniqueDesc: `On the stone bench at spawn.` }),
+		new MiscMarker(`76wM6`, markers.ritualChalice, [396.30393996342224, 322.96015090405484], { uniqueDesc: `On a table in the wine cellar.` }),
+		new MiscMarker(`MVMPK`, markers.ritualChalice, [253.43316504644355, 343.1156752682498], { uniqueDesc: `On a wooden bench above the entrance to the mansion, on the overlook.` }),
+		new MiscMarker(`BfrTS`, markers.questCollectible, [375.5052647213617, 333.13776109245003], { stepNumber: 18, uniqueTitle: `Safe`, uniqueDesc: `Contains the Antler Carving, requires the code from the walls after doing the chalice ritual.` }),
+		new MiscMarker(`lPUAz`, markers.ritualStep, [374.7451279461486, 394.56312583794164], { stepNumber: 19, uniqueTitle: `Purple Ritual`, uniqueDesc: `After obtaining the Antler Carving, return here to start a mini bossfight that requires the Purple Mk2 P to beat the boss and complete 1 of 3 rituals.` }),
 
 		// Final Step: Boss Fight
-		new MiscMarker(``, markers.bossFight, [440.45, 320.78], { uniqueTitle: `SAM AI Platform`, uniqueDesc: `After completing all 3 rituals, you can initiate the final boss fight by interacting with the platform.` }),
+		new MiscMarker(`RXwUX`, markers.bossFight, [418.85937681212664, 170.08776884488447], { stepNumber: 20, uniqueTitle: `SAM AI Platform`, uniqueDesc: `After completing all 3 rituals, you can initiate the final boss fight by interacting with the platform.` }),
 	],
 };
