@@ -710,9 +710,9 @@ export const MiscStore: MarkerStore = {
 		new MiscMarker(`DgSlK`, MiscTypes.gobblegum, [144.75869140807464, 166.0275845984664]),
 		new MiscMarker(`mcpW4`, MiscTypes.gobblegum, [138.39474789905117, 268.423664750664]),
 		new MiscMarker(`hIDfb`, MiscTypes.gobblegum, [389.1306555779884, 362.8380437146108]),
-		new MiscMarker(`qXCsN`, MiscTypes.workbench, [262.28125, 275.125], { uniqueTitle: `Used to craft the Yellow Mk2 R Variant` }),
-		new MiscMarker(`x5z67`, MiscTypes.workbench, [262.28125, 275.125], { uniqueTitle: `Used to craft the Blue Mk2 W Variant` }),
-		new MiscMarker(`L62F6`, MiscTypes.workbench, [262.28125, 275.125], { uniqueTitle: `Used to craft the Purple Mk2 P Variant` }),
+		new MiscMarker(`qXCsN`, MiscTypes.workbench, [84.9835814975431, 94.42620166393678], { uniqueTitle: `Yellow Mk2 R Workbench`, uniqueDesc: `Used to craft the Yellow Mk2 R Variant` }),
+		new MiscMarker(`x5z67`, MiscTypes.workbench, [300.8878155723823, 110.50417654185033], { uniqueTitle: `Blue Mk2 W Workbench`, uniqueDesc: `Used to craft the Blue Mk2 W Variant` }),
+		new MiscMarker(`L62F6`, MiscTypes.workbench, [350.17772588962794, 299.84709681261023], { uniqueTitle: `Purple Mk2 P Workbench`, uniqueDesc: `Used to craft the Purple Mk2 P Variant` }),
 		new MiscMarker(`Y1hFo`, MiscTypes.ziplineDown, [362.1378062501507, 356.3949492480494], { uniqueTitle: `To Underground Lab` }),
 
 		new MiscMarker(`ZTi11`, MiscTypes.papMachine, [378.73681880211603, 169.6370156942345]),

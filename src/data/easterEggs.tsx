@@ -169,9 +169,6 @@ const markers = {
 	cursedTreasureHuntSkeleton: new Item({
 		title: `Cursed Skeleton`, desc: `1 of 3 skeletons that will spawn a HVT that drop a cursed coin, when set on fire after delivering the watch during the cursed treasure hunt.`, icon: IconFileNames.mrPeeks,
 	}),
-	bossFight: new Item({
-		title: `Boss Fight`, desc: `A boss fight for this map, follow the main quest to begin.`, icon: IconFileNames.boss,
-	}),
 	culinaryDelight: new Item({
 		title: `Culinary Delight`, desc: `Side quest involving Oil (located directly to the right of the hobs).\nFish (obtained from blowing up/shocking any fish around the map), and 5 different ingredients.\nAfter collecting any or all of them, interacting with the pan, then waiting 1 round and interacting with the pan, will then unlock the achievement.`, icon: IconFileNames.workbench,
 	}),
@@ -204,6 +201,28 @@ const markers = {
 	statueHead: new Item({
 		title: `Statue Head`, icon: IconFileNames.mrPeeks,
 		desc: `Can be melee'd open and a statue head can be found inside. Take this and the other head back to the statues in spawn to enable the Blood Sacrifice side egg.`
+	}),
+	// Shattered Veil
+	wunderwaffeStart: new Item({
+		title: `Wunderwaffe DG-2 - Start`, desc: `The start of the free Wunderwaffe Side Egg. Will not spawn until you have obtained at least 1 elemental raygun variant.`, icon: IconFileNames.objective,
+	}),
+	wunderwaffeStep: new Item({
+		title: `Wunderwaffe DG-2 - Orb Step`, desc: `1 of 3 glowing purple items, that when shot, spawn an orb that needs to have the items around it destroyed, after doing all 3 the Wunderwaffe will be collectable.`, icon: IconFileNames.orb,
+	}),
+	wunderwaffeComplete: new Item({
+		title: `Wunderwaffe DG-2 - Finish`, desc: `After destroying all 3 floating purple masses, come here and shoot the purple smoke to drop the weapon.`, icon: IconFileNames.objective,
+	}),
+	mrPeeksParts: new Item({
+		title: `Mr Peeks Part`, desc: `1 of 6 parts around the map, that once all collected will allow you to spawn a friendly NPC at the motor court.`, icon: IconFileNames.mrPeeksBlue,
+	}),
+	mrPeeksComplete: new Item({
+		title: `Mr Peeks - Donut Egg`, desc: `Once all 6 parts are collected come here and interact with the parts on the sandbags to spawn a friendly NPC.`, icon: IconFileNames.mrPeeks,
+	}),
+	evilSamComputer: new Item({
+		title: `S.A.M Trap - Computer`, desc: `1 of 3 computers that can be interacted with, if you interact with one and end the round it will indicate if it was infected and then can be interacted with again to obtain a hard drive.`, icon: IconFileNames.interactable,
+	}),
+	evilSamTrapComplete: new Item({
+		title: `S.A.M Trap Egg`, desc: `After obtaining the hard drive from the computers and without ending the round, interact with this computer to activate the S.A.M trap easter egg.`, icon: IconFileNames.trap,
 	}),
 };
 
@@ -628,7 +647,32 @@ export const StaticEggStore: MarkerStore = {
 		new MiscMarker(`TcECm`, markers.interactable, [116.83626836111173, 290.397391651169], { uniqueTitle: `Waterfall`, uniqueDesc: `Freeze both waterfalls with cryofreeze or the ice staff to get a reward.` }),
 		new MiscMarker(`V7HfA`, markers.interactable, [209.68441399107735, 277.41558405548994], { uniqueTitle: `Waterfall`, uniqueDesc: `Freeze both waterfalls with cryofreeze or the ice staff to get a reward.` }),
 	],
-	[MapIds.shatteredVeil]: []
+	[MapIds.shatteredVeil]: [
+		new MiscMarker(`YVtDC`, markers.mrPeeksHeadphones, [230.1185021110245, 190.42063989551818], { uniqueDesc: `1 of 3 needed for the easter egg song.` }),
+		new MiscMarker(`49HJa`, markers.mrPeeksHeadphones, [345.94595679568675, 339.2858311148017], { uniqueDesc: `1 of 3 needed for the easter egg song.` }),
+		new MiscMarker(`uZqcP`, markers.mrPeeksHeadphones, [354.47361816266374, 135.6944257762957], { uniqueDesc: `1 of 3 needed for the easter egg song.` }),
+		new MiscMarker(`lkr_A`, markers.maxAmmo, [128.34889880749935, 200.9309460601648], { uniqueDesc: `On the corner of a stone fence.` }),
+		new MiscMarker(`2R6yv`, markers.maxArmour, [124.0118113214335, 381.12530495121183], { uniqueDesc: `Speared on the fence behind the burning building in the motor court.` }),
+		new MiscMarker(`WEk4b`, markers.instaKill, [438.58747024196396, 175.7509866979347], { uniqueDesc: `Up on the eastern wall of the elevator shaft.` }),
+		new MiscMarker(`V5qup`, markers.doublePoints, [463.2273736757784, 265.73558370368715], { uniqueDesc: `Off in the distance near a log.` }),
+		new MiscMarker(`3B6Xv`, markers.fullPower, [404.4604699265468, 449.9485715578522], { uniqueDesc: `On the zombie windowframe, only visible if you go prone and look through the hole in the wall.` }),
+		new MiscMarker(`3yA2m`, markers.nuke, [332.8224469369994, 74.58063978618736], { uniqueDesc: `On top of the white room, will need to climb on the box opposite to see.` }),
+		new MiscMarker(`jAH6p`, markers.bonusPoints, [279.9040888460702, 422.994971978198], { uniqueDesc: `In a hole in the wall by the stairs.` }),
+		new MiscMarker(`H5S9R`, markers.fireSale, [288.71161658427974, 354.9378194889196], { uniqueDesc: `Only appears after shooting all 7 other power ups. Hidden inside the chandelier.` }),
+		new MiscMarker(`xfavY`, markers.interactable, [386.75236794310933, 420.298320394806], { uniqueTitle: `Sleep Walking Egg - Clock`, uniqueDesc: `Start here at the grandfather clock at round 11, interact with the clock, then go to the bed and progress the round to round 12.` }),
+		new MiscMarker(`8blGa`, markers.interactable, [356.2316458965334, 315.04124898680425], { uniqueTitle: `Sleep Walking Egg - Bed`, uniqueDesc: `Go prone on this bed after interacting with the clock on round 11 and transition the round. When you wake up you'll need to follow the white footsteps to be led to the loot, including an intel document.` }),
+		new MiscMarker(`FpF7V`, markers.interactable, [404.4192934137231, 339.93895053041376], { uniqueTitle: `Deer Head Shotgun Egg`, uniqueDesc: `You can start a soul box easter egg mini game after placing a blue or better rarity shotgun on the pedestal under the 3 deer heads. The can be done multiple times.` }),
+		new MiscMarker(`nyVhH`, markers.interactable, [297.83350256900314, 289.0736936699148], { uniqueTitle: `Jumpscare Egg`, uniqueDesc: `Requires a thermal scope, progress to round 13 and look through the windows on the outside of the mansion until you spot a figure that will disappear when looked at. Do this 5 times to then be able to access this mirror and get your reward. Including a document intel item.` }),
+		new MiscMarker(`Jn9Ol`, markers.wunderwaffeStart, [276.61616468742903, 291.0590773140725], { uniqueDesc: `Underneath the bed, first one to spawn.` }),
+		new MiscMarker(`U2ogz`, markers.wunderwaffeStep, [403.6991852160152, 422.7244579108658], { uniqueDesc: `On a green chair opposite elemental pop, only spawns after shooting the glowing clothes.` }),
+		new MiscMarker(`JAOpX`, markers.wunderwaffeStep, [65.73113275293765, 118.31603895528778], { uniqueDesc: `On top of some rocks by spawn.` }),
+		new MiscMarker(`9Le70`, markers.wunderwaffeStep, [254.6317177712267, 334.6645172583519], { uniqueDesc: `Sat on a bench on the ground floor of the grand foyer.` }),
+		new MiscMarker(`pBvk7`, markers.wunderwaffeComplete, [440.2799404621328, 170.11947055161315]),
+		new MiscMarker(`8SwkB`, markers.evilSamComputer, [249.55501034107314, 324.41155911510066]),
+		new MiscMarker(`X6B_L`, markers.evilSamComputer, [333.45768028749956, 340.50346300582936]),
+		new MiscMarker(`8i9n_`, markers.evilSamComputer, [384.69973642080726, 445.8058883597766]),
+		new MiscMarker(`jK_ol`, markers.evilSamTrapComplete, [378.7904086076896, 163.87104724768952]),
+	]
 };
 
 
