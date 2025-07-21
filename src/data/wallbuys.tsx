@@ -64,6 +64,7 @@ export const WallbuyStore: MarkerStore = {
 		new MiscMarker(`ZEXRC`, MiscTypes.wallbuy, [340.85034092382944, 413.75], { uniqueTitle: `Diamatti` }),
 		new MiscMarker(`vdYgv`, MiscTypes.wallbuy, [323.38931113034687, 313.6534246276432], { uniqueTitle: `Hauer 77` }),
 		new MiscMarker(`ZUMvb`, MiscTypes.wallbuy, [307.8645191395491, 294.70791575751707], { uniqueTitle: `KSP 45` }),
+		new MiscMarker(`a58Jw`, MiscTypes.wallbuy, [209.1339898015277, 56.280828927686144], { uniqueTitle: `Pelington 703` }),
 	],
 	[MapIds.forsaken]: [
 		new MiscMarker(`LinzC`, MiscTypes.wallbuy, [252.94734525704655, 91.75], { uniqueTitle: `1911` }),
