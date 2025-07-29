@@ -698,7 +698,7 @@ export const MiscStore: MarkerStore = {
 		new MiscMarker(`a30nI`, MiscTypes.ammoCrate, [332.2615762114748, 439.4318925021325]),
 		new MiscMarker(`dxlrD`, MiscTypes.ammoCrate, [333.8353603054293, 289.3941350853321]),
 		new MiscMarker(`YZTip`, MiscTypes.ammoCrate, [456.73580369080685, 370.6050146813851]),
-		new MiscMarker(`_raB5`, MiscTypes.ammoCrate, [372.4576680872112, 73.8736810126095]),
+		new MiscMarker(`_raB5`, MiscTypes.ammoCrate, [352.72713406990306, 73.57256266607307]),
 		new MiscMarker(`EoH87`, MiscTypes.ammoCrate, [29.68378818870309, 427.66145517117934]),
 		new MiscMarker(`Xf1nd`, MiscTypes.ammoCrate, [107.452626927432, 423.2290343104228]),
 		new MiscMarker(`G8qDD`, MiscTypes.arsenal, [278.3322628708986, 379.98448935096104]),

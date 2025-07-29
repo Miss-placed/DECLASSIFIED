@@ -349,7 +349,7 @@ const staticIntelStore: IIntelItem[] = [
 		faction: Faction.None,
 		season: Season.Season3,
 		typeDesc: IntelType.Artifact,
-		loc: [209.63744978695888, 468.6689288387903],
+		loc: [68.4243260905452,425.7513623411701],
 		map: MapIds.shatteredVeil,
 		title: `Z-Rex Tooth`,
 		desc: `Defeat the final boss.`,

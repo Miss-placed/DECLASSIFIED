@@ -243,12 +243,12 @@ export const WallbuyStore: MarkerStore = {
 		new MiscMarker(`VZa9V`, MiscTypes.wallbuy, [303.809730157632, 309.0023760845965], { uniqueTitle: `XM4` }),
 		new MiscMarker(`4r3C8`, MiscTypes.wallbuy, [337.7532079562343, 331.6077259515169], { uniqueTitle: `AEK-973` }),
 		new MiscMarker(`qVs9p`, MiscTypes.wallbuy, [458.7385052006196, 363.1421184605717], { uniqueTitle: `LR 7.62` }),
-		new MiscMarker(`qsHoA`, MiscTypes.wallArmor1, [321.72595971005677, 451.75487656166956]),
-		new MiscMarker(`B76hb`, MiscTypes.wallArmor1, [311.44793870891823, 271.05292593700176]),
-		new MiscMarker(`mdctY`, MiscTypes.wallArmor2, [371.44289850626166, 352.08197522504724]),
+		new MiscMarker(`qsHoA`, MiscTypes.wallArmor1, [321.84375, 455.59375]),
+		new MiscMarker(`B76hb`, MiscTypes.wallArmor1, [304.5609175867392, 275.9252369540035]),
+		new MiscMarker(`mdctY`, MiscTypes.wallArmor2, [380.72132950507194, 344.5410653301249]),
 		new MiscMarker(`JD0Ja`, MiscTypes.wallbuy, [376.39550741143063, 194.98866565761386], { uniqueTitle: `GPMG-7` }),
 		new MiscMarker(`DaeuH`, MiscTypes.wallbuy, [289.16813814128614, 104.03616798310502], { uniqueTitle: `ASG-89` }),
-		new MiscMarker(`8lzPN`, MiscTypes.wallbuy, [396.52909671394724, 42.00373605121585], { uniqueTitle: `PU-21` }),
-		new MiscMarker(`v7G7Z`, MiscTypes.wallArmor2, [358.60814871193367, 126.7311662914773]),
+		new MiscMarker(`8lzPN`, MiscTypes.wallbuy, [376.41776247758315, 42.24828732702944], { uniqueTitle: `PU-21` }),
+		new MiscMarker(`v7G7Z`, MiscTypes.wallArmor2, [361.97844891390184, 126.26945893242274]),
 	]
 };

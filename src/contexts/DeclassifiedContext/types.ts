@@ -73,4 +73,6 @@ export interface UserContextProps {
 	) => void;
 	layerCheckboxStates: { [key: string]: boolean };
 	saveLayerCheckboxState: (layer: string, state: boolean) => void;
+	showAllLayers: () => void;
+	hideAllLayers: () => void;
 }

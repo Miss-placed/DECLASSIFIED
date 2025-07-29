@@ -31,6 +31,8 @@ const initialContextValues = {
 	//set default value from local storage or default value
 	layerCheckboxStates: JSON.parse(localStorage.getItem('layerCheckboxStates') || 'null') || initializeCheckboxStates(), // Default value, if we add more than 20 layers we need to update this
 	saveLayerCheckboxState: () => { },
+	showAllLayers: () => { },
+	hideAllLayers: () => { },
 };
 
 export const UserContext =
@@ -90,12 +92,36 @@ export const UserContextProvider = ({ children }) => {
 	}, []);
 
 	const saveLayerCheckboxState = (layer: string, state: boolean) => {
-		const updatedLayerCheckboxStates = layerCheckboxStates;
+		const updatedLayerCheckboxStates = { ...layerCheckboxStates };
 		updatedLayerCheckboxStates[layer] = state;
 		setLayerCheckboxState(updatedLayerCheckboxStates);
 		localStorage.setItem('layerCheckboxStates', JSON.stringify(updatedLayerCheckboxStates));
 		if (isDebugMode) {
 			console.log('UPDATED layerCheckboxStates', updatedLayerCheckboxStates);
+		}
+	};
+
+	const showAllLayers = () => {
+		const updatedLayerCheckboxStates = { ...layerCheckboxStates };
+		Object.keys(updatedLayerCheckboxStates).forEach(key => {
+			updatedLayerCheckboxStates[key] = true;
+		});
+		setLayerCheckboxState(updatedLayerCheckboxStates);
+		localStorage.setItem('layerCheckboxStates', JSON.stringify(updatedLayerCheckboxStates));
+		if (isDebugMode) {
+			console.log('SHOWING ALL LAYERS', updatedLayerCheckboxStates);
+		}
+	};
+
+	const hideAllLayers = () => {
+		const updatedLayerCheckboxStates = { ...layerCheckboxStates };
+		Object.keys(updatedLayerCheckboxStates).forEach(key => {
+			updatedLayerCheckboxStates[key] = false;
+		});
+		setLayerCheckboxState(updatedLayerCheckboxStates);
+		localStorage.setItem('layerCheckboxStates', JSON.stringify(updatedLayerCheckboxStates));
+		if (isDebugMode) {
+			console.log('HIDING ALL LAYERS', updatedLayerCheckboxStates);
 		}
 	};
 
@@ -113,7 +139,9 @@ export const UserContextProvider = ({ children }) => {
 				contributionState,
 				setContributionState,
 				layerCheckboxStates,
-				saveLayerCheckboxState
+				saveLayerCheckboxState,
+				showAllLayers,
+				hideAllLayers
 			}}
 		>
 			{children}

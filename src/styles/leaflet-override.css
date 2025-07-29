@@ -107,6 +107,7 @@
 .leaflet-control-layers.leaflet-control {
 	background-color: var(--clr-bg-inverted) !important;
 	border-radius: 10px !important;
+	margin-top: 75px !important;
 	/* box-shadow: var(--shadow) !important; TODO get this right */
 }
 .leaflet-control-layers.leaflet-control label {
