@@ -185,7 +185,7 @@ const HomePage: React.FC = () => {
                 <Grid size={{ xs: 12, sm: 6, md: 6 }} sx={{ height: '100px' }}>
                     <Paper component={Link} to={`/`}>
                         <Box className='homepage-box' p={2}>
-                            <Typography variant="h6">Janus Towers?</Typography>
+                            <Typography variant="h6">Reckoning (Janus Towers)</Typography>
                             <Typography >Coming Soon...</Typography>
                         </Box>
                     </Paper>
