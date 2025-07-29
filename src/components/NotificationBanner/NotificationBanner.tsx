@@ -1,7 +1,7 @@
-import React, { useState, forwardRef, useImperativeHandle } from 'react';
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import styled from '@emotion/styled';
+import MuiAlert, { AlertProps } from '@mui/material/Alert';
+import Snackbar from '@mui/material/Snackbar';
+import React, { forwardRef, useImperativeHandle, useState } from 'react';
 
 const Alert = forwardRef<HTMLDivElement, AlertProps>(
 	function Alert(props, ref) {
@@ -45,9 +45,9 @@ const NotificationBanner = forwardRef((props, ref) => {
 		<div>
 			<Notification
 				open={open}
-				autoHideDuration={4000}
+				autoHideDuration={750}
 				onClose={handleClose}
-				anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+				anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
 			>
 				<Alert onClose={handleClose} severity="info">
 					{message}

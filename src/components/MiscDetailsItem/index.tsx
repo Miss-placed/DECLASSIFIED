@@ -96,27 +96,29 @@ export const MiscDetailItem = ({
 							</LinksArea>
 						) : null}
 						<ActionContainer>
-							<Tooltip title="Locate on Map">
-								{ItemHasLocation && miscItemMap?.mapCanRender ? <Button onClick={async () => {
-									if (ItemIsOnAnotherMap) {
-										if (miscItemMap && miscItemMap.mapCanRender) {
-											var mapSetResult = await setCurrentMap(miscItemMap);
+							{ItemHasLocation && miscItemMap?.mapCanRender ?
+								<Tooltip title="Locate on Map">
+									<Button onClick={async () => {
+										if (ItemIsOnAnotherMap) {
+											if (miscItemMap && miscItemMap.mapCanRender) {
+												var mapSetResult = await setCurrentMap(miscItemMap);
 
-											if (mapSetResult) {
-												mapInstance.flyTo(loc, 4);
-												setSharedMapItemId(id);
+												if (mapSetResult) {
+													mapInstance.flyTo(loc, 4);
+													setSharedMapItemId(id);
+												}
 											}
+										} else {
+											mapInstance.flyTo(loc, 4);
+											setSharedMapItemId(id);
 										}
-									} else {
-										mapInstance.flyTo(loc, 4);
-										setSharedMapItemId(id);
-									}
-								}}>
-									<LocationOnIcon htmlColor="var(--clr-blue)" />
-								</Button> : <Button disabled>
+									}}>
+										<LocationOnIcon htmlColor="var(--clr-blue)" />
+									</Button>
+								</Tooltip>
+								: <Button disabled>
 									<LocationOnIcon htmlColor="var(--clr-grey)" />
 								</Button>}
-							</Tooltip>
 							<ShareButton id={id} />
 							<BugReportButton id={id} typeDesc={icon} mapItem={miscItemMap} /> {/* TODO: standardise the typeDesc to all come from the same icon id store */}
 						</ActionContainer>

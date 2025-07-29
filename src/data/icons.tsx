@@ -26,6 +26,7 @@ export enum IconFileNames {
 	redOrb = 'red_aether_orb',
 	redRift = 'tunnel_red',
 	crystal = 'aether_crystal',
+	crystalBlue = 'blue_aether_crystal',
 	chest = 'interactable',
 	pizza = 'pizza',
 	mrPeeks = 'mr_peeks',
@@ -94,6 +95,7 @@ export enum IconFileNames {
 	phd = 'phd',
 	meleeMacchiato = 'melee_macchiato',
 	vulture = 'vulture_aid',
+	doubleTap = 'double_tap',
 }
 
 

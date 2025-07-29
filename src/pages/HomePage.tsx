@@ -175,6 +175,22 @@ const HomePage: React.FC = () => {
                 Call of Duty: Black Ops 6
             </Typography>
             <Grid container spacing={2}>
+                <Grid size={{ xs: 12, sm: 6, md: 6 }} sx={{ height: '100px' }}>
+                    <Paper component={Link} to={`/${MapIds.shatteredVeil}`}>
+                        <Box className='homepage-box' p={2}>
+                            <Typography variant="h6">Shattered Veil</Typography>
+                        </Box>
+                    </Paper>
+                </Grid>
+                <Grid size={{ xs: 12, sm: 6, md: 6 }} sx={{ height: '100px' }}>
+                    <Paper component={Link} to={`/`}>
+                        <Box className='homepage-box' p={2}>
+                            <Typography variant="h6">Reckoning (Janus Towers)</Typography>
+                            <Typography >Coming Soon...</Typography>
+                        </Box>
+                    </Paper>
+                </Grid>
+
                 <Grid size={{ xs: 12, sm: 6, md: 3 }} sx={{ height: '100px' }}>
                     <Paper component={Link} to={`/${MapIds.libertyFalls}`}>
                         <Box className='homepage-box' p={2}>
