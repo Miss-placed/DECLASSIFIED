@@ -672,6 +672,9 @@ export const StaticEggStore: MarkerStore = {
 		new MiscMarker(`X6B_L`, markers.evilSamComputer, [333.6498105413765, 330.9302282160714]),
 		new MiscMarker(`8i9n_`, markers.evilSamComputer, [380.30967529375914, 438.4185709917439]),
 		new MiscMarker(`jK_ol`, markers.evilSamTrapComplete, [378.7904086076896, 163.87104724768952]),
+	],
+	[MapIds.reckoning]: [
+
 	]
 };
 
