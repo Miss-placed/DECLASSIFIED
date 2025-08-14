@@ -167,26 +167,29 @@ const HomePage: React.FC = () => {
 
             </Grid>
             <Typography className='rounded-box filled text-sm'>
-                The #1 interactive map for CoD Zombies. <br />
-                Track Intel and Calling Cards. Discover Main Quest and side Easter Eggs and explore the maps.<br />
-                Always free, no ads, totally open source. Now and forever.
+
+                <Typography className='title text' variant="h5" gutterBottom>
+                    The #1 interactive map for CoD Zombies.
+                </Typography>
+                - Track Intel and Calling Cards.<br />
+                - Discover Main Quest and side Easter Eggs and explore the maps.<br />
+                - Always free, no ads, open & community driven, now & forever.<br />
             </Typography>
             <Typography sx={{ mt: 4 }} className='title text-md' variant="h5" gutterBottom>
                 Call of Duty: Black Ops 6
             </Typography>
             <Grid container spacing={2}>
                 <Grid size={{ xs: 12, sm: 6, md: 6 }} sx={{ height: '100px' }}>
-                    <Paper component={Link} to={`/${MapIds.shatteredVeil}`}>
+                    <Paper component={Link} to={`/${MapIds.reckoning}`}>
                         <Box className='homepage-box' p={2}>
-                            <Typography variant="h6">Shattered Veil</Typography>
+                            <Typography variant="h6">Reckoning</Typography>
                         </Box>
                     </Paper>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6, md: 6 }} sx={{ height: '100px' }}>
-                    <Paper component={Link} to={`/`}>
+                    <Paper component={Link} to={`/${MapIds.shatteredVeil}`}>
                         <Box className='homepage-box' p={2}>
-                            <Typography variant="h6">Reckoning (Janus Towers)</Typography>
-                            <Typography >Coming Soon...</Typography>
+                            <Typography variant="h6">Shattered Veil</Typography>
                         </Box>
                     </Paper>
                 </Grid>

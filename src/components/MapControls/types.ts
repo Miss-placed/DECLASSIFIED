@@ -74,6 +74,11 @@ export const MapGroupings: MapGroupDictionary = {
 		mapLayers: [MapDetails.shatteredVeil],
 		game: Game.bo6,
 	},
+	reckoning_Group: {
+		mapName: 'Reckoning',
+		mapLayers: [MapDetails.reckoning, MapDetails.reckoningBossArena],
+		game: Game.bo6,
+	},
 };
 
 export interface MapControlsProps {
