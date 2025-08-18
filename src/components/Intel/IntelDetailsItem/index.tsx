@@ -103,7 +103,9 @@ export const IntelDetailsItem = ({
 						<IntelSubheading variant="h3">
 							{!isMarker ? `${mapItem?.title} - ` : ``}{season} - {typeDesc}{faction !== Faction.None ? ` - ${faction}` : ''}
 						</IntelSubheading>
-						<IntelDescription>{desc}</IntelDescription>
+						<IntelDescription>
+							{desc.trim()}
+						</IntelDescription>
 						<StyledIntelActionContainer>
 							{isCollected ? (
 								<Button
@@ -265,4 +267,6 @@ const IntelSubheading = styled(Typography)`
 const IntelDescription = styled(Typography)`
 	text-align: center;
 	margin: 0px !important;
+	font-size: 0.7rem;
+	white-space: pre-wrap;
 `;
