@@ -6,6 +6,312 @@ const staticIntelStore: IIntelItem[] = [
 	// TODO: Refactor this out into its own BO6 Intel list and clean up the constructor to make faction a non issue
 	/////////////////////Black Ops 6/////////////////////////
 	// ID Standard : {GAME}{SEASON}{MAP INITIALS}{INTEL TYPE}{INTEL NUMBER} //
+	/////////////////////Reckoning/////////////////////////
+	// Audio Logs:
+	// Mom Genes - (AP Bio.) In the bioweapon lab, in a corner.
+	// Play to Win - (Death cap.) In the Quantum Computing Lab, on a chair in a corner.
+	// The Things I've Seen PT 1- (Target practise.) In the mutant research test area, on a box near the shooting targets.
+	// The Things I've Seen PT2- (With a twist.) In the Director's Office, next to a coffee maker.
+	// Reactive PT 1 - (Snowstorm.) In the executive suite next to the Tsarkov 7.62 wall buy.
+	// Reactive PT 2 - (Light as a feather.) Sublevel 10 jump to top of ruined elevator.
+	// Reactive PT 3 - (Some assembly required.) In android assembly, on a shelf near the conveyor belt.
+	// Great Voice From Beyond - (Show 'em who's boss.) On a shelf in the boss arena.
+	// The Forspoken - (Need a lift?) In dark entity containment on a forklift.
+	// Dysphoria - (Portal authority.)- On a console in the T2 teleporter lab.
+	// Miracle Worker - (Welcome to Janus Towers.) On the reception desk in the spawn room
+	// Whistleblower - (Tangled webs we Weave.) While playing as Weaver, reach round 13 WITHOUT being in the mutant research test area. Then head to the clone room and SAM should give you a voice line. Interact with a speaker on the wall near a door, then the log will spawn on the console just next to it.
+	// ??? - Safe and sound.
+
+	// Documents:
+	// I'm A Real Girl- (A complete waste. ) - interact with bins around the map. After getting rewards from 4 of them, a bin in spawn will glow gold. Interact with it for more loot and this intel.
+	// Employee of the Month - (Presentation present. ) interact with the projector in the Directors office.
+	// Department Head - (Look out below!) In a balcony above quantum computing. You need to parachute down to it.
+	// Mangler Matrix - (Research high and low. ) Stack of papers in mutant research.
+	// Safety Measures - (Another day, another Deutsche Mark. ) briefcase held by a klaus in Android Assembly. Shoot it.
+	// ??? - Safe and sound.
+	// Misdirection pt2 - (Pole vault.)- in the boss fight tower in the second section where you have to shoot crystals. Jump from a broken railing to the top of a vat device in the middle of the room and the document is on top.
+
+	// Artifacts:
+	// Knick Knack- (Progress through Main Quest.) Open Sublevel 10.
+	// Klaus Arm- (Progress through Main Quest.) Dropped from Kommando Klaus.
+	// Fungal Head- Progress through Main Quest.
+	// Gorgofex- Progress through Main Quest.
+	// Wish You Were Here - (Turret tidying.)- Use the left turret trap near stamin up in the dark entity containment room. There should be a pile of trash on the floor you need it to hit.
+	{
+		id: `BO6S5RkAu1`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `Mom Genes`,
+		desc: `In the bioweapon lab, in a corner.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkAu2`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `Play to Win`,
+		desc: `In the Quantum Computing Lab, on a chair in a corner.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkAu3`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `The Things I've Seen PT 1`,
+		desc: `In the mutant research test area, on a box near the shooting targets.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkAu4`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `The Things I've Seen PT 2`,
+		desc: `In the Director's Office, next to a coffee maker.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkAu5`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `Reactive PT 1`,
+		desc: `In the executive suite next to the Tsarkov 7.62 wall buy.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkAu6`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `Reactive PT 2`,
+		desc: `Sublevel 10 jump to top of ruined elevator.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkAu7`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `Reactive PT 3`,
+		desc: `In android assembly, on a shelf near the conveyor belt.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkAu8`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `Great Voice From Beyond`,
+		desc: `On a shelf in the boss arena.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkAu9`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `The Forspoken`,
+		desc: `In dark entity containment on a forklift.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkAu10`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `Dysphoria`,
+		desc: `On a console in the T2 teleporter lab.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkAu11`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `Miracle Worker`,
+		desc: `On the reception desk in the spawn room.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkAu12`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `Whistleblower`,
+		desc: `While playing as Weaver, reach round 13 WITHOUT being in the mutant research test area. Then head to the clone room and SAM should give you a voice line. Interact with a speaker on the wall near a door, then the log will spawn on the console just next to it.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkAu13`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `???`,
+		desc: `Safe and sound.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkDo1`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Docs,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `I'm A Real Girl`,
+		desc: `Interact with bins around the map. After getting rewards from 4 of them, a bin in spawn will glow gold. Interact with it for more loot and this intel.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkDo2`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Docs,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `Employee of the Month`,
+		desc: `Interact with the projector in the Directors office.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkDo3`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Docs,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `Department Head`,
+		desc: `In a balcony above quantum computing. You need to parachute down to it.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkDo4`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Docs,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `Mangler Matrix`,
+		desc: `Stack of papers in mutant research.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkDo5`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Docs,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `Safety Measures`,
+		desc: `Briefcase held by a klaus in Android Assembly. Shoot it.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkDo6`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Docs,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `???`,
+		desc: `Safe and sound.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkDo7`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Docs,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `Misdirection pt2`,
+		desc: `In the boss fight tower in the second section where you have to shoot crystals. Jump from a broken railing to the top of a vat device in the middle of the room and the document is on top.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkAr1`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Artifact,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `Knick Knack`,
+		desc: `Open Sublevel 10.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkAr2`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Artifact,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `Klaus Arm`,
+		desc: `Dropped from Kommando Klaus.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkAr3`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Artifact,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `Fungal Head`,
+		desc: `Progress through Main Quest.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkAr4`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Artifact,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `Gorgofex`,
+		desc: `Progress through Main Quest.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkAr5`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Artifact,
+		loc: [0, 0],
+		map: MapIds.reckoning,
+		title: `Wish You Were Here`,
+		desc: `Use the left turret trap near stamin up in the dark entity containment room. There should be a pile of trash on the floor you need it to hit.`,
+		img: '',
+	},
 	/////////////////////Shattered Veil/////////////////////////
 	{
 		id: `BO6S3SVAu1`,
