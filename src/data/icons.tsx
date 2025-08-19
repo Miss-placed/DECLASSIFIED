@@ -58,7 +58,9 @@ export enum IconFileNames {
 	jumpPad = 'jumppad',
 	door = 'door_buy',
 	doorPower = 'door_power',
-	boatStation = 'upgrade', // Update with new icon
+	boatStation = 'boat',
+	parachute = 'parachute',
+	launcher = 'launcher',
 
 	//powerup icons
 	mysteryBox = 'mystery_box',
