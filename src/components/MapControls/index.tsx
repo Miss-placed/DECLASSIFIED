@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import { LayersControl } from 'react-leaflet';
 import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
-import { MapMarkers } from '../MapMarkers';
 import { useUserContext } from '../../contexts/UserContext/userContextProvider';
+import { MapMarkers } from '../MapMarkers';
 
 export const MapControls = () => {
 	const { currentMap, currentMapGroup } = useContext(DeclassifiedContext);
@@ -11,7 +11,7 @@ export const MapControls = () => {
 	return (
 		<LayersControl
 			position={isMobile ? 'bottomright' : 'topright'}
-			collapsed={isMobile}
+		// collapsed={isMobile}
 		>
 			{currentMapGroup ? (
 				currentMapGroup!.mapLayers.length > 1 ? currentMapGroup!.mapLayers.map(mapLayer => (

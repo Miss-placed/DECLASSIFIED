@@ -648,7 +648,7 @@ export const StaticEggStore: MarkerStore = {
 		new MiscMarker(`V7HfA`, markers.interactable, [209.68441399107735, 277.41558405548994], { uniqueTitle: `Waterfall`, uniqueDesc: `Freeze both waterfalls with cryofreeze or the ice staff to get a reward.` }),
 	],
 	[MapIds.shatteredVeil]: [
-		new MiscMarker(`YVtDC`, markers.mrPeeksHeadphones, [236.4240152904918, 199.14512216137794], { uniqueDesc: `On a box by the stairs in the conservatory.` }),
+		new MiscMarker(`YVtDC`, markers.mrPeeksHeadphones, [217.60655024142852, 220.77023586440757], { uniqueDesc: `On a box by the stairs in the conservatory.` }),
 		new MiscMarker(`49HJa`, markers.mrPeeksHeadphones, [347.79364380362995, 345.19713079829694], { uniqueDesc: `Behind the elevator on a shelf in the corner.` }),
 		new MiscMarker(`uZqcP`, markers.mrPeeksHeadphones, [354.54572287909696, 144.93529397523508], { uniqueDesc: `On a box behind a burnt body.` }),
 		new MiscMarker(`lkr_A`, markers.maxAmmo, [128.34889880749935, 200.9309460601648], { uniqueDesc: `On the corner of a stone fence.` }),

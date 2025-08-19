@@ -122,7 +122,7 @@ const HomePage: React.FC = () => {
         <HomePageContainer>
             <Grid className='header-container' container spacing={2}>
                 <Grid size={{ xs: 12, sm: 8 }}>
-                    <Grid sx={{ display: 'flex' }}>
+                    <Grid sx={{ display: 'flex', alignItems: 'center' }}>
                         <img style={{ height: '50px', margin: '10px' }} src="/favicon120.png" alt="Declassified Logo" />
                         <Typography variant="h4" className='main-title text-xl'>
                             Declassified

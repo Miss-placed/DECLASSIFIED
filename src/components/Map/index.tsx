@@ -96,7 +96,7 @@ const MapProvider = () => {
 				tapTolerance={30}
 				/* noWrap={true} */
 				doubleClickZoom={false}
-				zoomDelta={0.5}
+				zoomDelta={0.1}
 				wheelPxPerZoomLevel={80}
 				zoomSnap={0}
 				maxBoundsViscosity={0.2}
