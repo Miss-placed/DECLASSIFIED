@@ -1,7 +1,8 @@
 import { MiscMarker } from "../classes";
 import { MapGroupItem } from "../components/MapControls/types";
 import { EggType } from "./easterEggs";
-import { Faction, IntelItem, IntelType, MapIds, Season } from "./intel";
+import { MapIds } from "./intel";
+import { Faction, IntelItem, IntelType, Season } from './IntelTypes';
 import { allOutbreakMapsArr } from "./maps/mapDetails";
 import { MarkerStore } from "./types";
 

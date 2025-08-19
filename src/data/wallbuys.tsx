@@ -273,7 +273,5 @@ export const WallbuyStore: MarkerStore = {
 		// Sub Level 10
 		new MiscMarker(`ubFFG`, MiscTypes.wallbuy, [350.52545661237616, 389.2209570439761], { uniqueTitle: `XMG` }),
 		new MiscMarker(`mFQR9`, MiscTypes.wallArmor2, [406.65136264379595, 474.28133637109676]),
-
-
 	]
 };

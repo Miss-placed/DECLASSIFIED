@@ -2,7 +2,8 @@ import styled from '@emotion/styled';
 import React, { useContext, useRef } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
-import { IntelStore, IntelType } from '../../data/intel';
+import { IntelType } from '../../data/IntelTypes';
+import { IntelStore } from '../../data/intel';
 
 export const CustomIntelFilterCheckbox = ({ name, defaultChecked }) => {
 	const { register, getValues, setValue } = useFormContext();

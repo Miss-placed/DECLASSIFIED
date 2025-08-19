@@ -1,6 +1,6 @@
 import { Item, MiscMarker } from "../classes";
 import { IconFileNames } from "./icons";
-import { IntelType } from "./intel";
+import { IntelType } from './IntelTypes';
 
 /////////////////////Misc/////////////////////////
 export const MiscTypes = {

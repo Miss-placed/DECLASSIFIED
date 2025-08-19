@@ -1,6 +1,7 @@
 import { Item, MiscMarker } from '../classes';
 import { IconFileNames } from './icons';
-import { DefaultPOIData, MapIds } from './intel';
+import { MapIds } from './intel';
+import { DefaultPOIData } from './IntelTypes';
 import { MarkerStore } from './types';
 
 const markers = {

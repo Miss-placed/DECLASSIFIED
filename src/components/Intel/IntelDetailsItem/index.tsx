@@ -13,7 +13,7 @@ import { DeclassifiedContext } from "../../../contexts/DeclassifiedContext/decla
 import { useUserContext } from "../../../contexts/UserContext/userContextProvider";
 import { addCollectedIntel, deleteCollectedIntel } from "../../../data/dataAccessLayer";
 import { db } from "../../../data/db";
-import { DefaultPOIData, Faction, IIntelItem } from "../../../data/intel";
+import { DefaultPOIData, Faction, IIntelItem } from '../../../data/IntelTypes';
 import { GetMapById } from "../../../data/maps/mapDetails";
 import { BugReportButton } from "../../ActionButtons/BugReportButton";
 import { ShareButton } from "../../ActionButtons/ShareButton";

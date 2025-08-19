@@ -10,7 +10,7 @@ import { useContext, useState } from 'react';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { DeclassifiedContext } from '../../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { useUserContext } from '../../../contexts/UserContext/userContextProvider';
-import { Faction, IntelType, Season } from '../../../data/intel';
+import { Faction, IntelType, Season } from '../../../data/IntelTypes';
 import { MenuFooter } from '../../MenuFooter';
 import { IntelFilterMenu } from '../IntelFilterMenu';
 

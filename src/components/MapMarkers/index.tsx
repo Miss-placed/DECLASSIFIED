@@ -4,7 +4,8 @@ import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassi
 import { useUserContext } from '../../contexts/UserContext/userContextProvider';
 import { DoorStore } from '../../data/doors';
 import { StaticEggStore } from '../../data/easterEggs';
-import { IntelStore, IntelType } from '../../data/intel';
+import { IntelStore } from '../../data/intel';
+import { IntelType } from '../../data/IntelTypes';
 import { StaticQuestStore } from '../../data/mainQuest';
 import { MiscStore } from '../../data/misc';
 import { PerkStore } from '../../data/perks';

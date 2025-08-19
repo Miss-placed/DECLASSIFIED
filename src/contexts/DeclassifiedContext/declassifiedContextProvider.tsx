@@ -21,7 +21,8 @@ import {
 } from '../../data/dataAccessLayer';
 import { db, DeclassifiedUserPreferences } from '../../data/db';
 import { StaticEggStore } from '../../data/easterEggs';
-import { DefaultPOIData, IntelItem, IntelStore } from '../../data/intel';
+import { IntelStore } from '../../data/intel';
+import { DefaultPOIData, IntelItem } from '../../data/IntelTypes';
 import { filterIntel, filterMisc } from '../../data/listFiltering';
 import { StaticQuestStore } from '../../data/mainQuest';
 import { GetMapById, GetMapByTitle, MapDetails } from '../../data/maps/mapDetails';

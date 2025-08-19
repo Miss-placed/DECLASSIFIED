@@ -7,7 +7,7 @@ import { useMapEvents } from "react-leaflet";
 import { DeclassifiedContext } from "../../contexts/DeclassifiedContext/declassifiedContextProvider";
 import { useUserContext } from "../../contexts/UserContext/userContextProvider";
 import { LegacyIcons } from "../../data/icons";
-import { DefaultPOIData } from "../../data/intel";
+import { DefaultPOIData } from '../../data/IntelTypes';
 import { GetMapById } from "../../data/maps/mapDetails";
 import { getMiscMarkerById } from "../../helpers/github";
 import { BugReportButton } from "../ActionButtons/BugReportButton";
