@@ -79,5 +79,30 @@ export const DoorStore: MarkerStore = {
 		new MiscMarker(`7BTXd`, MiscTypes.door, [336.6327648584656, 354.87478121808135]),
 		new MiscMarker(`c3F0Y`, MiscTypes.door, [336.46385729958024, 341.1932689483695]),
 		new MiscMarker(`42_CU`, MiscTypes.door, [373.2857051365825, 304.0336059935966]),
-	]
+	],
+	[MapIds.shatteredVeil]: [
+
+	],
+	[MapIds.reckoning]: [
+		// Reception
+		new MiscMarker(`xwC1y`, MiscTypes.door, [249.1286528539106, 423.25193287577486]),
+		new MiscMarker(`TUYlc`, MiscTypes.door, [116.24597497417126, 423.12578133602665]),
+		new MiscMarker(`izuDP`, MiscTypes.doorPower, [162.33190555407688, 464.3907515720198]),
+		new MiscMarker(`QdNFK`, MiscTypes.doorPower, [167.20610115165363, 482.96920725553684]),
+		new MiscMarker(`kPNuf`, MiscTypes.doorPower, [182.40981699538102, 382.71269505842884]),
+		// Mutant
+		new MiscMarker(`fN7a3`, MiscTypes.door, [328.8074590743468, 271.6452905682642]),
+		new MiscMarker(`x1fye`, MiscTypes.door, [269.47879438581793, 256.81312439613197]),
+		new MiscMarker(`zxvvk`, MiscTypes.door, [235.6481232291568, 264.9791484684295]),
+		new MiscMarker(`7Wl7W`, MiscTypes.door, [334.49985145261405, 297.42867525492983]),
+		// Quantum
+		new MiscMarker(`xZHVA`, MiscTypes.door, [32.977874958006524, 278.4408520390551]),
+		new MiscMarker(`hGM5m`, MiscTypes.door, [121.62053176002406, 270.8395688040536]),
+		new MiscMarker(`owQFu`, MiscTypes.door, [21.73591386618226, 304.1977897117392]),
+		// Android
+		new MiscMarker(`hLwjI`, MiscTypes.door, [92.80574107774062, 30.902649294590134]),
+		// Executive
+		new MiscMarker(`U2Vbx`, MiscTypes.door, [439.228832933651, 204.89214896071937]),
+		new MiscMarker(`hh0Ns`, MiscTypes.door, [453.6897584130215, 295.31649021124093]),
+	],
 };
