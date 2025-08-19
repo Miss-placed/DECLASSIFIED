@@ -50,7 +50,7 @@ export const CustomImage = ({ src: imageId, altText = 'Placeholder' }) => { // T
 						<img
 							src={thumbnailSrc}
 							onClick={handleOpen}
-							alt={altText}
+							alt={""}
 							loading="lazy"
 							style={{
 								height: 'auto',
