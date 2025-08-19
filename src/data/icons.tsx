@@ -101,7 +101,6 @@ export enum IconFileNames {
 
 export const LegacyIcons = {
 	[IconFileNames.tombstoneSoda]: true,
-	[IconFileNames.speedCola]: true,
 	[IconFileNames.muleKick]: true,
 	[IconFileNames.monkey]: true,
 	[IconFileNames.general]: true,
