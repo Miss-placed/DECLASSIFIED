@@ -100,6 +100,77 @@ const markers = {
 		desc: `1 of 3 total chalices around the map, that can be interacted with after obtaining the Ritual Elixir from the Purple Banquet Hall liminal space.`
 	}),
 
+	// Reckoning specific markers
+	gorgofexUpgrade: new Item({
+		title: 'Gorgofex Upgrade', icon: IconFileNames.upgrade,
+		desc: 'Upgrade for the Gorgofex wonder weapon. Two variants available: Corpsloder or Necrodystonia.'
+	}),
+	frankenKlaus: new Item({
+		title: 'Franken-Klaus', icon: IconFileNames.workbench,
+		desc: 'Assembled Klaus robot used for hacking terminals during the main quest.'
+	}),
+	// klausArms: new Item({
+	// 	title: 'Klaus Arms', icon: IconFileNames.objective,
+	// 	desc: 'Dropped by shooting arms off Kommando Klaus robots during special rounds.'
+	// }),
+	klausLegs: new Item({
+		title: 'Klaus Legs', icon: IconFileNames.interactable,
+		desc: 'Found in various locations within T2 Android Assembly.'
+	}),
+	// fowlerMutantInjection: new Item({
+	// 	title: 'Fowler Mutant Injection', icon: IconFileNames.objective,
+	// 	desc: 'Used to access the T2 Teleportation Lab via scanner.'
+	// }),
+	// dnaVial: new Item({
+	// 	title: 'DNA Vial', icon: IconFileNames.objective,
+	// 	desc: 'Required to enter the final encounter. Obtained from fridge using keycard.'
+	// }),
+	// syringe: new Item({
+	// 	title: 'Syringe', icon: IconFileNames.objective,
+	// 	desc: 'Used to collect blood sample from floating zombie.'
+	// }),
+	aethericFlora: new Item({
+		title: 'Aetheric Flora', icon: IconFileNames.interactable,
+		desc: '1 of 3 glowing Aetheric Flora. Stand underneath to charge the cyst.'
+	}),
+	// projectJanusBrain: new Item({
+	// 	title: 'Project Janus Brain', icon: IconFileNames.objective,
+	// 	desc: 'Brain required for portal activation. Must be transported quickly.'
+	// }),
+	// fungalHead: new Item({
+	// 	title: 'Fungal Head', icon: IconFileNames.objective,
+	// 	desc: 'Must be cleaned and charged with souls before placing in portal.'
+	// }),
+	// vacuumSealDevice: new Item({
+	// 	title: 'Vacuum-Seal Device', icon: IconFileNames.objective,
+	// 	desc: 'Used to capture purple glowing items around the map.'
+	// }),
+	// purpleGlowingItem: new Item({
+	// 	title: 'Purple Glowing Item', icon: IconFileNames.objective,
+	// 	desc: 'Floating purple objects that must be captured with vacuum-seal devices.'
+	// }),
+	samFile: new Item({
+		title: 'S.A.M File', icon: IconFileNames.clue,
+		desc: 'Contains 1 digit of a 4-digit code. Arrange them chronologically for the pin.'
+	}),
+	// staticScreen: new Item({
+	// 	title: 'Static Screen', icon: IconFileNames.clue,
+	// 	desc: '1 of 2 static screens in T1 Mutant Research Lab. Note the first letter of words displayed.'
+	// }),
+
+	// aetherCrystalPipe: new Item({
+	// 	title: 'Aether Crystal (Portal)', icon: IconFileNames.crystal,
+	// 	desc: 'Crystals blocking aether flow in pipes. Must be shot to clear.'
+	// }),
+	// powerSurgeComputer: new Item({
+	// 	title: 'Power Surge Computer', icon: IconFileNames.interactable,
+	// 	desc: 'Computer with "INITIATE POWER SURGE" text. Activate in sequence.'
+	// }),
+	// portalSwitch: new Item({
+	// 	title: 'Portal Switch', icon: IconFileNames.interactable,
+	// 	desc: 'Red switches that must be turned green during portal lockdown.'
+	// }),
+
 };
 
 //TODO: Think about moving all main quest steps to an ordered list so we can enforce ordering and steps etc
@@ -527,5 +598,102 @@ export const StaticQuestStore: MarkerStore = {
 
 		// Final Step: Boss Fight
 		new MiscMarker(`RXwUX`, markers.bossFight, [418.85937681212664, 170.08776884488447], { stepNumber: 20, uniqueTitle: `SAM AI Platform`, uniqueDesc: `After completing all 3 rituals, you can initiate the final boss fight by interacting with the platform.` }),
+	],
+	[MapIds.reckoning]: [
+		// Step 1: Opening the Teleportation Lab
+		new MiscMarker('', markers.questCollectible, [0, 0], { stepNumber: 1, uniqueTitle: 'Centrifuge Syringe', uniqueDesc: 'Pick up the syringe from the centrifuge in T1 Mutant Research Lab. Required for blood collection.', }),
+		new MiscMarker('', markers.questCollectible, [0, 0], { stepNumber: 2, uniqueTitle: 'Floating Zombie Blood Sample', uniqueDesc: 'Jump into the Particle Accelerator Beam in T2 Sublevel 10 to knock down the floating zombie, then use the syringe to collect its blood.' }),
+		new MiscMarker('', markers.questCollectible, [0, 0], { stepNumber: 3, uniqueTitle: 'Fowler Mutant Injection', uniqueDesc: 'Return syringe to centrifuge to spawn a Fowler Mangler. Kill it to obtain the Fowler Mutant Injection.' }),
+		new MiscMarker('', markers.questCollectible, [0, 0], { stepNumber: 5, uniqueTitle: 'DNA Vial', uniqueDesc: 'After activating Pack-a-Punch, kill the "Geneticist Zombie" in T1 Mutant Research Lab for a keycard.Use the keycard to open the fridge and collect the DNA Vial. Required for final encounter.', }),
+		new MiscMarker('', markers.secretArea, [265.7653978967192, 139.23501433123437], { stepNumber: 6, uniqueTitle: 'Bio Scanner Door', uniqueDesc: 'Use the Fowler Mutant Injection at the scanner in T2 Dark Entity Containment to open portal to Teleportation Lab.', }),
+
+		// Step 2: Building Franken-Klaus & Hacking Janus System
+		new MiscMarker('', markers.questCollectible, [0, 0], { stepNumber: 7, uniqueTitle: 'Klaus Arms', uniqueDesc: 'During special rounds, shoot the arms off Kommando Klaus robots. Need 2 arms total.', }),
+		new MiscMarker('', markers.klausLegs, [64.64678327613858, 136.75281077644698], { stepNumber: 8, uniqueTitle: 'Klaus Legs - Shelf', uniqueDesc: '1 of 4 possible spawn locations for Klaus legs in T2 Android Assembly. On a shelf near the assembly line.', }),
+		new MiscMarker('', markers.klausLegs, [169.12701996775954, 63.76732070795281], { stepNumber: 8, uniqueTitle: 'Klaus Legs - TV', uniqueDesc: '1 of 4 possible spawn locations for Klaus legs in T2 Android Assembly. Behind the broken TV.', }),
+		new MiscMarker('', markers.klausLegs, [156.8331401195596, 128.2240178559916], { stepNumber: 8, uniqueTitle: 'Klaus Legs - Door', uniqueDesc: '1 of 4 possible spawn locations for Klaus legs in T2 Android Assembly. On the ground behind a door.', }),
+		new MiscMarker('', markers.klausLegs, [96.07140076681934, 50.1663161262222], { stepNumber: 8, uniqueTitle: 'Klaus Legs - Scrap', uniqueDesc: '1 of 4 possible spawn locations for Klaus legs in T2 Android Assembly. On top of the scrap pile.', }),
+		new MiscMarker('', markers.frankenKlaus, [117.60454468871991, 119.5224838904633], { stepNumber: 9, uniqueTitle: 'Hanging Klaus Assembly', uniqueDesc: 'Place arms and legs on the Hanging Klaus in T2 Android Assembly, then get an Uber Klaus to shock it.', }),
+		new MiscMarker('', markers.mainQuest, [122.0625, 114.40625], { stepNumber: 10, uniqueTitle: 'Klaus First Terminal', uniqueDesc: 'After activation, Franken-Klaus will work on this terminal. Progress a full round for him to move.', }),
+		new MiscMarker('', markers.mainQuest, [329.6685873624122, 135.6294188247762], { stepNumber: 11, uniqueTitle: 'S.A.M. Trial - Dark Entity Containment', uniqueDesc: 'Complete the S.A.M. Trial (kill quota) that Klaus activates in T2 Dark Entity Containment.', }),
+		new MiscMarker('', markers.mainQuest, [206.49762041663564, 128.78930536511223], { stepNumber: 12, uniqueTitle: 'Klaus Final Terminal', uniqueDesc: 'Klaus moves to T2 Teleportation Lab to work on the final terminal. Need 4-digit code to complete.', }),
+
+		// Computer Code Folders (7 possible spawn locations)
+		new MiscMarker('', markers.samFile, [416.5697810972365, 207.19992851691046], { stepNumber: 13, uniqueTitle: 'S.A.M File - Executive Suite Table', uniqueDesc: '1 of 7 possible locations for code folders. Check tables in T1 Executive Suite.', }),
+		new MiscMarker('', markers.samFile, [414.1549057795054, 186.24082121931076], { stepNumber: 13, uniqueTitle: 'S.A.M File - Small Table for Two', uniqueDesc: '1 of 7 possible locations for code folders. On small tables for two in T1 Executive Suite.', }),
+		new MiscMarker('', markers.samFile, [446.8930789065051, 280.92170759449004], { stepNumber: 13, uniqueTitle: 'S.A.M File - Executive Suite Reception Desk', uniqueDesc: '1 of 7 possible locations for code folders. On the main desk in T1 Executive Suite.', }),
+		new MiscMarker('', markers.samFile, [467.7513485935004, 272.94344206141733], { stepNumber: 13, uniqueTitle: 'S.A.M File - Directors Office Under TV', uniqueDesc: '1 of 7 possible locations for code folders. Left of lamp under the TV in T1 Directors Office.', }),
+		new MiscMarker('', markers.samFile, [487.4400877274493, 241.1759933014728], { stepNumber: 13, uniqueTitle: 'S.A.M File - Directors Office Bloody Table', uniqueDesc: '1 of 7 possible locations for code folders. On bloody table in T1 Directors Office.', }),
+		new MiscMarker('', markers.samFile, [454.36338563691794, 311.8935104795793], { stepNumber: 13, uniqueTitle: 'S.A.M File - Directors Desk', uniqueDesc: '1 of 7 possible locations for code folders. On main desk in T1 Directors Office.', }),
+		new MiscMarker('', markers.samFile, [218.78011471661623, 117.33172428596046], { stepNumber: 13, uniqueTitle: 'S.A.M File - Teleportation Lab Trolley', uniqueDesc: 'Guaranteed last location for code folders.', }),
+		new MiscMarker('', markers.mainQuest, [239.57753458119657, 114.99439638079211], { stepNumber: 14, uniqueTitle: 'Computer Terminal', uniqueDesc: 'Input the 4-digit code (arranged chronologically by date) into the computer in T2 Teleportation Lab.', }),
+
+		// Step 3: Obtaining the Gorgofex Wonder Weapon
+		new MiscMarker('', markers.clue, [285.0283721474805, 221.1873430368458], { stepNumber: 15, uniqueTitle: `Static Screen - Behind Richtofen's Family`, uniqueDesc: `1 of 2 static screens in T1 Mutant Research Lab. Note the first letter of words displayed` }),
+		new MiscMarker('', markers.clue, [260.2808345369212, 335.0139929537036], { stepNumber: 15, uniqueTitle: 'Static Screen - Left of Deadshot Daiquiri', uniqueDesc: '1 of 2 static screens in T1 Mutant Research Lab. Note the first letter of words displayed' }),
+		new MiscMarker('', markers.secretArea, [294.9341716881426, 223.53306492051607], { stepNumber: 16, uniqueTitle: 'T1 Bioweapons Lab Access', uniqueDesc: 'Enter periodic element code at keypad to access T1 Bioweapons Lab.', }),
+		new MiscMarker('', markers.secretArea, [243.14456891269083, 223.53306492051607], { stepNumber: 16, uniqueTitle: 'T1 Bioweapons Lab Access', uniqueDesc: 'Enter periodic element code at keypad to access T1 Bioweapons Lab.', }),
+		new MiscMarker('', markers.wonderWeaponCollectible, [272.27622047388246, 253.99753714137006], { stepNumber: 17, uniqueTitle: 'Gorgofex - Cyst', uniqueDesc: 'Kill 3 Vermin then 3 zombies near the cyst container in T1 Bioweapons Lab to charge it.', }),
+		new MiscMarker('', markers.aethericFlora, [40.75938916080559, 281.6416383421299], { stepNumber: 18 }),
+		new MiscMarker('', markers.aethericFlora, [16.1413702684328, 265.0045220019917], { stepNumber: 18 }),
+		new MiscMarker('', markers.aethericFlora, [89.28833933297638, 242.5291963117688], { stepNumber: 18 }),
+		new MiscMarker('', markers.wonderWeaponStep, [288.1213288150643, 66.62440463472076], { stepNumber: 19, uniqueTitle: 'Power Surge Computer', uniqueDesc: 'The first of 4 computers with "INITIATE POWER SURGE" text. Activate all 4 in quick succession to trigger the forsaken to spawn an Uber Klaus.', }),
+		new MiscMarker('', markers.wonderWeaponStep, [324.06344184169, 109.18999648468125], { stepNumber: 20, uniqueTitle: 'Forsaken Transfer Panel', uniqueDesc: 'Charged panel in front of Forsaken. Lure weakened Uber Klaus here to start the Forsaken mini-bossfight.', }),
+		new MiscMarker('', markers.wonderWeapon, [328.2953301886946, 114.39440739753712], { linkedItems: `BO6S5RkAr4`, stepNumber: 21, uniqueTitle: 'Gorgofex', uniqueDesc: 'Defeat The Forsaken, then interact with the remains to form Gorgofex.', }),
+
+		// Step 3.5: Optional Gorgofex Upgrades
+		new MiscMarker('', markers.gorgofexUpgrade, [151.53604399098379, 482.21800714484493], { stepNumber: 22, uniqueTitle: 'Gorgofex Corpsloder Upgrade Path', uniqueDesc: 'Talk to Blanchard, hit red button in Project Janus Reception, defend Klaus during lockdown.', img: 'MTsrbUs', }),
+		new MiscMarker('', markers.gorgofexUpgrade, [268.59692944756415, 254.0190771030559], { stepNumber: 22, uniqueTitle: 'Gorgofex Necrodystonia Upgrade Path', uniqueDesc: 'Talk to Blanchard, get Strauss Counter, find Life Drain Serum, collect 3 additional items.', img: 'ekZGOZp', }),
+
+		// Step 4: Unblocking the Portal
+		new MiscMarker('', markers.mainQuest, [75.3478902393696, 312.00809343738956], { stepNumber: 23, uniqueTitle: 'Project Janus Brain', uniqueDesc: 'Use Melee Macchiato to punch containment chamber in T1 Quantum Computing Core to reveal brain.', }),
+		new MiscMarker('', markers.interactable, [208.9875590410389, 136.6897795701532], { stepNumber: 24, uniqueTitle: 'Brain Containment Chamber', uniqueDesc: 'Place brain in Project Janus containment chamber in T2 Teleportation Lab (left of Klaus).', }),
+		new MiscMarker('', markers.questCollectible, [382.28660947433815, 455.9789653258379], { stepNumber: 26, uniqueTitle: 'Boost & Quantum Vermin', uniqueDesc: 'Hit red button on terminal in T2 Sublevel 10 to spawn blue Quantum Vermin. Kill with Gorgofex. Then interact with blue orb to charge the gorgofex.', }),
+		new MiscMarker('', markers.largeAetherCrystal, [217.58988167911133, 173.4774343843396], { stepNumber: 27, uniqueTitle: 'Portal Crystals', uniqueDesc: 'Shoot charged Gorgofex at the crystals blocking the portal in T2 Teleportation Lab.', img: `tHfgJfa` }),
+
+		// Step 5: Preparing the Portal
+		new MiscMarker('', markers.mainQuest, [125.53642631075911, 280.9790372828071], { stepNumber: 28, uniqueTitle: 'Fungal Head', uniqueDesc: 'Shoot charged Gorgofex shot at a body hanging from a balcony in Quantum Computing.', img: `YumBytQ`, linkedItems: `BO6S5RkAr3`, }),
+		new MiscMarker('', markers.interactable, [193.69470763183608, 492.0610615781832], { stepNumber: 29, uniqueTitle: 'Mop Bucket', uniqueDesc: '1 of 2 locations. Move mop bucket under sprinkler, throw explosive at smoke detector to fill.', }),
+		new MiscMarker('', markers.interactable, [131.02099241020414, 167.61130794894638], { stepNumber: 29, uniqueTitle: 'Mop Bucket', uniqueDesc: '1 of 2 locations. Move mop bucket under sprinkler, throw explosive at smoke detector to fill.', }),
+		new MiscMarker('', markers.mainQuest, [0, 0], { stepNumber: 30, uniqueTitle: 'Fungal Head Cleaning', uniqueDesc: 'Place Fungal Head in water-filled bucket to clean it, then collect souls by killing zombies.', }),
+		new MiscMarker('', markers.interactable, [217.5773258217545, 175.5956543060017], { stepNumber: 31, uniqueTitle: 'Portal Preparation', uniqueDesc: 'Place soul-charged Fungal Head in center of portal in T2 Teleportation Lab.', }),
+
+		// Step 6: Powering the Portal
+		new MiscMarker('', markers.questCollectible, [227.4600168565362, 134.7208441861445], { stepNumber: 32, uniqueTitle: 'Vacuum-Seal Device Container', uniqueDesc: 'Blue Project Janus containers now open. Contains Vacuum-Seal Devices for capturing purple items.', img: 'r3phAZ7', }),
+		new MiscMarker('', markers.mainQuest, [218.44700263281527, 148.0822424651694], { stepNumber: 34, uniqueTitle: 'Portal Console', uniqueDesc: 'Insert 4 captured items into console to power it and start a lockdown. There are approximately 10 floating purple objects around the map. Use Vacuum-Seal Devices to capture and return them here.', }),
+		new MiscMarker('', markers.interactable, [228.25063213931875, 163.18299436631585], { stepNumber: 35, uniqueTitle: 'Portal Lockdown Switches', uniqueDesc: '1 of 5 switches in the room that turn red during lockdown. Turn all switches green to complete.', }),
+		new MiscMarker('', markers.bossFight, [217.34014123691972, 177.3350079281233], { stepNumber: 36, uniqueTitle: 'Portal to Boss Fight', uniqueDesc: 'Interact with portal after completing lockdown to enter final boss encounter area.', }),
+
+		// Step 7: Final Boss Fight
+		new MiscMarker('', markers.interactable, [0, 0], {
+			stepNumber: 37,
+			uniqueTitle: 'L.T.G. Canister 1',
+			uniqueDesc: '1 of 3 L.T.G. Canisters in T3 Dark Aether Elements Vault 1. Kill zombies with purple eyes nearby.',
+		}),
+		new MiscMarker('', markers.interactable, [0, 0], {
+			stepNumber: 37,
+			uniqueTitle: 'L.T.G. Canister 2',
+			uniqueDesc: '1 of 3 L.T.G. Canisters in T3 Dark Aether Elements Vault 1. Kill zombies with purple eyes nearby.',
+		}),
+		new MiscMarker('', markers.interactable, [0, 0], {
+			stepNumber: 37,
+			uniqueTitle: 'L.T.G. Canister 3',
+			uniqueDesc: '1 of 3 L.T.G. Canisters in T3 Dark Aether Elements Vault 1. Kill zombies with purple eyes nearby.',
+		}),
+		new MiscMarker('', markers.interactable, [0, 0], {
+			stepNumber: 38,
+			uniqueTitle: 'Aether Crystals - Vault 2',
+			uniqueDesc: 'Shoot all Aether Crystals in T3 Dark Aether Elements Vault 2 to clear aether flow in pipes.',
+		}),
+		new MiscMarker('', markers.bossFight, [0, 0], {
+			stepNumber: 39,
+			uniqueTitle: 'S.A.M. Boss Fight',
+			uniqueDesc: 'If helping Richtofen: Fight S.A.M. (easier). Target weak points after laser attacks and spinning volleys.',
+		}),
+		new MiscMarker('', markers.bossFight, [0, 0], {
+			stepNumber: 39,
+			uniqueTitle: 'Uber Richtofen Boss Fight',
+			uniqueDesc: 'If helping S.A.M.: Fight Uber Richtofen (harder). Phase 1: Target shoulders/core. Phase 2: Use Aether Shroud.',
+		}),
 	],
 };
