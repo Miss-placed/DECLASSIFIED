@@ -199,6 +199,9 @@ export const PerkStore: MarkerStore = {
 		new MiscMarker(`CQtd2`, Perks.vulture, [355.3295382755751, 460.88921126765206]),
 		new MiscMarker(`igpZ8`, Perks.wunderFizz, [37.55119841264302, 82.63617957891974], { uniqueDesc: `Spawns at round 25.` }),
 	],
+	[MapIds.reckoningBossArena]: [
+		new MiscMarker(`pTxS3`, Perks.wunderFizz, [277.5162276794483, 185.66642021927655], { uniqueDesc: `On the second floor up the stairs, Spawns at round 25.` })
+	],
 
 	/////////////////////Outbreak/////////////////////////
 

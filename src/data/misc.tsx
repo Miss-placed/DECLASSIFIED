@@ -798,6 +798,22 @@ export const MiscStore: MarkerStore = {
 		new MiscMarker(`dobxs`, MiscTypes.ammoCrate, [194.23415974153738, 139.33966662916418]),
 		new MiscMarker(`YxRke`, MiscTypes.portal, [217.7123311821525, 101.0244086267738], { uniqueTitle: `To Dark Entity Containment` }),
 		new MiscMarker(`GAyBT`, MiscTypes.portal, [217.7123311821525, 176.39849914227517], { uniqueTitle: `To Tower 3 (Bossfight)` }),
+	],
+	[MapIds.reckoningBossArena]: [
+		new MiscMarker(`nxN7l`, MiscTypes.portal, [29.81611632673711, 242.64149838310198], { uniqueTitle: `Got you in, but can't get you back out now!` }),
+		new MiscMarker(`qpuFj`, MiscTypes.ammoCrate, [79.47537213988892, 170.36311983932202]),
+		new MiscMarker(`MV_zT`, MiscTypes.ammoCrate, [97.130561577682, 243.43673960941484]),
+		new MiscMarker(`tFyeP`, MiscTypes.arsenal, [117.44766927343058, 286.95547563614775]),
+
+		new MiscMarker(`Wd6fA`, MiscTypes.ammoCrate, [230.70688144932367, 243.78550284667762]),
+		new MiscMarker(`8uj1G`, MiscTypes.ammoCrate, [190.48442033574065, 309.26312793846046]),
+		new MiscMarker(`RTDoZ`, MiscTypes.craftingTable, [261.02942908567303, 196.8038086881112]),
+
+		new MiscMarker(`zJ6is`, MiscTypes.ammoCrate, [411.0174751141768, 243.61112122804624]),
+		new MiscMarker(`fu5qf`, MiscTypes.ammoCrate, [461.70225105074576, 292.4974037382937]),
+		new MiscMarker(`KegBk`, MiscTypes.ammoCrate, [454.4800929337509, 184.80986752953035]),
+		new MiscMarker(`CNJXj`, MiscTypes.ammoCrate, [360.5920374128171, 294.0450090490783]),
+		new MiscMarker(`ykqGn`, MiscTypes.ammoCrate, [328.09232588634, 197.70657845273556]),
 	]
 };
 

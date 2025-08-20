@@ -126,7 +126,7 @@ export const MapDetails = {
 	}),
 	reckoningBossArena: new MapItem(MapIds.reckoningBossArena, {
 		title: 'Reckoning Boss Area',
-		mapOverlay: allGameMapSVGs.reckoning,
+		mapOverlay: allGameMapSVGs.reckoningBossArena,
 	}),
 };
 
