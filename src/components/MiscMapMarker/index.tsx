@@ -5,7 +5,7 @@ import { Marker, Popup, useMapEvents } from 'react-leaflet';
 import { MiscMarker } from '../../classes';
 import { useUserContext } from '../../contexts/UserContext/userContextProvider';
 import { customMiscIconBounds, getMiscIconUri } from '../../data/icons';
-import { DefaultPOIData } from '../../data/intel';
+import { DefaultPOIData } from '../../data/IntelTypes';
 import { MiscDetailItem } from '../MiscDetailsItem';
 
 export const MiscMapMarker = ({

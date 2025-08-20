@@ -2,7 +2,8 @@ import { LatLngExpression, LatLngTuple } from 'leaflet';
 import { MapItem, MiscMarker } from '../classes';
 import { MapId } from '../components/MapControls/MapIds';
 import { IconFileNames } from '../data/icons';
-import { IntelStore, IntelType } from '../data/intel';
+import { IntelStore } from '../data/intel';
+import { IntelType } from '../data/IntelTypes';
 import { AllMiscStores } from '../data/misc';
 import { ContributionTemplates, RepoDomain } from './models';
 

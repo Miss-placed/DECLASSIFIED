@@ -120,6 +120,14 @@ export const MapDetails = {
 		title: 'Shattered Veil',
 		mapOverlay: allGameMapSVGs.shatteredVeil,
 	}),
+	reckoning: new MapItem(MapIds.reckoning, {
+		title: 'Reckoning',
+		mapOverlay: allGameMapSVGs.reckoning,
+	}),
+	reckoningBossArena: new MapItem(MapIds.reckoningBossArena, {
+		title: 'Reckoning Boss Area',
+		mapOverlay: allGameMapSVGs.reckoningBossArena,
+	}),
 };
 
 export const allOutbreakMapsArr: string[] = [

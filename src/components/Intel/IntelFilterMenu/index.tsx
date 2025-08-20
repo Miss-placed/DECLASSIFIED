@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import { useState } from 'react';
 import { useFormContext } from 'react-hook-form';
-import { Faction, IntelType, Season } from '../../../data/intel';
+import { Faction, IntelType, Season } from '../../../data/IntelTypes';
 import { CustomIntelFilterCheckbox } from '../../CustomIntelFilterCheckbox';
 import { getStyles, MenuProps, StyledIntelFilterMenu } from './styles';
 

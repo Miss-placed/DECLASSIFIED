@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { Marker, Popup, useMapEvents } from 'react-leaflet';
 import { useUserContext } from '../../../contexts/UserContext/userContextProvider';
 import { db, DeclassifiedIntelCollected } from '../../../data/db';
-import { DefaultPOIData, Faction, IntelItem } from '../../../data/intel';
+import { DefaultPOIData, Faction, IntelItem } from '../../../data/IntelTypes';
 import { intelIconInit } from '../../../helpers/icons';
 import { IntelDetailsItem } from '../IntelDetailsItem';
 

@@ -1,4 +1,4 @@
-import { db, DeclassifiedUserPreferences } from './db';
+import { db, DeclassifiedUserPreferences, requestPersistentStorage } from './db';
 
 const defaultUsername = 'defaultUser';
 const defaultUserPrefs: DeclassifiedUserPreferences = {
@@ -15,6 +15,9 @@ export async function getSetUserPreferences(
 	username: string = defaultUsername
 ) {
 	try {
+		// Request persistent storage when initializing the database
+		await requestPersistentStorage();
+
 		const userExists = (await db.userPrefs.get(username)) !== undefined;
 		if (!userExists) {
 			await db.userPrefs.add(defaultUserPrefs, username);
@@ -58,14 +61,14 @@ export async function updateUserPreferences(
 export async function addCollectedIntel(intelIds: string[]) {
 	try {
 		await Promise.all(
-			intelIds.map((intelId) => {
-				if (intelId) {
-					return db.intelCollected.put({
+			intelIds
+				.filter(intelId => intelId) // Filter out falsy values first
+				.map((intelId) =>
+					db.intelCollected.put({
 						intelId: intelId,
 						dateCollected: new Date(),
-					});
-				}
-			})
+					})
+				)
 		);
 	} catch (error) {
 		console.error('ERROR - addCollectedIntel: ', error);
@@ -75,11 +78,9 @@ export async function addCollectedIntel(intelIds: string[]) {
 export async function deleteCollectedIntel(intelIds: string[]) {
 	try {
 		await Promise.all(
-			intelIds.map((intelId) => {
-				if (intelId) {
-					return db.intelCollected.delete(intelId);
-				}
-			})
+			intelIds
+				.filter(intelId => intelId) // Filter out falsy values first
+				.map((intelId) => db.intelCollected.delete(intelId))
 		);
 	} catch (error) {
 		console.error('ERROR - deleteCollectedIntel: ', error);

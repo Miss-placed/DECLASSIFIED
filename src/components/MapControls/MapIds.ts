@@ -44,6 +44,8 @@ export const MapIds = {
     citadelle: `citadelle`,
     tomb: `tomb`,
     shatteredVeil: `shatteredVeil`,
+    reckoning: `reckoning`,
+    reckoningBossArena: `reckoningBossArena`,
 } as const;
 
 export type MapId = (typeof MapIds)[keyof typeof MapIds];

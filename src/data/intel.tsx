@@ -1,128 +1,317 @@
-import { LatLngExpression } from 'leaflet';
-import { MapId, MapIds } from '../components/MapControls/MapIds';
+import { MapIds } from '../components/MapControls/MapIds';
+import { DefaultPOIData, Faction, IIntelItem, IntelItem, IntelType, Season } from './IntelTypes';
 const placeholderSrc = 'placeholder'; // Any intel using this needs to be updated to use a real image
-
-interface IDefaultPOIData {
-	challenge: string;
-	special: string;
-	chests: string;
-	onslaught: string;
-	nullLoc: LatLngExpression;
-}
-
-export const DefaultPOIData: IDefaultPOIData = {
-	challenge: `Obtained through the Challenge Machine`,
-	special: `Dropped from Special/Elite kills`,
-	chests: `Dropped from Special/Elite kills or golden chests`,
-	onslaught: `Dropped during the onslaught gamemode.`,
-	nullLoc: [0, 0],
-};
-
-export enum Faction {
-	Requiem = `Requiem`,
-	Omega = `Omega`,
-	Maxis = `Maxis`,
-	Dark_Aether = `Dark Aether`,
-	None = `None`,
-}
-
-export enum Season {
-	Preseason = `Preseason`,
-	Onslaught = `Onslaught`,
-	Season1 = `Season 1`,
-	Season2 = `Season 2`,
-	Season3 = `Season 3`,
-	Season4 = `Season 4`,
-	Season5 = `Season 5`,
-	Season6 = `Season 6`,
-}
-
-export enum IntelType {
-	Audio = `Audio Logs`,
-	Docs = `Documents`,
-	Radio = `Radio Transmissions`,
-	Artifact = `Artifacts`,
-}
-
-export enum MiscIconTypes {
-	general = `general`,
-
-	ammoCrate = `ammo_crate`,
-	arsenal = `arsenal`,
-	craftingTable = `crafting_table`,
-	demented = `demented`,
-	fishing = `fishing`,
-	monkey = `monkey`,
-	mysteryBox = `mystery_box`,
-	papMachine = `pap_machine`,
-	radio = `radio`,
-	redRift = `tunnel_red`,
-	rift = `tunnel_pink`,
-	trialComputer = `trial_computer`,
-	wallbuy = `wallbuy`,
-	wunderFizz = `wunder_fizz`,
-	zipline = `zipline`,
-	ziplineUp = `ziplineUp`,
-	ziplineDown = `ziplineDown`,
-	tunnel = `tunnel`,
-	tunnelRed = `tunnel_red`,
-	tunnelPink = `tunnel_pink`,
-	portal = `portal`,
-
-	rampageInducer = `rampage_inducer`,
-
-	staminUp = `stamin_up`,
-	quickRevive = `quick_revive`,
-	juggernog = `juggernog`,
-	speedCola = `speed_cola`,
-	muleKick = `mule_kick`,
-	elementalPop = `elemental_pop`,
-	deathPerception = `death_perception`,
-	tombstoneSoda = `tombstone_soda`,
-	deadshotDaiquiri = `deadshot_daiquiri`,
-	phdSlider = `phd`,
-}
-
-export interface IIntelItem {
-	readonly id: string;
-	readonly faction: Faction;
-	readonly season: Season;
-	readonly typeDesc: IntelType;
-	readonly loc: LatLngExpression;
-	readonly map: string | undefined;
-	readonly title: string;
-	readonly desc: string;
-	readonly img?: string;
-}
-
-export class IntelItem implements IIntelItem {
-	id!: string;
-	faction!: Faction;
-	season!: Season;
-	typeDesc!: IntelType;
-	loc!: LatLngExpression;
-	map!: MapId | undefined;
-	title!: string;
-	desc!: string;
-	img?: string | undefined;
-
-	constructor(id, faction, season, typeDesc, loc, map, title, desc, img = ``) {
-		this.id = id;
-		this.faction = faction;
-		this.season = season;
-		this.typeDesc = typeDesc;
-		this.loc = loc;
-		this.map = map;
-		this.title = title;
-		this.desc = desc;
-		this.img = img;
-	}
-}
 
 const staticIntelStore: IIntelItem[] = [
 	// TODO: Refactor this out into its own BO6 Intel list and clean up the constructor to make faction a non issue
 	/////////////////////Black Ops 6/////////////////////////
 	// ID Standard : {GAME}{SEASON}{MAP INITIALS}{INTEL TYPE}{INTEL NUMBER} //
+	/////////////////////Reckoning/////////////////////////
+	// Audio Logs:
+	// Mom Genes - (AP Bio.) In the bioweapon lab, in a corner.
+	// Play to Win - (Death cap.) In the Quantum Computing Lab, on a chair in a corner.
+	// The Things I've Seen PT 1- (Target practise.) In the mutant research test area, on a box near the shooting targets.
+	// The Things I've Seen PT2- (With a twist.) In the Director's Office, next to a coffee maker.
+	// Reactive PT 1 - (Snowstorm.) In the executive suite next to the Tsarkov 7.62 wall buy.
+	// Reactive PT 2 - (Light as a feather.) Sublevel 10 jump to top of ruined elevator.
+	// Reactive PT 3 - (Some assembly required.) In android assembly, on a shelf near the conveyor belt.
+	// Great Voice From Beyond - (Show 'em who's boss.) On a shelf in the boss arena.
+	// The Forspoken - (Need a lift?) In dark entity containment on a forklift.
+	// Dysphoria - (Portal authority.)- On a console in the T2 teleporter lab.
+	// Miracle Worker - (Welcome to Janus Towers.) On the reception desk in the spawn room
+	// Whistleblower - (Tangled webs we Weave.) While playing as Weaver, reach round 13 WITHOUT being in the mutant research test area. Then head to the clone room and SAM should give you a voice line. Interact with a speaker on the wall near a door, then the log will spawn on the console just next to it.
+	// ??? - Safe and sound.
+
+	// Documents:
+	// I'm A Real Girl- (A complete waste. ) - interact with bins around the map. After getting rewards from 4 of them, a bin in spawn will glow gold. Interact with it for more loot and this intel.
+	// Employee of the Month - (Presentation present. ) interact with the projector in the Directors office.
+	// Department Head - (Look out below!) In a balcony above quantum computing. You need to parachute down to it.
+	// Mangler Matrix - (Research high and low. ) Stack of papers in mutant research.
+	// Safety Measures - (Another day, another Deutsche Mark. ) briefcase held by a klaus in Android Assembly. Shoot it.
+	// ??? - Safe and sound.
+	// Misdirection pt2 - (Pole vault.)- in the boss fight tower in the second section where you have to shoot crystals. Jump from a broken railing to the top of a vat device in the middle of the room and the document is on top.
+
+	// Artifacts:
+	// Knick Knack- (Progress through Main Quest.) Open Sublevel 10.
+	// Klaus Arm- (Progress through Main Quest.) Dropped from Kommando Klaus.
+	// Fungal Head- Progress through Main Quest.
+	// Gorgofex- Progress through Main Quest.
+	// Wish You Were Here - (Turret tidying.)- Use the left turret trap near stamin up in the dark entity containment room. There should be a pile of trash on the floor you need it to hit.
+	{
+		id: `BO6S5RkAu1`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [246.4409029104009, 253.09562832653307],
+		map: MapIds.reckoning,
+		title: `Mom Genes (AP Bio)`,
+		desc: `In the bioweapon lab, in a corner.`,
+		img: 'gXrKZa9',
+	},
+	{
+		id: `BO6S5RkAu2`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [67.24761088359621, 257.76216730699673],
+		map: MapIds.reckoning,
+		title: `Play to Win (Death cap)`,
+		desc: `In the Quantum Computing Lab, on a chair in a corner.`,
+		img: '9hVDYBz',
+	},
+	{
+		id: `BO6S5RkAu3`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [200.88714828214094, 259.3855412122426],
+		map: MapIds.reckoning,
+		title: `The Things I've Seen PT 1 (Target practise)`,
+		desc: `In the mutant research test area, on a box near the shooting targets.`,
+		img: 'lSVUqKA',
+	},
+	{
+		id: `BO6S5RkAu4`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [462.978031174443, 285.41797383919624],
+		map: MapIds.reckoning,
+		title: `The Things I've Seen PT 2 (With a twist)`,
+		desc: `In the Director's Office, next to a coffee maker.`,
+		img: 'XzLqGMy',
+	},
+	{
+		id: `BO6S5RkAu5`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [384.5924165797993, 197.45207563420016],
+		map: MapIds.reckoning,
+		title: `Reactive PT 1 (Snowstorm)`,
+		desc: `In the executive suite next to the Tsarkov 7.62 wall buy.`,
+		img: '6f45fn8',
+	},
+	{
+		id: `BO6S5RkAu6`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [417.95516960611974, 388.77704236276077],
+		map: MapIds.reckoning,
+		title: `Reactive PT 2 (Light as a feather)`,
+		desc: `Sublevel 10 jump to top of ruined elevator.`,
+		img: 'GCVcobN',
+	},
+	{
+		id: `BO6S5RkAu7`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [42.754465340066496, 148.79039784540186],
+		map: MapIds.reckoning,
+		title: `Reactive PT 3 (Some assembly required)`,
+		desc: `In android assembly, on a shelf near the conveyor belt.`,
+		img: 'GLBH8O0',
+	},
+	{
+		id: `BO6S5RkAu8`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [420.79500529099386, 171.83543895404753],
+		map: MapIds.reckoningBossArena,
+		title: `Great Voice From Beyond (Show 'em who's boss)`,
+		desc: `On a crate in the boss arena.`,
+		img: 'WangUcP',
+	},
+	{
+		id: `BO6S5RkAu9`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [341.4604075345265, 73.05884983734961],
+		map: MapIds.reckoning,
+		title: `The Forspoken (Need a lift?)`,
+		desc: `In dark entity containment on a forklift.`,
+		img: 'NuFB1WE',
+	},
+	{
+		id: `BO6S5RkAu10`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [205.4375, 164.6875],
+		map: MapIds.reckoning,
+		title: `Dysphoria (Portal authority)`,
+		desc: `On a console in the T2 teleporter lab.`,
+		img: 'UGNxewK',
+	},
+	{
+		id: `BO6S5RkAu11`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [192.6263055173381, 427.95668946437434],
+		map: MapIds.reckoning,
+		title: `Miracle Worker (Welcome to Janus Towers)`,
+		desc: `On the reception desk in the spawn room.`,
+		img: 'KtXr7Vq',
+	},
+	{
+		id: `BO6S5RkAu12`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [274.7195483766053, 220.54666366927228],
+		map: MapIds.reckoning,
+		title: `Whistleblower (Tangled webs we Weave)`,
+		desc: `While playing as Weaver, reach round 13 WITHOUT being in the mutant research test area. Then head to the clone room and SAM should give you a voice line. Interact with a speaker on the wall near a door, then the log will spawn on the console just next to it.`,
+		img: 'seXNaZ9',
+	},
+	{
+		id: `BO6S5RkAu13`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Audio,
+		loc: [446.16211726379623, 320.67172583036324],
+		map: MapIds.reckoning,
+		title: `??? (Safe and sound)`,
+		desc: `Can be obtained from the painting safe easter egg.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkDo1`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Docs,
+		loc: [169.00813928947136, 488.16441564923593],
+		map: MapIds.reckoning,
+		title: `I'm A Real Girl (A complete waste)`,
+		desc: `Interact with bins around the map. After getting rewards from 4 of them, a bin in spawn will glow gold. Interact with it for more loot and this intel.`,
+		img: 'TLbtjVs',
+	},
+	{
+		id: `BO6S5RkDo2`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Docs,
+		loc: [482.91119390266095, 255.13135499592764],
+		map: MapIds.reckoning,
+		title: `Employee of the Month (Presentation present)`,
+		desc: `Interact with the projector in the Directors office.`,
+		img: 'tFd7jmx',
+	},
+	{
+		id: `BO6S5RkDo3`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Docs,
+		loc: [118.73406284361799, 340.6765638750882],
+		map: MapIds.reckoning,
+		title: `Department Head (Look out below!)`,
+		desc: `In a balcony above quantum computing. You need to parachute down to it.`,
+		img: 'wyUxGSQ',
+	},
+	{
+		id: `BO6S5RkDo4`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Docs,
+		loc: [299.286261164171, 331.43412705498633],
+		map: MapIds.reckoning,
+		title: `Mangler Matrix (Research high and low)`,
+		desc: `Stack of papers in mutant research.`,
+		img: 'Jm84Pfo',
+	},
+	{
+		id: `BO6S5RkDo5`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Docs,
+		loc: [174.07374456774247, 134.27071641262822],
+		map: MapIds.reckoning,
+		title: `Safety Measures (Another day, another Deutsche Mark)`,
+		desc: `Briefcase held by a klaus downstairs in Android Assembly. Shoot it.`,
+		img: 'y5FOaGX',
+	},
+	{
+		id: `BO6S5RkDo6`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Docs,
+		loc: [446.16211726379623, 320.67172583036324],
+		map: MapIds.reckoning,
+		title: `??? (Safe and sound)`,
+		desc: `Can be obtained from the painting safe easter egg.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkDo7`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Docs,
+		loc: [284.31134518029376, 231.5035161019117],
+		map: MapIds.reckoningBossArena,
+		title: `Misdirection pt2 (Pole vault)`,
+		desc: `In the boss fight tower in the second section where you have to shoot crystals. Jump from a broken railing to the top of a vat device in the middle of the room and the document is on top.`,
+		img: '2k4nXN3',
+	},
+	{
+		id: `BO6S5RkAr1`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Artifact,
+		loc: [460.20919703564147, 314.54665301977326],
+		map: MapIds.reckoning,
+		title: `Knick Knack (Progress through Main Quest)`,
+		desc: `Open Sublevel 10.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkAr2`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Artifact,
+		loc: [112.84260850975326, 124.55790381047201],
+		map: MapIds.reckoning,
+		title: `Klaus Arm (Progress through Main Quest)`,
+		desc: `(Location just for reference)\nIt's dropped from Kommando Klaus during max ammo rounds.`,
+		img: '',
+	},
+	{
+		id: `BO6S5RkAr3`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Artifact,
+		loc: [131.97269307862882, 282.58945744277395],
+		map: MapIds.reckoning,
+		title: `Fungal Head (Progress through Main Quest)`,
+		desc: `Progress through Main Quest.`,
+		img: 'YumBytQ',
+	},
+	{
+		id: `BO6S5RkAr4`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Artifact,
+		loc: [337.7800642043187, 122.45651928093827],
+		map: MapIds.reckoning,
+		title: `Gorgofex (Progress through Main Quest)`,
+		desc: `Progress through Main Quest.`,
+		img: 'V6kofb7',
+	},
+	{
+		id: `BO6S5RkAr5`,
+		faction: Faction.None,
+		season: Season.Season5,
+		typeDesc: IntelType.Artifact,
+		loc: [345.05504565183344, 86.30391521966726],
+		map: MapIds.reckoning,
+		title: `Wish You Were Here (Turret tidying)`,
+		desc: `Use the left turret trap near stamin up in the dark entity containment room. There should be a pile of trash on the floor you need it to hit.`,
+		img: 'b9gfNEg',
+	},
 	/////////////////////Shattered Veil/////////////////////////
 	{
 		id: `BO6S3SVAu1`,
@@ -349,7 +538,7 @@ const staticIntelStore: IIntelItem[] = [
 		faction: Faction.None,
 		season: Season.Season3,
 		typeDesc: IntelType.Artifact,
-		loc: [68.4243260905452,425.7513623411701],
+		loc: [68.4243260905452, 425.7513623411701],
 		map: MapIds.shatteredVeil,
 		title: `Z-Rex Tooth`,
 		desc: `Defeat the final boss.`,
@@ -382,10 +571,10 @@ const staticIntelStore: IIntelItem[] = [
 		faction: Faction.None,
 		season: Season.Season3,
 		typeDesc: IntelType.Artifact,
-		loc: [302.34062147894053, 273.6043296909076],
+		loc: [290.89579517656523, 277.2563803663463],
 		map: MapIds.shatteredVeil,
 		title: `Family Portrait (Playtime)`,
-		desc: `Interact with the books in the Nursery.`,
+		desc: `The portrait has 3 interactable spots each game all in the nursery\n- The clock\n- The table in the middle of the room\n- The Toybox`,
 		img: `kjb56KL`,
 	},
 	/////////////////////The Tomb/////////////////////////

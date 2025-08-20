@@ -21,7 +21,8 @@ import {
 } from '../../data/dataAccessLayer';
 import { db, DeclassifiedUserPreferences } from '../../data/db';
 import { StaticEggStore } from '../../data/easterEggs';
-import { DefaultPOIData, IntelItem, IntelStore } from '../../data/intel';
+import { IntelStore } from '../../data/intel';
+import { DefaultPOIData, IntelItem } from '../../data/IntelTypes';
 import { filterIntel, filterMisc } from '../../data/listFiltering';
 import { StaticQuestStore } from '../../data/mainQuest';
 import { GetMapById, GetMapByTitle, MapDetails } from '../../data/maps/mapDetails';
@@ -60,7 +61,7 @@ export const DeclassifiedContextProvider = ({ children }) => {
 	const { isDebugMode, setSharedMapItemId, saveLayerCheckboxState } = useUserContext();
 	const [userPrefs, setUserPreferences] = useState<DeclassifiedUserPreferences | null>(null);
 
-	var initialMap: MapItem | null = MapDetails.shatteredVeil;
+	var initialMap: MapItem | null = MapDetails.reckoning;
 	var initialMapGroupItem: MapGroupItem | null = MapGroupings.tomb_Group;
 	if (mapUrlId && IsValidMapId(mapUrlId)) {
 		initialMap = GetMapById(mapUrlId) ?? null;

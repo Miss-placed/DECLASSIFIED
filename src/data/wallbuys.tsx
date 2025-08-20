@@ -251,5 +251,27 @@ export const WallbuyStore: MarkerStore = {
 		new MiscMarker(`DaeuH`, MiscTypes.wallbuy, [289.16813814128614, 104.03616798310502], { uniqueTitle: `ASG-89` }),
 		new MiscMarker(`8lzPN`, MiscTypes.wallbuy, [376.41776247758315, 42.24828732702944], { uniqueTitle: `PU-21` }),
 		new MiscMarker(`v7G7Z`, MiscTypes.wallArmor2, [361.97844891390184, 126.26945893242274]),
+	],
+	[MapIds.reckoning]: [
+		// Reception
+		new MiscMarker(`fnG1D`, MiscTypes.wallbuy, [186.84667734295894, 422.06425851341476], { uniqueTitle: `GS45` }),
+		new MiscMarker(`Bm15f`, MiscTypes.wallArmor1, [168.39417928311838, 469.0980708601155]),
+		// Mutant
+		new MiscMarker(`frJ_6`, MiscTypes.wallbuy, [286.37695171228864, 248.26203367863872], { uniqueTitle: `mutant lab` }),
+		new MiscMarker(`8_bdM`, MiscTypes.wallbuy, [314.6587827839404, 307.1669070033704], { uniqueTitle: `mutant hall` }),
+		// Quantum
+		new MiscMarker(`GuDM6`, MiscTypes.wallbuy, [79.89872348785053, 297.1591492470773], { uniqueTitle: `quantum computer` }),
+		new MiscMarker(`B97d5`, MiscTypes.wallbuy, [100.36436355760165, 248.5117607611531], { uniqueTitle: `quantum lab` }),
+		// Android
+		new MiscMarker(`gaSdZ`, MiscTypes.wallbuy, [62.264910914340426, 52.9525635341898], { uniqueTitle: `AK-47` }),
+		new MiscMarker(`HxXrR`, MiscTypes.wallArmor1, [169.26560826273774, 106.27031716171885]),
+		// Containment
+		new MiscMarker(`W9Yv8`, MiscTypes.wallbuy, [292.33466971806166, 148.6323679890707], { uniqueTitle: `XM4` }),
+		// Executive
+		new MiscMarker(`WKlET`, MiscTypes.wallbuy, [386.54013572291655, 185.95972907708173], { uniqueTitle: `Tsarkov 7.62` }),
+		new MiscMarker(`OcTq5`, MiscTypes.wallbuy, [460.6588791259711, 274.06067203674456], { uniqueTitle: `SVG` }),
+		// Sub Level 10
+		new MiscMarker(`ubFFG`, MiscTypes.wallbuy, [350.52545661237616, 389.2209570439761], { uniqueTitle: `XMG` }),
+		new MiscMarker(`mFQR9`, MiscTypes.wallArmor2, [406.65136264379595, 474.28133637109676]),
 	]
 };

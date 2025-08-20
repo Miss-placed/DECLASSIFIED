@@ -4,7 +4,7 @@ import { EggFormInputs } from '../../components/EasterEggs/ListMenu';
 import { IntelFormInputs } from '../../components/Intel/IntelListMenu';
 import { MapGroupItem } from '../../components/MapControls/types';
 import { DeclassifiedIntelCollected } from '../../data/db';
-import { IntelItem } from '../../data/intel';
+import { IntelItem } from '../../data/IntelTypes';
 
 export interface ToggleDrawerOptions {
 	isOpen: boolean;

@@ -1,6 +1,6 @@
 import { Item, MiscMarker } from "../classes";
 import { IconFileNames } from "./icons";
-import { IntelType } from "./intel";
+import { IntelType } from './IntelTypes';
 
 /////////////////////Misc/////////////////////////
 export const MiscTypes = {
@@ -36,7 +36,6 @@ export const MiscTypes = {
     ziplineUp: new Item({ title: 'Zipline', icon: IconFileNames.ziplineUp }),
     ziplineDown: new Item({ title: 'Zipline', icon: IconFileNames.ziplineDown }),
     rampageInducer: new Item({ title: 'Rampage Inducer', icon: IconFileNames.rampageInducer, }),
-
     klausRadio: new Item({ title: 'Klaus recall radio', icon: IconFileNames.trap, }),
     aetherTunnel: new Item({ title: 'Aether Tunnel', icon: IconFileNames.tunnel, }),
     aetherCrystal: new Item({ title: 'Aether Crystal' }),
@@ -56,6 +55,8 @@ export const MiscTypes = {
     portalRed: new Item({ title: 'Red Gateway', icon: IconFileNames.portalRed }),
     portalGreen: new Item({ title: 'Green Gateway', icon: IconFileNames.portalGreen }),
     portalBlue: new Item({ title: 'Blue Gateway', icon: IconFileNames.portalBlue }),
+    parachute: new Item({ title: 'Parachute', icon: IconFileNames.parachute }),
+    launcher: new Item({ title: 'Launcher', icon: IconFileNames.launcher }),
 };
 
 /////////////////////Markers/////////////////////////

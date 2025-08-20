@@ -1,5 +1,5 @@
 import ReactDOMServer from 'react-dom/server';
-import { Faction } from '../data/intel';
+import { Faction } from '../data/IntelTypes';
 
 export const intelIconInit = (faction: Faction, type: string) => {
 	return ReactDOMServer.renderToString(
