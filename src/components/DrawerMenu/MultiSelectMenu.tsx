@@ -11,13 +11,13 @@ export const MultiSelectMenu = ({ multiSelectState: selectedIntel, setMultiSelec
     const { filteredIntelStore } = useContext(DeclassifiedContext);
 
     // Memoize for performance
-    const { visibleSelectedIntel, visibleSelectedCount, filteredIntelIds } = useMemo(() => {
+    const { selectedVisibleIntel, selectedVisibleCount, filteredIntelIds } = useMemo(() => {
         const filteredIdSet = new Set(filteredIntelStore.map(intel => intel.id));
-        const visibleSelected = selectedIntel.filter(id => filteredIdSet.has(id));
+        const selectedVisible = selectedIntel.filter(id => filteredIdSet.has(id));
         
         return {
-            visibleSelectedIntel: visibleSelected,
-            visibleSelectedCount: visibleSelected.length,
+            selectedVisibleIntel: selectedVisible,
+            selectedVisibleCount: selectedVisible.length,
             filteredIntelIds: Array.from(filteredIdSet)
         };
     }, [selectedIntel, filteredIntelStore]);
@@ -30,7 +30,7 @@ export const MultiSelectMenu = ({ multiSelectState: selectedIntel, setMultiSelec
 
     // Determine the state of the checkbox based on selection
     const renderCheckBoxIcon = () => {
-        if (visibleSelectedCount === 0) {
+        if (selectedVisibleCount === 0) {
             return (
                 <Button
                     title="Select all"
@@ -39,7 +39,7 @@ export const MultiSelectMenu = ({ multiSelectState: selectedIntel, setMultiSelec
                     <CheckBoxOutlineBlankIcon htmlColor="var(--clr-blue)" />
                 </Button>
             );
-        } else if (visibleSelectedCount !== filteredIntelStore.length) {
+        } else if (selectedVisibleCount !== filteredIntelStore.length) {
             return (
                 <Button
                     title="Deselect all"
@@ -62,16 +62,16 @@ export const MultiSelectMenu = ({ multiSelectState: selectedIntel, setMultiSelec
 
     const handleButtonAction = (actionType) => {
         if (actionType === "collect") {
-            addCollectedIntel([...visibleSelectedIntel])
+            addCollectedIntel([...selectedVisibleIntel])
         } else if (actionType === "un-collect") {
-            deleteCollectedIntel([...visibleSelectedIntel])
+            deleteCollectedIntel([...selectedVisibleIntel])
         }
     };
 
     return (
         <MultiSelectMenuContent>
             {renderCheckBoxIcon()}
-            <ButtonGroup disabled={visibleSelectedCount === 0} fullWidth variant="contained">
+            <ButtonGroup disabled={selectedVisibleCount === 0} fullWidth variant="contained">
                 <Button
                     title="DECLASSIFY"
                     onClick={() => handleButtonAction("collect")}
