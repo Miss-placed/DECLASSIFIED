@@ -5,7 +5,8 @@ import { useTheme } from '@mui/material/styles';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
+import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { EggList } from '../EasterEggs/List';
 import { EggListMenu } from '../EasterEggs/ListMenu';
 import { IntelList } from '../Intel/IntelList';
@@ -44,6 +45,7 @@ function a11yProps(index: number) {
 
 export const IntelAndEasterEggDrawerContent = () => {
 	const theme = useTheme();
+	const { filteredIntelStore } = useContext(DeclassifiedContext);
 	const [tabSelectedState, setSelectedTab] = React.useState(0);
 	const [intelMultiSelectState, setIntelMultiSelectState] = useState<string[]>(
 		[]
@@ -54,16 +56,32 @@ export const IntelAndEasterEggDrawerContent = () => {
 	};
 
 	const addRemoveItemMultiSelect = (value: string) => {
-		intelMultiSelectState.includes(value)
-			? setIntelMultiSelectState(
-				intelMultiSelectState.filter(item => item !== value)
-			)
-			: setIntelMultiSelectState([...intelMultiSelectState, value]);
+		setIntelMultiSelectState(prevState => {
+			const currentSet = new Set(prevState);
+			if (currentSet.has(value)) {
+				currentSet.delete(value);
+			} else {
+				currentSet.add(value);
+			}
+			return Array.from(currentSet);
+		});
 	};
 
 	const handleSetIntelMultiSelectState = (intelToSelect: string[]) => {
 		setIntelMultiSelectState(intelToSelect);
 	};
+
+	useEffect(() => {
+		const filteredIntelIds = new Set(filteredIntelStore.map(intel => intel.id));
+		const filteredSelection = intelMultiSelectState.filter(id => 
+			filteredIntelIds.has(id)
+		);
+		
+		if (filteredSelection.length !== intelMultiSelectState.length) {
+			setIntelMultiSelectState(filteredSelection);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [filteredIntelStore]);
 
 	return (
 		<>
