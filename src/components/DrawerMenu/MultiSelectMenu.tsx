@@ -3,22 +3,34 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
 import { Button, ButtonGroup } from '@mui/material';
-import { useContext } from 'react';
+import { useContext, useMemo } from 'react';
 import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { addCollectedIntel, deleteCollectedIntel } from '../../data/dataAccessLayer';
 
 export const MultiSelectMenu = ({ multiSelectState: selectedIntel, setMultiSelectState }) => {
     const { filteredIntelStore } = useContext(DeclassifiedContext);
 
+    // Memoize for performance
+    const { visibleSelectedIntel, visibleSelectedCount, filteredIntelIds } = useMemo(() => {
+        const filteredIdSet = new Set(filteredIntelStore.map(intel => intel.id));
+        const visibleSelected = selectedIntel.filter(id => filteredIdSet.has(id));
+        
+        return {
+            visibleSelectedIntel: visibleSelected,
+            visibleSelectedCount: visibleSelected.length,
+            filteredIntelIds: Array.from(filteredIdSet)
+        };
+    }, [selectedIntel, filteredIntelStore]);
+
     // Function to handle select/deselect all
     function handleSelectAll(event, selectAll: boolean): void {
-        const intelToSelect = selectAll ? filteredIntelStore.map(intel => intel.id) : [];
+        const intelToSelect = selectAll ? filteredIntelIds : [];
         setMultiSelectState(intelToSelect);
     }
 
     // Determine the state of the checkbox based on selection
     const renderCheckBoxIcon = () => {
-        if (selectedIntel.length === 0) {
+        if (visibleSelectedCount === 0) {
             return (
                 <Button
                     title="Select all"
@@ -27,7 +39,7 @@ export const MultiSelectMenu = ({ multiSelectState: selectedIntel, setMultiSelec
                     <CheckBoxOutlineBlankIcon htmlColor="var(--clr-blue)" />
                 </Button>
             );
-        } else if (selectedIntel.length !== filteredIntelStore.length) {
+        } else if (visibleSelectedCount !== filteredIntelStore.length) {
             return (
                 <Button
                     title="Deselect all"
@@ -50,16 +62,16 @@ export const MultiSelectMenu = ({ multiSelectState: selectedIntel, setMultiSelec
 
     const handleButtonAction = (actionType) => {
         if (actionType === "collect") {
-            addCollectedIntel([...selectedIntel])
+            addCollectedIntel([...visibleSelectedIntel])
         } else if (actionType === "un-collect") {
-            deleteCollectedIntel([...selectedIntel])
+            deleteCollectedIntel([...visibleSelectedIntel])
         }
     };
 
     return (
         <MultiSelectMenuContent>
             {renderCheckBoxIcon()}
-            <ButtonGroup disabled={selectedIntel.length === 0} fullWidth variant="contained">
+            <ButtonGroup disabled={visibleSelectedCount === 0} fullWidth variant="contained">
                 <Button
                     title="DECLASSIFY"
                     onClick={() => handleButtonAction("collect")}

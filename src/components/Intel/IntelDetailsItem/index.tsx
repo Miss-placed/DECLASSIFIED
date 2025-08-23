@@ -56,8 +56,12 @@ export const IntelDetailsItem = ({
 	}
 
 	useEffect(() => {
-		setIsSelected(multiSelectState?.includes(id) ?? false);
-	}, [id, multiSelectState]);
+		const isCurrentlySelected = multiSelectState?.includes(id) ?? false;
+		// Only update if the selection state actually changed
+		if (isSelected !== isCurrentlySelected) {
+			setIsSelected(isCurrentlySelected);
+		}
+	}, [id, multiSelectState, isSelected]);
 
 	return (
 		<StyledAccordion
