@@ -81,8 +81,8 @@
 }
 .intel-icon .icon {
 	z-index: 2;
-	top: 4px;
-	left: calc(50% - 11.5px);
+	top: 3px;
+	height: 27px;
 }
 .intel-icon .background {
 	z-index: 1;

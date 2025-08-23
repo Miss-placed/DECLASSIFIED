@@ -21,7 +21,7 @@ export const MiscMapMarker = ({
 }: MiscMarker) => {
 	const { sharedMapItemId } = useUserContext();
 	const mapInstance = useMapEvents({});
-	const renderedIcon = miscIconInit(icon);
+	const renderedIcon = renderLeafletIcon(icon);
 	const [markerInstance, setPopupInstance] = useState<L.Marker | null>(null); // State to hold the Popup instance
 
 	useEffect(() => {
@@ -51,7 +51,7 @@ export const MiscMapMarker = ({
 	);
 };
 
-export const miscIconInit = (iconFileName?: string) => {
+export const renderLeafletIcon = (iconFileName?: string) => {
 	const { iconSize, iconAnchor, popupAnchor } =
 		(iconFileName && customMiscIconBounds[iconFileName]) ?? {};
 	return L.icon({

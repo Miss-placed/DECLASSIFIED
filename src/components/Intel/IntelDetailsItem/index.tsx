@@ -15,6 +15,7 @@ import { addCollectedIntel, deleteCollectedIntel } from "../../../data/dataAcces
 import { db } from "../../../data/db";
 import { DefaultPOIData, Faction, IIntelItem } from '../../../data/IntelTypes';
 import { GetMapById } from "../../../data/maps/mapDetails";
+import { toSnakeCase } from "../../../helpers/icons";
 import { BugReportButton } from "../../ActionButtons/BugReportButton";
 import { ShareButton } from "../../ActionButtons/ShareButton";
 import { CustomImage } from "../../CustomImage";
@@ -78,7 +79,7 @@ export const IntelDetailsItem = ({
 			>
 				<img
 					className="icon"
-					src={`/assets/img/markers/${typeDesc.toLowerCase()}.png`}
+					src={`/assets/img/markers/${toSnakeCase(typeDesc)}.svg`}
 					alt="Icon"
 				/>
 				{!isMarker ? (isSelected ? (

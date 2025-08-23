@@ -6,7 +6,7 @@ export const intelIconInit = (faction: Faction, type: string) => {
 		<div>
 			<img
 				className="icon"
-				src={`/assets/img/markers/${type.toLowerCase()}.png`}
+				src={`/assets/img/markers/${toSnakeCase(type)}.svg`}
 				alt="Icon"
 			/>
 			<img
@@ -17,3 +17,7 @@ export const intelIconInit = (faction: Faction, type: string) => {
 		</div>
 	);
 };
+
+export function toSnakeCase(str: string): string {
+	return str.toLowerCase().replace(/\s+/g, '_');
+}

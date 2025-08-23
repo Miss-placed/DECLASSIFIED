@@ -40,7 +40,7 @@ export const IntelMapMarker = ({
 	const mapInstance = useMapEvents({});
 	const [markerInstance, setPopupInstance] = useState<L.Marker | null>(null); // State to hold the Popup instance
 	const isCollected = useLiveQuery(() => db.intelCollected.get(id ?? ''));
-	const markerIcon = renderLeafletIcon(isCollected, faction, typeDesc);
+	const renderedIcon = renderLeafletIcon(isCollected, faction, typeDesc);
 
 	useEffect(() => {
 		if (sharedMapItemId === id && markerInstance) {
@@ -52,7 +52,7 @@ export const IntelMapMarker = ({
 		<></>
 	) : (
 		<>
-			<Marker position={loc} icon={markerIcon} ref={setPopupInstance}>
+			<Marker position={loc} icon={renderedIcon} ref={setPopupInstance}>
 				<StyledPopup>
 					<IntelDetailsItem
 						key={id}
