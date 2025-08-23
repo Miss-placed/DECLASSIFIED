@@ -10,7 +10,6 @@ import { addCollectedIntel, deleteCollectedIntel } from '../../data/dataAccessLa
 export const MultiSelectMenu = ({ multiSelectState: selectedIntel, setMultiSelectState }) => {
     const { filteredIntelStore } = useContext(DeclassifiedContext);
 
-    // Memoize for performance
     const { selectedVisibleIntel, selectedVisibleCount, filteredIntelIds } = useMemo(() => {
         const filteredIdSet = new Set(filteredIntelStore.map(intel => intel.id));
         const selectedVisible = selectedIntel.filter(id => filteredIdSet.has(id));

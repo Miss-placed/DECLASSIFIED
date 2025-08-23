@@ -71,14 +71,12 @@ export const IntelAndEasterEggDrawerContent = () => {
 		setIntelMultiSelectState(intelToSelect);
 	};
 
-	// Filter out selected intel that are not in the current filtered store when filter changes
 	useEffect(() => {
 		const filteredIntelIds = new Set(filteredIntelStore.map(intel => intel.id));
 		const filteredSelection = intelMultiSelectState.filter(id => 
 			filteredIntelIds.has(id)
 		);
 		
-		// Only update if the selection actually changed to prevent infinite loops
 		if (filteredSelection.length !== intelMultiSelectState.length) {
 			setIntelMultiSelectState(filteredSelection);
 		}
