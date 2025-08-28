@@ -793,6 +793,7 @@ export const MiscStore: MarkerStore = {
 		new MiscMarker(`IqDrR`, MiscTypes.gobblegum, [393.7528624999293, 377.89119340409326]),
 		new MiscMarker(`E1WTc`, MiscTypes.portal, [382.99934115074194, 357.55087994471256], { uniqueTitle: `To Executive Suites` }),
 		new MiscMarker(`X_Q5T`, MiscTypes.portal, [382.71138986986205, 506.071092146578], { uniqueTitle: `To Reception` }),
+		new MiscMarker(`8FJaZ`, MiscTypes.power, [390.9698509506195, 455.24761217824584], { uniqueDesc: `Repair the accellerator to unlock PaP.` }),
 		new MiscMarker(`mqfFg`, MiscTypes.papMachine, [382.76460775105124, 420.71445102258986], { uniqueDesc: `Floating in in various spots under the accellerator after turning on power.` }),
 		// Teleporter Room
 		new MiscMarker(`dobxs`, MiscTypes.ammoCrate, [194.23415974153738, 139.33966662916418]),
