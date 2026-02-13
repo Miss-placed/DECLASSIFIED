@@ -1,27 +1,70 @@
+import { Container, Typography } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import { Link, useParams } from 'react-router-dom';
 import DossierHeader from './components/DossierHeader';
 import '../../styles/intel-dossier.css';
 import { getIntelRouteModel } from '../../data/intelSeo';
+import { IsValidMapId } from '../../components/MapControls/MapIds';
+import DossierCard from './components/DossierCard';
+import { IntelType } from '../../data/IntelTypes';
+import { toSnakeCase } from '../../helpers/icons';
 
 export default function IntelMapPage() {
 	const { gameSlug, mapSlug } = useParams();
 	const intel = getIntelRouteModel().filter(
 		item => item.gameSlug === gameSlug && item.mapSlug === mapSlug
 	);
+	const mapTitle = intel[0]?.mapTitle ?? mapSlug ?? 'Unknown Map';
+	const mapId = intel[0]?.mapId;
+	const mapRouteId = mapId && IsValidMapId(mapId) ? mapId : undefined;
+	const intelTypeOrder = Object.values(IntelType) as IntelType[];
+	const intelGroups = intelTypeOrder
+		.map(type => ({
+			type,
+			items: intel.filter(item => item.type === type),
+		}))
+		.filter(group => group.items.length > 0);
 
 	return (
-		<section className="intel-dossier-page">
-			<DossierHeader title="Intel List" subtitle={`${gameSlug} / ${mapSlug}`} />
-			<ul>
-				{intel.map(item => (
-					<li key={item.id}>
-						<Link to={`/intel/${gameSlug}/${mapSlug}/${item.intelSlug}`}>
-							{item.title}
-						</Link>{' '}
-						({item.type})
-					</li>
-				))}
-			</ul>
-		</section>
+		<Container className="intel-dossier-page link-reset">
+			<DossierHeader title="Intel List" subtitle={`${gameSlug} / ${mapTitle}`} />
+			<div className="intel-dossier-actions">
+				{mapRouteId ? (
+					<Link to={`/${mapRouteId}`} target="_blank" rel="noreferrer">
+						Open map
+					</Link>
+				) : null}
+				{gameSlug ? <Link to={`/intel/${gameSlug}`}>Back to game hub</Link> : null}
+			</div>
+			{intelGroups.map(group => (
+				<div key={group.type} className="intel-group">
+					<div className="intel-type-header rounded-box filled">
+						<img
+							className="intel-type-icon"
+							src={`/assets/img/markers/${toSnakeCase(group.type)}.svg`}
+							alt={`${group.type} icon`}
+							loading="lazy"
+						/>
+						<Typography className="title text-md" variant="h5">
+							{group.type}
+						</Typography>
+					</div>
+					<Grid container spacing={2} sx={{ mt: 1 }}>
+						{group.items.map(item => (
+							<Grid key={item.id} size={{ xs: 12, sm: 6, md: 4 }}>
+								<DossierCard
+									title={item.title}
+									subtitle={item.type}
+									href={`/intel/${gameSlug}/${mapSlug}/${item.intelSlug}`}
+									actionHref={`/${item.id}`}
+									actionLabel="Open on map"
+									openInNewTab
+								/>
+							</Grid>
+						))}
+					</Grid>
+				</div>
+			))}
+		</Container>
 	);
 }

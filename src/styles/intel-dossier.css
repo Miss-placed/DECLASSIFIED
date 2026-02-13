@@ -1,10 +1,85 @@
 .intel-dossier-page {
-	max-width: 900px;
 	margin: 0 auto;
-	padding: 1rem;
+	padding: 20px;
+	color: var(--clr-color);
+}
+
+.intel-dossier-page .MuiTypography-root {
+	color: var(--clr-white-d);
+}
+
+.dossier-card {
+	background: transparent;
+	box-shadow: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	height: 100%;
+	width: 100%;
+}
+
+.dossier-card-link {
+	display: block;
+	flex: 1;
+	text-decoration: none;
+	color: inherit;
+}
+
+.dossier-card .homepage-box {
+	height: auto;
+	min-height: 110px;
+	width: 100%;
+}
+
+.dossier-card .intel-dossier-actions {
+	margin: 0;
+	justify-content: center;
+}
+
+.intel-type-header {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 0.75rem 1rem;
+	margin-top: 1.5rem;
+}
+
+.map-group-header {
+	margin-top: 1.5rem;
+}
+
+.map-group-grid {
+	margin-top: 0.75rem;
+}
+
+.intel-type-icon {
+	width: 34px;
+	height: 34px;
+	object-fit: contain;
 }
 
 .intel-dossier-page h2 {
 	border-bottom: 1px solid #303a4a;
 	padding-bottom: 0.25rem;
+}
+
+.intel-dossier-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 0.75rem 0 1.25rem;
+}
+
+.intel-dossier-actions a {
+	border: 1px solid var(--clr-grey-d);
+	border-radius: 6px;
+	padding: 0.35rem 0.7rem;
+	color: inherit;
+	background: var(--clr-bg);
+	text-decoration: none;
+	font-size: 0.9rem;
+}
+
+.intel-dossier-actions a:hover {
+	background: var(--clr-bg-lighter);
 }

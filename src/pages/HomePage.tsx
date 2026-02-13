@@ -9,62 +9,9 @@ import { Link } from 'react-router-dom';
 import { MapIds } from '../components/MapControls/MapIds';
 
 const HomePageContainer = styled(Container)`
-    .text-sm {
-        font-size: var(--fs-sm) !important;
-    }
-    .text-base {
-        font-size: var(--fs-base) !important;
-    }
-    .text-md {
-        font-size: var(--fs-md) !important;
-    }
-    .text-lg {
-        font-size: var(--fs-lg) !important;
-    }
-    .text-xl {
-        font-size: var(--fs-xl) !important;
-    }
-    .text-xxl {
-        font-size: var(--fs-xxl) !important;
-    }
     /* background: var(--clr-bg-lighter); */
     padding: 20px;
     border-radius: 8px;
-    
-    a {
-        text-decoration: none;
-    }
-    .homepage-box {
-        border-radius: 8px;
-        border: 1px solid;
-        border-color: var(--clr-grey-d);
-        padding: 10px;
-        height: 100%;
-        text-align: center;
-        vertical-align: middle;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        &:hover {
-            background: var(--clr-bg);
-            color: var(--clr-white-d);
-        }
-    }
-
-    .filled {
-        background: var(--clr-bg);
-        color: var(--clr-white-d);
-    }
-
-    .filled-btn {
-        background: var(--clr-bg);
-        color: var(--clr-white-d);
-        &:hover {
-            background: none;
-            color: var(--clr-white-d);
-        }
-    }
 
     .MuiTypography-h6 {
         font-size: var(--fs-base);
@@ -78,23 +25,8 @@ const HomePageContainer = styled(Container)`
         color: var(--clr-white-d);
     }
 
-    .rounded-box {
-        border-radius: 8px;
-        border: 1px solid;
-        border-color: var(--clr-grey-d);
-        padding: 10px;
-        height: 100%;
-        width: 100%;
-    }
-
     .header-container {
         margin-bottom: 24px;
-    }
-
-    .title,.main-title {
-        font-weight: 700;
-        align-content: center;
-        text-wrap: pretty;
     }
 
     .socials {
@@ -119,7 +51,7 @@ const HomePageContainer = styled(Container)`
 
 const HomePage: React.FC = () => {
     return (
-        <HomePageContainer>
+        <HomePageContainer className="link-reset">
             <Grid className='header-container' container spacing={2}>
                 <Grid size={{ xs: 12, sm: 8 }}>
                     <Grid sx={{ display: 'flex', alignItems: 'center' }}>
@@ -179,6 +111,14 @@ const HomePage: React.FC = () => {
                 Call of Duty: Black Ops 6
             </Typography>
             <Grid container spacing={2}>
+                <Grid size={{ xs: 12 }} sx={{ height: '100px' }}>
+                    <Paper component={Link} to="/intel/black-ops-6">
+                        <Box className='homepage-box filled' p={2}>
+                            <Typography variant="h6">Intel Dossier Hub</Typography>
+                            <Typography>Browse every Black Ops 6 intel dossier.</Typography>
+                        </Box>
+                    </Paper>
+                </Grid>
                 <Grid size={{ xs: 12, sm: 6, md: 6 }} sx={{ height: '100px' }}>
                     <Paper component={Link} to={`/${MapIds.reckoning}`}>
                         <Box className='homepage-box' p={2}>
@@ -244,6 +184,14 @@ const HomePage: React.FC = () => {
                 Call of Duty: Black Ops Cold War
             </Typography>
             <Grid container spacing={2}>
+                <Grid size={{ xs: 12 }} sx={{ height: '100px' }}>
+                    <Paper component={Link} to="/intel/black-ops-cold-war">
+                        <Box className='homepage-box filled' p={2}>
+                            <Typography variant="h6">Intel Dossier Hub</Typography>
+                            <Typography>Browse every Black Ops Cold War intel dossier.</Typography>
+                        </Box>
+                    </Paper>
+                </Grid>
                 <Grid size={{ xs: 12, sm: 6, md: 3 }} sx={{ height: '100px' }}>
                     <Paper component={Link} to={`/${MapIds.dieMaschine}`}>
                         <Box className='homepage-box' p={2}>

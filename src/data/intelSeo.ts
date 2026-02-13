@@ -34,6 +34,7 @@ export const getIntelRouteModel = () =>
 			desc: intel.desc,
 			gameSlug: game.slug,
 			gameTitle: game.title,
+			mapId: intel.map,
 			mapSlug,
 			mapTitle,
 			intelSlug: intelSlug(intel.title, intel.id),

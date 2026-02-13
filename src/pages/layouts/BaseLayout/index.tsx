@@ -5,6 +5,7 @@ import '../../../styles/challenge/cards-alt.css';
 import '../../../styles/challenge/cards.css';
 import '../../../styles/challenge/mobilefirst.css';
 import '../../../styles/global.css';
+import '../../../styles/homepage-shared.css';
 import '../../../styles/leaflet-override.css';
 import '../../../styles/normalize.css';
 import '../../../styles/style.css';

@@ -1,23 +1,80 @@
-import { Link, useParams } from 'react-router-dom';
+import { Container, Typography } from '@mui/material';
+import Grid from '@mui/material/Grid2';
+import { useParams } from 'react-router-dom';
+import { Game, MapGroupings } from '../../components/MapControls/types';
 import DossierHeader from './components/DossierHeader';
 import '../../styles/intel-dossier.css';
 import { getIntelRouteModel } from '../../data/intelSeo';
+import { IsValidMapId } from '../../components/MapControls/MapIds';
+import DossierCard from './components/DossierCard';
 
 export default function IntelGamePage() {
 	const { gameSlug } = useParams();
 	const intel = getIntelRouteModel().filter(item => item.gameSlug === gameSlug);
-	const maps = Array.from(new Map(intel.map(item => [item.mapSlug, item.mapTitle])).entries());
+	const gameTitle = intel[0]?.gameTitle ?? gameSlug ?? 'Unknown Game';
+	const gameKey =
+		gameSlug === 'black-ops-6'
+			? Game.bo6
+			: gameSlug === 'black-ops-cold-war'
+				? Game.coldWar
+				: undefined;
+	const mapMetaById = new Map<
+		string,
+		{ title: string; mapId: string; mapSlug: string }
+	>();
+	intel.forEach(item => {
+		if (item.mapId) {
+			mapMetaById.set(item.mapId, {
+				title: item.mapTitle,
+				mapId: item.mapId,
+				mapSlug: item.mapSlug,
+			});
+		}
+	});
+	const groupedMaps = gameKey
+		? Object.values(MapGroupings)
+			.filter(group => group.game === gameKey)
+			.map(group => {
+				const maps = group.mapLayers
+					.map(layer => (layer.id ? mapMetaById.get(layer.id) : undefined))
+					.filter((entry): entry is { title: string; mapId: string; mapSlug: string } => !!entry);
+				return { groupName: group.mapName, maps };
+			})
+			.filter(group => group.maps.length > 0)
+		: [];
 
 	return (
-		<section className="intel-dossier-page">
-			<DossierHeader title="Intel Maps" subtitle={`Game: ${gameSlug}`} />
-			<ul>
-				{maps.map(([mapSlug, mapTitle]) => (
-					<li key={mapSlug}>
-						<Link to={`/intel/${gameSlug}/${mapSlug}`}>{mapTitle}</Link>
-					</li>
-				))}
-			</ul>
-		</section>
+		<Container className="intel-dossier-page link-reset">
+			<DossierHeader title="Intel Maps" subtitle={gameTitle} />
+			<Typography className="rounded-box filled text-sm">
+				Select a map hub to view intel dossiers. Open the map to jump into the interactive tracker.
+			</Typography>
+			{groupedMaps.map(group => (
+				<div key={group.groupName} className="intel-group">
+					<div className="intel-type-header rounded-box filled map-group-header">
+						<Typography className="title text-md" variant="h5">
+							{group.groupName}
+						</Typography>
+					</div>
+					<Grid className="map-group-grid" container spacing={2}>
+						{group.maps.map(mapInfo => {
+							const mapRouteId =
+								mapInfo.mapId && IsValidMapId(mapInfo.mapId) ? mapInfo.mapId : undefined;
+							return (
+								<Grid key={mapInfo.mapSlug} size={{ xs: 12, sm: 6, md: 4 }}>
+									<DossierCard
+										title={mapInfo.title}
+										href={`/intel/${gameSlug}/${mapInfo.mapSlug}`}
+										actionHref={mapRouteId ? `/${mapRouteId}` : undefined}
+										actionLabel="Open map"
+										openInNewTab
+									/>
+								</Grid>
+							);
+						})}
+					</Grid>
+				</div>
+			))}
+		</Container>
 	);
 }

@@ -7,7 +7,7 @@ interface DossierHeaderProps {
 
 export default function DossierHeader({ title, subtitle }: DossierHeaderProps) {
 	return (
-		<header className="dossier-header">
+		<header className="dossier-header rounded-box filled">
 			<p className="dossier-kicker">DECLASSIFIED INTEL DOSSIER</p>
 			<h1>{title}</h1>
 			{subtitle ? <p>{subtitle}</p> : null}
