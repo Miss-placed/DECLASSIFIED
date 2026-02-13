@@ -34,12 +34,14 @@
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build && npx workbox injectManifest workbox-config.js",
+		"start": "node scripts/generate-intel-static.mjs && react-scripts start",
+		"build": "node scripts/generate-intel-static.mjs && react-scripts build && node scripts/generate-sitemap.mjs && npx workbox injectManifest workbox-config.js",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"format": "prettier --write .",
-		"format:check": "prettier --check ."
+		"format:check": "prettier --check .",
+		"intel:static": "node scripts/generate-intel-static.mjs",
+		"sitemap:generate": "node scripts/generate-sitemap.mjs"
 	},
 	"eslintConfig": {
 		"extends": [
