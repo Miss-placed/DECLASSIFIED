@@ -1,11 +1,11 @@
 import { Container, Typography } from '@mui/material';
 import { Link, useParams } from 'react-router-dom';
-import { Game, MapGroupings } from '../../components/MapControls/types';
-import DossierHeader from './components/DossierHeader';
-import '../../styles/intel-dossier.css';
-import { getIntelRouteModel } from '../../data/intelSeo';
 import { IsValidMapId } from '../../components/MapControls/MapIds';
+import { Game, MapGroupings } from '../../components/MapControls/types';
+import { getIntelRouteModel } from '../../data/intelSeo';
+import '../../styles/intel-dossier.css';
 import DossierCard from './components/DossierCard';
+import DossierHeader from './components/DossierHeader';
 
 export default function IntelGamePage() {
 	const { gameSlug } = useParams();

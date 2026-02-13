@@ -34,6 +34,7 @@
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {
+		"prestart": "node scripts/clean-intel-static.mjs",
 		"start": "react-scripts start",
 		"build": "react-scripts build && node scripts/generate-intel-static.mjs && node scripts/generate-sitemap.mjs && npx workbox injectManifest workbox-config.js",
 		"preview": "npm run build && npx serve -s build",
@@ -42,6 +43,7 @@
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"intel:static": "node scripts/generate-intel-static.mjs",
+		"intel:clean": "node scripts/clean-intel-static.mjs",
 		"sitemap:generate": "node scripts/generate-sitemap.mjs"
 	},
 	"eslintConfig": {

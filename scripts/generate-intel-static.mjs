@@ -12,9 +12,11 @@ const isProdLike =
   process.env.NETLIFY === 'true' ||
   process.env.CI === 'true' ||
   process.env.NODE_ENV === 'production';
-const outputRoot = (isProdLike || buildExists)
-  ? path.join(buildRoot, 'intel')
-  : path.join(root, 'public/intel');
+if (!isProdLike && !buildExists) {
+  console.log('Skipping intel static generation in dev (no build output found).');
+  process.exit(0);
+}
+const outputRoot = path.join(buildRoot, 'intel');
 
 const GAME_INFO = {
   'black-ops-6': { name: 'Black Ops 6' },
