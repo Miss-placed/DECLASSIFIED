@@ -8,6 +8,13 @@
 	color: var(--clr-white-d);
 }
 
+.intel-dossier-grid {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	margin-top: 1rem;
+}
+
 .dossier-card {
 	background: transparent;
 	box-shadow: none;

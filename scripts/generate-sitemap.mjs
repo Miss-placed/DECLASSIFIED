@@ -2,8 +2,16 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
-const manifestPath = path.join(root, 'public/intel/manifest.json');
-const sitemapPath = path.join(root, 'public/sitemap.xml');
+const buildManifestPath = path.join(root, 'build/intel/manifest.json');
+const publicManifestPath = path.join(root, 'public/intel/manifest.json');
+const buildSitemapPath = path.join(root, 'build/sitemap.xml');
+const publicSitemapPath = path.join(root, 'public/sitemap.xml');
+const manifestPath = fs.existsSync(buildManifestPath)
+  ? buildManifestPath
+  : publicManifestPath;
+const sitemapPath = fs.existsSync(buildManifestPath)
+  ? buildSitemapPath
+  : publicSitemapPath;
 const baseUrl = 'https://declassified.app';
 
 if (!fs.existsSync(manifestPath)) {
@@ -22,4 +30,4 @@ const body = uniqueUrls
 const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`;
 
 fs.writeFileSync(sitemapPath, xml, 'utf8');
-console.log(`Generated sitemap with ${uniqueUrls.length} URLs at public/sitemap.xml`);
+console.log(`Generated sitemap with ${uniqueUrls.length} URLs at ${sitemapPath}`);

@@ -4,7 +4,17 @@ import path from 'node:path';
 const root = process.cwd();
 const intelPath = path.join(root, 'src/data/intel.tsx');
 const mapDetailsPath = path.join(root, 'src/data/maps/mapDetails.tsx');
-const outputRoot = path.join(root, 'public/intel');
+const buildRoot = path.join(root, 'build');
+const assetManifestPath = path.join(buildRoot, 'asset-manifest.json');
+const hasAssetManifest = fs.existsSync(assetManifestPath);
+const buildExists = fs.existsSync(buildRoot);
+const isProdLike =
+  process.env.NETLIFY === 'true' ||
+  process.env.CI === 'true' ||
+  process.env.NODE_ENV === 'production';
+const outputRoot = (isProdLike || buildExists)
+  ? path.join(buildRoot, 'intel')
+  : path.join(root, 'public/intel');
 
 const GAME_INFO = {
   'black-ops-6': { name: 'Black Ops 6' },
@@ -65,9 +75,24 @@ function writeFile(filePath, content) {
   fs.writeFileSync(filePath, content, 'utf8');
 }
 
+function getCssLinks() {
+  if (!hasAssetManifest) return '';
+  const manifest = JSON.parse(fs.readFileSync(assetManifestPath, 'utf8'));
+  const cssFiles = Object.values(manifest.files ?? {}).filter((file) =>
+    typeof file === 'string' && file.endsWith('.css')
+  );
+  return cssFiles
+    .map((href) => `<link rel="stylesheet" href="${href}" />`)
+    .join('');
+}
+
 function pageShell({ title, description, canonicalPath, body, schema }) {
   const canonicalUrl = `https://declassified.app${canonicalPath}`;
-  return `<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8" />\n<meta name="viewport" content="width=device-width, initial-scale=1" />\n<title>${escapeHtml(title)}</title>\n<meta name="description" content="${escapeHtml(description)}" />\n<link rel="canonical" href="${canonicalUrl}" />\n<meta property="og:title" content="${escapeHtml(title)}" />\n<meta property="og:description" content="${escapeHtml(description)}" />\n<meta property="og:type" content="article" />\n<meta property="og:url" content="${canonicalUrl}" />\n<style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#0a0d14;color:#eaf2ff;margin:0;padding:24px;line-height:1.55}main{max-width:900px;margin:0 auto}.breadcrumbs{font-size:.85rem;opacity:.8;margin-bottom:12px}a{color:#90c2ff}h1{margin-top:0}.meta{opacity:.9;background:#121826;padding:12px;border-radius:8px}.transcript{background:#111924;border:1px solid #273146;border-radius:8px;padding:12px;white-space:pre-wrap}</style>\n<script type="application/ld+json">${JSON.stringify(schema)}</script>\n</head>\n<body>\n<main>${body}</main>\n</body>\n</html>`;
+  const cssLinks = getCssLinks();
+  const baseStyles = hasAssetManifest
+    ? `body{margin:0;padding:0}`
+    : `body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#0a0d14;color:#eaf2ff;margin:0;padding:24px;line-height:1.55}main{max-width:900px;margin:0 auto}.breadcrumbs{font-size:.85rem;opacity:.8;margin-bottom:12px}a{color:#90c2ff}h1{margin-top:0}.meta{opacity:.9;background:#121826;padding:12px;border-radius:8px}.transcript{background:#111924;border:1px solid #273146;border-radius:8px;padding:12px;white-space:pre-wrap}`;
+  return `<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8" />\n<meta name="viewport" content="width=device-width, initial-scale=1" />\n<title>${escapeHtml(title)}</title>\n<meta name="description" content="${escapeHtml(description)}" />\n<link rel="canonical" href="${canonicalUrl}" />\n<meta property="og:title" content="${escapeHtml(title)}" />\n<meta property="og:description" content="${escapeHtml(description)}" />\n<meta property="og:type" content="article" />\n<meta property="og:url" content="${canonicalUrl}" />\n${cssLinks}\n<style>${baseStyles}</style>\n<script type="application/ld+json">${JSON.stringify(schema)}</script>\n</head>\n<body class="dark">\n<main class="intel-dossier-page link-reset">${body}</main>\n</body>\n</html>`;
 }
 
 function build() {
@@ -97,7 +122,7 @@ function build() {
     };
 
     grouped[gameSlug] ??= {};
-    grouped[gameSlug][mapSlug] ??= { mapTitle, items: [] };
+    grouped[gameSlug][mapSlug] ??= { mapTitle, mapId: item.mapId, items: [] };
     grouped[gameSlug][mapSlug].items.push(normalized);
     urlManifest.push(normalized.url);
   }
@@ -105,9 +130,12 @@ function build() {
   fs.rmSync(outputRoot, { recursive: true, force: true });
   ensureDir(outputRoot);
 
-  const homeBody = `<h1>Intel Dossiers</h1><p>Browse declassified intel dossiers by game and map. Static HTML is generated at build time for crawler-friendly indexing.</p><ul>${Object.keys(grouped)
-    .map((slug) => `<li><a href="/intel/${slug}/">${GAME_INFO[slug].name}</a></li>`)
-    .join('')}</ul>`;
+  const homeBody = `<header class="dossier-header rounded-box filled"><p class="dossier-kicker">DECLASSIFIED INTEL DOSSIER</p><h1>Intel Dossier Archive</h1><p>Static SEO pages are generated under /intel for crawler-friendly previews.</p></header><p class="rounded-box filled text-sm">Browse each game hub for map dossiers and individual intel pages.</p><h2 class="title text-md">Intel Hubs</h2><div class="intel-dossier-grid">${Object.keys(grouped)
+    .map(
+      (slug) =>
+        `<a class="homepage-box" href="/intel/${slug}/"><h3>${GAME_INFO[slug].name}</h3><p>Explore map hubs and dossiers.</p></a>`
+    )
+    .join('')}</div>`;
   writeFile(path.join(outputRoot, 'index.html'), pageShell({
     title: 'Intel Dossiers',
     description: 'Crawlable index of all Intel dossier pages grouped by game and map.',
@@ -119,9 +147,12 @@ function build() {
 
   for (const [gameSlug, gameMaps] of Object.entries(grouped)) {
     const gameName = GAME_INFO[gameSlug].name;
-    const gameBody = `<div class="breadcrumbs"><a href="/intel/">Intel</a> / ${escapeHtml(gameName)}</div><h1>${escapeHtml(gameName)} Intel</h1><ul>${Object.entries(gameMaps)
-      .map(([mapSlug, mapData]) => `<li><a href="/intel/${gameSlug}/${mapSlug}/">${escapeHtml(mapData.mapTitle)}</a> (${mapData.items.length})</li>`)
-      .join('')}</ul>`;
+    const gameBody = `<header class="dossier-header rounded-box filled"><p class="dossier-kicker">DECLASSIFIED INTEL DOSSIER</p><h1>Intel Maps</h1><p>${escapeHtml(gameName)}</p></header><p class="rounded-box filled text-sm">Select a map hub to view intel dossiers. Open the map to jump into the interactive tracker.</p><div class="intel-dossier-grid">${Object.entries(gameMaps)
+      .map(
+        ([mapSlug, mapData]) =>
+          `<a class="homepage-box" href="/intel/${gameSlug}/${mapSlug}/"><h3>${escapeHtml(mapData.mapTitle)}</h3><p>${mapData.items.length} items</p></a>`
+      )
+      .join('')}</div>`;
 
     writeFile(path.join(outputRoot, gameSlug, 'index.html'), pageShell({
       title: `${gameName} Intel Dossiers`,
@@ -133,9 +164,15 @@ function build() {
     urlManifest.push(`/intel/${gameSlug}/`);
 
     for (const [mapSlug, mapData] of Object.entries(gameMaps)) {
-      const mapBody = `<div class="breadcrumbs"><a href="/intel/">Intel</a> / <a href="/intel/${gameSlug}/">${escapeHtml(gameName)}</a> / ${escapeHtml(mapData.mapTitle)}</div><h1>${escapeHtml(mapData.mapTitle)} Intel</h1><ul>${mapData.items
-        .map((intel) => `<li><a href="${intel.url}">${escapeHtml(intel.title)}</a> <small>(${escapeHtml(intel.typeDesc)})</small></li>`)
-        .join('')}</ul>`;
+      const mapActions = mapData.mapId
+        ? `<div class="intel-dossier-actions"><a href="/${escapeHtml(mapData.mapId)}" target="_blank" rel="noreferrer">Open map</a><a href="/intel/${gameSlug}/">Back to game hub</a></div>`
+        : `<div class="intel-dossier-actions"><a href="/intel/${gameSlug}/">Back to game hub</a></div>`;
+      const mapBody = `<header class="dossier-header rounded-box filled"><p class="dossier-kicker">DECLASSIFIED INTEL DOSSIER</p><h1>Intel List</h1><p>${escapeHtml(gameName)} / ${escapeHtml(mapData.mapTitle)}</p></header>${mapActions}<div class="intel-dossier-grid">${mapData.items
+        .map(
+          (intel) =>
+            `<div class="dossier-card"><a class="dossier-card-link" href="${intel.url}"><div class="homepage-box"><h3>${escapeHtml(intel.title)}</h3><p>${escapeHtml(intel.typeDesc)}</p></div></a><div class="intel-dossier-actions"><a href="/${escapeHtml(intel.id)}" target="_blank" rel="noreferrer">Open on map</a></div></div>`
+        )
+        .join('')}</div>`;
 
       writeFile(path.join(outputRoot, gameSlug, mapSlug, 'index.html'), pageShell({
         title: `${mapData.mapTitle} Intel Dossiers`,
@@ -147,7 +184,7 @@ function build() {
       urlManifest.push(`/intel/${gameSlug}/${mapSlug}/`);
 
       for (const intel of mapData.items) {
-        const body = `<div class="breadcrumbs"><a href="/intel/">Intel</a> / <a href="/intel/${gameSlug}/">${escapeHtml(gameName)}</a> / <a href="/intel/${gameSlug}/${mapSlug}/">${escapeHtml(mapData.mapTitle)}</a> / ${escapeHtml(intel.title)}</div><h1>${escapeHtml(intel.title)}</h1><p>${escapeHtml(intel.desc)}</p><div class="meta"><p><strong>Intel ID:</strong> ${escapeHtml(intel.id)}</p><p><strong>Type:</strong> ${escapeHtml(intel.typeDesc)}</p></div><h2>Transcript</h2><div class="transcript">${escapeHtml(intel.transcript)}</div>`;
+        const body = `<header class="dossier-header rounded-box filled"><p class="dossier-kicker">DECLASSIFIED INTEL DOSSIER</p><h1>${escapeHtml(intel.title)}</h1><p>${escapeHtml(mapData.mapTitle)} • ${escapeHtml(intel.typeDesc)}</p></header><div class="intel-dossier-actions"><a href="/${escapeHtml(intel.id)}" target="_blank" rel="noreferrer">Open intel on map</a><a href="/intel/${gameSlug}/${mapSlug}/">Back to map dossier</a></div><p class="rounded-box filled text-sm">${escapeHtml(intel.desc)}</p><h2 class="title text-md">Transcript</h2><p class="rounded-box text-sm">${escapeHtml(intel.transcript)}</p>`;
 
         writeFile(path.join(outputRoot, gameSlug, mapSlug, intel.intelSlug, 'index.html'), pageShell({
           title: `${intel.title} | ${mapData.mapTitle} Intel`,
@@ -168,7 +205,7 @@ function build() {
   }
 
   writeFile(path.join(outputRoot, 'manifest.json'), JSON.stringify({ urls: urlManifest.sort() }, null, 2));
-  console.log(`Generated ${urlManifest.length} intel URLs in public/intel`);
+  console.log(`Generated ${urlManifest.length} intel URLs in ${outputRoot}`);
 }
 
 build();
