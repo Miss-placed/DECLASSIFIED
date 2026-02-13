@@ -13,6 +13,7 @@
 	gap: 1rem;
 	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 	margin-top: 1rem;
+	align-items: stretch;
 }
 
 .dossier-card {
@@ -23,24 +24,37 @@
 	gap: 0.5rem;
 	height: 100%;
 	width: 100%;
+	align-items: stretch;
+	flex: 1;
 }
 
 .dossier-card-link {
-	display: block;
+	display: flex;
 	flex: 1;
 	text-decoration: none;
 	color: inherit;
+	width: 100%;
 }
 
 .dossier-card .homepage-box {
-	height: auto;
+	height: 100%;
 	min-height: 110px;
 	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .dossier-card .intel-dossier-actions {
 	margin: 0;
 	justify-content: center;
+	margin-top: auto;
+}
+
+.dossier-grid-item {
+	display: flex;
+	height: 100%;
+	align-self: stretch;
 }
 
 .intel-type-header {

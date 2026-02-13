@@ -1,5 +1,4 @@
 import { Container, Typography } from '@mui/material';
-import Grid from '@mui/material/Grid2';
 import { Link, useParams } from 'react-router-dom';
 import DossierHeader from './components/DossierHeader';
 import '../../styles/intel-dossier.css';
@@ -50,20 +49,19 @@ export default function IntelMapPage() {
 							{group.type}
 						</Typography>
 					</div>
-					<Grid container spacing={2} sx={{ mt: 1 }}>
+					<div className="intel-dossier-grid">
 						{group.items.map(item => (
-							<Grid key={item.id} size={{ xs: 12, sm: 6, md: 4 }}>
+							<div key={item.id} className="dossier-grid-item">
 								<DossierCard
 									title={item.title}
-									subtitle={item.type}
 									href={`/intel/${gameSlug}/${mapSlug}/${item.intelSlug}`}
 									actionHref={`/${item.id}`}
 									actionLabel="Open on map"
 									openInNewTab
 								/>
-							</Grid>
+							</div>
 						))}
-					</Grid>
+					</div>
 				</div>
 			))}
 		</Container>

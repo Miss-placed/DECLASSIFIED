@@ -1,8 +1,8 @@
 import { Box, Container, Paper, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import { Link } from 'react-router-dom';
-import DossierHeader from './components/DossierHeader';
 import '../../styles/intel-dossier.css';
+import DossierHeader from './components/DossierHeader';
 
 const games = [
 	{ slug: 'black-ops-6', title: 'Black Ops 6' },
@@ -14,8 +14,10 @@ export default function IntelHomePage() {
 		<Container className="intel-dossier-page link-reset">
 			<DossierHeader
 				title="Intel Dossier Archive"
-				subtitle="Static SEO pages are generated under /public/intel for crawler-friendly previews."
 			/>
+			<div className="intel-dossier-actions">
+				<Link to="/">Back to homepage</Link>
+			</div>
 			<Typography className="rounded-box filled text-sm">
 				Browse each game hub for map dossiers and individual intel pages. Each dossier links back to the interactive map.
 			</Typography>

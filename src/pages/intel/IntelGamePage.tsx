@@ -1,6 +1,5 @@
 import { Container, Typography } from '@mui/material';
-import Grid from '@mui/material/Grid2';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Game, MapGroupings } from '../../components/MapControls/types';
 import DossierHeader from './components/DossierHeader';
 import '../../styles/intel-dossier.css';
@@ -46,6 +45,9 @@ export default function IntelGamePage() {
 	return (
 		<Container className="intel-dossier-page link-reset">
 			<DossierHeader title="Intel Maps" subtitle={gameTitle} />
+			<div className="intel-dossier-actions">
+				<Link to="/">Back to homepage</Link>
+			</div>
 			<Typography className="rounded-box filled text-sm">
 				Select a map hub to view intel dossiers. Open the map to jump into the interactive tracker.
 			</Typography>
@@ -56,12 +58,12 @@ export default function IntelGamePage() {
 							{group.groupName}
 						</Typography>
 					</div>
-					<Grid className="map-group-grid" container spacing={2}>
+					<div className="intel-dossier-grid map-group-grid">
 						{group.maps.map(mapInfo => {
 							const mapRouteId =
 								mapInfo.mapId && IsValidMapId(mapInfo.mapId) ? mapInfo.mapId : undefined;
 							return (
-								<Grid key={mapInfo.mapSlug} size={{ xs: 12, sm: 6, md: 4 }}>
+								<div key={mapInfo.mapSlug} className="dossier-grid-item">
 									<DossierCard
 										title={mapInfo.title}
 										href={`/intel/${gameSlug}/${mapInfo.mapSlug}`}
@@ -69,10 +71,10 @@ export default function IntelGamePage() {
 										actionLabel="Open map"
 										openInNewTab
 									/>
-								</Grid>
+								</div>
 							);
 						})}
-					</Grid>
+					</div>
 				</div>
 			))}
 		</Container>
