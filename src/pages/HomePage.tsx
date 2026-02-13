@@ -51,7 +51,7 @@ const HomePageContainer = styled(Container)`
 
 const HomePage: React.FC = () => {
     return (
-        <HomePageContainer className="link-reset">
+        <HomePageContainer className="link-reset homepage-font">
             <Grid className='header-container' container spacing={2}>
                 <Grid size={{ xs: 12, sm: 8 }}>
                     <Grid sx={{ display: 'flex', alignItems: 'center' }}>

@@ -17,11 +17,19 @@ export interface BaseLayoutProps {
 export const BaseLayout = ({ children }: BaseLayoutProps) => {
 	// TODO: Apply and use this properly throughout the app so we can have theme switching
 	const defaultTheme = createTheme({
-		// typography: {
-		// 	fontFamily: [
-		// 		'Open Sans',
-		// 	].join(','),
-		// },
+		typography: {
+			fontFamily: [
+				'JetBrains Mono',
+				'ui-monospace',
+				'SFMono-Regular',
+				'Menlo',
+				'Monaco',
+				'Consolas',
+				'Liberation Mono',
+				'Courier New',
+				'monospace',
+			].join(','),
+		},
 		palette: {
 			background: {
 				default: '#1f2223'

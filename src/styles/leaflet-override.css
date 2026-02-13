@@ -2,6 +2,12 @@
 	border-radius: 12px !important;
 }
 
+.leaflet-container,
+.leaflet-container * {
+	font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco,
+		Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
 .leaflet-popup-content-wrapper {
 	border-radius: unset;
 	background-color: var(--clr-bg-inverted) !important;
