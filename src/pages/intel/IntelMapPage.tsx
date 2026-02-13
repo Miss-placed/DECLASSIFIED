@@ -14,6 +14,7 @@ export default function IntelMapPage() {
 	const intel = getIntelRouteModel().filter(
 		item => item.gameSlug === gameSlug && item.mapSlug === mapSlug
 	);
+	const gameTitle = intel[0]?.gameTitle ?? gameSlug ?? 'Unknown Game';
 	const mapTitle = intel[0]?.mapTitle ?? mapSlug ?? 'Unknown Map';
 	const mapId = intel[0]?.mapId;
 	const mapRouteId = mapId && IsValidMapId(mapId) ? mapId : undefined;
@@ -27,7 +28,7 @@ export default function IntelMapPage() {
 
 	return (
 		<Container className="intel-dossier-page link-reset">
-			<DossierHeader title="Intel List" subtitle={`${gameSlug} / ${mapTitle}`} />
+			<DossierHeader title="Intel List" subtitle={`${gameTitle} / ${mapTitle}`} />
 			<div className="intel-dossier-actions">
 				{mapRouteId ? (
 					<Link to={`/${mapRouteId}`} target="_blank" rel="noreferrer">
