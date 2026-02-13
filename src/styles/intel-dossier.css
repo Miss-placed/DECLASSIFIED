@@ -1,0 +1,10 @@
+.intel-dossier-page {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 1rem;
+}
+
+.intel-dossier-page h2 {
+	border-bottom: 1px solid #303a4a;
+	padding-bottom: 0.25rem;
+}

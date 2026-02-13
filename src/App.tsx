@@ -12,6 +12,10 @@ import {
 	useUserContext
 } from './contexts/UserContext/userContextProvider';
 import HomePage from './pages/HomePage';
+import IntelGamePage from './pages/intel/IntelGamePage';
+import IntelHomePage from './pages/intel/IntelHomePage';
+import IntelLeafPage from './pages/intel/IntelLeafPage';
+import IntelMapPage from './pages/intel/IntelMapPage';
 import { BaseLayout } from './pages/layouts/BaseLayout';
 
 function App() {
@@ -23,6 +27,13 @@ function App() {
 				<UserContextProvider>
 					<Routes>
 						<Route path="/" Component={HomePage} />
+						<Route path="/intel" Component={IntelHomePage} />
+						<Route path="/intel/:gameSlug" Component={IntelGamePage} />
+						<Route path="/intel/:gameSlug/:mapSlug" Component={IntelMapPage} />
+						<Route
+							path="/intel/:gameSlug/:mapSlug/:intelSlug"
+							Component={IntelLeafPage}
+						/>
 						<Route path="/:id" Component={MapWithIdRoute} />
 						<Route path="/legacy" Component={LegacySite} />
 						<Route path="/challenge" Component={LegacyChallengeSite} />

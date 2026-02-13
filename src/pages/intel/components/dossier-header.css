@@ -1,0 +1,13 @@
+.dossier-header {
+	padding: 1rem;
+	border: 1px solid #7b0000;
+	background: #110e0e;
+	margin-bottom: 1rem;
+}
+
+.dossier-kicker {
+	color: #d05757;
+	font-size: 0.75rem;
+	letter-spacing: 0.12em;
+	margin: 0;
+}
