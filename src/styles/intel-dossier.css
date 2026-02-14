@@ -51,6 +51,11 @@
 	margin-top: auto;
 }
 
+.dossier-card.is-collected .homepage-box {
+	border-color: var(--clr-green);
+	box-shadow: 0 0 0 1px var(--clr-green) inset;
+}
+
 .dossier-grid-item {
 	display: flex;
 	height: 100%;
@@ -63,6 +68,12 @@
 	gap: 0.75rem;
 	padding: 0.75rem 1rem;
 	margin-top: 1.5rem;
+}
+
+.intel-group-count {
+	margin-left: auto;
+	font-size: var(--fs-base);
+	opacity: 0.85;
 }
 
 .map-group-header {
@@ -91,7 +102,8 @@
 	margin: 0.75rem 0 1.25rem;
 }
 
-.intel-dossier-actions a {
+.intel-dossier-actions a,
+.intel-dossier-actions button {
 	border: 1px solid var(--clr-grey-d);
 	border-radius: 6px;
 	padding: 0.35rem 0.7rem;
@@ -99,8 +111,15 @@
 	background: var(--clr-bg);
 	text-decoration: none;
 	font-size: 0.9rem;
+	cursor: pointer;
+	font-family: inherit;
 }
 
-.intel-dossier-actions a:hover {
+.intel-dossier-actions a:hover,
+.intel-dossier-actions button:hover {
 	background: var(--clr-bg-lighter);
+}
+
+.intel-dossier-page.intel-collected .dossier-header {
+	box-shadow: 0 0 0 1px var(--clr-green) inset;
 }

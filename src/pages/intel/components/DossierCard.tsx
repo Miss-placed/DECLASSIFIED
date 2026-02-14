@@ -8,6 +8,7 @@ interface DossierCardProps {
 	actionHref?: string;
 	actionLabel?: string;
 	openInNewTab?: boolean;
+	isCollected?: boolean;
 }
 
 export default function DossierCard({
@@ -17,13 +18,14 @@ export default function DossierCard({
 	actionHref,
 	actionLabel,
 	openInNewTab = false,
+	isCollected = false,
 }: DossierCardProps) {
 	const actionProps = openInNewTab
 		? { target: '_blank', rel: 'noreferrer' }
 		: {};
 
 	return (
-		<Box className="dossier-card">
+		<Box className={`dossier-card ${isCollected ? 'is-collected' : ''}`}>
 			<Link className="dossier-card-link" to={href}>
 				<Box className="homepage-box" p={2}>
 					<Typography variant="h6">{title}</Typography>

@@ -35,10 +35,17 @@ export default function IntelGamePage() {
 		? Object.values(MapGroupings)
 			.filter(group => group.game === gameKey)
 			.map(group => {
+				const mapIdSet = new Set(
+					group.mapLayers
+						.map(layer => layer.id)
+						.filter((id): id is string => !!id)
+				);
+				const intelCount = intel.filter(item => item.mapId && mapIdSet.has(item.mapId))
+					.length;
 				const maps = group.mapLayers
 					.map(layer => (layer.id ? mapMetaById.get(layer.id) : undefined))
 					.filter((entry): entry is { title: string; mapId: string; mapSlug: string } => !!entry);
-				return { groupName: group.mapName, maps };
+				return { groupName: group.mapName, maps, intelCount };
 			})
 			.filter(group => group.maps.length > 0)
 		: [];
@@ -58,6 +65,7 @@ export default function IntelGamePage() {
 						<Typography className="title text-md" variant="h5">
 							{group.groupName}
 						</Typography>
+						<span className="intel-group-count">{group.intelCount} Intel</span>
 					</div>
 					{getWikiIntelUrlForMap(group.groupName) ? (
 						<div className="intel-dossier-actions">

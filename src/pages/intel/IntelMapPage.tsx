@@ -1,4 +1,5 @@
 import { Container, Typography } from '@mui/material';
+import { useLiveQuery } from 'dexie-react-hooks';
 import { Link, useParams } from 'react-router-dom';
 import DossierHeader from './components/DossierHeader';
 import '../../styles/intel-dossier.css';
@@ -8,6 +9,7 @@ import DossierCard from './components/DossierCard';
 import { IntelType } from '../../data/IntelTypes';
 import { toSnakeCase } from '../../helpers/icons';
 import { getMapGroupNameByMapId, getWikiIntelUrlForMap } from '../../helpers/wiki';
+import { db } from '../../data/db';
 
 export default function IntelMapPage() {
 	const { gameSlug, mapSlug } = useParams();
@@ -20,6 +22,10 @@ export default function IntelMapPage() {
 	const mapRouteId = mapId && IsValidMapId(mapId) ? mapId : undefined;
 	const mapGroupName = getMapGroupNameByMapId(mapId) ?? mapTitle;
 	const wikiIntelUrl = getWikiIntelUrlForMap(mapGroupName);
+	const collectedIntel = useLiveQuery(async () => db.intelCollected.toArray(), []);
+	const collectedIntelSet = new Set(
+		(collectedIntel ?? []).map(item => item.intelId)
+	);
 	const intelTypeOrder = Object.values(IntelType) as IntelType[];
 	const intelGroups = intelTypeOrder
 		.map(type => ({
@@ -56,6 +62,7 @@ export default function IntelMapPage() {
 						<Typography className="title text-md" variant="h5">
 							{group.type}
 						</Typography>
+						<span className="intel-group-count">{group.items.length} Intel</span>
 					</div>
 					<div className="intel-dossier-grid">
 						{group.items.map(item => (
@@ -66,6 +73,7 @@ export default function IntelMapPage() {
 									actionHref={`/${item.id}`}
 									actionLabel="Open on map"
 									openInNewTab
+									isCollected={collectedIntelSet.has(item.id)}
 								/>
 							</div>
 						))}

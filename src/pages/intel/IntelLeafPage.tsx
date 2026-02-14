@@ -1,4 +1,5 @@
 import { Container, Typography } from '@mui/material';
+import { useLiveQuery } from 'dexie-react-hooks';
 import { Link, useParams } from 'react-router-dom';
 import DossierHeader from './components/DossierHeader';
 import '../../styles/intel-dossier.css';
@@ -6,6 +7,8 @@ import { getIntelRouteModel } from '../../data/intelSeo';
 import { getIntelTranscript } from '../../data/intelTranscripts';
 import { IsValidMapId } from '../../components/MapControls/MapIds';
 import { getMapGroupNameByMapId, getWikiIntelUrlForMap } from '../../helpers/wiki';
+import { addCollectedIntel, deleteCollectedIntel } from '../../data/dataAccessLayer';
+import { db } from '../../data/db';
 
 export default function IntelLeafPage() {
 	const { gameSlug, mapSlug, intelSlug } = useParams();
@@ -15,6 +18,12 @@ export default function IntelLeafPage() {
 			item.mapSlug === mapSlug &&
 			item.intelSlug === intelSlug
 	);
+	const intelId = intel?.id;
+	const collectedEntry = useLiveQuery(
+		() => (intelId ? db.intelCollected.get(intelId) : undefined),
+		[intelId]
+	);
+	const isCollected = !!collectedEntry;
 
 	if (!intel) return <p>Intel dossier unavailable.</p>;
 	const mapRouteId = intel.mapId && IsValidMapId(intel.mapId) ? intel.mapId : undefined;
@@ -22,30 +31,35 @@ export default function IntelLeafPage() {
 	const wikiIntelUrl = getWikiIntelUrlForMap(mapGroupName);
 
 	return (
-		<Container className="intel-dossier-page link-reset">
+		<Container className={`intel-dossier-page link-reset ${isCollected ? 'intel-collected' : ''}`}>
 			<DossierHeader title={intel.title} subtitle={`${intel.mapTitle} • ${intel.type}`} />
 			<div className="intel-dossier-actions">
-				<Link to={`/${intel.id}`} target="_blank" rel="noreferrer">
-					Open intel on map
-				</Link>
-				{mapRouteId ? (
-					<Link to={`/${mapRouteId}`} target="_blank" rel="noreferrer">
-						Open map
-					</Link>
-				) : null}
 				<Link to={`/intel/${intel.gameSlug}/${intel.mapSlug}`}>Back to map dossier</Link>
 			</div>
 			<Typography className="rounded-box filled text-sm">{intel.desc}</Typography>
 			<Typography sx={{ mt: 4 }} className="title text-md" variant="h5" gutterBottom>
 				Transcript
 			</Typography>
-			{wikiIntelUrl ? (
-				<div className="intel-dossier-actions">
+			<div className="intel-dossier-actions">
+				<Link to={`/${intel.id}`} target="_blank" rel="noreferrer">
+					Open intel on map
+				</Link>
+				<button
+					type="button"
+					onClick={() =>
+						isCollected
+							? deleteCollectedIntel([intel.id])
+							: addCollectedIntel([intel.id])
+					}
+				>
+					{isCollected ? 'Classify' : 'Declassify'}
+				</button>
+				{wikiIntelUrl ? (
 					<a href={wikiIntelUrl} target="_blank" rel="noreferrer">
 						View Intel on CoD Wiki
 					</a>
-				</div>
-			) : null}
+				) : null}
+			</div>
 			<Typography className="rounded-box text-sm">{getIntelTranscript(intel.id)}</Typography>
 		</Container>
 	);
