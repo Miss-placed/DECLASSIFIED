@@ -4,6 +4,7 @@ import { IsValidMapId } from '../../components/MapControls/MapIds';
 import { Game, MapGroupings } from '../../components/MapControls/types';
 import { getIntelRouteModel } from '../../data/intelSeo';
 import '../../styles/intel-dossier.css';
+import { getWikiIntelUrlForMap } from '../../helpers/wiki';
 import DossierCard from './components/DossierCard';
 import DossierHeader from './components/DossierHeader';
 
@@ -58,6 +59,17 @@ export default function IntelGamePage() {
 							{group.groupName}
 						</Typography>
 					</div>
+					{getWikiIntelUrlForMap(group.groupName) ? (
+						<div className="intel-dossier-actions">
+							<a
+								href={getWikiIntelUrlForMap(group.groupName)}
+								target="_blank"
+								rel="noreferrer"
+							>
+								View Intel on CoD Wiki
+							</a>
+						</div>
+					) : null}
 					<div className="intel-dossier-grid map-group-grid">
 						{group.maps.map(mapInfo => {
 							const mapRouteId =

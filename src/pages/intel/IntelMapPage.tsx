@@ -7,6 +7,7 @@ import { IsValidMapId } from '../../components/MapControls/MapIds';
 import DossierCard from './components/DossierCard';
 import { IntelType } from '../../data/IntelTypes';
 import { toSnakeCase } from '../../helpers/icons';
+import { getMapGroupNameByMapId, getWikiIntelUrlForMap } from '../../helpers/wiki';
 
 export default function IntelMapPage() {
 	const { gameSlug, mapSlug } = useParams();
@@ -17,6 +18,8 @@ export default function IntelMapPage() {
 	const mapTitle = intel[0]?.mapTitle ?? mapSlug ?? 'Unknown Map';
 	const mapId = intel[0]?.mapId;
 	const mapRouteId = mapId && IsValidMapId(mapId) ? mapId : undefined;
+	const mapGroupName = getMapGroupNameByMapId(mapId) ?? mapTitle;
+	const wikiIntelUrl = getWikiIntelUrlForMap(mapGroupName);
 	const intelTypeOrder = Object.values(IntelType) as IntelType[];
 	const intelGroups = intelTypeOrder
 		.map(type => ({
@@ -33,6 +36,11 @@ export default function IntelMapPage() {
 					<Link to={`/${mapRouteId}`} target="_blank" rel="noreferrer">
 						Open map
 					</Link>
+				) : null}
+				{wikiIntelUrl ? (
+					<a href={wikiIntelUrl} target="_blank" rel="noreferrer">
+						View Intel on CoD Wiki
+					</a>
 				) : null}
 				{gameSlug ? <Link to={`/intel/${gameSlug}`}>Back to game hub</Link> : null}
 			</div>

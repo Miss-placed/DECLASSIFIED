@@ -5,6 +5,7 @@ import '../../styles/intel-dossier.css';
 import { getIntelRouteModel } from '../../data/intelSeo';
 import { getIntelTranscript } from '../../data/intelTranscripts';
 import { IsValidMapId } from '../../components/MapControls/MapIds';
+import { getMapGroupNameByMapId, getWikiIntelUrlForMap } from '../../helpers/wiki';
 
 export default function IntelLeafPage() {
 	const { gameSlug, mapSlug, intelSlug } = useParams();
@@ -17,6 +18,8 @@ export default function IntelLeafPage() {
 
 	if (!intel) return <p>Intel dossier unavailable.</p>;
 	const mapRouteId = intel.mapId && IsValidMapId(intel.mapId) ? intel.mapId : undefined;
+	const mapGroupName = getMapGroupNameByMapId(intel.mapId) ?? intel.mapTitle;
+	const wikiIntelUrl = getWikiIntelUrlForMap(mapGroupName);
 
 	return (
 		<Container className="intel-dossier-page link-reset">
@@ -36,6 +39,13 @@ export default function IntelLeafPage() {
 			<Typography sx={{ mt: 4 }} className="title text-md" variant="h5" gutterBottom>
 				Transcript
 			</Typography>
+			{wikiIntelUrl ? (
+				<div className="intel-dossier-actions">
+					<a href={wikiIntelUrl} target="_blank" rel="noreferrer">
+						View Intel on CoD Wiki
+					</a>
+				</div>
+			) : null}
 			<Typography className="rounded-box text-sm">{getIntelTranscript(intel.id)}</Typography>
 		</Container>
 	);

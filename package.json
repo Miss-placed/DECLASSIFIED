@@ -44,6 +44,7 @@
 		"format:check": "prettier --check .",
 		"intel:static": "node scripts/generate-intel-static.mjs",
 		"intel:clean": "node scripts/clean-intel-static.mjs",
+		"wiki:check": "react-scripts test --watchAll=false --testPathPattern=wiki-links.test.ts",
 		"sitemap:generate": "node scripts/generate-sitemap.mjs"
 	},
 	"eslintConfig": {
