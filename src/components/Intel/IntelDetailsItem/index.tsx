@@ -120,7 +120,7 @@ export const IntelDetailsItem = ({
 							{isCollected ? (
 								<Tooltip title="Classify">
 									<Button
-										title="classify"
+										aria-label="classify"
 										onClick={() => deleteCollectedIntel([id])}
 									>
 										<ClearIcon htmlColor="var(--clr-blue)" />
@@ -128,7 +128,7 @@ export const IntelDetailsItem = ({
 								</Tooltip>
 							) : (
 								<Tooltip title="Declassify">
-									<Button title="declassify" onClick={() => addCollectedIntel([id])}>
+									<Button aria-label="declassify" onClick={() => addCollectedIntel([id])}>
 										<DoneIcon htmlColor="var(--clr-blue)" />
 									</Button>
 								</Tooltip>
@@ -137,7 +137,11 @@ export const IntelDetailsItem = ({
 								<Button
 									component={Link}
 									to={intelDossierUrl}
-									title="View Dossier"
+									aria-label="view dossier"
+									onPointerDown={(event) => event.stopPropagation()}
+									onTouchStart={(event) => event.stopPropagation()}
+									onMouseDown={(event) => event.stopPropagation()}
+									onClick={(event) => event.stopPropagation()}
 								>
 									<MenuBookIcon htmlColor="var(--clr-blue)" />
 								</Button>
