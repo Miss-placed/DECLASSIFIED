@@ -122,17 +122,24 @@
 }
 
 .btn.ui svg {
-	font-size: calc(var(--width) / 1.6);
+	width: calc(var(--width) / 1.6);
+	height: calc(var(--width) / 1.6);
+	fill: currentColor;
 	margin: auto;
 }
 
 #discord {
-	background-color: #5865f2;
+	background-color: var(--clr-social-discord);
 	color: var(--clr-white-d);
 }
 
 #github {
-	background-color: var(--clr-black);
+	background-color: var(--clr-social-github);
+	color: var(--clr-white);
+}
+
+#coffee {
+	background-color: var(--clr-social-coffee);
 	color: var(--clr-white);
 }
 

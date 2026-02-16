@@ -10,6 +10,8 @@
 
 # production
 /build
+/public/intel
+/public/sitemap.xml
 
 # misc
 .DS_Store

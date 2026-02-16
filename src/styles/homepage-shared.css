@@ -1,0 +1,89 @@
+.text-sm {
+	font-size: var(--fs-sm) !important;
+}
+
+.text-base {
+	font-size: var(--fs-base) !important;
+}
+
+.text-md {
+	font-size: var(--fs-md) !important;
+}
+
+.text-lg {
+	font-size: var(--fs-lg) !important;
+}
+
+.text-xl {
+	font-size: var(--fs-xl) !important;
+}
+
+.text-xxl {
+	font-size: var(--fs-xxl) !important;
+}
+
+.link-reset a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.homepage-box {
+	border-radius: 8px;
+	border: 1px solid;
+	border-color: var(--clr-grey-d);
+	padding: 10px;
+	height: 100%;
+	text-align: center;
+	vertical-align: middle;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.homepage-box:hover {
+	background: var(--clr-bg);
+	color: var(--clr-white-d);
+}
+
+.filled {
+	background: var(--clr-bg);
+	color: var(--clr-white-d);
+}
+
+.filled-btn {
+	background: var(--clr-bg);
+	color: var(--clr-white-d);
+}
+
+.filled-btn:hover {
+	background: none;
+	color: var(--clr-white-d);
+}
+
+.rounded-box {
+	border-radius: 8px;
+	border: 1px solid;
+	border-color: var(--clr-grey-d);
+	padding: 10px;
+	height: 100%;
+	width: 100%;
+}
+
+.title,
+.main-title {
+	font-weight: 700;
+	align-content: center;
+	text-wrap: pretty;
+}
+.homepage-font,
+.intel-dossier-page {
+	font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco,
+		Consolas, 'Liberation Mono', 'Courier New', monospace !important;
+}
+
+.homepage-font .MuiTypography-root,
+.intel-dossier-page .MuiTypography-root {
+	font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco,
+		Consolas, 'Liberation Mono', 'Courier New', monospace !important;
+}

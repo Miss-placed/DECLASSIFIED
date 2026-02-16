@@ -1,15 +1,23 @@
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: sans-serif;
 }
 
 html {
 	font-size: x-large;
 }
 
+@media (max-width: 768px) {
+	html {
+		font-size: 16px;
+	}
+}
+
 body {
+	font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco,
+		Consolas, 'Liberation Mono', 'Courier New', monospace;
 	/* whites and blacks */
 	--clr-white: #ffffff;
 	--clr-white-d: #e3ddd9;
@@ -29,6 +37,10 @@ body {
 	--clr-yellow: #d3a92b;
 	--clr-orange: #d3642b;
 	--clr-pink: #cc358b;
+	/* social colors */
+	--clr-social-discord: #5865f2;
+	--clr-social-github: #0f1114;
+	--clr-social-coffee: #2f8f76;
 	/* backgrounds */
 	--clr-bg: var(--clr-white-d);
 	--clr-bg-lighter: #50504f;

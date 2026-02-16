@@ -5,14 +5,17 @@ import ClearIcon from '@mui/icons-material/Clear';
 import DoneIcon from '@mui/icons-material/Done';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 import { Accordion, AccordionDetails, AccordionSummary, Button, Tooltip, Typography } from "@mui/material";
 import { useLiveQuery } from "dexie-react-hooks";
 import { useContext, useEffect, useState } from "react";
 import { useMapEvents } from "react-leaflet";
+import { Link } from "react-router-dom";
 import { DeclassifiedContext } from "../../../contexts/DeclassifiedContext/declassifiedContextProvider";
 import { useUserContext } from "../../../contexts/UserContext/userContextProvider";
 import { addCollectedIntel, deleteCollectedIntel } from "../../../data/dataAccessLayer";
 import { db } from "../../../data/db";
+import { gameForIntel, intelSlug, mapTitleFromId, slugifyIntel } from '../../../data/intelSeo';
 import { DefaultPOIData, Faction, IIntelItem } from '../../../data/IntelTypes';
 import { GetMapById } from "../../../data/maps/mapDetails";
 import { toSnakeCase } from "../../../helpers/icons";
@@ -49,6 +52,9 @@ export const IntelDetailsItem = ({
 	const IntelIsOnAnotherMap = map !== currentMap!.id;
 	const isCollected = useLiveQuery(() => db.intelCollected.get(id));
 	const mapItem = GetMapById(map!);
+	const game = gameForIntel(id);
+	const mapSlug = slugifyIntel(mapTitleFromId(map));
+	const intelDossierUrl = `/intel/${game.slug}/${mapSlug}/${intelSlug(title, id)}`;
 
 	function handleSelectIntel(event, isSelected: boolean): void {
 		event.stopPropagation();
@@ -112,17 +118,34 @@ export const IntelDetailsItem = ({
 						</IntelDescription>
 						<StyledIntelActionContainer>
 							{isCollected ? (
-								<Button
-									title="collected"
-									onClick={() => deleteCollectedIntel([id])}
-								>
-									<ClearIcon htmlColor="var(--clr-blue)" />
-								</Button>
+								<Tooltip title="Classify">
+									<Button
+										aria-label="classify"
+										onClick={() => deleteCollectedIntel([id])}
+									>
+										<ClearIcon htmlColor="var(--clr-blue)" />
+									</Button>
+								</Tooltip>
 							) : (
-								<Button title="collected" onClick={() => addCollectedIntel([id])}>
-									<DoneIcon htmlColor="var(--clr-blue)" />
-								</Button>
+								<Tooltip title="Declassify">
+									<Button aria-label="declassify" onClick={() => addCollectedIntel([id])}>
+										<DoneIcon htmlColor="var(--clr-blue)" />
+									</Button>
+								</Tooltip>
 							)}
+							<Tooltip title="View Dossier">
+								<Button
+									component={Link}
+									to={intelDossierUrl}
+									aria-label="view dossier"
+									onPointerDown={(event) => event.stopPropagation()}
+									onTouchStart={(event) => event.stopPropagation()}
+									onMouseDown={(event) => event.stopPropagation()}
+									onClick={(event) => event.stopPropagation()}
+								>
+									<MenuBookIcon htmlColor="var(--clr-blue)" />
+								</Button>
+							</Tooltip>
 							{IntelHasLocation && mapItem?.mapCanRender ? (
 								<Tooltip title="Locate on Map">
 									<Button
