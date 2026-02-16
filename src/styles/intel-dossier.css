@@ -8,12 +8,76 @@
 	color: var(--clr-white-d);
 }
 
+.intel-header-links {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+}
+
+.intel-header-link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.35rem;
+	width: 36px;
+	height: 36px;
+	border-radius: 8px;
+	border: 1px solid transparent;
+	text-decoration: none;
+	color: var(--clr-white-d);
+	background: var(--clr-black);
+}
+
+.intel-header-link svg {
+	width: 18px;
+	height: 18px;
+	fill: currentColor;
+}
+
+.intel-header-link.social-link#discord {
+	background: var(--clr-social-discord);
+	color: var(--clr-white-d);
+}
+
+.intel-header-link.social-link#github {
+	background: var(--clr-social-github);
+	color: var(--clr-white);
+}
+
+.intel-header-link.social-link#coffee {
+	background: var(--clr-social-coffee);
+	color: var(--clr-white);
+}
+
+.intel-header-link:hover {
+	filter: brightness(1.08);
+}
+
+@media (max-width: 768px) {
+	.intel-header-links {
+		justify-content: flex-start;
+	}
+}
+
 .intel-dossier-grid {
 	display: grid;
 	gap: 1rem;
 	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 	margin-top: 1rem;
 	align-items: stretch;
+}
+
+.map-intel-grid .homepage-box .MuiTypography-h6 {
+	font-size: var(--fs-base);
+	line-height: 1.25;
+}
+
+.map-intel-grid .homepage-box .MuiTypography-body1 {
+	font-size: var(--fs-sm);
+	line-height: 1.2;
+	opacity: 0.9;
 }
 
 .dossier-card {
@@ -80,6 +144,25 @@
 	margin-top: 1.5rem;
 }
 
+.map-group-wiki-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	font-size: var(--fs-sm);
+	text-decoration: none;
+	padding: 0.2rem 0.55rem;
+	border: 1px solid var(--clr-grey);
+	border-radius: 6px;
+	background: var(--clr-grey-d);
+	color: var(--clr-white-d);
+}
+
+.map-group-wiki-link svg {
+	width: 0.8rem;
+	height: 0.8rem;
+	fill: currentColor;
+}
+
 .map-group-grid {
 	margin-top: 0.75rem;
 }
@@ -113,6 +196,18 @@
 	font-size: 0.9rem;
 	cursor: pointer;
 	font-family: inherit;
+}
+
+.intel-dossier-actions .intel-action-with-icon {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+}
+
+.intel-dossier-actions .intel-action-with-icon svg {
+	width: 0.85rem;
+	height: 0.85rem;
+	fill: currentColor;
 }
 
 .intel-dossier-actions a:hover,

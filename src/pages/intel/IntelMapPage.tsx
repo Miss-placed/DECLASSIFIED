@@ -2,12 +2,14 @@ import { Container, Typography } from '@mui/material';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { Link, useParams } from 'react-router-dom';
 import DossierHeader from './components/DossierHeader';
+import IntelQuickLinks from './components/IntelQuickLinks';
 import '../../styles/intel-dossier.css';
 import { getIntelRouteModel } from '../../data/intelSeo';
 import { IsValidMapId } from '../../components/MapControls/MapIds';
 import DossierCard from './components/DossierCard';
 import { IntelType } from '../../data/IntelTypes';
 import { toSnakeCase } from '../../helpers/icons';
+import { ExternalLinkIcon, HomeIcon } from '../../components/SocialIcons';
 import { getMapGroupNameByMapId, getWikiIntelUrlForMap } from '../../helpers/wiki';
 import { db } from '../../data/db';
 
@@ -36,7 +38,28 @@ export default function IntelMapPage() {
 
 	return (
 		<Container className="intel-dossier-page link-reset">
-			<DossierHeader title="Intel List" subtitle={`${gameTitle} / ${mapTitle}`} />
+			<DossierHeader
+				title="Intel List"
+				subtitle={
+					<>
+						<Link
+							to="/"
+							className="dossier-breadcrumb-home"
+							aria-label="Home"
+							title="Home"
+						>
+							<HomeIcon />
+						</Link>
+						{' / '}
+						<Link to="/intel">Intel Hub</Link>
+						{' / '}
+						{gameSlug ? <Link to={`/intel/${gameSlug}`}>{gameTitle}</Link> : gameTitle}
+						{' / '}
+						{mapTitle}
+					</>
+				}
+				actions={<IntelQuickLinks />}
+			/>
 			<div className="intel-dossier-actions">
 				{mapRouteId ? (
 					<Link to={`/${mapRouteId}`} target="_blank" rel="noreferrer">
@@ -44,11 +67,11 @@ export default function IntelMapPage() {
 					</Link>
 				) : null}
 				{wikiIntelUrl ? (
-					<a href={wikiIntelUrl} target="_blank" rel="noreferrer">
-						View Intel on CoD Wiki
+					<a className="intel-action-with-icon" href={wikiIntelUrl} target="_blank" rel="noreferrer">
+						<ExternalLinkIcon />
+						Wiki
 					</a>
 				) : null}
-				{gameSlug ? <Link to={`/intel/${gameSlug}`}>Back to game hub</Link> : null}
 			</div>
 			{intelGroups.map(group => (
 				<div key={group.type} className="intel-group">
@@ -64,7 +87,7 @@ export default function IntelMapPage() {
 						</Typography>
 						<span className="intel-group-count">{group.items.length} Intel</span>
 					</div>
-					<div className="intel-dossier-grid">
+					<div className="intel-dossier-grid map-intel-grid">
 						{group.items.map(item => (
 							<div key={item.id} className="dossier-grid-item">
 								<DossierCard

@@ -5,8 +5,10 @@ import { Game, MapGroupings } from '../../components/MapControls/types';
 import { getIntelRouteModel } from '../../data/intelSeo';
 import '../../styles/intel-dossier.css';
 import { getWikiIntelUrlForMap } from '../../helpers/wiki';
+import { ExternalLinkIcon, HomeIcon } from '../../components/SocialIcons';
 import DossierCard from './components/DossierCard';
 import DossierHeader from './components/DossierHeader';
+import IntelQuickLinks from './components/IntelQuickLinks';
 
 export default function IntelGamePage() {
 	const { gameSlug } = useParams();
@@ -52,51 +54,71 @@ export default function IntelGamePage() {
 
 	return (
 		<Container className="intel-dossier-page link-reset">
-			<DossierHeader title="Intel Maps" subtitle={gameTitle} />
-			<div className="intel-dossier-actions">
-				<Link to="/">Back to homepage</Link>
-			</div>
+			<DossierHeader
+				title="Intel Maps"
+				subtitle={
+					<>
+						<Link
+							to="/"
+							className="dossier-breadcrumb-home"
+							aria-label="Intel hubs"
+							title="Home"
+						>
+							<HomeIcon />
+						</Link>
+						{' / '}
+						<Link to="/intel">Intel Hub</Link>
+						{' / '}
+						{gameTitle}
+					</>
+				}
+				actions={<IntelQuickLinks />}
+			/>
 			<Typography className="rounded-box filled text-sm">
 				Select a map hub to view intel dossiers. Open the map to jump into the interactive tracker.
 			</Typography>
-			{groupedMaps.map(group => (
-				<div key={group.groupName} className="intel-group">
-					<div className="intel-type-header rounded-box filled map-group-header">
-						<Typography className="title text-md" variant="h5">
-							{group.groupName}
-						</Typography>
-						<span className="intel-group-count">{group.intelCount} Intel</span>
-					</div>
-					{getWikiIntelUrlForMap(group.groupName) ? (
-						<div className="intel-dossier-actions">
-							<a
-								href={getWikiIntelUrlForMap(group.groupName)}
-								target="_blank"
-								rel="noreferrer"
-							>
-								View Intel on CoD Wiki
-							</a>
+			{groupedMaps.map(group => {
+				const wikiUrl = getWikiIntelUrlForMap(group.groupName);
+				return (
+					<div key={group.groupName} className="intel-group">
+						<div className="intel-type-header rounded-box filled map-group-header">
+							<Typography className="title text-md" variant="h5">
+								{group.groupName}
+							</Typography>
+							{wikiUrl ? (
+								<a
+									className="map-group-wiki-link"
+									href={wikiUrl}
+									target="_blank"
+									rel="noreferrer"
+									aria-label={`Open ${group.groupName} wiki`}
+								>
+									<ExternalLinkIcon />
+									Wiki
+								</a>
+							) : null}
+							<span className="intel-group-count">{group.intelCount} Intel</span>
 						</div>
-					) : null}
-					<div className="intel-dossier-grid map-group-grid">
-						{group.maps.map(mapInfo => {
-							const mapRouteId =
-								mapInfo.mapId && IsValidMapId(mapInfo.mapId) ? mapInfo.mapId : undefined;
-							return (
-								<div key={mapInfo.mapSlug} className="dossier-grid-item">
-									<DossierCard
-										title={mapInfo.title}
-										href={`/intel/${gameSlug}/${mapInfo.mapSlug}`}
-										actionHref={mapRouteId ? `/${mapRouteId}` : undefined}
-										actionLabel="Open map"
-										openInNewTab
-									/>
-								</div>
-							);
-						})}
+						<div className="intel-dossier-grid map-group-grid">
+							{group.maps.map(mapInfo => {
+								const mapRouteId =
+									mapInfo.mapId && IsValidMapId(mapInfo.mapId) ? mapInfo.mapId : undefined;
+								return (
+									<div key={mapInfo.mapSlug} className="dossier-grid-item">
+										<DossierCard
+											title={mapInfo.title}
+											href={`/intel/${gameSlug}/${mapInfo.mapSlug}`}
+											actionHref={mapRouteId ? `/${mapRouteId}` : undefined}
+											actionLabel="Open map"
+											openInNewTab
+										/>
+									</div>
+								);
+							})}
+						</div>
 					</div>
-				</div>
-			))}
+				);
+			})}
 		</Container>
 	);
 }

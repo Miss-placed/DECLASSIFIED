@@ -163,22 +163,55 @@ const getWikiIntelUrlForMap = mapName =>
 		? `https://callofduty.fandom.com/wiki/${getWikiMapSlug(mapName)}/Intel`
 		: undefined;
 
+const QUICK_LINKS_HTML = `<div class="intel-header-links" aria-label="Quick links"><a id="discord" class="intel-header-link social-link" href="https://discord.gg/4Xqj8XntFe" target="_blank" rel="noreferrer" title="Discord" aria-label="Discord"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v11H8l-4 4V4z" /><circle cx="9" cy="10" r="1.2" /><circle cx="12" cy="10" r="1.2" /><circle cx="15" cy="10" r="1.2" /></svg></a><a id="github" class="intel-header-link social-link" href="https://github.com/Miss-placed/DECLASSIFIED" target="_blank" rel="noreferrer" title="GitHub" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 7 3 12l5 5 1.4-1.4L5.8 12l3.6-3.6L8 7zm8 0-1.4 1.4 3.6 3.6-3.6 3.6L16 17l5-5-5-5zM13.7 4 9.3 20h2l4.4-16h-2z" /></svg></a><a id="coffee" class="intel-header-link social-link" href="https://buymeacoffee.com/declassified.map" target="_blank" rel="noreferrer" title="Buy me a coffee" aria-label="Buy me a coffee"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h12v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V7zm12 2h2a2 2 0 1 1 0 4h-2V9zM7 4h2v2H7V4zm3 0h2v2h-2V4z" /></svg></a></div>`;
+const HOME_CRUMB_HTML = `<a class="dossier-breadcrumb-home" href="/" title="Home" aria-label="Home"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3 2 12h3v8h6v-5h2v5h6v-8h3L12 3z" /></svg></a>`;
+const INTEL_HUB_CRUMB_HTML = `<a href="/intel/">Intel Hub</a>`;
+const EXTERNAL_LINK_ICON_HTML = `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 3h7v7h-2V6.41l-8.29 8.3-1.42-1.42 8.3-8.29H14V3z" /><path d="M5 5h6v2H7v10h10v-4h2v6H5V5z" /></svg>`;
+
 function pageShell({ title, description, canonicalPath, body, schema, type = 'article' }) {
 	const canonicalUrl = `https://declassified.app${canonicalPath}`;
 	const cssLinks = getCssLinks();
-	const baseStyles = `html,body{margin:0;padding:0;min-height:100%;background:#1f2223;color:#e3ddd9;font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace}a{color:inherit}`;
+	const baseStyles = `html,body{margin:0;padding:0;min-height:100%;background:#1f2223;color:#e3ddd9;font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace}a{color:inherit}@media(max-width:768px){html{font-size:16px}}.dossier-header-content{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}.dossier-header-copy{min-width:0}.dossier-header-actions{flex-shrink:0}.dossier-subtitle{display:flex;align-items:center;gap:.35rem;flex-wrap:wrap}.dossier-subtitle a{font-weight:700;text-decoration:none}.dossier-subtitle a:hover{opacity:.85}.dossier-breadcrumb-home{display:inline-flex;align-items:center;justify-content:center;width:1.5rem;height:1.5rem;border-radius:6px;border:1px solid var(--clr-grey);background:var(--clr-grey-d);color:var(--clr-white-d)}.dossier-breadcrumb-home svg{width:.85rem;height:.85rem;fill:currentColor}.map-intel-grid .homepage-box h3{font-size:var(--fs-base,1rem);line-height:1.25}.map-intel-grid .homepage-box p{font-size:var(--fs-sm,.85rem);line-height:1.2;opacity:.9}.intel-header-links{display:flex;align-items:center;justify-content:flex-end;gap:.5rem;flex-wrap:wrap}.intel-header-link{display:inline-flex;align-items:center;justify-content:center;gap:.35rem;width:36px;height:36px;border-radius:8px;border:1px solid transparent;text-decoration:none;color:var(--clr-white-d);background:var(--clr-black)}.intel-header-link svg{width:18px;height:18px;fill:currentColor}.intel-header-link.social-link#discord{background:var(--clr-social-discord);color:var(--clr-white-d)}.intel-header-link.social-link#github{background:var(--clr-social-github);color:var(--clr-white)}.intel-header-link.social-link#coffee{background:var(--clr-social-coffee);color:var(--clr-white)}.intel-header-link:hover{filter:brightness(1.08)}.intel-dossier-actions .intel-action-with-icon{display:inline-flex;align-items:center;gap:.35rem}.intel-dossier-actions .intel-action-with-icon svg{width:.85rem;height:.85rem;fill:currentColor}.map-group-wiki-link{display:inline-flex;align-items:center;gap:.35rem;font-size:var(--fs-sm,.85rem);text-decoration:none;padding:.2rem .55rem;border:1px solid var(--clr-grey);border-radius:6px;background:var(--clr-grey-d);color:var(--clr-white-d)}.map-group-wiki-link svg{width:.8rem;height:.8rem;fill:currentColor}@media(max-width:768px){.dossier-header-content{flex-direction:column}.dossier-header-actions{width:100%}.intel-header-links{justify-content:flex-start}}`;
 
-	return `<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8" />\n<meta name="viewport" content="width=device-width, initial-scale=1" />\n<title>${escapeHtml(
+	return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>${escapeHtml(
 		title
-	)}</title>\n<meta name="description" content="${escapeHtml(
+	)}</title>
+<meta name="description" content="${escapeHtml(
 		description
-	)}" />\n<link rel="canonical" href="${canonicalUrl}" />\n<meta property="og:title" content="${escapeHtml(
+	)}" />
+<link rel="canonical" href="${canonicalUrl}" />
+<meta property="og:title" content="${escapeHtml(
 		title
-	)}" />\n<meta property="og:description" content="${escapeHtml(
+	)}" />
+<meta property="og:description" content="${escapeHtml(
 		description
-	)}" />\n<meta property="og:type" content="${type}" />\n<meta property="og:url" content="${canonicalUrl}" />\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />\n<link rel="preload" href="${FONT_STYLESHEET}" as="style" onload="this.onload=null;this.rel='stylesheet'" />\n<noscript><link rel="stylesheet" href="${FONT_STYLESHEET}" /></noscript>\n${cssLinks}\n<style>${baseStyles}</style>\n<script type="application/ld+json">${JSON.stringify(
+	)}" />
+<meta property="og:type" content="${type}" />
+<meta property="og:url" content="${canonicalUrl}" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" href="${FONT_STYLESHEET}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="${FONT_STYLESHEET}" /></noscript>
+${cssLinks}
+<style>${baseStyles}</style>
+<script type="application/ld+json">${JSON.stringify(
 		schema
-	)}</script>\n</head>\n<body class="dark">\n<main class="intel-dossier-page link-reset">${body}</main>\n</body>\n</html>`;
+	)}</script>
+</head>
+<body class="dark">
+<main class="intel-dossier-page link-reset">${body}</main>
+</body>
+</html>`;
+}
+
+function renderDossierHeader({ title, subtitle, subtitleHtml }) {
+	return `<header class="dossier-header rounded-box filled"><div class="dossier-header-content"><div class="dossier-header-copy"><p class="dossier-kicker">DECLASSIFIED INTEL DOSSIER</p><h1>${escapeHtml(
+		title
+	)}</h1>${subtitleHtml ? `<p class="dossier-subtitle">${subtitleHtml}</p>` : subtitle ? `<p class="dossier-subtitle">${escapeHtml(subtitle)}</p>` : ''}</div><div class="dossier-header-actions">${QUICK_LINKS_HTML}</div></div></header>`;
 }
 
 function renderDossierCard({ title, subtitle, href, actionHref, actionLabel, openInNewTab }) {
@@ -250,7 +283,7 @@ function build() {
 	fs.rmSync(outputRoot, { recursive: true, force: true });
 	ensureDir(outputRoot);
 
-	const homeBody = `<header class="dossier-header rounded-box filled"><p class="dossier-kicker">DECLASSIFIED INTEL DOSSIER</p><h1>Intel Dossier Archive</h1><p>Browse each game hub for map dossiers and individual intel pages.</p></header><div class="intel-dossier-actions"><a href="/">Back to homepage</a></div><p class="rounded-box filled text-sm">Browse each game hub for map dossiers and individual intel pages. Each dossier links back to the interactive map.</p><h2 class="title text-md">Intel Hubs</h2><div class="intel-dossier-grid">${Object.entries(
+	const homeBody = `${renderDossierHeader({ title: 'Intel Dossier Archive', subtitleHtml: `${HOME_CRUMB_HTML} / Intel Hub` })}<p class="rounded-box filled text-sm">Browse each game hub for map dossiers and individual intel pages. Each dossier links back to the interactive map.</p><div class="intel-type-header rounded-box filled map-group-header"><h2 class="title text-md">Intel Hubs</h2></div><div class="intel-dossier-grid map-group-grid">${Object.entries(
 		GAME_INFO
 	)
 		.map(
@@ -295,11 +328,11 @@ function build() {
 
 				return `<div class="intel-group"><div class="intel-type-header rounded-box filled map-group-header"><h2 class="title text-md">${escapeHtml(
 					group.name
-				)}</h2><span class="intel-group-count">${intelCount} Intel</span></div>${
+				)}</h2>${
 					wikiUrl
-						? `<div class="intel-dossier-actions"><a href="${wikiUrl}" target="_blank" rel="noreferrer">View Intel on CoD Wiki</a></div>`
+						? `<a class="map-group-wiki-link" href="${wikiUrl}" target="_blank" rel="noreferrer">${EXTERNAL_LINK_ICON_HTML}Wiki</a>`
 						: ''
-				}<div class="intel-dossier-grid map-group-grid">${maps
+				}<span class="intel-group-count">${intelCount} Intel</span></div><div class="intel-dossier-grid map-group-grid">${maps
 					.map(mapInfo =>
 						renderDossierCard({
 							title: mapInfo.mapTitle,
@@ -314,9 +347,7 @@ function build() {
 			.filter(Boolean)
 			.join('');
 
-		const gameBody = `<header class="dossier-header rounded-box filled"><p class="dossier-kicker">DECLASSIFIED INTEL DOSSIER</p><h1>Intel Maps</h1><p>${escapeHtml(
-			game.name
-		)}</p></header><div class="intel-dossier-actions"><a href="/">Back to homepage</a></div><p class="rounded-box filled text-sm">Select a map hub to view intel dossiers. Open the map to jump into the interactive tracker.</p>${groupSections}`;
+		const gameBody = `${renderDossierHeader({ title: 'Intel Maps', subtitleHtml: `${HOME_CRUMB_HTML} / ${INTEL_HUB_CRUMB_HTML} / ${escapeHtml(game.name)}` })}<p class="rounded-box filled text-sm">Select a map hub to view intel dossiers. Open the map to jump into the interactive tracker.</p>${groupSections}`;
 
 		writeFile(
 			path.join(outputRoot, gameSlug, 'index.html'),
@@ -338,8 +369,8 @@ function build() {
 		for (const mapInfo of gameMapMeta.values()) {
 			const mapItems = gameItems.filter(item => item.mapId === mapInfo.mapId);
 			if (mapItems.length === 0) continue;
-
 			const wikiUrl = getWikiIntelUrlForMap(mapInfo.groupName);
+
 			const typeSections = INTEL_TYPE_ORDER.map(type => {
 				const typeItems = mapItems.filter(item => item.type === type);
 				if (typeItems.length === 0) return '';
@@ -347,7 +378,7 @@ function build() {
 					type
 				)}.svg" alt="${escapeHtml(type)} icon" loading="lazy" /><h2 class="title text-md">${escapeHtml(
 					type
-				)}</h2><span class="intel-group-count">${typeItems.length} Intel</span></div><div class="intel-dossier-grid">${typeItems
+				)}</h2><span class="intel-group-count">${typeItems.length} Intel</span></div><div class="intel-dossier-grid map-intel-grid">${typeItems
 					.map(intel =>
 						renderDossierCard({
 							title: intel.title,
@@ -362,13 +393,14 @@ function build() {
 				.filter(Boolean)
 				.join('');
 
-			const mapBody = `<header class="dossier-header rounded-box filled"><p class="dossier-kicker">DECLASSIFIED INTEL DOSSIER</p><h1>Intel List</h1><p>${escapeHtml(
-				game.name
-			)} / ${escapeHtml(mapInfo.mapTitle)}</p></header><div class="intel-dossier-actions"><a href="/${mapInfo.mapId}" target="_blank" rel="noreferrer">Open map</a>${
+			const mapBody = `${renderDossierHeader({
+				title: 'Intel List',
+				subtitleHtml: `${HOME_CRUMB_HTML} / ${INTEL_HUB_CRUMB_HTML} / <a href="/intel/${gameSlug}/">${escapeHtml(game.name)}</a> / ${escapeHtml(mapInfo.mapTitle)}`,
+			})}<div class="intel-dossier-actions"><a href="/${mapInfo.mapId}" target="_blank" rel="noreferrer">Open map</a>${
 				wikiUrl
-					? `<a href="${wikiUrl}" target="_blank" rel="noreferrer">View Intel on CoD Wiki</a>`
+					? `<a class="intel-action-with-icon" href="${wikiUrl}" target="_blank" rel="noreferrer">${EXTERNAL_LINK_ICON_HTML}Wiki</a>`
 					: ''
-			}<a href="/intel/${gameSlug}/">Back to game hub</a></div>${typeSections}`;
+			}</div>${typeSections}`;
 
 			writeFile(
 				path.join(outputRoot, gameSlug, mapInfo.mapSlug, 'index.html'),
@@ -388,16 +420,14 @@ function build() {
 			urlManifest.add(`/intel/${gameSlug}/${mapInfo.mapSlug}/`);
 
 			for (const intel of mapItems) {
-				const wikiLeafUrl = getWikiIntelUrlForMap(mapInfo.groupName);
-				const leafBody = `<header class="dossier-header rounded-box filled"><p class="dossier-kicker">DECLASSIFIED INTEL DOSSIER</p><h1>${escapeHtml(
-					intel.title
-				)}</h1><p>${escapeHtml(mapInfo.mapTitle)} • ${escapeHtml(
-					intel.type
-				)}</p></header><div class="intel-dossier-actions"><a href="/intel/${gameSlug}/${mapInfo.mapSlug}/">Back to map dossier</a></div><p class="rounded-box filled text-sm">${escapeHtml(
+				const leafBody = `${renderDossierHeader({
+					title: intel.title,
+					subtitleHtml: `${HOME_CRUMB_HTML} / ${INTEL_HUB_CRUMB_HTML} / <a href="/intel/${gameSlug}/">${escapeHtml(game.name)}</a> / <a href="/intel/${gameSlug}/${mapInfo.mapSlug}/">${escapeHtml(mapInfo.mapTitle)}</a> • ${escapeHtml(intel.type)}`,
+				})}<p class="rounded-box filled text-sm">${escapeHtml(
 					intel.desc
 				)}</p><h2 class="title text-md">Transcript</h2><div class="intel-dossier-actions"><a href="/${intel.id}" target="_blank" rel="noreferrer">Open intel on map</a>${
-					wikiLeafUrl
-						? `<a href="${wikiLeafUrl}" target="_blank" rel="noreferrer">View Intel on CoD Wiki</a>`
+					wikiUrl
+						? `<a class="intel-action-with-icon" href="${wikiUrl}" target="_blank" rel="noreferrer">${EXTERNAL_LINK_ICON_HTML}Wiki</a>`
 						: ''
 				}</div><p class="rounded-box text-sm">${escapeHtml(intel.transcript)}</p>`;
 

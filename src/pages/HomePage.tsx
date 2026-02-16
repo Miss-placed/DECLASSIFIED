@@ -1,11 +1,13 @@
 import styled from '@emotion/styled';
-import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CoffeeIcon from '@mui/icons-material/Coffee';
 import { Box, Container, Paper, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {
+	CoffeeIcon,
+	DiscordIcon,
+	GithubIcon,
+} from '../components/SocialIcons';
 import { MapIds } from '../components/MapControls/MapIds';
 
 const HomePageContainer = styled(Container)`
@@ -45,6 +47,12 @@ const HomePageContainer = styled(Container)`
         .header-container {
             gap: 0;
         }
+
+		.main-title {
+			font-size: var(--fs-lg) !important;
+			white-space: normal;
+			overflow-wrap: anywhere;
+		}
     }
 
 `
@@ -71,7 +79,7 @@ const HomePage: React.FC = () => {
                         id="discord"
                         rel="noreferrer"
                     >
-                        <FontAwesomeIcon icon={faDiscord}></FontAwesomeIcon>{' '}
+                        <DiscordIcon />
                     </a>
                     <a
                         title="Help us out on Github!"
@@ -82,7 +90,7 @@ const HomePage: React.FC = () => {
                         rel="noreferrer"
                         style={{ alignContent: 'center' }}
                     >
-                        <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>{' '}
+                        <GithubIcon />
                     </a>
                     <a
                         title="Buy us a coffee!"
@@ -98,15 +106,14 @@ const HomePage: React.FC = () => {
                 </Grid>
 
             </Grid>
-            <Typography className='rounded-box filled text-sm'>
-
+            <Box className='rounded-box filled text-sm'>
                 <Typography className='title text' variant="h5" gutterBottom>
                     The #1 interactive map for CoD Zombies.
                 </Typography>
                 - Track Intel and Calling Cards.<br />
                 - Discover Main Quest and side Easter Eggs and explore the maps.<br />
                 - Always free, no ads, open & community driven, now & forever.<br />
-            </Typography>
+            </Box>
             <Typography sx={{ mt: 4 }} className='title text-md' variant="h5" gutterBottom>
                 Call of Duty: Black Ops 6
             </Typography>
