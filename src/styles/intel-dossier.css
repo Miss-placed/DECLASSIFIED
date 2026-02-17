@@ -115,6 +115,11 @@
 	margin-top: auto;
 }
 
+.dossier-placeholder-card .homepage-box {
+	justify-content: center;
+	text-align: center;
+}
+
 .dossier-card.is-collected .homepage-box {
 	border-color: var(--clr-green);
 	box-shadow: 0 0 0 1px var(--clr-green) inset;
@@ -165,6 +170,28 @@
 
 .map-group-grid {
 	margin-top: 0.75rem;
+}
+
+.dossier-game-groups-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.dossier-game-group {
+	display: flex;
+	flex-direction: column;
+}
+
+.dossier-game-group .map-group-header {
+	margin-top: 0;
+}
+
+@media (min-width: 1200px) {
+	.dossier-game-groups-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
 }
 
 .intel-type-icon {

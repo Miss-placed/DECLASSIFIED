@@ -186,10 +186,10 @@ const inferSideEggCategory = (marker: MiscMarker, linkedItemIds: string[]) => {
 };
 
 const resolveGroupingTitle = (marker: MiscMarker) => {
-	const markerGrouping = (marker.typeDesc ?? '').trim();
-	if (markerGrouping) return markerGrouping;
 	const explicitCategory = (marker.dossierCategory ?? '').trim();
 	if (explicitCategory) return explicitCategory;
+	const markerGrouping = (marker.typeDesc ?? '').trim();
+	if (markerGrouping) return markerGrouping;
 	return 'General';
 };
 
@@ -355,83 +355,32 @@ export const getOperationsMapGroups = (
 	gameSlug: string
 ) => {
 	const canonicalGroups = getCanonicalMapGroupsForGame(gameSlug);
-	const groupOrder = new Map(
-		canonicalGroups.map((group, index) => [group.mapName, index])
-	);
-	const mapOrderByGroup = new Map<string, Map<string, number>>(
-		canonicalGroups.map(group => [
-			group.mapName,
-			new Map(
-				group.mapLayers
-					.filter(layer => !!layer.id)
-					.map((layer, index) => [layer.id, index])
-			),
-		])
-	);
-
 	const items = getOperationsRouteModel().filter(
 		item => item.sourceKind === sourceKind && item.gameSlug === gameSlug
 	);
-	const groups = new Map<
-		string,
-		{
-			groupName: string;
-			mapSlug: string;
-			maps: { mapSlug: string; mapTitle: string; mapId: string; count: number }[];
-			count: number;
-		}
-	>();
+	const countByMapId = new Map<string, number>();
 	items.forEach(item => {
-		const key = item.mapGroupTitle;
-		const current = groups.get(key) ?? {
-			groupName: item.mapGroupTitle,
-			mapSlug: item.mapSlug,
-			maps: [],
-			count: 0,
-		};
-		current.count += 1;
-		const existingMap = current.maps.find(map => map.mapId === item.mapId);
-		if (existingMap) {
-			existingMap.count += 1;
-		} else {
-			current.maps.push({
-				mapSlug: slugify(item.mapTitle),
-				mapTitle: item.mapTitle,
-				mapId: item.mapId,
-				count: 1,
-			});
-		}
-		groups.set(key, current);
+		const current = countByMapId.get(item.mapId) ?? 0;
+		countByMapId.set(item.mapId, current + 1);
 	});
-	return Array.from(groups.values())
-		.map(group => {
-			const sortedMaps = group.maps.sort((a, b) => {
-				const orderMap = mapOrderByGroup.get(group.groupName);
-				const aIndex = orderMap?.get(a.mapId);
-				const bIndex = orderMap?.get(b.mapId);
-				if (typeof aIndex === 'number' && typeof bIndex === 'number') {
-					return aIndex - bIndex;
-				}
-				if (typeof aIndex === 'number') return -1;
-				if (typeof bIndex === 'number') return 1;
-				return a.mapTitle.localeCompare(b.mapTitle);
-			});
-			return {
-				...group,
-				maps: sortedMaps,
-				primaryMapId: sortedMaps[0]?.mapId,
-			};
-		})
-		.sort((a, b) => {
-			const aIndex = groupOrder.get(a.groupName);
-			const bIndex = groupOrder.get(b.groupName);
-			if (typeof aIndex === 'number' && typeof bIndex === 'number') {
-				return aIndex - bIndex;
-			}
-			if (typeof aIndex === 'number') return -1;
-			if (typeof bIndex === 'number') return 1;
-			return a.groupName.localeCompare(b.groupName);
-		});
+
+	return canonicalGroups.map(group => {
+		const maps = group.mapLayers
+			.filter(layer => !!layer.id)
+			.map(layer => ({
+				mapSlug: slugify(layer.title),
+				mapTitle: layer.title,
+				mapId: layer.id,
+				count: countByMapId.get(layer.id) ?? 0,
+			}));
+		return {
+			groupName: group.mapName,
+			mapSlug: slugify(group.mapName),
+			maps,
+			count: maps.reduce((sum, map) => sum + map.count, 0),
+			primaryMapId: maps[0]?.mapId,
+		};
+	});
 };
 
 export const getOperationsMapItems = (

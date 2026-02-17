@@ -10,6 +10,11 @@ import DossierCard from '../intel/components/DossierCard';
 import DossierHeader from '../intel/components/DossierHeader';
 import IntelQuickLinks from '../intel/components/IntelQuickLinks';
 
+const githubHelpLinkForMapGroup = (gameTitle: string, mapGroupTitle: string) =>
+	`https://github.com/Miss-placed/DECLASSIFIED/issues/new?title=${encodeURIComponent(
+		`[Side Eggs] ${gameTitle} - ${mapGroupTitle} dossier missing data`
+	)}`;
+
 export default function EggsGamePage() {
 	const { gameSlug } = useParams();
 	const games = getOperationsGames('sideEgg');
@@ -44,32 +49,59 @@ export default function EggsGamePage() {
 			<Typography className="rounded-box filled text-sm">
 				Choose a map dossier to view grouped Side Egg steps and cross-links into Main Quest.
 			</Typography>
-			{groups.map(group => (
-				<div key={group.groupName} className="intel-group">
-					<div className="intel-type-header rounded-box filled map-group-header">
-						<Typography className="title text-md" variant="h5">
-							{group.groupName}
-						</Typography>
-						<span className="intel-group-count">{group.count} Steps</span>
-					</div>
-					<div className="intel-dossier-grid map-group-grid">
-						<div className="dossier-grid-item">
-							<DossierCard
-								title={group.groupName}
-								subtitle={`${group.count} Steps${
-									group.maps.length > 1
-										? ` • ${group.maps.length} Areas`
-										: ''
-								}`}
-								href={`/eggs/${gameSlug}/${group.mapSlug}`}
-								actionHref={`/${group.primaryMapId ?? group.maps[0]?.mapId ?? ''}`}
-								actionLabel="Open map"
-								openInNewTab
-							/>
+			<div className="dossier-game-groups-grid">
+				{groups.map(group => (
+					<div key={group.groupName} className="intel-group dossier-game-group">
+						<div className="intel-type-header rounded-box filled map-group-header">
+							<Typography className="title text-md" variant="h5">
+								{group.groupName}
+							</Typography>
+							<span className="intel-group-count">{group.count} Steps</span>
+						</div>
+						<div className="intel-dossier-grid map-group-grid">
+							{group.count > 0 ? (
+								<div className="dossier-grid-item">
+									<DossierCard
+										title={group.groupName}
+										subtitle={`${group.count} Steps${
+											group.maps.length > 1
+												? ` • ${group.maps.length} Areas`
+												: ''
+										}`}
+										href={`/eggs/${gameSlug}/${group.mapSlug}`}
+										actionHref={`/${group.primaryMapId ?? group.maps[0]?.mapId ?? ''}`}
+										actionLabel="Open map"
+										openInNewTab
+									/>
+								</div>
+							) : (
+								<div className="dossier-grid-item">
+									<div className="dossier-card dossier-placeholder-card">
+										<div className="homepage-box" style={{ padding: '16px' }}>
+											<Typography variant="h6">Coming Soon</Typography>
+											<Typography>
+												No side egg dossier items yet for {group.groupName}.
+											</Typography>
+										</div>
+										<div className="intel-dossier-actions">
+											<a
+												href={githubHelpLinkForMapGroup(
+													gameTitle,
+													group.groupName
+												)}
+												target="_blank"
+												rel="noreferrer"
+											>
+												Help on GitHub
+											</a>
+										</div>
+									</div>
+								</div>
+							)}
 						</div>
 					</div>
-				</div>
-			))}
+				))}
+			</div>
 		</Container>
 	);
 }

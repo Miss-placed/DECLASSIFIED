@@ -37,6 +37,7 @@ const outputRoots = {
 const QUICK_LINKS_HTML = `<div class="intel-header-links" aria-label="Quick links"><a id="discord" class="intel-header-link social-link" href="https://discord.gg/4Xqj8XntFe" target="_blank" rel="noreferrer" title="Discord" aria-label="Discord"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v11H8l-4 4V4z" /><circle cx="9" cy="10" r="1.2" /><circle cx="12" cy="10" r="1.2" /><circle cx="15" cy="10" r="1.2" /></svg></a><a id="github" class="intel-header-link social-link" href="https://github.com/Miss-placed/DECLASSIFIED" target="_blank" rel="noreferrer" title="GitHub" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 7 3 12l5 5 1.4-1.4L5.8 12l3.6-3.6L8 7zm8 0-1.4 1.4 3.6 3.6-3.6 3.6L16 17l5-5-5-5zM13.7 4 9.3 20h2l4.4-16h-2z" /></svg></a><a id="coffee" class="intel-header-link social-link" href="https://buymeacoffee.com/declassified.map" target="_blank" rel="noreferrer" title="Buy me a coffee" aria-label="Buy me a coffee"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h12v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V7zm12 2h2a2 2 0 1 1 0 4h-2V9zM7 4h2v2H7V4zm3 0h2v2h-2V4z" /></svg></a></div>`;
 const STATIC_SITE_NOTICE_HTML = `<aside class="intel-static-notice" role="note">You are viewing the static Operations archive outside the app. <a href="/">Click here</a> to return to the homepage.</aside>`;
 const HOME_CRUMB_HTML = `<a class="dossier-breadcrumb-home" href="/" title="Home" aria-label="Home"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3 2 12h3v8h6v-5h2v5h6v-8h3L12 3z" /></svg></a>`;
+const GITHUB_ISSUES_NEW = 'https://github.com/Miss-placed/DECLASSIFIED/issues/new';
 
 const escapeHtml = (value: string) =>
 	value
@@ -142,6 +143,26 @@ const renderMapCard = ({
 	`<div class="dossier-grid-item"><div class="dossier-card"><a class="dossier-card-link" href="${href}"><div class="homepage-box" style="padding:16px;"><h3>${escapeHtml(
 		title
 	)}</h3><p>${escapeHtml(subtitle)}</p></div></a><div class="intel-dossier-actions"><a href="${actionHref}" target="_blank" rel="noreferrer">Open map</a></div></div></div>`;
+
+const buildGithubHelpLink = (
+	sectionLabel: string,
+	gameTitle: string,
+	mapGroupTitle: string
+) =>
+	`${GITHUB_ISSUES_NEW}?title=${encodeURIComponent(
+		`[${sectionLabel}] ${gameTitle} - ${mapGroupTitle} dossier missing data`
+	)}`;
+
+const renderComingSoonCard = ({
+	message,
+	helpHref,
+}: {
+	message: string;
+	helpHref: string;
+}) =>
+	`<div class="dossier-grid-item"><div class="dossier-card dossier-placeholder-card"><div class="homepage-box" style="padding:16px;"><h3>Coming Soon</h3><p>${escapeHtml(
+		message
+	)}</p></div><div class="intel-dossier-actions"><a href="${helpHref}" target="_blank" rel="noreferrer">Help on GitHub</a></div></div></div>`;
 
 const renderOperationItem = (item: OperationRouteItem) => {
 	const links = resolveRelatedLinksForItem(item);
@@ -251,19 +272,29 @@ const writeSectionPages = (
 			subtitleHtml: `${HOME_CRUMB_HTML} / <a href="/operations/">Operations Hub</a> / <a href="${routeRoot}/">${sectionLabel}</a> / ${escapeHtml(
 				game.title
 			)}`,
-		})}<p class="rounded-box filled text-sm">Select a map dossier to view ${sectionLabel.toLowerCase()} details and cross-links.</p>${groups
+		})}<p class="rounded-box filled text-sm">Select a map dossier to view ${sectionLabel.toLowerCase()} details and cross-links.</p><div class="dossier-game-groups-grid">${groups
 			.map(group => {
-				const cards = renderMapCard({
-					title: group.groupName,
-					subtitle: `${group.count} Steps${group.maps.length > 1 ? ` • ${group.maps.length} Areas` : ''}`,
-					href: `${routeRoot}/${game.slug}/${group.mapSlug}/`,
-					actionHref: `/${group.primaryMapId ?? group.maps[0]?.mapId ?? ''}`,
-				});
-				return `<section class="intel-group"><div class="intel-type-header rounded-box filled map-group-header"><h2 class="title text-md">${escapeHtml(
+				const cards =
+					group.count > 0
+						? renderMapCard({
+								title: group.groupName,
+								subtitle: `${group.count} Steps${group.maps.length > 1 ? ` • ${group.maps.length} Areas` : ''}`,
+								href: `${routeRoot}/${game.slug}/${group.mapSlug}/`,
+								actionHref: `/${group.primaryMapId ?? group.maps[0]?.mapId ?? ''}`,
+						  })
+						: renderComingSoonCard({
+								message: `No ${sectionLabel.toLowerCase()} dossier items yet for ${group.groupName}.`,
+								helpHref: buildGithubHelpLink(
+									sectionLabel,
+									game.title,
+									group.groupName
+								),
+						  });
+				return `<section class="intel-group dossier-game-group"><div class="intel-type-header rounded-box filled map-group-header"><h2 class="title text-md">${escapeHtml(
 					group.groupName
 				)}</h2><span class="intel-group-count">${group.count} Steps</span></div><div class="intel-dossier-grid map-group-grid">${cards}</div></section>`;
 			})
-			.join('')}`;
+			.join('')}</div>`;
 		writeFile(
 			path.join(buildRoot, dirRoot, game.slug, 'index.html'),
 			pageShell({

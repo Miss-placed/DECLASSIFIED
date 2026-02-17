@@ -10,6 +10,7 @@ export interface IItem {
 	desc?: string;
 	icon?: string;
 	layer?: string;
+	dossierCategory?: string;
 }
 export class Item {
 	id?: string;
@@ -17,13 +18,15 @@ export class Item {
 	desc?: string;
 	icon?: string;
 	layer?: string;
+	dossierCategory?: string;
 
-	constructor({ id, title, desc, icon, layer }: IItem) {
+	constructor({ id, title, desc, icon, layer, dossierCategory }: IItem) {
 		this.id = id;
 		this.title = title ?? '';
 		this.desc = desc ?? '';
 		this.icon = icon ?? 'general'; // Using MiscIconTypes.general here causes loop race condition
 		this.layer = layer ?? 'MiscMarkers';
+		this.dossierCategory = dossierCategory ?? '';
 	}
 }
 
@@ -104,7 +107,7 @@ export class IntelMarker extends BaseMarker {
 export class MiscMarker extends BaseMarker {
 	constructor(
 		id: string,
-		{ title, desc, icon }: any,
+		{ title, desc, icon, dossierCategory }: any,
 		loc: LatLngExpression,
 		optional?: {
 			uniqueTitle?: string;
@@ -134,7 +137,7 @@ export class MiscMarker extends BaseMarker {
 			linkedItems: optional?.linkedItems,
 			externalLinks: optional?.externalLinks,
 			stepNumber: optional?.stepNumber,
-			dossierCategory: optional?.dossierCategory,
+			dossierCategory: optional?.dossierCategory ?? dossierCategory,
 			linkedIntelIds: optional?.linkedIntelIds,
 			helpLinks: optional?.helpLinks,
 			spoilerTags: optional?.spoilerTags,

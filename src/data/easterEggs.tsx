@@ -61,28 +61,28 @@ const markers = {
 		title: `Bonus Item`, icon: IconFileNames.interactable,
 	}),
 	fullPower: new Item({
-		title: `Full Power`, icon: IconFileNames.fullPower,
+		title: `Full Power`, icon: IconFileNames.fullPower, dossierCategory: 'Powerups',
 	}),
 	bonusPoints: new Item({
-		title: `Bonus Points`, icon: IconFileNames.bonusPoints,
+		title: `Bonus Points`, icon: IconFileNames.bonusPoints, dossierCategory: 'Powerups',
 	}),
 	nuke: new Item({
-		title: `Nuke`, icon: IconFileNames.nuke,
+		title: `Nuke`, icon: IconFileNames.nuke, dossierCategory: 'Powerups',
 	}),
 	maxAmmo: new Item({
-		title: `Max Ammo`, icon: IconFileNames.maxAmmo,
+		title: `Max Ammo`, icon: IconFileNames.maxAmmo, dossierCategory: 'Powerups',
 	}),
 	maxArmour: new Item({
-		title: `Max Armour`, icon: IconFileNames.maxArmour,
+		title: `Max Armour`, icon: IconFileNames.maxArmour, dossierCategory: 'Powerups',
 	}),
 	doublePoints: new Item({
-		title: `Double Points`, icon: IconFileNames.doublePoints,
+		title: `Double Points`, icon: IconFileNames.doublePoints, dossierCategory: 'Powerups',
 	}),
 	instaKill: new Item({
-		title: `Insta Kill`, icon: IconFileNames.instaKill,
+		title: `Insta Kill`, icon: IconFileNames.instaKill, dossierCategory: 'Powerups',
 	}),
 	fireSale: new Item({
-		title: `Fire Sale`, icon: IconFileNames.fireSale,
+		title: `Fire Sale`, icon: IconFileNames.fireSale, dossierCategory: 'Powerups',
 	}),
 	randomPerk: new Item({
 		title: `Random Perk`, icon: IconFileNames.randomPerk,

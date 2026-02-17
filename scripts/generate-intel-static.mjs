@@ -168,6 +168,7 @@ const STATIC_SITE_NOTICE_HTML = `<aside class="intel-static-notice" role="note">
 const HOME_CRUMB_HTML = `<a class="dossier-breadcrumb-home" href="/" title="Home" aria-label="Home"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3 2 12h3v8h6v-5h2v5h6v-8h3L12 3z" /></svg></a>`;
 const INTEL_HUB_CRUMB_HTML = `<a href="/intel/">Intel Hub</a>`;
 const EXTERNAL_LINK_ICON_HTML = `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 3h7v7h-2V6.41l-8.29 8.3-1.42-1.42 8.3-8.29H14V3z" /><path d="M5 5h6v2H7v10h10v-4h2v6H5V5z" /></svg>`;
+const GITHUB_ISSUES_NEW = 'https://github.com/Miss-placed/DECLASSIFIED/issues/new';
 
 function pageShell({ title, description, canonicalPath, body, schema, type = 'article' }) {
 	const canonicalUrl = `https://declassified.app${canonicalPath}`;
@@ -226,6 +227,18 @@ function renderDossierCard({ title, subtitle, href, actionHref, actionLabel, ope
 				)}</a></div>`
 			: ''
 	}</div></div>`;
+}
+
+function buildGithubHelpLink(gameName, mapGroupName) {
+	return `${GITHUB_ISSUES_NEW}?title=${encodeURIComponent(
+		`[Intel] ${gameName} - ${mapGroupName} dossier missing data`
+	)}`;
+}
+
+function renderComingSoonCard({ message, helpHref }) {
+	return `<div class="dossier-grid-item"><div class="dossier-card dossier-placeholder-card"><div class="homepage-box" style="padding:16px;"><h3>Coming Soon</h3><p>${escapeHtml(
+		message
+	)}</p></div><div class="intel-dossier-actions"><a href="${helpHref}" target="_blank" rel="noreferrer">Help on GitHub</a></div></div></div>`;
 }
 
 function build() {
@@ -322,33 +335,37 @@ function build() {
 				const maps = group.mapIds
 					.map(mapId => gameMapMeta.get(mapId))
 					.filter(Boolean);
-				if (maps.length === 0) return '';
-
 				const intelCount = gameItems.filter(item => group.mapIds.includes(item.mapId)).length;
 				const wikiUrl = getWikiIntelUrlForMap(group.name);
+				const cards =
+					intelCount > 0
+						? maps
+								.map(mapInfo =>
+									renderDossierCard({
+										title: mapInfo.mapTitle,
+										href: `/intel/${gameSlug}/${mapInfo.mapSlug}/`,
+										actionHref: `/${mapInfo.mapId}`,
+										actionLabel: 'Open map',
+										openInNewTab: true,
+									})
+								)
+								.join('')
+						: renderComingSoonCard({
+								message: `No intel dossier items yet for ${group.name}.`,
+								helpHref: buildGithubHelpLink(game.name, group.name),
+							});
 
-				return `<div class="intel-group"><div class="intel-type-header rounded-box filled map-group-header"><h2 class="title text-md">${escapeHtml(
+				return `<div class="intel-group dossier-game-group"><div class="intel-type-header rounded-box filled map-group-header"><h2 class="title text-md">${escapeHtml(
 					group.name
 				)}</h2>${
 					wikiUrl
 						? `<a class="map-group-wiki-link" href="${wikiUrl}" target="_blank" rel="noreferrer">${EXTERNAL_LINK_ICON_HTML}Wiki</a>`
 						: ''
-				}<span class="intel-group-count">${intelCount} Intel</span></div><div class="intel-dossier-grid map-group-grid">${maps
-					.map(mapInfo =>
-						renderDossierCard({
-							title: mapInfo.mapTitle,
-							href: `/intel/${gameSlug}/${mapInfo.mapSlug}/`,
-							actionHref: `/${mapInfo.mapId}`,
-							actionLabel: 'Open map',
-							openInNewTab: true,
-						})
-					)
-					.join('')}</div></div>`;
+				}<span class="intel-group-count">${intelCount} Intel</span></div><div class="intel-dossier-grid map-group-grid">${cards}</div></div>`;
 			})
-			.filter(Boolean)
 			.join('');
 
-		const gameBody = `${renderDossierHeader({ title: 'Intel Maps', subtitleHtml: `${HOME_CRUMB_HTML} / ${INTEL_HUB_CRUMB_HTML} / ${escapeHtml(game.name)}` })}<p class="rounded-box filled text-sm">Select a map hub to view intel dossiers. Open the map to jump into the interactive tracker.</p>${groupSections}`;
+		const gameBody = `${renderDossierHeader({ title: 'Intel Maps', subtitleHtml: `${HOME_CRUMB_HTML} / ${INTEL_HUB_CRUMB_HTML} / ${escapeHtml(game.name)}` })}<p class="rounded-box filled text-sm">Select a map hub to view intel dossiers. Open the map to jump into the interactive tracker.</p><div class="dossier-game-groups-grid">${groupSections}</div>`;
 
 		writeFile(
 			path.join(outputRoot, gameSlug, 'index.html'),
