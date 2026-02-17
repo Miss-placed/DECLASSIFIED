@@ -135,6 +135,7 @@ export default function EggsMapPage() {
 								showSpoilers={showSpoilers}
 								links={resolveRelatedLinksForItem(item)}
 								showMapLayer={hasMultipleMapLayers}
+								groupTitle={group.category}
 							/>
 						))}
 					</div>

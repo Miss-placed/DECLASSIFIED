@@ -139,17 +139,20 @@
 	margin-top: 1.5rem;
 }
 
-.intel-group-count {
-	margin-left: auto;
-	font-size: var(--fs-base);
-	opacity: 0.85;
+.map-group-title {
+	display: flex;
+	flex-direction: column;
+	gap: 0.45rem;
+	min-width: 0;
 }
 
-.map-group-header {
-	margin-top: 1.5rem;
+.map-group-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
 }
 
-.map-group-wiki-link {
+.map-group-action {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.35rem;
@@ -162,10 +165,20 @@
 	color: var(--clr-white-d);
 }
 
-.map-group-wiki-link svg {
+.map-group-action svg {
 	width: 0.8rem;
 	height: 0.8rem;
 	fill: currentColor;
+}
+
+.intel-group-count {
+	margin-left: auto;
+	font-size: var(--fs-base);
+	opacity: 0.85;
+}
+
+.map-group-header {
+	margin-top: 1.5rem;
 }
 
 .map-group-grid {

@@ -1,5 +1,6 @@
 import { Container, Typography } from '@mui/material';
 import { Link, useParams } from 'react-router-dom';
+import { IsValidMapId } from '../../components/MapControls/MapIds';
 import { HomeIcon } from '../../components/SocialIcons';
 import {
 	getOperationsGames,
@@ -53,9 +54,23 @@ export default function QuestsGamePage() {
 				{groups.map(group => (
 					<div key={group.groupName} className="intel-group dossier-game-group">
 						<div className="intel-type-header rounded-box filled map-group-header">
-							<Typography className="title text-md" variant="h5">
-								{group.groupName}
-							</Typography>
+							<div className="map-group-title">
+								<Typography className="title text-md" variant="h5">
+									{group.groupName}
+								</Typography>
+								<div className="map-group-actions">
+									{group.primaryMapId && IsValidMapId(group.primaryMapId) ? (
+										<Link
+											className="map-group-action"
+											to={`/${group.primaryMapId}`}
+											target="_blank"
+											rel="noreferrer"
+										>
+											Open map
+										</Link>
+									) : null}
+								</div>
+							</div>
 							<span className="intel-group-count">{group.count} Steps</span>
 						</div>
 						<div className="intel-dossier-grid map-group-grid">
@@ -63,15 +78,13 @@ export default function QuestsGamePage() {
 								<div className="dossier-grid-item">
 									<DossierCard
 										title={group.groupName}
-										subtitle={`${group.count} Steps${
+										subtitle={`${group.groupName} · ${group.count} Steps${
 											group.maps.length > 1
 												? ` • ${group.maps.length} Areas`
 												: ''
 										}`}
 										href={`/quests/${gameSlug}/${group.mapSlug}`}
-										actionHref={`/${group.primaryMapId ?? group.maps[0]?.mapId ?? ''}`}
-										actionLabel="Open map"
-										openInNewTab
+										hideTitle
 									/>
 								</div>
 							) : (

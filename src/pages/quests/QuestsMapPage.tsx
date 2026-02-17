@@ -137,10 +137,11 @@ export default function QuestsMapPage() {
 							<OperationItemCard
 								key={item.id}
 								item={item}
-							showSpoilers={showSpoilers}
-							links={resolveRelatedLinksForItem(item)}
-							showMapLayer={hasMultipleMapLayers}
-						/>
+								showSpoilers={showSpoilers}
+								links={resolveRelatedLinksForItem(item)}
+								showMapLayer={hasMultipleMapLayers}
+								groupTitle={group.category}
+							/>
 						))}
 					</div>
 				</div>

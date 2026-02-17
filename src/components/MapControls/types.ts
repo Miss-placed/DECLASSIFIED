@@ -18,11 +18,15 @@ export type MapGroupDictionary = Record<string, MapGroupItem>;
 const gameFromKey = (game: MapGroupGameKey) =>
 	game === 'bo6' ? Game.bo6 : Game.coldWar;
 
-const mapDetailsById = new Map(
-	Object.values(MapDetails)
-		.filter(map => !!map.id)
-		.map(map => [map.id as string, map])
-);
+const mapDetailsById = new Map<string, MapItem>();
+Object.values(MapDetails)
+	.filter(map => !!map.id)
+	.forEach(map => {
+		const mapId = map.id as string;
+		if (!mapDetailsById.has(mapId)) {
+			mapDetailsById.set(mapId, map);
+		}
+	});
 
 export const MapGroupings: MapGroupDictionary = MapGroupDefinitions.reduce(
 	(acc, group) => {

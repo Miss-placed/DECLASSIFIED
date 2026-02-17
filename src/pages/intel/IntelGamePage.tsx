@@ -2,7 +2,7 @@ import { Container, Typography } from '@mui/material';
 import { Link, useParams } from 'react-router-dom';
 import { IsValidMapId } from '../../components/MapControls/MapIds';
 import { Game, MapGroupings } from '../../components/MapControls/types';
-import { getIntelRouteModel } from '../../data/intelSeo';
+import { getIntelRouteModel, slugifyIntel } from '../../data/intelSeo';
 import '../../styles/intel-dossier.css';
 import { getWikiIntelUrlForMap } from '../../helpers/wiki';
 import { ExternalLinkIcon, HomeIcon } from '../../components/SocialIcons';
@@ -29,19 +29,6 @@ export default function IntelGamePage() {
 			: gameSlug === 'black-ops-cold-war'
 				? Game.coldWar
 				: undefined;
-	const mapMetaById = new Map<
-		string,
-		{ title: string; mapId: string; mapSlug: string }
-	>();
-	intel.forEach(item => {
-		if (item.mapId) {
-			mapMetaById.set(item.mapId, {
-				title: item.mapTitle,
-				mapId: item.mapId,
-				mapSlug: item.mapSlug,
-			});
-		}
-	});
 	const groupedMaps = gameKey
 		? Object.values(MapGroupings)
 			.filter(group => group.game === gameKey)
@@ -53,10 +40,15 @@ export default function IntelGamePage() {
 				);
 				const intelCount = intel.filter(item => item.mapId && mapIdSet.has(item.mapId))
 					.length;
-				const maps = group.mapLayers
-					.map(layer => (layer.id ? mapMetaById.get(layer.id) : undefined))
-					.filter((entry): entry is { title: string; mapId: string; mapSlug: string } => !!entry);
-				return { groupName: group.mapName, maps, intelCount };
+				const mapIds = Array.from(mapIdSet);
+				const primaryMapId = mapIds[0];
+				return {
+					groupName: group.mapName,
+					mapSlug: slugifyIntel(group.mapName),
+					mapCount: mapIds.length,
+					primaryMapId,
+					intelCount,
+				};
 			})
 		: [];
 
@@ -90,41 +82,50 @@ export default function IntelGamePage() {
 					const wikiUrl = getWikiIntelUrlForMap(group.groupName);
 					return (
 						<div key={group.groupName} className="intel-group dossier-game-group">
-							<div className="intel-type-header rounded-box filled map-group-header">
+						<div className="intel-type-header rounded-box filled map-group-header">
+							<div className="map-group-title">
 								<Typography className="title text-md" variant="h5">
 									{group.groupName}
 								</Typography>
-								{wikiUrl ? (
-									<a
-										className="map-group-wiki-link"
-										href={wikiUrl}
-										target="_blank"
-										rel="noreferrer"
-										aria-label={`Open ${group.groupName} wiki`}
-									>
-										<ExternalLinkIcon />
-										Wiki
-									</a>
-								) : null}
+								<div className="map-group-actions">
+									{wikiUrl ? (
+										<a
+											className="map-group-action"
+											href={wikiUrl}
+											target="_blank"
+											rel="noreferrer"
+											aria-label={`Open ${group.groupName} wiki`}
+										>
+											<ExternalLinkIcon />
+											Wiki
+										</a>
+									) : null}
+									{group.primaryMapId && IsValidMapId(group.primaryMapId) ? (
+										<Link
+											className="map-group-action"
+											to={`/${group.primaryMapId}`}
+											target="_blank"
+											rel="noreferrer"
+										>
+											Open map
+										</Link>
+									) : null}
+								</div>
+							</div>
 							<span className="intel-group-count">{group.intelCount} Intel</span>
 						</div>
 						<div className="intel-dossier-grid map-group-grid">
 							{group.intelCount > 0 ? (
-								group.maps.map(mapInfo => {
-									const mapRouteId =
-										mapInfo.mapId && IsValidMapId(mapInfo.mapId) ? mapInfo.mapId : undefined;
-									return (
-										<div key={mapInfo.mapSlug} className="dossier-grid-item">
-											<DossierCard
-												title={mapInfo.title}
-												href={`/intel/${gameSlug}/${mapInfo.mapSlug}`}
-												actionHref={mapRouteId ? `/${mapRouteId}` : undefined}
-												actionLabel="Open map"
-												openInNewTab
-											/>
-										</div>
-									);
-								})
+								<div className="dossier-grid-item">
+									<DossierCard
+										title={group.groupName}
+										subtitle={`${group.groupName} · ${group.intelCount} Intel${
+											group.mapCount > 1 ? ` • ${group.mapCount} Areas` : ''
+										}`}
+										href={`/intel/${gameSlug}/${group.mapSlug}`}
+										hideTitle
+									/>
+								</div>
 							) : (
 								<div className="dossier-grid-item">
 									<div className="dossier-card dossier-placeholder-card">

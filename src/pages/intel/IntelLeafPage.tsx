@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import DossierHeader from './components/DossierHeader';
 import IntelQuickLinks from './components/IntelQuickLinks';
 import '../../styles/intel-dossier.css';
-import { getIntelRouteModel } from '../../data/intelSeo';
+import { getIntelRouteModel, slugifyIntel } from '../../data/intelSeo';
 import { getIntelTranscript } from '../../data/intelTranscripts';
 import { ExternalLinkIcon, HomeIcon } from '../../components/SocialIcons';
 import { getMapGroupNameByMapId, getWikiIntelUrlForMap } from '../../helpers/wiki';
@@ -12,12 +12,9 @@ import { addCollectedIntel, deleteCollectedIntel } from '../../data/dataAccessLa
 import { db } from '../../data/db';
 
 export default function IntelLeafPage() {
-	const { gameSlug, mapSlug, intelSlug } = useParams();
+	const { gameSlug, intelSlug } = useParams();
 	const intel = getIntelRouteModel().find(
-		item =>
-			item.gameSlug === gameSlug &&
-			item.mapSlug === mapSlug &&
-			item.intelSlug === intelSlug
+		item => item.gameSlug === gameSlug && item.intelSlug === intelSlug
 	);
 	const intelId = intel?.id;
 	const collectedEntry = useLiveQuery(
@@ -28,6 +25,7 @@ export default function IntelLeafPage() {
 
 	if (!intel) return <p>Intel dossier unavailable.</p>;
 	const mapGroupName = getMapGroupNameByMapId(intel.mapId) ?? intel.mapTitle;
+	const mapGroupSlug = mapGroupName ? slugifyIntel(mapGroupName) : intel.mapSlug;
 	const wikiIntelUrl = getWikiIntelUrlForMap(mapGroupName);
 
 	return (
@@ -49,7 +47,7 @@ export default function IntelLeafPage() {
 						{' / '}
 						<Link to={`/intel/${intel.gameSlug}`}>{intel.gameTitle}</Link>
 						{' / '}
-						<Link to={`/intel/${intel.gameSlug}/${intel.mapSlug}`}>{intel.mapTitle}</Link>
+						<Link to={`/intel/${intel.gameSlug}/${mapGroupSlug}`}>{mapGroupName}</Link>
 						{' • '}
 						{intel.type}
 					</>

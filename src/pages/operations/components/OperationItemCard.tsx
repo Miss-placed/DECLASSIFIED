@@ -13,6 +13,7 @@ interface OperationItemCardProps {
 	links: ParsedLink[];
 	showSpoilers: boolean;
 	showMapLayer?: boolean;
+	groupTitle?: string;
 }
 
 const renderLink = (link: ParsedLink, key: string) => {
@@ -35,6 +36,7 @@ export default function OperationItemCard({
 	links,
 	showSpoilers,
 	showMapLayer = false,
+	groupTitle,
 }: OperationItemCardProps) {
 	const mapItem = GetMapById(item.mapId);
 	const iconSrc = `/${getMiscIconUri(item.icon)}`;
@@ -61,7 +63,7 @@ export default function OperationItemCard({
 				{typeof item.stepNumber === 'number' ? (
 					<span className="operation-chip">Step {item.stepNumber}</span>
 				) : null}
-				{item.groupingTitle ? (
+				{item.groupingTitle && item.groupingTitle !== groupTitle ? (
 					<span className="operation-chip">{item.groupingTitle}</span>
 				) : null}
 				{hasSpoiler ? (

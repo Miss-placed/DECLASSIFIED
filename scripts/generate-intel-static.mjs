@@ -173,7 +173,7 @@ const GITHUB_ISSUES_NEW = 'https://github.com/Miss-placed/DECLASSIFIED/issues/ne
 function pageShell({ title, description, canonicalPath, body, schema, type = 'article' }) {
 	const canonicalUrl = `https://declassified.app${canonicalPath}`;
 	const cssLinks = getCssLinks();
-	const baseStyles = `html,body{margin:0;padding:0;min-height:100%;background:#1f2223;color:#e3ddd9;font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace}a{color:inherit}@media(max-width:768px){html{font-size:16px}}.intel-static-notice{margin:1rem 0;padding:.55rem .8rem;border:1px solid #4d5760;border-radius:8px;background:#2a3135;color:#ebe7e2;font-size:.8rem;line-height:1.35}.intel-static-notice a{font-weight:700;text-decoration:underline}.intel-static-notice a:hover{opacity:.85}.dossier-header-content{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}.dossier-header-copy{min-width:0}.dossier-header-actions{flex-shrink:0}.dossier-subtitle{display:flex;align-items:center;gap:.35rem;flex-wrap:wrap}.dossier-subtitle a{font-weight:700;text-decoration:none}.dossier-subtitle a:hover{opacity:.85}.dossier-breadcrumb-home{display:inline-flex;align-items:center;justify-content:center;width:1.5rem;height:1.5rem;border-radius:6px;border:1px solid var(--clr-grey);background:var(--clr-grey-d);color:var(--clr-white-d)}.dossier-breadcrumb-home svg{width:.85rem;height:.85rem;fill:currentColor}.map-intel-grid .homepage-box h3{font-size:var(--fs-base,1rem);line-height:1.25}.map-intel-grid .homepage-box p{font-size:var(--fs-sm,.85rem);line-height:1.2;opacity:.9}.intel-header-links{display:flex;align-items:center;justify-content:flex-end;gap:.5rem;flex-wrap:wrap}.intel-header-link{display:inline-flex;align-items:center;justify-content:center;gap:.35rem;width:36px;height:36px;border-radius:8px;border:1px solid transparent;text-decoration:none;color:var(--clr-white-d);background:var(--clr-black)}.intel-header-link svg{width:18px;height:18px;fill:currentColor}.intel-header-link.social-link#discord{background:var(--clr-social-discord);color:var(--clr-white-d)}.intel-header-link.social-link#github{background:var(--clr-social-github);color:var(--clr-white)}.intel-header-link.social-link#coffee{background:var(--clr-social-coffee);color:var(--clr-white)}.intel-header-link:hover{filter:brightness(1.08)}.intel-dossier-actions .intel-action-with-icon{display:inline-flex;align-items:center;gap:.35rem}.intel-dossier-actions .intel-action-with-icon svg{width:.85rem;height:.85rem;fill:currentColor}.map-group-wiki-link{display:inline-flex;align-items:center;gap:.35rem;font-size:var(--fs-sm,.85rem);text-decoration:none;padding:.2rem .55rem;border:1px solid var(--clr-grey);border-radius:6px;background:var(--clr-grey-d);color:var(--clr-white-d)}.map-group-wiki-link svg{width:.8rem;height:.8rem;fill:currentColor}@media(max-width:768px){.dossier-header-content{flex-direction:column}.dossier-header-actions{width:100%}.intel-header-links{justify-content:flex-start}}`;
+const baseStyles = `html,body{margin:0;padding:0;min-height:100%;background:#1f2223;color:#e3ddd9;font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace}a{color:inherit}@media(max-width:768px){html{font-size:16px}}.intel-static-notice{margin:1rem 0;padding:.55rem .8rem;border:1px solid #4d5760;border-radius:8px;background:#2a3135;color:#ebe7e2;font-size:.8rem;line-height:1.35}.intel-static-notice a{font-weight:700;text-decoration:underline}.intel-static-notice a:hover{opacity:.85}.dossier-header-content{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}.dossier-header-copy{min-width:0}.dossier-header-actions{flex-shrink:0}.dossier-subtitle{display:flex;align-items:center;gap:.35rem;flex-wrap:wrap}.dossier-subtitle a{font-weight:700;text-decoration:none}.dossier-subtitle a:hover{opacity:.85}.dossier-breadcrumb-home{display:inline-flex;align-items:center;justify-content:center;width:1.5rem;height:1.5rem;border-radius:6px;border:1px solid var(--clr-grey);background:var(--clr-grey-d);color:var(--clr-white-d)}.dossier-breadcrumb-home svg{width:.85rem;height:.85rem;fill:currentColor}.map-intel-grid .homepage-box h3{font-size:var(--fs-base,1rem);line-height:1.25}.map-intel-grid .homepage-box p{font-size:var(--fs-sm,.85rem);line-height:1.2;opacity:.9}.intel-header-links{display:flex;align-items:center;justify-content:flex-end;gap:.5rem;flex-wrap:wrap}.intel-header-link{display:inline-flex;align-items:center;justify-content:center;gap:.35rem;width:36px;height:36px;border-radius:8px;border:1px solid transparent;text-decoration:none;color:var(--clr-white-d);background:var(--clr-black)}.intel-header-link svg{width:18px;height:18px;fill:currentColor}.intel-header-link.social-link#discord{background:var(--clr-social-discord);color:var(--clr-white-d)}.intel-header-link.social-link#github{background:var(--clr-social-github);color:var(--clr-white)}.intel-header-link.social-link#coffee{background:var(--clr-social-coffee);color:var(--clr-white)}.intel-header-link:hover{filter:brightness(1.08)}.intel-dossier-actions .intel-action-with-icon{display:inline-flex;align-items:center;gap:.35rem}.intel-dossier-actions .intel-action-with-icon svg{width:.85rem;height:.85rem;fill:currentColor}.map-group-title{display:flex;flex-direction:column;gap:.45rem;min-width:0}.map-group-actions{display:flex;flex-wrap:wrap;gap:.5rem}.map-group-action{display:inline-flex;align-items:center;gap:.35rem;font-size:var(--fs-sm,.85rem);text-decoration:none;padding:.2rem .55rem;border:1px solid var(--clr-grey);border-radius:6px;background:var(--clr-grey-d);color:var(--clr-white-d)}.map-group-action svg{width:.8rem;height:.8rem;fill:currentColor}@media(max-width:768px){.dossier-header-content{flex-direction:column}.dossier-header-actions{width:100%}.intel-header-links{justify-content:flex-start}}`;
 
 	return `<!doctype html>
 <html lang="en">
@@ -216,11 +216,11 @@ function renderDossierHeader({ title, subtitle, subtitleHtml }) {
 	)}</h1>${subtitleHtml ? `<p class="dossier-subtitle">${subtitleHtml}</p>` : subtitle ? `<p class="dossier-subtitle">${escapeHtml(subtitle)}</p>` : ''}</div><div class="dossier-header-actions">${QUICK_LINKS_HTML}</div></div></header>`;
 }
 
-function renderDossierCard({ title, subtitle, href, actionHref, actionLabel, openInNewTab }) {
+function renderDossierCard({ title, subtitle, href, actionHref, actionLabel, openInNewTab, hideTitle = false }) {
 	const actionAttrs = openInNewTab ? ' target="_blank" rel="noreferrer"' : '';
-	return `<div class="dossier-grid-item"><div class="dossier-card"><a class="dossier-card-link" href="${href}"><div class="homepage-box" style="padding:16px;"><h3>${escapeHtml(
-		title
-	)}</h3>${subtitle ? `<p>${escapeHtml(subtitle)}</p>` : ''}</div></a>${
+	return `<div class="dossier-grid-item"><div class="dossier-card"><a class="dossier-card-link" href="${href}"><div class="homepage-box" style="padding:16px;">${
+		hideTitle ? '' : `<h3>${escapeHtml(title)}</h3>`
+	}${subtitle ? `<p>${escapeHtml(subtitle)}</p>` : ''}</div></a>${
 		actionHref && actionLabel
 			? `<div class="intel-dossier-actions"><a href="${actionHref}"${actionAttrs}>${escapeHtml(
 					actionLabel
@@ -245,28 +245,6 @@ function build() {
 	const intelSource = fs.readFileSync(intelPath, 'utf8');
 	const mapSource = fs.readFileSync(mapDetailsPath, 'utf8');
 	const mapTitleById = parseMapTitles(mapSource);
-	const items = parseIntelItems(intelSource).map(item => {
-		const gameSlug = inferGameSlug(item.id);
-		const mapTitle = mapTitleById[item.mapId] ?? item.mapId;
-		const type = INTEL_TYPE_LABELS[item.typeKey] ?? item.typeKey;
-		const mapSlug = slugify(mapTitle);
-		const intelSlug = `${slugify(item.title)}-${slugify(item.id)}`;
-		return {
-			...item,
-			type,
-			gameSlug,
-			gameName: GAME_INFO[gameSlug].name,
-			mapTitle,
-			mapSlug,
-			intelSlug,
-			transcript: PLACEHOLDER_TRANSCRIPT,
-			url: `/intel/${gameSlug}/${mapSlug}/${intelSlug}/`,
-		};
-	});
-
-	const urlManifest = new Set(['/intel/']);
-	const itemsByGame = new Map();
-	const mapMetaByGame = new Map();
 	const mapGroupNameByMapId = new Map();
 
 	for (const [gameSlug, groups] of Object.entries(MAP_GROUPS)) {
@@ -277,21 +255,36 @@ function build() {
 		}
 	}
 
+	const items = parseIntelItems(intelSource).map(item => {
+		const gameSlug = inferGameSlug(item.id);
+		const mapTitle = mapTitleById[item.mapId] ?? item.mapId;
+		const mapGroupName = mapGroupNameByMapId.get(item.mapId) ?? mapTitle;
+		const mapGroupSlug = slugify(mapGroupName);
+		const type = INTEL_TYPE_LABELS[item.typeKey] ?? item.typeKey;
+		const mapSlug = slugify(mapTitle);
+		const intelSlug = `${slugify(item.title)}-${slugify(item.id)}`;
+		return {
+			...item,
+			type,
+			gameSlug,
+			gameName: GAME_INFO[gameSlug].name,
+			mapTitle,
+			mapGroupName,
+			mapGroupSlug,
+			mapSlug,
+			intelSlug,
+			transcript: PLACEHOLDER_TRANSCRIPT,
+			url: `/intel/${gameSlug}/${mapGroupSlug}/${intelSlug}/`,
+		};
+	});
+
+	const urlManifest = new Set(['/intel/']);
+	const itemsByGame = new Map();
+
 	for (const item of items) {
 		const gameItems = itemsByGame.get(item.gameSlug) ?? [];
 		gameItems.push(item);
 		itemsByGame.set(item.gameSlug, gameItems);
-
-		const mapMeta = mapMetaByGame.get(item.gameSlug) ?? new Map();
-		if (!mapMeta.has(item.mapId)) {
-			mapMeta.set(item.mapId, {
-				mapId: item.mapId,
-				mapTitle: item.mapTitle,
-				mapSlug: item.mapSlug,
-				groupName: mapGroupNameByMapId.get(item.mapId) ?? item.mapTitle,
-			});
-		}
-		mapMetaByGame.set(item.gameSlug, mapMeta);
 	}
 
 	fs.rmSync(outputRoot, { recursive: true, force: true });
@@ -328,40 +321,42 @@ function build() {
 
 	for (const [gameSlug, game] of Object.entries(GAME_INFO)) {
 		const gameItems = itemsByGame.get(gameSlug) ?? [];
-		const gameMapMeta = mapMetaByGame.get(gameSlug) ?? new Map();
 		const groups = MAP_GROUPS[gameSlug] ?? [];
 		const groupSections = groups
 			.map(group => {
-				const maps = group.mapIds
-					.map(mapId => gameMapMeta.get(mapId))
-					.filter(Boolean);
 				const intelCount = gameItems.filter(item => group.mapIds.includes(item.mapId)).length;
 				const wikiUrl = getWikiIntelUrlForMap(group.name);
+				const mapGroupSlug = slugify(group.name);
+				const primaryMapId = group.mapIds[0];
 				const cards =
 					intelCount > 0
-						? maps
-								.map(mapInfo =>
-									renderDossierCard({
-										title: mapInfo.mapTitle,
-										href: `/intel/${gameSlug}/${mapInfo.mapSlug}/`,
-										actionHref: `/${mapInfo.mapId}`,
-										actionLabel: 'Open map',
-										openInNewTab: true,
-									})
-								)
-								.join('')
+						? renderDossierCard({
+								title: group.name,
+								subtitle: `${group.name} · ${intelCount} Intel${
+									group.mapIds.length > 1 ? ` • ${group.mapIds.length} Areas` : ''
+								}`,
+								href: `/intel/${gameSlug}/${mapGroupSlug}/`,
+								actionHref: primaryMapId ? `/${primaryMapId}` : undefined,
+								actionLabel: 'Open map',
+								openInNewTab: true,
+								hideTitle: true,
+							})
 						: renderComingSoonCard({
 								message: `No intel dossier items yet for ${group.name}.`,
 								helpHref: buildGithubHelpLink(game.name, group.name),
 							});
 
-				return `<div class="intel-group dossier-game-group"><div class="intel-type-header rounded-box filled map-group-header"><h2 class="title text-md">${escapeHtml(
+				return `<div class="intel-group dossier-game-group"><div class="intel-type-header rounded-box filled map-group-header"><div class="map-group-title"><h2 class="title text-md">${escapeHtml(
 					group.name
-				)}</h2>${
+				)}</h2><div class="map-group-actions">${
 					wikiUrl
-						? `<a class="map-group-wiki-link" href="${wikiUrl}" target="_blank" rel="noreferrer">${EXTERNAL_LINK_ICON_HTML}Wiki</a>`
+						? `<a class="map-group-action" href="${wikiUrl}" target="_blank" rel="noreferrer">${EXTERNAL_LINK_ICON_HTML}Wiki</a>`
 						: ''
-				}<span class="intel-group-count">${intelCount} Intel</span></div><div class="intel-dossier-grid map-group-grid">${cards}</div></div>`;
+				}${
+					primaryMapId
+						? `<a class="map-group-action" href="/${primaryMapId}" target="_blank" rel="noreferrer">Open map</a>`
+						: ''
+				}</div></div><span class="intel-group-count">${intelCount} Intel</span></div><div class="intel-dossier-grid map-group-grid">${cards}</div></div>`;
 			})
 			.join('');
 
@@ -384,10 +379,12 @@ function build() {
 		);
 		urlManifest.add(`/intel/${gameSlug}/`);
 
-		for (const mapInfo of gameMapMeta.values()) {
-			const mapItems = gameItems.filter(item => item.mapId === mapInfo.mapId);
+		for (const group of groups) {
+			const mapItems = gameItems.filter(item => group.mapIds.includes(item.mapId));
 			if (mapItems.length === 0) continue;
-			const wikiUrl = getWikiIntelUrlForMap(mapInfo.groupName);
+			const mapGroupSlug = slugify(group.name);
+			const wikiUrl = getWikiIntelUrlForMap(group.name);
+			const primaryMapId = group.mapIds[0];
 
 			const typeSections = INTEL_TYPE_ORDER.map(type => {
 				const typeItems = mapItems.filter(item => item.type === type);
@@ -400,7 +397,7 @@ function build() {
 					.map(intel =>
 						renderDossierCard({
 							title: intel.title,
-							href: `/intel/${gameSlug}/${mapInfo.mapSlug}/${intel.intelSlug}/`,
+							href: `/intel/${gameSlug}/${mapGroupSlug}/${intel.intelSlug}/`,
 							actionHref: `/${intel.id}`,
 							actionLabel: 'Open on map',
 							openInNewTab: true,
@@ -413,34 +410,34 @@ function build() {
 
 			const mapBody = `${renderDossierHeader({
 				title: 'Intel List',
-				subtitleHtml: `${HOME_CRUMB_HTML} / ${INTEL_HUB_CRUMB_HTML} / <a href="/intel/${gameSlug}/">${escapeHtml(game.name)}</a> / ${escapeHtml(mapInfo.mapTitle)}`,
-			})}<div class="intel-dossier-actions"><a href="/${mapInfo.mapId}" target="_blank" rel="noreferrer">Open map</a>${
+				subtitleHtml: `${HOME_CRUMB_HTML} / ${INTEL_HUB_CRUMB_HTML} / <a href="/intel/${gameSlug}/">${escapeHtml(game.name)}</a> / ${escapeHtml(group.name)}`,
+			})}<div class="intel-dossier-actions"><a href="/${primaryMapId}" target="_blank" rel="noreferrer">Open map</a>${
 				wikiUrl
 					? `<a class="intel-action-with-icon" href="${wikiUrl}" target="_blank" rel="noreferrer">${EXTERNAL_LINK_ICON_HTML}Wiki</a>`
 					: ''
 			}</div>${typeSections}`;
 
 			writeFile(
-				path.join(outputRoot, gameSlug, mapInfo.mapSlug, 'index.html'),
+				path.join(outputRoot, gameSlug, mapGroupSlug, 'index.html'),
 				pageShell({
-					title: `${mapInfo.mapTitle} Intel Dossiers`,
-					description: `Browse ${mapInfo.mapTitle} intel dossiers in ${game.name}.`,
-					canonicalPath: `/intel/${gameSlug}/${mapInfo.mapSlug}/`,
+					title: `${group.name} Intel Dossiers`,
+					description: `Browse ${group.name} intel dossiers in ${game.name}.`,
+					canonicalPath: `/intel/${gameSlug}/${mapGroupSlug}/`,
 					body: mapBody,
 					type: 'website',
 					schema: {
 						'@context': 'https://schema.org',
 						'@type': 'CollectionPage',
-						name: `${mapInfo.mapTitle} Intel Dossiers`,
+						name: `${group.name} Intel Dossiers`,
 					},
 				})
 			);
-			urlManifest.add(`/intel/${gameSlug}/${mapInfo.mapSlug}/`);
+			urlManifest.add(`/intel/${gameSlug}/${mapGroupSlug}/`);
 
 			for (const intel of mapItems) {
 				const leafBody = `${renderDossierHeader({
 					title: intel.title,
-					subtitleHtml: `${HOME_CRUMB_HTML} / ${INTEL_HUB_CRUMB_HTML} / <a href="/intel/${gameSlug}/">${escapeHtml(game.name)}</a> / <a href="/intel/${gameSlug}/${mapInfo.mapSlug}/">${escapeHtml(mapInfo.mapTitle)}</a> • ${escapeHtml(intel.type)}`,
+					subtitleHtml: `${HOME_CRUMB_HTML} / ${INTEL_HUB_CRUMB_HTML} / <a href="/intel/${gameSlug}/">${escapeHtml(game.name)}</a> / <a href="/intel/${gameSlug}/${mapGroupSlug}/">${escapeHtml(group.name)}</a> • ${escapeHtml(intel.type)}`,
 				})}<p class="rounded-box filled text-sm">${escapeHtml(
 					intel.desc
 				)}</p><h2 class="title text-md">Transcript</h2><div class="intel-dossier-actions"><a href="/${intel.id}" target="_blank" rel="noreferrer">Open intel on map</a>${
@@ -453,27 +450,27 @@ function build() {
 					path.join(
 						outputRoot,
 						gameSlug,
-						mapInfo.mapSlug,
+						mapGroupSlug,
 						intel.intelSlug,
 						'index.html'
 					),
 					pageShell({
-						title: `${intel.title} | ${mapInfo.mapTitle} Intel`,
-						description: `${intel.title} dossier for ${mapInfo.mapTitle}. ${intel.desc}`,
-						canonicalPath: `/intel/${gameSlug}/${mapInfo.mapSlug}/${intel.intelSlug}/`,
+						title: `${intel.title} | ${group.name} Intel`,
+						description: `${intel.title} dossier for ${group.name}. ${intel.desc}`,
+						canonicalPath: `/intel/${gameSlug}/${mapGroupSlug}/${intel.intelSlug}/`,
 						body: leafBody,
 						schema: {
 							'@context': 'https://schema.org',
 							'@type': 'Article',
 							headline: intel.title,
 							description: intel.desc,
-							about: mapInfo.mapTitle,
+							about: group.name,
 							inLanguage: 'en',
 						},
 					})
 				);
 				urlManifest.add(
-					`/intel/${gameSlug}/${mapInfo.mapSlug}/${intel.intelSlug}/`
+					`/intel/${gameSlug}/${mapGroupSlug}/${intel.intelSlug}/`
 				);
 			}
 		}
