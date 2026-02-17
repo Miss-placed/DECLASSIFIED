@@ -97,7 +97,11 @@ export const DeclassifiedContextProvider = ({ children }) => {
 	const timeoutIdRef = useRef<NodeJS.Timeout | null>(null);
 	const navigate = useNavigate();
 
-	const setCurrentMapWithValidation = useCallback(async (newMap: MapItem) => {
+	const setCurrentMapWithValidation = useCallback(
+		async (
+			newMap: MapItem,
+			options?: { skipNavigate?: boolean }
+		) => {
 		if (isDebugMode) {
 			console.log('Setting current map to: ', newMap);
 		}
@@ -109,7 +113,9 @@ export const DeclassifiedContextProvider = ({ children }) => {
 						console.log('Setting current map GROUP to: ', mapGroupItem);
 					}
 					setCurrentMapGroup(mapGroupItem);
-					navigate(`/${newMap.id}`);
+					if (!options?.skipNavigate) {
+						navigate(`/${newMap.id}`);
+					}
 				}
 			});
 
@@ -235,6 +241,15 @@ export const DeclassifiedContextProvider = ({ children }) => {
 			setFilteredEggStore(filteredMisc);
 		}
 	}, [collectedIntel, currentEggFilter.easterEggTypes, currentEggFilter.searchTerm, currentIntelFilter, currentMapGroup])
+
+	useEffect(() => {
+		if (mapUrlId && IsValidMapId(mapUrlId)) {
+			const nextMap = GetMapById(mapUrlId);
+			if (nextMap && nextMap !== currentMap) {
+				setCurrentMapWithValidation(nextMap, { skipNavigate: true });
+			}
+		}
+	}, [currentMap, mapUrlId, setCurrentMapWithValidation]);
 
 	useEffect(() => {
 		if (mapUrlId) {

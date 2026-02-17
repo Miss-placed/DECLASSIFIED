@@ -17,7 +17,10 @@ export interface ToggleDrawerOptions {
 
 export interface DeclassifiedContextProps {
 	currentMap: MapItem | null;
-	setCurrentMapWithValidation: (newMap: MapItem) => Promise<boolean>;
+	setCurrentMapWithValidation: (
+		newMap: MapItem,
+		options?: { skipNavigate?: boolean }
+	) => Promise<boolean>;
 
 	currentMapGroup: MapGroupItem | null;
 	setCurrentMapGroup: Dispatch<SetStateAction<MapGroupItem | null>>;
