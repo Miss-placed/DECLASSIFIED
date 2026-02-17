@@ -88,7 +88,7 @@ const markers = {
 		title: `Random Perk`, icon: IconFileNames.randomPerk,
 	}),
 	freePerk: new Item({
-		title: `Free Perk / Challenge`, icon: IconFileNames.randomPerk,
+		title: `Free Perk / Challenge`, icon: IconFileNames.randomPerk, dossierCategory: 'Free Perks',
 	}),
 	shovel: new Item({
 		title: `Shovel`, desc: `Used to dig up spots on the map.`, icon: IconFileNames.shovel,
@@ -140,7 +140,7 @@ const markers = {
 	mrPeeksBowlingShoe: new Item({ title: 'Mr Peeks - Bowling Shoe', desc: 'Shoot all of the shoes to start a bowling mini game!', icon: IconFileNames.mrPeeksBlue, }),
 	// Terminus
 	sporesEgg: new Item({
-		title: `Free Perk - Spores`, desc: `Final Spores Location\nAfter shooting all the spore islands shoot all spores here to be rewarded with a Random Perk powerup.`, icon: IconFileNames.randomPerk,
+		title: `Free Perk - Spores`, desc: `Final Spores Location\nAfter shooting all the spore islands shoot all spores here to be rewarded with a Random Perk powerup.`, icon: IconFileNames.randomPerk, dossierCategory: 'Free Perks',
 	}),
 	sporesEggIsland: new Item({
 		title: `Spore Island`, desc: `1 of 4 potential islands covered in spores. Shoot all spores on this island (you'll get an audio cue if done right), then find more islands over the next 2 rounds (can only find one per round) and repeat.\nAfter completing the last island look here:`, icon: IconFileNames.interactable,
@@ -161,7 +161,7 @@ const markers = {
 		title: `Mr Peeks - Boat Race!`, desc: `Underwater there is a pink boat, with a flashing red light. Interact with it to be teleported into a boat race game and play for a reward!`, icon: IconFileNames.mrPeeks,
 	}),
 	whackACrab: new Item({
-		title: `Free Perk - Whack A Crab`, desc: `Throw a grenade/molotov at the crab cage up in the trees. 4 crab spots will spawn around the island, melee them to start a small mini game, win to be rewarded with loot & perks. `, icon: IconFileNames.randomPerk,
+		title: `Free Perk - Whack A Crab`, desc: `Throw a grenade/molotov at the crab cage up in the trees. 4 crab spots will spawn around the island, melee them to start a small mini game, win to be rewarded with loot & perks. `, icon: IconFileNames.randomPerk, dossierCategory: 'Free Perks',
 	}),
 	cursedTreasureHunt: new Item({
 		title: `Cursed Treasure Hunt`, desc: `Break the stalagmites with a melee attack with melee macchiato equipt to begin a side quest. Collect a watch first, then go to each location on the map, defeating a HVT at each highlighted location. After returning 3 coins you will be rewarded with legendary weapons.`, icon: IconFileNames.mrPeeks,
@@ -187,7 +187,7 @@ const markers = {
 		title: `Bartending Egg`, icon: IconFileNames.bottle,
 		desc: `After collecting all 3 bottles, you can come back here to trigger the easter egg that rewards you with intel and a free PHD flopper perk.`,
 	}),
-	mrPeeksHideNSeek: new Item({ title: `Mr Peeks - Hide 'N Seek!`, desc: 'Find all Mr Peeks dolls in a specific order, to unlock a free perk! Originally found by one of the creators!', icon: IconFileNames.mrPeeks, }),
+	mrPeeksHideNSeek: new Item({ title: `Mr Peeks - Hide 'N Seek!`, desc: 'Find all Mr Peeks dolls in a specific order, to unlock a free perk! Originally found by one of the creators!', icon: IconFileNames.mrPeeks, dossierCategory: 'Free Perks', }),
 	cannonEgg: new Item({
 		title: `Clock Tower Monkey Bomb`, icon: IconFileNames.interactable,
 	}),
@@ -490,15 +490,15 @@ export const StaticEggStore: MarkerStore = {
 		new MiscMarker(`91uL5`, markers.mrPeeksHeadphones, [292.69235875192874, 273.4487864638555], { uniqueDesc: `1 of 3 needed for the easter egg song.` }),
 		new MiscMarker(`W79dg`, markers.mrPeeksHeadphones, [190.2183565265511, 98.67280276106689], { uniqueDesc: `1 of 3 needed for the easter egg song.` }),
 		new MiscMarker(`0JqXi`, markers.bonus, [171.02883650135874, 340.44541021518586], { uniqueTitle: `Vending Machine`, uniqueDesc: `When meleed correctly can drop bonus items each round. When hit with Melee Macchiato it blows up and offers one last reward.` }),
-		new MiscMarker(`YeXWV`, markers.bonus, [269.5062750742712, 231.81422099725725], { uniqueTitle: `Aetherella Statue`, uniqueDesc: `1 of 9\n Must be collected with Jet Gun. Up on top of an air conditioning unit.` }),
-		new MiscMarker(`zM2jb`, markers.bonus, [205.28419151815734, 340.36086600016], { uniqueTitle: `Aetherella Statue`, uniqueDesc: `1 of 9\n Must be collected with Jet Gun.\nOn top of the motel sign, top left.` }),
-		new MiscMarker(`0OHjM`, markers.bonus, [154.626598832603, 254.25667074355712], { uniqueTitle: `Aetherella Statue`, uniqueDesc: `1 of 9\n Must be collected with Jet Gun.\nNext to the bowling sign, jump onto the bus to reach it.` }),
-		new MiscMarker(`G4IGc`, markers.bonus, [313.2844647277621, 313.5398735527481], { uniqueTitle: `Aetherella Statue`, uniqueDesc: `1 of 9\n Must be collected with Jet Gun.` }),
-		new MiscMarker(`4w4zQ`, markers.bonus, [298.67507993856594, 316.96235180755974], { uniqueTitle: `Aetherella Statue`, uniqueDesc: `1 of 9\n Must be collected with Jet Gun.` }),
-		new MiscMarker(`ypSrs`, markers.bonus, [307.052489398105, 338.26344781138766], { uniqueTitle: `Aetherella Statue`, uniqueDesc: `1 of 9\n Must be collected with Jet Gun.` }),
-		new MiscMarker(`KnYD1`, markers.bonus, [320.4359118273686, 335.96476838651415], { uniqueTitle: `Aetherella Statue`, uniqueDesc: `1 of 9\n Must be collected with Jet Gun.` }),
-		new MiscMarker(`7xM7R`, markers.bonus, [200.86456177774397, 141.34366589801542], { uniqueTitle: `Aetherella Statue`, uniqueDesc: `1 of 9\n Must be collected with Jet Gun.\nOn the edge of the window on the outside of the church entrance. Look up and to the right.` }),
-		new MiscMarker(`gKJVw`, markers.bonus, [244.43444833982815, 340.1405042456944], { uniqueTitle: `Aetherella Statue`, uniqueDesc: `1 of 9\n Must be collected with Jet Gun.\nCan be grabbed when looking at the video store roof when stood on the roof of Yummy Freeze.` }),
+		new MiscMarker(`YeXWV`, markers.bonus, [269.5062750742712, 231.81422099725725], { uniqueTitle: `Aetherella Statue`, uniqueDesc: `1 of 9\n Must be collected with Jet Gun. Up on top of an air conditioning unit.`, dossierCategory: 'Aetherella Statue' }),
+		new MiscMarker(`zM2jb`, markers.bonus, [205.28419151815734, 340.36086600016], { uniqueTitle: `Aetherella Statue`, uniqueDesc: `1 of 9\n Must be collected with Jet Gun.\nOn top of the motel sign, top left.`, dossierCategory: 'Aetherella Statue' }),
+		new MiscMarker(`0OHjM`, markers.bonus, [154.626598832603, 254.25667074355712], { uniqueTitle: `Aetherella Statue`, uniqueDesc: `1 of 9\n Must be collected with Jet Gun.\nNext to the bowling sign, jump onto the bus to reach it.`, dossierCategory: 'Aetherella Statue' }),
+		new MiscMarker(`G4IGc`, markers.bonus, [313.2844647277621, 313.5398735527481], { uniqueTitle: `Aetherella Statue`, uniqueDesc: `1 of 9\n Must be collected with Jet Gun.`, dossierCategory: 'Aetherella Statue' }),
+		new MiscMarker(`4w4zQ`, markers.bonus, [298.67507993856594, 316.96235180755974], { uniqueTitle: `Aetherella Statue`, uniqueDesc: `1 of 9\n Must be collected with Jet Gun.`, dossierCategory: 'Aetherella Statue' }),
+		new MiscMarker(`ypSrs`, markers.bonus, [307.052489398105, 338.26344781138766], { uniqueTitle: `Aetherella Statue`, uniqueDesc: `1 of 9\n Must be collected with Jet Gun.`, dossierCategory: 'Aetherella Statue' }),
+		new MiscMarker(`KnYD1`, markers.bonus, [320.4359118273686, 335.96476838651415], { uniqueTitle: `Aetherella Statue`, uniqueDesc: `1 of 9\n Must be collected with Jet Gun.`, dossierCategory: 'Aetherella Statue' }),
+		new MiscMarker(`7xM7R`, markers.bonus, [200.86456177774397, 141.34366589801542], { uniqueTitle: `Aetherella Statue`, uniqueDesc: `1 of 9\n Must be collected with Jet Gun.\nOn the edge of the window on the outside of the church entrance. Look up and to the right.`, dossierCategory: 'Aetherella Statue' }),
+		new MiscMarker(`gKJVw`, markers.bonus, [244.43444833982815, 340.1405042456944], { uniqueTitle: `Aetherella Statue`, uniqueDesc: `1 of 9\n Must be collected with Jet Gun.\nCan be grabbed when looking at the video store roof when stood on the roof of Yummy Freeze.`, dossierCategory: 'Aetherella Statue' }),
 		new MiscMarker(`9G12F`, markers.bonus, [225.68311592941944, 177.1593431115426], { uniqueTitle: `Black And Gold Car`, uniqueDesc: `1 of 3 Possible locations of the Mr Peeks sat in the back of the car, indicating a spot for loot and an intel item.` }),
 		new MiscMarker(`Z0ygP`, markers.bonus, [293.8925195350405, 330.2987196842777], { uniqueTitle: `Black And Gold Car`, uniqueDesc: `1 of 3 Possible locations of the Mr Peeks sat in the back of the car, indicating a spot for loot and an intel item.` }),
 		new MiscMarker(`tQAjx`, markers.bonus, [282.96580199111264, 174.92431395814236], { uniqueTitle: `Black And Gold Car`, uniqueDesc: `1 of 3 Possible locations of the Mr Peeks sat in the back of the car, indicating a spot for loot and an intel item.` }),
