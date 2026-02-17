@@ -40,11 +40,11 @@ export const WorldEventTypes = {
 const markers = {
 	// Part of the music easter egg quests for Cold War
 	cassetteTape: new Item({
-		title: `Cassette Tape`, icon: IconFileNames.cassette,
+		title: `Cassette Tape`, icon: IconFileNames.cassette, dossierCategory: 'Cassette Tapes',
 	}),
 	// Part of the music easter egg quests for BO6
 	mrPeeksHeadphones: new Item({
-		title: `Mr Peeks Headphones`, icon: IconFileNames.cassette,
+		title: `Mr Peeks Headphones`, icon: IconFileNames.cassette, dossierCategory: 'Mr Peeks Headphones',
 		desc: `1 of 3 needed for the easter egg song.`,
 	}),
 	clue: new Item({ title: `Visual Clue`, icon: IconFileNames.clue }),
@@ -95,16 +95,16 @@ const markers = {
 	}),
 	// Die Maschine specific
 	dieMaschineBonusChest: new Item({
-		title: "Coffin Dance", icon: IconFileNames.chest,
+		title: "Coffin Dance", icon: IconFileNames.chest, dossierCategory: 'Blue Orbs',
 	}),
 	dieMaschineAntenna: new Item({
-		title: "Radio Alignment", icon: IconFileNames.interactable,
+		title: "Radio Alignment", icon: IconFileNames.interactable, dossierCategory: 'Satellite Dishes',
 	}),
 	dieMaschineOrdaHand: new Item({
 		title: "Orda Hand", icon: IconFileNames.interactable,
 	}),
 	dieMaschineFloatingBodies: new Item({
-		title: "Floating Bodies", icon: IconFileNames.interactable,
+		title: "Floating Bodies", icon: IconFileNames.interactable, dossierCategory: 'Floating Bodies',
 	}),
 	// D.I.E. Wonder Weapon Specific
 	thermophasic: new Item({ title: `D.I.E. Thermophasic Upgrade`, icon: IconFileNames.upgrade, }),
@@ -117,7 +117,7 @@ const markers = {
 	}),
 	// Maeur Der Toten specific
 	mauerDerTotenBonusChest: new Item({
-		title: `Hasenbau Club`, icon: IconFileNames.mrPeeksBlue,
+		title: `Hasenbau Club`, icon: IconFileNames.mrPeeksBlue, dossierCategory: 'Mr Peeks Pieces',
 	}),
 	// Forsaken specific
 	forsakenBonusChest: new Item({
@@ -143,19 +143,19 @@ const markers = {
 		title: `Free Perk - Spores`, desc: `Final Spores Location\nAfter shooting all the spore islands shoot all spores here to be rewarded with a Random Perk powerup.`, icon: IconFileNames.randomPerk, dossierCategory: 'Free Perks',
 	}),
 	sporesEggIsland: new Item({
-		title: `Spore Island`, desc: `1 of 4 potential islands covered in spores. Shoot all spores on this island (you'll get an audio cue if done right), then find more islands over the next 2 rounds (can only find one per round) and repeat.\nAfter completing the last island look here:`, icon: IconFileNames.interactable,
+		title: `Spore Island`, desc: `1 of 4 potential islands covered in spores. Shoot all spores on this island (you'll get an audio cue if done right), then find more islands over the next 2 rounds (can only find one per round) and repeat.\nAfter completing the last island look here:`, icon: IconFileNames.interactable, dossierCategory: 'Spore Islands',
 	}),
 	megaStuffyMain: new Item({
 		title: `Mega-Stuffy!`, desc: `Collect 6 stuffed animals around the map. After collecting all of them, head back here and interact with all of the animals, now located on the bunk beds. And when all are interacted with your new friend will spawn!`, icon: IconFileNames.mrPeeks,
 	}),
 	megaStuffyCollectible: new Item({
-		title: `Stuffed Animal`, desc: `1 of 6 Stuffed animals that need to be interacted with/shot in order to spawn a friendly NPC.`, icon: IconFileNames.mrPeeksBlue,
+		title: `Stuffed Animal`, desc: `1 of 6 Stuffed animals that need to be interacted with/shot in order to spawn a friendly NPC.`, icon: IconFileNames.mrPeeksBlue, dossierCategory: 'Stuffed Animals',
 	}),
 	meteorMain: new Item({
 		title: `Meteor Landing Site`, desc: `Landing site of a meteor that can be shot down by the Void Canon trap, after activating the 2 towers with dead wire.`, icon: IconFileNames.mrPeeks,
 	}),
 	meteorTower: new Item({
-		title: `Meteor Tower`, desc: `1 of 2 Towers that need to be shot with a weapon equipt with dead wire, once they are both activated and the red light on top stays lit, cycle to the next round and activate the Void Canon.`, icon: IconFileNames.interactable,
+		title: `Meteor Tower`, desc: `1 of 2 Towers that need to be shot with a weapon equipt with dead wire, once they are both activated and the red light on top stays lit, cycle to the next round and activate the Void Canon.`, icon: IconFileNames.interactable, dossierCategory: 'Meteor Towers',
 	}),
 	mrPeeksBoatRace: new Item({
 		title: `Mr Peeks - Boat Race!`, desc: `Underwater there is a pink boat, with a flashing red light. Interact with it to be teleported into a boat race game and play for a reward!`, icon: IconFileNames.mrPeeks,
@@ -167,7 +167,7 @@ const markers = {
 		title: `Cursed Treasure Hunt`, desc: `Break the stalagmites with a melee attack with melee macchiato equipt to begin a side quest. Collect a watch first, then go to each location on the map, defeating a HVT at each highlighted location. After returning 3 coins you will be rewarded with legendary weapons.`, icon: IconFileNames.mrPeeks,
 	}),
 	cursedTreasureHuntSkeleton: new Item({
-		title: `Cursed Skeleton`, desc: `1 of 3 skeletons that will spawn a HVT that drop a cursed coin, when set on fire after delivering the watch during the cursed treasure hunt.`, icon: IconFileNames.mrPeeks,
+		title: `Cursed Skeleton`, desc: `1 of 3 skeletons that will spawn a HVT that drop a cursed coin, when set on fire after delivering the watch during the cursed treasure hunt.`, icon: IconFileNames.mrPeeks, dossierCategory: 'Cursed Skeletons',
 	}),
 	culinaryDelight: new Item({
 		title: `Culinary Delight`, desc: `Side quest involving Oil (located directly to the right of the hobs).\nFish (obtained from blowing up/shocking any fish around the map), and 5 different ingredients.\nAfter collecting any or all of them, interacting with the pan, then waiting 1 round and interacting with the pan, will then unlock the achievement.`, icon: IconFileNames.workbench,
@@ -181,7 +181,7 @@ const markers = {
 	}),
 	alcoholBottle: new Item({
 		title: `Alcohol Bottle`, icon: IconFileNames.bottle,
-		desc: `1 of 3 needed for the bar easter egg.`,
+		desc: `1 of 3 needed for the bar easter egg.`, dossierCategory: 'Alcohol Bottles',
 	}),
 	barEgg: new Item({
 		title: `Bartending Egg`, icon: IconFileNames.bottle,
@@ -207,19 +207,19 @@ const markers = {
 		title: `Wunderwaffe DG-2 - Start`, desc: `The start of the free Wunderwaffe Side Egg. Will not spawn until you have obtained at least 1 elemental raygun variant.`, icon: IconFileNames.objective,
 	}),
 	wunderwaffeStep: new Item({
-		title: `Wunderwaffe DG-2 - Orb Step`, desc: `1 of 3 glowing purple items, that when shot, spawn an orb that needs to have the items around it destroyed, after doing all 3 the Wunderwaffe will be collectable.`, icon: IconFileNames.orb,
+		title: `Wunderwaffe DG-2 - Orb Step`, desc: `1 of 3 glowing purple items, that when shot, spawn an orb that needs to have the items around it destroyed, after doing all 3 the Wunderwaffe will be collectable.`, icon: IconFileNames.orb, dossierCategory: 'Wunderwaffe Orbs',
 	}),
 	wunderwaffeComplete: new Item({
 		title: `Wunderwaffe DG-2 - Finish`, desc: `After destroying all 3 floating purple masses, come here and shoot the purple smoke to drop the weapon.`, icon: IconFileNames.objective,
 	}),
 	mrPeeksParts: new Item({
-		title: `Mr Peeks Part`, desc: `1 of 6 parts around the map, that once all collected will allow you to spawn a friendly NPC at the motor court.`, icon: IconFileNames.mrPeeksBlue,
+		title: `Mr Peeks Part`, desc: `1 of 6 parts around the map, that once all collected will allow you to spawn a friendly NPC at the motor court.`, icon: IconFileNames.mrPeeksBlue, dossierCategory: 'Mr Peeks Parts',
 	}),
 	mrPeeksComplete: new Item({
 		title: `Mr Peeks - Donut Egg`, desc: `Once all 6 parts are collected come here and interact with the parts on the sandbags to spawn a friendly NPC.`, icon: IconFileNames.mrPeeks,
 	}),
 	evilSamComputer: new Item({
-		title: `S.A.M Trap - Computer`, desc: `1 of 3 computers that can be interacted with, if you interact with one and end the round it will indicate if it was infected and then can be interacted with again to obtain a hard drive.`, icon: IconFileNames.interactable,
+		title: `S.A.M Trap - Computer`, desc: `1 of 3 computers that can be interacted with, if you interact with one and end the round it will indicate if it was infected and then can be interacted with again to obtain a hard drive.`, icon: IconFileNames.interactable, dossierCategory: 'S.A.M. Trap Computers',
 	}),
 	evilSamTrapComplete: new Item({
 		title: `S.A.M Trap Egg`, desc: `After obtaining the hard drive from the computers and without ending the round, interact with this computer to activate the S.A.M trap easter egg.`, icon: IconFileNames.trap,
@@ -499,9 +499,9 @@ export const StaticEggStore: MarkerStore = {
 		new MiscMarker(`KnYD1`, markers.bonus, [320.4359118273686, 335.96476838651415], { uniqueTitle: `Aetherella Statue`, uniqueDesc: `1 of 9\n Must be collected with Jet Gun.`, dossierCategory: 'Aetherella Statue' }),
 		new MiscMarker(`7xM7R`, markers.bonus, [200.86456177774397, 141.34366589801542], { uniqueTitle: `Aetherella Statue`, uniqueDesc: `1 of 9\n Must be collected with Jet Gun.\nOn the edge of the window on the outside of the church entrance. Look up and to the right.`, dossierCategory: 'Aetherella Statue' }),
 		new MiscMarker(`gKJVw`, markers.bonus, [244.43444833982815, 340.1405042456944], { uniqueTitle: `Aetherella Statue`, uniqueDesc: `1 of 9\n Must be collected with Jet Gun.\nCan be grabbed when looking at the video store roof when stood on the roof of Yummy Freeze.`, dossierCategory: 'Aetherella Statue' }),
-		new MiscMarker(`9G12F`, markers.bonus, [225.68311592941944, 177.1593431115426], { uniqueTitle: `Black And Gold Car`, uniqueDesc: `1 of 3 Possible locations of the Mr Peeks sat in the back of the car, indicating a spot for loot and an intel item.` }),
-		new MiscMarker(`Z0ygP`, markers.bonus, [293.8925195350405, 330.2987196842777], { uniqueTitle: `Black And Gold Car`, uniqueDesc: `1 of 3 Possible locations of the Mr Peeks sat in the back of the car, indicating a spot for loot and an intel item.` }),
-		new MiscMarker(`tQAjx`, markers.bonus, [282.96580199111264, 174.92431395814236], { uniqueTitle: `Black And Gold Car`, uniqueDesc: `1 of 3 Possible locations of the Mr Peeks sat in the back of the car, indicating a spot for loot and an intel item.` }),
+		new MiscMarker(`9G12F`, markers.bonus, [225.68311592941944, 177.1593431115426], { uniqueTitle: `Black And Gold Car`, uniqueDesc: `1 of 3 Possible locations of the Mr Peeks sat in the back of the car, indicating a spot for loot and an intel item.`, dossierCategory: 'Black And Gold Cars' }),
+		new MiscMarker(`Z0ygP`, markers.bonus, [293.8925195350405, 330.2987196842777], { uniqueTitle: `Black And Gold Car`, uniqueDesc: `1 of 3 Possible locations of the Mr Peeks sat in the back of the car, indicating a spot for loot and an intel item.`, dossierCategory: 'Black And Gold Cars' }),
+		new MiscMarker(`tQAjx`, markers.bonus, [282.96580199111264, 174.92431395814236], { uniqueTitle: `Black And Gold Car`, uniqueDesc: `1 of 3 Possible locations of the Mr Peeks sat in the back of the car, indicating a spot for loot and an intel item.`, dossierCategory: 'Black And Gold Cars' }),
 		new MiscMarker(`mZN2H`, markers.freePerk, [269.68018735607296, 99.48248959488959], { uniqueTitle: `Free Deadshot`, uniqueDesc: `Shoot all of the cans on the fence outside the cemetary to be rewarded with a free deadshot perk. You're timed and only one person can get it per game.` }),
 		new MiscMarker(`j7eXX`, markers.maxAmmo, [237.08720300956975, 462.99502722954236], { uniqueDesc: `Look down at the yellow bridge between the barrier and the start of the yellow steel beams. Shoot the small golden object to spawn a free power up.` }),
 		new MiscMarker(`jBX9A`, markers.bonusPoints, [330.02159775218337, 331.85260972373345], { uniqueDesc: `Look up at the window, shoot the small golden object to spawn a free power up.` }),
@@ -520,13 +520,13 @@ export const StaticEggStore: MarkerStore = {
 		new MiscMarker(`dtAm9`, markers.mrPeeksBowlingShoe, [194.2381625762071, 431.0707322886372], { uniqueDesc: `Under spawn, on the fuel station counter.\nShoot all of them to be teleported to a game of bowling for a reward!` }),
 		new MiscMarker(`bw8QU`, markers.mrPeeksBowlingShoe, [163.66353585351, 283.1703256475334], { uniqueDesc: `Bonus Shoe\nSpawns a couple of rounds after bowling, can be shot to play bowling again!` }),
 		new MiscMarker(`DzJw9`, markers.bankVault, [257.1898821141628, 285.095345453075]),
-		new MiscMarker(`59M0p`, markers.clue, [313.2238913426472, 326.38618562722263], { uniqueTitle: `Bank Vault Number`, uniqueDesc: `1 of 3 numbers needed for the bank vault.` }),
-		new MiscMarker(`AmVI8`, markers.clue, [144.84576970738917, 255.81102392565194], { uniqueTitle: `Bank Vault Number`, uniqueDesc: `1 of 3 numbers needed for the bank vault.` }),
-		new MiscMarker(`Wa3zX`, markers.clue, [243.625, 293.28125], { uniqueTitle: `Bank Vault Number`, uniqueDesc: `1 of 3 numbers needed for the bank vault.` }),
+		new MiscMarker(`59M0p`, markers.clue, [313.2238913426472, 326.38618562722263], { uniqueTitle: `Bank Vault Number`, uniqueDesc: `1 of 3 numbers needed for the bank vault.`, dossierCategory: 'Bank Vault Numbers' }),
+		new MiscMarker(`AmVI8`, markers.clue, [144.84576970738917, 255.81102392565194], { uniqueTitle: `Bank Vault Number`, uniqueDesc: `1 of 3 numbers needed for the bank vault.`, dossierCategory: 'Bank Vault Numbers' }),
+		new MiscMarker(`Wa3zX`, markers.clue, [243.625, 293.28125], { uniqueTitle: `Bank Vault Number`, uniqueDesc: `1 of 3 numbers needed for the bank vault.`, dossierCategory: 'Bank Vault Numbers' }),
 		new MiscMarker(`ycopO`, markers.clue, [297.32875445409906, 383.9627368184202], { uniqueTitle: `Viewfinder`, uniqueDesc: `Set of binoculars that can be used for 50 essence. A dancing zombie can be spotted on a rock. The zombies will not attack you whilst in use. When both binoculars are focused on the dancing zombie, a party will start!` }),
 		new MiscMarker(`Xvkv1`, markers.clue, [282.07221275373934, 388.5203872504264], { uniqueTitle: `Viewfinder`, uniqueDesc: `Set of binoculars that can be used for 50 essence. A dancing zombie can be spotted on a rock. The zombies will not attack you whilst in use. When both binoculars are focused on the dancing zombie, a party will start!` }),
-		new MiscMarker(`9DjTf`, markers.bonus, [196.2236235990396, 77.3084034954576], { uniqueTitle: `Unlit Candles`, uniqueDesc: `1 of 2 candle racks that can be shot with Napalm burst to trigger a fire trap inside the main church building. Useful for the final battle.` }),
-		new MiscMarker(`jgS2I`, markers.bonus, [218.4032735692863, 81.15692723458717], { uniqueTitle: `Unlit Candles`, uniqueDesc: `1 of 2 candle racks that can be shot with Napalm burst to trigger a fire trap inside the main church building. Useful for the final battle.` }),
+		new MiscMarker(`9DjTf`, markers.bonus, [196.2236235990396, 77.3084034954576], { uniqueTitle: `Unlit Candles`, uniqueDesc: `1 of 2 candle racks that can be shot with Napalm burst to trigger a fire trap inside the main church building. Useful for the final battle.`, dossierCategory: 'Unlit Candles' }),
+		new MiscMarker(`jgS2I`, markers.bonus, [218.4032735692863, 81.15692723458717], { uniqueTitle: `Unlit Candles`, uniqueDesc: `1 of 2 candle racks that can be shot with Napalm burst to trigger a fire trap inside the main church building. Useful for the final battle.`, dossierCategory: 'Unlit Candles' }),
 		new MiscMarker(`C0jxR`, markers.bonus, [181.73527564128713, 323.1526631072432], { uniqueTitle: `Pool of Blood`, uniqueDesc: `Spawns a loot orb and or power up when 3 semtex are thrown into it during a vermin round.` }),
 	],
 	[MapIds.terminusBiolabs]: [
