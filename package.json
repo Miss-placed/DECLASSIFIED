@@ -36,14 +36,18 @@
 	"scripts": {
 		"prestart": "node scripts/clean-intel-static.mjs",
 		"start": "react-scripts start",
-		"build": "react-scripts build && node scripts/generate-intel-static.mjs && node scripts/generate-sitemap.mjs && npx workbox injectManifest workbox-config.js",
+		"build": "react-scripts build && node scripts/generate-intel-static.mjs && npx tsx scripts/generate-operations-static.ts && node scripts/generate-sitemap.mjs && npx workbox injectManifest workbox-config.js",
 		"preview": "npm run build && npx serve -s build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"intel:static": "node scripts/generate-intel-static.mjs",
+		"operations:static": "npx tsx scripts/generate-operations-static.ts",
+		"operations:static:check": "node scripts/check-operations-static.mjs",
+		"operations:test": "react-scripts test --watchAll=false --testPathPattern=operations-seo.test.ts",
 		"intel:clean": "node scripts/clean-intel-static.mjs",
+		"operations:clean": "node scripts/clean-intel-static.mjs",
 		"wiki:check": "react-scripts test --watchAll=false --testPathPattern=wiki-links.test.ts",
 		"sitemap:generate": "node scripts/generate-sitemap.mjs"
 	},
@@ -68,6 +72,7 @@
 	"devDependencies": {
 		"@types/leaflet": "^1.7.10",
 		"prettier": "^3.3.3",
+		"tsx": "^4.20.3",
 		"workbox-cli": "^7.1.0"
 	}
 }

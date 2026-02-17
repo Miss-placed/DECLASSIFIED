@@ -550,7 +550,7 @@ export const StaticEggStore: MarkerStore = {
 		new MiscMarker(`3ZEt8`, markers.meteorMain, [292.60321553883165, 393.8504359712161]),
 		new MiscMarker(`O7hw0`, markers.mrPeeksBoatRace, [293.2228119896759, 440.84162572153747]),
 		new MiscMarker(`YqWno`, markers.whackACrab, [144.1335293480531, 244.13413732050765]),
-		new MiscMarker(`BP6Xq`, markers.cursedTreasureHunt, [276.04996791307724, 234.638024611905], { linkedItems: `BO6S0TAr5` }),
+		new MiscMarker(`BP6Xq`, markers.cursedTreasureHunt, [276.04996791307724, 234.638024611905], { linkedIntelIds: `BO6S0TAr5` }),
 		new MiscMarker(`3Ig9c`, markers.cursedTreasureHuntSkeleton, [383.0625, 191.78125], { linkedItems: `BP6Xq` }),
 		new MiscMarker(`ZlkGz`, markers.cursedTreasureHuntSkeleton, [274.3935309560461, 425.7227774089735], { linkedItems: `BP6Xq` }),
 		new MiscMarker(`nTqHJ`, markers.cursedTreasureHuntSkeleton, [189.625, 150.25], { linkedItems: `BP6Xq` }),

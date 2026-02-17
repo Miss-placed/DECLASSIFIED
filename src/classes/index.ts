@@ -34,8 +34,32 @@ export class BaseMarker extends Item {
 	linkedItems?: string;
 	externalLinks?: string;
 	stepNumber?: number;
+	dossierCategory?: string;
+	linkedIntelIds?: string;
+	helpLinks?: string;
+	spoilerTags?: string;
+	anchorLabel?: string;
+	crossLinks?: string;
 
-	constructor({ id, title, desc, icon, layer, typeDesc, loc, img, linkedItems, externalLinks, stepNumber }: any) {
+	constructor({
+		id,
+		title,
+		desc,
+		icon,
+		layer,
+		typeDesc,
+		loc,
+		img,
+		linkedItems,
+		externalLinks,
+		stepNumber,
+		dossierCategory,
+		linkedIntelIds,
+		helpLinks,
+		spoilerTags,
+		anchorLabel,
+		crossLinks,
+	}: any) {
 		super({ id, title, desc, icon, layer });
 		this.typeDesc = typeDesc;
 		this.loc = loc ?? [0, 0];
@@ -43,6 +67,12 @@ export class BaseMarker extends Item {
 		this.linkedItems = linkedItems ?? '';
 		this.externalLinks = externalLinks ?? '';
 		this.stepNumber = stepNumber ?? null;
+		this.dossierCategory = dossierCategory ?? '';
+		this.linkedIntelIds = linkedIntelIds ?? '';
+		this.helpLinks = helpLinks ?? '';
+		this.spoilerTags = spoilerTags ?? '';
+		this.anchorLabel = anchorLabel ?? '';
+		this.crossLinks = crossLinks ?? '';
 	}
 }
 
@@ -83,11 +113,34 @@ export class MiscMarker extends BaseMarker {
 			linkedItems?: string;
 			externalLinks?: string;
 			stepNumber?: number;
+			dossierCategory?: string;
+			linkedIntelIds?: string;
+			helpLinks?: string;
+			spoilerTags?: string;
+			anchorLabel?: string;
+			crossLinks?: string;
 		}
 	) {
 		var newTitle = optional?.uniqueTitle ? optional?.uniqueTitle : title;
 		desc = optional?.uniqueDesc ? `${desc}\n${optional?.uniqueDesc}` : desc;
-		super({ id, title: newTitle, desc, icon, loc, typeDesc: title, img: optional?.img, linkedItems: optional?.linkedItems, externalLinks: optional?.externalLinks });
+		super({
+			id,
+			title: newTitle,
+			desc,
+			icon,
+			loc,
+			typeDesc: title,
+			img: optional?.img,
+			linkedItems: optional?.linkedItems,
+			externalLinks: optional?.externalLinks,
+			stepNumber: optional?.stepNumber,
+			dossierCategory: optional?.dossierCategory,
+			linkedIntelIds: optional?.linkedIntelIds,
+			helpLinks: optional?.helpLinks,
+			spoilerTags: optional?.spoilerTags,
+			anchorLabel: optional?.anchorLabel,
+			crossLinks: optional?.crossLinks,
+		});
 	}
 }
 
