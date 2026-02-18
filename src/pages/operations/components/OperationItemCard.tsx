@@ -44,6 +44,9 @@ export default function OperationItemCard({
 	const intelLinks = links.filter(link => link.type === 'intel');
 	const helpLinks = links.filter(link => link.type === 'help');
 	const hasSpoiler = item.spoilerTags.length > 0;
+	const showGroupingChip = !!item.groupingTitle && item.groupingTitle !== groupTitle;
+	const hasMetaChips =
+		showMapLayer || typeof item.stepNumber === 'number' || showGroupingChip || hasSpoiler;
 
 	return (
 		<article className="operation-item-card rounded-box" id={item.anchorId}>
@@ -56,22 +59,24 @@ export default function OperationItemCard({
 					{item.title}
 				</Typography>
 			</header>
-			<div className="operation-item-meta">
-				{showMapLayer ? (
-					<span className="operation-chip">{item.mapTitle}</span>
-				) : null}
-				{typeof item.stepNumber === 'number' ? (
-					<span className="operation-chip">Step {item.stepNumber}</span>
-				) : null}
-				{item.groupingTitle && item.groupingTitle !== groupTitle ? (
-					<span className="operation-chip">{item.groupingTitle}</span>
-				) : null}
-				{hasSpoiler ? (
-					<span className="operation-chip spoiler-chip">
-						{item.spoilerTags.join(', ')}
-					</span>
-				) : null}
-			</div>
+			{hasMetaChips ? (
+				<div className="operation-item-meta">
+					{showMapLayer ? (
+						<span className="operation-chip">{item.mapTitle}</span>
+					) : null}
+					{typeof item.stepNumber === 'number' ? (
+						<span className="operation-chip">Step {item.stepNumber}</span>
+					) : null}
+					{showGroupingChip ? (
+						<span className="operation-chip">{item.groupingTitle}</span>
+					) : null}
+					{hasSpoiler ? (
+						<span className="operation-chip spoiler-chip">
+							{item.spoilerTags.join(', ')}
+						</span>
+					) : null}
+				</div>
+			) : null}
 			<div className="operation-item-body">
 				{hasSpoiler && !showSpoilers ? (
 					<details className="operations-spoiler">
