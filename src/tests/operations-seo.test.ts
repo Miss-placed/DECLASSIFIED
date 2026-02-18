@@ -77,6 +77,14 @@ describe('operations seo model', () => {
 		expect(resolveRelatedLinksForItem(itemWithLinks!)).not.toHaveLength(0);
 	});
 
+	it('memoizes related links for repeated item lookups', () => {
+		const items = getOperationsRouteModel();
+		const firstItem = items[0];
+		const firstLinks = resolveRelatedLinksForItem(firstItem);
+		const secondLinks = resolveRelatedLinksForItem(firstItem);
+		expect(secondLinks).toBe(firstLinks);
+	});
+
 	it('produces map-level route paths for both eggs and quests', () => {
 		const items = getOperationsRouteModel();
 		const mapPaths = items.map(item => item.mapPath);

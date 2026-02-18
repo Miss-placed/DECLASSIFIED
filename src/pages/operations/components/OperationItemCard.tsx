@@ -24,6 +24,13 @@ const renderLink = (link: ParsedLink, key: string) => {
 			</a>
 		);
 	}
+	if (link.href.includes('#')) {
+		return (
+			<a key={key} href={link.href}>
+				{link.label}
+			</a>
+		);
+	}
 	return (
 		<Link key={key} to={link.href}>
 			{link.label}

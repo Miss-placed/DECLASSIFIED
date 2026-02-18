@@ -314,8 +314,11 @@ const getRawOperations = () => {
 const mapItemReferencesById = getMapItemReferencesById();
 const intelById = new Map(IntelStore.map(intel => [intel.id, intel]));
 const mapMetaByIdForSort = getMapMetaById();
+let operationsRouteModelCache: OperationRouteItem[] | null = null;
+let operationItemByIdCache: Map<string, OperationRouteItem> | null = null;
+const relatedLinksByItemCache = new WeakMap<OperationRouteItem, ParsedLink[]>();
 
-export const getOperationsRouteModel = () =>
+const buildOperationsRouteModel = () =>
 	getRawOperations().sort((a, b) => {
 		if (a.gameSlug !== b.gameSlug) return a.gameSlug.localeCompare(b.gameSlug);
 		if (a.mapSlug !== b.mapSlug) return a.mapSlug.localeCompare(b.mapSlug);
@@ -330,6 +333,22 @@ export const getOperationsRouteModel = () =>
 		}
 		return a.title.localeCompare(b.title);
 	});
+
+export const getOperationsRouteModel = () => {
+	if (!operationsRouteModelCache) {
+		operationsRouteModelCache = buildOperationsRouteModel();
+	}
+	return operationsRouteModelCache;
+};
+
+const getOperationItemByIdLookup = () => {
+	if (!operationItemByIdCache) {
+		operationItemByIdCache = new Map(
+			getOperationsRouteModel().map(operation => [operation.id, operation])
+		);
+	}
+	return operationItemByIdCache;
+};
 
 export const getOperationsGames = (sourceKind?: OperationSourceKind) => {
 	const items = getOperationsRouteModel().filter(item =>
@@ -425,8 +444,11 @@ export const getLinkedIntelForItem = (item: OperationRouteItem) =>
 		.map(buildIntelRouteLink);
 
 export const resolveRelatedLinksForItem = (item: OperationRouteItem): ParsedLink[] => {
-	const allItems = getOperationsRouteModel();
-	const itemById = new Map(allItems.map(operation => [operation.id, operation]));
+	const cachedLinks = relatedLinksByItemCache.get(item);
+	if (cachedLinks) {
+		return cachedLinks;
+	}
+	const itemById = getOperationItemByIdLookup();
 	const output: ParsedLink[] = [];
 	const seen = new Set<string>();
 
@@ -503,6 +525,7 @@ export const resolveRelatedLinksForItem = (item: OperationRouteItem): ParsedLink
 		});
 	});
 
+	relatedLinksByItemCache.set(item, output);
 	return output;
 };
 
