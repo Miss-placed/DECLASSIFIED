@@ -9,6 +9,7 @@ interface DossierCardProps {
 	actionLabel?: string;
 	openInNewTab?: boolean;
 	isCollected?: boolean;
+	hideTitle?: boolean;
 }
 
 export default function DossierCard({
@@ -19,6 +20,7 @@ export default function DossierCard({
 	actionLabel,
 	openInNewTab = false,
 	isCollected = false,
+	hideTitle = false,
 }: DossierCardProps) {
 	const actionProps = openInNewTab
 		? { target: '_blank', rel: 'noreferrer' }
@@ -26,9 +28,9 @@ export default function DossierCard({
 
 	return (
 		<Box className={`dossier-card ${isCollected ? 'is-collected' : ''}`}>
-			<Link className="dossier-card-link" to={href}>
+			<Link className="dossier-grid-item-link" to={href}>
 				<Box className="homepage-box" p={2}>
-					<Typography variant="h6">{title}</Typography>
+					{!hideTitle ? <Typography variant="h6">{title}</Typography> : null}
 					{subtitle ? <Typography>{subtitle}</Typography> : null}
 				</Box>
 			</Link>

@@ -4,8 +4,9 @@ import { Link, useParams } from 'react-router-dom';
 import DossierHeader from './components/DossierHeader';
 import IntelQuickLinks from './components/IntelQuickLinks';
 import '../../styles/intel-dossier.css';
-import { getIntelRouteModel } from '../../data/intelSeo';
+import { getIntelRouteModel, slugifyIntel } from '../../data/intelSeo';
 import { IsValidMapId } from '../../components/MapControls/MapIds';
+import { Game, MapGroupings } from '../../components/MapControls/types';
 import DossierCard from './components/DossierCard';
 import { IntelType } from '../../data/IntelTypes';
 import { toSnakeCase } from '../../helpers/icons';
@@ -15,14 +16,31 @@ import { db } from '../../data/db';
 
 export default function IntelMapPage() {
 	const { gameSlug, mapSlug } = useParams();
-	const intel = getIntelRouteModel().filter(
-		item => item.gameSlug === gameSlug && item.mapSlug === mapSlug
-	);
+	const gameKey =
+		gameSlug === 'black-ops-6'
+			? Game.bo6
+			: gameSlug === 'black-ops-cold-war'
+				? Game.coldWar
+				: undefined;
+	const mapGroup = gameKey
+		? Object.values(MapGroupings).find(
+				group =>
+					group.game === gameKey && slugifyIntel(group.mapName) === mapSlug
+			)
+		: undefined;
+	const mapGroupIds = mapGroup
+		? mapGroup.mapLayers.map(layer => layer.id).filter((id): id is string => !!id)
+		: [];
+	const intel = getIntelRouteModel().filter(item => {
+		if (item.gameSlug !== gameSlug) return false;
+		if (mapGroup) return !!item.mapId && mapGroupIds.includes(item.mapId);
+		return item.mapSlug === mapSlug;
+	});
 	const gameTitle = intel[0]?.gameTitle ?? gameSlug ?? 'Unknown Game';
-	const mapTitle = intel[0]?.mapTitle ?? mapSlug ?? 'Unknown Map';
-	const mapId = intel[0]?.mapId;
+	const mapTitle = mapGroup?.mapName ?? intel[0]?.mapTitle ?? mapSlug ?? 'Unknown Map';
+	const mapId = mapGroupIds[0] ?? intel[0]?.mapId;
 	const mapRouteId = mapId && IsValidMapId(mapId) ? mapId : undefined;
-	const mapGroupName = getMapGroupNameByMapId(mapId) ?? mapTitle;
+	const mapGroupName = mapGroup?.mapName ?? getMapGroupNameByMapId(mapId) ?? mapTitle;
 	const wikiIntelUrl = getWikiIntelUrlForMap(mapGroupName);
 	const collectedIntel = useLiveQuery(async () => db.intelCollected.toArray(), []);
 	const collectedIntelSet = new Set(
@@ -50,8 +68,6 @@ export default function IntelMapPage() {
 						>
 							<HomeIcon />
 						</Link>
-						{' / '}
-						<Link to="/intel">Intel Hub</Link>
 						{' / '}
 						{gameSlug ? <Link to={`/intel/${gameSlug}`}>{gameTitle}</Link> : gameTitle}
 						{' / '}

@@ -11,6 +11,9 @@
 # production
 /build
 /public/intel
+/public/operations
+/public/eggs
+/public/quests
 /public/sitemap.xml
 
 # misc

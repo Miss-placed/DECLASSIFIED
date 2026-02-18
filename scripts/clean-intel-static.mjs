@@ -4,6 +4,9 @@ import path from 'node:path';
 const root = process.cwd();
 const targets = [
   path.join(root, 'public', 'intel'),
+  path.join(root, 'public', 'operations'),
+  path.join(root, 'public', 'eggs'),
+  path.join(root, 'public', 'quests'),
   path.join(root, 'public', 'sitemap.xml'),
 ];
 
@@ -13,4 +16,4 @@ for (const target of targets) {
   }
 }
 
-console.log('Cleaned public intel static outputs.');
+console.log('Cleaned public static dossier outputs.');

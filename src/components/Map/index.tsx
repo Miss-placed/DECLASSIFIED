@@ -3,7 +3,6 @@ import { CircularProgress } from '@mui/material';
 import L from 'leaflet';
 import { MapContainer } from 'react-leaflet';
 import { DeclassifiedContextProvider } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
-import { NotificationProvider } from '../../contexts/NotificationContext/notificationProvider';
 import { useUserContext } from '../../contexts/UserContext/userContextProvider';
 import { ApplicationContent } from '../ApplicationContent';
 
@@ -101,11 +100,9 @@ const MapProvider = () => {
 				zoomSnap={0}
 				maxBoundsViscosity={0.2}
 			>
-				<NotificationProvider>
-					<DeclassifiedContextProvider>
-						<ApplicationContent />
-					</DeclassifiedContextProvider>
-				</NotificationProvider>
+				<DeclassifiedContextProvider>
+					<ApplicationContent />
+				</DeclassifiedContextProvider>
 			</StyledMapContainer>
 		</MapWrapper>
 	</>

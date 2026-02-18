@@ -1,4 +1,5 @@
 import { MapItem } from '../../classes';
+import { MapGroupDefinitions, MapGroupGameKey } from '../../data/mapGroups';
 import { MapDetails } from '../../data/maps/mapDetails';
 
 // TODO: add game styles per game preferably {baseColor: string, textColor:string}
@@ -14,72 +15,32 @@ export interface MapGroupItem {
 
 export type MapGroupDictionary = Record<string, MapGroupItem>;
 
-export const MapGroupings: MapGroupDictionary = {
-	dieMachine_Group: {
-		mapName: 'Die Maschine',
-		mapLayers: [MapDetails.dieMaschine, MapDetails.dieMaschineUnderground],
-		game: Game.coldWar,
+const gameFromKey = (game: MapGroupGameKey) =>
+	game === 'bo6' ? Game.bo6 : Game.coldWar;
+
+const mapDetailsById = new Map<string, MapItem>();
+Object.values(MapDetails)
+	.filter(map => !!map.id)
+	.forEach(map => {
+		const mapId = map.id as string;
+		if (!mapDetailsById.has(mapId)) {
+			mapDetailsById.set(mapId, map);
+		}
+	});
+
+export const MapGroupings: MapGroupDictionary = MapGroupDefinitions.reduce(
+	(acc, group) => {
+		acc[group.key] = {
+			mapName: group.mapName,
+			mapLayers: group.mapLayers
+				.map(layer => mapDetailsById.get(layer.id))
+				.filter((layer): layer is MapItem => !!layer),
+			game: gameFromKey(group.game),
+		};
+		return acc;
 	},
-	firebaseZ_Group: {
-		mapName: 'Firebase Z',
-		mapLayers: [MapDetails.firebaseZ, MapDetails.firebaseZSpawn],
-		game: Game.coldWar,
-	},
-	mauerDerToten_Group: {
-		mapName: 'Mauer Der Toten',
-		mapLayers: [MapDetails.mauerDerTotenStreets, MapDetails.mauerDerToten],
-		game: Game.coldWar,
-	},
-	forsaken_Group: {
-		mapName: 'Forsaken',
-		mapLayers: [MapDetails.forsaken, MapDetails.forsakenUnderground],
-		game: Game.coldWar,
-	},
-	outbreak_Group: {
-		mapName: 'Outbreak',
-		mapLayers: [
-			MapDetails.zoo,
-			MapDetails.ruka,
-			MapDetails.duga,
-			MapDetails.alpine,
-			MapDetails.golova,
-			MapDetails.sanatorium,
-			MapDetails.collateral,
-			MapDetails.armada,
-		],
-		game: Game.coldWar,
-	},
-	libertyFalls: {
-		mapName: 'Liberty Falls',
-		mapLayers: [MapDetails.libertyFalls],
-		game: Game.bo6,
-	},
-	terminus_Group: {
-		mapName: 'Terminus',
-		mapLayers: [MapDetails.terminusBiolabs, MapDetails.terminusPrison], // TODO eventually fix the layer issue with icons over multiple layers. Might need to add it here
-		game: Game.bo6,
-	},
-	citadelle_Group: {
-		mapName: 'Citadelle Des Morts',
-		mapLayers: [MapDetails.citadelle],
-		game: Game.bo6,
-	},
-	tomb_Group: {
-		mapName: 'The Tomb',
-		mapLayers: [MapDetails.tomb],
-		game: Game.bo6,
-	},
-	shatteredVeil_Group: {
-		mapName: 'Shattered Veil',
-		mapLayers: [MapDetails.shatteredVeil],
-		game: Game.bo6,
-	},
-	reckoning_Group: {
-		mapName: 'Reckoning',
-		mapLayers: [MapDetails.reckoning, MapDetails.reckoningBossArena],
-		game: Game.bo6,
-	},
-};
+	{} as MapGroupDictionary
+);
 
 export interface MapControlsProps {
 	currentMap: MapItem;

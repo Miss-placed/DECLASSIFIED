@@ -35,10 +35,15 @@ export const getWikiMapSlug = (mapName: string) => {
 	);
 };
 
-export const getWikiIntelUrlForMap = (mapName?: string) =>
+export const getWikiMapUrlForMap = (mapName?: string) =>
 	mapName
-		? `https://callofduty.fandom.com/wiki/${getWikiMapSlug(mapName)}/Intel`
+		? `https://callofduty.fandom.com/wiki/${getWikiMapSlug(mapName)}`
 		: undefined;
+
+export const getWikiIntelUrlForMap = (mapName?: string) => {
+	const mapUrl = getWikiMapUrlForMap(mapName);
+	return mapUrl ? `${mapUrl}/Intel` : undefined;
+};
 
 export const getMapGroupNameByMapId = (mapId?: string) => {
 	if (!mapId) return undefined;
