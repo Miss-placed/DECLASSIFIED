@@ -10,6 +10,7 @@ import {
 	type OperationSourceKind,
 } from '../src/data/operationsSeo';
 import { getMiscIconUri } from '../src/data/icons';
+import { getWikiMapUrlForMap } from '../src/helpers/wiki';
 
 const root = process.cwd();
 const buildRoot = path.join(root, 'build');
@@ -37,7 +38,6 @@ const outputRoots = {
 const QUICK_LINKS_HTML = `<div class="intel-header-links" aria-label="Quick links"><a id="discord" class="intel-header-link social-link" href="https://discord.gg/4Xqj8XntFe" target="_blank" rel="noreferrer" title="Discord" aria-label="Discord"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v11H8l-4 4V4z" /><circle cx="9" cy="10" r="1.2" /><circle cx="12" cy="10" r="1.2" /><circle cx="15" cy="10" r="1.2" /></svg></a><a id="github" class="intel-header-link social-link" href="https://github.com/Miss-placed/DECLASSIFIED" target="_blank" rel="noreferrer" title="GitHub" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 7 3 12l5 5 1.4-1.4L5.8 12l3.6-3.6L8 7zm8 0-1.4 1.4 3.6 3.6-3.6 3.6L16 17l5-5-5-5zM13.7 4 9.3 20h2l4.4-16h-2z" /></svg></a><a id="coffee" class="intel-header-link social-link" href="https://buymeacoffee.com/declassified.map" target="_blank" rel="noreferrer" title="Buy me a coffee" aria-label="Buy me a coffee"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h12v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V7zm12 2h2a2 2 0 1 1 0 4h-2V9zM7 4h2v2H7V4zm3 0h2v2h-2V4z" /></svg></a></div>`;
 const STATIC_SITE_NOTICE_HTML = `<aside class="intel-static-notice" role="note">You are viewing the static Operations archive outside the app. <a href="/">Click here</a> to return to the homepage.</aside>`;
 const HOME_CRUMB_HTML = `<a class="dossier-breadcrumb-home" href="/" title="Home" aria-label="Home"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3 2 12h3v8h6v-5h2v5h6v-8h3L12 3z" /></svg></a>`;
-const GITHUB_ISSUES_NEW = 'https://github.com/Miss-placed/DECLASSIFIED/issues/new';
 
 const escapeHtml = (value: string) =>
 	value
@@ -129,43 +129,6 @@ const renderDossierHeader = ({
 		title
 	)}</h1><p class="dossier-subtitle">${subtitleHtml}</p></div><div class="dossier-header-actions">${QUICK_LINKS_HTML}</div></div></header>`;
 
-const renderMapCard = ({
-	title,
-	subtitle,
-	href,
-	actionHref,
-	hideTitle = false,
-}: {
-	title: string;
-	subtitle: string;
-	href: string;
-	actionHref: string;
-	hideTitle?: boolean;
-}) =>
-	`<div class="dossier-grid-item"><div class="dossier-card"><a class="dossier-card-link" href="${href}"><div class="homepage-box" style="padding:16px;">${
-		hideTitle ? '' : `<h3>${escapeHtml(title)}</h3>`
-	}<p>${escapeHtml(subtitle)}</p></div></a><div class="intel-dossier-actions"><a href="${actionHref}" target="_blank" rel="noreferrer">Open map</a></div></div></div>`;
-
-const buildGithubHelpLink = (
-	sectionLabel: string,
-	gameTitle: string,
-	mapGroupTitle: string
-) =>
-	`${GITHUB_ISSUES_NEW}?title=${encodeURIComponent(
-		`[${sectionLabel}] ${gameTitle} - ${mapGroupTitle} dossier missing data`
-	)}`;
-
-const renderComingSoonCard = ({
-	message,
-	helpHref,
-}: {
-	message: string;
-	helpHref: string;
-}) =>
-	`<div class="dossier-grid-item"><div class="dossier-card dossier-placeholder-card"><div class="homepage-box" style="padding:16px;"><h3>Coming Soon</h3><p>${escapeHtml(
-		message
-	)}</p></div><div class="intel-dossier-actions"><a href="${helpHref}" target="_blank" rel="noreferrer">Help on GitHub</a></div></div></div>`;
-
 const renderOperationItem = (item: OperationRouteItem) => {
 	const links = resolveRelatedLinksForItem(item);
 	const renderLinks = links
@@ -235,6 +198,70 @@ const buildMapSections = (items: OperationRouteItem[], kind: OperationSourceKind
 		.join('');
 };
 
+const writeSharedOperationsGamePages = (urlManifest: Set<string>) => {
+	const games = getOperationsGames();
+
+	games.forEach(game => {
+		const sideEggGroups = getOperationsMapGroups('sideEgg', game.slug);
+		const questGroupsBySlug = new Map(
+			getOperationsMapGroups('mainQuest', game.slug).map(group => [
+				group.mapSlug,
+				group,
+			])
+		);
+
+		const groupsMarkup = sideEggGroups
+			.map(group => {
+				const sideEggCount = group.count;
+				const mainQuestCount = questGroupsBySlug.get(group.mapSlug)?.count ?? 0;
+				const wikiUrl = getWikiMapUrlForMap(group.groupName);
+
+				return `<section class="intel-group dossier-game-group"><div class="intel-type-header rounded-box filled map-group-header"><div class="map-group-title"><h2 class="title text-md">${escapeHtml(
+					group.groupName
+				)}</h2><div class="map-group-actions">${
+					wikiUrl
+						? `<a class="map-group-action" href="${escapeHtml(wikiUrl)}" target="_blank" rel="noreferrer">Wiki</a>`
+						: ''
+				}${
+					group.primaryMapId
+						? `<a class="map-group-action" href="/${group.primaryMapId}" target="_blank" rel="noreferrer">Open map</a>`
+						: ''
+				}</div></div></div><div class="operation-map-group-links">${
+					sideEggCount > 0
+						? `<a class="operation-map-group-link" href="/eggs/${game.slug}/${group.mapSlug}/">Eggs (${sideEggCount})</a>`
+						: `<span class="operation-map-group-link operation-map-group-link-disabled">Eggs (${sideEggCount})</span>`
+				}${
+					mainQuestCount > 0
+						? `<a class="operation-map-group-link" href="/quests/${game.slug}/${group.mapSlug}/">Quests (${mainQuestCount})</a>`
+						: `<span class="operation-map-group-link operation-map-group-link-disabled">Quests (${mainQuestCount})</span>`
+				}</div></section>`;
+			})
+			.join('');
+
+		const gameBody = `${renderDossierHeader({
+			title: `${game.title} Operations`,
+			subtitleHtml: `${HOME_CRUMB_HTML} / ${escapeHtml(game.title)}`,
+		})}<p class="rounded-box filled text-sm">Select a map group, then open either the Side Eggs or Main Quest dossier.</p><div class="dossier-game-groups-grid">${groupsMarkup}</div>`;
+
+		writeFile(
+			path.join(outputRoots.operations, game.slug, 'index.html'),
+			pageShell({
+				title: `${game.title} Operations Dossiers`,
+				description: `Browse Side Eggs and Main Quest map dossiers in ${game.title}.`,
+				canonicalPath: `/operations/${game.slug}/`,
+				body: gameBody,
+				type: 'website',
+				schema: {
+					'@context': 'https://schema.org',
+					'@type': 'CollectionPage',
+					name: `${game.title} Operations Dossiers`,
+				},
+			})
+		);
+		urlManifest.add(`/operations/${game.slug}/`);
+	});
+};
+
 const writeSectionPages = (
 	kind: OperationSourceKind,
 	urlManifest: Set<string>
@@ -242,84 +269,8 @@ const writeSectionPages = (
 	const { routeRoot, dirRoot, label: sectionLabel } = rootsForKind(kind);
 	const games = getOperationsGames(kind);
 
-	const sectionHomeBody = `${renderDossierHeader({
-		title: `${sectionLabel} Dossiers`,
-		subtitleHtml: `${HOME_CRUMB_HTML} / <a href="/operations/">Operations Hub</a> / ${sectionLabel}`,
-	})}<p class="rounded-box filled text-sm">Select a game hub to browse ${sectionLabel.toLowerCase()} grouped by map.</p><div class="intel-type-header rounded-box filled map-group-header"><h2 class="title text-md">Game Hubs</h2></div><div class="intel-dossier-grid map-group-grid">${games
-		.map(
-			game =>
-				`<div class="dossier-grid-item"><div class="dossier-card"><a class="dossier-card-link" href="${routeRoot}/${game.slug}/"><div class="homepage-box" style="padding:16px;"><h3>${escapeHtml(
-					game.title
-				)}</h3><p>${game.count} markers indexed.</p></div></a></div></div>`
-		)
-		.join('')}</div>`;
-
-	writeFile(
-		path.join(buildRoot, dirRoot, 'index.html'),
-		pageShell({
-			title: `${sectionLabel} Dossiers`,
-			description: `Browse ${sectionLabel.toLowerCase()} by game and map.`,
-			canonicalPath: `${routeRoot}/`,
-			body: sectionHomeBody,
-			type: 'website',
-			schema: { '@context': 'https://schema.org', '@type': 'CollectionPage', name: `${sectionLabel} Dossiers` },
-		})
-	);
-	urlManifest.add(`${routeRoot}/`);
-
 	games.forEach(game => {
 		const groups = getOperationsMapGroups(kind, game.slug);
-		const gameBody = `${renderDossierHeader({
-			title: `${sectionLabel} Maps`,
-			subtitleHtml: `${HOME_CRUMB_HTML} / <a href="/operations/">Operations Hub</a> / <a href="${routeRoot}/">${sectionLabel}</a> / ${escapeHtml(
-				game.title
-			)}`,
-		})}<p class="rounded-box filled text-sm">Select a map dossier to view ${sectionLabel.toLowerCase()} details and cross-links.</p><div class="dossier-game-groups-grid">${groups
-			.map(group => {
-				const cards =
-					group.count > 0
-						? renderMapCard({
-								title: group.groupName,
-								subtitle: `${group.groupName} · ${group.count} Steps${
-									group.maps.length > 1 ? ` • ${group.maps.length} Areas` : ''
-								}`,
-								href: `${routeRoot}/${game.slug}/${group.mapSlug}/`,
-								hideTitle: true,
-						  })
-						: renderComingSoonCard({
-								message: `No ${sectionLabel.toLowerCase()} dossier items yet for ${group.groupName}.`,
-								helpHref: buildGithubHelpLink(
-									sectionLabel,
-									game.title,
-									group.groupName
-								),
-						  });
-				return `<section class="intel-group dossier-game-group"><div class="intel-type-header rounded-box filled map-group-header"><div class="map-group-title"><h2 class="title text-md">${escapeHtml(
-					group.groupName
-				)}</h2><div class="map-group-actions">${
-					group.primaryMapId
-						? `<a class="map-group-action" href="/${group.primaryMapId}" target="_blank" rel="noreferrer">Open map</a>`
-						: ''
-				}</div></div><span class="intel-group-count">${group.count} Steps</span></div><div class="intel-dossier-grid map-group-grid">${cards}</div></section>`;
-			})
-			.join('')}</div>`;
-		writeFile(
-			path.join(buildRoot, dirRoot, game.slug, 'index.html'),
-			pageShell({
-				title: `${game.title} ${sectionLabel} Dossiers`,
-				description: `Browse ${sectionLabel.toLowerCase()} map dossiers in ${game.title}.`,
-				canonicalPath: `${routeRoot}/${game.slug}/`,
-				body: gameBody,
-				type: 'website',
-				schema: {
-					'@context': 'https://schema.org',
-					'@type': 'CollectionPage',
-					name: `${game.title} ${sectionLabel} Dossiers`,
-				},
-			})
-		);
-		urlManifest.add(`${routeRoot}/${game.slug}/`);
-
 		groups.forEach(group => {
 			const mapItems = getOperationsMapItems(kind, game.slug, group.mapSlug);
 			if (mapItems.length === 0) return;
@@ -342,9 +293,9 @@ const writeSectionPages = (
 					: '';
 			const mapBody = `${renderDossierHeader({
 				title: `${sectionLabel} List`,
-				subtitleHtml: `${HOME_CRUMB_HTML} / <a href="/operations/">Operations Hub</a> / <a href="${routeRoot}/">${sectionLabel}</a> / <a href="${routeRoot}/${game.slug}/">${escapeHtml(
+				subtitleHtml: `${HOME_CRUMB_HTML} / <a href="/operations/${game.slug}/">${escapeHtml(
 					game.title
-				)}</a> / ${escapeHtml(group.groupName)}`,
+				)}</a> / ${sectionLabel} / ${escapeHtml(group.groupName)}`,
 			})}<div class="intel-dossier-actions">${openMapAction}<a href="${oppositeRoot}/${game.slug}/${group.mapSlug}/">Open ${oppositeLabel} Dossier</a></div>${mapAreaInfo}${mapSections}`;
 
 			writeFile(
@@ -377,29 +328,9 @@ const build = () => {
 	}
 
 	cleanOutputs();
-	const urlManifest = new Set<string>(['/operations/']);
+	const urlManifest = new Set<string>();
 
-	const operationsHomeBody = `${renderDossierHeader({
-		title: 'Operations Dossier Archive',
-		subtitleHtml: `${HOME_CRUMB_HTML} / Operations Hub`,
-	})}<p class="rounded-box filled text-sm">Browse Side Eggs and Main Quest dossiers. All pages link back to the interactive map.</p><div class="intel-type-header rounded-box filled map-group-header"><h2 class="title text-md">Operations Sections</h2></div><div class="intel-dossier-grid map-group-grid"><div class="dossier-grid-item"><div class="dossier-card"><a class="dossier-card-link" href="/eggs/"><div class="homepage-box" style="padding:16px;"><h3>Side Eggs Dossier Hub</h3><p>Map-grouped side egg routes and related intel links.</p></div></a></div></div><div class="dossier-grid-item"><div class="dossier-card"><a class="dossier-card-link" href="/quests/"><div class="homepage-box" style="padding:16px;"><h3>Main Quest Dossier Hub</h3><p>Ordered quest routes, boss steps, weapons, and spoilers.</p></div></a></div></div></div>`;
-
-	writeFile(
-		path.join(outputRoots.operations, 'index.html'),
-		pageShell({
-			title: 'Operations Dossier Archive',
-			description: 'Browse Side Eggs and Main Quest map dossiers.',
-			canonicalPath: '/operations/',
-			body: operationsHomeBody,
-			type: 'website',
-			schema: {
-				'@context': 'https://schema.org',
-				'@type': 'CollectionPage',
-				name: 'Operations Dossier Archive',
-			},
-		})
-	);
-
+	writeSharedOperationsGamePages(urlManifest);
 	writeSectionPages('sideEgg', urlManifest);
 	writeSectionPages('mainQuest', urlManifest);
 

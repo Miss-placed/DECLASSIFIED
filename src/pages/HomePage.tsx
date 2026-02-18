@@ -114,41 +114,23 @@ const HomePage: React.FC = () => {
                 - Discover Main Quest and side Easter Eggs and explore the maps.<br />
                 - Always free, no ads, open & community driven, now & forever.<br />
             </Box>
-            <Grid container spacing={2} sx={{ mt: 2 }}>
-                <Grid size={{ xs: 12 }} sx={{ height: '100px' }}>
-                    <Paper component={Link} to="/operations">
-                        <Box className='homepage-box filled' p={2}>
-                            <Typography variant="h6">Operations Dossier Hub</Typography>
-                            <Typography>Browse Side Eggs and Main Quest dossiers with map-level guides.</Typography>
-                        </Box>
-                    </Paper>
-                </Grid>
-            </Grid>
             <Typography sx={{ mt: 4 }} className='title text-md' variant="h5" gutterBottom>
                 Call of Duty: Black Ops 6
             </Typography>
             <Grid container spacing={2}>
-                <Grid size={{ xs: 12 }} sx={{ height: '100px' }}>
+                <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100px' }}>
                     <Paper component={Link} to="/intel/black-ops-6">
                         <Box className='homepage-box filled' p={2}>
                             <Typography variant="h6">Intel Dossier Hub</Typography>
-                            <Typography>Browse every Black Ops 6 intel dossier.</Typography>
+                            <Typography>Browse all intel dossiers.</Typography>
                         </Box>
                     </Paper>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100px' }}>
-                    <Paper component={Link} to="/eggs/black-ops-6">
+                    <Paper component={Link} to="/operations/black-ops-6">
                         <Box className='homepage-box filled' p={2}>
-                            <Typography variant="h6">Side Eggs Hub</Typography>
-                            <Typography>Browse Black Ops 6 side egg dossiers by map.</Typography>
-                        </Box>
-                    </Paper>
-                </Grid>
-                <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100px' }}>
-                    <Paper component={Link} to="/quests/black-ops-6">
-                        <Box className='homepage-box filled' p={2}>
-                            <Typography variant="h6">Main Quest Hub</Typography>
-                            <Typography>Browse Black Ops 6 main quest dossiers by map.</Typography>
+                            <Typography variant="h6">Operations Dossier Hub</Typography>
+                            <Typography>Browse eggs and quests by map.</Typography>
                         </Box>
                     </Paper>
                 </Grid>
@@ -217,27 +199,19 @@ const HomePage: React.FC = () => {
                 Call of Duty: Black Ops Cold War
             </Typography>
             <Grid container spacing={2}>
-                <Grid size={{ xs: 12 }} sx={{ height: '100px' }}>
+                <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100px' }}>
                     <Paper component={Link} to="/intel/black-ops-cold-war">
                         <Box className='homepage-box filled' p={2}>
                             <Typography variant="h6">Intel Dossier Hub</Typography>
-                            <Typography>Browse every Black Ops Cold War intel dossier.</Typography>
+                            <Typography>Browse all intel dossiers.</Typography>
                         </Box>
                     </Paper>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100px' }}>
-                    <Paper component={Link} to="/eggs/black-ops-cold-war">
+                    <Paper component={Link} to="/operations/black-ops-cold-war">
                         <Box className='homepage-box filled' p={2}>
-                            <Typography variant="h6">Side Eggs Hub</Typography>
-                            <Typography>Browse Cold War side egg dossiers by map.</Typography>
-                        </Box>
-                    </Paper>
-                </Grid>
-                <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100px' }}>
-                    <Paper component={Link} to="/quests/black-ops-cold-war">
-                        <Box className='homepage-box filled' p={2}>
-                            <Typography variant="h6">Main Quest Hub</Typography>
-                            <Typography>Browse Cold War main quest dossiers by map.</Typography>
+                            <Typography variant="h6">Operations Dossier Hub</Typography>
+                            <Typography>Browse eggs and quests by map.</Typography>
                         </Box>
                     </Paper>
                 </Grid>

@@ -72,11 +72,9 @@ export default function QuestsMapPage() {
 							<HomeIcon />
 						</Link>
 						{' / '}
-						<Link to="/operations">Operations Hub</Link>
+						<Link to={`/operations/${gameSlug}`}>{gameTitle}</Link>
 						{' / '}
-						<Link to="/quests">Main Quest</Link>
-						{' / '}
-						<Link to={`/quests/${gameSlug}`}>{gameTitle}</Link>
+						Main Quest
 						{' / '}
 						{mapTitle}
 					</>

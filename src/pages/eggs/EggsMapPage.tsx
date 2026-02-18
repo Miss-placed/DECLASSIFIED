@@ -67,11 +67,9 @@ export default function EggsMapPage() {
 							<HomeIcon />
 						</Link>
 						{' / '}
-						<Link to="/operations">Operations Hub</Link>
+						<Link to={`/operations/${gameSlug}`}>{gameTitle}</Link>
 						{' / '}
-						<Link to="/eggs">Side Eggs</Link>
-						{' / '}
-						<Link to={`/eggs/${gameSlug}`}>{gameTitle}</Link>
+						Side Eggs
 						{' / '}
 						{mapTitle}
 					</>
