@@ -107,7 +107,6 @@ export default function IntelGamePage() {
 									) : null}
 								</div>
 							</div>
-							<span className="intel-group-count">{group.intelCount} Intel</span>
 						</div>
 						<div className="intel-dossier-grid map-group-grid">
 							{group.intelCount > 0 ? (
