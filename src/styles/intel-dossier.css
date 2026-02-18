@@ -92,12 +92,18 @@
 	flex: 1;
 }
 
-.dossier-card-link {
+.dossier-grid-item-link {
 	display: flex;
 	flex: 1;
 	text-decoration: none;
 	color: inherit;
 	width: 100%;
+}
+
+.dossier-grid-item-link-disabled {
+	opacity: 0.75;
+	cursor: default;
+	pointer-events: none;
 }
 
 .dossier-card .homepage-box {

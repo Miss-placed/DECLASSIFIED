@@ -28,7 +28,7 @@ export default function DossierCard({
 
 	return (
 		<Box className={`dossier-card ${isCollected ? 'is-collected' : ''}`}>
-			<Link className="dossier-card-link" to={href}>
+			<Link className="dossier-grid-item-link" to={href}>
 				<Box className="homepage-box" p={2}>
 					{!hideTitle ? <Typography variant="h6">{title}</Typography> : null}
 					{subtitle ? <Typography>{subtitle}</Typography> : null}

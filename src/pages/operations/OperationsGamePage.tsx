@@ -1,4 +1,4 @@
-import { Container, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import { Link, useParams } from 'react-router-dom';
 import { IsValidMapId } from '../../components/MapControls/MapIds';
 import { ExternalLinkIcon, HomeIcon } from '../../components/SocialIcons';
@@ -9,6 +9,7 @@ import {
 import { getWikiMapUrlForMap } from '../../helpers/wiki';
 import '../../styles/intel-dossier.css';
 import DossierHeader from '../intel/components/DossierHeader';
+import DossierCard from '../intel/components/DossierCard';
 import IntelQuickLinks from '../intel/components/IntelQuickLinks';
 
 interface CombinedMapGroup {
@@ -65,9 +66,6 @@ export default function OperationsGamePage() {
 				}
 				actions={<IntelQuickLinks />}
 			/>
-			<Typography className="rounded-box filled text-sm">
-				Select a map group, then open either the Side Eggs or Main Quest dossier.
-			</Typography>
 			{game ? (
 				<div className="dossier-game-groups-grid">
 					{groups.map(group => {
@@ -105,31 +103,43 @@ export default function OperationsGamePage() {
 										</div>
 									</div>
 								</div>
-								<div className="operation-map-group-links">
-									{group.sideEggCount > 0 ? (
-										<Link
-											className="operation-map-group-link"
-											to={`/eggs/${gameSlug}/${group.mapSlug}`}
-										>
-											Eggs ({group.sideEggCount})
-										</Link>
-									) : (
-										<span className="operation-map-group-link operation-map-group-link-disabled">
-											Eggs ({group.sideEggCount})
-										</span>
-									)}
-									{group.mainQuestCount > 0 ? (
-										<Link
-											className="operation-map-group-link"
-											to={`/quests/${gameSlug}/${group.mapSlug}`}
-										>
-											Quests ({group.mainQuestCount})
-										</Link>
-									) : (
-										<span className="operation-map-group-link operation-map-group-link-disabled">
-											Quests ({group.mainQuestCount})
-										</span>
-									)}
+								<div className="intel-dossier-grid map-group-grid">
+									<div className="dossier-grid-item">
+										{group.sideEggCount > 0 ? (
+											<DossierCard
+												title="Eggs"
+												subtitle={`Eggs · ${group.sideEggCount}`}
+												href={`/eggs/${gameSlug}/${group.mapSlug}`}
+												hideTitle
+											/>
+										) : (
+											<div className="dossier-card">
+												<span className="dossier-grid-item-link dossier-grid-item-link-disabled" aria-disabled="true">
+													<Box className="homepage-box" p={2}>
+														<Typography>Eggs · {group.sideEggCount}</Typography>
+													</Box>
+												</span>
+											</div>
+										)}
+									</div>
+									<div className="dossier-grid-item">
+										{group.mainQuestCount > 0 ? (
+											<DossierCard
+												title="Quests"
+												subtitle={`Quests · ${group.mainQuestCount}`}
+												href={`/quests/${gameSlug}/${group.mapSlug}`}
+												hideTitle
+											/>
+										) : (
+											<div className="dossier-card">
+												<span className="dossier-grid-item-link dossier-grid-item-link-disabled" aria-disabled="true">
+													<Box className="homepage-box" p={2}>
+														<Typography>Quests · {group.mainQuestCount}</Typography>
+													</Box>
+												</span>
+											</div>
+										)}
+									</div>
 								</div>
 							</div>
 						);

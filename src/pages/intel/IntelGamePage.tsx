@@ -67,16 +67,11 @@ export default function IntelGamePage() {
 							<HomeIcon />
 						</Link>
 						{' / '}
-						<Link to="/intel">Intel Hub</Link>
-						{' / '}
 						{gameTitle}
 					</>
 				}
 				actions={<IntelQuickLinks />}
 			/>
-			<Typography className="rounded-box filled text-sm">
-				Select a map hub to view intel dossiers. Open the map to jump into the interactive tracker.
-			</Typography>
 			<div className="dossier-game-groups-grid">
 				{groupedMaps.map(group => {
 					const wikiUrl = getWikiIntelUrlForMap(group.groupName);
@@ -119,7 +114,7 @@ export default function IntelGamePage() {
 								<div className="dossier-grid-item">
 									<DossierCard
 										title={group.groupName}
-										subtitle={`${group.groupName} · ${group.intelCount} Intel${
+										subtitle={`${group.intelCount} Intel${
 											group.mapCount > 1 ? ` • ${group.mapCount} Areas` : ''
 										}`}
 										href={`/intel/${gameSlug}/${group.mapSlug}`}

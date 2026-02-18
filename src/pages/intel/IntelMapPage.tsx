@@ -69,8 +69,6 @@ export default function IntelMapPage() {
 							<HomeIcon />
 						</Link>
 						{' / '}
-						<Link to="/intel">Intel Hub</Link>
-						{' / '}
 						{gameSlug ? <Link to={`/intel/${gameSlug}`}>{gameTitle}</Link> : gameTitle}
 						{' / '}
 						{mapTitle}

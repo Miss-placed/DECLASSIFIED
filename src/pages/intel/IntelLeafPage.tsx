@@ -43,8 +43,6 @@ export default function IntelLeafPage() {
 							<HomeIcon />
 						</Link>
 						{' / '}
-						<Link to="/intel">Intel Hub</Link>
-						{' / '}
 						<Link to={`/intel/${intel.gameSlug}`}>{intel.gameTitle}</Link>
 						{' / '}
 						<Link to={`/intel/${intel.gameSlug}/${mapGroupSlug}`}>{mapGroupName}</Link>

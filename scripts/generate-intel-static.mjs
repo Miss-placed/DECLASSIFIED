@@ -166,7 +166,6 @@ const getWikiIntelUrlForMap = mapName =>
 const QUICK_LINKS_HTML = `<div class="intel-header-links" aria-label="Quick links"><a id="discord" class="intel-header-link social-link" href="https://discord.gg/4Xqj8XntFe" target="_blank" rel="noreferrer" title="Discord" aria-label="Discord"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v11H8l-4 4V4z" /><circle cx="9" cy="10" r="1.2" /><circle cx="12" cy="10" r="1.2" /><circle cx="15" cy="10" r="1.2" /></svg></a><a id="github" class="intel-header-link social-link" href="https://github.com/Miss-placed/DECLASSIFIED" target="_blank" rel="noreferrer" title="GitHub" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 7 3 12l5 5 1.4-1.4L5.8 12l3.6-3.6L8 7zm8 0-1.4 1.4 3.6 3.6-3.6 3.6L16 17l5-5-5-5zM13.7 4 9.3 20h2l4.4-16h-2z" /></svg></a><a id="coffee" class="intel-header-link social-link" href="https://buymeacoffee.com/declassified.map" target="_blank" rel="noreferrer" title="Buy me a coffee" aria-label="Buy me a coffee"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h12v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V7zm12 2h2a2 2 0 1 1 0 4h-2V9zM7 4h2v2H7V4zm3 0h2v2h-2V4z" /></svg></a></div>`;
 const STATIC_SITE_NOTICE_HTML = `<aside class="intel-static-notice" role="note">You are viewing the static Intel archive outside the app. <a href="/">Click here</a> to return to the homepage.</aside>`;
 const HOME_CRUMB_HTML = `<a class="dossier-breadcrumb-home" href="/" title="Home" aria-label="Home"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3 2 12h3v8h6v-5h2v5h6v-8h3L12 3z" /></svg></a>`;
-const INTEL_HUB_CRUMB_HTML = `<a href="/intel/">Intel Hub</a>`;
 const EXTERNAL_LINK_ICON_HTML = `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 3h7v7h-2V6.41l-8.29 8.3-1.42-1.42 8.3-8.29H14V3z" /><path d="M5 5h6v2H7v10h10v-4h2v6H5V5z" /></svg>`;
 const GITHUB_ISSUES_NEW = 'https://github.com/Miss-placed/DECLASSIFIED/issues/new';
 
@@ -218,7 +217,7 @@ function renderDossierHeader({ title, subtitle, subtitleHtml }) {
 
 function renderDossierCard({ title, subtitle, href, actionHref, actionLabel, openInNewTab, hideTitle = false }) {
 	const actionAttrs = openInNewTab ? ' target="_blank" rel="noreferrer"' : '';
-	return `<div class="dossier-grid-item"><div class="dossier-card"><a class="dossier-card-link" href="${href}"><div class="homepage-box" style="padding:16px;">${
+	return `<div class="dossier-grid-item"><div class="dossier-card"><a class="dossier-grid-item-link" href="${href}"><div class="homepage-box" style="padding:16px;">${
 		hideTitle ? '' : `<h3>${escapeHtml(title)}</h3>`
 	}${subtitle ? `<p>${escapeHtml(subtitle)}</p>` : ''}</div></a>${
 		actionHref && actionLabel
@@ -278,7 +277,7 @@ function build() {
 		};
 	});
 
-	const urlManifest = new Set(['/intel/']);
+	const urlManifest = new Set();
 	const itemsByGame = new Map();
 
 	for (const item of items) {
@@ -289,35 +288,6 @@ function build() {
 
 	fs.rmSync(outputRoot, { recursive: true, force: true });
 	ensureDir(outputRoot);
-
-	const homeBody = `${renderDossierHeader({ title: 'Intel Dossier Archive', subtitleHtml: `${HOME_CRUMB_HTML} / Intel Hub` })}<p class="rounded-box filled text-sm">Browse each game hub for map dossiers and individual intel pages. Each dossier links back to the interactive map.</p><div class="intel-type-header rounded-box filled map-group-header"><h2 class="title text-md">Intel Hubs</h2></div><div class="intel-dossier-grid map-group-grid">${Object.entries(
-		GAME_INFO
-	)
-		.map(
-			([slug, game]) =>
-				renderDossierCard({
-					title: game.name,
-					subtitle: 'Explore map hubs and dossiers.',
-					href: `/intel/${slug}/`,
-				})
-		)
-		.join('')}</div>`;
-
-	writeFile(
-		path.join(outputRoot, 'index.html'),
-		pageShell({
-			title: 'Intel Dossier Archive',
-			description: 'Browse each game hub for map dossiers and individual intel pages.',
-			canonicalPath: '/intel/',
-			body: homeBody,
-			type: 'website',
-			schema: {
-				'@context': 'https://schema.org',
-				'@type': 'CollectionPage',
-				name: 'Intel Dossier Archive',
-			},
-		})
-	);
 
 	for (const [gameSlug, game] of Object.entries(GAME_INFO)) {
 		const gameItems = itemsByGame.get(gameSlug) ?? [];
@@ -332,7 +302,7 @@ function build() {
 					intelCount > 0
 						? renderDossierCard({
 								title: group.name,
-								subtitle: `${group.name} · ${intelCount} Intel${
+								subtitle: `${intelCount} Intel${
 									group.mapIds.length > 1 ? ` • ${group.mapIds.length} Areas` : ''
 								}`,
 								href: `/intel/${gameSlug}/${mapGroupSlug}/`,
@@ -360,7 +330,7 @@ function build() {
 			})
 			.join('');
 
-		const gameBody = `${renderDossierHeader({ title: 'Intel Maps', subtitleHtml: `${HOME_CRUMB_HTML} / ${INTEL_HUB_CRUMB_HTML} / ${escapeHtml(game.name)}` })}<p class="rounded-box filled text-sm">Select a map hub to view intel dossiers. Open the map to jump into the interactive tracker.</p><div class="dossier-game-groups-grid">${groupSections}</div>`;
+		const gameBody = `${renderDossierHeader({ title: 'Intel Maps', subtitleHtml: `${HOME_CRUMB_HTML} / ${escapeHtml(game.name)}` })}<div class="dossier-game-groups-grid">${groupSections}</div>`;
 
 		writeFile(
 			path.join(outputRoot, gameSlug, 'index.html'),
@@ -410,7 +380,7 @@ function build() {
 
 			const mapBody = `${renderDossierHeader({
 				title: 'Intel List',
-				subtitleHtml: `${HOME_CRUMB_HTML} / ${INTEL_HUB_CRUMB_HTML} / <a href="/intel/${gameSlug}/">${escapeHtml(game.name)}</a> / ${escapeHtml(group.name)}`,
+				subtitleHtml: `${HOME_CRUMB_HTML} / <a href="/intel/${gameSlug}/">${escapeHtml(game.name)}</a> / ${escapeHtml(group.name)}`,
 			})}<div class="intel-dossier-actions"><a href="/${primaryMapId}" target="_blank" rel="noreferrer">Open map</a>${
 				wikiUrl
 					? `<a class="intel-action-with-icon" href="${wikiUrl}" target="_blank" rel="noreferrer">${EXTERNAL_LINK_ICON_HTML}Wiki</a>`
@@ -437,7 +407,7 @@ function build() {
 			for (const intel of mapItems) {
 				const leafBody = `${renderDossierHeader({
 					title: intel.title,
-					subtitleHtml: `${HOME_CRUMB_HTML} / ${INTEL_HUB_CRUMB_HTML} / <a href="/intel/${gameSlug}/">${escapeHtml(game.name)}</a> / <a href="/intel/${gameSlug}/${mapGroupSlug}/">${escapeHtml(group.name)}</a> • ${escapeHtml(intel.type)}`,
+					subtitleHtml: `${HOME_CRUMB_HTML} / <a href="/intel/${gameSlug}/">${escapeHtml(game.name)}</a> / <a href="/intel/${gameSlug}/${mapGroupSlug}/">${escapeHtml(group.name)}</a> • ${escapeHtml(intel.type)}`,
 				})}<p class="rounded-box filled text-sm">${escapeHtml(
 					intel.desc
 				)}</p><h2 class="title text-md">Transcript</h2><div class="intel-dossier-actions"><a href="/${intel.id}" target="_blank" rel="noreferrer">Open intel on map</a>${
