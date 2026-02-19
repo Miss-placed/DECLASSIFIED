@@ -1,6 +1,6 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Container, Switch, TextField, Typography } from '@mui/material';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { HomeIcon } from '../../components/SocialIcons';
 import {
 	getOperationsMapItems,
@@ -12,10 +12,16 @@ import DossierHeader from '../intel/components/DossierHeader';
 import IntelQuickLinks from '../intel/components/IntelQuickLinks';
 import OperationItemCard from '../operations/components/OperationItemCard';
 
+type QuestViewMode = 'all' | 'guided';
+
 export default function QuestsMapPage() {
 	const { gameSlug, mapSlug } = useParams();
+	const [searchParams, setSearchParams] = useSearchParams();
 	const [query, setQuery] = useState('');
 	const [showSpoilers, setShowSpoilers] = useState(false);
+	const [viewMode, setViewMode] = useState<QuestViewMode>(() =>
+		searchParams.get('step') ? 'guided' : 'all'
+	);
 	const items = useMemo(
 		() =>
 			gameSlug && mapSlug
@@ -30,11 +36,100 @@ export default function QuestsMapPage() {
 	const mapAreas = Array.from(
 		new Map(items.map(item => [item.mapId, item.mapTitle])).entries()
 	);
+	const orderedSteps = useMemo(
+		() =>
+			Array.from(
+				new Set(
+					items
+						.filter(item => typeof item.stepNumber === 'number')
+						.map(item => item.stepNumber as number)
+				)
+			).sort((a, b) => a - b),
+		[items]
+	);
+	const hasNumberedSteps = orderedSteps.length > 0;
+
+	const activeStep = useMemo(() => {
+		if (!hasNumberedSteps) return null;
+		const rawStep = searchParams.get('step');
+		const parsedStep = rawStep ? Number.parseInt(rawStep, 10) : Number.NaN;
+		return orderedSteps.includes(parsedStep) ? parsedStep : orderedSteps[0];
+	}, [hasNumberedSteps, orderedSteps, searchParams]);
+
+	const activeStepIndex = useMemo(
+		() => (activeStep === null ? -1 : orderedSteps.indexOf(activeStep)),
+		[activeStep, orderedSteps]
+	);
+	const previousStep =
+		activeStepIndex > 0 ? orderedSteps[activeStepIndex - 1] : null;
+	const nextStep =
+		activeStepIndex >= 0 && activeStepIndex < orderedSteps.length - 1
+			? orderedSteps[activeStepIndex + 1]
+			: null;
+
+	const shouldShowGuided =
+		viewMode === 'guided' && hasNumberedSteps && activeStep !== null;
+
+	useEffect(() => {
+		if (!hasNumberedSteps) return;
+		if (searchParams.get('step')) {
+			setViewMode('guided');
+		}
+	}, [hasNumberedSteps, searchParams]);
+
+	useEffect(() => {
+		if (!shouldShowGuided || activeStep === null) return;
+		const currentStepParam = searchParams.get('step');
+		if (currentStepParam === String(activeStep)) return;
+		const nextParams = new URLSearchParams(searchParams);
+		nextParams.set('step', String(activeStep));
+		setSearchParams(nextParams, { replace: true });
+	}, [activeStep, searchParams, setSearchParams, shouldShowGuided]);
+
+	const setStepParam = (step: number | null) => {
+		const nextParams = new URLSearchParams(searchParams);
+		if (step === null) {
+			nextParams.delete('step');
+		} else {
+			nextParams.set('step', String(step));
+		}
+		setSearchParams(nextParams, { replace: true });
+	};
+
+	const switchToAllItems = () => {
+		setViewMode('all');
+		setStepParam(null);
+	};
+
+	const switchToGuided = () => {
+		if (!hasNumberedSteps) return;
+		setViewMode('guided');
+		setStepParam(activeStep ?? orderedSteps[0]);
+	};
 
 	const filteredItems = useMemo(
 		() => items.filter(item => matchesOperationQuery(item, query)),
 		[items, query]
 	);
+	const guidedStepItems = useMemo(() => {
+		if (activeStep === null) return [];
+		return items
+			.filter(item => item.stepNumber === activeStep)
+			.sort((a, b) => a.title.localeCompare(b.title));
+	}, [activeStep, items]);
+	const supportingItems = useMemo(
+		() =>
+			items
+				.filter(item => typeof item.stepNumber !== 'number')
+				.sort(
+					(a, b) =>
+						(a.groupingTitle || 'General').localeCompare(
+							b.groupingTitle || 'General'
+						) || a.title.localeCompare(b.title)
+				),
+		[items]
+	);
+
 	const grouped = useMemo(() => {
 		const groups = new Map<string, typeof filteredItems>();
 		filteredItems.forEach(item => {
@@ -90,6 +185,25 @@ export default function QuestsMapPage() {
 				{gameSlug && mapSlug ? (
 					<Link to={`/eggs/${gameSlug}/${mapSlug}`}>Open Side Eggs Dossier</Link>
 				) : null}
+				<div className="operation-mode-toggle" role="group" aria-label="Quest view mode">
+					<button
+						type="button"
+						onClick={switchToAllItems}
+						className={viewMode === 'all' ? 'active' : ''}
+						aria-pressed={viewMode === 'all'}
+					>
+						All Items
+					</button>
+					<button
+						type="button"
+						onClick={switchToGuided}
+						className={viewMode === 'guided' ? 'active' : ''}
+						aria-pressed={viewMode === 'guided'}
+						disabled={!hasNumberedSteps}
+					>
+						Step-by-Step
+					</button>
+				</div>
 				<label className="operation-toggle">
 					<Switch
 						size="small"
@@ -112,38 +226,139 @@ export default function QuestsMapPage() {
 					))}
 				</Typography>
 			) : null}
-			<div className="operation-search-row rounded-box filled">
-				<TextField
-					size="small"
-					fullWidth
-					label="Search main quest steps"
-					value={query}
-					onChange={event => setQuery(event.target.value)}
-				/>
-				<span className="operation-search-count">{filteredItems.length} results</span>
-			</div>
-			{grouped.map(group => (
-				<div key={group.category} className="intel-group">
-					<div className="intel-type-header rounded-box filled map-group-header">
-						<Typography className="title text-md" variant="h5">
-							{group.category}
-						</Typography>
-						<span className="intel-group-count">{group.items.length} Steps</span>
-					</div>
-					<div className="operation-map-grid map-group-grid">
-						{group.items.map(item => (
-							<OperationItemCard
-								key={item.id}
-								item={item}
-								showSpoilers={showSpoilers}
-								links={resolveRelatedLinksForItem(item)}
-								showMapLayer={hasMultipleMapLayers}
-								groupTitle={group.category}
-							/>
+
+			{shouldShowGuided ? (
+				<>
+					<div className="operation-step-rail rounded-box filled">
+						{orderedSteps.map(step => (
+							<button
+								type="button"
+								key={`step-rail-${step}`}
+								className={activeStep === step ? 'active' : ''}
+								onClick={() => setStepParam(step)}
+								aria-current={activeStep === step ? 'step' : undefined}
+								aria-label={`Go to step ${step}`}
+							>
+								{step}
+							</button>
 						))}
 					</div>
-				</div>
-			))}
+					<div className="operation-step-nav rounded-box filled">
+						<button
+							type="button"
+							onClick={() => setStepParam(previousStep)}
+							disabled={previousStep === null}
+							aria-label="Previous step"
+							title="Previous step"
+						>
+							&lt;
+						</button>
+						<span className="operation-step-status">
+							Step {activeStepIndex + 1} of {orderedSteps.length}
+						</span>
+						<button
+							type="button"
+							onClick={() => setStepParam(nextStep)}
+							disabled={nextStep === null}
+							aria-label="Next step"
+							title="Next step"
+						>
+							&gt;
+						</button>
+					</div>
+					<div className="intel-group">
+						<div className="intel-type-header rounded-box filled map-group-header">
+							<Typography className="title text-md" variant="h5">
+								Step {activeStep}
+							</Typography>
+							<span className="intel-group-count">{guidedStepItems.length} Items</span>
+						</div>
+						{guidedStepItems.length > 0 ? (
+							<div className="operation-map-grid map-group-grid">
+								{guidedStepItems.map(item => (
+									<OperationItemCard
+										key={item.id}
+										item={item}
+										showSpoilers={showSpoilers}
+										links={resolveRelatedLinksForItem(item)}
+										showMapLayer={hasMultipleMapLayers}
+										groupTitle={`Step ${activeStep}`}
+									/>
+								))}
+							</div>
+						) : (
+							<Typography className="rounded-box filled text-sm operation-guided-empty">
+								No items were found for this step.
+							</Typography>
+						)}
+					</div>
+					{supportingItems.length > 0 ? (
+						<div className="intel-group">
+							<div className="intel-type-header rounded-box filled map-group-header">
+								<Typography className="title text-md" variant="h5">
+									Supporting Info
+								</Typography>
+								<span className="intel-group-count">{supportingItems.length} Items</span>
+							</div>
+							<Typography className="rounded-box filled text-sm operation-guided-support-note">
+								Supplemental markers that are not part of the numbered quest flow.
+							</Typography>
+							<div className="operation-map-grid map-group-grid">
+								{supportingItems.map(item => (
+									<OperationItemCard
+										key={item.id}
+										item={item}
+										showSpoilers={showSpoilers}
+										links={resolveRelatedLinksForItem(item)}
+										showMapLayer={hasMultipleMapLayers}
+										groupTitle="Supporting Info"
+									/>
+								))}
+							</div>
+						</div>
+					) : null}
+				</>
+			) : (
+				<>
+					{viewMode === 'guided' && !hasNumberedSteps ? (
+						<Typography className="rounded-box filled text-sm operation-guided-empty">
+							This map does not currently have numbered steps. Showing all items.
+						</Typography>
+					) : null}
+					<div className="operation-search-row rounded-box filled">
+						<TextField
+							size="small"
+							fullWidth
+							label="Search main quest steps"
+							value={query}
+							onChange={event => setQuery(event.target.value)}
+						/>
+						<span className="operation-search-count">{filteredItems.length} results</span>
+					</div>
+					{grouped.map(group => (
+						<div key={group.category} className="intel-group">
+							<div className="intel-type-header rounded-box filled map-group-header">
+								<Typography className="title text-md" variant="h5">
+									{group.category}
+								</Typography>
+								<span className="intel-group-count">{group.items.length} Steps</span>
+							</div>
+							<div className="operation-map-grid map-group-grid">
+								{group.items.map(item => (
+									<OperationItemCard
+										key={item.id}
+										item={item}
+										showSpoilers={showSpoilers}
+										links={resolveRelatedLinksForItem(item)}
+										showMapLayer={hasMultipleMapLayers}
+										groupTitle={group.category}
+									/>
+								))}
+							</div>
+						</div>
+					))}
+				</>
+			)}
 		</Container>
 	);
 }
