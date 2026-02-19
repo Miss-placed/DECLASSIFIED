@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Container, Switch, TextField, Typography } from '@mui/material';
-import { Link, useParams, useSearchParams } from 'react-router-dom';
+import { Link, useLocation, useParams, useSearchParams } from 'react-router-dom';
 import { HomeIcon } from '../../components/SocialIcons';
 import {
 	getOperationsMapItems,
@@ -13,14 +13,24 @@ import IntelQuickLinks from '../intel/components/IntelQuickLinks';
 import OperationItemCard from '../operations/components/OperationItemCard';
 
 type QuestViewMode = 'all' | 'guided';
+type StepRailToken =
+	| { type: 'step'; displayStep: number; actualStep: number }
+	| { type: 'ellipsis'; key: string };
 
 export default function QuestsMapPage() {
 	const { gameSlug, mapSlug } = useParams();
+	const location = useLocation();
 	const [searchParams, setSearchParams] = useSearchParams();
+	const locationState = location.state as { questViewMode?: QuestViewMode } | null;
+	const locationViewMode = locationState?.questViewMode;
 	const [query, setQuery] = useState('');
 	const [showSpoilers, setShowSpoilers] = useState(false);
 	const [viewMode, setViewMode] = useState<QuestViewMode>(() =>
-		searchParams.get('step') ? 'guided' : 'all'
+		searchParams.get('step')
+			? 'guided'
+			: locationViewMode === 'all'
+				? 'all'
+				: 'guided'
 	);
 	const items = useMemo(
 		() =>
@@ -47,19 +57,78 @@ export default function QuestsMapPage() {
 			).sort((a, b) => a - b),
 		[items]
 	);
+	const stepDisplayByActual = useMemo(
+		() => new Map(orderedSteps.map((step, index) => [step, index + 1])),
+		[orderedSteps]
+	);
+	const actualStepByDisplay = useMemo(
+		() => new Map(orderedSteps.map((step, index) => [index + 1, step])),
+		[orderedSteps]
+	);
 	const hasNumberedSteps = orderedSteps.length > 0;
 
 	const activeStep = useMemo(() => {
 		if (!hasNumberedSteps) return null;
 		const rawStep = searchParams.get('step');
 		const parsedStep = rawStep ? Number.parseInt(rawStep, 10) : Number.NaN;
-		return orderedSteps.includes(parsedStep) ? parsedStep : orderedSteps[0];
-	}, [hasNumberedSteps, orderedSteps, searchParams]);
+		if (actualStepByDisplay.has(parsedStep)) {
+			return actualStepByDisplay.get(parsedStep) ?? orderedSteps[0];
+		}
+		return orderedSteps[0];
+	}, [actualStepByDisplay, hasNumberedSteps, orderedSteps, searchParams]);
 
 	const activeStepIndex = useMemo(
 		() => (activeStep === null ? -1 : orderedSteps.indexOf(activeStep)),
 		[activeStep, orderedSteps]
 	);
+	const activeDisplayStep = useMemo(
+		() =>
+			activeStep === null
+				? null
+				: (stepDisplayByActual.get(activeStep) ?? activeStepIndex + 1),
+		[activeStep, activeStepIndex, stepDisplayByActual]
+	);
+	const stepRailTokens = useMemo(() => {
+		if (!hasNumberedSteps || activeDisplayStep === null) return [];
+		const totalSteps = orderedSteps.length;
+		const windowRadius = 3;
+		const firstDisplayStep = 1;
+		const lastDisplayStep = totalSteps;
+		const windowStart = Math.max(firstDisplayStep, activeDisplayStep - windowRadius);
+		const windowEnd = Math.min(lastDisplayStep, activeDisplayStep + windowRadius);
+
+		const includedDisplaySteps = new Set<number>([
+			firstDisplayStep,
+			lastDisplayStep,
+		]);
+		for (let currentStep = windowStart; currentStep <= windowEnd; currentStep += 1) {
+			includedDisplaySteps.add(currentStep);
+		}
+
+		const orderedDisplaySteps = Array.from(includedDisplaySteps).sort((a, b) => a - b);
+		const railTokens: StepRailToken[] = [];
+		let previousDisplayStep: number | null = null;
+
+		orderedDisplaySteps.forEach(displayStep => {
+			if (previousDisplayStep !== null && displayStep - previousDisplayStep > 1) {
+				railTokens.push({
+					type: 'ellipsis',
+					key: `ellipsis-${previousDisplayStep}-${displayStep}`,
+				});
+			}
+			const actualStepForDisplay = actualStepByDisplay.get(displayStep);
+			if (typeof actualStepForDisplay === 'number') {
+				railTokens.push({
+					type: 'step',
+					displayStep,
+					actualStep: actualStepForDisplay,
+				});
+			}
+			previousDisplayStep = displayStep;
+		});
+
+		return railTokens;
+	}, [activeDisplayStep, actualStepByDisplay, hasNumberedSteps, orderedSteps.length]);
 	const previousStep =
 		activeStepIndex > 0 ? orderedSteps[activeStepIndex - 1] : null;
 	const nextStep =
@@ -71,29 +140,71 @@ export default function QuestsMapPage() {
 		viewMode === 'guided' && hasNumberedSteps && activeStep !== null;
 
 	useEffect(() => {
-		if (!hasNumberedSteps) return;
-		if (searchParams.get('step')) {
-			setViewMode('guided');
+		if (!hasNumberedSteps) {
+			if (viewMode !== 'all') {
+				setViewMode('all');
+			}
+			if (searchParams.get('step')) {
+				const nextParams = new URLSearchParams(searchParams);
+				nextParams.delete('step');
+				setSearchParams(nextParams, {
+					replace: true,
+					state: { questViewMode: 'all' },
+				});
+			}
+			return;
 		}
-	}, [hasNumberedSteps, searchParams]);
+		const hasStepParam = Boolean(searchParams.get('step'));
+		if (hasStepParam) {
+			setViewMode('guided');
+			return;
+		}
+		if (locationViewMode === 'all') {
+			setViewMode('all');
+			return;
+		}
+		setViewMode('guided');
+	}, [
+		hasNumberedSteps,
+		locationViewMode,
+		searchParams,
+		setSearchParams,
+		viewMode,
+	]);
 
 	useEffect(() => {
-		if (!shouldShowGuided || activeStep === null) return;
+		if (!shouldShowGuided || activeStep === null || activeDisplayStep === null) return;
 		const currentStepParam = searchParams.get('step');
-		if (currentStepParam === String(activeStep)) return;
+		if (!currentStepParam && locationViewMode === 'all') return;
+		if (currentStepParam === String(activeDisplayStep)) return;
 		const nextParams = new URLSearchParams(searchParams);
-		nextParams.set('step', String(activeStep));
-		setSearchParams(nextParams, { replace: true });
-	}, [activeStep, searchParams, setSearchParams, shouldShowGuided]);
+		nextParams.set('step', String(activeDisplayStep));
+		setSearchParams(nextParams, {
+			replace: true,
+			state: { questViewMode: 'guided' },
+		});
+	}, [
+		activeDisplayStep,
+		activeStep,
+		locationViewMode,
+		searchParams,
+		setSearchParams,
+		shouldShowGuided,
+	]);
 
-	const setStepParam = (step: number | null) => {
+	const setStepParam = (stepActual: number | null) => {
 		const nextParams = new URLSearchParams(searchParams);
-		if (step === null) {
+		if (stepActual === null) {
 			nextParams.delete('step');
 		} else {
-			nextParams.set('step', String(step));
+			const displayStep = stepDisplayByActual.get(stepActual);
+			if (!displayStep) return;
+			nextParams.set('step', String(displayStep));
 		}
-		setSearchParams(nextParams, { replace: true });
+		setSearchParams(nextParams, {
+			replace: true,
+			state: { questViewMode: stepActual === null ? 'all' : 'guided' },
+		});
 	};
 
 	const switchToAllItems = () => {
@@ -188,20 +299,20 @@ export default function QuestsMapPage() {
 				<div className="operation-mode-toggle" role="group" aria-label="Quest view mode">
 					<button
 						type="button"
-						onClick={switchToAllItems}
-						className={viewMode === 'all' ? 'active' : ''}
-						aria-pressed={viewMode === 'all'}
-					>
-						All Items
-					</button>
-					<button
-						type="button"
 						onClick={switchToGuided}
 						className={viewMode === 'guided' ? 'active' : ''}
 						aria-pressed={viewMode === 'guided'}
 						disabled={!hasNumberedSteps}
 					>
 						Step-by-Step
+					</button>
+					<button
+						type="button"
+						onClick={switchToAllItems}
+						className={viewMode === 'all' ? 'active' : ''}
+						aria-pressed={viewMode === 'all'}
+					>
+						All Items
 					</button>
 				</div>
 				<label className="operation-toggle">
@@ -230,18 +341,30 @@ export default function QuestsMapPage() {
 			{shouldShowGuided ? (
 				<>
 					<div className="operation-step-rail rounded-box filled">
-						{orderedSteps.map(step => (
-							<button
-								type="button"
-								key={`step-rail-${step}`}
-								className={activeStep === step ? 'active' : ''}
-								onClick={() => setStepParam(step)}
-								aria-current={activeStep === step ? 'step' : undefined}
-								aria-label={`Go to step ${step}`}
-							>
-								{step}
-							</button>
-						))}
+						{stepRailTokens.map(token =>
+							token.type === 'ellipsis' ? (
+								<span
+									key={token.key}
+									className="operation-step-ellipsis"
+									aria-hidden="true"
+								>
+									...
+								</span>
+							) : (
+								<button
+									type="button"
+									key={`step-rail-${token.displayStep}`}
+									className={activeDisplayStep === token.displayStep ? 'active' : ''}
+									onClick={() => setStepParam(token.actualStep)}
+									aria-current={
+										activeDisplayStep === token.displayStep ? 'step' : undefined
+									}
+									aria-label={`Go to step ${token.displayStep}`}
+								>
+									{token.displayStep}
+								</button>
+							)
+						)}
 					</div>
 					<div className="operation-step-nav rounded-box filled">
 						<button
@@ -254,7 +377,7 @@ export default function QuestsMapPage() {
 							&lt;
 						</button>
 						<span className="operation-step-status">
-							Step {activeStepIndex + 1} of {orderedSteps.length}
+							Step {activeDisplayStep} of {orderedSteps.length}
 						</span>
 						<button
 							type="button"
@@ -269,7 +392,7 @@ export default function QuestsMapPage() {
 					<div className="intel-group">
 						<div className="intel-type-header rounded-box filled map-group-header">
 							<Typography className="title text-md" variant="h5">
-								Step {activeStep}
+								Step {activeDisplayStep}
 							</Typography>
 							<span className="intel-group-count">{guidedStepItems.length} Items</span>
 						</div>
@@ -282,7 +405,9 @@ export default function QuestsMapPage() {
 										showSpoilers={showSpoilers}
 										links={resolveRelatedLinksForItem(item)}
 										showMapLayer={hasMultipleMapLayers}
-										groupTitle={`Step ${activeStep}`}
+										groupTitle={`Step ${activeDisplayStep}`}
+										stepLabel={activeDisplayStep ?? undefined}
+										showStepChip={false}
 									/>
 								))}
 							</div>
@@ -352,6 +477,17 @@ export default function QuestsMapPage() {
 										links={resolveRelatedLinksForItem(item)}
 										showMapLayer={hasMultipleMapLayers}
 										groupTitle={group.category}
+										stepLabel={
+											typeof item.stepNumber === 'number'
+												? stepDisplayByActual.get(item.stepNumber)
+												: undefined
+										}
+										stepChipTo={
+											typeof item.stepNumber === 'number' &&
+											stepDisplayByActual.has(item.stepNumber)
+												? `?step=${stepDisplayByActual.get(item.stepNumber)}`
+												: undefined
+										}
 									/>
 								))}
 							</div>

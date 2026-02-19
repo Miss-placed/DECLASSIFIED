@@ -15,6 +15,9 @@ interface OperationItemCardProps {
 	showSpoilers: boolean;
 	showMapLayer?: boolean;
 	groupTitle?: string;
+	stepLabel?: number;
+	showStepChip?: boolean;
+	stepChipTo?: string;
 }
 
 const getRedactedLineWidths = (seedText: string, count: number) => {
@@ -53,6 +56,9 @@ export default function OperationItemCard({
 	showSpoilers,
 	showMapLayer = false,
 	groupTitle,
+	stepLabel,
+	showStepChip = true,
+	stepChipTo,
 }: OperationItemCardProps) {
 	const [isSpoilerRevealed, setIsSpoilerRevealed] = useState(false);
 	const mapItem = GetMapById(item.mapId);
@@ -62,8 +68,13 @@ export default function OperationItemCard({
 	const helpLinks = links.filter(link => link.type === 'help');
 	const hasSpoiler = item.spoilerTags.length > 0;
 	const showGroupingChip = !!item.groupingTitle && item.groupingTitle !== groupTitle;
+	const displayStepNumber =
+		typeof stepLabel === 'number' ? stepLabel : item.stepNumber;
 	const hasMetaChips =
-		showMapLayer || typeof item.stepNumber === 'number' || showGroupingChip || hasSpoiler;
+		showMapLayer ||
+		(showStepChip && typeof displayStepNumber === 'number') ||
+		showGroupingChip ||
+		hasSpoiler;
 	const redactedLineCount = Math.max(3, Math.min(8, Math.ceil((item.desc?.length ?? 0) / 55)));
 	const redactedLineWidths = getRedactedLineWidths(item.id, redactedLineCount);
 	const shouldShowRedacted = hasSpoiler && !showSpoilers && !isSpoilerRevealed;
@@ -88,8 +99,18 @@ export default function OperationItemCard({
 					{showMapLayer ? (
 						<span className="operation-chip">{item.mapTitle}</span>
 					) : null}
-					{typeof item.stepNumber === 'number' ? (
-						<span className="operation-chip">Step {item.stepNumber}</span>
+					{showStepChip && typeof displayStepNumber === 'number' ? (
+						stepChipTo ? (
+							<Link
+								to={stepChipTo}
+								className="operation-chip operation-chip-link"
+								title={`View Step ${displayStepNumber} in Step-by-Step mode`}
+							>
+								Step {displayStepNumber}
+							</Link>
+						) : (
+							<span className="operation-chip">Step {displayStepNumber}</span>
+						)
 					) : null}
 					{showGroupingChip ? (
 						<span className="operation-chip">{item.groupingTitle}</span>

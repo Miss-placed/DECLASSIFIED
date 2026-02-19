@@ -347,6 +347,15 @@
 	background: var(--clr-grey-d);
 }
 
+.operation-chip.operation-chip-link {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.operation-chip.operation-chip-link:hover {
+	filter: brightness(1.08);
+}
+
 .spoiler-chip {
 	border-color: var(--clr-red);
 	color: var(--clr-white-d);
@@ -516,6 +525,8 @@
 	padding: 0.65rem;
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 	gap: 0.45rem;
 }
 
@@ -532,6 +543,17 @@
 .operation-step-rail button.active {
 	border-color: var(--clr-red);
 	background: rgba(179, 53, 54, 0.18);
+}
+
+.operation-step-ellipsis {
+	min-width: 2rem;
+	padding: 0.2rem 0.25rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--clr-white-extra-dark);
+	opacity: 0.75;
+	user-select: none;
 }
 
 .operation-step-nav {
