@@ -177,11 +177,8 @@ const renderOperationItem = (
 		item.img && item.img !== 'placeholder'
 			? `<a href="https://i.imgur.com/${item.img}.jpg" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/${item.img}l.jpg" alt="${escapeHtml(item.title)}" loading="lazy" style="width:100%;margin-top:.5rem;border-radius:8px;" /></a>`
 			: '';
-	const description = hasSpoiler
-		? `<details class="operations-spoiler"><summary>Classified content (click to reveal)</summary><p>${escapeHtml(
-				item.desc
-			)}</p></details>`
-		: `<p class="text-sm">${escapeHtml(item.desc)}</p>`;
+	// Static pages should always include visible full text for SEO.
+	const description = `<p class="text-sm">${escapeHtml(item.desc)}</p>`;
 	return `<article class="operation-item-static rounded-box" id="${item.anchorId}">${
 		item.stepAnchorId ? `<span id="${item.stepAnchorId}"></span>` : ''
 	}<div class="operation-item-static-header"><img src="/${getMiscIconUri(item.icon)}" alt="${escapeHtml(
