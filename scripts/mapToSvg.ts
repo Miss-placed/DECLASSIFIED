@@ -564,6 +564,45 @@ export interface FillResult {
  * @param py          Click y coordinate in pixel space
  * @param threshold   Luminance cutoff — pixels < threshold are walkable (fillable)
  */
+/**
+ * Two-pass separable morphological dilation (radius > 0) or erosion (radius < 0).
+ * Diamond-shaped structuring element (horizontal + vertical passes).
+ * O(n × r) per pass — fast enough for ≤ 2048 × 2048 images with r ≤ 20.
+ */
+function applyMorphology(filled: Uint8Array, width: number, height: number, radius: number): Uint8Array {
+    if (radius === 0) return filled;
+    const r      = Math.abs(radius);
+    const dilate = radius > 0;
+    const tmp    = new Uint8Array(width * height);
+    const out    = new Uint8Array(width * height);
+
+    // Horizontal pass
+    for (let y = 0; y < height; y++) {
+        for (let x = 0; x < width; x++) {
+            const lo = Math.max(0, x - r), hi = Math.min(width - 1, x + r);
+            let hit = !dilate;
+            for (let k = lo; k <= hi; k++) {
+                const v = filled[y * width + k];
+                if (dilate ? v : !v) { hit = dilate; break; }
+            }
+            tmp[y * width + x] = hit ? 1 : 0;
+        }
+    }
+    // Vertical pass
+    for (let y = 0; y < height; y++) {
+        for (let x = 0; x < width; x++) {
+            const lo = Math.max(0, y - r), hi = Math.min(height - 1, y + r);
+            let hit = !dilate;
+            for (let k = lo; k <= hi; k++) {
+                const v = tmp[k * width + x];
+                if (dilate ? v : !v) { hit = dilate; break; }
+            }
+            out[y * width + x] = hit ? 1 : 0;
+        }
+    }
+    return out;
+}
+
 export async function fillRegion(
     grayPixels: Uint8Array,
     width: number,
@@ -571,6 +610,7 @@ export async function fillRegion(
     px: number,
     py: number,
     threshold: number,
+    offset: number = 0,
 ): Promise<FillResult> {
     // Clamp click point to image bounds
     px = Math.max(0, Math.min(width - 1, Math.round(px)));
@@ -608,11 +648,14 @@ export async function fillRegion(
     const pixelCount = queue.length;
     if (pixelCount === 0) return { path: '', pixelCount: 0 };
 
+    // Apply morphological dilation (+) or erosion (−) for edge offset
+    const finalFilled = applyMorphology(filled, width, height, offset);
+
     // Build a 1-bit PNG: filled pixels → black (0), unfilled → white (255)
     // Potrace traces dark shapes on a light background.
     const bitmapData = Buffer.alloc(width * height);
     for (let i = 0; i < width * height; i++) {
-        bitmapData[i] = filled[i] ? 0 : 255;
+        bitmapData[i] = finalFilled[i] ? 0 : 255;
     }
     const bitmapPng = await sharp(bitmapData, { raw: { width, height, channels: 1 } })
         .png()

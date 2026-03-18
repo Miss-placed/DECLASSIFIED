@@ -1,19 +1,28 @@
 /**
- * mapToSvgPreview.ts
+ * mapToSvgPreview.ts  —  DECLASSIFIED Map SVG Builder
  *
- * Live-preview HTTP server for map SVG parameter tuning.
+ * A self-contained local dev app for interactively building SVG map layers
+ * from a raw map image. No CLI arguments needed — just drop PNG/JPG files into
+ * the scripts/map-workspace/ folder and launch:
  *
- * Serves a browser UI at http://localhost:9090 where you can:
- *  - Tune all pipeline parameters with sliders and see the SVG update live
- *  - Click the map in Fill mode → BFS flood fill from that point → confirm as a layer
- *  - Click existing SVG paths in Select mode → reassign to any layer
- *  - Toggle layer visibility and map image opacity
+ *   npm run map:build           (starts server on http://localhost:9090)
+ *   npm run map:build -- --port 9091
  *
- * Usage:
- *   npx tsx scripts/mapToSvgPreview.ts --input <path-to-image> [--port 9090]
+ * Workflow
+ *  1. Drop PNG/JPG files into scripts/map-workspace/
+ *  2. Open http://localhost:9090 — select an image from the dropdown
+ *  3. Optionally name and save your session (saved as JSON in the workspace)
+ *  4. Use Fill mode    — click the map to flood-fill regions
+ *  5. Use Select mode  — click any SVG path to reassign or exclude it
+ *  6. Use Outline mode — click vertices to draw the map boundary polygon
+ *  7. Save Progress    — persists annotations + config as a JSON session file
+ *  8. Export SVG       — downloads a clean 512 × 512 SVG for use in the app
+ *
+ * Exported SVG: outlines, walls, thickerWalls, inaccessible, stairs (512×512)
+ * When a closed outline exists, all fill layers are clipped to it on export.
  */
 
-import fs from 'node:fs';
+import fs   from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
 import sharp from 'sharp';
@@ -25,45 +34,33 @@ import {
     type MapConfig,
 } from './mapToSvg.js';
 
-// ---------------------------------------------------------------------------
-// CLI args
-// ---------------------------------------------------------------------------
+// ── constants ────────────────────────────────────────────────────────────────
 
-function requiredArg(name: string): string {
-    const idx = process.argv.indexOf(`--${name}`);
-    if (idx !== -1 && process.argv[idx + 1]) return process.argv[idx + 1];
-    console.error(`Missing required argument: --${name}`);
-    process.exit(1);
-}
+const WORKSPACE_DIR = path.join(process.cwd(), 'scripts', 'map-workspace');
 
-function optionalArg(name: string, fallback: number): number {
-    const idx = process.argv.indexOf(`--${name}`);
-    if (idx !== -1 && process.argv[idx + 1] !== undefined) {
+const PORT = (() => {
+    const idx = process.argv.indexOf('--port');
+    if (idx !== -1 && process.argv[idx + 1]) {
         const v = Number(process.argv[idx + 1]);
         if (!isNaN(v)) return v;
     }
-    return fallback;
+    return 9090;
+})();
+
+// Ensure the workspace folder exists on startup
+if (!fs.existsSync(WORKSPACE_DIR)) {
+    fs.mkdirSync(WORKSPACE_DIR, { recursive: true });
+    console.log(`\nCreated workspace folder: ${WORKSPACE_DIR}`);
+    console.log('Drop PNG or JPG map images there to get started.\n');
 }
 
-const inputPath = requiredArg('input');
-const PORT = optionalArg('port', 9090);
+// ── server state  ────────────────────────────────────────────────────────────
 
-if (!fs.existsSync(inputPath)) {
-    console.error(`Input file not found: ${inputPath}`);
-    process.exit(1);
-}
+let currentPngPath:   string | null = null;
+let currentPngBuffer: Buffer | null = null;
+let currentPngMime:   string        = 'image/png';
 
-const rawBuffer = fs.readFileSync(inputPath);
-const imageBase64 = rawBuffer.toString('base64');
-const imageExt = path.extname(inputPath).slice(1).toLowerCase();
-const imageMime = imageExt === 'jpg' || imageExt === 'jpeg' ? 'image/jpeg' : 'image/png';
-const imageDataUrl = `data:${imageMime};base64,${imageBase64}`;
-
-console.log(`Image loaded: ${inputPath} (${(rawBuffer.length / 1024 / 1024).toFixed(1)} MB)`);
-
-// ---------------------------------------------------------------------------
-// Gray pixel cache — populated/refreshed after every /process call
-// ---------------------------------------------------------------------------
+// ── gray-pixel cache (refreshed after every /process call) ──────────────────
 
 interface GrayCache {
     pixels: Uint8Array;
@@ -74,42 +71,142 @@ interface GrayCache {
 }
 let grayCache: GrayCache | null = null;
 
-// ---------------------------------------------------------------------------
-// Annotation types (server-side)
-// ---------------------------------------------------------------------------
+// ── annotation types (shared server ↔ session JSON) ────────────────────────
 
 interface FilledShapeServer {
-    kind:  'fill';
-    id:    string;
-    group: string;
-    mode:  'add' | 'subtract';
-    type:  'fill' | 'outline'; // fill = solid area; outline = stroke-only path
-    path:  string; // potrace `d` string captured at vW x vH
-    vW:    number;
-    vH:    number;
+    kind:      'fill';
+    id:        string;
+    group:     string;
+    mode:      'add' | 'subtract';
+    type:      'fill' | 'outline';
+    lineStyle: 'solid' | 'dashed';
+    path:      string;  // potrace `d` captured at vW × vH
+    vW:        number;
+    vH:        number;
 }
 
 interface ReassignmentServer {
     kind:      'reassign';
     id:        string;
-    d:         string; // exact `d` attribute from the rendered SVG
+    d:         string;
     fromGroup: string;
     toGroup:   string;
-    type:      'fill' | 'outline' | 'line'; // how to render in the target group
+    type:      'fill' | 'outline' | 'line';
+    lineStyle: 'solid' | 'dashed';
 }
 
 interface ExclusionServer {
     kind:      'exclude';
     id:        string;
-    d:         string;     // `d` attribute of the path to remove everywhere
-    fromGroup: string;     // original group (informational)
+    d:         string;
+    fromGroup: string;
 }
 
-type AnnotationServer = FilledShapeServer | ReassignmentServer | ExclusionServer;
+interface MoveServer {
+    kind:      'move';
+    id:        string;
+    d:         string;
+    fromGroup: string;
+    dx:        number;
+    dy:        number;
+}
 
-// ---------------------------------------------------------------------------
-// HTML UI
-// ---------------------------------------------------------------------------
+interface ReshapeServer {
+    kind:      'reshape';
+    id:        string;
+    origD:     string;  // original d attribute for matching
+    newD:      string;  // new d attribute after node editing
+    fromGroup: string;
+}
+
+interface MapOutlineServer {
+    kind:   'map-outline';
+    id:     string;
+    points: { nx: number; ny: number }[]; // normalised 0-1 coords relative to image
+    closed: boolean;
+}
+
+type AnnotationServer =
+    | FilledShapeServer
+    | ReassignmentServer
+    | ExclusionServer
+    | MoveServer
+    | ReshapeServer
+    | MapOutlineServer;
+
+// ── session types ────────────────────────────────────────────────────────────
+
+interface SessionInfo {
+    name:      string;
+    pngFile:   string;
+    updatedAt: string;
+}
+
+interface SessionData {
+    name:        string;
+    pngFile:     string;
+    config:      Partial<MapConfig>;
+    annotations: AnnotationServer[];
+    updatedAt:   string;
+}
+
+// ── workspace helpers ────────────────────────────────────────────────────────
+
+function scanWorkspace(): { pngs: string[]; sessions: SessionInfo[] } {
+    const files    = fs.readdirSync(WORKSPACE_DIR).sort();
+    const pngs     = files.filter(f => /\.(png|jpg|jpeg)$/i.test(f));
+    const sessions = files
+        .filter(f => f.endsWith('.json'))
+        .flatMap<SessionInfo>(f => {
+            try {
+                const d = JSON.parse(
+                    fs.readFileSync(path.join(WORKSPACE_DIR, f), 'utf8'),
+                ) as SessionData;
+                return [{ name: d.name, pngFile: d.pngFile, updatedAt: d.updatedAt }];
+            } catch { return []; }
+        });
+    return { pngs, sessions };
+}
+
+function loadPngFile(filename: string): void {
+    // Prevent path traversal
+    const safe = path.basename(filename);
+    const fp   = path.join(WORKSPACE_DIR, safe);
+    if (!fs.existsSync(fp)) throw new Error(`File not found: ${safe}`);
+    const ext         = path.extname(safe).slice(1).toLowerCase();
+    currentPngPath   = fp;
+    currentPngBuffer = fs.readFileSync(fp);
+    currentPngMime   = (ext === 'jpg' || ext === 'jpeg') ? 'image/jpeg' : 'image/png';
+    grayCache        = null;
+}
+
+function safeSessionName(name: string): string {
+    return name.replace(/[^a-zA-Z0-9_\-. ]/g, '_').trim().slice(0, 64) || 'session';
+}
+
+function saveSessionFile(session: SessionData): void {
+    const name = safeSessionName(session.name);
+    fs.writeFileSync(
+        path.join(WORKSPACE_DIR, name + '.json'),
+        JSON.stringify({ ...session, name }, null, 2),
+        'utf8',
+    );
+}
+
+function loadSessionFile(name: string): SessionData {
+    const safe = safeSessionName(name);
+    const fp   = path.join(WORKSPACE_DIR, safe + '.json');
+    if (!fs.existsSync(fp)) throw new Error(`Session not found: ${name}`);
+    return JSON.parse(fs.readFileSync(fp, 'utf8')) as SessionData;
+}
+
+function deleteSessionFile(name: string): void {
+    const safe = safeSessionName(name);
+    const fp   = path.join(WORKSPACE_DIR, safe + '.json');
+    if (fs.existsSync(fp)) fs.unlinkSync(fp);
+}
+
+// ── HTML UI ──────────────────────────────────────────────────────────────────
 
 function buildHtml(): string {
     const cfg = defaultConfig;
@@ -119,7 +216,7 @@ function buildHtml(): string {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Map SVG Tuner \u2014 ${path.basename(inputPath)}</title>
+<title>DECLASSIFIED \u2014 Map SVG Builder</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -138,15 +235,12 @@ function buildHtml(): string {
 }
 
 body {
-  display: flex;
-  height: 100vh;
-  overflow: hidden;
-  background: var(--bg);
-  color: var(--text);
+  display: flex; height: 100vh; overflow: hidden;
+  background: var(--bg); color: var(--text);
   font: 13px/1.5 'Segoe UI', system-ui, sans-serif;
 }
 
-/* ── LEFT PANEL ── */
+/* ─── LEFT PANEL ─────────────────────────────────────────── */
 #panel {
   width: 300px; flex-shrink: 0; display: flex;
   flex-direction: column; background: var(--panel);
@@ -156,10 +250,32 @@ body {
   padding: 10px 14px 8px; border-bottom: 1px solid var(--border); flex-shrink: 0;
 }
 #panel-header h1 { font-size: 13.5px; font-weight: 600; color: #eee; }
-#panel-header .sub {
-  font-size: 11px; color: var(--muted); margin-top: 1px;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+
+/* workspace / session */
+#workspace-section {
+  padding: 8px 14px 10px; border-bottom: 1px solid var(--border);
+  flex-shrink: 0; background: #111;
 }
+.ws-row { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; }
+.ws-label {
+  font-size: 10px; color: var(--muted); width: 46px; flex-shrink: 0;
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+#png-picker, #session-picker, #session-name {
+  flex: 1; min-width: 0; background: var(--row-bg); border: 1px solid var(--border);
+  color: var(--text); font-size: 11.5px; padding: 4px 6px; border-radius: 3px;
+}
+#png-picker, #session-picker { cursor: pointer; }
+#session-name::placeholder { color: var(--muted); }
+.ws-actions { display: flex; gap: 5px; margin-top: 2px; }
+.ws-btn {
+  flex: 1; padding: 5px 8px; background: var(--row-bg);
+  border: 1px solid var(--border); border-radius: 3px;
+  color: var(--muted); font-size: 11px; cursor: pointer; text-align: center;
+}
+.ws-btn:hover { border-color: var(--accent); color: var(--accent); }
+.ws-btn.danger:hover { border-color: var(--red); color: var(--red); }
+#btn-refresh-ws { flex: 0; padding: 5px 9px; font-size: 13px; }
 
 /* mode toggle */
 #mode-toggle {
@@ -167,12 +283,13 @@ body {
   border-bottom: 1px solid var(--border); flex-shrink: 0; gap: 0;
 }
 .mode-btn {
-  flex: 1; padding: 6px 8px; font-size: 12px; background: var(--row-bg);
-  border: 1px solid var(--border); color: var(--muted); cursor: pointer;
-  text-align: center; transition: all 0.15s;
+  flex: 1; padding: 6px 4px; font-size: 11.5px; background: var(--row-bg);
+  border: 1px solid var(--border); color: var(--muted);
+  cursor: pointer; text-align: center; transition: all 0.15s;
 }
+.mode-btn + .mode-btn { border-left: none; border-radius: 0; }
 .mode-btn:first-child { border-radius: 4px 0 0 4px; }
-.mode-btn:last-child  { border-radius: 0 4px 4px 0; border-left: none; }
+.mode-btn:last-child  { border-radius: 0 4px 4px 0; }
 .mode-btn.active { background: var(--accent); border-color: var(--accent); color: #000; font-weight: 600; }
 
 #panel-body { flex: 1; overflow-y: auto; overflow-x: hidden; }
@@ -249,54 +366,125 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 #status-msg  { flex: 1; font-size: 11px; color: var(--muted); }
 #status-time { font-family: monospace; font-size: 11px; color: var(--muted); }
 
-/* ── PREVIEW ── */
+/* export footer */
+#export-bar {
+  padding: 8px 14px; flex-shrink: 0;
+  border-top: 1px solid var(--border); background: #0f1620;
+}
+#btn-export {
+  width: 100%; padding: 8px; display: flex; align-items: center; justify-content: center; gap: 6px;
+  background: #1a3a5c; border: 1px solid #2a5a8c; border-radius: 5px;
+  color: #7ecfff; font-size: 12.5px; font-weight: 600; cursor: pointer; transition: all 0.15s;
+}
+#btn-export:hover:not(:disabled) { background: #1e4a70; border-color: #4a9adf; color: #aadeff; }
+#btn-export:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ─── PREVIEW ────────────────────────────────────────────── */
 #preview {
   flex: 1; overflow: auto; background: #0a0a0a; padding: 16px;
+  display: flex; align-items: flex-start; justify-content: flex-start;
 }
 #zoom-root { display: inline-block; line-height: 0; }
 #canvas-wrap { position: relative; display: inline-block; flex-shrink: 0; }
-#map-img { display: block; max-width: calc(100vw - 300px - 32px); image-rendering: pixelated; }
+#map-img { display: none; image-rendering: pixelated; }
+
+#map-placeholder {
+  width: 380px; height: 260px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 10px;
+  border: 2px dashed var(--border); border-radius: 8px;
+  color: var(--muted); font-size: 12px; text-align: center; padding: 20px;
+}
+#map-placeholder .ph-title { font-size: 14px; color: #666; }
+#map-placeholder .ph-hint  { font-size: 10px; font-family: monospace; color: #3a3a3a; margin-top: 4px; }
 
 #svg-overlay { position: absolute; inset: 0; pointer-events: none; }
 #svg-overlay svg { width: 100%; height: 100%; }
-/* hide the SVG black background rect — the image IS the background */
 #svg-overlay #background { display: none !important; }
 
-/* select mode — overlay + paths become clickable */
+/* select mode */
 #svg-overlay.select-mode { pointer-events: auto; cursor: default; }
-#svg-overlay.select-mode svg { pointer-events: auto; }
-/* Every path/polygon in select mode gets a pointer cursor */
+#svg-overlay.select-mode svg { pointer-events: auto; overflow: visible; }
+/* Give all paths a transparent fill so stroke-only paths are still click/hover-hittable */
 #svg-overlay.select-mode path,
-#svg-overlay.select-mode polygon { pointer-events: all; cursor: pointer; }
-/* Except pending preview and background — they should not be clicked */
+#svg-overlay.select-mode polygon {
+  fill: rgba(0,0,0,0) !important; pointer-events: all !important; cursor: grab;
+}
+/* Outline paths stay stroke-only even in select mode (no fill wash) */
+#svg-overlay.select-mode #outlines path,
+#svg-overlay.select-mode #outlines polygon { fill: none !important; }
+/* Hover highlight */
+#svg-overlay.select-mode path:hover,
+#svg-overlay.select-mode polygon:hover {
+  filter: drop-shadow(0 0 5px rgba(91,164,230,0.9));
+  stroke: #5ba4e6 !important; stroke-width: 2.5 !important; stroke-opacity: 0.9 !important;
+  fill: rgba(91,164,230,0.08) !important;
+}
+#svg-overlay.select-mode #outlines path:hover,
+#svg-overlay.select-mode #outlines polygon:hover { fill: none !important; }
+/* Non-interactive zones in select mode */
 #svg-overlay.select-mode #pending path,
-#svg-overlay.select-mode #pending polygon { pointer-events: none; }
-#svg-overlay.select-mode #background     { pointer-events: none; }
+#svg-overlay.select-mode #pending polygon { pointer-events: none !important; cursor: default; }
+#svg-overlay.select-mode #background { pointer-events: none; }
+/* Selection & drag visual states */
+#svg-overlay .path-selected { filter: drop-shadow(0 0 6px #ffe066) !important; stroke: #ffe066 !important; stroke-width: 2 !important; }
+#svg-overlay .path-dragging { cursor: grabbing !important; filter: drop-shadow(0 0 8px rgba(255,160,0,0.9)) !important; opacity: 0.85; }
 
-/* selected path highlight */
-#svg-overlay .path-selected { filter: drop-shadow(0 0 4px #ffe066); outline: none; }
-
-/* pending fill preview — solid fill */
+/* vertex edit mode */
+#svg-overlay.vertex-mode { pointer-events: auto; cursor: default; }
+#svg-overlay.vertex-mode svg { pointer-events: auto; overflow: visible; }
+#svg-overlay.vertex-mode path,
+#svg-overlay.vertex-mode polygon {
+  fill: rgba(0,0,0,0) !important; pointer-events: all !important; cursor: pointer;
+}
+#svg-overlay.vertex-mode #outlines path,
+#svg-overlay.vertex-mode #outlines polygon { fill: none !important; }
+#svg-overlay.vertex-mode path:hover,
+#svg-overlay.vertex-mode polygon:hover {
+  filter: drop-shadow(0 0 4px rgba(176,123,232,0.8));
+  stroke: #b07be8 !important; stroke-width: 2 !important; stroke-opacity: 0.7 !important;
+}
+#svg-overlay.vertex-mode #node-editor-layer path,
+#svg-overlay.vertex-mode #node-editor-layer circle,
+#svg-overlay.vertex-mode #node-editor-layer line {
+  pointer-events: all !important; cursor: default;
+}
+#svg-overlay.vertex-mode #node-editor-layer path:hover { filter: none; stroke: none !important; }
+#svg-overlay.vertex-mode #pending path,
+#svg-overlay.vertex-mode #pending polygon { pointer-events: none !important; cursor: default; }
+/* node editor handles — styled as SVG elements via page CSS */
+.node-handle {
+  fill: #4faeff; stroke: #fff; stroke-width: 1.5px;
+  cursor: grab; pointer-events: all;
+  transition: fill 0.1s;
+}
+.node-handle:hover { fill: #90d0ff; }
+.node-handle.node-dragging { fill: #ff9900 !important; cursor: grabbing !important; }
+.node-handle-active { fill: #ffd166 !important; stroke: #111 !important; stroke-width: 1.8px; }
+.node-segment {
+  stroke: rgba(255,153,0,0.42);
+  stroke-width: 1.2;
+  pointer-events: stroke;
+  cursor: copy;
+}
+.node-segment:hover { stroke: rgba(255,194,102,0.9); }
+.node-insert-marker {
+  fill: rgba(255,209,102,0.9);
+  stroke: #1f1f1f;
+  stroke-width: 1;
+  pointer-events: none;
+}
 #svg-overlay #pending path, #svg-overlay #pending polygon {
-  fill: rgba(255,220,40,0.22);
-  stroke: #ffe066;
-  stroke-width: 1.5;
+  fill: rgba(255,220,40,0.22); stroke: #ffe066; stroke-width: 1.5;
   animation: fadeIn 0.3s ease;
 }
-/* pending fill preview — outline mode: dashed stroke only */
-#svg-overlay #pending.outline path,
-#svg-overlay #pending.outline polygon {
-  fill: none;
-  stroke: #ffe066;
-  stroke-width: 3;
-  stroke-dasharray: 7 3;
+#svg-overlay #pending.outline path, #svg-overlay #pending.outline polygon {
+  fill: none; stroke: #ffe066; stroke-width: 3; stroke-dasharray: 7 3;
   animation: fadeIn 0.3s ease;
 }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* subtract compositing */
-#inaccessible, #stairs { isolation: isolate; }
 .subtract { fill: #000 !important; mix-blend-mode: destination-out; }
+#inaccessible, #stairs { isolation: isolate; }
 
 #busy-veil {
   position: absolute; inset: 0; background: rgba(0,0,0,0.4);
@@ -306,22 +494,20 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 }
 #busy-veil.show { opacity: 1; }
 
-/* sonar ping ring */
 .ping-ring {
   position: fixed; width: 40px; height: 40px;
   margin-left: -20px; margin-top: -20px;
   border-radius: 50%; border: 2px solid var(--accent);
-  pointer-events: none;
-  animation: sonar 0.65s ease-out forwards;
+  pointer-events: none; animation: sonar 0.65s ease-out forwards;
 }
 @keyframes sonar {
   0%   { transform: scale(0.1); opacity: 1; }
   100% { transform: scale(4.5); opacity: 0; }
 }
 
-/* floating confirmation panel */
+/* floating panel */
 #float-panel {
-  position: fixed; width: 248px;
+  position: fixed; width: 252px;
   background: #1a1a1a; border: 1px solid #333;
   border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.75);
   padding: 12px; z-index: 9999; display: none;
@@ -369,14 +555,12 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 }
 .fp-layer-btn:hover { border-color: #444; color: var(--text); }
 .fp-layer-btn.active { background: var(--accent); border-color: var(--accent); color: #000; }
-
-/* fill type / select treat-as buttons */
 .fp-type-btn {
   flex: 1; padding: 4px 6px; background: var(--row-bg); border: 1px solid var(--border);
   border-radius: 3px; color: var(--muted); font-size: 11px; cursor: pointer;
 }
 .fp-type-btn:hover { border-color: #444; color: var(--text); }
-.fp-type-btn.active     { background: var(--accent); border-color: var(--accent); color: #000; font-weight: 600; }
+.fp-type-btn.active      { background: var(--accent); border-color: var(--accent); color: #000; font-weight: 600; }
 .fp-type-btn.excl-active { background: #b22; border-color: #c33; color: #fff; font-weight: 600; }
 
 /* debug bitmaps */
@@ -385,7 +569,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   font-size: 11px; color: var(--muted); text-transform: uppercase;
   letter-spacing: 0.05em; margin-bottom: 5px;
 }
-.debug-bitmap img { width: 100%; border-radius: 4px; border: 1px solid var(--border); image-rendering: pixelated; display: block; }
+.debug-bitmap img { width: 100%; border-radius: 4px; border: 1px solid var(--border); image-rendering: pixelated; }
 .placeholder {
   width: 100%; padding: 18px; text-align: center; color: var(--muted);
   font-size: 11px; background: var(--row-bg); border-radius: 4px; border: 1px dashed var(--border);
@@ -403,16 +587,68 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 </head>
 <body>
 
-<!-- ════════ LEFT PANEL ════════ -->
+<!-- ═══════════════ LEFT PANEL ═══════════════ -->
 <div id="panel">
   <div id="panel-header">
-    <h1>Map SVG Tuner</h1>
-    <div class="sub">${path.basename(inputPath)}</div>
+    <h1>Map SVG Builder</h1>
   </div>
 
+  <!-- Workspace / Session -->
+  <div id="workspace-section">
+    <div class="ws-row">
+      <div class="ws-label">Image</div>
+      <select id="png-picker"><option value="">— no images found —</option></select>
+      <button class="ws-btn" id="btn-refresh-ws" title="Refresh workspace">\u21bb</button>
+    </div>
+    <div class="ws-row">
+      <div class="ws-label">Session</div>
+      <input type="text" id="session-name" placeholder="session name\u2026" autocomplete="off">
+    </div>
+    <div class="ws-actions">
+      <button class="ws-btn" id="btn-save-session">\ud83d\udcbe&nbsp; Save progress</button>
+      <select id="session-picker" style="flex:1;min-width:0">
+        <option value="">Load session\u2026</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Mode toggle -->
   <div id="mode-toggle">
-    <button class="mode-btn active" id="btn-fill-mode">&#x25C9;&nbsp; Fill</button>
-    <button class="mode-btn" id="btn-select-mode">&#x25A1;&nbsp; Select paths</button>
+    <button class="mode-btn active" id="btn-fill-mode">\u2728&nbsp; Magic Wand</button>
+    <button class="mode-btn" id="btn-select-mode">\u25a1&nbsp; Select / Move</button>
+    <button class="mode-btn" id="btn-vertex-mode">\u25ce&nbsp; Vertex Edit</button>
+  </div>
+
+  <!-- Select mode hint banner -->
+  <div id="select-hint" style="display:none;padding:5px 14px 6px;background:rgba(91,164,230,0.07);
+       border-bottom:1px solid rgba(91,164,230,0.15);flex-shrink:0">
+    <div style="font-size:10.5px;color:#7bb8e8;line-height:1.6">
+      <b>Click</b> a path to reassign or exclude it<br>
+      <b>Drag</b> a path to move its position
+    </div>
+  </div>
+
+  <!-- Vertex Edit hint banner -->
+  <div id="vertex-hint" style="display:none;padding:5px 14px 6px;background:rgba(150,91,230,0.07);
+       border-bottom:1px solid rgba(150,91,230,0.15);flex-shrink:0">
+    <div style="font-size:10.5px;color:#b07be8;line-height:1.6">
+      <b>Click</b> any path to activate node editing<br>
+      <b>Drag</b> points to move, <b>right-click</b> a point to delete, <b>hover/click</b> a line to add
+    </div>
+  </div>
+
+  <!-- Node controls bar (visible while editing a path's vertices) -->
+  <div id="node-controls" style="display:none;padding:5px 14px 6px;
+       background:rgba(255,153,0,0.08);border-bottom:1px solid rgba(255,153,0,0.2);flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:8px">
+      <span style="font-size:10.5px;color:#ffa724;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">
+        Editing: <b id="node-edit-group-label" style="color:#ffcc70"></b>
+      </span>
+      <button id="node-save-btn" style="padding:3px 10px;font-size:11px;background:#ff9900;border:none;
+              color:#000;border-radius:3px;cursor:pointer;font-weight:600">Save</button>
+      <button id="node-cancel-btn" style="padding:3px 10px;font-size:11px;background:rgba(255,255,255,0.1);
+              border:1px solid #555;color:#ccc;border-radius:3px;cursor:pointer">Cancel</button>
+    </div>
   </div>
 
   <div id="panel-body">
@@ -543,25 +779,42 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 
   <div id="status-bar">
     <div id="status-dot"></div>
-    <div id="status-msg">Initialising\u2026</div>
+    <div id="status-msg">Select an image to begin\u2026</div>
     <div id="status-time"></div>
   </div>
-</div>
 
-<!-- ════════ PREVIEW ════════ -->
+  <div id="export-bar">
+    <button id="btn-export">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M8 1a.5.5 0 0 1 .5.5v7.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 9.293V1.5A.5.5 0 0 1 8 1z"/>
+        <path d="M.5 13a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1H.5z"/>
+      </svg>
+      Export SVG (512\u00d7512)
+    </button>
+  </div>
+</div><!-- /panel -->
+
+<!-- ═══════════════ PREVIEW ═══════════════ -->
 <div id="preview">
-  <div id="canvas-wrap">
-    <img id="map-img" src="${imageDataUrl}" alt="map">
-    <div id="svg-overlay"></div>
-    <div id="busy-veil">Processing\u2026</div>
+  <div id="zoom-root">
+    <div id="canvas-wrap">
+      <div id="map-placeholder">
+        <div class="ph-title">No image loaded</div>
+        <div>Select a PNG from the dropdown above</div>
+        <div class="ph-hint">Drop images into: scripts/map-workspace/</div>
+      </div>
+      <img id="map-img" alt="map">
+      <div id="svg-overlay"></div>
+      <div id="busy-veil">Processing\u2026</div>
+    </div>
   </div>
 </div>
 
-<!-- ════════ FLOATING PANEL ════════ -->
+<!-- ═══════════════ FLOATING PANEL ═══════════════ -->
 <div id="float-panel">
   <!-- fill variant -->
   <div id="fp-fill">
-    <h3>Fill region</h3>
+    <h3>Magic Wand</h3>
     <div class="fp-row">
       <div class="fp-label">Fill sensitivity</div>
       <div style="display:flex;align-items:center;gap:6px">
@@ -571,11 +824,23 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       </div>
     </div>
     <div class="fp-row">
+      <div class="fp-label">Edge offset</div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <input type="range" id="fp-offset" min="-15" max="15" step="1" value="0"
+               style="flex:1;accent-color:var(--accent);height:3px;cursor:pointer">
+        <div id="fp-offset-v" style="width:28px;text-align:right;font-family:monospace;font-size:11.5px;color:var(--accent)">0</div>
+      </div>
+      <div style="font-size:10px;color:var(--muted);margin-top:2px">(&#8722;) shrink &nbsp;/&nbsp; (+) expand</div>
+    </div>
+    <div class="fp-row">
       <div class="fp-label">Layer</div>
-      <div class="fp-btns">
-        <button class="fp-btn active" data-group="inaccessible">Inaccessible</button>
-        <button class="fp-btn" data-group="stairs">Stairs</button>
-        <button class="fp-btn" data-group="walls">Walls</button>
+      <div class="fp-layer-btns">
+        <button class="fp-btn" data-wand-group="outlines">Outlines</button>
+        <button class="fp-btn" data-wand-group="walls">Walls</button>
+        <button class="fp-btn" data-wand-group="thickerWalls">Thick Walls</button>
+        <button class="fp-btn active" data-wand-group="inaccessible">Inaccessible</button>
+        <button class="fp-btn" data-wand-group="stairs">Stairs</button>
+        <button class="fp-btn" data-wand-group="unclassified">Unclassified</button>
       </div>
     </div>
     <div class="fp-row">
@@ -590,6 +855,13 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       <div style="display:flex;gap:5px">
         <button class="fp-type-btn active" id="fp-type-fill">\u25a3 Fill</button>
         <button class="fp-type-btn" id="fp-type-outline">\u25a1 Outline</button>
+      </div>
+    </div>
+    <div class="fp-row" id="fp-fill-line-style-row" style="display:none">
+      <div class="fp-label">Line style</div>
+      <div style="display:flex;gap:5px">
+        <button class="fp-type-btn active" id="fp-fill-ls-solid">\u2014 Solid</button>
+        <button class="fp-type-btn" id="fp-fill-ls-dashed">- - Dashed</button>
       </div>
     </div>
     <div class="fp-actions">
@@ -622,7 +894,14 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       </div>
     </div>
     <div id="fp-excl-hint" style="display:none;font-size:10.5px;color:var(--muted);line-height:1.5;padding:4px 0 8px">
-      Removes path from all groups. Its outline is kept in Outlines and will survive re-scans.
+      Removes path from all groups. Its outline is kept in Outlines for review.
+    </div>
+    <div class="fp-row" id="fp-sel-line-style-row" style="display:none">
+      <div class="fp-label">Line style</div>
+      <div style="display:flex;gap:5px">
+        <button class="fp-type-btn active" id="fp-sel-ls-solid">\u2014 Solid</button>
+        <button class="fp-type-btn" id="fp-sel-ls-dashed">- - Dashed</button>
+      </div>
     </div>
     <div class="fp-actions">
       <button class="fp-confirm" id="fp-select-confirm">Confirm</button>
@@ -634,6 +913,11 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 <script>
 (function () {
   'use strict';
+
+  // ── module state ─────────────────────────────────────────────────────────
+  let currentPngLoaded = false;
+  let annotations      = []; // AnnotationServer[]
+  let interactionMode  = 'fill'; // 'fill' | 'select' | 'outline'
 
   // ── slider wiring ────────────────────────────────────────────────────────
   const SLIDER_IDS = [
@@ -659,13 +943,12 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     mapImg.style.opacity = String(Number(this.value) / 100);
   });
 
-  // ── scroll-to-zoom
+  // ── scroll-to-zoom ───────────────────────────────────────────────────────
   let zoom = 1, baseW = 0, baseH = 0;
   function captureBase() {
     if (!baseW && mapImg.offsetWidth > 0) { baseW = mapImg.offsetWidth; baseH = mapImg.offsetHeight; }
   }
   mapImg.addEventListener('load', captureBase);
-  setTimeout(captureBase, 0);
   const preview = document.getElementById('preview');
   preview.addEventListener('wheel', e => {
     e.preventDefault();
@@ -707,7 +990,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     }
   }
 
-  // ── status ───────────────────────────────────────────────────────────────
+  // ── status helpers ───────────────────────────────────────────────────────
   const dot  = document.getElementById('status-dot');
   const msg  = document.getElementById('status-msg');
   const time = document.getElementById('status-time');
@@ -719,14 +1002,14 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     veil.classList.toggle('show', state === 'busy');
   }
 
-  // ── annotations ──────────────────────────────────────────────────────────
-  let annotations = [];
+  // ── annotation list ──────────────────────────────────────────────────────
   const GROUP_COLORS = {
     inaccessible: 'rgba(0,40,100,0.8)', stairs: '#00ccff',
     walls: '#888', thickerWalls: '#aaa', outlines: '#ff4444', unclassified: '#f0c040',
   };
   function renderAnnotationList() {
-    const list = document.getElementById('annotation-list');
+    const list  = document.getElementById('annotation-list');
+    const fills = annotations.filter(a => a.kind === 'fill');
     document.getElementById('annotation-count').textContent = '(' + annotations.length + ')';
     if (!annotations.length) { list.innerHTML = ''; return; }
     list.innerHTML = annotations.map(a => {
@@ -737,8 +1020,17 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
         label = (a.mode === 'add' ? '+' : '\u2212') + ' ' + ti + ' ' + a.group;
       } else if (a.kind === 'reassign') {
         col = GROUP_COLORS[a.toGroup] || '#555';
-        const ti = a.type === 'outline' || a.type === 'line' ? '\u25a1' : '\u25a3';
+        const ti = (a.type === 'outline' || a.type === 'line') ? '\u25a1' : '\u25a3';
         label = a.fromGroup + ' \u2192 ' + ti + ' ' + a.toGroup;
+      } else if (a.kind === 'map-outline') {
+        col = '#ff4444';
+        label = '\ud83d\udd34 Boundary (' + a.points.length + ' pts' + (a.closed ? ', closed' : '') + ')';
+      } else if (a.kind === 'move') {
+        col = GROUP_COLORS[a.fromGroup] || '#555';
+        label = '\u2195 moved \u00b7 ' + a.fromGroup + ' (\u0394' + a.dx.toFixed(1) + ', \u0394' + a.dy.toFixed(1) + ')';
+      } else if (a.kind === 'reshape') {
+        col = GROUP_COLORS[a.fromGroup] || '#555';
+        label = '\u270e reshaped \u00b7 ' + a.fromGroup;
       } else {
         col = '#555'; label = '\u2205 excl \u00b7 ' + a.fromGroup;
       }
@@ -755,7 +1047,13 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
         process(getConfig());
       })
     );
+    // Update inaccessible/stairs counts from fills
+    document.getElementById('lc-inaccessible').textContent =
+      fills.filter(a => a.group === 'inaccessible').length || '\u2014';
+    document.getElementById('lc-stairs').textContent =
+      fills.filter(a => a.group === 'stairs').length || '\u2014';
   }
+
   function updateStats(stats) {
     document.getElementById('wall-count').textContent      = stats.walls;
     document.getElementById('thick-count').textContent     = stats.thickerWalls;
@@ -764,24 +1062,171 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     document.getElementById('lc-walls').textContent        = stats.walls;
     document.getElementById('lc-thicker').textContent      = stats.thickerWalls;
     document.getElementById('lc-unclassified').textContent = stats.unclassified;
-    const fills = annotations.filter(a => a.kind === 'fill');
-    document.getElementById('lc-inaccessible').textContent =
-      fills.filter(a => a.group === 'inaccessible').length || '\u2014';
-    document.getElementById('lc-stairs').textContent =
-      fills.filter(a => a.group === 'stairs').length || '\u2014';
   }
 
+  // ── workspace & PNG management ───────────────────────────────────────────
+  async function loadWorkspace(restoreCurrentPng) {
+    try {
+      const res  = await fetch('/workspace');
+      const data = await res.json();
+
+      // Populate PNG picker
+      const pp = document.getElementById('png-picker');
+      if (data.pngs.length === 0) {
+        pp.innerHTML = '<option value="">\u2014 drop PNGs into map-workspace/ \u2014</option>';
+      } else {
+        pp.innerHTML = '<option value="">\u2014 select image \u2014</option>'
+          + data.pngs.map(f => '<option value="' + f + '">' + f + '</option>').join('');
+      }
+
+      // Populate session picker
+      const sp = document.getElementById('session-picker');
+      sp.innerHTML = '<option value="">Load session\u2026</option>'
+        + data.sessions.map(s =>
+            '<option value="' + s.name + '">' + s.name + ' \u00b7 ' + s.pngFile + '</option>'
+          ).join('');
+
+      // Restore active PNG if server already has one loaded
+      if (restoreCurrentPng && data.currentPng) {
+        pp.value = data.currentPng;
+        await switchToPng(data.currentPng, /* resetAnnotations */ false);
+      }
+    } catch (err) {
+      setStatus('error', 'Workspace load failed: ' + err.message);
+    }
+  }
+
+  document.getElementById('btn-refresh-ws').addEventListener('click', () => loadWorkspace(false));
+
+  document.getElementById('png-picker').addEventListener('change', function () {
+    if (this.value) switchToPng(this.value, true);
+  });
+
+  async function switchToPng(filename, resetAnnotations) {
+    setStatus('busy', 'Loading image\u2026');
+    try {
+      const res = await fetch('/load-png', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename }),
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error || 'HTTP ' + res.status);
+      }
+
+      // Bust the cached /current-image so the <img> reloads
+      document.getElementById('map-placeholder').style.display = 'none';
+      mapImg.style.display = 'block';
+      mapImg.src = '/current-image?v=' + Date.now();
+      baseW = 0; baseH = 0; zoom = 1;
+      mapImg.style.width = ''; mapImg.style.height = ''; mapImg.style.maxWidth = '';
+
+      if (resetAnnotations) {
+        annotations = [];
+        renderAnnotationList();
+        // Default session name to image basename
+        document.getElementById('session-name').value = filename.replace(/[.][^.]+$/, '');
+      }
+
+      currentPngLoaded = true;
+      setStatus('', 'Image loaded \u2014 ' + filename);
+      process(getConfig());
+    } catch (err) {
+      setStatus('error', 'Load failed: ' + err.message);
+    }
+  }
+
+  // ── session save ─────────────────────────────────────────────────────────
+  document.getElementById('btn-save-session').addEventListener('click', async () => {
+    const name    = document.getElementById('session-name').value.trim();
+    const pngFile = document.getElementById('png-picker').value;
+    if (!name)    { setStatus('error', 'Enter a session name first'); return; }
+    if (!pngFile) { setStatus('error', 'No image loaded'); return; }
+    try {
+      const res = await fetch('/save-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name, pngFile,
+          config:      getConfig(),
+          annotations,
+          updatedAt:   new Date().toISOString(),
+        }),
+      });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      setStatus('', 'Session saved: ' + name);
+      await loadWorkspace(false); // refresh session picker
+    } catch (err) {
+      setStatus('error', 'Save failed: ' + err.message);
+    }
+  });
+
+  // ── session load ─────────────────────────────────────────────────────────
+  document.getElementById('session-picker').addEventListener('change', async function () {
+    const name = this.value;
+    if (!name) return;
+    this.value = '';
+    try {
+      const res = await fetch('/session/' + encodeURIComponent(name));
+      if (!res.ok) throw new Error('Session not found');
+      const session = await res.json();
+
+      // Switch to session PNG if different
+      const pp = document.getElementById('png-picker');
+      if (pp.value !== session.pngFile) {
+        pp.value = session.pngFile;
+        await switchToPng(session.pngFile, false);
+      }
+
+      // Restore config sliders
+      for (const [key, val] of Object.entries(session.config || {})) {
+        const el = document.getElementById(key);
+        if (el) {
+          el.value = String(val);
+          const vEl = document.getElementById(key + '_v');
+          if (vEl) vEl.textContent = String(val);
+        }
+      }
+
+      // Restore annotations
+      annotations = Array.isArray(session.annotations) ? session.annotations : [];
+      renderAnnotationList();
+
+      document.getElementById('session-name').value = session.name;
+      currentPngLoaded = true;
+      setStatus('', 'Session loaded: ' + session.name);
+      process(getConfig());
+    } catch (err) {
+      setStatus('error', 'Load failed: ' + err.message);
+    }
+  });
+
   // ── mode toggle ──────────────────────────────────────────────────────────
-  let interactionMode = 'fill';
   const svgOverlay = document.getElementById('svg-overlay');
   document.getElementById('btn-fill-mode').addEventListener('click',   () => setMode('fill'));
   document.getElementById('btn-select-mode').addEventListener('click', () => setMode('select'));
+  document.getElementById('btn-vertex-mode').addEventListener('click', () => setMode('vertex'));
+
   function setMode(mode) {
     interactionMode = mode;
-    document.getElementById('btn-fill-mode').classList.toggle('active', mode === 'fill');
+    document.getElementById('btn-fill-mode').classList.toggle('active',   mode === 'fill');
     document.getElementById('btn-select-mode').classList.toggle('active', mode === 'select');
+    document.getElementById('btn-vertex-mode').classList.toggle('active', mode === 'vertex');
     svgOverlay.classList.toggle('select-mode', mode === 'select');
-    if (mode === 'fill') clearSelectHighlight();
+    svgOverlay.classList.toggle('vertex-mode', mode === 'vertex');
+    document.getElementById('select-hint').style.display = mode === 'select' ? '' : 'none';
+    document.getElementById('vertex-hint').style.display = mode === 'vertex' ? '' : 'none';
+    if (mode !== 'select') {
+      clearSelectHighlight();
+      if (window._selectCleanup) { window._selectCleanup(); window._selectCleanup = null; }
+    }
+    if (mode !== 'vertex') {
+      cancelVertexEdit();
+      if (_vertexPickerCleanup) { _vertexPickerCleanup(); _vertexPickerCleanup = null; }
+    }
+    if (mode === 'select') attachSelectListeners();
+    if (mode === 'vertex') attachVertexPickerListeners();
     hideFloatPanel();
   }
 
@@ -791,9 +1236,9 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   const canvasWrap  = document.getElementById('canvas-wrap');
 
   canvasWrap.addEventListener('click', e => {
-    if (interactionMode !== 'fill') return;
     if (e.target.closest('#float-panel')) return;
-    // Clicks on SVG paths in fill mode should still fill (overlay has pointer-events:none)
+    if (interactionMode !== 'fill') return;
+
     const rect = mapImg.getBoundingClientRect();
     const nx = (e.clientX - rect.left) / rect.width;
     const ny = (e.clientY - rect.top)  / rect.height;
@@ -807,14 +1252,14 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   function spawnPing(cx, cy) {
     const ring = document.createElement('div');
     ring.className = 'ping-ring';
-    ring.style.left = cx + 'px';
-    ring.style.top  = cy + 'px';
+    ring.style.left = cx + 'px'; ring.style.top = cy + 'px';
     document.body.appendChild(ring);
     ring.addEventListener('animationend', () => ring.remove());
   }
 
   function requestFill(nx, ny) {
     const sensitivity = Number(document.getElementById('fp-sensitivity').value);
+    const offset      = Number(document.getElementById('fp-offset').value);
     clearTimeout(fillDebouncer);
     fillDebouncer = setTimeout(async () => {
       try {
@@ -822,19 +1267,15 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
         const res = await fetch('/fill', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ nx, ny, threshold: sensitivity }),
+          body: JSON.stringify({ nx, ny, threshold: sensitivity, offset }),
         });
         if (!res.ok) {
           const err = await res.json().catch(() => ({ error: 'Server error' }));
-          setStatus('error', err.error || 'Fill failed');
-          return;
+          setStatus('error', err.error || 'Fill failed'); return;
         }
         const data = await res.json();
         setStatus('', 'Ready');
-        if (!data.path) {
-          setStatus('', 'No fill — try a darker area');
-          return;
-        }
+        if (!data.path) { setStatus('', 'No fill \u2014 try a darker area'); return; }
         if (pendingFill) pendingFill = { ...pendingFill, path: data.path, vW: data.vW, vH: data.vH };
         showPendingPath(data.path);
       } catch (err) {
@@ -848,33 +1289,35 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     if (pendingFill) requestFill(pendingFill.nx, pendingFill.ny);
   });
 
+  document.getElementById('fp-offset').addEventListener('input', function () {
+    const v = Number(this.value);
+    document.getElementById('fp-offset-v').textContent = (v > 0 ? '+' : '') + v;
+    if (pendingFill) requestFill(pendingFill.nx, pendingFill.ny);
+  });
+
   function showPendingPath(d) {
     const svg = document.querySelector('#svg-overlay svg');
     if (!svg) return;
     let g = svg.getElementById('pending');
     if (!g) {
       g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-      g.id = 'pending';
-      svg.appendChild(g);
+      g.id = 'pending'; svg.appendChild(g);
     }
     g.className.baseVal = fillType === 'outline' ? 'outline' : '';
     g.innerHTML = '<path d="' + d.replace(/"/g, '&quot;') + '"/>';
   }
-
   function clearPendingPath() {
     const svg = document.querySelector('#svg-overlay svg');
     if (svg) { const g = svg.getElementById('pending'); if (g) g.innerHTML = ''; }
   }
 
-  // Fill group buttons
-  document.querySelectorAll('[data-group]').forEach(btn => {
+  document.querySelectorAll('[data-wand-group]').forEach(btn =>
     btn.addEventListener('click', () => {
-      document.querySelectorAll('[data-group]').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('[data-wand-group]').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-    });
-  });
+    })
+  );
 
-  // Fill mode (add / subtract)
   let fillMode = 'add';
   document.getElementById('fp-add').addEventListener('click', () => {
     fillMode = 'add';
@@ -887,54 +1330,568 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     document.getElementById('fp-add').classList.remove('active');
   });
 
-  // Fill type (solid area vs stroke outline)
+  let fillLineStyle = 'solid';
+  function updateFillLineStyleVisibility() {
+    const isOutline = fillType === 'outline';
+    document.getElementById('fp-fill-line-style-row').style.display = isOutline ? '' : 'none';
+  }
+  document.getElementById('fp-fill-ls-solid').addEventListener('click', () => {
+    fillLineStyle = 'solid';
+    document.getElementById('fp-fill-ls-solid').classList.add('active');
+    document.getElementById('fp-fill-ls-dashed').classList.remove('active');
+  });
+  document.getElementById('fp-fill-ls-dashed').addEventListener('click', () => {
+    fillLineStyle = 'dashed';
+    document.getElementById('fp-fill-ls-dashed').classList.add('active');
+    document.getElementById('fp-fill-ls-solid').classList.remove('active');
+  });
+
   let fillType = 'fill';
   document.getElementById('fp-type-fill').addEventListener('click', () => {
     fillType = 'fill';
     document.getElementById('fp-type-fill').classList.add('active');
     document.getElementById('fp-type-outline').classList.remove('active');
-    if (pendingFill && pendingFill.path) showPendingPath(pendingFill.path);
+    updateFillLineStyleVisibility();
+    clearPendingPath();
   });
   document.getElementById('fp-type-outline').addEventListener('click', () => {
     fillType = 'outline';
     document.getElementById('fp-type-outline').classList.add('active');
     document.getElementById('fp-type-fill').classList.remove('active');
+    updateFillLineStyleVisibility();
     if (pendingFill && pendingFill.path) showPendingPath(pendingFill.path);
   });
 
   document.getElementById('fp-fill-confirm').addEventListener('click', () => {
     if (!pendingFill || !pendingFill.path) { hideFloatPanel(); return; }
-    const group = document.querySelector('[data-group].active')?.dataset?.group || 'inaccessible';
-    annotations.push({ kind:'fill', id:'ann-'+Date.now(), group, mode: fillMode, type: fillType,
-                        path: pendingFill.path, vW: pendingFill.vW, vH: pendingFill.vH });
-    pendingFill = null;
-    hideFloatPanel();
-    renderAnnotationList();
-    process(getConfig());
+    const group = document.querySelector('[data-wand-group].active')?.dataset?.wandGroup || 'inaccessible';
+    annotations.push({
+      kind: 'fill', id: 'ann-' + Date.now(), group, mode: fillMode, type: fillType,
+      lineStyle: fillType === 'outline' ? fillLineStyle : 'solid',
+      path: pendingFill.path, vW: pendingFill.vW, vH: pendingFill.vH,
+    });
+    pendingFill = null; hideFloatPanel(); renderAnnotationList(); process(getConfig());
   });
   document.getElementById('fp-fill-discard').addEventListener('click', () => {
     pendingFill = null; clearPendingPath(); hideFloatPanel();
   });
 
-  // ── select interaction ───────────────────────────────────────────────────
-  let selectedPathEl    = null;
-  let selectedFromGroup = null;
-  let selectedD         = null;
-  let selectedToGroup   = null;
+  // ── vertex editor ────────────────────────────────────────────────────────
+  // Vertex editing is always saved as straight M/L segments (plus optional Z).
+  let _vertexEditPath         = null; // { el, d, fromGroup, prevStroke, prevStrokeWidth }
+  let _vertexNodes            = [];   // [{x, y}]
+  let _vertexClosed           = false;
+  let _vertexActiveIndex      = -1;
+  let _nodeDragging           = null; // { index }
+  let _vertexInsertCandidate  = null; // { segIdx, x, y }
+  let _vertexPickerCleanup    = null;
+  let _vertexDragCleanup      = null;
+
+  function samePoint(a, b) {
+    return Math.abs(a.x - b.x) < 0.001 && Math.abs(a.y - b.y) < 0.001;
+  }
+
+  function parsePathToPolyline(d) {
+    const points = [];
+    let closed = false;
+    const re = /([MmLlHhVvCcSsQqTtAaZz])([^MmLlHhVvCcSsQqTtAaZz]*)/g;
+    let m; let cx = 0; let cy = 0; let sx = 0; let sy = 0;
+
+    while ((m = re.exec(d)) !== null) {
+      const cmd = m[1];
+      const nums = (m[2].trim().match(/[-+]?(?:[0-9]+[.][0-9]+|[.][0-9]+|[0-9]+)(?:[eE][-+]?[0-9]+)?/g) || []).map(Number);
+      const abs = cmd.toUpperCase();
+      const rel = cmd !== abs;
+      let i = 0;
+
+      if (abs === 'Z') {
+        closed = true;
+        cx = sx; cy = sy;
+        continue;
+      }
+
+      if (abs === 'M' || abs === 'L' || abs === 'T') {
+        while (i + 1 < nums.length) {
+          const x = rel ? cx + nums[i] : nums[i];
+          const y = rel ? cy + nums[i + 1] : nums[i + 1];
+          if (abs === 'M' && points.length === 0) { sx = x; sy = y; }
+          points.push({ x, y });
+          cx = x; cy = y;
+          i += 2;
+        }
+      } else if (abs === 'H') {
+        while (i < nums.length) {
+          const x = rel ? cx + nums[i] : nums[i];
+          points.push({ x, y: cy });
+          cx = x;
+          i += 1;
+        }
+      } else if (abs === 'V') {
+        while (i < nums.length) {
+          const y = rel ? cy + nums[i] : nums[i];
+          points.push({ x: cx, y });
+          cy = y;
+          i += 1;
+        }
+      } else if (abs === 'C') {
+        while (i + 5 < nums.length) {
+          const x = rel ? cx + nums[i + 4] : nums[i + 4];
+          const y = rel ? cy + nums[i + 5] : nums[i + 5];
+          points.push({ x, y });
+          cx = x; cy = y;
+          i += 6;
+        }
+      } else if (abs === 'S' || abs === 'Q') {
+        while (i + 3 < nums.length) {
+          const x = rel ? cx + nums[i + 2] : nums[i + 2];
+          const y = rel ? cy + nums[i + 3] : nums[i + 3];
+          points.push({ x, y });
+          cx = x; cy = y;
+          i += 4;
+        }
+      } else if (abs === 'A') {
+        while (i + 6 < nums.length) {
+          const x = rel ? cx + nums[i + 5] : nums[i + 5];
+          const y = rel ? cy + nums[i + 6] : nums[i + 6];
+          points.push({ x, y });
+          cx = x; cy = y;
+          i += 7;
+        }
+      }
+    }
+
+    if (closed && points.length > 1 && samePoint(points[0], points[points.length - 1])) {
+      points.pop();
+    }
+    return { points, closed };
+  }
+
+  function rebuildPolylinePath(points, closed) {
+    if (!points.length) return '';
+    let d = 'M ' + points[0].x.toFixed(3) + ' ' + points[0].y.toFixed(3);
+    for (let i = 1; i < points.length; i++) {
+      d += ' L ' + points[i].x.toFixed(3) + ' ' + points[i].y.toFixed(3);
+    }
+    if (closed) d += ' Z';
+    return d;
+  }
+
+  function getVertexMinCount() {
+    return _vertexClosed ? 3 : 2;
+  }
+
+  function getVertexLayer() {
+    const svgEl = document.querySelector('#svg-overlay svg');
+    return svgEl ? svgEl.getElementById('node-editor-layer') : null;
+  }
+
+  function getSvgScaleForVertex() {
+    const svgEl = document.querySelector('#svg-overlay svg');
+    if (!svgEl) return { sx: 1, sy: 1 };
+    const rect = svgEl.getBoundingClientRect();
+    const vb = (svgEl.getAttribute('viewBox') || '0 0 512 512').split(' ');
+    return {
+      sx: (parseFloat(vb[2]) || 512) / (rect.width || 1),
+      sy: (parseFloat(vb[3]) || 512) / (rect.height || 1),
+    };
+  }
+
+  function clientToSvgPoint(ev) {
+    const svgEl = document.querySelector('#svg-overlay svg');
+    if (!svgEl) return { x: 0, y: 0 };
+    const rect = svgEl.getBoundingClientRect();
+    const s = getSvgScaleForVertex();
+    return {
+      x: (ev.clientX - rect.left) * s.sx,
+      y: (ev.clientY - rect.top) * s.sy,
+    };
+  }
+
+  function projectPointToSegment(px, py, ax, ay, bx, by) {
+    const vx = bx - ax;
+    const vy = by - ay;
+    const len2 = vx * vx + vy * vy;
+    if (len2 < 1e-9) return { x: ax, y: ay, t: 0 };
+    let t = ((px - ax) * vx + (py - ay) * vy) / len2;
+    t = Math.max(0, Math.min(1, t));
+    return { x: ax + t * vx, y: ay + t * vy, t };
+  }
+
+  function updateEditedPathPreview() {
+    if (!_vertexEditPath || !_vertexEditPath.el) return;
+    _vertexEditPath.el.setAttribute('d', rebuildPolylinePath(_vertexNodes, _vertexClosed));
+  }
+
+  function updateVertexLayerGeometry() {
+    const layer = getVertexLayer();
+    if (!layer) return;
+
+    layer.querySelectorAll('.node-handle').forEach(h => {
+      const idx = Number(h.dataset.ptIdx);
+      const p = _vertexNodes[idx];
+      if (!p) return;
+      h.setAttribute('cx', p.x);
+      h.setAttribute('cy', p.y);
+      h.classList.toggle('node-handle-active', idx === _vertexActiveIndex);
+    });
+
+    layer.querySelectorAll('.node-segment').forEach(line => {
+      const i = Number(line.dataset.segIdx);
+      const a = _vertexNodes[i];
+      const b = _vertexClosed ? _vertexNodes[(i + 1) % _vertexNodes.length] : _vertexNodes[i + 1];
+      if (!a || !b) return;
+      line.setAttribute('x1', a.x);
+      line.setAttribute('y1', a.y);
+      line.setAttribute('x2', b.x);
+      line.setAttribute('y2', b.y);
+    });
+
+    const marker = layer.querySelector('.node-insert-marker');
+    if (marker && _vertexInsertCandidate) {
+      marker.setAttribute('cx', _vertexInsertCandidate.x);
+      marker.setAttribute('cy', _vertexInsertCandidate.y);
+      marker.style.display = '';
+    } else if (marker) {
+      marker.style.display = 'none';
+    }
+
+    updateEditedPathPreview();
+  }
+
+  function removeVertexAt(index) {
+    if (index < 0 || index >= _vertexNodes.length) return;
+    if (_vertexNodes.length <= getVertexMinCount()) {
+      setStatus('', 'Need at least ' + getVertexMinCount() + ' vertices for this shape');
+      return;
+    }
+    _vertexNodes.splice(index, 1);
+    if (_vertexActiveIndex >= _vertexNodes.length) _vertexActiveIndex = _vertexNodes.length - 1;
+    if (_vertexActiveIndex === index) _vertexActiveIndex = -1;
+    if (_vertexInsertCandidate && _vertexInsertCandidate.segIdx >= _vertexNodes.length) {
+      _vertexInsertCandidate = null;
+    }
+    redrawVertexEditorLayer();
+  }
+
+  function insertVertexAfter(segIdx, x, y) {
+    const idx = segIdx + 1;
+    _vertexNodes.splice(idx, 0, { x, y });
+    _vertexActiveIndex = idx;
+    _vertexInsertCandidate = null;
+    redrawVertexEditorLayer();
+  }
+
+  function redrawVertexEditorLayer() {
+    const svgEl = document.querySelector('#svg-overlay svg');
+    if (!svgEl || !_vertexEditPath) return;
+
+    const prev = svgEl.getElementById('node-editor-layer');
+    if (prev) prev.remove();
+
+    const layer = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    layer.id = 'node-editor-layer';
+    svgEl.appendChild(layer);
+
+    if (_vertexNodes.length < 2) {
+      updateEditedPathPreview();
+      return;
+    }
+
+    const segCount = _vertexClosed ? _vertexNodes.length : (_vertexNodes.length - 1);
+    for (let i = 0; i < segCount; i++) {
+      const a = _vertexNodes[i];
+      const b = _vertexClosed ? _vertexNodes[(i + 1) % _vertexNodes.length] : _vertexNodes[i + 1];
+      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.classList.add('node-segment');
+      line.dataset.segIdx = String(i);
+      line.setAttribute('x1', a.x);
+      line.setAttribute('y1', a.y);
+      line.setAttribute('x2', b.x);
+      line.setAttribute('y2', b.y);
+      line.addEventListener('mousemove', ev => {
+        const p = clientToSvgPoint(ev);
+        const proj = projectPointToSegment(p.x, p.y, a.x, a.y, b.x, b.y);
+        _vertexInsertCandidate = { segIdx: i, x: proj.x, y: proj.y };
+        updateVertexLayerGeometry();
+      });
+      line.addEventListener('mouseleave', () => {
+        if (_nodeDragging) return;
+        _vertexInsertCandidate = null;
+        updateVertexLayerGeometry();
+      });
+      line.addEventListener('click', ev => {
+        ev.stopPropagation();
+        const p = clientToSvgPoint(ev);
+        const proj = projectPointToSegment(p.x, p.y, a.x, a.y, b.x, b.y);
+        insertVertexAfter(i, proj.x, proj.y);
+      });
+      layer.appendChild(line);
+    }
+
+    const s = getSvgScaleForVertex();
+    const r = Math.max(3, Math.min(6, 4 * Math.max(s.sx, s.sy)));
+    _vertexNodes.forEach((pt, idx) => {
+      const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      c.classList.add('node-handle');
+      if (idx === _vertexActiveIndex) c.classList.add('node-handle-active');
+      c.dataset.ptIdx = String(idx);
+      c.setAttribute('cx', pt.x);
+      c.setAttribute('cy', pt.y);
+      c.setAttribute('r', r);
+      c.addEventListener('mousedown', ev => {
+        _nodeDragging = { index: idx };
+        _vertexActiveIndex = idx;
+        c.classList.add('node-dragging');
+        ev.preventDefault();
+        ev.stopPropagation();
+      });
+      c.addEventListener('click', ev => {
+        _vertexActiveIndex = idx;
+        updateVertexLayerGeometry();
+        ev.stopPropagation();
+      });
+      c.addEventListener('contextmenu', ev => {
+        ev.preventDefault();
+        ev.stopPropagation();
+        removeVertexAt(idx);
+      });
+      layer.appendChild(c);
+    });
+
+    const marker = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    marker.classList.add('node-insert-marker');
+    marker.setAttribute('r', Math.max(2.4, r * 0.8));
+    marker.style.display = 'none';
+    layer.appendChild(marker);
+
+    updateVertexLayerGeometry();
+  }
+
+  function startVertexEdit(pathEl, fromGroup, d) {
+    cancelVertexEdit();
+    const parsed = parsePathToPolyline(d);
+    if (!parsed.points.length) return;
+
+    _vertexEditPath = {
+      el: pathEl,
+      d,
+      fromGroup,
+      prevStroke: pathEl.getAttribute('stroke'),
+      prevStrokeWidth: pathEl.getAttribute('stroke-width'),
+    };
+    _vertexNodes = parsed.points.map(p => ({ x: p.x, y: p.y }));
+    _vertexClosed = parsed.closed;
+    _vertexActiveIndex = -1;
+    _vertexInsertCandidate = null;
+
+    pathEl.style.opacity = '1';
+    pathEl.setAttribute('stroke', '#ffa724');
+    pathEl.setAttribute('stroke-width', '1.5');
+
+    document.getElementById('node-controls').style.display = '';
+    document.getElementById('node-edit-group-label').textContent = fromGroup;
+
+    function onMousemove(ev) {
+      if (!_nodeDragging) return;
+      const p = clientToSvgPoint(ev);
+      const idx = _nodeDragging.index;
+      if (!_vertexNodes[idx]) return;
+      _vertexNodes[idx].x = p.x;
+      _vertexNodes[idx].y = p.y;
+      updateVertexLayerGeometry();
+    }
+
+    function onMouseup() {
+      if (!_nodeDragging) return;
+      const layer = getVertexLayer();
+      if (layer) {
+        const h = layer.querySelector('.node-handle.node-dragging');
+        if (h) h.classList.remove('node-dragging');
+      }
+      _nodeDragging = null;
+    }
+
+    function onKeydown(ev) {
+      if (!_vertexEditPath) return;
+      if ((ev.key === 'Delete' || ev.key === 'Backspace') && _vertexActiveIndex >= 0) {
+        ev.preventDefault();
+        removeVertexAt(_vertexActiveIndex);
+      }
+    }
+
+    document.addEventListener('mousemove', onMousemove);
+    document.addEventListener('mouseup', onMouseup);
+    document.addEventListener('keydown', onKeydown);
+    _vertexDragCleanup = () => {
+      document.removeEventListener('mousemove', onMousemove);
+      document.removeEventListener('mouseup', onMouseup);
+      document.removeEventListener('keydown', onKeydown);
+    };
+
+    redrawVertexEditorLayer();
+  }
+
+  function cancelVertexEdit() {
+    if (_vertexDragCleanup) { _vertexDragCleanup(); _vertexDragCleanup = null; }
+
+    const svgEl = document.querySelector('#svg-overlay svg');
+    if (svgEl) {
+      const l = svgEl.getElementById('node-editor-layer');
+      if (l) l.remove();
+    }
+
+    if (_vertexEditPath && _vertexEditPath.el) {
+      if (_vertexEditPath.prevStroke == null) _vertexEditPath.el.removeAttribute('stroke');
+      else _vertexEditPath.el.setAttribute('stroke', _vertexEditPath.prevStroke);
+
+      if (_vertexEditPath.prevStrokeWidth == null) _vertexEditPath.el.removeAttribute('stroke-width');
+      else _vertexEditPath.el.setAttribute('stroke-width', _vertexEditPath.prevStrokeWidth);
+    }
+
+    document.getElementById('node-controls').style.display = 'none';
+
+    _vertexEditPath = null;
+    _vertexNodes = [];
+    _vertexClosed = false;
+    _vertexActiveIndex = -1;
+    _nodeDragging = null;
+    _vertexInsertCandidate = null;
+  }
+
+  document.getElementById('node-save-btn').addEventListener('click', () => {
+    if (!_vertexEditPath) { cancelVertexEdit(); return; }
+    const origD = _vertexEditPath.d;
+    const newD = rebuildPolylinePath(_vertexNodes, _vertexClosed);
+    const grp = _vertexEditPath.fromGroup;
+    annotations.push({ kind: 'reshape', id: 'ann-' + Date.now(), origD, newD, fromGroup: grp });
+    cancelVertexEdit();
+    renderAnnotationList();
+    process(getConfig());
+  });
+
+  document.getElementById('node-cancel-btn').addEventListener('click', () => {
+    cancelVertexEdit();
+    if (interactionMode === 'vertex') attachVertexPickerListeners();
+  });
+
+  function attachVertexPickerListeners() {
+    if (_vertexPickerCleanup) { _vertexPickerCleanup(); _vertexPickerCleanup = null; }
+    const SELECTABLE = ['outlines', 'walls', 'thickerWalls', 'unclassified', 'inaccessible', 'stairs'];
+    const svgEl = document.querySelector('#svg-overlay svg');
+    if (!svgEl) return;
+
+    const handlers = [];
+    SELECTABLE.forEach(gId => {
+      const g = svgEl.getElementById(gId);
+      if (!g) return;
+      g.querySelectorAll('path').forEach(el => {
+        const handler = ev => {
+          if (interactionMode !== 'vertex') return;
+          ev.stopPropagation();
+          const d = el.getAttribute('d') || '';
+          if (!d) return;
+          startVertexEdit(el, gId, d);
+        };
+        el.addEventListener('click', handler);
+        handlers.push({ el, handler });
+      });
+    });
+
+    _vertexPickerCleanup = () => {
+      handlers.forEach(({ el, handler }) => el.removeEventListener('click', handler));
+    };
+  }
+  let selectedPathEl = null, selectedFromGroup = null, selectedD = null, selectedToGroup = null;
 
   function attachSelectListeners() {
+    // Cleanup any previous listeners first
+    if (window._selectCleanup) { window._selectCleanup(); window._selectCleanup = null; }
+
     const SELECTABLE = ['outlines','walls','thickerWalls','unclassified','inaccessible','stairs'];
     const svg = document.querySelector('#svg-overlay svg');
     if (!svg) return;
+
+    // ── drag-to-move state ─────────────────────────────────────────────
+    let dragEl = null, dragFromGroup = null, dragOrigD = null;
+    let dragStartX = 0, dragStartY = 0, dragDx = 0, dragDy = 0;
+    let isDragging = false, dragMoved = false;
+
+    // Scale factor: converts screen px → SVG user units
+    function getSvgScale() {
+      const svgEl = document.querySelector('#svg-overlay svg');
+      if (!svgEl) return { sx: 1, sy: 1 };
+      const rect = svgEl.getBoundingClientRect();
+      const vb = (svgEl.getAttribute('viewBox') || '0 0 512 512').split(' ');
+      return {
+        sx: (parseFloat(vb[2]) || 512) / (rect.width  || 1),
+        sy: (parseFloat(vb[3]) || 512) / (rect.height || 1),
+      };
+    }
+
+    function onMousemove(ev) {
+      if (!isDragging || !dragEl) return;
+      const dx = ev.clientX - dragStartX;
+      const dy = ev.clientY - dragStartY;
+      if (!dragMoved && Math.hypot(dx, dy) > 5) {
+        dragMoved = true;
+        hideFloatPanel();
+        clearSelectHighlight();
+        dragEl.classList.add('path-dragging');
+      }
+      if (!dragMoved) return;
+      const { sx, sy } = getSvgScale();
+      dragDx = dx * sx;
+      dragDy = dy * sy;
+      dragEl.setAttribute('transform',
+        'translate(' + dragDx.toFixed(2) + ',' + dragDy.toFixed(2) + ')');
+    }
+
+    function onMouseup(ev) {
+      if (!isDragging) return;
+      isDragging = false;
+      if (dragEl) {
+        dragEl.classList.remove('path-dragging');
+        if (dragMoved && (Math.abs(dragDx) > 0.5 || Math.abs(dragDy) > 0.5)) {
+          // Commit move annotation
+          annotations.push({
+            kind: 'move', id: 'ann-' + Date.now(),
+            d: dragOrigD, fromGroup: dragFromGroup, dx: dragDx, dy: dragDy,
+          });
+          renderAnnotationList();
+          process(getConfig());
+        } else if (!dragMoved) {
+          // Pure click → show float panel
+          selectPath(dragEl, dragFromGroup, dragOrigD);
+          showSelectPanel(ev.clientX, ev.clientY, dragFromGroup);
+        }
+      }
+      dragEl = null; dragFromGroup = null; dragOrigD = null;
+      dragDx = 0; dragDy = 0; dragMoved = false;
+    }
+
+    document.addEventListener('mousemove', onMousemove);
+    document.addEventListener('mouseup', onMouseup);
+    window._selectCleanup = () => {
+      document.removeEventListener('mousemove', onMousemove);
+      document.removeEventListener('mouseup', onMouseup);
+    };
+
     SELECTABLE.forEach(gId => {
       const g = svg.getElementById(gId);
       if (!g) return;
       g.querySelectorAll('path, polygon').forEach(el => {
-        el.addEventListener('click', ev => {
+        el.addEventListener('mousedown', ev => {
           if (interactionMode !== 'select') return;
           ev.stopPropagation();
-          selectPath(el, gId, el.getAttribute('d') || '');
-          showSelectPanel(ev.clientX, ev.clientY, gId);
+          ev.preventDefault();
+          isDragging  = true;
+          dragMoved   = false;
+          dragEl      = el;
+          dragFromGroup = gId;
+          dragOrigD   = el.getAttribute('d') || '';
+          dragStartX  = ev.clientX;
+          dragStartY  = ev.clientY;
+          dragDx = 0; dragDy = 0;
         });
       });
     });
@@ -951,16 +1908,31 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     selectedFromGroup = null; selectedD = null; selectedToGroup = null;
   }
 
-  document.querySelectorAll('.fp-layer-btn').forEach(btn => {
+  document.querySelectorAll('.fp-layer-btn').forEach(btn =>
     btn.addEventListener('click', () => {
       document.querySelectorAll('.fp-layer-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       selectedToGroup = btn.dataset.togroup;
-    });
+    })
+  );
+
+  let selPathType  = 'line';
+  let selLineStyle  = 'solid';
+  function updateSelLineStyleVisibility() {
+    const show = selPathType === 'line' || selPathType === 'outline';
+    document.getElementById('fp-sel-line-style-row').style.display = show ? '' : 'none';
+  }
+  document.getElementById('fp-sel-ls-solid').addEventListener('click', () => {
+    selLineStyle = 'solid';
+    document.getElementById('fp-sel-ls-solid').classList.add('active');
+    document.getElementById('fp-sel-ls-dashed').classList.remove('active');
+  });
+  document.getElementById('fp-sel-ls-dashed').addEventListener('click', () => {
+    selLineStyle = 'dashed';
+    document.getElementById('fp-sel-ls-dashed').classList.add('active');
+    document.getElementById('fp-sel-ls-solid').classList.remove('active');
   });
 
-  // Select panel type (Line / Fill / Exclude)
-  let selPathType = 'line';
   const SEL_TYPE_IDS = ['fp-sel-type-line', 'fp-sel-type-fill', 'fp-sel-type-exclude'];
   SEL_TYPE_IDS.forEach(btnId => {
     document.getElementById(btnId).addEventListener('click', () => {
@@ -969,38 +1941,37 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       document.getElementById(btnId).classList.add(selPathType === 'exclude' ? 'excl-active' : 'active');
       document.getElementById('fp-excl-hint').style.display     = selPathType === 'exclude' ? '' : 'none';
       document.getElementById('fp-sel-layer-row').style.display = selPathType === 'exclude' ? 'none' : '';
+      updateSelLineStyleVisibility();
     });
   });
 
   document.getElementById('fp-select-confirm').addEventListener('click', () => {
     if (!selectedD) { hideFloatPanel(); clearSelectHighlight(); return; }
     if (selPathType === 'exclude') {
-      annotations.push({ kind:'exclude', id:'ann-'+Date.now(),
+      annotations.push({ kind: 'exclude', id: 'ann-' + Date.now(),
                           d: selectedD, fromGroup: selectedFromGroup });
     } else {
       if (!selectedToGroup) { hideFloatPanel(); clearSelectHighlight(); return; }
-      annotations.push({ kind:'reassign', id:'ann-'+Date.now(), d: selectedD,
-                          fromGroup: selectedFromGroup, toGroup: selectedToGroup,
-                          type: selPathType });
+      const isLineLike = selPathType === 'line' || selPathType === 'outline';
+      annotations.push({ kind: 'reassign', id: 'ann-' + Date.now(), d: selectedD,
+                          fromGroup: selectedFromGroup, toGroup: selectedToGroup, type: selPathType,
+                          lineStyle: isLineLike ? selLineStyle : 'solid' });
     }
-    clearSelectHighlight(); hideFloatPanel();
-    renderAnnotationList(); process(getConfig());
+    clearSelectHighlight(); hideFloatPanel(); renderAnnotationList(); process(getConfig());
   });
   document.getElementById('fp-select-discard').addEventListener('click', () => {
     clearSelectHighlight(); hideFloatPanel();
   });
 
-  // ── floating panel ───────────────────────────────────────────────────────
+  // ── floating panel helpers ───────────────────────────────────────────────
   const floatPanel = document.getElementById('float-panel');
 
-  // Drag float panel by its header
   let fpDragging = false, fpDragOX = 0, fpDragOY = 0;
   floatPanel.addEventListener('mousedown', e => {
     if (!e.target.closest('h3')) return;
     fpDragging = true;
     const rect = floatPanel.getBoundingClientRect();
-    fpDragOX = e.clientX - rect.left;
-    fpDragOY = e.clientY - rect.top;
+    fpDragOX = e.clientX - rect.left; fpDragOY = e.clientY - rect.top;
     e.preventDefault();
   });
   document.addEventListener('mousemove', e => {
@@ -1013,26 +1984,27 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   function showFillPanel(cx, cy) {
     document.getElementById('fp-fill').style.display   = '';
     document.getElementById('fp-select').style.display = 'none';
-    positionPanel(cx, cy);
-    floatPanel.classList.add('visible');
+    positionPanel(cx, cy); floatPanel.classList.add('visible');
   }
   function showSelectPanel(cx, cy, fromGroup) {
     document.getElementById('fp-fill').style.display   = 'none';
     document.getElementById('fp-select').style.display = '';
     document.getElementById('fp-select-current').textContent = 'Currently in: ' + fromGroup;
-    // Reset treat-as state
-    selPathType = 'line';
+    selPathType  = 'line';
+    selLineStyle = 'solid';
     SEL_TYPE_IDS.forEach(id => document.getElementById(id).classList.remove('active', 'excl-active'));
     document.getElementById('fp-sel-type-line').classList.add('active');
     document.getElementById('fp-excl-hint').style.display     = 'none';
     document.getElementById('fp-sel-layer-row').style.display = '';
+    document.getElementById('fp-sel-ls-solid').classList.add('active');
+    document.getElementById('fp-sel-ls-dashed').classList.remove('active');
     document.querySelectorAll('.fp-layer-btn').forEach(b => b.classList.remove('active'));
     selectedToGroup = null;
-    positionPanel(cx, cy);
-    floatPanel.classList.add('visible');
+    updateSelLineStyleVisibility();
+    positionPanel(cx, cy); floatPanel.classList.add('visible');
   }
   function positionPanel(cx, cy) {
-    const W = 248, H = floatPanel.scrollHeight || 220;
+    const W = 252, H = floatPanel.scrollHeight || 220;
     const vw = window.innerWidth, vh = window.innerHeight;
     let left = cx + 14, top = cy + 14;
     if (left + W > vw - 8) left = cx - W - 14;
@@ -1040,10 +2012,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     floatPanel.style.left = Math.max(4, left) + 'px';
     floatPanel.style.top  = Math.max(4, top)  + 'px';
   }
-  function hideFloatPanel() {
-    floatPanel.classList.remove('visible');
-    clearPendingPath();
-  }
+  function hideFloatPanel() { floatPanel.classList.remove('visible'); clearPendingPath(); }
 
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
@@ -1060,6 +2029,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   }
 
   async function process(cfg) {
+    if (!currentPngLoaded) { setStatus('', 'Select an image to begin'); return; }
     if (inFlight) { pendingCfg = cfg; return; }
     inFlight = true; pendingCfg = null;
     setStatus('busy', 'Processing\u2026');
@@ -1074,7 +2044,9 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       svgOverlay.innerHTML = data.svg;
       applyLayerVisibility();
       updateStats(data.stats);
+      // Always re-attach listeners after re-render (SVG DOM is replaced)
       if (interactionMode === 'select') attachSelectListeners();
+      if (interactionMode === 'vertex') { cancelVertexEdit(); attachVertexPickerListeners(); }
       setStatus('', 'Ready', data.ms);
     } catch (err) {
       setStatus('error', 'Error: ' + err.message);
@@ -1094,86 +2066,105 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
         body: JSON.stringify(getConfig()),
       });
       if (!res.ok) throw new Error('HTTP ' + res.status);
-      const data = await res.json();
+      const data  = await res.json();
       const slots = { 'dbg-mask': data.mask, 'dbg-masked': data.masked,
                       'dbg-negmask': data.negatedMask, 'dbg-wallbmp': data.wallBitmap };
       for (const [id, src] of Object.entries(slots)) {
+        if (!src) continue;
         const el = document.getElementById(id);
-        if (src) el.outerHTML = '<img id="' + id + '" src="data:image/png;base64,' + src +
-          '" style="width:100%;border-radius:4px;border:1px solid var(--border)">';
+        el.outerHTML = '<img id="' + id + '" src="data:image/png;base64,' + src
+          + '" style="width:100%;border-radius:4px;border:1px solid var(--border)">';
       }
       btn.textContent = 'Reload Debug Bitmaps';
-    } catch (err) {
-      btn.textContent = 'Error: ' + err.message;
-    } finally { btn.disabled = false; }
+    } catch (err) { btn.textContent = 'Error: ' + err.message; }
+    finally { btn.disabled = false; }
   });
 
-  // ── kick off ─────────────────────────────────────────────────────────────
-  process(getConfig());
+  // ── export SVG ───────────────────────────────────────────────────────────
+  const btnExport = document.getElementById('btn-export');
+  btnExport.addEventListener('click', async () => {
+    if (!currentPngLoaded) { setStatus('error', 'No image loaded'); return; }
+    const orig = btnExport.innerHTML;
+    btnExport.textContent = 'Exporting\u2026'; btnExport.disabled = true;
+    try {
+      const res = await fetch('/export', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ config: getConfig(), annotations }),
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({ error: 'HTTP ' + res.status }));
+        throw new Error(err.error || 'HTTP ' + res.status);
+      }
+      const blob = await res.blob();
+      const cd   = res.headers.get('content-disposition') || '';
+      const name = cd.match(/filename="([^"]+)"/)?.[1] || 'map.svg';
+      const url  = URL.createObjectURL(blob);
+      const a    = document.createElement('a');
+      a.href = url; a.download = name;
+      document.body.appendChild(a); a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      setStatus('', 'SVG exported \u2014 ' + name);
+    } catch (err) {
+      setStatus('error', 'Export failed: ' + err.message);
+    } finally {
+      btnExport.innerHTML = orig; btnExport.disabled = false;
+    }
+  });
+
+  // ── init ─────────────────────────────────────────────────────────────────
+  loadWorkspace(/* restoreCurrentPng */ true);
 })();
 </script>
 </body>
 </html>`;
 }
 
-// ---------------------------------------------------------------------------
-// Annotation injection — server side
-// ---------------------------------------------------------------------------
+// ── Annotation injection (server-side) ───────────────────────────────────────
 
-/** Inject pathEl into <g id="groupId"> or create the group before </svg>. */
 function ensureGroupAndAppend(svg: string, groupId: string, pathEl: string): string {
     const openTag = `<g id="${groupId}"`;
     const idx = svg.indexOf(openTag);
     if (idx !== -1) {
         const closeIdx = svg.indexOf('</g>', idx);
-        if (closeIdx !== -1) {
-            return svg.slice(0, closeIdx) + pathEl + '\n  ' + svg.slice(closeIdx);
-        }
+        if (closeIdx !== -1) return svg.slice(0, closeIdx) + pathEl + '\n  ' + svg.slice(closeIdx);
     }
     return svg.replace('</svg>', `  <g id="${groupId}">\n${pathEl}\n  </g>\n\n</svg>`);
 }
 
-/**
- * Injects user annotations into the rendered SVG.
- *
- * FilledShape (add):      appends <path d="..."/> into target group
- * FilledShape (subtract): appends <path class="subtract" .../> — mix-blend-mode punch-through
- * Reassignment:           removes exact path from fromGroup, appends to toGroup
- */
 function injectAnnotations(svg: string, annotations: AnnotationServer[]): string {
     if (annotations.length === 0) return svg;
 
-    const vbMatch = svg.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/);
-    const currentVW = vbMatch ? parseFloat(vbMatch[1]) : 0;
-    const currentVH = vbMatch ? parseFloat(vbMatch[2]) : 0;
+    const vbMatch   = svg.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/);
+    const currentVW = vbMatch ? parseFloat(vbMatch[1]) : 512;
+    const currentVH = vbMatch ? parseFloat(vbMatch[2]) : 512;
 
-    // Ensure pending group exists (client uses it for fill preview)
-    if (!svg.includes('id="pending"')) {
+    if (!svg.includes('id="pending"'))
         svg = svg.replace('</svg>', '  <g id="pending"></g>\n\n</svg>');
-    }
 
-    // Inject annotation override styles once so outline paths override group fills
-    if (!svg.includes('ann-outline')) {
+    if (!svg.includes('ann-outline'))
         svg = svg.replace(
             '  </style>',
-            `    path.ann-outline { fill: none !important; stroke: #7ecfff; stroke-width: 1.5; stroke-dasharray: 5 2; }\n  </style>`,
+            `    path.ann-outline        { fill: none !important; stroke: #7ecfff; stroke-width: 1.5; }\n    path.ann-outline-dashed { fill: none !important; stroke: #7ecfff; stroke-width: 1.5; stroke-dasharray: 5 2; }\n  </style>`,
         );
-    }
+
+    if (!svg.includes('map-boundary-path'))
+        svg = svg.replace(
+            '  </style>',
+            `    path.map-boundary-path { fill: none !important; stroke: #ff2200 !important; stroke-width: 2.5 !important; }\n  </style>`,
+        );
 
     for (const ann of annotations) {
         if (ann.kind === 'fill') {
             const isOutline = ann.type === 'outline';
             let attrs: string;
             if (isOutline) {
-                attrs = ' class="ann-outline"';
-            } else if (ann.mode === 'subtract') {
-                attrs = ' class="subtract"';
-            } else {
-                attrs = '';
-            }
+                const cls = (ann.lineStyle === 'dashed') ? 'ann-outline-dashed' : 'ann-outline';
+                attrs = ` class="${cls}"`;
+            } else if (ann.mode === 'subtract') attrs = ' class="subtract"';
+            else                        attrs = '';
             let pathEl = `    <path${attrs} d="${ann.path}"/>`;
-
-            // Scale if SVG viewBox changed (e.g. maxSize slider moved)
             if (ann.vW && ann.vH && currentVW && currentVH &&
                 (Math.abs(ann.vW - currentVW) > 1 || Math.abs(ann.vH - currentVH) > 1)) {
                 const sx = (currentVW / ann.vW).toFixed(5);
@@ -1183,183 +2174,407 @@ function injectAnnotations(svg: string, annotations: AnnotationServer[]): string
             svg = ensureGroupAndAppend(svg, ann.group, pathEl);
 
         } else if (ann.kind === 'reassign') {
-            // Remove path from source group (handles paths with or without extra attributes)
-            const esc = ann.d.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            const re  = new RegExp(`[ \\t]*<path(?:[^>]*)? d="${esc}"[^/]*/?>\\r?\\n?`, 'g');
-            const before = svg;
+            const esc  = ann.d.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const re   = new RegExp(`[ \\t]*<path(?:[^>]*)? d="${esc}"[^/]*/?>\\r?\\n?`, 'g');
+            const prev = svg;
             svg = svg.replace(re, '');
-            if (svg !== before) {
+            if (svg !== prev) {
                 const isOutline = ann.type === 'outline' || ann.type === 'line';
-                const attrs = isOutline ? ' class="ann-outline"' : '';
+                let attrs = '';
+                if (isOutline) {
+                    const cls = (ann.lineStyle === 'dashed') ? 'ann-outline-dashed' : 'ann-outline';
+                    attrs = ` class="${cls}"`;
+                }
                 svg = ensureGroupAndAppend(svg, ann.toGroup, `    <path${attrs} d="${ann.d}"/>`);
             }
 
         } else if (ann.kind === 'exclude') {
-            // Remove path from all groups; preserve its outline in the outlines group
             const esc = ann.d.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             const re  = new RegExp(`[ \\t]*<path(?:[^>]*)? d="${esc}"[^/]*/?>\\r?\\n?`, 'g');
             svg = svg.replace(re, '');
-            // Plain path in outlines group — inherits #outlines CSS (fill:none, stroke:#ff3333)
             svg = ensureGroupAndAppend(svg, 'outlines', `    <path d="${ann.d}"/>`);
+
+        } else if (ann.kind === 'move') {
+            const esc = ann.d.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const re  = new RegExp(`(<path\\b)([^>]*\\bd="${esc}")([^/]*/>)`, 'g');
+            svg = svg.replace(re, (_, open, mid, end) => {
+                const tx = `translate(${ann.dx.toFixed(2)},${ann.dy.toFixed(2)})`;
+                if (mid.includes('transform=')) {
+                    return open + mid.replace(/transform="([^"]*)"/, `transform="${tx} $1"`) + end;
+                }
+                return `${open} transform="${tx}"${mid}${end}`;
+            });
+
+        } else if (ann.kind === 'reshape') {
+            const esc = ann.origD.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const re  = new RegExp(`(<path\\b)([^>]*\\bd="${esc}")([^/]*/>)`, 'g');
+            svg = svg.replace(re, (_, open, mid, end) => {
+                return open + mid.replace(/d="[^"]*"/, `d="${ann.newD}"`) + end;
+            });
+
+        } else if (ann.kind === 'map-outline') {
+            if (ann.points.length < 2) continue;
+            const pts = ann.points.map(p =>
+                `${(p.nx * currentVW).toFixed(2)},${(p.ny * currentVH).toFixed(2)}`
+            );
+            const d = 'M ' + pts.join(' L ') + (ann.closed ? ' Z' : '');
+            svg = ensureGroupAndAppend(svg, 'outlines', `    <path class="map-boundary-path" d="${d}"/>`);
         }
     }
 
     return svg;
 }
 
-// ---------------------------------------------------------------------------
-// HTTP server
-// ---------------------------------------------------------------------------
+// ── Export SVG builder ───────────────────────────────────────────────────────
+
+const EXPORT_EXCLUDE_GROUPS = ['background', 'unclassified', 'pending'];
+
+/**
+ * Strips internal-only groups, applies 512×512 dimensions, and optionally
+ * adds a clip-path from closed map-outline annotations so all fill layers
+ * are masked to the hand-drawn map boundary.
+ */
+function buildExportSvg(
+    svg:             string,
+    sourceBasename:  string,
+    outlineAnns:     MapOutlineServer[],
+): string {
+    let out = svg;
+
+    // Remove internal-only groups and their CSS
+    for (const id of EXPORT_EXCLUDE_GROUPS) {
+        out = out.replace(new RegExp(`[ \\t]*<!--[^\\n]*${id}[^\\n]*-->\\s*`, 'gi'), '');
+        out = out.replace(new RegExp(`[ \\t]*<g id="${id}">[\\s\\S]*?<\\/g>\\s*`, 'm'), '');
+        out = out.replace(new RegExp(`\\s*#${id}[^{]*\\{[^}]*\\}`, 'g'), '');
+    }
+
+    // Convert annotation-outline dashes to a clean stroke for the final file
+    out = out.replace(
+        /path\.ann-outline\s*\{[^}]*\}/,
+        'path.ann-outline { fill: none; stroke: #4aa8ff; stroke-width: 1.2; }',
+    );
+
+    // ── 512 × 512 sizing ──────────────────────────────────────────────────
+    // Replace or inject width/height on the <svg> root element
+    out = out.replace(/(<svg\b[^>]*?)(\s+width="[^"]*")?(\s+height="[^"]*")?(>)/,
+        (_, pre, _w, _h, close) => pre + ' width="512" height="512"' + close,
+    );
+
+    // ── Clip-path from closed boundary outlines ────────────────────────────
+    const closedOutlines = outlineAnns.filter(o => o.closed && o.points.length >= 3);
+    if (closedOutlines.length > 0) {
+        const vbMatch = out.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/);
+        const vW = vbMatch ? parseFloat(vbMatch[1]) : 512;
+        const vH = vbMatch ? parseFloat(vbMatch[2]) : 512;
+
+        const clipPaths = closedOutlines.map(o => {
+            const pts = o.points.map(p =>
+                `${(p.nx * vW).toFixed(2)},${(p.ny * vH).toFixed(2)}`
+            );
+            return `    <path d="M ${pts.join(' L ')} Z"/>`;
+        }).join('\n');
+
+        const clipEl = `  <clipPath id="map-boundary">\n${clipPaths}\n  </clipPath>`;
+        if (out.includes('</defs>')) {
+            out = out.replace('</defs>', clipEl + '\n</defs>');
+        } else {
+            out = out.replace('<svg', '<svg');
+            out = out.replace(/(<svg[^>]*>)/, '$1\n<defs>\n' + clipEl + '\n</defs>');
+        }
+
+        // Clip fill layers to the boundary (outlines group is intentionally NOT clipped
+        // so the boundary stroke always renders as the full map border)
+        for (const layerId of ['walls', 'thickerWalls', 'inaccessible', 'stairs']) {
+            out = out.replace(
+                `<g id="${layerId}"`,
+                `<g id="${layerId}" clip-path="url(#map-boundary)"`,
+            );
+        }
+    }
+
+    // Generator comment
+    const stamp = new Date().toISOString().slice(0, 10);
+    out = out.replace(
+        '<svg ',
+        `<!-- DECLASSIFIED Map SVG Builder \u2014 ${sourceBasename} \u2014 ${stamp} -->\n<svg `,
+    );
+
+    out = out.replace(/\n{3,}/g, '\n\n');
+    return out;
+}
+
+// ── HTTP server ──────────────────────────────────────────────────────────────
+
+function readBody(req: http.IncomingMessage): Promise<string> {
+    return new Promise((resolve, reject) => {
+        let body = '';
+        req.on('data', (c: Buffer | string) => { body += c; });
+        req.on('end', () => resolve(body));
+        req.on('error', reject);
+    });
+}
 
 const server = http.createServer(async (req, res) => {
+    const url    = req.url ?? '/';
+    const method = req.method ?? 'GET';
 
-    if (req.method === 'GET' && req.url === '/') {
+    // ── Serve UI ──────────────────────────────────────────────────────────
+    if (method === 'GET' && url === '/') {
         res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
         res.end(buildHtml());
         return;
     }
 
-    if (req.method === 'POST' && req.url === '/process') {
-        let body = '';
-        req.on('data', c => { body += c; });
-        req.on('end', async () => {
-            let cfg: MapConfig;
-            let annotations: AnnotationServer[] = [];
-            try {
-                const parsed = JSON.parse(body);
-                cfg = (parsed.config ?? parsed) as MapConfig;
-                annotations = Array.isArray(parsed.annotations) ? parsed.annotations as AnnotationServer[] : [];
-            } catch {
-                res.writeHead(400, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ error: 'Invalid JSON' }));
-                return;
-            }
-            const t0 = Date.now();
-            try {
-                const result = await processMap(rawBuffer, cfg, false);
-                const ms = Date.now() - t0;
-
-                // Refresh gray pixel cache for /fill endpoint
-                try {
-                    const resized = cfg.maxSize > 0
-                        ? await sharp(rawBuffer)
-                            .resize(cfg.maxSize, cfg.maxSize, { fit: 'inside', withoutEnlargement: true })
-                            .png().toBuffer()
-                        : rawBuffer;
-                    const gray = await extractGrayPixels(resized);
-                    const vbm  = result.svg.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/);
-                    grayCache = {
-                        pixels: gray.pixels, width: gray.width, height: gray.height,
-                        vW: vbm ? parseFloat(vbm[1]) : gray.width,
-                        vH: vbm ? parseFloat(vbm[2]) : gray.height,
-                    };
-                } catch (cacheErr) {
-                    console.warn('[/process] gray cache refresh failed:', cacheErr);
-                }
-
-                res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
-                res.end(JSON.stringify({
-                    svg:   injectAnnotations(result.svg, annotations),
-                    stats: result.stats,
-                    ms,
-                }));
-            } catch (err) {
-                const message = err instanceof Error ? err.message : String(err);
-                console.error('[/process] Error:', message);
-                res.writeHead(500, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ error: message }));
-            }
-        });
+    // ── Serve current PNG image ───────────────────────────────────────────
+    if (method === 'GET' && url.startsWith('/current-image')) {
+        if (!currentPngBuffer) {
+            res.writeHead(404); res.end('No image loaded'); return;
+        }
+        res.writeHead(200, { 'Content-Type': currentPngMime, 'Cache-Control': 'no-cache' });
+        res.end(currentPngBuffer);
         return;
     }
 
-    if (req.method === 'POST' && req.url === '/fill') {
-        let body = '';
-        req.on('data', c => { body += c; });
-        req.on('end', async () => {
-            if (!grayCache) {
-                res.writeHead(503, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ error: 'No cache — run /process first' }));
-                return;
-            }
-            let nx: number, ny: number, threshold: number;
-            try {
-                const p = JSON.parse(body);
-                nx = Number(p.nx); ny = Number(p.ny); threshold = Number(p.threshold);
-                if (isNaN(nx) || isNaN(ny) || isNaN(threshold)) throw new Error('bad values');
-            } catch {
-                res.writeHead(400, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ error: 'Expected { nx, ny, threshold }' }));
-                return;
-            }
-            const px = Math.round(nx * grayCache.width);
-            const py = Math.round(ny * grayCache.height);
-            try {
-                const result = await fillRegion(
-                    grayCache.pixels, grayCache.width, grayCache.height, px, py, threshold,
-                );
-                res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
-                res.end(JSON.stringify({
-                    path: result.path, pixelCount: result.pixelCount,
-                    vW: grayCache.vW, vH: grayCache.vH,
-                }));
-            } catch (err) {
-                const message = err instanceof Error ? err.message : String(err);
-                console.error('[/fill] Error:', message);
-                res.writeHead(500, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ error: message }));
-            }
-        });
+    // ── Workspace info ────────────────────────────────────────────────────
+    if (method === 'GET' && url === '/workspace') {
+        const { pngs, sessions } = scanWorkspace();
+        res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
+        res.end(JSON.stringify({
+            pngs,
+            sessions,
+            currentPng: currentPngPath ? path.basename(currentPngPath) : null,
+        }));
         return;
     }
 
-    if (req.method === 'POST' && req.url === '/debug') {
-        let body = '';
-        req.on('data', c => { body += c; });
-        req.on('end', async () => {
-            let cfg: MapConfig;
-            try { cfg = JSON.parse(body) as MapConfig; }
-            catch {
-                res.writeHead(400, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ error: 'Invalid JSON' }));
-                return;
-            }
-            try {
-                const result = await processMap(rawBuffer, cfg, true);
-                const d = result.debugBitmaps!;
-                res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
-                res.end(JSON.stringify({
-                    mask:        d.mask.toString('base64'),
-                    masked:      d.masked.toString('base64'),
-                    negatedMask: d.negatedMask.toString('base64'),
-                    wallBitmap:  d.wallBitmap.toString('base64'),
-                }));
-            } catch (err) {
-                const message = err instanceof Error ? err.message : String(err);
-                console.error('[/debug] Error:', message);
-                res.writeHead(500, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ error: message }));
-            }
-        });
+    // ── Load a PNG into server state ──────────────────────────────────────
+    if (method === 'POST' && url === '/load-png') {
+        try {
+            const body = await readBody(req);
+            const { filename } = JSON.parse(body) as { filename: string };
+            if (!filename) throw new Error('Missing filename');
+            loadPngFile(filename);
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ ok: true }));
+        } catch (err) {
+            const message = err instanceof Error ? err.message : String(err);
+            res.writeHead(400, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: message }));
+        }
         return;
     }
 
-    res.writeHead(404);
-    res.end('Not found');
+    // ── Save session ──────────────────────────────────────────────────────
+    if (method === 'POST' && url === '/save-session') {
+        try {
+            const body    = await readBody(req);
+            const session = JSON.parse(body) as SessionData;
+            if (!session.name)    throw new Error('Missing name');
+            if (!session.pngFile) throw new Error('Missing pngFile');
+            saveSessionFile(session);
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ ok: true }));
+        } catch (err) {
+            const message = err instanceof Error ? err.message : String(err);
+            res.writeHead(400, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: message }));
+        }
+        return;
+    }
+
+    // ── Load session ──────────────────────────────────────────────────────
+    const sessionLoadMatch = method === 'GET' && url.match(/^\/session\/(.+)$/);
+    if (sessionLoadMatch) {
+        try {
+            const name    = decodeURIComponent(sessionLoadMatch[1]);
+            const session = loadSessionFile(name);
+            res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
+            res.end(JSON.stringify(session));
+        } catch (err) {
+            const message = err instanceof Error ? err.message : String(err);
+            res.writeHead(404, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: message }));
+        }
+        return;
+    }
+
+    // ── Delete session ────────────────────────────────────────────────────
+    const sessionDeleteMatch = method === 'DELETE' && url.match(/^\/session\/(.+)$/);
+    if (sessionDeleteMatch) {
+        try {
+            const name = decodeURIComponent(sessionDeleteMatch[1]);
+            deleteSessionFile(name);
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ ok: true }));
+        } catch (err) {
+            const message = err instanceof Error ? err.message : String(err);
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: message }));
+        }
+        return;
+    }
+
+    // ── Process SVG ───────────────────────────────────────────────────────
+    if (method === 'POST' && url === '/process') {
+        if (!currentPngBuffer) {
+            res.writeHead(503, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: 'No image loaded' }));
+            return;
+        }
+        try {
+            const body     = await readBody(req);
+            const parsed   = JSON.parse(body);
+            const cfg      = (parsed.config ?? parsed) as MapConfig;
+            const anns     = Array.isArray(parsed.annotations) ? parsed.annotations as AnnotationServer[] : [];
+            const t0       = Date.now();
+            const result   = await processMap(currentPngBuffer, cfg, false);
+            const ms       = Date.now() - t0;
+
+            // Refresh gray pixel cache
+            try {
+                const resized = cfg.maxSize > 0
+                    ? await sharp(currentPngBuffer)
+                        .resize(cfg.maxSize, cfg.maxSize, { fit: 'inside', withoutEnlargement: true })
+                        .png().toBuffer()
+                    : currentPngBuffer;
+                const gray = await extractGrayPixels(resized);
+                const vbm  = result.svg.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/);
+                grayCache  = {
+                    pixels: gray.pixels, width: gray.width, height: gray.height,
+                    vW: vbm ? parseFloat(vbm[1]) : gray.width,
+                    vH: vbm ? parseFloat(vbm[2]) : gray.height,
+                };
+            } catch (e) { console.warn('[/process] gray cache error:', e); }
+
+            res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
+            res.end(JSON.stringify({
+                svg:   injectAnnotations(result.svg, anns),
+                stats: result.stats,
+                ms,
+            }));
+        } catch (err) {
+            const message = err instanceof Error ? err.message : String(err);
+            console.error('[/process]', message);
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: message }));
+        }
+        return;
+    }
+
+    // ── Flood fill ────────────────────────────────────────────────────────
+    if (method === 'POST' && url === '/fill') {
+        if (!grayCache) {
+            res.writeHead(503, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: 'No cache — run /process first' }));
+            return;
+        }
+        try {
+            const body = await readBody(req);
+            const p    = JSON.parse(body);
+            const nx   = Number(p.nx), ny = Number(p.ny), threshold = Number(p.threshold);
+            const offset = Number(p.offset) || 0;
+            if (isNaN(nx) || isNaN(ny) || isNaN(threshold)) throw new Error('bad values');
+            const px   = Math.round(nx * grayCache.width);
+            const py   = Math.round(ny * grayCache.height);
+            const fill = await fillRegion(
+                grayCache.pixels, grayCache.width, grayCache.height, px, py, threshold, offset,
+            );
+            res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
+            res.end(JSON.stringify({
+                path: fill.path, pixelCount: fill.pixelCount,
+                vW: grayCache.vW, vH: grayCache.vH,
+            }));
+        } catch (err) {
+            const message = err instanceof Error ? err.message : String(err);
+            console.error('[/fill]', message);
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: message }));
+        }
+        return;
+    }
+
+    // ── Debug bitmaps ─────────────────────────────────────────────────────
+    if (method === 'POST' && url === '/debug') {
+        if (!currentPngBuffer) {
+            res.writeHead(503, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: 'No image loaded' }));
+            return;
+        }
+        try {
+            const body   = await readBody(req);
+            const cfg    = JSON.parse(body) as MapConfig;
+            const result = await processMap(currentPngBuffer, cfg, true);
+            const d      = result.debugBitmaps!;
+            res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
+            res.end(JSON.stringify({
+                mask:        d.mask.toString('base64'),
+                masked:      d.masked.toString('base64'),
+                negatedMask: d.negatedMask.toString('base64'),
+                wallBitmap:  d.wallBitmap.toString('base64'),
+            }));
+        } catch (err) {
+            const message = err instanceof Error ? err.message : String(err);
+            console.error('[/debug]', message);
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: message }));
+        }
+        return;
+    }
+
+    // ── Export SVG ────────────────────────────────────────────────────────
+    if (method === 'POST' && url === '/export') {
+        if (!currentPngBuffer) {
+            res.writeHead(503, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: 'No image loaded' }));
+            return;
+        }
+        try {
+            const body     = await readBody(req);
+            const parsed   = JSON.parse(body);
+            const cfg      = (parsed.config ?? parsed) as MapConfig;
+            const anns     = Array.isArray(parsed.annotations) ? parsed.annotations as AnnotationServer[] : [];
+            const result   = await processMap(currentPngBuffer, cfg, false);
+            const annotated = injectAnnotations(result.svg, anns);
+            const outlineAnns = anns.filter((a): a is MapOutlineServer => a.kind === 'map-outline');
+            const basename = currentPngPath
+                ? path.basename(currentPngPath, path.extname(currentPngPath))
+                : 'map';
+            const clean    = buildExportSvg(annotated, basename, outlineAnns);
+            const filename = basename + '.svg';
+            res.writeHead(200, {
+                'Content-Type': 'image/svg+xml; charset=utf-8',
+                'Content-Disposition': `attachment; filename="${filename}"`,
+                'Cache-Control': 'no-store',
+            });
+            res.end(clean);
+        } catch (err) {
+            const message = err instanceof Error ? err.message : String(err);
+            console.error('[/export]', message);
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: message }));
+        }
+        return;
+    }
+
+    res.writeHead(404); res.end('Not found');
 });
 
 server.listen(PORT, () => {
-    console.log(`\nMap SVG Preview  \u2192  http://localhost:${PORT}`);
-    console.log(`Input: ${inputPath}`);
-    console.log('\nFill mode  : click the map to flood-fill a region from that point');
-    console.log('Select mode: click any SVG path to reassign it to a different layer');
+    console.log(`\nDECLASSIFIED  Map SVG Builder`);
+    console.log(`\u2192  http://localhost:${PORT}`);
+    console.log(`\nWorkspace: ${WORKSPACE_DIR}`);
+    console.log('Drop PNG/JPG map images into that folder, then select them in the browser.\n');
+    console.log('Fill mode   : click the map to flood-fill a region');
+    console.log('Select mode : click any SVG path to reassign or exclude it');
+    console.log('Outline mode: click to place map boundary vertices (Enter or Close to finish)');
+    console.log('Export SVG  : downloads a clean 512\u00d7512 SVG');
     console.log('\nPress Ctrl+C to stop.\n');
 });
 
 server.on('error', (err: NodeJS.ErrnoException) => {
     if (err.code === 'EACCES' || err.code === 'EADDRINUSE') {
         console.error(`\nPort ${PORT} unavailable: ${err.message}`);
-        console.error(`Try: npx tsx scripts/mapToSvgPreview.ts --input <image> --port 9091\n`);
+        console.error(`Try: npm run map:build -- --port 9091\n`);
     } else {
         console.error('Server error:', err);
     }
