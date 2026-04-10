@@ -436,7 +436,7 @@ export async function processMap(
         `    #outlines path     { fill: none; stroke: #ff3333; stroke-width: 2; }`,
         `    #walls path        { fill: #888888; }`,
         `    #thickerWalls path { fill: #aaaaaa; }`,
-        `    #inaccessible path { fill: rgba(0,40,100,0.5); }`,
+        `    #inaccessible path { fill: #7C2728; stroke: #6B6B6B; stroke-width: 1; }`,
         `    #stairs path       { fill: #00ccff; }`,
         `    #unclassified path { fill: none; stroke: #ffcc00; stroke-width: 0.5; opacity: 0.6; }`,
         `  </style>`,
@@ -571,10 +571,10 @@ export interface FillResult {
  */
 function applyMorphology(filled: Uint8Array, width: number, height: number, radius: number): Uint8Array {
     if (radius === 0) return filled;
-    const r      = Math.abs(radius);
+    const r = Math.abs(radius);
     const dilate = radius > 0;
-    const tmp    = new Uint8Array(width * height);
-    const out    = new Uint8Array(width * height);
+    const tmp = new Uint8Array(width * height);
+    const out = new Uint8Array(width * height);
 
     // Horizontal pass
     for (let y = 0; y < height; y++) {
@@ -639,10 +639,10 @@ export async function fillRegion(
         const idx = queue[head++];
         const x = idx % width;
         const y = Math.floor(idx / width);
-        if (y > 0)          enqueue(idx - width);
+        if (y > 0) enqueue(idx - width);
         if (y < height - 1) enqueue(idx + width);
-        if (x > 0)          enqueue(idx - 1);
-        if (x < width - 1)  enqueue(idx + 1);
+        if (x > 0) enqueue(idx - 1);
+        if (x < width - 1) enqueue(idx + 1);
     }
 
     const pixelCount = queue.length;
