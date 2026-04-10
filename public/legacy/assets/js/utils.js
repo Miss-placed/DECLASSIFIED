@@ -39,7 +39,7 @@ function GenerateDetailModal(intel) {
         intel.desc = "If you see this please report an issue on the github page."
     }
 
-    const imgEle = intel.img ? `<img src="https://i.imgur.com/${intel.img}.jpg" onclick="expandImage(this)"></img>` : '';
+    const imgEle = intel.img ? `<img src="https://declassified-cdn.sol3.me/${intel.img}.jpg" onclick="expandImage(this)"></img>` : '';
 
     var elementsToAdd = htmlToElements(
         `<button class="close-submodal btn inverted" onclick="openModal(modalSet.intelOverview)"><i class="fas fa-x"></i></button>

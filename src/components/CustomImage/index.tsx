@@ -26,10 +26,10 @@ export const CustomImage = ({ src: imageId, altText = 'Placeholder' }) => { // T
 	const hasImage = imageId !== '' && imageId !== null && imageId !== undefined;
 	const thumbnailSrc = imageId === 'placeholder'
 		? placeholderSrc
-		: `https://i.imgur.com/${imageId}l.jpg?t=${new Date().getTime()}`; // the "l" is used for imgur api to scale the image
+		: `https://declassified-cdn.sol3.me/${imageId}.jpg?t=${new Date().getTime()}`;
 	const fullSizeSrc = imageId === 'placeholder'
 		? placeholderSrc
-		: `https://i.imgur.com/${imageId}.jpg?t=${new Date().getTime()}`;
+		: `https://declassified-cdn.sol3.me/${imageId}.jpg?t=${new Date().getTime()}`;
 	const [imgLoaded, setImageLoaded] = useState(false);
 	const [modalImageLoaded, setModalImageLoaded] = useState(false);
 	const [open, setOpen] = useState(false);
