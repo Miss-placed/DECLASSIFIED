@@ -437,6 +437,13 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 }
 #btn-export:hover:not(:disabled) { background: #1e4a70; border-color: #4a9adf; color: #aadeff; }
 #btn-export:disabled { opacity: 0.5; cursor: not-allowed; }
+#btn-gen-walls {
+  width: 100%; padding: 7px 10px; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 5px;
+  background: #1e3a1e; border: 1px solid #3a7a3a; border-radius: 5px;
+  color: #7ecf7e; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.15s;
+}
+#btn-gen-walls:hover:not(:disabled) { background: #254d25; border-color: #5aaf5a; color: #adfaad; }
+#btn-gen-walls:disabled { opacity: 0.5; cursor: not-allowed; }
 
 /* ─── PREVIEW ────────────────────────────────────────────── */
 #preview {
@@ -743,6 +750,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
           &nbsp;\u00b7&nbsp; Thick: <span id="thick-count" style="color:var(--accent);font-family:monospace">\u2014</span>
           &nbsp;\u00b7&nbsp; Unclassified: <span id="unclass-count" style="color:var(--yellow);font-family:monospace">\u2014</span>
         </div>
+        <button id="btn-gen-walls" disabled>&#x2699;&#xFE0F;&nbsp; Generate Walls</button>
       </div>
     </details>
 
@@ -981,7 +989,6 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   let interactionMode  = 'fill'; // 'fill' | 'select' | 'outline'
   let _undoStack       = []; // JSON snapshots (max 50) for Ctrl+Z
   let _redoStack       = []; // JSON snapshots for Ctrl+Y
-  let _wallsGenerated  = false; // true once user deliberately triggers wall detection via a slider
 
   // ── slider wiring ────────────────────────────────────────────────────────
   const SLIDER_IDS = [
@@ -1153,7 +1160,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
         snapshotForUndo();
         annotations = annotations.filter(a => a.id !== e.currentTarget.dataset.id);
         renderAnnotationList();
-        process({ ...getConfig(), skipWalls: !_wallsGenerated });
+        process({ ...getConfig(), skipWalls: true });
       })
     );
     // Update inaccessible/stairs counts from fills
@@ -1257,7 +1264,6 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       if (resetAnnotations) {
         annotations = [];
         _undoStack = []; _redoStack = []; refreshUndoRedoButtons();
-        _wallsGenerated = false;
         renderAnnotationList();
         // Default session name: "Subdir - MapName" or just "MapName"
         const fParts = filename.split('/');
@@ -1267,6 +1273,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       }
 
       currentPngLoaded = true;
+      document.getElementById('btn-gen-walls').disabled = false;
       setStatus('', 'Image loaded \u2014 ' + filename);
       process({ ...getConfig(), skipWalls: true });
     } catch (err) {
@@ -1329,11 +1336,11 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       // Restore annotations
       annotations = Array.isArray(session.annotations) ? session.annotations : [];
       _undoStack = []; _redoStack = []; refreshUndoRedoButtons();
-      _wallsGenerated = false;
       renderAnnotationList();
 
       document.getElementById('session-name').value = session.name;
       currentPngLoaded = true;
+      document.getElementById('btn-gen-walls').disabled = false;
       setStatus('', 'Session loaded: ' + session.name);
       process({ ...getConfig(), skipWalls: true });
     } catch (err) {
@@ -1380,14 +1387,14 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     if (!_undoStack.length) return;
     _redoStack.push(JSON.stringify(annotations));
     annotations = JSON.parse(_undoStack.pop());
-    renderAnnotationList(); process({ ...getConfig(), skipWalls: !_wallsGenerated });
+    renderAnnotationList(); process({ ...getConfig(), skipWalls: true });
     refreshUndoRedoButtons();
   }
   function execRedo() {
     if (!_redoStack.length) return;
     _undoStack.push(JSON.stringify(annotations));
     annotations = JSON.parse(_redoStack.pop());
-    renderAnnotationList(); process({ ...getConfig(), skipWalls: !_wallsGenerated });
+    renderAnnotationList(); process({ ...getConfig(), skipWalls: true });
     refreshUndoRedoButtons();
   }
   function refreshUndoRedoButtons() {
@@ -1544,7 +1551,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       lineStyle: fillType === 'outline' ? fillLineStyle : 'solid',
       path: pendingFill.path, vW: pendingFill.vW, vH: pendingFill.vH,
     });
-    pendingFill = null; hideFloatPanel(); renderAnnotationList(); process({ ...getConfig(), skipWalls: !_wallsGenerated });
+    pendingFill = null; hideFloatPanel(); renderAnnotationList(); process({ ...getConfig(), skipWalls: true });
   });
   document.getElementById('fp-fill-discard').addEventListener('click', () => {
     pendingFill = null; clearPendingPath(); hideFloatPanel();
@@ -1953,7 +1960,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     annotations.push({ kind: 'reshape', id: 'ann-' + Date.now(), origD, newD, fromGroup: grp });
     cancelVertexEdit();
     renderAnnotationList();
-    process({ ...getConfig(), skipWalls: !_wallsGenerated });
+    process({ ...getConfig(), skipWalls: true });
   });
 
   document.getElementById('node-cancel-btn').addEventListener('click', () => {
@@ -2046,7 +2053,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
             d: dragOrigD, fromGroup: dragFromGroup, dx: dragDx, dy: dragDy,
           });
           renderAnnotationList();
-          process({ ...getConfig(), skipWalls: !_wallsGenerated });
+          process({ ...getConfig(), skipWalls: true });
           // Pure click → show float panel
           selectPath(dragEl, dragFromGroup, dragOrigD);
           showSelectPanel(ev.clientX, ev.clientY, dragFromGroup);
@@ -2145,7 +2152,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
                           fromGroup: selectedFromGroup, toGroup: selectedToGroup, type: selPathType,
                           lineStyle: isLineLike ? selLineStyle : 'solid' });
     }
-    clearSelectHighlight(); hideFloatPanel(); renderAnnotationList(); process({ ...getConfig(), skipWalls: !_wallsGenerated });
+    clearSelectHighlight(); hideFloatPanel(); renderAnnotationList(); process({ ...getConfig(), skipWalls: true });
   });
   document.getElementById('fp-select-discard').addEventListener('click', () => {
     clearSelectHighlight(); hideFloatPanel();
@@ -2212,9 +2219,8 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   let debounceTimer = null, inFlight = false, pendingCfg = null;
 
   function scheduleProcess() {
-    _wallsGenerated = true; // slider-driven — user explicitly wants walls generated
     clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(() => process(getConfig()), 350);
+    debounceTimer = setTimeout(() => process({ ...getConfig(), skipWalls: true }), 350);
   }
 
   async function process(cfg) {
@@ -2267,6 +2273,13 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       btn.textContent = 'Reload Debug Bitmaps';
     } catch (err) { btn.textContent = 'Error: ' + err.message; }
     finally { btn.disabled = false; }
+  });
+
+  // ── generate walls button ───────────────────────────────────────────────
+  const btnGenWalls = document.getElementById('btn-gen-walls');
+  btnGenWalls.addEventListener('click', () => {
+    if (!currentPngLoaded) return;
+    process(getConfig());
   });
 
   // ── export SVG ───────────────────────────────────────────────────────────
