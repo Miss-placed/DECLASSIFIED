@@ -2286,7 +2286,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     if (!svg) return;
 
     // ── drag-to-move state ─────────────────────────────────────────────
-    let dragEl = null, dragFromGroup = null, dragOrigD = null;
+    let dragEl = null, dragFromGroup = null, dragOrigD = null, dragExistingTransform = '';
     let dragStartX = 0, dragStartY = 0, dragDx = 0, dragDy = 0;
     let isDragging = false, dragMoved = false;
 
@@ -2316,8 +2316,8 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       const { sx, sy } = getSvgScale();
       dragDx = dx * sx;
       dragDy = dy * sy;
-      dragEl.setAttribute('transform',
-        'translate(' + dragDx.toFixed(2) + ',' + dragDy.toFixed(2) + ')');
+      const tx = 'translate(' + dragDx.toFixed(2) + ',' + dragDy.toFixed(2) + ')';
+      dragEl.setAttribute('transform', dragExistingTransform ? dragExistingTransform + ' ' + tx : tx);
     }
 
     function onMouseup(ev) {
@@ -2334,7 +2334,8 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
           });
           renderAnnotationList();
           process({ ...getConfig(), skipWalls: true });
-          // Pure click → show float panel
+        } else if (!dragMoved) {
+          // Pure click → show edit panel
           selectPath(dragEl, dragFromGroup, dragOrigD);
           showSelectPanel(ev.clientX, ev.clientY, dragFromGroup);
         }
@@ -2363,6 +2364,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
           dragEl      = el;
           dragFromGroup = gId;
           dragOrigD   = el.getAttribute('d') || '';
+          dragExistingTransform = el.getAttribute('transform') || '';
           dragStartX  = ev.clientX;
           dragStartY  = ev.clientY;
           dragDx = 0; dragDy = 0;
@@ -2633,7 +2635,7 @@ function injectAnnotations(svg: string, annotations: AnnotationServer[]): string
     if (!svg.includes('ann-outline'))
         svg = svg.replace(
             '  </style>',
-            `    path.ann-outline        { fill: none !important; stroke: #7ecfff; stroke-width: 1.5; }\n    path.ann-outline-dashed { fill: none !important; stroke: #7ecfff; stroke-width: 1.5; stroke-dasharray: 5 2; }\n    path.ann-fill           { pointer-events: all; }\n    #outlines path.ann-fill     { fill: #ff3333 !important; stroke: none; }\n    #walls path.ann-fill        { fill: #888888 !important; stroke: none; }\n    #thickerWalls path.ann-fill { fill: #aaaaaa !important; stroke: none; }\n    #inaccessible path.ann-fill { fill: #7C2728 !important; stroke: none; }\n    #stairs path.ann-fill       { fill: #00ccff !important; stroke: none; }\n    #unclassified path.ann-fill { fill: #ffcc00 !important; stroke: none; }\n  </style>`,
+            `    path.ann-outline        { fill: none !important; stroke: #7ecfff; stroke-width: 1.5; }\n    path.ann-outline-dashed { fill: none !important; stroke: #7ecfff; stroke-width: 1.5; stroke-dasharray: 5 2; }\n    path.ann-fill           { pointer-events: all; stroke: rgba(60,60,60,0.65) !important; stroke-width: 1 !important; }\n    #outlines path.ann-fill     { fill: #ff3333 !important; }\n    #walls path.ann-fill        { fill: #888888 !important; }\n    #thickerWalls path.ann-fill { fill: #aaaaaa !important; }\n    #inaccessible path.ann-fill { fill: #7C2728 !important; }\n    #stairs path.ann-fill       { fill: #00ccff !important; }\n    #unclassified path.ann-fill { fill: #ffcc00 !important; }\n  </style>`,
         );
 
     if (!svg.includes('map-boundary-path'))
