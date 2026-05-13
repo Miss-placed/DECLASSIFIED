@@ -1,0 +1,2 @@
+# Map builder — contains an inline HTML template literal that formatters break
+scripts/mapToSvgPreview.ts
