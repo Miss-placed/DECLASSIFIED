@@ -84,7 +84,7 @@ function addMarkerToMap(intel, icon, maep) {
         let imgEle = ''
 
         if (intel.img !== undefined) {
-            imgSrc = `https://i.imgur.com/${intel.img}.jpg`
+            imgSrc = `https://declassified-cdn.sol3.me/${intel.img}.jpg`
         }
 
         imgEle = `<img src="${imgSrc}" onclick="expandImage(this)"></img>`
