@@ -152,28 +152,57 @@ interface SessionData {
 
 // ── workspace helpers ────────────────────────────────────────────────────────
 
+/** Scans workspace root + one level of subdirectories for PNGs and JSON sessions.
+ *  PNG values are relative paths like "Astra Malorum/Mars.png" or "flat.png".
+ *  Session identifiers are "subdir/name" or "name" for root-level sessions.
+ */
 function scanWorkspace(): { pngs: string[]; sessions: SessionInfo[] } {
-    const files    = fs.readdirSync(WORKSPACE_DIR).sort();
-    const pngs     = files.filter(f => /\.(png|jpg|jpeg)$/i.test(f));
-    const sessions = files
-        .filter(f => f.endsWith('.json'))
-        .flatMap<SessionInfo>(f => {
-            try {
-                const d = JSON.parse(
-                    fs.readFileSync(path.join(WORKSPACE_DIR, f), 'utf8'),
-                ) as SessionData;
-                return [{ name: d.name, pngFile: d.pngFile, updatedAt: d.updatedAt }];
-            } catch { return []; }
-        });
+    const pngs: string[]        = [];
+    const sessions: SessionInfo[] = [];
+
+    function readJsonSession(fp: string, prefix: string): SessionInfo | null {
+        try {
+            const d = JSON.parse(fs.readFileSync(fp, 'utf8')) as SessionData;
+            return { name: prefix ? prefix + '/' + d.name : d.name, pngFile: d.pngFile, updatedAt: d.updatedAt };
+        } catch { return null; }
+    }
+
+    const entries = fs.readdirSync(WORKSPACE_DIR).sort();
+    for (const entry of entries) {
+        const fp   = path.join(WORKSPACE_DIR, entry);
+        const stat = fs.statSync(fp);
+        if (stat.isDirectory()) {
+            // One level deep only
+            const sub = fs.readdirSync(fp).sort();
+            for (const sf of sub) {
+                if (/\.(png|jpg|jpeg)$/i.test(sf)) {
+                    pngs.push(entry + '/' + sf);
+                } else if (sf.endsWith('.json')) {
+                    const s = readJsonSession(path.join(fp, sf), entry);
+                    if (s) sessions.push(s);
+                }
+            }
+        } else if (/\.(png|jpg|jpeg)$/i.test(entry)) {
+            pngs.push(entry);
+        } else if (entry.endsWith('.json')) {
+            const s = readJsonSession(fp, '');
+            if (s) sessions.push(s);
+        }
+    }
     return { pngs, sessions };
 }
 
 function loadPngFile(filename: string): void {
-    // Prevent path traversal
-    const safe = path.basename(filename);
-    const fp   = path.join(WORKSPACE_DIR, safe);
-    if (!fs.existsSync(fp)) throw new Error(`File not found: ${safe}`);
-    const ext         = path.extname(safe).slice(1).toLowerCase();
+    // Allow "subdir/file.png" (one level) — prevent traversal
+    const parts = filename.split('/');
+    if (parts.length > 2 || parts.some(p => !p || p === '.' || p === '..')) {
+        throw new Error('Invalid path');
+    }
+    const fp  = path.join(WORKSPACE_DIR, ...parts);
+    const abs = path.resolve(fp);
+    if (!abs.startsWith(path.resolve(WORKSPACE_DIR))) throw new Error('Path traversal denied');
+    if (!fs.existsSync(fp)) throw new Error(`File not found: ${filename}`);
+    const ext         = path.extname(parts[parts.length - 1]).slice(1).toLowerCase();
     currentPngPath   = fp;
     currentPngBuffer = fs.readFileSync(fp);
     currentPngMime   = (ext === 'jpg' || ext === 'jpeg') ? 'image/jpeg' : 'image/png';
@@ -184,25 +213,47 @@ function safeSessionName(name: string): string {
     return name.replace(/[^a-zA-Z0-9_\-. ]/g, '_').trim().slice(0, 64) || 'session';
 }
 
+/** Resolve the directory to save a session into — same folder as the PNG. */
+function sessionDir(pngFile: string): string {
+    const parts = pngFile.split('/');
+    const dir   = parts.length === 2 ? path.join(WORKSPACE_DIR, parts[0]) : WORKSPACE_DIR;
+    const abs   = path.resolve(dir);
+    if (!abs.startsWith(path.resolve(WORKSPACE_DIR))) throw new Error('Path traversal denied');
+    return dir;
+}
+
+/** Session identifier is "subdir/name" or "name". Resolve to an absolute .json path. */
+function resolveSessionPath(sessionId: string): string {
+    const parts = sessionId.split('/');
+    if (parts.length > 2 || parts.some(p => !p || p === '.' || p === '..')) {
+        throw new Error('Invalid session id');
+    }
+    const safeName  = safeSessionName(parts[parts.length - 1]);
+    const safeparts = parts.length === 2 ? [parts[0], safeName] : [safeName];
+    const fp  = path.join(WORKSPACE_DIR, ...safeparts) + '.json';
+    const abs = path.resolve(fp);
+    if (!abs.startsWith(path.resolve(WORKSPACE_DIR))) throw new Error('Path traversal denied');
+    return fp;
+}
+
 function saveSessionFile(session: SessionData): void {
     const name = safeSessionName(session.name);
+    const dir  = sessionDir(session.pngFile);
     fs.writeFileSync(
-        path.join(WORKSPACE_DIR, name + '.json'),
+        path.join(dir, name + '.json'),
         JSON.stringify({ ...session, name }, null, 2),
         'utf8',
     );
 }
 
-function loadSessionFile(name: string): SessionData {
-    const safe = safeSessionName(name);
-    const fp   = path.join(WORKSPACE_DIR, safe + '.json');
-    if (!fs.existsSync(fp)) throw new Error(`Session not found: ${name}`);
+function loadSessionFile(sessionId: string): SessionData {
+    const fp = resolveSessionPath(sessionId);
+    if (!fs.existsSync(fp)) throw new Error(`Session not found: ${sessionId}`);
     return JSON.parse(fs.readFileSync(fp, 'utf8')) as SessionData;
 }
 
-function deleteSessionFile(name: string): void {
-    const safe = safeSessionName(name);
-    const fp   = path.join(WORKSPACE_DIR, safe + '.json');
+function deleteSessionFile(sessionId: string): void {
+    const fp = resolveSessionPath(sessionId);
     if (fs.existsSync(fp)) fs.unlinkSync(fp);
 }
 
@@ -1127,21 +1178,44 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       const res  = await fetch('/workspace');
       const data = await res.json();
 
-      // Populate PNG picker
+      // Populate PNG picker — group by subdirectory
       const pp = document.getElementById('png-picker');
       if (data.pngs.length === 0) {
         pp.innerHTML = '<option value="">\u2014 drop PNGs into map-workspace/ \u2014</option>';
       } else {
-        pp.innerHTML = '<option value="">\u2014 select image \u2014</option>'
-          + data.pngs.map(f => '<option value="' + f + '">' + f + '</option>').join('');
+        const grouped = {};
+        for (const f of data.pngs) {
+          const parts = f.split('/');
+          const grp   = parts.length === 2 ? parts[0] : '';
+          const label = parts[parts.length - 1].replace(/\.[^.]+$/, '');
+          if (!grouped[grp]) grouped[grp] = [];
+          grouped[grp].push({ value: f, label });
+        }
+        let html = '<option value="">\u2014 select image \u2014</option>';
+        for (const [grp, items] of Object.entries(grouped)) {
+          if (grp) {
+            html += '<optgroup label="' + grp + '">';
+            for (const i of items)
+              html += '<option value="' + i.value + '">' + grp + ' \u2014 ' + i.label + '</option>';
+            html += '</optgroup>';
+          } else {
+            for (const i of items)
+              html += '<option value="' + i.value + '">' + i.label + '</option>';
+          }
+        }
+        pp.innerHTML = html;
       }
 
       // Populate session picker
       const sp = document.getElementById('session-picker');
       sp.innerHTML = '<option value="">Load session\u2026</option>'
-        + data.sessions.map(s =>
-            '<option value="' + s.name + '">' + s.name + ' \u00b7 ' + s.pngFile + '</option>'
-          ).join('');
+        + data.sessions.map(s => {
+            const parts = s.name.split('/');
+            const label = parts.length === 2
+              ? parts[0] + ' \u2014 ' + parts[1]
+              : s.name;
+            return '<option value="' + s.name + '">' + label + '</option>';
+          }).join('');
 
       // Restore active PNG if server already has one loaded
       if (restoreCurrentPng && data.currentPng) {
@@ -1183,8 +1257,11 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
         annotations = [];
         _undoStack = []; _redoStack = []; refreshUndoRedoButtons();
         renderAnnotationList();
-        // Default session name to image basename
-        document.getElementById('session-name').value = filename.replace(/[.][^.]+$/, '');
+        // Default session name: "Subdir - MapName" or just "MapName"
+        const fParts = filename.split('/');
+        const mapBase = fParts[fParts.length - 1].replace(/\.[^.]+$/, '');
+        document.getElementById('session-name').value =
+          fParts.length === 2 ? fParts[0] + ' - ' + mapBase : mapBase;
       }
 
       currentPngLoaded = true;
@@ -2451,7 +2528,9 @@ const server = http.createServer(async (req, res) => {
         res.end(JSON.stringify({
             pngs,
             sessions,
-            currentPng: currentPngPath ? path.basename(currentPngPath) : null,
+            currentPng: currentPngPath
+                ? path.relative(WORKSPACE_DIR, currentPngPath).replace(/\\/g, '/')
+                : null,
         }));
         return;
     }
