@@ -78,7 +78,7 @@ interface FilledShapeServer {
     id:        string;
     group:     string;
     mode:      'add' | 'subtract';
-    type:      'fill' | 'outline';
+    type:      'fill' | 'outline' | 'line';
     lineStyle: 'solid' | 'dashed';
     path:      string;  // potrace `d` captured at vW × vH
     vW:        number;
@@ -721,7 +721,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   <div id="draw-hint" style="display:none;padding:5px 14px 6px;background:rgba(255,224,102,0.06);
        border-bottom:1px solid rgba(255,224,102,0.18);flex-shrink:0">
     <div style="font-size:10.5px;color:#ffe066;line-height:1.6">
-      <b>Click</b> to place vertices &nbsp;\u00b7&nbsp; <b>Enter</b> or click first point to close<br>
+      <b>Click</b> to place vertices &nbsp;\u00b7&nbsp; <b>click first point</b> to close shape &nbsp;\u00b7&nbsp; <b>Enter</b> to finish open line<br>
       <b>Right-click</b> to remove last &nbsp;\u00b7&nbsp; <b>Esc</b> to cancel
     </div>
   </div>
@@ -974,6 +974,13 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
         <button class="fp-btn" data-draw-group="unclassified">Unclassified</button>
       </div>
     </div>
+    <div class="fp-row" id="fp-draw-type-row">
+      <div class="fp-label">Shape</div>
+      <div style="display:flex;gap:5px">
+        <button class="fp-type-btn active" id="fp-draw-type-outline">\u25a1 Outline</button>
+        <button class="fp-type-btn" id="fp-draw-type-fill">\u25a3 Fill</button>
+      </div>
+    </div>
     <div class="fp-row">
       <div class="fp-label">Line style</div>
       <div style="display:flex;gap:5px">
@@ -1042,6 +1049,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   let _drawPoints      = []; // [{x, y}] in current SVG user units
   let _drawCursor      = null; // rubber-band cursor pos
   let _drawCleanup     = null;
+  let _drawClosed      = false; // true when finished by snap-close, false for open line
 
   // ── slider wiring ────────────────────────────────────────────────────────
   const SLIDER_IDS = [
@@ -1534,8 +1542,9 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     if (fp) fp.style.display = 'none';
   }
 
-  function _finishDraw() {
+  function _finishDraw(closed = false) {
     if (_drawPoints.length < 2) { cancelDraw(); return; }
+    _drawClosed = closed;
     _clearDrawCanvas();
     if (_drawCleanup) { _drawCleanup(); _drawCleanup = null; }
     // Show the float panel group picker
@@ -1543,12 +1552,16 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     document.getElementById('fp-fill').style.display   = 'none';
     document.getElementById('fp-select').style.display = 'none';
     document.getElementById('fp-draw').style.display   = '';
+    // Shape type row only makes sense for closed shapes
+    document.getElementById('fp-draw-type-row').style.display = closed ? '' : 'none';
     // Reset active state
     document.querySelectorAll('[data-draw-group]').forEach(b => b.classList.remove('active'));
     document.querySelector('[data-draw-group="outlines"]').classList.add('active');
+    document.getElementById('fp-draw-type-outline').classList.add('active');
+    document.getElementById('fp-draw-type-fill').classList.remove('active');
     document.getElementById('fp-draw-ls-solid').classList.add('active');
     document.getElementById('fp-draw-ls-dashed').classList.remove('active');
-    // Position and show — match positionPanel() logic (floatPanel const not in scope here)
+    // Position and show
     const last  = _drawPoints[_drawPoints.length - 1];
     const svgEl = document.querySelector('#svg-overlay svg');
     if (svgEl && last) {
@@ -1589,7 +1602,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       if (_drawPoints.length >= 3) {
         const first = _drawPoints[0];
         if (Math.hypot(p.x - first.x, p.y - first.y) < r * 2.5) {
-          _finishDraw(); return;
+          _finishDraw(true); return; // closed shape
         }
       }
       _drawPoints.push(p);
@@ -1604,7 +1617,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 
     function onKeydown(ev) {
       if (interactionMode !== 'draw') return;
-      if (ev.key === 'Enter') { ev.preventDefault(); if (_drawPoints.length >= 2) _finishDraw(); }
+      if (ev.key === 'Enter') { ev.preventDefault(); if (_drawPoints.length >= 2) _finishDraw(false); } // open line
       if (ev.key === 'Escape') { ev.preventDefault(); cancelDraw(); }
     }
 
@@ -1628,6 +1641,14 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       btn.classList.add('active');
     });
   });
+  document.getElementById('fp-draw-type-outline').addEventListener('click', () => {
+    document.getElementById('fp-draw-type-outline').classList.add('active');
+    document.getElementById('fp-draw-type-fill').classList.remove('active');
+  });
+  document.getElementById('fp-draw-type-fill').addEventListener('click', () => {
+    document.getElementById('fp-draw-type-fill').classList.add('active');
+    document.getElementById('fp-draw-type-outline').classList.remove('active');
+  });
   document.getElementById('fp-draw-ls-solid').addEventListener('click', () => {
     document.getElementById('fp-draw-ls-solid').classList.add('active');
     document.getElementById('fp-draw-ls-dashed').classList.remove('active');
@@ -1638,16 +1659,18 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   });
   document.getElementById('fp-draw-confirm').addEventListener('click', () => {
     if (_drawPoints.length < 2) { hideFloatPanel(); return; }
-    const group = document.querySelector('[data-draw-group].active')?.dataset?.drawGroup || 'outlines';
+    const group    = document.querySelector('[data-draw-group].active')?.dataset?.drawGroup || 'outlines';
     const isDashed = document.getElementById('fp-draw-ls-dashed').classList.contains('active');
+    const wantFill = _drawClosed && document.getElementById('fp-draw-type-fill').classList.contains('active');
+    const type     = _drawClosed ? (wantFill ? 'fill' : 'outline') : 'line';
     const svgEl = document.querySelector('#svg-overlay svg');
     const vb = (svgEl?.getAttribute('viewBox') || '0 0 512 512').split(' ');
     const vW = parseFloat(vb[2]) || 512;
     const vH = parseFloat(vb[3]) || 512;
-    const d  = 'M ' + _drawPoints.map(p => p.x.toFixed(3) + ',' + p.y.toFixed(3)).join(' L ') + ' Z';
+    const d  = 'M ' + _drawPoints.map(p => p.x.toFixed(3) + ',' + p.y.toFixed(3)).join(' L ') + (_drawClosed ? ' Z' : '');
     snapshotForUndo();
     annotations.push({
-      kind: 'fill', id: 'ann-' + Date.now(), group, mode: 'add', type: 'outline',
+      kind: 'fill', id: 'ann-' + Date.now(), group, mode: 'add', type,
       lineStyle: isDashed ? 'dashed' : 'solid',
       path: d, vW, vH,
     });
@@ -2611,7 +2634,7 @@ function injectAnnotations(svg: string, annotations: AnnotationServer[]): string
 
     for (const ann of annotations) {
         if (ann.kind === 'fill') {
-            const isOutline = ann.type === 'outline';
+            const isOutline = ann.type === 'outline' || ann.type === 'line';
             let attrs: string;
             if (isOutline) {
                 const cls = (ann.lineStyle === 'dashed') ? 'ann-outline-dashed' : 'ann-outline';
