@@ -477,7 +477,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 }
 /* Outline paths stay stroke-only even in select mode (no fill wash) */
 #svg-overlay.select-mode #outlines path,
-#svg-overlay.select-mode #outlines polygon { fill: none !important; }
+#svg-overlay.select-mode #outlines polygon { fill: none !important; pointer-events: stroke !important; }
 /* Hover highlight */
 #svg-overlay.select-mode path:hover,
 #svg-overlay.select-mode polygon:hover {
@@ -496,6 +496,17 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 #svg-overlay .path-dragging { cursor: grabbing !important; filter: drop-shadow(0 0 8px rgba(255,160,0,0.9)) !important; opacity: 0.85; }
 
 /* vertex edit mode */
+/* draw mode */
+#svg-overlay.draw-mode { pointer-events: auto; cursor: crosshair; }
+#svg-overlay.draw-mode svg { pointer-events: auto; overflow: visible; }
+#svg-overlay.draw-mode path,
+#svg-overlay.draw-mode polygon { pointer-events: none !important; }
+.draw-preview-line { stroke: #ffe066; stroke-width: 1.5; stroke-dasharray: 5 3; fill: none; }
+.draw-rubber-band  { stroke: rgba(255,224,102,0.55); stroke-width: 1; stroke-dasharray: 3 2; fill: none; }
+.draw-preview-pt   { fill: #ffe066; stroke: #1f1f1f; stroke-width: 1; }
+.draw-preview-pt.snap-target { fill: #ff4444; stroke: #fff; stroke-width: 1.5; }
+
+/* vertex edit mode */
 #svg-overlay.vertex-mode { pointer-events: auto; cursor: default; }
 #svg-overlay.vertex-mode svg { pointer-events: auto; overflow: visible; }
 #svg-overlay.vertex-mode path,
@@ -503,7 +514,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   fill: rgba(0,0,0,0) !important; pointer-events: all !important; cursor: pointer;
 }
 #svg-overlay.vertex-mode #outlines path,
-#svg-overlay.vertex-mode #outlines polygon { fill: none !important; }
+#svg-overlay.vertex-mode #outlines polygon { fill: none !important; pointer-events: stroke !important; }
 #svg-overlay.vertex-mode path:hover,
 #svg-overlay.vertex-mode polygon:hover {
   filter: drop-shadow(0 0 4px rgba(176,123,232,0.8));
@@ -685,6 +696,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     <button class="mode-btn active" id="btn-fill-mode">\u2728&nbsp; Magic Wand</button>
     <button class="mode-btn" id="btn-select-mode">\u26f6&nbsp; Select / Move</button>
     <button class="mode-btn" id="btn-vertex-mode">\u25ce&nbsp; Vertex Edit</button>
+    <button class="mode-btn" id="btn-draw-mode">&#x270f;&nbsp; Draw Shape</button>
   </div>
 
   <!-- Select mode hint banner -->
@@ -702,6 +714,15 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     <div style="font-size:10.5px;color:#b07be8;line-height:1.6">
       <b>Click</b> any path to activate node editing<br>
       <b>Drag</b> points to move, <b>right-click</b> a point to delete, <b>hover/click</b> a line to add
+    </div>
+  </div>
+
+  <!-- Draw Shape hint banner -->
+  <div id="draw-hint" style="display:none;padding:5px 14px 6px;background:rgba(255,224,102,0.06);
+       border-bottom:1px solid rgba(255,224,102,0.18);flex-shrink:0">
+    <div style="font-size:10.5px;color:#ffe066;line-height:1.6">
+      <b>Click</b> to place vertices &nbsp;\u00b7&nbsp; <b>Enter</b> or click first point to close<br>
+      <b>Right-click</b> to remove last &nbsp;\u00b7&nbsp; <b>Esc</b> to cancel
     </div>
   </div>
 
@@ -939,6 +960,33 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     </div>
   </div>
 
+  <!-- draw variant -->
+  <div id="fp-draw" style="display:none">
+    <h3>New Shape</h3>
+    <div class="fp-row">
+      <div class="fp-label">Layer</div>
+      <div class="fp-layer-btns">
+        <button class="fp-btn active" data-draw-group="outlines">Outlines</button>
+        <button class="fp-btn" data-draw-group="walls">Walls</button>
+        <button class="fp-btn" data-draw-group="thickerWalls">Thick Walls</button>
+        <button class="fp-btn" data-draw-group="inaccessible">Inaccessible</button>
+        <button class="fp-btn" data-draw-group="stairs">Stairs</button>
+        <button class="fp-btn" data-draw-group="unclassified">Unclassified</button>
+      </div>
+    </div>
+    <div class="fp-row">
+      <div class="fp-label">Line style</div>
+      <div style="display:flex;gap:5px">
+        <button class="fp-type-btn active" id="fp-draw-ls-solid">\u2014 Solid</button>
+        <button class="fp-type-btn" id="fp-draw-ls-dashed">- - Dashed</button>
+      </div>
+    </div>
+    <div class="fp-actions">
+      <button class="fp-confirm" id="fp-draw-confirm">Add Shape</button>
+      <button class="fp-discard" id="fp-draw-discard">Discard</button>
+    </div>
+  </div>
+
   <!-- select/reassign/exclude variant -->
   <div id="fp-select" style="display:none">
     <h3>Edit path</h3>
@@ -986,10 +1034,14 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   // ── module state ─────────────────────────────────────────────────────────
   let currentPngLoaded = false;
   let annotations      = []; // AnnotationServer[]
-  let interactionMode  = 'fill'; // 'fill' | 'select' | 'outline'
+  let interactionMode  = 'fill'; // 'fill' | 'select' | 'vertex' | 'draw'
   let _undoStack       = []; // JSON snapshots (max 50) for Ctrl+Z
   let _redoStack       = []; // JSON snapshots for Ctrl+Y
   let _lastStats       = { outlines: 0, walls: 0, thickerWalls: 0, unclassified: 0 };
+  // draw-shape mode state
+  let _drawPoints      = []; // [{x, y}] in current SVG user units
+  let _drawCursor      = null; // rubber-band cursor pos
+  let _drawCleanup     = null;
 
   // ── slider wiring ────────────────────────────────────────────────────────
   const SLIDER_IDS = [
@@ -1364,16 +1416,20 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   document.getElementById('btn-fill-mode').addEventListener('click',   () => setMode('fill'));
   document.getElementById('btn-select-mode').addEventListener('click', () => setMode('select'));
   document.getElementById('btn-vertex-mode').addEventListener('click', () => setMode('vertex'));
+  document.getElementById('btn-draw-mode').addEventListener('click',   () => setMode('draw'));
 
   function setMode(mode) {
     interactionMode = mode;
     document.getElementById('btn-fill-mode').classList.toggle('active',   mode === 'fill');
     document.getElementById('btn-select-mode').classList.toggle('active', mode === 'select');
     document.getElementById('btn-vertex-mode').classList.toggle('active', mode === 'vertex');
+    document.getElementById('btn-draw-mode').classList.toggle('active',   mode === 'draw');
     svgOverlay.classList.toggle('select-mode', mode === 'select');
     svgOverlay.classList.toggle('vertex-mode', mode === 'vertex');
+    svgOverlay.classList.toggle('draw-mode',   mode === 'draw');
     document.getElementById('select-hint').style.display = mode === 'select' ? '' : 'none';
     document.getElementById('vertex-hint').style.display = mode === 'vertex' ? '' : 'none';
+    document.getElementById('draw-hint').style.display   = mode === 'draw'   ? '' : 'none';
     if (mode !== 'select') {
       clearSelectHighlight();
       if (window._selectCleanup) { window._selectCleanup(); window._selectCleanup = null; }
@@ -1382,8 +1438,10 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       cancelVertexEdit();
       if (_vertexPickerCleanup) { _vertexPickerCleanup(); _vertexPickerCleanup = null; }
     }
+    if (mode !== 'draw') cancelDraw();
     if (mode === 'select') attachSelectListeners();
     if (mode === 'vertex') attachVertexPickerListeners();
+    if (mode === 'draw')   _attachDrawListeners();
     hideFloatPanel();
   }
 
@@ -1419,6 +1477,184 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   document.addEventListener('keydown', e => {
     if ((e.ctrlKey || e.metaKey) && !e.shiftKey && e.key === 'z') { e.preventDefault(); execUndo(); }
     if ((e.ctrlKey || e.metaKey) && (e.key === 'y' || (e.shiftKey && e.key === 'z'))) { e.preventDefault(); execRedo(); }
+  });
+
+  // ── draw-shape mode ──────────────────────────────────────────────────────
+  function _getDrawLayer() {
+    const svgEl = document.querySelector('#svg-overlay svg');
+    if (!svgEl) return null;
+    let g = svgEl.getElementById('draw-preview-layer');
+    if (!g) {
+      g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      g.id = 'draw-preview-layer';
+      svgEl.appendChild(g);
+    }
+    return g;
+  }
+
+  function _updateDrawCanvas() {
+    const g = _getDrawLayer();
+    if (!g) return;
+    const pts = _drawPoints;
+    const cur = _drawCursor;
+    const s   = getSvgScaleForVertex();
+    const r   = Math.max(1.5, 5 * Math.max(s.sx, s.sy));
+    const SNAP_THRESH = r * 2.5;
+    const nearFirst = pts.length >= 3 && cur &&
+      Math.hypot(cur.x - pts[0].x, cur.y - pts[0].y) < SNAP_THRESH;
+    let html = '';
+    if (pts.length >= 2) {
+      const d = 'M ' + pts.map(p => p.x.toFixed(2) + ',' + p.y.toFixed(2)).join(' L ');
+      html += `<path class="draw-preview-line" d="${d}"/>`;
+    }
+    if (pts.length >= 1 && cur) {
+      const last = pts[pts.length - 1];
+      html += `<line class="draw-rubber-band" x1="${last.x.toFixed(2)}" y1="${last.y.toFixed(2)}" x2="${cur.x.toFixed(2)}" y2="${cur.y.toFixed(2)}"/>`;
+    }
+    pts.forEach((p, i) => {
+      const snap = i === 0 && pts.length >= 3 && nearFirst;
+      const cls  = snap ? 'draw-preview-pt snap-target' : 'draw-preview-pt';
+      html += `<circle class="${cls}" cx="${p.x.toFixed(2)}" cy="${p.y.toFixed(2)}" r="${r}"/>`;
+    });
+    g.innerHTML = html;
+  }
+
+  function _clearDrawCanvas() {
+    const svgEl = document.querySelector('#svg-overlay svg');
+    if (!svgEl) return;
+    const g = svgEl.getElementById('draw-preview-layer');
+    if (g) g.remove();
+  }
+
+  function cancelDraw() {
+    _drawPoints = []; _drawCursor = null;
+    _clearDrawCanvas();
+    if (_drawCleanup) { _drawCleanup(); _drawCleanup = null; }
+    const fp = document.getElementById('fp-draw');
+    if (fp) fp.style.display = 'none';
+  }
+
+  function _finishDraw() {
+    if (_drawPoints.length < 2) { cancelDraw(); return; }
+    _clearDrawCanvas();
+    if (_drawCleanup) { _drawCleanup(); _drawCleanup = null; }
+    // Show the float panel group picker — reuse existing float-panel positioning
+    const panel = document.getElementById('float-panel');
+    document.getElementById('fp-fill').style.display = 'none';
+    document.getElementById('fp-select').style.display = 'none';
+    document.getElementById('fp-draw').style.display = '';
+    // Reset active state
+    document.querySelectorAll('[data-draw-group]').forEach(b => b.classList.remove('active'));
+    document.querySelector('[data-draw-group="outlines"]').classList.add('active');
+    document.getElementById('fp-draw-ls-solid').classList.add('active');
+    document.getElementById('fp-draw-ls-dashed').classList.remove('active');
+    panel.style.display = '';
+    // Anchor panel near the last placed point
+    const last = _drawPoints[_drawPoints.length - 1];
+    const svgEl = document.querySelector('#svg-overlay svg');
+    if (svgEl && last) {
+      const rect = svgEl.getBoundingClientRect();
+      const s    = getSvgScaleForVertex();
+      const cx   = rect.left + last.x / s.sx;
+      const cy   = rect.top  + last.y / s.sy;
+      panel.style.left = (cx + 20) + 'px';
+      panel.style.top  = (cy - 20) + 'px';
+    }
+  }
+
+  // Draw mode canvas listeners (attached/removed when mode switches)
+  function _attachDrawListeners() {
+    if (_drawCleanup) { _drawCleanup(); _drawCleanup = null; }
+    const cw = document.getElementById('canvas-wrap');
+
+    function onMousemove(ev) {
+      if (interactionMode !== 'draw') return;
+      _drawCursor = clientToSvgPoint(ev);
+      _updateDrawCanvas();
+    }
+
+    function onClick(ev) {
+      if (interactionMode !== 'draw') return;
+      if (ev.button !== 0) return;
+      if (ev.target.closest('#float-panel')) return;
+      const p = clientToSvgPoint(ev);
+      const s = getSvgScaleForVertex();
+      const r = Math.max(1.5, 5 * Math.max(s.sx, s.sy));
+      // Snap-close if clicking near first vertex
+      if (_drawPoints.length >= 3) {
+        const first = _drawPoints[0];
+        if (Math.hypot(p.x - first.x, p.y - first.y) < r * 2.5) {
+          _finishDraw(); return;
+        }
+      }
+      _drawPoints.push(p);
+      _updateDrawCanvas();
+    }
+
+    function onContextmenu(ev) {
+      if (interactionMode !== 'draw') return;
+      ev.preventDefault();
+      if (_drawPoints.length > 0) { _drawPoints.pop(); _updateDrawCanvas(); }
+    }
+
+    function onKeydown(ev) {
+      if (interactionMode !== 'draw') return;
+      if (ev.key === 'Enter') { ev.preventDefault(); if (_drawPoints.length >= 2) _finishDraw(); }
+      if (ev.key === 'Escape') { ev.preventDefault(); cancelDraw(); }
+    }
+
+    cw.addEventListener('mousemove', onMousemove);
+    cw.addEventListener('click', onClick);
+    cw.addEventListener('contextmenu', onContextmenu);
+    document.addEventListener('keydown', onKeydown);
+
+    _drawCleanup = () => {
+      cw.removeEventListener('mousemove', onMousemove);
+      cw.removeEventListener('click', onClick);
+      cw.removeEventListener('contextmenu', onContextmenu);
+      document.removeEventListener('keydown', onKeydown);
+    };
+  }
+
+  // Wire up draw float panel
+  document.querySelectorAll('[data-draw-group]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-draw-group]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+  document.getElementById('fp-draw-ls-solid').addEventListener('click', () => {
+    document.getElementById('fp-draw-ls-solid').classList.add('active');
+    document.getElementById('fp-draw-ls-dashed').classList.remove('active');
+  });
+  document.getElementById('fp-draw-ls-dashed').addEventListener('click', () => {
+    document.getElementById('fp-draw-ls-dashed').classList.add('active');
+    document.getElementById('fp-draw-ls-solid').classList.remove('active');
+  });
+  document.getElementById('fp-draw-confirm').addEventListener('click', () => {
+    if (_drawPoints.length < 2) { hideFloatPanel(); return; }
+    const group = document.querySelector('[data-draw-group].active')?.dataset?.drawGroup || 'outlines';
+    const isDashed = document.getElementById('fp-draw-ls-dashed').classList.contains('active');
+    const svgEl = document.querySelector('#svg-overlay svg');
+    const vb = (svgEl?.getAttribute('viewBox') || '0 0 512 512').split(' ');
+    const vW = parseFloat(vb[2]) || 512;
+    const vH = parseFloat(vb[3]) || 512;
+    const d  = 'M ' + _drawPoints.map(p => p.x.toFixed(3) + ',' + p.y.toFixed(3)).join(' L ') + ' Z';
+    snapshotForUndo();
+    annotations.push({
+      kind: 'fill', id: 'ann-' + Date.now(), group, mode: 'add', type: 'outline',
+      lineStyle: isDashed ? 'dashed' : 'solid',
+      path: d, vW, vH,
+    });
+    _drawPoints = []; _drawCursor = null;
+    hideFloatPanel();
+    renderAnnotationList();
+    process({ ...getConfig(), skipWalls: true });
+  });
+  document.getElementById('fp-draw-discard').addEventListener('click', () => {
+    _drawPoints = []; _drawCursor = null;
+    hideFloatPanel();
+    _attachDrawListeners(); // re-arm so user can keep drawing
   });
 
   // ── fill interaction ─────────────────────────────────────────────────────
