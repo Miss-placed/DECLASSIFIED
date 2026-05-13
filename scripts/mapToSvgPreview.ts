@@ -1189,7 +1189,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 
       currentPngLoaded = true;
       setStatus('', 'Image loaded \u2014 ' + filename);
-      process(getConfig());
+      process({ ...getConfig(), skipWalls: true });
     } catch (err) {
       setStatus('error', 'Load failed: ' + err.message);
     }
@@ -1255,7 +1255,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       document.getElementById('session-name').value = session.name;
       currentPngLoaded = true;
       setStatus('', 'Session loaded: ' + session.name);
-      process(getConfig());
+      process({ ...getConfig(), skipWalls: true });
     } catch (err) {
       setStatus('error', 'Load failed: ' + err.message);
     }

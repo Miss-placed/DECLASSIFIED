@@ -76,6 +76,7 @@ export interface MapConfig {
     minPathArea: number;
     minUnclassified: number;
     maxSize: number;
+    skipWalls?: boolean;
 }
 
 export const defaultConfig: MapConfig = {
@@ -399,28 +400,30 @@ export async function processMap(
         .sort((a, b) => b.bbox.area - a.bbox.area)
         .slice(0, 1);
 
-    // Pass 2: luminance threshold → wall classification
-    const wallBitmap = await wallPass(maskedBuffer, cfg);
-    const wallSvg = await trace(wallBitmap, {
-        turdSize: cfg.wallTurd,
-        optTolerance: 0.2,
-        alphaMax: 0.5,
-    });
-    const wallSubpaths = extractSubpaths(wallSvg);
-
+    // Pass 2: luminance threshold → wall classification (skipped on initial load)
     const walls: string[] = [];
     const thickerWalls: string[] = [];
     const unclassified: string[] = [];
     let skipped = 0;
 
-    for (const d of wallSubpaths) {
-        const bbox = estimateBBox(d);
-        const group = classifyEdgePath(bbox, imageArea, cfg);
-        switch (group) {
-            case 'wall': walls.push(d); break;
-            case 'thickerWall': thickerWalls.push(d); break;
-            case 'unclassified': unclassified.push(d); break;
-            case 'skip': skipped++; break;
+    if (!cfg.skipWalls) {
+        const wallBitmap = await wallPass(maskedBuffer, cfg);
+        const wallSvg = await trace(wallBitmap, {
+            turdSize: cfg.wallTurd,
+            optTolerance: 0.2,
+            alphaMax: 0.5,
+        });
+        const wallSubpaths = extractSubpaths(wallSvg);
+
+        for (const d of wallSubpaths) {
+            const bbox = estimateBBox(d);
+            const group = classifyEdgePath(bbox, imageArea, cfg);
+            switch (group) {
+                case 'wall': walls.push(d); break;
+                case 'thickerWall': thickerWalls.push(d); break;
+                case 'unclassified': unclassified.push(d); break;
+                case 'skip': skipped++; break;
+            }
         }
     }
 
