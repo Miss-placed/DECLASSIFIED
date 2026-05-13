@@ -1505,16 +1505,16 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     let html = '';
     if (pts.length >= 2) {
       const d = 'M ' + pts.map(p => p.x.toFixed(2) + ',' + p.y.toFixed(2)).join(' L ');
-      html += `<path class="draw-preview-line" d="${d}"/>`;
+      html += '<path class="draw-preview-line" d="' + d + '"/>';
     }
     if (pts.length >= 1 && cur) {
       const last = pts[pts.length - 1];
-      html += `<line class="draw-rubber-band" x1="${last.x.toFixed(2)}" y1="${last.y.toFixed(2)}" x2="${cur.x.toFixed(2)}" y2="${cur.y.toFixed(2)}"/>`;
+      html += '<line class="draw-rubber-band" x1="' + last.x.toFixed(2) + '" y1="' + last.y.toFixed(2) + '" x2="' + cur.x.toFixed(2) + '" y2="' + cur.y.toFixed(2) + '"/>';
     }
     pts.forEach((p, i) => {
       const snap = i === 0 && pts.length >= 3 && nearFirst;
       const cls  = snap ? 'draw-preview-pt snap-target' : 'draw-preview-pt';
-      html += `<circle class="${cls}" cx="${p.x.toFixed(2)}" cy="${p.y.toFixed(2)}" r="${r}"/>`;
+      html += '<circle class="' + cls + '" cx="' + p.x.toFixed(2) + '" cy="' + p.y.toFixed(2) + '" r="' + r + '"/>';
     });
     g.innerHTML = html;
   }
