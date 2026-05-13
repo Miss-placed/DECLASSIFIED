@@ -989,6 +989,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   let interactionMode  = 'fill'; // 'fill' | 'select' | 'outline'
   let _undoStack       = []; // JSON snapshots (max 50) for Ctrl+Z
   let _redoStack       = []; // JSON snapshots for Ctrl+Y
+  let _lastStats       = { outlines: 0, walls: 0, thickerWalls: 0, unclassified: 0 };
 
   // ── slider wiring ────────────────────────────────────────────────────────
   const SLIDER_IDS = [
@@ -1163,21 +1164,31 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
         process({ ...getConfig(), skipWalls: true });
       })
     );
-    // Update inaccessible/stairs counts from fills
-    document.getElementById('lc-inaccessible').textContent =
-      fills.filter(a => a.group === 'inaccessible').length || '\u2014';
-    document.getElementById('lc-stairs').textContent =
-      fills.filter(a => a.group === 'stairs').length || '\u2014';
+    // Update layer counts including annotation fills
+    refreshLayerCounts();
   }
 
   function updateStats(stats) {
+    _lastStats = { outlines: stats.outlines, walls: stats.walls, thickerWalls: stats.thickerWalls, unclassified: stats.unclassified };
     document.getElementById('wall-count').textContent      = stats.walls;
     document.getElementById('thick-count').textContent     = stats.thickerWalls;
     document.getElementById('unclass-count').textContent   = stats.unclassified;
-    document.getElementById('lc-outlines').textContent     = stats.outlines;
-    document.getElementById('lc-walls').textContent        = stats.walls;
-    document.getElementById('lc-thicker').textContent      = stats.thickerWalls;
-    document.getElementById('lc-unclassified').textContent = stats.unclassified;
+    refreshLayerCounts();
+  }
+
+  function refreshLayerCounts() {
+    const fills = annotations.filter(a => a.kind === 'fill');
+    const byGroup = g => fills.filter(a => a.group === g).length;
+    const lc = (id, base, extra) => {
+      const total = (base || 0) + extra;
+      document.getElementById(id).textContent = total || '\u2014';
+    };
+    lc('lc-outlines',    _lastStats.outlines,      byGroup('outlines'));
+    lc('lc-walls',       _lastStats.walls,          byGroup('walls'));
+    lc('lc-thicker',     _lastStats.thickerWalls,   byGroup('thickerWalls'));
+    lc('lc-unclassified',_lastStats.unclassified,   byGroup('unclassified'));
+    lc('lc-inaccessible',0,                          byGroup('inaccessible'));
+    lc('lc-stairs',      0,                          byGroup('stairs'));
   }
 
   // ── workspace & PNG management ───────────────────────────────────────────
