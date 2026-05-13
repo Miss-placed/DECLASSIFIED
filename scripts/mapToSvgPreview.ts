@@ -471,13 +471,15 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 #svg-overlay.select-mode { pointer-events: auto; cursor: default; }
 #svg-overlay.select-mode svg { pointer-events: auto; overflow: visible; }
 /* Give all paths a transparent fill so stroke-only paths are still click/hover-hittable */
-#svg-overlay.select-mode path,
-#svg-overlay.select-mode polygon {
+#svg-overlay.select-mode path:not(.ann-fill),
+#svg-overlay.select-mode polygon:not(.ann-fill) {
   fill: rgba(0,0,0,0) !important; pointer-events: all !important; cursor: grab;
 }
+#svg-overlay.select-mode path.ann-fill,
+#svg-overlay.select-mode polygon.ann-fill { pointer-events: all !important; cursor: grab; }
 /* Outline paths stay stroke-only even in select mode (no fill wash) */
-#svg-overlay.select-mode #outlines path,
-#svg-overlay.select-mode #outlines polygon { fill: none !important; pointer-events: stroke !important; }
+#svg-overlay.select-mode #outlines path:not(.ann-fill),
+#svg-overlay.select-mode #outlines polygon:not(.ann-fill) { fill: none !important; pointer-events: stroke !important; }
 /* Hover highlight */
 #svg-overlay.select-mode path:hover,
 #svg-overlay.select-mode polygon:hover {
@@ -485,8 +487,8 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   stroke: #5ba4e6 !important; stroke-width: 2.5 !important; stroke-opacity: 0.9 !important;
   fill: rgba(91,164,230,0.08) !important;
 }
-#svg-overlay.select-mode #outlines path:hover,
-#svg-overlay.select-mode #outlines polygon:hover { fill: none !important; }
+#svg-overlay.select-mode #outlines path:not(.ann-fill):hover,
+#svg-overlay.select-mode #outlines polygon:not(.ann-fill):hover { fill: none !important; }
 /* Non-interactive zones in select mode */
 #svg-overlay.select-mode #pending path,
 #svg-overlay.select-mode #pending polygon { pointer-events: none !important; cursor: default; }
@@ -509,12 +511,14 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 /* vertex edit mode */
 #svg-overlay.vertex-mode { pointer-events: auto; cursor: default; }
 #svg-overlay.vertex-mode svg { pointer-events: auto; overflow: visible; }
-#svg-overlay.vertex-mode path,
-#svg-overlay.vertex-mode polygon {
+#svg-overlay.vertex-mode path:not(.ann-fill),
+#svg-overlay.vertex-mode polygon:not(.ann-fill) {
   fill: rgba(0,0,0,0) !important; pointer-events: all !important; cursor: pointer;
 }
-#svg-overlay.vertex-mode #outlines path,
-#svg-overlay.vertex-mode #outlines polygon { fill: none !important; pointer-events: stroke !important; }
+#svg-overlay.vertex-mode path.ann-fill,
+#svg-overlay.vertex-mode polygon.ann-fill { pointer-events: all !important; cursor: pointer; }
+#svg-overlay.vertex-mode #outlines path:not(.ann-fill),
+#svg-overlay.vertex-mode #outlines polygon:not(.ann-fill) { fill: none !important; pointer-events: stroke !important; }
 #svg-overlay.vertex-mode path:hover,
 #svg-overlay.vertex-mode polygon:hover {
   filter: drop-shadow(0 0 4px rgba(176,123,232,0.8));
@@ -1678,6 +1682,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     hideFloatPanel();
     renderAnnotationList();
     process({ ...getConfig(), skipWalls: true });
+    _attachDrawListeners(); // re-arm so user can draw another shape immediately
   });
   document.getElementById('fp-draw-discard').addEventListener('click', () => {
     _drawPoints = []; _drawCursor = null;
@@ -2460,14 +2465,19 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     document.getElementById('fp-fill').style.display   = 'none';
     document.getElementById('fp-select').style.display = '';
     document.getElementById('fp-select-current').textContent = 'Currently in: ' + fromGroup;
-    selPathType  = 'line';
-    selLineStyle = 'solid';
+    // Pre-populate type from the selected element's class
+    const elCls = selectedPathEl ? selectedPathEl.getAttribute('class') || '' : '';
+    if (elCls.includes('ann-fill'))            selPathType = 'fill';
+    else if (elCls.includes('ann-outline-dashed')) { selPathType = 'outline'; selLineStyle = 'dashed'; }
+    else if (elCls.includes('ann-outline'))    { selPathType = 'outline'; selLineStyle = 'solid'; }
+    else                                       { selPathType = 'line';    selLineStyle = 'solid'; }
     SEL_TYPE_IDS.forEach(id => document.getElementById(id).classList.remove('active', 'excl-active'));
-    document.getElementById('fp-sel-type-line').classList.add('active');
+    const activeTypeId = selPathType === 'fill' ? 'fp-sel-type-fill' : selPathType === 'exclude' ? 'fp-sel-type-exclude' : 'fp-sel-type-line';
+    document.getElementById(activeTypeId).classList.add('active');
     document.getElementById('fp-excl-hint').style.display     = 'none';
     document.getElementById('fp-sel-layer-row').style.display = '';
-    document.getElementById('fp-sel-ls-solid').classList.add('active');
-    document.getElementById('fp-sel-ls-dashed').classList.remove('active');
+    document.getElementById('fp-sel-ls-solid').classList.toggle('active', selLineStyle !== 'dashed');
+    document.getElementById('fp-sel-ls-dashed').classList.toggle('active', selLineStyle === 'dashed');
     document.querySelectorAll('.fp-layer-btn').forEach(b => b.classList.remove('active'));
     selectedToGroup = null;
     updateSelLineStyleVisibility();
@@ -2623,7 +2633,7 @@ function injectAnnotations(svg: string, annotations: AnnotationServer[]): string
     if (!svg.includes('ann-outline'))
         svg = svg.replace(
             '  </style>',
-            `    path.ann-outline        { fill: none !important; stroke: #7ecfff; stroke-width: 1.5; }\n    path.ann-outline-dashed { fill: none !important; stroke: #7ecfff; stroke-width: 1.5; stroke-dasharray: 5 2; }\n  </style>`,
+            `    path.ann-outline        { fill: none !important; stroke: #7ecfff; stroke-width: 1.5; }\n    path.ann-outline-dashed { fill: none !important; stroke: #7ecfff; stroke-width: 1.5; stroke-dasharray: 5 2; }\n    path.ann-fill           { pointer-events: all; }\n    #outlines path.ann-fill     { fill: #ff3333 !important; stroke: none; }\n    #walls path.ann-fill        { fill: #888888 !important; stroke: none; }\n    #thickerWalls path.ann-fill { fill: #aaaaaa !important; stroke: none; }\n    #inaccessible path.ann-fill { fill: #7C2728 !important; stroke: none; }\n    #stairs path.ann-fill       { fill: #00ccff !important; stroke: none; }\n    #unclassified path.ann-fill { fill: #ffcc00 !important; stroke: none; }\n  </style>`,
         );
 
     if (!svg.includes('map-boundary-path'))
@@ -2640,7 +2650,7 @@ function injectAnnotations(svg: string, annotations: AnnotationServer[]): string
                 const cls = (ann.lineStyle === 'dashed') ? 'ann-outline-dashed' : 'ann-outline';
                 attrs = ` class="${cls}"`;
             } else if (ann.mode === 'subtract') attrs = ' class="subtract"';
-            else                        attrs = '';
+            else                        attrs = ' class="ann-fill"';
             let pathEl = `    <path${attrs} d="${ann.path}"/>`;
             if (ann.vW && ann.vH && currentVW && currentVH &&
                 (Math.abs(ann.vW - currentVW) > 1 || Math.abs(ann.vH - currentVH) > 1)) {
