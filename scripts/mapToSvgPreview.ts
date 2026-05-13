@@ -1538,28 +1538,33 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     if (_drawPoints.length < 2) { cancelDraw(); return; }
     _clearDrawCanvas();
     if (_drawCleanup) { _drawCleanup(); _drawCleanup = null; }
-    // Show the float panel group picker — reuse existing float-panel positioning
+    // Show the float panel group picker
     const panel = document.getElementById('float-panel');
-    document.getElementById('fp-fill').style.display = 'none';
+    document.getElementById('fp-fill').style.display   = 'none';
     document.getElementById('fp-select').style.display = 'none';
-    document.getElementById('fp-draw').style.display = '';
+    document.getElementById('fp-draw').style.display   = '';
     // Reset active state
     document.querySelectorAll('[data-draw-group]').forEach(b => b.classList.remove('active'));
     document.querySelector('[data-draw-group="outlines"]').classList.add('active');
     document.getElementById('fp-draw-ls-solid').classList.add('active');
     document.getElementById('fp-draw-ls-dashed').classList.remove('active');
-    panel.style.display = '';
-    // Anchor panel near the last placed point
-    const last = _drawPoints[_drawPoints.length - 1];
+    // Position and show — match positionPanel() logic (floatPanel const not in scope here)
+    const last  = _drawPoints[_drawPoints.length - 1];
     const svgEl = document.querySelector('#svg-overlay svg');
     if (svgEl && last) {
       const rect = svgEl.getBoundingClientRect();
       const s    = getSvgScaleForVertex();
       const cx   = rect.left + last.x / s.sx;
       const cy   = rect.top  + last.y / s.sy;
-      panel.style.left = (cx + 20) + 'px';
-      panel.style.top  = (cy - 20) + 'px';
+      const W = 252, H = panel.scrollHeight || 220;
+      const vw = window.innerWidth, vh = window.innerHeight;
+      let left = cx + 14, top = cy + 14;
+      if (left + W > vw - 8) left = cx - W - 14;
+      if (top  + H > vh - 8) top  = cy - H - 14;
+      panel.style.left = Math.max(4, left) + 'px';
+      panel.style.top  = Math.max(4, top)  + 'px';
     }
+    panel.classList.add('visible');
   }
 
   // Draw mode canvas listeners (attached/removed when mode switches)
