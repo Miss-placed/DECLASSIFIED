@@ -981,6 +981,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   let interactionMode  = 'fill'; // 'fill' | 'select' | 'outline'
   let _undoStack       = []; // JSON snapshots (max 50) for Ctrl+Z
   let _redoStack       = []; // JSON snapshots for Ctrl+Y
+  let _wallsGenerated  = false; // true once user deliberately triggers wall detection via a slider
 
   // ── slider wiring ────────────────────────────────────────────────────────
   const SLIDER_IDS = [
@@ -1152,7 +1153,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
         snapshotForUndo();
         annotations = annotations.filter(a => a.id !== e.currentTarget.dataset.id);
         renderAnnotationList();
-        process(getConfig());
+        process({ ...getConfig(), skipWalls: !_wallsGenerated });
       })
     );
     // Update inaccessible/stairs counts from fills
@@ -1256,6 +1257,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       if (resetAnnotations) {
         annotations = [];
         _undoStack = []; _redoStack = []; refreshUndoRedoButtons();
+        _wallsGenerated = false;
         renderAnnotationList();
         // Default session name: "Subdir - MapName" or just "MapName"
         const fParts = filename.split('/');
@@ -1327,6 +1329,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       // Restore annotations
       annotations = Array.isArray(session.annotations) ? session.annotations : [];
       _undoStack = []; _redoStack = []; refreshUndoRedoButtons();
+      _wallsGenerated = false;
       renderAnnotationList();
 
       document.getElementById('session-name').value = session.name;
@@ -1377,14 +1380,14 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     if (!_undoStack.length) return;
     _redoStack.push(JSON.stringify(annotations));
     annotations = JSON.parse(_undoStack.pop());
-    renderAnnotationList(); process(getConfig());
+    renderAnnotationList(); process({ ...getConfig(), skipWalls: !_wallsGenerated });
     refreshUndoRedoButtons();
   }
   function execRedo() {
     if (!_redoStack.length) return;
     _undoStack.push(JSON.stringify(annotations));
     annotations = JSON.parse(_redoStack.pop());
-    renderAnnotationList(); process(getConfig());
+    renderAnnotationList(); process({ ...getConfig(), skipWalls: !_wallsGenerated });
     refreshUndoRedoButtons();
   }
   function refreshUndoRedoButtons() {
@@ -1541,7 +1544,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       lineStyle: fillType === 'outline' ? fillLineStyle : 'solid',
       path: pendingFill.path, vW: pendingFill.vW, vH: pendingFill.vH,
     });
-    pendingFill = null; hideFloatPanel(); renderAnnotationList(); process(getConfig());
+    pendingFill = null; hideFloatPanel(); renderAnnotationList(); process({ ...getConfig(), skipWalls: !_wallsGenerated });
   });
   document.getElementById('fp-fill-discard').addEventListener('click', () => {
     pendingFill = null; clearPendingPath(); hideFloatPanel();
@@ -1950,7 +1953,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     annotations.push({ kind: 'reshape', id: 'ann-' + Date.now(), origD, newD, fromGroup: grp });
     cancelVertexEdit();
     renderAnnotationList();
-    process(getConfig());
+    process({ ...getConfig(), skipWalls: !_wallsGenerated });
   });
 
   document.getElementById('node-cancel-btn').addEventListener('click', () => {
@@ -2043,8 +2046,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
             d: dragOrigD, fromGroup: dragFromGroup, dx: dragDx, dy: dragDy,
           });
           renderAnnotationList();
-          process(getConfig());
-        } else if (!dragMoved) {
+          process({ ...getConfig(), skipWalls: !_wallsGenerated });
           // Pure click → show float panel
           selectPath(dragEl, dragFromGroup, dragOrigD);
           showSelectPanel(ev.clientX, ev.clientY, dragFromGroup);
@@ -2143,7 +2145,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
                           fromGroup: selectedFromGroup, toGroup: selectedToGroup, type: selPathType,
                           lineStyle: isLineLike ? selLineStyle : 'solid' });
     }
-    clearSelectHighlight(); hideFloatPanel(); renderAnnotationList(); process(getConfig());
+    clearSelectHighlight(); hideFloatPanel(); renderAnnotationList(); process({ ...getConfig(), skipWalls: !_wallsGenerated });
   });
   document.getElementById('fp-select-discard').addEventListener('click', () => {
     clearSelectHighlight(); hideFloatPanel();
@@ -2210,6 +2212,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   let debounceTimer = null, inFlight = false, pendingCfg = null;
 
   function scheduleProcess() {
+    _wallsGenerated = true; // slider-driven — user explicitly wants walls generated
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(() => process(getConfig()), 350);
   }
