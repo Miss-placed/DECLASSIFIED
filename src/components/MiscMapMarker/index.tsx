@@ -16,6 +16,7 @@ export const MiscMapMarker = ({
 	typeDesc,
 	loc,
 	img,
+	stepNumber,
 	linkedItems,
 	externalLinks,
 }: MiscMarker) => {
@@ -30,7 +31,8 @@ export const MiscMapMarker = ({
 		}
 	}, [sharedMapItemId, id, markerInstance, mapInstance]);
 
-	return loc !== null && loc.toString() === DefaultPOIData.nullLoc.toString() ? (
+	return loc !== null &&
+		loc.toString() === DefaultPOIData.nullLoc.toString() ? (
 		<></>
 	) : (
 		<Marker position={loc} icon={renderedIcon} ref={setPopupInstance}>
@@ -44,8 +46,10 @@ export const MiscMapMarker = ({
 					icon={icon}
 					img={img}
 					isMarker={true}
+					stepNumber={stepNumber}
 					linkedItems={linkedItems}
-					externalLinks={externalLinks} />
+					externalLinks={externalLinks}
+				/>
 			</StyledPopup>
 		</Marker>
 	);
@@ -63,8 +67,6 @@ export const renderLeafletIcon = (iconFileName?: string) => {
 	});
 };
 
-
-
 const StyledPopup = styled(Popup)`
 	background-color: var(--clr-bg-inverted);
 	border-radius: 12px !important;
@@ -80,5 +82,3 @@ const StyledPopup = styled(Popup)`
 		display: none !important;
 	}
 `;
-
-

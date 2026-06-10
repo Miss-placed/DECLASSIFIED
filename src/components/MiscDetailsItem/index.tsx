@@ -1,18 +1,26 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import { Accordion, AccordionDetails, AccordionSummary, Button, Paper, Tooltip, Typography } from "@mui/material";
-import { useContext, useState } from "react";
-import { useMapEvents } from "react-leaflet";
-import { DeclassifiedContext } from "../../contexts/DeclassifiedContext/declassifiedContextProvider";
-import { useUserContext } from "../../contexts/UserContext/userContextProvider";
-import { LegacyIcons } from "../../data/icons";
+import {
+	Accordion,
+	AccordionDetails,
+	AccordionSummary,
+	Button,
+	Paper,
+	Tooltip,
+	Typography,
+} from '@mui/material';
+import { useContext, useState } from 'react';
+import { useMapEvents } from 'react-leaflet';
+import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
+import { useUserContext } from '../../contexts/UserContext/userContextProvider';
+import { LegacyIcons } from '../../data/icons';
 import { DefaultPOIData } from '../../data/IntelTypes';
-import { GetMapById } from "../../data/maps/mapDetails";
-import { getMiscMarkerById } from "../../helpers/github";
-import { BugReportButton } from "../ActionButtons/BugReportButton";
-import { ShareButton } from "../ActionButtons/ShareButton";
-import { CustomImage } from "../CustomImage";
+import { GetMapById } from '../../data/maps/mapDetails';
+import { getMiscMarkerById } from '../../helpers/github';
+import { BugReportButton } from '../ActionButtons/BugReportButton';
+import { ShareButton } from '../ActionButtons/ShareButton';
+import { CustomImage } from '../CustomImage';
 
 export const MiscDetailItem = ({
 	id,
@@ -23,10 +31,13 @@ export const MiscDetailItem = ({
 	icon,
 	img,
 	isMarker = false,
+	stepNumber,
 	linkedItems,
-	externalLinks }) => {
+	externalLinks,
+}) => {
 	const { setSharedMapItemId } = useUserContext();
-	const { setCurrentMapWithValidation: setCurrentMap, currentMap } = useContext(DeclassifiedContext);
+	const { setCurrentMapWithValidation: setCurrentMap, currentMap } =
+		useContext(DeclassifiedContext);
 	const mapInstance = useMapEvents({});
 	const [expanded, setExpanded] = useState(false);
 	let miscItemResult = getMiscMarkerById(id!);
@@ -44,12 +55,12 @@ export const MiscDetailItem = ({
 	const iconSource = `assets/img/markers/${(icon ?? '').toLowerCase()}.${LegacyIcons[icon ?? ''] ? 'png' : 'svg'}`;
 	const ItemHasLocation = loc !== DefaultPOIData.nullLoc;
 	const ItemIsOnAnotherMap = miscMapId !== currentMap!.id;
-	if (typeDesc !== title) subheading.push(typeDesc)
-	if (!isMarker && miscItemMap && miscItemMap.title) subheading.push(miscItemMap.title)
+	const hasStepNumber = typeof stepNumber === 'number';
+	if (typeDesc !== title) subheading.push(typeDesc);
+	if (!isMarker && miscItemMap && miscItemMap.title)
+		subheading.push(miscItemMap.title);
 
 	return (
-
-
 		<StyledAccordion
 			defaultExpanded={isMarker}
 			onChange={() => setExpanded(!expanded)}
@@ -60,74 +71,97 @@ export const MiscDetailItem = ({
 				className={`misc-item-header`}
 				data-type={typeDesc}
 			>
-				<img
-					className="icon"
-					src={iconSource}
-					alt="Icon"
-				/>
-				<Typography variant="h2" className="miscItemTitle">
-					{title}
-				</Typography>
+				<img className="icon" src={iconSource} alt="Icon" />
+				<MiscTitleArea>
+					<Typography variant="h2" className="miscItemTitle">
+						{title}
+					</Typography>
+					{hasStepNumber ? <StepChip>Step {stepNumber}</StepChip> : null}
+				</MiscTitleArea>
 			</MiscItemSummary>
 			{isMarker || expanded ? (
 				<StyledAccordionDetails>
 					<CustomImage src={img} altText="Placeholder" />
 					<MiscDetailItemContainer>
-						<Subheading variant="h3">
-							{subheading.join(' - ')}
-						</Subheading>
-						<MiscDescription>
-							{desc.trim()}
-						</MiscDescription>
+						<Subheading variant="h3">{subheading.join(' - ')}</Subheading>
+						<MiscDescription>{desc.trim()}</MiscDescription>
 						{externalLinkArray.length > 0 || linkedItemsArray.length > 0 ? (
 							<LinksArea>
-								{externalLinkArray.length > 0 ? externalLinkArray.map((externalLink, index) => (
-									<a key={"ext:" + index} target="blank" href={"https://" + externalLink}>{externalLink}{index !== 0 ? ` #${index + 1}` : null}<br /></a>
-								)) : null}
+								{externalLinkArray.length > 0
+									? externalLinkArray.map((externalLink, index) => (
+											<a
+												key={'ext:' + index}
+												target="blank"
+												href={'https://' + externalLink}
+											>
+												{externalLink}
+												{index !== 0 ? ` #${index + 1}` : null}
+												<br />
+											</a>
+										))
+									: null}
 								{linkedItemsArray.length > 0 ? (
 									<>
 										<b>Related Markers</b>
 										<br />
 									</>
 								) : null}
-								{linkedItemsArray.length > 0 ? linkedItemsArray.map((internalItemId, index) => (
-									<a key={"int:" + index} target="blank" href={"/" + internalItemId}>Marker{index !== 0 ? ` #${index + 1}` : null}<br /></a>
-								)) : null}
+								{linkedItemsArray.length > 0
+									? linkedItemsArray.map((internalItemId, index) => (
+											<a
+												key={'int:' + index}
+												target="blank"
+												href={'/' + internalItemId}
+											>
+												Marker{index !== 0 ? ` #${index + 1}` : null}
+												<br />
+											</a>
+										))
+									: null}
 							</LinksArea>
 						) : null}
 						<ActionContainer>
-							{ItemHasLocation && miscItemMap?.mapCanRender ?
+							{ItemHasLocation && miscItemMap?.mapCanRender ? (
 								<Tooltip title="Locate on Map">
-									<Button onClick={async () => {
-										if (ItemIsOnAnotherMap) {
-											if (miscItemMap && miscItemMap.mapCanRender) {
-												var mapSetResult = await setCurrentMap(miscItemMap);
+									<Button
+										onClick={async () => {
+											if (ItemIsOnAnotherMap) {
+												if (miscItemMap && miscItemMap.mapCanRender) {
+													var mapSetResult = await setCurrentMap(miscItemMap);
 
-												if (mapSetResult) {
-													mapInstance.flyTo(loc, 4);
-													setSharedMapItemId(id);
+													if (mapSetResult) {
+														mapInstance.flyTo(loc, 4);
+														setSharedMapItemId(id);
+													}
 												}
+											} else {
+												mapInstance.flyTo(loc, 4);
+												setSharedMapItemId(id);
 											}
-										} else {
-											mapInstance.flyTo(loc, 4);
-											setSharedMapItemId(id);
-										}
-									}}>
+										}}
+									>
 										<LocationOnIcon htmlColor="var(--clr-blue)" />
 									</Button>
 								</Tooltip>
-								: <Button disabled>
+							) : (
+								<Button disabled>
 									<LocationOnIcon htmlColor="var(--clr-grey)" />
-								</Button>}
+								</Button>
+							)}
 							<ShareButton id={id} />
-							<BugReportButton id={id} typeDesc={icon} mapItem={miscItemMap} /> {/* TODO: standardise the typeDesc to all come from the same icon id store */}
+							<BugReportButton
+								id={id}
+								typeDesc={icon}
+								mapItem={miscItemMap}
+							/>{' '}
+							{/* TODO: standardise the typeDesc to all come from the same icon id store */}
 						</ActionContainer>
 					</MiscDetailItemContainer>
 				</StyledAccordionDetails>
 			) : null}
 		</StyledAccordion>
 	);
-}
+};
 
 const MiscDetailItemContainer = styled(Paper)`
 	background-color: unset;
@@ -169,6 +203,29 @@ const ActionContainer = styled.div`
 	}
 	display: flex;
 	justify-content: space-evenly;
+`;
+
+const MiscTitleArea = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4px;
+	flex: 1;
+	min-width: 0;
+`;
+
+const StepChip = styled.span`
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.1rem 0.45rem;
+	border-radius: 999px;
+	border: 1px solid var(--clr-grey-d);
+	background: var(--clr-grey-d);
+	color: var(--clr-white-d);
+	font-size: 0.7rem;
+	line-height: 1.2;
+	white-space: nowrap;
 `;
 
 const StyledAccordion = styled(Accordion)`
@@ -223,7 +280,6 @@ const MiscItemSummary = styled(AccordionSummary)`
 
 	.miscItemTitle {
 		margin: 0 auto;
-		white-space: nowrap;
 		overflow: hidden;
 		text-wrap: pretty;
 		text-align: center;
