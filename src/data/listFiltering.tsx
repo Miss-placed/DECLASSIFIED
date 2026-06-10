@@ -1,114 +1,129 @@
-import { MiscMarker } from "../classes";
-import { MapGroupItem } from "../components/MapControls/types";
-import { MapIds } from "./intel";
+import { MiscMarker } from '../classes';
+import { MapGroupItem } from '../components/MapControls/types';
+import { MapIds } from './intel';
 import { Faction, IntelItem, IntelType, Season } from './IntelTypes';
-import { allOutbreakMapsArr } from "./maps/mapDetails";
-import { MarkerStore } from "./types";
+import { allOutbreakMapsArr } from './maps/mapDetails';
+import { MarkerStore } from './types';
+
+export function getEggMarkerTypeLabel(marker: MiscMarker) {
+	const dossierCategory = (marker.dossierCategory ?? '').trim();
+	if (dossierCategory.toLowerCase() === 'powerups') {
+		return 'Power ups';
+	}
+	return dossierCategory || marker.typeDesc;
+}
 
 export function filterIntel(
-    collectedIntel,
-    currentMapGroup: MapGroupItem,
-    intelCache: IntelItem[],
-    searchTermDirty: string,
-    factionsArr: Faction[] = [],
-    seasonsArr: Season[] = [],
-    intelTypeArr: IntelType[] = [],
-    currentMapOnly: boolean,
-    collectedIntelFilter: string
+	collectedIntel,
+	currentMapGroup: MapGroupItem,
+	intelCache: IntelItem[],
+	searchTermDirty: string,
+	factionsArr: Faction[] = [],
+	seasonsArr: Season[] = [],
+	intelTypeArr: IntelType[] = [],
+	currentMapOnly: boolean,
+	collectedIntelFilter: string
 ) {
-    let results = intelCache;
+	let results = intelCache;
 
-    let searchTerm = searchTermDirty.trim().toLowerCase();
-    results = results.filter(intel => {
-        return (
-            intel.title.toLowerCase().indexOf(searchTerm.trim().toLowerCase()) !== -1
-        );
-    });
+	let searchTerm = searchTermDirty.trim().toLowerCase();
+	results = results.filter(intel => {
+		return (
+			intel.title.toLowerCase().indexOf(searchTerm.trim().toLowerCase()) !== -1
+		);
+	});
 
-    if (factionsArr.some(item => item)) {
-        results = results.filter(intel => {
-            return factionsArr.includes(intel.faction);
-        });
-    }
+	if (factionsArr.some(item => item)) {
+		results = results.filter(intel => {
+			return factionsArr.includes(intel.faction);
+		});
+	}
 
-    if (seasonsArr.some(item => item)) {
-        results = results.filter(intel => {
-            return seasonsArr.includes(intel.season);
-        });
-    }
+	if (seasonsArr.some(item => item)) {
+		results = results.filter(intel => {
+			return seasonsArr.includes(intel.season);
+		});
+	}
 
-    if (intelTypeArr.some(item => item)) {
-        results = results.filter(intel => {
-            return intelTypeArr.includes(intel.typeDesc);
-        });
-    }
+	if (intelTypeArr.some(item => item)) {
+		results = results.filter(intel => {
+			return intelTypeArr.includes(intel.typeDesc);
+		});
+	}
 
-    // if currentMapOnly then get current map ids and filter
-    if (currentMapOnly) {
-        results = results.filter(intel => {
-            return (
-                currentMapGroup.mapLayers.filter(map => map.id === intel.map || // if map is in current map group
-                    (map.id && intel.map === MapIds.allOutbreakMaps && allOutbreakMapsArr.includes(map.id))).length > 0 // or if map is an outbreak map and intel could be found in any outbreak map
-            );
-        });
-    }
-    // if (mapArr.some(item => item)) {
-    //     results = results.filter((intel) => {
-    //         return mapArr.includes(intel.map) || intel.map == mapDetails.allOutbreakMaps.id && mapArr.some((e) => { return allOutbreakMapsArr.includes(e) });
-    //     });
-    // }
+	// if currentMapOnly then get current map ids and filter
+	if (currentMapOnly) {
+		results = results.filter(intel => {
+			return (
+				currentMapGroup.mapLayers.filter(
+					map =>
+						map.id === intel.map || // if map is in current map group
+						(map.id &&
+							intel.map === MapIds.allOutbreakMaps &&
+							allOutbreakMapsArr.includes(map.id))
+				).length > 0 // or if map is an outbreak map and intel could be found in any outbreak map
+			);
+		});
+	}
+	// if (mapArr.some(item => item)) {
+	//     results = results.filter((intel) => {
+	//         return mapArr.includes(intel.map) || intel.map == mapDetails.allOutbreakMaps.id && mapArr.some((e) => { return allOutbreakMapsArr.includes(e) });
+	//     });
+	// }
 
-    if (collectedIntel) {
-        if (collectedIntelFilter === 'uncollected-only') {
-            results = results.filter(intel => {
-                return !(
-                    intel.id ===
-                    collectedIntel.find(collected => collected.intelId === intel.id)
-                        ?.intelId
-                );
-            });
-        } else if (collectedIntelFilter === 'collected-only') {
-            results = results.filter(intel => {
-                return (
-                    intel.id ===
-                    collectedIntel.find(collected => collected.intelId === intel.id)
-                        ?.intelId
-                );
-            });
-        }
-    }
-    return results;
+	if (collectedIntel) {
+		if (collectedIntelFilter === 'uncollected-only') {
+			results = results.filter(intel => {
+				return !(
+					intel.id ===
+					collectedIntel.find(collected => collected.intelId === intel.id)
+						?.intelId
+				);
+			});
+		} else if (collectedIntelFilter === 'collected-only') {
+			results = results.filter(intel => {
+				return (
+					intel.id ===
+					collectedIntel.find(collected => collected.intelId === intel.id)
+						?.intelId
+				);
+			});
+		}
+	}
+	return results;
 }
 
 export function filterMisc(
-    currentMapGroup: MapGroupItem,
-    miscStore: MarkerStore,
-    staticQuestStore: MarkerStore,
-    searchTermDirty: string,
-    markerTypes: string[] = [],
+	currentMapGroup: MapGroupItem,
+	miscStore: MarkerStore,
+	staticQuestStore: MarkerStore,
+	searchTermDirty: string,
+	markerTypes: string[] = []
 ) {
-    let results: MiscMarker[] = [];
+	let results: MiscMarker[] = [];
 
-    currentMapGroup.mapLayers.forEach(map => {
-        if (map.id && miscStore[map.id]) {
-            results.push(...miscStore[map.id]);
-        };
-        // Might be a duplication bug to fix here
-        if (map.id && staticQuestStore[map.id]) {
-            results.push(...staticQuestStore[map.id]);
-        };
-    });
+	currentMapGroup.mapLayers.forEach(map => {
+		if (map.id && miscStore[map.id]) {
+			results.push(...miscStore[map.id]);
+		}
+		// Might be a duplication bug to fix here
+		if (map.id && staticQuestStore[map.id]) {
+			results.push(...staticQuestStore[map.id]);
+		}
+	});
 
-    let searchTerm = searchTermDirty.trim().toLowerCase();
-    results = results.filter(intel => {
-        return (
-            intel.title.toLowerCase().indexOf(searchTerm.trim().toLowerCase()) !== -1
-        );
-    });
+	let searchTerm = searchTermDirty.trim().toLowerCase();
+	results = results.filter(intel => {
+		return (
+			intel.title.toLowerCase().indexOf(searchTerm.trim().toLowerCase()) !== -1
+		);
+	});
 
-    if (markerTypes.some(type => type)) {
-        results = results.filter(egg => markerTypes.includes(egg.typeDesc));
-    }
+	if (markerTypes.some(type => type)) {
+		results = results.filter(egg =>
+			markerTypes.includes(getEggMarkerTypeLabel(egg))
+		);
+	}
 
-    return results;
+	return results;
 }

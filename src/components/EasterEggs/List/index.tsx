@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
-import { Paper, Typography } from '@mui/material';
+import { Button, Paper, Typography } from '@mui/material';
 import { useContext } from 'react';
 import { DeclassifiedContext } from '../../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { MiscDetailItem } from '../../MiscDetailsItem';
+import { getEggFilterDefaults } from '../ListMenu';
 
 const StyledEggList = styled.div`
 	background-color: var(--clr-grey-d);
@@ -24,7 +25,8 @@ const NoResults = styled.div`
 `;
 
 export const EggList = () => {
-	const { currentMapGroup, filteredEggStore } = useContext(DeclassifiedContext);
+	const { currentMapGroup, filteredEggStore, setCurrentEggFilter } =
+		useContext(DeclassifiedContext);
 	// const [loading, setLoading] = useState(true); // TODO - Implement loading spinner
 
 	if (!currentMapGroup) {
@@ -61,7 +63,12 @@ export const EggList = () => {
 		return (
 			<NoResults>
 				<Paper>
-					<Typography variant="h2"> Nothing Found...</Typography>
+					<Typography variant="h2">No Intel Found...</Typography>
+					<NoResultsActions>
+						<Button onClick={() => setCurrentEggFilter(getEggFilterDefaults())}>
+							Clear Filters
+						</Button>
+					</NoResultsActions>
 				</Paper>
 			</NoResults>
 		);
@@ -112,4 +119,10 @@ const EggSectionList = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 0.25rem;
+`;
+
+const NoResultsActions = styled.div`
+	display: flex;
+	justify-content: center;
+	padding: 0 0 0.75rem;
 `;
