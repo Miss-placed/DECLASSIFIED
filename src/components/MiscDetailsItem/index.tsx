@@ -209,8 +209,9 @@ const MiscTitleArea = styled.div`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: center;
-	gap: 0.4rem;
+	justify-content: flex-start;
+	gap: 0.5rem;
+	padding-left: 0.35rem;
 	flex: 1;
 	min-width: 0;
 `;
