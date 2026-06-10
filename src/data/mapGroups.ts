@@ -1,6 +1,6 @@
 import { MapIds } from '../components/MapControls/MapIds';
 
-export type MapGroupGameKey = 'coldWar' | 'bo6';
+export type MapGroupGameKey = 'coldWar' | 'bo6' | 'bo7';
 
 export interface MapLayerDefinition {
 	id: string;
@@ -110,6 +110,37 @@ export const MapGroupDefinitions: MapGroupDefinition[] = [
 			{ id: MapIds.reckoning, title: 'Reckoning' },
 			{ id: MapIds.reckoningBossArena, title: 'Reckoning Boss Area' },
 		],
+	},
+	/////////////////////Black Ops 7/////////////////////////
+	{
+		key: 'ashesOfTheDamned_Group',
+		mapName: 'Ashes of the Damned',
+		game: 'bo7',
+		mapLayers: [{ id: MapIds.ashesOfTheDamned, title: 'Ashes of the Damned' }],
+	},
+	{
+		key: 'astraMalorum_Group',
+		mapName: 'Astra Malorum',
+		game: 'bo7',
+		mapLayers: [{ id: MapIds.astraMalorum, title: 'Astra Malorum' }],
+	},
+	{
+		key: 'paradoxJunction_Group',
+		mapName: 'Paradox Junction',
+		game: 'bo7',
+		mapLayers: [{ id: MapIds.paradoxJunction, title: 'Paradox Junction' }],
+	},
+	{
+		key: 'totenreich_Group',
+		mapName: 'Totenreich',
+		game: 'bo7',
+		mapLayers: [{ id: MapIds.totenreich, title: 'Totenreich' }],
+	},
+	{
+		key: 'kowakujo_Group',
+		mapName: 'Kowakujō',
+		game: 'bo7',
+		mapLayers: [{ id: MapIds.kowakujo, title: 'Kowakujō' }],
 	},
 ];
 
