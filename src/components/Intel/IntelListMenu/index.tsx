@@ -6,7 +6,7 @@ import {
 	AccordionSummary,
 	TextField,
 } from '@mui/material';
-import { useContext, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { DeclassifiedContext } from '../../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { useUserContext } from '../../../contexts/UserContext/userContextProvider';
@@ -23,7 +23,11 @@ export type IntelFormInputs = {
 	collectedIntelFilter: string;
 };
 
-export const IntelListMenu = () => {
+export const IntelListMenu = ({
+	onClearFiltersReady,
+}: {
+	onClearFiltersReady?: (clearFilters: () => void) => void;
+}) => {
 	const {
 		currentIntelFilter,
 		setCurrentIntelFilter,
@@ -39,14 +43,16 @@ export const IntelListMenu = () => {
 		defaultValues: currentIntelFilter,
 		shouldUnregister: false,
 	});
-	const {
-		register,
-		handleSubmit,
-		watch,
-		trigger,
-		formState,
-		formState: { isValidating },
-	} = methods;
+	const { register, handleSubmit, watch, reset } = methods;
+	const clearFilters = useCallback(() => {
+		const defaults = getIntelFilterDefaults();
+		reset(defaults);
+		setCurrentIntelFilter(defaults);
+	}, [reset, setCurrentIntelFilter]);
+
+	useEffect(() => {
+		onClearFiltersReady?.(() => clearFilters);
+	}, [clearFilters, onClearFiltersReady]);
 	const onSubmit: SubmitHandler<IntelFormInputs> = data => {
 		// TODO: set filter value in context
 		setCurrentIntelFilter(data);

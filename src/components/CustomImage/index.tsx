@@ -6,6 +6,7 @@ const StyledImageContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	width: 100%;
 `;
 
 const style = {
@@ -53,7 +54,10 @@ export const CustomImage = ({ src: imageId, altText = 'Placeholder' }) => { // T
 							alt={""}
 							loading="lazy"
 							style={{
+								width: '100%',
+								maxWidth: '100%',
 								height: 'auto',
+								display: 'block',
 								cursor: 'pointer',
 							}}
 							onLoad={() => setImageLoaded(true)}

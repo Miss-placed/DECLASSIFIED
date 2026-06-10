@@ -50,6 +50,8 @@ export const IntelAndEasterEggDrawerContent = () => {
 	const [intelMultiSelectState, setIntelMultiSelectState] = useState<string[]>(
 		[]
 	);
+	const [intelClearFilters, setIntelClearFilters] = useState<(() => void) | undefined>();
+	const [eggClearFilters, setEggClearFilters] = useState<(() => void) | undefined>();
 
 	const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
 		setSelectedTab(newValue);
@@ -111,8 +113,9 @@ export const IntelAndEasterEggDrawerContent = () => {
 						<IntelList
 							multiSelectState={intelMultiSelectState}
 							addRemoveItemMultiSelect={addRemoveItemMultiSelect}
+							onClearFilters={intelClearFilters}
 						/>
-						<IntelListMenu />
+						<IntelListMenu onClearFiltersReady={setIntelClearFilters} />
 					</TabContentContainer>
 				</StyledTabPanel>
 				<StyledTabPanel
@@ -121,8 +124,8 @@ export const IntelAndEasterEggDrawerContent = () => {
 					dir={theme.direction}
 				>
 					<TabContentContainer id="eggs-filter">
-						<EggList />
-						<EggListMenu />
+						<EggList onClearFilters={eggClearFilters} />
+						<EggListMenu onClearFiltersReady={setEggClearFilters} />
 					</TabContentContainer>
 				</StyledTabPanel>
 			</Box>
