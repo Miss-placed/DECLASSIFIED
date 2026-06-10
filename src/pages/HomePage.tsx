@@ -126,6 +126,14 @@ const HomePage: React.FC = () => {
                         </Box>
                     </Paper>
                 </Grid>
+                <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100px' }}>
+                    <Paper component={Link} to="/operations/black-ops-7">
+                        <Box className='homepage-box filled' p={2}>
+                            <Typography variant="h6">Operations Dossier Hub</Typography>
+                            <Typography>Browse eggs and quests by map.</Typography>
+                        </Box>
+                    </Paper>
+                </Grid>
                 <Grid size={{ xs: 12, sm: 6, md: 3 }} sx={{ height: '100px' }}>
                     <Paper component={Link} to={`/${MapIds.ashesOfTheDamned}`}>
                         <Box className='homepage-box' p={2}>
