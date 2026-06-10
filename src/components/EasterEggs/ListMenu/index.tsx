@@ -34,6 +34,10 @@ import { useUserContext } from '../../../contexts/UserContext/userContextProvide
 import { StaticEggStore } from '../../../data/easterEggs';
 import { StaticQuestStore } from '../../../data/mainQuest';
 import { getEggMarkerTypeLabel } from '../../../data/listFiltering';
+import {
+	MenuProps,
+	StyledIntelFilterMenu,
+} from '../../Intel/IntelFilterMenu/styles';
 
 export type EggFormInputs = {
 	searchTerm: string;
@@ -132,38 +136,43 @@ export const EggListMenu = () => {
 					<StyledAccordionDetails>
 						<EggFilterMenuTitle variant="h6">Marker Types</EggFilterMenuTitle>
 						{markerTypes.length > 0 ? (
-							<FormControl fullWidth>
-								<InputLabel id="egg-marker-type-label">Marker Types</InputLabel>
-								<Controller
-									name="markerTypes"
-									control={control}
-									render={({ field }) => (
-										<Select
-											{...field}
-											multiple
-											labelId="egg-marker-type-label"
-											input={<OutlinedInput label="Marker Types" />}
-											renderValue={selected => (
-												<Box
-													sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}
-												>
-													{selected.map(value => (
-														<Chip key={value} label={value} />
-													))}
-												</Box>
-											)}
-											onChange={handleMarkerTypeChange}
-											value={field.value ?? []}
-										>
-											{markerTypes.map(markerType => (
-												<MenuItem key={markerType} value={markerType}>
-													{markerType}
-												</MenuItem>
-											))}
-										</Select>
-									)}
-								/>
-							</FormControl>
+							<StyledEggFilterMenu>
+								<FormControl>
+									<InputLabel id="egg-marker-type-label">
+										Marker Types
+									</InputLabel>
+									<Controller
+										name="markerTypes"
+										control={control}
+										render={({ field }) => (
+											<Select
+												{...field}
+												multiple
+												labelId="egg-marker-type-label"
+												input={<OutlinedInput label="Marker Types" />}
+												MenuProps={MenuProps}
+												renderValue={selected => (
+													<Box
+														sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}
+													>
+														{selected.map(value => (
+															<Chip key={value} label={value} />
+														))}
+													</Box>
+												)}
+												onChange={handleMarkerTypeChange}
+												value={field.value ?? []}
+											>
+												{markerTypes.map(markerType => (
+													<MenuItem key={markerType} value={markerType}>
+														{markerType}
+													</MenuItem>
+												))}
+											</Select>
+										)}
+									/>
+								</FormControl>
+							</StyledEggFilterMenu>
 						) : (
 							<Typography variant="body2">
 								No marker types available for this map.
@@ -230,4 +239,8 @@ const EggFilterMenuTitle = styled(Typography)`
 	font-size: 0.95rem;
 	text-transform: uppercase;
 	letter-spacing: 0.06em;
+`;
+
+const StyledEggFilterMenu = styled(StyledIntelFilterMenu)`
+	grid-template-columns: 1fr;
 `;

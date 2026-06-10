@@ -1,8 +1,9 @@
-import { Paper, Typography } from '@mui/material';
+import { Button, Paper, Typography } from '@mui/material';
 import { useContext } from 'react';
 import styled from 'styled-components';
 import { DeclassifiedContext } from '../../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { IntelDetailsItem } from '../IntelDetailsItem';
+import { getIntelFilterDefaults } from '../IntelListMenu';
 
 const StyledIntelList = styled.div`
 	background-color: var(--clr-grey-d);
@@ -10,21 +11,27 @@ const StyledIntelList = styled.div`
 `;
 
 const NoResults = styled.div`
-    padding: 10px;
+	padding: 10px;
 
-    .MuiPaper-root{
-        background-color: var(--clr-bg-inverted);
-    }
+	.MuiPaper-root {
+		background-color: var(--clr-bg-inverted);
+	}
 	h2 {
-        display: flex;
+		display: flex;
 		justify-content: center;
 		font-size: 1.5rem;
-        padding: 10px;
+		padding: 10px;
 	}
 `;
 
+const NoResultsActions = styled.div`
+	display: flex;
+	justify-content: center;
+	padding: 0 0 0.75rem;
+`;
+
 export const IntelList = ({ multiSelectState, addRemoveItemMultiSelect }) => {
-	const { currentMapGroup, filteredIntelStore } =
+	const { currentMapGroup, filteredIntelStore, setCurrentIntelFilter } =
 		useContext(DeclassifiedContext);
 	// const [loading, setLoading] = useState(true); // TODO - Implement loading spinner
 
@@ -33,13 +40,27 @@ export const IntelList = ({ multiSelectState, addRemoveItemMultiSelect }) => {
 	}
 
 	const RenderedIntelList = filteredIntelStore.map(intel => {
-		return <IntelDetailsItem key={intel.id} {...intel} multiSelectState={multiSelectState} addRemoveItemMultiSelect={addRemoveItemMultiSelect} />;
+		return (
+			<IntelDetailsItem
+				key={intel.id}
+				{...intel}
+				multiSelectState={multiSelectState}
+				addRemoveItemMultiSelect={addRemoveItemMultiSelect}
+			/>
+		);
 	});
 	if (RenderedIntelList.length === 0) {
 		return (
 			<NoResults>
 				<Paper>
 					<Typography variant="h2"> No Intel Found...</Typography>
+					<NoResultsActions>
+						<Button
+							onClick={() => setCurrentIntelFilter(getIntelFilterDefaults())}
+						>
+							Clear Filters
+						</Button>
+					</NoResultsActions>
 				</Paper>
 			</NoResults>
 		);
