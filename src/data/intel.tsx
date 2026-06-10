@@ -3971,7 +3971,7 @@ const staticIntelStore: IIntelItem[] = [
 		loc: [252.46909913105162, 213.5],
 		map: MapIds.ruka,
 		title: `Omega Group Patch`,
-		desc: `On top of the climbable net in the obstacle course. (might currently be bugged)`,
+		desc: `On top of the unclimbable ropes in the obstacle course (jump over from the climbable net).`,
 		img: `nAPQUJs`,
 	},
 	{

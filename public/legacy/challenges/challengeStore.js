@@ -32,7 +32,7 @@ class Challenge {
         this.category = category;
         this.name = name;
         this.desc = desc;
-        this.img = img ? `https://i.imgur.com/${img}.jpg` : `assets/img/cc/placeholder.jpg`;
+        this.img = img ? `https://declassified-cdn.sol3.me/${img}.jpg` : `assets/img/cc/placeholder.jpg`;
         this.requiredChallenges = requiredChallenges;
         this.minimumRequired = minimumRequired
     }
