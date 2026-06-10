@@ -283,6 +283,7 @@ const MiscItemSummary = styled(AccordionSummary)`
 
 	.miscItemTitle {
 		margin: 0;
+		flex: 1;
 		overflow: hidden;
 		text-wrap: pretty;
 		text-align: center;

@@ -1,6 +1,5 @@
 import { MiscMarker } from "../classes";
 import { MapGroupItem } from "../components/MapControls/types";
-import { EggType } from "./easterEggs";
 import { MapIds } from "./intel";
 import { Faction, IntelItem, IntelType, Season } from './IntelTypes';
 import { allOutbreakMapsArr } from "./maps/mapDetails";
@@ -86,7 +85,7 @@ export function filterMisc(
     miscStore: MarkerStore,
     staticQuestStore: MarkerStore,
     searchTermDirty: string,
-    eggTypeArr: EggType[] = [],
+    markerTypes: string[] = [],
 ) {
     let results: MiscMarker[] = [];
 
@@ -106,6 +105,10 @@ export function filterMisc(
             intel.title.toLowerCase().indexOf(searchTerm.trim().toLowerCase()) !== -1
         );
     });
+
+    if (markerTypes.some(type => type)) {
+        results = results.filter(egg => markerTypes.includes(egg.typeDesc));
+    }
 
     return results;
 }
