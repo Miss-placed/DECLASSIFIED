@@ -235,12 +235,12 @@ export const DeclassifiedContextProvider = ({ children }) => {
 				StaticEggStore,
 				StaticQuestStore,
 				currentEggFilter.searchTerm,
-				currentEggFilter.easterEggTypes,
+				currentEggFilter.markerTypes,
 			);
 			filteredMisc = filteredMisc.sort((a, b) => a.title.localeCompare(b.title));
 			setFilteredEggStore(filteredMisc);
 		}
-	}, [collectedIntel, currentEggFilter.easterEggTypes, currentEggFilter.searchTerm, currentIntelFilter, currentMapGroup])
+	}, [collectedIntel, currentEggFilter.markerTypes, currentEggFilter.searchTerm, currentIntelFilter, currentMapGroup])
 
 	useEffect(() => {
 		if (mapUrlId && IsValidMapId(mapUrlId)) {

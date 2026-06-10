@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Button, Tooltip, Typography } from '@mui/material';
@@ -14,7 +15,18 @@ interface OperationItemCardProps {
 	showSpoilers: boolean;
 	showMapLayer?: boolean;
 	groupTitle?: string;
+	stepLabel?: number;
+	showStepChip?: boolean;
+	stepChipTo?: string;
 }
+
+const getRedactedLineWidths = (seedText: string, count: number) => {
+	const seed = seedText
+		.split('')
+		.reduce((sum, char, index) => sum + char.charCodeAt(0) * (index + 1), 0);
+	const widths = [97, 90, 82, 94, 76, 88, 69, 84];
+	return Array.from({ length: count }, (_, index) => `${widths[(seed + index) % widths.length]}%`);
+};
 
 const renderLink = (link: ParsedLink, key: string) => {
 	if (link.href.startsWith('http')) {
@@ -44,7 +56,11 @@ export default function OperationItemCard({
 	showSpoilers,
 	showMapLayer = false,
 	groupTitle,
+	stepLabel,
+	showStepChip = true,
+	stepChipTo,
 }: OperationItemCardProps) {
+	const [isSpoilerRevealed, setIsSpoilerRevealed] = useState(false);
 	const mapItem = GetMapById(item.mapId);
 	const iconSrc = `/${getMiscIconUri(item.icon)}`;
 	const operationLinks = links.filter(link => link.type === 'operation');
@@ -52,8 +68,20 @@ export default function OperationItemCard({
 	const helpLinks = links.filter(link => link.type === 'help');
 	const hasSpoiler = item.spoilerTags.length > 0;
 	const showGroupingChip = !!item.groupingTitle && item.groupingTitle !== groupTitle;
+	const displayStepNumber =
+		typeof stepLabel === 'number' ? stepLabel : item.stepNumber;
 	const hasMetaChips =
-		showMapLayer || typeof item.stepNumber === 'number' || showGroupingChip || hasSpoiler;
+		showMapLayer ||
+		(showStepChip && typeof displayStepNumber === 'number') ||
+		showGroupingChip ||
+		hasSpoiler;
+	const redactedLineCount = Math.max(3, Math.min(8, Math.ceil((item.desc?.length ?? 0) / 55)));
+	const redactedLineWidths = getRedactedLineWidths(item.id, redactedLineCount);
+	const shouldShowRedacted = hasSpoiler && !showSpoilers && !isSpoilerRevealed;
+
+	useEffect(() => {
+		setIsSpoilerRevealed(false);
+	}, [item.id, showSpoilers]);
 
 	return (
 		<article className="operation-item-card rounded-box" id={item.anchorId}>
@@ -71,8 +99,18 @@ export default function OperationItemCard({
 					{showMapLayer ? (
 						<span className="operation-chip">{item.mapTitle}</span>
 					) : null}
-					{typeof item.stepNumber === 'number' ? (
-						<span className="operation-chip">Step {item.stepNumber}</span>
+					{showStepChip && typeof displayStepNumber === 'number' ? (
+						stepChipTo ? (
+							<Link
+								to={stepChipTo}
+								className="operation-chip operation-chip-link"
+								title={`View Step ${displayStepNumber} in Step-by-Step mode`}
+							>
+								Step {displayStepNumber}
+							</Link>
+						) : (
+							<span className="operation-chip">Step {displayStepNumber}</span>
+						)
 					) : null}
 					{showGroupingChip ? (
 						<span className="operation-chip">{item.groupingTitle}</span>
@@ -85,11 +123,24 @@ export default function OperationItemCard({
 				</div>
 			) : null}
 			<div className="operation-item-body">
-				{hasSpoiler && !showSpoilers ? (
-					<details className="operations-spoiler">
-						<summary>Classified content (click to reveal)</summary>
-						<p>{item.desc}</p>
-					</details>
+				{shouldShowRedacted ? (
+					<button
+						type="button"
+						className="operations-redacted"
+						onClick={() => setIsSpoilerRevealed(true)}
+						aria-label={`Reveal classified content for ${item.title}`}
+						title="Click to reveal"
+					>
+						<p className="operations-redacted-label">CLASSIFIED CONTENT</p>
+						<div className="operations-redacted-lines" aria-hidden>
+							{redactedLineWidths.map((width, index) => (
+								<span
+									key={`${item.id}-redacted-${index}`}
+									style={{ width }}
+								/>
+							))}
+						</div>
+					</button>
 				) : (
 					<Typography className="text-sm">{item.desc}</Typography>
 				)}
