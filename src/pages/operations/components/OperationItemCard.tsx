@@ -81,7 +81,7 @@ export default function OperationItemCard({
 
 	useEffect(() => {
 		setIsSpoilerRevealed(false);
-	}, [item.id]);
+	}, [item.id, showSpoilers]);
 
 	return (
 		<article className="operation-item-card rounded-box" id={item.anchorId}>
