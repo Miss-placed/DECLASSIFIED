@@ -73,10 +73,10 @@ export const MiscDetailItem = ({
 			>
 				<img className="icon" src={iconSource} alt="Icon" />
 				<MiscTitleArea>
+					{hasStepNumber ? <StepChip>#{stepNumber}</StepChip> : null}
 					<Typography variant="h2" className="miscItemTitle">
 						{title}
 					</Typography>
-					{hasStepNumber ? <StepChip>Step {stepNumber}</StepChip> : null}
 				</MiscTitleArea>
 			</MiscItemSummary>
 			{isMarker || expanded ? (
@@ -207,9 +207,10 @@ const ActionContainer = styled.div`
 
 const MiscTitleArea = styled.div`
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: center;
-	gap: 4px;
+	justify-content: center;
+	gap: 0.4rem;
 	flex: 1;
 	min-width: 0;
 `;
@@ -226,6 +227,7 @@ const StepChip = styled.span`
 	font-size: 0.7rem;
 	line-height: 1.2;
 	white-space: nowrap;
+	flex: 0 0 auto;
 `;
 
 const StyledAccordion = styled(Accordion)`
@@ -279,7 +281,7 @@ const MiscItemSummary = styled(AccordionSummary)`
 	}
 
 	.miscItemTitle {
-		margin: 0 auto;
+		margin: 0;
 		overflow: hidden;
 		text-wrap: pretty;
 		text-align: center;

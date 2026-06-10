@@ -31,24 +31,33 @@ export const EggList = () => {
 		return null;
 	}
 
-	const RenderedEggList = filteredEggStore.map(egg => {
-		return (
-			<MiscDetailItem
-				key={egg.id}
-				id={egg.id}
-				title={egg.title}
-				desc={egg.desc}
-				typeDesc={egg.typeDesc}
-				loc={egg.loc}
-				icon={egg.icon}
-				img={egg.img}
-				stepNumber={egg.stepNumber}
-				linkedItems={egg.linkedItems}
-				externalLinks={egg.externalLinks}
-			/>
+	const stepEggs = filteredEggStore
+		.filter(egg => typeof egg.stepNumber === 'number')
+		.sort(
+			(a, b) =>
+				(a.stepNumber ?? Number.MAX_SAFE_INTEGER) -
+					(b.stepNumber ?? Number.MAX_SAFE_INTEGER) ||
+				a.title.localeCompare(b.title)
 		);
-	});
-	if (RenderedEggList.length === 0) {
+	const normalEggs = filteredEggStore.filter(
+		egg => typeof egg.stepNumber !== 'number'
+	);
+	const renderEgg = egg => (
+		<MiscDetailItem
+			key={egg.id}
+			id={egg.id}
+			title={egg.title}
+			desc={egg.desc}
+			typeDesc={egg.typeDesc}
+			loc={egg.loc}
+			icon={egg.icon}
+			img={egg.img}
+			stepNumber={egg.stepNumber}
+			linkedItems={egg.linkedItems}
+			externalLinks={egg.externalLinks}
+		/>
+	);
+	if (filteredEggStore.length === 0) {
 		return (
 			<NoResults>
 				<Paper>
@@ -57,9 +66,50 @@ export const EggList = () => {
 			</NoResults>
 		);
 	}
+
+	if (stepEggs.length === 0) {
+		return (
+			<StyledEggList id="egg-list">
+				{filteredEggStore.map(renderEgg)}
+			</StyledEggList>
+		);
+	}
+
 	return (
 		<>
-			<StyledEggList id="egg-list">{RenderedEggList}</StyledEggList>
+			<StyledEggList id="egg-list">
+				<EggSection>
+					<EggSectionTitle variant="h3">Steps</EggSectionTitle>
+					<EggSectionList>{stepEggs.map(renderEgg)}</EggSectionList>
+				</EggSection>
+				{normalEggs.length > 0 ? (
+					<EggSection>
+						<EggSectionTitle variant="h3">Other Items</EggSectionTitle>
+						<EggSectionList>{normalEggs.map(renderEgg)}</EggSectionList>
+					</EggSection>
+				) : null}
+			</StyledEggList>
 		</>
 	);
 };
+
+const EggSection = styled.section`
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	margin-bottom: 1rem;
+`;
+
+const EggSectionTitle = styled(Typography)`
+	padding: 0 0.25rem;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: var(--clr-white-d);
+`;
+
+const EggSectionList = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+`;
