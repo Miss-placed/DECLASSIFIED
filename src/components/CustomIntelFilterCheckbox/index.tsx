@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { IntelType } from '../../data/IntelTypes';
@@ -22,6 +22,14 @@ export const CustomIntelFilterCheckbox = ({ name, defaultChecked }) => {
 			collectedIntel &&
 			collectedIntel.find(({ intelId }) => intelId === intel.id)
 	).length;
+
+	useEffect(() => {
+		const nextChecked = defaultChecked || false;
+		setChecked(nextChecked);
+		if (checkbox.current) {
+			checkbox.current.checked = nextChecked;
+		}
+	}, [defaultChecked]);
 
 	return (
 		<>
