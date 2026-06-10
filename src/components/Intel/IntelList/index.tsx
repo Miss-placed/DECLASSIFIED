@@ -3,7 +3,6 @@ import { useContext } from 'react';
 import styled from 'styled-components';
 import { DeclassifiedContext } from '../../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { IntelDetailsItem } from '../IntelDetailsItem';
-import { getIntelFilterDefaults } from '../IntelListMenu';
 
 const StyledIntelList = styled.div`
 	background-color: var(--clr-grey-d);
@@ -30,9 +29,16 @@ const NoResultsActions = styled.div`
 	padding: 0 0 0.75rem;
 `;
 
-export const IntelList = ({ multiSelectState, addRemoveItemMultiSelect }) => {
-	const { currentMapGroup, filteredIntelStore, setCurrentIntelFilter } =
-		useContext(DeclassifiedContext);
+export const IntelList = ({
+	multiSelectState,
+	addRemoveItemMultiSelect,
+	onClearFilters,
+}: {
+	multiSelectState: string[];
+	addRemoveItemMultiSelect: (value: string) => void;
+	onClearFilters?: () => void;
+}) => {
+	const { currentMapGroup, filteredIntelStore } = useContext(DeclassifiedContext);
 	// const [loading, setLoading] = useState(true); // TODO - Implement loading spinner
 
 	if (!currentMapGroup) {
@@ -44,7 +50,7 @@ export const IntelList = ({ multiSelectState, addRemoveItemMultiSelect }) => {
 			<IntelDetailsItem
 				key={intel.id}
 				{...intel}
-				multiSelectState={multiSelectState}
+				multiSelectState={multiSelectState.join(',')}
 				addRemoveItemMultiSelect={addRemoveItemMultiSelect}
 			/>
 		);
@@ -56,7 +62,7 @@ export const IntelList = ({ multiSelectState, addRemoveItemMultiSelect }) => {
 					<Typography variant="h2"> No Intel Found...</Typography>
 					<NoResultsActions>
 						<Button
-							onClick={() => setCurrentIntelFilter(getIntelFilterDefaults())}
+							onClick={onClearFilters}
 						>
 							Clear Filters
 						</Button>

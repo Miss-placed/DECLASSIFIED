@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import ClearIcon from '@mui/icons-material/Clear';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import {
 	Accordion,
@@ -8,11 +9,13 @@ import {
 	Chip,
 	FormControl,
 	InputLabel,
+	IconButton,
 	MenuItem,
 	OutlinedInput,
 	Select,
 	SelectChangeEvent,
 	TextField,
+	Tooltip,
 	Typography,
 } from '@mui/material';
 import {
@@ -44,7 +47,11 @@ export type EggFormInputs = {
 	markerTypes: string[];
 };
 
-export const EggListMenu = () => {
+export const EggListMenu = ({
+	onClearFiltersReady,
+}: {
+	onClearFiltersReady?: (clearFilters: () => void) => void;
+}) => {
 	const {
 		currentMapGroup,
 		currentEggFilter,
@@ -57,8 +64,19 @@ export const EggListMenu = () => {
 		defaultValues: currentEggFilter,
 		shouldUnregister: false,
 	});
-	const { control, handleSubmit, register, watch, getValues, setValue } =
+	const { control, handleSubmit, register, watch, getValues, setValue, reset } =
 		methods;
+	const searchTerm = watch('searchTerm');
+	const selectedMarkerTypes = watch('markerTypes');
+	const clearFilters = useCallback(() => {
+		const defaults = getEggFilterDefaults();
+		reset(defaults);
+		setCurrentEggFilter(defaults);
+	}, [reset, setCurrentEggFilter]);
+
+	useEffect(() => {
+		onClearFiltersReady?.(() => clearFilters);
+	}, [clearFilters, onClearFiltersReady]);
 
 	const markerTypes = useMemo(() => {
 		if (!currentMapGroup) return [];
@@ -93,7 +111,10 @@ export const EggListMenu = () => {
 		return () => subscription.unsubscribe();
 	}, [handleSubmit, onSubmit, watch]);
 
-	const handleMarkerTypeChange = (event: SelectChangeEvent<string[]>) => {
+	const handleMarkerTypeChange = (
+		event: SelectChangeEvent<string[]>,
+		onChange: (value: string[]) => void
+	) => {
 		const {
 			target: { value },
 		} = event;
@@ -102,6 +123,7 @@ export const EggListMenu = () => {
 			shouldDirty: true,
 			shouldValidate: false,
 		});
+		onChange(nextValue);
 		setCurrentEggFilter({ ...getValues(), markerTypes: nextValue });
 	};
 
@@ -134,44 +156,65 @@ export const EggListMenu = () => {
 						</StyledResultsCounter>
 					</StyledAccordionSummary>
 					<StyledAccordionDetails>
-						<EggFilterMenuTitle variant="h6">Marker Types</EggFilterMenuTitle>
 						{markerTypes.length > 0 ? (
 							<StyledEggFilterMenu>
-								<FormControl>
-									<InputLabel id="egg-marker-type-label">
-										Marker Types
-									</InputLabel>
-									<Controller
-										name="markerTypes"
-										control={control}
-										render={({ field }) => (
-											<Select
-												{...field}
-												multiple
-												labelId="egg-marker-type-label"
-												input={<OutlinedInput label="Marker Types" />}
-												MenuProps={MenuProps}
-												renderValue={selected => (
-													<Box
-														sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}
-													>
-														{selected.map(value => (
-															<Chip key={value} label={value} />
-														))}
-													</Box>
-												)}
-												onChange={handleMarkerTypeChange}
-												value={field.value ?? []}
+								<EggFilterControl>
+									<FormControl>
+										<InputLabel id="egg-marker-type-label">
+											Marker Types
+										</InputLabel>
+										<Controller
+											name="markerTypes"
+											control={control}
+											render={({ field }) => (
+												<Select
+													{...field}
+													multiple
+													labelId="egg-marker-type-label"
+													input={<OutlinedInput label="Marker Types" />}
+													MenuProps={MenuProps}
+													renderValue={selected => (
+														<Box
+															sx={{
+																display: 'flex',
+																flexWrap: 'wrap',
+																gap: 0.5,
+															}}
+														>
+															{selected.map(value => (
+																<Chip key={value} label={value} />
+															))}
+														</Box>
+													)}
+														onChange={event => {
+															handleMarkerTypeChange(event, field.onChange);
+														}}
+														value={field.value ?? []}
+												>
+													{markerTypes.map(markerType => (
+														<MenuItem key={markerType} value={markerType}>
+															{markerType}
+														</MenuItem>
+													))}
+												</Select>
+											)}
+										/>
+									</FormControl>
+									<Tooltip title="Clear filters">
+										<span>
+											<StyledClearButton
+												aria-label="clear filters"
+												size="small"
+												onClick={clearFilters}
+												disabled={
+													!(searchTerm || selectedMarkerTypes?.length > 0)
+												}
 											>
-												{markerTypes.map(markerType => (
-													<MenuItem key={markerType} value={markerType}>
-														{markerType}
-													</MenuItem>
-												))}
-											</Select>
-										)}
-									/>
-								</FormControl>
+												<ClearIcon fontSize="small" />
+											</StyledClearButton>
+										</span>
+									</Tooltip>
+								</EggFilterControl>
 							</StyledEggFilterMenu>
 						) : (
 							<Typography variant="body2">
@@ -234,11 +277,16 @@ const StyledResultsCounter = styled.div`
 	color: var(--clr-white-d);
 `;
 
-const EggFilterMenuTitle = styled(Typography)`
-	margin: 0;
-	font-size: 0.95rem;
-	text-transform: uppercase;
-	letter-spacing: 0.06em;
+const EggFilterControl = styled.div`
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	width: 100%;
+`;
+
+const StyledClearButton = styled(IconButton)`
+	align-self: flex-end;
+	margin-bottom: 0.1rem;
 `;
 
 const StyledEggFilterMenu = styled(StyledIntelFilterMenu)`
