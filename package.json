@@ -23,12 +23,14 @@
 		"dexie": "^4.0.8",
 		"dexie-react-hooks": "^1.1.7",
 		"leaflet": "^1.8.0",
+		"potrace": "^2.1.8",
 		"react": "^18.1.0",
 		"react-dom": "^18.2.0",
 		"react-hook-form": "^7.34.0",
 		"react-leaflet": "^4.0.0",
 		"react-router-dom": "^6.26.1",
 		"react-scripts": "5.0.1",
+		"sharp": "^0.34.5",
 		"styled-components": "^5.3.5",
 		"typescript": "^4.6.4",
 		"web-vitals": "^2.1.4"
@@ -49,7 +51,8 @@
 		"intel:clean": "node scripts/clean-intel-static.mjs",
 		"operations:clean": "node scripts/clean-intel-static.mjs",
 		"wiki:check": "react-scripts test --watchAll=false --testPathPattern=wiki-links.test.ts",
-		"sitemap:generate": "node scripts/generate-sitemap.mjs"
+		"sitemap:generate": "node scripts/generate-sitemap.mjs",
+		"map:build": "npx tsx scripts/mapToSvgPreview.ts"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -71,6 +74,7 @@
 	},
 	"devDependencies": {
 		"@types/leaflet": "^1.7.10",
+		"@types/potrace": "^2.1.5",
 		"prettier": "^3.3.3",
 		"tsx": "^4.20.3",
 		"workbox-cli": "^7.1.0"
