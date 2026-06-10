@@ -407,7 +407,6 @@ export default function QuestsMapPage() {
 										showMapLayer={hasMultipleMapLayers}
 										groupTitle={`Step ${activeDisplayStep}`}
 										stepLabel={activeDisplayStep ?? undefined}
-										showStepChip={false}
 									/>
 								))}
 							</div>
