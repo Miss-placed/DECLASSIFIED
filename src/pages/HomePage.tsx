@@ -115,6 +115,55 @@ const HomePage: React.FC = () => {
                 - Always free, no ads, open & community driven, now & forever.<br />
             </Box>
             <Typography sx={{ mt: 4 }} className='title text-md' variant="h5" gutterBottom>
+                Call of Duty: Black Ops 7
+            </Typography>
+            <Grid container spacing={2}>
+                <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100px' }}>
+                    <Paper component={Link} to="/intel/black-ops-7">
+                        <Box className='homepage-box filled' p={2}>
+                            <Typography variant="h6">Intel Dossier Hub</Typography>
+                            <Typography>Browse all intel dossiers.</Typography>
+                        </Box>
+                    </Paper>
+                </Grid>
+                <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100px' }}>
+                    <Paper component={Link} to="/operations/black-ops-7">
+                        <Box className='homepage-box filled' p={2}>
+                            <Typography variant="h6">Operations Dossier Hub</Typography>
+                            <Typography>Browse eggs and quests by map.</Typography>
+                        </Box>
+                    </Paper>
+                </Grid>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }} sx={{ height: '100px' }}>
+                    <Paper component={Link} to={`/${MapIds.ashesOfTheDamned}`}>
+                        <Box className='homepage-box' p={2}>
+                            <Typography variant="h6">Ashes of the Damned</Typography>
+                        </Box>
+                    </Paper>
+                </Grid>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }} sx={{ height: '100px' }}>
+                    <Paper component={Link} to={`/${MapIds.astraMalorum}`}>
+                        <Box className='homepage-box' p={2}>
+                            <Typography variant="h6">Astra Malorum</Typography>
+                        </Box>
+                    </Paper>
+                </Grid>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }} sx={{ height: '100px' }}>
+                    <Paper component={Link} to={`/${MapIds.paradoxJunction}`}>
+                        <Box className='homepage-box' p={2}>
+                            <Typography variant="h6">Paradox Junction</Typography>
+                        </Box>
+                    </Paper>
+                </Grid>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }} sx={{ height: '100px' }}>
+                    <Paper component={Link} to={`/${MapIds.totenreich}`}>
+                        <Box className='homepage-box' p={2}>
+                            <Typography variant="h6">Totenreich</Typography>
+                        </Box>
+                    </Paper>
+                </Grid>
+            </Grid>
+            <Typography sx={{ mt: 4 }} className='title text-md' variant="h5" gutterBottom>
                 Call of Duty: Black Ops 6
             </Typography>
             <Grid container spacing={2}>

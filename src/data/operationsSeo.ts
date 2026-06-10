@@ -107,12 +107,14 @@ const normalizeExternalUrl = (raw: string) => {
 };
 
 const getGameSlugAndTitle = (game: MapGroupGameKey) =>
-	game === 'bo6'
+	game === 'bo7'
+		? { gameSlug: 'black-ops-7', gameTitle: 'Black Ops 7' }
+		: game === 'bo6'
 		? { gameSlug: 'black-ops-6', gameTitle: 'Black Ops 6' }
 		: { gameSlug: 'black-ops-cold-war', gameTitle: 'Black Ops Cold War' };
 
 const getCanonicalMapGroupsForGame = (gameSlug: string) => {
-	const mapGame = gameSlug === 'black-ops-6' ? 'bo6' : 'coldWar';
+	const mapGame = gameSlug === 'black-ops-7' ? 'bo7' : gameSlug === 'black-ops-6' ? 'bo6' : 'coldWar';
 	return MapGroupDefinitions.filter(group => group.game === mapGame);
 };
 

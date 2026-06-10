@@ -122,12 +122,19 @@ const Header = () => {
 			setIsDrawerOpen(open);
 		};
 
+	const bo7Maps = Object.entries(MapGroupings).filter(
+		([key, mapGroupItem]) => mapGroupItem.game === Game.bo7
+	);
 	const bo6Maps = Object.entries(MapGroupings).filter(
 		([key, mapGroupItem]) => mapGroupItem.game === Game.bo6
 	);
 	const coldWarMaps = Object.entries(MapGroupings).filter(
 		([key, mapGroupItem]) => mapGroupItem.game === Game.coldWar
 	);
+	// TODO: set --game-base-color to somethingdynamic from the mappacks
+	const bo7StyleVars = {
+		'--game-base-color': 'var(--clr-red)',
+	} as React.CSSProperties;
 	// TODO: set --game-base-color to somethingdynamic from the mappacks
 	const bo6StyleVars = {
 		'--game-base-color': 'var(--clr-orange)',
@@ -138,6 +145,10 @@ const Header = () => {
 	} as React.CSSProperties;
 
 	const MapMenuItems = [
+		<GameSeparator key="BlackOps7" style={bo7StyleVars}>
+			<GameTitle label="Black Ops 7" size="small" />
+		</GameSeparator>,
+		buildMapItems(bo7Maps),
 		<GameSeparator key="BlackOps6" style={bo6StyleVars}>
 			<GameTitle label="Black Ops 6" size="small" />
 		</GameSeparator>,

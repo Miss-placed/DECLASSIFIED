@@ -6,6 +6,7 @@ import { MapDetails } from '../../data/maps/mapDetails';
 export enum Game {
 	coldWar = 'Black Ops: Cold War',
 	bo6 = 'Black Ops 6',
+	bo7 = 'Black Ops 7',
 }
 export interface MapGroupItem {
 	mapName: string;
@@ -16,7 +17,7 @@ export interface MapGroupItem {
 export type MapGroupDictionary = Record<string, MapGroupItem>;
 
 const gameFromKey = (game: MapGroupGameKey) =>
-	game === 'bo6' ? Game.bo6 : Game.coldWar;
+	game === 'bo7' ? Game.bo7 : game === 'bo6' ? Game.bo6 : Game.coldWar;
 
 const mapDetailsById = new Map<string, MapItem>();
 Object.values(MapDetails)

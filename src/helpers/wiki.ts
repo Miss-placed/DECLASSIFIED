@@ -9,6 +9,10 @@ const wikiMapNameOverrides: Record<string, string> = {
 	'Outbreak': 'Outbreak_(Cold_War)',
 	'Terminus': 'Terminus_(Zombies)',
 	'Reckoning': 'Reckoning_(Zombies)',
+	'Ashes of the Damned': 'Ashes_of_the_Damned',
+	'Astra Malorum': 'Astra_Malorum',
+	'Paradox Junction': 'Paradox_Junction',
+	'Kowakujō': 'Kowakuj%C5%8D',
 };
 
 export const wikiMapGroupNames = [
@@ -23,6 +27,11 @@ export const wikiMapGroupNames = [
 	'The Tomb',
 	'Shattered Veil',
 	'Reckoning',
+	'Ashes of the Damned',
+	'Astra Malorum',
+	'Paradox Junction',
+	'Totenreich',
+	'Kowakujō',
 ];
 
 export const getWikiMapSlug = (mapName: string) => {
