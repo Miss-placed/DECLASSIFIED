@@ -646,6 +646,9 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 .fp-type-btn:hover { border-color: #444; color: var(--text); }
 .fp-type-btn.active      { background: var(--accent); border-color: var(--accent); color: #000; font-weight: 600; }
 .fp-type-btn.excl-active { background: #b22; border-color: #c33; color: #fff; font-weight: 600; }
+.fp-shape-hint {
+  font-size: 10px; color: var(--muted); margin-top: 2px; line-height: 1.35;
+}
 
 /* debug bitmaps — removed */
 
@@ -914,6 +917,15 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
         <button class="fp-type-btn" id="fp-fill-ls-dashed">- - Dashed</button>
       </div>
     </div>
+    <div class="fp-row" id="fp-fill-shape-row" style="display:none">
+      <div class="fp-label">Quick fix</div>
+      <div style="display:flex;gap:5px">
+        <button class="fp-type-btn active" id="fp-shape-original">As traced</button>
+        <button class="fp-type-btn" id="fp-shape-rectangle">Rectangle</button>
+        <button class="fp-type-btn" id="fp-shape-square">Square</button>
+      </div>
+      <div class="fp-shape-hint" id="fp-fill-shape-hint"></div>
+    </div>
     <div class="fp-actions">
       <button class="fp-confirm" id="fp-fill-confirm">Confirm</button>
       <button class="fp-discard" id="fp-fill-discard">Discard</button>
@@ -1042,6 +1054,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   let _reFillPending        = null;
   let _bendsOrigBezierPath  = null; // original bezier d for live preview toggle
   let _bendsOrigCurrentD    = null; // element d at click time (for discard revert)
+  let _fillShapeFix         = null; // pending wand quick-fix metadata/state
 
   // ── slider wiring ────────────────────────────────────────────────────────
   const SLIDER_IDS = ['boundaryThreshold', 'maxSize'];
@@ -1734,6 +1747,81 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   let fillDebouncer = null;
   const canvasWrap  = document.getElementById('canvas-wrap');
 
+  function setFillShapeSelection(mode) {
+    if (!_fillShapeFix || !_fillShapeFix.available) return;
+    _fillShapeFix.selected = mode;
+    document.getElementById('fp-shape-original').classList.toggle('active', mode === 'original');
+    document.getElementById('fp-shape-rectangle').classList.toggle('active', mode === 'rectangle');
+    document.getElementById('fp-shape-square').classList.toggle('active', mode === 'square');
+    applyPendingFillPreview();
+  }
+
+  function hideFillShapeRow() {
+    document.getElementById('fp-fill-shape-row').style.display = 'none';
+    document.getElementById('fp-fill-shape-hint').textContent = '';
+    document.getElementById('fp-shape-original').classList.add('active');
+    document.getElementById('fp-shape-rectangle').classList.remove('active');
+    document.getElementById('fp-shape-square').classList.remove('active');
+  }
+
+  function setFillShapeFixFromPath(path) {
+    const fix = detectRectangleQuickFix(path);
+    if (!fix) {
+      _fillShapeFix = null;
+      hideFillShapeRow();
+      return;
+    }
+    _fillShapeFix = {
+      available: true,
+      selected: 'original',
+      rectanglePath: fix.rectanglePath,
+      squarePath: fix.squarePath,
+      confidence: fix.confidence,
+      nearSquare: fix.nearSquare,
+      cornerCount: fix.cornerCount,
+    };
+    const row = document.getElementById('fp-fill-shape-row');
+    const hint = document.getElementById('fp-fill-shape-hint');
+    row.style.display = '';
+    hint.textContent =
+      'Simple shape detected (' + Math.round(fix.confidence * 100) + '% fit, ' + fix.cornerCount +
+      ' corners). Use Rectangle/Square to clean it up quickly.';
+    setFillShapeSelection('original');
+  }
+
+  function clearFillShapeFix() {
+    _fillShapeFix = null;
+    hideFillShapeRow();
+  }
+
+  function getPendingFillPathForConfirm() {
+    if (!pendingFill || !pendingFill.path) return '';
+    if (_fillShapeFix && _fillShapeFix.available) {
+      if (_fillShapeFix.selected === 'rectangle' && _fillShapeFix.rectanglePath) return _fillShapeFix.rectanglePath;
+      if (_fillShapeFix.selected === 'square' && _fillShapeFix.squarePath) return _fillShapeFix.squarePath;
+    }
+    return pendingFill.path;
+  }
+
+  function getPendingFillPathForPreview() {
+    const basePath = getPendingFillPathForConfirm();
+    if (!basePath) return '';
+    if (_fillShapeFix && _fillShapeFix.available && _fillShapeFix.selected !== 'original') return basePath;
+    if (!fillRemoveBends) return basePath;
+    const parsed = flattenPath(basePath);
+    return rebuildPolylinePath(parsed.points, parsed.closed);
+  }
+
+  function applyPendingFillPreview() {
+    const previewPath = getPendingFillPathForPreview();
+    if (!previewPath) { clearPendingPath(); return; }
+    showPendingPath(previewPath);
+  }
+
+  document.getElementById('fp-shape-original').addEventListener('click', () => setFillShapeSelection('original'));
+  document.getElementById('fp-shape-rectangle').addEventListener('click', () => setFillShapeSelection('rectangle'));
+  document.getElementById('fp-shape-square').addEventListener('click', () => setFillShapeSelection('square'));
+
   canvasWrap.addEventListener('click', e => {
     if (e.target.closest('#float-panel')) return;
     if (interactionMode !== 'fill') return;
@@ -1744,6 +1832,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     if (nx < 0 || nx > 1 || ny < 0 || ny > 1) return;
     spawnPing(e.clientX, e.clientY);
     pendingFill = { nx, ny, path: null };
+    clearFillShapeFix();
     showFillPanel(e.clientX, e.clientY);
     requestFill(nx, ny);
   });
@@ -1774,15 +1863,15 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
         }
         const data = await res.json();
         setStatus('', 'Ready');
-        if (!data.path) { setStatus('', 'No fill \u2014 try a darker area'); return; }
-        if (pendingFill) pendingFill = { ...pendingFill, path: data.path, vW: data.vW, vH: data.vH };
-        // Respect current bends toggle when showing new fill result
-        if (fillRemoveBends) {
-          const parsed = flattenPath(data.path);
-          showPendingPath(rebuildPolylinePath(parsed.points, parsed.closed));
-        } else {
-          showPendingPath(data.path);
+        if (!data.path) {
+          clearFillShapeFix();
+          clearPendingPath();
+          setStatus('', 'No fill \u2014 try a darker area');
+          return;
         }
+        if (pendingFill) pendingFill = { ...pendingFill, path: data.path, vW: data.vW, vH: data.vH };
+        setFillShapeFixFromPath(data.path);
+        applyPendingFillPreview();
       } catch (err) {
         setStatus('error', 'Fill error: ' + err.message);
       }
@@ -1805,16 +1894,13 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     fillRemoveBends = false;
     document.getElementById('fp-fill-bends-on').classList.add('active');
     document.getElementById('fp-fill-bends-off').classList.remove('active');
-    if (pendingFill && pendingFill.path) showPendingPath(pendingFill.path);
+    if (pendingFill && pendingFill.path) applyPendingFillPreview();
   });
   document.getElementById('fp-fill-bends-off').addEventListener('click', () => {
     fillRemoveBends = true;
     document.getElementById('fp-fill-bends-off').classList.add('active');
     document.getElementById('fp-fill-bends-on').classList.remove('active');
-    if (pendingFill && pendingFill.path) {
-      const parsed = flattenPath(pendingFill.path);
-      showPendingPath(rebuildPolylinePath(parsed.points, parsed.closed));
-    }
+    if (pendingFill && pendingFill.path) applyPendingFillPreview();
   });
 
   // ── re-fill request (select panel) ──────────────────────────────────────
@@ -1929,21 +2015,27 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     clearPendingPath();
   });
   document.getElementById('fp-type-outline').addEventListener('click', () => {
+    if (pendingFill && pendingFill.path) applyPendingFillPreview();
+    else clearPendingPath();
+  });
+  document.getElementById('fp-type-outline').addEventListener('click', () => {
     fillType = 'outline';
     document.getElementById('fp-type-outline').classList.add('active');
     document.getElementById('fp-type-fill').classList.remove('active');
     updateFillLineStyleVisibility();
-    if (pendingFill && pendingFill.path) showPendingPath(pendingFill.path);
+    if (pendingFill && pendingFill.path) applyPendingFillPreview();
   });
 
   document.getElementById('fp-fill-confirm').addEventListener('click', () => {
     if (!pendingFill || !pendingFill.path) { hideFloatPanel(); return; }
+    const finalPath = getPendingFillPathForConfirm();
+    if (!finalPath) { hideFloatPanel(); return; }
     const group = document.querySelector('[data-wand-group].active')?.dataset?.wandGroup || 'inaccessible';
     snapshotForUndo();
     annotations.push({
       kind: 'fill', id: 'ann-' + Date.now(), group, mode: fillMode, type: fillType,
       lineStyle: fillType === 'outline' ? fillLineStyle : 'solid',
-      path: pendingFill.path, vW: pendingFill.vW, vH: pendingFill.vH,
+      path: finalPath, vW: pendingFill.vW, vH: pendingFill.vH,
       nx: pendingFill.nx, ny: pendingFill.ny,
       sensitivity: Number(document.getElementById('fp-sensitivity').value),
       offset: Number(document.getElementById('fp-offset').value),
@@ -1952,10 +2044,8 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     pendingFill = null; hideFloatPanel(); renderAnnotationList(); process(getConfig());
   });
   document.getElementById('fp-fill-discard').addEventListener('click', () => {
-    pendingFill = null; clearPendingPath(); hideFloatPanel();
+    pendingFill = null; clearFillShapeFix(); clearPendingPath(); hideFloatPanel();
   });
-
-  // ── vertex editor ────────────────────────────────────────────────────────
   // Vertex editing is always saved as straight M/L segments (plus optional Z).
   let _vertexEditPath         = null; // { el, d, fromGroup, prevStroke, prevStrokeWidth }
   let _vertexNodes            = [];   // [{x, y}]
@@ -2161,6 +2251,247 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     }
     if (closed) d += ' Z';
     return d;
+  }
+
+  function polyPerimeter(points, closed) {
+    if (!points || points.length < 2) return 0;
+    let p = 0;
+    for (let i = 1; i < points.length; i++) {
+      p += Math.hypot(points[i].x - points[i - 1].x, points[i].y - points[i - 1].y);
+    }
+    if (closed) p += Math.hypot(points[0].x - points[points.length - 1].x, points[0].y - points[points.length - 1].y);
+    return p;
+  }
+
+  function pointSegDist(p, a, b) {
+    const abx = b.x - a.x;
+    const aby = b.y - a.y;
+    const apx = p.x - a.x;
+    const apy = p.y - a.y;
+    const abLen2 = abx * abx + aby * aby;
+    if (abLen2 < 1e-9) return Math.hypot(apx, apy);
+    const t = Math.max(0, Math.min(1, (apx * abx + apy * aby) / abLen2));
+    const px = a.x + t * abx;
+    const py = a.y + t * aby;
+    return Math.hypot(p.x - px, p.y - py);
+  }
+
+  function rdpSimplify(points, epsilon) {
+    if (!points || points.length <= 2) return points ? points.slice() : [];
+
+    let maxDist = -1;
+    let idx = -1;
+    const a = points[0];
+    const b = points[points.length - 1];
+
+    for (let i = 1; i < points.length - 1; i++) {
+      const d = pointSegDist(points[i], a, b);
+      if (d > maxDist) {
+        maxDist = d;
+        idx = i;
+      }
+    }
+
+    if (maxDist > epsilon && idx !== -1) {
+      const left = rdpSimplify(points.slice(0, idx + 1), epsilon);
+      const right = rdpSimplify(points.slice(idx), epsilon);
+      return left.slice(0, -1).concat(right);
+    }
+
+    return [a, b];
+  }
+
+  function simplifyClosedPolygon(points, epsilon) {
+    if (!points || points.length < 4) return points ? points.slice() : [];
+    const ring = points.slice();
+    if (!samePoint(ring[0], ring[ring.length - 1])) ring.push({ x: ring[0].x, y: ring[0].y });
+    const simplified = rdpSimplify(ring, epsilon);
+    if (simplified.length > 1 && samePoint(simplified[0], simplified[simplified.length - 1])) simplified.pop();
+    return simplified;
+  }
+
+  function rotateLocal(p, cx, cy, cosT, sinT) {
+    const dx = p.x - cx;
+    const dy = p.y - cy;
+    return {
+      x: cosT * dx + sinT * dy,
+      y: -sinT * dx + cosT * dy,
+    };
+  }
+
+  function rotateGlobal(p, cx, cy, cosT, sinT) {
+    return {
+      x: cx + (p.x * cosT - p.y * sinT),
+      y: cy + (p.x * sinT + p.y * cosT),
+    };
+  }
+
+  function distanceToRectBoundary(x, y, minX, minY, maxX, maxY) {
+    const insideX = x >= minX && x <= maxX;
+    const insideY = y >= minY && y <= maxY;
+    if (insideX && insideY) {
+      return Math.min(x - minX, maxX - x, y - minY, maxY - y);
+    }
+    const cx = Math.min(maxX, Math.max(minX, x));
+    const cy = Math.min(maxY, Math.max(minY, y));
+    return Math.hypot(x - cx, y - cy);
+  }
+
+  function detectRectangleQuickFix(path) {
+    const flat = flattenPath(path, 8);
+    if (!flat.points || flat.points.length < 4) return null;
+
+    const perimeter = polyPerimeter(flat.points, true);
+    if (perimeter < 12) return null;
+
+    // Potrace can sometimes emit effectively-closed traces without a final Z.
+    // Accept them when endpoints are very close relative to shape size.
+    const first = flat.points[0];
+    const last = flat.points[flat.points.length - 1];
+    const endGap = Math.hypot(last.x - first.x, last.y - first.y);
+    const nearClosed = endGap <= Math.max(2, perimeter * 0.02);
+    if (!flat.closed && !nearClosed) return null;
+
+    const baseEpsilon = Math.max(1.0, Math.min(10, perimeter * 0.01));
+    const epsilonSweep = [0.6, 0.9, 1.2, 1.6, 2.1, 2.8, 3.6, 4.6];
+    let corners = [];
+    let bestCornerScore = Infinity;
+    for (const mul of epsilonSweep) {
+      const eps = Math.max(0.8, Math.min(16, baseEpsilon * mul));
+      const candidate = simplifyClosedPolygon(flat.points, eps);
+      if (candidate.length < 4 || candidate.length > 18) continue;
+      const score = Math.abs(candidate.length - 4);
+      if (score < bestCornerScore) {
+        bestCornerScore = score;
+        corners = candidate;
+      }
+      if (candidate.length >= 4 && candidate.length <= 8) break;
+    }
+    if (corners.length < 4 || corners.length > 18) return null;
+
+    let cx = 0;
+    let cy = 0;
+    for (const p of flat.points) {
+      cx += p.x;
+      cy += p.y;
+    }
+    cx /= flat.points.length;
+    cy /= flat.points.length;
+
+    let sxx = 0;
+    let syy = 0;
+    let sxy = 0;
+    for (const p of flat.points) {
+      const dx = p.x - cx;
+      const dy = p.y - cy;
+      sxx += dx * dx;
+      syy += dy * dy;
+      sxy += dx * dy;
+    }
+
+    const HALF_PI = Math.PI / 2;
+    const normRectAngle = (a) => {
+      while (a < 0) a += HALF_PI;
+      while (a >= HALF_PI) a -= HALF_PI;
+      return a;
+    };
+
+    const angleCandidates = [];
+    const addAngleCandidate = (a) => {
+      const t = normRectAngle(a);
+      for (const ex of angleCandidates) {
+        if (Math.abs(ex - t) < 0.03) return;
+      }
+      angleCandidates.push(t);
+    };
+
+    // PCA gives a decent fallback, but on near-squares it can drift to diagonals.
+    addAngleCandidate(0.5 * Math.atan2(2 * sxy, sxx - syy));
+
+    // Use simplified edges as orientation hints; this stabilizes square alignment.
+    const minEdgeLen = Math.max(2, perimeter * 0.03);
+    for (let i = 0; i < corners.length; i++) {
+      const a = corners[i];
+      const b = corners[(i + 1) % corners.length];
+      const dx = b.x - a.x;
+      const dy = b.y - a.y;
+      const len = Math.hypot(dx, dy);
+      if (len < minEdgeLen) continue;
+      addAngleCandidate(Math.atan2(dy, dx));
+    }
+
+    if (!angleCandidates.length) addAngleCandidate(0);
+
+    function evaluateTheta(theta) {
+      const cosT = Math.cos(theta);
+      const sinT = Math.sin(theta);
+      const local = flat.points.map(p => rotateLocal(p, cx, cy, cosT, sinT));
+      let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+      for (const p of local) {
+        if (p.x < minX) minX = p.x;
+        if (p.y < minY) minY = p.y;
+        if (p.x > maxX) maxX = p.x;
+        if (p.y > maxY) maxY = p.y;
+      }
+      const w = maxX - minX;
+      const h = maxY - minY;
+      if (w < 2 || h < 2) return null;
+
+      const dists = local.map(p => distanceToRectBoundary(p.x, p.y, minX, minY, maxX, maxY));
+      const meanDist = dists.reduce((acc, v) => acc + v, 0) / Math.max(1, dists.length);
+      const normScale = Math.max(1, Math.min(w, h));
+      const normError = meanDist / normScale;
+      const sorted = dists.slice().sort((a, b) => a - b);
+      const p90 = sorted[Math.floor((sorted.length - 1) * 0.9)] / normScale;
+      const score = normError + p90 * 0.7;
+
+      return { theta, cosT, sinT, local, minX, minY, maxX, maxY, w, h, normError, p90, score };
+    }
+
+    let bestFit = null;
+    for (const theta of angleCandidates) {
+      const fit = evaluateTheta(theta);
+      if (!fit) continue;
+      if (!bestFit || fit.score < bestFit.score) bestFit = fit;
+    }
+    if (!bestFit) return null;
+
+    const { theta, cosT, sinT, minX, minY, maxX, maxY, w, h, normError, p90 } = bestFit;
+    if (normError > 0.2 || p90 > 0.38) return null;
+
+    const rectLocal = [
+      { x: minX, y: minY },
+      { x: maxX, y: minY },
+      { x: maxX, y: maxY },
+      { x: minX, y: maxY },
+    ];
+    const rectGlobal = rectLocal.map(p => rotateGlobal(p, cx, cy, cosT, sinT));
+
+    const side = (w + h) / 2;
+    const hc = side / 2;
+    const mx = (minX + maxX) / 2;
+    const my = (minY + maxY) / 2;
+    const squareLocal = [
+      { x: mx - hc, y: my - hc },
+      { x: mx + hc, y: my - hc },
+      { x: mx + hc, y: my + hc },
+      { x: mx - hc, y: my + hc },
+    ];
+    const squareGlobal = squareLocal.map(p => rotateGlobal(p, cx, cy, cosT, sinT));
+
+    const fitQuality = Math.max(0, 1 - Math.min(1, normError / 0.2));
+    const complexityQuality = Math.max(0, 1 - Math.min(1, (corners.length - 4) / 14));
+    const confidence = Math.max(0, Math.min(1, fitQuality * 0.7 + complexityQuality * 0.3));
+    const squareness = Math.abs(w - h) / Math.max(w, h);
+    if (confidence < 0.34) return null;
+
+    return {
+      rectanglePath: rebuildPolylinePath(rectGlobal, true),
+      squarePath: rebuildPolylinePath(squareGlobal, true),
+      confidence,
+      nearSquare: squareness <= 0.2,
+      cornerCount: corners.length,
+    };
   }
 
   function getVertexMinCount() {
@@ -2909,7 +3240,11 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     floatPanel.style.left = Math.max(4, left) + 'px';
     floatPanel.style.top  = Math.max(4, top)  + 'px';
   }
-  function hideFloatPanel() { floatPanel.classList.remove('visible'); clearPendingPath(); }
+  function hideFloatPanel() {
+    floatPanel.classList.remove('visible');
+    clearPendingPath();
+    clearFillShapeFix();
+  }
 
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
