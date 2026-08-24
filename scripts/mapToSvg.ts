@@ -69,24 +69,11 @@ function requiredArg(name: string): string {
 
 export interface MapConfig {
     boundaryThreshold: number;
-    wallThreshold: number;
-    wallTurd: number;
-    strokeThreshold: number;
-    aspectThreshold: number;
-    minPathArea: number;
-    minUnclassified: number;
     maxSize: number;
-    skipWalls?: boolean;
 }
 
 export const defaultConfig: MapConfig = {
     boundaryThreshold: 128,
-    wallThreshold: 35,
-    wallTurd: 5,
-    strokeThreshold: 8,
-    aspectThreshold: 4,
-    minPathArea: 30,
-    minUnclassified: 500,
     maxSize: 2048,
 };
 
@@ -201,29 +188,6 @@ async function maybeResize(inputBuffer: Buffer, cfg: MapConfig): Promise<Buffer>
         .toBuffer();
 }
 
-/**
- * Wall pass: isolates bright wall pixels from the masked image using a luminance threshold.
- *
- * WHY this works better than Laplacian for this map:
- *   - Laplacian responds to transitions → it traces the EDGE RING of every light halo.
- *     Those rings are thin and circular → high aspect ratio → falsely classfied as walls.
- *   - This pass traces the FILLED AREA of bright pixels directly.
- *     Light sources → large circular disc shapes (aspect≈1) → filtered by aspectThreshold.
- *     Wall lines   → elongated thin strips (aspect≥4) → kept as walls.
- *     Dark floors  → below threshold → not traced at all.
- *
- * Pipeline: flatten(black) → greyscale → threshold(n) → negate → potrace input
- */
-async function wallPass(buf: Buffer, cfg: MapConfig): Promise<Buffer> {
-    return sharp(buf)
-        .flatten({ background: { r: 0, g: 0, b: 0 } })
-        .greyscale()
-        .threshold(cfg.wallThreshold)
-        .negate()  // bright walls → black for potrace
-        .png()
-        .toBuffer();
-}
-
 // ---------------------------------------------------------------------------
 // potrace wrapper — returns a promise with the raw SVG string
 // ---------------------------------------------------------------------------
@@ -303,36 +267,6 @@ function estimateBBox(d: string): BBox {
 }
 
 // ---------------------------------------------------------------------------
-// Path classification
-// ---------------------------------------------------------------------------
-
-type Group = 'outline' | 'inaccessible' | 'wall' | 'thickerWall' | 'unclassified' | 'skip';
-
-/**
- * Classify a subpath from the EDGE pass (Laplacian) — used for wall detection.
- * The Laplacian pass rejects soft light halos, so these are genuinely sharp edges.
- */
-function classifyEdgePath(bbox: BBox, imageArea: number, cfg: MapConfig): 'wall' | 'thickerWall' | 'unclassified' | 'skip' {
-    const { width, height, area } = bbox;
-
-    if (area < cfg.minPathArea) return 'skip';
-    // Skip very large shapes — probably rings from light-halo edges that slipped through
-    if (area > imageArea * 0.05) return 'skip';
-    if (width === 0 || height === 0) return 'skip';
-
-    const long = Math.max(width, height);
-    const short = Math.min(width, height);
-    const aspect = long / short;
-
-    if (aspect >= cfg.aspectThreshold) return short < cfg.strokeThreshold ? 'wall' : 'thickerWall';
-
-    // Not elongated enough to be a wall — could be a stair shape or noise.
-    // Only keep in unclassified if large enough to plausibly be a stair/feature.
-    if (area < cfg.minUnclassified) return 'skip';
-    return 'unclassified';
-}
-
-// ---------------------------------------------------------------------------
 // SVG dimensions from potrace output
 // ---------------------------------------------------------------------------
 
@@ -358,34 +292,19 @@ export interface ProcessResult {
     svg: string;
     stats: {
         outlines: number;
-        walls: number;
-        thickerWalls: number;
-        unclassified: number;
-        skipped: number;
-    };
-    debugBitmaps?: {
-        mask: Buffer;
-        masked: Buffer;
-        negatedMask: Buffer;
-        wallBitmap: Buffer;
     };
 }
 
 export async function processMap(
     rawBuffer: Buffer,
     cfg: MapConfig,
-    emitDebug = false,
 ): Promise<ProcessResult> {
     const inputBuffer = await maybeResize(rawBuffer, cfg);
 
-    const meta = await sharp(inputBuffer).metadata();
-    const imageArea = (meta.width ?? 2048) * (meta.height ?? 2048);
-
     // Pre-pass: BFS interior mask
     const interiorMask = await createInteriorMask(inputBuffer, cfg);
-    const maskedBuffer = await applyMask(inputBuffer, interiorMask);
 
-    // Pass 1: trace negated mask perimeter → outline
+    // Trace negated mask perimeter → outline
     const negatedMask = await sharp(interiorMask).negate().png().toBuffer();
     const outlineSvg = await trace(negatedMask, {
         turdSize: 100,
@@ -400,34 +319,7 @@ export async function processMap(
         .sort((a, b) => b.bbox.area - a.bbox.area)
         .slice(0, 1);
 
-    // Pass 2: luminance threshold → wall classification (skipped on initial load)
-    const walls: string[] = [];
-    const thickerWalls: string[] = [];
-    const unclassified: string[] = [];
-    let skipped = 0;
-
-    if (!cfg.skipWalls) {
-        const wallBitmap = await wallPass(maskedBuffer, cfg);
-        const wallSvg = await trace(wallBitmap, {
-            turdSize: cfg.wallTurd,
-            optTolerance: 0.2,
-            alphaMax: 0.5,
-        });
-        const wallSubpaths = extractSubpaths(wallSvg);
-
-        for (const d of wallSubpaths) {
-            const bbox = estimateBBox(d);
-            const group = classifyEdgePath(bbox, imageArea, cfg);
-            switch (group) {
-                case 'wall': walls.push(d); break;
-                case 'thickerWall': thickerWalls.push(d); break;
-                case 'unclassified': unclassified.push(d); break;
-                case 'skip': skipped++; break;
-            }
-        }
-    }
-
-    // Build SVG
+    // Build SVG — layer groups kept empty for manual population via the builder tool
     const viewBox = extractViewBox(outlineSvg);
     const { width, height } = extractWidthHeight(outlineSvg);
     const pathEl = (d: string) => `    <path d="${d}"/>`;
@@ -452,17 +344,11 @@ export async function processMap(
         outlinePaths.length > 0
             ? `  <g id="outlines">\n${outlinePaths.map((p) => pathEl(p.d)).join('\n')}\n  </g>`
             : `  <!-- outlines: no paths found -->`,
-        `  <!-- inaccessible: manual — trace in SVG editor -->\n  <g id="inaccessible">\n  </g>`,
-        walls.length > 0
-            ? `  <g id="walls">\n${walls.map(pathEl).join('\n')}\n  </g>`
-            : `  <!-- walls: none found -->`,
-        thickerWalls.length > 0
-            ? `  <g id="thickerWalls">\n${thickerWalls.map(pathEl).join('\n')}\n  </g>`
-            : `  <!-- thickerWalls: none found -->`,
-        `  <!-- stairs: populate manually -->\n  <g id="stairs">\n  </g>`,
-        unclassified.length > 0
-            ? `  <!-- MANUAL STEP: review for stairs -->\n  <g id="unclassified">\n${unclassified.map(pathEl).join('\n')}\n  </g>`
-            : `  <!-- unclassified: none found -->`,
+        `  <g id="inaccessible">\n  </g>`,
+        `  <g id="walls">\n  </g>`,
+        `  <g id="thickerWalls">\n  </g>`,
+        `  <g id="stairs">\n  </g>`,
+        `  <g id="unclassified">\n  </g>`,
     ];
 
     const svg = [
@@ -474,16 +360,7 @@ export async function processMap(
 
     return {
         svg,
-        stats: {
-            outlines: outlinePaths.length,
-            walls: walls.length,
-            thickerWalls: thickerWalls.length,
-            unclassified: unclassified.length,
-            skipped,
-        },
-        ...(emitDebug && {
-            debugBitmaps: { mask: interiorMask, masked: maskedBuffer, negatedMask, wallBitmap },
-        }),
+        stats: { outlines: outlinePaths.length },
     };
 }
 
@@ -494,7 +371,6 @@ export async function processMap(
 async function main() {
     const inputPath = requiredArg('input');
     const outputPath = requiredArg('output');
-    const debugMode = process.argv.includes('--debug');
 
     if (!fs.existsSync(inputPath)) {
         console.error(`Input file not found: ${inputPath}`);
@@ -508,12 +384,6 @@ async function main() {
 
     const cfg: MapConfig = {
         boundaryThreshold: arg('boundaryThreshold', defaultConfig.boundaryThreshold),
-        wallThreshold: arg('wallThreshold', defaultConfig.wallThreshold),
-        wallTurd: arg('wallTurd', defaultConfig.wallTurd),
-        strokeThreshold: arg('strokeThreshold', defaultConfig.strokeThreshold),
-        aspectThreshold: arg('aspectThreshold', defaultConfig.aspectThreshold),
-        minPathArea: arg('minPathArea', defaultConfig.minPathArea),
-        minUnclassified: arg('minUnclassified', defaultConfig.minUnclassified),
         maxSize: arg('maxSize', defaultConfig.maxSize),
     };
 
@@ -521,29 +391,13 @@ async function main() {
     const rawBuffer = fs.readFileSync(inputPath);
 
     console.log('Processing...');
-    const result = await processMap(rawBuffer, cfg, debugMode);
-
-    if (debugMode && result.debugBitmaps) {
-        const d = result.debugBitmaps;
-        fs.writeFileSync(outputPath.replace('.svg', '_debug_mask.png'), d.mask as unknown as Uint8Array);
-        fs.writeFileSync(outputPath.replace('.svg', '_debug_masked.png'), d.masked as unknown as Uint8Array);
-        fs.writeFileSync(outputPath.replace('.svg', '_debug_pass1_negatedmask.png'), d.negatedMask as unknown as Uint8Array);
-        fs.writeFileSync(outputPath.replace('.svg', '_debug_pass2_walls.png'), d.wallBitmap as unknown as Uint8Array);
-        console.log('  Saved debug bitmaps.');
-    }
+    const result = await processMap(rawBuffer, cfg);
 
     fs.writeFileSync(outputPath, result.svg, 'utf8');
 
-    const s = result.stats;
     console.log('\nDone.');
-    console.log(`  outlines:     ${s.outlines} path(s)`);
-    console.log(`  inaccessible: 0 path(s)  (manual — trace in SVG editor)`);
-    console.log(`  walls:        ${s.walls} path(s)`);
-    console.log(`  thickerWalls: ${s.thickerWalls} path(s)`);
-    console.log(`  unclassified: ${s.unclassified} path(s)  <- review manually for stairs`);
-    console.log(`  skipped:      ${s.skipped} (noise filtered out)`);
+    console.log(`  outlines: ${result.stats.outlines} path(s)`);
     console.log(`\nOutput: ${outputPath}`);
-    console.log('\nTip: run  npx tsx scripts/mapToSvgPreview.ts --input <image>  for live parameter tuning.');
 }
 
 // ---------------------------------------------------------------------------
@@ -675,6 +529,127 @@ export async function fillRegion(
         .sort((a, b) => b.area - a.area)[0];
 
     return { path: best.d, pixelCount };
+}
+
+/**
+ * Flatten bezier curves in a potrace SVG path into a high-resolution polyline (M/L/Z only).
+ * Each curve is sampled at multiple points along its length so the sharpened shape
+ * retains the original curve geometry instead of collapsing to a coarse polygon.
+ */
+export function stripBeziers(d: string, stepSize = 12): string {
+    const pts: { x: number; y: number }[] = [];
+    let closed = false;
+    const NUM = /[-+]?(?:[0-9]+[.][0-9]+|[.][0-9]+|[0-9]+)(?:[eE][-+]?[0-9]+)?/g;
+    const re = /([MmLlHhVvCcSsQqTtAaZz])([^MmLlHhVvCcSsQqTtAaZz]*)/g;
+    let m: RegExpExecArray | null;
+    let cx = 0, cy = 0, sx = 0, sy = 0;
+    let prevCtrl: { x: number; y: number } | null = null;
+
+    const cubic = (p0: {x:number;y:number}, p1: {x:number;y:number}, p2: {x:number;y:number}, p3: {x:number;y:number}, t: number) => {
+        const mt = 1 - t;
+        const a = mt * mt * mt, b = 3 * mt * mt * t, c = 3 * mt * t * t, d3 = t * t * t;
+        return { x: a * p0.x + b * p1.x + c * p2.x + d3 * p3.x, y: a * p0.y + b * p1.y + c * p2.y + d3 * p3.y };
+    };
+    const quad = (p0: {x:number;y:number}, p1: {x:number;y:number}, p2: {x:number;y:number}, t: number) => {
+        const mt = 1 - t;
+        return { x: mt * mt * p0.x + 2 * mt * t * p1.x + t * t * p2.x, y: mt * mt * p0.y + 2 * mt * t * p1.y + t * t * p2.y };
+    };
+    const sampleCubic = (p0: {x:number;y:number}, p1: {x:number;y:number}, p2: {x:number;y:number}, p3: {x:number;y:number}) => {
+        const chord = Math.hypot(p3.x - p0.x, p3.y - p0.y);
+        const steps = Math.max(4, Math.min(20, Math.round(chord / stepSize)));
+        for (let s = 1; s <= steps; s++) pts.push(cubic(p0, p1, p2, p3, s / steps));
+    };
+    const sampleQuad = (p0: {x:number;y:number}, p1: {x:number;y:number}, p2: {x:number;y:number}) => {
+        const chord = Math.hypot(p2.x - p0.x, p2.y - p0.y);
+        const steps = Math.max(4, Math.min(20, Math.round(chord / stepSize)));
+        for (let s = 1; s <= steps; s++) pts.push(quad(p0, p1, p2, s / steps));
+    };
+
+    while ((m = re.exec(d)) !== null) {
+        const cmd = m[1];
+        const nums = (m[2].match(NUM) ?? []).map(Number);
+        const abs = cmd.toUpperCase();
+        const rel = cmd !== abs;
+        let i = 0;
+        const gx = (k: number) => rel ? cx + nums[k] : nums[k];
+        const gy = (k: number) => rel ? cy + nums[k] : nums[k];
+
+        if (abs === 'Z') { closed = true; cx = sx; cy = sy; prevCtrl = null; continue; }
+
+        if (abs === 'M' || abs === 'L') {
+            while (i + 1 < nums.length) {
+                const x = gx(i), y = gy(i + 1);
+                if (abs === 'M' && pts.length === 0) { sx = x; sy = y; }
+                pts.push({ x, y }); cx = x; cy = y; i += 2;
+            }
+            prevCtrl = null;
+        } else if (abs === 'H') {
+            while (i < nums.length) {
+                const x = rel ? cx + nums[i] : nums[i];
+                pts.push({ x, y: cy }); cx = x; i++;
+            }
+            prevCtrl = null;
+        } else if (abs === 'V') {
+            while (i < nums.length) {
+                const y = rel ? cy + nums[i] : nums[i];
+                pts.push({ x: cx, y }); cy = y; i++;
+            }
+            prevCtrl = null;
+        } else if (abs === 'C') {
+            while (i + 5 < nums.length) {
+                const p0 = { x: cx, y: cy };
+                const p1 = { x: gx(i), y: gy(i + 1) };
+                const p2 = { x: gx(i + 2), y: gy(i + 3) };
+                const p3 = { x: gx(i + 4), y: gy(i + 5) };
+                sampleCubic(p0, p1, p2, p3);
+                cx = p3.x; cy = p3.y; prevCtrl = p2; i += 6;
+            }
+        } else if (abs === 'S') {
+            while (i + 3 < nums.length) {
+                const p0 = { x: cx, y: cy };
+                const p1 = prevCtrl ? { x: 2 * cx - prevCtrl.x, y: 2 * cy - prevCtrl.y } : p0;
+                const p2 = { x: gx(i), y: gy(i + 1) };
+                const p3 = { x: gx(i + 2), y: gy(i + 3) };
+                sampleCubic(p0, p1, p2, p3);
+                cx = p3.x; cy = p3.y; prevCtrl = p2; i += 4;
+            }
+        } else if (abs === 'Q') {
+            while (i + 3 < nums.length) {
+                const p0 = { x: cx, y: cy };
+                const p1 = { x: gx(i), y: gy(i + 1) };
+                const p2 = { x: gx(i + 2), y: gy(i + 3) };
+                sampleQuad(p0, p1, p2);
+                cx = p2.x; cy = p2.y; prevCtrl = p1; i += 4;
+            }
+        } else if (abs === 'T') {
+            while (i + 1 < nums.length) {
+                const p0 = { x: cx, y: cy };
+                const p1 = prevCtrl ? { x: 2 * cx - prevCtrl.x, y: 2 * cy - prevCtrl.y } : p0;
+                const p2 = { x: gx(i), y: gy(i + 1) };
+                sampleQuad(p0, p1, p2);
+                cx = p2.x; cy = p2.y; prevCtrl = p1; i += 2;
+            }
+        } else if (abs === 'A') {
+            while (i + 6 < nums.length) {
+                const x = gx(i + 5), y = gy(i + 6);
+                pts.push({ x, y }); cx = x; cy = y; i += 7;
+            }
+            prevCtrl = null;
+        }
+    }
+
+    if (closed && pts.length > 1) {
+        const first = pts[0], last = pts[pts.length - 1];
+        if (Math.abs(first.x - last.x) < 0.001 && Math.abs(first.y - last.y) < 0.001) pts.pop();
+    }
+
+    if (!pts.length) return d;
+    let out = `M ${pts[0].x.toFixed(3)} ${pts[0].y.toFixed(3)}`;
+    for (let j = 1; j < pts.length; j++) {
+        out += ` L ${pts[j].x.toFixed(3)} ${pts[j].y.toFixed(3)}`;
+    }
+    if (closed) out += ' Z';
+    return out;
 }
 
 /**

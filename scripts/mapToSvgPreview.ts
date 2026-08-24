@@ -22,16 +22,17 @@
  * When a closed outline exists, all fill layers are clipped to it on export.
  */
 
-import fs   from 'node:fs';
+import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
 import sharp from 'sharp';
 import {
-    defaultConfig,
-    extractGrayPixels,
-    fillRegion,
-    processMap,
-    type MapConfig,
+  defaultConfig,
+  extractGrayPixels,
+  fillRegion,
+  processMap,
+  stripBeziers,
+  type MapConfig,
 } from './mapToSvg.js';
 
 // ── constants ────────────────────────────────────────────────────────────────
@@ -39,115 +40,122 @@ import {
 const WORKSPACE_DIR = path.join(process.cwd(), 'scripts', 'map-workspace');
 
 const PORT = (() => {
-    const idx = process.argv.indexOf('--port');
-    if (idx !== -1 && process.argv[idx + 1]) {
-        const v = Number(process.argv[idx + 1]);
-        if (!isNaN(v)) return v;
-    }
-    return 9090;
+  const idx = process.argv.indexOf('--port');
+  if (idx !== -1 && process.argv[idx + 1]) {
+    const v = Number(process.argv[idx + 1]);
+    if (!isNaN(v)) return v;
+  }
+  return 9090;
 })();
 
 // Ensure the workspace folder exists on startup
 if (!fs.existsSync(WORKSPACE_DIR)) {
-    fs.mkdirSync(WORKSPACE_DIR, { recursive: true });
-    console.log(`\nCreated workspace folder: ${WORKSPACE_DIR}`);
-    console.log('Drop PNG or JPG map images there to get started.\n');
+  fs.mkdirSync(WORKSPACE_DIR, { recursive: true });
+  console.log(`\nCreated workspace folder: ${WORKSPACE_DIR}`);
+  console.log('Drop PNG or JPG map images there to get started.\n');
 }
 
 // ── server state  ────────────────────────────────────────────────────────────
 
-let currentPngPath:   string | null = null;
+let currentPngPath: string | null = null;
 let currentPngBuffer: Buffer | null = null;
-let currentPngMime:   string        = 'image/png';
+let currentPngMime: string = 'image/png';
 
 // ── gray-pixel cache (refreshed after every /process call) ──────────────────
 
 interface GrayCache {
-    pixels: Uint8Array;
-    width:  number;
-    height: number;
-    vW:     number; // SVG viewBox width  from last render
-    vH:     number; // SVG viewBox height from last render
+  pixels: Uint8Array;
+  width: number;
+  height: number;
+  vW: number; // SVG viewBox width  from last render
+  vH: number; // SVG viewBox height from last render
 }
 let grayCache: GrayCache | null = null;
 
 // ── annotation types (shared server ↔ session JSON) ────────────────────────
 
 interface FilledShapeServer {
-    kind:      'fill';
-    id:        string;
-    group:     string;
-    mode:      'add' | 'subtract';
-    type:      'fill' | 'outline' | 'line';
-    lineStyle: 'solid' | 'dashed';
-    path:      string;  // potrace `d` captured at vW × vH
-    vW:        number;
-    vH:        number;
+  kind: 'fill';
+  id: string;
+  group: string;
+  mode: 'add' | 'subtract';
+  type: 'fill' | 'outline' | 'line';
+  lineStyle: 'solid' | 'dashed';
+  path: string;  // potrace `d` captured at vW × vH
+  vW: number;
+  vH: number;
+  nx?: number;  // normalised click x (0–1) — enables re-tuning in select mode
+  ny?: number;
+  sensitivity?: number; // fill threshold at capture time
+  offset?: number;  // edge offset at capture time
+  removeBends?: boolean; // strip bezier curves → straight polyline on render
 }
 
 interface ReassignmentServer {
-    kind:      'reassign';
-    id:        string;
-    d:         string;
-    fromGroup: string;
-    toGroup:   string;
-    type:      'fill' | 'outline' | 'line';
-    lineStyle: 'solid' | 'dashed';
+  kind: 'reassign';
+  id: string;
+  d: string;
+  fromGroup: string;
+  toGroup: string;
+  type: 'fill' | 'outline' | 'line';
+  lineStyle: 'solid' | 'dashed';
+  removeBends?: boolean;
 }
 
 interface ExclusionServer {
-    kind:      'exclude';
-    id:        string;
-    d:         string;
-    fromGroup: string;
+  kind: 'exclude';
+  id: string;
+  d: string;
+  fromGroup: string;
 }
 
 interface MoveServer {
-    kind:      'move';
-    id:        string;
-    d:         string;
-    fromGroup: string;
-    dx:        number;
-    dy:        number;
+  kind: 'move';
+  id: string;
+  d: string;
+  fromGroup: string;
+  dx: number;
+  dy: number;
 }
 
 interface ReshapeServer {
-    kind:      'reshape';
-    id:        string;
-    origD:     string;  // original d attribute for matching
-    newD:      string;  // new d attribute after node editing
-    fromGroup: string;
+  kind: 'reshape';
+  id: string;
+  origD: string;  // original d attribute for matching (fallback)
+  newD: string;  // new d attribute after node editing
+  fromGroup: string;
+  annId?: string; // stable data-ann-id of the target path (preferred match key)
 }
 
 interface MapOutlineServer {
-    kind:   'map-outline';
-    id:     string;
-    points: { nx: number; ny: number }[]; // normalised 0-1 coords relative to image
-    closed: boolean;
+  kind: 'map-outline';
+  id: string;
+  points: { nx: number; ny: number }[]; // normalised 0-1 coords relative to image
+  closed: boolean;
 }
 
 type AnnotationServer =
-    | FilledShapeServer
-    | ReassignmentServer
-    | ExclusionServer
-    | MoveServer
-    | ReshapeServer
-    | MapOutlineServer;
+  | FilledShapeServer
+  | ReassignmentServer
+  | ExclusionServer
+  | MoveServer
+  | ReshapeServer
+  | MapOutlineServer;
 
 // ── session types ────────────────────────────────────────────────────────────
 
 interface SessionInfo {
-    name:      string;
-    pngFile:   string;
-    updatedAt: string;
+  name: string;
+  pngFile: string;
+  updatedAt: string;
 }
 
 interface SessionData {
-    name:        string;
-    pngFile:     string;
-    config:      Partial<MapConfig>;
-    annotations: AnnotationServer[];
-    updatedAt:   string;
+  name: string;
+  pngFile: string;
+  config: Partial<MapConfig>;
+  annotations: AnnotationServer[];
+  updatedAt: string;
 }
 
 // ── workspace helpers ────────────────────────────────────────────────────────
@@ -157,112 +165,112 @@ interface SessionData {
  *  Session identifiers are "subdir/name" or "name" for root-level sessions.
  */
 function scanWorkspace(): { pngs: string[]; sessions: SessionInfo[] } {
-    const pngs: string[]        = [];
-    const sessions: SessionInfo[] = [];
+  const pngs: string[] = [];
+  const sessions: SessionInfo[] = [];
 
-    function readJsonSession(fp: string, prefix: string): SessionInfo | null {
-        try {
-            const d = JSON.parse(fs.readFileSync(fp, 'utf8')) as SessionData;
-            return { name: prefix ? prefix + '/' + d.name : d.name, pngFile: d.pngFile, updatedAt: d.updatedAt };
-        } catch { return null; }
-    }
+  function readJsonSession(fp: string, prefix: string): SessionInfo | null {
+    try {
+      const d = JSON.parse(fs.readFileSync(fp, 'utf8')) as SessionData;
+      return { name: prefix ? prefix + '/' + d.name : d.name, pngFile: d.pngFile, updatedAt: d.updatedAt };
+    } catch { return null; }
+  }
 
-    const entries = fs.readdirSync(WORKSPACE_DIR).sort();
-    for (const entry of entries) {
-        const fp   = path.join(WORKSPACE_DIR, entry);
-        const stat = fs.statSync(fp);
-        if (stat.isDirectory()) {
-            // One level deep only
-            const sub = fs.readdirSync(fp).sort();
-            for (const sf of sub) {
-                if (/\.(png|jpg|jpeg)$/i.test(sf)) {
-                    pngs.push(entry + '/' + sf);
-                } else if (sf.endsWith('.json')) {
-                    const s = readJsonSession(path.join(fp, sf), entry);
-                    if (s) sessions.push(s);
-                }
-            }
-        } else if (/\.(png|jpg|jpeg)$/i.test(entry)) {
-            pngs.push(entry);
-        } else if (entry.endsWith('.json')) {
-            const s = readJsonSession(fp, '');
-            if (s) sessions.push(s);
+  const entries = fs.readdirSync(WORKSPACE_DIR).sort();
+  for (const entry of entries) {
+    const fp = path.join(WORKSPACE_DIR, entry);
+    const stat = fs.statSync(fp);
+    if (stat.isDirectory()) {
+      // One level deep only
+      const sub = fs.readdirSync(fp).sort();
+      for (const sf of sub) {
+        if (/\.(png|jpg|jpeg)$/i.test(sf)) {
+          pngs.push(entry + '/' + sf);
+        } else if (sf.endsWith('.json')) {
+          const s = readJsonSession(path.join(fp, sf), entry);
+          if (s) sessions.push(s);
         }
+      }
+    } else if (/\.(png|jpg|jpeg)$/i.test(entry)) {
+      pngs.push(entry);
+    } else if (entry.endsWith('.json')) {
+      const s = readJsonSession(fp, '');
+      if (s) sessions.push(s);
     }
-    return { pngs, sessions };
+  }
+  return { pngs, sessions };
 }
 
 function loadPngFile(filename: string): void {
-    // Allow "subdir/file.png" (one level) — prevent traversal
-    const parts = filename.split('/');
-    if (parts.length > 2 || parts.some(p => !p || p === '.' || p === '..')) {
-        throw new Error('Invalid path');
-    }
-    const fp  = path.join(WORKSPACE_DIR, ...parts);
-    const abs = path.resolve(fp);
-    if (!abs.startsWith(path.resolve(WORKSPACE_DIR))) throw new Error('Path traversal denied');
-    if (!fs.existsSync(fp)) throw new Error(`File not found: ${filename}`);
-    const ext         = path.extname(parts[parts.length - 1]).slice(1).toLowerCase();
-    currentPngPath   = fp;
-    currentPngBuffer = fs.readFileSync(fp);
-    currentPngMime   = (ext === 'jpg' || ext === 'jpeg') ? 'image/jpeg' : 'image/png';
-    grayCache        = null;
+  // Allow "subdir/file.png" (one level) — prevent traversal
+  const parts = filename.split('/');
+  if (parts.length > 2 || parts.some(p => !p || p === '.' || p === '..')) {
+    throw new Error('Invalid path');
+  }
+  const fp = path.join(WORKSPACE_DIR, ...parts);
+  const abs = path.resolve(fp);
+  if (!abs.startsWith(path.resolve(WORKSPACE_DIR))) throw new Error('Path traversal denied');
+  if (!fs.existsSync(fp)) throw new Error(`File not found: ${filename}`);
+  const ext = path.extname(parts[parts.length - 1]).slice(1).toLowerCase();
+  currentPngPath = fp;
+  currentPngBuffer = fs.readFileSync(fp);
+  currentPngMime = (ext === 'jpg' || ext === 'jpeg') ? 'image/jpeg' : 'image/png';
+  grayCache = null;
 }
 
 function safeSessionName(name: string): string {
-    return name.replace(/[^a-zA-Z0-9_\-. ]/g, '_').trim().slice(0, 64) || 'session';
+  return name.replace(/[^a-zA-Z0-9_\-. ]/g, '_').trim().slice(0, 64) || 'session';
 }
 
 /** Resolve the directory to save a session into — same folder as the PNG. */
 function sessionDir(pngFile: string): string {
-    const parts = pngFile.split('/');
-    const dir   = parts.length === 2 ? path.join(WORKSPACE_DIR, parts[0]) : WORKSPACE_DIR;
-    const abs   = path.resolve(dir);
-    if (!abs.startsWith(path.resolve(WORKSPACE_DIR))) throw new Error('Path traversal denied');
-    return dir;
+  const parts = pngFile.split('/');
+  const dir = parts.length === 2 ? path.join(WORKSPACE_DIR, parts[0]) : WORKSPACE_DIR;
+  const abs = path.resolve(dir);
+  if (!abs.startsWith(path.resolve(WORKSPACE_DIR))) throw new Error('Path traversal denied');
+  return dir;
 }
 
 /** Session identifier is "subdir/name" or "name". Resolve to an absolute .json path. */
 function resolveSessionPath(sessionId: string): string {
-    const parts = sessionId.split('/');
-    if (parts.length > 2 || parts.some(p => !p || p === '.' || p === '..')) {
-        throw new Error('Invalid session id');
-    }
-    const safeName  = safeSessionName(parts[parts.length - 1]);
-    const safeparts = parts.length === 2 ? [parts[0], safeName] : [safeName];
-    const fp  = path.join(WORKSPACE_DIR, ...safeparts) + '.json';
-    const abs = path.resolve(fp);
-    if (!abs.startsWith(path.resolve(WORKSPACE_DIR))) throw new Error('Path traversal denied');
-    return fp;
+  const parts = sessionId.split('/');
+  if (parts.length > 2 || parts.some(p => !p || p === '.' || p === '..')) {
+    throw new Error('Invalid session id');
+  }
+  const safeName = safeSessionName(parts[parts.length - 1]);
+  const safeparts = parts.length === 2 ? [parts[0], safeName] : [safeName];
+  const fp = path.join(WORKSPACE_DIR, ...safeparts) + '.json';
+  const abs = path.resolve(fp);
+  if (!abs.startsWith(path.resolve(WORKSPACE_DIR))) throw new Error('Path traversal denied');
+  return fp;
 }
 
 function saveSessionFile(session: SessionData): void {
-    const name = safeSessionName(session.name);
-    const dir  = sessionDir(session.pngFile);
-    fs.writeFileSync(
-        path.join(dir, name + '.json'),
-        JSON.stringify({ ...session, name }, null, 2),
-        'utf8',
-    );
+  const name = safeSessionName(session.name);
+  const dir = sessionDir(session.pngFile);
+  fs.writeFileSync(
+    path.join(dir, name + '.json'),
+    JSON.stringify({ ...session, name }, null, 2),
+    'utf8',
+  );
 }
 
 function loadSessionFile(sessionId: string): SessionData {
-    const fp = resolveSessionPath(sessionId);
-    if (!fs.existsSync(fp)) throw new Error(`Session not found: ${sessionId}`);
-    return JSON.parse(fs.readFileSync(fp, 'utf8')) as SessionData;
+  const fp = resolveSessionPath(sessionId);
+  if (!fs.existsSync(fp)) throw new Error(`Session not found: ${sessionId}`);
+  return JSON.parse(fs.readFileSync(fp, 'utf8')) as SessionData;
 }
 
 function deleteSessionFile(sessionId: string): void {
-    const fp = resolveSessionPath(sessionId);
-    if (fs.existsSync(fp)) fs.unlinkSync(fp);
+  const fp = resolveSessionPath(sessionId);
+  if (fs.existsSync(fp)) fs.unlinkSync(fp);
 }
 
 // ── HTML UI ──────────────────────────────────────────────────────────────────
 
 function buildHtml(): string {
-    const cfg = defaultConfig;
+  const cfg = defaultConfig;
 
-    return `<!DOCTYPE html>
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -437,13 +445,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 }
 #btn-export:hover:not(:disabled) { background: #1e4a70; border-color: #4a9adf; color: #aadeff; }
 #btn-export:disabled { opacity: 0.5; cursor: not-allowed; }
-#btn-gen-walls {
-  width: 100%; padding: 7px 10px; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 5px;
-  background: #1e3a1e; border: 1px solid #3a7a3a; border-radius: 5px;
-  color: #7ecf7e; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.15s;
-}
-#btn-gen-walls:hover:not(:disabled) { background: #254d25; border-color: #5aaf5a; color: #adfaad; }
-#btn-gen-walls:disabled { opacity: 0.5; cursor: not-allowed; }
+#btn-gen-walls { display: none; }
 
 /* ─── PREVIEW ────────────────────────────────────────────── */
 #preview {
@@ -540,6 +542,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 }
 .node-handle:hover { fill: #90d0ff; }
 .node-handle.node-dragging { fill: #ff9900 !important; cursor: grabbing !important; }
+.node-handle.node-snap-target { fill: #44ff88 !important; stroke: #fff !important; stroke-width: 2px; }
 .node-handle-active { fill: #ffd166 !important; stroke: #111 !important; stroke-width: 1.8px; }
 .node-segment {
   stroke: rgba(255,153,0,0.42);
@@ -644,22 +647,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 .fp-type-btn.active      { background: var(--accent); border-color: var(--accent); color: #000; font-weight: 600; }
 .fp-type-btn.excl-active { background: #b22; border-color: #c33; color: #fff; font-weight: 600; }
 
-/* debug bitmaps */
-.debug-bitmap { margin-bottom: 12px; }
-.debug-bitmap h3 {
-  font-size: 11px; color: var(--muted); text-transform: uppercase;
-  letter-spacing: 0.05em; margin-bottom: 5px;
-}
-.debug-bitmap img { width: 100%; border-radius: 4px; border: 1px solid var(--border); image-rendering: pixelated; }
-.placeholder {
-  width: 100%; padding: 18px; text-align: center; color: var(--muted);
-  font-size: 11px; background: var(--row-bg); border-radius: 4px; border: 1px dashed var(--border);
-}
-.debug-load-btn {
-  width: 100%; padding: 7px; margin-bottom: 12px;
-  background: var(--accent); color: #000; border: none;
-  border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer;
-}
+/* debug bitmaps — removed */
 
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
@@ -717,7 +705,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
        border-bottom:1px solid rgba(150,91,230,0.15);flex-shrink:0">
     <div style="font-size:10.5px;color:#b07be8;line-height:1.6">
       <b>Click</b> any path to activate node editing<br>
-      <b>Drag</b> points to move, <b>right-click</b> a point to delete, <b>hover/click</b> a line to add
+      <b>Drag</b> points to move, <b>right-click</b> a point to delete, <b>hover/click</b> a line to add &nbsp;&middot;&nbsp; <b>Shift+right-click</b> for browser menu
     </div>
   </div>
 
@@ -726,7 +714,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
        border-bottom:1px solid rgba(255,224,102,0.18);flex-shrink:0">
     <div style="font-size:10.5px;color:#ffe066;line-height:1.6">
       <b>Click</b> to place vertices &nbsp;\u00b7&nbsp; <b>click first point</b> to close shape &nbsp;\u00b7&nbsp; <b>Enter</b> to finish open line<br>
-      <b>Right-click</b> to remove last &nbsp;\u00b7&nbsp; <b>Esc</b> to cancel
+      <b>Right-click</b> to remove last &nbsp;\u00b7&nbsp; <b>Esc</b> to cancel &nbsp;\u00b7&nbsp; <b>Shift+right-click</b> for browser menu
     </div>
   </div>
 
@@ -737,6 +725,15 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       <span style="font-size:10.5px;color:#ffa724;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">
         Editing: <b id="node-edit-group-label" style="color:#ffcc70"></b>
       </span>
+      <button id="node-split-toggle" title="Toggle split-on-delete (break path at deleted vertex)"
+              style="padding:3px 8px;font-size:11px;background:rgba(255,255,255,0.08);border:1px solid #555;
+                     color:#aaa;border-radius:3px;cursor:pointer">&#x2702; Split</button>
+      <button id="node-undo-btn" title="Undo (Ctrl+Z)" disabled
+              style="padding:3px 8px;font-size:14px;background:rgba(255,255,255,0.08);border:1px solid #555;
+                     color:#aaa;border-radius:3px;cursor:pointer">&#x21A9;</button>
+      <button id="node-redo-btn" title="Redo (Ctrl+Y)" disabled
+              style="padding:3px 8px;font-size:14px;background:rgba(255,255,255,0.08);border:1px solid #555;
+                     color:#aaa;border-radius:3px;cursor:pointer">&#x21AA;</button>
       <button id="node-save-btn" style="padding:3px 10px;font-size:11px;background:#ff9900;border:none;
               color:#000;border-radius:3px;cursor:pointer;font-weight:600">Save</button>
       <button id="node-cancel-btn" style="padding:3px 10px;font-size:11px;background:rgba(255,255,255,0.1);
@@ -751,11 +748,6 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       <summary>SVG Generation</summary>
       <div class="section-body">
         <div class="slider-row">
-          <div class="slider-label">Wall sensitivity<span class="slider-hint">min brightness = wall</span></div>
-          <input type="range" id="wallThreshold" min="10" max="200" step="1" value="${cfg.wallThreshold}">
-          <div class="slider-val" id="wallThreshold_v">${cfg.wallThreshold}</div>
-        </div>
-        <div class="slider-row">
           <div class="slider-label">Outer boundary<span class="slider-hint">ring luminance cutoff</span></div>
           <input type="range" id="boundaryThreshold" min="50" max="240" step="1" value="${cfg.boundaryThreshold}">
           <div class="slider-val" id="boundaryThreshold_v">${cfg.boundaryThreshold}</div>
@@ -765,17 +757,9 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
           <input type="range" id="maxSize" min="256" max="4096" step="256" value="${cfg.maxSize}">
           <div class="slider-val" id="maxSize_v">${cfg.maxSize}</div>
         </div>
-        <div class="slider-row">
-          <div class="slider-label">Noise filter<span class="slider-hint">min blob size (turd)</span></div>
-          <input type="range" id="wallTurd" min="0" max="50" step="1" value="${cfg.wallTurd}">
-          <div class="slider-val" id="wallTurd_v">${cfg.wallTurd}</div>
-        </div>
         <div style="font-size:11px;color:var(--muted);padding-top:2px">
-          Walls: <span id="wall-count" style="color:var(--accent);font-family:monospace">\u2014</span>
-          &nbsp;\u00b7&nbsp; Thick: <span id="thick-count" style="color:var(--accent);font-family:monospace">\u2014</span>
-          &nbsp;\u00b7&nbsp; Unclassified: <span id="unclass-count" style="color:var(--yellow);font-family:monospace">\u2014</span>
+          Outline: <span id="outline-count" style="color:var(--accent);font-family:monospace">\u2014</span>
         </div>
-        <button id="btn-gen-walls" disabled>&#x2699;&#xFE0F;&nbsp; Generate Walls</button>
       </div>
     </details>
 
@@ -834,41 +818,6 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       </div>
     </details>
 
-    <!-- Advanced -->
-    <details>
-      <summary>Advanced</summary>
-      <div class="section-body">
-        <div class="slider-row">
-          <div class="slider-label">Aspect filter<span class="slider-hint">min long/short ratio</span></div>
-          <input type="range" id="aspectThreshold" min="1" max="20" step="0.5" value="${cfg.aspectThreshold}">
-          <div class="slider-val" id="aspectThreshold_v">${cfg.aspectThreshold}</div>
-        </div>
-        <div class="slider-row">
-          <div class="slider-label">Stroke width<span class="slider-hint">thin vs thick wall px</span></div>
-          <input type="range" id="strokeThreshold" min="1" max="40" step="0.5" value="${cfg.strokeThreshold}">
-          <div class="slider-val" id="strokeThreshold_v">${cfg.strokeThreshold}</div>
-        </div>
-        <div class="slider-row">
-          <div class="slider-label">Min path area<span class="slider-hint">px\u00b2 drop threshold</span></div>
-          <input type="range" id="minPathArea" min="0" max="500" step="10" value="${cfg.minPathArea}">
-          <div class="slider-val" id="minPathArea_v">${cfg.minPathArea}</div>
-        </div>
-        <div class="slider-row">
-          <div class="slider-label">Min unclassified<span class="slider-hint">px\u00b2 to keep for review</span></div>
-          <input type="range" id="minUnclassified" min="0" max="5000" step="50" value="${cfg.minUnclassified}">
-          <div class="slider-val" id="minUnclassified_v">${cfg.minUnclassified}</div>
-        </div>
-
-        <div style="margin-top:10px">
-          <button class="debug-load-btn" id="load-debug">Load Debug Bitmaps</button>
-          <div class="debug-bitmap"><h3>Interior Mask</h3><div class="placeholder" id="dbg-mask">Not loaded</div></div>
-          <div class="debug-bitmap"><h3>Masked Image</h3><div class="placeholder" id="dbg-masked">Not loaded</div></div>
-          <div class="debug-bitmap"><h3>Pass 1 Input</h3><div class="placeholder" id="dbg-negmask">Not loaded</div></div>
-          <div class="debug-bitmap"><h3>Pass 2 Input</h3><div class="placeholder" id="dbg-wallbmp">Not loaded</div></div>
-        </div>
-      </div>
-    </details>
-
   </div><!-- /panel-body -->
 
   <div id="status-bar">
@@ -912,9 +861,9 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     <div class="fp-row">
       <div class="fp-label">Fill sensitivity</div>
       <div style="display:flex;align-items:center;gap:6px">
-        <input type="range" id="fp-sensitivity" min="10" max="255" step="1" value="${cfg.wallThreshold}"
+        <input type="range" id="fp-sensitivity" min="10" max="255" step="1" value="68"
                style="flex:1;accent-color:var(--accent);height:3px;cursor:pointer">
-        <div id="fp-sensitivity-v" style="width:28px;text-align:right;font-family:monospace;font-size:11.5px;color:var(--accent)">${cfg.wallThreshold}</div>
+        <div id="fp-sensitivity-v" style="width:28px;text-align:right;font-family:monospace;font-size:11.5px;color:var(--accent)">68</div>
       </div>
     </div>
     <div class="fp-row">
@@ -949,6 +898,13 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       <div style="display:flex;gap:5px">
         <button class="fp-type-btn active" id="fp-type-fill">\u25a3 Fill</button>
         <button class="fp-type-btn" id="fp-type-outline">\u25a1 Outline</button>
+      </div>
+    </div>
+    <div class="fp-row">
+      <div class="fp-label">Curves</div>
+      <div style="display:flex;gap:5px">
+        <button class="fp-type-btn active" id="fp-fill-bends-on">&#126; Smooth</button>
+        <button class="fp-type-btn" id="fp-fill-bends-off">/ Sharp</button>
       </div>
     </div>
     <div class="fp-row" id="fp-fill-line-style-row" style="display:none">
@@ -1031,6 +987,29 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
         <button class="fp-type-btn" id="fp-sel-ls-dashed">- - Dashed</button>
       </div>
     </div>
+    <div class="fp-row">
+      <div class="fp-label">Curves</div>
+      <div style="display:flex;gap:5px">
+        <button class="fp-type-btn active" id="fp-sel-bends-on">&#126; Smooth</button>
+        <button class="fp-type-btn" id="fp-sel-bends-off">/ Sharp</button>
+      </div>
+    </div>
+    <div id="fp-sel-refill-row" style="display:none;margin-bottom:9px">
+      <div class="fp-label" style="margin-bottom:6px">Re-tune fill</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px">
+        <span style="font-size:10.5px;color:var(--muted);width:64px;flex-shrink:0">Sensitivity</span>
+        <input type="range" id="fp-sel-sensitivity" min="10" max="255" step="1" value="68"
+               style="flex:1;accent-color:var(--accent);height:3px;cursor:pointer">
+        <div id="fp-sel-sensitivity-v" style="width:28px;text-align:right;font-family:monospace;font-size:11.5px;color:var(--accent)">68</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <span style="font-size:10.5px;color:var(--muted);width:64px;flex-shrink:0">Edge offset</span>
+        <input type="range" id="fp-sel-offset" min="-15" max="15" step="1" value="0"
+               style="flex:1;accent-color:var(--accent);height:3px;cursor:pointer">
+        <div id="fp-sel-offset-v" style="width:28px;text-align:right;font-family:monospace;font-size:11.5px;color:var(--accent)">0</div>
+      </div>
+      <div style="font-size:10px;color:var(--muted);margin-top:2px">(&#8722;) shrink &nbsp;/&nbsp; (+) expand</div>
+    </div>
     <div class="fp-actions">
       <button class="fp-confirm" id="fp-select-confirm">Confirm</button>
       <button class="fp-discard" id="fp-select-discard">Discard</button>
@@ -1048,19 +1027,24 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   let interactionMode  = 'fill'; // 'fill' | 'select' | 'vertex' | 'draw'
   let _undoStack       = []; // JSON snapshots (max 50) for Ctrl+Z
   let _redoStack       = []; // JSON snapshots for Ctrl+Y
-  let _lastStats       = { outlines: 0, walls: 0, thickerWalls: 0, unclassified: 0 };
+  let _outlineCount   = 0;
   // draw-shape mode state
   let _drawPoints      = []; // [{x, y}] in current SVG user units
   let _drawCursor      = null; // rubber-band cursor pos
   let _drawCleanup     = null;
   let _drawClosed      = false; // true when finished by snap-close, false for open line
+  // bends / re-fill state
+  let fillRemoveBends       = false;
+  let selRemoveBends        = false;
+  let _reFillAnnId          = null;
+  let _reFillNx             = null;
+  let _reFillNy             = null;
+  let _reFillPending        = null;
+  let _bendsOrigBezierPath  = null; // original bezier d for live preview toggle
+  let _bendsOrigCurrentD    = null; // element d at click time (for discard revert)
 
   // ── slider wiring ────────────────────────────────────────────────────────
-  const SLIDER_IDS = [
-    'boundaryThreshold','wallThreshold','wallTurd',
-    'strokeThreshold','aspectThreshold','minPathArea',
-    'minUnclassified','maxSize',
-  ];
+  const SLIDER_IDS = ['boundaryThreshold', 'maxSize'];
   function getConfig() {
     const c = {};
     for (const k of SLIDER_IDS) c[k] = Number(document.getElementById(k).value);
@@ -1147,6 +1131,10 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   preview.addEventListener('contextmenu', e => {
     if (_panMoved) { e.preventDefault(); _panMoved = false; }
   });
+  // Suppress native context menu inside the canvas unless Shift is held
+  document.getElementById('canvas-wrap').addEventListener('contextmenu', e => {
+    if (!e.shiftKey) e.preventDefault();
+  });
 
   // ── layer toggles ────────────────────────────────────────────────────────
   const layerState = {
@@ -1225,7 +1213,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
         snapshotForUndo();
         annotations = annotations.filter(a => a.id !== e.currentTarget.dataset.id);
         renderAnnotationList();
-        process({ ...getConfig(), skipWalls: true });
+        process(getConfig());
       })
     );
     // Update layer counts including annotation fills
@@ -1233,10 +1221,8 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   }
 
   function updateStats(stats) {
-    _lastStats = { outlines: stats.outlines, walls: stats.walls, thickerWalls: stats.thickerWalls, unclassified: stats.unclassified };
-    document.getElementById('wall-count').textContent      = stats.walls;
-    document.getElementById('thick-count').textContent     = stats.thickerWalls;
-    document.getElementById('unclass-count').textContent   = stats.unclassified;
+    _outlineCount = stats.outlines;
+    document.getElementById('outline-count').textContent = stats.outlines ? String(stats.outlines) : '\u2014';
     refreshLayerCounts();
   }
 
@@ -1245,14 +1231,14 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     const byGroup = g => fills.filter(a => a.group === g).length;
     const lc = (id, base, extra) => {
       const total = (base || 0) + extra;
-      document.getElementById(id).textContent = total || '\u2014';
+      document.getElementById(id).textContent = total ? String(total) : '\u2014';
     };
-    lc('lc-outlines',    _lastStats.outlines,      byGroup('outlines'));
-    lc('lc-walls',       _lastStats.walls,          byGroup('walls'));
-    lc('lc-thicker',     _lastStats.thickerWalls,   byGroup('thickerWalls'));
-    lc('lc-unclassified',_lastStats.unclassified,   byGroup('unclassified'));
-    lc('lc-inaccessible',0,                          byGroup('inaccessible'));
-    lc('lc-stairs',      0,                          byGroup('stairs'));
+    lc('lc-outlines',    _outlineCount, byGroup('outlines'));
+    lc('lc-walls',       0,             byGroup('walls'));
+    lc('lc-thicker',     0,             byGroup('thickerWalls'));
+    lc('lc-unclassified',0,             byGroup('unclassified'));
+    lc('lc-inaccessible',0,             byGroup('inaccessible'));
+    lc('lc-stairs',      0,             byGroup('stairs'));
   }
 
   // ── workspace & PNG management ───────────────────────────────────────────
@@ -1304,6 +1290,13 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       if (restoreCurrentPng && data.currentPng) {
         pp.value = data.currentPng;
         await switchToPng(data.currentPng, /* resetAnnotations */ false);
+        // Auto-restore the most-recent session for this image so config + annotations
+        // don't drift from what was last saved (otherwise the outline re-traces
+        // with default config and all shape annotations orphan).
+        const matching = data.sessions
+          .filter(s => s.pngFile === data.currentPng)
+          .sort((a, b) => String(b.updatedAt || '').localeCompare(String(a.updatedAt || '')))[0];
+        if (matching) await loadSession(matching.name, /* quiet */ true);
       }
     } catch (err) {
       setStatus('error', 'Workspace load failed: ' + err.message);
@@ -1348,9 +1341,8 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       }
 
       currentPngLoaded = true;
-      document.getElementById('btn-gen-walls').disabled = false;
       setStatus('', 'Image loaded \u2014 ' + filename);
-      process({ ...getConfig(), skipWalls: true });
+      process(getConfig());
     } catch (err) {
       setStatus('error', 'Load failed: ' + err.message);
     }
@@ -1382,10 +1374,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   });
 
   // ── session load ─────────────────────────────────────────────────────────
-  document.getElementById('session-picker').addEventListener('change', async function () {
-    const name = this.value;
-    if (!name) return;
-    this.value = '';
+  async function loadSession(name, quiet) {
     try {
       const res = await fetch('/session/' + encodeURIComponent(name));
       if (!res.ok) throw new Error('Session not found');
@@ -1415,12 +1404,18 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 
       document.getElementById('session-name').value = session.name;
       currentPngLoaded = true;
-      document.getElementById('btn-gen-walls').disabled = false;
-      setStatus('', 'Session loaded: ' + session.name);
-      process({ ...getConfig(), skipWalls: true });
+      setStatus('', (quiet ? 'Session restored: ' : 'Session loaded: ') + session.name);
+      process(getConfig());
     } catch (err) {
-      setStatus('error', 'Load failed: ' + err.message);
+      if (!quiet) setStatus('error', 'Load failed: ' + err.message);
     }
+  }
+
+  document.getElementById('session-picker').addEventListener('change', async function () {
+    const name = this.value;
+    if (!name) return;
+    this.value = '';
+    loadSession(name);
   });
 
   // ── mode toggle ──────────────────────────────────────────────────────────
@@ -1468,14 +1463,14 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     if (!_undoStack.length) return;
     _redoStack.push(JSON.stringify(annotations));
     annotations = JSON.parse(_undoStack.pop());
-    renderAnnotationList(); process({ ...getConfig(), skipWalls: true });
+    renderAnnotationList(); process(getConfig());
     refreshUndoRedoButtons();
   }
   function execRedo() {
     if (!_redoStack.length) return;
     _undoStack.push(JSON.stringify(annotations));
     annotations = JSON.parse(_redoStack.pop());
-    renderAnnotationList(); process({ ...getConfig(), skipWalls: true });
+    renderAnnotationList(); process(getConfig());
     refreshUndoRedoButtons();
   }
   function refreshUndoRedoButtons() {
@@ -1487,9 +1482,53 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   document.getElementById('btn-undo').addEventListener('click', execUndo);
   document.getElementById('btn-redo').addEventListener('click', execRedo);
   document.addEventListener('keydown', e => {
-    if ((e.ctrlKey || e.metaKey) && !e.shiftKey && e.key === 'z') { e.preventDefault(); execUndo(); }
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'y' || (e.shiftKey && e.key === 'z'))) { e.preventDefault(); execRedo(); }
+    if ((e.ctrlKey || e.metaKey) && !e.shiftKey && e.key === 'z') {
+      e.preventDefault();
+      if (_vertexEditPath) execVertexUndo(); else execUndo();
+    }
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'y' || (e.shiftKey && e.key === 'z'))) {
+      e.preventDefault();
+      if (_vertexEditPath) execVertexRedo(); else execRedo();
+    }
   });
+
+  // ── vertex editor undo/redo ─────────────────────────────────────────────────────
+  function vertexSnapshot() {
+    _vertexUndoStack.push(JSON.stringify({ nodes: _vertexNodes.map(p => ({ x: p.x, y: p.y })), closed: _vertexClosed }));
+    if (_vertexUndoStack.length > 30) _vertexUndoStack.shift();
+    _vertexRedoStack = [];
+    refreshVertexUndoButtons();
+  }
+  function refreshVertexUndoButtons() {
+    const u = document.getElementById('node-undo-btn');
+    const r = document.getElementById('node-redo-btn');
+    if (u) u.disabled = _vertexUndoStack.length === 0;
+    if (r) r.disabled = _vertexRedoStack.length === 0;
+  }
+  function execVertexUndo() {
+    if (!_vertexUndoStack.length) return;
+    _vertexRedoStack.push(JSON.stringify({ nodes: _vertexNodes.map(p => ({ x: p.x, y: p.y })), closed: _vertexClosed }));
+    const state = JSON.parse(_vertexUndoStack.pop());
+    _vertexNodes = state.nodes;
+    _vertexClosed = state.closed;
+    _vertexActiveIndex = -1;
+    _vertexSnapTarget = null;
+    refreshVertexUndoButtons();
+    redrawVertexEditorLayer();
+  }
+  function execVertexRedo() {
+    if (!_vertexRedoStack.length) return;
+    _vertexUndoStack.push(JSON.stringify({ nodes: _vertexNodes.map(p => ({ x: p.x, y: p.y })), closed: _vertexClosed }));
+    const state = JSON.parse(_vertexRedoStack.pop());
+    _vertexNodes = state.nodes;
+    _vertexClosed = state.closed;
+    _vertexActiveIndex = -1;
+    _vertexSnapTarget = null;
+    refreshVertexUndoButtons();
+    redrawVertexEditorLayer();
+  }
+  document.getElementById('node-undo-btn').addEventListener('click', execVertexUndo);
+  document.getElementById('node-redo-btn').addEventListener('click', execVertexRedo);
 
   // ── draw-shape mode ──────────────────────────────────────────────────────
   function _getDrawLayer() {
@@ -1681,7 +1720,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     _drawPoints = []; _drawCursor = null;
     hideFloatPanel();
     renderAnnotationList();
-    process({ ...getConfig(), skipWalls: true });
+    process(getConfig());
     _attachDrawListeners(); // re-arm so user can draw another shape immediately
   });
   document.getElementById('fp-draw-discard').addEventListener('click', () => {
@@ -1737,7 +1776,13 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
         setStatus('', 'Ready');
         if (!data.path) { setStatus('', 'No fill \u2014 try a darker area'); return; }
         if (pendingFill) pendingFill = { ...pendingFill, path: data.path, vW: data.vW, vH: data.vH };
-        showPendingPath(data.path);
+        // Respect current bends toggle when showing new fill result
+        if (fillRemoveBends) {
+          const parsed = flattenPath(data.path);
+          showPendingPath(rebuildPolylinePath(parsed.points, parsed.closed));
+        } else {
+          showPendingPath(data.path);
+        }
       } catch (err) {
         setStatus('error', 'Fill error: ' + err.message);
       }
@@ -1753,6 +1798,75 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     const v = Number(this.value);
     document.getElementById('fp-offset-v').textContent = (v > 0 ? '+' : '') + v;
     if (pendingFill) requestFill(pendingFill.nx, pendingFill.ny);
+  });
+
+  // ── bends toggles (magic wand panel) ────────────────────────────────────
+  document.getElementById('fp-fill-bends-on').addEventListener('click', () => {
+    fillRemoveBends = false;
+    document.getElementById('fp-fill-bends-on').classList.add('active');
+    document.getElementById('fp-fill-bends-off').classList.remove('active');
+    if (pendingFill && pendingFill.path) showPendingPath(pendingFill.path);
+  });
+  document.getElementById('fp-fill-bends-off').addEventListener('click', () => {
+    fillRemoveBends = true;
+    document.getElementById('fp-fill-bends-off').classList.add('active');
+    document.getElementById('fp-fill-bends-on').classList.remove('active');
+    if (pendingFill && pendingFill.path) {
+      const parsed = flattenPath(pendingFill.path);
+      showPendingPath(rebuildPolylinePath(parsed.points, parsed.closed));
+    }
+  });
+
+  // ── re-fill request (select panel) ──────────────────────────────────────
+  function requestReFill() {
+    if (_reFillNx == null) return;
+    const sensitivity = Number(document.getElementById('fp-sel-sensitivity').value);
+    const offset      = Number(document.getElementById('fp-sel-offset').value);
+    clearTimeout(fillDebouncer);
+    fillDebouncer = setTimeout(async () => {
+      try {
+        const res = await fetch('/fill', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nx: _reFillNx, ny: _reFillNy, threshold: sensitivity, offset }),
+        });
+        if (!res.ok) return;
+        const data = await res.json();
+        if (data.path) {
+          _reFillPending = { path: data.path, vW: data.vW, vH: data.vH };
+          showPendingPath(data.path);
+        }
+      } catch (_err) { /* silent */ }
+    }, 200);
+  }
+  document.getElementById('fp-sel-sensitivity').addEventListener('input', function () {
+    document.getElementById('fp-sel-sensitivity-v').textContent = this.value;
+    requestReFill();
+  });
+  document.getElementById('fp-sel-offset').addEventListener('input', function () {
+    const v = Number(this.value);
+    document.getElementById('fp-sel-offset-v').textContent = (v > 0 ? '+' : '') + v;
+    requestReFill();
+  });
+
+  // ── bends toggles (select panel) ─────────────────────────────────────────
+  document.getElementById('fp-sel-bends-on').addEventListener('click', () => {
+    selRemoveBends = false;
+    document.getElementById('fp-sel-bends-on').classList.add('active');
+    document.getElementById('fp-sel-bends-off').classList.remove('active');
+    // Live preview: revert element to original bezier path
+    if (selectedPathEl && _bendsOrigBezierPath != null)
+      selectedPathEl.setAttribute('d', _bendsOrigBezierPath);
+  });
+  document.getElementById('fp-sel-bends-off').addEventListener('click', () => {
+    selRemoveBends = true;
+    document.getElementById('fp-sel-bends-off').classList.add('active');
+    document.getElementById('fp-sel-bends-on').classList.remove('active');
+    // Live preview: strip beziers on element
+    if (selectedPathEl && _bendsOrigBezierPath != null) {
+      const parsed = flattenPath(_bendsOrigBezierPath);
+      selectedPathEl.setAttribute('d', rebuildPolylinePath(parsed.points, parsed.closed));
+    }
   });
 
   function showPendingPath(d) {
@@ -1830,8 +1944,12 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       kind: 'fill', id: 'ann-' + Date.now(), group, mode: fillMode, type: fillType,
       lineStyle: fillType === 'outline' ? fillLineStyle : 'solid',
       path: pendingFill.path, vW: pendingFill.vW, vH: pendingFill.vH,
+      nx: pendingFill.nx, ny: pendingFill.ny,
+      sensitivity: Number(document.getElementById('fp-sensitivity').value),
+      offset: Number(document.getElementById('fp-offset').value),
+      removeBends: fillRemoveBends,
     });
-    pendingFill = null; hideFloatPanel(); renderAnnotationList(); process({ ...getConfig(), skipWalls: true });
+    pendingFill = null; hideFloatPanel(); renderAnnotationList(); process(getConfig());
   });
   document.getElementById('fp-fill-discard').addEventListener('click', () => {
     pendingFill = null; clearPendingPath(); hideFloatPanel();
@@ -1845,6 +1963,11 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   let _vertexActiveIndex      = -1;
   let _nodeDragging           = null; // { index }
   let _vertexInsertCandidate  = null; // { segIdx, x, y }
+  let _vertexSnapTarget       = null; // index of vertex the dragged node is snapping to
+  let _vertexSplitOnDelete    = false;
+  let _vertexUndoStack        = []; // max 30 snapshots of {nodes, closed}
+  let _vertexRedoStack        = [];
+  let _vertexDragStartState   = null; // lazy snapshot taken at drag start
   let _vertexPickerCleanup    = null;
   let _vertexDragCleanup      = null;
 
@@ -1927,6 +2050,109 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     return { points, closed };
   }
 
+  // Curve-aware flatten: samples points along beziers so a sharpened shape keeps
+  // its curve geometry instead of collapsing each curve to a single point.
+  function flattenPath(d, stepSize) {
+    stepSize = stepSize || 12;
+    const points = [];
+    let closed = false;
+    const NUM = /[-+]?(?:[0-9]+[.][0-9]+|[.][0-9]+|[0-9]+)(?:[eE][-+]?[0-9]+)?/g;
+    const re = /([MmLlHhVvCcSsQqTtAaZz])([^MmLlHhVvCcSsQqTtAaZz]*)/g;
+    let m; let cx = 0; let cy = 0; let sx = 0; let sy = 0; let prevCtrl = null;
+
+    function cubic(p0, p1, p2, p3, t) {
+      const mt = 1 - t;
+      const a = mt * mt * mt, b = 3 * mt * mt * t, c = 3 * mt * t * t, d3 = t * t * t;
+      return { x: a * p0.x + b * p1.x + c * p2.x + d3 * p3.x, y: a * p0.y + b * p1.y + c * p2.y + d3 * p3.y };
+    }
+    function quad(p0, p1, p2, t) {
+      const mt = 1 - t;
+      return { x: mt * mt * p0.x + 2 * mt * t * p1.x + t * t * p2.x, y: mt * mt * p0.y + 2 * mt * t * p1.y + t * t * p2.y };
+    }
+    function sampleCubic(p0, p1, p2, p3) {
+      const chord = Math.hypot(p3.x - p0.x, p3.y - p0.y);
+      const steps = Math.max(4, Math.min(20, Math.round(chord / stepSize)));
+      for (let s = 1; s <= steps; s++) points.push(cubic(p0, p1, p2, p3, s / steps));
+    }
+    function sampleQuad(p0, p1, p2) {
+      const chord = Math.hypot(p2.x - p0.x, p2.y - p0.y);
+      const steps = Math.max(4, Math.min(20, Math.round(chord / stepSize)));
+      for (let s = 1; s <= steps; s++) points.push(quad(p0, p1, p2, s / steps));
+    }
+
+    while ((m = re.exec(d)) !== null) {
+      const cmd = m[1];
+      const nums = (m[2].match(NUM) || []).map(Number);
+      const abs = cmd.toUpperCase();
+      const rel = cmd !== abs;
+      let i = 0;
+      const gx = (k) => rel ? cx + nums[k] : nums[k];
+      const gy = (k) => rel ? cy + nums[k] : nums[k];
+
+      if (abs === 'Z') { closed = true; cx = sx; cy = sy; prevCtrl = null; continue; }
+
+      if (abs === 'M' || abs === 'L') {
+        while (i + 1 < nums.length) {
+          const x = gx(i), y = gy(i + 1);
+          if (abs === 'M' && points.length === 0) { sx = x; sy = y; }
+          points.push({ x, y }); cx = x; cy = y; i += 2;
+        }
+        prevCtrl = null;
+      } else if (abs === 'H') {
+        while (i < nums.length) { const x = rel ? cx + nums[i] : nums[i]; points.push({ x, y: cy }); cx = x; i++; }
+        prevCtrl = null;
+      } else if (abs === 'V') {
+        while (i < nums.length) { const y = rel ? cy + nums[i] : nums[i]; points.push({ x: cx, y }); cy = y; i++; }
+        prevCtrl = null;
+      } else if (abs === 'C') {
+        while (i + 5 < nums.length) {
+          const p0 = { x: cx, y: cy };
+          const p1 = { x: gx(i), y: gy(i + 1) };
+          const p2 = { x: gx(i + 2), y: gy(i + 3) };
+          const p3 = { x: gx(i + 4), y: gy(i + 5) };
+          sampleCubic(p0, p1, p2, p3);
+          cx = p3.x; cy = p3.y; prevCtrl = p2; i += 6;
+        }
+      } else if (abs === 'S') {
+        while (i + 3 < nums.length) {
+          const p0 = { x: cx, y: cy };
+          const p1 = prevCtrl ? { x: 2 * cx - prevCtrl.x, y: 2 * cy - prevCtrl.y } : p0;
+          const p2 = { x: gx(i), y: gy(i + 1) };
+          const p3 = { x: gx(i + 2), y: gy(i + 3) };
+          sampleCubic(p0, p1, p2, p3);
+          cx = p3.x; cy = p3.y; prevCtrl = p2; i += 4;
+        }
+      } else if (abs === 'Q') {
+        while (i + 3 < nums.length) {
+          const p0 = { x: cx, y: cy };
+          const p1 = { x: gx(i), y: gy(i + 1) };
+          const p2 = { x: gx(i + 2), y: gy(i + 3) };
+          sampleQuad(p0, p1, p2);
+          cx = p2.x; cy = p2.y; prevCtrl = p1; i += 4;
+        }
+      } else if (abs === 'T') {
+        while (i + 1 < nums.length) {
+          const p0 = { x: cx, y: cy };
+          const p1 = prevCtrl ? { x: 2 * cx - prevCtrl.x, y: 2 * cy - prevCtrl.y } : p0;
+          const p2 = { x: gx(i), y: gy(i + 1) };
+          sampleQuad(p0, p1, p2);
+          cx = p2.x; cy = p2.y; prevCtrl = p1; i += 2;
+        }
+      } else if (abs === 'A') {
+        while (i + 6 < nums.length) {
+          const x = gx(i + 5), y = gy(i + 6);
+          points.push({ x, y }); cx = x; cy = y; i += 7;
+        }
+        prevCtrl = null;
+      }
+    }
+
+    if (closed && points.length > 1 && samePoint(points[0], points[points.length - 1])) {
+      points.pop();
+    }
+    return { points, closed };
+  }
+
   function rebuildPolylinePath(points, closed) {
     if (!points.length) return '';
     let d = 'M ' + points[0].x.toFixed(3) + ' ' + points[0].y.toFixed(3);
@@ -1994,6 +2220,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       h.setAttribute('cx', p.x);
       h.setAttribute('cy', p.y);
       h.classList.toggle('node-handle-active', idx === _vertexActiveIndex);
+      h.classList.toggle('node-snap-target', idx === _vertexSnapTarget);
     });
 
     layer.querySelectorAll('.node-segment').forEach(line => {
@@ -2025,9 +2252,47 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       setStatus('', 'Need at least ' + getVertexMinCount() + ' vertices for this shape');
       return;
     }
-    _vertexNodes.splice(index, 1);
-    if (_vertexActiveIndex >= _vertexNodes.length) _vertexActiveIndex = _vertexNodes.length - 1;
-    if (_vertexActiveIndex === index) _vertexActiveIndex = -1;
+    vertexSnapshot();
+
+    if (_vertexSplitOnDelete) {
+      if (_vertexClosed) {
+        // Closed path → open it, rotating so deleted vertex falls off the end
+        const rotated = [..._vertexNodes.slice(index + 1), ..._vertexNodes.slice(0, index)];
+        _vertexNodes = rotated;
+        _vertexClosed = false;
+      } else {
+        // Open path → split into two pieces at the deleted vertex
+        const piece1 = _vertexNodes.slice(0, index);
+        const piece2 = _vertexNodes.slice(index + 1);
+        // Save piece2 as a new annotation immediately (needs >= 2 nodes to be visible)
+        if (piece1.length >= 2 && piece2.length >= 2) {
+          const svgEl = document.querySelector('#svg-overlay svg');
+          const vb = (svgEl ? svgEl.getAttribute('viewBox') : null) || '0 0 512 512';
+          const vbParts = vb.split(' ');
+          const vW = parseFloat(vbParts[2]) || 512;
+          const vH = parseFloat(vbParts[3]) || 512;
+          annotations.push({
+            kind: 'fill',
+            id: 'ann-' + Date.now(),
+            group: _vertexEditPath.fromGroup,
+            mode: 'add',
+            type: 'line',
+            lineStyle: 'solid',
+            path: rebuildPolylinePath(piece2, false),
+            vW, vH,
+            removeBends: false,
+          });
+          renderAnnotationList();
+        }
+        _vertexNodes = piece1.length >= 1 ? piece1 : piece2;
+      }
+      _vertexActiveIndex = -1;
+    } else {
+      _vertexNodes.splice(index, 1);
+      if (_vertexActiveIndex >= _vertexNodes.length) _vertexActiveIndex = _vertexNodes.length - 1;
+      if (_vertexActiveIndex === index) _vertexActiveIndex = -1;
+    }
+
     if (_vertexInsertCandidate && _vertexInsertCandidate.segIdx >= _vertexNodes.length) {
       _vertexInsertCandidate = null;
     }
@@ -2035,6 +2300,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
   }
 
   function insertVertexAfter(segIdx, x, y) {
+    vertexSnapshot();
     const idx = segIdx + 1;
     _vertexNodes.splice(idx, 0, { x, y });
     _vertexActiveIndex = idx;
@@ -2090,7 +2356,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     }
 
     const s = getSvgScaleForVertex();
-    const r = Math.max(3, Math.min(6, 4 * Math.max(s.sx, s.sy)));
+    const r = Math.max(0.5, 6 * Math.max(s.sx, s.sy));
     _vertexNodes.forEach((pt, idx) => {
       const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
       c.classList.add('node-handle');
@@ -2100,6 +2366,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       c.setAttribute('cy', pt.y);
       c.setAttribute('r', r);
       c.addEventListener('mousedown', ev => {
+        _vertexDragStartState = JSON.stringify({ nodes: _vertexNodes.map(p => ({ x: p.x, y: p.y })), closed: _vertexClosed });
         _nodeDragging = { index: idx };
         _vertexActiveIndex = idx;
         c.classList.add('node-dragging');
@@ -2121,7 +2388,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 
     const marker = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
     marker.classList.add('node-insert-marker');
-    marker.setAttribute('r', Math.max(2.4, r * 0.8));
+    marker.setAttribute('r', Math.max(0.4, r * 0.8));
     marker.style.display = 'none';
     layer.appendChild(marker);
 
@@ -2137,6 +2404,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       el: pathEl,
       d,
       fromGroup,
+      annId: pathEl.getAttribute('data-ann-id') || null,
       prevStroke: pathEl.getAttribute('stroke'),
       prevStrokeWidth: pathEl.getAttribute('stroke-width'),
     };
@@ -2157,19 +2425,62 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       const p = clientToSvgPoint(ev);
       const idx = _nodeDragging.index;
       if (!_vertexNodes[idx]) return;
-      _vertexNodes[idx].x = p.x;
-      _vertexNodes[idx].y = p.y;
+
+      // Snap only when dragging an endpoint of an open path onto the other endpoint.
+      // Interior nodes must move freely — snapping them to neighbours eats the drag.
+      const n = _vertexNodes.length;
+      const isEndpoint = !_vertexClosed && (idx === 0 || idx === n - 1);
+      let snapIdx = null;
+      if (isEndpoint && n >= 2) {
+        const otherIdx = idx === 0 ? n - 1 : 0;
+        const s = getSvgScaleForVertex();
+        const snapThresh = Math.max(0.5, 6 * Math.max(s.sx, s.sy)) * 3;
+        if (Math.hypot(p.x - _vertexNodes[otherIdx].x, p.y - _vertexNodes[otherIdx].y) < snapThresh) {
+          snapIdx = otherIdx;
+        }
+      }
+      _vertexSnapTarget = snapIdx;
+
+      if (snapIdx !== null) {
+        _vertexNodes[idx].x = _vertexNodes[snapIdx].x;
+        _vertexNodes[idx].y = _vertexNodes[snapIdx].y;
+      } else {
+        _vertexNodes[idx].x = p.x;
+        _vertexNodes[idx].y = p.y;
+      }
       updateVertexLayerGeometry();
     }
 
     function onMouseup() {
       if (!_nodeDragging) return;
+      const dragIdx = _nodeDragging.index;
+      const snapIdx = _vertexSnapTarget;
+      _vertexSnapTarget = null;
+
       const layer = getVertexLayer();
       if (layer) {
         const h = layer.querySelector('.node-handle.node-dragging');
         if (h) h.classList.remove('node-dragging');
       }
       _nodeDragging = null;
+
+      // Push drag-start snapshot only if position actually changed
+      const afterState = JSON.stringify({ nodes: _vertexNodes.map(p => ({ x: p.x, y: p.y })), closed: _vertexClosed });
+      if (_vertexDragStartState && _vertexDragStartState !== afterState) {
+        _vertexUndoStack.push(_vertexDragStartState);
+        if (_vertexUndoStack.length > 30) _vertexUndoStack.shift();
+        _vertexRedoStack = [];
+        refreshVertexUndoButtons();
+      }
+      _vertexDragStartState = null;
+
+      // Only close the path when two endpoints were snapped together
+      if (snapIdx !== null && snapIdx !== dragIdx) {
+        _vertexNodes.splice(dragIdx, 1);
+        _vertexClosed = true;
+        _vertexActiveIndex = -1;
+        redrawVertexEditorLayer();
+      }
     }
 
     function onKeydown(ev) {
@@ -2219,6 +2530,11 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 
       if (_vertexEditPath.prevStrokeWidth == null) _vertexEditPath.el.removeAttribute('stroke-width');
       else _vertexEditPath.el.setAttribute('stroke-width', _vertexEditPath.prevStrokeWidth);
+
+      // Restore the original geometry — the live preview mutates the d attribute
+      // in place. Without this, a cancelled edit leaves stale coords that the
+      // next edit captures as origD, causing a NO MATCH on save.
+      _vertexEditPath.el.setAttribute('d', _vertexEditPath.d);
     }
 
     document.getElementById('node-controls').style.display = 'none';
@@ -2228,19 +2544,50 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     _vertexClosed = false;
     _vertexActiveIndex = -1;
     _nodeDragging = null;
+    _vertexSnapTarget = null;
+    _vertexUndoStack = [];
+    _vertexRedoStack = [];
+    _vertexDragStartState = null;
     _vertexInsertCandidate = null;
+    refreshVertexUndoButtons();
   }
+
+  document.getElementById('node-split-toggle').addEventListener('click', () => {
+    _vertexSplitOnDelete = !_vertexSplitOnDelete;
+    const btn = document.getElementById('node-split-toggle');
+    btn.style.background = _vertexSplitOnDelete ? '#c44' : 'rgba(255,255,255,0.08)';
+    btn.style.borderColor = _vertexSplitOnDelete ? '#e55' : '#555';
+    btn.style.color       = _vertexSplitOnDelete ? '#fff' : '#aaa';
+  });
 
   document.getElementById('node-save-btn').addEventListener('click', () => {
     if (!_vertexEditPath) { cancelVertexEdit(); return; }
     const origD = _vertexEditPath.d;
     const newD = rebuildPolylinePath(_vertexNodes, _vertexClosed);
     const grp = _vertexEditPath.fromGroup;
+    const svgEl = document.querySelector('#svg-overlay svg');
+    const viewBox = svgEl ? svgEl.getAttribute('viewBox') : null;
+    const liveD = _vertexEditPath.el.getAttribute('d');
+    console.log('[vertex-save]', {
+      group: grp,
+      closed: _vertexClosed,
+      nodeCount: _vertexNodes.length,
+      origD: origD.slice(0, 160),
+      newD: newD.slice(0, 160),
+      pathHadTransform: !!_vertexEditPath.el.getAttribute('transform'),
+      viewBox,
+      config: getConfig(),
+      // liveD is the element's current d at save time (may differ from origD after edits)
+      liveD: liveD ? liveD.slice(0, 160) : null,
+      liveDLength: liveD ? liveD.length : 0,
+      origDLength: origD.length,
+    });
     snapshotForUndo();
-    annotations.push({ kind: 'reshape', id: 'ann-' + Date.now(), origD, newD, fromGroup: grp });
+    annotations.push({ kind: 'reshape', id: 'ann-' + Date.now(), origD, newD, fromGroup: grp,
+                       annId: _vertexEditPath.annId || undefined });
     cancelVertexEdit();
     renderAnnotationList();
-    process({ ...getConfig(), skipWalls: true });
+    process(getConfig());
   });
 
   document.getElementById('node-cancel-btn').addEventListener('click', () => {
@@ -2333,7 +2680,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
             d: dragOrigD, fromGroup: dragFromGroup, dx: dragDx, dy: dragDy,
           });
           renderAnnotationList();
-          process({ ...getConfig(), skipWalls: true });
+          process(getConfig());
         } else if (!dragMoved) {
           // Pure click → show edit panel
           selectPath(dragEl, dragFromGroup, dragOrigD);
@@ -2378,6 +2725,35 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     selectedPathEl = el; selectedFromGroup = fromGroup; selectedD = d; selectedToGroup = null;
     el.classList.add('path-selected');
     document.querySelectorAll('.fp-layer-btn').forEach(b => b.classList.remove('active'));
+    // Detect re-editable annotation via data-ann-id
+    _reFillAnnId = el.dataset.annId || null;
+    _reFillNx = null; _reFillNy = null; _reFillPending = null;
+    selRemoveBends = false;
+    _bendsOrigBezierPath = null;
+    _bendsOrigCurrentD   = el.getAttribute('d');
+    if (_reFillAnnId) {
+      const ann = annotations.find(a => a.id === _reFillAnnId);
+      if (ann) {
+        selRemoveBends = ann.removeBends || false;
+        if (ann.kind === 'fill') {
+          _bendsOrigBezierPath = ann.path;
+          if (ann.nx != null) {
+            _reFillNx = ann.nx;
+            _reFillNy = ann.ny;
+            const sv = ann.sensitivity ?? 68;
+            document.getElementById('fp-sel-sensitivity').value = String(sv);
+            document.getElementById('fp-sel-sensitivity-v').textContent = String(sv);
+            const ov = ann.offset ?? 0;
+            document.getElementById('fp-sel-offset').value = String(ov);
+            document.getElementById('fp-sel-offset-v').textContent = (ov > 0 ? '+' : '') + ov;
+          }
+        } else if (ann.kind === 'reassign') {
+          _bendsOrigBezierPath = ann.d; // original bezier from annotation
+        }
+      }
+    }
+    // Fallback: untracked auto-detected path — current element d IS the bezier
+    if (_bendsOrigBezierPath == null) _bendsOrigBezierPath = d;
   }
   function clearSelectHighlight() {
     if (selectedPathEl) { selectedPathEl.classList.remove('path-selected'); selectedPathEl = null; }
@@ -2427,17 +2803,49 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     if (selPathType === 'exclude') {
       annotations.push({ kind: 'exclude', id: 'ann-' + Date.now(),
                           d: selectedD, fromGroup: selectedFromGroup });
+    } else if (_reFillAnnId) {
+      // Updating a tracked annotation (fill or reassign) — update it in place
+      const ann = annotations.find(a => a.id === _reFillAnnId);
+      if (ann) {
+        const idx = annotations.indexOf(ann);
+        if (ann.kind === 'fill') {
+          const newPath = _reFillPending ? _reFillPending.path : ann.path;
+          const newVW   = _reFillPending ? _reFillPending.vW  : ann.vW;
+          const newVH   = _reFillPending ? _reFillPending.vH  : ann.vH;
+          const newSens = ann.nx != null ? Number(document.getElementById('fp-sel-sensitivity').value) : ann.sensitivity;
+          const newOff  = ann.nx != null ? Number(document.getElementById('fp-sel-offset').value)      : ann.offset;
+          const updated = { ...ann, path: newPath, vW: newVW, vH: newVH,
+                            sensitivity: newSens, offset: newOff, removeBends: selRemoveBends };
+          if (selectedToGroup) updated.group = selectedToGroup;
+          if (idx >= 0) annotations[idx] = updated; else annotations.push(updated);
+        } else if (ann.kind === 'reassign') {
+          const updated = { ...ann, removeBends: selRemoveBends };
+          if (selectedToGroup) updated.toGroup = selectedToGroup;
+          if (idx >= 0) annotations[idx] = updated; else annotations.push(updated);
+        }
+      }
     } else {
-      if (!selectedToGroup) { hideFloatPanel(); clearSelectHighlight(); return; }
+      // Standard reassign — allow confirm even without a new layer (bends-only change)
+      const effectiveToGroup = selectedToGroup || selectedFromGroup;
+      if (!selectedToGroup && !selRemoveBends) { hideFloatPanel(); clearSelectHighlight(); return; }
       const isLineLike = selPathType === 'line' || selPathType === 'outline';
       annotations.push({ kind: 'reassign', id: 'ann-' + Date.now(), d: selectedD,
-                          fromGroup: selectedFromGroup, toGroup: selectedToGroup, type: selPathType,
-                          lineStyle: isLineLike ? selLineStyle : 'solid' });
+                          fromGroup: selectedFromGroup, toGroup: effectiveToGroup, type: selPathType,
+                          lineStyle: isLineLike ? selLineStyle : 'solid',
+                          removeBends: selRemoveBends });
     }
-    clearSelectHighlight(); hideFloatPanel(); renderAnnotationList(); process({ ...getConfig(), skipWalls: true });
+    clearSelectHighlight(); clearPendingPath(); hideFloatPanel();
+    _reFillAnnId = null; _reFillNx = null; _reFillNy = null; _reFillPending = null;
+    _bendsOrigBezierPath = null; _bendsOrigCurrentD = null;
+    renderAnnotationList(); process(getConfig());
   });
   document.getElementById('fp-select-discard').addEventListener('click', () => {
-    clearSelectHighlight(); hideFloatPanel();
+    // Revert any live preview changes on the element before closing
+    if (selectedPathEl && _bendsOrigCurrentD != null)
+      selectedPathEl.setAttribute('d', _bendsOrigCurrentD);
+    clearSelectHighlight(); clearPendingPath(); hideFloatPanel();
+    _reFillAnnId = null; _reFillNx = null; _reFillNy = null; _reFillPending = null;
+    _bendsOrigBezierPath = null; _bendsOrigCurrentD = null;
   });
 
   // ── floating panel helpers ───────────────────────────────────────────────
@@ -2483,6 +2891,13 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     document.querySelectorAll('.fp-layer-btn').forEach(b => b.classList.remove('active'));
     selectedToGroup = null;
     updateSelLineStyleVisibility();
+    // Bends toggle — pre-populate from annotation state set in selectPath
+    document.getElementById('fp-sel-bends-on').classList.toggle('active', !selRemoveBends);
+    document.getElementById('fp-sel-bends-off').classList.toggle('active', selRemoveBends);
+    // Re-fill section — visible only for fill annotations that recorded click coords
+    const hasRefill = _reFillNx != null;
+    document.getElementById('fp-sel-refill-row').style.display = hasRefill ? '' : 'none';
+    if (hasRefill) requestReFill();
     positionPanel(cx, cy); floatPanel.classList.add('visible');
   }
   function positionPanel(cx, cy) {
@@ -2507,7 +2922,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 
   function scheduleProcess() {
     clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(() => process({ ...getConfig(), skipWalls: true }), 350);
+    debounceTimer = setTimeout(() => process(getConfig()), 350);
   }
 
   async function process(cfg) {
@@ -2526,10 +2941,16 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       svgOverlay.innerHTML = data.svg;
       applyLayerVisibility();
       updateStats(data.stats);
+      // Surface any annotation application warnings in the status bar
+      if (Array.isArray(data.warnings) && data.warnings.length) {
+        console.warn('[process] warnings:', data.warnings);
+        setStatus('error', data.warnings.join(' · '));
+      } else {
+        setStatus('', 'Ready', data.ms);
+      }
       // Always re-attach listeners after re-render (SVG DOM is replaced)
       if (interactionMode === 'select') attachSelectListeners();
       if (interactionMode === 'vertex') { cancelVertexEdit(); attachVertexPickerListeners(); }
-      setStatus('', 'Ready', data.ms);
     } catch (err) {
       setStatus('error', 'Error: ' + err.message);
     } finally {
@@ -2537,37 +2958,6 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       if (pendingCfg) process(pendingCfg);
     }
   }
-
-  // ── debug bitmaps ────────────────────────────────────────────────────────
-  document.getElementById('load-debug').addEventListener('click', async () => {
-    const btn = document.getElementById('load-debug');
-    btn.textContent = 'Loading\u2026'; btn.disabled = true;
-    try {
-      const res = await fetch('/debug', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(getConfig()),
-      });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      const data  = await res.json();
-      const slots = { 'dbg-mask': data.mask, 'dbg-masked': data.masked,
-                      'dbg-negmask': data.negatedMask, 'dbg-wallbmp': data.wallBitmap };
-      for (const [id, src] of Object.entries(slots)) {
-        if (!src) continue;
-        const el = document.getElementById(id);
-        el.outerHTML = '<img id="' + id + '" src="data:image/png;base64,' + src
-          + '" style="width:100%;border-radius:4px;border:1px solid var(--border)">';
-      }
-      btn.textContent = 'Reload Debug Bitmaps';
-    } catch (err) { btn.textContent = 'Error: ' + err.message; }
-    finally { btn.disabled = false; }
-  });
-
-  // ── generate walls button ───────────────────────────────────────────────
-  const btnGenWalls = document.getElementById('btn-gen-walls');
-  btnGenWalls.addEventListener('click', () => {
-    if (!currentPngLoaded) return;
-    process(getConfig());
-  });
 
   // ── export SVG ───────────────────────────────────────────────────────────
   const btnExport = document.getElementById('btn-export');
@@ -2613,105 +3003,143 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 // ── Annotation injection (server-side) ───────────────────────────────────────
 
 function ensureGroupAndAppend(svg: string, groupId: string, pathEl: string): string {
-    const openTag = `<g id="${groupId}"`;
-    const idx = svg.indexOf(openTag);
-    if (idx !== -1) {
-        const closeIdx = svg.indexOf('</g>', idx);
-        if (closeIdx !== -1) return svg.slice(0, closeIdx) + pathEl + '\n  ' + svg.slice(closeIdx);
-    }
-    return svg.replace('</svg>', `  <g id="${groupId}">\n${pathEl}\n  </g>\n\n</svg>`);
+  const openTag = `<g id="${groupId}"`;
+  const idx = svg.indexOf(openTag);
+  if (idx !== -1) {
+    const closeIdx = svg.indexOf('</g>', idx);
+    if (closeIdx !== -1) return svg.slice(0, closeIdx) + pathEl + '\n  ' + svg.slice(closeIdx);
+  }
+  return svg.replace('</svg>', `  <g id="${groupId}">\n${pathEl}\n  </g>\n\n</svg>`);
 }
 
+// Warnings surfaced to the browser UI when annotations fail to apply.
+let injectWarnings: string[] = [];
+
 function injectAnnotations(svg: string, annotations: AnnotationServer[]): string {
-    if (annotations.length === 0) return svg;
+  injectWarnings = [];
+  if (annotations.length === 0) return svg;
 
-    const vbMatch   = svg.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/);
-    const currentVW = vbMatch ? parseFloat(vbMatch[1]) : 512;
-    const currentVH = vbMatch ? parseFloat(vbMatch[2]) : 512;
+  const vbMatch = svg.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/);
+  const currentVW = vbMatch ? parseFloat(vbMatch[1]) : 512;
+  const currentVH = vbMatch ? parseFloat(vbMatch[2]) : 512;
 
-    if (!svg.includes('id="pending"'))
-        svg = svg.replace('</svg>', '  <g id="pending"></g>\n\n</svg>');
+  if (!svg.includes('id="pending"'))
+    svg = svg.replace('</svg>', '  <g id="pending"></g>\n\n</svg>');
 
-    if (!svg.includes('ann-outline'))
-        svg = svg.replace(
-            '  </style>',
-            `    path.ann-outline        { fill: none !important; stroke: #7ecfff; stroke-width: 1.5; }\n    path.ann-outline-dashed { fill: none !important; stroke: #7ecfff; stroke-width: 1.5; stroke-dasharray: 5 2; }\n    path.ann-fill           { pointer-events: all; stroke: rgba(60,60,60,0.65) !important; stroke-width: 1 !important; }\n    #outlines path.ann-fill     { fill: #ff3333 !important; }\n    #walls path.ann-fill        { fill: #888888 !important; }\n    #thickerWalls path.ann-fill { fill: #aaaaaa !important; }\n    #inaccessible path.ann-fill { fill: #7C2728 !important; }\n    #stairs path.ann-fill       { fill: #00ccff !important; }\n    #unclassified path.ann-fill { fill: #ffcc00 !important; }\n  </style>`,
-        );
+  if (!svg.includes('ann-outline'))
+    svg = svg.replace(
+      '  </style>',
+      `    path.ann-outline        { fill: none !important; stroke: #7ecfff; stroke-width: 1.5; }\n    path.ann-outline-dashed { fill: none !important; stroke: #7ecfff; stroke-width: 1.5; stroke-dasharray: 5 2; }\n    path.ann-fill           { pointer-events: all; stroke: rgba(60,60,60,0.65) !important; stroke-width: 1 !important; }\n    #outlines path.ann-fill     { fill: #ff3333 !important; }\n    #walls path.ann-fill        { fill: #888888 !important; }\n    #thickerWalls path.ann-fill { fill: #aaaaaa !important; }\n    #inaccessible path.ann-fill { fill: #7C2728 !important; }\n    #stairs path.ann-fill       { fill: #00ccff !important; }\n    #unclassified path.ann-fill { fill: #ffcc00 !important; }\n  </style>`,
+    );
 
-    if (!svg.includes('map-boundary-path'))
-        svg = svg.replace(
-            '  </style>',
-            `    path.map-boundary-path { fill: none !important; stroke: #ff2200 !important; stroke-width: 2.5 !important; }\n  </style>`,
-        );
+  if (!svg.includes('map-boundary-path'))
+    svg = svg.replace(
+      '  </style>',
+      `    path.map-boundary-path { fill: none !important; stroke: #ff2200 !important; stroke-width: 2.5 !important; }\n  </style>`,
+    );
 
-    for (const ann of annotations) {
-        if (ann.kind === 'fill') {
-            const isOutline = ann.type === 'outline' || ann.type === 'line';
-            let attrs: string;
-            if (isOutline) {
-                const cls = (ann.lineStyle === 'dashed') ? 'ann-outline-dashed' : 'ann-outline';
-                attrs = ` class="${cls}"`;
-            } else if (ann.mode === 'subtract') attrs = ' class="subtract"';
-            else                        attrs = ' class="ann-fill"';
-            let pathEl = `    <path${attrs} d="${ann.path}"/>`;
-            if (ann.vW && ann.vH && currentVW && currentVH &&
-                (Math.abs(ann.vW - currentVW) > 1 || Math.abs(ann.vH - currentVH) > 1)) {
-                const sx = (currentVW / ann.vW).toFixed(5);
-                const sy = (currentVH / ann.vH).toFixed(5);
-                pathEl = `    <path${attrs} transform="scale(${sx},${sy})" d="${ann.path}"/>`;
-            }
-            svg = ensureGroupAndAppend(svg, ann.group, pathEl);
+  for (const ann of annotations) {
+    if (ann.kind === 'fill') {
+      const rawPath = ann.removeBends ? stripBeziers(ann.path) : ann.path;
+      const isOutline = ann.type === 'outline' || ann.type === 'line';
+      let attrs: string;
+      if (isOutline) {
+        const cls = (ann.lineStyle === 'dashed') ? 'ann-outline-dashed' : 'ann-outline';
+        attrs = ` class="${cls}" data-ann-id="${ann.id}"`;
+      } else if (ann.mode === 'subtract') attrs = ` class="subtract" data-ann-id="${ann.id}"`;
+      else attrs = ` class="ann-fill" data-ann-id="${ann.id}"`;
+      let pathEl = `    <path${attrs} d="${rawPath}"/>`;
+      if (ann.vW && ann.vH && currentVW && currentVH &&
+        (Math.abs(ann.vW - currentVW) > 1 || Math.abs(ann.vH - currentVH) > 1)) {
+        const sx = (currentVW / ann.vW).toFixed(5);
+        const sy = (currentVH / ann.vH).toFixed(5);
+        pathEl = `    <path${attrs} transform="scale(${sx},${sy})" d="${rawPath}"/>`;
+      }
+      svg = ensureGroupAndAppend(svg, ann.group, pathEl);
 
-        } else if (ann.kind === 'reassign') {
-            const esc  = ann.d.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            const re   = new RegExp(`[ \\t]*<path(?:[^>]*)? d="${esc}"[^/]*/?>\\r?\\n?`, 'g');
-            const prev = svg;
-            svg = svg.replace(re, '');
-            if (svg !== prev) {
-                const isOutline = ann.type === 'outline' || ann.type === 'line';
-                let attrs = '';
-                if (isOutline) {
-                    const cls = (ann.lineStyle === 'dashed') ? 'ann-outline-dashed' : 'ann-outline';
-                    attrs = ` class="${cls}"`;
-                }
-                svg = ensureGroupAndAppend(svg, ann.toGroup, `    <path${attrs} d="${ann.d}"/>`);
-            }
-
-        } else if (ann.kind === 'exclude') {
-            const esc = ann.d.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            const re  = new RegExp(`[ \\t]*<path(?:[^>]*)? d="${esc}"[^/]*/?>\\r?\\n?`, 'g');
-            svg = svg.replace(re, '');
-            svg = ensureGroupAndAppend(svg, 'outlines', `    <path d="${ann.d}"/>`);
-
-        } else if (ann.kind === 'move') {
-            const esc = ann.d.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            const re  = new RegExp(`(<path\\b)([^>]*\\bd="${esc}")([^/]*/>)`, 'g');
-            svg = svg.replace(re, (_, open, mid, end) => {
-                const tx = `translate(${ann.dx.toFixed(2)},${ann.dy.toFixed(2)})`;
-                if (mid.includes('transform=')) {
-                    return open + mid.replace(/transform="([^"]*)"/, `transform="${tx} $1"`) + end;
-                }
-                return `${open} transform="${tx}"${mid}${end}`;
-            });
-
-        } else if (ann.kind === 'reshape') {
-            const esc = ann.origD.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            const re  = new RegExp(`(<path\\b)([^>]*\\bd="${esc}")([^/]*/>)`, 'g');
-            svg = svg.replace(re, (_, open, mid, end) => {
-                return open + mid.replace(/d="[^"]*"/, `d="${ann.newD}"`) + end;
-            });
-
-        } else if (ann.kind === 'map-outline') {
-            if (ann.points.length < 2) continue;
-            const pts = ann.points.map(p =>
-                `${(p.nx * currentVW).toFixed(2)},${(p.ny * currentVH).toFixed(2)}`
-            );
-            const d = 'M ' + pts.join(' L ') + (ann.closed ? ' Z' : '');
-            svg = ensureGroupAndAppend(svg, 'outlines', `    <path class="map-boundary-path" d="${d}"/>`);
+    } else if (ann.kind === 'reassign') {
+      const esc = ann.d.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const re = new RegExp(`[ \\t]*<path(?:[^>]*)?\\bd\\s*=\\s*"${esc}"[^/]*/?>\\r?\\n?`, 'g');
+      const prev = svg;
+      svg = svg.replace(re, '');
+      if (svg === prev) {
+        const w = `[reassign] NO MATCH (${ann.fromGroup})`;
+        console.warn(w, ann.d.slice(-80));
+        injectWarnings.push(w);
+      } else {
+        const rawD = ann.removeBends ? stripBeziers(ann.d) : ann.d;
+        const isOutline = ann.type === 'outline' || ann.type === 'line';
+        let attrs = ` data-ann-id="${ann.id}"`;
+        if (isOutline) {
+          const cls = (ann.lineStyle === 'dashed') ? 'ann-outline-dashed' : 'ann-outline';
+          attrs = ` class="${cls}" data-ann-id="${ann.id}"`;
         }
-    }
+        svg = ensureGroupAndAppend(svg, ann.toGroup, `    <path${attrs} d="${rawD}"/>`);
+      }
 
-    return svg;
+    } else if (ann.kind === 'exclude') {
+      const esc = ann.d.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const re = new RegExp(`[ \\t]*<path(?:[^>]*)?\\bd\\s*=\\s*"${esc}"[^/]*/?>\\r?\\n?`, 'g');
+      const prev = svg;
+      svg = svg.replace(re, '');
+      if (svg === prev) {
+        const w = `[exclude] NO MATCH (${ann.fromGroup})`;
+        console.warn(w, ann.d.slice(-80));
+        injectWarnings.push(w);
+      }
+      svg = ensureGroupAndAppend(svg, 'outlines', `    <path d="${ann.d}"/>`);
+
+    } else if (ann.kind === 'move') {
+      const esc = ann.d.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const re = new RegExp(`(<path\\b)([^>]*\\bd\\s*=\\s*"${esc}")([^/]*/>)`, 'g');
+      let matched = false;
+      svg = svg.replace(re, (_, open, mid, end) => {
+        matched = true;
+        const tx = `translate(${ann.dx.toFixed(2)},${ann.dy.toFixed(2)})`;
+        if (mid.includes('transform=')) {
+          return open + mid.replace(/transform="([^"]*)"/, `transform="${tx} $1"`) + end;
+        }
+        return `${open} transform="${tx}"${mid}${end}`;
+      });
+      if (!matched) { const w = `[move] NO MATCH (${ann.fromGroup})`; console.warn(w, ann.d.slice(-80)); injectWarnings.push(w); }
+
+    } else if (ann.kind === 'reshape') {
+      let matched = false;
+      if (ann.annId) {
+        // Stable match by data-ann-id — immune to coordinate drift from edits.
+        const idRe = new RegExp(`(<path\\b[^>]*data-ann-id="${ann.annId}"[^>]*\\bd\\s*=\\s*")([^"]*)(")`, 'g');
+        svg = svg.replace(idRe, (_, pre, _oldD, post) => {
+          matched = true;
+          return pre + ann.newD + post;
+        });
+      }
+      if (!matched) {
+        const esc = ann.origD.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const re = new RegExp(`(<path\\b)([^>]*\\bd\\s*=\\s*"${esc}")([^/]*/>)`, 'g');
+        svg = svg.replace(re, (_, open, mid, end) => {
+          matched = true;
+          return open + mid.replace(/\bd\s*=\s*"[^"]*"/, `d="${ann.newD}"`) + end;
+        });
+      }
+      if (!matched) {
+        const w = `[reshape] NO MATCH (${ann.fromGroup}) — config may have changed since the edit`;
+        console.warn(w, 'origD=', ann.origD.slice(0, 120));
+        injectWarnings.push(w);
+      } else {
+        console.log(`[reshape] applied ${ann.fromGroup}: ${ann.newD.slice(0, 80)}…`);
+      }
+
+    } else if (ann.kind === 'map-outline') {
+      if (ann.points.length < 2) continue;
+      const pts = ann.points.map(p =>
+        `${(p.nx * currentVW).toFixed(2)},${(p.ny * currentVH).toFixed(2)}`
+      );
+      const d = 'M ' + pts.join(' L ') + (ann.closed ? ' Z' : '');
+      svg = ensureGroupAndAppend(svg, 'outlines', `    <path class="map-boundary-path" d="${d}"/>`);
+    }
+  }
+
+  return svg;
 }
 
 // ── Export SVG builder ───────────────────────────────────────────────────────
@@ -2724,350 +3152,326 @@ const EXPORT_EXCLUDE_GROUPS = ['background', 'unclassified', 'pending'];
  * are masked to the hand-drawn map boundary.
  */
 function buildExportSvg(
-    svg:             string,
-    sourceBasename:  string,
-    outlineAnns:     MapOutlineServer[],
+  svg: string,
+  sourceBasename: string,
+  outlineAnns: MapOutlineServer[],
 ): string {
-    let out = svg;
+  let out = svg;
 
-    // Remove internal-only groups and their CSS
-    for (const id of EXPORT_EXCLUDE_GROUPS) {
-        out = out.replace(new RegExp(`[ \\t]*<!--[^\\n]*${id}[^\\n]*-->\\s*`, 'gi'), '');
-        out = out.replace(new RegExp(`[ \\t]*<g id="${id}">[\\s\\S]*?<\\/g>\\s*`, 'm'), '');
-        out = out.replace(new RegExp(`\\s*#${id}[^{]*\\{[^}]*\\}`, 'g'), '');
+  // Remove internal-only groups and their CSS
+  for (const id of EXPORT_EXCLUDE_GROUPS) {
+    out = out.replace(new RegExp(`[ \\t]*<!--[^\\n]*${id}[^\\n]*-->\\s*`, 'gi'), '');
+    out = out.replace(new RegExp(`[ \\t]*<g id="${id}">[\\s\\S]*?<\\/g>\\s*`, 'm'), '');
+    out = out.replace(new RegExp(`\\s*#${id}[^{]*\\{[^}]*\\}`, 'g'), '');
+  }
+
+  // Convert annotation-outline dashes to a clean stroke for the final file
+  out = out.replace(
+    /path\.ann-outline\s*\{[^}]*\}/,
+    'path.ann-outline { fill: none; stroke: #4aa8ff; stroke-width: 1.2; }',
+  );
+
+  // ── 512 × 512 sizing ──────────────────────────────────────────────────
+  // Replace or inject width/height on the <svg> root element
+  out = out.replace(/<svg\b[^>]*>/, (tag) => {
+    const stripped = tag
+      .replace(/\s+width="[^"]*"/, '')
+      .replace(/\s+height="[^"]*"/, '');
+    return stripped.replace(/^<svg\b/, '<svg width="512" height="512"');
+  });
+
+  // ── Clip-path from closed boundary outlines ────────────────────────────
+  const closedOutlines = outlineAnns.filter(o => o.closed && o.points.length >= 3);
+  if (closedOutlines.length > 0) {
+    const vbMatch = out.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/);
+    const vW = vbMatch ? parseFloat(vbMatch[1]) : 512;
+    const vH = vbMatch ? parseFloat(vbMatch[2]) : 512;
+
+    const clipPaths = closedOutlines.map(o => {
+      const pts = o.points.map(p =>
+        `${(p.nx * vW).toFixed(2)},${(p.ny * vH).toFixed(2)}`
+      );
+      return `    <path d="M ${pts.join(' L ')} Z"/>`;
+    }).join('\n');
+
+    const clipEl = `  <clipPath id="map-boundary">\n${clipPaths}\n  </clipPath>`;
+    if (out.includes('</defs>')) {
+      out = out.replace('</defs>', clipEl + '\n</defs>');
+    } else {
+      out = out.replace('<svg', '<svg');
+      out = out.replace(/(<svg[^>]*>)/, '$1\n<defs>\n' + clipEl + '\n</defs>');
     }
 
-    // Convert annotation-outline dashes to a clean stroke for the final file
-    out = out.replace(
-        /path\.ann-outline\s*\{[^}]*\}/,
-        'path.ann-outline { fill: none; stroke: #4aa8ff; stroke-width: 1.2; }',
-    );
-
-    // ── 512 × 512 sizing ──────────────────────────────────────────────────
-    // Replace or inject width/height on the <svg> root element
-    out = out.replace(/(<svg\b[^>]*?)(\s+width="[^"]*")?(\s+height="[^"]*")?(>)/,
-        (_, pre, _w, _h, close) => pre + ' width="512" height="512"' + close,
-    );
-
-    // ── Clip-path from closed boundary outlines ────────────────────────────
-    const closedOutlines = outlineAnns.filter(o => o.closed && o.points.length >= 3);
-    if (closedOutlines.length > 0) {
-        const vbMatch = out.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/);
-        const vW = vbMatch ? parseFloat(vbMatch[1]) : 512;
-        const vH = vbMatch ? parseFloat(vbMatch[2]) : 512;
-
-        const clipPaths = closedOutlines.map(o => {
-            const pts = o.points.map(p =>
-                `${(p.nx * vW).toFixed(2)},${(p.ny * vH).toFixed(2)}`
-            );
-            return `    <path d="M ${pts.join(' L ')} Z"/>`;
-        }).join('\n');
-
-        const clipEl = `  <clipPath id="map-boundary">\n${clipPaths}\n  </clipPath>`;
-        if (out.includes('</defs>')) {
-            out = out.replace('</defs>', clipEl + '\n</defs>');
-        } else {
-            out = out.replace('<svg', '<svg');
-            out = out.replace(/(<svg[^>]*>)/, '$1\n<defs>\n' + clipEl + '\n</defs>');
-        }
-
-        // Clip fill layers to the boundary (outlines group is intentionally NOT clipped
-        // so the boundary stroke always renders as the full map border)
-        for (const layerId of ['walls', 'thickerWalls', 'inaccessible', 'stairs']) {
-            out = out.replace(
-                `<g id="${layerId}"`,
-                `<g id="${layerId}" clip-path="url(#map-boundary)"`,
-            );
-        }
+    // Clip fill layers to the boundary (outlines group is intentionally NOT clipped
+    // so the boundary stroke always renders as the full map border)
+    for (const layerId of ['walls', 'thickerWalls', 'inaccessible', 'stairs']) {
+      out = out.replace(
+        `<g id="${layerId}"`,
+        `<g id="${layerId}" clip-path="url(#map-boundary)"`,
+      );
     }
+  }
 
-    // Generator comment
-    const stamp = new Date().toISOString().slice(0, 10);
-    out = out.replace(
-        '<svg ',
-        `<!-- DECLASSIFIED Map SVG Builder \u2014 ${sourceBasename} \u2014 ${stamp} -->\n<svg `,
-    );
+  // Generator comment
+  const stamp = new Date().toISOString().slice(0, 10);
+  out = out.replace(
+    '<svg ',
+    `<!-- DECLASSIFIED Map SVG Builder \u2014 ${sourceBasename} \u2014 ${stamp} -->\n<svg `,
+  );
 
-    out = out.replace(/\n{3,}/g, '\n\n');
-    return out;
+  out = out.replace(/\n{3,}/g, '\n\n');
+  return out;
 }
 
 // ── HTTP server ──────────────────────────────────────────────────────────────
 
 function readBody(req: http.IncomingMessage): Promise<string> {
-    return new Promise((resolve, reject) => {
-        let body = '';
-        req.on('data', (c: Buffer | string) => { body += c; });
-        req.on('end', () => resolve(body));
-        req.on('error', reject);
-    });
+  return new Promise((resolve, reject) => {
+    let body = '';
+    req.on('data', (c: Buffer | string) => { body += c; });
+    req.on('end', () => resolve(body));
+    req.on('error', reject);
+  });
 }
 
 const server = http.createServer(async (req, res) => {
-    const url    = req.url ?? '/';
-    const method = req.method ?? 'GET';
+  const url = req.url ?? '/';
+  const method = req.method ?? 'GET';
 
-    // ── Serve UI ──────────────────────────────────────────────────────────
-    if (method === 'GET' && url === '/') {
-        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
-        res.end(buildHtml());
-        return;
+  // ── Serve UI ──────────────────────────────────────────────────────────
+  if (method === 'GET' && url === '/') {
+    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
+    res.end(buildHtml());
+    return;
+  }
+
+  // ── Serve current PNG image ───────────────────────────────────────────
+  if (method === 'GET' && url.startsWith('/current-image')) {
+    if (!currentPngBuffer) {
+      res.writeHead(404); res.end('No image loaded'); return;
     }
+    res.writeHead(200, { 'Content-Type': currentPngMime, 'Cache-Control': 'no-cache' });
+    res.end(currentPngBuffer);
+    return;
+  }
 
-    // ── Serve current PNG image ───────────────────────────────────────────
-    if (method === 'GET' && url.startsWith('/current-image')) {
-        if (!currentPngBuffer) {
-            res.writeHead(404); res.end('No image loaded'); return;
-        }
-        res.writeHead(200, { 'Content-Type': currentPngMime, 'Cache-Control': 'no-cache' });
-        res.end(currentPngBuffer);
-        return;
+  // ── Workspace info ────────────────────────────────────────────────────
+  if (method === 'GET' && url === '/workspace') {
+    const { pngs, sessions } = scanWorkspace();
+    res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
+    res.end(JSON.stringify({
+      pngs,
+      sessions,
+      currentPng: currentPngPath
+        ? path.relative(WORKSPACE_DIR, currentPngPath).replace(/\\/g, '/')
+        : null,
+    }));
+    return;
+  }
+
+  // ── Load a PNG into server state ──────────────────────────────────────
+  if (method === 'POST' && url === '/load-png') {
+    try {
+      const body = await readBody(req);
+      const { filename } = JSON.parse(body) as { filename: string };
+      if (!filename) throw new Error('Missing filename');
+      loadPngFile(filename);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: true }));
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: message }));
     }
+    return;
+  }
 
-    // ── Workspace info ────────────────────────────────────────────────────
-    if (method === 'GET' && url === '/workspace') {
-        const { pngs, sessions } = scanWorkspace();
-        res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
-        res.end(JSON.stringify({
-            pngs,
-            sessions,
-            currentPng: currentPngPath
-                ? path.relative(WORKSPACE_DIR, currentPngPath).replace(/\\/g, '/')
-                : null,
-        }));
-        return;
+  // ── Save session ──────────────────────────────────────────────────────
+  if (method === 'POST' && url === '/save-session') {
+    try {
+      const body = await readBody(req);
+      const session = JSON.parse(body) as SessionData;
+      if (!session.name) throw new Error('Missing name');
+      if (!session.pngFile) throw new Error('Missing pngFile');
+      saveSessionFile(session);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: true }));
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: message }));
     }
+    return;
+  }
 
-    // ── Load a PNG into server state ──────────────────────────────────────
-    if (method === 'POST' && url === '/load-png') {
-        try {
-            const body = await readBody(req);
-            const { filename } = JSON.parse(body) as { filename: string };
-            if (!filename) throw new Error('Missing filename');
-            loadPngFile(filename);
-            res.writeHead(200, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ ok: true }));
-        } catch (err) {
-            const message = err instanceof Error ? err.message : String(err);
-            res.writeHead(400, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ error: message }));
-        }
-        return;
+  // ── Load session ──────────────────────────────────────────────────────
+  const sessionLoadMatch = method === 'GET' && url.match(/^\/session\/(.+)$/);
+  if (sessionLoadMatch) {
+    try {
+      const name = decodeURIComponent(sessionLoadMatch[1]);
+      const session = loadSessionFile(name);
+      res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
+      res.end(JSON.stringify(session));
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      res.writeHead(404, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: message }));
     }
+    return;
+  }
 
-    // ── Save session ──────────────────────────────────────────────────────
-    if (method === 'POST' && url === '/save-session') {
-        try {
-            const body    = await readBody(req);
-            const session = JSON.parse(body) as SessionData;
-            if (!session.name)    throw new Error('Missing name');
-            if (!session.pngFile) throw new Error('Missing pngFile');
-            saveSessionFile(session);
-            res.writeHead(200, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ ok: true }));
-        } catch (err) {
-            const message = err instanceof Error ? err.message : String(err);
-            res.writeHead(400, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ error: message }));
-        }
-        return;
+  // ── Delete session ────────────────────────────────────────────────────
+  const sessionDeleteMatch = method === 'DELETE' && url.match(/^\/session\/(.+)$/);
+  if (sessionDeleteMatch) {
+    try {
+      const name = decodeURIComponent(sessionDeleteMatch[1]);
+      deleteSessionFile(name);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: true }));
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: message }));
     }
+    return;
+  }
 
-    // ── Load session ──────────────────────────────────────────────────────
-    const sessionLoadMatch = method === 'GET' && url.match(/^\/session\/(.+)$/);
-    if (sessionLoadMatch) {
-        try {
-            const name    = decodeURIComponent(sessionLoadMatch[1]);
-            const session = loadSessionFile(name);
-            res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
-            res.end(JSON.stringify(session));
-        } catch (err) {
-            const message = err instanceof Error ? err.message : String(err);
-            res.writeHead(404, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ error: message }));
-        }
-        return;
+  // ── Process SVG ───────────────────────────────────────────────────────
+  if (method === 'POST' && url === '/process') {
+    if (!currentPngBuffer) {
+      res.writeHead(503, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'No image loaded' }));
+      return;
     }
+    try {
+      const body = await readBody(req);
+      const parsed = JSON.parse(body);
+      const cfg = (parsed.config ?? parsed) as MapConfig;
+      const anns = Array.isArray(parsed.annotations) ? parsed.annotations as AnnotationServer[] : [];
+      const t0 = Date.now();
+      const result = await processMap(currentPngBuffer, cfg);
+      const ms = Date.now() - t0;
 
-    // ── Delete session ────────────────────────────────────────────────────
-    const sessionDeleteMatch = method === 'DELETE' && url.match(/^\/session\/(.+)$/);
-    if (sessionDeleteMatch) {
-        try {
-            const name = decodeURIComponent(sessionDeleteMatch[1]);
-            deleteSessionFile(name);
-            res.writeHead(200, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ ok: true }));
-        } catch (err) {
-            const message = err instanceof Error ? err.message : String(err);
-            res.writeHead(500, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ error: message }));
-        }
-        return;
+      // Refresh gray pixel cache
+      try {
+        const resized = cfg.maxSize > 0
+          ? await sharp(currentPngBuffer)
+            .resize(cfg.maxSize, cfg.maxSize, { fit: 'inside', withoutEnlargement: true })
+            .png().toBuffer()
+          : currentPngBuffer;
+        const gray = await extractGrayPixels(resized);
+        const vbm = result.svg.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/);
+        grayCache = {
+          pixels: gray.pixels, width: gray.width, height: gray.height,
+          vW: vbm ? parseFloat(vbm[1]) : gray.width,
+          vH: vbm ? parseFloat(vbm[2]) : gray.height,
+        };
+      } catch (e) { console.warn('[/process] gray cache error:', e); }
+
+      res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
+      res.end(JSON.stringify({
+        svg: injectAnnotations(result.svg, anns),
+        stats: result.stats,
+        warnings: injectWarnings,
+        ms,
+      }));
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      console.error('[/process]', message);
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: message }));
     }
+    return;
+  }
 
-    // ── Process SVG ───────────────────────────────────────────────────────
-    if (method === 'POST' && url === '/process') {
-        if (!currentPngBuffer) {
-            res.writeHead(503, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ error: 'No image loaded' }));
-            return;
-        }
-        try {
-            const body     = await readBody(req);
-            const parsed   = JSON.parse(body);
-            const cfg      = (parsed.config ?? parsed) as MapConfig;
-            const anns     = Array.isArray(parsed.annotations) ? parsed.annotations as AnnotationServer[] : [];
-            const t0       = Date.now();
-            const result   = await processMap(currentPngBuffer, cfg, false);
-            const ms       = Date.now() - t0;
-
-            // Refresh gray pixel cache
-            try {
-                const resized = cfg.maxSize > 0
-                    ? await sharp(currentPngBuffer)
-                        .resize(cfg.maxSize, cfg.maxSize, { fit: 'inside', withoutEnlargement: true })
-                        .png().toBuffer()
-                    : currentPngBuffer;
-                const gray = await extractGrayPixels(resized);
-                const vbm  = result.svg.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/);
-                grayCache  = {
-                    pixels: gray.pixels, width: gray.width, height: gray.height,
-                    vW: vbm ? parseFloat(vbm[1]) : gray.width,
-                    vH: vbm ? parseFloat(vbm[2]) : gray.height,
-                };
-            } catch (e) { console.warn('[/process] gray cache error:', e); }
-
-            res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
-            res.end(JSON.stringify({
-                svg:   injectAnnotations(result.svg, anns),
-                stats: result.stats,
-                ms,
-            }));
-        } catch (err) {
-            const message = err instanceof Error ? err.message : String(err);
-            console.error('[/process]', message);
-            res.writeHead(500, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ error: message }));
-        }
-        return;
+  // ── Flood fill ────────────────────────────────────────────────────────
+  if (method === 'POST' && url === '/fill') {
+    if (!grayCache) {
+      res.writeHead(503, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'No cache — run /process first' }));
+      return;
     }
-
-    // ── Flood fill ────────────────────────────────────────────────────────
-    if (method === 'POST' && url === '/fill') {
-        if (!grayCache) {
-            res.writeHead(503, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ error: 'No cache — run /process first' }));
-            return;
-        }
-        try {
-            const body = await readBody(req);
-            const p    = JSON.parse(body);
-            const nx   = Number(p.nx), ny = Number(p.ny), threshold = Number(p.threshold);
-            const offset = Number(p.offset) || 0;
-            if (isNaN(nx) || isNaN(ny) || isNaN(threshold)) throw new Error('bad values');
-            const px   = Math.round(nx * grayCache.width);
-            const py   = Math.round(ny * grayCache.height);
-            const fill = await fillRegion(
-                grayCache.pixels, grayCache.width, grayCache.height, px, py, threshold, offset,
-            );
-            res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
-            res.end(JSON.stringify({
-                path: fill.path, pixelCount: fill.pixelCount,
-                vW: grayCache.vW, vH: grayCache.vH,
-            }));
-        } catch (err) {
-            const message = err instanceof Error ? err.message : String(err);
-            console.error('[/fill]', message);
-            res.writeHead(500, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ error: message }));
-        }
-        return;
+    try {
+      const body = await readBody(req);
+      const p = JSON.parse(body);
+      const nx = Number(p.nx), ny = Number(p.ny), threshold = Number(p.threshold);
+      const offset = Number(p.offset) || 0;
+      if (isNaN(nx) || isNaN(ny) || isNaN(threshold)) throw new Error('bad values');
+      const px = Math.round(nx * grayCache.width);
+      const py = Math.round(ny * grayCache.height);
+      const fill = await fillRegion(
+        grayCache.pixels, grayCache.width, grayCache.height, px, py, threshold, offset,
+      );
+      res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
+      res.end(JSON.stringify({
+        path: fill.path, pixelCount: fill.pixelCount,
+        vW: grayCache.vW, vH: grayCache.vH,
+      }));
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      console.error('[/fill]', message);
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: message }));
     }
+    return;
+  }
 
-    // ── Debug bitmaps ─────────────────────────────────────────────────────
-    if (method === 'POST' && url === '/debug') {
-        if (!currentPngBuffer) {
-            res.writeHead(503, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ error: 'No image loaded' }));
-            return;
-        }
-        try {
-            const body   = await readBody(req);
-            const cfg    = JSON.parse(body) as MapConfig;
-            const result = await processMap(currentPngBuffer, cfg, true);
-            const d      = result.debugBitmaps!;
-            res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
-            res.end(JSON.stringify({
-                mask:        d.mask.toString('base64'),
-                masked:      d.masked.toString('base64'),
-                negatedMask: d.negatedMask.toString('base64'),
-                wallBitmap:  d.wallBitmap.toString('base64'),
-            }));
-        } catch (err) {
-            const message = err instanceof Error ? err.message : String(err);
-            console.error('[/debug]', message);
-            res.writeHead(500, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ error: message }));
-        }
-        return;
+  // ── Export SVG ────────────────────────────────────────────────────────
+  if (method === 'POST' && url === '/export') {
+    if (!currentPngBuffer) {
+      res.writeHead(503, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'No image loaded' }));
+      return;
     }
-
-    // ── Export SVG ────────────────────────────────────────────────────────
-    if (method === 'POST' && url === '/export') {
-        if (!currentPngBuffer) {
-            res.writeHead(503, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ error: 'No image loaded' }));
-            return;
-        }
-        try {
-            const body     = await readBody(req);
-            const parsed   = JSON.parse(body);
-            const cfg      = (parsed.config ?? parsed) as MapConfig;
-            const anns     = Array.isArray(parsed.annotations) ? parsed.annotations as AnnotationServer[] : [];
-            const result   = await processMap(currentPngBuffer, cfg, false);
-            const annotated = injectAnnotations(result.svg, anns);
-            const outlineAnns = anns.filter((a): a is MapOutlineServer => a.kind === 'map-outline');
-            const basename = currentPngPath
-                ? path.basename(currentPngPath, path.extname(currentPngPath))
-                : 'map';
-            const clean    = buildExportSvg(annotated, basename, outlineAnns);
-            const filename = basename + '.svg';
-            res.writeHead(200, {
-                'Content-Type': 'image/svg+xml; charset=utf-8',
-                'Content-Disposition': `attachment; filename="${filename}"`,
-                'Cache-Control': 'no-store',
-            });
-            res.end(clean);
-        } catch (err) {
-            const message = err instanceof Error ? err.message : String(err);
-            console.error('[/export]', message);
-            res.writeHead(500, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ error: message }));
-        }
-        return;
+    try {
+      const body = await readBody(req);
+      const parsed = JSON.parse(body);
+      const cfg = (parsed.config ?? parsed) as MapConfig;
+      const anns = Array.isArray(parsed.annotations) ? parsed.annotations as AnnotationServer[] : [];
+      const result = await processMap(currentPngBuffer, cfg);
+      const annotated = injectAnnotations(result.svg, anns);
+      const outlineAnns = anns.filter((a): a is MapOutlineServer => a.kind === 'map-outline');
+      const basename = currentPngPath
+        ? path.basename(currentPngPath, path.extname(currentPngPath))
+        : 'map';
+      const clean = buildExportSvg(annotated, basename, outlineAnns);
+      const filename = basename + '.svg';
+      res.writeHead(200, {
+        'Content-Type': 'image/svg+xml; charset=utf-8',
+        'Content-Disposition': `attachment; filename="${filename}"`,
+        'Cache-Control': 'no-store',
+      });
+      res.end(clean);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      console.error('[/export]', message);
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: message }));
     }
+    return;
+  }
 
-    res.writeHead(404); res.end('Not found');
+  res.writeHead(404); res.end('Not found');
 });
 
 server.listen(PORT, () => {
-    console.log(`\nDECLASSIFIED  Map SVG Builder`);
-    console.log(`\u2192  http://localhost:${PORT}`);
-    console.log(`\nWorkspace: ${WORKSPACE_DIR}`);
-    console.log('Drop PNG/JPG map images into that folder, then select them in the browser.\n');
-    console.log('Fill mode   : click the map to flood-fill a region');
-    console.log('Select mode : click any SVG path to reassign or exclude it');
-    console.log('Outline mode: click to place map boundary vertices (Enter or Close to finish)');
-    console.log('Export SVG  : downloads a clean 512\u00d7512 SVG');
-    console.log('\nPress Ctrl+C to stop.\n');
+  console.log(`\nDECLASSIFIED  Map SVG Builder`);
+  console.log(`\u2192  http://localhost:${PORT}`);
+  console.log(`\nWorkspace: ${WORKSPACE_DIR}`);
+  console.log('Drop PNG/JPG map images into that folder, then select them in the browser.\n');
+  console.log('Fill mode   : click the map to flood-fill a region');
+  console.log('Select mode : click any SVG path to reassign or exclude it');
+  console.log('Outline mode: click to place map boundary vertices (Enter or Close to finish)');
+  console.log('Export SVG  : downloads a clean 512\u00d7512 SVG');
+  console.log('\nPress Ctrl+C to stop.\n');
 });
 
 server.on('error', (err: NodeJS.ErrnoException) => {
-    if (err.code === 'EACCES' || err.code === 'EADDRINUSE') {
-        console.error(`\nPort ${PORT} unavailable: ${err.message}`);
-        console.error(`Try: npm run map:build -- --port 9091\n`);
-    } else {
-        console.error('Server error:', err);
-    }
-    process.exit(1);
+  if (err.code === 'EACCES' || err.code === 'EADDRINUSE') {
+    console.error(`\nPort ${PORT} unavailable: ${err.message}`);
+    console.error(`Try: npm run map:build -- --port 9091\n`);
+  } else {
+    console.error('Server error:', err);
+  }
+  process.exit(1);
 });
