@@ -34,6 +34,11 @@ import {
   stripBeziers,
   type MapConfig,
 } from './mapToSvg.js';
+import {
+  applyTransformToPathByD,
+  removeAllPathTagsByD,
+  replacePathDByD,
+} from './mapSvgPathMatch.js';
 
 // ── constants ────────────────────────────────────────────────────────────────
 
@@ -3393,11 +3398,9 @@ function injectAnnotations(svg: string, annotations: AnnotationServer[]): string
       svg = ensureGroupAndAppend(svg, ann.group, pathEl);
 
     } else if (ann.kind === 'reassign') {
-      const esc = ann.d.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      const re = new RegExp(`[ \\t]*<path(?:[^>]*)?\\bd\\s*=\\s*"${esc}"[^/]*/?>\\r?\\n?`, 'g');
-      const prev = svg;
-      svg = svg.replace(re, '');
-      if (svg === prev) {
+      const { svg: removed, matchCount } = removeAllPathTagsByD(svg, ann.d);
+      svg = removed;
+      if (matchCount === 0) {
         const w = `[reassign] NO MATCH (${ann.fromGroup})`;
         console.warn(w, ann.d.slice(-80));
         injectWarnings.push(w);
@@ -3413,11 +3416,9 @@ function injectAnnotations(svg: string, annotations: AnnotationServer[]): string
       }
 
     } else if (ann.kind === 'exclude') {
-      const esc = ann.d.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      const re = new RegExp(`[ \\t]*<path(?:[^>]*)?\\bd\\s*=\\s*"${esc}"[^/]*/?>\\r?\\n?`, 'g');
-      const prev = svg;
-      svg = svg.replace(re, '');
-      if (svg === prev) {
+      const { svg: removed, matchCount } = removeAllPathTagsByD(svg, ann.d);
+      svg = removed;
+      if (matchCount === 0) {
         const w = `[exclude] NO MATCH (${ann.fromGroup})`;
         console.warn(w, ann.d.slice(-80));
         injectWarnings.push(w);
@@ -3425,18 +3426,11 @@ function injectAnnotations(svg: string, annotations: AnnotationServer[]): string
       svg = ensureGroupAndAppend(svg, 'outlines', `    <path d="${ann.d}"/>`);
 
     } else if (ann.kind === 'move') {
-      const esc = ann.d.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      const re = new RegExp(`(<path\\b)([^>]*\\bd\\s*=\\s*"${esc}")([^/]*/>)`, 'g');
-      let matched = false;
-      svg = svg.replace(re, (_, open, mid, end) => {
-        matched = true;
-        const tx = `translate(${ann.dx.toFixed(2)},${ann.dy.toFixed(2)})`;
-        if (mid.includes('transform=')) {
-          return open + mid.replace(/transform="([^"]*)"/, `transform="${tx} $1"`) + end;
-        }
-        return `${open} transform="${tx}"${mid}${end}`;
-      });
-      if (!matched) { const w = `[move] NO MATCH (${ann.fromGroup})`; console.warn(w, ann.d.slice(-80)); injectWarnings.push(w); }
+      const tx = `translate(${ann.dx.toFixed(2)},${ann.dy.toFixed(2)})`;
+      const { svg: applied, matchCount } = applyTransformToPathByD(svg, ann.d,
+        existing => existing ? `${tx} ${existing}` : tx);
+      svg = applied;
+      if (matchCount === 0) { const w = `[move] NO MATCH (${ann.fromGroup})`; console.warn(w, ann.d.slice(-80)); injectWarnings.push(w); }
 
     } else if (ann.kind === 'reshape') {
       let matched = false;
@@ -3449,12 +3443,9 @@ function injectAnnotations(svg: string, annotations: AnnotationServer[]): string
         });
       }
       if (!matched) {
-        const esc = ann.origD.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        const re = new RegExp(`(<path\\b)([^>]*\\bd\\s*=\\s*"${esc}")([^/]*/>)`, 'g');
-        svg = svg.replace(re, (_, open, mid, end) => {
-          matched = true;
-          return open + mid.replace(/\bd\s*=\s*"[^"]*"/, `d="${ann.newD}"`) + end;
-        });
+        const { svg: replaced, matchCount } = replacePathDByD(svg, ann.origD, ann.newD);
+        svg = replaced;
+        matched = matchCount > 0;
       }
       if (!matched) {
         const w = `[reshape] NO MATCH (${ann.fromGroup}) — config may have changed since the edit`;
