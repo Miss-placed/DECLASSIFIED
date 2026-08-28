@@ -52,7 +52,8 @@
 		"operations:clean": "node scripts/clean-intel-static.mjs",
 		"wiki:check": "react-scripts test --watchAll=false --testPathPattern=wiki-links.test.ts",
 		"sitemap:generate": "node scripts/generate-sitemap.mjs",
-		"map:build": "npx tsx scripts/mapToSvgPreview.ts"
+		"map:build": "npx tsx scripts/mapToSvgPreview.ts",
+		"test:map": "npx tsx --test scripts/*.test.ts"
 	},
 	"eslintConfig": {
 		"extends": [
