@@ -132,6 +132,16 @@ interface ReshapeServer {
   annId?: string; // stable data-ann-id of the target path (preferred match key)
 }
 
+interface RotateServer {
+  kind: 'rotate';
+  id: string;
+  d: string;
+  fromGroup: string;
+  angle: number; // delta degrees applied by this annotation
+  cx: number;    // rotation center, in the path's own (pre-transform) coordinate space
+  cy: number;
+}
+
 interface MapOutlineServer {
   kind: 'map-outline';
   id: string;
@@ -145,6 +155,7 @@ type AnnotationServer =
   | ExclusionServer
   | MoveServer
   | ReshapeServer
+  | RotateServer
   | MapOutlineServer;
 
 // ── session types ────────────────────────────────────────────────────────────
@@ -503,6 +514,14 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
 /* Selection & drag visual states */
 #svg-overlay .path-selected { filter: drop-shadow(0 0 6px #ffe066) !important; stroke: #ffe066 !important; stroke-width: 2 !important; }
 #svg-overlay .path-dragging { cursor: grabbing !important; filter: drop-shadow(0 0 8px rgba(255,160,0,0.9)) !important; opacity: 0.85; }
+/* Rotate corner handles */
+#rotate-handle-layer { pointer-events: none; }
+.rotate-handle-hit { fill: rgba(0,0,0,0); pointer-events: all; cursor: grab; }
+.rotate-handle.rotate-handle-active .rotate-handle-hit { cursor: grabbing; }
+.rotate-icon-arc  { fill: none; stroke: #ffe066; stroke-width: 1.6px; stroke-linecap: round; pointer-events: none; }
+.rotate-icon-head { fill: #ffe066; stroke: none; pointer-events: none; }
+.rotate-handle.rotate-handle-active .rotate-icon-arc  { stroke: #fff; filter: drop-shadow(0 0 4px rgba(255,255,255,0.8)); }
+.rotate-handle.rotate-handle-active .rotate-icon-head { fill: #fff; filter: drop-shadow(0 0 4px rgba(255,255,255,0.8)); }
 
 /* vertex edit mode */
 /* draw mode */
@@ -2973,6 +2992,14 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     let dragStartX = 0, dragStartY = 0, dragDx = 0, dragDy = 0;
     let isDragging = false, dragMoved = false;
 
+    // ── drag-to-rotate state ────────────────────────────────────────────
+    let isRotating = false, rotateEl = null, rotateFromGroup = null, rotateOrigD = null;
+    let rotateExistingTransform = '';
+    let rotateLocalCx = 0, rotateLocalCy = 0;   // rotation center, in the path's own d-space (transform-independent)
+    let rotateCenterRoot = { x: 0, y: 0 };      // same center, in root-SVG space (for angle math against the mouse)
+    let rotateStartAngle = 0, rotateDeltaDeg = 0;
+    let hoverHandleLayer = null;
+
     // Scale factor: converts screen px → SVG user units
     function getSvgScale() {
       const svgEl = document.querySelector('#svg-overlay svg');
@@ -2985,7 +3012,127 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
       };
     }
 
+    // Bounding-box corners + center of el, in the root svg's viewBox-unit user space
+    // (accounts for pan/zoom and any transform already on el, e.g. a prior move/rotate).
+    function getElRootCorners(el) {
+      const svgRoot = el.ownerSVGElement;
+      const ctm = el.getCTM();
+      if (!svgRoot || !ctm) return null;
+      // getCTM() maps into the SVG's viewport-pixel space, not its viewBox-unit space —
+      // rescale so results share the same units as clientToSvgPoint()/translate()/rotate().
+      const s = getSvgScaleForVertex();
+      const b = el.getBBox();
+      const local = [
+        { x: b.x, y: b.y }, { x: b.x + b.width, y: b.y },
+        { x: b.x + b.width, y: b.y + b.height }, { x: b.x, y: b.y + b.height },
+      ];
+      const pt = svgRoot.createSVGPoint();
+      const toViewBox = p => { pt.x = p.x; pt.y = p.y; const t = pt.matrixTransform(ctm); return { x: t.x * s.sx, y: t.y * s.sy }; };
+      const corners = local.map(toViewBox);
+      const center = toViewBox({ x: b.x + b.width / 2, y: b.y + b.height / 2 });
+      return { corners, center };
+    }
+
+    let hideHandlesTimer = null;
+    function hideRotateHandles() {
+      if (hideHandlesTimer) { clearTimeout(hideHandlesTimer); hideHandlesTimer = null; }
+      if (hoverHandleLayer) { hoverHandleLayer.remove(); hoverHandleLayer = null; }
+    }
+    // The handles sit just outside the shape's own hit area, so there's a small gap the
+    // mouse crosses between the two — hide on a short delay so that crossing doesn't
+    // tear the layer down before it reaches the handle underneath the cursor.
+    function scheduleHideRotateHandles() {
+      if (hideHandlesTimer) clearTimeout(hideHandlesTimer);
+      hideHandlesTimer = setTimeout(() => { hideHandlesTimer = null; if (!isRotating) hideRotateHandles(); }, 250);
+    }
+    function cancelHideRotateHandles() {
+      if (hideHandlesTimer) { clearTimeout(hideHandlesTimer); hideHandlesTimer = null; }
+    }
+
+    function showRotateHandles(el, gId) {
+      hideRotateHandles();
+      const info = getElRootCorners(el);
+      if (!info) return;
+      const svgRoot = el.ownerSVGElement;
+      const layer = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      layer.id = 'rotate-handle-layer';
+      const s = getSvgScaleForVertex();
+      const px = Math.max(s.sx, s.sy);
+      const r = 7 * px, outward = 10 * px;
+      info.corners.forEach(c => {
+        const dx = c.x - info.center.x, dy = c.y - info.center.y;
+        const len = Math.hypot(dx, dy) || 1;
+        const ox = c.x + (dx / len) * outward;
+        const oy = c.y + (dy / len) * outward;
+
+        const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        g.classList.add('rotate-handle');
+        g.setAttribute('transform', 'translate(' + ox.toFixed(2) + ',' + oy.toFixed(2) + ')');
+
+        const hit = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        hit.classList.add('rotate-handle-hit');
+        hit.setAttribute('r', (11 * px).toFixed(2));
+        g.appendChild(hit);
+
+        const arc = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        arc.classList.add('rotate-icon-arc');
+        arc.setAttribute('d',
+          'M ' + (-r * 0.75).toFixed(2) + ' ' + (-r * 0.35).toFixed(2) +
+          ' A ' + (r * 0.8).toFixed(2) + ' ' + (r * 0.8).toFixed(2) +
+          ' 0 1 1 ' + (-r * 0.82).toFixed(2) + ' ' + (r * 0.25).toFixed(2));
+        g.appendChild(arc);
+
+        const head = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        head.classList.add('rotate-icon-head');
+        head.setAttribute('d',
+          'M ' + (-r * 0.98).toFixed(2) + ' ' + (r * 0.02).toFixed(2) +
+          ' L ' + (-r * 0.55).toFixed(2) + ' ' + (-r * 0.15).toFixed(2) +
+          ' L ' + (-r * 0.55).toFixed(2) + ' ' + (r * 0.35).toFixed(2) + ' Z');
+        g.appendChild(head);
+
+        g.addEventListener('mouseenter', () => { cancelHideRotateHandles(); g.classList.add('rotate-handle-active'); });
+        g.addEventListener('mouseleave', () => { g.classList.remove('rotate-handle-active'); if (!isRotating) scheduleHideRotateHandles(); });
+        g.addEventListener('mousedown', ev => {
+          ev.stopPropagation();
+          ev.preventDefault();
+          startRotateDrag(el, gId, ev);
+        });
+        layer.appendChild(g);
+      });
+      svgRoot.appendChild(layer);
+      hoverHandleLayer = layer;
+    }
+
+    function startRotateDrag(el, gId, ev) {
+      const info = getElRootCorners(el);
+      if (!info) return;
+      hideFloatPanel();
+      clearSelectHighlight();
+      hideRotateHandles();
+      const b = el.getBBox();
+      isRotating = true;
+      rotateEl = el; rotateFromGroup = gId;
+      rotateOrigD = el.getAttribute('d') || '';
+      rotateExistingTransform = el.getAttribute('transform') || '';
+      rotateLocalCx = b.x + b.width / 2;
+      rotateLocalCy = b.y + b.height / 2;
+      rotateCenterRoot = info.center;
+      const p = clientToSvgPoint(ev);
+      rotateStartAngle = Math.atan2(p.y - rotateCenterRoot.y, p.x - rotateCenterRoot.x);
+      rotateDeltaDeg = 0;
+      el.classList.add('path-dragging');
+    }
+
     function onMousemove(ev) {
+      if (isRotating && rotateEl) {
+        const p = clientToSvgPoint(ev);
+        const curAngle = Math.atan2(p.y - rotateCenterRoot.y, p.x - rotateCenterRoot.x);
+        rotateDeltaDeg = (curAngle - rotateStartAngle) * 180 / Math.PI;
+        if (Math.abs(rotateDeltaDeg) < 0.05) return;
+        const rot = 'rotate(' + rotateDeltaDeg.toFixed(2) + ',' + rotateLocalCx.toFixed(2) + ',' + rotateLocalCy.toFixed(2) + ')';
+        rotateEl.setAttribute('transform', rotateExistingTransform ? rotateExistingTransform + ' ' + rot : rot);
+        return;
+      }
       if (!isDragging || !dragEl) return;
       const dx = ev.clientX - dragStartX;
       const dy = ev.clientY - dragStartY;
@@ -2993,17 +3140,41 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
         dragMoved = true;
         hideFloatPanel();
         clearSelectHighlight();
+        hideRotateHandles();
         dragEl.classList.add('path-dragging');
       }
       if (!dragMoved) return;
       const { sx, sy } = getSvgScale();
       dragDx = dx * sx;
       dragDy = dy * sy;
+      // Prepended (kept outermost) so it composes correctly on top of any existing
+      // rotate() already on the element — rotate must stay innermost, closest to raw d.
       const tx = 'translate(' + dragDx.toFixed(2) + ',' + dragDy.toFixed(2) + ')';
-      dragEl.setAttribute('transform', dragExistingTransform ? dragExistingTransform + ' ' + tx : tx);
+      dragEl.setAttribute('transform', dragExistingTransform ? tx + ' ' + dragExistingTransform : tx);
     }
 
     function onMouseup(ev) {
+      if (isRotating) {
+        isRotating = false;
+        if (rotateEl) {
+          rotateEl.classList.remove('path-dragging');
+          if (Math.abs(rotateDeltaDeg) > 0.5) {
+            snapshotForUndo();
+            annotations.push({
+              kind: 'rotate', id: 'ann-' + Date.now(),
+              d: rotateOrigD, fromGroup: rotateFromGroup,
+              angle: rotateDeltaDeg, cx: rotateLocalCx, cy: rotateLocalCy,
+            });
+            renderAnnotationList();
+            process(getConfig());
+          } else {
+            // Below the commit threshold — revert the live preview nudge, no-op.
+            rotateEl.setAttribute('transform', rotateExistingTransform);
+          }
+        }
+        rotateEl = null; rotateFromGroup = null; rotateOrigD = null; rotateDeltaDeg = 0;
+        return;
+      }
       if (!isDragging) return;
       isDragging = false;
       if (dragEl) {
@@ -3032,6 +3203,7 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
     window._selectCleanup = () => {
       document.removeEventListener('mousemove', onMousemove);
       document.removeEventListener('mouseup', onMouseup);
+      hideRotateHandles();
     };
 
     SELECTABLE.forEach(gId => {
@@ -3051,6 +3223,15 @@ input[type=range] { flex: 1; accent-color: var(--accent); height: 3px; cursor: p
           dragStartX  = ev.clientX;
           dragStartY  = ev.clientY;
           dragDx = 0; dragDy = 0;
+        });
+        el.addEventListener('mouseenter', () => {
+          if (interactionMode !== 'select' || isDragging || isRotating) return;
+          cancelHideRotateHandles();
+          showRotateHandles(el, gId);
+        });
+        el.addEventListener('mouseleave', () => {
+          if (isRotating) return;
+          scheduleHideRotateHandles();
         });
       });
     });
@@ -3431,6 +3612,15 @@ function injectAnnotations(svg: string, annotations: AnnotationServer[]): string
         existing => existing ? `${tx} ${existing}` : tx);
       svg = applied;
       if (matchCount === 0) { const w = `[move] NO MATCH (${ann.fromGroup})`; console.warn(w, ann.d.slice(-80)); injectWarnings.push(w); }
+
+    } else if (ann.kind === 'rotate') {
+      // Appended to the RIGHT of any existing transform so it stays innermost —
+      // rotate acts on the raw `d` geometry first, then any translate(s) reposition the result.
+      const rot = `rotate(${ann.angle.toFixed(2)},${ann.cx.toFixed(2)},${ann.cy.toFixed(2)})`;
+      const { svg: applied, matchCount } = applyTransformToPathByD(svg, ann.d,
+        existing => existing ? `${existing} ${rot}` : rot);
+      svg = applied;
+      if (matchCount === 0) { const w = `[rotate] NO MATCH (${ann.fromGroup})`; console.warn(w, ann.d.slice(-80)); injectWarnings.push(w); }
 
     } else if (ann.kind === 'reshape') {
       let matched = false;
