@@ -175,7 +175,7 @@ const renderOperationItem = (
 			: '';
 	const imageBlock =
 		item.img && item.img !== 'placeholder'
-			? `<a href="https://i.imgur.com/${item.img}.jpg" target="_blank" rel="noreferrer"><img src="https://i.imgur.com/${item.img}l.jpg" alt="${escapeHtml(item.title)}" loading="lazy" style="width:100%;margin-top:.5rem;border-radius:8px;" /></a>`
+			? `<a href="https://declassified-cdn.sol3.me/${item.img}.jpg" target="_blank" rel="noreferrer"><img src="https://declassified-cdn.sol3.me/${item.img}.jpg" alt="${escapeHtml(item.title)}" loading="lazy" style="width:100%;margin-top:.5rem;border-radius:8px;" /></a>`
 			: '';
 	// Static pages should always include visible full text for SEO.
 	const description = `<p class="text-sm">${escapeHtml(item.desc)}</p>`;

@@ -1,0 +1,77 @@
+# DECLASSIFIED
+
+> DECLASSIFIED is a Call of Duty Zombies reference site with interactive map data, collectible intel hubs, main quest walkthroughs, side egg guides, and operations indexes for Black Ops 6 and Black Ops Cold War.
+
+Use map hub pages before deep links when you need context. Canonical URLs use trailing slashes.
+Only `/intel/` currently exposes item-level deep links in the published static route set; `/quests/` and `/eggs/` are map-level guides.
+
+Primary route patterns:
+- `/intel/{game}/`: Game-level intel index.
+- `/intel/{game}/{map}/`: Map-specific intel hub.
+- `/intel/{game}/{map}/{item-slug}/`: Individual intel detail page.
+- `/quests/{game}/{map}/`: Main quest walkthrough for a map.
+- `/eggs/{game}/{map}/`: Side eggs and auxiliary tasks for a map.
+- `/operations/{game}/`: Game-wide operations hub.
+
+Deployment note: production `robots.txt` may be overridden at the CDN or Cloudflare layer. Repo file alone does not guarantee live crawler access.
+
+## Start Here
+
+- [Homepage](https://declassified.app/): Interactive app entry point.
+- [Sitemap](https://declassified.app/sitemap.xml): Complete canonical URL inventory.
+- [Full llms index](https://declassified.app/llms-full.txt): Exhaustive route listing for direct deep links.
+
+## Intel Game Hubs
+
+- [Intel hub · Black Ops 6](https://declassified.app/intel/black-ops-6/): Top-level intel index for this game.
+- [Intel hub · Black Ops Cold War](https://declassified.app/intel/black-ops-cold-war/): Top-level intel index for this game.
+
+## Intel Map Hubs
+
+- [Intel hub · Black Ops 6 · Citadelle Des Morts](https://declassified.app/intel/black-ops-6/citadelle-des-morts/): Collectible intel hub for this map.
+- [Intel hub · Black Ops 6 · Liberty Falls](https://declassified.app/intel/black-ops-6/liberty-falls/): Collectible intel hub for this map.
+- [Intel hub · Black Ops 6 · Reckoning](https://declassified.app/intel/black-ops-6/reckoning/): Collectible intel hub for this map.
+- [Intel hub · Black Ops 6 · Shattered Veil](https://declassified.app/intel/black-ops-6/shattered-veil/): Collectible intel hub for this map.
+- [Intel hub · Black Ops 6 · Terminus](https://declassified.app/intel/black-ops-6/terminus/): Collectible intel hub for this map.
+- [Intel hub · Black Ops 6 · The Tomb](https://declassified.app/intel/black-ops-6/the-tomb/): Collectible intel hub for this map.
+- [Intel hub · Black Ops Cold War · Die Maschine](https://declassified.app/intel/black-ops-cold-war/die-maschine/): Collectible intel hub for this map.
+- [Intel hub · Black Ops Cold War · Firebase Z](https://declassified.app/intel/black-ops-cold-war/firebase-z/): Collectible intel hub for this map.
+- [Intel hub · Black Ops Cold War · Forsaken](https://declassified.app/intel/black-ops-cold-war/forsaken/): Collectible intel hub for this map.
+- [Intel hub · Black Ops Cold War · Mauer Der Toten](https://declassified.app/intel/black-ops-cold-war/mauer-der-toten/): Collectible intel hub for this map.
+- [Intel hub · Black Ops Cold War · Outbreak](https://declassified.app/intel/black-ops-cold-war/outbreak/): Collectible intel hub for this map.
+
+## Main Quest Guides
+
+- [Main quest · Black Ops 6 · Citadelle Des Morts](https://declassified.app/quests/black-ops-6/citadelle-des-morts/): Main quest walkthrough and step navigation for this map.
+- [Main quest · Black Ops 6 · Liberty Falls](https://declassified.app/quests/black-ops-6/liberty-falls/): Main quest walkthrough and step navigation for this map.
+- [Main quest · Black Ops 6 · Reckoning](https://declassified.app/quests/black-ops-6/reckoning/): Main quest walkthrough and step navigation for this map.
+- [Main quest · Black Ops 6 · Shattered Veil](https://declassified.app/quests/black-ops-6/shattered-veil/): Main quest walkthrough and step navigation for this map.
+- [Main quest · Black Ops 6 · Terminus](https://declassified.app/quests/black-ops-6/terminus/): Main quest walkthrough and step navigation for this map.
+- [Main quest · Black Ops 6 · The Tomb](https://declassified.app/quests/black-ops-6/the-tomb/): Main quest walkthrough and step navigation for this map.
+- [Main quest · Black Ops Cold War · Die Maschine](https://declassified.app/quests/black-ops-cold-war/die-maschine/): Main quest walkthrough and step navigation for this map.
+- [Main quest · Black Ops Cold War · Firebase Z](https://declassified.app/quests/black-ops-cold-war/firebase-z/): Main quest walkthrough and step navigation for this map.
+- [Main quest · Black Ops Cold War · Forsaken](https://declassified.app/quests/black-ops-cold-war/forsaken/): Main quest walkthrough and step navigation for this map.
+- [Main quest · Black Ops Cold War · Mauer Der Toten](https://declassified.app/quests/black-ops-cold-war/mauer-der-toten/): Main quest walkthrough and step navigation for this map.
+- [Main quest · Black Ops Cold War · Outbreak](https://declassified.app/quests/black-ops-cold-war/outbreak/): Main quest walkthrough and step navigation for this map.
+
+## Side Egg Guides
+
+- [Side eggs · Black Ops 6 · Citadelle Des Morts](https://declassified.app/eggs/black-ops-6/citadelle-des-morts/): Side egg and auxiliary objective guide for this map.
+- [Side eggs · Black Ops 6 · Liberty Falls](https://declassified.app/eggs/black-ops-6/liberty-falls/): Side egg and auxiliary objective guide for this map.
+- [Side eggs · Black Ops 6 · Shattered Veil](https://declassified.app/eggs/black-ops-6/shattered-veil/): Side egg and auxiliary objective guide for this map.
+- [Side eggs · Black Ops 6 · Terminus](https://declassified.app/eggs/black-ops-6/terminus/): Side egg and auxiliary objective guide for this map.
+- [Side eggs · Black Ops 6 · The Tomb](https://declassified.app/eggs/black-ops-6/the-tomb/): Side egg and auxiliary objective guide for this map.
+- [Side eggs · Black Ops Cold War · Die Maschine](https://declassified.app/eggs/black-ops-cold-war/die-maschine/): Side egg and auxiliary objective guide for this map.
+- [Side eggs · Black Ops Cold War · Firebase Z](https://declassified.app/eggs/black-ops-cold-war/firebase-z/): Side egg and auxiliary objective guide for this map.
+- [Side eggs · Black Ops Cold War · Forsaken](https://declassified.app/eggs/black-ops-cold-war/forsaken/): Side egg and auxiliary objective guide for this map.
+- [Side eggs · Black Ops Cold War · Mauer Der Toten](https://declassified.app/eggs/black-ops-cold-war/mauer-der-toten/): Side egg and auxiliary objective guide for this map.
+- [Side eggs · Black Ops Cold War · Outbreak](https://declassified.app/eggs/black-ops-cold-war/outbreak/): Side egg and auxiliary objective guide for this map.
+
+## Operations Hubs
+
+- [Operations hub · Black Ops 6](https://declassified.app/operations/black-ops-6/): Game-wide operations overview.
+- [Operations hub · Black Ops Cold War](https://declassified.app/operations/black-ops-cold-war/): Game-wide operations overview.
+
+## Optional
+
+- [robots.txt](https://declassified.app/robots.txt): Origin crawl policy file. Deployed response may differ if CDN-managed rules are enabled.

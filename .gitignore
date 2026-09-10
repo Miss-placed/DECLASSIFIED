@@ -31,3 +31,8 @@ yarn-error.log*
 /build
 /node_modules
 /scripts/imgur-downloads
+
+# Map builder debug/output files — local only
+scripts/*.png
+scripts/*.svg
+scripts/map-workspace/*.png

@@ -1,0 +1,378 @@
+# DECLASSIFIED Full Index
+
+> Exhaustive canonical route index for DECLASSIFIED. Prefer `/llms.txt` for curated discovery and use this file when you need direct deep links.
+
+All listed URLs are canonical site paths with trailing slashes.
+
+## Entry Points
+
+- [Homepage](https://declassified.app/): Interactive app entry point.
+- [llms.txt](https://declassified.app/llms.txt): Curated LLM discovery file.
+- [Sitemap](https://declassified.app/sitemap.xml): Complete machine-generated sitemap.
+
+## Intel Game Hubs
+
+- [Black Ops 6 Intel Dossiers](https://declassified.app/intel/black-ops-6/): Game-level intel index for Black Ops 6.
+- [Black Ops Cold War Intel Dossiers](https://declassified.app/intel/black-ops-cold-war/): Game-level intel index for Black Ops Cold War.
+
+## Intel Map Hubs
+
+- [Citadelle Des Morts Intel Dossiers](https://declassified.app/intel/black-ops-6/citadelle-des-morts/): Map-level intel hub for Citadelle Des Morts.
+- [Liberty Falls Intel Dossiers](https://declassified.app/intel/black-ops-6/liberty-falls/): Map-level intel hub for Liberty Falls.
+- [Reckoning Intel Dossiers](https://declassified.app/intel/black-ops-6/reckoning/): Map-level intel hub for Reckoning.
+- [Shattered Veil Intel Dossiers](https://declassified.app/intel/black-ops-6/shattered-veil/): Map-level intel hub for Shattered Veil.
+- [Terminus Intel Dossiers](https://declassified.app/intel/black-ops-6/terminus/): Map-level intel hub for Terminus.
+- [The Tomb Intel Dossiers](https://declassified.app/intel/black-ops-6/the-tomb/): Map-level intel hub for The Tomb.
+- [Die Maschine Intel Dossiers](https://declassified.app/intel/black-ops-cold-war/die-maschine/): Map-level intel hub for Die Maschine.
+- [Firebase Z Intel Dossiers](https://declassified.app/intel/black-ops-cold-war/firebase-z/): Map-level intel hub for Firebase Z.
+- [Forsaken Intel Dossiers](https://declassified.app/intel/black-ops-cold-war/forsaken/): Map-level intel hub for Forsaken.
+- [Mauer Der Toten Intel Dossiers](https://declassified.app/intel/black-ops-cold-war/mauer-der-toten/): Map-level intel hub for Mauer Der Toten.
+- [Outbreak Intel Dossiers](https://declassified.app/intel/black-ops-cold-war/outbreak/): Map-level intel hub for Outbreak.
+
+## Intel Detail Pages
+
+- [Balmung](https://declassified.app/intel/black-ops-6/citadelle-des-morts/balmung-bo6s1car4/): Intel entry for Balmung on Citadelle Des Morts.
+- [Caliburn](https://declassified.app/intel/black-ops-6/citadelle-des-morts/caliburn-bo6s1car2/): Intel entry for Caliburn on Citadelle Des Morts.
+- [Do Your Damn Job](https://declassified.app/intel/black-ops-6/citadelle-des-morts/do-your-damn-job-bo6s1cau5/): Intel entry for Do Your Damn Job on Citadelle Des Morts.
+- [Durendal](https://declassified.app/intel/black-ops-6/citadelle-des-morts/durendal-bo6s1car3/): Intel entry for Durendal on Citadelle Des Morts.
+- [Fair Enough](https://declassified.app/intel/black-ops-6/citadelle-des-morts/fair-enough-bo6s1cau6/): Intel entry for Fair Enough on Citadelle Des Morts.
+- [Family Book](https://declassified.app/intel/black-ops-6/citadelle-des-morts/family-book-bo6s1cdo1/): Intel entry for Family Book on Citadelle Des Morts.
+- [Get It Done](https://declassified.app/intel/black-ops-6/citadelle-des-morts/get-it-done-bo6s1cau4/): Intel entry for Get It Done on Citadelle Des Morts.
+- [Good Afternoon Mr Richtofen](https://declassified.app/intel/black-ops-6/citadelle-des-morts/good-afternoon-mr-richtofen-bo6s1cau1/): Intel entry for Good Afternoon Mr Richtofen on Citadelle Des Morts.
+- [Historically Speaking](https://declassified.app/intel/black-ops-6/citadelle-des-morts/historically-speaking-bo6s1cau3/): Intel entry for Historically Speaking on Citadelle Des Morts.
+- [Intake Form](https://declassified.app/intel/black-ops-6/citadelle-des-morts/intake-form-bo6s1cdo3/): Intel entry for Intake Form on Citadelle Des Morts.
+- [New Horizons](https://declassified.app/intel/black-ops-6/citadelle-des-morts/new-horizons-bo6s1cau9/): Intel entry for New Horizons on Citadelle Des Morts.
+- [Obscurus Altilium](https://declassified.app/intel/black-ops-6/citadelle-des-morts/obscurus-altilium-bo6s1car6/): Intel entry for Obscurus Altilium on Citadelle Des Morts.
+- [Solais](https://declassified.app/intel/black-ops-6/citadelle-des-morts/solais-bo6s1car5/): Intel entry for Solais on Citadelle Des Morts.
+- [Some Context](https://declassified.app/intel/black-ops-6/citadelle-des-morts/some-context-bo6s1cdo2/): Intel entry for Some Context on Citadelle Des Morts.
+- [Space Race](https://declassified.app/intel/black-ops-6/citadelle-des-morts/space-race-bo6s1car7/): Intel entry for Space Race on Citadelle Des Morts.
+- [Statuesque](https://declassified.app/intel/black-ops-6/citadelle-des-morts/statuesque-bo6s1cdo4/): Intel entry for Statuesque on Citadelle Des Morts.
+- [Survival Of The Fittest](https://declassified.app/intel/black-ops-6/citadelle-des-morts/survival-of-the-fittest-bo6s1cau7/): Intel entry for Survival Of The Fittest on Citadelle Des Morts.
+- [The Bastard Sword](https://declassified.app/intel/black-ops-6/citadelle-des-morts/the-bastard-sword-bo6s1car1/): Intel entry for The Bastard Sword on Citadelle Des Morts.
+- [The Foundling](https://declassified.app/intel/black-ops-6/citadelle-des-morts/the-foundling-bo6s1cau8/): Intel entry for The Foundling on Citadelle Des Morts.
+- [The Four Bastards](https://declassified.app/intel/black-ops-6/citadelle-des-morts/the-four-bastards-bo6s1cau10/): Intel entry for The Four Bastards on Citadelle Des Morts.
+- [You Would Ve Done The Same](https://declassified.app/intel/black-ops-6/citadelle-des-morts/you-would-ve-done-the-same-bo6s1cau2/): Intel entry for You Would Ve Done The Same on Citadelle Des Morts.
+- [Aetherella Statue](https://declassified.app/intel/black-ops-6/liberty-falls/aetherella-statue-bo6s0lfar2/): Intel entry for Aetherella Statue on Liberty Falls.
+- [Aetheric Bowling Ball](https://declassified.app/intel/black-ops-6/liberty-falls/aetheric-bowling-ball-bo6s0lfar3/): Intel entry for Aetheric Bowling Ball on Liberty Falls.
+- [Bear Witness](https://declassified.app/intel/black-ops-6/liberty-falls/bear-witness-bo6s0lfau8/): Intel entry for Bear Witness on Liberty Falls.
+- [Conspiracy Theorist](https://declassified.app/intel/black-ops-6/liberty-falls/conspiracy-theorist-bo6s0lfau2/): Intel entry for Conspiracy Theorist on Liberty Falls.
+- [Final Issue](https://declassified.app/intel/black-ops-6/liberty-falls/final-issue-bo6s0lfdo4/): Intel entry for Final Issue on Liberty Falls.
+- [Fine Man](https://declassified.app/intel/black-ops-6/liberty-falls/fine-man-bo6s0lfdo3/): Intel entry for Fine Man on Liberty Falls.
+- [Limited Run](https://declassified.app/intel/black-ops-6/liberty-falls/limited-run-bo6s0lfau6/): Intel entry for Limited Run on Liberty Falls.
+- [Limited Transdimensional Gateway Device](https://declassified.app/intel/black-ops-6/liberty-falls/limited-transdimensional-gateway-device-bo6s0lfar1/): Intel entry for Limited Transdimensional Gateway Device on Liberty Falls.
+- [Money Talks](https://declassified.app/intel/black-ops-6/liberty-falls/money-talks-bo6s0lfau9/): Intel entry for Money Talks on Liberty Falls.
+- [Mr Peeks Misplaced Bowling Shoes](https://declassified.app/intel/black-ops-6/liberty-falls/mr-peeks-misplaced-bowling-shoes-bo6s0lfar5/): Intel entry for Mr Peeks Misplaced Bowling Shoes on Liberty Falls.
+- [One Lit Match](https://declassified.app/intel/black-ops-6/liberty-falls/one-lit-match-bo6s0lfau3/): Intel entry for One Lit Match on Liberty Falls.
+- [Politics Politics](https://declassified.app/intel/black-ops-6/liberty-falls/politics-politics-bo6s0lfdo2/): Intel entry for Politics Politics on Liberty Falls.
+- [Quantum Mechanical Failure](https://declassified.app/intel/black-ops-6/liberty-falls/quantum-mechanical-failure-bo6s0lfau1/): Intel entry for Quantum Mechanical Failure on Liberty Falls.
+- [Steel Mountain Rescue](https://declassified.app/intel/black-ops-6/liberty-falls/steel-mountain-rescue-bo6s0lfau7/): Intel entry for Steel Mountain Rescue on Liberty Falls.
+- [The House Josiah Built](https://declassified.app/intel/black-ops-6/liberty-falls/the-house-josiah-built-bo6s0lfau4/): Intel entry for The House Josiah Built on Liberty Falls.
+- [The Scientist And The Moonshiner](https://declassified.app/intel/black-ops-6/liberty-falls/the-scientist-and-the-moonshiner-bo6s0lfau5/): Intel entry for The Scientist And The Moonshiner on Liberty Falls.
+- [Thrustodyne Model 23](https://declassified.app/intel/black-ops-6/liberty-falls/thrustodyne-model-23-bo6s0lfar4/): Intel entry for Thrustodyne Model 23 on Liberty Falls.
+- [We Only Take Cash](https://declassified.app/intel/black-ops-6/liberty-falls/we-only-take-cash-bo6s0lfdo1/): Intel entry for We Only Take Cash on Liberty Falls.
+- [Department Head Look Out Below](https://declassified.app/intel/black-ops-6/reckoning/department-head-look-out-below-bo6s5rkdo3/): Intel entry for Department Head Look Out Below on Reckoning.
+- [Dysphoria Portal Authority](https://declassified.app/intel/black-ops-6/reckoning/dysphoria-portal-authority-bo6s5rkau10/): Intel entry for Dysphoria Portal Authority on Reckoning.
+- [Employee Of The Month Presentation Present](https://declassified.app/intel/black-ops-6/reckoning/employee-of-the-month-presentation-present-bo6s5rkdo2/): Intel entry for Employee Of The Month Presentation Present on Reckoning.
+- [Fungal Head Progress Through Main Quest](https://declassified.app/intel/black-ops-6/reckoning/fungal-head-progress-through-main-quest-bo6s5rkar3/): Intel entry for Fungal Head Progress Through Main Quest on Reckoning.
+- [Gorgofex Progress Through Main Quest](https://declassified.app/intel/black-ops-6/reckoning/gorgofex-progress-through-main-quest-bo6s5rkar4/): Intel entry for Gorgofex Progress Through Main Quest on Reckoning.
+- [Great Voice From Beyond Show Em Who S Boss](https://declassified.app/intel/black-ops-6/reckoning/great-voice-from-beyond-show-em-who-s-boss-bo6s5rkau8/): Intel entry for Great Voice From Beyond Show Em Who S Boss on Reckoning.
+- [I M A Real Girl A Complete Waste](https://declassified.app/intel/black-ops-6/reckoning/i-m-a-real-girl-a-complete-waste-bo6s5rkdo1/): Intel entry for I M A Real Girl A Complete Waste on Reckoning.
+- [Klaus Arm Progress Through Main Quest](https://declassified.app/intel/black-ops-6/reckoning/klaus-arm-progress-through-main-quest-bo6s5rkar2/): Intel entry for Klaus Arm Progress Through Main Quest on Reckoning.
+- [Knick Knack Progress Through Main Quest](https://declassified.app/intel/black-ops-6/reckoning/knick-knack-progress-through-main-quest-bo6s5rkar1/): Intel entry for Knick Knack Progress Through Main Quest on Reckoning.
+- [Mangler Matrix Research High And Low](https://declassified.app/intel/black-ops-6/reckoning/mangler-matrix-research-high-and-low-bo6s5rkdo4/): Intel entry for Mangler Matrix Research High And Low on Reckoning.
+- [Miracle Worker Welcome To Janus Towers](https://declassified.app/intel/black-ops-6/reckoning/miracle-worker-welcome-to-janus-towers-bo6s5rkau11/): Intel entry for Miracle Worker Welcome To Janus Towers on Reckoning.
+- [Misdirection PT2 Pole Vault](https://declassified.app/intel/black-ops-6/reckoning/misdirection-pt2-pole-vault-bo6s5rkdo7/): Intel entry for Misdirection PT2 Pole Vault on Reckoning.
+- [Mom Genes Ap Bio](https://declassified.app/intel/black-ops-6/reckoning/mom-genes-ap-bio-bo6s5rkau1/): Intel entry for Mom Genes Ap Bio on Reckoning.
+- [Play To Win Death Cap](https://declassified.app/intel/black-ops-6/reckoning/play-to-win-death-cap-bo6s5rkau2/): Intel entry for Play To Win Death Cap on Reckoning.
+- [Reactive Pt 1 Snowstorm](https://declassified.app/intel/black-ops-6/reckoning/reactive-pt-1-snowstorm-bo6s5rkau5/): Intel entry for Reactive Pt 1 Snowstorm on Reckoning.
+- [Reactive Pt 2 Light As A Feather](https://declassified.app/intel/black-ops-6/reckoning/reactive-pt-2-light-as-a-feather-bo6s5rkau6/): Intel entry for Reactive Pt 2 Light As A Feather on Reckoning.
+- [Reactive Pt 3 Some Assembly Required](https://declassified.app/intel/black-ops-6/reckoning/reactive-pt-3-some-assembly-required-bo6s5rkau7/): Intel entry for Reactive Pt 3 Some Assembly Required on Reckoning.
+- [Safe And Sound](https://declassified.app/intel/black-ops-6/reckoning/safe-and-sound-bo6s5rkau13/): Intel entry for Safe And Sound on Reckoning.
+- [Safe And Sound](https://declassified.app/intel/black-ops-6/reckoning/safe-and-sound-bo6s5rkdo6/): Intel entry for Safe And Sound on Reckoning.
+- [Safety Measures Another Day Another Deutsche Mark](https://declassified.app/intel/black-ops-6/reckoning/safety-measures-another-day-another-deutsche-mark-bo6s5rkdo5/): Intel entry for Safety Measures Another Day Another Deutsche Mark on Reckoning.
+- [The Forspoken Need A Lift](https://declassified.app/intel/black-ops-6/reckoning/the-forspoken-need-a-lift-bo6s5rkau9/): Intel entry for The Forspoken Need A Lift on Reckoning.
+- [The Things I Ve Seen Pt 1 Target Practise](https://declassified.app/intel/black-ops-6/reckoning/the-things-i-ve-seen-pt-1-target-practise-bo6s5rkau3/): Intel entry for The Things I Ve Seen Pt 1 Target Practise on Reckoning.
+- [The Things I Ve Seen Pt 2 With A Twist](https://declassified.app/intel/black-ops-6/reckoning/the-things-i-ve-seen-pt-2-with-a-twist-bo6s5rkau4/): Intel entry for The Things I Ve Seen Pt 2 With A Twist on Reckoning.
+- [Whistleblower Tangled Webs We Weave](https://declassified.app/intel/black-ops-6/reckoning/whistleblower-tangled-webs-we-weave-bo6s5rkau12/): Intel entry for Whistleblower Tangled Webs We Weave on Reckoning.
+- [Wish You Were Here Turret Tidying](https://declassified.app/intel/black-ops-6/reckoning/wish-you-were-here-turret-tidying-bo6s5rkar5/): Intel entry for Wish You Were Here Turret Tidying on Reckoning.
+- [A Monstrous Proposal Sleepwalking](https://declassified.app/intel/black-ops-6/shattered-veil/a-monstrous-proposal-sleepwalking-bo6s3svdo3/): Intel entry for A Monstrous Proposal Sleepwalking on Shattered Veil.
+- [A Way In Bench Press](https://declassified.app/intel/black-ops-6/shattered-veil/a-way-in-bench-press-bo6s3svau6/): Intel entry for A Way In Bench Press on Shattered Veil.
+- [Antler Carving](https://declassified.app/intel/black-ops-6/shattered-veil/antler-carving-bo6s3svar3/): Intel entry for Antler Carving on Shattered Veil.
+- [Bodily Harm Minor Chord](https://declassified.app/intel/black-ops-6/shattered-veil/bodily-harm-minor-chord-bo6s3svau1/): Intel entry for Bodily Harm Minor Chord on Shattered Veil.
+- [Cracking Eggheads Car Wreck](https://declassified.app/intel/black-ops-6/shattered-veil/cracking-eggheads-car-wreck-bo6s3svau8/): Intel entry for Cracking Eggheads Car Wreck on Shattered Veil.
+- [Deed Of Sale Pain In The Glass](https://declassified.app/intel/black-ops-6/shattered-veil/deed-of-sale-pain-in-the-glass-bo6s3svar7/): Intel entry for Deed Of Sale Pain In The Glass on Shattered Veil.
+- [Family Portrait Playtime](https://declassified.app/intel/black-ops-6/shattered-veil/family-portrait-playtime-bo6s3svar9/): Intel entry for Family Portrait Playtime on Shattered Veil.
+- [Hip Flask](https://declassified.app/intel/black-ops-6/shattered-veil/hip-flask-bo6s3svar2/): Intel entry for Hip Flask on Shattered Veil.
+- [My Warheads Woodsman](https://declassified.app/intel/black-ops-6/shattered-veil/my-warheads-woodsman-bo6s3svdo2/): Intel entry for My Warheads Woodsman on Shattered Veil.
+- [Nuclear Plant Inspection](https://declassified.app/intel/black-ops-6/shattered-veil/nuclear-plant-inspection-bo6s3svar5/): Intel entry for Nuclear Plant Inspection on Shattered Veil.
+- [Obstacles Computer Deck Top](https://declassified.app/intel/black-ops-6/shattered-veil/obstacles-computer-deck-top-bo6s3svau5/): Intel entry for Obstacles Computer Deck Top on Shattered Veil.
+- [Particulars Tunnel Vision](https://declassified.app/intel/black-ops-6/shattered-veil/particulars-tunnel-vision-bo6s3svau4/): Intel entry for Particulars Tunnel Vision on Shattered Veil.
+- [Prime Time An Overlook In Security](https://declassified.app/intel/black-ops-6/shattered-veil/prime-time-an-overlook-in-security-bo6s3svau2/): Intel entry for Prime Time An Overlook In Security on Shattered Veil.
+- [Ray Gun Mk Ii](https://declassified.app/intel/black-ops-6/shattered-veil/ray-gun-mk-ii-bo6s3svar4/): Intel entry for Ray Gun Mk Ii on Shattered Veil.
+- [Regretfully Yours Top Shelf Material](https://declassified.app/intel/black-ops-6/shattered-veil/regretfully-yours-top-shelf-material-bo6s3svdo1/): Intel entry for Regretfully Yours Top Shelf Material on Shattered Veil.
+- [Rentals Bed Head](https://declassified.app/intel/black-ops-6/shattered-veil/rentals-bed-head-bo6s3svar1/): Intel entry for Rentals Bed Head on Shattered Veil.
+- [Serpent Mound Helmet Head](https://declassified.app/intel/black-ops-6/shattered-veil/serpent-mound-helmet-head-bo6s3svau12/): Intel entry for Serpent Mound Helmet Head on Shattered Veil.
+- [Shadow Benefactor Water Under The Bridge](https://declassified.app/intel/black-ops-6/shattered-veil/shadow-benefactor-water-under-the-bridge-bo6s3svau9/): Intel entry for Shadow Benefactor Water Under The Bridge on Shattered Veil.
+- [Shem S Folly Shhhhh](https://declassified.app/intel/black-ops-6/shattered-veil/shem-s-folly-shhhhh-bo6s3svau10/): Intel entry for Shem S Folly Shhhhh on Shattered Veil.
+- [Specter The Most Important Meal Of The Day](https://declassified.app/intel/black-ops-6/shattered-veil/specter-the-most-important-meal-of-the-day-bo6s3svau3/): Intel entry for Specter The Most Important Meal Of The Day on Shattered Veil.
+- [Thesis Statement Terrace Trees](https://declassified.app/intel/black-ops-6/shattered-veil/thesis-statement-terrace-trees-bo6s3svau11/): Intel entry for Thesis Statement Terrace Trees on Shattered Veil.
+- [Unwelcome Guests What The Truck](https://declassified.app/intel/black-ops-6/shattered-veil/unwelcome-guests-what-the-truck-bo6s3svar8/): Intel entry for Unwelcome Guests What The Truck on Shattered Veil.
+- [Within Reach Dino Might](https://declassified.app/intel/black-ops-6/shattered-veil/within-reach-dino-might-bo6s3svau7/): Intel entry for Within Reach Dino Might on Shattered Veil.
+- [Z Rex Tooth](https://declassified.app/intel/black-ops-6/shattered-veil/z-rex-tooth-bo6s3svar6/): Intel entry for Z Rex Tooth on Shattered Veil.
+- [Code Words](https://declassified.app/intel/black-ops-6/terminus/code-words-bo6s0tau1/): Intel entry for Code Words on Terminus.
+- [Doctor S Orders](https://declassified.app/intel/black-ops-6/terminus/doctor-s-orders-bo6s0tau13/): Intel entry for Doctor S Orders on Terminus.
+- [Dr 11 Beamsmasher](https://declassified.app/intel/black-ops-6/terminus/dr-11-beamsmasher-bo6s0tar3/): Intel entry for Dr 11 Beamsmasher on Terminus.
+- [Food For Thought](https://declassified.app/intel/black-ops-6/terminus/food-for-thought-bo6s0tau5/): Intel entry for Food For Thought on Terminus.
+- [Hard Drive](https://declassified.app/intel/black-ops-6/terminus/hard-drive-bo6s0tar1/): Intel entry for Hard Drive on Terminus.
+- [I Hope You Re Watching](https://declassified.app/intel/black-ops-6/terminus/i-hope-you-re-watching-bo6s0tau15/): Intel entry for I Hope You Re Watching on Terminus.
+- [Innovative Technology](https://declassified.app/intel/black-ops-6/terminus/innovative-technology-bo6s0tdo9/): Intel entry for Innovative Technology on Terminus.
+- [Keycard](https://declassified.app/intel/black-ops-6/terminus/keycard-bo6s0tar2/): Intel entry for Keycard on Terminus.
+- [Last Minute Transfer](https://declassified.app/intel/black-ops-6/terminus/last-minute-transfer-bo6s0tdo8/): Intel entry for Last Minute Transfer on Terminus.
+- [Limb Regrowth Specimen](https://declassified.app/intel/black-ops-6/terminus/limb-regrowth-specimen-bo6s0tar4/): Intel entry for Limb Regrowth Specimen on Terminus.
+- [Listen](https://declassified.app/intel/black-ops-6/terminus/listen-bo6s0tau11/): Intel entry for Listen on Terminus.
+- [Noble Purpose](https://declassified.app/intel/black-ops-6/terminus/noble-purpose-bo6s0tau10/): Intel entry for Noble Purpose on Terminus.
+- [On The Horizon](https://declassified.app/intel/black-ops-6/terminus/on-the-horizon-bo6s0tdo1/): Intel entry for On The Horizon on Terminus.
+- [Onboarding](https://declassified.app/intel/black-ops-6/terminus/onboarding-bo6s0tau16/): Intel entry for Onboarding on Terminus.
+- [Pleasing Results](https://declassified.app/intel/black-ops-6/terminus/pleasing-results-bo6s0tau2/): Intel entry for Pleasing Results on Terminus.
+- [Red Tape](https://declassified.app/intel/black-ops-6/terminus/red-tape-bo6s0tau9/): Intel entry for Red Tape on Terminus.
+- [Ship Manifest Destiny](https://declassified.app/intel/black-ops-6/terminus/ship-manifest-destiny-bo6s0tau4/): Intel entry for Ship Manifest Destiny on Terminus.
+- [The Hard Way](https://declassified.app/intel/black-ops-6/terminus/the-hard-way-bo6s0tau7/): Intel entry for The Hard Way on Terminus.
+- [Tougher Than She Looks](https://declassified.app/intel/black-ops-6/terminus/tougher-than-she-looks-bo6s0tau6/): Intel entry for Tougher Than She Looks on Terminus.
+- [Uniquely Qualified](https://declassified.app/intel/black-ops-6/terminus/uniquely-qualified-bo6s0tdo7/): Intel entry for Uniquely Qualified on Terminus.
+- [What Have You Done](https://declassified.app/intel/black-ops-6/terminus/what-have-you-done-bo6s0tdo2/): Intel entry for What Have You Done on Terminus.
+- [Working Theory](https://declassified.app/intel/black-ops-6/terminus/working-theory-bo6s0tau3/): Intel entry for Working Theory on Terminus.
+- [A Fabrication Dome Light](https://declassified.app/intel/black-ops-6/the-tomb/a-fabrication-dome-light-bo6s2tau10/): Intel entry for A Fabrication Dome Light on The Tomb.
+- [Aetheric Lantern](https://declassified.app/intel/black-ops-6/the-tomb/aetheric-lantern-bo6s2tar1/): Intel entry for Aetheric Lantern on The Tomb.
+- [Against A Wall Shoot To Kill](https://declassified.app/intel/black-ops-6/the-tomb/against-a-wall-shoot-to-kill-bo6s2tau1/): Intel entry for Against A Wall Shoot To Kill on The Tomb.
+- [Alas Poor Bernard An Ice Place To Rest](https://declassified.app/intel/black-ops-6/the-tomb/alas-poor-bernard-an-ice-place-to-rest-bo6s2tar6/): Intel entry for Alas Poor Bernard An Ice Place To Rest on The Tomb.
+- [Deep Trouble Ascend](https://declassified.app/intel/black-ops-6/the-tomb/deep-trouble-ascend-bo6s2tau8/): Intel entry for Deep Trouble Ascend on The Tomb.
+- [Grave Robbers Miniatures](https://declassified.app/intel/black-ops-6/the-tomb/grave-robbers-miniatures-bo6s2tau5/): Intel entry for Grave Robbers Miniatures on The Tomb.
+- [Ice Staff](https://declassified.app/intel/black-ops-6/the-tomb/ice-staff-bo6s2tar4/): Intel entry for Ice Staff on The Tomb.
+- [Look At All The Bodies Tile Work](https://declassified.app/intel/black-ops-6/the-tomb/look-at-all-the-bodies-tile-work-bo6s2tau4/): Intel entry for Look At All The Bodies Tile Work on The Tomb.
+- [Making A Monocle Column C](https://declassified.app/intel/black-ops-6/the-tomb/making-a-monocle-column-c-bo6s2tau2/): Intel entry for Making A Monocle Column C on The Tomb.
+- [Monolith Crystal Shard](https://declassified.app/intel/black-ops-6/the-tomb/monolith-crystal-shard-bo6s2tar3/): Intel entry for Monolith Crystal Shard on The Tomb.
+- [Potts And Pains Pt 1 Stoneware](https://declassified.app/intel/black-ops-6/the-tomb/potts-and-pains-pt-1-stoneware-bo6s2tdo1/): Intel entry for Potts And Pains Pt 1 Stoneware on The Tomb.
+- [Potts And Pains Pt 2 Earthenware](https://declassified.app/intel/black-ops-6/the-tomb/potts-and-pains-pt-2-earthenware-bo6s2tdo2/): Intel entry for Potts And Pains Pt 2 Earthenware on The Tomb.
+- [Potts And Pains Pt 3 Kiln Firing](https://declassified.app/intel/black-ops-6/the-tomb/potts-and-pains-pt-3-kiln-firing-bo6s2tdo3/): Intel entry for Potts And Pains Pt 3 Kiln Firing on The Tomb.
+- [Potts And Pains Pt 4 Bring Back The Dead](https://declassified.app/intel/black-ops-6/the-tomb/potts-and-pains-pt-4-bring-back-the-dead-bo6s2tdo4/): Intel entry for Potts And Pains Pt 4 Bring Back The Dead on The Tomb.
+- [Potts And Pains Pt 5 Precious Stones](https://declassified.app/intel/black-ops-6/the-tomb/potts-and-pains-pt-5-precious-stones-bo6s2tdo5/): Intel entry for Potts And Pains Pt 5 Precious Stones on The Tomb.
+- [Retirement Plan Packed And Ready](https://declassified.app/intel/black-ops-6/the-tomb/retirement-plan-packed-and-ready-bo6s2tau9/): Intel entry for Retirement Plan Packed And Ready on The Tomb.
+- [Sentinel Artifact](https://declassified.app/intel/black-ops-6/the-tomb/sentinel-artifact-bo6s2tar2/): Intel entry for Sentinel Artifact on The Tomb.
+- [Sir Archibald S Monocle](https://declassified.app/intel/black-ops-6/the-tomb/sir-archibald-s-monocle-bo6s2tar5/): Intel entry for Sir Archibald S Monocle on The Tomb.
+- [Spring Time Descend](https://declassified.app/intel/black-ops-6/the-tomb/spring-time-descend-bo6s2tau7/): Intel entry for Spring Time Descend on The Tomb.
+- [The Infamous Mr Rhodes To Go Box](https://declassified.app/intel/black-ops-6/the-tomb/the-infamous-mr-rhodes-to-go-box-bo6s2tau3/): Intel entry for The Infamous Mr Rhodes To Go Box on The Tomb.
+- [The Knaves On A Slab](https://declassified.app/intel/black-ops-6/the-tomb/the-knaves-on-a-slab-bo6s2tau6/): Intel entry for The Knaves On A Slab on The Tomb.
+- [Tortured Artist Completely Ruined](https://declassified.app/intel/black-ops-6/the-tomb/tortured-artist-completely-ruined-bo6s2tau11/): Intel entry for Tortured Artist Completely Ruined on The Tomb.
+- [Aetherium](https://declassified.app/intel/black-ops-cold-war/die-maschine/aetherium-rs0ra5/): Intel entry for Aetherium on Die Maschine.
+- [Aetherscope](https://declassified.app/intel/black-ops-cold-war/die-maschine/aetherscope-rs0ar3/): Intel entry for Aetherscope on Die Maschine.
+- [D I E Machine](https://declassified.app/intel/black-ops-cold-war/die-maschine/d-i-e-machine-rs0ar2/): Intel entry for D I E Machine on Die Maschine.
+- [D I E Remote Control](https://declassified.app/intel/black-ops-cold-war/die-maschine/d-i-e-remote-control-rs0ar1/): Intel entry for D I E Remote Control on Die Maschine.
+- [Dark Aether Crystal](https://declassified.app/intel/black-ops-cold-war/die-maschine/dark-aether-crystal-ds0ar3/): Intel entry for Dark Aether Crystal on Die Maschine.
+- [Dark Aether Wrench](https://declassified.app/intel/black-ops-cold-war/die-maschine/dark-aether-wrench-ds0ar4/): Intel entry for Dark Aether Wrench on Die Maschine.
+- [Decontamination Agent](https://declassified.app/intel/black-ops-cold-war/die-maschine/decontamination-agent-rs0ar4/): Intel entry for Decontamination Agent on Die Maschine.
+- [Dimension Of Death](https://declassified.app/intel/black-ops-cold-war/die-maschine/dimension-of-death-rs0ra3/): Intel entry for Dimension Of Death on Die Maschine.
+- [Doctor Grey](https://declassified.app/intel/black-ops-cold-war/die-maschine/doctor-grey-rs0ra2/): Intel entry for Doctor Grey on Die Maschine.
+- [Doctor Strauss](https://declassified.app/intel/black-ops-cold-war/die-maschine/doctor-strauss-rs0ra4/): Intel entry for Doctor Strauss on Die Maschine.
+- [Doctor Vogel Entry 203](https://declassified.app/intel/black-ops-cold-war/die-maschine/doctor-vogel-entry-203-rs1do1/): Intel entry for Doctor Vogel Entry 203 on Die Maschine.
+- [Endstation Approval Letter](https://declassified.app/intel/black-ops-cold-war/die-maschine/endstation-approval-letter-rs0do1/): Intel entry for Endstation Approval Letter on Die Maschine.
+- [Exo Element 1](https://declassified.app/intel/black-ops-cold-war/die-maschine/exo-element-1-rs1au1/): Intel entry for Exo Element 1 on Die Maschine.
+- [Game Changer](https://declassified.app/intel/black-ops-cold-war/die-maschine/game-changer-ms0au2/): Intel entry for Game Changer on Die Maschine.
+- [Kgb Videotape Note](https://declassified.app/intel/black-ops-cold-war/die-maschine/kgb-videotape-note-ms0do1/): Intel entry for Kgb Videotape Note on Die Maschine.
+- [Major Carver](https://declassified.app/intel/black-ops-cold-war/die-maschine/major-carver-rs0ra6/): Intel entry for Major Carver on Die Maschine.
+- [New Arms Race](https://declassified.app/intel/black-ops-cold-war/die-maschine/new-arms-race-rs0ra7/): Intel entry for New Arms Race on Die Maschine.
+- [New Orders](https://declassified.app/intel/black-ops-cold-war/die-maschine/new-orders-rs1au2/): Intel entry for New Orders on Die Maschine.
+- [Next Phase](https://declassified.app/intel/black-ops-cold-war/die-maschine/next-phase-os1au2/): Intel entry for Next Phase on Die Maschine.
+- [Omega Group Formation](https://declassified.app/intel/black-ops-cold-war/die-maschine/omega-group-formation-os1do1/): Intel entry for Omega Group Formation on Die Maschine.
+- [Parallel World](https://declassified.app/intel/black-ops-cold-war/die-maschine/parallel-world-rs0au2/): Intel entry for Parallel World on Die Maschine.
+- [Plaguehound Gas](https://declassified.app/intel/black-ops-cold-war/die-maschine/plaguehound-gas-ds0ar2/): Intel entry for Plaguehound Gas on Die Maschine.
+- [The Incident](https://declassified.app/intel/black-ops-cold-war/die-maschine/the-incident-rs0au1/): Intel entry for The Incident on Die Maschine.
+- [The Vhs Tape](https://declassified.app/intel/black-ops-cold-war/die-maschine/the-vhs-tape-ms0au3/): Intel entry for The Vhs Tape on Die Maschine.
+- [The Volunteer](https://declassified.app/intel/black-ops-cold-war/die-maschine/the-volunteer-os0au2/): Intel entry for The Volunteer on Die Maschine.
+- [Turning Point](https://declassified.app/intel/black-ops-cold-war/die-maschine/turning-point-os1au1/): Intel entry for Turning Point on Die Maschine.
+- [Aethermeter](https://declassified.app/intel/black-ops-cold-war/firebase-z/aethermeter-os1ar5/): Intel entry for Aethermeter on Firebase Z.
+- [Aethernauts](https://declassified.app/intel/black-ops-cold-war/firebase-z/aethernauts-os1au5/): Intel entry for Aethernauts on Firebase Z.
+- [Agent Delivery System](https://declassified.app/intel/black-ops-cold-war/firebase-z/agent-delivery-system-os1ar3/): Intel entry for Agent Delivery System on Firebase Z.
+- [Dimensional Fertility](https://declassified.app/intel/black-ops-cold-war/firebase-z/dimensional-fertility-os1au3/): Intel entry for Dimensional Fertility on Firebase Z.
+- [Essence Trap](https://declassified.app/intel/black-ops-cold-war/firebase-z/essence-trap-os1ar4/): Intel entry for Essence Trap on Firebase Z.
+- [Focal Point](https://declassified.app/intel/black-ops-cold-war/firebase-z/focal-point-rs2au1/): Intel entry for Focal Point on Firebase Z.
+- [Gorev](https://declassified.app/intel/black-ops-cold-war/firebase-z/gorev-os1au7/): Intel entry for Gorev on Firebase Z.
+- [Half Of The Reason](https://declassified.app/intel/black-ops-cold-war/firebase-z/half-of-the-reason-os2au1/): Intel entry for Half Of The Reason on Firebase Z.
+- [Let It Ride](https://declassified.app/intel/black-ops-cold-war/firebase-z/let-it-ride-os1au4/): Intel entry for Let It Ride on Firebase Z.
+- [Lost Souls Fedorov 2](https://declassified.app/intel/black-ops-cold-war/firebase-z/lost-souls-fedorov-2-ds2au1/): Intel entry for Lost Souls Fedorov 2 on Firebase Z.
+- [Lost Souls Fedorov](https://declassified.app/intel/black-ops-cold-war/firebase-z/lost-souls-fedorov-ds1au1/): Intel entry for Lost Souls Fedorov on Firebase Z.
+- [Meeting Of Minds](https://declassified.app/intel/black-ops-cold-war/firebase-z/meeting-of-minds-rs1au5/): Intel entry for Meeting Of Minds on Firebase Z.
+- [Omega Portal Blueprint](https://declassified.app/intel/black-ops-cold-war/firebase-z/omega-portal-blueprint-ms1do1/): Intel entry for Omega Portal Blueprint on Firebase Z.
+- [Outbreak Zones Timeline](https://declassified.app/intel/black-ops-cold-war/firebase-z/outbreak-zones-timeline-rs1do2/): Intel entry for Outbreak Zones Timeline on Firebase Z.
+- [Outpost 25 Has Fallen](https://declassified.app/intel/black-ops-cold-war/firebase-z/outpost-25-has-fallen-os1au10/): Intel entry for Outpost 25 Has Fallen on Firebase Z.
+- [Rai K 84 Prototype](https://declassified.app/intel/black-ops-cold-war/firebase-z/rai-k-84-prototype-rs1ar4/): Intel entry for Rai K 84 Prototype on Firebase Z.
+- [Ravenov Id Badge](https://declassified.app/intel/black-ops-cold-war/firebase-z/ravenov-id-badge-os1ar2/): Intel entry for Ravenov Id Badge on Firebase Z.
+- [Ravenov](https://declassified.app/intel/black-ops-cold-war/firebase-z/ravenov-rs1au3/): Intel entry for Ravenov on Firebase Z.
+- [Re Funding Allocation 1](https://declassified.app/intel/black-ops-cold-war/firebase-z/re-funding-allocation-1-rs2do1/): Intel entry for Re Funding Allocation 1 on Firebase Z.
+- [The Anatomy Lesson](https://declassified.app/intel/black-ops-cold-war/firebase-z/the-anatomy-lesson-os1au6/): Intel entry for The Anatomy Lesson on Firebase Z.
+- [They Took Her](https://declassified.app/intel/black-ops-cold-war/firebase-z/they-took-her-rs1au4/): Intel entry for They Took Her on Firebase Z.
+- [To Dust You Will Return](https://declassified.app/intel/black-ops-cold-war/firebase-z/to-dust-you-will-return-os1au9/): Intel entry for To Dust You Will Return on Firebase Z.
+- [Weapon Trial Folder](https://declassified.app/intel/black-ops-cold-war/firebase-z/weapon-trial-folder-rs1ar2/): Intel entry for Weapon Trial Folder on Firebase Z.
+- [Workers Of The Worlds](https://declassified.app/intel/black-ops-cold-war/firebase-z/workers-of-the-worlds-ms1au2/): Intel entry for Workers Of The Worlds on Firebase Z.
+- [Worse Than Baton Rouge](https://declassified.app/intel/black-ops-cold-war/firebase-z/worse-than-baton-rouge-ms1au3/): Intel entry for Worse Than Baton Rouge on Firebase Z.
+- [Aetherium Neutralizer](https://declassified.app/intel/black-ops-cold-war/forsaken/aetherium-neutralizer-rs6ar6/): Intel entry for Aetherium Neutralizer on Forsaken.
+- [Catalyzed Crystal Shard](https://declassified.app/intel/black-ops-cold-war/forsaken/catalyzed-crystal-shard-ds6ar8/): Intel entry for Catalyzed Crystal Shard on Forsaken.
+- [Deja Vu](https://declassified.app/intel/black-ops-cold-war/forsaken/deja-vu-os6au6/): Intel entry for Deja Vu on Forsaken.
+- [For Health](https://declassified.app/intel/black-ops-cold-war/forsaken/for-health-rs6au3/): Intel entry for For Health on Forsaken.
+- [Fuel Tank](https://declassified.app/intel/black-ops-cold-war/forsaken/fuel-tank-rs6ar7/): Intel entry for Fuel Tank on Forsaken.
+- [Fully Operational](https://declassified.app/intel/black-ops-cold-war/forsaken/fully-operational-os6au4/): Intel entry for Fully Operational on Forsaken.
+- [Housing Unit](https://declassified.app/intel/black-ops-cold-war/forsaken/housing-unit-rs6ar5/): Intel entry for Housing Unit on Forsaken.
+- [Monitoring Device](https://declassified.app/intel/black-ops-cold-war/forsaken/monitoring-device-rs6ar4/): Intel entry for Monitoring Device on Forsaken.
+- [My Choice](https://declassified.app/intel/black-ops-cold-war/forsaken/my-choice-ms6au2/): Intel entry for My Choice on Forsaken.
+- [My Control](https://declassified.app/intel/black-ops-cold-war/forsaken/my-control-ms6au4/): Intel entry for My Control on Forsaken.
+- [My Orders](https://declassified.app/intel/black-ops-cold-war/forsaken/my-orders-ms6au3/): Intel entry for My Orders on Forsaken.
+- [Polymorphic Crystal Core](https://declassified.app/intel/black-ops-cold-war/forsaken/polymorphic-crystal-core-ds6ar5/): Intel entry for Polymorphic Crystal Core on Forsaken.
+- [Russian To Russian](https://declassified.app/intel/black-ops-cold-war/forsaken/russian-to-russian-rs6au2/): Intel entry for Russian To Russian on Forsaken.
+- [The Agreement](https://declassified.app/intel/black-ops-cold-war/forsaken/the-agreement-os6au3/): Intel entry for The Agreement on Forsaken.
+- [The Chrysalax](https://declassified.app/intel/black-ops-cold-war/forsaken/the-chrysalax-rs6ar8/): Intel entry for The Chrysalax on Forsaken.
+- [The Magnificent Two](https://declassified.app/intel/black-ops-cold-war/forsaken/the-magnificent-two-os6au5/): Intel entry for The Magnificent Two on Forsaken.
+- [The Zakarpatska Oblast](https://declassified.app/intel/black-ops-cold-war/forsaken/the-zakarpatska-oblast-rs6au4/): Intel entry for The Zakarpatska Oblast on Forsaken.
+- [A Decent Proposal](https://declassified.app/intel/black-ops-cold-war/mauer-der-toten/a-decent-proposal-os4au9/): Intel entry for A Decent Proposal on Mauer Der Toten.
+- [A Handful](https://declassified.app/intel/black-ops-cold-war/mauer-der-toten/a-handful-rs4au7/): Intel entry for A Handful on Mauer Der Toten.
+- [Bad Days](https://declassified.app/intel/black-ops-cold-war/mauer-der-toten/bad-days-rs4au8/): Intel entry for Bad Days on Mauer Der Toten.
+- [Battery](https://declassified.app/intel/black-ops-cold-war/mauer-der-toten/battery-os4ar7/): Intel entry for Battery on Mauer Der Toten.
+- [Corrupted Uranium](https://declassified.app/intel/black-ops-cold-war/mauer-der-toten/corrupted-uranium-ds4ar7/): Intel entry for Corrupted Uranium on Mauer Der Toten.
+- [Crbr S](https://declassified.app/intel/black-ops-cold-war/mauer-der-toten/crbr-s-rs4ar5/): Intel entry for Crbr S on Mauer Der Toten.
+- [Ee 1 Harvester Blueprint](https://declassified.app/intel/black-ops-cold-war/mauer-der-toten/ee-1-harvester-blueprint-rs4do15/): Intel entry for Ee 1 Harvester Blueprint on Mauer Der Toten.
+- [Final Order](https://declassified.app/intel/black-ops-cold-war/mauer-der-toten/final-order-rs4au10/): Intel entry for Final Order on Mauer Der Toten.
+- [Hacking Helm](https://declassified.app/intel/black-ops-cold-war/mauer-der-toten/hacking-helm-rs4ar8/): Intel entry for Hacking Helm on Mauer Der Toten.
+- [Improvised Collider](https://declassified.app/intel/black-ops-cold-war/mauer-der-toten/improvised-collider-rs4ar10/): Intel entry for Improvised Collider on Mauer Der Toten.
+- [J Cipher 2](https://declassified.app/intel/black-ops-cold-war/mauer-der-toten/j-cipher-2-rs4do14/): Intel entry for J Cipher 2 on Mauer Der Toten.
+- [Lost In Transit](https://declassified.app/intel/black-ops-cold-war/mauer-der-toten/lost-in-transit-rs4au6/): Intel entry for Lost In Transit on Mauer Der Toten.
+- [Subject Strange Communique](https://declassified.app/intel/black-ops-cold-war/mauer-der-toten/subject-strange-communique-rs4do12/): Intel entry for Subject Strange Communique on Mauer Der Toten.
+- [Subject Urgent](https://declassified.app/intel/black-ops-cold-war/mauer-der-toten/subject-urgent-rs4do13/): Intel entry for Subject Urgent on Mauer Der Toten.
+- [Tempest Essence](https://declassified.app/intel/black-ops-cold-war/mauer-der-toten/tempest-essence-ds4ar6/): Intel entry for Tempest Essence on Mauer Der Toten.
+- [The Letter](https://declassified.app/intel/black-ops-cold-war/mauer-der-toten/the-letter-os4au10/): Intel entry for The Letter on Mauer Der Toten.
+- [The Turn](https://declassified.app/intel/black-ops-cold-war/mauer-der-toten/the-turn-os4au11/): Intel entry for The Turn on Mauer Der Toten.
+- [Warhead](https://declassified.app/intel/black-ops-cold-war/mauer-der-toten/warhead-rs4ar7/): Intel entry for Warhead on Mauer Der Toten.
+- [Your Problem Now](https://declassified.app/intel/black-ops-cold-war/mauer-der-toten/your-problem-now-os4ra3/): Intel entry for Your Problem Now on Mauer Der Toten.
+- [A Grisly Affair](https://declassified.app/intel/black-ops-cold-war/outbreak/a-grisly-affair-rs2au3/): Intel entry for A Grisly Affair on Outbreak.
+- [A New Friend](https://declassified.app/intel/black-ops-cold-war/outbreak/a-new-friend-ms3au3/): Intel entry for A New Friend on Outbreak.
+- [A Trap Is Set](https://declassified.app/intel/black-ops-cold-war/outbreak/a-trap-is-set-os4au7/): Intel entry for A Trap Is Set on Outbreak.
+- [Ability Assessment](https://declassified.app/intel/black-ops-cold-war/outbreak/ability-assessment-ms6do1/): Intel entry for Ability Assessment on Outbreak.
+- [Aether Shroud Canister](https://declassified.app/intel/black-ops-cold-war/outbreak/aether-shroud-canister-rs3ar6/): Intel entry for Aether Shroud Canister on Outbreak.
+- [Aetherium Canister](https://declassified.app/intel/black-ops-cold-war/outbreak/aetherium-canister-rs2ar2/): Intel entry for Aetherium Canister on Outbreak.
+- [Aetherium Crystal Chunks](https://declassified.app/intel/black-ops-cold-war/outbreak/aetherium-crystal-chunks-ds3ar5/): Intel entry for Aetherium Crystal Chunks on Outbreak.
+- [Aetherium Crystal Shard](https://declassified.app/intel/black-ops-cold-war/outbreak/aetherium-crystal-shard-rs2ar3/): Intel entry for Aetherium Crystal Shard on Outbreak.
+- [Aetherium Rocket Model](https://declassified.app/intel/black-ops-cold-war/outbreak/aetherium-rocket-model-rs5ar2/): Intel entry for Aetherium Rocket Model on Outbreak.
+- [Aftermath](https://declassified.app/intel/black-ops-cold-war/outbreak/aftermath-rs4au2/): Intel entry for Aftermath on Outbreak.
+- [Agent Klaus Model](https://declassified.app/intel/black-ops-cold-war/outbreak/agent-klaus-model-rs5ar6/): Intel entry for Agent Klaus Model on Outbreak.
+- [Beacon Device Component](https://declassified.app/intel/black-ops-cold-war/outbreak/beacon-device-component-rs3ar5/): Intel entry for Beacon Device Component on Outbreak.
+- [Beacon Listening Device](https://declassified.app/intel/black-ops-cold-war/outbreak/beacon-listening-device-ms3ar2/): Intel entry for Beacon Listening Device on Outbreak.
+- [Boost Module Monitor](https://declassified.app/intel/black-ops-cold-war/outbreak/boost-module-monitor-os3ar3/): Intel entry for Boost Module Monitor on Outbreak.
+- [Broken Essence Canister](https://declassified.app/intel/black-ops-cold-war/outbreak/broken-essence-canister-ds3ar4/): Intel entry for Broken Essence Canister on Outbreak.
+- [Broken Essence Capsule](https://declassified.app/intel/black-ops-cold-war/outbreak/broken-essence-capsule-ds3ar2/): Intel entry for Broken Essence Capsule on Outbreak.
+- [Call Me Mac](https://declassified.app/intel/black-ops-cold-war/outbreak/call-me-mac-ms2au2/): Intel entry for Call Me Mac on Outbreak.
+- [Change Of Plans](https://declassified.app/intel/black-ops-cold-war/outbreak/change-of-plans-os5au1/): Intel entry for Change Of Plans on Outbreak.
+- [Codename Whiskers](https://declassified.app/intel/black-ops-cold-war/outbreak/codename-whiskers-os6ar2/): Intel entry for Codename Whiskers on Outbreak.
+- [Cymbal Monkey Toy](https://declassified.app/intel/black-ops-cold-war/outbreak/cymbal-monkey-toy-ds2ar2/): Intel entry for Cymbal Monkey Toy on Outbreak.
+- [Dark Aether Photos](https://declassified.app/intel/black-ops-cold-war/outbreak/dark-aether-photos-os4ar3/): Intel entry for Dark Aether Photos on Outbreak.
+- [Day Of Victory](https://declassified.app/intel/black-ops-cold-war/outbreak/day-of-victory-os4au2/): Intel entry for Day Of Victory on Outbreak.
+- [Death Squads](https://declassified.app/intel/black-ops-cold-war/outbreak/death-squads-rs3au3/): Intel entry for Death Squads on Outbreak.
+- [Demented Echo Head](https://declassified.app/intel/black-ops-cold-war/outbreak/demented-echo-head-ds5ar2/): Intel entry for Demented Echo Head on Outbreak.
+- [Desperate Measures](https://declassified.app/intel/black-ops-cold-war/outbreak/desperate-measures-rs5au5/): Intel entry for Desperate Measures on Outbreak.
+- [Director Mug](https://declassified.app/intel/black-ops-cold-war/outbreak/director-mug-rs6ar3/): Intel entry for Director Mug on Outbreak.
+- [Dissent And Division](https://declassified.app/intel/black-ops-cold-war/outbreak/dissent-and-division-rs3au6/): Intel entry for Dissent And Division on Outbreak.
+- [Do What You Must](https://declassified.app/intel/black-ops-cold-war/outbreak/do-what-you-must-os2au5/): Intel entry for Do What You Must on Outbreak.
+- [Doubts](https://declassified.app/intel/black-ops-cold-war/outbreak/doubts-rs3au2/): Intel entry for Doubts on Outbreak.
+- [Dragon Head Trophy](https://declassified.app/intel/black-ops-cold-war/outbreak/dragon-head-trophy-ds3ar6/): Intel entry for Dragon Head Trophy on Outbreak.
+- [Ecm Model](https://declassified.app/intel/black-ops-cold-war/outbreak/ecm-model-rs4ar4/): Intel entry for Ecm Model on Outbreak.
+- [Elemental Pop Poster](https://declassified.app/intel/black-ops-cold-war/outbreak/elemental-pop-poster-ds4ar4/): Intel entry for Elemental Pop Poster on Outbreak.
+- [Embarrassment Of Riches](https://declassified.app/intel/black-ops-cold-war/outbreak/embarrassment-of-riches-rs3au8/): Intel entry for Embarrassment Of Riches on Outbreak.
+- [Empty Death Perception](https://declassified.app/intel/black-ops-cold-war/outbreak/empty-death-perception-ds6ar3/): Intel entry for Empty Death Perception on Outbreak.
+- [Empty Elemental Pop](https://declassified.app/intel/black-ops-cold-war/outbreak/empty-elemental-pop-ds4ar3/): Intel entry for Empty Elemental Pop on Outbreak.
+- [Empty Phd Slider](https://declassified.app/intel/black-ops-cold-war/outbreak/empty-phd-slider-ds6ar2/): Intel entry for Empty Phd Slider on Outbreak.
+- [Empty Quick Revive](https://declassified.app/intel/black-ops-cold-war/outbreak/empty-quick-revive-ds3ar3/): Intel entry for Empty Quick Revive on Outbreak.
+- [Essence Explosive](https://declassified.app/intel/black-ops-cold-war/outbreak/essence-explosive-rs3ar2/): Intel entry for Essence Explosive on Outbreak.
+- [Eyes Only](https://declassified.app/intel/black-ops-cold-war/outbreak/eyes-only-rs3au4/): Intel entry for Eyes Only on Outbreak.
+- [Fifteen Days](https://declassified.app/intel/black-ops-cold-war/outbreak/fifteen-days-ms5au3/): Intel entry for Fifteen Days on Outbreak.
+- [Fury Crystal](https://declassified.app/intel/black-ops-cold-war/outbreak/fury-crystal-ds4ar2/): Intel entry for Fury Crystal on Outbreak.
+- [Ghost Stories](https://declassified.app/intel/black-ops-cold-war/outbreak/ghost-stories-os2au2/): Intel entry for Ghost Stories on Outbreak.
+- [Goes Without Saying](https://declassified.app/intel/black-ops-cold-war/outbreak/goes-without-saying-rs4au5/): Intel entry for Goes Without Saying on Outbreak.
+- [Greater Threat](https://declassified.app/intel/black-ops-cold-war/outbreak/greater-threat-os4au1/): Intel entry for Greater Threat on Outbreak.
+- [His Plan Our Plan](https://declassified.app/intel/black-ops-cold-war/outbreak/his-plan-our-plan-os3au4/): Intel entry for His Plan Our Plan on Outbreak.
+- [I See A Hierarchy](https://declassified.app/intel/black-ops-cold-war/outbreak/i-see-a-hierarchy-rs2au4/): Intel entry for I See A Hierarchy on Outbreak.
+- [Icbm Launch Key](https://declassified.app/intel/black-ops-cold-war/outbreak/icbm-launch-key-os3ar4/): Intel entry for Icbm Launch Key on Outbreak.
+- [In The Wild](https://declassified.app/intel/black-ops-cold-war/outbreak/in-the-wild-os2au6/): Intel entry for In The Wild on Outbreak.
+- [Interrogation](https://declassified.app/intel/black-ops-cold-war/outbreak/interrogation-ms5au2/): Intel entry for Interrogation on Outbreak.
+- [Inversion Warhead Model](https://declassified.app/intel/black-ops-cold-war/outbreak/inversion-warhead-model-os4ar2/): Intel entry for Inversion Warhead Model on Outbreak.
+- [Killer Crystals](https://declassified.app/intel/black-ops-cold-war/outbreak/killer-crystals-rs2au7/): Intel entry for Killer Crystals on Outbreak.
+- [Krasny Soldat Flamethrower](https://declassified.app/intel/black-ops-cold-war/outbreak/krasny-soldat-flamethrower-os4ar5/): Intel entry for Krasny Soldat Flamethrower on Outbreak.
+- [Leadership Techniques](https://declassified.app/intel/black-ops-cold-war/outbreak/leadership-techniques-os3au1/): Intel entry for Leadership Techniques on Outbreak.
+- [Lightning Bugs](https://declassified.app/intel/black-ops-cold-war/outbreak/lightning-bugs-os2au8/): Intel entry for Lightning Bugs on Outbreak.
+- [Like Flies To Honey](https://declassified.app/intel/black-ops-cold-war/outbreak/like-flies-to-honey-rs2au2/): Intel entry for Like Flies To Honey on Outbreak.
+- [Lineage](https://declassified.app/intel/black-ops-cold-war/outbreak/lineage-os6au2/): Intel entry for Lineage on Outbreak.
+- [Maxis Bnd Badge](https://declassified.app/intel/black-ops-cold-war/outbreak/maxis-bnd-badge-ms2ar2/): Intel entry for Maxis Bnd Badge on Outbreak.
+- [Maxis Status Report](https://declassified.app/intel/black-ops-cold-war/outbreak/maxis-status-report-ms2au5/): Intel entry for Maxis Status Report on Outbreak.
+- [Mimic Tentacle](https://declassified.app/intel/black-ops-cold-war/outbreak/mimic-tentacle-os5ar2/): Intel entry for Mimic Tentacle on Outbreak.
+- [Modified Essence Trap](https://declassified.app/intel/black-ops-cold-war/outbreak/modified-essence-trap-os3ar5/): Intel entry for Modified Essence Trap on Outbreak.
+- [My Reputation Precedes Me](https://declassified.app/intel/black-ops-cold-war/outbreak/my-reputation-precedes-me-ms2au3/): Intel entry for My Reputation Precedes Me on Outbreak.
+- [Mystery Box Bunny](https://declassified.app/intel/black-ops-cold-war/outbreak/mystery-box-bunny-ds2ar3/): Intel entry for Mystery Box Bunny on Outbreak.
+- [New Frontiers](https://declassified.app/intel/black-ops-cold-war/outbreak/new-frontiers-os5au2/): Intel entry for New Frontiers on Outbreak.
+- [Off The Hook](https://declassified.app/intel/black-ops-cold-war/outbreak/off-the-hook-os2au4/): Intel entry for Off The Hook on Outbreak.
+- [Omega Flag](https://declassified.app/intel/black-ops-cold-war/outbreak/omega-flag-os4ar4/): Intel entry for Omega Flag on Outbreak.
+- [Omega Group Patch](https://declassified.app/intel/black-ops-cold-war/outbreak/omega-group-patch-os2ar2/): Intel entry for Omega Group Patch on Outbreak.
+- [Operation Baldr](https://declassified.app/intel/black-ops-cold-war/outbreak/operation-baldr-rs3au5/): Intel entry for Operation Baldr on Outbreak.
+- [Operatsiya Izbavitel Approval](https://declassified.app/intel/black-ops-cold-war/outbreak/operatsiya-izbavitel-approval-os6do1/): Intel entry for Operatsiya Izbavitel Approval on Outbreak.
+- [Outbursts](https://declassified.app/intel/black-ops-cold-war/outbreak/outbursts-ms3au1/): Intel entry for Outbursts on Outbreak.
+- [Peace Is Our Profession](https://declassified.app/intel/black-ops-cold-war/outbreak/peace-is-our-profession-os4au6/): Intel entry for Peace Is Our Profession on Outbreak.
+- [Peacemakers](https://declassified.app/intel/black-ops-cold-war/outbreak/peacemakers-rs5au1/): Intel entry for Peacemakers on Outbreak.
+- [Play Your Part](https://declassified.app/intel/black-ops-cold-war/outbreak/play-your-part-os4au8/): Intel entry for Play Your Part on Outbreak.
+- [Proposed Targets](https://declassified.app/intel/black-ops-cold-war/outbreak/proposed-targets-os2au7/): Intel entry for Proposed Targets on Outbreak.
+- [Quantum Entanglement](https://declassified.app/intel/black-ops-cold-war/outbreak/quantum-entanglement-rs2au5/): Intel entry for Quantum Entanglement on Outbreak.
+- [Recon Rover Blues](https://declassified.app/intel/black-ops-cold-war/outbreak/recon-rover-blues-rs2au6/): Intel entry for Recon Rover Blues on Outbreak.
+- [Recon Rover Model](https://declassified.app/intel/black-ops-cold-war/outbreak/recon-rover-model-rs4ar2/): Intel entry for Recon Rover Model on Outbreak.
+- [Requiem Patch](https://declassified.app/intel/black-ops-cold-war/outbreak/requiem-patch-rs3ar3/): Intel entry for Requiem Patch on Outbreak.
+- [Ring Of Fire Canister](https://declassified.app/intel/black-ops-cold-war/outbreak/ring-of-fire-canister-rs4ar3/): Intel entry for Ring Of Fire Canister on Outbreak.
+- [Someone We Can Trust](https://declassified.app/intel/black-ops-cold-war/outbreak/someone-we-can-trust-ms3au5/): Intel entry for Someone We Can Trust on Outbreak.
+- [Soul Searching](https://declassified.app/intel/black-ops-cold-war/outbreak/soul-searching-rs5au2/): Intel entry for Soul Searching on Outbreak.
+- [Take Her](https://declassified.app/intel/black-ops-cold-war/outbreak/take-her-ms3ar6/): Intel entry for Take Her on Outbreak.
+- [Tempest Head](https://declassified.app/intel/black-ops-cold-war/outbreak/tempest-head-os3ar6/): Intel entry for Tempest Head on Outbreak.
+- [Tesla Storm Canister](https://declassified.app/intel/black-ops-cold-war/outbreak/tesla-storm-canister-rs6ar1/): Intel entry for Tesla Storm Canister on Outbreak.
+- [The Ally](https://declassified.app/intel/black-ops-cold-war/outbreak/the-ally-ms4au3/): Intel entry for The Ally on Outbreak.
+- [The Beacon](https://declassified.app/intel/black-ops-cold-war/outbreak/the-beacon-rs3au1/): Intel entry for The Beacon on Outbreak.
+- [The Berlin Situation](https://declassified.app/intel/black-ops-cold-war/outbreak/the-berlin-situation-rs4au4/): Intel entry for The Berlin Situation on Outbreak.
+- [The Confrontation](https://declassified.app/intel/black-ops-cold-war/outbreak/the-confrontation-ms4au2/): Intel entry for The Confrontation on Outbreak.
+- [The Device](https://declassified.app/intel/black-ops-cold-war/outbreak/the-device-os4au4/): Intel entry for The Device on Outbreak.
+- [The Survivors](https://declassified.app/intel/black-ops-cold-war/outbreak/the-survivors-os4au3/): Intel entry for The Survivors on Outbreak.
+- [The Trap](https://declassified.app/intel/black-ops-cold-war/outbreak/the-trap-os4au5/): Intel entry for The Trap on Outbreak.
+- [Thirty Seconds](https://declassified.app/intel/black-ops-cold-war/outbreak/thirty-seconds-ms5au5/): Intel entry for Thirty Seconds on Outbreak.
+- [Transformed Apple Crate](https://declassified.app/intel/black-ops-cold-war/outbreak/transformed-apple-crate-rs3ar4/): Intel entry for Transformed Apple Crate on Outbreak.
+- [What Tomorrow Brings](https://declassified.app/intel/black-ops-cold-war/outbreak/what-tomorrow-brings-rs4au3/): Intel entry for What Tomorrow Brings on Outbreak.
+- [Witching Hour](https://declassified.app/intel/black-ops-cold-war/outbreak/witching-hour-os3au2/): Intel entry for Witching Hour on Outbreak.
+
+## Main Quest Guides
+
+- [Citadelle Des Morts Main Quest](https://declassified.app/quests/black-ops-6/citadelle-des-morts/): Main quest walkthrough for Citadelle Des Morts.
+- [Liberty Falls Main Quest](https://declassified.app/quests/black-ops-6/liberty-falls/): Main quest walkthrough for Liberty Falls.
+- [Reckoning Main Quest](https://declassified.app/quests/black-ops-6/reckoning/): Main quest walkthrough for Reckoning.
+- [Shattered Veil Main Quest](https://declassified.app/quests/black-ops-6/shattered-veil/): Main quest walkthrough for Shattered Veil.
+- [Terminus Main Quest](https://declassified.app/quests/black-ops-6/terminus/): Main quest walkthrough for Terminus.
+- [The Tomb Main Quest](https://declassified.app/quests/black-ops-6/the-tomb/): Main quest walkthrough for The Tomb.
+- [Die Maschine Main Quest](https://declassified.app/quests/black-ops-cold-war/die-maschine/): Main quest walkthrough for Die Maschine.
+- [Firebase Z Main Quest](https://declassified.app/quests/black-ops-cold-war/firebase-z/): Main quest walkthrough for Firebase Z.
+- [Forsaken Main Quest](https://declassified.app/quests/black-ops-cold-war/forsaken/): Main quest walkthrough for Forsaken.
+- [Mauer Der Toten Main Quest](https://declassified.app/quests/black-ops-cold-war/mauer-der-toten/): Main quest walkthrough for Mauer Der Toten.
+- [Outbreak Main Quest](https://declassified.app/quests/black-ops-cold-war/outbreak/): Main quest walkthrough for Outbreak.
+
+## Side Egg Guides
+
+- [Citadelle Des Morts Side Eggs](https://declassified.app/eggs/black-ops-6/citadelle-des-morts/): Side egg guide for Citadelle Des Morts.
+- [Liberty Falls Side Eggs](https://declassified.app/eggs/black-ops-6/liberty-falls/): Side egg guide for Liberty Falls.
+- [Shattered Veil Side Eggs](https://declassified.app/eggs/black-ops-6/shattered-veil/): Side egg guide for Shattered Veil.
+- [Terminus Side Eggs](https://declassified.app/eggs/black-ops-6/terminus/): Side egg guide for Terminus.
+- [The Tomb Side Eggs](https://declassified.app/eggs/black-ops-6/the-tomb/): Side egg guide for The Tomb.
+- [Die Maschine Side Eggs](https://declassified.app/eggs/black-ops-cold-war/die-maschine/): Side egg guide for Die Maschine.
+- [Firebase Z Side Eggs](https://declassified.app/eggs/black-ops-cold-war/firebase-z/): Side egg guide for Firebase Z.
+- [Forsaken Side Eggs](https://declassified.app/eggs/black-ops-cold-war/forsaken/): Side egg guide for Forsaken.
+- [Mauer Der Toten Side Eggs](https://declassified.app/eggs/black-ops-cold-war/mauer-der-toten/): Side egg guide for Mauer Der Toten.
+- [Outbreak Side Eggs](https://declassified.app/eggs/black-ops-cold-war/outbreak/): Side egg guide for Outbreak.
+
+## Operations Hubs
+
+- [Black Ops 6 Operations](https://declassified.app/operations/black-ops-6/): Game hub that routes players into main quest walkthroughs and side egg guides, depending on whether they want core progression or optional rewards and secrets.
+- [Black Ops Cold War Operations](https://declassified.app/operations/black-ops-cold-war/): Game hub that routes players into main quest walkthroughs and side egg guides, depending on whether they want core progression or optional rewards and secrets.
