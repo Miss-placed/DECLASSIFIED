@@ -1,5 +1,6 @@
 import { MapIds } from '../components/MapControls/MapIds';
 import { DefaultPOIData, Faction, IIntelItem, IntelItem, IntelType, Season } from './IntelTypes';
+import { blackOps7Intel } from './blackOps7Intel';
 const placeholderSrc = 'placeholder'; // Any intel using this needs to be updated to use a real image
 
 const staticIntelStore: IIntelItem[] = [
@@ -7613,7 +7614,10 @@ function getIntelStore(intelStore: IIntelItem[]): IntelItem[] {
 	return intelListComputed;
 }
 
-export const IntelStore: IntelItem[] = getIntelStore(staticIntelStore);
+export const IntelStore: IntelItem[] = getIntelStore([
+	...staticIntelStore,
+	...blackOps7Intel,
+]);
 
 
 export { MapIds };

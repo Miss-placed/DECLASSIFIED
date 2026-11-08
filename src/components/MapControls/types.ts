@@ -6,17 +6,20 @@ import { MapDetails } from '../../data/maps/mapDetails';
 export enum Game {
 	coldWar = 'Black Ops: Cold War',
 	bo6 = 'Black Ops 6',
+	bo7 = 'Black Ops 7',
 }
 export interface MapGroupItem {
 	mapName: string;
 	mapLayers: MapItem[];
+	/** true when mapLayers are areas of one map rather than separate maps */
+	mapLayersAreAreas: boolean;
 	game: Game;
 }
 
 export type MapGroupDictionary = Record<string, MapGroupItem>;
 
 const gameFromKey = (game: MapGroupGameKey) =>
-	game === 'bo6' ? Game.bo6 : Game.coldWar;
+	game === 'bo7' ? Game.bo7 : game === 'bo6' ? Game.bo6 : Game.coldWar;
 
 const mapDetailsById = new Map<string, MapItem>();
 Object.values(MapDetails)
@@ -35,6 +38,7 @@ export const MapGroupings: MapGroupDictionary = MapGroupDefinitions.reduce(
 			mapLayers: group.mapLayers
 				.map(layer => mapDetailsById.get(layer.id))
 				.filter((layer): layer is MapItem => !!layer),
+			mapLayersAreAreas: !!group.mapLayersAreAreas,
 			game: gameFromKey(group.game),
 		};
 		return acc;

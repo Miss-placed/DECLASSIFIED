@@ -18,6 +18,7 @@ import { db } from "../../../data/db";
 import { gameForIntel, intelSlug, mapTitleFromId, slugifyIntel } from '../../../data/intelSeo';
 import { DefaultPOIData, Faction, IIntelItem } from '../../../data/IntelTypes';
 import { GetMapById } from "../../../data/maps/mapDetails";
+import { withIntelDescription } from '../../../helpers/intelDescription';
 import { toSnakeCase } from "../../../helpers/icons";
 import { BugReportButton } from "../../ActionButtons/BugReportButton";
 import { ShareButton } from "../../ActionButtons/ShareButton";
@@ -114,7 +115,7 @@ export const IntelDetailsItem = ({
 							{!isMarker ? `${mapItem?.title} - ` : ``}{season} - {typeDesc}{faction !== Faction.None ? ` - ${faction}` : ''}
 						</IntelSubheading>
 						<IntelDescription>
-							{desc.trim()}
+							{withIntelDescription(desc)}
 						</IntelDescription>
 						<StyledIntelActionContainer>
 							{isCollected ? (
@@ -295,5 +296,4 @@ const IntelDescription = styled(Typography)`
 	text-align: center;
 	margin: 0px !important;
 	font-size: 0.7rem;
-	white-space: pre-wrap;
 `;

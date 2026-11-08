@@ -128,6 +128,39 @@ export const MapDetails = {
 		title: 'Reckoning Boss Area',
 		mapOverlay: allGameMapSVGs.reckoningBossArena,
 	}),
+	//bo7
+	ashesOfTheDamned: new MapItem(MapIds.ashesOfTheDamned, {
+		title: 'Ashes of the Damned',
+		mapOverlay: allGameMapSVGs.ashesOfTheDamned,
+	}),
+	astraMalorum: new MapItem(MapIds.astraMalorum, {
+		title: 'Astra Malorum',
+		mapOverlay: allGameMapSVGs.astraMalorum,
+	}),
+	paradoxJunction: new MapItem(MapIds.paradoxJunction, {
+		title: 'Paradox Junction',
+		mapOverlay: allGameMapSVGs.paradoxJunction,
+	}),
+	paradoxJunctionPast: new MapItem(MapIds.paradoxJunctionPast, {
+		title: 'Paradox Junction (Past)',
+		mapOverlay: allGameMapSVGs.paradoxJunctionPast,
+	}),
+	totenreich: new MapItem(MapIds.totenreich, {
+		title: 'Totenreich',
+		mapOverlay: allGameMapSVGs.totenreich,
+	}),
+	totenreichBoss: new MapItem(MapIds.totenreichBoss, {
+		title: 'Totenreich Boss Area',
+		mapOverlay: allGameMapSVGs.totenreichBoss,
+	}),
+	kowakujo: new MapItem(MapIds.kowakujo, {
+		title: 'Kowakujō',
+		mapOverlay: allGameMapSVGs.kowakujo,
+	}),
+	rexInfernus: new MapItem(MapIds.rexInfernus, {
+		title: 'Rex Infernus',
+		mapOverlay: allGameMapSVGs.rexInfernus,
+	}),
 };
 
 export const allOutbreakMapsArr: string[] = [

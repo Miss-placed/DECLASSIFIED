@@ -4,7 +4,10 @@ import { Theme } from '@mui/material';
 export const StyledIntelFilterMenu = styled.div`
 	display: grid;
 	justify-items: center;
-	grid-template-columns: 50% 50%;
+	/* 50% + 50% + a 10px gap is 10px wider than the panel, which pushed the right
+	   column past the 16px inset and flush against the drawer edge. fr units
+	   include the gap in their share, so both columns stay inside the inset. */
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 	gap: var(--radius);
 	.MuiFormControl-root {
 		width: 100%;

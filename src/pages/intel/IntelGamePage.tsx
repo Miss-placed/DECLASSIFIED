@@ -24,11 +24,13 @@ export default function IntelGamePage() {
 	const intel = getIntelRouteModel().filter(item => item.gameSlug === gameSlug);
 	const gameTitle = intel[0]?.gameTitle ?? gameSlug ?? 'Unknown Game';
 	const gameKey =
-		gameSlug === 'black-ops-6'
-			? Game.bo6
-			: gameSlug === 'black-ops-cold-war'
-				? Game.coldWar
-				: undefined;
+		gameSlug === 'black-ops-7'
+			? Game.bo7
+			: gameSlug === 'black-ops-6'
+				? Game.bo6
+				: gameSlug === 'black-ops-cold-war'
+					? Game.coldWar
+					: undefined;
 	const groupedMaps = gameKey
 		? Object.values(MapGroupings)
 			.filter(group => group.game === gameKey)

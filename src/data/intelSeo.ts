@@ -10,7 +10,9 @@ export const slugifyIntel = (value: string): string =>
 		.replace(/-{2,}/g, '-');
 
 export const gameForIntel = (intelId: string) =>
-	intelId.startsWith('BO6')
+	intelId.startsWith('BO7')
+		? { slug: 'black-ops-7', title: 'Black Ops 7' }
+		: intelId.startsWith('BO6')
 		? { slug: 'black-ops-6', title: 'Black Ops 6' }
 		: { slug: 'black-ops-cold-war', title: 'Black Ops Cold War' };
 

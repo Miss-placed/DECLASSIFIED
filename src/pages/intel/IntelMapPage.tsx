@@ -17,11 +17,13 @@ import { db } from '../../data/db';
 export default function IntelMapPage() {
 	const { gameSlug, mapSlug } = useParams();
 	const gameKey =
-		gameSlug === 'black-ops-6'
-			? Game.bo6
-			: gameSlug === 'black-ops-cold-war'
-				? Game.coldWar
-				: undefined;
+		gameSlug === 'black-ops-7'
+			? Game.bo7
+			: gameSlug === 'black-ops-6'
+				? Game.bo6
+				: gameSlug === 'black-ops-cold-war'
+					? Game.coldWar
+					: undefined;
 	const mapGroup = gameKey
 		? Object.values(MapGroupings).find(
 				group =>

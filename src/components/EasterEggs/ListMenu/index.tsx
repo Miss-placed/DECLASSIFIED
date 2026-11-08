@@ -1,21 +1,14 @@
 import styled from '@emotion/styled';
-import ClearIcon from '@mui/icons-material/Clear';
-import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import {
-	Accordion,
-	AccordionDetails,
-	AccordionSummary,
 	Box,
 	Chip,
 	FormControl,
 	InputLabel,
-	IconButton,
 	MenuItem,
 	OutlinedInput,
 	Select,
 	SelectChangeEvent,
 	TextField,
-	Tooltip,
 	Typography,
 } from '@mui/material';
 import {
@@ -37,6 +30,14 @@ import { useUserContext } from '../../../contexts/UserContext/userContextProvide
 import { StaticEggStore } from '../../../data/easterEggs';
 import { StaticQuestStore } from '../../../data/mainQuest';
 import { getEggMarkerTypeLabel } from '../../../data/listFiltering';
+import {
+	FilterAccordion,
+	FilterAccordionDetails,
+	FilterAccordionSummary,
+	FilterExpandableForm,
+	FilterToggle,
+	shouldToggleFromSummary,
+} from '../../FilterChrome';
 import {
 	MenuProps,
 	StyledIntelFilterMenu,
@@ -60,14 +61,13 @@ export const EggListMenu = ({
 	} = useContext(DeclassifiedContext);
 	const { isDebugMode } = useUserContext();
 	const [expand, setExpand] = useState(false);
+	const toggleAccordion = () => setExpand(prev => !prev);
 	const methods = useForm<EggFormInputs>({
 		defaultValues: currentEggFilter,
 		shouldUnregister: false,
 	});
 	const { control, handleSubmit, register, watch, getValues, setValue, reset } =
 		methods;
-	const searchTerm = watch('searchTerm');
-	const selectedMarkerTypes = watch('markerTypes');
 	const clearFilters = useCallback(() => {
 		const defaults = getEggFilterDefaults();
 		reset(defaults);
@@ -133,97 +133,85 @@ export const EggListMenu = ({
 
 	return (
 		<FormProvider {...methods}>
-			<StyledExpandableMenu
+			<FilterExpandableForm
 				id="easterEgg-expandable-menu"
 				onSubmit={handleSubmit(onSubmit)}
 			>
-				<StyledAccordion expanded={expand} onClick={onModalClick}>
-					<StyledAccordionSummary
-						expandIcon={
-							<FilterAltIcon onClick={() => setExpand(prev => !prev)} />
-						}
-						aria-controls="easterEgg-filter"
+				<FilterAccordion expanded={expand} onClick={onModalClick}>
+					<FilterAccordionSummary
+						aria-controls="easterEgg-filter-panel"
 						id="easterEgg-filter-header"
+						onClick={event => {
+							if (shouldToggleFromSummary(event.target)) toggleAccordion();
+						}}
 					>
 						<TextField
 							id="easterEggSearch"
-							label="Search"
+							label="Search Easter Eggs"
 							variant="outlined"
 							{...register('searchTerm')}
 						/>
-						<StyledResultsCounter>
-							{filteredEggStore.length}
-						</StyledResultsCounter>
-					</StyledAccordionSummary>
-					<StyledAccordionDetails>
+						<FilterToggle
+							count={filteredEggStore.length}
+							expanded={expand}
+							panelId="easterEgg-filter-panel"
+							label="Toggle easter egg filters"
+							onToggle={toggleAccordion}
+						/>
+					</FilterAccordionSummary>
+					<FilterAccordionDetails id="easterEgg-filter-panel">
 						{markerTypes.length > 0 ? (
 							<StyledEggFilterMenu>
-								<EggFilterControl>
-									<FormControl>
-										<InputLabel id="egg-marker-type-label">
-											Marker Types
-										</InputLabel>
-										<Controller
-											name="markerTypes"
-											control={control}
-											render={({ field }) => (
-												<Select
-													{...field}
-													multiple
-													labelId="egg-marker-type-label"
-													input={<OutlinedInput label="Marker Types" />}
-													MenuProps={MenuProps}
-													renderValue={selected => (
-														<Box
-															sx={{
-																display: 'flex',
-																flexWrap: 'wrap',
-																gap: 0.5,
-															}}
-														>
-															{selected.map(value => (
-																<Chip key={value} label={value} />
-															))}
-														</Box>
-													)}
-														onChange={event => {
-															handleMarkerTypeChange(event, field.onChange);
+								<FormControl>
+									<InputLabel id="egg-marker-type-label">
+										Marker Types
+									</InputLabel>
+									<Controller
+										name="markerTypes"
+										control={control}
+										render={({ field }) => (
+											<Select
+												{...field}
+												multiple
+												labelId="egg-marker-type-label"
+												input={<OutlinedInput label="Marker Types" />}
+												MenuProps={MenuProps}
+												renderValue={selected => (
+													<Box
+														sx={{
+															display: 'flex',
+															flexWrap: 'wrap',
+															gap: 0.5,
 														}}
-														value={field.value ?? []}
-												>
-													{markerTypes.map(markerType => (
-														<MenuItem key={markerType} value={markerType}>
-															{markerType}
-														</MenuItem>
-													))}
-												</Select>
-											)}
-										/>
-									</FormControl>
-									<Tooltip title="Clear filters">
-										<span>
-											<StyledClearButton
-												aria-label="clear filters"
-												size="small"
-												onClick={clearFilters}
-												disabled={
-													!(searchTerm || selectedMarkerTypes?.length > 0)
-												}
+													>
+														{selected.map(value => (
+															<Chip key={value} label={value} />
+														))}
+													</Box>
+												)}
+												onChange={event => {
+													handleMarkerTypeChange(event, field.onChange);
+												}}
+												value={field.value ?? []}
 											>
-												<ClearIcon fontSize="small" />
-											</StyledClearButton>
-										</span>
-									</Tooltip>
-								</EggFilterControl>
+												{markerTypes.map(markerType => (
+													<MenuItem key={markerType} value={markerType}>
+														{markerType}
+													</MenuItem>
+												))}
+											</Select>
+										)}
+									/>
+								</FormControl>
 							</StyledEggFilterMenu>
 						) : (
 							<Typography variant="body2">
 								No marker types available for this map.
 							</Typography>
 						)}
-					</StyledAccordionDetails>
-				</StyledAccordion>
-			</StyledExpandableMenu>
+					</FilterAccordionDetails>
+				</FilterAccordion>
+			</FilterExpandableForm>
 		</FormProvider>
 	);
 };
@@ -235,60 +223,7 @@ export function getEggFilterDefaults(): EggFormInputs {
 	};
 }
 
-const StyledExpandableMenu = styled.form`
-	display: grid;
-	justify-items: center;
-	background-color: var(--clr-grey-d);
-	position: sticky;
-	bottom: 0;
-`;
-
-const StyledAccordionSummary = styled(AccordionSummary)`
-	background-color: var(--clr-grey-l);
-
-	.MuiAccordionSummary-content {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	#easterEggSearch,
-	#easterEggSearch input {
-		background-color: var(--clr-white);
-		border-radius: var(--radius);
-		border: unset;
-	}
-`;
-
-const StyledAccordion = styled(Accordion)`
-	width: 100%;
-	margin: 0;
-	box-shadow: none;
-`;
-
-const StyledAccordionDetails = styled(AccordionDetails)`
-	background: var(--clr-grey-l);
-	display: flex;
-	flex-direction: column;
-	gap: 0.75rem;
-`;
-
-const StyledResultsCounter = styled.div`
-	color: var(--clr-white-d);
-`;
-
-const EggFilterControl = styled.div`
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-	width: 100%;
-`;
-
-const StyledClearButton = styled(IconButton)`
-	align-self: flex-end;
-	margin-bottom: 0.1rem;
-`;
-
+/* one column instead of the intel menu's two: there is only the marker type select */
 const StyledEggFilterMenu = styled(StyledIntelFilterMenu)`
-	grid-template-columns: 1fr;
+	grid-template-columns: minmax(0, 1fr);
 `;

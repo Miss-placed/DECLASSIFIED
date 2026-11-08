@@ -38,6 +38,15 @@ export const MapIds = {
     deprogram: `deprogram`,
     //b06
     libertyFalls: `libertyFalls`,
+    //bo7
+    ashesOfTheDamned: `ashesOfTheDamned`,
+    astraMalorum: `astraMalorum`,
+    paradoxJunction: `paradoxJunction`,
+    paradoxJunctionPast: `paradoxJunctionPast`,
+    totenreich: `totenreich`,
+    totenreichBoss: `totenreichBoss`,
+    kowakujo: `kowakujo`,
+    rexInfernus: `rexInfernus`,
     terminusBiolabs: `terminusBiolabs`,
     terminusPrison: `terminusPrison`,
     terminusIslands: `terminusBiolabs`, // TODO: change thisto be unique when the refactoring for multiple layer markers is done 

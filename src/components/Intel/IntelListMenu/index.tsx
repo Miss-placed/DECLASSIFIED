@@ -1,16 +1,17 @@
-import styled from '@emotion/styled';
-import FilterAltIcon from '@mui/icons-material/FilterAlt';
-import {
-	Accordion,
-	AccordionDetails,
-	AccordionSummary,
-	TextField,
-} from '@mui/material';
+import { TextField } from '@mui/material';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { DeclassifiedContext } from '../../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { useUserContext } from '../../../contexts/UserContext/userContextProvider';
 import { Faction, IntelType, Season } from '../../../data/IntelTypes';
+import {
+	FilterAccordion,
+	FilterAccordionDetails,
+	FilterAccordionSummary,
+	FilterExpandableForm,
+	FilterToggle,
+	shouldToggleFromSummary,
+} from '../../FilterChrome';
 import { MenuFooter } from '../../MenuFooter';
 import { IntelFilterMenu } from '../IntelFilterMenu';
 
@@ -75,15 +76,17 @@ export const IntelListMenu = ({
 
 	return (
 		<FormProvider {...methods}>
-			<StyledExpandableMenu
+			<FilterExpandableForm
 				id="intel-expandable-menu"
 				onSubmit={handleSubmit(onSubmit)}
 			>
-				<StyledAccordion expanded={expand}>
-					<StyledAccordionSummary
-						expandIcon={<FilterAltIcon onClick={toggleAcordion} />}
-						aria-controls="intel-filter"
+				<FilterAccordion expanded={expand}>
+					<FilterAccordionSummary
+						aria-controls="intel-filter-panel"
 						id="intel-filter-header"
+						onClick={event => {
+							if (shouldToggleFromSummary(event.target)) toggleAcordion();
+						}}
 					>
 						<TextField
 							id="intelSearch"
@@ -91,16 +94,20 @@ export const IntelListMenu = ({
 							variant="outlined"
 							{...register('searchTerm')}
 						/>
-						<StyledResultsCounter>
-							{totalIntelCollectedOfType}/{totalIntelOfType}
-						</StyledResultsCounter>
-					</StyledAccordionSummary>
-					<StyledAccordionDetails>
+						<FilterToggle
+							count={`${totalIntelCollectedOfType}/${totalIntelOfType}`}
+							expanded={expand}
+							panelId="intel-filter-panel"
+							label="Toggle intel filters"
+							onToggle={toggleAcordion}
+						/>
+					</FilterAccordionSummary>
+					<FilterAccordionDetails id="intel-filter-panel">
 						<IntelFilterMenu />
-					</StyledAccordionDetails>
+					</FilterAccordionDetails>
 					<MenuFooter />
-				</StyledAccordion>
-			</StyledExpandableMenu>
+				</FilterAccordion>
+			</FilterExpandableForm>
 		</FormProvider>
 	);
 };
@@ -115,39 +122,3 @@ export function getIntelFilterDefaults(): IntelFormInputs {
 		collectedIntelFilter: 'all',
 	};
 }
-
-const StyledExpandableMenu = styled.form`
-	display: grid;
-	justify-items: center;
-	background-color: var(--clr-grey-d);
-	position: sticky;
-	bottom: 0;
-`;
-
-const StyledAccordionSummary = styled(AccordionSummary)`
-	background-color: var(--clr-grey-l);
-
-	.MuiAccordionSummary-content {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-	#intelSearch,
-	#intelSearch input {
-		background-color: var(--clr-white);
-		border-radius: var(--radius);
-		border: unset;
-	}
-`;
-
-const StyledAccordion = styled(Accordion)`
-	width: 100%;
-	margin: 0;
-	box-shadow: none;
-`;
-const StyledAccordionDetails = styled(AccordionDetails)`
-	background: var(--clr-grey-l);
-`;
-const StyledResultsCounter = styled.div`
-	color: var(--clr-white-d);
-`;

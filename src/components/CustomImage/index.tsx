@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { Box, CircularProgress, Modal } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+import { Box, CircularProgress, IconButton, Modal } from '@mui/material';
 import { useState } from 'react';
 
 const StyledImageContainer = styled.div`
@@ -9,17 +10,33 @@ const StyledImageContainer = styled.div`
 	width: 100%;
 `;
 
-const style = {
+const previewBoxStyle = {
 	position: 'absolute' as 'absolute',
 	top: '50%',
 	left: '50%',
 	transform: 'translate(-50%, -50%)',
-	width: '80vw',
+	// as large as the screen allows without ever being smaller than the popup image
+	// that was clicked. Sized to the image itself so portrait shots do not sit in a
+	// wide, mostly empty box. The image uses vw/vh max constraints so the sizing has
+	// no circular percentage dependency on this box.
+	width: 'fit-content',
+	maxWidth: '96vw',
+	maxHeight: '96vh',
 	bgcolor: 'var(--clr-bg-inverted)',
 	border: '2px solid #000',
 	boxShadow: 24,
-	p: 4,
-	padding: '14px',
+	padding: '6px',
+	outline: 'none',
+};
+
+const closeButtonStyle = {
+	position: 'absolute',
+	top: 6,
+	right: 6,
+	zIndex: 1,
+	backgroundColor: 'rgba(0, 0, 0, 0.55)',
+	color: 'var(--clr-white)',
+	'&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.78)' },
 };
 
 export const CustomImage = ({ src: imageId, altText = 'Placeholder' }) => { // TODO: replace "Placeholder" with a more descriptive alt text from the image metadata
@@ -72,10 +89,16 @@ export const CustomImage = ({ src: imageId, altText = 'Placeholder' }) => { // T
 				<Modal
 					open={open}
 					onClose={handleClose}
-					aria-labelledby="modal-modal-title"
-					aria-describedby="modal-modal-description"
+					aria-label="Image preview"
 				>
-					<Box sx={style}>
+					<Box sx={previewBoxStyle}>
+						<IconButton
+							aria-label="Close image preview"
+							onClick={handleClose}
+							sx={closeButtonStyle}
+						>
+							<CloseIcon />
+						</IconButton>
 						{!modalImageLoaded && (
 							<CircularProgress style={{ display: 'block', margin: 'auto' }} />
 						)}
@@ -84,7 +107,10 @@ export const CustomImage = ({ src: imageId, altText = 'Placeholder' }) => { // T
 							onLoad={() => setModalImageLoaded(true)}
 							alt={altText}
 							style={{
-								width: '100%',
+								width: 'auto',
+								height: 'auto',
+								maxWidth: 'calc(96vw - 16px)',
+								maxHeight: 'calc(96vh - 16px)',
 								display: modalImageLoaded ? 'block' : 'none',
 							}}
 						/>
