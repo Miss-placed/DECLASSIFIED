@@ -90,6 +90,8 @@ const StyledCustomIntelFilterCheckbox = styled.div`
 		width: 100%;
 		background-color: var(--clr-white-d);
 		display: grid;
+		/* keep the label's square corners inside the rounded button */
+		overflow: hidden;
 		/* the label carries the longest text ("Artifacts"), so it gets the flexible
 		   column and the count sizes to its own content */
 		grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr) auto;

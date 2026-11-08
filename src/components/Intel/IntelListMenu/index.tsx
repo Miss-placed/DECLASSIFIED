@@ -81,9 +81,17 @@ export const IntelListMenu = ({
 			>
 				<StyledAccordion expanded={expand}>
 					<StyledAccordionSummary
-						expandIcon={<FilterAltIcon onClick={toggleAcordion} />}
 						aria-controls="intel-filter"
 						id="intel-filter-header"
+						onClick={event => {
+							const target = event.target as HTMLElement;
+							// keep typing in the search box and the explicit toggle button from
+							// toggling the panel twice
+							if (target.closest('#intelSearch')) return;
+							if (target.closest('button[aria-label="Toggle intel filters"]'))
+								return;
+							toggleAcordion();
+						}}
 					>
 						<TextField
 							id="intelSearch"
@@ -91,9 +99,18 @@ export const IntelListMenu = ({
 							variant="outlined"
 							{...register('searchTerm')}
 						/>
-						<StyledResultsCounter>
-							{totalIntelCollectedOfType}/{totalIntelOfType}
-						</StyledResultsCounter>
+						<StyledFilterToggle
+							type="button"
+							onClick={toggleAcordion}
+							aria-expanded={expand}
+							aria-controls="intel-filter"
+							aria-label="Toggle intel filters"
+						>
+							<span>
+								{totalIntelCollectedOfType}/{totalIntelOfType}
+							</span>
+							<FilterAltIcon />
+						</StyledFilterToggle>
 					</StyledAccordionSummary>
 					<StyledAccordionDetails>
 						<IntelFilterMenu />
@@ -148,6 +165,33 @@ const StyledAccordion = styled(Accordion)`
 const StyledAccordionDetails = styled(AccordionDetails)`
 	background: var(--clr-grey-l);
 `;
-const StyledResultsCounter = styled.div`
-	color: var(--clr-white-d);
+/* the count and funnel read as decoration on their own, so they are wrapped in a
+   real button that also carries the expanded state */
+const StyledFilterToggle = styled.button`
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-family: inherit;
+	font-size: 0.8rem;
+	line-height: 1;
+	color: var(--clr-grey-d);
+	background-color: var(--clr-white);
+	border: 1px solid var(--clr-white-extra-dark);
+	border-radius: var(--radius);
+	padding: 8px 12px;
+	cursor: pointer;
+	transition: background-color 0.2s ease, box-shadow 0.2s ease;
+
+	&:hover {
+		background-color: var(--clr-white-extra-dark);
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--clr-orange);
+		outline-offset: 2px;
+	}
+
+	svg {
+		font-size: 1.1rem;
+	}
 `;
