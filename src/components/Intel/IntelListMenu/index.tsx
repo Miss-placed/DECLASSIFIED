@@ -1,16 +1,17 @@
-import styled from '@emotion/styled';
-import FilterAltIcon from '@mui/icons-material/FilterAlt';
-import {
-	Accordion,
-	AccordionDetails,
-	AccordionSummary,
-	TextField,
-} from '@mui/material';
+import { TextField } from '@mui/material';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { DeclassifiedContext } from '../../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { useUserContext } from '../../../contexts/UserContext/userContextProvider';
 import { Faction, IntelType, Season } from '../../../data/IntelTypes';
+import {
+	FilterAccordion,
+	FilterAccordionDetails,
+	FilterAccordionSummary,
+	FilterExpandableForm,
+	FilterToggle,
+	shouldToggleFromSummary,
+} from '../../FilterChrome';
 import { MenuFooter } from '../../MenuFooter';
 import { IntelFilterMenu } from '../IntelFilterMenu';
 
@@ -75,22 +76,16 @@ export const IntelListMenu = ({
 
 	return (
 		<FormProvider {...methods}>
-			<StyledExpandableMenu
+			<FilterExpandableForm
 				id="intel-expandable-menu"
 				onSubmit={handleSubmit(onSubmit)}
 			>
-				<StyledAccordion expanded={expand}>
-					<StyledAccordionSummary
-						aria-controls="intel-filter"
+				<FilterAccordion expanded={expand}>
+					<FilterAccordionSummary
+						aria-controls="intel-filter-panel"
 						id="intel-filter-header"
 						onClick={event => {
-							const target = event.target as HTMLElement;
-							// keep typing in the search box and the explicit toggle button from
-							// toggling the panel twice
-							if (target.closest('#intelSearch')) return;
-							if (target.closest('button[aria-label="Toggle intel filters"]'))
-								return;
-							toggleAcordion();
+							if (shouldToggleFromSummary(event.target)) toggleAcordion();
 						}}
 					>
 						<TextField
@@ -99,25 +94,20 @@ export const IntelListMenu = ({
 							variant="outlined"
 							{...register('searchTerm')}
 						/>
-						<StyledFilterToggle
-							type="button"
-							onClick={toggleAcordion}
-							aria-expanded={expand}
-							aria-controls="intel-filter"
-							aria-label="Toggle intel filters"
-						>
-							<span>
-								{totalIntelCollectedOfType}/{totalIntelOfType}
-							</span>
-							<FilterAltIcon />
-						</StyledFilterToggle>
-					</StyledAccordionSummary>
-					<StyledAccordionDetails>
+						<FilterToggle
+							count={`${totalIntelCollectedOfType}/${totalIntelOfType}`}
+							expanded={expand}
+							panelId="intel-filter-panel"
+							label="Toggle intel filters"
+							onToggle={toggleAcordion}
+						/>
+					</FilterAccordionSummary>
+					<FilterAccordionDetails id="intel-filter-panel">
 						<IntelFilterMenu />
-					</StyledAccordionDetails>
+					</FilterAccordionDetails>
 					<MenuFooter />
-				</StyledAccordion>
-			</StyledExpandableMenu>
+				</FilterAccordion>
+			</FilterExpandableForm>
 		</FormProvider>
 	);
 };
@@ -132,75 +122,3 @@ export function getIntelFilterDefaults(): IntelFormInputs {
 		collectedIntelFilter: 'all',
 	};
 }
-
-const StyledExpandableMenu = styled.form`
-	display: grid;
-	justify-items: center;
-	background-color: var(--clr-grey-d);
-	position: sticky;
-	bottom: 0;
-`;
-
-const StyledAccordionSummary = styled(AccordionSummary)`
-	background-color: var(--clr-grey-l);
-	/* MUI defaults to no vertical padding with a content margin, which left a wider
-	   gap above the filters than between them */
-	padding: var(--radius) 16px;
-
-	.MuiAccordionSummary-content {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: var(--radius);
-		margin: 0;
-	}
-	#intelSearch,
-	#intelSearch input {
-		background-color: var(--clr-white);
-		border-radius: var(--radius);
-		border: unset;
-	}
-`;
-
-const StyledAccordion = styled(Accordion)`
-	width: 100%;
-	margin: 0;
-	box-shadow: none;
-`;
-const StyledAccordionDetails = styled(AccordionDetails)`
-	background: var(--clr-grey-l);
-	/* the filter grid carries its own 10px gap, so no extra top padding. The bottom
-	   padding repeats that gap so the last filter row is not sitting on the seam
-	   where the footer band starts. */
-	padding: 0 16px var(--radius);
-`;
-/* the count and funnel read as decoration on their own, so they are wrapped in a
-   real button that also carries the expanded state */
-const StyledFilterToggle = styled.button`
-	display: inline-flex;
-	align-items: center;
-	gap: 8px;
-	font-family: inherit;
-	font-size: 0.8rem;
-	line-height: 1;
-	color: var(--clr-grey-d);
-	background-color: var(--clr-white);
-	border: 1px solid var(--clr-white-extra-dark);
-	border-radius: var(--radius);
-	padding: 8px 12px;
-	cursor: pointer;
-	transition: background-color 0.2s ease, box-shadow 0.2s ease;
-
-	&:hover {
-		background-color: var(--clr-white-extra-dark);
-	}
-
-	&:focus-visible {
-		outline: 2px solid var(--clr-orange);
-		outline-offset: 2px;
-	}
-
-	svg {
-		font-size: 1.1rem;
-	}
-`;
