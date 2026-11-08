@@ -42,7 +42,7 @@ export const MapIds = {
     ashesOfTheDamned: `ashesOfTheDamned`,
     astraMalorum: `astraMalorum`,
     paradoxJunction: `paradoxJunction`,
-    paradoxJunctionNuked: `paradoxJunctionNuked`,
+    paradoxJunctionPast: `paradoxJunctionPast`,
     totenreich: `totenreich`,
     totenreichBoss: `totenreichBoss`,
     kowakujo: `kowakujo`,

@@ -141,9 +141,9 @@ export const MapDetails = {
 		title: 'Paradox Junction',
 		mapOverlay: allGameMapSVGs.paradoxJunction,
 	}),
-	paradoxJunctionNuked: new MapItem(MapIds.paradoxJunctionNuked, {
-		title: 'Paradox Junction Nuked',
-		mapOverlay: allGameMapSVGs.paradoxJunctionNuked,
+	paradoxJunctionPast: new MapItem(MapIds.paradoxJunctionPast, {
+		title: 'Paradox Junction (Past)',
+		mapOverlay: allGameMapSVGs.paradoxJunctionPast,
 	}),
 	totenreich: new MapItem(MapIds.totenreich, {
 		title: 'Totenreich',

@@ -130,7 +130,7 @@ export const MapGroupDefinitions: MapGroupDefinition[] = [
 		game: 'bo7',
 		mapLayers: [
 			{ id: MapIds.paradoxJunction, title: 'Paradox Junction' },
-			{ id: MapIds.paradoxJunctionNuked, title: 'Paradox Junction Nuked' },
+			{ id: MapIds.paradoxJunctionPast, title: 'Paradox Junction (Past)' },
 		],
 	},
 	{

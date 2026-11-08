@@ -15,7 +15,7 @@ const bo7Groups = MapGroupDefinitions.filter(group => group.game === 'bo7');
 const expectedBo7Layers: Record<string, string[]> = {
 	ashesOfTheDamned_Group: [MapIds.ashesOfTheDamned],
 	astraMalorum_Group: [MapIds.astraMalorum],
-	paradoxJunction_Group: [MapIds.paradoxJunction, 'paradoxJunctionNuked'],
+	paradoxJunction_Group: [MapIds.paradoxJunction, 'paradoxJunctionPast'],
 	totenreich_Group: [MapIds.totenreich, 'totenreichBoss'],
 	kowakujo_Group: [MapIds.kowakujo],
 	rexInfernus_Group: ['rexInfernus'],
@@ -24,7 +24,7 @@ const expectedBo7Layers: Record<string, string[]> = {
 describe('Black Ops 7 map wiring', () => {
 	it('exposes a map id for every Black Ops 7 map', () => {
 		expect(Object.values(MapIds)).toEqual(
-			expect.arrayContaining(['rexInfernus', 'paradoxJunctionNuked', 'totenreichBoss'])
+			expect.arrayContaining(['rexInfernus', 'paradoxJunctionPast', 'totenreichBoss'])
 		);
 	});
 

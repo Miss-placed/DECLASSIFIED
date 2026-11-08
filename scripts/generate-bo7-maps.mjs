@@ -26,8 +26,8 @@ if (!SVG_DIR || !OUT_FILE) {
 const MAPS = [
     ['ashesOfTheDamned', 'Ashes Of The Damned.svg'],
     ['astraMalorum', 'Astra Malorum.svg'],
-    ['paradoxJunction', 'Paradox Junction - Past.svg'],
-    ['paradoxJunctionNuked', 'Paradox Junction - Nuked.svg'],
+    ['paradoxJunction', 'Paradox Junction - Nuked.svg'],
+    ['paradoxJunctionPast', 'Paradox Junction - Past.svg'],
     ['totenreich', 'Totenreich.svg'],
     ['totenreichBoss', 'Totenreich - Boss.svg'],
     ['kowakujo', 'Kowakujō.svg'],
