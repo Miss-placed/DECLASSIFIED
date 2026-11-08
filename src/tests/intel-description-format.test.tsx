@@ -6,20 +6,14 @@ const descFor = (id: string) =>
 	blackOps7Intel.find(item => item.id === id)?.desc ?? '';
 
 describe('withIntelDescription', () => {
-	it('renders the location text before an italic in-game description', () => {
+	it('renders the in-game hint in italics before the location', () => {
 		const { container } = render(
-			<p>{withIntelDescription('In the farmhouse kitchen. *The Vandorn family gives thanks.*')}</p>
+			<p>{withIntelDescription('*Barrels of Fun!* In Eidskallen Landing, on some barrels.')}</p>
 		);
 
-		expect(container.textContent).toBe(
-			'In the farmhouse kitchen. The Vandorn family gives thanks.'
-		);
-		expect(container.querySelector('em')?.textContent).toBe(
-			'The Vandorn family gives thanks.'
-		);
-		expect(container.querySelector('p')?.firstChild?.textContent).toBe(
-			'In the farmhouse kitchen. '
-		);
+		expect(container.textContent).toBe('Barrels of Fun! In Eidskallen Landing, on some barrels.');
+		expect(container.querySelector('em')?.textContent).toBe('Barrels of Fun!');
+		expect(container.querySelector('p')?.firstChild?.nodeName).toBe('EM');
 	});
 
 	it('leaves descriptions without markup as plain text', () => {
@@ -38,22 +32,43 @@ describe('withIntelDescription', () => {
 });
 
 describe('Black Ops 7 intel descriptions', () => {
-	it('startsWith the location guide text for every item', () => {
+	it('startsWith the in-game hint for every item', () => {
 		const offenders = blackOps7Intel
-			.filter(item => !item.desc.trim() || item.desc.trim().startsWith('*'))
+			.filter(item => !/^\*[^*]+\*/.test(item.desc.trim()))
 			.map(item => item.id);
 
 		expect(offenders).toEqual([]);
 	});
 
-	it('keeps the in-game description in italics', () => {
+	it('keeps the hint text from the intel guides', () => {
 		expect(descFor('BO7S1AdAu1')).toBe(
-			'Main Quest. In Vandorn Farm, in the pan in the kitchen of the Farmhouse. *The Vandorn family gives thanks.*'
+			'*Progress through Main Quest* In Vandorn Farm, in the pan in the kitchen of the Farmhouse.'
 		);
-		expect(descFor('BO7S1TrAu1')).toContain('*Nothing is native in the Dark Aether.*');
-		expect(descFor('BO7S1PjAr4')).toContain('*Check, check... is this thing on?*');
-		expect(descFor('BO7S1KoAu1')).toContain(`*Takeo knows where his loyalty lies.*`);
-		expect(descFor('BO7S1RiAr3')).toContain(`*The definition is in the name.*`);
+		expect(descFor('BO7S1TrAu1')).toBe(
+			'*Barrels of Fun!* In Eidskallen Landing, on some barrels. Across from the ammo crate around the corner of Quick Revive.'
+		);
+		expect(descFor('BO7S1KoAu8')).toBe(
+			'*A bridge too far* On a post of the bridge in the Outer Ward near the ammo box and trap.'
+		);
+		expect(descFor('BO7S1RiAu3')).toBe(
+			'*Bone-picked* Play the Paradox Junction song on the piano in Her House.'
+		);
+		expect(descFor('BO7S1PjAr2')).toBe('*Build the Sundergat*');
+	});
+
+	it('does not carry the post-pickup wiki description', () => {
+		const wikiDescriptions = [
+			'The Vandorn family gives thanks.',
+			'Nothing is native in the Dark Aether.',
+			'Check, check... is this thing on?',
+			'Takeo knows where his loyalty lies.',
+			'The definition is in the name.',
+		];
+		const offenders = blackOps7Intel
+			.filter(item => wikiDescriptions.some(text => item.desc.includes(text)))
+			.map(item => item.id);
+
+		expect(offenders).toEqual([]);
 	});
 
 	it('has balanced markup in every description', () => {
