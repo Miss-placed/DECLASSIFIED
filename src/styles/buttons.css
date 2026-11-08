@@ -51,7 +51,9 @@
 	top: 0;
 	left: 0;
 	bottom: 0;
-	background-size: calc(contain - 5px);
+	/* `calc(contain - 5px)` was invalid CSS: `contain` is a keyword, not a
+	   length, so postcss-calc failed the production build. */
+	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center center;
 }

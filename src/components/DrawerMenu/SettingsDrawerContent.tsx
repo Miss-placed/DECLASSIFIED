@@ -23,6 +23,7 @@ const SettingsMenuBackground = styled.div`
         padding: 10px;
     `;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 enum ContributionType {
     Intel,
     Misc

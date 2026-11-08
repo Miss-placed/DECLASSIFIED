@@ -17,6 +17,7 @@ import { getStyles, MenuProps, StyledIntelFilterMenu } from './styles';
 import { DeclassifiedContext } from '../../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { Game } from '../../MapControls/types';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface FilterState {
 	searchText: string;
 	seasons: Season[];

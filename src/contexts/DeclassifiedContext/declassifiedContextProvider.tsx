@@ -58,8 +58,8 @@ export const DeclassifiedContext = createContext<DeclassifiedContextProps>(initi
 export const DeclassifiedContextProvider = ({ children }) => {
 	const { id: mapUrlId } = useParams();
 	const mapInstance = useMapEvents({});
-	const { isDebugMode, setSharedMapItemId, saveLayerCheckboxState } = useUserContext();
-	const [userPrefs, setUserPreferences] = useState<DeclassifiedUserPreferences | null>(null);
+	const { isDebugMode, saveLayerCheckboxState } = useUserContext();
+	const [, setUserPreferences] = useState<DeclassifiedUserPreferences | null>(null);
 
 	var initialMap: MapItem | null = MapDetails.reckoning;
 	var initialMapGroupItem: MapGroupItem | null = MapGroupings.tomb_Group;

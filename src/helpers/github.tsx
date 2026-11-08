@@ -102,12 +102,11 @@ export const getMiscMarkerById = (
 	if (markerId) {
 		let matchedMiscMarker: MiscMarker | undefined;
 		let foundMap: MapId | undefined;
-		Object.entries(AllMiscStores()).map(([key, miscMarkersForMap]) => {
+		Object.entries(AllMiscStores()).forEach(([key, miscMarkersForMap]) => {
 			let matchedMisc = miscMarkersForMap.find(item => item.id === markerId);
 			if (matchedMisc) {
 				matchedMiscMarker = matchedMisc;
 				foundMap = key as MapId;
-				return [foundMap, matchedMiscMarker];
 			}
 		});
 		if (foundMap && matchedMiscMarker) return [foundMap!, matchedMiscMarker!];
