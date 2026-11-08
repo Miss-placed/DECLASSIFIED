@@ -82,33 +82,58 @@ export const CustomIntelFilterCheckbox = ({ name, defaultChecked }) => {
 };
 
 const StyledCustomIntelFilterCheckbox = styled.div`
+	/* fill the grid cell so every filter button is the same width instead of
+	   shrinking to its own content */
+	width: 100%;
+
 	.container {
+		width: 100%;
 		background-color: var(--clr-white-d);
 		display: grid;
+		/* the label carries the longest text ("Artifacts"), so it gets the flexible
+		   column and the count sizes to its own content */
+		grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr) auto;
 		border-radius: 5px;
-		grid-template-columns: 40% 40% 20%;
 		justify-items: center;
 		align-items: center;
+	}
+	/* grid items default to min-width: auto, so the icon images (much wider than
+	   the cell) would blow the column out and squash the label */
+	.container > * {
+		min-width: 0;
 	}
 	label {
 		background-color: var(--clr-grey-d);
 		color: var(--clr-white-d);
-		padding: 0.2rem;
+		padding: 0.2rem 0.25rem;
+		/* the root font size is x-large, so the label needs its own scale to fit
+		   "Artifact(s)" in the label column without breaking mid-word */
+		font-size: 0.7rem;
 		width: 100%;
+		height: 100%;
+		line-height: 1.15;
+		/* last resort on very narrow screens: wrap instead of spilling under the icon */
+		overflow-wrap: anywhere;
+		hyphens: auto;
 		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 	img {
 		width: 100%;
+		height: 2.6rem;
+		object-fit: contain;
 		padding: 0.2rem;
 	}
 	.intel-count {
-		font-size: initial;
+		font-size: 0.7rem;
 		background-color: var(--clr-white);
 		text-align: center;
 		height: 100%;
 		display: flex;
 		align-items: center;
-		padding: 0.2rem;
+		padding: 0.2rem 0.35rem;
 		border-top-right-radius: var(--radius);
 		border-bottom-right-radius: var(--radius);
 	}
