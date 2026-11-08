@@ -17,7 +17,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `Tilling the Earth`,
-		desc: `Main Quest. In Vandorn Farm, in the pan in the kitchen of the Farmhouse. *The Vandorn family gives thanks.*`,
+		desc: `*Progress through Main Quest* In Vandorn Farm, in the pan in the kitchen of the Farmhouse.`,
 	},
 	{
 		id: `BO7S1AdAu2`,
@@ -27,7 +27,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `Meat the Vandorns`,
-		desc: `Main Quest. In the Farm Basement, on a shelf after doing the farm ritual. *Ma Vandorn prepares supper.*`,
+		desc: `*Progress through Main Quest* In the Farm Basement, on a shelf after doing the farm ritual.`,
 	},
 	{
 		id: `BO7S1AdAu3`,
@@ -37,7 +37,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `Ground Control`,
-		desc: `Main Quest. In Zarya Cosmodrome, in the control room after completing the Serum Lockdown in the main quest. *Yuri Zavoyski discovers a self-help guide.*`,
+		desc: `*Progress through Main Quest* In Zarya Cosmodrome, in the control room after completing the Serum Lockdown in the main quest.`,
 	},
 	{
 		id: `BO7S1AdAu4`,
@@ -47,7 +47,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `What Came After`,
-		desc: `Main Quest. In Zarya Cosmodrome, in the Flame Trench under the rocket after completing the Serum Lockdown. *Stranded in a strange world, Cosmonaut Egorov tries to survive.*`,
+		desc: `*Progress through Main Quest* In Zarya Cosmodrome, in the Flame Trench under the rocket after completing the Serum Lockdown.`,
 	},
 	{
 		id: `BO7S1AdAu5`,
@@ -57,7 +57,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `She Got Hers`,
-		desc: `Main Quest. In Exit 115, in the Diner's Kitchen. *Reba's got problems.*`,
+		desc: `*Progress through Main Quest* In Exit 115, in the Diner's Kitchen.`,
 	},
 	{
 		id: `BO7S1AdAu6`,
@@ -67,7 +67,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `He Got His`,
-		desc: `Main Quest. In Exit 115, in the Self Serve station on a shelf. *Earl's got problems, too.*`,
+		desc: `*Progress through Main Quest* In Exit 115, in the Self Serve station on a shelf.`,
 	},
 	{
 		id: `BO7S1AdAu7`,
@@ -77,7 +77,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `The Price You Pay`,
-		desc: `Tailor-Made. In Ashwood, on a shelf in the Tailor Shop. *Preacher Elijah Mercer casts stones, Josiah Whitlock throws them back.*`,
+		desc: `*Tailor-Made* In Ashwood, on a shelf in the Tailor Shop.`,
 	},
 	{
 		id: `BO7S1AdAu8`,
@@ -87,7 +87,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `Craftsmanship`,
-		desc: `Top shelf spirits. In Ashwood, in the Ruby Rabbit, on a desk right in front of you going up the zipline next to the garage. *The fires of Ashwood cannot be put out.*`,
+		desc: `*Top shelf spirits* In Ashwood, in the Ruby Rabbit, on a desk right in front of you going up the zipline next to the garage.`,
 	},
 	{
 		id: `BO7S1AdAu9`,
@@ -97,7 +97,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `Cold Blooded Thriller`,
-		desc: `Life preserver. In Blackwater Cabin, on a shelf in the little dock house. *The final cut of Dean Roth's masterpiece.*`,
+		desc: `*Life preserver* In Blackwater Cabin, on a shelf in the little dock house.`,
 	},
 	{
 		id: `BO7S1AdAu10`,
@@ -107,7 +107,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `The Fate of the Flock`,
-		desc: `Smithy. In Ashwood, in the Garage. *A story of betrayal.*`,
+		desc: `*Smithy* In Ashwood, in the Garage.`,
 	},
 	{
 		id: `BO7S1AdAu11`,
@@ -117,7 +117,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `Study Room Monologue Rehearsal`,
-		desc: `Main Quest. In Blackwater Cabin, near where one of the film reels is. *Evelyn Sharpe struggles to find her motivation.*`,
+		desc: `*Progress through Main Quest* In Blackwater Cabin, near where one of the film reels is.`,
 	},
 	{
 		id: `BO7S1AdAu12`,
@@ -127,7 +127,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `Confrontation in the Parlor - Camera B`,
-		desc: `Main Quest. In Blackwater Cabin, near where one of the film reels is. *The pursuit of ultimate terror begins.*`,
+		desc: `*Progress through Main Quest* In Blackwater Cabin, near where one of the film reels is.`,
 	},
 	{
 		id: `BO7S1AdAu13`,
@@ -137,7 +137,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `Scene 27 The Drowning`,
-		desc: `Main Quest. In Blackwater Cabin, near where one of the film reels is. *Filmmaking in its purest form.*`,
+		desc: `*Progress through Main Quest* In Blackwater Cabin, near where one of the film reels is.`,
 	},
 	{
 		id: `BO7S1AdAu14`,
@@ -147,7 +147,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `Director's Notes: Improv Test`,
-		desc: `Main Quest. In Blackwater Cabin, near where one of the film reels is. *The Blackwood Lake filming goes off script.*`,
+		desc: `*Progress through Main Quest* In Blackwater Cabin, near where one of the film reels is.`,
 	},
 
 	// Documents:
@@ -159,7 +159,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `Cut`,
-		desc: `Crickets. In Blackwater Lake, shoot the bullseye in the dartboard in the hunting shack while standing behind the miscolored board. *An escape plan is hatched by Evelyn Sharpe.*`,
+		desc: `*Crickets* In Blackwater Lake, shoot the bullseye in the dartboard in the hunting shack while standing behind the miscolored board.`,
 	},
 	{
 		id: `BO7S1AdDo2`,
@@ -169,7 +169,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `Signal Fires`,
-		desc: `Ascend, Descend. In Ashwood, climb the ascender directly facing the garage, then turn around to face the garage. Look down and you will see the document on the platform to the right. *No one listens, no one will be safe.*`,
+		desc: `*Ascend, Descend* In Ashwood, climb the ascender directly facing the garage, then turn around to face the garage. Look down and you will see the document on the platform to the right.`,
 	},
 	{
 		id: `BO7S1AdDo3`,
@@ -179,7 +179,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `Evidence`,
-		desc: `Oil change. In Exit 115, in the auto shop under some spray cans. *Deputy Tommy Briggs was putting the pieces together.*`,
+		desc: `*Oil change* In Exit 115, in the auto shop under some spray cans.`,
 	},
 	{
 		id: `BO7S1AdDo4`,
@@ -189,7 +189,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `Maintenance`,
-		desc: `Rocket, Paper, Scissors. In the Zarya Cosmodrome, shoot papers in the Control Room. *Engineer Kuznetsov is trying his best.*`,
+		desc: `*Rocket, Paper, Scissors* In the Zarya Cosmodrome, shoot papers in the Control Room.`,
 	},
 	{
 		id: `BO7S1AdDo5`,
@@ -199,7 +199,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `Playmates`,
-		desc: `Like a needle... In Vandorn Farm, interact with the haystacks until it drops. *Friends need dolls, too.*`,
+		desc: `*Like a needle...* In Vandorn Farm, interact with the haystacks until it drops.`,
 	},
 	{
 		id: `BO7S1AdDo6`,
@@ -209,7 +209,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `Good Game`,
-		desc: `Tanks a lot. In Janus Towers plaza, melee macchiato a tank. *The sisters that play together, stay together.*`,
+		desc: `*Tanks a lot* In Janus Towers plaza, melee macchiato a tank.`,
 	},
 
 	// Artifacts:
@@ -221,7 +221,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `T.E.D.D. Head`,
-		desc: `Main Quest. *It's T.E.D.D.!*`,
+		desc: `*Progress through Main Quest*`,
 	},
 	{
 		id: `BO7S1AdAr2`,
@@ -231,7 +231,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `Mirror of the Forgotten`,
-		desc: `Main Quest. *An enchanted mirror where your journey begins.*`,
+		desc: `*Progress through Main Quest*`,
 	},
 	{
 		id: `BO7S1AdAr3`,
@@ -241,7 +241,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `DG-2 Turret`,
-		desc: `Main Quest. *This turret is 100% Tessie approved.*`,
+		desc: `*Progress through Main Quest*`,
 	},
 	{
 		id: `BO7S1AdAr4`,
@@ -251,7 +251,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `Seal of Sorrows`,
-		desc: `Main Quest. *Three keys must be used to open this box.*`,
+		desc: `*Progress through Main Quest*`,
 	},
 	{
 		id: `BO7S1AdAr5`,
@@ -261,7 +261,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `Necrofluid Gauntlet`,
-		desc: `Get the Free Wonder Weapon. *This Wonder Weapon is the only helping hand you need.*`,
+		desc: `*Get the Free Wonder Weapon*`,
 	},
 	{
 		id: `BO7S1AdAr6`,
@@ -271,7 +271,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.ashesOfTheDamned,
 		title: `Hellion Horn`,
-		desc: `Main Quest. *A whistle gifted by the spirit of Evelyn Sharpe.*`,
+		desc: `*Progress through Main Quest*`,
 	},
 
 	/////////////////////Astra Malorum/////////////////////////
@@ -284,7 +284,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.astraMalorum,
 		title: `Fools`,
-		desc: `Please take your seat. In The Luminarium, on a metal shelf near the trap. *Be careful what you worship for.*`,
+		desc: `*Please take your seat* In The Luminarium, on a metal shelf near the trap.`,
 	},
 	{
 		id: `BO7S1AmAu2`,
@@ -294,7 +294,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.astraMalorum,
 		title: `Planets`,
-		desc: `Organ donor. In the Observatory Dome, on a shelf in the back corner near a filing cabinet. *Lost civilizations are found once again.*`,
+		desc: `*Organ donor* In the Observatory Dome, on a shelf in the back corner near a filing cabinet.`,
 	},
 	{
 		id: `BO7S1AmAu3`,
@@ -304,7 +304,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.astraMalorum,
 		title: `Robotics`,
-		desc: `Extraorbital. In Machina Astralis, on a shelf on the second floor. *Every prison needs a guard.*`,
+		desc: `*Extraorbital* In Machina Astralis, on a shelf on the second floor.`,
 	},
 	{
 		id: `BO7S1AmAu4`,
@@ -314,7 +314,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.astraMalorum,
 		title: `Dual Functions`,
-		desc: `Unsafe arbor. In The Veilwalk, in the little gazebo thing near the ammo box. *O.S.C.A.R. considers an unforeseen obstacle.*`,
+		desc: `*Unsafe arbor* In The Veilwalk, in the little gazebo thing near the ammo box.`,
 	},
 
 	// Documents:
@@ -326,7 +326,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.astraMalorum,
 		title: `Immense Power`,
-		desc: `Look out below! In The Luminarium, shoot the planets in order, starting with Mercury. If done right, Pluto will drop and turn into this document. *A fragment of an ancient scroll.*`,
+		desc: `*Look out below!* In The Luminarium, shoot the planets in order, starting with Mercury. If done right, Pluto will drop and turn into this document.`,
 	},
 	{
 		id: `BO7S1AmDo2`,
@@ -336,7 +336,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.astraMalorum,
 		title: `Eventful`,
-		desc: `Archive stacks. In the Archive of Orbis, shoot a paper stack. *Dr. Thurston struggles with the limits of human perception.*`,
+		desc: `*Archive stacks* In the Archive of Orbis, shoot a paper stack.`,
 	},
 	{
 		id: `BO7S1AmDo3`,
@@ -346,7 +346,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.astraMalorum,
 		title: `Their Town`,
-		desc: `Poser planet. In the Abyssal Rim, look at the edge of the map in between Wisp Tea and the ammo box. Look down and you should see the document. Fall off the map and spam interact and you should pick it up. *Ruminations on a dream of a mysterious place.*`,
+		desc: `*Poser planet* In the Abyssal Rim, look at the edge of the map in between Wisp Tea and the ammo box. Look down and you should see the document. Fall off the map and spam interact and you should pick it up.`,
 	},
 
 	// Artifacts:
@@ -358,7 +358,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.astraMalorum,
 		title: `Damaged Drone`,
-		desc: `Progress through the main quest. Shoot down one of O.S.C.A.R.'s drones and pick it up. *O.S.C.A.R.'s first line of defense.*`,
+		desc: `*Progress through Main Quest* Shoot down one of O.S.C.A.R.'s drones and pick it up.`,
 	},
 	{
 		id: `BO7S1AmAr2`,
@@ -368,7 +368,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.astraMalorum,
 		title: `LGM-1`,
-		desc: `Progress through the main quest. Acquire the Wonder Weapon. *A Wonder Weapon, that most definitely does not come in peace.*`,
+		desc: `*Progress through Main Quest* Acquire the Wonder Weapon.`,
 	},
 	{
 		id: `BO7S1AmAr3`,
@@ -378,7 +378,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.astraMalorum,
 		title: `Perfusion Machine`,
-		desc: `Progress through the main quest. *Have brain, will travel.*`,
+		desc: `*Progress through Main Quest*`,
 	},
 	{
 		id: `BO7S1AmAr4`,
@@ -388,7 +388,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.astraMalorum,
 		title: `Ascendant Eye`,
-		desc: `Progress through the main quest. *This artifact must be lured then charmed.*`,
+		desc: `*Progress through Main Quest*`,
 	},
 
 	/////////////////////Paradox Junction/////////////////////////
@@ -401,7 +401,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.paradoxJunction,
 		title: `The Search Begins`,
-		desc: `Top bunk taken. In the caved in roof over the beds in Yellow House Upstairs (destroyed/future). *A message in a bottle.*`,
+		desc: `*Top bunk taken* In the caved in roof over the beds in Yellow House Upstairs (destroyed/future).`,
 	},
 	{
 		id: `BO7S1PjAu2`,
@@ -411,7 +411,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.paradoxJunction,
 		title: `Run Aground`,
-		desc: `Campers delight. On a dresser in Green House upstairs (destroyed/future). *Depths of depravity.*`,
+		desc: `*Campers delight* On a dresser in Green House upstairs (destroyed/future).`,
 	},
 	{
 		id: `BO7S1PjAu3`,
@@ -421,7 +421,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.paradoxJunction,
 		title: `Live Air`,
-		desc: `Pizza Party! On the oven in Yellow House Backyard (past). *Recent events.*`,
+		desc: `*Pizza Party!* On the oven in Yellow House Backyard (past).`,
 	},
 	{
 		id: `BO7S1PjAu4`,
@@ -431,7 +431,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.paradoxJunction,
 		title: `Dead Air`,
-		desc: `Viewing deck. On the deck of the Green House (destroyed/future). *Second-hand nostalgia.*`,
+		desc: `*Viewing deck* On the deck of the Green House (destroyed/future).`,
 	},
 	{
 		id: `BO7S1PjAu5`,
@@ -441,7 +441,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.paradoxJunction,
 		title: `Head Cannon`,
-		desc: `Supply drop. On the hood of a truck in Trinity Ave. (past). *Time for questions.*`,
+		desc: `*Supply drop* On the hood of a truck in Trinity Ave. (past).`,
 	},
 	{
 		id: `BO7S1PjAu6`,
@@ -451,7 +451,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.paradoxJunction,
 		title: `Makin' It Right`,
-		desc: `Gold star driving. On the hood of a car in Trinity Ave. (destroyed/future). *He's got plans.*`,
+		desc: `*Gold star driving* On the hood of a car in Trinity Ave. (destroyed/future).`,
 	},
 	{
 		id: `BO7S1PjAu7`,
@@ -461,7 +461,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.paradoxJunction,
 		title: `Before Times`,
-		desc: `Check the shed. Interact with the drawings on the side of the shed in Yellow House Backyard (destroyed/future). *The beginning.*`,
+		desc: `*Check the shed* Interact with the drawings on the side of the shed in Yellow House Backyard (destroyed/future).`,
 	},
 	{
 		id: `BO7S1PjAu8`,
@@ -471,7 +471,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.paradoxJunction,
 		title: `Storm Coming`,
-		desc: `Plant life. Interact with the drawing of a guy under a storm cloud in the garden of Green House Backyard after interacting with the "Before Times" drawing (past). *The hook.*`,
+		desc: `*Plant life* Interact with the drawing of a guy under a storm cloud in the garden of Green House Backyard after interacting with the "Before Times" drawing (past).`,
 	},
 	{
 		id: `BO7S1PjAu9`,
@@ -481,7 +481,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.paradoxJunction,
 		title: `Trickery`,
-		desc: `Attempted Delivery. In Trinity Ave. there's a drawing on a crate (destroyed/future). Same as before, you need the other drawings first. *The twist.*`,
+		desc: `*Attempted Delivery* In Trinity Ave. there's a drawing on a crate (destroyed/future). Same as before, you need the other drawings first.`,
 	},
 	{
 		id: `BO7S1PjAu10`,
@@ -491,7 +491,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.paradoxJunction,
 		title: `Aftermath`,
-		desc: `Pop. 4. On the back of the population counter in the Cul-De-Sac (past). Same as before, you need the other drawings first. *He's never going to stop.*`,
+		desc: `*Pop. 4* On the back of the population counter in the Cul-De-Sac (past). Same as before, you need the other drawings first.`,
 	},
 
 	// Documents:
@@ -503,7 +503,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.paradoxJunction,
 		title: `Paper Hearts`,
-		desc: `Stop Stairing. On a table near the stairs in Green House (destroyed/future). *There's a monster in the sky.*`,
+		desc: `*Stop Stairing* On a table near the stairs in Green House (destroyed/future).`,
 	},
 	{
 		id: `BO7S1PjDo2`,
@@ -513,7 +513,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.paradoxJunction,
 		title: `Helpful Information`,
-		desc: `Can we get a booth? On a table inside Yellow House (past). *Warning: not actually useful.*`,
+		desc: `*Can we get a booth?* On a table inside Yellow House (past).`,
 	},
 	{
 		id: `BO7S1PjDo3`,
@@ -523,7 +523,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.paradoxJunction,
 		title: `Wanted Man`,
-		desc: `Picketer. On a fence in Trinity Ave. (past). *An unclaimed bounty.*`,
+		desc: `*Picketer* On a fence in Trinity Ave. (past).`,
 	},
 
 	// Artifacts:
@@ -535,7 +535,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.paradoxJunction,
 		title: `Sidewalk Chalk`,
-		desc: `Main quest. *For drawing disturbing images in bright big colors.*`,
+		desc: `*Progress through Main Quest*`,
 	},
 	{
 		id: `BO7S1PjAr2`,
@@ -545,7 +545,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.paradoxJunction,
 		title: `Sundergat`,
-		desc: `Build the Sundergat. *The perfect weapon just got perfect...er.*`,
+		desc: `*Build the Sundergat*`,
 	},
 	{
 		id: `BO7S1PjAr3`,
@@ -555,7 +555,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.paradoxJunction,
 		title: `Music Box`,
-		desc: `Progress through the main quest. *Not the same, but something like it.*`,
+		desc: `*Progress through Main Quest*`,
 	},
 	{
 		id: `BO7S1PjAr4`,
@@ -565,7 +565,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.paradoxJunction,
 		title: `Headset`,
-		desc: `Progress through the main quest. *Check, check... is this thing on?*`,
+		desc: `*Progress through Main Quest*`,
 	},
 	{
 		id: `BO7S1PjAr5`,
@@ -575,7 +575,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.paradoxJunction,
 		title: `Goggles`,
-		desc: `Progress through the main quest. *Always wear proper eye protection!*`,
+		desc: `*Progress through Main Quest*`,
 	},
 
 	/////////////////////Totenreich/////////////////////////
@@ -588,7 +588,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Building Blocks`,
-		desc: `Barrels of Fun! In Eidskallen Landing, on some barrels. Across from the ammo crate around the corner of Quick Revive. *Nothing is native in the Dark Aether.*`,
+		desc: `*Barrels of Fun!* In Eidskallen Landing, on some barrels. Across from the ammo crate around the corner of Quick Revive.`,
 	},
 	{
 		id: `BO7S1TrAu2`,
@@ -598,7 +598,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Limitations`,
-		desc: `Cage Match. Next to the cages in the Group 935 Genetic Lab. *The Warden's hunger for power remains unsated.*`,
+		desc: `*Cage Match* Next to the cages in the Group 935 Genetic Lab.`,
 	},
 	{
 		id: `BO7S1TrAu3`,
@@ -608,7 +608,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `The Chair Incident`,
-		desc: `Holey Buckets. Next to the big silo in Eidskallen Landing. *Conflict resolution at its best.*`,
+		desc: `*Holey Buckets* Next to the big silo in Eidskallen Landing.`,
 	},
 	{
 		id: `BO7S1TrAu4`,
@@ -618,7 +618,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `The Serpent's Head`,
-		desc: `All ashore. In Eidskallen square, on a boat behind the building with the arsenal machine. *Astrid Loven won't give them an inch.*`,
+		desc: `*All ashore* In Eidskallen square, on a boat behind the building with the arsenal machine.`,
 	},
 	{
 		id: `BO7S1TrAu5`,
@@ -628,7 +628,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Talk`,
-		desc: `Control Issues. On a console in the War Factory near the arsenal machine. *As always, Richtofen must have the last word.*`,
+		desc: `*Control Issues* On a console in the War Factory near the arsenal machine.`,
 	},
 	{
 		id: `BO7S1TrAu6`,
@@ -638,7 +638,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Problems`,
-		desc: `Progress through Side Quest. *A Group 935 Officer comes to grips with their abandonment issues.*`,
+		desc: `*Progress through Side Quest*`,
 	},
 	{
 		id: `BO7S1TrAu7`,
@@ -648,7 +648,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Solutions`,
-		desc: `Progress through Side Quest. *The walls are closing in.*`,
+		desc: `*Progress through Side Quest*`,
 	},
 	{
 		id: `BO7S1TrAu8`,
@@ -658,7 +658,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Counting the Cost`,
-		desc: `Progress through Side Quest. *A deal is struck.*`,
+		desc: `*Progress through Side Quest*`,
 	},
 	{
 		id: `BO7S1TrAu9`,
@@ -668,7 +668,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `He Left Us`,
-		desc: `Mixed Signals. In the Core Foundry, on a table in the console room next to the area with Double Tap. *A price paid.*`,
+		desc: `*Mixed Signals* In the Core Foundry, on a table in the console room next to the area with Double Tap.`,
 	},
 
 	// Documents:
@@ -680,7 +680,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Little Fishes`,
-		desc: `Craft services. Under a crate on a cart nearby the power line you need to repair in Skallen Market. *Dieter Rauch is playing the long game.*`,
+		desc: `*Craft services* Under a crate on a cart nearby the power line you need to repair in Skallen Market.`,
 	},
 	{
 		id: `BO7S1TrDo2`,
@@ -690,7 +690,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Saboteur`,
-		desc: `Refueling. In the Dry Dock, on a barrel next to the boat. *Elias Nordvik is planning a heist.*`,
+		desc: `*Refueling* In the Dry Dock, on a barrel next to the boat.`,
 	},
 	{
 		id: `BO7S1TrDo3`,
@@ -700,7 +700,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Rezoning`,
-		desc: `Fresh Buns. In Eidskallen Square, on a box next to a bunch of bread at the edge of the map. It's near an ammo crate. *A land grab, courtesy of Group 935.*`,
+		desc: `*Fresh Buns* In Eidskallen Square, on a box next to a bunch of bread at the edge of the map. It's near an ammo crate.`,
 	},
 	{
 		id: `BO7S1TrDo4`,
@@ -710,7 +710,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Secret and Safe`,
-		desc: `Another Round? On the side of a building in Eidskallen Square. The building is the one closest to the Arsenal machine. *Astrid won't give them an inch.*`,
+		desc: `*Another Round?* On the side of a building in Eidskallen Square. The building is the one closest to the Arsenal machine.`,
 	},
 	{
 		id: `BO7S1TrDo5`,
@@ -720,7 +720,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Beneath the Boards`,
-		desc: `Over packed. On the fishery Island, locate the big red building. Just outside one of the entrances, on a ledge you need to jump to. *This is what you get when you collaborate with Group 935.*`,
+		desc: `*Over packed* On the fishery Island, locate the big red building. Just outside one of the entrances, on a ledge you need to jump to.`,
 	},
 	{
 		id: `BO7S1TrDo6`,
@@ -730,7 +730,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Priorities`,
-		desc: `Can I vent? In the War Factory, throw a grenade in the open vent above the stairs. *A popular opinion.*`,
+		desc: `*Can I vent?* In the War Factory, throw a grenade in the open vent above the stairs.`,
 	},
 	{
 		id: `BO7S1TrDo7`,
@@ -740,7 +740,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Radio Operator`,
-		desc: `Don't stair. In the lighthouse on a crate during the wonder weapon quest. *Tyr is in good hands.*`,
+		desc: `*Don't stair* In the lighthouse on a crate during the wonder weapon quest.`,
 	},
 	{
 		id: `BO7S1TrDo8`,
@@ -750,7 +750,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Tyr's Bell`,
-		desc: `Lightkeeper. At the top of the lighthouse during the wonder weapon quest. *Support for the troops has now been streamlined.*`,
+		desc: `*Lightkeeper* At the top of the lighthouse during the wonder weapon quest.`,
 	},
 	{
 		id: `BO7S1TrDo9`,
@@ -760,7 +760,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Dossier`,
-		desc: `Progress through Side Quest. *A new assignment.*`,
+		desc: `*Progress through Side Quest*`,
 	},
 	{
 		id: `BO7S1TrDo10`,
@@ -770,7 +770,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Report`,
-		desc: `Progress through Side Quest. *Troubling reports from New Mexico.*`,
+		desc: `*Progress through Side Quest*`,
 	},
 	{
 		id: `BO7S1TrDo11`,
@@ -780,7 +780,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Telegram`,
-		desc: `Progress through Side Quest. *Some truly terrible news.*`,
+		desc: `*Progress through Side Quest*`,
 	},
 
 	// Artifacts:
@@ -792,7 +792,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Fishy Fish Bot`,
-		desc: `Progress through Side Quest. *Nightmare fuel? Yes. Effective? Also, yes.*`,
+		desc: `*Progress through Side Quest*`,
 	},
 	{
 		id: `BO7S1TrAr2`,
@@ -802,7 +802,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Jotunn Star`,
-		desc: `Progress through Main Quest. *You are worthy!*`,
+		desc: `*Progress through Main Quest*`,
 	},
 	{
 		id: `BO7S1TrAr3`,
@@ -812,7 +812,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Ritterkreuz`,
-		desc: `Progress through Side Quest. *Nothing but an empty trinket.*`,
+		desc: `*Progress through Side Quest*`,
 	},
 	{
 		id: `BO7S1TrAr4`,
@@ -822,7 +822,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Anatomy Chart`,
-		desc: `Meat Locker. In the Group 935 Genetic Lab, on a wall near the desk where you get the necrospike. *You like skeletal systems? It's got endo and exo.*`,
+		desc: `*Meat Locker* In the Group 935 Genetic Lab, on a wall near the desk where you get the necrospike.`,
 	},
 	{
 		id: `BO7S1TrAr5`,
@@ -832,7 +832,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.totenreich,
 		title: `Blueprint`,
-		desc: `We are all his slaves. On a wall in the room above the VS Recon wallbuy in the War Factory. *Fun fact: this blueprint is not to scale.*`,
+		desc: `*We are all his slaves* On a wall in the room above the VS Recon wallbuy in the War Factory.`,
 	},
 
 	/////////////////////Kowakujo/////////////////////////
@@ -845,7 +845,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.kowakujo,
 		title: `Takeo's Resolve`,
-		desc: `Progress through Main Quest. *Takeo knows where his loyalty lies.*`,
+		desc: `*Progress through Main Quest*`,
 	},
 	{
 		id: `BO7S1KoAu2`,
@@ -855,7 +855,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.kowakujo,
 		title: `Takeo's Devotion`,
-		desc: `Progress through Main Quest.`,
+		desc: `*Progress through Main Quest*`,
 	},
 	{
 		id: `BO7S1KoAu3`,
@@ -865,7 +865,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.kowakujo,
 		title: `Takeshi's Dread`,
-		desc: `Progress through Main Quest. *What awaits in Korea, is certain death.*`,
+		desc: `*Progress through Main Quest*`,
 	},
 	{
 		id: `BO7S1KoAu4`,
@@ -875,7 +875,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.kowakujo,
 		title: `Takeshi's Perception`,
-		desc: `Progress through Main Quest. *Takeshi recognizes his father's vision.*`,
+		desc: `*Progress through Main Quest*`,
 	},
 	{
 		id: `BO7S1KoAu5`,
@@ -885,7 +885,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.kowakujo,
 		title: `Mitsuhime's Trepidation`,
-		desc: `Progress through Main Quest. *Mitsuhime fears all will be lost.*`,
+		desc: `*Progress through Main Quest*`,
 	},
 	{
 		id: `BO7S1KoAu6`,
@@ -895,7 +895,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.kowakujo,
 		title: `Mitsuhime's Reverence`,
-		desc: `Progress through Main Quest.`,
+		desc: `*Progress through Main Quest*`,
 	},
 	{
 		id: `BO7S1KoAu7`,
@@ -905,7 +905,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.kowakujo,
 		title: `Katanas Out`,
-		desc: `Progress through Side Quest. *This story ends with a twist.*`,
+		desc: `*Progress through Side Quest*`,
 	},
 	{
 		id: `BO7S1KoAu8`,
@@ -915,7 +915,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.kowakujo,
 		title: `Two Brothers`,
-		desc: `A bridge too far. On a post of the bridge in the Outer Ward near the ammo box and trap. *There's no such thing as a free sword.*`,
+		desc: `*A bridge too far* On a post of the bridge in the Outer Ward near the ammo box and trap.`,
 	},
 	{
 		id: `BO7S1KoAu9`,
@@ -925,7 +925,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.kowakujo,
 		title: `Paydirt`,
-		desc: `Between a Rock and a hot place. In the Flower Garden, behind the big rock between the exfil booth and the Wisp Tea machine. *The Warden plays a real long game.*`,
+		desc: `*Between a Rock and a hot place* In the Flower Garden, behind the big rock between the exfil booth and the Wisp Tea machine.`,
 	},
 	{
 		id: `BO7S1KoAu10`,
@@ -935,7 +935,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.kowakujo,
 		title: `Subverting Control`,
-		desc: `Training montage. In the Training area, on a box in the corner. *Dravakar gives a math lesson.*`,
+		desc: `*Training montage* In the Training area, on a box in the corner.`,
 	},
 	{
 		id: `BO7S1KoAu11`,
@@ -945,7 +945,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.kowakujo,
 		title: `Extra Crispy`,
-		desc: `Pie in the sky. In the Collapsed study, behind the armor buy. Interact with the pizza. *Don't forget the cheese.*`,
+		desc: `*Pie in the sky* In the Collapsed study, behind the armor buy. Interact with the pizza.`,
 	},
 	{
 		id: `BO7S1KoAu12`,
@@ -955,7 +955,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.kowakujo,
 		title: `What About The Cat`,
-		desc: `Ready to scroll. In the Storage Rooms, on a table next to a lantern. Requires getting Extra Crispy first. *Once again, Strauss suffers for Peck's poor decisions.*`,
+		desc: `*Ready to scroll* In the Storage Rooms, on a table next to a lantern. Requires getting Extra Crispy first.`,
 	},
 
 	// Documents:
@@ -967,7 +967,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.kowakujo,
 		title: `PSSPSSPSS`,
-		desc: `Barrel of laughs. In the Kitchens, near Double Tap, interact with a barrel and it will drop. Random barrel each time. *That kitty's dynamite!*`,
+		desc: `*Barrel of laughs* In the Kitchens, near Double Tap, interact with a barrel and it will drop. Random barrel each time.`,
 	},
 	{
 		id: `BO7S1KoDo2`,
@@ -977,7 +977,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.kowakujo,
 		title: `Hair Rising`,
-		desc: `Raising the roof. In the Shogun's Sanctum/Tenshu Rooftops, melee the scrolls on the shelf. *Good for her.*`,
+		desc: `*Raising the roof* In the Shogun's Sanctum/Tenshu Rooftops, melee the scrolls on the shelf.`,
 	},
 
 	// Artifacts:
@@ -989,7 +989,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.kowakujo,
 		title: `Ninja Kite`,
-		desc: `Progress through Main Quest. Glide for the first time. *Quick, quiet, stylish: the only way to travel.*`,
+		desc: `*Progress through Main Quest* Glide for the first time.`,
 	},
 	{
 		id: `BO7S1KoAr2`,
@@ -999,7 +999,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.kowakujo,
 		title: `Maneki-Neko`,
-		desc: `Progress through Main Quest. *Good luck, cat!*`,
+		desc: `*Progress through Main Quest*`,
 	},
 	{
 		id: `BO7S1KoAr3`,
@@ -1009,7 +1009,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.kowakujo,
 		title: `Nekomancer`,
-		desc: `Progress through Main Quest. *Full of hiss and vinegar!*`,
+		desc: `*Progress through Main Quest*`,
 	},
 	{
 		id: `BO7S1KoAr4`,
@@ -1019,7 +1019,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.kowakujo,
 		title: `Kitsune Mask`,
-		desc: `Progress through Main Quest. *Feeling foxy?*`,
+		desc: `*Progress through Main Quest*`,
 	},
 	{
 		id: `BO7S1KoAr5`,
@@ -1029,7 +1029,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.kowakujo,
 		title: `Lantern Clock`,
-		desc: `Progress through Main Quest.`,
+		desc: `*Progress through Main Quest*`,
 	},
 	{
 		id: `BO7S1KoAr6`,
@@ -1039,7 +1039,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.kowakujo,
 		title: `Path of Sorrows`,
-		desc: `Progress through Main Quest.`,
+		desc: `*Progress through Main Quest*`,
 	},
 
 	/////////////////////Rex Infernus/////////////////////////
@@ -1052,7 +1052,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.rexInfernus,
 		title: `The Long Game`,
-		desc: `Warped. In Nyxara sanctuary, near the arsenal machine, against the wall. *The path is set.*`,
+		desc: `*Warped* In Nyxara sanctuary, near the arsenal machine, against the wall.`,
 	},
 	{
 		id: `BO7S1RiAu2`,
@@ -1062,7 +1062,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.rexInfernus,
 		title: `Pecking Order`,
-		desc: `A looming sense of dread. In Veytharion Sanctuary, on a rock near the entrance by the armor buy. *Of gods, demons, and men.*`,
+		desc: `*A looming sense of dread* In Veytharion Sanctuary, on a rock near the entrance by the armor buy.`,
 	},
 	{
 		id: `BO7S1RiAu3`,
@@ -1072,7 +1072,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.rexInfernus,
 		title: `A Game of Cat and Strauss`,
-		desc: `Bone-picked. Play the Paradox Junction song on the piano in Her House. *Strauss gets a little lost, a little help, and a little petty revenge.*`,
+		desc: `*Bone-picked* Play the Paradox Junction song on the piano in Her House.`,
 	},
 	{
 		id: `BO7S1RiAu4`,
@@ -1082,7 +1082,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.rexInfernus,
 		title: `The Mark`,
-		desc: `Close-knit. In Caltheris Main Chamber, on the ground near the armor buy. *Hook, line, and sinker.*`,
+		desc: `*Close-knit* In Caltheris Main Chamber, on the ground near the armor buy.`,
 	},
 	{
 		id: `BO7S1RiAu5`,
@@ -1092,7 +1092,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.rexInfernus,
 		title: `Spa Day`,
-		desc: `Forgery. In Dravakar Main Chamber, next to the door buy above the workbench. *A promise fulfilled!*`,
+		desc: `*Forgery* In Dravakar Main Chamber, next to the door buy above the workbench.`,
 	},
 
 	// Documents:
@@ -1104,7 +1104,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.rexInfernus,
 		title: `The First to Fall`,
-		desc: `Birds-islet view. In Spira Insula near Jug. It's on a rock pillar, use the Void Claw to grapple to a floating rock and pick it up as you fall. *The Loom was first.*`,
+		desc: `*Birds-islet view* In Spira Insula near Jug. It's on a rock pillar, use the Void Claw to grapple to a floating rock and pick it up as you fall.`,
 	},
 	{
 		id: `BO7S1RiDo2`,
@@ -1114,7 +1114,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.rexInfernus,
 		title: `The Others That Followed`,
-		desc: `Web of lies. In Aranea Insula, burn some of the loose webs on the ground on the big rock across from Widow's Wine. *Then the Needle, Forge and Warp.*`,
+		desc: `*Web of lies* In Aranea Insula, burn some of the loose webs on the ground on the big rock across from Widow's Wine.`,
 	},
 	{
 		id: `BO7S1RiDo3`,
@@ -1124,7 +1124,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.rexInfernus,
 		title: `The Inevitable End`,
-		desc: `Void Clause. In Dravakar's main chamber, on the ledge above the grapple spawn, you need to grapple up to it. *Only they will remain.*`,
+		desc: `*Void Clause* In Dravakar's main chamber, on the ledge above the grapple spawn, you need to grapple up to it.`,
 	},
 	{
 		id: `BO7S1RiDo4`,
@@ -1134,7 +1134,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.rexInfernus,
 		title: `Longterm Goals`,
-		desc: `Bone to pick. Dug up from a bone pile on the map. Appears to be random. *The Twins' prediction of the future! (Fingers crossed)*`,
+		desc: `*Bone to pick* Dug up from a bone pile on the map. Appears to be random.`,
 	},
 	{
 		id: `BO7S1RiDo5`,
@@ -1144,7 +1144,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.rexInfernus,
 		title: `Blurprint`,
-		desc: `House keys. Play the Paradox Junction song on the piano in Her House. *A drawing of a mysterious machine. It couldn't possibly work... Could it?*`,
+		desc: `*House keys* Play the Paradox Junction song on the piano in Her House.`,
 	},
 	{
 		id: `BO7S1RiDo6`,
@@ -1154,7 +1154,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.rexInfernus,
 		title: `Squish`,
-		desc: `Bed Bed Bed Bed Bed. Jump on the bed in Her House. *A nasty trick - in more ways than one.*`,
+		desc: `*Bed Bed Bed Bed Bed* Jump on the bed in Her House.`,
 	},
 
 	// Artifacts:
@@ -1166,7 +1166,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.rexInfernus,
 		title: `World Seed`,
-		desc: `Progress through Main Quest. *That is one persnickety seed.*`,
+		desc: `*Progress through Main Quest*`,
 	},
 	{
 		id: `BO7S1RiAr2`,
@@ -1176,7 +1176,7 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.rexInfernus,
 		title: `Void Claw`,
-		desc: `Progress through Main Quest. *For those hard to reach places!*`,
+		desc: `*Progress through Main Quest*`,
 	},
 	{
 		id: `BO7S1RiAr3`,
@@ -1186,6 +1186,6 @@ export const blackOps7Intel: IIntelItem[] = [
 		loc: DefaultPOIData.nullLoc,
 		map: MapIds.rexInfernus,
 		title: `Warden's Blight`,
-		desc: `Progress through Main Quest. *The definition is in the name.*`,
+		desc: `*Progress through Main Quest*`,
 	},
 ];
