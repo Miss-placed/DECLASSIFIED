@@ -5,6 +5,7 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { useUserContext } from '../../contexts/UserContext/userContextProvider';
+import { getAreaLabel } from '../../helpers/mapAreas';
 import { Game, MapGroupings, MapGroupItem } from '../MapControls/types';
 
 const StyledHeader = styled.header`
@@ -36,6 +37,16 @@ const StyledHeader = styled.header`
 		box-shadow: var(--shadow);
 		/* text-transform: uppercase; */
 		font-weight: 900;
+
+		.area-count {
+			font-size: 0.55rem;
+			font-weight: 400;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			background: rgba(255, 255, 255, 0.16);
+			border-radius: 999px;
+			padding: 2px 8px;
+		}
 	}
 `;
 
@@ -55,6 +66,20 @@ const MapMenu = styled(Menu)`
 		border-radius: 50%;
 		display: inline-block;
 		margin-left: 10px;
+	}
+	// areas of a map, nested under the map they belong to
+	.map-area-item {
+		font-size: 0.8rem;
+		padding-left: 2.5rem !important;
+		opacity: 0.9;
+		&::before {
+			content: '';
+			position: absolute;
+			left: 1.25rem;
+			height: 1px;
+			width: 0.7rem;
+			background-color: var(--clr-grey-l);
+		}
 	}
 	.MuiPaper-root {
 		width: 375px;
@@ -92,7 +117,7 @@ const GameTitle = styled(Chip)`
 const Header = () => {
 	const navigate = useNavigate();
 	const { isMobile } = useUserContext();
-	const { currentMapGroup } = useContext(DeclassifiedContext);
+	const { currentMap, currentMapGroup } = useContext(DeclassifiedContext);
 	const { setCurrentMapWithValidation: setCurrentMap } =
 		useContext(DeclassifiedContext);
 	const [menuAnchorElement, setMenuAnchorElement] =
@@ -158,12 +183,23 @@ const Header = () => {
 		</GameSeparator>,
 		buildMapItems(coldWarMaps),
 	];
+
+	const areaCount =
+		currentMapGroup &&
+		currentMapGroup.mapLayersAreAreas &&
+		currentMapGroup.mapLayers.length > 1 ? (
+			<span className="area-count">
+				{currentMapGroup.mapLayers.length} areas
+			</span>
+		) : null;
+
 	return (
 		<>
 			{isMobile ? (
 				<StyledHeader>
 					<Button onClick={toggleHeader(true)}>
 						{currentMapGroup!.mapName}
+						{areaCount}
 						<KeyboardArrowDownIcon />
 					</Button>
 					<MapDrawer
@@ -184,6 +220,7 @@ const Header = () => {
 						onClick={handleMenuClick}
 					>
 						{currentMapGroup!.mapName}
+						{areaCount}
 						<KeyboardArrowDownIcon />
 					</Button>
 					<MapMenu
@@ -205,25 +242,56 @@ const Header = () => {
 	);
 
 	function buildMapItems(mapGroup: [string, MapGroupItem][]) {
+		if (!mapGroup) return null;
 
-		return mapGroup
-			? mapGroup.map(([key, mapGroupItem]) => {
+		// MUI menus only accept MenuItems / arrays, so the map row and its area
+		// rows are flattened into a single array instead of a Fragment.
+		return mapGroup.flatMap(([key, mapGroupItem]) => {
+			const isCurrentGroup = currentMapGroup!.mapName === mapGroupItem.mapName;
+
+			const mapItem = (
+				<MenuItem
+					key={key}
+					onClick={() => {
+						setCurrentMap(mapGroupItem.mapLayers[0]);
+						navigate(`/${mapGroupItem.mapLayers[0].id!}`, { replace: true });
+					}}
+				>
+					{mapGroupItem.mapName}
+					<span className={isCurrentGroup ? 'current-map-indicator' : ''}></span>
+				</MenuItem>
+			);
+
+			if (!mapGroupItem.mapLayersAreAreas || mapGroupItem.mapLayers.length < 2) {
+				return [mapItem];
+			}
+
+			const areaItems = mapGroupItem.mapLayers.map(mapLayer => {
+				const areaLabel = getAreaLabel(mapLayer.title, mapGroupItem.mapName);
+
 				return (
 					<MenuItem
-						onClick={
-							() => {
-								setCurrentMap(mapGroupItem.mapLayers[0])
-								navigate(`/${mapGroupItem.mapLayers[0].id!}`, { replace: true })
-							}
-						}
-						key={key}
+						key={`${key}-${mapLayer.id}`}
+						className="map-area-item"
+						aria-label={`${mapGroupItem.mapName} ${areaLabel}`}
+						onClick={() => {
+							setCurrentMap(mapLayer);
+							handleClose();
+							setIsDrawerOpen(false);
+						}}
 					>
-						{mapGroupItem.mapName}
-						<span className={currentMapGroup!.mapName === mapGroupItem.mapName ? 'current-map-indicator' : ''}></span>
+						{areaLabel}
+						<span
+							className={
+								currentMap?.id === mapLayer.id ? 'current-map-indicator' : ''
+							}
+						></span>
 					</MenuItem>
-				)
-			})
-			: null;
+				);
+			});
+
+			return [mapItem, ...areaItems];
+		});
 	}
 };
 

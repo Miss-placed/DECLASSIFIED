@@ -6,7 +6,7 @@ import { useUserContext } from '../../contexts/UserContext/userContextProvider';
 import { MapMarkers } from '../MapMarkers';
 
 export const MapControls = () => {
-	const { currentMap, currentMapGroup } = useContext(DeclassifiedContext);
+	const { currentMap } = useContext(DeclassifiedContext);
 	const { isMobile } = useUserContext();
 
 	const renderMapOverlay = (mapLayer: MapItem) => {
@@ -25,23 +25,9 @@ export const MapControls = () => {
 			position={isMobile ? 'bottomright' : 'topright'}
 		// collapsed={isMobile}
 		>
-			{currentMapGroup ? (
-				currentMapGroup!.mapLayers.length > 1 ? currentMapGroup!.mapLayers.map(mapLayer => (
-					<LayersControl.BaseLayer
-						key={`layer-${mapLayer.id}`}
-						checked={
-							mapLayer.id === currentMap!.id /* TODO: SWAP WITH USER PREFS */
-						}
-						name={mapLayer.title}
-					>
-						{renderMapOverlay(mapLayer)}
-					</LayersControl.BaseLayer>
-				)) : (
-					<>
-						{renderMapOverlay(currentMapGroup!.mapLayers[0])}
-					</>
-				)
-			) : (null)}
+			{/* Areas are switched through the header menu and the on-map area
+			    switcher, the leaflet base-layer radios are no longer needed. */}
+			{currentMap ? renderMapOverlay(currentMap) : null}
 
 			<MapMarkers />
 		</LayersControl>

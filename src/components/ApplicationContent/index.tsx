@@ -3,6 +3,7 @@ import { DeclassifiedContext } from "../../contexts/DeclassifiedContext/declassi
 import { DrawerMenu } from "../DrawerMenu";
 import Header from "../Header";
 import { MapControls } from "../MapControls";
+import { AreaSwitcherContainer } from "../MapControls/AreaSwitcherContainer";
 import { LayerToggleButtons } from "../MapControls/LayerToggleButtons";
 import { UserInterface } from "../UserInterface";
 
@@ -12,6 +13,7 @@ export const ApplicationContent = () => {
         <>
             <Header />
             <MapControls />
+            <AreaSwitcherContainer />
             <LayerToggleButtons />
             <UserInterface />
             <DrawerMenu>

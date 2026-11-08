@@ -11,6 +11,11 @@ export interface MapGroupDefinition {
 	key: string;
 	mapName: string;
 	game: MapGroupGameKey;
+	/**
+	 * True when the layers are areas of one map (boss arena, past/nuked) rather than
+	 * separate maps. Outbreak is a collection of maps, so it stays false.
+	 */
+	mapLayersAreAreas?: boolean;
 	mapLayers: MapLayerDefinition[];
 }
 
@@ -19,6 +24,7 @@ export const MapGroupDefinitions: MapGroupDefinition[] = [
 		key: 'dieMachine_Group',
 		mapName: 'Die Maschine',
 		game: 'coldWar',
+		mapLayersAreAreas: true,
 		mapLayers: [
 			{ id: MapIds.dieMaschine, title: 'Die Maschine' },
 			{ id: MapIds.dieMaschineUnderground, title: 'Die Maschine Underground' },
@@ -28,6 +34,7 @@ export const MapGroupDefinitions: MapGroupDefinition[] = [
 		key: 'firebaseZ_Group',
 		mapName: 'Firebase Z',
 		game: 'coldWar',
+		mapLayersAreAreas: true,
 		mapLayers: [
 			{ id: MapIds.firebaseZ, title: 'Firebase Z' },
 			{ id: MapIds.firebaseZSpawn, title: 'Firebase Z Spawn' },
@@ -37,6 +44,7 @@ export const MapGroupDefinitions: MapGroupDefinition[] = [
 		key: 'mauerDerToten_Group',
 		mapName: 'Mauer Der Toten',
 		game: 'coldWar',
+		mapLayersAreAreas: true,
 		mapLayers: [
 			{ id: MapIds.mauerDerTotenStreets, title: 'Mauer Der Toten' },
 			{
@@ -49,6 +57,7 @@ export const MapGroupDefinitions: MapGroupDefinition[] = [
 		key: 'forsaken_Group',
 		mapName: 'Forsaken',
 		game: 'coldWar',
+		mapLayersAreAreas: true,
 		mapLayers: [
 			{ id: MapIds.forsaken, title: 'Forsaken' },
 			{ id: MapIds.forsakenUnderground, title: 'Forsaken Underground' },
@@ -79,6 +88,7 @@ export const MapGroupDefinitions: MapGroupDefinition[] = [
 		key: 'terminus_Group',
 		mapName: 'Terminus',
 		game: 'bo6',
+		mapLayersAreAreas: true,
 		mapLayers: [
 			{ id: MapIds.terminusBiolabs, title: 'Terminus Biolabs & Islands' },
 			{ id: MapIds.terminusPrison, title: 'Terminus Prison' },
@@ -106,6 +116,7 @@ export const MapGroupDefinitions: MapGroupDefinition[] = [
 		key: 'reckoning_Group',
 		mapName: 'Reckoning',
 		game: 'bo6',
+		mapLayersAreAreas: true,
 		mapLayers: [
 			{ id: MapIds.reckoning, title: 'Reckoning' },
 			{ id: MapIds.reckoningBossArena, title: 'Reckoning Boss Area' },
@@ -128,6 +139,7 @@ export const MapGroupDefinitions: MapGroupDefinition[] = [
 		key: 'paradoxJunction_Group',
 		mapName: 'Paradox Junction',
 		game: 'bo7',
+		mapLayersAreAreas: true,
 		mapLayers: [
 			{ id: MapIds.paradoxJunction, title: 'Paradox Junction' },
 			{ id: MapIds.paradoxJunctionPast, title: 'Paradox Junction (Past)' },
@@ -137,6 +149,7 @@ export const MapGroupDefinitions: MapGroupDefinition[] = [
 		key: 'totenreich_Group',
 		mapName: 'Totenreich',
 		game: 'bo7',
+		mapLayersAreAreas: true,
 		mapLayers: [
 			{ id: MapIds.totenreich, title: 'Totenreich' },
 			{ id: MapIds.totenreichBoss, title: 'Totenreich Boss Area' },

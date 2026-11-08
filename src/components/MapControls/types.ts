@@ -11,6 +11,8 @@ export enum Game {
 export interface MapGroupItem {
 	mapName: string;
 	mapLayers: MapItem[];
+	/** true when mapLayers are areas of one map rather than separate maps */
+	mapLayersAreAreas: boolean;
 	game: Game;
 }
 
@@ -36,6 +38,7 @@ export const MapGroupings: MapGroupDictionary = MapGroupDefinitions.reduce(
 			mapLayers: group.mapLayers
 				.map(layer => mapDetailsById.get(layer.id))
 				.filter((layer): layer is MapItem => !!layer),
+			mapLayersAreAreas: !!group.mapLayersAreAreas,
 			game: gameFromKey(group.game),
 		};
 		return acc;
