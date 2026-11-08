@@ -15,9 +15,12 @@ const previewBoxStyle = {
 	top: '50%',
 	left: '50%',
 	transform: 'translate(-50%, -50%)',
-	// nearly full screen, and always wider than the popup image that was clicked
-	width: '96vw',
-	maxWidth: '1200px',
+	// as large as the screen allows without ever being smaller than the popup image
+	// that was clicked. Sized to the image itself so portrait shots do not sit in a
+	// wide, mostly empty box. The image uses vw/vh max constraints so the sizing has
+	// no circular percentage dependency on this box.
+	width: 'fit-content',
+	maxWidth: '96vw',
 	maxHeight: '96vh',
 	bgcolor: 'var(--clr-bg-inverted)',
 	border: '2px solid #000',
@@ -104,9 +107,10 @@ export const CustomImage = ({ src: imageId, altText = 'Placeholder' }) => { // T
 							onLoad={() => setModalImageLoaded(true)}
 							alt={altText}
 							style={{
-								width: '100%',
-								maxHeight: 'calc(96vh - 12px)',
-								objectFit: 'contain',
+								width: 'auto',
+								height: 'auto',
+								maxWidth: 'calc(96vw - 16px)',
+								maxHeight: 'calc(96vh - 16px)',
 								display: modalImageLoaded ? 'block' : 'none',
 							}}
 						/>
