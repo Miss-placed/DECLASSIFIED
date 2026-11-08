@@ -114,10 +114,16 @@ const HomePage: React.FC = () => {
                 - Discover Main Quest and side Easter Eggs and explore the maps.<br />
                 - Always free, no ads, open & community driven, now & forever.<br />
             </Box>
-            <Typography sx={{ mt: 4 }} className='title text-md' variant="h5" gutterBottom>
+            <Typography
+                sx={{ mt: 4, borderLeft: '4px solid var(--game-base-color)', pl: 1.5 }}
+                className='title text-md'
+                style={{ '--game-base-color': 'var(--clr-red)' } as React.CSSProperties}
+                variant="h5"
+                gutterBottom
+            >
                 Call of Duty: Black Ops 7
             </Typography>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} className='game-section' style={{ '--game-base-color': 'var(--clr-red)' } as React.CSSProperties}>
                 <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100px' }}>
                     <Paper component={Link} to="/intel/black-ops-7">
                         <Box className='homepage-box filled' p={2}>
@@ -131,6 +137,20 @@ const HomePage: React.FC = () => {
                         <Box className='homepage-box filled' p={2}>
                             <Typography variant="h6">Operations Dossier Hub</Typography>
                             <Typography>Browse eggs and quests by map.</Typography>
+                        </Box>
+                    </Paper>
+                </Grid>
+                <Grid size={{ xs: 12, sm: 6, md: 6 }} sx={{ height: '100px' }}>
+                    <Paper component={Link} to={`/${MapIds.rexInfernus}`}>
+                        <Box className='homepage-box' p={2}>
+                            <Typography variant="h6">Rex Infernus</Typography>
+                        </Box>
+                    </Paper>
+                </Grid>
+                <Grid size={{ xs: 12, sm: 6, md: 6 }} sx={{ height: '100px' }}>
+                    <Paper component={Link} to={`/${MapIds.kowakujo}`}>
+                        <Box className='homepage-box' p={2}>
+                            <Typography variant="h6">Kowakujō</Typography>
                         </Box>
                     </Paper>
                 </Grid>
@@ -163,10 +183,16 @@ const HomePage: React.FC = () => {
                     </Paper>
                 </Grid>
             </Grid>
-            <Typography sx={{ mt: 4 }} className='title text-md' variant="h5" gutterBottom>
+            <Typography
+                sx={{ mt: 4, borderLeft: '4px solid var(--game-base-color)', pl: 1.5 }}
+                className='title text-md'
+                style={{ '--game-base-color': 'var(--clr-orange)' } as React.CSSProperties}
+                variant="h5"
+                gutterBottom
+            >
                 Call of Duty: Black Ops 6
             </Typography>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} className='game-section' style={{ '--game-base-color': 'var(--clr-orange)' } as React.CSSProperties}>
                 <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100px' }}>
                     <Paper component={Link} to="/intel/black-ops-6">
                         <Box className='homepage-box filled' p={2}>
@@ -244,10 +270,16 @@ const HomePage: React.FC = () => {
                 </Grid>
             </Grid>
 
-            <Typography sx={{ mt: 4 }} className='title text-md' variant="h5" gutterBottom>
+            <Typography
+                sx={{ mt: 4, borderLeft: '4px solid var(--game-base-color)', pl: 1.5 }}
+                className='title text-md'
+                style={{ '--game-base-color': 'var(--clr-purple)' } as React.CSSProperties}
+                variant="h5"
+                gutterBottom
+            >
                 Call of Duty: Black Ops Cold War
             </Typography>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} className='game-section' style={{ '--game-base-color': 'var(--clr-purple)' } as React.CSSProperties}>
                 <Grid size={{ xs: 12, sm: 6 }} sx={{ height: '100px' }}>
                     <Paper component={Link} to="/intel/black-ops-cold-war">
                         <Box className='homepage-box filled' p={2}>

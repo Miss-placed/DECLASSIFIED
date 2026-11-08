@@ -30,7 +30,10 @@
 .homepage-box {
 	border-radius: 8px;
 	border: 1px solid;
-	border-color: var(--clr-grey-d);
+	/* Per-game accent, set on the game section container so it matches the
+	   colour used for that game in the map drop-down. Falls back to the
+	   neutral border anywhere else the class is reused. */
+	border-color: var(--game-base-color, var(--clr-grey-d));
 	padding: 10px;
 	height: 100%;
 	text-align: center;
@@ -44,6 +47,17 @@
 .homepage-box:hover {
 	background: var(--clr-bg);
 	color: var(--clr-white-d);
+}
+
+/* Game sections on the homepage pick up the same accent colour the map
+   drop-down uses for that game, so BO7/BO6/Cold War read as distinct blocks. */
+.game-section .homepage-box {
+	border-width: 2px;
+}
+
+.game-section .homepage-box:hover {
+	background: var(--game-base-color, var(--clr-bg));
+	color: var(--clr-white);
 }
 
 .filled {
