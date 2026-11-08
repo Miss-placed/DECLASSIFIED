@@ -5,11 +5,6 @@ import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassi
 
 const StyledSwipeableDrawer = styled(SwipeableDrawer)`
 	.MuiDrawer-paper {
-		/* the paper is the scroll container, so its scrollbar only eats into the
-		   right edge and pushes the panel content off-centre. Reserving the gutter on
-		   both edges keeps the sticky panels symmetric. */
-		scrollbar-gutter: stable both-edges;
-
 		@media (max-width: 900px) {
 			max-height: 75%;
 		}
