@@ -6,14 +6,24 @@ const descFor = (id: string) =>
 	blackOps7Intel.find(item => item.id === id)?.desc ?? '';
 
 describe('withIntelDescription', () => {
-	it('renders the in-game hint in italics before the location', () => {
+	it('puts the in-game hint on its own line above the location', () => {
 		const { container } = render(
 			<p>{withIntelDescription('*Barrels of Fun!* In Eidskallen Landing, on some barrels.')}</p>
 		);
 
-		expect(container.textContent).toBe('Barrels of Fun! In Eidskallen Landing, on some barrels.');
 		expect(container.querySelector('em')?.textContent).toBe('Barrels of Fun!');
-		expect(container.querySelector('p')?.firstChild?.nodeName).toBe('EM');
+		expect(container.querySelectorAll('br')).toHaveLength(1);
+		expect(container.querySelector('p')?.childNodes[0].nodeName).toBe('EM');
+		expect(container.querySelector('p')?.textContent).toBe(
+			'Barrels of Fun!In Eidskallen Landing, on some barrels.'
+		);
+	});
+
+	it('does not add a line break when the hint has no location after it', () => {
+		const { container } = render(<p>{withIntelDescription('*Progress through Main Quest*')}</p>);
+
+		expect(container.querySelectorAll('br')).toHaveLength(0);
+		expect(container.textContent).toBe('Progress through Main Quest');
 	});
 
 	it('leaves descriptions without markup as plain text', () => {

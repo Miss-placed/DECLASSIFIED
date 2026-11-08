@@ -1,4 +1,4 @@
-import { Fragment, ReactNode } from 'react';
+import { Fragment, ReactNode, isValidElement } from 'react';
 
 const ITALIC_SEGMENT = /\*([^*]+)\*/g;
 
@@ -19,18 +19,38 @@ const italiciseLine = (line: string, keyPrefix: string): ReactNode[] => {
 	return nodes;
 };
 
+const isEmphasis = (node: ReactNode) => isValidElement(node) && node.type === 'em';
+
 /**
- * Renders an intel description where the location guidance comes first and any
- * `*starred*` text is shown in italics (used for the in-game description).
- * Authored line breaks become <br /> for the same reason as `withLineBreaks`.
+ * Renders an intel description where the in-game hint is shown in italics on its
+ * own line, with the guide's location text underneath. Authored line breaks
+ * become <br /> for the same reason as `withLineBreaks`.
  */
 export const withIntelDescription = (text: string | undefined): ReactNode =>
 	(text ?? '')
 		.trim()
 		.split(/\r?\n/)
-		.map((line, index) => (
-			<Fragment key={index}>
-				{index > 0 ? <br /> : null}
-				{italiciseLine(line, `${index}`)}
-			</Fragment>
-		));
+		.map((line, index) => {
+			const nodes = italiciseLine(line, `${index}`);
+			const [first, ...restNodes] = nodes;
+			const rest = restNodes.filter(node => node !== '');
+
+			if (typeof rest[0] === 'string') {
+				rest[0] = rest[0].trimStart();
+			}
+
+			return (
+				<Fragment key={index}>
+					{index > 0 ? <br /> : null}
+					{isEmphasis(first) && rest.length > 0 ? (
+						<>
+							{first}
+							<br />
+						</>
+					) : (
+						first
+					)}
+					{rest}
+				</Fragment>
+			);
+		});
