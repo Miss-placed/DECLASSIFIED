@@ -169,9 +169,10 @@ const StyledAccordion = styled(Accordion)`
 `;
 const StyledAccordionDetails = styled(AccordionDetails)`
 	background: var(--clr-grey-l);
-	/* the filter grid carries its own 10px gap, so no extra top padding; the 5px
-	   bottom plus the footer's own 5px keeps the same rhythm under the grid */
-	padding: 0 16px 5px;
+	/* the filter grid carries its own 10px gap, so no extra top padding. No bottom
+	   padding either: the footer's own top padding provides that gap, so the space
+	   under the last filter row reads the same as the space between rows. */
+	padding: 0 16px;
 `;
 /* the count and funnel read as decoration on their own, so they are wrapped in a
    real button that also carries the expanded state */
