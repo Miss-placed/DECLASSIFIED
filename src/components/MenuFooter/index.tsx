@@ -14,7 +14,9 @@ import FilterAltOffIcon from '@mui/icons-material/FilterAltOff';
 const StyledFormGroup = styled(FormGroup)`
 	display: flex;
 	flex-direction: row;
-	padding: 5px;
+	/* 5px top pairs with the 5px under the filter grid, 10px at the bottom matches
+	   the rest of the panel's spacing */
+	padding: 5px 5px 10px;
 	justify-content: space-evenly;
 `;
 

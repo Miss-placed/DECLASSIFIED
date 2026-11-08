@@ -94,7 +94,7 @@ const StyledCustomIntelFilterCheckbox = styled.div`
 		overflow: hidden;
 		/* the label carries the longest text ("Artifacts"), so it gets the flexible
 		   column and the count sizes to its own content */
-		grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr) auto;
+		grid-template-columns: minmax(0, 2.5fr) minmax(0, 1.6fr) auto;
 		border-radius: 5px;
 		justify-items: center;
 		align-items: center;
