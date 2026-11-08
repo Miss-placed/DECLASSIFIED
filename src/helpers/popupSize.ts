@@ -5,7 +5,7 @@
  * maximum is all that is needed: short popups stay compact, long ones go wider
  * before they wrap.
  */
-export const POPUP_MIN_WIDTH = 300;
+export const POPUP_MIN_WIDTH = 180;
 export const POPUP_MAX_WIDTH = 560;
 const VIEWPORT_MARGIN = 48;
 

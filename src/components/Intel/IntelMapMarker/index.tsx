@@ -37,7 +37,7 @@ export const IntelMapMarker = ({
 	img,
 	map,
 }: IntelItem) => {
-	const { sharedMapItemId } = useUserContext();
+	const { sharedMapItemId, isMobile } = useUserContext();
 	const mapInstance = useMapEvents({});
 	const [markerInstance, setPopupInstance] = useState<L.Marker | null>(null); // State to hold the Popup instance
 	const isCollected = useLiveQuery(() => db.intelCollected.get(id ?? ''));
@@ -72,7 +72,11 @@ export const IntelMapMarker = ({
 	) : (
 		<>
 			<Marker position={loc} icon={renderedIcon} ref={setPopupInstance}>
-				<StyledPopup {...getPopupWidths(window.innerWidth)}>
+				<StyledPopup
+					{...getPopupWidths(window.innerWidth)}
+					autoPanPaddingTopLeft={[20, 20]}
+					autoPanPaddingBottomRight={[20, isMobile ? 90 : 20]}
+				>
 					<IntelDetailsItem
 						key={id}
 						id={id!}
