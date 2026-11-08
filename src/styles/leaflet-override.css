@@ -106,6 +106,8 @@
 }
 .intel-icon .background {
 	z-index: 1;
+	/* inset black edge generated from the pin's own alpha, see public/index.html */
+	filter: url(#intel-marker-inner-outline);
 }
 
 .leaflet-control-attribution.leaflet-control {
