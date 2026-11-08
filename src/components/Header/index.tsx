@@ -1,11 +1,12 @@
 import styled from '@emotion/styled';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { Button, Chip, Divider, Drawer, Menu, MenuItem } from '@mui/material';
+import { Button, Chip, Drawer, Menu, MenuItem } from '@mui/material';
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { useUserContext } from '../../contexts/UserContext/userContextProvider';
 import { getMapMenuRows } from '../../helpers/mapAreas';
+import { getGameMenuSections } from '../../helpers/mapMenu';
 import { Game, MapGroupings, MapGroupItem } from '../MapControls/types';
 
 const StyledHeader = styled.header`
@@ -84,13 +85,28 @@ const MapMenu = styled(Menu)`
 	}
 `;
 
-const GameSeparator = styled(Divider)`
-	background-color: var(--clr-bg-inverted);
-	color: var(--clr-color);
-	font-size: 0.6rem;
-	margin-bottom: 8px;
-	padding: 1ch;
-	font-weight: lighter;
+const GameSectionHeader = styled.button`
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	width: 100%;
+	padding: 10px 16px 8px;
+	background: none;
+	border: 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+	cursor: pointer;
+	font-family: inherit;
+	text-align: left;
+
+	.chevron {
+		margin-left: auto;
+		color: var(--clr-grey);
+		transition: transform 0.2s ease;
+	}
+
+	&[aria-expanded='true'] .chevron {
+		transform: rotate(180deg);
+	}
 `;
 const GameTitle = styled(Chip)`
 	// TODO: needs to be dynamic once we add more shit
@@ -134,42 +150,55 @@ const Header = () => {
 			setIsDrawerOpen(open);
 		};
 
-	const bo7Maps = Object.entries(MapGroupings).filter(
-		([key, mapGroupItem]) => mapGroupItem.game === Game.bo7
+	const gameSections = getGameMenuSections(MapGroupings);
+	const currentGameTitle = (currentMapGroup?.game as string | undefined) ?? null;
+	const [expandedGame, setExpandedGame] = React.useState<string | null>(
+		currentGameTitle
 	);
-	const bo6Maps = Object.entries(MapGroupings).filter(
-		([key, mapGroupItem]) => mapGroupItem.game === Game.bo6
-	);
-	const coldWarMaps = Object.entries(MapGroupings).filter(
-		([key, mapGroupItem]) => mapGroupItem.game === Game.coldWar
-	);
-	// TODO: set --game-base-color to somethingdynamic from the mappacks
-	const bo7StyleVars = {
-		'--game-base-color': 'var(--clr-red)',
-	} as React.CSSProperties;
-	// TODO: set --game-base-color to somethingdynamic from the mappacks
-	const bo6StyleVars = {
-		'--game-base-color': 'var(--clr-orange)',
-	} as React.CSSProperties;
-	// TODO: set --game-base-color to somethingdynamic from the mappacks
-	const bocwStyleVars = {
-		'--game-base-color': 'var(--clr-purple)',
-	} as React.CSSProperties;
 
-	const MapMenuItems = [
-		<GameSeparator key="BlackOps7" style={bo7StyleVars}>
-			<GameTitle label="Black Ops 7" size="small" />
-		</GameSeparator>,
-		buildMapItems(bo7Maps),
-		<GameSeparator key="BlackOps6" style={bo6StyleVars}>
-			<GameTitle label="Black Ops 6" size="small" />
-		</GameSeparator>,
-		buildMapItems(bo6Maps),
-		<GameSeparator key="BlackOpsColdWar" style={bocwStyleVars}>
-			<GameTitle label="Black Ops: Cold War" size="small" />
-		</GameSeparator>,
-		buildMapItems(coldWarMaps),
-	];
+	// Keep the current map's game open when the map changes, so the menu never
+	// opens on a game the user is not looking at.
+	React.useEffect(() => {
+		setExpandedGame(currentGameTitle);
+	}, [currentGameTitle]);
+
+	// TODO: set --game-base-color to somethingdynamic from the mappacks
+	const gameStyleVars: Record<string, React.CSSProperties> = {
+		[Game.bo7]: { '--game-base-color': 'var(--clr-red)' } as React.CSSProperties,
+		[Game.bo6]: {
+			'--game-base-color': 'var(--clr-orange)',
+		} as React.CSSProperties,
+		[Game.coldWar]: {
+			'--game-base-color': 'var(--clr-purple)',
+		} as React.CSSProperties,
+	};
+
+	// MUI menus only accept elements or arrays, never Fragments, so each section
+	// is flattened into a header + its map rows.
+	const MapMenuItems = gameSections.flatMap(section => {
+		const isExpanded = expandedGame === section.title;
+
+		const header = (
+			<GameSectionHeader
+				key={`section-${section.title}`}
+				type="button"
+				aria-expanded={isExpanded}
+				style={gameStyleVars[section.title]}
+				onClick={() =>
+					setExpandedGame(currentSection =>
+						currentSection === section.title ? null : section.title
+					)
+				}
+			>
+				<GameTitle label={section.title} size="small" />
+				<KeyboardArrowDownIcon className="chevron" />
+			</GameSectionHeader>
+		);
+
+		if (!isExpanded) return [header];
+
+		return [header, ...(buildMapItems(section.maps) ?? [])];
+	});
 
 	const areaCount =
 		currentMapGroup &&
