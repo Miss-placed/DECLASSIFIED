@@ -143,11 +143,16 @@ const StyledExpandableMenu = styled.form`
 
 const StyledAccordionSummary = styled(AccordionSummary)`
 	background-color: var(--clr-grey-l);
+	/* MUI defaults to no vertical padding with a content margin, which left a wider
+	   gap above the filters than between them */
+	padding: var(--radius) 16px;
 
 	.MuiAccordionSummary-content {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		gap: var(--radius);
+		margin: 0;
 	}
 	#intelSearch,
 	#intelSearch input {
@@ -164,6 +169,9 @@ const StyledAccordion = styled(Accordion)`
 `;
 const StyledAccordionDetails = styled(AccordionDetails)`
 	background: var(--clr-grey-l);
+	/* the filter grid carries its own 10px gap, so no extra top padding; the 5px
+	   bottom plus the footer's own 5px keeps the same rhythm under the grid */
+	padding: 0 16px 5px;
 `;
 /* the count and funnel read as decoration on their own, so they are wrapped in a
    real button that also carries the expanded state */
