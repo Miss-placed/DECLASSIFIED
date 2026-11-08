@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { Box, CircularProgress, Modal } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+import { Box, CircularProgress, IconButton, Modal } from '@mui/material';
 import { useState } from 'react';
 
 const StyledImageContainer = styled.div`
@@ -9,17 +10,30 @@ const StyledImageContainer = styled.div`
 	width: 100%;
 `;
 
-const style = {
+const previewBoxStyle = {
 	position: 'absolute' as 'absolute',
 	top: '50%',
 	left: '50%',
 	transform: 'translate(-50%, -50%)',
-	width: '80vw',
+	// nearly full screen, and always wider than the popup image that was clicked
+	width: '96vw',
+	maxWidth: '1200px',
+	maxHeight: '96vh',
 	bgcolor: 'var(--clr-bg-inverted)',
 	border: '2px solid #000',
 	boxShadow: 24,
-	p: 4,
-	padding: '14px',
+	padding: '6px',
+	outline: 'none',
+};
+
+const closeButtonStyle = {
+	position: 'absolute',
+	top: 6,
+	right: 6,
+	zIndex: 1,
+	backgroundColor: 'rgba(0, 0, 0, 0.55)',
+	color: 'var(--clr-white)',
+	'&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.78)' },
 };
 
 export const CustomImage = ({ src: imageId, altText = 'Placeholder' }) => { // TODO: replace "Placeholder" with a more descriptive alt text from the image metadata
@@ -72,10 +86,16 @@ export const CustomImage = ({ src: imageId, altText = 'Placeholder' }) => { // T
 				<Modal
 					open={open}
 					onClose={handleClose}
-					aria-labelledby="modal-modal-title"
-					aria-describedby="modal-modal-description"
+					aria-label="Image preview"
 				>
-					<Box sx={style}>
+					<Box sx={previewBoxStyle}>
+						<IconButton
+							aria-label="Close image preview"
+							onClick={handleClose}
+							sx={closeButtonStyle}
+						>
+							<CloseIcon />
+						</IconButton>
 						{!modalImageLoaded && (
 							<CircularProgress style={{ display: 'block', margin: 'auto' }} />
 						)}
@@ -85,6 +105,8 @@ export const CustomImage = ({ src: imageId, altText = 'Placeholder' }) => { // T
 							alt={altText}
 							style={{
 								width: '100%',
+								maxHeight: 'calc(96vh - 12px)',
+								objectFit: 'contain',
 								display: modalImageLoaded ? 'block' : 'none',
 							}}
 						/>
