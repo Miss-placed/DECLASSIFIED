@@ -7,6 +7,7 @@ import '../../styles/intel-dossier.css';
 import { getIntelRouteModel, slugifyIntel } from '../../data/intelSeo';
 import { getIntelTranscript } from '../../data/intelTranscripts';
 import { ExternalLinkIcon, HomeIcon } from '../../components/SocialIcons';
+import { withIntelDescription } from '../../helpers/intelDescription';
 import { getMapGroupNameByMapId, getWikiIntelUrlForMap } from '../../helpers/wiki';
 import { addCollectedIntel, deleteCollectedIntel } from '../../data/dataAccessLayer';
 import { db } from '../../data/db';
@@ -52,7 +53,9 @@ export default function IntelLeafPage() {
 				}
 				actions={<IntelQuickLinks />}
 			/>
-			<Typography className="rounded-box filled text-sm">{intel.desc}</Typography>
+			<Typography className="rounded-box filled text-sm">
+				{withIntelDescription(intel.desc)}
+			</Typography>
 			<Typography sx={{ mt: 4 }} className="title text-md" variant="h5" gutterBottom>
 				Transcript
 			</Typography>
