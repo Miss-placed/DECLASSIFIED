@@ -16,7 +16,7 @@ const StyledAreaSwitcher = styled.div`
 	align-items: center;
 	gap: 2px;
 	padding: 3px;
-	border-radius: 999px;
+	border-radius: 10px;
 	background: rgba(31, 34, 35, 0.82);
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 	opacity: 0.72;
@@ -38,9 +38,9 @@ const StyledAreaSwitcher = styled.div`
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		white-space: nowrap;
-		padding: 5px 12px;
+		padding: 8px 12px;
 		border: 0;
-		border-radius: 999px;
+		border-radius: 7px;
 		background: transparent;
 		color: var(--clr-white-d);
 		cursor: pointer;

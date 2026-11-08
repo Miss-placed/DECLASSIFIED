@@ -5,7 +5,7 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassifiedContextProvider';
 import { useUserContext } from '../../contexts/UserContext/userContextProvider';
-import { getAreaLabel } from '../../helpers/mapAreas';
+import { getMapMenuRows } from '../../helpers/mapAreas';
 import { Game, MapGroupings, MapGroupItem } from '../MapControls/types';
 
 const StyledHeader = styled.header`
@@ -68,19 +68,6 @@ const MapMenu = styled(Menu)`
 		margin-left: 10px;
 	}
 	// areas of a map, nested under the map they belong to
-	.map-area-item {
-		font-size: 0.8rem;
-		padding-left: 2.5rem !important;
-		opacity: 0.9;
-		&::before {
-			content: '';
-			position: absolute;
-			left: 1.25rem;
-			height: 1px;
-			width: 0.7rem;
-			background-color: var(--clr-grey-l);
-		}
-	}
 	.MuiPaper-root {
 		width: 375px;
 		background-color: var(--clr-bg-inverted);
@@ -262,33 +249,51 @@ const Header = () => {
 				</MenuItem>
 			);
 
-			if (!mapGroupItem.mapLayersAreAreas || mapGroupItem.mapLayers.length < 2) {
+			// Multi-layer groups always list their layers so every map stays reachable
+			// in the menu. Only real area groups also get the on-map switcher.
+			const layerRows = getMapMenuRows(
+				mapGroupItem.mapName,
+				mapGroupItem.mapLayers
+			);
+
+			if (layerRows.length === 0) {
 				return [mapItem];
 			}
 
-			const areaItems = mapGroupItem.mapLayers.map(mapLayer => {
-				const areaLabel = getAreaLabel(mapLayer.title, mapGroupItem.mapName);
-
-				return (
-					<MenuItem
-						key={`${key}-${mapLayer.id}`}
-						className="map-area-item"
-						aria-label={`${mapGroupItem.mapName} ${areaLabel}`}
-						onClick={() => {
-							setCurrentMap(mapLayer);
-							handleClose();
-							setIsDrawerOpen(false);
-						}}
-					>
-						{areaLabel}
-						<span
-							className={
-								currentMap?.id === mapLayer.id ? 'current-map-indicator' : ''
-							}
-						></span>
-					</MenuItem>
-				);
-			});
+			const areaItems = layerRows.map(({ layer: mapLayer, label }) => (
+				<MenuItem
+					key={`${key}-${mapLayer.id}`}
+					className="map-area-item"
+					aria-label={`${mapGroupItem.mapName} ${label}`}
+					// styled on the item so the menu and the mobile drawer match
+					sx={{
+						position: 'relative',
+						pl: '2.5rem',
+						fontSize: '0.8rem',
+						opacity: 0.85,
+						'&::before': {
+							content: '""',
+							position: 'absolute',
+							left: '1.25rem',
+							height: '1px',
+							width: '0.7rem',
+							backgroundColor: 'var(--clr-grey-l)',
+						},
+					}}
+					onClick={() => {
+						setCurrentMap(mapLayer);
+						handleClose();
+						setIsDrawerOpen(false);
+					}}
+				>
+					{label}
+					<span
+						className={
+							currentMap?.id === mapLayer.id ? 'current-map-indicator' : ''
+						}
+					></span>
+				</MenuItem>
+			));
 
 			return [mapItem, ...areaItems];
 		});
