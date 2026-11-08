@@ -87,6 +87,7 @@ const StyledCustomIntelFilterCheckbox = styled.div`
 	width: 100%;
 
 	.container {
+		position: relative;
 		width: 100%;
 		background-color: var(--clr-white-d);
 		display: grid;
@@ -98,6 +99,9 @@ const StyledCustomIntelFilterCheckbox = styled.div`
 		border-radius: 5px;
 		justify-items: center;
 		align-items: center;
+		/* the row is one big click target, so dragging across it should not select
+		   the label or the count as text */
+		user-select: none;
 	}
 	/* grid items default to min-width: auto, so the icon images (much wider than
 	   the cell) would blow the column out and squash the label */
@@ -139,7 +143,16 @@ const StyledCustomIntelFilterCheckbox = styled.div`
 		border-top-right-radius: var(--radius);
 		border-bottom-right-radius: var(--radius);
 	}
-	.checked {
-		outline: 3px solid var(--clr-yellow);
+	/* an outline is painted outside the border box, so it spilled into the 10px
+	   grid gap and got clipped by the panel edge on the first row. Drawing the
+	   highlight as an overlay inside the button keeps the shape intact and does not
+	   shift any layout. */
+	.checked::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border: 3px solid var(--clr-yellow);
+		border-radius: inherit;
+		pointer-events: none;
 	}
 `;
