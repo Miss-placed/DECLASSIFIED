@@ -19,7 +19,6 @@ import { gameForIntel, intelSlug, mapTitleFromId, slugifyIntel } from '../../../
 import { DefaultPOIData, Faction, IIntelItem } from '../../../data/IntelTypes';
 import { GetMapById } from "../../../data/maps/mapDetails";
 import { withIntelDescription } from '../../../helpers/intelDescription';
-import { withLineBreaks } from '../../../helpers/lineBreaks';
 import { toSnakeCase } from "../../../helpers/icons";
 import { BugReportButton } from "../../ActionButtons/BugReportButton";
 import { ShareButton } from "../../ActionButtons/ShareButton";
