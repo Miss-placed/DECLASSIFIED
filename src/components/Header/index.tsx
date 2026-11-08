@@ -60,14 +60,6 @@ const MapDrawer = styled(Drawer)`
 	}
 `;
 const MapMenu = styled(Menu)`
-	.current-map-indicator {
-		height: 10px;
-		width: 10px;
-		background-color: var(--clr-red);
-		border-radius: 50%;
-		display: inline-block;
-		margin-left: 10px;
-	}
 	// areas of a map, nested under the map they belong to
 	.MuiPaper-root {
 		width: 375px;
@@ -115,6 +107,19 @@ const GameTitle = styled(Chip)`
 	padding: 1.7ch;
 	border-radius: 5em;
 	color: var(--clr-color);
+`;
+
+// One definition for both branches: the desktop menu renders through a portal and
+// the mobile drawer does not, so a `.MapMenu .current-map-indicator` rule never
+// reached the drawer and the dot was invisible there.
+const CurrentMapIndicator = styled.span`
+	height: 10px;
+	width: 10px;
+	background-color: var(--clr-red);
+	border-radius: 50%;
+	display: inline-block;
+	margin-left: 10px;
+	flex: 0 0 auto;
 `;
 
 const Header = () => {
@@ -213,7 +218,10 @@ const Header = () => {
 		<>
 			{isMobile ? (
 				<StyledHeader>
-					<Button onClick={toggleHeader(true)}>
+					<Button
+						onClick={toggleHeader(true)}
+						aria-expanded={isDrawerOpen ? 'true' : 'false'}
+					>
 						{currentMapGroup!.mapName}
 						{areaCount}
 						<KeyboardArrowDownIcon />
@@ -272,10 +280,15 @@ const Header = () => {
 					onClick={() => {
 						setCurrentMap(mapGroupItem.mapLayers[0]);
 						navigate(`/${mapGroupItem.mapLayers[0].id!}`, { replace: true });
+						// both the menu and the drawer are controlled, so neither closes itself
+						handleClose();
+						setIsDrawerOpen(false);
 					}}
 				>
 					{mapGroupItem.mapName}
-					<span className={isCurrentGroup ? 'current-map-indicator' : ''}></span>
+					{isCurrentGroup ? (
+						<CurrentMapIndicator className="current-map-indicator" />
+					) : null}
 				</MenuItem>
 			);
 
@@ -319,11 +332,9 @@ const Header = () => {
 					}}
 				>
 					{label}
-					<span
-						className={
-							currentMap?.id === mapLayer.id ? 'current-map-indicator' : ''
-						}
-					></span>
+					{currentMap?.id === mapLayer.id ? (
+						<CurrentMapIndicator className="current-map-indicator" />
+					) : null}
 				</MenuItem>
 			));
 
