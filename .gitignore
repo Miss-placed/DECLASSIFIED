@@ -36,3 +36,4 @@ yarn-error.log*
 scripts/*.png
 scripts/*.svg
 scripts/map-workspace/*.png
+/scripts/map-workspace
