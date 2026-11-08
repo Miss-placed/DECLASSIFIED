@@ -87,7 +87,17 @@ export const IntelAndEasterEggDrawerContent = () => {
 
 	return (
 		<>
-			<Box sx={{ bgcolor: 'background.paper', height: 'inherit' }}>
+			<Box
+				sx={{
+					bgcolor: 'background.paper',
+					// 100% rather than inherit: the paper's height is a percentage on
+					// mobile, so inheriting it would resolve against the paper again
+					height: '100%',
+					display: 'flex',
+					flexDirection: 'column',
+					minHeight: 0,
+				}}
+			>
 				<StyledAppBar position="sticky">
 					<Tabs
 						value={tabSelectedState}
@@ -110,11 +120,13 @@ export const IntelAndEasterEggDrawerContent = () => {
 							multiSelectState={intelMultiSelectState}
 							setMultiSelectState={handleSetIntelMultiSelectState}
 						/>
-						<IntelList
-							multiSelectState={intelMultiSelectState}
-							addRemoveItemMultiSelect={addRemoveItemMultiSelect}
-							onClearFilters={intelClearFilters}
-						/>
+						<ScrollPane>
+							<IntelList
+								multiSelectState={intelMultiSelectState}
+								addRemoveItemMultiSelect={addRemoveItemMultiSelect}
+								onClearFilters={intelClearFilters}
+							/>
+						</ScrollPane>
 						<IntelListMenu onClearFiltersReady={setIntelClearFilters} />
 					</TabContentContainer>
 				</StyledTabPanel>
@@ -124,7 +136,9 @@ export const IntelAndEasterEggDrawerContent = () => {
 					dir={theme.direction}
 				>
 					<TabContentContainer id="eggs-filter">
-						<EggList onClearFilters={eggClearFilters} />
+						<ScrollPane>
+							<EggList onClearFilters={eggClearFilters} />
+						</ScrollPane>
 						<EggListMenu onClearFiltersReady={setEggClearFilters} />
 					</TabContentContainer>
 				</StyledTabPanel>
@@ -137,8 +151,16 @@ const TabContentContainer = styled.div`
 	background-color: var(--clr-grey-d);
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	/* min-height keeps the flex children from growing past the panel */
+	min-height: 0;
 	height: 100%;
+`;
+
+/* the only scrolling region in the drawer */
+const ScrollPane = styled.div`
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow-y: auto;
 `;
 
 const StyledAppBar = styled(AppBar)`
@@ -146,9 +168,12 @@ const StyledAppBar = styled(AppBar)`
 `;
 
 const StyledTabPanel = styled(TabPanel)`
-	height: inherit;
+	/* take the space left under the tabs instead of adding 100% height below them */
+	flex: 1 1 auto;
+	min-height: 0;
+
 	.MuiBox-root {
 		padding: unset;
-		height: inherit;
+		height: 100%;
 	}
 `;

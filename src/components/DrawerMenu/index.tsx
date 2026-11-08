@@ -5,7 +5,13 @@ import { DeclassifiedContext } from '../../contexts/DeclassifiedContext/declassi
 
 const StyledSwipeableDrawer = styled(SwipeableDrawer)`
 	.MuiDrawer-paper {
+		/* the paper itself must not scroll: the tabs and the filter panel stay put and
+		   only the list between them scrolls, so no scrollbar runs past the header or
+		   the filters */
+		overflow: hidden;
+
 		@media (max-width: 900px) {
+			height: 75%;
 			max-height: 75%;
 		}
 		@media (min-width: 900px) {
