@@ -18,6 +18,7 @@ import { LegacyIcons } from '../../data/icons';
 import { DefaultPOIData } from '../../data/IntelTypes';
 import { GetMapById } from '../../data/maps/mapDetails';
 import { getMiscMarkerById } from '../../helpers/github';
+import { withLineBreaks } from '../../helpers/lineBreaks';
 import { BugReportButton } from '../ActionButtons/BugReportButton';
 import { ShareButton } from '../ActionButtons/ShareButton';
 import { CustomImage } from '../CustomImage';
@@ -84,7 +85,7 @@ export const MiscDetailItem = ({
 					<CustomImage src={img} altText="Placeholder" />
 					<MiscDetailItemContainer>
 						<Subheading variant="h3">{subheading.join(' - ')}</Subheading>
-						<MiscDescription>{desc.trim()}</MiscDescription>
+						<MiscDescription>{withLineBreaks(desc)}</MiscDescription>
 						{externalLinkArray.length > 0 || linkedItemsArray.length > 0 ? (
 							<LinksArea>
 								{externalLinkArray.length > 0
@@ -186,7 +187,6 @@ const MiscDescription = styled(Typography)`
 	text-align: center;
 	margin: 0px !important;
 	font-size: 0.7rem;
-	white-space: pre-wrap;
 `;
 
 const LinksArea = styled.span`
@@ -194,7 +194,6 @@ const LinksArea = styled.span`
 	margin: 0px !important;
 	font-size: 0.7rem;
 	white-space: pre-wrap;
-	margin: 0px !important;
 `;
 
 const ActionContainer = styled.div`

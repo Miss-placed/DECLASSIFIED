@@ -268,6 +268,7 @@ const Header = () => {
 			const mapItem = (
 				<MenuItem
 					key={key}
+					sx={{ minHeight: 'auto', py: '5px' }}
 					onClick={() => {
 						setCurrentMap(mapGroupItem.mapLayers[0]);
 						navigate(`/${mapGroupItem.mapLayers[0].id!}`, { replace: true });
@@ -297,6 +298,8 @@ const Header = () => {
 					// styled on the item so the menu and the mobile drawer match
 					sx={{
 						position: 'relative',
+						minHeight: 'auto',
+						py: '4px',
 						pl: '2.5rem',
 						fontSize: '0.8rem',
 						opacity: 0.85,

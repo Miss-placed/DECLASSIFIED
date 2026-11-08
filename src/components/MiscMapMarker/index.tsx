@@ -6,6 +6,7 @@ import { MiscMarker } from '../../classes';
 import { useUserContext } from '../../contexts/UserContext/userContextProvider';
 import { customMiscIconBounds, getMiscIconUri } from '../../data/icons';
 import { DefaultPOIData } from '../../data/IntelTypes';
+import { getPopupWidths } from '../../helpers/popupSize';
 import { MiscDetailItem } from '../MiscDetailsItem';
 
 export const MiscMapMarker = ({
@@ -31,12 +32,31 @@ export const MiscMapMarker = ({
 		}
 	}, [sharedMapItemId, id, markerInstance, mapInstance]);
 
+	// Leaflet measures the popup when it opens, which is before React has put the
+	// marker content in the DOM, so it always lands on the minimum width. Measure
+	// again once the content exists so longer descriptions get a wider popup.
+	useEffect(() => {
+		if (!markerInstance) return;
+
+		const handlePopupOpen = () => {
+			const popup = markerInstance.getPopup();
+			if (!popup) return;
+
+			requestAnimationFrame(() => popup.update());
+		};
+
+		markerInstance.on('popupopen', handlePopupOpen);
+		return () => {
+			markerInstance.off('popupopen', handlePopupOpen);
+		};
+	}, [markerInstance]);
+
 	return loc !== null &&
 		loc.toString() === DefaultPOIData.nullLoc.toString() ? (
 		<></>
 	) : (
 		<Marker position={loc} icon={renderedIcon} ref={setPopupInstance}>
-			<StyledPopup>
+			<StyledPopup {...getPopupWidths(window.innerWidth)}>
 				<MiscDetailItem
 					id={id}
 					title={title}

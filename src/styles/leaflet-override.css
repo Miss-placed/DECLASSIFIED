@@ -2,6 +2,17 @@
 	border-radius: 12px !important;
 }
 
+/*
+ * On mobile the layer control sits 11px lower than the bottom UI buttons, which
+ * makes the bottom row look wonky. Nudge the whole bottom-right corner up so the
+ * control and the buttons share a baseline.
+ */
+@media (max-width: 768px) {
+	.leaflet-bottom.leaflet-right {
+		bottom: 11px;
+	}
+}
+
 .leaflet-container,
 .leaflet-container * {
 	font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco,
@@ -14,9 +25,12 @@
 	border: none;
 	padding: 0px !important;
 }
-.leaflet-popup-content {
-	width: unset !important;
-}
+
+/*
+ * Popup width is left to Leaflet: it measures the content and clamps it between
+ * the minWidth/maxWidth set on the marker popups, so short markers stay compact
+ * and long descriptions get wider instead of growing into a tall narrow column.
+ */
 
 .intel-content {
 	width: 300px;

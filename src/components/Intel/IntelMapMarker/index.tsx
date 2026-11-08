@@ -7,6 +7,7 @@ import { useUserContext } from '../../../contexts/UserContext/userContextProvide
 import { db, DeclassifiedIntelCollected } from '../../../data/db';
 import { DefaultPOIData, Faction, IntelItem } from '../../../data/IntelTypes';
 import { intelIconInit } from '../../../helpers/icons';
+import { getPopupWidths } from '../../../helpers/popupSize';
 import { IntelDetailsItem } from '../IntelDetailsItem';
 
 const StyledPopup = styled(Popup)`
@@ -48,12 +49,30 @@ export const IntelMapMarker = ({
 		}
 	}, [sharedMapItemId, id, markerInstance, mapInstance]);
 
+	// Re-measure after React renders the content, otherwise long descriptions stay
+	// at the popup's minimum width and grow very tall.
+	useEffect(() => {
+		if (!markerInstance) return;
+
+		const handlePopupOpen = () => {
+			const popup = markerInstance.getPopup();
+			if (!popup) return;
+
+			requestAnimationFrame(() => popup.update());
+		};
+
+		markerInstance.on('popupopen', handlePopupOpen);
+		return () => {
+			markerInstance.off('popupopen', handlePopupOpen);
+		};
+	}, [markerInstance]);
+
 	return loc !== null && loc.toString() === DefaultPOIData.nullLoc.toString() ? (
 		<></>
 	) : (
 		<>
 			<Marker position={loc} icon={renderedIcon} ref={setPopupInstance}>
-				<StyledPopup>
+				<StyledPopup {...getPopupWidths(window.innerWidth)}>
 					<IntelDetailsItem
 						key={id}
 						id={id!}

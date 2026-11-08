@@ -18,6 +18,7 @@ import { db } from "../../../data/db";
 import { gameForIntel, intelSlug, mapTitleFromId, slugifyIntel } from '../../../data/intelSeo';
 import { DefaultPOIData, Faction, IIntelItem } from '../../../data/IntelTypes';
 import { GetMapById } from "../../../data/maps/mapDetails";
+import { withLineBreaks } from '../../../helpers/lineBreaks';
 import { toSnakeCase } from "../../../helpers/icons";
 import { BugReportButton } from "../../ActionButtons/BugReportButton";
 import { ShareButton } from "../../ActionButtons/ShareButton";
@@ -295,5 +296,4 @@ const IntelDescription = styled(Typography)`
 	text-align: center;
 	margin: 0px !important;
 	font-size: 0.7rem;
-	white-space: pre-wrap;
 `;

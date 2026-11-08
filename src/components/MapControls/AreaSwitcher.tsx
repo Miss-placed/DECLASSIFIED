@@ -11,7 +11,9 @@ const StyledAreaSwitcher = styled.div`
 	bottom: 20px;
 	left: 50%;
 	transform: translateX(-50%);
-	z-index: var(--z-index-ui);
+	/* below Leaflet's popup pane (700) so an open marker is never covered,
+	   but above the overlay/marker panes */
+	z-index: 500;
 	display: flex;
 	align-items: center;
 	gap: 2px;
