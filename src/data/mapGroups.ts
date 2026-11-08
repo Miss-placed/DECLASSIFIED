@@ -128,19 +128,31 @@ export const MapGroupDefinitions: MapGroupDefinition[] = [
 		key: 'paradoxJunction_Group',
 		mapName: 'Paradox Junction',
 		game: 'bo7',
-		mapLayers: [{ id: MapIds.paradoxJunction, title: 'Paradox Junction' }],
+		mapLayers: [
+			{ id: MapIds.paradoxJunction, title: 'Paradox Junction' },
+			{ id: MapIds.paradoxJunctionNuked, title: 'Paradox Junction Nuked' },
+		],
 	},
 	{
 		key: 'totenreich_Group',
 		mapName: 'Totenreich',
 		game: 'bo7',
-		mapLayers: [{ id: MapIds.totenreich, title: 'Totenreich' }],
+		mapLayers: [
+			{ id: MapIds.totenreich, title: 'Totenreich' },
+			{ id: MapIds.totenreichBoss, title: 'Totenreich Boss Area' },
+		],
 	},
 	{
 		key: 'kowakujo_Group',
 		mapName: 'Kowakujō',
 		game: 'bo7',
 		mapLayers: [{ id: MapIds.kowakujo, title: 'Kowakujō' }],
+	},
+	{
+		key: 'rexInfernus_Group',
+		mapName: 'Rex Infernus',
+		game: 'bo7',
+		mapLayers: [{ id: MapIds.rexInfernus, title: 'Rex Infernus' }],
 	},
 ];
 

@@ -141,13 +141,25 @@ export const MapDetails = {
 		title: 'Paradox Junction',
 		mapOverlay: allGameMapSVGs.paradoxJunction,
 	}),
+	paradoxJunctionNuked: new MapItem(MapIds.paradoxJunctionNuked, {
+		title: 'Paradox Junction Nuked',
+		mapOverlay: allGameMapSVGs.paradoxJunctionNuked,
+	}),
 	totenreich: new MapItem(MapIds.totenreich, {
 		title: 'Totenreich',
 		mapOverlay: allGameMapSVGs.totenreich,
 	}),
+	totenreichBoss: new MapItem(MapIds.totenreichBoss, {
+		title: 'Totenreich Boss Area',
+		mapOverlay: allGameMapSVGs.totenreichBoss,
+	}),
 	kowakujo: new MapItem(MapIds.kowakujo, {
 		title: 'Kowakujō',
 		mapOverlay: allGameMapSVGs.kowakujo,
+	}),
+	rexInfernus: new MapItem(MapIds.rexInfernus, {
+		title: 'Rex Infernus',
+		mapOverlay: allGameMapSVGs.rexInfernus,
 	}),
 };
 
